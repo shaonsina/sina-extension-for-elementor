@@ -9,7 +9,7 @@ function sina_add_submenu() {
 		'sina_page_content'
 	);
 
-	add_option( 'sina_map_apikey', 'AIzaSyBOQMDDOsJA0uHTqXTDHUogDJfaTST7hNQ' );
+	add_option( 'sina_map_apikey', '' );
 	add_action( 'admin_init', 'sina_settings_group' );
 }
 add_action( 'admin_menu', 'sina_add_submenu', 550 );
