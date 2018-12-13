@@ -496,7 +496,7 @@ img.mfp-img{
 	height: 400px;
 }
 
-/*--------------------------------- Image Zoomer -------------------------------------- */
+/*--------------------------------- Product Zoomer -------------------------------------- */
 .sina-product-zoomer{
 	display: inline-block;
 }
@@ -512,6 +512,49 @@ img.mfp-img{
 	line-height: 24px;
 	font-weight: 600;
 	margin: 0 0 20px 0;
+}
+.xzoom-source img,
+.xzoom-preview img,
+.xzoom-lens img {
+    display: block;
+    max-width: none;
+    max-height: none
+}
+.xzoom-thumb-item {
+    cursor: pointer;
+    float: left
+}
+.elementor .xzoom-gallery {
+    display: inline-block;
+    border: 1px solid #cecece;
+    width: 100%
+}
+.elementor .xzoom {
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px
+}
+.xzoom-source,
+.xzoom-hidden {
+    display: block;
+    position: static;
+    float: none;
+    clear: both
+}
+.xzoom-hidden {
+    overflow: hidden
+}
+.xzoom-preview {
+    border: 1px solid #888;
+    box-shadow: -0 -0 10px rgba(0, 0, 0, 0.50)
+}
+.xzoom-lens {
+    border: 1px solid #555;
+    box-shadow: -0 -0 10px rgba(0, 0, 0, 0.50);
+    cursor: crosshair
+}
+.elementor .xactive {
+    box-shadow: 0 0 3px 0 rgba(74, 169, 210, 1);
+    border: 1px solid #4aaad2
 }
 
 /*--------------------------------- Mailchimp Subscribe Form -------------------------------------- */
@@ -568,6 +611,43 @@ img.mfp-img{
 	display: none;
 	margin: 15px 0 0;
 	color: #ccc;
+}
+
+/*-------------------------- News Ticker --------------------------*/
+.sina-news-ticker{
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+}
+.sina-news-ticker .sina-ticker-wrapper{
+	position: absolute;
+	width: 9999px;
+	left: 200px;
+	float: left;
+	z-index: 1;
+}
+.sina-news-ticker .sina-nt-left-label,
+.sina-news-ticker .sina-nt-right-label{
+	position: relative;
+	z-index: 999;
+	min-width: 160px;
+	padding: 12px 20px;
+	float: left;
+	font-size: 20px;
+	text-align: center;
+}
+.sina-news-ticker .sina-nt-right-label{
+	float: right;
+}
+.sina-news-ticker .sina-ticker{
+	float: left;
+}
+.sina-news-ticker .sina-ticker a{
+	display: block;
+	padding: 15px 20px 15px 0;
+	font-size: 15px;
+	font-family: arial;
+	text-decoration: none;
 }
 
 /*-------------------------- Particle Layer --------------------------*/

@@ -298,6 +298,7 @@ final class Sina_Extension {
 		wp_register_script( 'mailchimp', SINA_EXT_URL .'assets/js/jquery.ajaxchimp.min.js', ['jquery'], SINA_EXT_VERSION, true );
 		wp_register_script( 'isotope', SINA_EXT_URL .'assets/js/isotope.min.js', ['jquery', 'imagesLoaded', 'magnific-popup'], '3.0.6', true );
 		wp_register_script( 'xzoom', SINA_EXT_URL .'assets/js/xzoom.min.js', ['jquery'], '1.0.14', true );
+		wp_register_script( 'news-ticker', SINA_EXT_URL .'assets/js/jquery.tickerNews.min.js', ['jquery'], SINA_EXT_VERSION, true );
 
 		if ( $apikey ) {
 			wp_register_script( 'sina-google-map', '//maps.google.com/maps/api/js?key='. $apikey, [], SINA_EXT_VERSION, true );
@@ -324,13 +325,13 @@ final class Sina_Extension {
 		require_once( SINA_EXT_DIR .'/widgets/sina-fancytext.php' );
 		require_once( SINA_EXT_DIR .'/widgets/sina-flip-box.php' );
 		require_once( SINA_EXT_DIR .'/widgets/sina-google-map.php' );
-		require_once( SINA_EXT_DIR .'/widgets/sina-product-zoomer.php' );
 		require_once( SINA_EXT_DIR .'/widgets/sina-mailchimp-subscribe.php' );
 		require_once( SINA_EXT_DIR .'/widgets/sina-news-ticker.php' );
 		require_once( SINA_EXT_DIR .'/widgets/sina-particle-layer.php' );
 		require_once( SINA_EXT_DIR .'/widgets/sina-piechart.php' );
 		require_once( SINA_EXT_DIR .'/widgets/sina-portfolio.php' );
 		require_once( SINA_EXT_DIR .'/widgets/sina-pricing.php' );
+		require_once( SINA_EXT_DIR .'/widgets/sina-product-zoomer.php' );
 		require_once( SINA_EXT_DIR .'/widgets/sina-progressbar.php' );
 		require_once( SINA_EXT_DIR .'/widgets/sina-review-carousel.php' );
 		require_once( SINA_EXT_DIR .'/widgets/sina-team.php' );

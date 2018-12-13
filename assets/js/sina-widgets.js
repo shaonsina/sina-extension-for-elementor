@@ -419,6 +419,19 @@
 		});
 	}
 
+	function sinaNewsTicker($scope, $) {
+		$scope.find('.sina-ticker-wrapper').each(function () {
+			var ticker = $(this).newsTicker();
+
+			ticker.on("mouseenter",function(){
+				this.pauseTicker();
+			});
+			ticker.on("mouseleave",function(){
+				this.startTicker();
+			});
+		});
+	}
+
 	function sinaProductZoomer($scope, $) {
 		$scope.find('.sina-product-zoomer').each(function () {
 			var $this = $(this),
@@ -702,6 +715,7 @@
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_counter.default', sinaCounter);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_fancytext.default', sinaFancytext);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_google_map.default', sinaGoogleMap);
+		elementorFrontend.hooks.addAction('frontend/element_ready/sina_news_ticker.default', sinaNewsTicker);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_product_zoomer.default', sinaProductZoomer);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_particle_layer.default', sinaParticleLayer);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_piechart.default', sinaPiechart);
