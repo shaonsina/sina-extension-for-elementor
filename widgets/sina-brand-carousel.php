@@ -138,7 +138,7 @@ class Sina_Brand_Carousel_Widget extends Widget_Base {
 						'label' => __( 'Brand Name', 'sina-ext' ),
 						'type' => Controls_Manager::TEXT,
 						'placeholder' => __( 'Enter Name', 'sina-ext' ),
-						'description' => __( 'This name will be show in the item header', 'sina-ext' ),
+						'description' => __( 'This name will be show only item header', 'sina-ext' ),
 						'default' => 'Youtube',
 					],
 				],

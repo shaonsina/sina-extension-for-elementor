@@ -275,7 +275,8 @@ final class Sina_Extension {
 	public function widget_styles() {
 		wp_enqueue_style( 'owl-carousel', SINA_EXT_URL .'assets/css/owl.carousel.min.css', [], '2.3.4' );
 		wp_enqueue_style( 'magnific-popup', SINA_EXT_URL .'assets/css/magnific-popup.css', [], '1.1.0' );
-		wp_enqueue_style( 'sina-widgets', SINA_EXT_URL .'assets/css/sina-widgets.min.css', [], SINA_EXT_VERSION );
+		wp_enqueue_style( 'xzoom', SINA_EXT_URL .'assets/css/xzoom.min.css', [], '1.0.14' );
+		wp_enqueue_style( 'sina-widgets', SINA_EXT_URL .'assets/css/sina-widgets.css', [], SINA_EXT_VERSION );
 	}
 
 	/**
@@ -296,11 +297,12 @@ final class Sina_Extension {
 		wp_register_script( 'easypiechart', SINA_EXT_URL .'assets/js/jquery.easypiechart.min.js', ['jquery'], '2.1.7', true );
 		wp_register_script( 'mailchimp', SINA_EXT_URL .'assets/js/jquery.ajaxchimp.min.js', ['jquery'], SINA_EXT_VERSION, true );
 		wp_register_script( 'isotope', SINA_EXT_URL .'assets/js/isotope.min.js', ['jquery', 'imagesLoaded', 'magnific-popup'], '3.0.6', true );
+		wp_register_script( 'xzoom', SINA_EXT_URL .'assets/js/xzoom.min.js', ['jquery'], '1.0.14', true );
 
 		if ( $apikey ) {
 			wp_register_script( 'sina-google-map', '//maps.google.com/maps/api/js?key='. $apikey, [], SINA_EXT_VERSION, true );
 		}
-		wp_register_script( 'sina-widgets', SINA_EXT_URL .'assets/js/sina-widgets.min.js', ['jquery'], SINA_EXT_VERSION, true );
+		wp_register_script( 'sina-widgets', SINA_EXT_URL .'assets/js/sina-widgets.js', ['jquery'], SINA_EXT_VERSION, true );
 		wp_localize_script( 'sina-widgets', 'sinaAjax', ['ajaxURL' => $ajax_url] );
 	}
 
@@ -322,7 +324,9 @@ final class Sina_Extension {
 		require_once( SINA_EXT_DIR .'/widgets/sina-fancytext.php' );
 		require_once( SINA_EXT_DIR .'/widgets/sina-flip-box.php' );
 		require_once( SINA_EXT_DIR .'/widgets/sina-google-map.php' );
+		require_once( SINA_EXT_DIR .'/widgets/sina-product-zoomer.php' );
 		require_once( SINA_EXT_DIR .'/widgets/sina-mailchimp-subscribe.php' );
+		require_once( SINA_EXT_DIR .'/widgets/sina-news-ticker.php' );
 		require_once( SINA_EXT_DIR .'/widgets/sina-particle-layer.php' );
 		require_once( SINA_EXT_DIR .'/widgets/sina-piechart.php' );
 		require_once( SINA_EXT_DIR .'/widgets/sina-portfolio.php' );
@@ -347,10 +351,12 @@ final class Sina_Extension {
 		Plugin::instance()->widgets_manager->register_widget_type( new Sina_Flip_Box_Widget() );
 		Plugin::instance()->widgets_manager->register_widget_type( new Sina_Google_Map_Widget() );
 		Plugin::instance()->widgets_manager->register_widget_type( new Sina_MC_Subscribe_Widget() );
+		Plugin::instance()->widgets_manager->register_widget_type( new Sina_News_Ticker_Widget() );
 		Plugin::instance()->widgets_manager->register_widget_type( new Sina_Particle_Layer_Widget() );
 		Plugin::instance()->widgets_manager->register_widget_type( new Sina_Piechart_Widget() );
 		Plugin::instance()->widgets_manager->register_widget_type( new Sina_Portfolio_Widget() );
 		Plugin::instance()->widgets_manager->register_widget_type( new Sina_Pricing_Widget() );
+		Plugin::instance()->widgets_manager->register_widget_type( new Sina_Product_Zoomer_Widget() );
 		Plugin::instance()->widgets_manager->register_widget_type( new Sina_Progressbar_Widget() );
 		Plugin::instance()->widgets_manager->register_widget_type( new Sina_Review_Carousel_Widget() );
 		Plugin::instance()->widgets_manager->register_widget_type( new Sina_Team_Widget() );

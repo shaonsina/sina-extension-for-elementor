@@ -116,6 +116,19 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 		);
 
 		$this->add_control(
+			'image_position',
+			[
+				'label' => __( 'Image Position', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					'top' => __( 'Top', 'sina-ext' ),
+					'middle' => __( 'Middle', 'sina-ext' ),
+					'bottom' => __( 'Bottom', 'sina-ext' ),
+				],
+				'default' => 'top',
+			]
+		);
+		$this->add_control(
 			'review',
 			[
 				'label' => __( 'Add Image', 'sina-ext' ),
@@ -656,27 +669,77 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 				$this->add_inline_editing_attributes( $comment_key );
 			?>
 			<div class="sina-review-item">
-				<div class="sina-review-member">
-					<?php if ( $item['image']['url'] ): ?>
-						<img src="<?php echo esc_url( $item['image']['url'] ); ?>" class="sina-review-face" alt="<?php echo esc_attr($item['name']); ?>">
+				<?php if ( 'top' == $data['image_position'] ): ?>
+					<div class="sina-review-member">
+						<?php if ( $item['image']['url'] ): ?>
+							<img src="<?php echo esc_url( $item['image']['url'] ); ?>" class="sina-review-face" alt="<?php echo esc_attr($item['name']); ?>">
+						<?php endif; ?>
+
+						<?php if ($item['name']): ?>
+							<h5 <?php echo $this->get_render_attribute_string( $name_key ); ?>><?php echo esc_html($item['name']); ?></h5>
+						<?php endif; ?>
+
+						<?php if ($item['position']): ?>
+							<p <?php echo $this->get_render_attribute_string( $position_key ); ?>><?php echo esc_html($item['position']); ?></p>
+						<?php endif; ?>
+
+						<?php if ($item['company']): ?>
+							<p <?php echo $this->get_render_attribute_string( $company_key ); ?>><?php echo esc_html($item['company']); ?></p>
+						<?php endif; ?>
+					</div>
+
+					<?php if ($item['comment']): ?>
+						<div <?php echo $this->get_render_attribute_string( $comment_key ); ?>>
+							<?php echo esc_html($item['comment']); ?>
+						</div>
+					<?php endif; ?>
+				<?php elseif ( 'middle' == $data['image_position'] ) : ?>
+					<?php if ($item['comment']): ?>
+						<div <?php echo $this->get_render_attribute_string( $comment_key ); ?>>
+							<?php echo esc_html($item['comment']); ?>
+						</div>
 					<?php endif; ?>
 
-					<?php if ($item['name']): ?>
-						<h5 <?php echo $this->get_render_attribute_string( $name_key ); ?>><?php echo esc_html($item['name']); ?></h5>
+					<div class="sina-review-member">
+						<?php if ( $item['image']['url'] ): ?>
+							<img src="<?php echo esc_url( $item['image']['url'] ); ?>" class="sina-review-face" alt="<?php echo esc_attr($item['name']); ?>">
+						<?php endif; ?>
+
+						<?php if ($item['name']): ?>
+							<h5 <?php echo $this->get_render_attribute_string( $name_key ); ?>><?php echo esc_html($item['name']); ?></h5>
+						<?php endif; ?>
+
+						<?php if ($item['position']): ?>
+							<p <?php echo $this->get_render_attribute_string( $position_key ); ?>><?php echo esc_html($item['position']); ?></p>
+						<?php endif; ?>
+
+						<?php if ($item['company']): ?>
+							<p <?php echo $this->get_render_attribute_string( $company_key ); ?>><?php echo esc_html($item['company']); ?></p>
+						<?php endif; ?>
+					</div>
+				<?php else: ?>
+					<?php if ($item['comment']): ?>
+						<div <?php echo $this->get_render_attribute_string( $comment_key ); ?>>
+							<?php echo esc_html($item['comment']); ?>
+						</div>
 					<?php endif; ?>
 
-					<?php if ($item['position']): ?>
-						<p <?php echo $this->get_render_attribute_string( $position_key ); ?>><?php echo esc_html($item['position']); ?></p>
-					<?php endif; ?>
+					<div class="sina-review-member">
+						<?php if ($item['name']): ?>
+							<h5 <?php echo $this->get_render_attribute_string( $name_key ); ?>><?php echo esc_html($item['name']); ?></h5>
+						<?php endif; ?>
 
-					<?php if ($item['company']): ?>
-						<p <?php echo $this->get_render_attribute_string( $company_key ); ?>><?php echo esc_html($item['company']); ?></p>
-					<?php endif; ?>
-				</div>
+						<?php if ($item['position']): ?>
+							<p <?php echo $this->get_render_attribute_string( $position_key ); ?>><?php echo esc_html($item['position']); ?></p>
+						<?php endif; ?>
 
-				<?php if ($item['comment']): ?>
-					<div <?php echo $this->get_render_attribute_string( $comment_key ); ?>>
-						<?php echo esc_html($item['comment']); ?>
+						<?php if ($item['company']): ?>
+							<p <?php echo $this->get_render_attribute_string( $company_key ); ?>><?php echo esc_html($item['company']); ?></p>
+						<?php endif; ?>
+
+						<?php if ( $item['image']['url'] ): ?>
+							<img src="<?php echo esc_url( $item['image']['url'] ); ?>" class="sina-review-face" alt="<?php echo esc_attr($item['name']); ?>">
+						<?php endif; ?>
 					</div>
 				<?php endif; ?>
 			</div>

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Image Zoomer Widget.
+ * News Ticker Widget.
  *
  * @since 1.1.0
  */
@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class Sina_Image_Zoomer_Widget extends Widget_Base {
+class Sina_News_Ticker_Widget extends Widget_Base {
 
 	/**
 	 * Get widget name.
@@ -25,7 +25,7 @@ class Sina_Image_Zoomer_Widget extends Widget_Base {
 	 * @since 1.1.0
 	 */
 	public function get_name() {
-		return 'sina_image_zoomer';
+		return 'sina_news_ticker';
 	}
 
 	/**
@@ -34,7 +34,7 @@ class Sina_Image_Zoomer_Widget extends Widget_Base {
 	 * @since 1.1.0
 	 */
 	public function get_title() {
-		return __( 'Sina Image Zoomer', 'sina-ext' );
+		return __( 'Sina News Ticker', 'sina-ext' );
 	}
 
 	/**
@@ -43,7 +43,7 @@ class Sina_Image_Zoomer_Widget extends Widget_Base {
 	 * @since 1.1.0
 	 */
 	public function get_icon() {
-		return 'fa fa-search-plus';
+		return 'fa fa-text-width';
 	}
 
 	/**
@@ -63,7 +63,7 @@ class Sina_Image_Zoomer_Widget extends Widget_Base {
 	 * @since 1.1.0
 	 */
 	public function get_keywords() {
-		return [ 'sina image zoomer', 'visitor', 'sina' ];
+		return [ 'sina news ticker', 'sina ticker', 'sina' ];
 	}
 
 	/**
@@ -98,30 +98,29 @@ class Sina_Image_Zoomer_Widget extends Widget_Base {
 	 * Adds different input fields to allow the user to change and customize the widget settings.
 	 *
 	 * @since 1.1.0
-	 * @access protected
 	 */
 	protected function _register_controls() {
-		// Start Image Zoomer
-		// ===================
+		// Start Ticker Content
+		// =====================
 		$this->start_controls_section(
-			'zoomer_content',
+			'ticker_content',
 			[
-				'label' => __( 'Zoomer Content', 'sina-ext' ),
+				'label' => __( 'Ticker Content', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
 
 		$this->end_controls_section();
-		// End Image Zoomer
-		// =================
+		// End Ticker Content
+		// ===================
 	}
 
 
 	protected function render() {
 		$data = $this->get_settings_for_display();
 		?>
-		<div class="sina-image-zoomer">
-		</div><!-- .sina-image-zoomer -->
+		<div class="sina-news-ticker">
+		</div><!-- .sina-news-ticker -->
 		<?php
 	}
 

@@ -419,6 +419,19 @@
 		});
 	}
 
+	function sinaProductZoomer($scope, $) {
+		$scope.find('.sina-product-zoomer').each(function () {
+			var $this = $(this),
+				position = $this.data('position'),
+				shape = $this.data('shape');
+
+			$this.find('.xzoom, .xzoom-gallery').xzoom({
+				position: position,
+				lensShape: shape,
+			});
+		});
+	}
+
 	function sinaParticleLayer($scope, $) {
 		$scope.find('.sina-particle').each(function () {
 			var $this = $(this),
@@ -689,6 +702,7 @@
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_counter.default', sinaCounter);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_fancytext.default', sinaFancytext);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_google_map.default', sinaGoogleMap);
+		elementorFrontend.hooks.addAction('frontend/element_ready/sina_product_zoomer.default', sinaProductZoomer);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_particle_layer.default', sinaParticleLayer);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_piechart.default', sinaPiechart);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_portfolio.default', sinaPortfolio);

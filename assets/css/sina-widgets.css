@@ -496,6 +496,24 @@ img.mfp-img{
 	height: 400px;
 }
 
+/*--------------------------------- Image Zoomer -------------------------------------- */
+.sina-product-zoomer{
+	display: inline-block;
+}
+.sina-product-title a,
+.sina-product-title{
+	font-size: 30px;
+	line-height: 36px;
+	font-weight: 600;
+	margin: 0 0 6px 0;
+}
+.sina-product-desc{
+	font-size: 16px;
+	line-height: 24px;
+	font-weight: 600;
+	margin: 0 0 20px 0;
+}
+
 /*--------------------------------- Mailchimp Subscribe Form -------------------------------------- */
 .sina-subs-form{
 	overflow: hidden;
@@ -568,6 +586,19 @@ img.mfp-img{
 }
 .sina-banner-title{
 	margin-bottom: 15px;
+	font-size: 40px;
+	line-height: 50px;
+	color: #eee;
+}
+.sina-banner-subtitle{
+	font-size: 30px;
+	line-height: 40px;
+	color: #eee;
+}
+.sina-banner-desc{
+	font-size: 16px;
+	line-height: 22px;
+	color: #eee;
 }
 .sina-banner-btns{
 	margin-top: 40px;
