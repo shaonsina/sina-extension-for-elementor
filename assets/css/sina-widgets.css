@@ -1,4 +1,4 @@
-/* Sina Extension for Elementor v1.0.2 */
+/* Sina Extension for Elementor v1.1.0 */
 
 /*--------------------------------- General -------------------------------------- */
 .sina-contact-input .sina-input-field,
@@ -616,37 +616,34 @@ img.mfp-img{
 /*-------------------------- News Ticker --------------------------*/
 .sina-news-ticker{
 	position: relative;
-	width: 100%;
 	overflow: hidden;
 }
-.sina-news-ticker .sina-ticker-wrapper{
-	position: absolute;
-	width: 9999px;
-	left: 200px;
+.sina-news-content,
+.sina-news{
 	float: left;
-	z-index: 1;
 }
 .sina-news-ticker .sina-nt-left-label,
 .sina-news-ticker .sina-nt-right-label{
-	position: relative;
-	z-index: 999;
-	min-width: 160px;
+	position: absolute;
+	top: 0;
+	left: 0;
 	padding: 12px 20px;
 	float: left;
+	font-family: arial;
 	font-size: 20px;
+	line-height: 32px;
 	text-align: center;
 }
 .sina-news-ticker .sina-nt-right-label{
-	float: right;
+	left: inherit;
+	right: 0;
 }
-.sina-news-ticker .sina-ticker{
-	float: left;
-}
-.sina-news-ticker .sina-ticker a{
+.sina-news-ticker .sina-news a{
 	display: block;
-	padding: 15px 20px 15px 0;
-	font-size: 15px;
+	padding: 15px;
 	font-family: arial;
+	font-size: 15px;
+	line-height: 26px;
 	text-decoration: none;
 }
 
@@ -670,7 +667,16 @@ img.mfp-img{
 	line-height: 50px;
 	color: #eee;
 }
+.sina-banner-title > *,
+.sina-banner-subtitle > *,
+.sina-banner-desc > *{
+	margin: 0 !important;
+}
+.sina-banner-desc > p{
+	margin: 0 0 10px 0 !important;
+}
 .sina-banner-subtitle{
+	margin-bottom: 10px;
 	font-size: 30px;
 	line-height: 40px;
 	color: #eee;
@@ -1113,6 +1119,9 @@ img.mfp-img{
 	}
 	.sina-portfolio-item{
 		height: 300px;
+	}
+	.sina-nt-label-both{
+		display: none;
 	}
 }
 

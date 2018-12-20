@@ -1,10 +1,10 @@
 == Sina Extension for Elementor ==
 Contributors: shaonsina
-Tags: elementor, addon, extension, elementor extension, elementor addon, page builder, builder, elementor builder, elementor contact form, elementor widget
+Tags: addon, elementor, elementor addon, elementor extension, extension, page builder, builder, elementor builder, elementor contact form, elementor widget
 Requires at least: 4.0
-Tested up to: 4.9.8
+Tested up to: 5.0
 Requires PHP: 5.4
-Stable tag: 1.0.3
+Stable tag: 1.1.0
 License: GPLv3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -13,7 +13,7 @@ A collection of high-quality widgets for Elementor page builder.
 
 == Description ==
 
-This is an extension for Elementor (https://wordpress.org/plugins/elementor/) page builder. It will extend the Elementor and increase web page building experience. It has 20+ useful high-quality widgets. Which you may use for easy & fast make the page & display your content far better way.
+This is an extension for Elementor (https://wordpress.org/plugins/elementor/) page builder. It will extend the Elementor and increase web page building experience. It has 24 useful high-quality widgets. Which you may use for easy & fast make the page & display your content far better way.
 
 
 Basic use of blogpost
@@ -23,7 +23,7 @@ Basic use of particle layer
 https://youtu.be/xYMzXFVQri8
 
 
-== 20+ FREE WIDGETS
+== 24 FREE WIDGETS
 
 1. Accordion: Use accordion for display FAQ or custom content which you want
 2. Banner Slider: Add an animated text or image slider into your web page
@@ -37,16 +37,18 @@ https://youtu.be/xYMzXFVQri8
 10. Flipbox: Use animated Flip Box to highlight any content on your web page
 11. Google Map: Add Google map with API key into the web page.
 12. MailChimp: Add MailChimp subscribe form for collect subscribers data
-13. Particle Layer: Use particle layer with lots of style, layout & more
-14. Piechart: Works the same as the Counter, but with a circle
-15. Portfolio: Easily display your works
-16. Pricing: Add Pricing for display your services rate
-17. Progressbar: Display progress bars with different styles
-18. Review Carousel: Show what others said about your brand
-19. Team: Add your team members just a few clicks
-20. User Counter: Display how many users visit
-21. Video: Show a video in a popup
-22. Visit Counter: Display how many users registered
+13. News Ticker: Use it for scrolling post or news title
+14. Particle Layer: Use particle layer with lots of style, layout & more
+15. Piechart: Works the same as the Counter, but with a circle
+16. Portfolio: Easily display your works
+17. Pricing: Add Pricing for display your services rate
+18. Product Zoomer: Add multiple images of product for zoom in
+19. Progressbar: Display progress bars with different styles
+20. Review Carousel: Show what others said about your brand
+21. Team: Add your team members just a few clicks
+22. User Counter: Display how many users visit
+23. Video: Show a video in a popup
+24. Visit Counter: Display how many users registered
 
 More coming soon...
 
@@ -75,16 +77,21 @@ Yes. It's totally free.
 
 == Changelog ==
 
-= 1.0.3 =
+= 1.1.0 - 21-12-2018 =
+- New: Product Zoomer
+- New: News Ticker
+- Improved
+
+= 1.0.3 - 03-12-2018 =
 - some issue fixed
 
-= 1.0.2 =
+= 1.0.2 - 30-11-2018 =
 - Icon box has been changed to content box
 - Added: templates option to content box
 - Added: templates option to accordion
 - Improved
 
-= 1.0.1 =
+= 1.0.1 - 27-11-2018 =
 - sina-particles added
 - particle layer improved
 

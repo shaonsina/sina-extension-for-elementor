@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Image Product Widget.
+ * Product Zoomer Widget.
  *
  * @since 1.1.0
  */

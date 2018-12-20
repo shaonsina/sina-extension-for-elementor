@@ -10,7 +10,6 @@ use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
 use Elementor\Group_Control_Text_Shadow;
-use Elementor\Plugin;
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -117,7 +116,7 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 				'label' => __( 'Number of Posts', 'sina-ext' ),
 				'type' => Controls_Manager::NUMBER,
 				'step' => 1,
-				'min' => 1,
+				'min' => 2,
 				'max' => 50,
 				'default' => 10,
 			]
@@ -150,6 +149,22 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 				'label' => __( 'Label Text', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
 				'default' => __( 'Latest News', 'sina-ext' ),
+			]
+		);
+		$this->add_control(
+			'pause_on_hover',
+			[
+				'label' => __( 'Pause On Hover', 'sina-ext' ),
+				'type' => Controls_Manager::SWITCHER,
+			]
+		);
+		$this->add_control(
+			'speed',
+			[
+				'label' => __( 'Scroll Speed', 'sina-ext' ),
+				'type' => Controls_Manager::NUMBER,
+				'min' => 5,
+				'default' => 15,
 			]
 		);
 
@@ -215,6 +230,17 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 				],
 			]
 		);
+		$this->add_responsive_control(
+			'label_padding',
+			[
+				'label' => __( 'Padding', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'selectors' => [
+					'{{WRAPPER}} .sina-nt-left-label, {{WRAPPER}} .sina-nt-right-label' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
 
 		$this->end_controls_section();
 		// End label Style
@@ -238,7 +264,7 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '#222',
 				'selectors' => [
-					'{{WRAPPER}} .sina-ticker a' => 'color: {{VALUE}}'
+					'{{WRAPPER}} .sina-news a, {{WRAPPER}} .sina-news a:hover, {{WRAPPER}} .sina-news a:focus' => 'color: {{VALUE}}'
 				],
 			]
 		);
@@ -249,7 +275,7 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '#1085e4',
 				'selectors' => [
-					'{{WRAPPER}} .sina-ticker a span' => 'color: {{VALUE}}'
+					'{{WRAPPER}} .sina-news a span' => 'color: {{VALUE}}'
 				],
 			]
 		);
@@ -268,29 +294,14 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'headline_typography',
-				'selector' => '{{WRAPPER}} .sina-ticker a',
+				'selector' => '{{WRAPPER}} .sina-news a',
 			]
 		);
 		$this->add_group_control(
 			Group_Control_Text_Shadow::get_type(),
 			[
 				'name' => 'headline_shadow',
-				'selector' => '{{WRAPPER}} .sina-ticker a',
-			]
-		);
-		$this->add_control(
-			'headline_space',
-			[
-				'label' => __( 'Spacing', 'sina-ext' ),
-				'type' => Controls_Manager::SLIDER,
-				'range' => [
-					'px' => [
-						'max' => 50,
-					],
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-ticker a' => 'padding-right: {{SIZE}}{{UNIT}};',
-				],
+				'selector' => '{{WRAPPER}} .sina-news a',
 			]
 		);
 		$this->add_responsive_control(
@@ -301,6 +312,17 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
 					'{{WRAPPER}} .sina-news-ticker' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'headline_padding',
+			[
+				'label' => __( 'Padding', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'selectors' => [
+					'{{WRAPPER}} .sina-news a' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -323,29 +345,33 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 		// Post Query
 		$post_query = new WP_Query( $args );
 		?>
-		<div class="sina-news-ticker">
+		<div class="sina-news-ticker"
+		data-pause="<?php echo esc_attr( $data['pause_on_hover'] ); ?>"
+		data-speed="<?php echo esc_attr( $data['speed'] ); ?>">
 			<?php if ( 'left' == $data['label_position'] || 'both' == $data['label_position'] ): ?>
 				<div class="sina-nt-left-label"><?php echo esc_html( $data['label_text'] ); ?></div>
-			<?php endif ?>
+			<?php endif; ?>
 
-			<?php if ( $post_query->have_posts() ) : ?>
-				<div class="sina-ticker-wrapper">
-					<div class="sina-ticker-slide">
-						<div class="sina-ticker-content">
+			<div class="sina-news-wrapper">
+				<?php if ( $post_query->have_posts() ) : ?>
+					<div class="sina-news-container">
+						<div class="sina-news-content">
 							<?php while ( $post_query->have_posts() ) : $post_query->the_post(); ?>
-								<div class="sina-ticker">
+								<div class="sina-news">
 									<a href="<?php the_permalink(); ?>"><span><?php the_time(); ?></span> <?php the_title(); ?></a>
 								</div>
 							<?php endwhile; ?>
 							<?php wp_reset_query(); ?>
 						</div>
 					</div>
-				</div>
-			<?php else: ?>
-				<?php _e('News not published yet', 'sina-ext'); ?>
-			<?php endif; ?>
+				<?php else: ?>
+					<?php _e('News not published yet', 'sina-ext'); ?>
+				<?php endif; ?>
+			</div>
 
-			<?php if ( 'right' == $data['label_position'] || 'both' == $data['label_position'] ): ?>
+			<?php if ( 'both' == $data['label_position'] ): ?>
+				<div class="sina-nt-right-label sina-nt-label-both"><?php echo esc_html( $data['label_text'] ); ?></div>
+			<?php elseif ( 'right' == $data['label_position'] ): ?>
 				<div class="sina-nt-right-label"><?php echo esc_html( $data['label_text'] ); ?></div>
 			<?php endif ?>
 		</div><!-- .sina-news-ticker -->

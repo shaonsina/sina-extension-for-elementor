@@ -1,4 +1,4 @@
-/* Sina Extension for Elementor v1.0.2 */
+/* Sina Extension for Elementor v1.1.0 */
 
 (function ($) {
 
@@ -420,15 +420,50 @@
 	}
 
 	function sinaNewsTicker($scope, $) {
-		$scope.find('.sina-ticker-wrapper').each(function () {
-			var ticker = $(this).newsTicker();
+		$scope.find('.sina-news-ticker').each(function () {
+			var ticker = $(this),
+				speed = $(this).data('speed'),
+				pause = 'yes' == $(this).data('pause') ? true : false,
+				newsContainer = ticker.find( '.sina-news-container' ),
+				newsContent = newsContainer.find('.sina-news-content'),
+				news = newsContent.children('.sina-news'),
+				toWid = 0;
 
-			ticker.on("mouseenter",function(){
-				this.pauseTicker();
-			});
-			ticker.on("mouseleave",function(){
-				this.startTicker();
-			});
+			newsContent.clone().appendTo( newsContainer );
+			newsContent.clone().appendTo( newsContainer );
+
+			function newsTicker( sp, ps ) {
+				newsContainer.css('marginLeft', 0);
+				newsContent.clone().appendTo( newsContainer );
+
+				news.each(function(index, el) {
+					toWid += $(this).outerWidth();
+				});
+				var duration = toWid*sp;
+
+				newsContainer.css('width', toWid*5+'px');
+				newsContainer.animate({
+					marginLeft:'-='+toWid+'px'
+				}, duration, 'linear', function () {
+					newsContainer.children('.sina-news-content').first().remove();
+					newsTicker( sp, ps );
+				});
+
+				if ( ps ) {
+					newsContainer.on('mouseenter', function(e) {
+						newsContainer.stop();
+					});
+					newsContainer.on('mouseleave', function(e) {
+						newsContainer.animate({
+							marginLeft:'-='+toWid+'px'
+						}, duration, 'linear', function () {
+							newsContainer.children('.sina-news-content').first().remove();
+							newsTicker( sp, ps );
+						});
+					});
+				}
+			}
+			newsTicker( speed, pause );
 		});
 	}
 
