@@ -120,7 +120,7 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter Placeholder Text', 'sina-ext' ),
-				'default' => __( 'Enter Your Name', 'sina-ext' ),
+				'default' => __( 'Enter Your Name *', 'sina-ext' ),
 			]
 		);
 		$this->add_control(
@@ -130,7 +130,7 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter Placeholder Text', 'sina-ext' ),
-				'default' => __( 'Enter Your Email', 'sina-ext' ),
+				'default' => __( 'Enter Your Email *', 'sina-ext' ),
 			]
 		);
 		$this->add_control(
@@ -140,7 +140,7 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter Placeholder Text', 'sina-ext' ),
-				'default' => __( 'Enter Your Subject', 'sina-ext' ),
+				'default' => __( 'Enter Your Subject *', 'sina-ext' ),
 			]
 		);
 		$this->add_control(
@@ -150,7 +150,7 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter Placeholder Text', 'sina-ext' ),
-				'default' => __( 'Enter Your Message', 'sina-ext' ),
+				'default' => __( 'Enter Your Message *', 'sina-ext' ),
 			]
 		);
 
@@ -829,12 +829,40 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 		$this->end_controls_tabs();
 
 		$this->add_responsive_control(
+			'btn_width',
+			[
+				'label' => __( 'Width', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', 'em', '%' ],
+				'range' => [
+					'px' => [
+						'min' => 100,
+						'max' => 1000,
+						'step' => 1,
+					],
+					'em' => [
+						'min' => 10,
+						'max' => 100,
+						'step' => 1,
+					],
+					'%' => [
+						'min' => 10,
+						'max' => 100,
+						'step' => 1,
+					],
+				],
+				'separator' => 'before',
+				'selectors' => [
+					'{{WRAPPER}} .sina-contact-btn' => 'width: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
 			'btn_radius',
 			[
 				'label' => __( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
-				'separator' => 'before',
 				'selectors' => [
 					'{{WRAPPER}} .sina-contact-btn' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],

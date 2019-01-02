@@ -238,30 +238,6 @@ class Sina_Brand_Carousel_Widget extends Widget_Base {
 			]
 		);
 		$this->add_control(
-			'nav',
-			[
-				'label' => __( 'Navigation', 'sina-ext' ),
-				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Show', 'sina-ext' ),
-				'label_off' => __( 'Hide', 'sina-ext' ),
-				'default' => 'yes',
-			]
-		);
-		$this->add_control(
-			'nav_bg',
-			[
-				'label' => __( 'Navigation Background', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'condition' => [
-					'nav!' => '',
-				],
-				'default' => '#1085e4',
-				'selectors' => [
-					'{{WRAPPER}} .sina-brand-carousel .owl-prev, {{WRAPPER}} .sina-brand-carousel .owl-next' => 'background-color: {{VALUE}}'
-				]
-			]
-		);
-		$this->add_control(
 			'nav_color',
 			[
 				'label' => __( 'Navigation Color', 'sina-ext' ),
@@ -467,7 +443,6 @@ class Sina_Brand_Carousel_Widget extends Widget_Base {
 		<div class="sina-brand-carousel owl-carousel"
 		data-autoplay="<?php echo esc_attr( $data['autoplay'] ); ?>"
 		data-pause="<?php echo esc_attr( $data['pause'] ); ?>"
-		data-nav="<?php echo esc_attr( $data['nav'] ); ?>"
 		data-mouse-drag="<?php echo esc_attr( $data['mouse_drag'] ); ?>"
 		data-touch-drag="<?php echo esc_attr( $data['touch_drag'] ); ?>"
 		data-loop="<?php echo esc_attr( $data['loop'] ); ?>"

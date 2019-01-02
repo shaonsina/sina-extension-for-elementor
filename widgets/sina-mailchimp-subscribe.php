@@ -936,7 +936,7 @@ class Sina_MC_Subscribe_Widget extends Widget_Base {
 				'range' => [
 					'px' => [
 						'min' => 100,
-						'max' => 500,
+						'max' => 1000,
 						'step' => 1,
 					],
 					'em' => [
@@ -945,7 +945,7 @@ class Sina_MC_Subscribe_Widget extends Widget_Base {
 						'step' => 1,
 					],
 					'%' => [
-						'min' => 5,
+						'min' => 10,
 						'max' => 100,
 						'step' => 1,
 					],
@@ -1055,7 +1055,7 @@ class Sina_MC_Subscribe_Widget extends Widget_Base {
 
 	protected function render() {
 		$data = $this->get_settings_for_display();
-		$display_class = ('block' == $data['display']) ? 'sina-input-block' : ''; 
+		$display_class = ('block' == $data['display']) ? 'sina-input-block' : '';
 		?>
 		<div class="sina-form">
 			<form class="sina-subs-form"
@@ -1069,7 +1069,7 @@ class Sina_MC_Subscribe_Widget extends Widget_Base {
 						<input class="sina-input-field sina-input-lname <?php echo esc_attr( $display_class ); ?>" type="text" name="<?php echo esc_attr( $data['lname_tag'] ); ?>" placeholder="<?php echo esc_attr( $data['lname_placeholder'] ); ?>">
 					<?php endif; ?>
 
-					<input class="sina-input-field sina-input-email <?php echo esc_attr( $display_class ); ?>" type="email" name="<?php echo esc_attr( $data['email_tag'] ); ?>" placeholder="<?php echo esc_attr( $data['email_placeholder'] ); ?>">
+					<input class="sina-input-field sina-input-email <?php echo esc_attr( $display_class ); ?>" type="email" name="<?php echo esc_attr( $data['email_tag'] ); ?>" placeholder="<?php echo esc_attr( $data['email_placeholder'] ); ?> *">
 
 					<?php if ( $data['phone'] ): ?>
 						<input class="sina-input-field sina-input-phone <?php echo esc_attr( $display_class ); ?>" type="text" name="<?php echo esc_attr( $data['phone_tag'] ); ?>" placeholder="<?php echo esc_attr( $data['phone_placeholder'] ); ?>">
@@ -1115,7 +1115,7 @@ class Sina_MC_Subscribe_Widget extends Widget_Base {
 						<input class="sina-input-field sina-input-lname {{{displayClass}}}" type="text" name="{{{settings.lname_tag}}}" placeholder="{{{settings.lname_placeholder}}}">
 					<# } #>
 
-					<input class="sina-input-field sina-input-email {{{displayClass}}}" type="email" name="{{{settings.email_tag}}}" placeholder="{{{settings.email_placeholder}}}">
+					<input class="sina-input-field sina-input-email {{{displayClass}}}" type="email" name="{{{settings.email_tag}}}" placeholder="{{{settings.email_placeholder}}} *">
 
 					<# if( settings.phone ) { #>
 						<input class="sina-input-field sina-input-phone {{{displayClass}}}" type="text" name="{{{settings.phone_tag}}}" placeholder="{{{settings.phone_placeholder}}}">

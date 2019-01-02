@@ -1,4 +1,4 @@
-/* Sina Extension for Elementor v1.1.0 */
+/* Sina Extension for Elementor v1.1.1 */
 
 (function ($) {
 
@@ -186,7 +186,6 @@
 			var $this = $(this),
 				play = $this.data('autoplay') ? true : false,
 				pause = $this.data('pause') ? true : false,
-				nav = $this.data('nav') ? true : false,
 				mouse = $this.data('mouse-drag') ? true : false,
 				touch = $this.data('touch-drag') ? true : false,
 				loop = $this.data('loop') ? true : false,
@@ -198,7 +197,7 @@
 			$this.owlCarousel({
 				autoplay: play,
 				autoplayHoverPause: pause,
-				nav: nav,
+				nav: false,
 				dots: false,
 				mouseDrag: mouse,
 				touchDrag: touch,

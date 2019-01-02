@@ -1,4 +1,4 @@
-/* Sina Extension for Elementor v1.1.0 */
+/* Sina Extension for Elementor v1.1.1 */
 
 /*--------------------------------- General -------------------------------------- */
 .sina-contact-input .sina-input-field,
@@ -27,6 +27,25 @@
 	cursor: pointer;
 }
 
+/* Ribbon */
+.sina-ribbon-left,
+.sina-ribbon-right {
+	position: absolute;
+	top: 25px;
+	right: -85px;
+	width: 250px;
+	padding: 5px;
+	z-index: 9;
+	transform: rotate( 45deg );
+	font-size: 20px;
+	text-align: center;
+}
+.sina-ribbon-left {
+	left: -85px;
+	right: auto;
+	transform: rotate( -45deg );
+}
+
 /* Magnific Popup */
 .mfp-image-holder .mfp-close,
 .mfp-iframe-holder .mfp-close {
@@ -44,6 +63,7 @@ img.mfp-img{
 	outline: none;
 }
 
+/* Template Editor button hide */
 .sina-accordion-body .elementor-element-overlay,
 .sina-content-box .elementor-element-overlay{
 	display: none;
@@ -118,8 +138,6 @@ img.mfp-img{
 }
 .sina-review-carousel .owl-next,
 .sina-review-carousel .owl-prev,
-.sina-brand-carousel .owl-next,
-.sina-brand-carousel .owl-prev,
 .sina-banner-slider .owl-next,
 .sina-banner-slider .owl-prev {
 	position: absolute;
@@ -139,19 +157,15 @@ img.mfp-img{
 	transition: all 0.4s ease-in-out;
 }
 .sina-review-carousel .owl-next,
-.sina-brand-carousel .owl-next,
 .sina-banner-slider .owl-next{
 	right: 35px;
 }
 .sina-review-carousel .owl-prev,
-.sina-brand-carousel .owl-prev,
 .sina-banner-slider .owl-prev{
 	left: 35px;
 }
 .sina-review-carousel .owl-next span,
 .sina-review-carousel .owl-prev span,
-.sina-brand-carousel .owl-next span,
-.sina-brand-carousel .owl-prev span,
 .sina-banner-slider .owl-next span,
 .sina-banner-slider .owl-prev span{
 	float: left;
@@ -322,12 +336,13 @@ img.mfp-img{
 
 /*--------------------------------- Content Box -------------------------------------- */
 .sina-content-box{
-	z-index: 1;
 	position: relative;
+	z-index: 1;
 	padding: 30px;
 	border: 1px solid #eee;
 	text-align: center;
 	transition: 0.4s;
+	overflow: hidden;
 }
 .sina-content-box.sina-content-box-move:hover{
 	z-index:100;
@@ -883,6 +898,7 @@ img.mfp-img{
 }
 .sina-pricing .sina-price-tag{
 	padding: 20px;
+	margin: 0;
 	font-size: 32px;
 	line-height: 1.1;
 }
@@ -891,6 +907,7 @@ img.mfp-img{
 	font-weight: 600;
 }
 .sina-pricing-body{
+	margin-top: 10px;
 	margin-bottom: 20px;
 }
 .sina-pricing-body li{

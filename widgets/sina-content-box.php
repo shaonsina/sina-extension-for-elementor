@@ -120,6 +120,35 @@ class Sina_Content_Box_Widget extends Widget_Base {
 			]
 		);
 		$this->add_control(
+			'ribbon_title',
+			[
+				'label' => __( 'Ribbon Title', 'sina-ext' ),
+				'type' => Controls_Manager::TEXT,
+			]
+		);
+		$this->add_control(
+			'ribbon_position',
+			[
+				'label' => __( 'Ribbon Position', 'sina-ext' ),
+				'type' => Controls_Manager::CHOOSE,
+				'label_block' => false,
+				'options' => [
+					'sina-ribbon-left' => [
+						'title' => __( 'Left', 'sina-ext' ),
+						'icon' => 'eicon-h-align-left',
+					],
+					'sina-ribbon-right' => [
+						'title' => __( 'Right', 'sina-ext' ),
+						'icon' => 'eicon-h-align-right',
+					],
+				],
+				'condition' => [
+					'ribbon_title!' => '',
+				],
+				'default' => 'sina-ribbon-right',
+			]
+		);
+		$this->add_control(
 			'icon',
 			[
 				'label' => __( 'Icon', 'sina-ext' ),
@@ -650,6 +679,61 @@ class Sina_Content_Box_Widget extends Widget_Base {
 		$this->end_controls_section();
 		// End Desc Style
 		// =====================
+
+
+		// Start Ribbon Style
+		// =====================
+		$this->start_controls_section(
+			'ribbon_style',
+			[
+				'label' => __( 'Ribbon', 'sina-ext' ),
+				'tab' => Controls_Manager::TAB_STYLE,
+				'condition' => [
+					'ribbon_title!' => '',
+				],
+			]
+		);
+
+		$this->add_control(
+			'ribbon_color',
+			[
+				'label' => __( 'Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#f8f8f8',
+				'selectors' => [
+					'{{WRAPPER}} .sina-ribbon-right, {{WRAPPER}} .sina-ribbon-left' => 'color: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_control(
+			'ribbon_bg',
+			[
+				'label' => __( 'Background', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#61ce70',
+				'selectors' => [
+					'{{WRAPPER}} .sina-ribbon-right, {{WRAPPER}} .sina-ribbon-left' => 'background: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name' => 'ribbon_typography',
+				'selector' => '{{WRAPPER}} .sina-ribbon-right, {{WRAPPER}} .sina-ribbon-left',
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Text_Shadow::get_type(),
+			[
+				'name' => 'ribbon_shadow',
+				'selector' => '{{WRAPPER}} .sina-ribbon-right, {{WRAPPER}} .sina-ribbon-left',
+			]
+		);
+
+		$this->end_controls_section();
+		// End Ribbon Style
+		// =====================
 	}
 
 
@@ -663,6 +747,12 @@ class Sina_Content_Box_Widget extends Widget_Base {
 		$this->add_inline_editing_attributes( 'desc' );
 		?>
 		<div class="sina-content-box <?php echo esc_attr( $data['effects'] ); ?>">
+			<?php if ( $data['ribbon_title'] && $data['ribbon_position'] ): ?>
+				<div class="<?php echo esc_attr( $data['ribbon_position'] ); ?>">
+					<?php echo esc_html( $data['ribbon_title'] ); ?>
+				</div>
+			<?php endif; ?>
+
 			<?php
 				if ( 'yes' == $data['save_templates'] && $data['template'] ) :
 					$frontend = new Frontend;

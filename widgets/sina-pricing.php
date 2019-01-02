@@ -12,6 +12,7 @@ use Elementor\Group_Control_Typography;
 use Elementor\Group_Control_Text_Shadow;
 use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Box_Shadow;
+use Elementor\Utils;
 
 
 // Exit if accessed directly.
@@ -124,6 +125,9 @@ class Sina_Pricing_Widget extends Widget_Base {
 				'label' => __( 'Price Suffix', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter Suffix', 'sina-ext' ),
+				'condition' => [
+					'price!' => '',
+				],
 				'default' => __( 'M', 'sina-ext' ),
 			]
 		);
@@ -148,16 +152,81 @@ class Sina_Pricing_Widget extends Widget_Base {
 			]
 		);
 		$this->add_control(
+			'thumbs',
+			[
+				'label' => __( 'Show Image', 'sina-ext' ),
+				'type' => Controls_Manager::SWITCHER,
+			]
+		);
+		$this->add_control(
+			'img_position',
+			[
+				'label' => __( 'Image Position', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					'top' => __( 'Top', 'sina-ext' ),
+					'middle' => __( 'Middle', 'sina-ext' ),
+					'bottom' => __( 'Bottom', 'sina-ext' ),
+				],
+				'condition' => [
+					'thumbs!' => '',
+				],
+				'default' => 'middle',
+			]
+		);
+		$this->add_control(
+			'image',
+			[
+				'label' => __( 'Image', 'sina-ext' ),
+				'type' => Controls_Manager::MEDIA,
+				'condition' => [
+					'thumbs!' => '',
+				],
+				'default' => [
+					'url' => Utils::get_placeholder_image_src(),
+				],
+			]
+		);
+		$this->add_control(
+			'ribbon_title',
+			[
+				'label' => __( 'Ribbon Title', 'sina-ext' ),
+				'type' => Controls_Manager::TEXT,
+			]
+		);
+		$this->add_control(
+			'ribbon_position',
+			[
+				'label' => __( 'Ribbon Position', 'sina-ext' ),
+				'type' => Controls_Manager::CHOOSE,
+				'label_block' => false,
+				'options' => [
+					'sina-ribbon-left' => [
+						'title' => __( 'Left', 'sina-ext' ),
+						'icon' => 'eicon-h-align-left',
+					],
+					'sina-ribbon-right' => [
+						'title' => __( 'Right', 'sina-ext' ),
+						'icon' => 'eicon-h-align-right',
+					],
+				],
+				'condition' => [
+					'ribbon_title!' => '',
+				],
+				'default' => 'sina-ribbon-right',
+			]
+		);
+		$this->add_control(
 			'item',
 			[
-				'label' => __( 'Add Item', 'sina-ext' ),
+				'label' => __( 'Add Content', 'sina-ext' ),
 				'type' => Controls_Manager::REPEATER,
 				'fields' => [
 					[
 						'name' => 'title',
 						'label' => __( 'Content', 'sina-ext' ),
 						'label_block' => true,
-						'type' => Controls_Manager::TEXT,
+						'type' => Controls_Manager::TEXTAREA,
 						'placeholder' => __( 'Enter Content', 'sina-ext' ),
 					],
 				],
@@ -463,6 +532,32 @@ class Sina_Pricing_Widget extends Widget_Base {
 				],
 			]
 		);
+		$this->add_responsive_control(
+			'title_alignment',
+			[
+				'label' => __( 'Alignment', 'sina-ext' ),
+				'type' => Controls_Manager::CHOOSE,
+				'options' => [
+					'left' => [
+						'title' => __( 'Left', 'sina-ext' ),
+						'icon' => 'fa fa-align-left',
+					],
+					'center' => [
+						'title' => __( 'Center', 'sina-ext' ),
+						'icon' => 'fa fa-align-center',
+					],
+					'right' => [
+						'title' => __( 'Right', 'sina-ext' ),
+						'icon' => 'fa fa-align-right',
+					],
+				],
+				'devices' => [ 'desktop', 'tablet', 'mobile' ],
+				'default' => 'center',
+				'selectors' => [
+					'{{WRAPPER}} .sina-pricing-title' => 'text-align: {{VALUE}};',
+				],
+			]
+		);
 
 		$this->end_controls_section();
 		// End Title Style
@@ -568,6 +663,32 @@ class Sina_Pricing_Widget extends Widget_Base {
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
 					'{{WRAPPER}} .sina-pricing .sina-price-tag' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'price_alignment',
+			[
+				'label' => __( 'Alignment', 'sina-ext' ),
+				'type' => Controls_Manager::CHOOSE,
+				'options' => [
+					'left' => [
+						'title' => __( 'Left', 'sina-ext' ),
+						'icon' => 'fa fa-align-left',
+					],
+					'center' => [
+						'title' => __( 'Center', 'sina-ext' ),
+						'icon' => 'fa fa-align-center',
+					],
+					'right' => [
+						'title' => __( 'Right', 'sina-ext' ),
+						'icon' => 'fa fa-align-right',
+					],
+				],
+				'devices' => [ 'desktop', 'tablet', 'mobile' ],
+				'default' => 'center',
+				'selectors' => [
+					'{{WRAPPER}} .sina-price-tag' => 'text-align: {{VALUE}};',
 				],
 			]
 		);
@@ -779,39 +900,113 @@ class Sina_Pricing_Widget extends Widget_Base {
 		$this->end_controls_section();
 		// End Content Style
 		// =====================
+
+
+		// Start Ribbon Style
+		// =====================
+		$this->start_controls_section(
+			'ribbon_style',
+			[
+				'label' => __( 'Ribbon', 'sina-ext' ),
+				'tab' => Controls_Manager::TAB_STYLE,
+				'condition' => [
+					'ribbon_title!' => '',
+				],
+			]
+		);
+
+		$this->add_control(
+			'ribbon_color',
+			[
+				'label' => __( 'Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#f8f8f8',
+				'selectors' => [
+					'{{WRAPPER}} .sina-ribbon-right, {{WRAPPER}} .sina-ribbon-left' => 'color: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_control(
+			'ribbon_bg',
+			[
+				'label' => __( 'Background', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#61ce70',
+				'selectors' => [
+					'{{WRAPPER}} .sina-ribbon-right, {{WRAPPER}} .sina-ribbon-left' => 'background: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name' => 'ribbon_typography',
+				'selector' => '{{WRAPPER}} .sina-ribbon-right, {{WRAPPER}} .sina-ribbon-left',
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Text_Shadow::get_type(),
+			[
+				'name' => 'ribbon_shadow',
+				'selector' => '{{WRAPPER}} .sina-ribbon-right, {{WRAPPER}} .sina-ribbon-left',
+			]
+		);
+
+		$this->end_controls_section();
+		// End Ribbon Style
+		// =====================
 	}
 
 
 	protected function render() {
 		$data = $this->get_settings_for_display();
-
-		$this->add_render_attribute( 'title', 'class', 'sina-pricing-title' );
-		$this->add_inline_editing_attributes( 'title' );
-
-		$this->add_render_attribute( 'btn_label', 'class', 'sina-order-btn' );
-		$this->add_inline_editing_attributes( 'btn_label' );
 		?>
 		<div class="sina-pricing <?php echo esc_attr( $data['effects'] ); ?>">
-			<h3 <?php echo $this->get_render_attribute_string( 'title' ); ?>>
-				<?php echo esc_html( $data['title'] ); ?>
-			</h3>
-			<h4 class="sina-price-tag">
-				<span><?php echo esc_html( $data['price'] ); ?></span><span class="sina-price-suffix"><?php echo esc_html( $data['price_suffix'] ); ?></span>
-			</h4>
-			<ul class="sina-pricing-body">
-				<?php
-					foreach ($data['item'] as $index => $item) :
-						$item_key = $this->get_repeater_setting_key( 'title', 'item', $index );
+			<?php if ( $data['ribbon_title'] && $data['ribbon_position'] ): ?>
+				<div class="<?php echo esc_attr( $data['ribbon_position'] ); ?>">
+					<?php echo esc_html( $data['ribbon_title'] ); ?>
+				</div>
+			<?php endif; ?>
 
-						$this->add_render_attribute( $item_key );
-						$this->add_inline_editing_attributes( $item_key );
-					?>
-					<li <?php echo $this->get_render_attribute_string( $item_key ); ?>><?php echo esc_html( $item['title'] ) ?></li>
+			<?php if ( 'yes' == $data['thumbs'] && 'top' == $data['img_position'] ): ?>
+				<div class="sina-pricing-img">
+					<img src="<?php echo esc_url( $data['image']['url'] ); ?>">
+				</div>
+			<?php endif; ?>
+
+			<?php if ( $data['title'] ): ?>
+				<h3 class="sina-pricing-title">
+					<?php echo esc_html( $data['title'] ); ?>
+				</h3>
+			<?php endif; ?>
+
+			<?php if ( 'yes' == $data['thumbs'] && 'middle' == $data['img_position'] ): ?>
+				<div class="sina-pricing-img">
+					<img src="<?php echo esc_url( $data['image']['url'] ); ?>">
+				</div>
+			<?php endif; ?>
+
+			<?php if ( $data['price']): ?>
+				<h4 class="sina-price-tag">
+					<span><?php echo esc_html( $data['price'] ); ?></span><span class="sina-price-suffix"><?php echo esc_html( $data['price_suffix'] ); ?></span>
+				</h4>
+			<?php endif; ?>
+
+			<?php if ( 'yes' == $data['thumbs'] && 'bottom' == $data['img_position'] ): ?>
+				<div class="sina-pricing-img">
+					<img src="<?php echo esc_url( $data['image']['url'] ); ?>">
+				</div>
+			<?php endif; ?>
+
+			<ul class="sina-pricing-body">
+				<?php foreach ($data['item'] as $index => $item) : ?>
+					<li><?php echo esc_html( $item['title'] ) ?></li>
 				<?php endforeach ?>
 			</ul>
+
 			<?php if ( $data['btn_label'] ) : ?>
 				<div class="sina-pricing-btn">
-					<a <?php echo $this->get_render_attribute_string( 'btn_label' ); ?>
+					<a class="sina-order-btn"
 					href="<?php echo esc_url( $data['btn_link']['url'] ); ?>"
 					<?php if ( 'on' == $data['btn_link']['is_external'] ): ?>
 						target="_blank" 
@@ -830,33 +1025,52 @@ class Sina_Pricing_Widget extends Widget_Base {
 
 	protected function _content_template() {
 		?>
-		<#
-		view.addRenderAttribute( 'title', 'class', 'sina-pricing-title' );
-		view.addInlineEditingAttributes( 'title' );
-
-		view.addRenderAttribute( 'btn_label', 'class', 'sina-order-btn' );
-		view.addInlineEditingAttributes( 'btn_label' );
-		#>
 		<div class="sina-pricing {{{settings.effects}}}">
-			<h3 {{{ view.getRenderAttributeString( 'title' ) }}}>
-				{{{settings.title}}}
-			</h3>
-			<h4 class="sina-price-tag">
-				<span>{{{settings.price}}}</span><span class="sina-price-suffix">{{{settings.price_suffix}}}</span>
-			</h4>
+			<# if ( settings.ribbon_title && settings.ribbon_position ) { #>
+				<div class="{{{settings.ribbon_position}}}">
+					{{{settings.ribbon_title}}}
+				</div>
+			<# } #>
+
+			<# if ( 'yes' == settings.thumbs && 'top' == settings.img_position ) { #>
+				<div class="sina-pricing-img">
+					<img src="{{{settings.image.url}}}">
+				</div>
+			<# } #>
+
+			<# if ( settings.title ) { #>
+				<h3 class="sina-pricing-title">
+					{{{settings.title}}}
+				</h3>
+			<# } #>
+
+			<# if ( 'yes' == settings.thumbs && 'middle' == settings.img_position ) { #>
+				<div class="sina-pricing-img">
+					<img src="{{{settings.image.url}}}">
+				</div>
+			<# } #>
+
+			<# if ( settings.price ) { #>
+				<h4 class="sina-price-tag">
+					<span>{{{settings.price}}}</span><span class="sina-price-suffix">{{{settings.price_suffix}}}</span>
+				</h4>
+			<# } #>
+
+			<# if ( 'yes' == settings.thumbs && 'bottom' == settings.img_position ) { #>
+				<div class="sina-pricing-img">
+					<img src="{{{settings.image.url}}}">
+				</div>
+			<# } #>
+
 			<ul class="sina-pricing-body">
-				<#
-					_.each( settings.item, function( item, index ) {
-						var titleKey = view.getRepeaterSettingKey( 'title', 'item', index );
-						view.addRenderAttribute( titleKey );
-						view.addInlineEditingAttributes( titleKey );
-					#>
-					<li {{{ view.getRenderAttributeString( titleKey ) }}}>{{{item.title}}}</li>
+				<# _.each( settings.item, function( item, index ) { #>
+					<li>{{{item.title}}}</li>
 				<# }); #>
 			</ul>
+
 			<# if ( settings.btn_label) { #>
 				<div class="sina-pricing-btn">
-					<a {{{ view.getRenderAttributeString( 'btn_label' ) }}}
+					<a class="sina-order-btn"
 					href="{{{settings.btn_link.url}}}">
 						{{{settings.btn_label}}}
 					</a>

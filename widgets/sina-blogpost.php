@@ -161,12 +161,30 @@ class Sina_Blogpost_Widget extends Widget_Base {
 			]
 		);
 		$this->add_control(
-			'excerpt',
+			'order_by',
 			[
-				'label' => __( 'Excerpt', 'sina-ext' ),
-				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Yes', 'sina-ext' ),
-				'label_off' => __( 'No', 'sina-ext' ),
+				'label' => __( 'Order by', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					'date' => __( 'Date', 'sina-ext' ),
+					'title' => __( 'Title', 'sina-ext' ),
+					'author' => __( 'Author', 'sina-ext' ),
+					'modified' => __( 'Modified', 'sina-ext' ),
+					'comment_count' => __( 'Comments', 'sina-ext' ),
+				],
+				'default' => 'date',
+			]
+		);
+		$this->add_control(
+			'sort',
+			[
+				'label' => __( 'Sort', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					'ASC' => __( 'ASC', 'sina-ext' ),
+					'DESC' => __( 'DESC', 'sina-ext' ),
+				],
+				'default' => 'DESC',
 			]
 		);
 		$this->add_control(
@@ -178,6 +196,15 @@ class Sina_Blogpost_Widget extends Widget_Base {
 				'min' => 10,
 				'max' => 2000,
 				'default' => 50,
+			]
+		);
+		$this->add_control(
+			'excerpt',
+			[
+				'label' => __( 'Excerpt', 'sina-ext' ),
+				'type' => Controls_Manager::SWITCHER,
+				'label_on' => __( 'Yes', 'sina-ext' ),
+				'label_off' => __( 'No', 'sina-ext' ),
 			]
 		);
 		$this->add_control(
@@ -984,6 +1011,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 		$category	= !empty($data['categories']) ? implode( ',', $data['categories'] ) : '';
 		$default	= [
 			'cat'				=> $category,
+			'orderby'			=> array( $data['order_by'] => $data['sort'] ),
 			'posts_per_page'	=> $data['posts_num'],
 			'paged'				=> $paged,
 			'offset'			=> $new_offset,

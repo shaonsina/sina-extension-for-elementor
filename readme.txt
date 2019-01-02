@@ -1,10 +1,10 @@
 == Sina Extension for Elementor ==
 Contributors: shaonsina
-Tags: addon, elementor, elementor addon, elementor extension, extension, page builder, builder, elementor builder, elementor contact form, elementor widget
+Tags: addon, elementor, elementor addon, elementor extension, extension, page builder, builder, elementor builder, elementor contact form, elementor widget, best elementor addon, best elementor extension
 Requires at least: 4.0
 Tested up to: 5.0
-Requires PHP: 5.4
-Stable tag: 1.1.0
+Requires PHP: 5.6
+Stable tag: 1.1.1
 License: GPLv3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -46,9 +46,9 @@ https://youtu.be/xYMzXFVQri8
 19. Progressbar: Display progress bars with different styles
 20. Review Carousel: Show what others said about your brand
 21. Team: Add your team members just a few clicks
-22. User Counter: Display how many users visit
+22. User Counter: Display how many users registered
 23. Video: Show a video in a popup
-24. Visit Counter: Display how many users registered
+24. Visit Counter: Display how many users visit
 
 More coming soon...
 
@@ -76,6 +76,14 @@ Yes. It's totally free.
 
 
 == Changelog ==
+
+= 1.1.1 - 03-01-2019 =
+- Added: order & sorting functionality added to Blog post
+- Added: Contact Form button width added
+- Added: Image functionality added to Pricing
+- Added: Ribbon functionality added to Pricing
+- Added: Ribbon functionality added to Content Box
+- Improved
 
 = 1.1.0 - 21-12-2018 =
 - New: Product Zoomer

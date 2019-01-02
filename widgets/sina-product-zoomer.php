@@ -314,6 +314,36 @@ class Sina_Product_Zoomer_Widget extends Widget_Base {
 				'selector' => '{{WRAPPER}} .sina-product-title, {{WRAPPER}} .sina-product-title a',
 			]
 		);
+		$this->add_responsive_control(
+			'title_alignment',
+			[
+				'label' => __( 'Alignment', 'sina-ext' ),
+				'type' => Controls_Manager::CHOOSE,
+				'options' => [
+					'left' => [
+						'title' => __( 'Left', 'sina-ext' ),
+						'icon' => 'fa fa-align-left',
+					],
+					'center' => [
+						'title' => __( 'Center', 'sina-ext' ),
+						'icon' => 'fa fa-align-center',
+					],
+					'right' => [
+						'title' => __( 'Right', 'sina-ext' ),
+						'icon' => 'fa fa-align-right',
+					],
+					'justify' => [
+						'title' => __( 'Right', 'sina-ext' ),
+						'icon' => 'fa fa-align-justify',
+					],
+				],
+				'devices' => [ 'desktop', 'tablet', 'mobile' ],
+				'default' => 'left',
+				'selectors' => [
+					'{{WRAPPER}} .sina-product-title' => 'text-align: {{VALUE}};',
+				],
+			]
+		);
 
 		$this->end_controls_section();
 		// End Product Title Style
@@ -353,6 +383,36 @@ class Sina_Product_Zoomer_Widget extends Widget_Base {
 			[
 				'name' => 'desc_shadow',
 				'selector' => '{{WRAPPER}} .sina-product-desc',
+			]
+		);
+		$this->add_responsive_control(
+			'desc_alignment',
+			[
+				'label' => __( 'Alignment', 'sina-ext' ),
+				'type' => Controls_Manager::CHOOSE,
+				'options' => [
+					'left' => [
+						'title' => __( 'Left', 'sina-ext' ),
+						'icon' => 'fa fa-align-left',
+					],
+					'center' => [
+						'title' => __( 'Center', 'sina-ext' ),
+						'icon' => 'fa fa-align-center',
+					],
+					'right' => [
+						'title' => __( 'Right', 'sina-ext' ),
+						'icon' => 'fa fa-align-right',
+					],
+					'justify' => [
+						'title' => __( 'Right', 'sina-ext' ),
+						'icon' => 'fa fa-align-justify',
+					],
+				],
+				'devices' => [ 'desktop', 'tablet', 'mobile' ],
+				'default' => 'left',
+				'selectors' => [
+					'{{WRAPPER}} .sina-product-desc' => 'text-align: {{VALUE}};',
+				],
 			]
 		);
 
