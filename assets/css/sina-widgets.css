@@ -1,4 +1,4 @@
-/* Sina Extension for Elementor v1.1.1 */
+/* Sina Extension for Elementor v1.2.0 */
 
 /*--------------------------------- General -------------------------------------- */
 .sina-contact-input .sina-input-field,
@@ -345,14 +345,10 @@ img.mfp-img{
 	overflow: hidden;
 }
 .sina-content-box.sina-content-box-move:hover{
-	z-index:100;
 	box-shadow: 0 15px 15px rgba(0,0,0,0.1);
-	transform: translate(0, -10px);
 }
 .sina-content-box.sina-content-box-zoom:hover{
-	z-index:100;
-	box-shadow:0 0 15px rgba(0,0,0,0.1);
-	transform: scale(1.05);
+	box-shadow: 0 0 15px rgba(0,0,0,0.1);
 }
 .sina-content-box-icon i{
 	padding: 15px 20px;
@@ -750,13 +746,16 @@ img.mfp-img{
 }
 
 /*--------------------------------- Portfolio -------------------------------------- */
+.sina-posts-tab,
 .sina-portfolio{
 	overflow: hidden;
 }
+.sina-pt-btns,
 .sina-portfolio-btns{
 	margin-bottom: 30px;
 	text-align: center;
 }
+.sina-pt-btn,
 .sina-portfolio-btn {
 	margin: 6px;
 	padding: 10px 15px;
@@ -874,6 +873,19 @@ img.mfp-img{
 	margin-bottom: 100px;
 }
 
+/*--------------------------------- Posts Tab -------------------------------------- */
+.sina-pt-content{
+	padding: 20px;
+}
+.sina-pt-item{
+	display: none;
+}
+.sina-pt-item.active{
+	display: block;
+}
+
+
+
 /*--------------------------------- Pricing -------------------------------------- */
 .sina-pricing {
 	position: relative;
@@ -882,12 +894,14 @@ img.mfp-img{
 	box-shadow: 0 0 2px #1085e4;
 	transition: 0.4s;
 }
+.sina-content-box.sina-content-box-move:hover,
 .sina-pricing.sina-pricing-move:hover{
-	z-index:100;
+	z-index: 999999;
 	transform: translate(0, -10px);
 }
+.sina-content-box.sina-content-box-zoom:hover,
 .sina-pricing.sina-pricing-zoom:hover{
-	z-index:100;
+	z-index: 999999;
 	transform: scale(1.1);
 }
 .sina-pricing .sina-pricing-title{

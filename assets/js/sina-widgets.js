@@ -1,4 +1,4 @@
-/* Sina Extension for Elementor v1.1.1 */
+/* Sina Extension for Elementor v1.2.0 */
 
 (function ($) {
 
@@ -582,6 +582,31 @@
 		});
 	}
 
+	function sinaPostsTab($scope, $) {
+		elementorFrontend.waypoint($scope.find('.sina-posts-tab'), function () {
+			var $this = $(this),
+				$btn = $this.find('.sina-pt-btn'),
+				$btns = $this.children('.sina-pt-btns').find('.sina-pt-btn'),
+				$btnBtns = $this.find('.sina-pt-item .sina-pt-btn');
+
+			$btn.on('click', function(e) {
+				var $el = $( $(this).data('filter') ).parent();
+
+				if ( $el.is('.sina-pt-content-content') ) {
+					$btnBtns.each(function() {
+						$( $(this).data('filter') ).removeClass('active');
+					});
+					$( $(this).data('filter') ).addClass('active');
+				} else{
+					$btns.each(function() {
+						$( $(this).data('filter') ).removeClass('active');
+					});
+					$( $(this).data('filter') ).addClass('active');
+				}
+			});
+		});
+	}
+
 	function sinaProgressbars($scope, $) {
 		elementorFrontend.waypoint($scope.find('.sina-bar-content'), function () {
 			var $this = $(this),
@@ -754,6 +779,7 @@
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_particle_layer.default', sinaParticleLayer);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_piechart.default', sinaPiechart);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_portfolio.default', sinaPortfolio);
+		elementorFrontend.hooks.addAction('frontend/element_ready/sina_posts_tab.default', sinaPostsTab);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_progressbar.default', sinaProgressbars);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_review_carousel.default', sinaReviewCarousel);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_mc_subscribe.default', sinaMCSubscribe);

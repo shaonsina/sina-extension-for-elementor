@@ -3,7 +3,7 @@
  * Plugin Name: Sina Extension for Elementor
  * Plugin URI: https://github.com/shaonsina/sina-extension-for-elementor.git
  * Description: A collection of high-quality widgets for Elementor page builder.
- * Version: 1.1.1
+ * Version: 1.2.0
  * Author: shaonsina
  * Author URI: https://github.com/shaonsina
  * Text Domain: sina-ext
@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 
-define('SINA_EXT_VERSION', '1.1.1');
+define('SINA_EXT_VERSION', '1.2.0');
 define('SINA_EXT_URL', plugins_url('/', __FILE__));
 define('SINA_EXT_DIR', __DIR__);
 define('SINA_EXT_BASENAME', plugin_basename( __FILE__ ));
@@ -242,8 +242,8 @@ final class Sina_Extension {
 		// Register Widget Category
 		add_action( 'elementor/elements/categories_registered', [ $this, 'widget_category' ] );
 
-		// Add Plugin actions
-		add_action( 'elementor/widgets/widgets_registered', [ $this, 'init_widgets' ] );
+		// Register Widgets
+		add_action( 'elementor/widgets/widgets_registered', [ $this, 'register_widgets' ] );
 
 		// Enqueue Widget Styles
 		add_action( 'elementor/frontend/after_register_styles', [ $this, 'widget_styles' ] );
@@ -257,7 +257,7 @@ final class Sina_Extension {
 	 *
 	 * @since 1.0.0
 	 */
-	public function widget_category($elements_manager) {
+	public function widget_category( $elements_manager ) {
 		$elements_manager->add_category(
 			'sina-extension',
 			[
@@ -276,7 +276,7 @@ final class Sina_Extension {
 		wp_enqueue_style( 'owl-carousel', SINA_EXT_URL .'assets/css/owl.carousel.min.css', [], '2.3.4' );
 		wp_enqueue_style( 'magnific-popup', SINA_EXT_URL .'assets/css/magnific-popup.css', [], '1.1.0' );
 		wp_enqueue_style( 'xzoom', SINA_EXT_URL .'assets/css/xzoom.min.css', [], '1.0.14' );
-		wp_enqueue_style( 'sina-widgets', SINA_EXT_URL .'assets/css/sina-widgets.min.css', [], SINA_EXT_VERSION );
+		wp_enqueue_style( 'sina-widgets', SINA_EXT_URL .'assets/css/sina-widgets.css', [], SINA_EXT_VERSION );
 	}
 
 	/**
@@ -303,16 +303,16 @@ final class Sina_Extension {
 		if ( $apikey ) {
 			wp_register_script( 'sina-google-map', '//maps.google.com/maps/api/js?key='. $apikey, [], SINA_EXT_VERSION, true );
 		}
-		wp_register_script( 'sina-widgets', SINA_EXT_URL .'assets/js/sina-widgets.min.js', ['jquery'], SINA_EXT_VERSION, true );
+		wp_register_script( 'sina-widgets', SINA_EXT_URL .'assets/js/sina-widgets.js', ['jquery'], SINA_EXT_VERSION, true );
 		wp_localize_script( 'sina-widgets', 'sinaAjax', ['ajaxURL' => $ajax_url] );
 	}
 
 	/**
-	 * Initialize widgets
+	 * Register widgets
 	 *
 	 * @since 1.0.0
 	 */
-	public function init_widgets() {
+	public function register_widgets( $widgets_manager ) {
 		// Include Widget files
 		require_once( SINA_EXT_DIR .'/widgets/sina-accordion.php' );
 		require_once( SINA_EXT_DIR .'/widgets/sina-banner-slider.php' );
@@ -330,6 +330,7 @@ final class Sina_Extension {
 		require_once( SINA_EXT_DIR .'/widgets/sina-particle-layer.php' );
 		require_once( SINA_EXT_DIR .'/widgets/sina-piechart.php' );
 		require_once( SINA_EXT_DIR .'/widgets/sina-portfolio.php' );
+		require_once( SINA_EXT_DIR .'/widgets/sina-posts-tab.php' );
 		require_once( SINA_EXT_DIR .'/widgets/sina-pricing.php' );
 		require_once( SINA_EXT_DIR .'/widgets/sina-product-zoomer.php' );
 		require_once( SINA_EXT_DIR .'/widgets/sina-progressbar.php' );
@@ -340,30 +341,31 @@ final class Sina_Extension {
 		require_once( SINA_EXT_DIR .'/widgets/sina-visit-counter.php' );
 
 		// Register widgets
-		Plugin::instance()->widgets_manager->register_widget_type( new Sina_Accordion_Widget() );
-		Plugin::instance()->widgets_manager->register_widget_type( new Sina_Banner_Slider_Widget() );
-		Plugin::instance()->widgets_manager->register_widget_type( new Sina_Blogpost_Widget() );
-		Plugin::instance()->widgets_manager->register_widget_type( new Sina_Brand_Carousel_Widget() );
-		Plugin::instance()->widgets_manager->register_widget_type( new Sina_Contact_Form_Widget() );
-		Plugin::instance()->widgets_manager->register_widget_type( new Sina_Content_Box_Widget() );
-		Plugin::instance()->widgets_manager->register_widget_type( new Sina_Countdown_Widget() );
-		Plugin::instance()->widgets_manager->register_widget_type( new Sina_Counter_Widget() );
-		Plugin::instance()->widgets_manager->register_widget_type( new Sina_Fancytext_Widget() );
-		Plugin::instance()->widgets_manager->register_widget_type( new Sina_Flip_Box_Widget() );
-		Plugin::instance()->widgets_manager->register_widget_type( new Sina_Google_Map_Widget() );
-		Plugin::instance()->widgets_manager->register_widget_type( new Sina_MC_Subscribe_Widget() );
-		Plugin::instance()->widgets_manager->register_widget_type( new Sina_News_Ticker_Widget() );
-		Plugin::instance()->widgets_manager->register_widget_type( new Sina_Particle_Layer_Widget() );
-		Plugin::instance()->widgets_manager->register_widget_type( new Sina_Piechart_Widget() );
-		Plugin::instance()->widgets_manager->register_widget_type( new Sina_Portfolio_Widget() );
-		Plugin::instance()->widgets_manager->register_widget_type( new Sina_Pricing_Widget() );
-		Plugin::instance()->widgets_manager->register_widget_type( new Sina_Product_Zoomer_Widget() );
-		Plugin::instance()->widgets_manager->register_widget_type( new Sina_Progressbar_Widget() );
-		Plugin::instance()->widgets_manager->register_widget_type( new Sina_Review_Carousel_Widget() );
-		Plugin::instance()->widgets_manager->register_widget_type( new Sina_Team_Widget() );
-		Plugin::instance()->widgets_manager->register_widget_type( new Sina_User_Counter_Widget() );
-		Plugin::instance()->widgets_manager->register_widget_type( new Sina_Video_Widget() );
-		Plugin::instance()->widgets_manager->register_widget_type( new Sina_Visit_Counter_Widget() );
+		$widgets_manager->register_widget_type( new Sina_Accordion_Widget() );
+		$widgets_manager->register_widget_type( new Sina_Banner_Slider_Widget() );
+		$widgets_manager->register_widget_type( new Sina_Blogpost_Widget() );
+		$widgets_manager->register_widget_type( new Sina_Brand_Carousel_Widget() );
+		$widgets_manager->register_widget_type( new Sina_Contact_Form_Widget() );
+		$widgets_manager->register_widget_type( new Sina_Content_Box_Widget() );
+		$widgets_manager->register_widget_type( new Sina_Countdown_Widget() );
+		$widgets_manager->register_widget_type( new Sina_Counter_Widget() );
+		$widgets_manager->register_widget_type( new Sina_Fancytext_Widget() );
+		$widgets_manager->register_widget_type( new Sina_Flip_Box_Widget() );
+		$widgets_manager->register_widget_type( new Sina_Google_Map_Widget() );
+		$widgets_manager->register_widget_type( new Sina_MC_Subscribe_Widget() );
+		$widgets_manager->register_widget_type( new Sina_News_Ticker_Widget() );
+		$widgets_manager->register_widget_type( new Sina_Particle_Layer_Widget() );
+		$widgets_manager->register_widget_type( new Sina_Piechart_Widget() );
+		$widgets_manager->register_widget_type( new Sina_Portfolio_Widget() );
+		$widgets_manager->register_widget_type( new Sina_Posts_Tab_Widget() );
+		$widgets_manager->register_widget_type( new Sina_Pricing_Widget() );
+		$widgets_manager->register_widget_type( new Sina_Product_Zoomer_Widget() );
+		$widgets_manager->register_widget_type( new Sina_Progressbar_Widget() );
+		$widgets_manager->register_widget_type( new Sina_Review_Carousel_Widget() );
+		$widgets_manager->register_widget_type( new Sina_Team_Widget() );
+		$widgets_manager->register_widget_type( new Sina_User_Counter_Widget() );
+		$widgets_manager->register_widget_type( new Sina_Video_Widget() );
+		$widgets_manager->register_widget_type( new Sina_Visit_Counter_Widget() );
 	}
 
 }

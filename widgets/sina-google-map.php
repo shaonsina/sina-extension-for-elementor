@@ -160,7 +160,7 @@ class Sina_Google_Map_Widget extends Widget_Base {
 		$this->add_control(
 			'marker',
 			[
-				'label' => __( 'Custom Marker', 'sina-ext' ),
+				'label' => __( 'Marker', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => 'yes',
 			]

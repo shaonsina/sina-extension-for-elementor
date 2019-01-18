@@ -117,6 +117,7 @@ class Sina_Content_Box_Widget extends Widget_Base {
 				'condition' => [
 					'save_templates!' => '',
 				],
+				'description' => __('NOTE: Don\'t try to edit after insertion template. If you need to change the style or layout then you try to change the main template then save and then insert', 'sina-ext'),
 			]
 		);
 		$this->add_control(
@@ -241,7 +242,7 @@ class Sina_Content_Box_Widget extends Widget_Base {
 		$this->add_control(
 			'translate',
 			[
-				'label' => __( 'Translate', 'sina-ext' ),
+				'label' => __( 'Vertical', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [

@@ -131,6 +131,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 				'condition' => [
 					'save_templates!' => '',
 				],
+				'description' => __('NOTE: Don\'t try to edit after insertion template. If you need to change the style or layout then you try to change the main template then save and then insert', 'sina-ext'),
 			]
 		);
 		$this->add_control(

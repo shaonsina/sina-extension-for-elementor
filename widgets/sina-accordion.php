@@ -166,7 +166,7 @@ class Sina_Accordion_Widget extends Widget_Base {
 				'condition' => [
 					'save_templates!' => '',
 				],
-				'description' => __('NOTE: Don\'t use <strong>Blogpost, Particle, etc.</strong> as a template, which is look like more complex.', 'sina-ext'),
+				'description' => __('NOTE: Don\'t try to edit after insertion template. If you need to change the style or layout then you try to change the main template then save and then insert', 'sina-ext'),
 			]
 		);
 		$repeater->add_control(
