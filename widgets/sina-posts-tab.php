@@ -110,13 +110,6 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 			]
 		);
 
-		$this->add_control(
-			'multi-tab',
-			[
-				'label' => __( 'Multi-tab', 'sina-ext' ),
-				'type' => Controls_Manager::SWITCHER,
-			]
-		);
 
 		$this->end_controls_section();
 		// End Tab Content
@@ -129,41 +122,83 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 		?>
 		<div class="sina-posts-tab">
 			<div class="sina-pt-btns">
-				<button class="sina-pt-btn sina-button" data-filter="#all">All</button>
-				<button class="sina-pt-btn sina-button" data-filter="#fine">Fine</button>
-				<button class="sina-pt-btn sina-button" data-filter="#nice">Nice</button>
+				<button class="sina-pt-btn sina-pt-parent-btn sina-button" data-filter="#all">All</button>
+				<button class="sina-pt-btn sina-pt-parent-btn sina-button" data-filter="#one">One</button>
+				<button class="sina-pt-btn sina-pt-parent-btn sina-button" data-filter="#two">Two</button>
 			</div>
 
 			<div class="sina-pt-content">
-				<div class="sina-pt-item" id="all">
-					<div class="sina-pt-content">
+				<div class="sina-pt-item active" id="all">
+					<div class="sina-pt-content sina-pt-content-right">
 						<div class="sina-pt-btns">
-							<button class="sina-pt-btn sina-button" data-filter="#najifa">Najifa</button>
-							<button class="sina-pt-btn sina-button" data-filter="#nabila">Nabila</button>
-							<button class="sina-pt-btn sina-button" data-filter="#dalim">Dalim</button>
+							<button class="sina-pt-btn sina-pt-child-btn sina-button" data-filter="#blog1">Blog1</button>
+							<button class="sina-pt-btn sina-pt-child-btn sina-button" data-filter="#blog2">Blog2</button>
+							<button class="sina-pt-btn sina-pt-child-btn sina-button" data-filter="#blog3">Blog3</button>
 						</div>
 
 						<div class="sina-pt-content-content">
-							<div class="sina-pt-item active" id="najifa">
+							<div class="sina-pt-item active" id="blog1">
 								<p>This is first tab's paragraph. This is first tab's paragraph. This is first tab's paragraph. This is first tab's paragraph. This is first tab's paragraph. This is first tab's paragraph.</p>
 								<p>This is first tab's paragraph. This is first tab's paragraph. This is first tab's paragraph. This is first tab's paragraph. This is first tab's paragraph. This is first tab's paragraph.</p>
 							</div>
-							<div class="sina-pt-item" id="nabila">
+							<div class="sina-pt-item" id="blog2">
 								<p>This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph.</p>
 								<p>This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph.</p>
 							</div>
-							<div class="sina-pt-item" id="dalim">
+							<div class="sina-pt-item" id="blog3">
 								<p>This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph.</p>
 								<p>This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph.</p>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="sina-pt-item active" id="fine">
-					<p>This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph.</p>
+				<div class="sina-pt-item" id="one">
+					<div class="sina-pt-content sina-pt-content-right">
+						<div class="sina-pt-btns">
+							<button class="sina-pt-btn sina-pt-child-btn sina-button" data-filter="#item1">Item1</button>
+							<button class="sina-pt-btn sina-pt-child-btn sina-button" data-filter="#item2">Item2</button>
+							<button class="sina-pt-btn sina-pt-child-btn sina-button" data-filter="#item3">Item3</button>
+						</div>
+
+						<div class="sina-pt-content-content">
+							<div class="sina-pt-item active" id="item1">
+								<p>This is first tab's paragraph. This is first tab's paragraph. This is first tab's paragraph. This is first tab's paragraph. This is first tab's paragraph. This is first tab's paragraph.</p>
+								<p>This is first tab's paragraph. This is first tab's paragraph. This is first tab's paragraph. This is first tab's paragraph. This is first tab's paragraph. This is first tab's paragraph.</p>
+							</div>
+							<div class="sina-pt-item" id="item2">
+								<p>This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph.</p>
+								<p>This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph.</p>
+							</div>
+							<div class="sina-pt-item" id="item3">
+								<p>This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph.</p>
+								<p>This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph.</p>
+							</div>
+						</div>
+					</div>
 				</div>
-				<div class="sina-pt-item" id="nice">
-					<p>This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph.</p>
+				<div class="sina-pt-item" id="two">
+					<div class="sina-pt-content sina-pt-content-right">
+						<div class="sina-pt-btns">
+							<button class="sina-pt-btn sina-pt-child-btn sina-button" data-filter="#post1">Post1</button>
+							<button class="sina-pt-btn sina-pt-child-btn sina-button" data-filter="#post2">Post2</button>
+							<button class="sina-pt-btn sina-pt-child-btn sina-button" data-filter="#post3">Post3</button>
+						</div>
+
+						<div class="sina-pt-content-content">
+							<div class="sina-pt-item active" id="post1">
+								<p>This is first tab's paragraph. This is first tab's paragraph. This is first tab's paragraph. This is first tab's paragraph. This is first tab's paragraph. This is first tab's paragraph.</p>
+								<p>This is first tab's paragraph. This is first tab's paragraph. This is first tab's paragraph. This is first tab's paragraph. This is first tab's paragraph. This is first tab's paragraph.</p>
+							</div>
+							<div class="sina-pt-item" id="post2">
+								<p>This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph.</p>
+								<p>This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph.</p>
+							</div>
+							<div class="sina-pt-item" id="post3">
+								<p>This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph.</p>
+								<p>This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph.</p>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div><!-- .sina-posts-tab -->

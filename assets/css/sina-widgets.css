@@ -875,6 +875,9 @@ img.mfp-img{
 
 /*--------------------------------- Posts Tab -------------------------------------- */
 .sina-pt-content{
+	overflow: hidden;
+}
+.sina-pt-content .sina-pt-content{
 	padding: 20px;
 }
 .sina-pt-item{
@@ -883,6 +886,28 @@ img.mfp-img{
 .sina-pt-item.active{
 	display: block;
 }
+.sina-pt-content-content{
+	width: 70%;
+}
+.sina-pt-content .sina-pt-btns{
+	width: 30%;
+}
+.sina-pt-content-right .sina-pt-btns {
+	float: left;
+}
+.sina-pt-content-left .sina-pt-btns{
+	float: right;
+}
+.sina-pt-content-left .sina-pt-content-content{
+	float: left;
+}
+.sina-pt-content-right .sina-pt-content-content{
+	float: right;
+}
+.sina-pt-content .sina-pt-btn{
+	display: block;
+}
+
 
 
 
