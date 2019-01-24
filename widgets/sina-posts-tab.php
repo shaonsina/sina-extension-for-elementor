@@ -11,6 +11,7 @@ use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
 use Elementor\Group_Control_Text_Shadow;
 use Elementor\Plugin;
+use Elementor\Utils;
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -110,6 +111,16 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 			]
 		);
 
+		$this->add_control(
+			'img',
+			[
+				'label' => __( 'Test image', 'sina-ext' ),
+				'type' => Controls_Manager::MEDIA,
+				'default' => [
+					'url' => Utils::get_placeholder_image_src(),
+				],
+			]
+		);
 
 		$this->end_controls_section();
 		// End Tab Content
@@ -119,71 +130,62 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 
 	protected function render() {
 		$data = $this->get_settings_for_display();
+		// fw_print( $data );
 		?>
 		<div class="sina-posts-tab">
 			<div class="sina-pt-btns">
-				<button class="sina-pt-btn sina-pt-parent-btn sina-button" data-filter="#all">All</button>
-				<button class="sina-pt-btn sina-pt-parent-btn sina-button" data-filter="#one">One</button>
-				<button class="sina-pt-btn sina-pt-parent-btn sina-button" data-filter="#two">Two</button>
+				<button class="sina-pt-cat-btn sina-button" data-sina-pt="#all">All</button>
+				<button class="sina-pt-cat-btn sina-button" data-sina-pt="#one">One</button>
+				<button class="sina-pt-cat-btn sina-button" data-sina-pt="#two">Two</button>
 			</div>
 
 			<div class="sina-pt-content">
 				<div class="sina-pt-item active" id="all">
-					<div class="sina-pt-content sina-pt-content-right">
-						<div class="sina-pt-btns">
-							<button class="sina-pt-btn sina-pt-child-btn sina-button" data-filter="#blog1">Blog1</button>
-							<button class="sina-pt-btn sina-pt-child-btn sina-button" data-filter="#blog2">Blog2</button>
-							<button class="sina-pt-btn sina-pt-child-btn sina-button" data-filter="#blog3">Blog3</button>
-						</div>
-
+					<div class="sina-pt-content-left">
 						<div class="sina-pt-content-content">
 							<div class="sina-pt-item active" id="blog1">
-								<p>This is first tab's paragraph. This is first tab's paragraph. This is first tab's paragraph. This is first tab's paragraph. This is first tab's paragraph. This is first tab's paragraph.</p>
 								<p>This is first tab's paragraph. This is first tab's paragraph. This is first tab's paragraph. This is first tab's paragraph. This is first tab's paragraph. This is first tab's paragraph.</p>
 							</div>
 							<div class="sina-pt-item" id="blog2">
 								<p>This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph.</p>
-								<p>This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph.</p>
 							</div>
 							<div class="sina-pt-item" id="blog3">
 								<p>This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph.</p>
-								<p>This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph.</p>
+							</div>
+						</div>
+						<div class="sina-pt-posts">
+							<div class="sina-pt-post">
+								<div class="sina-pt-thumb" data-sina-pt="#blog1">
+									<img src="<?php echo esc_url( $data['img']['url']); ?>">
+								</div>
+								<div class="sina-pt-title-wraper">
+									<h3 class="sina-pt-title sina-button" data-sina-pt="#blog1">This is nice post</h3>
+									<p><span class="fa fa-clock-o"></span> Dec 10, 2018</p>
+								</div>
+							</div>
+							<div class="sina-pt-post">
+								<div class="sina-pt-thumb" data-sina-pt="#blog2">
+									<img src="<?php echo esc_url( $data['img']['url']); ?>">
+								</div>
+								<div class="sina-pt-title-wraper">
+									<h3 class="sina-pt-title sina-button" data-sina-pt="#blog2">This is nice post</h3>
+									<p><span class="fa fa-clock-o"></span> Dec 10, 2018</p>
+								</div>
+							</div>
+							<div class="sina-pt-post">
+								<div class="sina-pt-thumb" data-sina-pt="#blog3">
+									<img src="<?php echo esc_url( $data['img']['url']); ?>">
+								</div>
+								<div class="sina-pt-title-wraper">
+									<h3 class="sina-pt-title sina-button" data-sina-pt="#blog3">This is nice post</h3>
+									<p><span class="fa fa-clock-o"></span> Dec 10, 2018</p>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 				<div class="sina-pt-item" id="one">
-					<div class="sina-pt-content sina-pt-content-right">
-						<div class="sina-pt-btns">
-							<button class="sina-pt-btn sina-pt-child-btn sina-button" data-filter="#item1">Item1</button>
-							<button class="sina-pt-btn sina-pt-child-btn sina-button" data-filter="#item2">Item2</button>
-							<button class="sina-pt-btn sina-pt-child-btn sina-button" data-filter="#item3">Item3</button>
-						</div>
-
-						<div class="sina-pt-content-content">
-							<div class="sina-pt-item active" id="item1">
-								<p>This is first tab's paragraph. This is first tab's paragraph. This is first tab's paragraph. This is first tab's paragraph. This is first tab's paragraph. This is first tab's paragraph.</p>
-								<p>This is first tab's paragraph. This is first tab's paragraph. This is first tab's paragraph. This is first tab's paragraph. This is first tab's paragraph. This is first tab's paragraph.</p>
-							</div>
-							<div class="sina-pt-item" id="item2">
-								<p>This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph.</p>
-								<p>This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph.</p>
-							</div>
-							<div class="sina-pt-item" id="item3">
-								<p>This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph.</p>
-								<p>This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph.</p>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="sina-pt-item" id="two">
-					<div class="sina-pt-content sina-pt-content-right">
-						<div class="sina-pt-btns">
-							<button class="sina-pt-btn sina-pt-child-btn sina-button" data-filter="#post1">Post1</button>
-							<button class="sina-pt-btn sina-pt-child-btn sina-button" data-filter="#post2">Post2</button>
-							<button class="sina-pt-btn sina-pt-child-btn sina-button" data-filter="#post3">Post3</button>
-						</div>
-
+					<div class="sina-pt-content">
 						<div class="sina-pt-content-content">
 							<div class="sina-pt-item active" id="post1">
 								<p>This is first tab's paragraph. This is first tab's paragraph. This is first tab's paragraph. This is first tab's paragraph. This is first tab's paragraph. This is first tab's paragraph.</p>
@@ -196,6 +198,82 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 							<div class="sina-pt-item" id="post3">
 								<p>This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph.</p>
 								<p>This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph.</p>
+							</div>
+						</div>
+						<div class="sina-pt-posts">
+							<div class="sina-pt-post">
+								<div class="sina-pt-title-wraper">
+									<h3 class="sina-pt-title sina-button" data-sina-pt="#post1">This is awesome post This is awesome post</h3>
+									<p><span class="fa fa-clock-o"></span> Dec 10, 2018</p>
+								</div>
+								<div class="sina-pt-thumb" data-sina-pt="#post1">
+									<img src="<?php echo esc_url( $data['img']['url']); ?>">
+								</div>
+							</div>
+							<div class="sina-pt-post">
+								<div class="sina-pt-title-wraper">
+									<h3 class="sina-pt-title sina-button" data-sina-pt="#post2">This is awesome post This is awesome post</h3>
+									<p><span class="fa fa-clock-o"></span> Dec 10, 2018</p>
+								</div>
+								<div class="sina-pt-thumb" data-sina-pt="#post2">
+									<img src="<?php echo esc_url( $data['img']['url']); ?>">
+								</div>
+							</div>
+							<div class="sina-pt-post">
+								<div class="sina-pt-title-wraper">
+									<h3 class="sina-pt-title sina-button" data-sina-pt="#post3">This is awesome post This is awesome post</h3>
+									<p><span class="fa fa-clock-o"></span> Dec 10, 2018</p>
+								</div>
+								<div class="sina-pt-thumb" data-sina-pt="#post3">
+									<img src="<?php echo esc_url( $data['img']['url']); ?>">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="sina-pt-item" id="two">
+					<div class="sina-pt-content">
+						<div class="sina-pt-content-content">
+							<div class="sina-pt-item active" id="item1">
+								<p>This is first tab's paragraph. This is first tab's paragraph. This is first tab's paragraph. This is first tab's paragraph. This is first tab's paragraph. This is first tab's paragraph.</p>
+								<p>This is first tab's paragraph. This is first tab's paragraph. This is first tab's paragraph. This is first tab's paragraph. This is first tab's paragraph. This is first tab's paragraph.</p>
+								<p>This is first tab's paragraph. This is first tab's paragraph. This is first tab's paragraph. This is first tab's paragraph. This is first tab's paragraph. This is first tab's paragraph.</p>
+							</div>
+							<div class="sina-pt-item" id="item2">
+								<p>This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph.</p>
+								<p>This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph.</p>
+								<p>This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph. This is second tab's paragraph.</p>
+							</div>
+							<div class="sina-pt-item" id="item3">
+								<p>This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph.</p>
+								<p>This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph.</p>
+								<p>This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph. This is third tab's paragraph.</p>
+							</div>
+						</div>
+						<div class="sina-pt-posts">
+							<div class="sina-pt-post">
+								<div class="sina-pt-title-wraper">
+									<h3 class="sina-pt-title sina-button" data-sina-pt="#item1">This is fine post</h3>
+								</div>
+								<div class="sina-pt-thumb" data-sina-pt="#item1">
+									<img src="<?php echo esc_url( $data['img']['url']); ?>">
+								</div>
+							</div>
+							<div class="sina-pt-post">
+								<div class="sina-pt-title-wraper">
+									<h3 class="sina-pt-title sina-button" data-sina-pt="#item2">This is fine post</h3>
+								</div>
+								<div class="sina-pt-thumb" data-sina-pt="#item2">
+									<img src="<?php echo esc_url( $data['img']['url']); ?>">
+								</div>
+							</div>
+							<div class="sina-pt-post">
+								<div class="sina-pt-title-wraper">
+									<h3 class="sina-pt-title sina-button" data-sina-pt="#item3">This is fine post</h3>
+								</div>
+								<div class="sina-pt-thumb" data-sina-pt="#item3">
+									<img src="<?php echo esc_url( $data['img']['url']); ?>">
+								</div>
 							</div>
 						</div>
 					</div>

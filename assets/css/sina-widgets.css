@@ -755,7 +755,7 @@ img.mfp-img{
 	margin-bottom: 30px;
 	text-align: center;
 }
-.sina-pt-btn,
+.sina-pt-cat-btn,
 .sina-portfolio-btn {
 	margin: 6px;
 	padding: 10px 15px;
@@ -877,9 +877,6 @@ img.mfp-img{
 .sina-pt-content{
 	overflow: hidden;
 }
-.sina-pt-content .sina-pt-content{
-	padding: 20px;
-}
 .sina-pt-item{
 	display: none;
 }
@@ -887,29 +884,58 @@ img.mfp-img{
 	display: block;
 }
 .sina-pt-content-content{
-	width: 70%;
+	padding: 15px 25px;
+	width: 60%;
+	overflow: hidden;
+	float: right;
 }
-.sina-pt-content .sina-pt-btns{
-	width: 30%;
-}
-.sina-pt-content-right .sina-pt-btns {
+.sina-pt-content .sina-pt-posts{
+	width: 40%;
 	float: left;
 }
-.sina-pt-content-left .sina-pt-btns{
+.sina-pt-content .sina-pt-post{
+	padding: 15px 0;
+	border-bottom: 1px solid #ddd;
+	overflow: hidden;
+}
+.sina-pt-content .sina-pt-post:last-child{
+	border-bottom: 0;
+}
+.sina-pt-content-left .sina-pt-posts{
 	float: right;
 }
 .sina-pt-content-left .sina-pt-content-content{
 	float: left;
 }
-.sina-pt-content-right .sina-pt-content-content{
-	float: right;
-}
 .sina-pt-content .sina-pt-btn{
 	display: block;
 }
-
-
-
+.sina-pt-title-wraper{
+	width: 60%;
+	float: left;
+	text-align: right;
+}
+.sina-pt-content-left .sina-pt-title-wraper{
+	text-align: left;
+}
+.sina-pt-title-wraper p{
+	margin: 0;
+}
+.sina-pt-title{
+	margin: 0;
+	font-size: 18px;
+	line-height: 20px;
+}
+.sina-pt-thumb{
+	width: 40%;
+	padding-left: 15px;
+	float: left;
+	cursor: pointer;
+}
+.sina-pt-content-left .sina-pt-thumb{
+	padding-right: 15px;
+	padding-left: 0;
+}
 
 /*--------------------------------- Pricing -------------------------------------- */
 .sina-pricing {
@@ -1130,6 +1156,13 @@ img.mfp-img{
 	.sina-bp-item-3,
 	.sina-bp-item-4{
 		width: 50%;
+	}
+	.sina-pt-content .sina-pt-posts,
+	.sina-pt-content-content{
+		width: 100%;
+	}
+	.sina-pt-content-content{
+		padding: 0;
 	}
 }
 

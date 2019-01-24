@@ -584,19 +584,11 @@
 
 	function sinaPostsTab($scope, $) {
 		elementorFrontend.waypoint($scope.find('.sina-posts-tab'), function () {
-			var $this = $(this),
-				$btn = $this.find('.sina-pt-btn');
+			var $btn = $("[data-sina-pt]");
 
 			$btn.on('click', function(e) {
-				var $el = $( $(this).data('filter') ).parent();
-
-				if ( $el.is('.sina-pt-content-content') ) {
-					$( $(this).data('filter') ).siblings('.sina-pt-item').removeClass('active');
-					$( $(this).data('filter') ).addClass('active');
-				} else{
-					$( $(this).data('filter') ).siblings('.sina-pt-item').removeClass('active');
-					$( $(this).data('filter') ).addClass('active');
-				}
+				$( $(this).data('sina-pt') ).siblings('.sina-pt-item').removeClass('active');
+				$( $(this).data('sina-pt') ).addClass('active');
 			});
 		});
 	}
