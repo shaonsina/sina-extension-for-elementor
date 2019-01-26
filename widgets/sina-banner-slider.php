@@ -12,8 +12,6 @@ use Elementor\Group_Control_Typography;
 use Elementor\Group_Control_Text_Shadow;
 use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Box_Shadow;
-use Elementor\Utils;
-use Elementor\Group_Control_Image_Size;
 
 
 // Exit if accessed directly.
@@ -128,7 +126,7 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 						'label' => __( 'Choose Image', 'sina-ext' ),
 						'type' => Controls_Manager::MEDIA,
 						'default' => [
-							'url' => Utils::get_placeholder_image_src(),
+							'url' => SINA_EXT_URL .'assets/img/choose-img.jpg',
 						],
 					],
 					[
@@ -362,7 +360,7 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => 'rgba(0,0,0,0.5)',
 				'selectors' => [
-					'{{WRAPPER}} .sina-slider-overlay' => 'background-color: {{VALUE}}'
+					'{{WRAPPER}} .sina-slider-content .sina-overlay' => 'background-color: {{VALUE}}'
 				],
 				'condition' => [
 					'overlay!' => '',
@@ -1260,7 +1258,7 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 				?>
 				<div class="sina-slider-content" style="background-image: url(<?php echo esc_url( $slide['image']['url'] ); ?>);">
 					<?php if ( 'yes' == $data['overlay'] ): ?>
-						<div class="sina-slider-overlay"></div>
+						<div class="sina-overlay"></div>
 					<?php endif ?>
 
 					<div class="sina-banner-container" style="text-align: <?php echo esc_attr( $slide['align'] ); ?>">

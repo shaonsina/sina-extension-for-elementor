@@ -11,7 +11,6 @@ use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
 use Elementor\Group_Control_Text_Shadow;
 use Elementor\Repeater;
-use Elementor\Utils;
 
 
 // Exit if accessed directly.
@@ -142,7 +141,7 @@ class Sina_Product_Zoomer_Widget extends Widget_Base {
 				'label' => __( 'Original Image', 'sina-ext' ),
 				'type' => Controls_Manager::MEDIA,
 				'default' => [
-					'url' => Utils::get_placeholder_image_src(),
+					'url' => SINA_EXT_URL .'assets/img/choose-img.jpg',
 				],
 			]
 		);
@@ -152,7 +151,7 @@ class Sina_Product_Zoomer_Widget extends Widget_Base {
 				'label' => __( 'Preview Image', 'sina-ext' ),
 				'type' => Controls_Manager::MEDIA,
 				'default' => [
-					'url' => Utils::get_placeholder_image_src(),
+					'url' => SINA_EXT_URL .'assets/img/choose-img.jpg',
 				],
 			]
 		);
@@ -162,7 +161,7 @@ class Sina_Product_Zoomer_Widget extends Widget_Base {
 				'label' => __( 'Thumb Image', 'sina-ext' ),
 				'type' => Controls_Manager::MEDIA,
 				'default' => [
-					'url' => Utils::get_placeholder_image_src(),
+					'url' => SINA_EXT_URL .'assets/img/choose-img.jpg',
 				],
 			]
 		);

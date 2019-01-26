@@ -12,7 +12,6 @@ use Elementor\Group_Control_Typography;
 use Elementor\Group_Control_Text_Shadow;
 use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Box_Shadow;
-use Elementor\Utils;
 
 
 // Exit if accessed directly.
@@ -183,7 +182,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 					'thumbs!' => '',
 				],
 				'default' => [
-					'url' => Utils::get_placeholder_image_src(),
+					'url' => SINA_EXT_URL .'assets/img/choose-img.jpg',
 				],
 			]
 		);

@@ -49,11 +49,11 @@
 /* Magnific Popup */
 .mfp-image-holder .mfp-close,
 .mfp-iframe-holder .mfp-close {
-    top: -44px;
+	top: -44px;
 	right: 0 !important;
 	padding-right: 0 !important;
 	background: transparent;
-    outline: none;
+	outline: none;
 	font-weight: 400;
 }
 img.mfp-img{
@@ -68,6 +68,18 @@ img.mfp-img{
 .sina-content-box .elementor-element-overlay{
 	display: none;
 }
+
+/* Overlay */
+.sina-overlay{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	transition: 0.4s;
+}
+
 
 
 /*--------------------------------- Accordion -------------------------------------- */
@@ -129,12 +141,8 @@ img.mfp-img{
 	background-repeat: no-repeat;
 	background-position: center;
 }
-.sina-slider-overlay{
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
+.sina-slider-content .sina-overlay{
+	opacity: 1;
 }
 .sina-review-carousel .owl-next,
 .sina-review-carousel .owl-prev,
@@ -154,15 +162,17 @@ img.mfp-img{
 	line-height: 30px;
 	cursor: pointer;
 	opacity: 0;
-	transition: all 0.4s ease-in-out;
+	transition: all 0.6s ease-in-out;
 }
 .sina-review-carousel .owl-next,
 .sina-banner-slider .owl-next{
 	right: 35px;
+	transform: translate( 0, -40px );
 }
 .sina-review-carousel .owl-prev,
 .sina-banner-slider .owl-prev{
 	left: 35px;
+	transform: translate( 0, 40px );
 }
 .sina-review-carousel .owl-next span,
 .sina-review-carousel .owl-prev span,
@@ -170,11 +180,10 @@ img.mfp-img{
 .sina-banner-slider .owl-prev span{
 	float: left;
 }
-.sina-review-carousel:hover .owl-next,
-.sina-review-carousel:hover .owl-prev,
 .sina-banner-slider:hover .owl-next,
 .sina-banner-slider:hover .owl-prev {
 	opacity: 1;
+	transform: translate(0);
 }
 .sina-banner-slider .owl-dots,
 .sina-review-carousel .owl-dots {
@@ -239,6 +248,16 @@ img.mfp-img{
 }
 .sina-bp{
 	border: 1px solid #eee;
+}
+.sina-bg-thumb{
+	position: relative;
+}
+.sina-bg-thumb .sina-overlay a{
+	display: block;
+	height: 100%;
+}
+.sina-bg-thumb:hover .sina-overlay{
+	opacity: 1;
 }
 .sina-bg-thumb img {
 	display: block;
@@ -527,45 +546,45 @@ img.mfp-img{
 .xzoom-source img,
 .xzoom-preview img,
 .xzoom-lens img {
-    display: block;
-    max-width: none;
-    max-height: none
+	display: block;
+	max-width: none;
+	max-height: none
 }
 .xzoom-thumb-item {
-    cursor: pointer;
-    float: left
+	cursor: pointer;
+	float: left
 }
 .elementor .xzoom-gallery {
-    display: inline-block;
-    border: 1px solid #cecece;
-    width: 100%
+	display: inline-block;
+	border: 1px solid #cecece;
+	width: 100%
 }
 .elementor .xzoom {
-    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
-    margin-bottom: 20px
+	box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
+	margin-bottom: 20px
 }
 .xzoom-source,
 .xzoom-hidden {
-    display: block;
-    position: static;
-    float: none;
-    clear: both
+	display: block;
+	position: static;
+	float: none;
+	clear: both
 }
 .xzoom-hidden {
-    overflow: hidden
+	overflow: hidden
 }
 .xzoom-preview {
-    border: 1px solid #888;
-    box-shadow: -0 -0 10px rgba(0, 0, 0, 0.50)
+	border: 1px solid #888;
+	box-shadow: -0 -0 10px rgba(0, 0, 0, 0.50)
 }
 .xzoom-lens {
-    border: 1px solid #555;
-    box-shadow: -0 -0 10px rgba(0, 0, 0, 0.50);
-    cursor: crosshair
+	border: 1px solid #555;
+	box-shadow: -0 -0 10px rgba(0, 0, 0, 0.50);
+	cursor: crosshair
 }
 .elementor .xactive {
-    box-shadow: 0 0 3px 0 rgba(74, 169, 210, 1);
-    border: 1px solid #4aaad2
+	box-shadow: 0 0 3px 0 rgba(74, 169, 210, 1);
+	border: 1px solid #4aaad2
 }
 
 /*--------------------------------- Mailchimp Subscribe Form -------------------------------------- */
@@ -820,13 +839,6 @@ img.mfp-img{
 	display: -ms-flex;
 	display: -o-flex;
 	display: flex;
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	opacity: 0;
-	transition: 0.4s;
 }
 .sina-portfolio-item-inner:hover .sina-portfolio-overlay{
 	opacity: .9;
@@ -883,11 +895,25 @@ img.mfp-img{
 .sina-pt-item.active{
 	display: block;
 }
+.sina-pt-content-content .sina-overlay:hover {
+	opacity: 1;
+}
 .sina-pt-content-content{
-	padding: 15px 25px;
 	width: 60%;
+	padding: 15px 0 0 25px;
 	overflow: hidden;
 	float: right;
+}
+.sina-pt-content-content .sina-pt-item{
+	position: relative;
+	height: 422px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.sina-pt-content-content .sina-pt-item a {
+	display: block;
+	height: 100%;
 }
 .sina-pt-content .sina-pt-posts{
 	width: 40%;
@@ -901,38 +927,53 @@ img.mfp-img{
 .sina-pt-content .sina-pt-post:last-child{
 	border-bottom: 0;
 }
-.sina-pt-content-left .sina-pt-posts{
+.sina-pt-content-right .sina-pt-posts{
 	float: right;
 }
-.sina-pt-content-left .sina-pt-content-content{
+.sina-pt-content-right .sina-pt-content-content{
 	float: left;
+	padding: 15px 25px 0 0;
 }
 .sina-pt-content .sina-pt-btn{
 	display: block;
 }
 .sina-pt-title-wraper{
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	align-items: center;
+	padding-right: 20px;
 	width: 60%;
+	height: 120px;
 	float: left;
-	text-align: right;
 }
-.sina-pt-content-left .sina-pt-title-wraper{
-	text-align: left;
+.sina-pt-content-right .sina-pt-title-wraper{
+	padding-left: 20px;
+	padding-right: 0;
 }
 .sina-pt-title-wraper p{
-	margin: 0;
+	margin: 10px 0 0;
 }
-.sina-pt-title{
+.sina-pt-title h3{
 	margin: 0;
 	font-size: 18px;
 	line-height: 20px;
+	cursor: pointer;
+	transition: all 0.4s ease-in-out;
 }
 .sina-pt-thumb{
 	width: 40%;
-	padding-left: 15px;
+	height: 120px;
+	overflow: hidden;
 	float: left;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
 	cursor: pointer;
 }
-.sina-pt-content-left .sina-pt-thumb{
+.sina-pt-content-right .sina-pt-thumb{
 	padding-right: 15px;
 	padding-left: 0;
 }
@@ -1037,6 +1078,17 @@ img.mfp-img{
 .sina-review-comment{
 	margin-top: 20px;
 }
+.sina-review-carousel .owl-next{
+	transform: translate( 20px );
+}
+.sina-review-carousel .owl-prev{
+	transform: translate( -20px );
+}
+.sina-review-carousel:hover .owl-next,
+.sina-review-carousel:hover .owl-prev{
+	opacity: 1;
+	transform: translate(0);
+}
 
 /*--------------------------------- Team -------------------------------------- */
 .sina-team {
@@ -1048,14 +1100,7 @@ img.mfp-img{
 	width: 100%;
 }
 .sina-team-overlay {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
 	padding: 20px;
-	opacity: 0;
-	transition: 0.4s;
 }
 .sina-team-name{
 	font-size: 20px;
@@ -1101,7 +1146,6 @@ img.mfp-img{
 /* Zoom Effect */
 .sina-team.sina-team-zoom .sina-team-overlay{
 	transform: scale(0.1);
-	transition: 0.4s;
 }
 .sina-team.sina-team-zoom:hover .sina-team-overlay{
 	transform: scale(1);

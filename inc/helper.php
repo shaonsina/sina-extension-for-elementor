@@ -38,7 +38,7 @@ function sina_get_user_roles() {
 	return $roles;
 }
 
-function sina_blogpost_categories(){
+function sina_get_categories(){
 	$terms = get_terms( [ 
 		'taxonomy' => 'category',
 		'hide_empty' => true,
@@ -55,17 +55,17 @@ function sina_blogpost_categories(){
 }
 
 function sina_get_page_templates(){
-    $page_templates = get_posts( [
-        'post_type'         => 'elementor_library',
-        'posts_per_page'    => -1
-    ] );
+	$page_templates = get_posts( [
+		'post_type'         => 'elementor_library',
+		'posts_per_page'    => -1
+	] );
 
-    $options = [];
+	$options = [];
 
-    if ( ! empty( $page_templates ) && ! is_wp_error( $page_templates ) ){
-        foreach ( $page_templates as $template ) {
-            $options[ $template->ID ] = $template->post_title;
-        }
-    }
-    return $options;
+	if ( ! empty( $page_templates ) && ! is_wp_error( $page_templates ) ){
+		foreach ( $page_templates as $template ) {
+			$options[ $template->ID ] = $template->post_title;
+		}
+	}
+	return $options;
 }

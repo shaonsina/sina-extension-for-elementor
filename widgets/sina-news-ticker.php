@@ -127,7 +127,7 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 				'label' => esc_html__( 'Categories', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT2,
 				'multiple' => true,
-				'options' => sina_blogpost_categories(),        
+				'options' => sina_get_categories(),        
 			]
 		);
 		$this->add_control(

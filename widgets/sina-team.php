@@ -10,7 +10,6 @@ use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
 use Elementor\Group_Control_Text_Shadow;
-use Elementor\Utils;
 use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Box_Shadow;
 
@@ -536,7 +535,7 @@ class Sina_Team_Widget extends Widget_Base {
 			?>
 			<div class="sina-team <?php echo esc_attr( $data['effects'] ); ?>">
 				<img src="<?php echo esc_url( $data['image']['url'] ); ?>" alt="<?php echo esc_attr( $data['name'] ); ?>">
-				<div class="sina-team-overlay">
+				<div class="sina-team-overlay sina-overlay">
 					<?php if ( $data['name'] ): ?>
 						<h5 <?php echo $this->get_render_attribute_string( 'name' ); ?>>
 							<?php echo esc_html( $data['name'] ); ?>
@@ -593,7 +592,7 @@ class Sina_Team_Widget extends Widget_Base {
 		#>
 		<div class="sina-team {{{settings.effects}}}">
 			<img src="{{{settings.image.url}}}" alt="{{{settings.name}}}">
-			<div class="sina-team-overlay">
+			<div class="sina-team-overlay sina-overlay">
 				<# if ( settings.name ) { #>
 					<h5 {{{ view.getRenderAttributeString( 'name' ) }}}>{{{settings.name}}}</h5>
 				<# } #>

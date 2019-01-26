@@ -12,7 +12,6 @@ use Elementor\Group_Control_Typography;
 use Elementor\Group_Control_Text_Shadow;
 use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Box_Shadow;
-use Elementor\Utils;
 use Elementor\Plugin;
 
 
@@ -177,7 +176,7 @@ class Sina_Portfolio_Widget extends Widget_Base {
 						'label' => __( 'Choose Image', 'sina-ext' ),
 						'type' => Controls_Manager::MEDIA,
 						'default' => [
-							'url' => Utils::get_placeholder_image_src(),
+							'url' => SINA_EXT_URL .'assets/img/choose-img.jpg',
 						],
 					],
 					[
@@ -485,7 +484,8 @@ class Sina_Portfolio_Widget extends Widget_Base {
 			]
 		);
 
-		$this->add_control('premium_maps_api_url',
+		$this->add_control(
+			'note',
 			[
 				'label' => 'If you want to change the <strong>Height</strong> or <strong>Padding</strong> then the page need to <strong>Refresh</strong> for seeing the actual result',
 				'type' => Controls_Manager::RAW_HTML,
@@ -752,7 +752,7 @@ class Sina_Portfolio_Widget extends Widget_Base {
 					<div class="sina-portfolio-item <?php echo esc_attr( $category .' '. $size_class ); ?>">
 						<div class="sina-portfolio-item-inner"
 							style="background-image: url(<?php echo esc_url( $item['image']['url'] ); ?>);">
-							<div class="sina-portfolio-overlay <?php echo esc_attr( $data['effects'] ); ?>">
+							<div class="sina-portfolio-overlay sina-overlay <?php echo esc_attr( $data['effects'] ); ?>">
 								<div class="sina-portfolio-icons">
 									<a title="<?php echo esc_attr( $item['item_name'] ); ?>" href="#" data-mfp-src="<?php echo esc_url( $item['image']['url'] ); ?>" class="sina-portfolio-zoom">
 										<i class="fa fa-search-plus"></i>

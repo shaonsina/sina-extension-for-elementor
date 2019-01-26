@@ -10,7 +10,6 @@ use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
 use Elementor\Group_Control_Text_Shadow;
-use Elementor\Utils;
 use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Box_Shadow;
 
@@ -139,7 +138,7 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 						'label' => __( 'Choose Image', 'sina-ext' ),
 						'type' => Controls_Manager::MEDIA,
 						'default' => [
-							'url' => Utils::get_placeholder_image_src(),
+							'url' => SINA_EXT_URL .'assets/img/choose-img.jpg',
 						],
 					],
 					[

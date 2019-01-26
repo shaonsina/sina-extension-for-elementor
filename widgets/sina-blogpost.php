@@ -157,7 +157,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 				'label' => esc_html__( 'Categories', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT2,
 				'multiple' => true,
-				'options' => sina_blogpost_categories(),        
+				'options' => sina_get_categories(),
 			]
 		);
 		$this->add_control(
@@ -268,7 +268,8 @@ class Sina_Blogpost_Widget extends Widget_Base {
 			]
 		);
 
-		$this->add_control('premium_maps_api_url',
+		$this->add_control(
+			'note',
 			[
 				'label' => 'If you want to change the <strong>Padding</strong> or <strong>Border</strong> then the page need to <strong>Refresh</strong> for seeing the actual result',
 				'type' => Controls_Manager::RAW_HTML,
@@ -282,6 +283,17 @@ class Sina_Blogpost_Widget extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .sina-bp' => 'background: {{VALUE}};'
+				]
+			]
+		);
+		$this->add_control(
+			'overlay_bg',
+			[
+				'label' => __( 'Overlay Background', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => 'rgba(0, 0, 0, 0.2)',
+				'selectors' => [
+					'{{WRAPPER}} .sina-bg-thumb .sina-overlay' => 'background: {{VALUE}};'
 				]
 			]
 		);
@@ -467,7 +479,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '#1085e4',
 				'selectors' => [
-					'{{WRAPPER}} .sina-bp:hover .sina-bp-title a' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .sina-bp-title a:hover, {{WRAPPER}} .sina-bp-title a:focus' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -1041,6 +1053,9 @@ class Sina_Blogpost_Widget extends Widget_Base {
 								<?php if ( has_post_thumbnail() ): ?>
 									<div class="sina-bg-thumb">
 										<?php the_post_thumbnail(); ?>
+										<div class="sina-overlay">
+											<a href="<?php the_permalink(); ?>"></a>
+										</div>
 									</div>
 								<?php endif; ?>
 								<div class="sina-bp-content">
