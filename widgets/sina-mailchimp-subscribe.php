@@ -303,6 +303,9 @@ class Sina_MC_Subscribe_Widget extends Widget_Base {
 						'max' => 50,
 					],
 				],
+				'default' => [
+					'size' => 5,
+				],
 				'condition' => [
 					'icon!' => '',
 				],
@@ -354,6 +357,21 @@ class Sina_MC_Subscribe_Widget extends Widget_Base {
 				],
 			]
 		);
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name' => 'fields_typography',
+				'selector' => '{{WRAPPER}} .sina-subs-input .sina-input-field',
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Text_Shadow::get_type(),
+			[
+				'name' => 'fields_text_shadow',
+				'selector' => '{{WRAPPER}} .sina-subs-input .sina-input-field',
+			]
+		);
+
 		$this->start_controls_tabs( 'field_tabs' );
 
 		$this->start_controls_tab(

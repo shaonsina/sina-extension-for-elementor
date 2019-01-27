@@ -1,8 +1,8 @@
 /* Sina Extension for Elementor v1.2.0 */
 
 /*--------------------------------- General -------------------------------------- */
-.sina-contact-input .sina-input-field,
-.sina-subs-input .sina-input-field{
+.sina-input-field,
+.sina-input-field{
 	display: inline-block;
 	width: inherit;
 	height: inherit;
@@ -13,8 +13,8 @@
 	line-height: 24px;
 	transition: 0.4s;
 }
-.sina-contact-input .sina-input-field:focus,
-.sina-subs-input .sina-input-field:focus{
+.sina-input-field:focus,
+.sina-input-field:focus{
 	border: 1px solid #1085e4;
 	outline: none;
 	color: #495057;
@@ -25,6 +25,16 @@
 	border: 0;
 	outline: none;
 	cursor: pointer;
+}
+
+.sina-search-btn,
+.sina-contact-btn,
+.sina-subs-btn{
+	padding: 11px 20px;
+	border-radius: 0;
+	font-size: 16px;
+	line-height: 24px;
+	transition: 0.4s;
 }
 
 /* Ribbon */
@@ -79,7 +89,6 @@ img.mfp-img{
 	opacity: 0;
 	transition: 0.4s;
 }
-
 
 
 /*--------------------------------- Accordion -------------------------------------- */
@@ -588,39 +597,34 @@ img.mfp-img{
 }
 
 /*--------------------------------- Mailchimp Subscribe Form -------------------------------------- */
+.sina-search-form,
 .sina-subs-form{
 	overflow: hidden;
 	text-align: center;
 }
-.sina-subs-form a{
-	display: none;
-	margin: 0 auto;
-	text-align: center;
-}
-.sina-contact-input .sina-contact-btn,
-.sina-subs-input .sina-subs-btn{
-	padding: 11px 20px;
-	border-radius: 0;
-	font-size: 16px;
-	line-height: 24px;
-	transition: 0.4s;
-}
+.sina-search-box .sina-input-field,
 .sina-subs-input .sina-input-field{
 	width: 300px;
 	margin-bottom: 20px;
 }
+.sina-search-box .sina-input-block,
 .sina-subs-input .sina-input-block{
 	display: block;
 	width: 100%;
 	float: left;
 }
+.sina-search-box .sina-search-btn,
 .sina-subs-input .sina-subs-btn{
 	margin-left: -4px;
 }
+.sina-search-box .sina-search-btn.sina-input-block,
 .sina-subs-input .sina-subs-btn.sina-input-block{
 	display: inline;
 	width: inherit;
 	margin-left: 0;
+}
+.sina-subs-form a{
+	display: none;
 }
 .sina-contact-error,
 .sina-contact-success,

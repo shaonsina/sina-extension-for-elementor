@@ -335,6 +335,7 @@ final class Sina_Extension {
 		require_once( SINA_EXT_DIR .'/widgets/sina-product-zoomer.php' );
 		require_once( SINA_EXT_DIR .'/widgets/sina-progressbar.php' );
 		require_once( SINA_EXT_DIR .'/widgets/sina-review-carousel.php' );
+		require_once( SINA_EXT_DIR .'/widgets/sina-search-form.php' );
 		require_once( SINA_EXT_DIR .'/widgets/sina-team.php' );
 		require_once( SINA_EXT_DIR .'/widgets/sina-user-counter.php' );
 		require_once( SINA_EXT_DIR .'/widgets/sina-video.php' );
@@ -362,6 +363,7 @@ final class Sina_Extension {
 		$widgets_manager->register_widget_type( new Sina_Product_Zoomer_Widget() );
 		$widgets_manager->register_widget_type( new Sina_Progressbar_Widget() );
 		$widgets_manager->register_widget_type( new Sina_Review_Carousel_Widget() );
+		$widgets_manager->register_widget_type( new Sina_Search_Form_Widget() );
 		$widgets_manager->register_widget_type( new Sina_Team_Widget() );
 		$widgets_manager->register_widget_type( new Sina_User_Counter_Widget() );
 		$widgets_manager->register_widget_type( new Sina_Video_Widget() );
