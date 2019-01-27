@@ -4,7 +4,7 @@ Tags: addon, elementor, elementor addon, elementor extension, extension, page bu
 Requires at least: 4.0
 Tested up to: 5.0
 Requires PHP: 5.6
-Stable tag: 1.1.1
+Stable tag: 1.2.0
 License: GPLv3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -16,14 +16,17 @@ A collection of high-quality widgets for Elementor page builder.
 This is an extension for Elementor (https://wordpress.org/plugins/elementor/) page builder. It will extend the Elementor and increase web page building experience. It has 24 useful high-quality widgets. Which you may use for easy & fast make the page & display your content far better way.
 
 
-Basic use of blogpost
+Basic use of Blogpost
 https://youtu.be/ZnxKYO7-Urw
 
-Basic use of particle layer
+Basic use of Particle Layer
 https://youtu.be/xYMzXFVQri8
 
+Basic use of Banner Slider
+https://youtu.be/9HB3UF2dO70
 
-== 24 FREE WIDGETS
+
+== 26 FREE WIDGETS
 
 1. Accordion: Use accordion for display FAQ or custom content which you want
 2. Banner Slider: Add an animated text or image slider into your web page
@@ -41,14 +44,16 @@ https://youtu.be/xYMzXFVQri8
 14. Particle Layer: Use particle layer with lots of style, layout & more
 15. Piechart: Works the same as the Counter, but with a circle
 16. Portfolio: Easily display your works
-17. Pricing: Add Pricing for display your services rate
-18. Product Zoomer: Add multiple images of product for zoom in
-19. Progressbar: Display progress bars with different styles
-20. Review Carousel: Show what others said about your brand
-21. Team: Add your team members just a few clicks
-22. User Counter: Display how many users registered
-23. Video: Show a video in a popup
-24. Visit Counter: Display how many users visit
+17. Posts Tab: Show your latest posts with a tab
+18. Pricing: Add Pricing for display your services rate
+19. Product Zoomer: Add multiple images of product for zoom in
+20. Progressbar: Display progress bars with different styles
+21. Review Carousel: Show what others said about your brand
+22. Team: Add your team members just a few clicks
+23. Search Form: Display search form for searching the users
+24. User Counter: Display how many users registered
+25. Video: Show a video in a popup
+26. Visit Counter: Display how many users visit
 
 More coming soon...
 
@@ -76,6 +81,11 @@ Yes. It's totally free.
 
 
 == Changelog ==
+
+= 1.2.0 - 27-01-2019 =
+- New: Posts Tab
+- New: Search Form
+- Improved
 
 = 1.1.1 - 03-01-2019 =
 - Added: order & sorting functionality added to Blog post

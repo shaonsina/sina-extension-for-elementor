@@ -89,6 +89,18 @@ img.mfp-img{
 	opacity: 0;
 	transition: 0.4s;
 }
+.sina-bg-cover{
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.sina-flex{
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+}
 
 
 /*--------------------------------- Accordion -------------------------------------- */
@@ -97,11 +109,6 @@ img.mfp-img{
 	overflow: hidden;
 }
 .sina-accordion-item .sina-accordion-header{
-	display: -webkit-flex;
-	display: -moz-flex;
-	display: -ms-flex;
-	display: -o-flex;
-	display: flex;
 	-ms-flex-pack: justify;
 	justify-content: space-between;
 	margin: 0;
@@ -146,9 +153,6 @@ img.mfp-img{
 .sina-slider-content{
 	height: 600px;
 	padding: 200px 120px 220px;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
 }
 .sina-slider-content .sina-overlay{
 	opacity: 1;
@@ -196,9 +200,11 @@ img.mfp-img{
 }
 .sina-banner-slider .owl-dots,
 .sina-review-carousel .owl-dots {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
 	display: flex;
-	-ms-display: flex;
-	-webkit-display: flex;
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
@@ -746,7 +752,6 @@ img.mfp-img{
 
 /*-------------------------- Pie Chart --------------------------*/
 .sina-piechart {
-	display: flex;
 	position: relative;
 	margin: 0 auto;
 }
@@ -835,22 +840,12 @@ img.mfp-img{
 	position: relative;
 	width: 100%;
 	height: 100%;
-	background-size: cover;
-	background-position: center center;
 	overflow: hidden;
-}
-.sina-portfolio-overlay{
-	display: -ms-flex;
-	display: -o-flex;
-	display: flex;
 }
 .sina-portfolio-item-inner:hover .sina-portfolio-overlay{
 	opacity: .9;
 }
 .sina-portfolio-icons {
-	display: -ms-flex;
-	display: -o-flex;
-	display: flex;
 	align-items: center;
 	justify-content: center;
 	width: 100%;
@@ -899,8 +894,14 @@ img.mfp-img{
 .sina-pt-item.active{
 	display: block;
 }
-.sina-pt-content-content .sina-overlay:hover {
+.sina-pt-content-content .sina-overlay {
 	opacity: 1;
+	background-color: rgba(0, 0, 0, 0);
+	background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0) 100%);
+	transition: all 0.4s;
+}
+.sina-pt-content-content .sina-overlay:hover {
+	background-color: rgba(0, 0, 0, 0.1);
 }
 .sina-pt-content-content{
 	width: 60%;
@@ -911,13 +912,30 @@ img.mfp-img{
 .sina-pt-content-content .sina-pt-item{
 	position: relative;
 	height: 422px;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
 }
-.sina-pt-content-content .sina-pt-item a {
-	display: block;
-	height: 100%;
+.sina-pt-thumb-content{
+	position: absolute;
+	top: inherit;
+	bottom: 0;
+	width: 100%;
+	padding: 20px 15px;
+	opacity: 1;
+}
+.sina-pt-thumb-content h2 a{
+	font-size: 30px;
+	line-height: 30px;
+}
+.sina-pt-thumb-content h2,
+.sina-pt-thumb-content p {
+	margin: 0;
+}
+.sina-pt-thumb-content p span{
+	margin-right: 10px;
+}
+.sina-pt-thumb-content a,
+.sina-pt-thumb-content a:hover,
+.sina-pt-thumb-content a:focus {
+	color: #fff;
 }
 .sina-pt-content .sina-pt-posts{
 	width: 40%;
@@ -942,11 +960,6 @@ img.mfp-img{
 	display: block;
 }
 .sina-pt-title-wraper{
-	display: -webkit-flex;
-	display: -moz-flex;
-	display: -ms-flex;
-	display: -o-flex;
-	display: flex;
 	align-items: center;
 	padding-right: 20px;
 	width: 60%;
@@ -958,7 +971,10 @@ img.mfp-img{
 	padding-right: 0;
 }
 .sina-pt-title-wraper p{
-	margin: 10px 0 0;
+	margin-bottom: 0;
+}
+.sina-pt-title{
+	width: 100%;
 }
 .sina-pt-title h3{
 	margin: 0;
@@ -972,9 +988,6 @@ img.mfp-img{
 	height: 120px;
 	overflow: hidden;
 	float: left;
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
 	cursor: pointer;
 }
 .sina-pt-content-right .sina-pt-thumb{
@@ -1049,7 +1062,6 @@ img.mfp-img{
 	border: 1px solid;
 }
 .sina-progressbars .sina-bar-content {
-	display: flex;
 	width: 0;
 	height: 100%;
 }
@@ -1177,13 +1189,18 @@ img.mfp-img{
 .sina-video-play:focus{
 	outline: none;
 }
-.sina-video i {
-	padding: 20px 20px 20px 26px;
+.sina-video-play {
+	display: inline-block;
+	width: 100px;
+	height: 100px;
 	border-radius: 50%;
 	font-size: 32px;
-	color: #1085e4;
+	line-height: 100px;
 	text-align: center;
-	transition: 0.4s;
+	transition: all 0.5s;
+}
+.sina-video-play i{
+	margin-left: 4px;
 }
 .sina-video .sina-video-title{
 	margin-top: 30px;
@@ -1209,6 +1226,7 @@ img.mfp-img{
 	.sina-pt-content-content{
 		width: 100%;
 	}
+	.sina-pt-content-right .sina-pt-content-content,
 	.sina-pt-content-content{
 		padding: 0;
 	}

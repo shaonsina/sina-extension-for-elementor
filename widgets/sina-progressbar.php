@@ -363,7 +363,7 @@ class Sina_Progressbar_Widget extends Widget_Base {
 						<?php echo esc_html( $bar['title'] ); ?>
 					</div>
 					<div class="sina-bar-bg" style="border-color: <?php echo esc_attr( $bar['border_color'] ); ?>;">
-						<div class="sina-bar-content" style="background: <?php echo esc_attr( $bar['bar_bg'] ) ?>; color: <?php echo esc_attr( $bar['bar_color'] ) ?>;" data-percentage="<?php echo esc_attr( $bar['percentage'] ); ?>">
+						<div class="sina-bar-content sina-flex" style="background: <?php echo esc_attr( $bar['bar_bg'] ) ?>; color: <?php echo esc_attr( $bar['bar_color'] ) ?>;" data-percentage="<?php echo esc_attr( $bar['percentage'] ); ?>">
 							<span class="sina-bar-percent">
 								<?php echo esc_html( $bar['percentage'] ); ?>
 							</span>
@@ -388,7 +388,7 @@ class Sina_Progressbar_Widget extends Widget_Base {
 			<div class="sina-bar">
 				<div {{{ view.getRenderAttributeString( titleKey ) }}}>{{{ bar.title }}}</div>
 				<div class="sina-bar-bg" style="border-color: {{{bar.border_color}}};">
-					<div style="background: {{{bar.bar_bg}}}; color: {{{bar.bar_bg}}};" class="sina-bar-content" data-percentage="{{{bar.percentage}}}">
+					<div style="background: {{{bar.bar_bg}}}; color: {{{bar.bar_bg}}};" class="sina-bar-content sina-flex" data-percentage="{{{bar.percentage}}}">
 						<span class="sina-bar-percent" style="color: {{{bar.bar_color}}}">{{{bar.percentage}}}%</span>
 					</div>
 				</div>

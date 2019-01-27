@@ -1256,7 +1256,7 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 					$this->add_render_attribute( $desc_key, 'class', 'sina-banner-desc '. $invisible );
 					$this->add_inline_editing_attributes( $desc_key );
 				?>
-				<div class="sina-slider-content" style="background-image: url(<?php echo esc_url( $slide['image']['url'] ); ?>);">
+				<div class="sina-slider-content sina-bg-cover" style="background-image: url(<?php echo esc_url( $slide['image']['url'] ); ?>);">
 					<?php if ( 'yes' == $data['overlay'] ): ?>
 						<div class="sina-overlay"></div>
 					<?php endif ?>

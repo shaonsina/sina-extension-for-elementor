@@ -354,7 +354,7 @@ class Sina_Piechart_Widget extends Widget_Base {
 		$this->add_render_attribute( 'title', 'class', 'sina-piechart-title' );
 		$this->add_inline_editing_attributes( 'title' );
 		?>
-		<div class="sina-piechart" style="width: <?php echo esc_attr( $data['size'] ); ?>px; height: <?php echo esc_attr( $data['size'] ); ?>px;">
+		<div class="sina-piechart sina-flex" style="width: <?php echo esc_attr( $data['size'] ); ?>px; height: <?php echo esc_attr( $data['size'] ); ?>px;">
 			<div class="sina-piechart-wrap"
 			data-track="<?php echo esc_attr( $data['track_color'] ); ?>"
 			data-track-width="<?php echo esc_attr( $data['track_width'] ); ?>"
@@ -383,7 +383,7 @@ class Sina_Piechart_Widget extends Widget_Base {
 		view.addRenderAttribute( 'title', 'class', 'sina-piechart-title' );
 		view.addInlineEditingAttributes( 'title' );
 		#>
-		<div class="sina-piechart" style="width: {{{settings.size}}}px; height: {{{settings.size}}}px;">
+		<div class="sina-piechart sina-flex" style="width: {{{settings.size}}}px; height: {{{settings.size}}}px;">
 			<div class="sina-piechart-wrap" data-track="{{{settings.track_color}}}" data-track-width="{{{settings.track_width}}}" data-bar="{{{settings.bar_color}}}" data-line="{{{settings.bar_width}}}" data-cap="{{{settings.bar_cap}}}" data-speed="{{{settings.speed}}}" data-scale="{{{settings.scale_color}}}" data-size="{{{settings.size}}}" data-percent="{{{Math.round(settings.value / settings.max_value * 100)}}}">
 			</div>
 			<div class="sina-piechart-content" style="padding: {{{settings.bar_width + 10}}}px;">

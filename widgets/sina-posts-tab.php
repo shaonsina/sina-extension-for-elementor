@@ -170,6 +170,15 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 			]
 		);
 		$this->add_control(
+			'tag',
+			[
+				'label' => __( 'Tag', 'sina-ext' ),
+				'type' => Controls_Manager::SWITCHER,
+				'label_on' => __( 'Show', 'sina-ext' ),
+				'label_off' => __( 'Hide', 'sina-ext' ),
+			]
+		);
+		$this->add_control(
 			'preview_right',
 			[
 				'label' => __( 'Preview Right', 'sina-ext' ),
@@ -404,17 +413,6 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 			]
 		);
 
-		$this->add_control(
-			'thumb_overlay',
-			[
-				'label' => __( 'Overlay Background', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => 'rgba(0, 0, 0, 0.3)',
-				'selectors' => [
-					'{{WRAPPER}} .sina-pt-content-content .sina-overlay' => 'background: {{VALUE}}'
-				],
-			]
-		);
 		$this->add_responsive_control(
 			'thumb_width',
 			[
@@ -466,6 +464,114 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 				],
 			]
 		);
+		$this->add_responsive_control(
+			'thumb_title_alignment',
+			[
+				'label' => __( 'Alignment', 'sina-ext' ),
+				'type' => Controls_Manager::CHOOSE,
+				'options' => [
+					'left' => [
+						'title' => __( 'Left', 'sina-ext' ),
+						'icon' => 'fa fa-align-left',
+					],
+					'center' => [
+						'title' => __( 'Center', 'sina-ext' ),
+						'icon' => 'fa fa-align-center',
+					],
+					'right' => [
+						'title' => __( 'Right', 'sina-ext' ),
+						'icon' => 'fa fa-align-right',
+					],
+				],
+				'devices' => [ 'desktop', 'tablet', 'mobile' ],
+				'default' => 'center',
+				'selectors' => [
+					'{{WRAPPER}} .sina-pt-thumb-content' => 'text-align: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->start_controls_tabs( 'thumb_tabs' );
+
+		$this->start_controls_tab(
+			'thumb_title',
+			[
+				'label' => __( 'Title', 'sina-ext' ),
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name' => 'thumb_title_typography',
+				'selector' => '{{WRAPPER}} .sina-pt-thumb-content h2 a',
+			]
+		);
+		$this->add_control(
+			'thumb_title_color',
+			[
+				'label' => __( 'Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#eee',
+				'selectors' => [
+					'{{WRAPPER}} .sina-pt-thumb-content h2 a,
+					{{WRAPPER}} .sina-pt-thumb-content h2 a:hover,
+					{{WRAPPER}} .sina-pt-thumb-content h2 a:focus' => 'color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->end_controls_tab();
+
+		$this->start_controls_tab(
+			'thumb_meta',
+			[
+				'label' => __( 'Meta', 'sina-ext' ),
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name' => 'thumb_meta_typography',
+				'selector' => '{{WRAPPER}} .sina-pt-thumb-content p,
+				{{WRAPPER}} .sina-pt-thumb-content p a',
+			]
+		);
+		$this->add_control(
+			'thumb_meta_color',
+			[
+				'label' => __( 'Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#eee',
+				'selectors' => [
+					'{{WRAPPER}} .sina-pt-thumb-content p,
+					{{WRAPPER}} .sina-pt-thumb-content p a' => 'color: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'thumb_meta_gap',
+			[
+				'label' => __( 'Gap From Title', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'range' => [
+					'px' => [
+						'max' => 100,
+					],
+				],
+				'default' => [
+					'size' => 5,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-pt-thumb-content p' => 'margin-top: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->end_controls_tab();
+
+		$this->end_controls_tabs();
 
 		$this->end_controls_section();
 		// End Thumb style
@@ -657,6 +763,33 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 
 		$this->end_controls_tabs();
 
+		$this->add_responsive_control(
+			'title_alignment',
+			[
+				'label' => __( 'Alignment', 'sina-ext' ),
+				'type' => Controls_Manager::CHOOSE,
+				'options' => [
+					'left' => [
+						'title' => __( 'Left', 'sina-ext' ),
+						'icon' => 'fa fa-align-left',
+					],
+					'center' => [
+						'title' => __( 'Center', 'sina-ext' ),
+						'icon' => 'fa fa-align-center',
+					],
+					'right' => [
+						'title' => __( 'Right', 'sina-ext' ),
+						'icon' => 'fa fa-align-right',
+					],
+				],
+				'devices' => [ 'desktop', 'tablet', 'mobile' ],
+				'default' => 'left',
+				'selectors' => [
+					'{{WRAPPER}} .sina-pt-title' => 'text-align: {{VALUE}};',
+				],
+			]
+		);
+
 		$this->end_controls_section();
 		// End Title style
 		// ===================
@@ -697,6 +830,24 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 			[
 				'name' => 'meta_shadow',
 				'selector' => '{{WRAPPER}} .sina-pt-title p',
+			]
+		);
+		$this->add_responsive_control(
+			'meta_gap',
+			[
+				'label' => __( 'Gap From Title', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'range' => [
+					'px' => [
+						'max' => 100,
+					],
+				],
+				'default' => [
+					'size' => 5,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-pt-title p' => 'margin-top: {{SIZE}}{{UNIT}};',
+				],
 			]
 		);
 
@@ -750,15 +901,33 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 											$tid = $id.'-'.str_replace(' ', '-', $cat_name).'-'.$tc;
 											?>
 											<?php if ( get_the_post_thumbnail_url() ): ?>
-												<div class="sina-pt-item <?php echo $tc == 0 ? 'active' : ''; ?>" id="<?php echo esc_attr($tid); ?>" style="background-image: url(<?php the_post_thumbnail_url(); ?>); ">
-													<div class="sina-overlay">
-														<a href="<?php the_permalink(); ?>"></a>
+												<div class="sina-pt-item sina-bg-cover <?php echo $tc == 0 ? 'active' : ''; ?>" id="<?php echo esc_attr($tid); ?>" style="background-image: url(<?php the_post_thumbnail_url(); ?>); ">
+													<a class="sina-overlay" href="<?php the_permalink(); ?>"></a>
+													<div class="sina-pt-thumb-content">
+														<h2>
+															<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+														</h2>
+														<?php if ('yes' == $data['tag']): ?>
+															<p>
+																<span class="fa fa-tag"></span>
+																<?php the_tags( '' ); ?>
+															</p>
+														<?php endif; ?>
 													</div>
 												</div>
 											<?php else: ?>
-												<div class="sina-pt-item <?php echo $tc == 0 ? 'active' : ''; ?>" id="<?php echo esc_attr($tid); ?>" style="background-image: url(<?php echo esc_url( SINA_EXT_URL .'assets/img/featured-img.jpg' ); ?>); ">
-													<div class="sina-overlay">
-														<a href="<?php the_permalink(); ?>"></a>
+												<div class="sina-pt-item sina-bg-cover <?php echo $tc == 0 ? 'active' : ''; ?>" id="<?php echo esc_attr($tid); ?>" style="background-image: url(<?php echo esc_url( SINA_EXT_URL .'assets/img/featured-img.jpg' ); ?>); ">
+													<a class="sina-overlay" href="<?php the_permalink(); ?>"></a>
+													<div class="sina-pt-thumb-content">
+														<h2>
+															<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+														</h2>
+														<?php if ('yes' == $data['tag']): ?>
+															<p>
+																<span class="fa fa-tag"></span>
+																<?php the_tags( '' ); ?>
+															</p>
+														<?php endif; ?>
 													</div>
 												</div>
 											<?php endif; ?>
@@ -778,13 +947,13 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 											<div class="sina-pt-post">
 												<?php if ( 'yes' == $data['preview_right'] ): ?>
 													<?php if ( get_the_post_thumbnail_url() ): ?>
-														<div class="sina-pt-thumb" data-sina-pt="#<?php echo esc_attr( $pid ); ?>" style="background-image: url(<?php the_post_thumbnail_url(); ?>)">
+														<div class="sina-pt-thumb sina-bg-cover" data-sina-pt="#<?php echo esc_attr( $pid ); ?>" style="background-image: url(<?php the_post_thumbnail_url(); ?>)">
 														</div>
 													<?php else: ?>
-														<div class="sina-pt-thumb" data-sina-pt="#<?php echo esc_attr( $pid ); ?>" style="background-image: url(<?php echo esc_url( SINA_EXT_URL .'assets/img/featured-img.jpg' ); ?>)">
+														<div class="sina-pt-thumb sina-bg-cover" data-sina-pt="#<?php echo esc_attr( $pid ); ?>" style="background-image: url(<?php echo esc_url( SINA_EXT_URL .'assets/img/featured-img.jpg' ); ?>)">
 														</div>
 													<?php endif; ?>
-													<div class="sina-pt-title-wraper">
+													<div class="sina-pt-title-wraper sina-flex">
 														<div class="sina-pt-title">
 															<h3 data-sina-pt="#<?php echo esc_attr( $pid ); ?>"><?php the_title(); ?></h3>
 															<?php if ('yes' == $data['date']): ?>
@@ -793,7 +962,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 														</div>
 													</div>
 												<?php else: ?>
-													<div class="sina-pt-title-wraper">
+													<div class="sina-pt-title-wraper sina-flex">
 														<div class="sina-pt-title">
 															<h3 data-sina-pt="#<?php echo esc_attr( $pid ); ?>"><?php the_title(); ?></h3>
 															<?php if ('yes' == $data['date']): ?>
@@ -802,10 +971,10 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 														</div>
 													</div>
 													<?php if ( get_the_post_thumbnail_url() ): ?>
-														<div class="sina-pt-thumb" data-sina-pt="#<?php echo esc_attr( $pid ); ?>" style="background-image: url(<?php the_post_thumbnail_url(); ?>)">
+														<div class="sina-pt-thumb sina-bg-cover" data-sina-pt="#<?php echo esc_attr( $pid ); ?>" style="background-image: url(<?php the_post_thumbnail_url(); ?>)">
 														</div>
 													<?php else: ?>
-														<div class="sina-pt-thumb" data-sina-pt="#<?php echo esc_attr( $pid ); ?>" style="background-image: url(<?php echo esc_url( SINA_EXT_URL .'assets/img/featured-img.jpg' ); ?>)">
+														<div class="sina-pt-thumb sina-bg-cover" data-sina-pt="#<?php echo esc_attr( $pid ); ?>" style="background-image: url(<?php echo esc_url( SINA_EXT_URL .'assets/img/featured-img.jpg' ); ?>)">
 														</div>
 													<?php endif; ?>
 												<?php endif ?>

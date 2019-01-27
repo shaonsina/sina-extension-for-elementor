@@ -750,10 +750,10 @@ class Sina_Portfolio_Widget extends Widget_Base {
 				?>
 				<?php if ( $item['image']['url'] ): ?>
 					<div class="sina-portfolio-item <?php echo esc_attr( $category .' '. $size_class ); ?>">
-						<div class="sina-portfolio-item-inner"
+						<div class="sina-portfolio-item-inner sina-bg-cover"
 							style="background-image: url(<?php echo esc_url( $item['image']['url'] ); ?>);">
-							<div class="sina-portfolio-overlay sina-overlay <?php echo esc_attr( $data['effects'] ); ?>">
-								<div class="sina-portfolio-icons">
+							<div class="sina-portfolio-overlay sina-overlay sina-flex <?php echo esc_attr( $data['effects'] ); ?>">
+								<div class="sina-portfolio-icons sina-flex">
 									<a title="<?php echo esc_attr( $item['item_name'] ); ?>" href="#" data-mfp-src="<?php echo esc_url( $item['image']['url'] ); ?>" class="sina-portfolio-zoom">
 										<i class="fa fa-search-plus"></i>
 									</a>

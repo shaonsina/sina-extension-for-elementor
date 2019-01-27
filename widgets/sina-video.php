@@ -240,7 +240,7 @@ class Sina_Video_Widget extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '#eee',
 				'selectors' => [
-					'{{WRAPPER}} .sina-video i' => 'background: {{VALUE}};',
+					'{{WRAPPER}} .sina-video-play' => 'background: {{VALUE}};',
 				],
 			]
 		);
@@ -251,7 +251,7 @@ class Sina_Video_Widget extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '#1085e4',
 				'selectors' => [
-					'{{WRAPPER}} .sina-video i' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .sina-video-play' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -259,14 +259,14 @@ class Sina_Video_Widget extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'icon_shadow',
-				'selector' => '{{WRAPPER}} .sina-video i',
+				'selector' => '{{WRAPPER}} .sina-video-play',
 			]
 		);
 		$this->add_group_control(
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'icon_border',
-				'selector' => '{{WRAPPER}} .sina-video i',
+				'selector' => '{{WRAPPER}} .sina-video-play',
 			]
 		);
 
@@ -286,7 +286,7 @@ class Sina_Video_Widget extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '#1085e4',
 				'selectors' => [
-					'{{WRAPPER}} .sina-video i:hover' => 'background: {{VALUE}};',
+					'{{WRAPPER}} .sina-video-play:hover' => 'background: {{VALUE}};',
 				],
 			]
 		);
@@ -297,7 +297,7 @@ class Sina_Video_Widget extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '#eee',
 				'selectors' => [
-					'{{WRAPPER}} .sina-video i:hover' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .sina-video-play:hover' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -305,7 +305,7 @@ class Sina_Video_Widget extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'icon_hover_shadow',
-				'selector' => '{{WRAPPER}} .sina-video i:hover',
+				'selector' => '{{WRAPPER}} .sina-video-play:hover',
 			]
 		);
 		$this->add_control(
@@ -315,7 +315,7 @@ class Sina_Video_Widget extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .sina-video i:hover' => 'border-color: {{VALUE}}'
+					'{{WRAPPER}} .sina-video-play:hover' => 'border-color: {{VALUE}}'
 				],
 			]
 		);
@@ -336,7 +336,7 @@ class Sina_Video_Widget extends Widget_Base {
 				],
 				'separator' => 'before',
 				'selectors' => [
-					'{{WRAPPER}} .sina-video i' => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .sina-video-play' => 'font-size: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -347,33 +347,7 @@ class Sina_Video_Widget extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
-					'{{WRAPPER}} .sina-video i' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
-		);
-
-		$this->add_responsive_control(
-			'icon_padding',
-			[
-				'label' => __( 'Padding', 'sina-ext' ),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', 'em', '%' ],
-				'range' => [
-					'px' => [
-						'max' => 100,
-						'step' => 1,
-					],
-					'em' => [
-						'max' => 20,
-						'step' => 1,
-					],
-					'%' => [
-						'max' => 100,
-						'step' => 1,
-					],
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-video i' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .sina-video-play' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);

@@ -515,7 +515,7 @@ class Sina_Accordion_Widget extends Widget_Base {
 					$this->add_inline_editing_attributes( $desc_key );
 				?>
 				<div class="sina-accordion-item <?php echo esc_attr( $open_class ); ?>">
-					<h4 class="sina-accordion-header">
+					<h4 class="sina-accordion-header sina-flex">
 						<span <?php echo $this->get_render_attribute_string( $title_key ); ?>>
 							<?php echo esc_html( $item['title'] ); ?>
 						</span>
