@@ -21,7 +21,6 @@ function sina_get_portfolio_cat( $portfolio ) {
 			}
 		}
 	}
-
 	return $category_in;
 }
 
@@ -34,7 +33,6 @@ function sina_get_user_roles() {
 			$roles[ $key ] = $key;
 		}
 	}
-
 	return $roles;
 }
 
@@ -47,10 +45,9 @@ function sina_get_categories(){
 	$options = [];
 	if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
 		foreach ( $terms as $term ) {
-			$options[ $term->term_id ] = $term->name;
+			$options[ $term->name ] = $term->name;
 		}
 	}
-
 	return $options;
 }
 

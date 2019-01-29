@@ -115,11 +115,24 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 		$this->add_control(
 			'categories',
 			[
-				'label' => __( 'Categories', 'sina-ext' ),
-				'type' => Controls_Manager::SELECT2,
-				'multiple' => true,
-				'options' => sina_get_categories(),
-				'default' => [1],
+				'label' => __('Add Categories', 'sina-ext'),
+				'type' => Controls_Manager::REPEATER,
+				'fields' => [
+					[
+						'name' => 'category',
+						'label' => __( 'Select Category', 'sina-ext' ),
+						'type' => Controls_Manager::SELECT,
+						'options' => sina_get_categories(),
+						'default' => 'Uncategorized',
+					],
+				],
+				'default' => [
+					[
+						'title' => __('Uncategorized', 'sina-ext'),
+						'category' => 'Uncategorized',
+					],
+				],
+				'title_field' => '{{{category}}}',
 			]
 		);
 		$this->add_control(
@@ -860,24 +873,21 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 	protected function render() {
 		$data = $this->get_settings_for_display();
 		if ( !empty($data['categories']) ) :
-			$category = implode( ',', $data['categories'] );
 			$id = $this->get_id();
 			?>
 			<div class="sina-posts-tab">
 				<div class="sina-pt-btns">
 					<?php
-						foreach ($data['categories'] as $cat):
-							$cat_name = get_cat_name( $cat );
-							$bid = $id.'-'.str_replace(' ', '-', $cat_name);
+						foreach ($data['categories'] as $cats):
+							$bid = $id.'-'.str_replace(' ', '-', $cats['category']);
 							?>
-							<button class="sina-pt-cat-btn sina-button" data-sina-pt="#<?php echo esc_attr($bid); ?>"><?php echo esc_html( $cat_name ); ?></button>
+							<button class="sina-pt-cat-btn sina-button" data-sina-pt="#<?php echo esc_attr($bid); ?>"><?php echo esc_html( $cats['category'] ); ?></button>
 					<?php endforeach; ?>
 				</div>
 
 				<div class="sina-pt-content">
-					<?php foreach ($data['categories'] as $key => $cat):
-						$cat_name = get_cat_name( $cat );
-						$cid = $id.'-'.str_replace(' ', '-', $cat_name);
+					<?php foreach ($data['categories'] as $key => $cats):
+						$cid = $id.'-'.str_replace(' ', '-', $cats['category']);
 						?>
 						<div class="sina-pt-item <?php echo $key == 0 ? 'active' : ''; ?>" id="<?php echo esc_attr($cid); ?>">
 							<div class="sina-pt-content<?php echo 'yes' == $data['preview_right'] ? '-right' : ''; ?>">
@@ -885,7 +895,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 									<?php
 										$tc = 0;
 										$default	= [
-											'cat'				=> $cat,
+											'category_name'		=> $cats['category'],
 											'orderby'			=> array( $data['order_by'] => $data['sort'] ),
 											'posts_per_page'	=> $data['posts_num'],
 											'has_password'		=> false,
@@ -897,8 +907,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 										$post_query = new WP_Query( $default );
 
 										while ( $post_query->have_posts() ) : $post_query->the_post();
-											$cat_name = get_cat_name( $cat );
-											$tid = $id.'-'.str_replace(' ', '-', $cat_name).'-'.$tc;
+											$tid = $id.'-'.str_replace(' ', '-', $cats['category']).'-'.$tc;
 											?>
 											<?php if ( get_the_post_thumbnail_url() ): ?>
 												<div class="sina-pt-item sina-bg-cover <?php echo $tc == 0 ? 'active' : ''; ?>" id="<?php echo esc_attr($tid); ?>" style="background-image: url(<?php the_post_thumbnail_url(); ?>); ">
@@ -907,7 +916,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 														<h2>
 															<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 														</h2>
-														<?php if ('yes' == $data['tag']): ?>
+														<?php if ('yes' == $data['tag'] && get_the_tags()): ?>
 															<p>
 																<span class="fa fa-tag"></span>
 																<?php the_tags( '' ); ?>
@@ -922,7 +931,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 														<h2>
 															<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 														</h2>
-														<?php if ('yes' == $data['tag']): ?>
+														<?php if ('yes' == $data['tag'] && get_the_tags()): ?>
 															<p>
 																<span class="fa fa-tag"></span>
 																<?php the_tags( '' ); ?>
@@ -941,8 +950,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 									<?php
 										$pc = 0;
 										while ( $post_query->have_posts() ) : $post_query->the_post();
-											$cat_name = get_cat_name( $cat );
-											$pid = $id.'-'.str_replace(' ', '-', $cat_name).'-'.$pc;
+											$pid = $id.'-'.str_replace(' ', '-', $cats['category']).'-'.$pc;
 											?>
 											<div class="sina-pt-post">
 												<?php if ( 'yes' == $data['preview_right'] ): ?>

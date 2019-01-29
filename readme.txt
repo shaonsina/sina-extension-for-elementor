@@ -4,7 +4,7 @@ Tags: addon, elementor, elementor addon, elementor extension, extension, page bu
 Requires at least: 4.0
 Tested up to: 5.0
 Requires PHP: 5.6
-Stable tag: 1.2.0
+Stable tag: 1.2.1
 License: GPLv3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -81,6 +81,10 @@ Yes. It's totally free.
 
 
 == Changelog ==
+
+= 1.2.1 - 29-01-2019 =
+- Added: Category sorting functionality added to Posts Tab
+- Improved
 
 = 1.2.0 - 27-01-2019 =
 - New: Posts Tab

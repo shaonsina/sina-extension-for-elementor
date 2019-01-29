@@ -99,18 +99,6 @@ class Sina_Search_Form_Widget extends Widget_Base {
 		);
 
 		$this->add_control(
-			'display',
-			[
-				'label' => __( 'Display', 'sina-ext' ),
-				'type' => Controls_Manager::SELECT,
-				'options' => [
-					'inline-block' => __( 'Inline', 'sina-ext' ),
-					'block' => __( 'Block', 'sina-ext' ),
-				],
-				'default' => 'inline-block',
-			]
-		);
-		$this->add_control(
 			'placeholder',
 			[
 				'label' => __( 'Placeholder text', 'sina-ext' ),
@@ -292,8 +280,37 @@ class Sina_Search_Form_Widget extends Widget_Base {
 				'label' => __( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
+				'separator' => 'before',
 				'selectors' => [
 					'{{WRAPPER}} .sina-search-box .sina-input-field' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'field_width',
+			[
+				'label' => __( 'Width', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', 'em', '%' ],
+				'range' => [
+					'px' => [
+						'min' => 100,
+						'max' => 1000,
+						'step' => 1,
+					],
+					'em' => [
+						'min' => 10,
+						'max' => 30,
+						'step' => 1,
+					],
+					'%' => [
+						'min' => 5,
+						'max' => 100,
+						'step' => 1,
+					],
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-search-box .sina-input-field' => 'width: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -317,7 +334,6 @@ class Sina_Search_Form_Widget extends Widget_Base {
 						'step' => 1,
 					],
 				],
-				'separator' => 'before',
 				'selectors' => [
 					'{{WRAPPER}} .sina-search-box .sina-input-field' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
@@ -583,11 +599,10 @@ class Sina_Search_Form_Widget extends Widget_Base {
 
 	protected function render() {
 		$data = $this->get_settings_for_display();
-		$display_class = ('block' == $data['display']) ? 'sina-input-block' : '';
 		?>
 		<div class="sina-search-form">
 			<form class="sina-search-box" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-				<input type="search" class="sina-input-field <?php echo esc_attr( $display_class ); ?>" placeholder="<?php echo esc_attr( $data['placeholder'] ); ?>" value="<?php get_search_query(); ?>" name="<?php echo esc_attr( 's' ) ?>">
+				<input type="search" class="sina-input-field" placeholder="<?php echo esc_attr( $data['placeholder'] ); ?>" value="<?php get_search_query(); ?>" name="<?php echo esc_attr( 's' ) ?>">
 
 				<button type="submit" class="sina-button sina-search-btn">
 					<?php echo esc_html( $data['btn_text'] ); ?>
@@ -604,12 +619,9 @@ class Sina_Search_Form_Widget extends Widget_Base {
 
 	protected function _content_template() {
 		?>
-		<#
-		var displayClass = ('block' == settings.display) ? 'sina-input-block' : '';
-		#>
 		<div class="sina-search-form">
 			<form class="sina-search-box" action="">
-				<input type="search" class="sina-input-field {{{displayClass}}}" placeholder="{{{settings.placeholder}}}">
+				<input type="search" class="sina-input-field" placeholder="{{{settings.placeholder}}}">
 
 				<button type="submit" class="sina-button sina-search-btn">
 					{{{settings.btn_text}}}

@@ -338,7 +338,7 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 		$category	= !empty($data['categories']) ? implode( ',', $data['categories'] ) : '';
 		$args = [
 			'posts_per_page'	=> $data['posts_num'],
-			'cat'				=> $category,
+			'category_name'		=> $category,
 			'has_password'		=> false,
 			'post_status'		=> 'publish',
 		];
@@ -353,20 +353,22 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 			<?php endif; ?>
 
 			<div class="sina-news-wrapper">
-				<?php if ( $post_query->have_posts() ) : ?>
-					<div class="sina-news-container">
-						<div class="sina-news-content">
+				<div class="sina-news-container">
+					<div class="sina-news-content">
+						<?php if ( $post_query->have_posts() ) : ?>
 							<?php while ( $post_query->have_posts() ) : $post_query->the_post(); ?>
 								<div class="sina-news">
 									<a href="<?php the_permalink(); ?>"><span><?php the_time(); ?></span> <?php the_title(); ?></a>
 								</div>
 							<?php endwhile; ?>
 							<?php wp_reset_query(); ?>
-						</div>
+						<?php else: ?>
+							<div class="sina-news">
+								<a><?php _e($data['label_text']. ' not published yet', 'sina-ext'); ?></a>
+							</div>
+						<?php endif; ?>
 					</div>
-				<?php else: ?>
-					<?php _e('News not published yet', 'sina-ext'); ?>
-				<?php endif; ?>
+				</div>
 			</div>
 
 			<?php if ( 'both' == $data['label_position'] ): ?>
