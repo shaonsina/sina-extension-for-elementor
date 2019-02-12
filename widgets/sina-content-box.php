@@ -240,7 +240,7 @@ class Sina_Content_Box_Widget extends Widget_Base {
 			]
 		);
 		$this->add_control(
-			'translate',
+			'translateY',
 			[
 				'label' => __( 'Vertical', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
@@ -257,8 +257,22 @@ class Sina_Content_Box_Widget extends Widget_Base {
 				'condition' => [
 					'effects' => 'sina-content-box-move',
 				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-content-box.sina-content-box-move:hover' => 'transform: translate(0, {{SIZE}}{{UNIT}});',
+			]
+		);
+		$this->add_control(
+			'translateX',
+			[
+				'label' => __( 'Horizontal', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'range' => [
+					'px' => [
+						'step' => 1,
+						'min' => -100,
+						'max' => 100,
+					],
+				],
+				'condition' => [
+					'effects' => 'sina-content-box-move',
 				],
 			]
 		);
@@ -740,14 +754,22 @@ class Sina_Content_Box_Widget extends Widget_Base {
 
 	protected function render() {
 		$data = $this->get_settings_for_display();
-
 		$this->add_render_attribute( 'title', 'class', 'sina-content-box-title' );
 		$this->add_inline_editing_attributes( 'title' );
 
 		$this->add_render_attribute( 'desc', 'class', 'sina-content-box-desc' );
 		$this->add_inline_editing_attributes( 'desc' );
-		?>
-		<div class="sina-content-box <?php echo esc_attr( $data['effects'] ); ?>">
+
+		if ( 'sina-content-box-move' == $data['effects'] ):
+			?>
+			<style type="text/css">
+				[data-id="<?php echo $this->get_id(); ?>"] .sina-content-box:hover{
+					transform: translate(<?php echo esc_html( $data['translateX']['size'].'px' ); ?>, <?php echo esc_html( $data['translateY']['size'].'px' ); ?>);
+				}
+			</style>
+		<?php endif; ?>
+
+		<div class="sina-content-box <?php echo esc_attr( $data['effects'] ); ?>" style="">
 			<?php if ( $data['ribbon_title'] && $data['ribbon_position'] ): ?>
 				<div class="<?php echo esc_attr( $data['ribbon_position'] ); ?>">
 					<?php echo esc_html( $data['ribbon_title'] ); ?>

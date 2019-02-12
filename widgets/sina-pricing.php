@@ -309,9 +309,9 @@ class Sina_Pricing_Widget extends Widget_Base {
 			]
 		);
 		$this->add_control(
-			'translate',
+			'translateY',
 			[
-				'label' => __( 'Translate', 'sina-ext' ),
+				'label' => __( 'Vertical', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -326,8 +326,25 @@ class Sina_Pricing_Widget extends Widget_Base {
 				'condition' => [
 					'effects' => 'sina-pricing-move',
 				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-pricing.sina-pricing-move:hover' => 'transform: translate(0, {{SIZE}}{{UNIT}});',
+			]
+		);
+		$this->add_control(
+			'translateX',
+			[
+				'label' => __( 'Horizontal', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'range' => [
+					'px' => [
+						'step' => 1,
+						'min' => -100,
+						'max' => 100,
+					],
+				],
+				'default' => [
+					'px' => '10',
+				],
+				'condition' => [
+					'effects' => 'sina-pricing-move',
 				],
 			]
 		);
@@ -959,7 +976,15 @@ class Sina_Pricing_Widget extends Widget_Base {
 
 	protected function render() {
 		$data = $this->get_settings_for_display();
-		?>
+		if ( 'sina-pricing-move' == $data['effects'] ):
+			?>
+			<style type="text/css">
+				[data-id="<?php echo $this->get_id(); ?>"] .sina-pricing:hover{
+					transform: translate(<?php echo esc_html( $data['translateX']['size'].'px' ); ?>, <?php echo esc_html( $data['translateY']['size'].'px' ); ?>);
+				}
+			</style>
+		<?php endif; ?>
+
 		<div class="sina-pricing <?php echo esc_attr( $data['effects'] ); ?>">
 			<?php if ( $data['ribbon_title'] && $data['ribbon_position'] ): ?>
 				<div class="<?php echo esc_attr( $data['ribbon_position'] ); ?>">
@@ -1024,6 +1049,13 @@ class Sina_Pricing_Widget extends Widget_Base {
 
 	protected function _content_template() {
 		?>
+		<# if ( 'sina-pricing-move' == settings.effects ) { #>
+			<style type="text/css">
+				[data-id="{{{view.getID()}}}"] .sina-pricing:hover{
+					transform: translate( {{{settings.translateX.size +'px'}}}, {{{settings.translateY.size + 'px'}}} );
+				}
+			</style>
+		<# } #>
 		<div class="sina-pricing {{{settings.effects}}}">
 			<# if ( settings.ribbon_title && settings.ribbon_position ) { #>
 				<div class="{{{settings.ribbon_position}}}">
