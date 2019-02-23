@@ -2,7 +2,7 @@
 Contributors: shaonsina
 Tags: addon, elementor, elementor addon, elementor extension, extension, page builder, builder, elementor builder, elementor contact form, elementor widget, best elementor addon, best elementor extension
 Requires at least: 4.0
-Tested up to: 5.0
+Tested up to: 5.1
 Requires PHP: 5.6
 Stable tag: 1.2.1
 License: GPLv3
@@ -13,7 +13,7 @@ A collection of high-quality widgets for Elementor page builder.
 
 == Description ==
 
-This is an extension for Elementor (https://wordpress.org/plugins/elementor/) page builder. It will extend the Elementor and increase web page building experience. It has 24 useful high-quality widgets. Which you may use for easy & fast make the page & display your content far better way.
+This is an extension for Elementor (https://wordpress.org/plugins/elementor/) page builder. It will extend the Elementor and increase web page building experience. It has 26 useful high-quality widgets. Which you may use for easy & fast make the page & display your content far better way.
 
 
 Basic use of Blogpost
