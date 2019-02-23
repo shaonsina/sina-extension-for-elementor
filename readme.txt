@@ -2,7 +2,7 @@
 Contributors: shaonsina
 Tags: addon, elementor, elementor addon, elementor extension, extension, page builder, builder, elementor builder, elementor contact form, elementor widget, best elementor addon, best elementor extension
 Requires at least: 4.0
-Tested up to: 5.0
+Tested up to: 5.1
 Requires PHP: 5.6
 Stable tag: 1.2.1
 License: GPLv3

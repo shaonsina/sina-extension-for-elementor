@@ -276,7 +276,7 @@ final class Sina_Extension {
 		wp_enqueue_style( 'owl-carousel', SINA_EXT_URL .'assets/css/owl.carousel.min.css', [], '2.3.4' );
 		wp_enqueue_style( 'magnific-popup', SINA_EXT_URL .'assets/css/magnific-popup.css', [], '1.1.0' );
 		wp_enqueue_style( 'xzoom', SINA_EXT_URL .'assets/css/xzoom.min.css', [], '1.0.14' );
-		wp_enqueue_style( 'sina-widgets', SINA_EXT_URL .'assets/css/sina-widgets.min.css', [], SINA_EXT_VERSION );
+		wp_enqueue_style( 'sina-widgets', SINA_EXT_URL .'assets/css/sina-widgets.css', [], SINA_EXT_VERSION );
 	}
 
 	/**
@@ -303,7 +303,7 @@ final class Sina_Extension {
 		if ( $apikey ) {
 			wp_register_script( 'sina-google-map', '//maps.google.com/maps/api/js?key='. $apikey, [], SINA_EXT_VERSION, true );
 		}
-		wp_register_script( 'sina-widgets', SINA_EXT_URL .'assets/js/sina-widgets.min.js', ['jquery'], SINA_EXT_VERSION, true );
+		wp_register_script( 'sina-widgets', SINA_EXT_URL .'assets/js/sina-widgets.js', ['jquery'], SINA_EXT_VERSION, true );
 		wp_localize_script( 'sina-widgets', 'sinaAjax', ['ajaxURL' => $ajax_url] );
 	}
 
@@ -320,6 +320,7 @@ final class Sina_Extension {
 		require_once( SINA_EXT_DIR .'/widgets/sina-brand-carousel.php' );
 		require_once( SINA_EXT_DIR .'/widgets/sina-contact-form.php' );
 		require_once( SINA_EXT_DIR .'/widgets/sina-content-box.php' );
+		require_once( SINA_EXT_DIR .'/widgets/sina-content-slider.php' );
 		require_once( SINA_EXT_DIR .'/widgets/sina-countdown.php' );
 		require_once( SINA_EXT_DIR .'/widgets/sina-counter.php' );
 		require_once( SINA_EXT_DIR .'/widgets/sina-fancytext.php' );
@@ -348,6 +349,7 @@ final class Sina_Extension {
 		$widgets_manager->register_widget_type( new Sina_Brand_Carousel_Widget() );
 		$widgets_manager->register_widget_type( new Sina_Contact_Form_Widget() );
 		$widgets_manager->register_widget_type( new Sina_Content_Box_Widget() );
+		$widgets_manager->register_widget_type( new Sina_Content_Slider_Widget() );
 		$widgets_manager->register_widget_type( new Sina_Countdown_Widget() );
 		$widgets_manager->register_widget_type( new Sina_Counter_Widget() );
 		$widgets_manager->register_widget_type( new Sina_Fancytext_Widget() );
