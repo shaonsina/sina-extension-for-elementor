@@ -93,7 +93,6 @@ Yes. It's totally free.
 
 = 1.1.1 - 03-01-2019 =
 - Added: order & sorting functionality added to Blog post
-- Added: Contact Form button width added
 - Added: Image functionality added to Pricing
 - Added: Ribbon functionality added to Pricing
 - Added: Ribbon functionality added to Content Box
