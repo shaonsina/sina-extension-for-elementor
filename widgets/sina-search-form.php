@@ -275,18 +275,6 @@ class Sina_Search_Form_Widget extends Widget_Base {
 		$this->end_controls_tabs();
 
 		$this->add_responsive_control(
-			'field_radius',
-			[
-				'label' => __( 'Radius', 'sina-ext' ),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', 'em', '%' ],
-				'separator' => 'before',
-				'selectors' => [
-					'{{WRAPPER}} .sina-search-box .sina-input-field' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
-		);
-		$this->add_responsive_control(
 			'field_width',
 			[
 				'label' => __( 'Width', 'sina-ext' ),
@@ -309,8 +297,20 @@ class Sina_Search_Form_Widget extends Widget_Base {
 						'step' => 1,
 					],
 				],
+				'separator' => 'before',
 				'selectors' => [
 					'{{WRAPPER}} .sina-search-box .sina-input-field' => 'width: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'field_radius',
+			[
+				'label' => __( 'Radius', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'selectors' => [
+					'{{WRAPPER}} .sina-search-box .sina-input-field' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
