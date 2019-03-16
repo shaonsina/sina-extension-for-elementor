@@ -4,7 +4,7 @@ Tags: addon, elementor, elementor addon, elementor extension, extension, page bu
 Requires at least: 4.0
 Tested up to: 5.1
 Requires PHP: 5.6
-Stable tag: 1.2.1
+Stable tag: 1.2.2
 License: GPLv3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -82,6 +82,9 @@ Yes. It's totally free.
 
 == Changelog ==
 
+= 1.2.2 - 16-03-2019 =
+- Some minor issue fixed
+
 = 1.2.1 - 29-01-2019 =
 - Added: Category sorting functionality added to Posts Tab
 - Improved
@@ -93,6 +96,7 @@ Yes. It's totally free.
 
 = 1.1.1 - 03-01-2019 =
 - Added: order & sorting functionality added to Blog post
+- Added: Contact Form button width added
 - Added: Image functionality added to Pricing
 - Added: Ribbon functionality added to Pricing
 - Added: Ribbon functionality added to Content Box
@@ -104,7 +108,7 @@ Yes. It's totally free.
 - Improved
 
 = 1.0.3 - 03-12-2018 =
-- some issue fixed
+- Some minor issue fixed
 
 = 1.0.2 - 30-11-2018 =
 - Icon box has been changed to content box

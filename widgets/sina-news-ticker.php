@@ -87,7 +87,6 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 	 */
 	public function get_script_depends() {
 		return [
-			'news-ticker',
 			'sina-widgets',
 		];
 	}

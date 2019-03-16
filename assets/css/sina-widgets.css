@@ -1,4 +1,4 @@
-/* Sina Extension for Elementor v1.2.1 */
+/* Sina Extension for Elementor v1.2.2 */
 
 /*--------------------------------- General -------------------------------------- */
 .sina-input-field,
@@ -119,8 +119,7 @@ img.mfp-img{
 }
 .sina-accordion-item .sina-accordion-header,
 .sina-accordion-title,
-.sina-accordion-icon .on,
-.sina-accordion-icon .off {
+.sina-accordion-icon{
 	font-size: 18px;
 	line-height: 24px;
 }

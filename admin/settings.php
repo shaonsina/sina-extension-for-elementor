@@ -33,6 +33,9 @@ function sina_page_content() {
 		settings_fields( 'sina_settings_group' );
 		submit_button();
 	?>
+		<div>
+		    <p>Did you like <strong><i>Sina Extension</i></strong> Plugin? Please <a href="https://wordpress.org/support/plugin/sina-extension-for-elementor/reviews/#new-post" target="_blank">Click Here to Rate it ★★★★★</a></p>
+		</div>
 	</form>
 	<?php
 }

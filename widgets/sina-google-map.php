@@ -115,7 +115,7 @@ class Sina_Google_Map_Widget extends Widget_Base {
 		$this->add_control(
 			'map_api_url',
 			[
-				'label' => 'If you want to change API key <a target="_blank" href="admin.php?page=sina_ext_settings">click here</a>',
+				'label' => 'If you would like to change the API key <a target="_blank" href="admin.php?page=sina_ext_settings">click here</a>',
 				'type' => Controls_Manager::RAW_HTML,
 				'separator' => 'after',
 			]

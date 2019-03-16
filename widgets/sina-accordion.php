@@ -384,7 +384,24 @@ class Sina_Accordion_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'title_typography',
-				'selector' => '{{WRAPPER}} .sina-accordion-title, {{WRAPPER}} .sina-accordion-icon .on, {{WRAPPER}} .sina-accordion-icon .off',
+				'selector' => '{{WRAPPER}} .sina-accordion-title, {{WRAPPER}} .sina-accordion-icon',
+				'fields_options' => [
+					'font_weight' => [
+						'default' => '600',
+					],
+					'font_size'   => [
+						'default' => [
+							'unit' => 'px',
+							'size' => 18,
+						],
+					],
+					'line_height'   => [
+						'default' => [
+							'unit' => 'px',
+							'size' => 24,
+						],
+					],
+				],
 			]
 		);
 		$this->add_group_control(
