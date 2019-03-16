@@ -3,7 +3,7 @@
  * Plugin Name: Sina Extension for Elementor
  * Plugin URI: https://github.com/shaonsina/sina-extension-for-elementor.git
  * Description: A collection of high-quality widgets for Elementor page builder.
- * Version: 1.2.2
+ * Version: 1.2.3
  * Author: shaonsina
  * Author URI: https://github.com/shaonsina
  * Text Domain: sina-ext
@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 
-define('SINA_EXT_VERSION', '1.2.2');
+define('SINA_EXT_VERSION', '1.2.3');
 define('SINA_EXT_URL', plugins_url('/', __FILE__));
 define('SINA_EXT_DIR', __DIR__);
 define('SINA_EXT_BASENAME', plugin_basename( __FILE__ ));
@@ -319,7 +319,6 @@ final class Sina_Extension {
 		require_once( SINA_EXT_DIR .'/widgets/sina-brand-carousel.php' );
 		require_once( SINA_EXT_DIR .'/widgets/sina-contact-form.php' );
 		require_once( SINA_EXT_DIR .'/widgets/sina-content-box.php' );
-		require_once( SINA_EXT_DIR .'/widgets/sina-content-slider.php' );
 		require_once( SINA_EXT_DIR .'/widgets/sina-countdown.php' );
 		require_once( SINA_EXT_DIR .'/widgets/sina-counter.php' );
 		require_once( SINA_EXT_DIR .'/widgets/sina-fancytext.php' );
@@ -348,7 +347,6 @@ final class Sina_Extension {
 		$widgets_manager->register_widget_type( new Sina_Brand_Carousel_Widget() );
 		$widgets_manager->register_widget_type( new Sina_Contact_Form_Widget() );
 		$widgets_manager->register_widget_type( new Sina_Content_Box_Widget() );
-		$widgets_manager->register_widget_type( new Sina_Content_Slider_Widget() );
 		$widgets_manager->register_widget_type( new Sina_Countdown_Widget() );
 		$widgets_manager->register_widget_type( new Sina_Counter_Widget() );
 		$widgets_manager->register_widget_type( new Sina_Fancytext_Widget() );
