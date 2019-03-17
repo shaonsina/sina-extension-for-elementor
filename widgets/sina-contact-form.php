@@ -929,12 +929,11 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 		$data = $this->get_settings_for_display();
 		?>
 		<div class="sina-form">
-			<form class="sina-contact-form">
-				<?php wp_nonce_field( 'sina_contact', 'sina_contact_nonce' ); ?>
-
+			<form class="sina-contact-form"
+			data-uid="<?php echo esc_attr( $this->get_id() ); ?>">
 				<?php if ( 'layout1' == $data['form_layout'] ) : ?>
 					<div class="sina-contact-input">
-						<input class="sina-input-field sina-input-name" type="name" name="name" placeholder="<?php echo esc_attr( $data['name_placeholder'] ); ?>" >
+						<input class="sina-input-field sina-input-name" type="text" name="text" placeholder="<?php echo esc_attr( $data['name_placeholder'] ); ?>" >
 						<input class="sina-input-field sina-input-email" type="email" name="email" placeholder="<?php echo esc_attr( $data['email_placeholder'] ); ?>" >
 						<input class="sina-input-field sina-input-subject" type="text" name="subject" placeholder="<?php echo esc_attr( $data['sub_placeholder'] ); ?>" >
 						<textarea class="sina-input-field sina-input-block sina-input-message" placeholder="<?php echo esc_attr( $data['msg_placeholder'] ); ?>"></textarea>
@@ -950,14 +949,14 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 							<?php endif ?>
 						</button>
 					</div>
-					<h5 class="sina-contact-success"></h5>
-					<h5 class="sina-contact-error"></h5>
+					<p class="sina-contact-success"></p>
+					<p class="sina-contact-error"></p>
 					<p class="sina-contact-process"><?php _e( 'Processing...', 'sina-ext' ); ?></p>
 				<?php else : ?>
 					<div class="sina-contact-input">
 						<div class="sina-contact-input-half">
 							<input class="sina-input-field sina-input-block sina-input-name" type="text" name="name" placeholder="<?php echo esc_attr( $data['name_placeholder'] ); ?>" >
-							<input class="sina-input-field sina-input-block sina-input-email" type="text" name="email" placeholder="<?php echo esc_attr( $data['email_placeholder'] ); ?>" >
+							<input class="sina-input-field sina-input-block sina-input-email" type="email" name="email" placeholder="<?php echo esc_attr( $data['email_placeholder'] ); ?>" >
 							<input class="sina-input-field sina-input-block sina-input-subject" type="text" name="subject" placeholder="<?php echo esc_attr( $data['sub_placeholder'] ); ?>" >
 						</div>
 						<div class="sina-contact-input-half">
@@ -977,10 +976,12 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 							<?php endif ?>
 						</button>
 					</div>
-					<h5 class="sina-contact-success"></h5>
-					<h5 class="sina-contact-error"></h5>
+					<p class="sina-contact-success"></p>
+					<p class="sina-contact-error"></p>
 					<p class="sina-contact-process"><?php _e( 'Processing...', 'sina-ext' ); ?></p>
 				<?php endif; ?>
+
+				<?php wp_nonce_field( 'sina_contact', 'sina_contact_nonce'.$this->get_id() ); ?>
 			</form><!-- .sina-contact-form -->
 		</div><!-- .sina-form -->
 		<?php

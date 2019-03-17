@@ -438,7 +438,7 @@ class Sina_Product_Zoomer_Widget extends Widget_Base {
 			</h2>
 			<p class="sina-product-desc"><?php echo esc_html( $data['desc'] ); ?></p>
 
-			<img class="xzoom" src="<?php echo esc_url( $data['product_imgs'][0]['preview_image']['url'] ); ?>" xoriginal="<?php echo esc_url( $data['product_imgs'][0]['original_image']['url'] ); ?>" />
+			<img class="xzoom" src="<?php echo esc_url( $data['product_imgs'][0]['preview_image']['url'] ); ?>" data-xoriginal="<?php echo esc_url( $data['product_imgs'][0]['original_image']['url'] ); ?>" alt="<?php echo esc_attr( $data['title'] ) ?>">
 
 			<?php if ( 'yes' == $data['thumbs'] ): ?>
 				<div class="xzoom-thumbs">
@@ -449,7 +449,7 @@ class Sina_Product_Zoomer_Widget extends Widget_Base {
 							<?php if ( $img['preview_image']['url'] && $img['thumb_image']['url']): ?>
 								<img class="xzoom-gallery"
 								src="<?php echo esc_url( $img['thumb_image']['url'] ); ?>"
-								xpreview="<?php echo esc_url( $img['preview_image']['url'] ); ?>">
+								data-xpreview="<?php echo esc_url( $img['preview_image']['url'] ); ?>"  alt="<?php echo esc_attr( $data['title'] ) ?>">
 							<?php endif; ?>
 						</div>
 					<?php endforeach; ?>

@@ -1107,8 +1107,8 @@ class Sina_MC_Subscribe_Widget extends Widget_Base {
 						</button>
 					<?php endif; ?>
 				</div>
-				<h5 class="sina-subs-success"></h5>
-				<h5 class="sina-subs-error"></h5>
+				<p class="sina-subs-success"></p>
+				<p class="sina-subs-error"></p>
 				<p class="sina-subs-process"><?php _e( 'Processing...', 'sina-ext' ); ?></p>
 			</form><!-- .sina-subs-form -->
 		</div><!-- .sina-form -->
@@ -1153,8 +1153,8 @@ class Sina_MC_Subscribe_Widget extends Widget_Base {
 						</button>
 					<# } #>
 				</div>
-				<h5 class="sina-subs-success"></h5>
-				<h5 class="sina-subs-error"></h5>
+				<p class="sina-subs-success"></p>
+				<p class="sina-subs-error"></p>
 				<p class="sina-subs-process"><?php _e( 'Processing...', 'sina-ext' ); ?></p>
 			</form>
 		</div>

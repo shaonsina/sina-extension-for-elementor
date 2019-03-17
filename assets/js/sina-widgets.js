@@ -128,7 +128,8 @@
 				});
 			});
 
-			var columns = $this.data('columns'),
+			var uid = $this.data('uid'),
+				columns = $this.data('columns'),
 				categories = $this.data('categories'),
 				postsNum = $this.data('posts-num'),
 				totalPosts = $this.data('total-posts'),
@@ -136,7 +137,7 @@
 				excerpt = $this.data('excerpt'),
 				postsMeta = $this.data('posts-meta'),
 				contentLength = $this.data('content-length'),
-				nonce = $this.find('#sina_load_more_posts'),
+				nonce = $this.find('#sina_load_more_posts'+uid),
 				loadMore = $this.find('.sina-load-more'),
 				btn = loadMore.children('.sina-load-more-btn'),
 				btnText = btn.html();
@@ -229,7 +230,8 @@
 	function sinaContactForm($scope, $) {
 		$scope.find('.sina-contact-form').each(function () {
 			var $this = $(this),
-				$nonce = $this.children('#sina_contact_nonce'),
+				$uid = $this.data('uid'),
+				$nonce = $this.children('#sina_contact_nonce'+$uid),
 				$success = $this.children('.sina-contact-success'),
 				$error = $this.children('.sina-contact-error'),
 				$process = $this.children('.sina-contact-process'),

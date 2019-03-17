@@ -994,7 +994,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 
 			<?php if ( 'yes' == $data['thumbs'] && 'top' == $data['img_position'] ): ?>
 				<div class="sina-pricing-img">
-					<img src="<?php echo esc_url( $data['image']['url'] ); ?>">
+					<img src="<?php echo esc_url( $data['image']['url'] ); ?>" alt="<?php echo esc_attr( $data['title'] ) ?>">
 				</div>
 			<?php endif; ?>
 
@@ -1006,7 +1006,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 
 			<?php if ( 'yes' == $data['thumbs'] && 'middle' == $data['img_position'] ): ?>
 				<div class="sina-pricing-img">
-					<img src="<?php echo esc_url( $data['image']['url'] ); ?>">
+					<img src="<?php echo esc_url( $data['image']['url'] ); ?>" alt="<?php echo esc_attr( $data['title'] ) ?>">
 				</div>
 			<?php endif; ?>
 
@@ -1018,7 +1018,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 
 			<?php if ( 'yes' == $data['thumbs'] && 'bottom' == $data['img_position'] ): ?>
 				<div class="sina-pricing-img">
-					<img src="<?php echo esc_url( $data['image']['url'] ); ?>">
+					<img src="<?php echo esc_url( $data['image']['url'] ); ?>" alt="<?php echo esc_attr( $data['title'] ) ?>">
 				</div>
 			<?php endif; ?>
 
@@ -1065,7 +1065,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 
 			<# if ( 'yes' == settings.thumbs && 'top' == settings.img_position ) { #>
 				<div class="sina-pricing-img">
-					<img src="{{{settings.image.url}}}">
+					<img src="{{{settings.image.url}}}" alt="{{{settings.title}}}">
 				</div>
 			<# } #>
 
@@ -1077,7 +1077,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 
 			<# if ( 'yes' == settings.thumbs && 'middle' == settings.img_position ) { #>
 				<div class="sina-pricing-img">
-					<img src="{{{settings.image.url}}}">
+					<img src="{{{settings.image.url}}}" alt="{{{settings.title}}}">
 				</div>
 			<# } #>
 
@@ -1089,7 +1089,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 
 			<# if ( 'yes' == settings.thumbs && 'bottom' == settings.img_position ) { #>
 				<div class="sina-pricing-img">
-					<img src="{{{settings.image.url}}}">
+					<img src="{{{settings.image.url}}}" alt="{{{settings.title}}}">
 				</div>
 			<# } #>
 

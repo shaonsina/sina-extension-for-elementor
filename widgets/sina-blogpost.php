@@ -1038,6 +1038,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 		if ( $post_query->have_posts() ) :
 			?>
 			<div class="sina-blogpost <?php echo esc_attr( 'sina-bp-'.$this->get_id() ); ?>"
+			data-uid="<?php echo esc_attr( $this->get_id() ); ?>"
 			data-columns="<?php echo esc_attr( $data['columns'] ); ?>"
 			data-categories="<?php echo esc_attr( $category ); ?>"
 			data-posts-num="<?php echo esc_attr( $data['posts_num'] ); ?>"
@@ -1107,7 +1108,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 						?>
 					</div>
 				<?php endif; ?>
-				<?php wp_nonce_field( 'sina_load_more_posts', 'sina_load_more_posts' ); ?>
+				<?php wp_nonce_field( 'sina_load_more_posts', 'sina_load_more_posts'.$this->get_id() ); ?>
 			</div><!-- .sina-blogpost -->
 			<?php
 		else:

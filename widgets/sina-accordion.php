@@ -536,10 +536,10 @@ class Sina_Accordion_Widget extends Widget_Base {
 						<span <?php echo $this->get_render_attribute_string( $title_key ); ?>>
 							<?php echo esc_html( $item['title'] ); ?>
 						</span>
-						<div class="sina-accordion-icon">
+						<span class="sina-accordion-icon">
 							<i class="<?php echo esc_attr( $data['icon']); ?> off"></i>
 							<i class="<?php echo esc_attr( $data['active_icon']); ?> on"></i>
-						</div>
+						</span>
 					</h4>
 					<div class="sina-accordion-body">
 						<?php
