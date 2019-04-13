@@ -1,4 +1,11 @@
 <?php
+function sina_admin_enqueue( $hook ) {
+	if ( 'elementor_page_sina_ext_settings' == $hook ) {
+		wp_enqueue_style( 'sina-admin-style', SINA_EXT_URL .'admin/assets/css/sina-admin.css', [], SINA_EXT_VERSION );
+	}
+}
+add_action( 'admin_enqueue_scripts', 'sina_admin_enqueue' );
+
 function sina_add_submenu() {
 	add_submenu_page(
 		'elementor',
@@ -16,23 +23,47 @@ add_action( 'admin_menu', 'sina_add_submenu', 550 );
 
 function sina_settings_group() {
 	register_setting( 'sina_settings_group', 'sina_map_apikey' );
+	register_setting( 'sina_widgets_group', 'sina_widgets' );
 
-	add_settings_section( 'sina_ext_section', '', '', 'sina_ext_settings' );
+	add_settings_section( 'sina_api_section', '', '', 'sina_ext_settings' );
+	add_settings_field( 'sina_google_map_key', __('Google Map API Key', 'sina-ext'), 'sina_map_api_key', 'sina_ext_settings', 'sina_api_section' );
 
-	add_settings_field( 'sina_google_map_key', __('Google Map API Key', 'sina-ext'), 'sina_map_api_key', 'sina_ext_settings', 'sina_ext_section' );
+	foreach ( SINA_WIDGETS as $cat => $widgets ) {
+		$section = 'sina_'.$cat.'_widgets_section';
+		$page = 'sina_widgets_'.$cat;
+		add_settings_section( $section, '', '', $page );
+
+		foreach ($widgets as $widget => $status) {
+			add_settings_field( 'sina_'.str_replace('-', '_', $widget), __('Sina '. ucwords( str_replace('-', ' ', $widget) ), 'sina-ext'), 'sina_widgets_ac_dc', $page, $section, ['widget' => $widget, 'cat' => $cat]  );
+		}
+	}
 }
 
 function sina_page_content() {
 	?>
-	<h1><?php echo esc_html( 'Sina Extension Settings' ); ?></h1>
+	<h1><?php echo __( 'Sina Extension Settings', 'sina-ext' ); ?></h1>
 	<p><?php _e('Thank you for using <strong><i>Sina Extension</i></strong>. This plugin has been developed by <a href="https://github.com/shaonsina" target="_blank">shaonsina</a> and I hope you enjoy using it.', 'sina-ext'); ?></p>
+	<h2><?php echo __( 'API Settings', 'sina-ext' ); ?></h2>
 	<form action="options.php" method="POST">
-	<?php
-		settings_errors();
-		do_settings_sections( 'sina_ext_settings' );
-		settings_fields( 'sina_settings_group' );
-		submit_button();
-	?>
+		<?php
+			settings_errors();
+			do_settings_sections( 'sina_ext_settings' );
+			settings_fields( 'sina_settings_group' );
+		?>
+		<div class="sina-widget-options">
+			<h2><?php echo __( 'Widget Settings', 'sina-ext' ); ?></h2>
+			<p><?php echo __( 'You can disable the widgets if you would like to not using on your site.', 'sina-ext' ); ?></p>
+
+			<?php
+				foreach (SINA_WIDGETS as $cat => $data) {
+					printf("<div class='sina-widget-cats'><h2>%s</h2>", __( ucfirst($cat), 'sina-ext' ));
+					do_settings_sections( 'sina_widgets_'.$cat );
+					echo '</div>';
+				}
+				settings_fields( 'sina_widgets_group' );
+				submit_button();
+			?>
+		</div>
 		<div>
 		    <p>Did you like <strong><i>Sina Extension</i></strong> Plugin? Please <a href="https://wordpress.org/support/plugin/sina-extension-for-elementor/reviews/#new-post" target="_blank">Click Here to Rate it ★★★★★</a></p>
 		</div>
@@ -44,4 +75,15 @@ function sina_map_api_key() {
 	?>
 	<input type="text" class="regular-text" name="sina_map_apikey" value="<?php echo esc_attr( get_option( 'sina_map_apikey' ) ); ?>">
 	<?php
+}
+
+function sina_widgets_ac_dc($data) {
+	$widget 		= $data['widget'];
+	$cat 			= $data['cat'];
+	$name 			= 'sina-'.$widget;
+	$option_name	= 'sina_widgets';
+	$checkbox 		= get_option( $option_name );
+	$checked		= isset( $checkbox[ $cat ][ $widget ] ) && 1 == $checkbox[ $cat ][ $widget ]  ? 'checked' : '';
+
+	echo '<div class="sina-widget-toggle"><input type="checkbox" id="'. $name .'" name="'.$option_name.'['.$cat.']['. $widget .']" value="1" '. $checked.'><label for="'. $name .'"><div></div></label></div>';
 }

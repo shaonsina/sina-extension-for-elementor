@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class Sina_MC_Subscribe_Widget extends Widget_Base {
+class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 
 	/**
 	 * Get widget name.

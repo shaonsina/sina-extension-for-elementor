@@ -1023,7 +1023,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 		$category	= !empty($data['categories']) ? implode( ',', $data['categories'] ) : '';
 		$default	= [
 			'category_name'		=> $category,
-			'orderby'			=> array( $data['order_by'] => $data['sort'] ),
+			'orderby'			=> [ $data['order_by'] => $data['sort'] ],
 			'posts_per_page'	=> $data['posts_num'],
 			'paged'				=> $paged,
 			'offset'			=> $new_offset,

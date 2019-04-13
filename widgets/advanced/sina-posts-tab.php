@@ -896,7 +896,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 										$tc = 0;
 										$default	= [
 											'category_name'		=> $cats['category'],
-											'orderby'			=> array( $data['order_by'] => $data['sort'] ),
+											'orderby'			=> [ $data['order_by'] => $data['sort'] ],
 											'posts_per_page'	=> $data['posts_num'],
 											'has_password'		=> false,
 											'post_status'		=> 'publish',
