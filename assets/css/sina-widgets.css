@@ -155,10 +155,6 @@ img.mfp-img{
 .sina-banner-slider{
 	position: relative;
 }
-.sina-slider-content{
-	height: 600px;
-	padding: 200px 120px 220px;
-}
 .sina-slider-content .sina-overlay{
 	opacity: 1;
 }
@@ -651,12 +647,6 @@ img.mfp-img{
 	margin: 0 auto;
 	text-align: center;
 }
-.sina-banner-title{
-	margin-bottom: 15px;
-	font-size: 40px;
-	line-height: 50px;
-	color: #eee;
-}
 .sina-banner-title > *,
 .sina-banner-subtitle > *,
 .sina-banner-desc > *{
@@ -664,23 +654,6 @@ img.mfp-img{
 }
 .sina-banner-desc > p{
 	margin: 0 0 10px 0 !important;
-}
-.sina-banner-subtitle{
-	margin-bottom: 10px;
-	font-size: 30px;
-	line-height: 40px;
-	color: #eee;
-}
-.sina-banner-desc{
-	font-size: 16px;
-	line-height: 22px;
-	color: #eee;
-}
-.sina-banner-btns{
-	margin-top: 40px;
-}
-.sina-banner-sbtn{
-	margin-left: 20px;
 }
 .sina-particle{
 	position: absolute;

@@ -271,6 +271,7 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 								'icon' => 'fa fa-align-justify',
 							],
 						],
+						'default' => 'center',
 					],
 					[
 						'name' => 'buttons_anim',
@@ -310,7 +311,8 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 				'default' => [
 					[
 						'title' => __( 'Welcome to get start your business', 'sina-ext' ),
-						'subtitle' => __( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit', 'sina-ext' ),
+						'subtitle' => __( 'Lorem ipsum dolor sit amet', 'sina-ext' ),
+						'align' => 'center',
 						'title_anim' => 'fadeInLeft',
 						'subtitle_anim' => 'fadeInRight',
 						'buttons_anim' => 'fadeInUp',
@@ -318,6 +320,7 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 					[
 						'title' => __( 'Lorem ipsum dolor sit amet,', 'sina-ext' ),
 						'subtitle' => __( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit', 'sina-ext' ),
+						'align' => 'center',
 						'title_anim' => 'zoomIn',
 						'subtitle_anim' => 'zoomIn',
 						'desc_anim' => 'fadeInUp',
@@ -667,9 +670,15 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 				'range' => [
 					'px' => [
 						'min' => 10,
-						'max' => 200,
+						'max' => 100,
 						'step' => 1,
 					],
+				],
+				'desktop_default' => [
+					'size' => 20,
+				],
+				'mobile_default' => [
+					'size' => 15,
 				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-banner-sbtn' => 'margin-left: {{SIZE}}{{UNIT}};',
@@ -715,6 +724,12 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 						'step' => 1,
 					],
 				],
+				'desktop_default' => [
+					'size' => 600,
+				],
+				'tablet_default' => [
+					'size' => 500,
+				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-slider-content' => 'height: {{SIZE}}{{UNIT}};',
 				],
@@ -742,6 +757,27 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 						'max' => 100,
 						'step' => 1,
 					],
+				],
+				'desktop_default' => [
+					'top' => '200',
+					'right' => '120',
+					'bottom' => '220',
+					'left' => '120',
+					'isLinked' => false,
+				],
+				'tablet_default' => [
+					'top' => '80',
+					'right' => '100',
+					'bottom' => '100',
+					'left' => '100',
+					'isLinked' => false,
+				],
+				'mobile_default' => [
+					'top' => '60',
+					'right' => '20',
+					'bottom' => '60',
+					'left' => '20',
+					'isLinked' => false,
 				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-slider-content' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
@@ -771,7 +807,7 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '#eee',
 				'selectors' => [
-					'{{WRAPPER}} .sina-banner-title > *' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .sina-banner-title, {{WRAPPER}} .sina-banner-title > *' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -779,7 +815,25 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'title_typography',
-				'selector' => '{{WRAPPER}} .sina-banner-title > *',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_weight' => [
+						'default' => '600',
+					],
+					'font_size'   => [
+						'default' => [
+							'size' => '40',
+						],
+					],
+					'line_height'   => [
+						'default' => [
+							'size' => '50',
+						],
+					],
+				],
+				'selector' => '{{WRAPPER}} .sina-banner-title, {{WRAPPER}} .sina-banner-title > *',
 			]
 		);
 		$this->add_group_control(
@@ -792,11 +846,14 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'title_margin',
 			[
-				'label' => __( 'Margin', 'sina-ext' ),
-				'type' => Controls_Manager::DIMENSIONS,
+				'label' => __( 'Margin Bottom', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'size' => '15',
+				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-banner-title > *' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .sina-banner-title' => 'margin-bottom: {{size}}{{UNIT}};',
 				],
 			]
 		);
@@ -823,7 +880,7 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '#eee',
 				'selectors' => [
-					'{{WRAPPER}} .sina-banner-subtitle > *' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .sina-banner-subtitle, {{WRAPPER}} .sina-banner-subtitle > *' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -831,7 +888,25 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'subtitle_typography',
-				'selector' => '{{WRAPPER}} .sina-banner-subtitle > *',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_weight' => [
+						'default' => '600',
+					],
+					'font_size'   => [
+						'default' => [
+							'size' => '30',
+						],
+					],
+					'line_height'   => [
+						'default' => [
+							'size' => '40',
+						],
+					],
+				],
+				'selector' => '{{WRAPPER}} .sina-banner-subtitle, {{WRAPPER}} .sina-banner-subtitle > *',
 			]
 		);
 		$this->add_group_control(
@@ -844,11 +919,14 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'subtitle_margin',
 			[
-				'label' => __( 'Margin', 'sina-ext' ),
-				'type' => Controls_Manager::DIMENSIONS,
+				'label' => __( 'Margin Bottom', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'size' => '10',
+				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-banner-subtitle > *' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .sina-banner-subtitle' => 'margin-bottom: {{size}}{{UNIT}};',
 				],
 			]
 		);
@@ -875,7 +953,7 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '#eee',
 				'selectors' => [
-					'{{WRAPPER}} .sina-banner-desc > *' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .sina-banner-desc, {{WRAPPER}} .sina-banner-desc > *' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -883,7 +961,22 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'desc_typography',
-				'selector' => '{{WRAPPER}} .sina-banner-desc > *',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_size'   => [
+						'default' => [
+							'size' => '16',
+						],
+					],
+					'line_height'   => [
+						'default' => [
+							'size' => '24',
+						],
+					],
+				],
+				'selector' => '{{WRAPPER}} .sina-banner-desc, {{WRAPPER}} .sina-banner-desc > *',
 			]
 		);
 		$this->add_group_control(
@@ -896,11 +989,14 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'desc_margin',
 			[
-				'label' => __( 'Margin', 'sina-ext' ),
-				'type' => Controls_Manager::DIMENSIONS,
+				'label' => __( 'Margin Bottom', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'size' => '40',
+				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-banner-desc > *' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .sina-banner-desc' => 'margin-bottom: {{size}}{{UNIT}};',
 				],
 			]
 		);
@@ -927,6 +1023,19 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'pbtn_typography',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_weight' => [
+						'default' => '600',
+					],
+					'transform'   => [
+						'default' => [
+							'size' => 'uppercase',
+						],
+					],
+				],
 				'selector' => '{{WRAPPER}} .sina-banner-pbtn',
 			]
 		);
@@ -1039,6 +1148,13 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 				'label' => __( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '4',
+					'right' => '4',
+					'bottom' => '4',
+					'left' => '4',
+					'isLinked' => true,
+				],
 				'separator' => 'before',
 				'selectors' => [
 					'{{WRAPPER}} .sina-banner-pbtn' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
@@ -1051,6 +1167,20 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 				'label' => __( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
+				'desktop_default' => [
+					'top' => '15',
+					'right' => '30',
+					'bottom' => '15',
+					'left' => '30',
+					'isLinked' => false,
+				],
+				'mobile_default' => [
+					'top' => '10',
+					'right' => '15',
+					'bottom' => '10',
+					'left' => '15',
+					'isLinked' => false,
+				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-banner-pbtn' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
@@ -1079,6 +1209,19 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'sbtn_typography',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_weight' => [
+						'default' => '600',
+					],
+					'transform'   => [
+						'default' => [
+							'size' => 'uppercase',
+						],
+					],
+				],
 				'selector' => '{{WRAPPER}} .sina-banner-sbtn',
 			]
 		);
@@ -1192,6 +1335,13 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 				'label' => __( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '4',
+					'right' => '4',
+					'bottom' => '4',
+					'left' => '4',
+					'isLinked' => true,
+				],
 				'separator' => 'before',
 				'selectors' => [
 					'{{WRAPPER}} .sina-banner-sbtn' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
@@ -1204,6 +1354,20 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 				'label' => __( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
+				'desktop_default' => [
+					'top' => '15',
+					'right' => '30',
+					'bottom' => '15',
+					'left' => '30',
+					'isLinked' => false,
+				],
+				'mobile_default' => [
+					'top' => '10',
+					'right' => '15',
+					'bottom' => '10',
+					'left' => '15',
+					'isLinked' => false,
+				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-banner-sbtn' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
@@ -1218,6 +1382,7 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 
 	protected function render() {
 		$data = $this->get_settings_for_display();
+		fw_print($data);
 
 		$this->add_render_attribute( 'pbtn_text', 'class', 'sina-banner-pbtn-text' );
 		$this->add_inline_editing_attributes( 'pbtn_text' );
