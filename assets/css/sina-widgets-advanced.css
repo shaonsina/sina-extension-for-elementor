@@ -655,6 +655,67 @@
 	padding-left: 0;
 }
 
+/*--------------------------------- Product Zoomer -------------------------------------- */
+.sina-product-zoomer{
+	display: inline-block;
+}
+.sina-product-title a,
+.sina-product-title{
+	font-size: 30px;
+	line-height: 36px;
+	font-weight: 600;
+	margin: 0 0 6px 0;
+}
+.sina-product-desc{
+	font-size: 16px;
+	line-height: 24px;
+	font-weight: 600;
+	margin: 0 0 20px 0;
+}
+.xzoom-source img,
+.xzoom-preview img,
+.xzoom-lens img {
+	display: block;
+	max-width: none;
+	max-height: none
+}
+.xzoom-thumb-item {
+	cursor: pointer;
+	float: left
+}
+.elementor .xzoom-gallery {
+	display: inline-block;
+	border: 1px solid #cecece;
+	width: 100%
+}
+.elementor .xzoom {
+	box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
+	margin-bottom: 20px
+}
+.xzoom-source,
+.xzoom-hidden {
+	display: block;
+	position: static;
+	float: none;
+	clear: both
+}
+.xzoom-hidden {
+	overflow: hidden
+}
+.xzoom-preview {
+	border: 1px solid #888;
+	box-shadow: -0 -0 10px rgba(0, 0, 0, 0.50)
+}
+.xzoom-lens {
+	border: 1px solid #555;
+	box-shadow: -0 -0 10px rgba(0, 0, 0, 0.50);
+	cursor: crosshair
+}
+.elementor .xactive {
+	box-shadow: 0 0 3px 0 rgba(74, 169, 210, 1);
+	border: 1px solid #4aaad2
+}
+
 /*--------------------------------- Review Carousel -------------------------------------- */
 .sina-review-item{
 	text-align: center;

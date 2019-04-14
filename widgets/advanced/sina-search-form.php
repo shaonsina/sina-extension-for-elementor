@@ -53,7 +53,7 @@ class Sina_Search_Form_Widget extends Widget_Base {
 	 * @since 1.2.0
 	 */
 	public function get_categories() {
-		return [ 'sina-extension' ];
+		return [ 'sina-ext-advanced' ];
 	}
 
 	/**

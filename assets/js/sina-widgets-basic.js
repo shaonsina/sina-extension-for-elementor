@@ -129,19 +129,6 @@
 		});
 	}
 
-	function sinaProductZoomer($scope, $) {
-		$scope.find('.sina-product-zoomer').each(function () {
-			var $this = $(this),
-				position = $this.data('position'),
-				shape = $this.data('shape');
-
-			$this.find('.xzoom, .xzoom-gallery').xzoom({
-				position: position,
-				lensShape: shape,
-			});
-		});
-	}
-
 	function sinaProgressbars($scope, $) {
 		elementorFrontend.waypoint($scope.find('.sina-bar-content'), function () {
 			var $this = $(this),
@@ -219,7 +206,6 @@
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_fancytext.default', sinaFancytext);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_google_map.default', sinaGoogleMap);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_piechart.default', sinaPiechart);
-		elementorFrontend.hooks.addAction('frontend/element_ready/sina_product_zoomer.default', sinaProductZoomer);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_progressbar.default', sinaProgressbars);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_user_counter.default', sinaUserCounter);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_video.default', sinaVideo);

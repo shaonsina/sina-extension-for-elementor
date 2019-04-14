@@ -42,7 +42,6 @@ define('SINA_WIDGETS', [
 		'google-map' 			=> 1,
 		'piechart' 				=> 1,
 		'pricing' 				=> 1,
-		'product-zoomer' 		=> 1,
 		'progressbar' 			=> 1,
 		'team' 					=> 1,
 		'user-counter' 			=> 1,
@@ -60,6 +59,7 @@ define('SINA_WIDGETS', [
 		'particle-layer' 		=> 1,
 		'portfolio' 			=> 1,
 		'posts-tab' 			=> 1,
+		'product-zoomer' 		=> 1,
 		'review-carousel' 		=> 1,
 		'search-form' 			=> 1,
 	],
@@ -301,7 +301,14 @@ final class Sina_Extension {
 		$elements_manager->add_category(
 			'sina-extension',
 			[
-				'title' => __( 'Sina Extension', 'sina-ext' ),
+				'title' => __( 'Sina Extension Basic Widgets', 'sina-ext' ),
+				'icon' => 'fa fa-plug',
+			]
+		);
+		$elements_manager->add_category(
+			'sina-ext-advanced',
+			[
+				'title' => __( 'Sina Extension Advaced Widgets', 'sina-ext' ),
 				'icon' => 'fa fa-plug',
 			]
 		);

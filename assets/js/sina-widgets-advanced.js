@@ -493,6 +493,19 @@
 		});
 	}
 
+	function sinaProductZoomer($scope, $) {
+		$scope.find('.sina-product-zoomer').each(function () {
+			var $this = $(this),
+				position = $this.data('position'),
+				shape = $this.data('shape');
+
+			$this.find('.xzoom, .xzoom-gallery').xzoom({
+				position: position,
+				lensShape: shape,
+			});
+		});
+	}
+
 	function sinaReviewCarousel($scope, $) {
 		$scope.find('.sina-review-carousel').each(function () {
 			var $this = $(this),
@@ -551,6 +564,7 @@
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_news_ticker.default', sinaNewsTicker);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_portfolio.default', sinaPortfolio);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_posts_tab.default', sinaPostsTab);
+		elementorFrontend.hooks.addAction('frontend/element_ready/sina_product_zoomer.default', sinaProductZoomer);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_particle_layer.default', sinaParticleLayer);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_review_carousel.default', sinaReviewCarousel);
 
