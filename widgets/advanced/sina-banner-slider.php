@@ -1382,7 +1382,6 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 
 	protected function render() {
 		$data = $this->get_settings_for_display();
-		fw_print($data);
 
 		$this->add_render_attribute( 'pbtn_text', 'class', 'sina-banner-pbtn-text' );
 		$this->add_inline_editing_attributes( 'pbtn_text' );
