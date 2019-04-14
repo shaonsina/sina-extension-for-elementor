@@ -206,15 +206,15 @@ class Sina_Progressbar_Widget extends Widget_Base {
 				'label' => __('Spacing', 'sina-ext'),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => ['px'],
-				'default' => [
-					'size' => 15,
-				],
 				'range' => [
 					'px' => [
 						'min' => 5,
 						'max' => 100,
 						'step' => 1,
 					],
+				],
+				'default' => [
+					'size' => 15,
 				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-bar' => 'margin-bottom: {{SIZE}}{{UNIT}};',
@@ -228,15 +228,15 @@ class Sina_Progressbar_Widget extends Widget_Base {
 				'label' => __('Height', 'sina-ext'),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => ['px'],
-				'default' => [
-					'size' => 16,
-				],
 				'range' => [
 					'px' => [
 						'min' => 12,
 						'max' => 60,
 						'step' => 1,
 					],
+				],
+				'default' => [
+					'size' => 16,
 				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-bar-bg' => 'height: {{SIZE}}{{UNIT}};',
@@ -288,7 +288,35 @@ class Sina_Progressbar_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'title_typography',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_size'   => [
+						'default' => [
+							'size' => '16',
+						],
+					],
+					'line_height'   => [
+						'default' => [
+							'size' => '24',
+						],
+					],
+				],
 				'selector' => '{{WRAPPER}} .sina-bar-title',
+			]
+		);
+		$this->add_control(
+			'title_margin',
+			[
+				'label' => __('Bottom Margin', 'sina-ext'),
+				'type' => Controls_Manager::SLIDER,
+				'default'=> [
+					'size' => '5',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-bar-title' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+				],
 			]
 		);
 
@@ -311,6 +339,21 @@ class Sina_Progressbar_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'percentage_typography',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_size'   => [
+						'default' => [
+							'size' => '12',
+						],
+					],
+					'line_height'   => [
+						'default' => [
+							'size' => '14',
+						],
+					],
+				],
 				'selector' => '{{WRAPPER}} .sina-bar-percent',
 			]
 		);

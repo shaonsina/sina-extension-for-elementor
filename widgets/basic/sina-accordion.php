@@ -251,6 +251,13 @@ class Sina_Accordion_Widget extends Widget_Base {
 						'step' => 1,
 					],
 				],
+				'default' => [
+					'top' => '0',
+					'right' => '0',
+					'bottom' => '15',
+					'left' => '0',
+					'isLinked' => false,
+				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-accordion-item' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
@@ -269,6 +276,39 @@ class Sina_Accordion_Widget extends Widget_Base {
 			[
 				'label' => __( 'Header', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name' => 'title_typography',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_weight' => [
+						'default' => '600',
+					],
+					'font_size'   => [
+						'default' => [
+							'size' => '18',
+						],
+					],
+					'line_height'   => [
+						'default' => [
+							'size' => '24',
+						],
+					],
+				],
+				'selector' => '{{WRAPPER}} .sina-accordion-title, {{WRAPPER}} .sina-accordion-icon',
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Text_Shadow::get_type(),
+			[
+				'name' => 'title_shadow',
+				'selector' => '{{WRAPPER}} .sina-accordion-title',
 			]
 		);
 
@@ -359,6 +399,13 @@ class Sina_Accordion_Widget extends Widget_Base {
 						'step' => 1,
 					],
 				],
+				'default' => [
+					'top' => '20',
+					'right' => '25',
+					'bottom' => '20',
+					'left' => '25',
+					'isLinked' => false,
+				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-accordion-header' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
@@ -367,53 +414,6 @@ class Sina_Accordion_Widget extends Widget_Base {
 
 		$this->end_controls_section();
 		// End Header Style
-		// =====================
-
-
-		// Start Title Style
-		// =====================
-		$this->start_controls_section(
-			'title_style',
-			[
-				'label' => __( 'Title', 'sina-ext' ),
-				'tab' => Controls_Manager::TAB_STYLE,
-			]
-		);
-
-		$this->add_group_control(
-			Group_Control_Typography::get_type(),
-			[
-				'name' => 'title_typography',
-				'selector' => '{{WRAPPER}} .sina-accordion-title, {{WRAPPER}} .sina-accordion-icon',
-				'fields_options' => [
-					'font_weight' => [
-						'default' => '600',
-					],
-					'font_size'   => [
-						'default' => [
-							'unit' => 'px',
-							'size' => 18,
-						],
-					],
-					'line_height'   => [
-						'default' => [
-							'unit' => 'px',
-							'size' => 24,
-						],
-					],
-				],
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Text_Shadow::get_type(),
-			[
-				'name' => 'title_shadow',
-				'selector' => '{{WRAPPER}} .sina-accordion-title',
-			]
-		);
-
-		$this->end_controls_section();
-		// End Title Style
 		// =====================
 
 
@@ -445,6 +445,23 @@ class Sina_Accordion_Widget extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'desc_border',
+				'fields_options' => [
+					'border' => [
+						'default' => 'solid',
+					],
+					'color' => [
+						'default' => '#1085e4',
+					],
+					'width' => [
+						'default' => [
+							'top' => '1',
+							'right' => '1',
+							'bottom' => '1',
+							'left' => '1',
+							'isLinked' => true,
+						]
+					],
+				],
 				'selector' => '{{WRAPPER}} .sina-accordion-body',
 			]
 		);
@@ -467,6 +484,13 @@ class Sina_Accordion_Widget extends Widget_Base {
 						'max' => 100,
 						'step' => 1,
 					],
+				],
+				'default' => [
+					'top' => '20',
+					'right' => '20',
+					'bottom' => '20',
+					'left' => '20',
+					'isLinked' => true,
 				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-accordion-desc' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',

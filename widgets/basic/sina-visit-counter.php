@@ -101,8 +101,8 @@ class Sina_Visit_Counter_Widget extends Widget_Base {
 	 * @access protected
 	 */
 	protected function _register_controls() {
-		// Start Visit Counter Content
-		// ============================
+		// Start Visit Counter
+		// ====================
 		$this->start_controls_section(
 			'vc_content',
 			[
@@ -131,10 +131,36 @@ class Sina_Visit_Counter_Widget extends Widget_Base {
 				'default' => __( 'Yesterday\'s visit', 'sina-ext' ),
 			]
 		);
+		$this->add_responsive_control(
+			'alignment',
+			[
+				'label' => __( 'Alignment', 'sina-ext' ),
+				'type' => Controls_Manager::CHOOSE,
+				'options' => [
+					'left' => [
+						'title' => __( 'Left', 'sina-ext' ),
+						'icon' => 'fa fa-align-left',
+					],
+					'center' => [
+						'title' => __( 'Center', 'sina-ext' ),
+						'icon' => 'fa fa-align-center',
+					],
+					'right' => [
+						'title' => __( 'Right', 'sina-ext' ),
+						'icon' => 'fa fa-align-right',
+					],
+				],
+				'default' => 'center',
+				'devices' => [ 'desktop', 'tablet', 'mobile' ],
+				'selectors' => [
+					'{{WRAPPER}} .sina-visit-counter' => 'text-align: {{VALUE}};',
+				],
+			]
+		);
 
 		$this->end_controls_section();
-		// End Visit Counter Content
-		// ==========================
+		// End Visit Counter
+		// ===================
 
 
 		// Start Text Style
@@ -162,6 +188,19 @@ class Sina_Visit_Counter_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'typography',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_weight' => [
+						'default' => '600',
+					],
+					'font_size'   => [
+						'default' => [
+							'size' => '24',
+						],
+					],
+				],
 				'selector' => '{{WRAPPER}} .sina-visit-text',
 			]
 		);
@@ -203,6 +242,24 @@ class Sina_Visit_Counter_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'number_typography',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_weight' => [
+						'default' => '600',
+					],
+					'font_size'   => [
+						'default' => [
+							'size' => '32',
+						],
+					],
+					'line_height'   => [
+						'default' => [
+							'size' => '40',
+						],
+					],
+				],
 				'selector' => '{{WRAPPER}} .sina-visit-number',
 			]
 		);

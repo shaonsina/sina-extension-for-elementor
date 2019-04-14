@@ -289,6 +289,24 @@ class Sina_Piechart_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'title_typography',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_weight' => [
+						'default' => '600',
+					],
+					'font_size'   => [
+						'default' => [
+							'size' => '18',
+						],
+					],
+					'line_height'   => [
+						'default' => [
+							'size' => '24',
+						],
+					],
+				],
 				'selector' => '{{WRAPPER}} .sina-piechart-title',
 			]
 		);
@@ -330,6 +348,24 @@ class Sina_Piechart_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'value_typography',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_weight' => [
+						'default' => '600',
+					],
+					'font_size'   => [
+						'default' => [
+							'size' => '50',
+						],
+					],
+					'line_height'   => [
+						'default' => [
+							'size' => '50',
+						],
+					],
+				],
 				'selector' => '{{WRAPPER}} .sina-piechart-percent',
 			]
 		);

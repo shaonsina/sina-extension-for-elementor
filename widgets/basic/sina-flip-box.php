@@ -251,6 +251,13 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 						'step' => 1,
 					],
 				],
+				'default' => [
+					'top' => '20',
+					'right' => '20',
+					'bottom' => '30',
+					'left' => '20',
+					'isLinked' => false,
+				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-flipbox-front' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
@@ -304,6 +311,13 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 						'step' => 1,
 					],
 				],
+				'default' => [
+					'top' => '20',
+					'right' => '20',
+					'bottom' => '30',
+					'left' => '20',
+					'isLinked' => false,
+				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-flipbox-back' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
@@ -337,6 +351,9 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 						'step' => 1,
 					],
 				],
+				'default' => [
+					'size' => '230',
+				],
 				'separator' => 'before',
 				'selectors' => [
 					'{{WRAPPER}} .sina-flipbox' => 'height: {{SIZE}}{{UNIT}};',
@@ -351,6 +368,32 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
 					'{{WRAPPER}} .sina-flipbox-front, {{WRAPPER}} .sina-flipbox-back' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'alignment',
+			[
+				'label' => __( 'Alignment', 'sina-ext' ),
+				'type' => Controls_Manager::CHOOSE,
+				'options' => [
+					'left' => [
+						'title' => __( 'Left', 'sina-ext' ),
+						'icon' => 'fa fa-align-left',
+					],
+					'center' => [
+						'title' => __( 'Center', 'sina-ext' ),
+						'icon' => 'fa fa-align-center',
+					],
+					'right' => [
+						'title' => __( 'Right', 'sina-ext' ),
+						'icon' => 'fa fa-align-right',
+					],
+				],
+				'default' => 'center',
+				'devices' => [ 'desktop', 'tablet', 'mobile' ],
+				'selectors' => [
+					'{{WRAPPER}} .sina-flipbox' => 'text-align: {{VALUE}};',
 				],
 			]
 		);
@@ -400,6 +443,9 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 						'max' => 200,
 					],
 				],
+				'default' => [
+					'size' => '38',
+				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-flipbox-front .sina-flipbox-icon i' => 'font-size: {{SIZE}}{{UNIT}};',
 				],
@@ -443,6 +489,13 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 						'step' => 1,
 					],
 				],
+				'default' => [
+					'top' => '15',
+					'right' => '20',
+					'bottom' => '15',
+					'left' => '20',
+					'isLinked' => false,
+				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-flipbox-front .sina-flipbox-icon i' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
@@ -478,6 +531,9 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 					'px' => [
 						'max' => 200,
 					],
+				],
+				'default' => [
+					'size' => '38'
 				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-flipbox-back .sina-flipbox-icon i' => 'font-size: {{SIZE}}{{UNIT}};',
@@ -521,6 +577,13 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 						'max' => 100,
 						'step' => 1,
 					],
+				],
+				'default' => [
+					'top' => '15',
+					'right' => '20',
+					'bottom' => '15',
+					'left' => '20',
+					'isLinked' => false,
 				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-flipbox-back .sina-flipbox-icon i' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
@@ -571,6 +634,19 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'front_title_typography',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_weight' => [
+						'default' => '600',
+					],
+					'font_size'   => [
+						'default' => [
+							'size' => '24',
+						],
+					],
+				],
 				'selector' => '{{WRAPPER}} .sina-flipbox-front .sina-flipbox-title',
 			]
 		);
@@ -600,6 +676,13 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 						'max' => 100,
 						'step' => 1,
 					],
+				],
+				'default' => [
+					'top' => '15',
+					'right' => '0',
+					'bottom' => '10',
+					'left' => '0',
+					'isLinked' => false,
 				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-flipbox-front .sina-flipbox-title' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
@@ -631,6 +714,19 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'back_title_typography',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_weight' => [
+						'default' => '600',
+					],
+					'font_size'   => [
+						'default' => [
+							'size' => '24',
+						],
+					],
+				],
 				'selector' => '{{WRAPPER}} .sina-flipbox-back .sina-flipbox-title',
 			]
 		);
@@ -660,6 +756,13 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 						'max' => 100,
 						'step' => 1,
 					],
+				],
+				'default' => [
+					'top' => '15',
+					'right' => '0',
+					'bottom' => '10',
+					'left' => '0',
+					'isLinked' => false,
 				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-flipbox-back .sina-flipbox-title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',

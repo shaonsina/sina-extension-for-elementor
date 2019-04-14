@@ -101,8 +101,8 @@ class Sina_User_Counter_Widget extends Widget_Base {
 	 * @access protected
 	 */
 	protected function _register_controls() {
-		// Start User Counter Content
-		// ============================
+		// Start User Counter
+		// ====================
 		$this->start_controls_section(
 			'uc_content',
 			[
@@ -139,10 +139,36 @@ class Sina_User_Counter_Widget extends Widget_Base {
 				'placeholder' => __( 'Enter suffix text', 'sina-ext' ),
 			]
 		);
+		$this->add_responsive_control(
+			'alignment',
+			[
+				'label' => __( 'Alignment', 'sina-ext' ),
+				'type' => Controls_Manager::CHOOSE,
+				'options' => [
+					'left' => [
+						'title' => __( 'Left', 'sina-ext' ),
+						'icon' => 'fa fa-align-left',
+					],
+					'center' => [
+						'title' => __( 'Center', 'sina-ext' ),
+						'icon' => 'fa fa-align-center',
+					],
+					'right' => [
+						'title' => __( 'Right', 'sina-ext' ),
+						'icon' => 'fa fa-align-right',
+					],
+				],
+				'default' => 'center',
+				'devices' => [ 'desktop', 'tablet', 'mobile' ],
+				'selectors' => [
+					'{{WRAPPER}} .sina-user-counter' => 'text-align: {{VALUE}};',
+				],
+			]
+		);
 
 		$this->end_controls_section();
-		// End User Counter Content
-		// ==========================
+		// End User Counter
+		// =================
 
 
 		// Start Prefix & Suffix Style
@@ -170,6 +196,19 @@ class Sina_User_Counter_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'typography',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_weight' => [
+						'default' => '600',
+					],
+					'font_size'   => [
+						'default' => [
+							'size' => '24',
+						],
+					],
+				],
 				'selector' => '{{WRAPPER}} .sina-uc-text',
 			]
 		);
@@ -211,6 +250,24 @@ class Sina_User_Counter_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'number_typography',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_weight' => [
+						'default' => '600',
+					],
+					'font_size'   => [
+						'default' => [
+							'size' => '32',
+						],
+					],
+					'line_height'   => [
+						'default' => [
+							'size' => '40',
+						],
+					],
+				],
 				'selector' => '{{WRAPPER}} .sina-uc-number',
 			]
 		);

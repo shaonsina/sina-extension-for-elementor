@@ -187,7 +187,7 @@ class Sina_Fancytext_Widget extends Widget_Base {
 					'block' => __( 'Block', 'sina-ext' ),
 				],
 				'devices' => [ 'desktop', 'tablet', 'mobile' ],
-				'default' => 'inline-block',
+				'default' => 'inline',
 				'selectors' => [
 					'{{WRAPPER}} .sina-fancytext-prefix, {{WRAPPER}} .sina-fancytext-suffix' => 'display: {{VALUE}};',
 				],
@@ -216,6 +216,7 @@ class Sina_Fancytext_Widget extends Widget_Base {
 						'icon' => 'fa fa-align-justify',
 					],
 				],
+				'default' => 'center',
 				'devices' => [ 'desktop', 'tablet', 'mobile' ],
 				'selectors' => [
 					'{{WRAPPER}} .sina-fancytext' => 'text-align: {{VALUE}};',

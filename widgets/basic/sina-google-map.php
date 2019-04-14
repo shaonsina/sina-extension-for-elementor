@@ -217,6 +217,9 @@ class Sina_Google_Map_Widget extends Widget_Base {
 						'step' => 1,
 					],
 				],
+				'default' => [
+					'size' => '400',
+				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-google-map' => 'height: {{SIZE}}{{UNIT}};',
 				],

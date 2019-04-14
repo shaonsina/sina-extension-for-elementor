@@ -293,6 +293,13 @@ class Sina_Team_Widget extends Widget_Base {
 						'step' => 1,
 					],
 				],
+				'default' => [
+					'top' => '20',
+					'right' => '20',
+					'bottom' => '20',
+					'left' => '20',
+					'isLinked' => true,
+				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-team-overlay' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
@@ -329,6 +336,19 @@ class Sina_Team_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'name_typography',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_weight' => [
+						'default' => '600',
+					],
+					'font_size'   => [
+						'default' => [
+							'size' => '24',
+						],
+					],
+				],
 				'selector' => '{{WRAPPER}} .sina-team-name',
 			]
 		);
@@ -363,6 +383,19 @@ class Sina_Team_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'position_typography',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_weight' => [
+						'default' => '600',
+					],
+					'font_size'   => [
+						'default' => [
+							'size' => '14',
+						],
+					],
+				],
 				'selector' => '{{WRAPPER}} .sina-team-position',
 			]
 		);
@@ -508,6 +541,14 @@ class Sina_Team_Widget extends Widget_Base {
 				'label' => __( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'unit' => '%',
+					'top' => '50',
+					'right' => '50',
+					'bottom' => '50',
+					'left' => '50',
+					'isLinked' => true,
+				],
 				'separator' => 'before',
 				'selectors' => [
 					'{{WRAPPER}} .sina-team-social li i' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',

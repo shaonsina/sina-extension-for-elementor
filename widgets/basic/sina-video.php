@@ -203,6 +203,13 @@ class Sina_Video_Widget extends Widget_Base {
 						'step' => 1,
 					],
 				],
+				'default' => [
+					'top' => '30',
+					'right' => '0',
+					'bottom' => '0',
+					'left' => '0',
+					'isLinked' => false,
+				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-video-title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
@@ -327,16 +334,39 @@ class Sina_Video_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'icon_size',
 			[
-				'label' => __( 'Size', 'sina-ext' ),
+				'label' => __( 'Icon Size', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
 						'max' => 200,
 					],
 				],
+				'default' => [
+					'unit' => 'px',
+					'size' => '32',
+				],
 				'separator' => 'before',
 				'selectors' => [
 					'{{WRAPPER}} .sina-video-play' => 'font-size: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'icon_box_size',
+			[
+				'label' => __( 'Icon Box Size', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'range' => [
+					'px' => [
+						'max' => 5,
+						'step' => 0.1,
+					],
+				],
+				'default' => [
+					'size' => '1',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-video-play' => 'transform: scale({{SIZE}});',
 				],
 			]
 		);
@@ -346,6 +376,14 @@ class Sina_Video_Widget extends Widget_Base {
 				'label' => __( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'unit' => '%',
+					'top' => '50',
+					'right' => '50',
+					'bottom' => '50',
+					'left' => '50',
+					'isLinked' => true,
+				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-video-play' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],

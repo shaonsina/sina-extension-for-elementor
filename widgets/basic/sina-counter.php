@@ -230,6 +230,32 @@ class Sina_Counter_Widget extends Widget_Base {
 				],
 			]
 		);
+		$this->add_responsive_control(
+			'alignment',
+			[
+				'label' => __( 'Alignment', 'sina-ext' ),
+				'type' => Controls_Manager::CHOOSE,
+				'options' => [
+					'left' => [
+						'title' => __( 'Left', 'sina-ext' ),
+						'icon' => 'fa fa-align-left',
+					],
+					'center' => [
+						'title' => __( 'Center', 'sina-ext' ),
+						'icon' => 'fa fa-align-center',
+					],
+					'right' => [
+						'title' => __( 'Right', 'sina-ext' ),
+						'icon' => 'fa fa-align-right',
+					],
+				],
+				'default' => 'center',
+				'devices' => [ 'desktop', 'tablet', 'mobile' ],
+				'selectors' => [
+					'{{WRAPPER}} .sina-counter' => 'text-align: {{VALUE}};',
+				],
+			]
+		);
 
 		$this->end_controls_section();
 		// End Counter Content
@@ -264,6 +290,21 @@ class Sina_Counter_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'title_typography',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_size'   => [
+						'default' => [
+							'size' => '32',
+						],
+					],
+					'line_height'   => [
+						'default' => [
+							'size' => '40',
+						],
+					],
+				],
 				'selector' => '{{WRAPPER}} .sina-counter-title',
 			]
 		);
@@ -305,6 +346,24 @@ class Sina_Counter_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'number_typography',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_weight' => [
+						'default' => '600',
+					],
+					'font_size'   => [
+						'default' => [
+							'size' => '50',
+						],
+					],
+					'line_height'   => [
+						'default' => [
+							'size' => '70',
+						],
+					],
+				],
 				'selector' => '{{WRAPPER}} .sina-counter-number-wrap',
 			]
 		);
@@ -357,6 +416,9 @@ class Sina_Counter_Widget extends Widget_Base {
 						'max' => 200,
 						'step' => 1,
 					],
+				],
+				'default' => [
+					'size' => '40'
 				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-counter-icon i' => 'font-size: {{SIZE}}{{UNIT}};',

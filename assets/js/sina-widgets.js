@@ -2,6 +2,33 @@
 
 (function ($) {
 
+	function sinaAccordion($scope, $) {
+		$scope.find('.sina-accordion').each(function () {
+			var $this = $(this),
+				openF = $this.data('open-first');
+
+			$this.find('.sina-accordion-item').each(function(index, el) {
+				var $item = $(this),
+					$siblings = $item.siblings('.sina-accordion-item'),
+					$header = $item.children('.sina-accordion-header'),
+					$body = $item.children('.sina-accordion-body');
+
+				if ( openF && 0 == index ) {
+					$body.slideDown(200);
+				}
+
+				$header.on('click', function(e) {
+					e.stopImmediatePropagation();
+
+					$body.slideToggle(200);
+					$siblings.children('.sina-accordion-body').slideUp(200);
+					$item.toggleClass('open');
+					$siblings.removeClass('open');
+				});
+			});
+		});
+	}
+
 	function sinaBannerSlider($scope, $) {
 		$scope.find('.sina-banner-slider').each(function () {
 			function doAnimations( elems ) {
@@ -317,40 +344,78 @@
 		});
 	}
 
-	function sinaMCSubscribe($scope, $) {
-		$scope.find('.sina-subs-form').each(function () {
+	function sinaCounter($scope, $) {
+		elementorFrontend.waypoint($scope.find('.sina-counter-number'), function () {
+			var $this 	= $(this),
+				data 	= $this.data(),
+				digit	= data.toValue.toString().match(/\.(.*)/);
+
+			if (digit) {
+				data.rounding = digit[1].length;
+			}
+
+			$this.numerator(data);
+		});
+	}
+
+	function sinaFancytext($scope, $) {
+		$scope.find('.sina-fancytext').each(function () {
 			var $this = $(this),
-				$link = $this.data('link'),
-				$success = $this.children('.sina-subs-success'),
-				$error = $this.children('.sina-subs-error'),
-				$process = $this.children('.sina-subs-process');
+				strings = $this.find('.sina-fancytext-strings'),
+				anim = $this.data('anim'),
+				speed = $this.data('speed'),
+				delay = $this.data('delay'),
+				cursor = $this.data('cursor') ? true : false,
+				loop = $this.data('loop') ? true : false,
+				fancyText = $this.data('fancy-text'),
+				fancyText = fancyText.split('@@');
 
-			$this.ajaxChimp({
-				language: 'es',
-				callback: mailchimpCallback,
-				url: $link
+			if ( 'typing' == anim ) {
+				strings.typed({
+					strings: fancyText,
+					typeSpeed: speed,
+					startDelay: delay,
+					showCursor: cursor,
+					loop: loop,
+				});
+			} else{
+				strings.Morphext({
+					animation: anim,
+					separator: '@@',
+					speed: delay
+				});
+			}
+		});
+	}
+
+	function sinaGoogleMap($scope, $) {
+		$scope.find('.sina-google-map').each(function () {
+			var $this = $(this),
+				$id = $this.data('id'),
+				$anim = $this.data('anim'),
+				$zoom = $this.data('zoom'),
+				$lat = $this.data('lat'),
+				$long = $this.data('long'),
+				$isMarker = $this.data('marker'),
+				$marker = $this.data('marker-link');
+
+			var map = new google.maps.Map(document.getElementById($id), {
+				center: {
+					lat: $lat,
+					lng: $long
+				},
+				zoom: $zoom
 			});
-			$this.on('submit', function(e) {
-				$error.fadeOut(0);
-				$success.fadeOut(0);
-				$process.fadeIn(200);
 
-				setTimeout( function() {
-					$error.fadeOut(200);
-					$success.fadeOut(200);
-				}, 10000 );
-
-				return false;
-			});
-			function mailchimpCallback(resp) {
-				if (resp.result === 'success') {
-					$process.fadeOut(0);
-					$success.html( resp.msg ).fadeIn(800);
-
-				} else if (resp.result === 'error') {
-					$process.fadeOut(0);
-					$error.html( resp.msg.replace('0 - ', '') ).fadeIn(800);
-				}
+			if ( $isMarker && $marker ) {
+				var marker = new google.maps.Marker({
+					position: new google.maps.LatLng($lat, $long),
+					map: map,
+					icon: {
+						url: $marker,
+					},
+					animation: google.maps.Animation[$anim]
+				});
 			}
 		});
 	}
@@ -400,6 +465,72 @@
 				}
 			}
 			newsTicker( speed, pause );
+		});
+	}
+
+	function sinaProductZoomer($scope, $) {
+		$scope.find('.sina-product-zoomer').each(function () {
+			var $this = $(this),
+				position = $this.data('position'),
+				shape = $this.data('shape');
+
+			$this.find('.xzoom, .xzoom-gallery').xzoom({
+				position: position,
+				lensShape: shape,
+			});
+		});
+	}
+
+	function sinaParticleLayer($scope, $) {
+		$scope.find('.sina-particle').each(function () {
+			var $this = $(this),
+				linkColor = $this.data('link-color'),
+				ballColor = $this.data('ball-color'),
+				number = $this.data('number'),
+				link = $this.data('link'),
+				clink = $this.data('clink'),
+				linkw = $this.data('linkw'),
+				size = $this.data('size'),
+				speed = $this.data('speed'),
+				dlink = $this.data('dlink') ? true : false,
+				dmouse = $this.data('dmouse') ? true : false;
+
+			$this.sinaParticles({
+				lineColor: linkColor,
+				fillColor: ballColor,
+				particlesNumber: number,
+				linkDist: link,
+				createLinkDist: clink,
+				linksWidth: linkw,
+				maxSize: size,
+				speed: speed,
+				disableLinks: dlink,
+				disableMouse: dmouse
+			});
+		});
+	}
+
+	function sinaPiechart($scope, $) {
+		elementorFrontend.waypoint($scope.find('.sina-piechart-wrap'), function () {
+			var $this 		= $(this),
+				trackColor	= $this.data('track'),
+				trackWidth	= $this.data('track-width'),
+				barColor	= $this.data('bar'),
+				lineWidth	= $this.data('line'),
+				lineCap		= $this.data('cap'),
+				animSpeed	= $this.data('speed'),
+				scale		= $this.data('scale'),
+				size		= $this.data('size');
+
+			$this.easyPieChart({
+				trackColor: trackColor,
+				barColor: barColor,
+				lineWidth: lineWidth,
+				lineCap: lineCap,
+				animate: animSpeed,
+				scaleColor: scale,
+				size: size
+			});
 		});
 	}
 
@@ -464,45 +595,12 @@
 		});
 	}
 
-	function sinaParticleLayer($scope, $) {
-		$scope.find('.sina-particle').each(function () {
+	function sinaProgressbars($scope, $) {
+		elementorFrontend.waypoint($scope.find('.sina-bar-content'), function () {
 			var $this = $(this),
-				linkColor = $this.data('link-color'),
-				ballColor = $this.data('ball-color'),
-				number = $this.data('number'),
-				link = $this.data('link'),
-				clink = $this.data('clink'),
-				linkw = $this.data('linkw'),
-				size = $this.data('size'),
-				speed = $this.data('speed'),
-				dlink = $this.data('dlink') ? true : false,
-				dmouse = $this.data('dmouse') ? true : false;
+				$perc = $this.data('percentage');
 
-			$this.sinaParticles({
-				lineColor: linkColor,
-				fillColor: ballColor,
-				particlesNumber: number,
-				linkDist: link,
-				createLinkDist: clink,
-				linksWidth: linkw,
-				maxSize: size,
-				speed: speed,
-				disableLinks: dlink,
-				disableMouse: dmouse
-			});
-		});
-	}
-
-	function sinaProductZoomer($scope, $) {
-		$scope.find('.sina-product-zoomer').each(function () {
-			var $this = $(this),
-				position = $this.data('position'),
-				shape = $this.data('shape');
-
-			$this.find('.xzoom, .xzoom-gallery').xzoom({
-				position: position,
-				lensShape: shape,
-			});
+			$this.animate({ width: $perc + '%' }, $perc * 20 );
 		});
 	}
 
@@ -553,21 +651,129 @@
 		});
 	}
 
+	function sinaMCSubscribe($scope, $) {
+		$scope.find('.sina-subs-form').each(function () {
+			var $this = $(this),
+				$link = $this.data('link'),
+				$success = $this.children('.sina-subs-success'),
+				$error = $this.children('.sina-subs-error'),
+				$process = $this.children('.sina-subs-process');
+
+			$this.ajaxChimp({
+				language: 'es',
+				callback: mailchimpCallback,
+				url: $link
+			});
+			$this.on('submit', function(e) {
+				$error.fadeOut(0);
+				$success.fadeOut(0);
+				$process.fadeIn(200);
+
+				setTimeout( function() {
+					$error.fadeOut(200);
+					$success.fadeOut(200);
+				}, 10000 );
+
+				return false;
+			});
+			function mailchimpCallback(resp) {
+				if (resp.result === 'success') {
+					$process.fadeOut(0);
+					$success.html( resp.msg ).fadeIn(800);
+
+				} else if (resp.result === 'error') {
+					$process.fadeOut(0);
+					$error.html( resp.msg.replace('0 - ', '') ).fadeIn(800);
+				}
+			}
+		});
+	}
+
+	function sinaUserCounter($scope, $) {
+		$scope.find('.sina-user-counter').each(function () {
+			var $this = $(this),
+				number = $this.children('.sina-uc-number'),
+				roles = $this.data('roles'),
+				nonce = $this.find('#sina_user_counter_nonce');
+
+			setInterval( function() {
+				$.post(
+					sinaAjax.ajaxURL,
+					{
+						action: "sina_user_counter",
+						roles: roles,
+						nonce: nonce.val(),
+					},
+					function( data, status, code ) {
+						if ( status == 'success' ) {
+							number.html(data);
+						}
+					}
+				);
+			}, 5000);
+		});
+	}
+
+	function sinaVideo($scope, $) {
+		$scope.find('.sina-video').each(function () {
+			$(this).children('.sina-video-play').magnificPopup({
+				type: 'iframe'
+			});
+		});
+	}
+
+	function sinaVisitCounter($scope, $) {
+		$scope.find('.sina-visit-counter').each(function () {
+			var $this = $(this),
+				page = $this.data('page'),
+				today = $this.children('.sina-visit-today'),
+				yesterday = $this.children('.sina-visit-yesterday'),
+				nonce = $this.find('#sina_visit_counter_nonce');
+
+			setInterval( function() {
+				$.post(
+					sinaAjax.ajaxURL,
+					{
+						action: "sina_visit_counter",
+						page: page,
+						nonce: nonce.val(),
+					},
+					function( data, status, code ) {
+						if ( status == 'success' ) {
+							data = data.split('|');
+							today.html(data['0']);
+							yesterday.html(data['1']);
+						}
+					}
+				);
+			}, 5000);
+		});
+	}
+
+
 
 	$(window).on('elementor/frontend/init', function () {
+		elementorFrontend.hooks.addAction('frontend/element_ready/sina_accordion.default', sinaAccordion);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_banner_slider.default', sinaBannerSlider);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_blogpost.default', sinaBlogpost);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_brand_carousel.default', sinaBrandCarousel);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_contact_form.default', sinaContactForm);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_countdown.default', sinaCountdown);
-		elementorFrontend.hooks.addAction('frontend/element_ready/sina_mc_subscribe.default', sinaMCSubscribe);
+		elementorFrontend.hooks.addAction('frontend/element_ready/sina_counter.default', sinaCounter);
+		elementorFrontend.hooks.addAction('frontend/element_ready/sina_fancytext.default', sinaFancytext);
+		elementorFrontend.hooks.addAction('frontend/element_ready/sina_google_map.default', sinaGoogleMap);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_news_ticker.default', sinaNewsTicker);
-		elementorFrontend.hooks.addAction('frontend/element_ready/sina_portfolio.default', sinaPortfolio);
-		elementorFrontend.hooks.addAction('frontend/element_ready/sina_posts_tab.default', sinaPostsTab);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_product_zoomer.default', sinaProductZoomer);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_particle_layer.default', sinaParticleLayer);
+		elementorFrontend.hooks.addAction('frontend/element_ready/sina_piechart.default', sinaPiechart);
+		elementorFrontend.hooks.addAction('frontend/element_ready/sina_portfolio.default', sinaPortfolio);
+		elementorFrontend.hooks.addAction('frontend/element_ready/sina_posts_tab.default', sinaPostsTab);
+		elementorFrontend.hooks.addAction('frontend/element_ready/sina_progressbar.default', sinaProgressbars);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_review_carousel.default', sinaReviewCarousel);
-
+		elementorFrontend.hooks.addAction('frontend/element_ready/sina_mc_subscribe.default', sinaMCSubscribe);
+		elementorFrontend.hooks.addAction('frontend/element_ready/sina_user_counter.default', sinaUserCounter);
+		elementorFrontend.hooks.addAction('frontend/element_ready/sina_video.default', sinaVideo);
+		elementorFrontend.hooks.addAction('frontend/element_ready/sina_visit_counter.default', sinaVisitCounter);
 	});
 
 })(jQuery);

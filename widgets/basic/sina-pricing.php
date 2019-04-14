@@ -298,7 +298,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 					],
 				],
 				'default' => [
-					'px' => '1.1',
+					'size' => '1.1',
 				],
 				'condition' => [
 					'effects' => 'sina-pricing-zoom',
@@ -321,7 +321,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 					],
 				],
 				'default' => [
-					'px' => '10',
+					'size' => '-10',
 				],
 				'condition' => [
 					'effects' => 'sina-pricing-move',
@@ -341,7 +341,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 					],
 				],
 				'default' => [
-					'px' => '10',
+					'size' => '0',
 				],
 				'condition' => [
 					'effects' => 'sina-pricing-move',
@@ -373,6 +373,23 @@ class Sina_Pricing_Widget extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'box_border',
+				'fields_options' => [
+					'border' => [
+						'default' => 'solid',
+					],
+					'color' => [
+						'default' => '#1085e4',
+					],
+					'width' => [
+						'default' => [
+							'top' => '1',
+							'right' => '1',
+							'bottom' => '1',
+							'left' => '1',
+							'isLinked' => true,
+						]
+					],
+				],
 				'selector' => '{{WRAPPER}} .sina-pricing',
 			]
 		);
@@ -497,6 +514,19 @@ class Sina_Pricing_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'title_typography',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_weight' => [
+						'default' => '600',
+					],
+					'font_size'   => [
+						'default' => [
+							'size' => '24',
+						],
+					],
+				],
 				'selector' => '{{WRAPPER}} .sina-pricing .sina-pricing-title',
 			]
 		);
@@ -543,6 +573,13 @@ class Sina_Pricing_Widget extends Widget_Base {
 				'label' => __( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '20',
+					'right' => '15',
+					'bottom' => '20',
+					'left' => '15',
+					'isLinked' => false,
+				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-pricing .sina-pricing-title' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
@@ -605,6 +642,19 @@ class Sina_Pricing_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'price_typography',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_weight' => [
+						'default' => '600',
+					],
+					'font_size'   => [
+						'default' => [
+							'size' => '32',
+						],
+					],
+				],
 				'selector' => '{{WRAPPER}} .sina-pricing .sina-price-tag',
 			]
 		);
@@ -643,6 +693,9 @@ class Sina_Pricing_Widget extends Widget_Base {
 						'max' => 100,
 					],
 				],
+				'default' => [
+					'size' => '12',
+				],
 				'separator' => 'before',
 				'selectors' => [
 					'{{WRAPPER}} .sina-pricing .sina-price-tag .sina-price-suffix' => 'font-size: {{SIZE}}{{UNIT}};',
@@ -666,6 +719,13 @@ class Sina_Pricing_Widget extends Widget_Base {
 				'label' => __( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '20',
+					'right' => '20',
+					'bottom' => '15',
+					'left' => '20',
+					'isLinked' => true,
+				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-pricing .sina-price-tag' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
@@ -677,6 +737,13 @@ class Sina_Pricing_Widget extends Widget_Base {
 				'label' => __( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '0',
+					'right' => '0',
+					'bottom' => '0',
+					'left' => '0',
+					'isLinked' => true,
+				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-pricing .sina-price-tag' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
@@ -728,6 +795,19 @@ class Sina_Pricing_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'btn_typography',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_weight' => [
+						'default' => '600',
+					],
+					'transform'   => [
+						'default' => [
+							'size' => 'uppercase',
+						],
+					],
+				],
 				'separator' => 'before',
 				'selector' => '{{WRAPPER}} .sina-pricing-btn .sina-order-btn',
 			]
@@ -775,6 +855,23 @@ class Sina_Pricing_Widget extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'btn_border',
+				'fields_options' => [
+					'border' => [
+						'default' => 'solid',
+					],
+					'color' => [
+						'default' => '#1085e4',
+					],
+					'width' => [
+						'default' => [
+							'top' => '1',
+							'right' => '1',
+							'bottom' => '1',
+							'left' => '1',
+							'isLinked' => true,
+						]
+					],
+				],
 				'selector' => '{{WRAPPER}} .sina-pricing-btn .sina-order-btn',
 			]
 		);
@@ -832,6 +929,13 @@ class Sina_Pricing_Widget extends Widget_Base {
 				'label' => __( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '4',
+					'right' => '4',
+					'bottom' => '4',
+					'left' => '4',
+					'isLinked' => false,
+				],
 				'separator' => 'before',
 				'selectors' => [
 					'{{WRAPPER}} .sina-pricing-btn .sina-order-btn' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
@@ -844,6 +948,13 @@ class Sina_Pricing_Widget extends Widget_Base {
 				'label' => __( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '15',
+					'right' => '30',
+					'bottom' => '15',
+					'left' => '30',
+					'isLinked' => false,
+				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-pricing-btn .sina-order-btn' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
@@ -855,6 +966,13 @@ class Sina_Pricing_Widget extends Widget_Base {
 				'label' => __( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '30',
+					'right' => '0',
+					'bottom' => '40',
+					'left' => '0',
+					'isLinked' => false,
+				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-pricing-btn' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
@@ -891,6 +1009,21 @@ class Sina_Pricing_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'content_typography',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'line_height'   => [
+						'default' => [
+							'size' => '32',
+						],
+					],
+					'transform'   => [
+						'default' => [
+							'size' => 'uppercase',
+						],
+					],
+				],
 				'selector' => '{{WRAPPER}} .sina-pricing-body li',
 			]
 		);
@@ -908,7 +1041,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
-					'{{WRAPPER}} .sina-pricing-body li' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .sina-pricing-body' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
