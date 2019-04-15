@@ -521,20 +521,6 @@ class Sina_Content_Box_Widget extends Widget_Base {
 				'label' => __( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
-				'range' => [
-					'px' => [
-						'max' => 100,
-						'step' => 1,
-					],
-					'em' => [
-						'max' => 20,
-						'step' => 1,
-					],
-					'%' => [
-						'max' => 100,
-						'step' => 1,
-					],
-				],
 				'default' => [
 					'top' => '30',
 					'right' => '30',
@@ -631,20 +617,6 @@ class Sina_Content_Box_Widget extends Widget_Base {
 				'label' => __( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
-				'range' => [
-					'px' => [
-						'max' => 100,
-						'step' => 1,
-					],
-					'em' => [
-						'max' => 20,
-						'step' => 1,
-					],
-					'%' => [
-						'max' => 100,
-						'step' => 1,
-					],
-				],
 				'default' => [
 					'top' => '15',
 					'right' => '20',
@@ -714,20 +686,6 @@ class Sina_Content_Box_Widget extends Widget_Base {
 				'label' => __( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
-				'range' => [
-					'px' => [
-						'max' => 100,
-						'step' => 1,
-					],
-					'em' => [
-						'max' => 20,
-						'step' => 1,
-					],
-					'%' => [
-						'max' => 100,
-						'step' => 1,
-					],
-				],
 				'default' => [
 					'top' => '15',
 					'right' => '0',

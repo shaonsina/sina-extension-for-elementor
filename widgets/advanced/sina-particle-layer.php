@@ -222,16 +222,13 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 				'default' => 'left',
 			]
 		);
-		$this->add_control(
+		$this->add_responsive_control(
 			'pbtn_icon_space',
 			[
 				'label' => __( 'Icon Spacing', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
-				'range' => [
-					'px' => [
-						'max' => 50,
-						'step' => 1,
-					],
+				'default' => [
+					'size' => '5',
 				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-banner-pbtn .sina-icon-right' => 'margin-left: {{SIZE}}{{UNIT}};',
@@ -295,16 +292,13 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 				'default' => 'left',
 			]
 		);
-		$this->add_control(
+		$this->add_responsive_control(
 			'sbtn_icon_space',
 			[
 				'label' => __( 'Icon Spacing', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
-				'range' => [
-					'px' => [
-						'max' => 50,
-						'step' => 1,
-					],
+				'default' => [
+					'size' => '5',
 				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-banner-sbtn .sina-icon-right' => 'margin-left: {{SIZE}}{{UNIT}};',
@@ -312,17 +306,16 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 				],
 			]
 		);
-		$this->add_control(
+		$this->add_responsive_control(
 			'button_space',
 			[
 				'label' => __( 'Button Spacing', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
-				'range' => [
-					'px' => [
-						'min' => 10,
-						'max' => 200,
-						'step' => 1,
-					],
+				'desktop_default' => [
+					'size' => 20,
+				],
+				'mobile_default' => [
+					'size' => 15,
 				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-banner-sbtn' => 'margin-left: {{SIZE}}{{UNIT}};',
@@ -648,6 +641,10 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 						'step' => 1,
 					],
 				],
+				'default' =>[
+					'unit' => '%',
+					'size' => '100',
+				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-banner-container' => 'width: {{SIZE}}{{UNIT}};',
 				],
@@ -659,22 +656,26 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 				'label' => __( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
-				'range' => [
-					'px' => [
-						'min' => 50,
-						'max' => 500,
-						'step' => 1,
-					],
-					'em' => [
-						'min' => 5,
-						'max' => 50,
-						'step' => 1,
-					],
-					'%' => [
-						'min' => 5,
-						'max' => 100,
-						'step' => 1,
-					],
+				'desktop_default' => [
+					'top' => '180',
+					'right' => '50',
+					'bottom' => '180',
+					'left' => '50',
+					'isLinked' => false,
+				],
+				'tablet_default' => [
+					'top' => '80',
+					'right' => '100',
+					'bottom' => '100',
+					'left' => '100',
+					'isLinked' => false,
+				],
+				'mobile_default' => [
+					'top' => '60',
+					'right' => '20',
+					'bottom' => '60',
+					'left' => '20',
+					'isLinked' => false,
 				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-particle-layer' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
@@ -704,6 +705,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 						'icon' => 'fa fa-align-justify',
 					],
 				],
+				'default' => 'center',
 				'devices' => [ 'desktop', 'tablet', 'mobile' ],
 				'selectors' => [
 					'{{WRAPPER}} .sina-banner-container' => 'text-align: {{VALUE}};',
@@ -733,7 +735,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '#eee',
 				'selectors' => [
-					'{{WRAPPER}} .sina-banner-title > *' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .sina-banner-title, {{WRAPPER}} .sina-banner-title > *' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -741,7 +743,25 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'title_typography',
-				'selector' => '{{WRAPPER}} .sina-banner-title > *',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_weight' => [
+						'default' => '600',
+					],
+					'font_size'   => [
+						'default' => [
+							'size' => '40',
+						],
+					],
+					'line_height'   => [
+						'default' => [
+							'size' => '50',
+						],
+					],
+				],
+				'selector' => '{{WRAPPER}} .sina-banner-title, {{WRAPPER}} .sina-banner-title > *',
 			]
 		);
 		$this->add_group_control(
@@ -754,11 +774,14 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'title_margin',
 			[
-				'label' => __( 'Margin', 'sina-ext' ),
-				'type' => Controls_Manager::DIMENSIONS,
+				'label' => __( 'Margin Bottom', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'size' => '15',
+				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-banner-title > *' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .sina-banner-title' => 'margin-bottom: {{size}}{{UNIT}};',
 				],
 			]
 		);
@@ -785,7 +808,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '#eee',
 				'selectors' => [
-					'{{WRAPPER}} .sina-banner-subtitle > *' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .sina-banner-subtitle, {{WRAPPER}} .sina-banner-subtitle > *' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -793,7 +816,25 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'subtitle_typography',
-				'selector' => '{{WRAPPER}} .sina-banner-subtitle > *',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_weight' => [
+						'default' => '600',
+					],
+					'font_size'   => [
+						'default' => [
+							'size' => '30',
+						],
+					],
+					'line_height'   => [
+						'default' => [
+							'size' => '40',
+						],
+					],
+				],
+				'selector' => '{{WRAPPER}} .sina-banner-subtitle, {{WRAPPER}} .sina-banner-subtitle > *',
 			]
 		);
 		$this->add_group_control(
@@ -806,11 +847,14 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'subtitle_margin',
 			[
-				'label' => __( 'Margin', 'sina-ext' ),
-				'type' => Controls_Manager::DIMENSIONS,
+				'label' => __( 'Margin Bottom', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'size' => '10',
+				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-banner-subtitle > *' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .sina-banner-subtitle' => 'margin-bottom: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -837,7 +881,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '#eee',
 				'selectors' => [
-					'{{WRAPPER}} .sina-banner-desc > *' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .sina-banner-desc, {{WRAPPER}} .sina-banner-desc > *' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -845,7 +889,22 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'desc_typography',
-				'selector' => '{{WRAPPER}} .sina-banner-desc > *',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_size'   => [
+						'default' => [
+							'size' => '16',
+						],
+					],
+					'line_height'   => [
+						'default' => [
+							'size' => '24',
+						],
+					],
+				],
+				'selector' => '{{WRAPPER}} .sina-banner-desc, {{WRAPPER}} .sina-banner-desc > *',
 			]
 		);
 		$this->add_group_control(
@@ -858,11 +917,14 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'desc_margin',
 			[
-				'label' => __( 'Margin', 'sina-ext' ),
-				'type' => Controls_Manager::DIMENSIONS,
+				'label' => __( 'Margin Bottom', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'size' => '40',
+				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-banner-desc > *' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .sina-banner-desc' => 'margin-bottom: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -886,6 +948,19 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'pbtn_typography',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_weight' => [
+						'default' => '600',
+					],
+					'transform'   => [
+						'default' => [
+							'size' => 'uppercase',
+						],
+					],
+				],
 				'selector' => '{{WRAPPER}} .sina-banner-pbtn',
 			]
 		);
@@ -998,6 +1073,13 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 				'label' => __( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '4',
+					'right' => '4',
+					'bottom' => '4',
+					'left' => '4',
+					'isLinked' => true,
+				],
 				'separator' => 'before',
 				'selectors' => [
 					'{{WRAPPER}} .sina-banner-pbtn' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
@@ -1010,6 +1092,20 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 				'label' => __( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
+				'desktop_default' => [
+					'top' => '15',
+					'right' => '30',
+					'bottom' => '15',
+					'left' => '30',
+					'isLinked' => false,
+				],
+				'mobile_default' => [
+					'top' => '10',
+					'right' => '15',
+					'bottom' => '10',
+					'left' => '15',
+					'isLinked' => false,
+				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-banner-pbtn' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
@@ -1035,6 +1131,19 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'sbtn_typography',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_weight' => [
+						'default' => '600',
+					],
+					'transform'   => [
+						'default' => [
+							'size' => 'uppercase',
+						],
+					],
+				],
 				'selector' => '{{WRAPPER}} .sina-banner-sbtn',
 			]
 		);
@@ -1148,6 +1257,13 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 				'label' => __( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '4',
+					'right' => '4',
+					'bottom' => '4',
+					'left' => '4',
+					'isLinked' => true,
+				],
 				'separator' => 'before',
 				'selectors' => [
 					'{{WRAPPER}} .sina-banner-sbtn' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
@@ -1160,6 +1276,20 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 				'label' => __( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
+				'desktop_default' => [
+					'top' => '15',
+					'right' => '30',
+					'bottom' => '15',
+					'left' => '30',
+					'isLinked' => false,
+				],
+				'mobile_default' => [
+					'top' => '10',
+					'right' => '15',
+					'bottom' => '10',
+					'left' => '15',
+					'isLinked' => false,
+				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-banner-sbtn' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],

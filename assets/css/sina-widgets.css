@@ -110,6 +110,8 @@ img.mfp-img{
 }
 
 /* only transition */
+.sina-brand-item-inner,
+.sina-brand-item-inner a img,
 .sina-flipbox-title,
 .sina-flipbox-icon i,
 .sina-content-box-icon i,
@@ -259,11 +261,7 @@ img.mfp-img{
 }
 .sina-bp-col{
 	float: left;
-	padding: 10px;
 	overflow: hidden;
-}
-.sina-bp{
-	border: 1px solid #eee;
 }
 .sina-bg-thumb{
 	position: relative;
@@ -278,33 +276,16 @@ img.mfp-img{
 .sina-bg-thumb img {
 	display: block;
 }
-.sina-bp-content{
-	padding: 15px;
-}
 .sina-bp-title,
 .sina-bp-title a{
 	display: block;
-	font-size: 20px;
-	font-weight: 600;
-	line-height: 1.1;
 	transition: 0.4s;
-}
-.sina-bp-meta{
-	padding-top: .75rem;
-	margin-top: 15px;
-	margin-bottom: 0;
-	border-top: 1px solid #1085e4;
 }
 .sina-bp-pagination {
 	margin: 40px 15px;
 }
 .sina-bp-pagination .page-numbers {
 	display: inline-block;
-	margin: 4px 2px;
-	padding: 6px 12px;
-	border: 1px solid #1085e4;
-	font-size: 15px;
-	line-height: 20px;
 	text-align: center;
 	transition: all 0.4s ease-in-out;
 }
@@ -319,8 +300,6 @@ img.mfp-img{
 }
 .sina-load-more .sina-load-more-btn{
 	min-width: 160px;
-	margin: 40px 0;
-	border: 1px solid #1085e4;
 	cursor: pointer;
 }
 
@@ -328,20 +307,9 @@ img.mfp-img{
 .sina-brand-carousel{
 	overflow: hidden;
 }
-.sina-brand-item{
-	padding: 20px;
-}
-.sina-brand-item-inner{
-	border: 1px solid #eee;
-	transition: all 0.4s ease-in-out;
-}
 .sina-brand-item-inner a{
 	display: block;
-	padding: 20px 75px;
 	text-align: center;
-}
-.sina-brand-item-inner a img{
-	transition: all 0.4s ease-in-out;
 }
 
 /*--------------------------------- Contact Form -------------------------------------- */
@@ -637,15 +605,12 @@ img.mfp-img{
 .sina-particle-layer{
 	position: relative;
 	width: 100%;
-	padding: 180px 50px;
 	overflow: hidden;
 }
 .sina-banner-container{
 	position: relative;
 	z-index: 1;
-	width: 100%;
 	margin: 0 auto;
-	text-align: center;
 }
 .sina-banner-title > *,
 .sina-banner-subtitle > *,
@@ -1041,9 +1006,6 @@ img.mfp-img{
 
 /* RESPONSIVE-Tablet*/
 @media (max-width: 991px) {
-	.sina-brand-item-inner a{
-		padding: 15px 35px;
-	}
 	.sina-portfolio-item{
 		width: 50%;
 		height: 400px;
@@ -1071,14 +1033,6 @@ img.mfp-img{
 	.sina-banner-slider .owl-next,
 	.sina-banner-slider .owl-prev{
 		display: none;
-	}
-	.sina-slider-content,
-	.sina-particle-layer{
-		padding: 100px 20px;
-	}
-	.sina-banner-btns .sina-banner-pbtn,
-	.sina-banner-btns .sina-banner-sbtn{
-		padding: 10px;
 	}
 	.sina-bp-col{
 		width: calc(100% - 30px);

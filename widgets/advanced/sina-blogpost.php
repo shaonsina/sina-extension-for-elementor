@@ -308,6 +308,23 @@ class Sina_Blogpost_Widget extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'box_border',
+				'fields_options' => [
+					'border' => [
+						'default' => 'solid',
+					],
+					'color' => [
+						'default' => '#eee',
+					],
+					'width' => [
+						'default' => [
+							'top' => '1',
+							'right' => '1',
+							'bottom' => '1',
+							'left' => '1',
+							'isLinked' => true,
+						]
+					],
+				],
 				'selector' => '{{WRAPPER}} .sina-bp',
 			]
 		);
@@ -328,6 +345,13 @@ class Sina_Blogpost_Widget extends Widget_Base {
 				'label' => __( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '10',
+					'right' => '10',
+					'bottom' => '10',
+					'left' => '10',
+					'isLinked' => true,
+				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-bp-col' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
@@ -409,6 +433,13 @@ class Sina_Blogpost_Widget extends Widget_Base {
 				'label' => __( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '15',
+					'right' => '15',
+					'bottom' => '15',
+					'left' => '15',
+					'isLinked' => true,
+				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-bp-content' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
@@ -434,6 +465,24 @@ class Sina_Blogpost_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'title_typography',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_weight' => [
+						'default' => '600',
+					],
+					'font_size'   => [
+						'default' => [
+							'size' => '24',
+						],
+					],
+					'line_height'   => [
+						'default' => [
+							'size' => '32',
+						],
+					],
+				],
 				'selector' => '{{WRAPPER}} .sina-bp-title, {{WRAPPER}} .sina-bp-title a',
 			]
 		);
@@ -493,6 +542,13 @@ class Sina_Blogpost_Widget extends Widget_Base {
 				'label' => __( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '0',
+					'right' => '0',
+					'bottom' => '10',
+					'left' => '0',
+					'isLinked' => false,
+				],
 				'separator' => 'before',
 				'selectors' => [
 					'{{WRAPPER}} .sina-bp-title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
@@ -576,8 +632,25 @@ class Sina_Blogpost_Widget extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'meta_border',
-				'selector' => '{{WRAPPER}} .sina-bp-meta',
+				'fields_options' => [
+					'border' => [
+						'default' => 'solid',
+					],
+					'color' => [
+						'default' => '#1085e4',
+					],
+					'width' => [
+						'default' => [
+							'top' => '1',
+							'right' => '0',
+							'bottom' => '0',
+							'left' => '0',
+							'isLinked' => false,
+						]
+					],
+				],
 				'separator' => 'before',
+				'selector' => '{{WRAPPER}} .sina-bp-meta',
 			]
 		);
 		$this->add_responsive_control(
@@ -586,6 +659,13 @@ class Sina_Blogpost_Widget extends Widget_Base {
 				'label' => __( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '12',
+					'right' => '0',
+					'bottom' => '0',
+					'left' => '0',
+					'isLinked' => false,
+				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-bp-meta' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
@@ -597,6 +677,13 @@ class Sina_Blogpost_Widget extends Widget_Base {
 				'label' => __( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '15',
+					'right' => '0',
+					'bottom' => '0',
+					'left' => '0',
+					'isLinked' => false,
+				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-bp-meta' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
@@ -618,6 +705,32 @@ class Sina_Blogpost_Widget extends Widget_Base {
 				'condition' => [
 					'pagination!' => '',
 				],
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name' => 'pagi_typography',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_size'   => [
+						'default' => [
+							'size' => '16',
+						],
+					],
+				],
+				'selector' => '{{WRAPPER}} .sina-bp-pagination .page-numbers',
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Text_Shadow::get_type(),
+			[
+				'name' => 'pagi_tshadow',
+				'selector' => '{{WRAPPER}} .sina-bp-pagination .page-numbers',
 			]
 		);
 
@@ -654,6 +767,23 @@ class Sina_Blogpost_Widget extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'pagi_link_border',
+				'fields_options' => [
+					'border' => [
+						'default' => 'solid',
+					],
+					'color' => [
+						'default' => '#1085e4',
+					],
+					'width' => [
+						'default' => [
+							'top' => '1',
+							'right' => '1',
+							'bottom' => '1',
+							'left' => '1',
+							'isLinked' => true,
+						]
+					],
+				],
 				'selector' => '{{WRAPPER}} .sina-bp-pagination .page-numbers',
 			]
 		);
@@ -731,6 +861,23 @@ class Sina_Blogpost_Widget extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'pagi_link_current_border',
+				'fields_options' => [
+					'border' => [
+						'default' => 'solid',
+					],
+					'color' => [
+						'default' => '#1085e4',
+					],
+					'width' => [
+						'default' => [
+							'top' => '1',
+							'right' => '1',
+							'bottom' => '1',
+							'left' => '1',
+							'isLinked' => true,
+						]
+					],
+				],
 				'selector' => '{{WRAPPER}} .sina-bp-pagination .page-numbers.current',
 			]
 		);
@@ -743,10 +890,8 @@ class Sina_Blogpost_Widget extends Widget_Base {
 			[
 				'label' => __( 'Gap From Posts', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
-				'range' => [
-					'px' => [
-						'max' => 100,
-					],
+				'default' => [
+					'size' => '40',
 				],
 				'separator' => 'before',
 				'selectors' => [
@@ -771,6 +916,13 @@ class Sina_Blogpost_Widget extends Widget_Base {
 				'label' => __( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '6',
+					'right' => '12',
+					'bottom' => '6',
+					'left' => '12',
+					'isLinked' => false,
+				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-bp-pagination .page-numbers' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
@@ -782,6 +934,13 @@ class Sina_Blogpost_Widget extends Widget_Base {
 				'label' => __( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '4',
+					'right' => '2',
+					'bottom' => '4',
+					'left' => '2',
+					'isLinked' => false,
+				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-bp-pagination .page-numbers' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
@@ -835,9 +994,20 @@ class Sina_Blogpost_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'load_btn_typography',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_size'   => [
+						'default' => [
+							'size' => '16',
+						],
+					],
+				],
 				'selector' => '{{WRAPPER}} .sina-load-more-btn',
 			]
 		);
+
 		$this->add_group_control(
 			Group_Control_Text_Shadow::get_type(),
 			[
@@ -887,6 +1057,23 @@ class Sina_Blogpost_Widget extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'load_btn_border',
+				'fields_options' => [
+					'border' => [
+						'default' => 'solid',
+					],
+					'color' => [
+						'default' => '#1085e4',
+					],
+					'width' => [
+						'default' => [
+							'top' => '1',
+							'right' => '1',
+							'bottom' => '1',
+							'left' => '1',
+							'isLinked' => true,
+						]
+					],
+				],
 				'selector' => '{{WRAPPER}} .sina-load-more-btn',
 			]
 		);
@@ -947,6 +1134,13 @@ class Sina_Blogpost_Widget extends Widget_Base {
 				'label' => __( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '4',
+					'right' => '4',
+					'bottom' => '4',
+					'left' => '4',
+					'isLinked' => true,
+				],
 				'separator' => 'before',
 				'selectors' => [
 					'{{WRAPPER}} .sina-load-more-btn' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
@@ -959,6 +1153,13 @@ class Sina_Blogpost_Widget extends Widget_Base {
 				'label' => __( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '10',
+					'right' => '15',
+					'bottom' => '10',
+					'left' => '15',
+					'isLinked' => false,
+				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-load-more-btn' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
@@ -967,11 +1168,14 @@ class Sina_Blogpost_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'load_btn_margin',
 			[
-				'label' => __( 'Margin', 'sina-ext' ),
-				'type' => Controls_Manager::DIMENSIONS,
+				'label' => __( 'Margin Top', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'size' => '40',
+				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-load-more-btn' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .sina-load-more-btn' => 'margin-top: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);

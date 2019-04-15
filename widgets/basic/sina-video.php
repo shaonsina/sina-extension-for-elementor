@@ -189,20 +189,6 @@ class Sina_Video_Widget extends Widget_Base {
 				'label' => __( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
-				'range' => [
-					'px' => [
-						'max' => 100,
-						'step' => 1,
-					],
-					'em' => [
-						'max' => 20,
-						'step' => 1,
-					],
-					'%' => [
-						'max' => 100,
-						'step' => 1,
-					],
-				],
 				'default' => [
 					'top' => '30',
 					'right' => '0',

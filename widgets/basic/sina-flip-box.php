@@ -237,20 +237,6 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 				'label' => __( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
-				'range' => [
-					'px' => [
-						'max' => 100,
-						'step' => 1,
-					],
-					'em' => [
-						'max' => 20,
-						'step' => 1,
-					],
-					'%' => [
-						'max' => 100,
-						'step' => 1,
-					],
-				],
 				'default' => [
 					'top' => '20',
 					'right' => '20',
@@ -297,20 +283,6 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 				'label' => __( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
-				'range' => [
-					'px' => [
-						'max' => 100,
-						'step' => 1,
-					],
-					'em' => [
-						'max' => 20,
-						'step' => 1,
-					],
-					'%' => [
-						'max' => 100,
-						'step' => 1,
-					],
-				],
 				'default' => [
 					'top' => '20',
 					'right' => '20',
@@ -334,23 +306,6 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 				'label' => __( 'Height', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', '%' ],
-				'range' => [
-					'px' => [
-						'min' => 100,
-						'max' => 500,
-						'step' => 1,
-					],
-					'em' => [
-						'min' => 10,
-						'max' => 100,
-						'step' => 1,
-					],
-					'%' => [
-						'min' => 5,
-						'max' => 100,
-						'step' => 1,
-					],
-				],
 				'default' => [
 					'size' => '230',
 				],
@@ -475,20 +430,6 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 				'label' => __( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
-				'range' => [
-					'px' => [
-						'max' => 100,
-						'step' => 1,
-					],
-					'em' => [
-						'max' => 20,
-						'step' => 1,
-					],
-					'%' => [
-						'max' => 100,
-						'step' => 1,
-					],
-				],
 				'default' => [
 					'top' => '15',
 					'right' => '20',
@@ -564,20 +505,6 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 				'label' => __( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
-				'range' => [
-					'px' => [
-						'max' => 100,
-						'step' => 1,
-					],
-					'em' => [
-						'max' => 20,
-						'step' => 1,
-					],
-					'%' => [
-						'max' => 100,
-						'step' => 1,
-					],
-				],
 				'default' => [
 					'top' => '15',
 					'right' => '20',
@@ -663,20 +590,6 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 				'label' => __( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
-				'range' => [
-					'px' => [
-						'max' => 100,
-						'step' => 1,
-					],
-					'em' => [
-						'max' => 20,
-						'step' => 1,
-					],
-					'%' => [
-						'max' => 100,
-						'step' => 1,
-					],
-				],
 				'default' => [
 					'top' => '15',
 					'right' => '0',
@@ -743,20 +656,6 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 				'label' => __( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
-				'range' => [
-					'px' => [
-						'max' => 100,
-						'step' => 1,
-					],
-					'em' => [
-						'max' => 20,
-						'step' => 1,
-					],
-					'%' => [
-						'max' => 100,
-						'step' => 1,
-					],
-				],
 				'default' => [
 					'top' => '15',
 					'right' => '0',

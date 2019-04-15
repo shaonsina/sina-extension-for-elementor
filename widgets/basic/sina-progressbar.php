@@ -206,13 +206,6 @@ class Sina_Progressbar_Widget extends Widget_Base {
 				'label' => __('Spacing', 'sina-ext'),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => ['px'],
-				'range' => [
-					'px' => [
-						'min' => 5,
-						'max' => 100,
-						'step' => 1,
-					],
-				],
 				'default' => [
 					'size' => 15,
 				],
@@ -228,13 +221,6 @@ class Sina_Progressbar_Widget extends Widget_Base {
 				'label' => __('Height', 'sina-ext'),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => ['px'],
-				'range' => [
-					'px' => [
-						'min' => 12,
-						'max' => 60,
-						'step' => 1,
-					],
-				],
 				'default' => [
 					'size' => 16,
 				],

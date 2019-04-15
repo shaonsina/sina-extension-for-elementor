@@ -294,19 +294,19 @@ class Sina_Brand_Carousel_Widget extends Widget_Base {
 				'label' => __( 'Logo Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
-				'range' => [
-					'px' => [
-						'max' => 100,
-						'step' => 1,
-					],
-					'em' => [
-						'max' => 20,
-						'step' => 1,
-					],
-					'%' => [
-						'max' => 100,
-						'step' => 1,
-					],
+				'desktop_default' => [
+					'top' => '20',
+					'right' => '75',
+					'bottom' => '20',
+					'left' => '75',
+					'isLinked' => false,
+				],
+				'tablet_default' => [
+					'top' => '15',
+					'right' => '35',
+					'bottom' => '15',
+					'left' => '35',
+					'isLinked' => false,
 				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-brand-item-inner a' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
@@ -319,19 +319,12 @@ class Sina_Brand_Carousel_Widget extends Widget_Base {
 				'label' => __( 'Box Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
-				'range' => [
-					'px' => [
-						'max' => 100,
-						'step' => 1,
-					],
-					'em' => [
-						'max' => 20,
-						'step' => 1,
-					],
-					'%' => [
-						'max' => 100,
-						'step' => 1,
-					],
+				'default' => [
+					'top' => '20',
+					'right' => '20',
+					'bottom' => '20',
+					'left' => '20',
+					'isLinked' => true,
 				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-brand-item' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
@@ -374,6 +367,23 @@ class Sina_Brand_Carousel_Widget extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'box_border',
+				'fields_options' => [
+					'border' => [
+						'default' => 'solid',
+					],
+					'color' => [
+						'default' => '#eee',
+					],
+					'width' => [
+						'default' => [
+							'top' => '1',
+							'right' => '1',
+							'bottom' => '1',
+							'left' => '1',
+							'isLinked' => true,
+						]
+					],
+				],
 				'selector' => '{{WRAPPER}} .sina-brand-item-inner',
 			]
 		);

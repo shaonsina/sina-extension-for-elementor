@@ -200,23 +200,6 @@ class Sina_Google_Map_Widget extends Widget_Base {
 				'label' => __( 'Height', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', '%' ],
-				'range' => [
-					'px' => [
-						'min' => 100,
-						'max' => 1500,
-						'step' => 1,
-					],
-					'em' => [
-						'min' => 10,
-						'max' => 150,
-						'step' => 1,
-					],
-					'%' => [
-						'min' => 5,
-						'max' => 100,
-						'step' => 1,
-					],
-				],
 				'default' => [
 					'size' => '400',
 				],
