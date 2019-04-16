@@ -626,19 +626,10 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 				'size_units' => [ 'px', 'em', '%' ],
 				'range' => [
 					'px' => [
-						'min' => 100,
 						'max' => 2000,
-						'step' => 1,
 					],
 					'em' => [
-						'min' => 10,
-						'max' => 200,
-						'step' => 1,
-					],
-					'%' => [
-						'min' => 5,
 						'max' => 100,
-						'step' => 1,
 					],
 				],
 				'default' =>[

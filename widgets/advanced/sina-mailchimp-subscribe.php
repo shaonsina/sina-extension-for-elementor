@@ -298,11 +298,6 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 			[
 				'label' => __( 'Icon Space', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
-				'range' => [
-					'px' => [
-						'max' => 50,
-					],
-				],
 				'default' => [
 					'size' => 5,
 				],
@@ -343,6 +338,31 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 				'default' => 'inline-block',
 			]
 		);
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name' => 'fields_typography',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_weight' => [
+						'default' => '400',
+					],
+					'font_size'   => [
+						'default' => [
+							'size' => '16',
+						],
+					],
+					'line_height'   => [
+						'default' => [
+							'size' => '24',
+						],
+					],
+				],
+				'selector' => '{{WRAPPER}} .sina-subs-input .sina-input-field',
+			]
+		);
 		$this->add_control(
 			'placeholder_color',
 			[
@@ -355,13 +375,6 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 					'{{WRAPPER}} .sina-subs-input .sina-input-field::-ms-placeholder' => 'color: {{VALUE}};',
 					'{{WRAPPER}} .sina-subs-input .sina-input-field::placeholder' => 'color: {{VALUE}};',
 				],
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Typography::get_type(),
-			[
-				'name' => 'fields_typography',
-				'selector' => '{{WRAPPER}} .sina-subs-input .sina-input-field',
 			]
 		);
 		$this->add_group_control(
@@ -407,6 +420,23 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'border',
+				'fields_options' => [
+					'border' => [
+						'default' => 'solid',
+					],
+					'color' => [
+						'default' => '#1085e4',
+					],
+					'width' => [
+						'default' => [
+							'top' => '1',
+							'right' => '1',
+							'bottom' => '1',
+							'left' => '1',
+							'isLinked' => true,
+						]
+					],
+				],
 				'selector' => '{{WRAPPER}} .sina-subs-input .sina-input-field',
 			]
 		);
@@ -464,23 +494,16 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 				'label' => __( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
-				'range' => [
-					'px' => [
-						'max' => 500,
-						'step' => 1,
-					],
-					'em' => [
-						'max' => 20,
-						'step' => 1,
-					],
-					'%' => [
-						'max' => 50,
-						'step' => 1,
-					],
+				'default' => [
+					'top' => '10',
+					'right' => '12',
+					'bottom' => '10',
+					'left' => '12',
+					'isLinked' => false,
 				],
 				'separator' => 'before',
 				'selectors' => [
-					'{{WRAPPER}} .sina-subs-input' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .sina-subs-input .sina-input-field' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -511,19 +534,10 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 				'size_units' => [ 'px', 'em', '%' ],
 				'range' => [
 					'px' => [
-						'min' => 100,
-						'max' => 500,
-						'step' => 1,
+						'max' => 1000,
 					],
 					'em' => [
-						'min' => 10,
-						'max' => 30,
-						'step' => 1,
-					],
-					'%' => [
-						'min' => 5,
-						'max' => 100,
-						'step' => 1,
+						'max' => 50,
 					],
 				],
 				'selectors' => [
@@ -537,6 +551,13 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 				'label' => __( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '0',
+					'right' => '0',
+					'bottom' => '0',
+					'left' => '0',
+					'isLinked' => true,
+				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-subs-input .sina-input-fname' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
@@ -548,19 +569,12 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 				'label' => __( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
-				'range' => [
-					'px' => [
-						'max' => 500,
-						'step' => 1,
-					],
-					'em' => [
-						'max' => 20,
-						'step' => 1,
-					],
-					'%' => [
-						'max' => 50,
-						'step' => 1,
-					],
+				'default' => [
+					'top' => '0',
+					'right' => '0',
+					'bottom' => '20',
+					'left' => '0',
+					'isLinked' => false,
 				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-subs-input .sina-input-fname' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
@@ -594,19 +608,10 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 				'size_units' => [ 'px', 'em', '%' ],
 				'range' => [
 					'px' => [
-						'min' => 100,
-						'max' => 500,
-						'step' => 1,
+						'max' => 1000,
 					],
 					'em' => [
-						'min' => 10,
-						'max' => 30,
-						'step' => 1,
-					],
-					'%' => [
-						'min' => 5,
-						'max' => 100,
-						'step' => 1,
+						'max' => 50,
 					],
 				],
 				'selectors' => [
@@ -620,6 +625,13 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 				'label' => __( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '0',
+					'right' => '0',
+					'bottom' => '0',
+					'left' => '0',
+					'isLinked' => true,
+				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-subs-input .sina-input-lname' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
@@ -631,19 +643,12 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 				'label' => __( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
-				'range' => [
-					'px' => [
-						'max' => 500,
-						'step' => 1,
-					],
-					'em' => [
-						'max' => 20,
-						'step' => 1,
-					],
-					'%' => [
-						'max' => 50,
-						'step' => 1,
-					],
+				'default' => [
+					'top' => '0',
+					'right' => '0',
+					'bottom' => '20',
+					'left' => '0',
+					'isLinked' => false,
 				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-subs-input .sina-input-lname' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
@@ -674,19 +679,10 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 				'size_units' => [ 'px', 'em', '%' ],
 				'range' => [
 					'px' => [
-						'min' => 100,
-						'max' => 500,
-						'step' => 1,
+						'max' => 1000,
 					],
 					'em' => [
-						'min' => 10,
-						'max' => 30,
-						'step' => 1,
-					],
-					'%' => [
-						'min' => 5,
-						'max' => 100,
-						'step' => 1,
+						'max' => 50,
 					],
 				],
 				'selectors' => [
@@ -700,6 +696,13 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 				'label' => __( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '0',
+					'right' => '0',
+					'bottom' => '0',
+					'left' => '0',
+					'isLinked' => true,
+				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-subs-input .sina-input-email' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
@@ -711,19 +714,12 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 				'label' => __( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
-				'range' => [
-					'px' => [
-						'max' => 500,
-						'step' => 1,
-					],
-					'em' => [
-						'max' => 20,
-						'step' => 1,
-					],
-					'%' => [
-						'max' => 50,
-						'step' => 1,
-					],
+				'default' => [
+					'top' => '0',
+					'right' => '0',
+					'bottom' => '20',
+					'left' => '0',
+					'isLinked' => false,
 				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-subs-input .sina-input-email' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
@@ -757,19 +753,10 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 				'size_units' => [ 'px', 'em', '%' ],
 				'range' => [
 					'px' => [
-						'min' => 100,
-						'max' => 500,
-						'step' => 1,
+						'max' => 1000,
 					],
 					'em' => [
-						'min' => 10,
-						'max' => 30,
-						'step' => 1,
-					],
-					'%' => [
-						'min' => 5,
-						'max' => 100,
-						'step' => 1,
+						'max' => 50,
 					],
 				],
 				'selectors' => [
@@ -783,6 +770,13 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 				'label' => __( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '0',
+					'right' => '0',
+					'bottom' => '0',
+					'left' => '0',
+					'isLinked' => true,
+				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-subs-input .sina-input-phone' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
@@ -794,19 +788,12 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 				'label' => __( 'Phone Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
-				'range' => [
-					'px' => [
-						'max' => 500,
-						'step' => 1,
-					],
-					'em' => [
-						'max' => 20,
-						'step' => 1,
-					],
-					'%' => [
-						'max' => 50,
-						'step' => 1,
-					],
+				'default' => [
+					'top' => '0',
+					'right' => '0',
+					'bottom' => '20',
+					'left' => '0',
+					'isLinked' => false,
 				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-subs-input .sina-input-phone' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
@@ -833,6 +820,21 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'btn_typography',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_size'   => [
+						'default' => [
+							'size' => '16',
+						],
+					],
+					'line_height'   => [
+						'default' => [
+							'size' => '24',
+						],
+					],
+				],
 				'selector' => '{{WRAPPER}} .sina-subs-btn',
 			]
 		);
@@ -953,19 +955,10 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 				'size_units' => [ 'px', 'em', '%' ],
 				'range' => [
 					'px' => [
-						'min' => 100,
 						'max' => 1000,
-						'step' => 1,
 					],
 					'em' => [
-						'min' => 10,
-						'max' => 30,
-						'step' => 1,
-					],
-					'%' => [
-						'min' => 10,
-						'max' => 100,
-						'step' => 1,
+						'max' => 50,
 					],
 				],
 				'separator' => 'before',
@@ -980,6 +973,13 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 				'label' => __( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '0',
+					'right' => '0',
+					'bottom' => '0',
+					'left' => '0',
+					'isLinked' => true,
+				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-subs-btn' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
@@ -991,19 +991,12 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 				'label' => __( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
-				'range' => [
-					'px' => [
-						'max' => 100,
-						'step' => 1,
-					],
-					'em' => [
-						'max' => 20,
-						'step' => 1,
-					],
-					'%' => [
-						'max' => 100,
-						'step' => 1,
-					],
+				'default' => [
+					'top' => '11',
+					'right' => '20',
+					'bottom' => '11',
+					'left' => '20',
+					'isLinked' => false,
 				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-subs-btn' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
@@ -1016,19 +1009,12 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 				'label' => __( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
-				'range' => [
-					'px' => [
-						'max' => 100,
-						'step' => 1,
-					],
-					'em' => [
-						'max' => 20,
-						'step' => 1,
-					],
-					'%' => [
-						'max' => 100,
-						'step' => 1,
-					],
+				'default' => [
+					'top' => '0',
+					'right' => '0',
+					'bottom' => '0',
+					'left' => '-4',
+					'isLinked' => false,
 				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-subs-btn' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',

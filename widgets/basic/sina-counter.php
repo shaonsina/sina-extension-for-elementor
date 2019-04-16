@@ -186,11 +186,10 @@ class Sina_Counter_Widget extends Widget_Base {
 			[
 				'label' => __( 'Prefix Space', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
-				'size_units' => ['px'],
+				'size_units' => ['px', 'em'],
 				'range' => [
 					'px' => [
 						'min' => -20,
-						'step' => 1,
 					],
 				],
 				'condition' => [
@@ -215,11 +214,10 @@ class Sina_Counter_Widget extends Widget_Base {
 			[
 				'label' => __( 'Suffix space', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
-				'size_units' => ['px'],
+				'size_units' => ['px', 'em'],
 				'range' => [
 					'px' => [
 						'min' => -20,
-						'step' => 1,
 					],
 				],
 				'condition' => [
@@ -412,9 +410,7 @@ class Sina_Counter_Widget extends Widget_Base {
 				'size_units' => ['px'],
 				'range' => [
 					'px' => [
-						'min' => 20,
 						'max' => 200,
-						'step' => 1,
 					],
 				],
 				'default' => [

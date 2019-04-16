@@ -695,7 +695,15 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 			[
 				'label' => __( 'Height', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
-				'size_units' => [ 'px', 'em', '%' ],
+				'size_units' => [ 'px', 'em' ],
+				'range' => [
+					'px' => [
+						'max' => 1000,
+					],
+					'em' => [
+						'max' => 50,
+					],
+				],
 				'desktop_default' => [
 					'size' => 600,
 				],

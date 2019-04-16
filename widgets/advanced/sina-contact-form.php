@@ -206,10 +206,8 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 			[
 				'label' => __( 'Icon Space', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
-				'range' => [
-					'px' => [
-						'max' => 50,
-					],
+				'default' => [
+					'size' => '5',
 				],
 				'condition' => [
 					'icon!' => '',
@@ -246,6 +244,31 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 					'layout2' => __( 'Layout 2', 'sina-ext' ),
 				],
 				'default' => 'layout2',
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name' => 'fields_typo',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_weight' => [
+						'default' => '400',
+					],
+					'font_size'   => [
+						'default' => [
+							'size' => '16',
+						],
+					],
+					'line_height'   => [
+						'default' => [
+							'size' => '24',
+						],
+					],
+				],
+				'selector' => '{{WRAPPER}} .sina-contact-input .sina-input-field',
 			]
 		);
 		$this->add_control(
@@ -298,6 +321,23 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'border',
+				'fields_options' => [
+					'border' => [
+						'default' => 'solid',
+					],
+					'color' => [
+						'default' => '#1085e4',
+					],
+					'width' => [
+						'default' => [
+							'top' => '1',
+							'right' => '1',
+							'bottom' => '1',
+							'left' => '1',
+							'isLinked' => true,
+						]
+					],
+				],
 				'selector' => '{{WRAPPER}} .sina-contact-input .sina-input-field',
 			]
 		);
@@ -316,7 +356,7 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 			[
 				'label' => __( 'Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '',
+				'default' => '#495057',
 				'selectors' => [
 					'{{WRAPPER}} .sina-contact-input .sina-input-field:focus' => 'color: {{VALUE}};',
 				],
@@ -355,19 +395,12 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 				'label' => __( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
-				'range' => [
-					'px' => [
-						'max' => 500,
-						'step' => 1,
-					],
-					'em' => [
-						'max' => 20,
-						'step' => 1,
-					],
-					'%' => [
-						'max' => 50,
-						'step' => 1,
-					],
+				'default' => [
+					'top' => '10',
+					'right' => '12',
+					'bottom' => '10',
+					'left' => '12',
+					'isLinked' => false,
 				],
 				'separator' => 'before',
 				'selectors' => [
@@ -399,19 +432,10 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 				'size_units' => [ 'px', 'em', '%' ],
 				'range' => [
 					'px' => [
-						'min' => 100,
-						'max' => 500,
-						'step' => 1,
+						'max' => 1000,
 					],
 					'em' => [
-						'min' => 10,
-						'max' => 100,
-						'step' => 1,
-					],
-					'%' => [
-						'min' => 5,
-						'max' => 100,
-						'step' => 1,
+						'max' => 50,
 					],
 				],
 				'selectors' => [
@@ -425,6 +449,13 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 				'label' => __( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '4',
+					'right' => '4',
+					'bottom' => '4',
+					'left' => '4',
+					'isLinked' => true,
+				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-contact-input .sina-input-name' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
@@ -436,19 +467,12 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 				'label' => __( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
-				'range' => [
-					'px' => [
-						'max' => 500,
-						'step' => 1,
-					],
-					'em' => [
-						'max' => 20,
-						'step' => 1,
-					],
-					'%' => [
-						'max' => 50,
-						'step' => 1,
-					],
+				'default' => [
+					'top' => '0',
+					'right' => '0',
+					'bottom' => '20',
+					'left' => '0',
+					'isLinked' => false,
 				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-contact-input .sina-input-name' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
@@ -479,19 +503,10 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 				'size_units' => [ 'px', 'em', '%' ],
 				'range' => [
 					'px' => [
-						'min' => 100,
-						'max' => 500,
-						'step' => 1,
+						'max' => 1000,
 					],
 					'em' => [
-						'min' => 10,
-						'max' => 100,
-						'step' => 1,
-					],
-					'%' => [
-						'min' => 5,
-						'max' => 100,
-						'step' => 1,
+						'max' => 50,
 					],
 				],
 				'selectors' => [
@@ -505,6 +520,13 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 				'label' => __( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '4',
+					'right' => '4',
+					'bottom' => '4',
+					'left' => '4',
+					'isLinked' => true,
+				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-contact-input .sina-input-email' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
@@ -516,19 +538,12 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 				'label' => __( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
-				'range' => [
-					'px' => [
-						'max' => 500,
-						'step' => 1,
-					],
-					'em' => [
-						'max' => 20,
-						'step' => 1,
-					],
-					'%' => [
-						'max' => 50,
-						'step' => 1,
-					],
+				'default' => [
+					'top' => '0',
+					'right' => '0',
+					'bottom' => '20',
+					'left' => '0',
+					'isLinked' => false,
 				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-contact-input .sina-input-email' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
@@ -559,19 +574,10 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 				'size_units' => [ 'px', 'em', '%' ],
 				'range' => [
 					'px' => [
-						'min' => 100,
-						'max' => 500,
-						'step' => 1,
+						'max' => 1000,
 					],
 					'em' => [
-						'min' => 10,
-						'max' => 100,
-						'step' => 1,
-					],
-					'%' => [
-						'min' => 5,
-						'max' => 100,
-						'step' => 1,
+						'max' => 50,
 					],
 				],
 				'selectors' => [
@@ -585,6 +591,13 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 				'label' => __( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '4',
+					'right' => '4',
+					'bottom' => '4',
+					'left' => '4',
+					'isLinked' => true,
+				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-contact-input .sina-input-subject' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
@@ -596,19 +609,12 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 				'label' => __( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
-				'range' => [
-					'px' => [
-						'max' => 500,
-						'step' => 1,
-					],
-					'em' => [
-						'max' => 20,
-						'step' => 1,
-					],
-					'%' => [
-						'max' => 50,
-						'step' => 1,
-					],
+				'default' => [
+					'top' => '0',
+					'right' => '0',
+					'bottom' => '20',
+					'left' => '0',
+					'isLinked' => false,
 				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-contact-input .sina-input-subject' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
@@ -636,23 +642,17 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 			[
 				'label' => __( 'Height', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
-				'size_units' => [ 'px', 'em', '%' ],
+				'size_units' => [ 'px', 'em' ],
 				'range' => [
 					'px' => [
-						'min' => 100,
-						'max' => 500,
-						'step' => 1,
+						'max' => 1000,
 					],
 					'em' => [
-						'min' => 10,
-						'max' => 100,
-						'step' => 1,
+						'max' => 50,
 					],
-					'%' => [
-						'min' => 5,
-						'max' => 100,
-						'step' => 1,
-					],
+				],
+				'default' => [
+					'size' => '178',
 				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-contact-input .sina-input-message' => 'height: {{SIZE}}{{UNIT}};',
@@ -665,6 +665,13 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 				'label' => __( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '4',
+					'right' => '4',
+					'bottom' => '4',
+					'left' => '4',
+					'isLinked' => true,
+				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-contact-input .sina-input-message' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
@@ -676,19 +683,12 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 				'label' => __( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
-				'range' => [
-					'px' => [
-						'max' => 500,
-						'step' => 1,
-					],
-					'em' => [
-						'max' => 20,
-						'step' => 1,
-					],
-					'%' => [
-						'max' => 50,
-						'step' => 1,
-					],
+				'default' => [
+					'top' => '0',
+					'right' => '0',
+					'bottom' => '20',
+					'left' => '0',
+					'isLinked' => false,
 				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-contact-input .sina-input-message' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
@@ -715,6 +715,21 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'btn_typography',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_size'   => [
+						'default' => [
+							'size' => '16',
+						],
+					],
+					'line_height'   => [
+						'default' => [
+							'size' => '24',
+						],
+					],
+				],
 				'selector' => '{{WRAPPER}} .sina-contact-btn',
 			]
 		);
@@ -836,19 +851,10 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 				'size_units' => [ 'px', 'em', '%' ],
 				'range' => [
 					'px' => [
-						'min' => 100,
 						'max' => 1000,
-						'step' => 1,
 					],
 					'em' => [
-						'min' => 10,
-						'max' => 100,
-						'step' => 1,
-					],
-					'%' => [
-						'min' => 10,
-						'max' => 100,
-						'step' => 1,
+						'max' => 50,
 					],
 				],
 				'separator' => 'before',
@@ -863,6 +869,13 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 				'label' => __( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '4',
+					'right' => '4',
+					'bottom' => '4',
+					'left' => '4',
+					'isLinked' => false,
+				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-contact-btn' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
@@ -874,19 +887,12 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 				'label' => __( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
-				'range' => [
-					'px' => [
-						'max' => 100,
-						'step' => 1,
-					],
-					'em' => [
-						'max' => 20,
-						'step' => 1,
-					],
-					'%' => [
-						'max' => 100,
-						'step' => 1,
-					],
+				'default' => [
+					'top' => '11',
+					'right' => '20',
+					'bottom' => '11',
+					'left' => '20',
+					'isLinked' => false,
 				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-contact-btn' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',

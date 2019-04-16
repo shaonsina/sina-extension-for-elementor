@@ -305,7 +305,15 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 			[
 				'label' => __( 'Height', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
-				'size_units' => [ 'px', 'em', '%' ],
+				'size_units' => [ 'px', 'em' ],
+				'range' => [
+					'px' => [
+						'max' => 1000,
+					],
+					'em' => [
+						'max' => 50,
+					],
+				],
 				'default' => [
 					'size' => '230',
 				],

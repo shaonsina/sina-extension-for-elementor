@@ -315,9 +315,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
-						'step' => 1,
 						'min' => -100,
-						'max' => 100,
 					],
 				],
 				'default' => [
@@ -335,9 +333,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
-						'step' => 1,
-						'min' => -100,
-						'max' => 100,
+						'min' => -100
 					],
 				],
 				'default' => [

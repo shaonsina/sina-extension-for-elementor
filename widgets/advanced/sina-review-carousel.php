@@ -370,25 +370,34 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 		);
 
 		$this->add_responsive_control(
-			'image_padding',
+			'image_size',
 			[
-				'label' => __( 'Image Padding', 'sina-ext' ),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', 'em', '%' ],
+				'label' => __( 'Size', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', 'em' ],
 				'range' => [
 					'px' => [
-						'max' => 100,
-						'step' => 1,
+						'max' => 1000,
 					],
 					'em' => [
-						'max' => 20,
-						'step' => 1,
-					],
-					'%' => [
-						'max' => 100,
-						'step' => 1,
+						'max' => 50,
 					],
 				],
+				'default' => [
+					'size' => '130',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-review-carousel .owl-item .sina-review-face' => 'height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .sina-review-carousel .owl-item .sina-review-face' => 'width: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'image_padding',
+			[
+				'label' => __( 'Padding', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
 					'{{WRAPPER}} .sina-review-carousel .owl-item .sina-review-face' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
@@ -400,6 +409,14 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 				'label' => __( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'unit' => '%',
+					'top' => '50',
+					'right' => '50',
+					'bottom' => '50',
+					'left' => '50',
+					'isLinked' => true,
+				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-review-carousel .owl-item .sina-review-face' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
@@ -451,6 +468,24 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'name_typography',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_weight' => [
+						'default' => '600',
+					],
+					'font_size'   => [
+						'default' => [
+							'size' => '24',
+						],
+					],
+					'line_height'   => [
+						'default' => [
+							'size' => '32',
+						],
+					],
+				],
 				'selector' => '{{WRAPPER}} .sina-review-carousel .sina-review-name',
 			]
 		);
@@ -467,6 +502,13 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 				'label' => __( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '20',
+					'right' => '0',
+					'bottom' => '0',
+					'left' => '0',
+					'isLinked' => false,
+				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-review-carousel .sina-review-name' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
@@ -503,6 +545,16 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'position_typography',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_size'   => [
+						'default' => [
+							'size' => '14',
+						],
+					],
+				],
 				'selector' => '{{WRAPPER}} .sina-review-carousel .sina-review-position',
 			]
 		);
@@ -555,6 +607,16 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'company_typography',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_size'   => [
+						'default' => [
+							'size' => '16',
+						],
+					],
+				],
 				'selector' => '{{WRAPPER}} .sina-review-carousel .sina-review-company',
 			]
 		);
@@ -571,6 +633,13 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 				'label' => __( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '10',
+					'right' => '0',
+					'bottom' => '20',
+					'left' => '0',
+					'isLinked' => false,
+				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-review-carousel .sina-review-company' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],

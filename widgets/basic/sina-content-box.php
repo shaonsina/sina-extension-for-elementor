@@ -776,6 +776,16 @@ class Sina_Content_Box_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'ribbon_typography',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_size'   => [
+						'default' => [
+							'size' => '20',
+						],
+					],
+				],
 				'selector' => '{{WRAPPER}} .sina-ribbon-right, {{WRAPPER}} .sina-ribbon-left',
 			]
 		);

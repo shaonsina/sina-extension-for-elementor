@@ -6,18 +6,11 @@
 	display: inline-block;
 	width: inherit;
 	height: inherit;
-	padding: 10px 12px;
-	border: 1px solid #1085e4;
-	border-radius: 0;
-	font-size: 16px;
-	line-height: 24px;
 	transition: 0.4s;
 }
 .sina-input-field:focus,
 .sina-input-field:focus{
-	border: 1px solid #1085e4;
 	outline: none;
-	color: #495057;
 }
 .sina-button:active,
 .sina-button:focus,
@@ -27,15 +20,6 @@
 	cursor: pointer;
 }
 
-.sina-search-btn,
-.sina-contact-btn,
-.sina-subs-btn{
-	padding: 11px 20px;
-	border-radius: 0;
-	font-size: 16px;
-	line-height: 24px;
-	transition: 0.4s;
-}
 
 /* Ribbon */
 .sina-ribbon-left,
@@ -47,7 +31,6 @@
 	padding: 5px;
 	z-index: 9;
 	transform: rotate( 45deg );
-	font-size: 20px;
 	text-align: center;
 }
 .sina-ribbon-left {
@@ -119,7 +102,10 @@ img.mfp-img{
 .sina-load-more-btn,
 .sina-pricing-btn .sina-order-btn,
 .sina-banner-btns .sina-banner-pbtn,
-.sina-banner-btns .sina-banner-sbtn {
+.sina-banner-btns .sina-banner-sbtn,
+.sina-search-btn,
+.sina-contact-btn,
+.sina-subs-btn {
 	transition: all 0.4s ease-in-out;
 }
 
@@ -170,7 +156,6 @@ img.mfp-img{
 	border: 0;
 	border-radius: 4px;
 	outline: 0;
-	background: #1085e4;
 	font-family: arial, sans-serif;
 	font-size: 30px;
 	font-weight: 700;
@@ -236,7 +221,6 @@ img.mfp-img{
 .sina-review-carousel .owl-dot.active {
 	width: 10px;
 	height: 10px;
-	background-color: #1085e4;
 	border-radius: 50%
 }
 .sina-anim-invisible{
@@ -281,9 +265,6 @@ img.mfp-img{
 	display: block;
 	transition: 0.4s;
 }
-.sina-bp-pagination {
-	margin: 40px 15px;
-}
 .sina-bp-pagination .page-numbers {
 	display: inline-block;
 	text-align: center;
@@ -325,7 +306,6 @@ img.mfp-img{
 }
 .sina-contact-input .sina-input-field{
 	width: calc(33.33333% - 2.45px);
-	margin-bottom: 20px;
 }
 .sina-contact-input .sina-input-block{
 	display: block;
@@ -333,7 +313,6 @@ img.mfp-img{
 	float: left;
 }
 .sina-contact-input textarea.sina-input-field{
-	height: 178px;
 	resize: vertical;
 }
 
@@ -525,17 +504,12 @@ img.mfp-img{
 .sina-search-box .sina-input-field,
 .sina-subs-input .sina-input-field{
 	width: 300px;
-	margin-bottom: 20px;
 }
 .sina-search-box .sina-input-block,
 .sina-subs-input .sina-input-block{
 	display: block;
 	width: 100%;
 	float: left;
-}
-.sina-search-box .sina-search-btn,
-.sina-subs-input .sina-subs-btn{
-	margin-left: -4px;
 }
 .sina-search-box .sina-search-btn.sina-input-block,
 .sina-subs-input .sina-subs-btn.sina-input-block{
@@ -902,20 +876,8 @@ img.mfp-img{
 	text-align: center;
 }
 .sina-review-carousel .owl-item .sina-review-face {
-	width: 130px;
 	margin: 20px auto;
 	border-radius: 50%;
-}
-.sina-review-name{
-	margin-top: 20px;
-}
-.sina-review-position,
-.sina-review-company{
-	margin: 0;
-	text-transform: uppercase;
-}
-.sina-review-comment{
-	margin-top: 20px;
 }
 .sina-review-carousel .owl-next{
 	transform: translate( 20px );

@@ -200,12 +200,12 @@ class Sina_Progressbar_Widget extends Widget_Base {
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'bars_spacing',
 			[
 				'label' => __('Spacing', 'sina-ext'),
 				'type' => Controls_Manager::SLIDER,
-				'size_units' => ['px'],
+				'size_units' => ['px', 'em'],
 				'default' => [
 					'size' => 15,
 				],
@@ -215,12 +215,12 @@ class Sina_Progressbar_Widget extends Widget_Base {
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'bars_height',
 			[
 				'label' => __('Height', 'sina-ext'),
 				'type' => Controls_Manager::SLIDER,
-				'size_units' => ['px'],
+				'size_units' => ['px', 'em'],
 				'default' => [
 					'size' => 16,
 				],
@@ -230,7 +230,7 @@ class Sina_Progressbar_Widget extends Widget_Base {
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'bars_border_radius',
 			[
 				'label' => __('Border Radius', 'sina-ext'),
@@ -292,7 +292,7 @@ class Sina_Progressbar_Widget extends Widget_Base {
 				'selector' => '{{WRAPPER}} .sina-bar-title',
 			]
 		);
-		$this->add_control(
+		$this->add_responsive_control(
 			'title_margin',
 			[
 				'label' => __('Bottom Margin', 'sina-ext'),
@@ -344,7 +344,7 @@ class Sina_Progressbar_Widget extends Widget_Base {
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'percentage_align',
 			[
 				'label' => __( 'Alignment', 'sina-ext' ),
