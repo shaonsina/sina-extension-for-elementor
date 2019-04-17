@@ -130,13 +130,12 @@ class Sina_Search_Form_Widget extends Widget_Base {
 			[
 				'label' => __( 'Icon Space', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
-				'range' => [
-					'px' => [
-						'max' => 50,
-					],
+				'default' => [
+					'size' => '5',
 				],
 				'condition' => [
 					'icon!' => '',
+					'btn_text!' => '',
 				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-btn-icon-right' => 'margin-left: {{SIZE}}{{UNIT}};',
@@ -575,6 +574,13 @@ class Sina_Search_Form_Widget extends Widget_Base {
 				'label' => __( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '0',
+					'right' => '0',
+					'bottom' => '0',
+					'left' => '-4',
+					'isLinked' => false,
+				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-search-btn' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],

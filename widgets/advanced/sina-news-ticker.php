@@ -158,6 +158,14 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 			]
 		);
 		$this->add_control(
+			'show_time',
+			[
+				'label' => __( 'Time', 'sina-ext' ),
+				'type' => Controls_Manager::SWITCHER,
+				'default' => 'yes',
+			]
+		);
+		$this->add_control(
 			'speed',
 			[
 				'label' => __( 'Scroll Speed', 'sina-ext' ),
@@ -208,6 +216,24 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'label_typography',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_size' => [
+						'default' => [
+							'size' => '16',
+						],
+					],
+					'line_height' => [
+						'default' => [
+							'size' => '24',
+						],
+					],
+					'text_transform' => [
+						'default' => 'uppercase',
+					],
+				],
 				'selector' => '{{WRAPPER}} .sina-nt-left-label, {{WRAPPER}} .sina-nt-right-label',
 			]
 		);
@@ -235,6 +261,13 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 				'label' => __( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '15',
+					'right' => '20',
+					'bottom' => '15',
+					'left' => '20',
+					'isLinked' => false,
+				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-nt-left-label, {{WRAPPER}} .sina-nt-right-label' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
@@ -256,6 +289,14 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 			]
 		);
 
+		$this->start_controls_tabs( 'headline_tabs' );
+
+		$this->start_controls_tab(
+			'headline_normal',
+			[
+				'label' => __( 'Normal', 'sina-ext' ),
+			]
+		);
 		$this->add_control(
 			'headline_color',
 			[
@@ -263,27 +304,40 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '#222',
 				'selectors' => [
-					'{{WRAPPER}} .sina-news a, {{WRAPPER}} .sina-news a:hover, {{WRAPPER}} .sina-news a:focus' => 'color: {{VALUE}}'
+					'{{WRAPPER}} .sina-news a' => 'color: {{VALUE}}'
 				],
+			]
+		);
+		$this->end_controls_tab();
+
+		$this->start_controls_tab(
+			'headline_hover',
+			[
+				'label' => __( 'Hover', 'sina-ext' ),
 			]
 		);
 		$this->add_control(
-			'time_color',
+			'headline_hover_color',
 			[
-				'label' => __( 'Time Color', 'sina-ext' ),
+				'label' => __( 'Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#1085e4',
 				'selectors' => [
-					'{{WRAPPER}} .sina-news a span' => 'color: {{VALUE}}'
+					'{{WRAPPER}} .sina-news a:hover, {{WRAPPER}} .sina-news a:focus' => 'color: {{VALUE}};',
 				],
 			]
 		);
+		$this->end_controls_tab();
+
+		$this->end_controls_tabs();
+
 		$this->add_control(
 			'headline_BG',
 			[
 				'label' => __( 'Background', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#f8f8f8',
+				'separator' => 'before',
 				'selectors' => [
 					'{{WRAPPER}} .sina-news-ticker' => 'background: {{VALUE}}'
 				],
@@ -293,6 +347,16 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'headline_typography',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_size'   => [
+						'default' => [
+							'size' => '14',
+						],
+					],
+				],
 				'selector' => '{{WRAPPER}} .sina-news a',
 			]
 		);
@@ -320,6 +384,13 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 				'label' => __( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '18',
+					'right' => '18',
+					'bottom' => '18',
+					'left' => '18',
+					'isLinked' => true,
+				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-news a' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
@@ -329,6 +400,50 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 		$this->end_controls_section();
 		// End Headline Style
 		// ====================
+
+
+		// Start Time Style
+		// =====================
+		$this->start_controls_section(
+			'time_style',
+			[
+				'label' => __( 'Time', 'sina-ext' ),
+				'tab' => Controls_Manager::TAB_STYLE,
+				'condition' => [
+					'show_time' => 'yes',
+				],
+			]
+		);
+
+		$this->add_control(
+			'time_color',
+			[
+				'label' => __( 'Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#1085e4',
+				'selectors' => [
+					'{{WRAPPER}} .sina-news a span' => 'color: {{VALUE}}'
+				],
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name' => 'time_typography',
+				'selector' => '{{WRAPPER}} .sina-news a span',
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Text_Shadow::get_type(),
+			[
+				'name' => 'time_shadow',
+				'selector' => '{{WRAPPER}} .sina-news a span',
+			]
+		);
+
+		$this->end_controls_section();
+		// End Time Style
+		// ================
 	}
 
 
@@ -357,7 +472,12 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 						<?php if ( $post_query->have_posts() ) : ?>
 							<?php while ( $post_query->have_posts() ) : $post_query->the_post(); ?>
 								<div class="sina-news">
-									<a href="<?php the_permalink(); ?>"><span><?php the_time(); ?></span> <?php the_title(); ?></a>
+									<a href="<?php the_permalink(); ?>">
+										<?php if( 'yes' == $data['show_time'] ): ?>
+											<span><?php the_time(); ?></span>
+										<?php endif; ?>
+										<?php the_title(); ?>
+									</a>
 								</div>
 							<?php endwhile; ?>
 							<?php wp_reset_query(); ?>

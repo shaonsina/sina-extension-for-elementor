@@ -19,7 +19,73 @@
 	outline: none;
 	cursor: pointer;
 }
+.sina-overlay{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	transition: 0.4s;
+}
+.sina-bg-cover{
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.sina-flex{
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+}
+.sina-content-box.sina-content-box-move:hover,
+.sina-content-box.sina-content-box-zoom:hover,
+.sina-pricing.sina-pricing-move:hover,
+.sina-pricing.sina-pricing-zoom:hover{
+	z-index: 999999;
+}
+.sina-brand-item-inner,
+.sina-brand-item-inner a img,
+.sina-flipbox-title,
+.sina-flipbox-icon i,
+.sina-content-box-icon i,
+.sina-content-box .sina-content-box-title,
+.sina-load-more-btn,
+.sina-pricing-btn .sina-order-btn,
+.sina-banner-btns .sina-banner-pbtn,
+.sina-banner-btns .sina-banner-sbtn,
+.sina-search-btn,
+.sina-contact-btn,
+.sina-subs-btn,
+.sina-pt-cat-btn,
+.sina-portfolio-btn {
+	transition: all 0.4s ease-in-out;
+}
+.sina-accordion-item,
+.sina-accordion-body,
+.sina-blogpost,
+.sina-bp-grid,
+.sina-brand-carousel,
+.sina-contact-input,
+.xzoom-hidden,
+.sina-portfolio,
+.sina-posts-tab,
+.sina-pt-content {
+	overflow: hidden;
+}
 
+/* Template Editor button hide */
+.sina-accordion-body .elementor-element-overlay,
+.sina-content-box .elementor-element-overlay,
+.sina-accordion-item > .sina-accordion-header > .sina-accordion-icon .on,
+.sina-accordion-item.open > .sina-accordion-header > .sina-accordion-icon .off,
+.sina-accordion-body,
+.sina-subs-form a,
+.sina-pt-item{
+	display: none;
+}
 
 /* Ribbon */
 .sina-ribbon-left,
@@ -56,64 +122,7 @@ img.mfp-img{
 	outline: none;
 }
 
-/* Template Editor button hide */
-.sina-accordion-body .elementor-element-overlay,
-.sina-content-box .elementor-element-overlay{
-	display: none;
-}
-
-/* Overlay */
-.sina-overlay{
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	opacity: 0;
-	transition: 0.4s;
-}
-.sina-bg-cover{
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
-}
-.sina-flex{
-	display: -webkit-flex;
-	display: -moz-flex;
-	display: -ms-flex;
-	display: -o-flex;
-	display: flex;
-}
-
-.sina-content-box.sina-content-box-move:hover,
-.sina-content-box.sina-content-box-zoom:hover,
-.sina-pricing.sina-pricing-move:hover,
-.sina-pricing.sina-pricing-zoom:hover{
-	z-index: 999999;
-}
-
-/* only transition */
-.sina-brand-item-inner,
-.sina-brand-item-inner a img,
-.sina-flipbox-title,
-.sina-flipbox-icon i,
-.sina-content-box-icon i,
-.sina-content-box .sina-content-box-title,
-.sina-load-more-btn,
-.sina-pricing-btn .sina-order-btn,
-.sina-banner-btns .sina-banner-pbtn,
-.sina-banner-btns .sina-banner-sbtn,
-.sina-search-btn,
-.sina-contact-btn,
-.sina-subs-btn {
-	transition: all 0.4s ease-in-out;
-}
-
-
 /*--------------------------------- Accordion -------------------------------------- */
-.sina-accordion-item{
-	overflow: hidden;
-}
 .sina-accordion-item .sina-accordion-header{
 	-ms-flex-pack: justify;
 	justify-content: space-between;
@@ -121,19 +130,11 @@ img.mfp-img{
 	cursor: pointer;
 	transition: 0.4s;
 }
-.sina-accordion-body{
-	display: none;
-	overflow: hidden;
-}
 .sina-accordion-desc p{
 	margin-bottom: 0;
 }
 .sina-accordion-icon {
 	padding-left: 20px;
-}
-.sina-accordion-item > .sina-accordion-header > .sina-accordion-icon .on,
-.sina-accordion-item.open > .sina-accordion-header > .sina-accordion-icon .off{
-	display: none;
 }
 .sina-accordion-item.open > .sina-accordion-header > .sina-accordion-icon .on{
 	display: block;
@@ -228,9 +229,6 @@ img.mfp-img{
 }
 
 /*--------------------------------- Blogpost -------------------------------------- */
-.sina-blogpost {
-	overflow: hidden;
-}
 .sina-bp-item-2{
 	width: 50%;
 }
@@ -239,9 +237,6 @@ img.mfp-img{
 }
 .sina-bp-item-4{
 	width: 25%;
-}
-.sina-bp-grid{
-	overflow: hidden;
 }
 .sina-bp-col{
 	float: left;
@@ -285,9 +280,6 @@ img.mfp-img{
 }
 
 /*--------------------------------- Brand Carousel -------------------------------------- */
-.sina-brand-carousel{
-	overflow: hidden;
-}
 .sina-brand-item-inner a{
 	display: block;
 	text-align: center;
@@ -300,9 +292,6 @@ img.mfp-img{
 }
 .sina-contact-input-half:last-child{
 	margin-left: 20px;
-}
-.sina-contact-input{
-	overflow: hidden;
 }
 .sina-contact-input .sina-input-field{
 	width: calc(33.33333% - 2.45px);
@@ -325,27 +314,9 @@ img.mfp-img{
 }
 
 /*-------------------------- Countdown --------------------------*/
-.sina-countdown {
-	text-align: center;
-}
 .sina-countdown .sina-cd {
 	display: inline-block;
-	width: 100px;
-	height: 110px;
-	margin: 6px;
-	padding: 10px;
-	font-size: 55px;
-	line-height: 60px;
 	text-align: center;
-	border-radius: 8px;
-}
-.sina-countdown .sina-cd-text {
-	font-size: 16px;
-	line-height: 24px;
-}
-.sina-countdown .sina-cd-message {
-	font-size: 40px;
-	line-height: 50px;
 }
 
 /*-------------------------- Fancytext --------------------------*/
@@ -382,7 +353,6 @@ img.mfp-img{
 	left: 0;
 	width: 100%;
 	height: 100%;
-	overflow: hidden;
 	-moz-backface-visibility: hidden;
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
@@ -478,9 +448,6 @@ img.mfp-img{
 	float: none;
 	clear: both
 }
-.xzoom-hidden {
-	overflow: hidden
-}
 .xzoom-preview {
 	border: 1px solid #888;
 	box-shadow: -0 -0 10px rgba(0, 0, 0, 0.50)
@@ -517,9 +484,6 @@ img.mfp-img{
 	width: inherit;
 	margin-left: 0;
 }
-.sina-subs-form a{
-	display: none;
-}
 .sina-contact-error,
 .sina-contact-success,
 .sina-subs-error,
@@ -555,11 +519,7 @@ img.mfp-img{
 	position: absolute;
 	top: 0;
 	left: 0;
-	padding: 12px 20px;
 	float: left;
-	font-family: arial;
-	font-size: 20px;
-	line-height: 32px;
 	text-align: center;
 }
 .sina-news-ticker .sina-nt-right-label{
@@ -568,10 +528,6 @@ img.mfp-img{
 }
 .sina-news-ticker .sina-news a{
 	display: block;
-	padding: 15px;
-	font-family: arial;
-	font-size: 15px;
-	line-height: 26px;
 	text-decoration: none;
 }
 
@@ -615,23 +571,6 @@ img.mfp-img{
 }
 
 /*--------------------------------- Portfolio -------------------------------------- */
-.sina-posts-tab,
-.sina-portfolio{
-	overflow: hidden;
-}
-.sina-pt-btns,
-.sina-portfolio-btns{
-	margin-bottom: 30px;
-	text-align: center;
-}
-.sina-pt-cat-btn,
-.sina-portfolio-btn {
-	margin: 6px;
-	padding: 10px 15px;
-	font-size: 16px;
-	text-transform: uppercase;
-	transition: 0.4s;
-}
 .sina-portfolio-item{
 	float: left;
 }
@@ -684,7 +623,7 @@ img.mfp-img{
 	overflow: hidden;
 }
 .sina-portfolio-item-inner:hover .sina-portfolio-overlay{
-	opacity: .9;
+	opacity: 1;
 }
 .sina-portfolio-icons {
 	align-items: center;
@@ -692,15 +631,8 @@ img.mfp-img{
 	width: 100%;
 }
 .sina-portfolio-overlay i{
-	width: 44px;
-	height: 44px;
-	padding: 14px;
-	border-radius: 50%;
-	font-size: 18px;
+	text-align: center;
 	transition: 0.4s;
-}
-.sina-portfolio-zoom{
-	margin-right: 20px;
 }
 /* Effects */
 .sina-portfolio-overlay.sina-pf-effect-zoom{
@@ -726,11 +658,8 @@ img.mfp-img{
 }
 
 /*--------------------------------- Posts Tab -------------------------------------- */
-.sina-pt-content{
-	overflow: hidden;
-}
-.sina-pt-item{
-	display: none;
+.sina-pt-btns{
+	text-align: center;
 }
 .sina-pt-item.active{
 	display: block;

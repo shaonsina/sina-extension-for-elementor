@@ -278,6 +278,19 @@ class Sina_Portfolio_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'btn_typography',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_size'   => [
+						'default' => [
+							'size' => '16',
+						],
+					],
+					'text_transform' => [
+						'default' => 'uppercase',
+					],
+				],
 				'selector' => '{{WRAPPER}} .sina-portfolio-btn',
 			]
 		);
@@ -396,14 +409,38 @@ class Sina_Portfolio_Widget extends Widget_Base {
 			[
 				'label' => __( 'Gap From Items', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
-				'range' => [
-					'px' => [
-						'max' => 100,
-					],
+				'default' =>[
+					'size' => '40',
 				],
 				'separator' => 'before',
 				'selectors' => [
 					'{{WRAPPER}} .sina-portfolio-btns' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'btn_alignment',
+			[
+				'label' => __( 'Alignment', 'sina-ext' ),
+				'type' => Controls_Manager::CHOOSE,
+				'options' => [
+					'left' => [
+						'title' => __( 'Left', 'sina-ext' ),
+						'icon' => 'fa fa-align-left',
+					],
+					'center' => [
+						'title' => __( 'Center', 'sina-ext' ),
+						'icon' => 'fa fa-align-center',
+					],
+					'right' => [
+						'title' => __( 'Right', 'sina-ext' ),
+						'icon' => 'fa fa-align-right',
+					],
+				],
+				'default' => 'center',
+				'devices' => [ 'desktop', 'tablet', 'mobile' ],
+				'selectors' => [
+					'{{WRAPPER}} .sina-portfolio-btns' => 'text-align: {{VALUE}};',
 				],
 			]
 		);
@@ -424,19 +461,12 @@ class Sina_Portfolio_Widget extends Widget_Base {
 				'label' => __( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
-				'range' => [
-					'px' => [
-						'max' => 50,
-						'step' => 1,
-					],
-					'em' => [
-						'max' => 20,
-						'step' => 1,
-					],
-					'%' => [
-						'max' => 100,
-						'step' => 1,
-					],
+				'default' => [
+					'top' => '10',
+					'right' => '15',
+					'bottom' => '10',
+					'left' => '15',
+					'isLinked' => false,
 				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-portfolio-btn' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
@@ -449,19 +479,12 @@ class Sina_Portfolio_Widget extends Widget_Base {
 				'label' => __( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
-				'range' => [
-					'px' => [
-						'max' => 50,
-						'step' => 1,
-					],
-					'em' => [
-						'max' => 20,
-						'step' => 1,
-					],
-					'%' => [
-						'max' => 100,
-						'step' => 1,
-					],
+				'default' => [
+					'top' => '6',
+					'right' => '6',
+					'bottom' => '6',
+					'left' => '6',
+					'isLinked' => true,
 				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-portfolio-btn' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
@@ -497,7 +520,7 @@ class Sina_Portfolio_Widget extends Widget_Base {
 			[
 				'label' => __( 'Overlay Background', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '#000',
+				'default' => 'rgba(0,0,0,0.8)',
 				'selectors' => [
 					'{{WRAPPER}} .sina-portfolio-overlay' => 'background: {{VALUE}}'
 				],
@@ -538,20 +561,6 @@ class Sina_Portfolio_Widget extends Widget_Base {
 				'label' => __( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
-				'range' => [
-					'px' => [
-						'max' => 50,
-						'step' => 1,
-					],
-					'em' => [
-						'max' => 20,
-						'step' => 1,
-					],
-					'%' => [
-						'max' => 100,
-						'step' => 1,
-					],
-				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-portfolio-item' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
@@ -664,14 +673,55 @@ class Sina_Portfolio_Widget extends Widget_Base {
 			[
 				'label' => __( 'Icons Gap', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
-				'range' => [
-					'px' => [
-						'max' => 100,
-					],
+				'default' => [
+					'size' => '20',
 				],
 				'separator' => 'before',
 				'selectors' => [
 					'{{WRAPPER}} .sina-portfolio-zoom' => 'margin-right: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'icons_size',
+			[
+				'label' => __( 'Icon Size', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'size' => '16',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-portfolio-overlay i' => 'font-size: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'icons_width',
+			[
+				'label' => __( 'Width', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'size' => '44',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-portfolio-overlay i' => 'width: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'icons_height',
+			[
+				'label' => __( 'Height', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'size' => '44',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-portfolio-overlay i' => 'height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .sina-portfolio-overlay i' => 'line-height: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -681,33 +731,16 @@ class Sina_Portfolio_Widget extends Widget_Base {
 				'label' => __( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'unit' => '%',
+					'top' => '50',
+					'right' => '50',
+					'bottom' => '50',
+					'left' => '50',
+					'isLinked' => true,
+				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-portfolio-overlay i' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
-		);
-		$this->add_responsive_control(
-			'icons_padding',
-			[
-				'label' => __( 'Padding', 'sina-ext' ),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', 'em', '%' ],
-				'range' => [
-					'px' => [
-						'max' => 50,
-						'step' => 1,
-					],
-					'em' => [
-						'max' => 20,
-						'step' => 1,
-					],
-					'%' => [
-						'max' => 100,
-						'step' => 1,
-					],
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-portfolio-overlay i' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);

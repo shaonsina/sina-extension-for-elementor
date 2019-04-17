@@ -146,7 +146,33 @@ class Sina_Countdown_Widget extends Widget_Base {
 					'second',
 				],
 				'multiple' => true,
-				'separator' => 'after'
+			]
+		);
+		$this->add_responsive_control(
+			'alignment',
+			[
+				'label' => __( 'Alignment', 'sina-ext' ),
+				'type' => Controls_Manager::CHOOSE,
+				'options' => [
+					'left' => [
+						'title' => __( 'Left', 'sina-ext' ),
+						'icon' => 'fa fa-align-left',
+					],
+					'center' => [
+						'title' => __( 'Center', 'sina-ext' ),
+						'icon' => 'fa fa-align-center',
+					],
+					'right' => [
+						'title' => __( 'Right', 'sina-ext' ),
+						'icon' => 'fa fa-align-right',
+					],
+				],
+				'devices' => [ 'desktop', 'tablet', 'mobile' ],
+				'default' => 'center',
+				'separator' => 'after',
+				'selectors' => [
+					'{{WRAPPER}} .sina-countdown' => 'text-align: {{VALUE}};',
+				],
 			]
 		);
 		$this->add_control(
@@ -211,38 +237,6 @@ class Sina_Countdown_Widget extends Widget_Base {
 			]
 		);
 
-		$this->add_responsive_control(
-			'width',
-			[
-				'label' => __( 'Width', 'sina-ext' ),
-				'type' => Controls_Manager::SLIDER,
-				'range' => [
-					'px' => [
-						'min' => 50,
-						'max' => 200,
-					],
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-cd' => 'width: {{SIZE}}{{UNIT}};',
-				],
-			]
-		);
-		$this->add_responsive_control(
-			'height',
-			[
-				'label' => __( 'Height', 'sina-ext' ),
-				'type' => Controls_Manager::SLIDER,
-				'range' => [
-					'px' => [
-						'min' => 50,
-						'max' => 200,
-					],
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-cd' => 'height: {{SIZE}}{{UNIT}};',
-				],
-			]
-		);
 		$this->add_control(
 			'background',
 			[
@@ -269,12 +263,57 @@ class Sina_Countdown_Widget extends Widget_Base {
 			]
 		);
 		$this->add_responsive_control(
+			'width',
+			[
+				'label' => __( 'Width', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'range' => [
+					'px' => [
+						'min' => 50,
+						'max' => 200,
+					],
+				],
+				'default' => [
+					'size' => '100',
+				],
+				'separator' => 'before',
+				'selectors' => [
+					'{{WRAPPER}} .sina-cd' => 'width: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'height',
+			[
+				'label' => __( 'Height', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'range' => [
+					'px' => [
+						'min' => 50,
+						'max' => 200,
+					],
+				],
+				'default' => [
+					'size' => '110',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-cd' => 'height: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
 			'box_radius',
 			[
 				'label' => __( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
-				'separator' => 'before',
+				'default' => [
+					'top' => '6',
+					'right' => '6',
+					'bottom' => '6',
+					'left' => '6',
+					'isLinked' => true,
+				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-cd' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
@@ -287,6 +326,13 @@ class Sina_Countdown_Widget extends Widget_Base {
 				'label' => __( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '10',
+					'right' => '10',
+					'bottom' => '10',
+					'left' => '10',
+					'isLinked' => true,
+				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-cd' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
@@ -298,6 +344,13 @@ class Sina_Countdown_Widget extends Widget_Base {
 				'label' => __( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '6',
+					'right' => '6',
+					'bottom' => '6',
+					'left' => '6',
+					'isLinked' => true,
+				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-cd' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
@@ -334,6 +387,21 @@ class Sina_Countdown_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'digit_typography',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_size'   => [
+						'default' => [
+							'size' => '50',
+						],
+					],
+					'line_height'   => [
+						'default' => [
+							'size' => '60',
+						],
+					],
+				],
 				'selector' => '{{WRAPPER}} .sina-cd',
 			]
 		);
@@ -378,6 +446,21 @@ class Sina_Countdown_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'text_typography',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_size'   => [
+						'default' => [
+							'size' => '16',
+						],
+					],
+					'line_height'   => [
+						'default' => [
+							'size' => '24',
+						],
+					],
+				],
 				'selector' => '{{WRAPPER}} .sina-cd .sina-cd-text',
 			]
 		);
@@ -419,6 +502,21 @@ class Sina_Countdown_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'message_typography',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_size'   => [
+						'default' => [
+							'size' => '32',
+						],
+					],
+					'line_height'   => [
+						'default' => [
+							'size' => '40',
+						],
+					],
+				],
 				'selector' => '{{WRAPPER}} .sina-cd-message',
 			]
 		);

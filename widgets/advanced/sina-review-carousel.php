@@ -571,6 +571,13 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 				'label' => __( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '10',
+					'right' => '0',
+					'bottom' => '0',
+					'left' => '0',
+					'isLinked' => true,
+				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-review-carousel .sina-review-position' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
@@ -634,7 +641,7 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
-					'top' => '10',
+					'top' => '0',
 					'right' => '0',
 					'bottom' => '20',
 					'left' => '0',
