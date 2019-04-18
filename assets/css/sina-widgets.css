@@ -72,7 +72,8 @@
 .xzoom-hidden,
 .sina-portfolio,
 .sina-posts-tab,
-.sina-pt-content {
+.sina-pt-content,
+.sina-pt-content .sina-pt-post {
 	overflow: hidden;
 }
 
@@ -658,9 +659,6 @@ img.mfp-img{
 }
 
 /*--------------------------------- Posts Tab -------------------------------------- */
-.sina-pt-btns{
-	text-align: center;
-}
 .sina-pt-item.active{
 	display: block;
 }
@@ -674,14 +672,11 @@ img.mfp-img{
 	background-color: rgba(0, 0, 0, 0.1);
 }
 .sina-pt-content-content{
-	width: 60%;
-	padding: 15px 0 0 25px;
 	overflow: hidden;
 	float: right;
 }
 .sina-pt-content-content .sina-pt-item{
 	position: relative;
-	height: 422px;
 }
 .sina-pt-thumb-content{
 	position: absolute;
@@ -691,10 +686,6 @@ img.mfp-img{
 	padding: 20px 15px;
 	opacity: 1;
 }
-.sina-pt-thumb-content h2 a{
-	font-size: 30px;
-	line-height: 30px;
-}
 .sina-pt-thumb-content h2,
 .sina-pt-thumb-content p {
 	margin: 0;
@@ -702,29 +693,17 @@ img.mfp-img{
 .sina-pt-thumb-content p span{
 	margin-right: 10px;
 }
-.sina-pt-thumb-content a,
-.sina-pt-thumb-content a:hover,
-.sina-pt-thumb-content a:focus {
-	color: #fff;
-}
 .sina-pt-content .sina-pt-posts{
-	width: 40%;
 	float: left;
 }
-.sina-pt-content .sina-pt-post{
-	padding: 15px 0;
-	border-bottom: 1px solid #ddd;
-	overflow: hidden;
-}
 .sina-pt-content .sina-pt-post:last-child{
-	border-bottom: 0;
+	border-bottom: 0 !important;
 }
 .sina-pt-content-right .sina-pt-posts{
 	float: right;
 }
 .sina-pt-content-right .sina-pt-content-content{
 	float: left;
-	padding: 15px 25px 0 0;
 }
 .sina-pt-content .sina-pt-btn{
 	display: block;
@@ -732,8 +711,6 @@ img.mfp-img{
 .sina-pt-title-wraper{
 	align-items: center;
 	padding-right: 20px;
-	width: 60%;
-	height: 120px;
 	float: left;
 }
 .sina-pt-content-right .sina-pt-title-wraper{
@@ -748,14 +725,10 @@ img.mfp-img{
 }
 .sina-pt-title h3{
 	margin: 0;
-	font-size: 18px;
-	line-height: 20px;
 	cursor: pointer;
 	transition: all 0.4s ease-in-out;
 }
 .sina-pt-thumb{
-	width: 40%;
-	height: 120px;
 	overflow: hidden;
 	float: left;
 	cursor: pointer;
@@ -910,10 +883,10 @@ img.mfp-img{
 	.sina-pt-content-content{
 		width: 100%;
 	}
-	.sina-pt-content-right .sina-pt-content-content,
+	/*.sina-pt-content-right .sina-pt-content-content,
 	.sina-pt-content-content{
 		padding: 0;
-	}
+	}*/
 }
 
 

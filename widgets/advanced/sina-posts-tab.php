@@ -142,7 +142,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 				'type' => Controls_Manager::NUMBER,
 				'step' => 1,
 				'min' => 1,
-				'max' => 6,
+				'max' => 5,
 				'default' => 3,
 			]
 		);
@@ -220,6 +220,19 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'cat_typography',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_size'   => [
+						'default' => [
+							'size' => '16',
+						],
+					],
+					'text_transform' => [
+						'default' => 'uppercase',
+					],
+				],
 				'selector' => '{{WRAPPER}} .sina-pt-cat-btn',
 			]
 		);
@@ -338,14 +351,38 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 			[
 				'label' => __( 'Gap From Content', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
-				'range' => [
-					'px' => [
-						'max' => 100,
-					],
+				'default' =>[
+					'size' => '40',
 				],
 				'separator' => 'before',
 				'selectors' => [
 					'{{WRAPPER}} .sina-pt-btns' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'cat_alignment',
+			[
+				'label' => __( 'Alignment', 'sina-ext' ),
+				'type' => Controls_Manager::CHOOSE,
+				'options' => [
+					'left' => [
+						'title' => __( 'Left', 'sina-ext' ),
+						'icon' => 'fa fa-align-left',
+					],
+					'center' => [
+						'title' => __( 'Center', 'sina-ext' ),
+						'icon' => 'fa fa-align-center',
+					],
+					'right' => [
+						'title' => __( 'Right', 'sina-ext' ),
+						'icon' => 'fa fa-align-right',
+					],
+				],
+				'default' => 'center',
+				'devices' => [ 'desktop', 'tablet', 'mobile' ],
+				'selectors' => [
+					'{{WRAPPER}} .sina-pt-btns' => 'text-align: {{VALUE}};',
 				],
 			]
 		);
@@ -366,19 +403,12 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 				'label' => __( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
-				'range' => [
-					'px' => [
-						'max' => 50,
-						'step' => 1,
-					],
-					'em' => [
-						'max' => 20,
-						'step' => 1,
-					],
-					'%' => [
-						'max' => 100,
-						'step' => 1,
-					],
+				'default' => [
+					'top' => '10',
+					'right' => '15',
+					'bottom' => '10',
+					'left' => '15',
+					'isLinked' => false,
 				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-pt-cat-btn' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
@@ -391,19 +421,12 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 				'label' => __( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
-				'range' => [
-					'px' => [
-						'max' => 50,
-						'step' => 1,
-					],
-					'em' => [
-						'max' => 20,
-						'step' => 1,
-					],
-					'%' => [
-						'max' => 100,
-						'step' => 1,
-					],
+				'default' => [
+					'top' => '4',
+					'right' => '4',
+					'bottom' => '4',
+					'left' => '4',
+					'isLinked' => true,
 				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-pt-cat-btn' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
@@ -431,13 +454,13 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 			[
 				'label' => __( 'Width (%)', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
-				'range' => [
-					'%' => [
-						'max' => 100,
-					],
+				'size_units' => [ '%' ],
+				'default' => [
+					'unit' => '%',
+					'size' => '60',
 				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-pt-content-content' => 'width: {{SIZE}}%;',
+					'{{WRAPPER}} .sina-pt-content-content' => 'width: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -451,6 +474,9 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 						'max' => 800,
 					],
 				],
+				'default' => [
+					'size' => '422',
+				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-pt-content-content .sina-pt-item' => 'height: {{SIZE}}{{UNIT}};',
 				],
@@ -462,15 +488,12 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 				'label' => __( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em' ],
-				'range' => [
-					'px' => [
-						'max' => 50,
-						'step' => 1,
-					],
-					'em' => [
-						'max' => 20,
-						'step' => 1,
-					],
+				'default' => [
+					'top' => '15',
+					'right' => '0',
+					'bottom' => '0',
+					'left' => '25',
+					'isLinked' => false,
 				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-pt-content-content' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
@@ -517,6 +540,24 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'thumb_title_typography',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_size'   => [
+						'default' => [
+							'size' => '24',
+						],
+					],
+					'line_height'   => [
+						'default' => [
+							'size' => '32',
+						],
+					],
+					'text_transform' => [
+						'default' => 'uppercase',
+					],
+				],
 				'selector' => '{{WRAPPER}} .sina-pt-thumb-content h2 a',
 			]
 		);
@@ -568,13 +609,8 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 			[
 				'label' => __( 'Gap From Title', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
-				'range' => [
-					'px' => [
-						'max' => 100,
-					],
-				],
 				'default' => [
-					'size' => 5,
+					'size' => 10,
 				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-pt-thumb-content p' => 'margin-top: {{SIZE}}{{UNIT}};',
@@ -601,29 +637,36 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 			]
 		);
 
-		$this->add_control(
-			'preview_border',
-			[
-				'label' => __( 'Border Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '',
-				'selectors' => [
-					'{{WRAPPER}} .sina-pt-content .sina-pt-post' => 'border-color: {{VALUE}}'
-				],
-			]
-		);
 		$this->add_responsive_control(
 			'preview_width',
 			[
 				'label' => __( 'List Width (%)', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
-				'range' => [
-					'%' => [
-						'max' => 100,
-					],
+				'size_units' => [ '%' ],
+				'default' => [
+					'unit' => '%',
+					'size' => '40',
 				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-pt-content .sina-pt-posts' => 'width: {{SIZE}}%;',
+					'{{WRAPPER}} .sina-pt-content .sina-pt-posts' => 'width: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'list_padding',
+			[
+				'label' => __( 'List Padding', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em' ],
+				'default' => [
+					'top' => '15',
+					'right' => '0',
+					'bottom' => '15',
+					'left' => '0',
+					'isLinked' => false,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-pt-post' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -632,13 +675,14 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 			[
 				'label' => __( 'Title Width (%)', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
-				'range' => [
-					'%' => [
-						'max' => 100,
-					],
+				'size_units' => [ '%' ],
+				'default' => [
+					'unit' => '%',
+					'size' => '60',
 				],
+				'separator' => 'before',
 				'selectors' => [
-					'{{WRAPPER}} .sina-pt-title-wraper' => 'width: {{SIZE}}%;',
+					'{{WRAPPER}} .sina-pt-title-wraper' => 'width: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -647,13 +691,13 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 			[
 				'label' => __( 'Preview Thumb Width (%)', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
-				'range' => [
-					'%' => [
-						'max' => 100,
-					],
+				'size_units' => [ '%' ],
+				'default' => [
+					'unit' => '%',
+					'size' => '40',
 				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-pt-thumb' => 'width: {{SIZE}}%;',
+					'{{WRAPPER}} .sina-pt-thumb' => 'width: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -667,30 +711,36 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 						'max' => 200,
 					],
 				],
+				'default' => [
+					'size' => '120',
+				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-pt-thumb, {{WRAPPER}} .sina-pt-title-wraper' => 'height: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
-		$this->add_responsive_control(
-			'list_padding',
+		$this->add_group_control(
+			Group_Control_Border::get_type(),
 			[
-				'label' => __( 'List Padding', 'sina-ext' ),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', 'em' ],
-				'range' => [
-					'px' => [
-						'max' => 50,
-						'step' => 1,
+				'name' => 'preview_border',
+				'fields_options' => [
+					'border' => [
+						'default' => 'solid',
 					],
-					'em' => [
-						'max' => 20,
-						'step' => 1,
+					'color' => [
+						'default' => '#eee',
+					],
+					'width' => [
+						'default' => [
+							'top' => '0',
+							'right' => '0',
+							'bottom' => '1',
+							'left' => '0',
+							'isLinked' => false,
+						]
 					],
 				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-pt-post' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
+				'selector' => '{{WRAPPER}} .sina-pt-content .sina-pt-post',
 			]
 		);
 
@@ -704,7 +754,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'title_style',
 			[
-				'label' => __( 'Title', 'sina-ext' ),
+				'label' => __( 'Preview Title', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -713,6 +763,21 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'title_typography',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_size'   => [
+						'default' => [
+							'size' => '16',
+						],
+					],
+					'line_height'   => [
+						'default' => [
+							'size' => '24',
+						],
+					],
+				],
 				'selector' => '{{WRAPPER}} .sina-pt-title h3',
 			]
 		);
@@ -797,6 +862,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 				],
 				'devices' => [ 'desktop', 'tablet', 'mobile' ],
 				'default' => 'left',
+				'separator' => 'before',
 				'selectors' => [
 					'{{WRAPPER}} .sina-pt-title' => 'text-align: {{VALUE}};',
 				],
@@ -813,7 +879,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'meta_style',
 			[
-				'label' => __( 'Meta', 'sina-ext' ),
+				'label' => __( 'Date', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'date' => 'yes',
@@ -850,13 +916,8 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 			[
 				'label' => __( 'Gap From Title', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
-				'range' => [
-					'px' => [
-						'max' => 100,
-					],
-				],
 				'default' => [
-					'size' => 5,
+					'size' => 10,
 				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-pt-title p' => 'margin-top: {{SIZE}}{{UNIT}};',
