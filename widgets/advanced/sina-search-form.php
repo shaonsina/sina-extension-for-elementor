@@ -323,6 +323,9 @@ class Sina_Search_Form_Widget extends Widget_Base {
 						'max' => 50,
 					],
 				],
+				'mobile_default' => [
+					'size' => '190',
+				],
 				'separator' => 'before',
 				'selectors' => [
 					'{{WRAPPER}} .sina-search-box .sina-input-field' => 'width: {{SIZE}}{{UNIT}};',

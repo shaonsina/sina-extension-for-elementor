@@ -455,9 +455,17 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 				'label' => __( 'Width (%)', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ '%' ],
-				'default' => [
+				'desktop_default' => [
 					'unit' => '%',
 					'size' => '60',
+				],
+				'tablet_default' => [
+					'unit' => '%',
+					'size' => '60',
+				],
+				'mobile_default' => [
+					'unit' => '%',
+					'size' => '100',
 				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-pt-content-content' => 'width: {{SIZE}}{{UNIT}};',
@@ -488,13 +496,28 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 				'label' => __( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em' ],
-				'default' => [
+				'desktop_default' => [
 					'top' => '15',
 					'right' => '0',
 					'bottom' => '0',
 					'left' => '25',
 					'isLinked' => false,
 				],
+				'tablet_default' => [
+					'top' => '15',
+					'right' => '0',
+					'bottom' => '0',
+					'left' => '25',
+					'isLinked' => false,
+				],
+				'mobile_default' => [
+					'top' => '15',
+					'right' => '0',
+					'bottom' => '0',
+					'left' => '0',
+					'isLinked' => false,
+				],
+
 				'selectors' => [
 					'{{WRAPPER}} .sina-pt-content-content' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
@@ -643,9 +666,17 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 				'label' => __( 'List Width (%)', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ '%' ],
-				'default' => [
+				'desktop_default' => [
 					'unit' => '%',
 					'size' => '40',
+				],
+				'tablet_default' => [
+					'unit' => '%',
+					'size' => '40',
+				],
+				'mobile_default' => [
+					'unit' => '%',
+					'size' => '100',
 				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-pt-content .sina-pt-posts' => 'width: {{SIZE}}{{UNIT}};',
@@ -676,7 +707,15 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 				'label' => __( 'Title Width (%)', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ '%' ],
-				'default' => [
+				'desktop_default' => [
+					'unit' => '%',
+					'size' => '60',
+				],
+				'tablet_default' => [
+					'unit' => '%',
+					'size' => '60',
+				],
+				'mobile_default' => [
 					'unit' => '%',
 					'size' => '60',
 				],
@@ -692,7 +731,15 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 				'label' => __( 'Preview Thumb Width (%)', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ '%' ],
-				'default' => [
+				'desktop_default' => [
+					'unit' => '%',
+					'size' => '40',
+				],
+				'tablet_default' => [
+					'unit' => '%',
+					'size' => '40',
+				],
+				'mobile_default' => [
 					'unit' => '%',
 					'size' => '40',
 				],

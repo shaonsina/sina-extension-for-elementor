@@ -173,6 +173,27 @@ class Sina_Video_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'title_typography',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_weight' => [
+						'default' => '600',
+					],
+					'font_size'   => [
+						'default' => [
+							'size' => '24',
+						],
+					],
+					'line_height'   => [
+						'default' => [
+							'size' => '32',
+						],
+					],
+					'text_transform' => [
+						'default' => 'capitalize',
+					],
+				],
 				'selector' => '{{WRAPPER}} .sina-video-title',
 			]
 		);

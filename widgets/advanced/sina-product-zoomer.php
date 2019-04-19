@@ -116,7 +116,7 @@ class Sina_Product_Zoomer_Widget extends Widget_Base {
 		$this->add_control(
 			'thumbs',
 			[
-				'label' => __( 'Show Thumbnail', 'sina-ext' ),
+				'label' => __( 'Show Preview', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => 'yes',
 			]
@@ -148,7 +148,7 @@ class Sina_Product_Zoomer_Widget extends Widget_Base {
 		$repeater->add_control(
 			'preview_image',
 			[
-				'label' => __( 'Preview Image', 'sina-ext' ),
+				'label' => __( 'Thumb Image', 'sina-ext' ),
 				'type' => Controls_Manager::MEDIA,
 				'default' => [
 					'url' => SINA_EXT_URL .'assets/img/choose-img.jpg',
@@ -158,7 +158,7 @@ class Sina_Product_Zoomer_Widget extends Widget_Base {
 		$repeater->add_control(
 			'thumb_image',
 			[
-				'label' => __( 'Thumb Image', 'sina-ext' ),
+				'label' => __( 'Preview Image', 'sina-ext' ),
 				'type' => Controls_Manager::MEDIA,
 				'default' => [
 					'url' => SINA_EXT_URL .'assets/img/choose-img.jpg',
@@ -303,6 +303,24 @@ class Sina_Product_Zoomer_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'title_typography',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_weight' => [
+						'default' => '600',
+					],
+					'font_size'   => [
+						'default' => [
+							'size' => '24',
+						],
+					],
+					'line_height'   => [
+						'default' => [
+							'size' => '32',
+						],
+					],
+				],
 				'selector' => '{{WRAPPER}} .sina-product-title, {{WRAPPER}} .sina-product-title a',
 			]
 		);
@@ -374,6 +392,21 @@ class Sina_Product_Zoomer_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'desc_typography',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_size'   => [
+						'default' => [
+							'size' => '16',
+						],
+					],
+					'line_height'   => [
+						'default' => [
+							'size' => '24',
+						],
+					],
+				],
 				'selector' => '{{WRAPPER}} .sina-product-desc',
 			]
 		);

@@ -536,6 +536,9 @@ class Sina_Portfolio_Widget extends Widget_Base {
 						'max' => 800,
 					],
 				],
+				'mobile_default' => [
+					'size' => 300,
+				],
 				'condition' => [
 					'columns!' => 'masonry',
 				],

@@ -782,7 +782,7 @@ class Sina_Content_Box_Widget extends Widget_Base {
 					],
 					'font_size'   => [
 						'default' => [
-							'size' => '20',
+							'size' => '16',
 						],
 					],
 				],

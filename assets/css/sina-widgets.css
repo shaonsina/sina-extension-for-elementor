@@ -1,24 +1,6 @@
 /* Sina Extension for Elementor v2.0.0 */
 
 /*--------------------------------- General -------------------------------------- */
-.sina-input-field,
-.sina-input-field{
-	display: inline-block;
-	width: inherit;
-	height: inherit;
-	transition: 0.4s;
-}
-.sina-input-field:focus,
-.sina-input-field:focus{
-	outline: none;
-}
-.sina-button:active,
-.sina-button:focus,
-.sina-button{
-	border: 0;
-	outline: none;
-	cursor: pointer;
-}
 .sina-overlay{
 	position: absolute;
 	top: 0;
@@ -40,6 +22,8 @@
 	display: -o-flex;
 	display: flex;
 }
+
+/* Common */
 .sina-content-box.sina-content-box-move:hover,
 .sina-content-box.sina-content-box-zoom:hover,
 .sina-pricing.sina-pricing-move:hover,
@@ -67,6 +51,7 @@
 .sina-accordion-body,
 .sina-blogpost,
 .sina-bp-grid,
+.sina-bp-col,
 .sina-brand-carousel,
 .sina-contact-input,
 .xzoom-hidden,
@@ -87,6 +72,62 @@
 .sina-pt-item{
 	display: none;
 }
+.sina-bg-thumb img,
+.sina-pt-item.active,
+.sina-pt-content .sina-pt-btn,
+.sina-accordion-item.open > .sina-accordion-header > .sina-accordion-icon .on{
+	display: block;
+}
+.sina-bp-col,
+.sina-news,
+.sina-news-content,
+.sina-portfolio-item,
+.sina-pt-content .sina-pt-posts,
+.sina-pt-content-right .sina-pt-content-content,
+.sina-review-carousel .owl-next span,
+.sina-review-carousel .owl-prev span,
+.sina-banner-slider .owl-next span,
+.sina-banner-slider .owl-prev span{
+	float: left;
+}
+.sina-input-field,
+.sina-input-field{
+	display: inline-block;
+	width: inherit;
+	height: inherit;
+	transition: 0.4s;
+}
+.sina-input-field:focus,
+.sina-input-field:focus,
+.sina-load-more .sina-load-more-btn:active,
+.sina-load-more .sina-load-more-btn:focus,
+.sina-load-more .sina-load-more-btn,
+.sina-video-play,
+.sina-video-play:focus,
+.mfp-arrow.mfp-prevent-close{
+	outline: none;
+}
+.sina-button:active,
+.sina-button:focus,
+.sina-button{
+	border: 0;
+	outline: none;
+	cursor: pointer;
+}
+
+/* Magnific Popup */
+.mfp-image-holder .mfp-close,
+.mfp-iframe-holder .mfp-close {
+	top: -44px;
+	right: 0 !important;
+	padding-right: 0 !important;
+	background: transparent;
+	outline: none;
+	font-weight: 400;
+}
+img.mfp-img{
+	padding-top: 0;
+}
 
 /* Ribbon */
 .sina-ribbon-left,
@@ -106,22 +147,6 @@
 	transform: rotate( -45deg );
 }
 
-/* Magnific Popup */
-.mfp-image-holder .mfp-close,
-.mfp-iframe-holder .mfp-close {
-	top: -44px;
-	right: 0 !important;
-	padding-right: 0 !important;
-	background: transparent;
-	outline: none;
-	font-weight: 400;
-}
-img.mfp-img{
-	padding-top: 0;
-}
-.mfp-arrow.mfp-prevent-close{
-	outline: none;
-}
 
 /*--------------------------------- Accordion -------------------------------------- */
 .sina-accordion-item .sina-accordion-header{
@@ -136,9 +161,6 @@ img.mfp-img{
 }
 .sina-accordion-icon {
 	padding-left: 20px;
-}
-.sina-accordion-item.open > .sina-accordion-header > .sina-accordion-icon .on{
-	display: block;
 }
 
 /*------------------- Banner Slider, Brand Carousel & Review Carousel -------------------*/
@@ -176,12 +198,6 @@ img.mfp-img{
 .sina-banner-slider .owl-prev{
 	left: 35px;
 	transform: translate( 0, 40px );
-}
-.sina-review-carousel .owl-next span,
-.sina-review-carousel .owl-prev span,
-.sina-banner-slider .owl-next span,
-.sina-banner-slider .owl-prev span{
-	float: left;
 }
 .sina-banner-slider:hover .owl-next,
 .sina-banner-slider:hover .owl-prev {
@@ -239,10 +255,6 @@ img.mfp-img{
 .sina-bp-item-4{
 	width: 25%;
 }
-.sina-bp-col{
-	float: left;
-	overflow: hidden;
-}
 .sina-bg-thumb{
 	position: relative;
 }
@@ -252,9 +264,6 @@ img.mfp-img{
 }
 .sina-bg-thumb:hover .sina-overlay{
 	opacity: 1;
-}
-.sina-bg-thumb img {
-	display: block;
 }
 .sina-bp-title,
 .sina-bp-title a{
@@ -269,11 +278,6 @@ img.mfp-img{
 .sina-load-more{
 	width: 100%;
 	overflow: hidden;
-}
-.sina-load-more .sina-load-more-btn:active,
-.sina-load-more .sina-load-more-btn:focus,
-.sina-load-more .sina-load-more-btn{
-	outline: 0;
 }
 .sina-load-more .sina-load-more-btn{
 	min-width: 160px;
@@ -411,15 +415,9 @@ img.mfp-img{
 }
 .sina-product-title a,
 .sina-product-title{
-	font-size: 30px;
-	line-height: 36px;
-	font-weight: 600;
 	margin: 0 0 6px 0;
 }
 .sina-product-desc{
-	font-size: 16px;
-	line-height: 24px;
-	font-weight: 600;
 	margin: 0 0 20px 0;
 }
 .xzoom-source img,
@@ -511,10 +509,6 @@ img.mfp-img{
 	position: relative;
 	overflow: hidden;
 }
-.sina-news-content,
-.sina-news{
-	float: left;
-}
 .sina-news-ticker .sina-nt-left-label,
 .sina-news-ticker .sina-nt-right-label{
 	position: absolute;
@@ -572,9 +566,6 @@ img.mfp-img{
 }
 
 /*--------------------------------- Portfolio -------------------------------------- */
-.sina-portfolio-item{
-	float: left;
-}
 .sina-pf-item-4{
 	width: 25%;
 	height: 300px;
@@ -659,9 +650,6 @@ img.mfp-img{
 }
 
 /*--------------------------------- Posts Tab -------------------------------------- */
-.sina-pt-item.active{
-	display: block;
-}
 .sina-pt-content-content .sina-overlay {
 	opacity: 1;
 	background-color: rgba(0, 0, 0, 0);
@@ -693,20 +681,11 @@ img.mfp-img{
 .sina-pt-thumb-content p span{
 	margin-right: 10px;
 }
-.sina-pt-content .sina-pt-posts{
-	float: left;
-}
 .sina-pt-content .sina-pt-post:last-child{
 	border-bottom: 0 !important;
 }
 .sina-pt-content-right .sina-pt-posts{
 	float: right;
-}
-.sina-pt-content-right .sina-pt-content-content{
-	float: left;
-}
-.sina-pt-content .sina-pt-btn{
-	display: block;
 }
 .sina-pt-title-wraper{
 	align-items: center;
@@ -854,10 +833,6 @@ img.mfp-img{
 .sina-video{
 	text-align: center;
 }
-.sina-video-play,
-.sina-video-play:focus{
-	outline: none;
-}
 .sina-video-play {
 	display: inline-block;
 	width: 100px;
@@ -883,10 +858,6 @@ img.mfp-img{
 	.sina-pt-content-content{
 		width: 100%;
 	}
-	/*.sina-pt-content-right .sina-pt-content-content,
-	.sina-pt-content-content{
-		padding: 0;
-	}*/
 }
 
 
@@ -920,9 +891,6 @@ img.mfp-img{
 	}
 	.sina-contact-input-half:last-child{
 		margin: 0;
-	}
-	.sina-portfolio-item{
-		height: 300px;
 	}
 	.sina-nt-label-both{
 		display: none;
