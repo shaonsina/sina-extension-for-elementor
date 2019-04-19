@@ -4,7 +4,7 @@ Tags: addon, elementor, elementor addon, elementor extension, extension, page bu
 Requires at least: 4.0
 Tested up to: 5.1
 Requires PHP: 5.6
-Stable tag: 1.2.4
+Stable tag: 2.0.0
 License: GPLv3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -34,26 +34,28 @@ https://youtu.be/9HB3UF2dO70
 4. Brand Carousel: Display clients logo in a carousel
 5. Contact Form: Use contact form with lots of style & layout
 6. Content box: Works the same as the flip box, But it is more powerful because it can be used in any template
-7. Countdown: Add countdown timer into your web page
-8. Counter: Show number with animate counting
-9. Fancytext: Animated text with 20+ animation effects
-10. Flipbox: Use animated Flip Box to highlight any content on your web page
-11. Google Map: Add Google map with API key into the web page.
-12. MailChimp: Add MailChimp subscribe form for collect subscribers data
-13. News Ticker: Use it for scrolling post or news title
-14. Particle Layer: Use particle layer with lots of style, layout & more
-15. Piechart: Works the same as the Counter, but with a circle
-16. Portfolio: Easily display your works
-17. Posts Tab: Show your latest posts with a tab
-18. Pricing: Add Pricing for display your services rate
-19. Product Zoomer: Add multiple images of product for zoom in
-20. Progressbar: Display progress bars with different styles
-21. Review Carousel: Show what others said about your brand
-22. Team: Add your team members just a few clicks
-23. Search Form: Display search form for searching the users
-24. User Counter: Display how many users registered
-25. Video: Show a video in a popup
-26. Visit Counter: Display how many users visit
+7. Content Slider:
+8. Countdown: Add countdown timer into your web page
+9. Counter: Show number with animate counting
+10. Fancytext: Animated text with 20+ animation effects
+11. Flipbox: Use animated Flip Box to highlight any content on your web page
+12. Google Map: Add Google map with API key into the web page.
+13. MailChimp: Add MailChimp subscribe form for collect subscribers data
+14. News Ticker: Use it for scrolling post or news title
+15. Particle Layer: Use particle layer with lots of style, layout & more
+16. Piechart: Works the same as the Counter, but with a circle
+17. Portfolio: Easily display your works
+18. Posts Tab: Show your latest posts with a tab
+19. Pricing: Add Pricing for display your services rate
+20. Product Zoomer: Add multiple images of product for zoom in
+21. Progressbar: Display progress bars with different styles
+22. Review Carousel: Show what others said about your brand
+23. Team: Add your team members just a few clicks
+24. Title:
+25. Search Form: Display search form for searching the users
+26. User Counter: Display how many users registered
+27. Video: Show a video in a popup
+28. Visit Counter: Display how many users visit
 
 More coming soon...
 

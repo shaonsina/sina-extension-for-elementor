@@ -44,6 +44,7 @@ define('SINA_WIDGETS', [
 		'pricing' 				=> 1,
 		'progressbar' 			=> 1,
 		'team' 					=> 1,
+		'title'					=> 1,
 		'user-counter' 			=> 1,
 		'video' 				=> 1,
 		'visit-counter' 		=> 1,
@@ -53,6 +54,7 @@ define('SINA_WIDGETS', [
 		'blogpost' 				=> 1,
 		'brand-carousel' 		=> 1,
 		'contact-form' 			=> 1,
+		'content-slider'		=> 1,
 		'countdown' 			=> 1,
 		'mailchimp-subscribe' 	=> 1,
 		'news-ticker' 			=> 1,
@@ -301,14 +303,14 @@ final class Sina_Extension {
 		$elements_manager->add_category(
 			'sina-extension',
 			[
-				'title' => __( 'Sina Extension Basic Widgets', 'sina-ext' ),
+				'title' => __( 'Sina Basic Widgets', 'sina-ext' ),
 				'icon' => 'fa fa-plug',
 			]
 		);
 		$elements_manager->add_category(
 			'sina-ext-advanced',
 			[
-				'title' => __( 'Sina Extension Advaced Widgets', 'sina-ext' ),
+				'title' => __( 'Sina Advaced Widgets', 'sina-ext' ),
 				'icon' => 'fa fa-plug',
 			]
 		);
@@ -361,14 +363,16 @@ final class Sina_Extension {
 	public function register_widgets( $widgets_manager ) {
 		$active_widgets = get_option( 'sina_widgets' );
 
-		foreach ($active_widgets as $cat => $widgets) {
-			foreach ($widgets as $widget => $status) {
-				$file = SINA_EXT_DIR .'/widgets/'.$cat.'/sina-'.$widget.'.php';
-				if (1 == $status && file_exists( $file )) {
-					require_once( $file );
-					$widget = str_replace(' ', '_', ucwords( str_replace('-', ' ', $widget) ) );
-					$widget = 'Sina_'.$widget.'_Widget';
-					$widgets_manager->register_widget_type( new $widget() );
+		if ( is_array($active_widgets) ) {
+			foreach ($active_widgets as $cat => $widgets) {
+				foreach ($widgets as $widget => $status) {
+					$file = SINA_EXT_DIR .'/widgets/'.$cat.'/sina-'.$widget.'.php';
+					if (1 == $status && file_exists( $file )) {
+						require_once( $file );
+						$widget = str_replace(' ', '_', ucwords( str_replace('-', ' ', $widget) ) );
+						$widget = 'Sina_'.$widget.'_Widget';
+						$widgets_manager->register_widget_type( new $widget() );
+					}
 				}
 			}
 		}
