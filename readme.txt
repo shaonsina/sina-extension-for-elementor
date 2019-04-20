@@ -13,7 +13,7 @@ A collection of high-quality widgets for Elementor page builder.
 
 == Description ==
 
-This is an extension for Elementor (https://wordpress.org/plugins/elementor/) page builder. It will extend the Elementor and increase web page building experience. It has 26 useful high-quality widgets. Which you may use for easy & fast make the page & display your content far better way.
+This is an extension for Elementor (https://wordpress.org/plugins/elementor/) page builder. It will extend the Elementor and increase web page building experience. It has 28 useful high-quality widgets. Which you may use for easy & fast make the page & display your content far better way.
 
 
 Basic use of Blogpost
@@ -26,7 +26,7 @@ Basic use of Banner Slider
 https://youtu.be/9HB3UF2dO70
 
 
-== 26 FREE WIDGETS
+== 28 FREE WIDGETS
 
 1. Accordion: Use accordion for display FAQ or custom content which you want
 2. Banner Slider: Add an animated text or image slider into your web page

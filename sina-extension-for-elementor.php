@@ -23,9 +23,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 
 define('SINA_EXT_VERSION', '2.0.0');
-define('SINA_EXT_URL', plugins_url('/', __FILE__));
+define('SINA_EXT_PREVIOUS_VERSION', '1.2.4' );
+define('SINA_EXT_FILE', __FILE__ );
+define('SINA_EXT_SLUG', basename( SINA_EXT_FILE, '.php' ));
 define('SINA_EXT_DIR', __DIR__);
-define('SINA_EXT_BASENAME', plugin_basename( __FILE__ ));
+define('SINA_EXT_URL', plugins_url('/', SINA_EXT_FILE));
+define('SINA_EXT_BASENAME', plugin_basename( SINA_EXT_FILE ));
 
 /**
  * SINA WIDGETS Constant
@@ -122,11 +125,11 @@ final class Sina_Extension {
 		add_action( 'plugins_loaded', [ $this, 'init' ] );
 		add_action( 'init', [ $this, 'i18n' ] );
 
-		register_activation_hook(__FILE__, [ $this, 'activation' ] );
+		register_activation_hook(SINA_EXT_FILE, [ $this, 'activation' ] );
 		add_action('admin_init', [ $this, 'redirection' ] );
 
-		$this->create_admin_page();
 		$this->include_files();
+		$this->create_admin_page();
 	}
 
 	/**
@@ -161,8 +164,6 @@ final class Sina_Extension {
 	 * @since 1.0.0
 	 */
 	protected function create_admin_page() {
-		require_once( SINA_EXT_DIR .'/admin/settings.php' );
-
 		add_filter( 'plugin_action_links_'. SINA_EXT_BASENAME, [ $this, 'settings_link' ] );
 	}
 
@@ -182,6 +183,9 @@ final class Sina_Extension {
 	 * @since 1.0.0
 	 */
 	public function include_files() {
+		require_once( SINA_EXT_DIR .'/admin/scripts.php' );
+		require_once( SINA_EXT_DIR .'/admin/settings.php' );
+		require_once( SINA_EXT_DIR .'/admin/rollback.php' );
 		require_once( SINA_EXT_DIR .'/inc/helper.php' );
 		require_once( SINA_EXT_DIR .'/inc/hooks.php' );
 	}

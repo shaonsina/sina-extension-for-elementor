@@ -1,10 +1,9 @@
 <?php
-function sina_admin_enqueue( $hook ) {
-	if ( 'elementor_page_sina_ext_settings' == $hook ) {
-		wp_enqueue_style( 'sina-admin-style', SINA_EXT_URL .'admin/assets/css/sina-admin.css', [], SINA_EXT_VERSION );
-	}
+
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
 }
-add_action( 'admin_enqueue_scripts', 'sina_admin_enqueue' );
 
 function sina_add_submenu() {
 	add_submenu_page(
@@ -64,10 +63,24 @@ function sina_page_content() {
 				submit_button();
 			?>
 		</div>
-		<div>
-		    <p>Did you like <strong><i>Sina Extension</i></strong> Plugin? Please <a href="https://wordpress.org/support/plugin/sina-extension-for-elementor/reviews/#new-post" target="_blank">Click Here to Rate it ★★★★★</a></p>
-		</div>
 	</form>
+	<h2><?php echo __( 'Rollback to Previous Version', 'sina-ext' ); ?></h2>
+	<p><?php echo __( 'Experiencing an issue with this version? You can rollback the previous version.', 'sina-ext' ); ?></p>
+	<?php
+		printf( '<a href="%1$s" class="sina-ext-rollback">%2$s</a>',
+			wp_nonce_url( admin_url( 'admin-post.php?action=sina_ext_rollback' ), 'sina_ext_rollback' ),
+			sprintf(
+				__( 'Reinstall v%s', 'elementor' ),
+				SINA_EXT_PREVIOUS_VERSION
+			)
+		);
+		// 'desc' => '<span style="color: red;">' . __( 'Warning: Please backup your database before making the rollback.', 'elementor' ) . '</span>',
+
+		// printf( '<a href="https://downloads.wordpress.org/plugin/%1$s.%2$s.zip">Rollback(%2$s)</a>', SINA_EXT_SLUG, SINA_EXT_PREVIOUS_VERSION );
+	?>
+	<div>
+	    <p>Did you like <strong><i>Sina Extension</i></strong> Plugin? Please <a href="https://wordpress.org/support/plugin/sina-extension-for-elementor/reviews/#new-post" target="_blank">Click Here to Rate it ★★★★★</a></p>
+	</div>
 	<?php
 }
 
