@@ -65,21 +65,25 @@ function sina_page_content() {
 			?>
 		</div>
 	</form>
-	<h2><?php echo __( 'Rollback to Previous Version', 'sina-ext' ); ?></h2>
-	<p><?php echo __( 'Experiencing an issue with this version? You can rollback the previous version.', 'sina-ext' ); ?></p>
-	<?php
-		printf( '<a class="sina-ext-rollback-btn button elementor-button-spinner elementor-rollback-button">%2$s</a>',
-			wp_nonce_url( admin_url( 'admin-post.php?action=sina_ext_rollback' ), 'sina_ext_rollback' ),
-			sprintf(
-				__( 'Reinstall v%s', 'elementor' ),
-				SINA_EXT_PREVIOUS_VERSION
-			)
-		);
-		// 'desc' => '<span style="color: red;">' . __( 'Warning: Please backup your database before making the rollback.', 'elementor' ) . '</span>',
 
-		// printf( '<a href="https://downloads.wordpress.org/plugin/%1$s.%2$s.zip">Rollback(%2$s)</a>', SINA_EXT_SLUG, SINA_EXT_PREVIOUS_VERSION );
-	?>
-	<div>
+	<div class="sina-widget-options">
+		<h2><?php echo __( 'Rollback to Previous Version', 'sina-ext' ); ?></h2>
+		<p><?php echo __( 'Experiencing an issue with this version? You can rollback the previous version.', 'sina-ext' ); ?></p>
+		<?php
+			printf( '<a href="%1$s" class="sina-ext-rollback-btn button elementor-button-spinner elementor-rollback-button">%2$s</a>',
+				wp_nonce_url( admin_url( 'admin-post.php?action=sina_ext_rollback' ), 'sina_ext_rollback' ),
+				sprintf(
+					__( 'Reinstall v%s', 'elementor' ),
+					SINA_EXT_PREVIOUS_VERSION
+				)
+			);
+		?>
+		<p style="color: #e00;">
+			<?php echo __( 'Warning: Please backup your database before making the rollback.', 'sina-ext' ); ?>
+		</p>
+	</div>
+
+	<div class="sina-widget-options">
 	    <p>Did you like <strong><i>Sina Extension</i></strong> Plugin? Please <a href="https://wordpress.org/support/plugin/sina-extension-for-elementor/reviews/#new-post" target="_blank">Click Here to Rate it ★★★★★</a></p>
 	</div>
 	<?php

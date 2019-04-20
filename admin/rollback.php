@@ -5,21 +5,26 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+use \Elementor\Rollback;
+
 function sina_ext_rollback() {
 	check_admin_referer( 'sina_ext_rollback' );
 
-	require_once( ABSPATH . 'wp-admin/includes/class-wp-upgrader.php' );
+	$rollback = new Rollback(
+		[
+			'version' => SINA_EXT_PREVIOUS_VERSION,
+			'plugin_name' => SINA_EXT_SLUG,
+			'plugin_slug' => SINA_EXT_SLUG,
+			'package_url' => sprintf( 'https://downloads.wordpress.org/plugin/%s.%s.zip', SINA_EXT_SLUG, SINA_EXT_PREVIOUS_VERSION ),
+		]
+	);
 
-	$upgrader_args = [
-		'url' => 'update.php?action=upgrade-plugin&plugin=' . rawurlencode( SINA_EXT_SLUG ),
-		'plugin' => SINA_EXT_SLUG,
-		'nonce' => 'upgrade-plugin_' . SINA_EXT_SLUG,
-		'title' => __( 'Rollback to Previous Version', 'sina-ext' ),
-	];
+	$rollback->run();
 
-	$upgrader = new \Plugin_Upgrader( new \Plugin_Upgrader_Skin( $upgrader_args ) );
-	$upgrader->upgrade( SINA_EXT_SLUG );
-
-	die();
+	wp_die(
+		'', __( 'Rollback to Previous Version', 'sina-ext' ), [
+			'response' => 200,
+		]
+	);
 }
-add_action( 'wp_ajax_sina_ext_rollback', 'sina_ext_rollback' );
+add_action( 'admin_post_sina_ext_rollback', 'sina_ext_rollback' );
