@@ -67,7 +67,7 @@ function sina_page_content() {
 	<h2><?php echo __( 'Rollback to Previous Version', 'sina-ext' ); ?></h2>
 	<p><?php echo __( 'Experiencing an issue with this version? You can rollback the previous version.', 'sina-ext' ); ?></p>
 	<?php
-		printf( '<a href="%1$s" class="sina-ext-rollback">%2$s</a>',
+		printf( '<a href="%1$s" class="sina-ext-rollback-btn">%2$s</a>',
 			wp_nonce_url( admin_url( 'admin-post.php?action=sina_ext_rollback' ), 'sina_ext_rollback' ),
 			sprintf(
 				__( 'Reinstall v%s', 'elementor' ),
