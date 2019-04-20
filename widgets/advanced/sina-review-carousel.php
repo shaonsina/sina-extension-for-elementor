@@ -355,8 +355,8 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 		);
 
 		$this->end_controls_section();
-		// End Carousel Content
-		// =====================
+		// End Carousel Settings
+		// ======================
 
 
 		// Start Image Style

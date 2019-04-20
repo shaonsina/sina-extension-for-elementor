@@ -483,7 +483,6 @@ class Sina_Title_Widget extends Widget_Base {
 			<?php if ( '' != $data['desc'] ): ?>
 				<?php printf( '<div class="sina-title-desc">%1$s</div>', $data['desc'] ); ?>
 			<?php endif; ?>
-			</div>
 		</div><!-- .sina-title -->
 		<?php
 	}
