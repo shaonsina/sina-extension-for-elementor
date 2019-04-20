@@ -43,6 +43,7 @@ function sina_page_content() {
 	<h1><?php echo __( 'Sina Extension Settings', 'sina-ext' ); ?></h1>
 	<p><?php _e('Thank you for using <strong><i>Sina Extension</i></strong>. This plugin has been developed by <a href="https://github.com/shaonsina" target="_blank">shaonsina</a> and I hope you enjoy using it.', 'sina-ext'); ?></p>
 	<h2><?php echo __( 'API Settings', 'sina-ext' ); ?></h2>
+
 	<form action="options.php" method="POST">
 		<?php
 			settings_errors();
@@ -67,7 +68,7 @@ function sina_page_content() {
 	<h2><?php echo __( 'Rollback to Previous Version', 'sina-ext' ); ?></h2>
 	<p><?php echo __( 'Experiencing an issue with this version? You can rollback the previous version.', 'sina-ext' ); ?></p>
 	<?php
-		printf( '<a href="%1$s" class="sina-ext-rollback-btn">%2$s</a>',
+		printf( '<a class="sina-ext-rollback-btn button elementor-button-spinner elementor-rollback-button">%2$s</a>',
 			wp_nonce_url( admin_url( 'admin-post.php?action=sina_ext_rollback' ), 'sina_ext_rollback' ),
 			sprintf(
 				__( 'Reinstall v%s', 'elementor' ),

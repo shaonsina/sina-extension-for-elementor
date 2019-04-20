@@ -183,9 +183,9 @@ final class Sina_Extension {
 	 * @since 1.0.0
 	 */
 	public function include_files() {
-		require_once( SINA_EXT_DIR .'/admin/scripts.php' );
 		require_once( SINA_EXT_DIR .'/admin/settings.php' );
 		require_once( SINA_EXT_DIR .'/admin/rollback.php' );
+		require_once( SINA_EXT_DIR .'/admin/scripts.php' );
 		require_once( SINA_EXT_DIR .'/inc/helper.php' );
 		require_once( SINA_EXT_DIR .'/inc/hooks.php' );
 	}
