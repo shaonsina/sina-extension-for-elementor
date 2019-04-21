@@ -89,7 +89,7 @@ class Sina_Brand_Carousel_Widget extends Widget_Base {
 	public function get_script_depends() {
 	    return [
 	    	'jquery-owl',
-	        'sina-widgets-advanced',
+	        'sina-widgets',
 	    ];
 	}
 

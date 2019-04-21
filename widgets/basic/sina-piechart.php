@@ -298,7 +298,7 @@ class Sina_Piechart_Widget extends Widget_Base {
 					],
 					'font_size'   => [
 						'default' => [
-							'size' => '18',
+							'size' => '16',
 						],
 					],
 					'line_height'   => [

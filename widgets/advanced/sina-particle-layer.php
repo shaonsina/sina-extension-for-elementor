@@ -716,6 +716,9 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 			[
 				'label' => __( 'Title', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
+				'condition' => [
+					'title!' => '',
+				],
 			]
 		);
 
@@ -789,6 +792,9 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 			[
 				'label' => __( 'Sub Title', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
+				'condition' => [
+					'subtitle!' => '',
+				],
 			]
 		);
 
@@ -862,6 +868,9 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 			[
 				'label' => __( 'Description', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
+				'condition' => [
+					'desc!' => '',
+				],
 			]
 		);
 
