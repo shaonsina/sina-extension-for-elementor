@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 
 define('SINA_EXT_VERSION', '2.0.0');
-define('SINA_EXT_PREVIOUS_VERSION', '1.2.1' );
+define('SINA_EXT_PREVIOUS_VERSION', '1.2.4' );
 define('SINA_EXT_FILE', __FILE__ );
 define('SINA_EXT_SLUG', basename( SINA_EXT_FILE, '.php' ));
 define('SINA_EXT_DIR', __DIR__);
