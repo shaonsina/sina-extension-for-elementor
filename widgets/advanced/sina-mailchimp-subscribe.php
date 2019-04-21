@@ -303,6 +303,7 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 				],
 				'condition' => [
 					'icon!' => '',
+					'label!' => '',
 				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-btn-icon-right' => 'margin-left: {{SIZE}}{{UNIT}};',
@@ -1079,7 +1080,7 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 						<input class="sina-input-field sina-input-phone <?php echo esc_attr( $display_class ); ?>" type="text" name="<?php echo esc_attr( $data['phone_tag'] ); ?>" placeholder="<?php echo esc_attr( $data['phone_placeholder'] ); ?>">
 					<?php endif; ?>
 
-					<?php if ( $data['label'] ): ?>
+					<?php if ( $data['label'] || $data['icon'] ): ?>
 						<button type="submit" class="sina-button sina-subs-btn">
 							<?php if ( $data['icon'] && 'left' == $data['icon_position'] ): ?>
 								<i class="<?php echo esc_attr( $data['icon'] ); ?> sina-btn-icon-left"></i>
@@ -1125,7 +1126,7 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 						<input class="sina-input-field sina-input-phone {{{displayClass}}}" type="text" name="{{{settings.phone_tag}}}" placeholder="{{{settings.phone_placeholder}}}">
 					<# } #>
 
-					<# if( settings.label ) { #>
+					<# if( settings.label || settings.icon ) { #>
 						<button type="submit" class="sina-button sina-subs-btn">
 							<# if ( settings.icon && 'left' == settings.icon_position ) { #>
 								<i class="{{{settings.icon}}} sina-btn-icon-left"></i>

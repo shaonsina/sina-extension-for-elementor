@@ -280,11 +280,11 @@ class Sina_Team_Widget extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
-					'top' => '20',
+					'top' => '60',
 					'right' => '20',
 					'bottom' => '20',
 					'left' => '20',
-					'isLinked' => true,
+					'isLinked' => false,
 				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-team-overlay' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',

@@ -361,7 +361,7 @@ class Sina_Video_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'icon_box_size',
 			[
-				'label' => __( 'Icon Box Size', 'sina-ext' ),
+				'label' => __( 'Box Scale', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
