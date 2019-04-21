@@ -13,7 +13,7 @@ A collection of high-quality widgets for Elementor page builder.
 
 == Description ==
 
-This is an extension for Elementor (https://wordpress.org/plugins/elementor/) page builder. It will extend the Elementor and increase web page building experience. It has 28 useful high-quality widgets. Which you may use for easy & fast make the page & display your content far better way.
+This is an extension for Elementor (https://wordpress.org/plugins/elementor/) page builder. It will extend the Elementor and increase web page building experience. It has 28 useful & high-quality widgets. Which you may use for easy & fast make the page & display your content far better way.
 
 
 Basic use of Blogpost
@@ -33,8 +33,8 @@ https://youtu.be/9HB3UF2dO70
 3. Blogpost: Show your blog posts with masonry grid
 4. Brand Carousel: Display clients logo in a carousel
 5. Contact Form: Use contact form with lots of style & layout
-6. Content box: Works the same as the flip box, But it is more powerful because it can be used in any template
-7. Content Slider:
+6. Content box: Works the same as the flip box, But it's more powerful because it can be used in any template
+7. Content Slider: You can slide any content with that. Also can sliding any template. Enjoy!
 8. Countdown: Add countdown timer into your web page
 9. Counter: Show number with animate counting
 10. Fancytext: Animated text with 20+ animation effects
@@ -51,13 +51,13 @@ https://youtu.be/9HB3UF2dO70
 21. Progressbar: Display progress bars with different styles
 22. Review Carousel: Show what others said about your brand
 23. Team: Add your team members just a few clicks
-24. Title:
+24. Title: Use title, subtitle & description anywhere into your web page.
 25. Search Form: Display search form for searching the users
 26. User Counter: Display how many users registered
 27. Video: Show a video in a popup
 28. Visit Counter: Display how many users visit
 
-More coming soon...
+Cool things are coming soon...
 
 
 == Installation ==
@@ -83,6 +83,18 @@ Yes. It's totally free.
 
 
 == Changelog ==
+
+= 2.0.0 - 21-04-2019 =
+- New: Content Slider
+- New: Title
+- Added: Widgets disable option panel
+- Added: Rollback to previous version
+- Added: Default value for various widgets
+- Added: Some control to various widgets
+- Optimize: Some script Optimized
+- Fix: Some minor issue fixed
+- Improved
+**NOTE: It's a major release of this plugin. So, please review your site after update.**
 
 = 1.2.4 - 18-03-2019 =
 - Improved
