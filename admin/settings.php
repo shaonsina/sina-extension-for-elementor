@@ -42,11 +42,11 @@ function sina_page_content() {
 	?>
 	<h1><?php echo __( 'Sina Extension Settings', 'sina-ext' ); ?></h1>
 	<p><?php _e('Thank you for using <strong><i>Sina Extension</i></strong>. This plugin has been developed by <a href="https://github.com/shaonsina" target="_blank">shaonsina</a> and I hope you enjoy using it.', 'sina-ext'); ?></p>
-	<h2><?php echo __( 'API Settings', 'sina-ext' ); ?></h2>
 
 	<form action="options.php" method="POST">
+		<?php settings_errors(); ?>
+		<h2><?php echo __( 'API Settings', 'sina-ext' ); ?></h2>
 		<?php
-			settings_errors();
 			do_settings_sections( 'sina_ext_settings' );
 			settings_fields( 'sina_settings_group' );
 		?>

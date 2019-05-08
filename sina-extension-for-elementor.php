@@ -43,8 +43,10 @@ define('SINA_WIDGETS', [
 		'piechart' 				=> 1,
 		'pricing' 				=> 1,
 		'progressbar' 			=> 1,
+		'table'			 		=> 1,
 		'team' 					=> 1,
 		'title'					=> 1,
+		'transform'				=> 1,
 		'user-counter' 			=> 1,
 		'video' 				=> 1,
 		'visit-counter' 		=> 1,
@@ -57,9 +59,11 @@ define('SINA_WIDGETS', [
 		'content-slider'		=> 1,
 		'countdown' 			=> 1,
 		'mailchimp-subscribe' 	=> 1,
+		'modal-box'				=> 1,
 		'news-ticker' 			=> 1,
 		'particle-layer' 		=> 1,
 		'portfolio' 			=> 1,
+		'posts-carousel'		=> 1,
 		'posts-tab' 			=> 1,
 		'product-zoomer' 		=> 1,
 		'review-carousel' 		=> 1,
@@ -88,7 +92,7 @@ final class Sina_Extension {
 	 * @since 1.0.0
 	 * @var string Minimum PHP version required to run the plugin.
 	 */
-	const MINIMUM_PHP_VERSION = '7.0';
+	const MINIMUM_PHP_VERSION = '5.6';
 
 	/**
 	 * Instance

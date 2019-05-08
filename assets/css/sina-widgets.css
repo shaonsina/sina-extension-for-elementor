@@ -65,6 +65,7 @@
 /* Template Editor button hide */
 .sina-accordion-body .elementor-element-overlay,
 .sina-content-box .elementor-element-overlay,
+.sina-content-slider .elementor-element-overlay,
 .sina-accordion-item > .sina-accordion-header > .sina-accordion-icon .on,
 .sina-accordion-item.open > .sina-accordion-header > .sina-accordion-icon .off,
 .sina-accordion-body,
