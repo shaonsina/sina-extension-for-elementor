@@ -330,7 +330,7 @@ final class Sina_Extension {
 		wp_enqueue_style( 'owl-carousel', SINA_EXT_URL .'assets/css/owl.carousel.min.css', [], '2.3.4' );
 		wp_enqueue_style( 'magnific-popup', SINA_EXT_URL .'assets/css/magnific-popup.css', [], '1.1.0' );
 		wp_enqueue_style( 'xzoom', SINA_EXT_URL .'assets/css/xzoom.min.css', [], '1.0.14' );
-		wp_enqueue_style( 'sina-widgets', SINA_EXT_URL .'assets/css/sina-widgets.min.css', [], SINA_EXT_VERSION );
+		wp_enqueue_style( 'sina-widgets', SINA_EXT_URL .'assets/css/sina-widgets.css', [], SINA_EXT_VERSION );
 	}
 
 	/**

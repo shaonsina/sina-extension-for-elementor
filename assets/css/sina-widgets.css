@@ -30,6 +30,7 @@
 .sina-pricing.sina-pricing-zoom:hover{
 	z-index: 999999;
 }
+.sina-transform-content,
 .sina-brand-item-inner,
 .sina-brand-item-inner a img,
 .sina-flipbox-title,
@@ -47,6 +48,7 @@
 .sina-portfolio-btn {
 	transition: all 0.4s ease-in-out;
 }
+.sina-transform-overflow,
 .sina-accordion-item,
 .sina-accordion-body,
 .sina-blogpost,

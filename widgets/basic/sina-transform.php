@@ -7,10 +7,9 @@
 
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
-use Elementor\Group_Control_Typography;
-use Elementor\Group_Control_Text_Shadow;
 use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Box_Shadow;
+use Elementor\Group_Control_Css_Filter;
 use Elementor\Frontend;
 
 // Exit if accessed directly.
@@ -134,22 +133,365 @@ class Sina_Transform_Widget extends Widget_Base {
 		$this->end_controls_section();
 		// End Transform Content
 		// =======================
+
+
+		// Start Transform Style
+		// =========================
+		$this->start_controls_section(
+			'transform_style',
+			[
+				'label' => __( 'Transform Style', 'sina-ext' ),
+				'tab' => Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_control(
+			'transform_effects',
+			[
+				'label' => __( 'Transform Effects', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					'rotateX' => __( 'Rotate X', 'sina-ext' ),
+					'rotateY' => __( 'Rotate Y', 'sina-ext' ),
+					'rotateZ' => __( 'Rotate Z', 'sina-ext' ),
+					'skewX' => __( 'Skew X', 'sina-ext' ),
+					'skewY' => __( 'Skew Y', 'sina-ext' ),
+					'none' => __( 'None', 'sina-ext' ),
+				],
+				'default' => 'rotateY',
+			]
+		);
+
+		$this->add_control(
+			'transform_overflow',
+			[
+				'label' => __( 'Overflow', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					'' => __( 'Default', 'sina-ext' ),
+					'sina-transform-overflow' => __( 'Hidden', 'sina-ext' ),
+				],
+				'default' => '',
+			]
+		);
+
+		$this->start_controls_tabs( 'transform_tabs' );
+
+		$this->start_controls_tab(
+			'transform_normal',
+			[
+				'label' => __( 'Normal', 'sina-ext' ),
+			]
+		);
+
+		$this->add_control(
+			'rotateX',
+			[
+				'label' => __( 'Rotate X', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'range' => [
+					'px' => [
+						'step' => 1,
+						'min' => 0,
+						'max' => 180,
+					],
+				],
+				'default' => [
+					'size' => '15',
+				],
+				'condition' => [
+					'transform_effects' => 'rotateX',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-transform-content' => 'transform: rotateX({{SIZE}}deg);',
+				],
+			]
+		);
+		$this->add_control(
+			'rotateY',
+			[
+				'label' => __( 'Rotate Y', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'range' => [
+					'px' => [
+						'step' => 1,
+						'min' => 0,
+						'max' => 180,
+					],
+				],
+				'default' => [
+					'size' => '15',
+				],
+				'condition' => [
+					'transform_effects' => 'rotateY',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-transform-content' => 'transform: rotateY({{SIZE}}deg);',
+				],
+			]
+		);
+		$this->add_control(
+			'rotateZ',
+			[
+				'label' => __( 'Rotate Z', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'range' => [
+					'px' => [
+						'step' => 1,
+						'min' => -180,
+						'max' => 180,
+					],
+				],
+				'default' => [
+					'size' => '0',
+				],
+				'condition' => [
+					'transform_effects' => 'rotateZ',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-transform-content' => 'transform: rotateZ({{SIZE}}deg);',
+				],
+			]
+		);
+		$this->add_control(
+			'skewX',
+			[
+				'label' => __( 'Skew X', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'range' => [
+					'px' => [
+						'step' => 1,
+						'min' => -60,
+						'max' => 60,
+					],
+				],
+				'default' => [
+					'size' => '0',
+				],
+				'condition' => [
+					'transform_effects' => 'skewX',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-transform-content' => 'transform: skewX({{SIZE}}deg);',
+				],
+			]
+		);
+		$this->add_control(
+			'skewY',
+			[
+				'label' => __( 'Skew Y', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'range' => [
+					'px' => [
+						'step' => 1,
+						'min' => -60,
+						'max' => 60,
+					],
+				],
+				'default' => [
+					'size' => '0',
+				],
+				'condition' => [
+					'transform_effects' => 'skewY',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-transform-content' => 'transform: skewY({{SIZE}}deg);',
+				],
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Css_Filter::get_type(),
+			[
+				'name' => 'transform_filters',
+				'selector' => '{{WRAPPER}} .sina-transform-content',
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Border::get_type(),
+			[
+				'name' => 'transform_border',
+				'selector' => '{{WRAPPER}} .sina-transform-content',
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Box_Shadow::get_type(),
+			[
+				'name' => 'transform_shadow',
+				'selector' => '{{WRAPPER}} .sina-transform-content',
+			]
+		);
+
+		$this->end_controls_tab();
+
+		$this->start_controls_tab(
+			'transform_hover',
+			[
+				'label' => __( 'Hover', 'sina-ext' ),
+			]
+		);
+
+		$this->add_control(
+			'rotateX_hover',
+			[
+				'label' => __( 'Rotate X', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'range' => [
+					'px' => [
+						'step' => 1,
+						'min' => 0,
+						'max' => 180,
+					],
+				],
+				'default' => [
+					'size' => '0',
+				],
+				'condition' => [
+					'transform_effects' => 'rotateX',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-transform:hover .sina-transform-content' => 'transform: rotateX({{SIZE}}deg);',
+				],
+			]
+		);
+		$this->add_control(
+			'rotateY_hover',
+			[
+				'label' => __( 'Rotate Y', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'range' => [
+					'px' => [
+						'step' => 1,
+						'min' => 0,
+						'max' => 180,
+					],
+				],
+				'default' => [
+					'size' => '0',
+				],
+				'condition' => [
+					'transform_effects' => 'rotateY',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-transform:hover .sina-transform-content' => 'transform: rotateY({{SIZE}}deg);',
+				],
+			]
+		);
+		$this->add_control(
+			'rotateZ_hover',
+			[
+				'label' => __( 'Rotate Z', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'range' => [
+					'px' => [
+						'step' => 1,
+						'min' => -180,
+						'max' => 180,
+					],
+				],
+				'default' => [
+					'size' => '15',
+				],
+				'condition' => [
+					'transform_effects' => 'rotateZ',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-transform:hover .sina-transform-content' => 'transform: rotateZ({{SIZE}}deg);',
+				],
+			]
+		);
+		$this->add_control(
+			'skewX_hover',
+			[
+				'label' => __( 'Skew X', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'range' => [
+					'px' => [
+						'step' => 1,
+						'min' => -60,
+						'max' => 60,
+					],
+				],
+				'default' => [
+					'size' => '15',
+				],
+				'condition' => [
+					'transform_effects' => 'skewX',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-transform:hover .sina-transform-content' => 'transform: skewX({{SIZE}}deg);',
+				],
+			]
+		);
+		$this->add_control(
+			'skewY_hover',
+			[
+				'label' => __( 'Skew Y', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'range' => [
+					'px' => [
+						'step' => 1,
+						'min' => -60,
+						'max' => 60,
+					],
+				],
+				'default' => [
+					'size' => '15',
+				],
+				'condition' => [
+					'transform_effects' => 'skewY',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-transform:hover .sina-transform-content' => 'transform: skewY({{SIZE}}deg);',
+				],
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Css_Filter::get_type(),
+			[
+				'name' => 'transform_filters_hover',
+				'selector' => '{{WRAPPER}} .sina-transform:hover .sina-transform-content',
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Border::get_type(),
+			[
+				'name' => 'transform_border_hover',
+				'selector' => '{{WRAPPER}} .sina-transform:hover .sina-transform-content',
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Box_Shadow::get_type(),
+			[
+				'name' => 'transform_shadow_hover',
+				'selector' => '{{WRAPPER}} .sina-transform:hover .sina-transform-content',
+			]
+		);
+
+		$this->end_controls_tab();
+
+		$this->end_controls_tabs();
+
+		$this->end_controls_section();
+		// End Transform Style
+		// =======================
 	}
 
 
 	protected function render() {
 		$data = $this->get_settings_for_display();
-		// fw_print( $data );
 		?>
-		<div class="sina-transform">
-			<?php
-				if ( 'yes' == $data['save_templates'] && $data['template'] ) :
-					$frontend = new Frontend;
-					echo $frontend->get_builder_content( $data['template'], true );
-				elseif ( $data['image']['url'] ) :
-					?>
-					<img class="sina-transform-img" src="<?php echo esc_url( $data['image']['url'] ); ?>">
-			<?php endif; ?>
+		<div class="sina-transform <?php echo esc_attr( $data['transform_overflow'] ); ?>">
+			<div class="sina-transform-content">
+				<?php
+					if ( 'yes' == $data['save_templates'] && $data['template'] ) :
+						$frontend = new Frontend;
+						echo $frontend->get_builder_content( $data['template'], true );
+					elseif ( $data['image']['url'] ) :
+						?>
+						<img src="<?php echo esc_url( $data['image']['url'] ); ?>">
+				<?php endif; ?>
+			</div><!-- .sina-transform-content -->
 		</div><!-- .sina-transform -->
 		<?php
 	}
