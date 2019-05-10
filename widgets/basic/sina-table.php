@@ -180,6 +180,18 @@ class Sina_Table_Widget extends Widget_Base {
 				],
 			]
 		);
+		$tbody->add_control(
+			'cell_content',
+			[
+				'label' => __( 'Content', 'sina-ext' ),
+				'type' => Controls_Manager::TEXTAREA,
+				'default' => __('Google', 'sina-ext'),
+				'description' => __( 'You can use HTML.', 'sina-ext' ),
+				'condition' => [
+					'content_type' => ['cell', 'head'],
+				],
+			]
+		);
 		$this->add_control(
 			'body_content',
 			[
@@ -204,33 +216,61 @@ class Sina_Table_Widget extends Widget_Base {
 
 	protected function render() {
 		$data = $this->get_settings_for_display();
+
+		$rows = [];
+		$i = 0;
+		foreach ($data['body_content'] as $key => $content) {
+			if ( 'row' == $content['content_type'] ) {
+				$rows[] = [];
+				$i++;
+			}
+			else {
+				if ( 'head' == $content['content_type'] ) {
+					array_push($rows[$i-1], [
+						'type' => 'th',
+						'row_span' => $content['row_span'],
+						'col_span' => $content['col_span'],
+						'cell_content' => $content['cell_content'],
+					]);
+				} elseif ( 'cell' == $content['content_type'] ) {
+					array_push($rows[$i-1], [
+						'type' => 'td',
+						'row_span' => $content['row_span'],
+						'col_span' => $content['col_span'],
+						'cell_content' => $content['cell_content'],
+					]);
+				}
+			}
+		}
+		// fw_print($rows);
 		?>
 		<div class="sina-table">
 			<table>
 				<caption>List of users</caption>
-				<thead>
-					<tr>
-						<th>fine</th>
-						<th>fine</th>
-						<th>fine</th>
-						<th>fine</th>
-					</tr>
-				</thead>
+				<?php if ( !empty( $data['header_content'] ) ): ?>
+					<thead>
+						<tr>
+							<?php foreach ($data['header_content'] as $content): ?>
+								<th><?php echo esc_html( $content['header_text'] ); ?></th>
+							<?php endforeach; ?>
+						</tr>
+					</thead>
+				<?php endif; ?>
+
 				<tbody>
-					<tr>
-						<th>nice</th>
-						<td>nice</td>
-						<td>nice</td>
-						<td>nice</td>
-						<td>nice</td>
-					</tr>
-					<tr>
-						<th>nice</th>
-						<td>nice</td>
-						<td>nice</td>
-						<td>nice</td>
-						<td>nice</td>
-					</tr>
+					<?php foreach ($rows as $row) : ?>
+						<tr>
+							<?php foreach ($row as $content) : ?>
+								<<?php echo esc_html( $content['type'] ); ?>
+								rowspan="<?php echo esc_attr( $content['row_span'] ); ?>"
+								colspan="<?php echo esc_attr( $content['col_span'] ); ?>">
+
+								<?php printf( '<div class="sina-table-data">%s</div>', $content['cell_content'] ); ?>
+
+								</<?php echo esc_html( $content['type'] ); ?>>
+							<?php endforeach; ?>
+						</tr>
+					<?php endforeach; ?>
 				</tbody>
 			</table>
 		</div><!-- .sina-table -->
