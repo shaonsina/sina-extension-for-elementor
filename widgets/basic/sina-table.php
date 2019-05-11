@@ -102,13 +102,22 @@ class Sina_Table_Widget extends Widget_Base {
 		$thead = new Repeater();
 
 		$thead->add_control(
+			'header_col_span',
+			[
+				'label' => __( 'Column Span', 'sina-ext' ),
+				'type' => Controls_Manager::NUMBER,
+				'min' => 1,
+				'default' => 1,
+			]
+		);
+		$thead->add_control(
 			'header_text',
 			[
 				'label' => __( 'Header Text', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __('Enter Text', 'sina-ext'),
-				'default' => __('WordPress', 'sina-ext'),
+				'default' => 'WordPress',
 			]
 		);
 		$thead->add_control(
@@ -160,7 +169,16 @@ class Sina_Table_Widget extends Widget_Base {
 				'prevent_empty' => false,
 				'default' => [
 					[
-						'header_text' => __('WordPress', 'sina-ext'),
+						'header_text' => 'ID',
+					],
+					[
+						'header_text' => 'First Name',
+					],
+					[
+						'header_text' => 'Last Name',
+					],
+					[
+						'header_text' => 'Age',
 					],
 				],
 				'title_field' => '{{{ header_text }}}',
@@ -226,7 +244,6 @@ class Sina_Table_Widget extends Widget_Base {
 			[
 				'label' => __( 'Content', 'sina-ext' ),
 				'type' => Controls_Manager::TEXTAREA,
-				'default' => __('Google', 'sina-ext'),
 				'description' => __( 'You can use HTML.', 'sina-ext' ),
 				'condition' => [
 					'content_type' => ['cell', 'head'],
@@ -241,8 +258,58 @@ class Sina_Table_Widget extends Widget_Base {
 				'fields' => $tbody->get_controls(),
 				'default' => [
 					[
-						'row_span' => __('1', 'sina-ext'),
-						'col_span' => __('1', 'sina-ext'),
+						'content_type' => 'row',
+					],
+					[
+						'content_type' => 'head',
+						'row_span' => 1,
+						'col_span' => 1,
+						'cell_content' => '2019',
+					],
+					[
+						'content_type' => 'cell',
+						'row_span' => 1,
+						'col_span' => 1,
+						'cell_content' => 'Jhon',
+					],
+					[
+						'content_type' => 'cell',
+						'row_span' => 1,
+						'col_span' => 1,
+						'cell_content' => 'Doe',
+					],
+					[
+						'content_type' => 'cell',
+						'row_span' => 1,
+						'col_span' => 1,
+						'cell_content' => '28',
+					],
+					[
+						'content_type' => 'row',
+					],
+					[
+						'content_type' => 'head',
+						'row_span' => 1,
+						'col_span' => 1,
+						'cell_content' => '2020',
+					],
+					[
+						'content_type' => 'cell',
+						'row_span' => 1,
+						'col_span' => 1,
+						'cell_content' => 'Steve',
+					],
+					[
+						'content_type' => 'cell',
+						'row_span' => 1,
+						'col_span' => 1,
+						'cell_content' => 'Rhodes',
+					],
+					[
+						'content_type' => 'cell',
+						'row_span' => 1,
+						'col_span' => 1,
+						'cell_content' => '32',
 					],
 				],
 				'title_field' => '{{{ content_type }}}',
@@ -265,14 +332,14 @@ class Sina_Table_Widget extends Widget_Base {
 				$rows[] = [];
 				$i++;
 			}
-			elseif ( 'head' == $content['content_type'] ) {
+			elseif ( 'head' == $content['content_type'] && isset( $rows[$i-1] ) ) {
 				array_push($rows[$i-1], [
 					'type' => 'th',
 					'row_span' => $content['row_span'],
 					'col_span' => $content['col_span'],
 					'cell_content' => $content['cell_content'],
 				]);
-			} elseif ( 'cell' == $content['content_type'] ) {
+			} elseif ( 'cell' == $content['content_type'] && isset( $rows[$i-1] ) ) {
 				array_push($rows[$i-1], [
 					'type' => 'td',
 					'row_span' => $content['row_span'],
@@ -281,7 +348,7 @@ class Sina_Table_Widget extends Widget_Base {
 				]);
 			}
 		}
-		// fw_print($rows);
+		// fw_print($data);
 		?>
 		<div class="sina-table">
 			<table>
@@ -290,7 +357,7 @@ class Sina_Table_Widget extends Widget_Base {
 					<thead>
 						<tr>
 							<?php foreach ($data['header_content'] as $content): ?>
-								<th><?php echo esc_html( $content['header_text'] ); ?></th>
+								<th colspan="<?php echo esc_attr( $content['header_col_span'] ); ?>"><?php echo esc_html( $content['header_text'] ); ?></th>
 							<?php endforeach; ?>
 						</tr>
 					</thead>
