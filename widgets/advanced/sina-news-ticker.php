@@ -9,6 +9,7 @@
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
+use Elementor\Group_Control_Background;
 use Elementor\Group_Control_Text_Shadow;
 
 // Exit if accessed directly.
@@ -193,22 +194,11 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 		$this->add_control(
 			'label_color',
 			[
-				'label' => __( 'Color', 'sina-ext' ),
+				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#eee',
 				'selectors' => [
 					'{{WRAPPER}} .sina-nt-left-label, {{WRAPPER}} .sina-nt-right-label' => 'color: {{VALUE}}'
-				],
-			]
-		);
-		$this->add_control(
-			'label_BG',
-			[
-				'label' => __( 'Background', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#1085e4',
-				'selectors' => [
-					'{{WRAPPER}} .sina-nt-left-label, {{WRAPPER}} .sina-nt-right-label' => 'background: {{VALUE}}'
 				],
 			]
 		);
@@ -241,6 +231,23 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 			Group_Control_Text_Shadow::get_type(),
 			[
 				'name' => 'label_shadow',
+				'selector' => '{{WRAPPER}} .sina-nt-left-label, {{WRAPPER}} .sina-nt-right-label',
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
+			[
+				'name' => 'label_BG',
+				'label' => __( 'Background', 'sina-ext' ),
+				'types' => [ 'classic', 'gradient' ],
+				'fields_options' => [
+					'background' => [ 
+						'default' =>'classic', 
+					],
+					'color' => [
+						'default' => '#1085e4',
+					],
+				],
 				'selector' => '{{WRAPPER}} .sina-nt-left-label, {{WRAPPER}} .sina-nt-right-label',
 			]
 		);
@@ -300,9 +307,10 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 		$this->add_control(
 			'headline_color',
 			[
-				'label' => __( 'Color', 'sina-ext' ),
+				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#222',
+				'separator' => 'after',
 				'selectors' => [
 					'{{WRAPPER}} .sina-news a' => 'color: {{VALUE}}'
 				],
@@ -319,9 +327,10 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 		$this->add_control(
 			'headline_hover_color',
 			[
-				'label' => __( 'Color', 'sina-ext' ),
+				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#1085e4',
+				'separator' => 'after',
 				'selectors' => [
 					'{{WRAPPER}} .sina-news a:hover, {{WRAPPER}} .sina-news a:focus' => 'color: {{VALUE}};',
 				],
@@ -331,18 +340,6 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 
 		$this->end_controls_tabs();
 
-		$this->add_control(
-			'headline_BG',
-			[
-				'label' => __( 'Background', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#f8f8f8',
-				'separator' => 'before',
-				'selectors' => [
-					'{{WRAPPER}} .sina-news-ticker' => 'background: {{VALUE}}'
-				],
-			]
-		);
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
@@ -365,6 +362,23 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 			[
 				'name' => 'headline_shadow',
 				'selector' => '{{WRAPPER}} .sina-news a',
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
+			[
+				'name' => 'headline_BG',
+				'label' => __( 'Background', 'sina-ext' ),
+				'types' => [ 'classic', 'gradient' ],
+				'fields_options' => [
+					'background' => [ 
+						'default' =>'classic', 
+					],
+					'color' => [
+						'default' => '#f8f8f8',
+					],
+				],
+				'selector' => '{{WRAPPER}} .sina-news-ticker',
 			]
 		);
 		$this->add_responsive_control(
@@ -418,7 +432,7 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 		$this->add_control(
 			'time_color',
 			[
-				'label' => __( 'Color', 'sina-ext' ),
+				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#1085e4',
 				'selectors' => [

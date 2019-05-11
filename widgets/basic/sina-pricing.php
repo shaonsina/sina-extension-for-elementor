@@ -9,9 +9,10 @@
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
+use Elementor\Group_Control_Background;
+use Elementor\Group_Control_Box_Shadow;
 use Elementor\Group_Control_Text_Shadow;
 use Elementor\Group_Control_Border;
-use Elementor\Group_Control_Box_Shadow;
 
 
 // Exit if accessed directly.
@@ -354,17 +355,6 @@ class Sina_Pricing_Widget extends Widget_Base {
 			]
 		);
 
-		$this->add_control(
-			'box_bg',
-			[
-				'label' => __( 'Background', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#fff',
-				'selectors' => [
-					'{{WRAPPER}} .sina-pricing' => 'background: {{VALUE}};',
-				],
-			]
-		);
 		$this->add_group_control(
 			Group_Control_Border::get_type(),
 			[
@@ -407,17 +397,6 @@ class Sina_Pricing_Widget extends Widget_Base {
 			]
 		);
 
-		$this->add_control(
-			'box_hover_bg',
-			[
-				'label' => __( 'Background', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '',
-				'selectors' => [
-					'{{WRAPPER}} .sina-pricing:hover' => 'background: {{VALUE}};',
-				],
-			]
-		);
 		$this->add_control(
 			'box_hover_border',
 			[
@@ -484,7 +463,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 		$this->add_control(
 			'title_color',
 			[
-				'label' => __( 'Color', 'sina-ext' ),
+				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#111',
 				'selectors' => [
@@ -519,15 +498,13 @@ class Sina_Pricing_Widget extends Widget_Base {
 				'selector' => '{{WRAPPER}} .sina-pricing .sina-pricing-title',
 			]
 		);
-		$this->add_control(
-			'title_bg',
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
 			[
+				'name' => 'title_bg',
 				'label' => __( 'Background', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '',
-				'selectors' => [
-					'{{WRAPPER}} .sina-pricing .sina-pricing-title' => 'background: {{VALUE}};',
-				],
+				'types' => [ 'classic', 'gradient' ],
+				'selector' => '{{WRAPPER}} .sina-pricing .sina-pricing-title',
 			]
 		);
 		$this->add_group_control(
@@ -612,7 +589,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 		$this->add_control(
 			'price_color',
 			[
-				'label' => __( 'Color', 'sina-ext' ),
+				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#eee',
 				'selectors' => [
@@ -647,15 +624,21 @@ class Sina_Pricing_Widget extends Widget_Base {
 				'selector' => '{{WRAPPER}} .sina-pricing .sina-price-tag',
 			]
 		);
-		$this->add_control(
-			'price_bg',
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
 			[
+				'name' => 'price_bg',
 				'label' => __( 'Background', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#1085e4',
-				'selectors' => [
-					'{{WRAPPER}} .sina-pricing .sina-price-tag' => 'background: {{VALUE}};',
+				'types' => [ 'classic', 'gradient' ],
+				'fields_options' => [
+					'background' => [ 
+						'default' =>'classic', 
+					],
+					'color' => [
+						'default' => '#1085e4',
+					],
 				],
+				'selector' => '{{WRAPPER}} .sina-pricing .sina-price-tag',
 			]
 		);
 		$this->add_group_control(
@@ -809,7 +792,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 		$this->add_control(
 			'btn_color',
 			[
-				'label' => __( 'Color', 'sina-ext' ),
+				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#eee',
 				'selectors' => [
@@ -817,15 +800,21 @@ class Sina_Pricing_Widget extends Widget_Base {
 				],
 			]
 		);
-		$this->add_control(
-			'btn_bg',
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
 			[
+				'name' => 'btn_bg',
 				'label' => __( 'Background', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#1085e4',
-				'selectors' => [
-					'{{WRAPPER}} .sina-pricing-btn .sina-order-btn' => 'background: {{VALUE}};',
+				'types' => [ 'classic', 'gradient' ],
+				'fields_options' => [
+					'background' => [ 
+						'default' =>'classic', 
+					],
+					'color' => [
+						'default' => '#1085e4',
+					],
 				],
+				'selector' => '{{WRAPPER}} .sina-pricing-btn .sina-order-btn',
 			]
 		);
 		$this->add_group_control(
@@ -865,7 +854,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 		$this->add_control(
 			'btn_hover_color',
 			[
-				'label' => __( 'Color', 'sina-ext' ),
+				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#1085e4',
 				'selectors' => [
@@ -873,15 +862,21 @@ class Sina_Pricing_Widget extends Widget_Base {
 				],
 			]
 		);
-		$this->add_control(
-			'btn_hover_bg',
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
 			[
+				'name' => 'btn_hover_bg',
 				'label' => __( 'Background', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#fff',
-				'selectors' => [
-					'{{WRAPPER}} .sina-pricing-btn .sina-order-btn:hover, {{WRAPPER}} .sina-pricing-btn .sina-order-btn:focus' => 'background: {{VALUE}};',
+				'types' => [ 'classic', 'gradient' ],
+				'fields_options' => [
+					'background' => [ 
+						'default' =>'classic', 
+					],
+					'color' => [
+						'default' => '#fff',
+					],
 				],
+				'selector' => '{{WRAPPER}} .sina-pricing-btn .sina-order-btn:hover, {{WRAPPER}} .sina-pricing-btn .sina-order-btn:focus',
 			]
 		);
 		$this->add_control(
@@ -974,7 +969,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 		$this->add_control(
 			'content_color',
 			[
-				'label' => __( 'Color', 'sina-ext' ),
+				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#111',
 				'selectors' => [
@@ -1044,7 +1039,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 		$this->add_control(
 			'ribbon_color',
 			[
-				'label' => __( 'Color', 'sina-ext' ),
+				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#f8f8f8',
 				'selectors' => [

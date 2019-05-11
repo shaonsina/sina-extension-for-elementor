@@ -8,9 +8,10 @@
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
+use Elementor\Group_Control_Background;
+use Elementor\Group_Control_Box_Shadow;
 use Elementor\Group_Control_Text_Shadow;
 use Elementor\Group_Control_Border;
-use Elementor\Group_Control_Box_Shadow;
 use Elementor\Repeater;
 
 // Exit if accessed directly.
@@ -108,6 +109,46 @@ class Sina_Table_Widget extends Widget_Base {
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __('Enter Text', 'sina-ext'),
 				'default' => __('WordPress', 'sina-ext'),
+			]
+		);
+		$thead->add_control(
+			'header_icon',
+			[
+				'label' => __( 'Icon', 'sina-ext' ),
+				'type' => Controls_Manager::ICON,
+				'default' => 'fa fa-user',
+			]
+		);
+		$thead->add_control(
+			'header_icon_align',
+			[
+				'label' => __( 'Icon Position', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					'left' => __( 'Before', 'sina-ext' ),
+					'right' => __( 'After', 'sina-ext' ),
+				],
+				'default' => 'left',
+				'condition' => [
+					'header_icon!' => '',
+				],
+			]
+		);
+		$thead->add_responsive_control(
+			'header_icon_space',
+			[
+				'label' => __( 'Icon Spacing', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'default' => [
+					'size' => '5',
+				],
+				'condition' => [
+					'header_icon!' => '',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-banner-pbtn .sina-icon-right' => 'margin-left: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .sina-banner-pbtn .sina-icon-left' => 'margin-right: {{SIZE}}{{UNIT}};',
+				],
 			]
 		);
 		$this->add_control(
@@ -224,22 +265,20 @@ class Sina_Table_Widget extends Widget_Base {
 				$rows[] = [];
 				$i++;
 			}
-			else {
-				if ( 'head' == $content['content_type'] ) {
-					array_push($rows[$i-1], [
-						'type' => 'th',
-						'row_span' => $content['row_span'],
-						'col_span' => $content['col_span'],
-						'cell_content' => $content['cell_content'],
-					]);
-				} elseif ( 'cell' == $content['content_type'] ) {
-					array_push($rows[$i-1], [
-						'type' => 'td',
-						'row_span' => $content['row_span'],
-						'col_span' => $content['col_span'],
-						'cell_content' => $content['cell_content'],
-					]);
-				}
+			elseif ( 'head' == $content['content_type'] ) {
+				array_push($rows[$i-1], [
+					'type' => 'th',
+					'row_span' => $content['row_span'],
+					'col_span' => $content['col_span'],
+					'cell_content' => $content['cell_content'],
+				]);
+			} elseif ( 'cell' == $content['content_type'] ) {
+				array_push($rows[$i-1], [
+					'type' => 'td',
+					'row_span' => $content['row_span'],
+					'col_span' => $content['col_span'],
+					'cell_content' => $content['cell_content'],
+				]);
 			}
 		}
 		// fw_print($rows);

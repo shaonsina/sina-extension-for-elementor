@@ -9,9 +9,10 @@
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
+use Elementor\Group_Control_Background;
 use Elementor\Group_Control_Text_Shadow;
-use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Box_Shadow;
+use Elementor\Group_Control_Border;
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -218,7 +219,7 @@ class Sina_Search_Form_Widget extends Widget_Base {
 		$this->add_control(
 			'color',
 			[
-				'label' => __( 'Color', 'sina-ext' ),
+				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#111',
 				'selectors' => [
@@ -274,7 +275,7 @@ class Sina_Search_Form_Widget extends Widget_Base {
 		$this->add_control(
 			'focus_color',
 			[
-				'label' => __( 'Color', 'sina-ext' ),
+				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
@@ -426,7 +427,7 @@ class Sina_Search_Form_Widget extends Widget_Base {
 		$this->add_control(
 			'btn_color',
 			[
-				'label' => __( 'Color', 'sina-ext' ),
+				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#eee',
 				'selectors' => [
@@ -434,15 +435,21 @@ class Sina_Search_Form_Widget extends Widget_Base {
 				],
 			]
 		);
-		$this->add_control(
-			'btn_background',
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
 			[
+				'name' => 'btn_background',
 				'label' => __( 'Background', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#1085e4',
-				'selectors' => [
-					'{{WRAPPER}} .sina-search-btn' => 'background: {{VALUE}};',
+				'types' => [ 'classic', 'gradient' ],
+				'fields_options' => [
+					'background' => [ 
+						'default' =>'classic', 
+					],
+					'color' => [
+						'default' => '#1085e4',
+					],
 				],
+				'selector' => '{{WRAPPER}} .sina-search-btn',
 			]
 		);
 		$this->add_group_control(
@@ -472,7 +479,7 @@ class Sina_Search_Form_Widget extends Widget_Base {
 		$this->add_control(
 			'hover_color',
 			[
-				'label' => __( 'Color', 'sina-ext' ),
+				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
@@ -480,15 +487,13 @@ class Sina_Search_Form_Widget extends Widget_Base {
 				],
 			]
 		);
-		$this->add_control(
-			'hover_background',
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
 			[
+				'name' => 'hover_background',
 				'label' => __( 'Background', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '',
-				'selectors' => [
-					'{{WRAPPER}} .sina-search-btn:hover' => 'background: {{VALUE}};',
-				],
+				'types' => [ 'classic', 'gradient' ],
+				'selector' => '{{WRAPPER}} .sina-search-btn:hover',
 			]
 		);
 		$this->add_control(

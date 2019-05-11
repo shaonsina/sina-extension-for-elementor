@@ -9,9 +9,10 @@
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
+use Elementor\Group_Control_Background;
+use Elementor\Group_Control_Box_Shadow;
 use Elementor\Group_Control_Text_Shadow;
 use Elementor\Group_Control_Border;
-use Elementor\Group_Control_Box_Shadow;
 use Elementor\Frontend;
 
 
@@ -341,15 +342,21 @@ class Sina_Content_Box_Widget extends Widget_Base {
 				],
 			]
 		);
-		$this->add_control(
-			'background',
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
 			[
-				'label' => __( 'Box Background', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#fff',
-				'selectors' => [
-					'{{WRAPPER}} .sina-content-box' => 'background: {{VALUE}};',
+				'name' => 'background',
+				'label' => __( 'Background', 'sina-ext' ),
+				'types' => [ 'classic', 'gradient' ],
+				'fields_options' => [
+					'background' => [ 
+						'default' =>'classic', 
+					],
+					'color' => [
+						'default' => '#fff',
+					],
 				],
+				'selector' => '{{WRAPPER}} .sina-content-box',
 			]
 		);
 		$this->add_group_control(
@@ -449,15 +456,13 @@ class Sina_Content_Box_Widget extends Widget_Base {
 				],
 			]
 		);
-		$this->add_control(
-			'hover_background',
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
 			[
-				'label' => __( 'Box Background', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '',
-				'selectors' => [
-					'{{WRAPPER}} .sina-content-box:hover' => 'background: {{VALUE}};',
-				],
+				'name' => 'hover_background',
+				'label' => __( 'Background', 'sina-ext' ),
+				'types' => [ 'classic', 'gradient' ],
+				'selector' => '{{WRAPPER}} .sina-content-box:hover',
 			]
 		);
 		$this->add_control(
@@ -753,7 +758,7 @@ class Sina_Content_Box_Widget extends Widget_Base {
 		$this->add_control(
 			'ribbon_color',
 			[
-				'label' => __( 'Color', 'sina-ext' ),
+				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#f8f8f8',
 				'selectors' => [

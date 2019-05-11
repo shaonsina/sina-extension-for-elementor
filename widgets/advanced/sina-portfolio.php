@@ -9,9 +9,10 @@
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
+use Elementor\Group_Control_Background;
+use Elementor\Group_Control_Box_Shadow;
 use Elementor\Group_Control_Text_Shadow;
 use Elementor\Group_Control_Border;
-use Elementor\Group_Control_Box_Shadow;
 use Elementor\Plugin;
 
 
@@ -314,7 +315,7 @@ class Sina_Portfolio_Widget extends Widget_Base {
 		$this->add_control(
 			'btn_color',
 			[
-				'label' => __( 'Color', 'sina-ext' ),
+				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#fff',
 				'selectors' => [
@@ -322,15 +323,21 @@ class Sina_Portfolio_Widget extends Widget_Base {
 				],
 			]
 		);
-		$this->add_control(
-			'btn_bg',
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
 			[
+				'name' => 'btn_bg',
 				'label' => __( 'Background', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#1085e4',
-				'selectors' => [
-					'{{WRAPPER}} .sina-portfolio-btn' => 'background: {{VALUE}}'
+				'types' => [ 'classic', 'gradient' ],
+				'fields_options' => [
+					'background' => [ 
+						'default' =>'classic', 
+					],
+					'color' => [
+						'default' => '#1085e4',
+					],
 				],
+				'selector' => '{{WRAPPER}} .sina-portfolio-btn',
 			]
 		);
 		$this->add_group_control(
@@ -361,7 +368,7 @@ class Sina_Portfolio_Widget extends Widget_Base {
 		$this->add_control(
 			'btn_hover_color',
 			[
-				'label' => __( 'Color', 'sina-ext' ),
+				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
@@ -369,15 +376,13 @@ class Sina_Portfolio_Widget extends Widget_Base {
 				],
 			]
 		);
-		$this->add_control(
-			'btn_hover_bg',
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
 			[
+				'name' => 'btn_hover_bg',
 				'label' => __( 'Background', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '',
-				'selectors' => [
-					'{{WRAPPER}} .sina-portfolio-btn:hover' => 'background: {{VALUE}}'
-				],
+				'types' => [ 'classic', 'gradient' ],
+				'selector' => '{{WRAPPER}} .sina-portfolio-btn:hover',
 			]
 		);
 		$this->add_control(
@@ -515,15 +520,21 @@ class Sina_Portfolio_Widget extends Widget_Base {
 				'separator' => 'after',
 			]
 		);
-		$this->add_control(
-			'overlay',
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
 			[
-				'label' => __( 'Overlay Background', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => 'rgba(0,0,0,0.8)',
-				'selectors' => [
-					'{{WRAPPER}} .sina-portfolio-overlay' => 'background: {{VALUE}}'
+				'name' => 'overlay',
+				'label' => __( 'Background', 'sina-ext' ),
+				'types' => [ 'classic', 'gradient' ],
+				'fields_options' => [
+					'background' => [ 
+						'default' =>'classic', 
+					],
+					'color' => [
+						'default' => 'rgba(0,0,0,0.8)',
+					],
 				],
+				'selector' => '{{WRAPPER}} .sina-portfolio-overlay',
 			]
 		);
 		$this->add_responsive_control(
@@ -597,7 +608,7 @@ class Sina_Portfolio_Widget extends Widget_Base {
 		$this->add_control(
 			'icons_color',
 			[
-				'label' => __( 'Color', 'sina-ext' ),
+				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#fff',
 				'selectors' => [
@@ -636,7 +647,7 @@ class Sina_Portfolio_Widget extends Widget_Base {
 		$this->add_control(
 			'icons_hover_color',
 			[
-				'label' => __( 'Color', 'sina-ext' ),
+				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [

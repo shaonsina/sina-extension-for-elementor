@@ -9,9 +9,9 @@
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
+use Elementor\Group_Control_Box_Shadow;
 use Elementor\Group_Control_Text_Shadow;
 use Elementor\Group_Control_Border;
-use Elementor\Group_Control_Box_Shadow;
 
 
 // Exit if accessed directly.
@@ -161,7 +161,7 @@ class Sina_Video_Widget extends Widget_Base {
 		$this->add_control(
 			'title_color',
 			[
-				'label' => __( 'Color', 'sina-ext' ),
+				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#eee',
 				'selectors' => [
@@ -339,13 +339,13 @@ class Sina_Video_Widget extends Widget_Base {
 		$this->end_controls_tabs();
 
 		$this->add_responsive_control(
-			'icon_size',
+			'font_size',
 			[
-				'label' => __( 'Icon Size', 'sina-ext' ),
+				'label' => __( 'Font Size', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
-						'max' => 200,
+						'max' => 100,
 					],
 				],
 				'default' => [
@@ -359,21 +359,48 @@ class Sina_Video_Widget extends Widget_Base {
 			]
 		);
 		$this->add_responsive_control(
-			'icon_box_size',
+			'icon_size',
 			[
-				'label' => __( 'Box Scale', 'sina-ext' ),
+				'label' => __( 'Icon Size', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', 'em' ],
 				'range' => [
 					'px' => [
-						'max' => 5,
-						'step' => 0.1,
+						'max' => 200,
+					],
+					'em' => [
+						'max' => 20,
 					],
 				],
 				'default' => [
-					'size' => '1',
+					'unit' => 'px',
+					'size' => '100',
 				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-video-play' => 'transform: scale({{SIZE}});',
+					'{{WRAPPER}} .sina-video-play' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'font_line_height',
+			[
+				'label' => __( 'Line Height', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', 'em' ],
+				'range' => [
+					'px' => [
+						'max' => 200,
+					],
+					'em' => [
+						'max' => 20,
+					],
+				],
+				'default' => [
+					'unit' => 'px',
+					'size' => '100',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-video-play' => 'line-height: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);

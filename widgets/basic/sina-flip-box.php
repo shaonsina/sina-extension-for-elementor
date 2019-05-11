@@ -9,9 +9,10 @@
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
+use Elementor\Group_Control_Background;
+use Elementor\Group_Control_Box_Shadow;
 use Elementor\Group_Control_Text_Shadow;
 use Elementor\Group_Control_Border;
-use Elementor\Group_Control_Box_Shadow;
 
 
 // Exit if accessed directly.
@@ -213,15 +214,21 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 			]
 		);
 
-		$this->add_control(
-			'front_bg_color',
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
 			[
+				'name' => 'front_bg_color',
 				'label' => __( 'Background', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#1085e4',
-				'selectors' => [
-					'{{WRAPPER}} .sina-flipbox-front' => 'background: {{VALUE}};',
+				'types' => [ 'classic', 'gradient' ],
+				'fields_options' => [
+					'background' => [ 
+						'default' =>'classic', 
+					],
+					'color' => [
+						'default' => '#1085e4',
+					],
 				],
+				'selector' => '{{WRAPPER}} .sina-flipbox-front',
 			]
 		);
 		$this->add_group_control(
@@ -259,15 +266,21 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 			]
 		);
 
-		$this->add_control(
-			'back_bg_color',
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
 			[
+				'name' => 'back_bg_color',
 				'label' => __( 'Background', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#d300d0',
-				'selectors' => [
-					'{{WRAPPER}} .sina-flipbox-back' => 'background: {{VALUE}};',
+				'types' => [ 'classic', 'gradient' ],
+				'fields_options' => [
+					'background' => [ 
+						'default' =>'classic', 
+					],
+					'color' => [
+						'default' => '#d300d0',
+					],
 				],
+				'selector' => '{{WRAPPER}} .sina-flipbox-back',
 			]
 		);
 		$this->add_group_control(
@@ -557,7 +570,7 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 		$this->add_control(
 			'front_title_color',
 			[
-				'label' => __( 'Color', 'sina-ext' ),
+				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#eee',
 				'selectors' => [
@@ -623,7 +636,7 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 		$this->add_control(
 			'back_title_color',
 			[
-				'label' => __( 'Color', 'sina-ext' ),
+				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#eee',
 				'selectors' => [
@@ -708,7 +721,7 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 		$this->add_control(
 			'front_desc_color',
 			[
-				'label' => __( 'Color', 'sina-ext' ),
+				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#eee',
 				'selectors' => [
@@ -743,7 +756,7 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 		$this->add_control(
 			'back_desc_color',
 			[
-				'label' => __( 'Color', 'sina-ext' ),
+				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#eee',
 				'selectors' => [

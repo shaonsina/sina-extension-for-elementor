@@ -8,8 +8,9 @@
 
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
-use Elementor\Group_Control_Border;
+use Elementor\Group_Control_Background;
 use Elementor\Group_Control_Box_Shadow;
+use Elementor\Group_Control_Border;
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -352,15 +353,13 @@ class Sina_Brand_Carousel_Widget extends Widget_Base {
 			]
 		);
 
-		$this->add_control(
-			'box_bg',
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
 			[
+				'name' => 'box_bg',
 				'label' => __( 'Background', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '',
-				'selectors' => [
-					'{{WRAPPER}} .sina-brand-item-inner' => 'background-color: {{VALUE}}'
-				],
+				'types' => [ 'classic', 'gradient' ],
+				'selector' => '{{WRAPPER}} .sina-brand-item-inner',
 			]
 		);
 		$this->add_group_control(
@@ -405,15 +404,13 @@ class Sina_Brand_Carousel_Widget extends Widget_Base {
 			]
 		);
 
-		$this->add_control(
-			'box_hover_bg',
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
 			[
+				'name' => 'box_hover_bg',
 				'label' => __( 'Background', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '',
-				'selectors' => [
-					'{{WRAPPER}} .sina-brand-item-inner:hover' => 'background-color: {{VALUE}}'
-				],
+				'types' => [ 'classic', 'gradient' ],
+				'selector' => '{{WRAPPER}} .sina-brand-item-inner:hover',
 			]
 		);
 		$this->add_control(

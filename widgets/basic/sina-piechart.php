@@ -117,7 +117,6 @@ class Sina_Piechart_Widget extends Widget_Base {
 			[
 				'label' => __( 'Title', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
-				'description' => __('The title for the piechart.', 'sina-ext'),
 				'placeholder' => __( 'Enter title', 'sina-ext' ),
 				'default' => __( 'Web Development', 'sina-ext' ),
 				'label_block' => true,
@@ -131,7 +130,6 @@ class Sina_Piechart_Widget extends Widget_Base {
 				'min' => 5,
 				'step' => 1,
 				'default' => 75,
-				'description' => __('The value for the piechart.', 'sina-ext'),
 			]
 		);
 		$this->add_control(
@@ -142,7 +140,6 @@ class Sina_Piechart_Widget extends Widget_Base {
 				'min' => 5,
 				'step' => 1,
 				'default' => 100,
-				'description' => __('The max value for the percent calculate.', 'sina-ext'),
 			]
 		);
 		$this->add_control(
@@ -151,7 +148,6 @@ class Sina_Piechart_Widget extends Widget_Base {
 				'label' => __( 'Prefix', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter prefix', 'sina-ext' ),
-				'description' => __('The prefix for the value.', 'sina-ext'),
 			]
 		);
 		$this->add_control(
@@ -161,7 +157,6 @@ class Sina_Piechart_Widget extends Widget_Base {
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter suffix', 'sina-ext' ),
 				'default' => __( '%', 'sina-ext' ),
-				'description' => __('The suffix for the value.', 'sina-ext'),
 			]
 		);
 		$this->add_control(
@@ -277,7 +272,7 @@ class Sina_Piechart_Widget extends Widget_Base {
 		$this->add_control(
 			'title_color',
 			[
-				'label' => __('Color', 'sina-ext'),
+				'label' => __('Text Color', 'sina-ext'),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#111',
 				'selectors' => [
@@ -336,7 +331,7 @@ class Sina_Piechart_Widget extends Widget_Base {
 		$this->add_control(
 			'value_color',
 			[
-				'label' => __('Color', 'sina-ext'),
+				'label' => __('Text Color', 'sina-ext'),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#111',
 				'selectors' => [

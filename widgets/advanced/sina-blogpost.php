@@ -9,8 +9,9 @@
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
-use Elementor\Group_Control_Text_Shadow;
+use Elementor\Group_Control_Background;
 use Elementor\Group_Control_Box_Shadow;
+use Elementor\Group_Control_Text_Shadow;
 use Elementor\Group_Control_Border;
 use Elementor\Plugin;
 
@@ -276,25 +277,13 @@ class Sina_Blogpost_Widget extends Widget_Base {
 				'separator' => 'after',
 			]
 		);
-		$this->add_control(
-			'background',
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
 			[
+				'name' => 'background',
 				'label' => __( 'Background', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .sina-bp' => 'background: {{VALUE}};'
-				]
-			]
-		);
-		$this->add_control(
-			'overlay_bg',
-			[
-				'label' => __( 'Overlay Background', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => 'rgba(0, 0, 0, 0.2)',
-				'selectors' => [
-					'{{WRAPPER}} .sina-bg-thumb .sina-overlay' => 'background: {{VALUE}};'
-				]
+				'types' => [ 'classic', 'gradient' ],
+				'selector' => '{{WRAPPER}} .sina-bp',
 			]
 		);
 		$this->add_group_control(
@@ -386,6 +375,31 @@ class Sina_Blogpost_Widget extends Widget_Base {
 				],
 			]
 		);
+		$this->add_control(
+			'overlay',
+			[
+				'label' => __( 'Overlay Background', 'sina-ext' ),
+				'type' => Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
+			[
+				'name' => 'overlay_bg',
+				'label' => __( 'Background', 'sina-ext' ),
+				'types' => [ 'classic', 'gradient' ],
+				'fields_options' => [
+					'background' => [ 
+						'default' =>'classic', 
+					],
+					'color' => [
+						'default' => 'rgba(0, 0, 0, 0.4)',
+					],
+				],
+				'selector' => '{{WRAPPER}} .sina-bg-thumb .sina-overlay',
+			]
+		);
 
 		$this->end_controls_section();
 		// End Post Style
@@ -405,7 +419,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 		$this->add_control(
 			'content_color',
 			[
-				'label' => __( 'Color', 'sina-ext' ),
+				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#111',
 				'selectors' => [
@@ -505,7 +519,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 		$this->add_control(
 			'title_color',
 			[
-				'label' => __( 'Color', 'sina-ext' ),
+				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#111',
 				'selectors' => [
@@ -524,7 +538,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 		$this->add_control(
 			'title_hover_color',
 			[
-				'label' => __( 'Color', 'sina-ext' ),
+				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#1085e4',
 				'selectors' => [
@@ -1031,7 +1045,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 		$this->add_control(
 			'load_btn_color',
 			[
-				'label' => __( 'Color', 'sina-ext' ),
+				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#eee',
 				'selectors' => [
@@ -1039,15 +1053,21 @@ class Sina_Blogpost_Widget extends Widget_Base {
 				],
 			]
 		);
-		$this->add_control(
-			'load_btn_bg',
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
 			[
+				'name' => 'load_btn_bg',
 				'label' => __( 'Background', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#1085e4',
-				'selectors' => [
-					'{{WRAPPER}} .sina-load-more-btn' => 'background-color: {{VALUE}};',
+				'types' => [ 'classic', 'gradient' ],
+				'fields_options' => [
+					'background' => [ 
+						'default' =>'classic', 
+					],
+					'color' => [
+						'default' => '#1085e4',
+					],
 				],
+				'selector' => '{{WRAPPER}} .sina-load-more-btn',
 			]
 		);
 		$this->add_group_control(
@@ -1092,7 +1112,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 		$this->add_control(
 			'load_btn_hover_color',
 			[
-				'label' => __( 'Color', 'sina-ext' ),
+				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#1085e4',
 				'selectors' => [
@@ -1100,15 +1120,21 @@ class Sina_Blogpost_Widget extends Widget_Base {
 				],
 			]
 		);
-		$this->add_control(
-			'load_btn_hover_bg',
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
 			[
+				'name' => 'load_btn_hover_bg',
 				'label' => __( 'Background', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#fff',
-				'selectors' => [
-					'{{WRAPPER}} .sina-load-more-btn:hover' => 'background-color: {{VALUE}};',
+				'types' => [ 'classic', 'gradient' ],
+				'fields_options' => [
+					'background' => [ 
+						'default' =>'classic', 
+					],
+					'color' => [
+						'default' => '#fff',
+					],
 				],
+				'selector' => '{{WRAPPER}} .sina-load-more-btn:hover',
 			]
 		);
 		$this->add_group_control(

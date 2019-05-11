@@ -762,7 +762,6 @@ img.mfp-img{
 }
 .sina-progressbars .sina-bar-percent {
 	width: 100%;
-	padding: 0 5px;
 	align-self: center;
 }
 
@@ -803,10 +802,7 @@ img.mfp-img{
 	margin: 6px;
 }
 .sina-team-social li i {
-	width: 40px;
-	height: 40px;
-	padding: 13px;
-	font-size: 14px;
+	text-align: center;
 	transition: 0.4s;
 }
 /* Move Effect */
@@ -849,9 +845,6 @@ img.mfp-img{
 }
 .sina-video-play {
 	display: inline-block;
-	width: 100px;
-	height: 100px;
-	line-height: 100px;
 	text-align: center;
 	transition: all 0.5s;
 }

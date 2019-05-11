@@ -9,6 +9,7 @@
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
+use Elementor\Group_Control_Background;
 use Elementor\Group_Control_Text_Shadow;
 use Elementor\Group_Control_Border;
 use Elementor\Frontend;
@@ -220,15 +221,13 @@ class Sina_Accordion_Widget extends Widget_Base {
 			]
 		);
 
-		$this->add_control(
-			'box_bg',
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
 			[
+				'name' => 'box_bg',
 				'label' => __( 'Background', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '',
-				'selectors' => [
-					'{{WRAPPER}} .sina-accordion-item' => 'background: {{VALUE}};',
-				],
+				'types' => [ 'classic', 'gradient' ],
+				'selector' => '{{WRAPPER}} .sina-accordion-item',
 			]
 		);
 		$this->add_responsive_control(
@@ -309,7 +308,7 @@ class Sina_Accordion_Widget extends Widget_Base {
 		$this->add_control(
 			'title_color',
 			[
-				'label' => __( 'Color', 'sina-ext' ),
+				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#eee',
 				'selectors' => [
@@ -317,15 +316,21 @@ class Sina_Accordion_Widget extends Widget_Base {
 				],
 			]
 		);
-		$this->add_control(
-			'header_bg',
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
 			[
-				'label' => __('Background', 'sina-ext'),
-				'type' => Controls_Manager::COLOR,
-				'default'=> '#1085e4',
-				'selectors' => [
-					'{{WRAPPER}} .sina-accordion-header' => 'background: {{VALUE}};',
+				'name' => 'header_bg',
+				'label' => __( 'Background', 'sina-ext' ),
+				'types' => [ 'classic', 'gradient' ],
+				'fields_options' => [
+					'background' => [ 
+						'default' =>'classic', 
+					],
+					'color' => [
+						'default' => '#1085e4',
+					],
 				],
+				'selector' => '{{WRAPPER}} .sina-accordion-header',
 			]
 		);
 
@@ -341,7 +346,7 @@ class Sina_Accordion_Widget extends Widget_Base {
 		$this->add_control(
 			'title_active_color',
 			[
-				'label' => __( 'Color', 'sina-ext' ),
+				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
@@ -349,15 +354,13 @@ class Sina_Accordion_Widget extends Widget_Base {
 				],
 			]
 		);
-		$this->add_control(
-			'active_background',
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
 			[
+				'name' => 'active_background',
 				'label' => __( 'Background', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '',
-				'selectors' => [
-					'{{WRAPPER}} .sina-accordion-item.open .sina-accordion-header' => 'background: {{VALUE}};',
-				],
+				'types' => [ 'classic', 'gradient' ],
+				'selector' => '{{WRAPPER}} .sina-accordion-item.open .sina-accordion-header',
 			]
 		);
 
@@ -399,6 +402,17 @@ class Sina_Accordion_Widget extends Widget_Base {
 			]
 		);
 
+		$this->add_control(
+			'desc_color',
+			[
+				'label' => __( 'Text Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#111',
+				'selectors' => [
+					'{{WRAPPER}} .sina-accordion-desc' => 'color: {{VALUE}};',
+				],
+			]
+		);
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[

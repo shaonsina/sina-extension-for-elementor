@@ -9,8 +9,9 @@
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
-use Elementor\Group_Control_Text_Shadow;
+use Elementor\Group_Control_Background;
 use Elementor\Group_Control_Box_Shadow;
+use Elementor\Group_Control_Text_Shadow;
 use Elementor\Group_Control_Border;
 use Elementor\Frontend;
 
@@ -220,6 +221,9 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 					'right' => __( 'After', 'sina-ext' ),
 				],
 				'default' => 'left',
+				'condition' => [
+					'pbtn_icon!' => '',
+				],
 			]
 		);
 		$this->add_responsive_control(
@@ -229,6 +233,9 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
 					'size' => '5',
+				],
+				'condition' => [
+					'pbtn_icon!' => '',
 				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-banner-pbtn .sina-icon-right' => 'margin-left: {{SIZE}}{{UNIT}};',
@@ -290,6 +297,9 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 					'right' => __( 'After', 'sina-ext' ),
 				],
 				'default' => 'left',
+				'condition' => [
+					'sbtn_icon!' => '',
+				],
 			]
 		);
 		$this->add_responsive_control(
@@ -299,6 +309,9 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
 					'size' => '5',
+				],
+				'condition' => [
+					'sbtn_icon!' => '',
 				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-banner-sbtn .sina-icon-right' => 'margin-left: {{SIZE}}{{UNIT}};',
@@ -725,7 +738,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 		$this->add_control(
 			'title_color',
 			[
-				'label' => __( 'Color', 'sina-ext' ),
+				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#eee',
 				'selectors' => [
@@ -801,7 +814,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 		$this->add_control(
 			'subtitle_color',
 			[
-				'label' => __( 'Color', 'sina-ext' ),
+				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#eee',
 				'selectors' => [
@@ -877,7 +890,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 		$this->add_control(
 			'desc_color',
 			[
-				'label' => __( 'Color', 'sina-ext' ),
+				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#eee',
 				'selectors' => [
@@ -983,7 +996,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 		$this->add_control(
 			'pbtn_color',
 			[
-				'label' => __( 'Color', 'sina-ext' ),
+				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#eee',
 				'selectors' => [
@@ -991,15 +1004,21 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 				],
 			]
 		);
-		$this->add_control(
-			'pbtn_bg',
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
 			[
+				'name' => 'pbtn_bg',
 				'label' => __( 'Background', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#1085e4',
-				'selectors' => [
-					'{{WRAPPER}} .sina-banner-pbtn' => 'background-color: {{VALUE}};',
+				'types' => [ 'classic', 'gradient' ],
+				'fields_options' => [
+					'background' => [ 
+						'default' =>'classic', 
+					],
+					'color' => [
+						'default' => '#1085e4',
+					],
 				],
+				'selector' => '{{WRAPPER}} .sina-banner-pbtn',
 			]
 		);
 		$this->add_group_control(
@@ -1027,7 +1046,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 		$this->add_control(
 			'pbtn_hover_color',
 			[
-				'label' => __( 'Color', 'sina-ext' ),
+				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#1085e4',
 				'selectors' => [
@@ -1035,15 +1054,21 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 				],
 			]
 		);
-		$this->add_control(
-			'pbtn_hover_bg',
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
 			[
+				'name' => 'pbtn_hover_bg',
 				'label' => __( 'Background', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#fff',
-				'selectors' => [
-					'{{WRAPPER}} .sina-banner-pbtn:hover, {{WRAPPER}} .sina-banner-pbtn:focus' => 'background-color: {{VALUE}};',
+				'types' => [ 'classic', 'gradient' ],
+				'fields_options' => [
+					'background' => [ 
+						'default' =>'classic', 
+					],
+					'color' => [
+						'default' => '#fff',
+					],
 				],
+				'selector' => '{{WRAPPER}} .sina-banner-pbtn:hover, {{WRAPPER}} .sina-banner-pbtn:focus',
 			]
 		);
 		$this->add_group_control(
@@ -1166,7 +1191,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 		$this->add_control(
 			'sbtn_color',
 			[
-				'label' => __( 'Color', 'sina-ext' ),
+				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#eee',
 				'selectors' => [
@@ -1174,15 +1199,21 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 				],
 			]
 		);
-		$this->add_control(
-			'sbtn_bg',
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
 			[
+				'name' => 'sbtn_bg',
 				'label' => __( 'Background', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#1085e4',
-				'selectors' => [
-					'{{WRAPPER}} .sina-banner-sbtn' => 'background-color: {{VALUE}};',
+				'types' => [ 'classic', 'gradient' ],
+				'fields_options' => [
+					'background' => [ 
+						'default' =>'classic', 
+					],
+					'color' => [
+						'default' => '#1085e4',
+					],
 				],
+				'selector' => '{{WRAPPER}} .sina-banner-sbtn',
 			]
 		);
 		$this->add_group_control(
@@ -1211,7 +1242,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 		$this->add_control(
 			'sbtn_hover_color',
 			[
-				'label' => __( 'Color', 'sina-ext' ),
+				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#1085e4',
 				'selectors' => [
@@ -1219,15 +1250,21 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 				],
 			]
 		);
-		$this->add_control(
-			'sbtn_hover_bg',
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
 			[
+				'name' => 'sbtn_hover_bg',
 				'label' => __( 'Background', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#fff',
-				'selectors' => [
-					'{{WRAPPER}} .sina-banner-sbtn:hover, {{WRAPPER}} .sina-banner-sbtn:focus' => 'background-color: {{VALUE}};',
+				'types' => [ 'classic', 'gradient' ],
+				'fields_options' => [
+					'background' => [ 
+						'default' =>'classic', 
+					],
+					'color' => [
+						'default' => '#fff',
+					],
 				],
+				'selector' => '{{WRAPPER}} .sina-banner-sbtn:hover, {{WRAPPER}} .sina-banner-sbtn:focus',
 			]
 		);
 		$this->add_group_control(

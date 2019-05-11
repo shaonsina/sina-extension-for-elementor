@@ -10,6 +10,10 @@
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
+use Elementor\Group_Control_Background;
+use Elementor\Group_Control_Text_Shadow;
+use Elementor\Group_Control_Border;
+use Elementor\Repeater;
 
 
 // Exit if accessed directly.
@@ -112,64 +116,23 @@ class Sina_Progressbar_Widget extends Widget_Base {
 		);
 
 		$this->add_control(
-			'progressbars',
+			'title',
 			[
-				'label' => __('Add Bar', 'sina-ext'),
-				'type' => Controls_Manager::REPEATER,
-				'fields' => [
-					[
-						'name' => 'title',
-						'label' => __('Title', 'sina-ext'),
-						'type' => Controls_Manager::TEXT,
-						'default' => __('Progressbars title', 'sina-ext'),
-						'label_block' => true,
-					],
-					[
-						'name' => 'percentage',
-						'label' => __('Percentage', 'sina-ext'),
-						'type' => Controls_Manager::NUMBER,
-						'min' => 1,
-						'max' => 100,
-						'step' => 1,
-						'default' => 30,
-					],
-					[
-						'name' => 'bar_bg',
-						'label' => __('Background', 'sina-ext'),
-						'type' => Controls_Manager::COLOR,
-						'default' => '#1085e4',
-					],
-					[
-						'name' => 'bar_color',
-						'label' => __('Percentage Color', 'sina-ext'),
-						'type' => Controls_Manager::COLOR,
-						'default' => '#eee',
-					],
-					[
-						'name' => 'border_color',
-						'label' => __('Border Color', 'sina-ext'),
-						'type' => Controls_Manager::COLOR,
-						'default' => 'rgba(0, 0, 0, 0)',
-					],
-				],
-				'default' => [
-					[
-						'title' => __('Web Development', 'sina-ext'),
-						'percentage' => 93,
-						'bar_bg' => '#00aa00',
-					],
-					[
-						'title' => __('Brand Marketing', 'sina-ext'),
-						'percentage' => 77,
-						'bar_bg' => '#d300d0',
-					],
-					[
-						'title' => __('Graphic Design', 'sina-ext'),
-						'percentage' => 53,
-						'bar_bg' => '#1085e4',
-					],
-				],
-				'title_field' => '{{{ title }}}',
+				'label' => __( 'Title', 'sina-ext' ),
+				'label_block' => true,
+				'type' => Controls_Manager::TEXT,
+				'placeholder' => __('Enter Title', 'sina-ext'),
+				'default' => __('Progressbars title', 'sina-ext'),
+			]
+		);
+		$this->add_control(
+			'percentage',
+			[
+				'label' => __( 'Percentage', 'sina-ext' ),
+				'type' => Controls_Manager::NUMBER,
+				'min' => 0,
+				'max' => 100,
+				'default' => 90,
 			]
 		);
 
@@ -188,33 +151,23 @@ class Sina_Progressbar_Widget extends Widget_Base {
 			]
 		);
 
-		$this->add_control(
-			'bars_bg',
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
 			[
-				'label' => __('Background', 'sina-ext'),
-				'type' => Controls_Manager::COLOR,
-				'default'=> '#eee',
-				'selectors' => [
-					'{{WRAPPER}} .sina-bar-bg' => 'background-color: {{VALUE}};',
+				'name' => 'bar_bg',
+				'label' => __( 'Bar Background', 'sina-ext' ),
+				'types' => [ 'classic', 'gradient' ],
+				'fields_options' => [
+					'background' => [ 
+						'default' =>'classic', 
+					],
+					'color' => [
+						'default' => '#eee',
+					],
 				],
+				'selector' => '{{WRAPPER}} .sina-bar-bg',
 			]
 		);
-
-		$this->add_responsive_control(
-			'bars_spacing',
-			[
-				'label' => __('Spacing', 'sina-ext'),
-				'type' => Controls_Manager::SLIDER,
-				'size_units' => ['px', 'em'],
-				'default' => [
-					'size' => 15,
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-bar' => 'margin-bottom: {{SIZE}}{{UNIT}};',
-				],
-			]
-		);
-
 		$this->add_responsive_control(
 			'bars_height',
 			[
@@ -229,7 +182,6 @@ class Sina_Progressbar_Widget extends Widget_Base {
 				],
 			]
 		);
-
 		$this->add_responsive_control(
 			'bars_border_radius',
 			[
@@ -239,6 +191,38 @@ class Sina_Progressbar_Widget extends Widget_Base {
 				'selectors' => [
 					'{{WRAPPER}} .sina-bar-bg, {{WRAPPER}} .sina-bar-content' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Border::get_type(),
+			[
+				'name' => 'bars_border',
+				'selector' => '{{WRAPPER}} .sina-bar-bg',
+			]
+		);
+		$this->add_control(
+			'track',
+			[
+				'label' => __( 'Track Background', 'sina-ext' ),
+				'type' => Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
+			[
+				'name' => 'track_bg',
+				'label' => __( 'Track Background', 'sina-ext' ),
+				'types' => [ 'classic', 'gradient' ],
+				'fields_options' => [
+					'background' => [ 
+						'default' =>'classic', 
+					],
+					'color' => [
+						'default' => '#1085e4',
+					],
+				],
+				'selector' => '{{WRAPPER}} .sina-bar-content',
 			]
 		);
 
@@ -261,7 +245,7 @@ class Sina_Progressbar_Widget extends Widget_Base {
 		$this->add_control(
 			'title_color',
 			[
-				'label' => __('Color', 'sina-ext'),
+				'label' => __('Text Color', 'sina-ext'),
 				'type' => Controls_Manager::COLOR,
 				'default'=> '#111',
 				'selectors' => [
@@ -269,7 +253,6 @@ class Sina_Progressbar_Widget extends Widget_Base {
 				],
 			]
 		);
-
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
@@ -305,6 +288,30 @@ class Sina_Progressbar_Widget extends Widget_Base {
 				],
 			]
 		);
+		$this->add_responsive_control(
+			'title_align',
+			[
+				'label' => __( 'Alignment', 'sina-ext' ),
+				'type' => Controls_Manager::CHOOSE,
+				'options' => [
+					'left' => [
+						'title' => __( 'Left', 'sina-ext' ),
+						'icon' => 'fa fa-align-left',
+					],
+					'center' => [
+						'title' => __( 'Center', 'sina-ext' ),
+						'icon' => 'fa fa-align-center',
+					],
+					'right' => [
+						'title' => __( 'Right', 'sina-ext' ),
+						'icon' => 'fa fa-align-right',
+					],
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-bar-title' => 'text-align: {{VALUE}};',
+				],
+			]
+		);
 
 		$this->end_controls_section();
 		// End Title Style
@@ -321,6 +328,17 @@ class Sina_Progressbar_Widget extends Widget_Base {
 			]
 		);
 
+		$this->add_control(
+			'bar_color',
+			[
+				'label' => __( 'Text Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#eee',
+				'selectors' => [
+					'{{WRAPPER}} .sina-bar-percent' => 'color: {{VALUE}};',
+				],
+			]
+		);
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
@@ -343,7 +361,26 @@ class Sina_Progressbar_Widget extends Widget_Base {
 				'selector' => '{{WRAPPER}} .sina-bar-percent',
 			]
 		);
-
+		$this->add_responsive_control(
+			'percentage_padding',
+			[
+				'label' => __( 'Padding', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', 'em' ],
+				'default' => [
+					'size' => 15,
+				],
+				'range' => [
+					'px' => [
+						'min' => 0,
+						'max' => 50,
+					],
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-bar-percent' => 'padding: 0 {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
 		$this->add_responsive_control(
 			'percentage_align',
 			[
@@ -380,50 +417,24 @@ class Sina_Progressbar_Widget extends Widget_Base {
 		$data = $this->get_settings_for_display();
 		?>
 		<div class="sina-progressbars">
-			<?php
-				foreach ( $data['progressbars'] as $index => $bar ) :
-					$title_key = $this->get_repeater_setting_key( 'title', 'progressbars', $index );
-
-					$this->add_render_attribute( $title_key, 'class', 'sina-bar-title' );
-					$this->add_inline_editing_attributes( $title_key );
-				?>
-				<div class="sina-bar">
-					<div <?php echo $this->get_render_attribute_string( $title_key ); ?>>
-						<?php echo esc_html( $bar['title'] ); ?>
-					</div>
-					<div class="sina-bar-bg" style="border-color: <?php echo esc_attr( $bar['border_color'] ); ?>;">
-						<div class="sina-bar-content sina-flex" style="background: <?php echo esc_attr( $bar['bar_bg'] ) ?>; color: <?php echo esc_attr( $bar['bar_color'] ) ?>;" data-percentage="<?php echo esc_attr( $bar['percentage'] ); ?>">
-							<span class="sina-bar-percent">
-								<?php echo esc_html( $bar['percentage'] ); ?>
-							</span>
-						</div>
+			<div class="sina-bar">
+				<div class="sina-bar-title">
+					<?php echo esc_html( $data['title'] ); ?>
+				</div>
+				<div class="sina-bar-bg">
+					<div class="sina-bar-content sina-flex" data-percentage="<?php echo esc_attr( $data['percentage'] ); ?>">
+						<span class="sina-bar-percent">
+							<?php echo esc_html( $data['percentage'] ); ?>
+						</span>
 					</div>
 				</div>
-			<?php endforeach; ?>
+			</div>
 		</div><!-- .sina-progressbars -->
 		<?php
 	}
 
 
 	protected function _content_template() {
-		?>
-		<div class="sina-progressbars">
-		<#
-			_.each( settings.progressbars, function( bar, index ) {
-				var titleKey = view.getRepeaterSettingKey( 'title', 'progressbars', index );
-				view.addRenderAttribute( titleKey, 'class', 'sina-bar-title' );
-				view.addInlineEditingAttributes( titleKey );
-			#>
-			<div class="sina-bar">
-				<div {{{ view.getRenderAttributeString( titleKey ) }}}>{{{ bar.title }}}</div>
-				<div class="sina-bar-bg" style="border-color: {{{bar.border_color}}};">
-					<div style="background: {{{bar.bar_bg}}}; color: {{{bar.bar_bg}}};" class="sina-bar-content sina-flex" data-percentage="{{{bar.percentage}}}">
-						<span class="sina-bar-percent" style="color: {{{bar.bar_color}}}">{{{bar.percentage}}}%</span>
-					</div>
-				</div>
-			</div>
-		<# }); #>
-		</div>
-		<?php
+
 	}
 }

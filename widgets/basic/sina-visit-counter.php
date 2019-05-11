@@ -176,7 +176,7 @@ class Sina_Visit_Counter_Widget extends Widget_Base {
 		$this->add_control(
 			'color',
 			[
-				'label' => __( 'Color', 'sina-ext' ),
+				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#1085e4',
 				'selectors' => [
@@ -230,7 +230,7 @@ class Sina_Visit_Counter_Widget extends Widget_Base {
 		$this->add_control(
 			'number_color',
 			[
-				'label' => __( 'Color', 'sina-ext' ),
+				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#1085e4',
 				'selectors' => [
