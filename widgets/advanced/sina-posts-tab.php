@@ -383,7 +383,6 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 					],
 				],
 				'default' => 'center',
-				'devices' => [ 'desktop', 'tablet', 'mobile' ],
 				'selectors' => [
 					'{{WRAPPER}} .sina-pt-btns' => 'text-align: {{VALUE}};',
 				],
@@ -545,7 +544,6 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 						'icon' => 'fa fa-align-right',
 					],
 				],
-				'devices' => [ 'desktop', 'tablet', 'mobile' ],
 				'default' => 'center',
 				'selectors' => [
 					'{{WRAPPER}} .sina-pt-thumb-content' => 'text-align: {{VALUE}};',
@@ -911,7 +909,6 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 						'icon' => 'fa fa-align-right',
 					],
 				],
-				'devices' => [ 'desktop', 'tablet', 'mobile' ],
 				'default' => 'left',
 				'separator' => 'before',
 				'selectors' => [

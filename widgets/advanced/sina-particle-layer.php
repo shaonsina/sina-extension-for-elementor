@@ -710,7 +710,6 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 					],
 				],
 				'default' => 'center',
-				'devices' => [ 'desktop', 'tablet', 'mobile' ],
 				'selectors' => [
 					'{{WRAPPER}} .sina-banner-container' => 'text-align: {{VALUE}};',
 				],

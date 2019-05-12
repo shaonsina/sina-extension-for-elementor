@@ -367,7 +367,6 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 					],
 				],
 				'default' => 'center',
-				'devices' => [ 'desktop', 'tablet', 'mobile' ],
 				'selectors' => [
 					'{{WRAPPER}} .sina-flipbox' => 'text-align: {{VALUE}};',
 				],

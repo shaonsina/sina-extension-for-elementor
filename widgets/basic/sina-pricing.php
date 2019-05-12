@@ -563,7 +563,6 @@ class Sina_Pricing_Widget extends Widget_Base {
 						'icon' => 'fa fa-align-right',
 					],
 				],
-				'devices' => [ 'desktop', 'tablet', 'mobile' ],
 				'default' => 'center',
 				'selectors' => [
 					'{{WRAPPER}} .sina-pricing-title' => 'text-align: {{VALUE}};',
@@ -728,7 +727,6 @@ class Sina_Pricing_Widget extends Widget_Base {
 						'icon' => 'fa fa-align-right',
 					],
 				],
-				'devices' => [ 'desktop', 'tablet', 'mobile' ],
 				'default' => 'center',
 				'selectors' => [
 					'{{WRAPPER}} .sina-price-tag' => 'text-align: {{VALUE}};',

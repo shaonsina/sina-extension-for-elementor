@@ -923,7 +923,6 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 						'icon' => 'fa fa-align-right',
 					],
 				],
-				'devices' => [ 'desktop', 'tablet', 'mobile' ],
 				'selectors' => [
 					'{{WRAPPER}} .sina-contact-form' => 'text-align: {{VALUE}};',
 				],

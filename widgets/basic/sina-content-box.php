@@ -562,7 +562,6 @@ class Sina_Content_Box_Widget extends Widget_Base {
 					],
 				],
 				'default' => 'center',
-				'devices' => [ 'desktop', 'tablet', 'mobile' ],
 				'selectors' => [
 					'{{WRAPPER}} .sina-content-box' => 'text-align: {{VALUE}};',
 				],

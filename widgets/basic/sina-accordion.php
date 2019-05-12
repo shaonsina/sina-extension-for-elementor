@@ -493,7 +493,6 @@ class Sina_Accordion_Widget extends Widget_Base {
 					],
 				],
 				'default' => 'left',
-				'devices' => [ 'desktop', 'tablet', 'mobile' ],
 				'selectors' => [
 					'{{WRAPPER}} .sina-accordion-desc' => 'text-align: {{VALUE}};',
 				],

@@ -369,7 +369,6 @@ class Sina_Blogpost_Widget extends Widget_Base {
 						'icon' => 'fa fa-align-justify',
 					],
 				],
-				'devices' => [ 'desktop', 'tablet', 'mobile' ],
 				'selectors' => [
 					'{{WRAPPER}} .sina-bp-content' => 'text-align: {{VALUE}};',
 				],
@@ -983,7 +982,6 @@ class Sina_Blogpost_Widget extends Widget_Base {
 						'icon' => 'fa fa-align-right',
 					],
 				],
-				'devices' => [ 'desktop', 'tablet', 'mobile' ],
 				'selectors' => [
 					'{{WRAPPER}} .sina-bp-pagination' => 'text-align: {{VALUE}};',
 				],
@@ -1228,7 +1226,6 @@ class Sina_Blogpost_Widget extends Widget_Base {
 						'icon' => 'fa fa-align-right',
 					],
 				],
-				'devices' => [ 'desktop', 'tablet', 'mobile' ],
 				'default' => 'center',
 				'selectors' => [
 					'{{WRAPPER}} .sina-load-more' => 'text-align: {{VALUE}};',

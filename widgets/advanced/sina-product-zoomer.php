@@ -354,7 +354,6 @@ class Sina_Product_Zoomer_Widget extends Widget_Base {
 						'icon' => 'fa fa-align-justify',
 					],
 				],
-				'devices' => [ 'desktop', 'tablet', 'mobile' ],
 				'default' => 'left',
 				'selectors' => [
 					'{{WRAPPER}} .sina-product-title' => 'text-align: {{VALUE}};',
@@ -440,7 +439,6 @@ class Sina_Product_Zoomer_Widget extends Widget_Base {
 						'icon' => 'fa fa-align-justify',
 					],
 				],
-				'devices' => [ 'desktop', 'tablet', 'mobile' ],
 				'default' => 'left',
 				'selectors' => [
 					'{{WRAPPER}} .sina-product-desc' => 'text-align: {{VALUE}};',

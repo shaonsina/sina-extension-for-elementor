@@ -151,7 +151,6 @@ class Sina_Visit_Counter_Widget extends Widget_Base {
 					],
 				],
 				'default' => 'center',
-				'devices' => [ 'desktop', 'tablet', 'mobile' ],
 				'selectors' => [
 					'{{WRAPPER}} .sina-visit-counter' => 'text-align: {{VALUE}};',
 				],

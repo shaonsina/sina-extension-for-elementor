@@ -599,7 +599,6 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 					],
 				],
 				'default' => 'left',
-				'devices' => [ 'desktop', 'tablet', 'mobile' ],
 				'selectors' => [
 					'{{WRAPPER}} .sina-cs-title' => 'text-align: {{VALUE}};',
 				],
@@ -699,7 +698,6 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 					],
 				],
 				'default' => 'left',
-				'devices' => [ 'desktop', 'tablet', 'mobile' ],
 				'selectors' => [
 					'{{WRAPPER}} .sina-cs-subtitle' => 'text-align: {{VALUE}};',
 				],
@@ -785,7 +783,6 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 					],
 				],
 				'default' => 'justify',
-				'devices' => [ 'desktop', 'tablet', 'mobile' ],
 				'selectors' => [
 					'{{WRAPPER}} .sina-cs-desc' => 'text-align: {{VALUE}};',
 				],

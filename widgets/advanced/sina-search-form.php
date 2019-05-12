@@ -613,7 +613,6 @@ class Sina_Search_Form_Widget extends Widget_Base {
 						'icon' => 'fa fa-align-right',
 					],
 				],
-				'devices' => [ 'desktop', 'tablet', 'mobile' ],
 				'condition' => [
 					'display!' => 'inline-block',
 				],

@@ -249,7 +249,6 @@ class Sina_Counter_Widget extends Widget_Base {
 					],
 				],
 				'default' => 'center',
-				'devices' => [ 'desktop', 'tablet', 'mobile' ],
 				'selectors' => [
 					'{{WRAPPER}} .sina-counter' => 'text-align: {{VALUE}};',
 				],

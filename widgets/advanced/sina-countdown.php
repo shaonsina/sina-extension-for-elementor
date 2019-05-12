@@ -168,7 +168,6 @@ class Sina_Countdown_Widget extends Widget_Base {
 						'icon' => 'fa fa-align-right',
 					],
 				],
-				'devices' => [ 'desktop', 'tablet', 'mobile' ],
 				'default' => 'center',
 				'separator' => 'after',
 				'selectors' => [
