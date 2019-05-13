@@ -149,7 +149,6 @@ class Sina_Portfolio_Widget extends Widget_Base {
 				'default' => 'sina-pf-effect-move',
 			]
 		);
-
 		$this->add_control(
 			'portfolio',
 			[
@@ -162,7 +161,7 @@ class Sina_Portfolio_Widget extends Widget_Base {
 						'label_block' => true,
 						'type' => Controls_Manager::TEXT,
 						'placeholder' => __( 'Enter Item Name', 'sina-ext' ),
-						'default' => __( 'Lorem ipsum dolor sit amet', 'sina-ext' ),
+						'default' => 'Lorem ipsum dolor sit amet',
 					],
 					[
 						'name' => 'category',
@@ -170,7 +169,7 @@ class Sina_Portfolio_Widget extends Widget_Base {
 						'label_block' => true,
 						'type' => Controls_Manager::TEXT,
 						'description' => __( 'Multiple categories must be comma separated.', 'sina-ext' ),
-						'default' => __( 'Web Design', 'sina-ext' ),
+						'default' => 'Web Design',
 					],
 					[
 						'name' => 'image',
@@ -208,48 +207,48 @@ class Sina_Portfolio_Widget extends Widget_Base {
 				],
 				'default' => [
 					[
-						'item_name' => __( 'Lorem ipsum dolor sit amet', 'sina-ext' ),
-						'category' => __( 'Graphic Design', 'sina-ext' ),
+						'item_name' => 'Lorem ipsum dolor sit amet',
+						'category' => 'Graphic Design',
 						'size' => 'sina-pf-item-11',
 						'image' => [
 							'url' => SINA_EXT_URL .'assets/img/portfolio1.jpg',
 						]
 					],
 					[
-						'item_name' => __( 'Lorem ipsum dolor sit amet', 'sina-ext' ),
-						'category' => __( 'Web Design', 'sina-ext' ),
+						'item_name' => 'Lorem ipsum dolor sit amet',
+						'category' => 'Web Design',
 						'size' => 'sina-pf-item-22',
 						'image' => [
 							'url' => SINA_EXT_URL .'assets/img/portfolio2.jpg',
 						]
 					],
 					[
-						'item_name' => __( 'Lorem ipsum dolor sit amet', 'sina-ext' ),
-						'category' => __( 'Graphic Design', 'sina-ext' ),
+						'item_name' => 'Lorem ipsum dolor sit amet',
+						'category' => 'Graphic Design',
 						'size' => 'sina-pf-item-11',
 						'image' => [
 							'url' => SINA_EXT_URL .'assets/img/portfolio3.jpg',
 						]
 					],
 					[
-						'item_name' => __( 'Lorem ipsum dolor sit amet', 'sina-ext' ),
-						'category' => __( 'Photography', 'sina-ext' ),
+						'item_name' => 'Lorem ipsum dolor sit amet',
+						'category' => 'Photography',
 						'size' => 'sina-pf-item-22',
 						'image' => [
 							'url' => SINA_EXT_URL .'assets/img/portfolio4.jpg',
 						]
 					],
 					[
-						'item_name' => __( 'Lorem ipsum dolor sit amet', 'sina-ext' ),
-						'category' => __( 'Web Design', 'sina-ext' ),
+						'item_name' => 'Lorem ipsum dolor sit amet',
+						'category' => 'Web Design',
 						'size' => 'sina-pf-item-11',
 						'image' => [
 							'url' => SINA_EXT_URL .'assets/img/portfolio5.jpg',
 						]
 					],
 					[
-						'item_name' => __( 'Lorem ipsum dolor sit amet', 'sina-ext' ),
-						'category' => __( 'Photography', 'sina-ext' ),
+						'item_name' => 'Lorem ipsum dolor sit amet',
+						'category' => 'Photography',
 						'size' => 'sina-pf-item-11',
 						'image' => [
 							'url' => SINA_EXT_URL .'assets/img/portfolio6.jpg',

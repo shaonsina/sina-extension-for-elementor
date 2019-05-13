@@ -106,7 +106,7 @@ class Sina_Search_Form_Widget extends Widget_Base {
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter placeholder text', 'sina-ext' ),
-				'default' => __( 'Search Here...', 'sina-ext' ),
+				'default' => 'Search Here...',
 			]
 		);
 		$this->add_control(

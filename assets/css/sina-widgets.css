@@ -71,6 +71,7 @@
 }
 
 /* Template Editor button hide */
+.sina-transform .elementor-element-overlay,
 .sina-accordion-body .elementor-element-overlay,
 .sina-content-box .elementor-element-overlay,
 .sina-content-slider .elementor-element-overlay,

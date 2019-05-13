@@ -103,7 +103,7 @@ class Sina_Title_Widget extends Widget_Base {
 				'type' => Controls_Manager::TEXTAREA,
 				'placeholder' => __( 'Enter Title', 'sina-ext' ),
 				'description' => __( 'You can use HTML.', 'sina-ext' ),
-				'default' => __( 'Welcome to get start your business.', 'sina-ext' ),
+				'default' => 'Welcome to get start your business.',
 			]
 		);
 		$this->add_control(
@@ -112,12 +112,12 @@ class Sina_Title_Widget extends Widget_Base {
 				'label' => __( 'Select Tag', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'h1' => __( 'H1', 'sina-ext' ),
-					'h2' => __( 'H2', 'sina-ext' ),
-					'h3' => __( 'H3', 'sina-ext' ),
-					'h4' => __( 'H4', 'sina-ext' ),
-					'h5' => __( 'H5', 'sina-ext' ),
-					'h6' => __( 'H6', 'sina-ext' ),
+					'h1' => 'H1',
+					'h2' => 'H2',
+					'h3' => 'H3',
+					'h4' => 'H4',
+					'h5' => 'H5',
+					'h6' => 'H6',
 				],
 				'default' => 'h2',
 			]
@@ -130,7 +130,7 @@ class Sina_Title_Widget extends Widget_Base {
 				'type' => Controls_Manager::TEXTAREA,
 				'placeholder' => __( 'Enter Sub Title', 'sina-ext' ),
 				'description' => __( 'You can use HTML.', 'sina-ext' ),
-				'default' => __( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.', 'sina-ext' ),
+				'default' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
 			]
 		);
 		$this->add_control(
@@ -139,11 +139,11 @@ class Sina_Title_Widget extends Widget_Base {
 				'label' => __( 'Select Tag', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'h2' => __( 'H2', 'sina-ext' ),
-					'h3' => __( 'H3', 'sina-ext' ),
-					'h4' => __( 'H4', 'sina-ext' ),
-					'h5' => __( 'H5', 'sina-ext' ),
-					'h6' => __( 'H6', 'sina-ext' ),
+					'h2' => 'H2',
+					'h3' => 'H3',
+					'h4' => 'H4',
+					'h5' => 'H5',
+					'h6' => 'H6',
 				],
 				'default' => 'h3',
 			]
@@ -156,7 +156,7 @@ class Sina_Title_Widget extends Widget_Base {
 				'type' => Controls_Manager::TEXTAREA,
 				'placeholder' => __( 'Enter Description', 'sina-ext' ),
 				'description' => __( 'You can use HTML.', 'sina-ext' ),
-				'default' => __( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.', 'sina-ext' ),
+				'default' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
 			]
 		);
 

@@ -122,7 +122,7 @@ class Sina_Progressbar_Widget extends Widget_Base {
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __('Enter Title', 'sina-ext'),
-				'default' => __('Progressbars title', 'sina-ext'),
+				'default' => 'Progressbars title',
 			]
 		);
 		$this->add_control(

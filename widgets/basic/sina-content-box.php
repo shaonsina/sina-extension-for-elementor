@@ -169,7 +169,7 @@ class Sina_Content_Box_Widget extends Widget_Base {
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter Title', 'sina-ext' ),
-				'default' => __( 'Apps Development', 'sina-ext' ),
+				'default' => 'Apps Development',
 				'condition' => [
 					'save_templates' => '',
 				],
@@ -182,7 +182,7 @@ class Sina_Content_Box_Widget extends Widget_Base {
 				'label_block' => true,
 				'type' => Controls_Manager::TEXTAREA,
 				'placeholder' => __( 'Enter Description', 'sina-ext' ),
-				'default' => __( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, autem amet. Labore eos cum at, et illo ducimus.', 'sina-ext' ),
+				'default' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, autem amet. Labore eos cum at, et illo ducimus.',
 				'condition' => [
 					'save_templates' => '',
 				],

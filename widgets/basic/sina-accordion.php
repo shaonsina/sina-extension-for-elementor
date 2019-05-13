@@ -148,7 +148,7 @@ class Sina_Accordion_Widget extends Widget_Base {
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __('Enter Title', 'sina-ext'),
-				'default' => __('Web Development', 'sina-ext'),
+				'default' => 'Web Development',
 			]
 		);
 		$repeater->add_control(
@@ -176,7 +176,7 @@ class Sina_Accordion_Widget extends Widget_Base {
 				'label' => __('Description', 'sina-ext'),
 				'label_block' => true,
 				'type' => Controls_Manager::WYSIWYG,
-				'default' => __('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 'sina-ext'),
+				'default' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
 				'condition' => [
 					'save_templates' => '',
 				],
@@ -190,16 +190,16 @@ class Sina_Accordion_Widget extends Widget_Base {
 				'fields' => $repeater->get_controls(),
 				'default' => [
 					[
-						'title' => __('Web Development', 'sina-ext'),
-						'desc' => __('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 'sina-ext'),
+						'title' => 'Web Development',
+						'desc' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
 					],
 					[
-						'title' => __('Graphics Design', 'sina-ext'),
-						'desc' => __('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 'sina-ext'),
+						'title' => 'Graphics Design',
+						'desc' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
 					],
 					[
-						'title' => __('Digital Marketing', 'sina-ext'),
-						'desc' => __('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 'sina-ext'),
+						'title' => 'Digital Marketing',
+						'desc' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
 					],
 				],
 				'title_field' => '{{{ title }}}',

@@ -116,10 +116,10 @@ class Sina_Piechart_Widget extends Widget_Base {
 			'title',
 			[
 				'label' => __( 'Title', 'sina-ext' ),
+				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter title', 'sina-ext' ),
-				'default' => __( 'Web Development', 'sina-ext' ),
-				'label_block' => true,
+				'default' => 'Web Development',
 			]
 		);
 		$this->add_control(
@@ -156,7 +156,7 @@ class Sina_Piechart_Widget extends Widget_Base {
 				'label' => __( 'Suffix', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter suffix', 'sina-ext' ),
-				'default' => __( '%', 'sina-ext' ),
+				'default' => '%',
 			]
 		);
 		$this->add_control(

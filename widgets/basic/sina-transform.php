@@ -168,8 +168,8 @@ class Sina_Transform_Widget extends Widget_Base {
 				'label' => __( 'Overflow', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'' => __( 'Default', 'sina-ext' ),
-					'sina-transform-overflow' => __( 'Hidden', 'sina-ext' ),
+					'' => 'Default',
+					'sina-transform-overflow' => 'Hidden',
 				],
 				'default' => '',
 			]

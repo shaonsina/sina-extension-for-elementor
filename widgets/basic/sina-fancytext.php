@@ -122,21 +122,21 @@ class Sina_Fancytext_Widget extends Widget_Base {
 						'name' => 'fancy_items',
 						'label' => __( 'Text', 'sina-ext' ),
 						'type' => Controls_Manager::TEXTAREA,
-						'default' => __('Fancy text', 'sina-ext'),
+						'default' => 'Fancy text',
 					],
 				],
 				'default' => [
 					[
-						'fancy_items' => __( 'first text', 'sina-ext' ),
+						'fancy_items' => 'first text',
 					],
 					[
-						'fancy_items' => __( 'second text', 'sina-ext' ),
+						'fancy_items' => 'second text',
 					],
 					[
-						'fancy_items' => __( 'third text', 'sina-ext' ),
+						'fancy_items' => 'third text',
 					],
 					[
-						'fancy_items' => __( 'fourth text', 'sina-ext' ),
+						'fancy_items' => 'fourth text',
 					],
 				],
 				'title_field' => '{{{ fancy_items }}}',
@@ -148,7 +148,7 @@ class Sina_Fancytext_Widget extends Widget_Base {
 				'label' => __( 'Prefix', 'sina-ext' ),
 				'type' => Controls_Manager::TEXTAREA,
 				'placeholder' => __( 'Enter prefix text', 'sina-ext' ),
-				'default' => __( 'Prefix text ', 'sina-ext' ),
+				'default' => 'Prefix text ',
 			]
 		);
 		$this->add_control(
@@ -157,7 +157,7 @@ class Sina_Fancytext_Widget extends Widget_Base {
 				'label' => __( 'Suffix', 'sina-ext' ),
 				'type' => Controls_Manager::TEXTAREA,
 				'placeholder' => __( 'Enter suffix text', 'sina-ext' ),
-				'default' => __( ' Suffix text', 'sina-ext' ),
+				'default' => ' Suffix text',
 			]
 		);
 
@@ -327,13 +327,13 @@ class Sina_Fancytext_Widget extends Widget_Base {
 				'label' => __( 'Selct Tag', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'h1' => __( 'H1', 'sina-ext' ),
-					'h2' => __( 'H2', 'sina-ext' ),
-					'h3' => __( 'H3', 'sina-ext' ),
-					'h4' => __( 'H4', 'sina-ext' ),
-					'h5' => __( 'H5', 'sina-ext' ),
-					'h6' => __( 'H6', 'sina-ext' ),
-					'p' => __( 'p', 'sina-ext' ),
+					'h1' => 'H1',
+					'h2' => 'H2',
+					'h3' => 'H3',
+					'h4' => 'H4',
+					'h5' => 'H5',
+					'h6' => 'H6',
+					'p' => 'p',
 				],
 				'default' => 'h3',
 			]

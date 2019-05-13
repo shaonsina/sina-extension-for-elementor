@@ -148,7 +148,7 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 			[
 				'label' => __( 'Label Text', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
-				'default' => __( 'Latest News', 'sina-ext' ),
+				'default' => 'Latest News',
 			]
 		);
 		$this->add_control(

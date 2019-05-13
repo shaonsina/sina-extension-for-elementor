@@ -107,7 +107,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 				'label' => __( 'Title', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter Title', 'sina-ext' ),
-				'default' => __( 'Basic', 'sina-ext' ),
+				'default' => 'Basic',
 			]
 		);
 		$this->add_control(
@@ -116,7 +116,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 				'label' => __( 'Price', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter Price', 'sina-ext' ),
-				'default' => __( '$20', 'sina-ext' ),
+				'default' => '$20',
 			]
 		);
 		$this->add_control(
@@ -128,7 +128,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 				'condition' => [
 					'price!' => '',
 				],
-				'default' => __( 'M', 'sina-ext' ),
+				'default' => 'M',
 			]
 		);
 		$this->add_control(
@@ -137,7 +137,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 				'label' => __( 'Button Label', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter Label', 'sina-ext' ),
-				'default' => __( 'Order', 'sina-ext' ),
+				'default' => 'Order',
 			]
 		);
 		$this->add_control(
@@ -232,25 +232,25 @@ class Sina_Pricing_Widget extends Widget_Base {
 				],
 				'default' => [
 					[
-						'title' => __( '1GB', 'sina-ext' ),
+						'title' => '1GB',
 					],
 					[
-						'title' => __( '15GB Bandwith', 'sina-ext' ),
+						'title' => '15GB Bandwith',
 					],
 					[
-						'title' => __( '5 Subdomain', 'sina-ext' ),
+						'title' => '5 Subdomain',
 					],
 					[
-						'title' => __( 'SSD Server', 'sina-ext' ),
+						'title' => 'SSD Server',
 					],
 					[
-						'title' => __( '1 Web Hosting', 'sina-ext' ),
+						'title' => '1 Web Hosting',
 					],
 					[
-						'title' => __( 'Free SSL', 'sina-ext' ),
+						'title' => 'Free SSL',
 					],
 					[
-						'title' => __( '24/7 Support', 'sina-ext' ),
+						'title' => '24/7 Support',
 					],
 				],
 				'title_field' => '{{{ title }}}',

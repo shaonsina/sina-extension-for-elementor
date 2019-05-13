@@ -127,7 +127,7 @@ class Sina_User_Counter_Widget extends Widget_Base {
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter prefix text', 'sina-ext' ),
-				'default' => __( 'Already registered', 'sina-ext' ),
+				'default' => 'Already registered',
 			]
 		);
 		$this->add_control(

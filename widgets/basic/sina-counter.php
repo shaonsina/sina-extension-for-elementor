@@ -119,8 +119,8 @@ class Sina_Counter_Widget extends Widget_Base {
 				'label' => __( 'Title', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
 				'label_block' => true,
-				'default' => __( 'Satisfied Customers', 'sina-ext' ),
 				'placeholder' => __( 'Enter Title', 'sina-ext' ),
+				'default' => 'Satisfied Customers',
 			]
 		);
 		$this->add_control(
@@ -206,8 +206,8 @@ class Sina_Counter_Widget extends Widget_Base {
 			[
 				'label' => __( 'Suffix', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
-				'default' => '',
 				'placeholder' => __( 'Enter Suffix', 'sina-ext' ),
+				'default' => '',
 			]
 		);
 		$this->add_control(

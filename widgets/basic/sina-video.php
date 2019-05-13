@@ -131,7 +131,7 @@ class Sina_Video_Widget extends Widget_Base {
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter Title', 'sina-ext' ),
-				'default' => __( 'Watch video', 'sina-ext' ),
+				'default' => 'Watch video',
 			]
 		);
 		$this->add_control(

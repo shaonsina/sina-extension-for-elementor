@@ -131,7 +131,7 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter placeholder text', 'sina-ext' ),
 				'separator' => 'before',
-				'default' => __( 'Enter Email', 'sina-ext' ),
+				'default' => 'Enter Email',
 			]
 		);
 		$this->add_control(
@@ -142,7 +142,7 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter field tag', 'sina-ext' ),
 				'separator' => 'after',
-				'default' => __( 'EMAIL', 'sina-ext' ),
+				'default' => 'EMAIL',
 			]
 		);
 		$this->add_control(
@@ -162,7 +162,7 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 				'condition' => [
 					'fname!' => '',
 				],
-				'default' => __( 'Enter First Name', 'sina-ext' ),
+				'default' => 'Enter First Name',
 			]
 		);
 		$this->add_control(
@@ -176,7 +176,7 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 					'fname!' => '',
 				],
 				'separator' => 'after',
-				'default' => __( 'FNAME', 'sina-ext' ),
+				'default' => 'FNAME',
 			]
 		);
 		$this->add_control(
@@ -196,7 +196,7 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 				'condition' => [
 					'lname!' => '',
 				],
-				'default' => __( 'Enter Last Name', 'sina-ext' ),
+				'default' => 'Enter Last Name',
 			]
 		);
 		$this->add_control(
@@ -210,7 +210,7 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 					'lname!' => '',
 				],
 				'separator' => 'after',
-				'default' => __( 'LNAME', 'sina-ext' ),
+				'default' => 'LNAME',
 			]
 		);
 		$this->add_control(
@@ -230,7 +230,7 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 				'condition' => [
 					'phone!' => '',
 				],
-				'default' => __( 'Enter Phone Number', 'sina-ext' ),
+				'default' => 'Enter Phone Number',
 			]
 		);
 		$this->add_control(
@@ -243,7 +243,7 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 				'condition' => [
 					'phone!' => '',
 				],
-				'default' => __( 'PHONE', 'sina-ext' ),
+				'default' => 'PHONE',
 			]
 		);
 

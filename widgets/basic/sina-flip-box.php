@@ -117,7 +117,7 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter Title', 'sina-ext' ),
-				'default' => __( 'Apps Development', 'sina-ext' ),
+				'default' => 'Apps Development',
 			]
 		);
 		$this->add_control(
@@ -127,7 +127,7 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 				'label_block' => true,
 				'type' => Controls_Manager::TEXTAREA,
 				'placeholder' => __( 'Enter Description', 'sina-ext' ),
-				'default' => __( 'This is flip box description.', 'sina-ext' ),
+				'default' => 'This is flip box description.',
 			]
 		);
 
@@ -162,7 +162,7 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter Title', 'sina-ext' ),
-				'default' => __( 'Web Development', 'sina-ext' ),
+				'default' => 'Web Development',
 			]
 		);
 		$this->add_control(
@@ -172,7 +172,7 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 				'label_block' => true,
 				'type' => Controls_Manager::TEXTAREA,
 				'placeholder' => __( 'Enter Description', 'sina-ext' ),
-				'default' => __( 'This is flip box description.', 'sina-ext' ),
+				'default' => 'This is flip box description.',
 			]
 		);
 

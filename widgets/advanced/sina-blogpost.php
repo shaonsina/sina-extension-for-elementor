@@ -250,7 +250,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 				'condition' => [
 					'loadmore!' => '',
 				],
-				'default' => __( 'Load More', 'sina-ext' ),
+				'default' => 'Load More',
 			]
 		);
 

@@ -122,7 +122,7 @@ class Sina_Team_Widget extends Widget_Base {
 				'label' => __( 'Name', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter Name', 'sina-ext' ),
-				'default' => __( 'Jhon Doe', 'sina-ext' ),
+				'default' => 'Jhon Doe',
 			]
 		);
 		$this->add_control(
@@ -131,7 +131,7 @@ class Sina_Team_Widget extends Widget_Base {
 				'label' => __( 'Position', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter Position', 'sina-ext' ),
-				'default' => __( 'CEO', 'sina-ext' ),
+				'default' => 'CEO',
 			]
 		);
 		$this->add_control(
@@ -141,7 +141,7 @@ class Sina_Team_Widget extends Widget_Base {
 				'lable_block' => true,
 				'type' => Controls_Manager::TEXTAREA,
 				'placeholder' => __( 'Enter Description', 'sina-ext' ),
-				'default' => __( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, autem amet. Labore eos cum at, et illo ducimus.', 'sina-ext' ),
+				'default' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, autem amet. Labore eos cum at, et illo ducimus.',
 			]
 		);
 		$this->add_control(
@@ -179,7 +179,7 @@ class Sina_Team_Widget extends Widget_Base {
 				'label' => __( 'Name', 'sina-ext' ),
 				'description' => __( 'This name will be show in the item header', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
-				'default' => __( 'Facebook', 'sina-ext' ),
+				'default' => 'Facebook',
 			]
 		);
 
@@ -294,21 +294,21 @@ class Sina_Team_Widget extends Widget_Base {
 						'link' => [
 							'url' => 'https://facebook.com',
 						],
-						'social_name' => __( 'Facebook', 'sina-ext' ),
+						'social_name' => 'Facebook',
 					],
 					[
 						'name' => 'fa fa-twitter',
 						'link' => [
 							'url' => 'https://twitter.com',
 						],
-						'social_name' => __( 'Twitter', 'sina-ext' ),
+						'social_name' => 'Twitter',
 					],
 					[
 						'name' => 'fa fa-linkedin',
 						'link' => [
 							'url' => 'https://linkedin.com',
 						],
-						'social_name' => __( 'Linkedin', 'sina-ext' ),
+						'social_name' => 'Linkedin',
 					],
 				],
 				'title_field' => '{{{ social_name }}}',

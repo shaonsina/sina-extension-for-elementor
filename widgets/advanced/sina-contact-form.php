@@ -121,7 +121,7 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter Placeholder Text', 'sina-ext' ),
-				'default' => __( 'Enter Your Name *', 'sina-ext' ),
+				'default' => 'Enter Your Name *',
 			]
 		);
 		$this->add_control(
@@ -131,7 +131,7 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter Placeholder Text', 'sina-ext' ),
-				'default' => __( 'Enter Your Email *', 'sina-ext' ),
+				'default' => 'Enter Your Email *',
 			]
 		);
 		$this->add_control(
@@ -141,7 +141,7 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter Placeholder Text', 'sina-ext' ),
-				'default' => __( 'Enter Your Subject *', 'sina-ext' ),
+				'default' => 'Enter Your Subject *',
 			]
 		);
 		$this->add_control(
@@ -151,7 +151,7 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter Placeholder Text', 'sina-ext' ),
-				'default' => __( 'Enter Your Message *', 'sina-ext' ),
+				'default' => 'Enter Your Message *',
 			]
 		);
 

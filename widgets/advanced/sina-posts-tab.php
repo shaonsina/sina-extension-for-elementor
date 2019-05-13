@@ -128,7 +128,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 				],
 				'default' => [
 					[
-						'title' => __('Uncategorized', 'sina-ext'),
+						'title' => 'Uncategorized',
 						'category' => 'Uncategorized',
 					],
 				],

@@ -203,7 +203,7 @@ class Sina_Countdown_Widget extends Widget_Base {
 			[
 				'label'	=> __('Message', 'sina-ext'),
 				'type' => Controls_Manager::TEXTAREA,
-				'default' => __('Countdown is finished!','sina-ext'),
+				'default' => 'Countdown is finished!',
 				'condition' => [
 					'action' => 'text'
 				]

@@ -142,7 +142,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 				'label_block' => true,
 				'type' => Controls_Manager::WYSIWYG,
 				'placeholder' => __( 'Enter Title', 'sina-ext' ),
-				'default' => __( 'Welcome to get start your business', 'sina-ext' ),
+				'default' => 'Welcome to get start your business',
 			]
 		);
 		$this->add_control(
@@ -153,7 +153,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 				'type' => Controls_Manager::WYSIWYG,
 				'placeholder' => __( 'Enter Title', 'sina-ext' ),
 				'separator' => 'before',
-				'default' => __( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit', 'sina-ext' ),
+				'default' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
 			]
 		);
 		$this->add_control(
@@ -164,7 +164,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 				'type' => Controls_Manager::WYSIWYG,
 				'placeholder' => __( 'Enter Description', 'sina-ext' ),
 				'separator' => 'before',
-				'default' => __( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit', 'sina-ext' ),
+				'default' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
 			]
 		);
 
@@ -189,7 +189,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 				'label' => __( 'Label', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter Label', 'sina-ext' ),
-				'default' => __( 'Learn More', 'sina-ext' ),
+				'default' => 'Learn More',
 			]
 		);
 		$this->add_control(
@@ -265,7 +265,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 				'label' => __( 'Label', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter Label', 'sina-ext' ),
-				'default' => __( 'Learn More', 'sina-ext' ),
+				'default' => 'Learn More',
 			]
 		);
 		$this->add_control(

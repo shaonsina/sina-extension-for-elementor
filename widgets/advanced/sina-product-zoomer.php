@@ -132,7 +132,7 @@ class Sina_Product_Zoomer_Widget extends Widget_Base {
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter Title', 'sina-ext' ),
 				'description' => __( 'This title will be show only item header', 'sina-ext' ),
-				'default' => __('Image Title', 'sina-ext'),
+				'default' => 'Image Title',
 			]
 		);
 		$repeater->add_control(
@@ -174,7 +174,7 @@ class Sina_Product_Zoomer_Widget extends Widget_Base {
 				'fields' => $repeater->get_controls(),
 				'default' => [
 					[
-						'title' => __('Car One', 'sina-ext'),
+						'title' => 'Car One',
 						'original_image' => [
 							'url' => SINA_EXT_URL .'assets/img/car-original1.jpg',
 						],
@@ -186,7 +186,7 @@ class Sina_Product_Zoomer_Widget extends Widget_Base {
 						]
 					],
 					[
-						'title' => __('Car two', 'sina-ext'),
+						'title' => 'Car two',
 						'original_image' => [
 							'url' => SINA_EXT_URL .'assets/img/car-original2.jpg',
 						],
@@ -198,7 +198,7 @@ class Sina_Product_Zoomer_Widget extends Widget_Base {
 						]
 					],
 					[
-						'title' => __('Car Three', 'sina-ext'),
+						'title' => 'Car Three',
 						'original_image' => [
 							'url' => SINA_EXT_URL .'assets/img/car-original3.jpg',
 						],

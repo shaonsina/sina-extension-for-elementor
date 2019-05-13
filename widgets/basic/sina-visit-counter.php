@@ -118,7 +118,7 @@ class Sina_Visit_Counter_Widget extends Widget_Base {
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter text', 'sina-ext' ),
-				'default' => __( 'Today\'s visit', 'sina-ext' ),
+				'default' => 'Today\'s visit',
 			]
 		);
 		$this->add_control(
@@ -128,7 +128,7 @@ class Sina_Visit_Counter_Widget extends Widget_Base {
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter text', 'sina-ext' ),
-				'default' => __( 'Yesterday\'s visit', 'sina-ext' ),
+				'default' => 'Yesterday\'s visit',
 			]
 		);
 		$this->add_responsive_control(

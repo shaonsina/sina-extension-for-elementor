@@ -311,16 +311,16 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 				],
 				'default' => [
 					[
-						'title' => __( 'Welcome to get start your business', 'sina-ext' ),
-						'subtitle' => __( 'Lorem ipsum dolor sit amet', 'sina-ext' ),
+						'title' => 'Welcome to get start your business',
+						'subtitle' => 'Lorem ipsum dolor sit amet',
 						'align' => 'center',
 						'title_anim' => 'fadeInLeft',
 						'subtitle_anim' => 'fadeInRight',
 						'buttons_anim' => 'fadeInUp',
 					],
 					[
-						'title' => __( 'Lorem ipsum dolor sit amet,', 'sina-ext' ),
-						'subtitle' => __( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit', 'sina-ext' ),
+						'title' => 'Lorem ipsum dolor sit amet,',
+						'subtitle' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
 						'align' => 'center',
 						'title_anim' => 'zoomIn',
 						'subtitle_anim' => 'zoomIn',
@@ -547,7 +547,7 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 				'label' => __( 'Label', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter Label', 'sina-ext' ),
-				'default' => __( 'Learn More', 'sina-ext' ),
+				'default' => 'Learn More',
 			]
 		);
 		$this->add_control(
@@ -623,7 +623,7 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 				'label' => __( 'Label', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter Label', 'sina-ext' ),
-				'default' => __( 'Learn More', 'sina-ext' ),
+				'default' => 'Learn More',
 			]
 		);
 		$this->add_control(
