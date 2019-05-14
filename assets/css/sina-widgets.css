@@ -30,8 +30,6 @@
 .sina-pricing.sina-pricing-zoom:hover{
 	z-index: 999999;
 }
-.sina-table table th,
-.sina-table table td,
 .sina-transform-content,
 .sina-brand-item-inner,
 .sina-brand-item-inner a img,
@@ -51,8 +49,9 @@
 	transition: all 0.4s ease-in-out;
 }
 .sina-table table th,
-.sina-table table td{
-	transition: all 0.15s ease-in-out;
+.sina-table table td,
+.sina-table table tr{
+	transition: all 0.1s ease-in-out;
 }
 .sina-transform-overflow,
 .sina-accordion-item,
@@ -794,7 +793,6 @@ img.mfp-img{
 
 /*--------------------------------- Table -------------------------------------- */
 .sina-table table{
-	/*border-collapse: collapse;*/
 	width: 100%;
 }
 
