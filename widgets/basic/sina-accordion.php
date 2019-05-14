@@ -348,7 +348,6 @@ class Sina_Accordion_Widget extends Widget_Base {
 			[
 				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '',
 				'selectors' => [
 					'{{WRAPPER}} .sina-accordion-item.open .sina-accordion-title, {{WRAPPER}} .sina-accordion-item.open .sina-accordion-icon i' => 'color: {{VALUE}};',
 				],

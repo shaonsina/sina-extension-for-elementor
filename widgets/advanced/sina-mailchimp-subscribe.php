@@ -457,7 +457,6 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 			[
 				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '',
 				'selectors' => [
 					'{{WRAPPER}} .sina-subs-input .sina-input-field:focus' => 'color: {{VALUE}};',
 				],
@@ -468,7 +467,6 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 			[
 				'label' => __( 'Background', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '',
 				'selectors' => [
 					'{{WRAPPER}} .sina-subs-input .sina-input-field:focus' => 'background: {{VALUE}};',
 				],
@@ -479,7 +477,6 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 			[
 				'label' => __( 'Border Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '',
 				'selectors' => [
 					'{{WRAPPER}} .sina-subs-input .sina-input-field:focus' => 'border-color: {{VALUE}}'
 				],
@@ -914,7 +911,6 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 			[
 				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '',
 				'selectors' => [
 					'{{WRAPPER}} .sina-subs-btn:hover' => 'color: {{VALUE}};',
 				],
@@ -934,7 +930,6 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 			[
 				'label' => __( 'Border Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '',
 				'selectors' => [
 					'{{WRAPPER}} .sina-subs-btn:hover' => 'border-color: {{VALUE}}'
 				],

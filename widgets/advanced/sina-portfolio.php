@@ -369,7 +369,6 @@ class Sina_Portfolio_Widget extends Widget_Base {
 			[
 				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '',
 				'selectors' => [
 					'{{WRAPPER}} .sina-portfolio-btn:hover' => 'color: {{VALUE}}'
 				],
@@ -389,7 +388,6 @@ class Sina_Portfolio_Widget extends Widget_Base {
 			[
 				'label' => __( 'Border Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '',
 				'selectors' => [
 					'{{WRAPPER}} .sina-portfolio-btn:hover' => 'border-color: {{VALUE}}'
 				],
@@ -647,7 +645,6 @@ class Sina_Portfolio_Widget extends Widget_Base {
 			[
 				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '',
 				'selectors' => [
 					'{{WRAPPER}} .sina-portfolio-overlay i:hover' => 'color: {{VALUE}}'
 				],
@@ -658,7 +655,6 @@ class Sina_Portfolio_Widget extends Widget_Base {
 			[
 				'label' => __( 'Background', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '',
 				'selectors' => [
 					'{{WRAPPER}} .sina-portfolio-overlay i:hover' => 'background: {{VALUE}}'
 				],
@@ -669,7 +665,6 @@ class Sina_Portfolio_Widget extends Widget_Base {
 			[
 				'label' => __( 'Border Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '',
 				'selectors' => [
 					'{{WRAPPER}} .sina-portfolio-overlay i:hover' => 'border-color: {{VALUE}}'
 				],

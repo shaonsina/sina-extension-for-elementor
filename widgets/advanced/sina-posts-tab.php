@@ -330,7 +330,6 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 			[
 				'label' => __( 'Border Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '',
 				'selectors' => [
 					'{{WRAPPER}} .sina-pt-cat-btn:hover' => 'border-color: {{VALUE}}'
 				],
@@ -872,7 +871,6 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 			[
 				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '',
 				'selectors' => [
 					'{{WRAPPER}} .sina-pt-title h3:hover' => 'color: {{VALUE}}'
 				],

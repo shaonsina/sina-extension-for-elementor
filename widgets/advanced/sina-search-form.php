@@ -277,7 +277,6 @@ class Sina_Search_Form_Widget extends Widget_Base {
 			[
 				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '',
 				'selectors' => [
 					'{{WRAPPER}} .sina-search-box .sina-input-field:focus' => 'color: {{VALUE}};',
 				],
@@ -288,7 +287,6 @@ class Sina_Search_Form_Widget extends Widget_Base {
 			[
 				'label' => __( 'Background', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '',
 				'selectors' => [
 					'{{WRAPPER}} .sina-search-box .sina-input-field:focus' => 'background: {{VALUE}};',
 				],
@@ -299,7 +297,6 @@ class Sina_Search_Form_Widget extends Widget_Base {
 			[
 				'label' => __( 'Border Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '',
 				'selectors' => [
 					'{{WRAPPER}} .sina-search-box .sina-input-field:focus' => 'border-color: {{VALUE}}'
 				],
@@ -481,7 +478,6 @@ class Sina_Search_Form_Widget extends Widget_Base {
 			[
 				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '',
 				'selectors' => [
 					'{{WRAPPER}} .sina-search-btn:hover' => 'color: {{VALUE}};',
 				],
@@ -501,7 +497,6 @@ class Sina_Search_Form_Widget extends Widget_Base {
 			[
 				'label' => __( 'Border Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '',
 				'selectors' => [
 					'{{WRAPPER}} .sina-search-btn:hover' => 'border-color: {{VALUE}}'
 				],

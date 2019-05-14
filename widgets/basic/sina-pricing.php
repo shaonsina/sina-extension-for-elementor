@@ -402,7 +402,6 @@ class Sina_Pricing_Widget extends Widget_Base {
 			[
 				'label' => __( 'Border Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '',
 				'selectors' => [
 					'{{WRAPPER}} .sina-pricing:hover' => 'border-color: {{VALUE}}'
 				],
@@ -882,7 +881,6 @@ class Sina_Pricing_Widget extends Widget_Base {
 			[
 				'label' => __( 'Border Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '',
 				'selectors' => [
 					'{{WRAPPER}} .sina-pricing-btn .sina-order-btn:hover, {{WRAPPER}} .sina-pricing-btn .sina-order-btn:focus' => 'border-color: {{VALUE}}'
 				],

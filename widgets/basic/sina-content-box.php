@@ -405,7 +405,6 @@ class Sina_Content_Box_Widget extends Widget_Base {
 			[
 				'label' => __( 'Icon Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '',
 				'condition' => [
 					'save_templates' => '',
 				],
@@ -419,7 +418,6 @@ class Sina_Content_Box_Widget extends Widget_Base {
 			[
 				'label' => __( 'Icon Border Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '',
 				'condition' => [
 					'save_templates' => '',
 				],
@@ -433,7 +431,6 @@ class Sina_Content_Box_Widget extends Widget_Base {
 			[
 				'label' => __( 'Title Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '',
 				'condition' => [
 					'save_templates' => '',
 				],
@@ -447,7 +444,6 @@ class Sina_Content_Box_Widget extends Widget_Base {
 			[
 				'label' => __( 'Description Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '',
 				'condition' => [
 					'save_templates' => '',
 				],
@@ -470,7 +466,6 @@ class Sina_Content_Box_Widget extends Widget_Base {
 			[
 				'label' => __( 'Box Border Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '',
 				'selectors' => [
 					'{{WRAPPER}} .sina-content-box:hover' => 'border-color: {{VALUE}}'
 				],

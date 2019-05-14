@@ -207,7 +207,6 @@ class Sina_Counter_Widget extends Widget_Base {
 				'label' => __( 'Suffix', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter Suffix', 'sina-ext' ),
-				'default' => '',
 			]
 		);
 		$this->add_control(
