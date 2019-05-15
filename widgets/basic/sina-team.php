@@ -297,14 +297,14 @@ class Sina_Team_Widget extends Widget_Base {
 						'social_name' => 'Facebook',
 					],
 					[
-						'name' => 'fa fa-twitter',
+						'icon' => 'fa fa-twitter',
 						'link' => [
 							'url' => 'https://twitter.com',
 						],
 						'social_name' => 'Twitter',
 					],
 					[
-						'name' => 'fa fa-linkedin',
+						'icon' => 'fa fa-linkedin',
 						'link' => [
 							'url' => 'https://linkedin.com',
 						],

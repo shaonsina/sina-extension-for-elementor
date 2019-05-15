@@ -90,11 +90,11 @@ class Sina_Table_Widget extends Widget_Base {
 	 */
 	protected function _register_controls() {
 		// Start Table Header
-		// ====================
+		// ===================
 		$this->start_controls_section(
 			'table_header',
 			[
-				'label' => __( 'Header Content', 'sina-ext' ),
+				'label' => __( 'Header', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -250,14 +250,15 @@ class Sina_Table_Widget extends Widget_Base {
 
 		$this->end_controls_section();
 		// End Table Header
-		// ==================
+		// =================
+
 
 		// Start Table Body
-		// ====================
+		// =================
 		$this->start_controls_section(
 			'table_body',
 			[
-				'label' => __( 'Body Content', 'sina-ext' ),
+				'label' => __( 'Body', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -328,7 +329,7 @@ class Sina_Table_Widget extends Widget_Base {
 				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} {{CURRENT_ITEM}}' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .sina-table table tbody {{CURRENT_ITEM}}' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -338,7 +339,7 @@ class Sina_Table_Widget extends Widget_Base {
 				'name' => 'content_background',
 				'label' => __( 'Background', 'sina-ext' ),
 				'types' => [ 'classic', 'gradient' ],
-				'selector' => '{{WRAPPER}} {{CURRENT_ITEM}}',
+				'selector' => '{{WRAPPER}} .sina-table table tbody {{CURRENT_ITEM}}',
 			]
 		);
 
@@ -357,7 +358,7 @@ class Sina_Table_Widget extends Widget_Base {
 				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} {{CURRENT_ITEM}}:hover' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .sina-table table tbody {{CURRENT_ITEM}}:hover' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -367,7 +368,7 @@ class Sina_Table_Widget extends Widget_Base {
 				'name' => 'content_hover_background',
 				'label' => __( 'Background', 'sina-ext' ),
 				'types' => [ 'classic', 'gradient' ],
-				'selector' => '{{WRAPPER}} {{CURRENT_ITEM}}:hover',
+				'selector' => '{{WRAPPER}} .sina-table table tbody {{CURRENT_ITEM}}:hover',
 			]
 		);
 
@@ -416,7 +417,7 @@ class Sina_Table_Widget extends Widget_Base {
 
 		$this->end_controls_section();
 		// End Table Body
-		// ==================
+		// ===============
 
 
 		// Start Table Header Style
@@ -424,7 +425,7 @@ class Sina_Table_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'table_header_style',
 			[
-				'label' => __( 'Header Style', 'sina-ext' ),
+				'label' => __( 'Header', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -617,8 +618,206 @@ class Sina_Table_Widget extends Widget_Base {
 		);
 
 		$this->end_controls_section();
-		// End Table Body
-		// ==================
+		// End Table Header Style
+		// =======================
+
+
+		// Start Table Content Style
+		// =========================
+		$this->start_controls_section(
+			'table_content_style',
+			[
+				'label' => __( 'Content', 'sina-ext' ),
+				'tab' => Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name' => 'content_typography',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_weight' => [
+						'default' => '400',
+					],
+					'font_size'   => [
+						'default' => [
+							'size' => '14',
+						],
+					],
+				],
+				'selector' => '{{WRAPPER}} .sina-table table tbody tr',
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Text_Shadow::get_type(),
+			[
+				'name' => 'content_text_shadow',
+				'selector' => '{{WRAPPER}} .sina-table table tbody tr',
+			]
+		);
+
+		$this->start_controls_tabs( 'content_tabs' );
+
+		$this->start_controls_tab(
+			'content_normal',
+			[
+				'label' => __( 'Normal', 'sina-ext' ),
+			]
+		);
+
+		$this->add_control(
+			'content_color',
+			[
+				'label' => __( 'Text Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#1085e4',
+				'selectors' => [
+					'{{WRAPPER}} .sina-table table tbody tr' => 'color: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
+			[
+				'name' => 'content_background',
+				'label' => __( 'Background', 'sina-ext' ),
+				'types' => [ 'classic', 'gradient' ],
+				'selector' => '{{WRAPPER}} .sina-table table tbody tr',
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Border::get_type(),
+			[
+				'name' => 'content_border',
+				'fields_options' => [
+					'border' => [
+						'default' => 'solid',
+					],
+					'color' => [
+						'default' => '#eee',
+					],
+					'width' => [
+						'default' => [
+							'top' => '1',
+							'right' => '1',
+							'bottom' => '1',
+							'left' => '1',
+							'isLinked' => true,
+						]
+					],
+				],
+				'selector' => '{{WRAPPER}} .sina-table table tbody td, {{WRAPPER}} .sina-table table tbody th',
+			]
+		);
+
+		$this->end_controls_tab();
+
+		$this->start_controls_tab(
+			'content_hover',
+			[
+				'label' => __( 'Hover', 'sina-ext' ),
+			]
+		);
+
+		$this->add_control(
+			'content_hover_color',
+			[
+				'label' => __( 'Text Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#111',
+				'selectors' => [
+					'{{WRAPPER}} .sina-table table tbody tr:hover' => 'color: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
+			[
+				'name' => 'content_hover_background',
+				'label' => __( 'Background', 'sina-ext' ),
+				'types' => [ 'classic', 'gradient' ],
+				'fields_options' => [
+					'background' => [ 
+						'default' =>'classic', 
+					],
+					'color' => [
+						'default' => 'rgba(16, 133, 228, 0.2)',
+					],
+				],
+				'selector' => '{{WRAPPER}} .sina-table table tbody tr:hover',
+			]
+		);
+		$this->add_control(
+			'content_hover_border',
+			[
+				'label' => __( 'Border Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .sina-table table tbody tr:hover td, {{WRAPPER}} .sina-table table tbody tr:hover th' => 'border-color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->end_controls_tab();
+
+		$this->end_controls_tabs();
+
+		$this->add_responsive_control(
+			'content_padding',
+			[
+				'label' => __( 'Padding', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '10',
+					'right' => '15',
+					'bottom' => '10',
+					'left' => '15',
+					'isLinked' => false,
+				],
+				'separator' => 'before',
+				'selectors' => [
+					'{{WRAPPER}} .sina-table table tbody td, {{WRAPPER}} .sina-table table tbody th' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'content_alignment',
+			[
+				'label' => __( 'Alignment', 'sina-ext' ),
+				'type' => Controls_Manager::CHOOSE,
+				'options' => [
+					'left' => [
+						'title' => __( 'Left', 'sina-ext' ),
+						'icon' => 'fa fa-align-left',
+					],
+					'center' => [
+						'title' => __( 'Center', 'sina-ext' ),
+						'icon' => 'fa fa-align-center',
+					],
+					'right' => [
+						'title' => __( 'Right', 'sina-ext' ),
+						'icon' => 'fa fa-align-right',
+					],
+					'justify' => [
+						'title' => __( 'justify', 'sina-ext' ),
+						'icon' => 'fa fa-align-justify',
+					],
+				],
+				'default' => 'left',
+				'selectors' => [
+					'{{WRAPPER}} .sina-table table tbody td, {{WRAPPER}} .sina-table table tbody th' => 'text-align: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->end_controls_section();
+		// End Table Header Style
+		// =======================
 	}
 
 
@@ -654,7 +853,6 @@ class Sina_Table_Widget extends Widget_Base {
 		?>
 		<div class="sina-table">
 			<table>
-				<caption>List of users</caption>
 				<?php if ( !empty( $data['header_content'] ) ): ?>
 					<thead>
 						<tr>
