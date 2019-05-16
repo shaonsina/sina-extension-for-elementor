@@ -9,7 +9,6 @@ use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
 use Elementor\Group_Control_Background;
-use Elementor\Group_Control_Box_Shadow;
 use Elementor\Group_Control_Text_Shadow;
 use Elementor\Group_Control_Border;
 use Elementor\Repeater;
@@ -125,7 +124,6 @@ class Sina_Table_Widget extends Widget_Base {
 			[
 				'label' => __( 'Icon', 'sina-ext' ),
 				'type' => Controls_Manager::ICON,
-				'default' => 'fa fa-user',
 			]
 		);
 		$thead->add_control(
@@ -140,23 +138,6 @@ class Sina_Table_Widget extends Widget_Base {
 				'default' => 'left',
 				'condition' => [
 					'header_icon!' => '',
-				],
-			]
-		);
-		$thead->add_responsive_control(
-			'header_icon_space',
-			[
-				'label' => __( 'Icon Spacing', 'sina-ext' ),
-				'type' => Controls_Manager::SLIDER,
-				'default' => [
-					'size' => '5',
-				],
-				'condition' => [
-					'header_icon!' => '',
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-banner-pbtn .sina-icon-right' => 'margin-left: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .sina-banner-pbtn .sina-icon-left' => 'margin-right: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -313,6 +294,32 @@ class Sina_Table_Widget extends Widget_Base {
 				],
 			]
 		);
+		$tbody->add_control(
+			'content_icon',
+			[
+				'label' => __( 'Icon', 'sina-ext' ),
+				'type' => Controls_Manager::ICON,
+				'condition' => [
+					'content_type' => ['cell', 'head'],
+				],
+			]
+		);
+		$tbody->add_control(
+			'content_icon_align',
+			[
+				'label' => __( 'Icon Position', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					'left' => __( 'Before', 'sina-ext' ),
+					'right' => __( 'After', 'sina-ext' ),
+				],
+				'default' => 'left',
+				'condition' => [
+					'content_type' => ['cell', 'head'],
+					'content_icon!' => '',
+				],
+			]
+		);
 
 		$tbody->start_controls_tabs( 'content_style_tabs' );
 
@@ -430,6 +437,33 @@ class Sina_Table_Widget extends Widget_Base {
 			]
 		);
 
+		$this->add_responsive_control(
+			'header_icon_size',
+			[
+				'label' => __( 'Icon Size', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'default' => [
+					'size' => '16',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-table table thead th > i' => 'font-size: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'header_icon_space',
+			[
+				'label' => __( 'Icon Spacing', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'default' => [
+					'size' => '5',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-table table thead th > .sina-icon-right' => 'margin-left: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .sina-table table thead th > .sina-icon-left' => 'margin-right: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
@@ -632,6 +666,33 @@ class Sina_Table_Widget extends Widget_Base {
 			]
 		);
 
+		$this->add_responsive_control(
+			'content_icon_size',
+			[
+				'label' => __( 'Icon Size', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'default' => [
+					'size' => '14',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-table table tbody td > i, {{WRAPPER}} .sina-table table tbody th > i' => 'font-size: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'content_icon_space',
+			[
+				'label' => __( 'Icon Spacing', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'default' => [
+					'size' => '5',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-table table tbody td > .sina-icon-right, {{WRAPPER}} .sina-table table tbody th > .sina-icon-right' => 'margin-left: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .sina-table table tbody td > .sina-icon-left, {{WRAPPER}} .sina-table table tbody th > .sina-icon-left' => 'margin-right: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
@@ -837,6 +898,8 @@ class Sina_Table_Widget extends Widget_Base {
 					'row_span' => $content['row_span'],
 					'col_span' => $content['col_span'],
 					'cell_content' => $content['cell_content'],
+					'icon' => $content['content_icon'],
+					'icon_align' => $content['content_icon_align'],
 				]);
 			} elseif ( 'cell' == $content['content_type'] && isset( $rows[ $tid ] ) ) {
 				array_push($rows[ $tid ], [
@@ -845,11 +908,11 @@ class Sina_Table_Widget extends Widget_Base {
 					'row_span' => $content['row_span'],
 					'col_span' => $content['col_span'],
 					'cell_content' => $content['cell_content'],
+					'icon' => $content['content_icon'],
+					'icon_align' => $content['content_icon_align'],
 				]);
 			}
 		}
-		// fw_print($rows);
-		// fw_print($data);
 		?>
 		<div class="sina-table">
 			<table>
@@ -859,7 +922,13 @@ class Sina_Table_Widget extends Widget_Base {
 							<?php foreach ($data['header_content'] as $content): ?>
 								<th colspan="<?php echo esc_attr( $content['header_col_span'] ); ?>"
 									class="elementor-repeater-item-<?php echo esc_attr( $content['_id'] ); ?>">
-									<?php echo esc_html( $content['header_text'] ); ?>
+									<?php if ( $content['header_icon'] && $content['header_icon_align'] == 'left' ): ?>
+										<i class="<?php echo esc_attr($content['header_icon']); ?> sina-icon-left"></i>
+									<?php endif; ?>
+									<?php printf( '%s', $content['header_text'] ); ?>
+									<?php if ( $content['header_icon'] && $content['header_icon_align'] == 'right' ): ?>
+										<i class="<?php echo esc_attr($content['header_icon']); ?> sina-icon-right"></i>
+									<?php endif; ?>
 								</th>
 							<?php endforeach; ?>
 						</tr>
@@ -875,8 +944,13 @@ class Sina_Table_Widget extends Widget_Base {
 								colspan="<?php echo esc_attr( $content['col_span'] ); ?>"
 								class="elementor-repeater-item-<?php echo esc_attr( $content['id'] ); ?>" >
 
-								<?php printf( '<div class="sina-table-data">%s</div>', $content['cell_content'] ); ?>
-
+								<?php if ( $content['icon'] && $content['icon_align'] == 'left' ): ?>
+									<i class="<?php echo esc_attr($content['icon']); ?> sina-icon-left"></i>
+								<?php endif; ?>
+								<?php printf( '%s', $content['cell_content'] ); ?>
+								<?php if ( $content['icon'] && $content['icon_align'] == 'right' ): ?>
+									<i class="<?php echo esc_attr($content['icon']); ?> sina-icon-right"></i>
+								<?php endif; ?>
 								</<?php echo esc_html( $content['type'] ); ?>>
 							<?php endforeach; ?>
 						</tr>

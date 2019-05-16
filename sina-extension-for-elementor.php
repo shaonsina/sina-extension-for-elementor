@@ -3,7 +3,7 @@
  * Plugin Name: Sina Extension for Elementor
  * Plugin URI: https://github.com/shaonsina/sina-extension-for-elementor.git
  * Description: A collection of high-quality widgets for Elementor page builder.
- * Version: 2.0.0
+ * Version: 2.1.0
  * Author: shaonsina
  * Author URI: https://github.com/shaonsina
  * Text Domain: sina-ext
@@ -19,8 +19,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 
-define('SINA_EXT_VERSION', '2.0.0');
-define('SINA_EXT_PREVIOUS_VERSION', '1.2.4' );
+define('SINA_EXT_VERSION', '2.1.0');
+define('SINA_EXT_PREVIOUS_VERSION', '2.0.0' );
 define('SINA_EXT_FILE', __FILE__ );
 define('SINA_EXT_SLUG', basename( SINA_EXT_FILE, '.php' ));
 define('SINA_EXT_DIR', __DIR__);
@@ -59,11 +59,9 @@ define('SINA_WIDGETS', [
 		'content-slider'		=> 1,
 		'countdown' 			=> 1,
 		'mailchimp-subscribe' 	=> 1,
-		'modal-box'				=> 1,
 		'news-ticker' 			=> 1,
 		'particle-layer' 		=> 1,
 		'portfolio' 			=> 1,
-		'posts-carousel'		=> 1,
 		'posts-tab' 			=> 1,
 		'product-zoomer' 		=> 1,
 		'review-carousel' 		=> 1,
@@ -330,7 +328,7 @@ final class Sina_Extension {
 		wp_enqueue_style( 'owl-carousel', SINA_EXT_URL .'assets/css/owl.carousel.min.css', [], '2.3.4' );
 		wp_enqueue_style( 'magnific-popup', SINA_EXT_URL .'assets/css/magnific-popup.css', [], '1.1.0' );
 		wp_enqueue_style( 'xzoom', SINA_EXT_URL .'assets/css/xzoom.min.css', [], '1.0.14' );
-		wp_enqueue_style( 'sina-widgets', SINA_EXT_URL .'assets/css/sina-widgets.css', [], SINA_EXT_VERSION );
+		wp_enqueue_style( 'sina-widgets', SINA_EXT_URL .'assets/css/sina-widgets.min.css', [], SINA_EXT_VERSION );
 	}
 
 	/**

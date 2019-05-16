@@ -8,6 +8,7 @@
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Border;
+use Elementor\Group_Control_Background;
 use Elementor\Group_Control_Box_Shadow;
 use Elementor\Group_Control_Css_Filter;
 use Elementor\Frontend;
@@ -117,12 +118,23 @@ class Sina_Transform_Widget extends Widget_Base {
 			]
 		);
 		$this->add_control(
+			'empty_space',
+			[
+				'label' => __( 'Space', 'sina-ext' ),
+				'type' => Controls_Manager::SWITCHER,
+				'condition' => [
+					'save_templates!' => 'yes',
+				],
+			]
+		);
+		$this->add_control(
 			'image',
 			[
 				'label' => __( 'Choose Image', 'sina-ext' ),
 				'type' => Controls_Manager::MEDIA,
 				'condition' => [
 					'save_templates' => '',
+					'empty_space!' => 'yes',
 				],
 				'default' => [
 					'url' => SINA_EXT_URL .'assets/img/choose-img.jpg',
@@ -145,6 +157,34 @@ class Sina_Transform_Widget extends Widget_Base {
 			]
 		);
 
+		$this->add_responsive_control(
+			'height',
+			[
+				'label' => __( 'Height', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', 'em' ],
+				'range' => [
+					'px' => [
+						'min' => 0,
+						'max' => 2000,
+					],
+					'em' => [
+						'min' => 0,
+						'max' => 100,
+					],
+				],
+				'default' => [
+					'size' => '100',
+					'unit' => 'px',
+				],
+				'condition' => [
+					'empty_space' => 'yes',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-transform-content' => 'height: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
 		$this->add_control(
 			'transform_effects',
 			[
@@ -304,9 +344,20 @@ class Sina_Transform_Widget extends Widget_Base {
 			[
 				'name' => 'transform_filters',
 				'selector' => '{{WRAPPER}} .sina-transform-content',
+				'condition' => [
+					'empty_space!' => 'yes',
+				]
 			]
 		);
-
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
+			[
+				'name' => 'transform_bg',
+				'label' => __( 'Background', 'sina-ext' ),
+				'types' => [ 'classic', 'gradient' ],
+				'selector' => '{{WRAPPER}} .sina-transform-content',
+			]
+		);
 		$this->add_group_control(
 			Group_Control_Border::get_type(),
 			[
@@ -451,6 +502,18 @@ class Sina_Transform_Widget extends Widget_Base {
 			[
 				'name' => 'transform_filters_hover',
 				'selector' => '{{WRAPPER}} .sina-transform:hover .sina-transform-content',
+				'condition' => [
+					'empty_space!' => 'yes',
+				]
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
+			[
+				'name' => 'transform_hover_bg',
+				'label' => __( 'Background', 'sina-ext' ),
+				'types' => [ 'classic', 'gradient' ],
+				'selector' => '{{WRAPPER}} {{WRAPPER}} .sina-transform:hover .sina-transform-content',
 			]
 		);
 		$this->add_group_control(

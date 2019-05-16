@@ -1,4 +1,4 @@
-/* Sina Extension for Elementor v2.0.0 */
+/* Sina Extension for Elementor v2.1.0 */
 
 (function ($) {
 

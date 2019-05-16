@@ -1,4 +1,4 @@
-/* Sina Extension for Elementor v2.0.0 */
+/* Sina Extension for Elementor v2.1.0 */
 
 /*--------------------------------- General -------------------------------------- */
 .sina-overlay{
@@ -792,6 +792,9 @@ img.mfp-img{
 }
 
 /*--------------------------------- Table -------------------------------------- */
+.sina-table{
+	overflow-x: auto;
+}
 .sina-table table{
 	width: 100%;
 }

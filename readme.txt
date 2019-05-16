@@ -4,7 +4,7 @@ Tags: addon, elementor, elementor addon, elementor extension, extension, page bu
 Requires at least: 4.0
 Tested up to: 5.1
 Requires PHP: 5.6
-Stable tag: 2.0.0
+Stable tag: 2.1.0
 License: GPLv3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -13,7 +13,7 @@ A collection of high-quality widgets for Elementor page builder.
 
 == Description ==
 
-This is an extension for Elementor (https://wordpress.org/plugins/elementor/) page builder. It will extend the Elementor and increase web page building experience. It has 28 useful & high-quality widgets. Which you may use for easy & fast make the page & display your content far better way.
+This is an extension for Elementor (https://wordpress.org/plugins/elementor/) page builder. It will extend the Elementor and increase web page building experience. It has 30 useful & high-quality widgets. Which you may use for easy & fast make the page & display your content far better way.
 
 
 Basic use of Blogpost
@@ -26,36 +26,38 @@ Basic use of Banner Slider
 https://youtu.be/9HB3UF2dO70
 
 
-== 28 FREE WIDGETS
+== 30 FREE WIDGETS
 
-1. Accordion: Use accordion for display FAQ or custom content which you want
-2. Banner Slider: Add an animated text or image slider into your web page
-3. Blogpost: Show your blog posts with masonry grid
-4. Brand Carousel: Display clients logo in a carousel
-5. Contact Form: Use contact form with lots of style & layout
-6. Content box: Works the same as the flip box, But it's more powerful because it can be used in any template
+1. Accordion: Use accordion for display FAQ or custom content which you want.
+2. Banner Slider: Add an animated text or image slider into your web page.
+3. Blogpost: Show your blog posts with masonry grid.
+4. Brand Carousel: Display clients logo in a carousel.
+5. Contact Form: Use contact form with lots of style & layout.
+6. Content box: Works the same as the flip box, But it's more powerful because it can be used in any template.
 7. Content Slider: You can slide any content with that. Also can sliding any template. Enjoy!
-8. Countdown: Add countdown timer into your web page
-9. Counter: Show number with animate counting
-10. Fancytext: Animated text with 20+ animation effects
-11. Flipbox: Use animated Flip Box to highlight any content on your web page
+8. Countdown: Add countdown timer into your web page.
+9. Counter: Show number with animate counting.
+10. Fancytext: Animated text with 20+ animation effects.
+11. Flipbox: Use animated Flip Box to highlight any content on your web page.
 12. Google Map: Add Google map with API key into the web page.
-13. MailChimp: Add MailChimp subscribe form for collect subscribers data
-14. News Ticker: Use it for scrolling post or news title
-15. Particle Layer: Use particle layer with lots of style, layout & more
-16. Piechart: Works the same as the Counter, but with a circle
-17. Portfolio: Easily display your works
-18. Posts Tab: Show your latest posts with a tab
-19. Pricing: Add Pricing for display your services rate
-20. Product Zoomer: Add multiple images of product for zoom in
-21. Progressbar: Display progress bars with different styles
-22. Review Carousel: Show what others said about your brand
-23. Team: Add your team members just a few clicks
-24. Title: Use title, subtitle & description anywhere into your web page.
-25. Search Form: Display search form for searching the users
-26. User Counter: Display how many users registered
-27. Video: Show a video in a popup
-28. Visit Counter: Display how many users visit
+13. MailChimp: Add MailChimp subscribe form for collect subscribers data.
+14. News Ticker: Use it for scrolling post or news title.
+15. Particle Layer: Use particle layer with lots of style, layout & more.
+16. Piechart: Works the same as the Counter, but with a circle.
+17. Portfolio: Easily display your works.
+18. Posts Tab: Show your latest posts with a tab.
+19. Pricing: Add Pricing for display your services rate.
+20. Product Zoomer: Add multiple images of product for zoom in.
+21. Progressbar: Display progress bars with different styles.
+22. Review Carousel: Show what others said about your brand.
+23. Table: Use table for showing your expected data.
+24. Team: Add your team members just a few clicks.
+25. Title: Use title, subtitle & description anywhere into your web page.
+26. Transform: Display content by transforming in the different dimensions.
+27. Search Form: Display search form for searching the users.
+28. User Counter: Display how many users registered.
+29. Video: Show a video in a popup.
+30. Visit Counter: Display how many users visit.
 
 Cool things are coming soon...
 
@@ -83,6 +85,14 @@ Yes. It's totally free.
 
 
 == Changelog ==
+
+= 2.1.0 - 16-05-2019 =
+- New: Table
+- New: Transform
+- Added: Some control to various widgets
+- Fix: Some minor issue
+- Improved
+**NOTE: Progressbar layout has been changed. So, please review your progressbar after update.**
 
 = 2.0.0 - 21-04-2019 =
 - New: Content Slider
