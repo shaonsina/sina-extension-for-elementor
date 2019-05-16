@@ -2,7 +2,7 @@
 Contributors: shaonsina
 Tags: addon, elementor, elementor addon, elementor extension, extension, page builder, builder, elementor builder, elementor contact form, elementor widget, best elementor addon, best elementor extension
 Requires at least: 4.0
-Tested up to: 5.1
+Tested up to: 5.2
 Requires PHP: 5.6
 Stable tag: 2.1.0
 License: GPLv3
@@ -92,7 +92,7 @@ Yes. It's totally free.
 - Added: Some control to various widgets
 - Fix: Some minor issue
 - Improved
-**NOTE: Progressbar layout has been changed. So, please review your progressbar after update.**
+**NOTE: Some widgets layout has been changed. So, please review your site after update.**
 
 = 2.0.0 - 21-04-2019 =
 - New: Content Slider
