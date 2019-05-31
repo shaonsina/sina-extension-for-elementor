@@ -1,4 +1,4 @@
-/* Sina Extension for Elementor v2.1.0 */
+/* Sina Extension for Elementor v2.1.1 */
 
 /*--------------------------------- General -------------------------------------- */
 .sina-overlay{
@@ -52,6 +52,17 @@
 .sina-table table td,
 .sina-table table tr{
 	transition: all 0.1s ease-in-out;
+}
+.sina-pricing-btn .sina-order-btn,
+.sina-banner-btns .sina-banner-pbtn,
+.sina-banner-btns .sina-banner-sbtn{
+	display: inline-block;
+}
+.sina-review-carousel,
+.sina-brand-carousel,
+.sina-content-slider,
+.sina-banner-slider{
+	direction: ltr;
 }
 .sina-transform-overflow,
 .sina-accordion-item,

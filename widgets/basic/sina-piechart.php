@@ -127,8 +127,7 @@ class Sina_Piechart_Widget extends Widget_Base {
 			[
 				'label' => __( 'Value', 'sina-ext' ),
 				'type' => Controls_Manager::NUMBER,
-				'min' => 5,
-				'step' => 1,
+				'min' => 0,
 				'default' => 75,
 			]
 		);
@@ -137,8 +136,7 @@ class Sina_Piechart_Widget extends Widget_Base {
 			[
 				'label' => __( 'Max Value', 'sina-ext' ),
 				'type' => Controls_Manager::NUMBER,
-				'min' => 5,
-				'step' => 1,
+				'min' => 1,
 				'default' => 100,
 			]
 		);
