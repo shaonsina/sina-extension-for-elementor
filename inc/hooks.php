@@ -61,7 +61,7 @@ function sina_ajax_contact(){
 			}
 
 			if ( '' == $err ) {
-				wp_mail( $email, $subject, $message, "From: {$admin_email}\r\n" );
+				wp_mail( $admin_email, $subject, $message, "From: {$email}\r\n" );
 			}
 		}
 		echo esc_html( $err );

@@ -4,7 +4,7 @@ Tags: addon, elementor, elementor addon, elementor extension, extension, page bu
 Requires at least: 4.0
 Tested up to: 5.2
 Requires PHP: 5.6
-Stable tag: 2.1.1
+Stable tag: 2.1.2
 License: GPLv3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -85,6 +85,10 @@ Yes. It's totally free.
 
 
 == Changelog ==
+
+= 2.1.2 - 8-06-2019 =
+- Fix: Contact form mail
+- Fix: Google map API key
 
 = 2.1.1 - 31-05-2019 =
 - Fix: Slider issue for RTL

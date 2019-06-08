@@ -22,7 +22,7 @@ add_action( 'admin_menu', 'sina_add_submenu', 550 );
 
 function sina_settings_group() {
 	register_setting( 'sina_settings_group', 'sina_map_apikey' );
-	register_setting( 'sina_widgets_group', 'sina_widgets' );
+	register_setting( 'sina_settings_group', 'sina_widgets' );
 
 	add_settings_section( 'sina_api_section', '', '', 'sina_ext_settings' );
 	add_settings_field( 'sina_google_map_key', __('Google Map API Key', 'sina-ext'), 'sina_map_api_key', 'sina_ext_settings', 'sina_api_section' );
@@ -46,10 +46,8 @@ function sina_page_content() {
 	<form action="options.php" method="POST">
 		<?php settings_errors(); ?>
 		<h2><?php echo __( 'API Settings', 'sina-ext' ); ?></h2>
-		<?php
-			do_settings_sections( 'sina_ext_settings' );
-			settings_fields( 'sina_settings_group' );
-		?>
+		<?php do_settings_sections( 'sina_ext_settings' ); ?>
+
 		<div class="sina-widget-options">
 			<h2><?php echo __( 'Widget Settings', 'sina-ext' ); ?></h2>
 			<p><?php echo __( 'You can disable the widgets if you would like to not using on your site.', 'sina-ext' ); ?></p>
@@ -60,7 +58,7 @@ function sina_page_content() {
 					do_settings_sections( 'sina_widgets_'.$cat );
 					echo '</div>';
 				}
-				settings_fields( 'sina_widgets_group' );
+				settings_fields( 'sina_settings_group' );
 				submit_button();
 			?>
 		</div>
