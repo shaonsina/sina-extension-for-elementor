@@ -456,6 +456,9 @@ class Sina_Pricing_Widget extends Widget_Base {
 			[
 				'label' => __( 'Title', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
+				'condition' => [
+					'title!' => '',
+				],
 			]
 		);
 
@@ -581,6 +584,9 @@ class Sina_Pricing_Widget extends Widget_Base {
 			[
 				'label' => __( 'Price', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
+				'condition' => [
+					'price!' => '',
+				],
 			]
 		);
 
@@ -745,6 +751,9 @@ class Sina_Pricing_Widget extends Widget_Base {
 			[
 				'label' => __( 'Button', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
+				'condition' => [
+					'btn_label!' => '',
+				],
 			]
 		);
 
@@ -1032,6 +1041,30 @@ class Sina_Pricing_Widget extends Widget_Base {
 			]
 		);
 
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name' => 'ribbon_typography',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_size'   => [
+						'default' => [
+							'size' => '16',
+						],
+					],
+				],
+				'selector' => '{{WRAPPER}} .sina-ribbon-right, {{WRAPPER}} .sina-ribbon-left',
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Text_Shadow::get_type(),
+			[
+				'name' => 'ribbon_shadow',
+				'selector' => '{{WRAPPER}} .sina-ribbon-right, {{WRAPPER}} .sina-ribbon-left',
+			]
+		);
 		$this->add_control(
 			'ribbon_color',
 			[
@@ -1043,28 +1076,20 @@ class Sina_Pricing_Widget extends Widget_Base {
 				],
 			]
 		);
-		$this->add_control(
-			'ribbon_bg',
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
 			[
+				'name' => 'ribbon_bg',
 				'label' => __( 'Background', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#61ce70',
-				'selectors' => [
-					'{{WRAPPER}} .sina-ribbon-right, {{WRAPPER}} .sina-ribbon-left' => 'background: {{VALUE}};',
+				'types' => [ 'classic', 'gradient' ],
+				'fields_options' => [
+					'background' => [ 
+						'default' =>'classic', 
+					],
+					'color' => [
+						'default' => '#61ce70',
+					],
 				],
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Typography::get_type(),
-			[
-				'name' => 'ribbon_typography',
-				'selector' => '{{WRAPPER}} .sina-ribbon-right, {{WRAPPER}} .sina-ribbon-left',
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Text_Shadow::get_type(),
-			[
-				'name' => 'ribbon_shadow',
 				'selector' => '{{WRAPPER}} .sina-ribbon-right, {{WRAPPER}} .sina-ribbon-left',
 			]
 		);

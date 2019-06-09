@@ -901,18 +901,29 @@ class Sina_Blogpost_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'pagi_gap',
 			[
-				'label' => __( 'Margin', 'sina-ext' ),
-				'type' => Controls_Manager::DIMENSIONS,
+				'label' => __( 'Spacing', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', 'em' ],
 				'default' => [
-					'top' => '40',
-					'right' => '0',
-					'bottom' => '0',
-					'left' => '10',
-					'isLinked' => false,
+					'size' => '40',
 				],
 				'separator' => 'before',
 				'selectors' => [
-					'{{WRAPPER}} .sina-bp-pagination' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .sina-bp-pagination' => 'margin-top: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'pagi_width',
+			[
+				'label' => __( 'Min Width', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', 'em' ],
+				'default' => [
+					'size' => '38',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-bp-pagination .page-numbers' => 'min-width: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -934,9 +945,9 @@ class Sina_Blogpost_Widget extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
-					'top' => '6',
+					'top' => '8',
 					'right' => '12',
-					'bottom' => '6',
+					'bottom' => '8',
 					'left' => '12',
 					'isLinked' => false,
 				],
@@ -948,7 +959,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'pagi_link_margin',
 			[
-				'label' => __( 'Spacing', 'sina-ext' ),
+				'label' => __( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [

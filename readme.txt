@@ -86,6 +86,11 @@ Yes. It's totally free.
 
 == Changelog ==
 
+- Fixed: Blogpost pagination Spacing
+- Added: Blogpost pagination button width
+- Improved
+
+
 = 2.1.2 - 8-06-2019 =
 - Fix: Contact form mail
 - Fix: Google map API key

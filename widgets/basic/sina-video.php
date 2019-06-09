@@ -9,6 +9,7 @@
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
+use Elementor\Group_Control_Background;
 use Elementor\Group_Control_Box_Shadow;
 use Elementor\Group_Control_Text_Shadow;
 use Elementor\Group_Control_Border;
@@ -247,15 +248,21 @@ class Sina_Video_Widget extends Widget_Base {
 			]
 		);
 
-		$this->add_control(
-			'background',
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
 			[
+				'name' => 'background',
 				'label' => __( 'Background', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#eee',
-				'selectors' => [
-					'{{WRAPPER}} .sina-video-play' => 'background: {{VALUE}};',
+				'types' => [ 'classic', 'gradient' ],
+				'fields_options' => [
+					'background' => [ 
+						'default' =>'classic', 
+					],
+					'color' => [
+						'default' => '#eee',
+					],
 				],
+				'selector' => '{{WRAPPER}} .sina-video-play',
 			]
 		);
 		$this->add_control(
@@ -293,15 +300,21 @@ class Sina_Video_Widget extends Widget_Base {
 			]
 		);
 
-		$this->add_control(
-			'hover_background',
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
 			[
+				'name' => 'hover_background',
 				'label' => __( 'Background', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#1085e4',
-				'selectors' => [
-					'{{WRAPPER}} .sina-video-play:hover' => 'background: {{VALUE}};',
+				'types' => [ 'classic', 'gradient' ],
+				'fields_options' => [
+					'background' => [ 
+						'default' =>'classic', 
+					],
+					'color' => [
+						'default' => '#1085e4',
+					],
 				],
+				'selector' => '{{WRAPPER}} .sina-video-play:hover',
 			]
 		);
 		$this->add_control(
