@@ -76,7 +76,6 @@ class Sina_Product_Zoomer_Widget extends Widget_Base {
 	 */
 	public function get_style_depends() {
 		return [
-			'xzoom',
 			'sina-widgets',
 		];
 	}

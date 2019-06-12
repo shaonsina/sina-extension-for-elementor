@@ -86,24 +86,26 @@ Yes. It's totally free.
 
 == Changelog ==
 
-- Fixed: Blogpost pagination Spacing
+
+= 2.2.0 - 8-06-2019 =
+
 - Added: Blogpost pagination button width
+- Fixed: Blogpost pagination Spacing
 - Improved
 
-
 = 2.1.2 - 8-06-2019 =
-- Fix: Contact form mail
-- Fix: Google map API key
+- Fixed: Contact form mail
+- Fixed: Google map API key
 
 = 2.1.1 - 31-05-2019 =
-- Fix: Slider issue for RTL
-- Fix: Piechart value
+- Fixed: Slider issue for RTL
+- Fixed: Piechart value
 
 = 2.1.0 - 16-05-2019 =
 - New: Table
 - New: Transform
 - Added: Some control to various widgets
-- Fix: Some minor issue
+- Fixed: Some minor issue
 - Improved
 **NOTE: Some widgets layout has been changed. So, please review your site after update.**
 
@@ -114,8 +116,8 @@ Yes. It's totally free.
 - Added: Rollback to previous version
 - Added: Default value for various widgets
 - Added: Some control to various widgets
+- Fixed: Some minor issue fixed
 - Optimize: Some script Optimized
-- Fix: Some minor issue fixed
 - Improved
 **NOTE: It's a major release of this plugin. So, please review your site after update.**
 
@@ -154,7 +156,7 @@ Yes. It's totally free.
 - Some minor issue fixed
 
 = 1.0.2 - 30-11-2018 =
-- Icon box has been changed to content box
+- Changed: Icon box has been changed to content box
 - Added: templates option to content box
 - Added: templates option to accordion
 - Improved

@@ -123,6 +123,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 				'label' => __( 'Number of Columns', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
+					'sina-bp-item-1' => __( '1', 'sina-ext' ),
 					'sina-bp-item-2' => __( '2', 'sina-ext' ),
 					'sina-bp-item-3' => __( '3', 'sina-ext' ),
 					'sina-bp-item-4' => __( '4', 'sina-ext' ),
@@ -393,7 +394,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 						'default' =>'classic', 
 					],
 					'color' => [
-						'default' => 'rgba(0, 0, 0, 0.4)',
+						'default' => 'rgba(0,0,0,0.4)',
 					],
 				],
 				'selector' => '{{WRAPPER}} .sina-bg-thumb .sina-overlay',
@@ -587,6 +588,38 @@ class Sina_Blogpost_Widget extends Widget_Base {
 			]
 		);
 
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name' => 'meta_typography',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_weight' => [
+						'default' => '600',
+					],
+					'font_size'   => [
+						'default' => [
+							'size' => '24',
+						],
+					],
+					'line_height'   => [
+						'default' => [
+							'size' => '32',
+						],
+					],
+				],
+				'selector' => '{{WRAPPER}} .sina-bp-meta, {{WRAPPER}} .sina-bp-meta a',
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Text_Shadow::get_type(),
+			[
+				'name' => 'meta_shadow',
+				'selector' => '{{WRAPPER}} .sina-bp-meta, {{WRAPPER}} .sina-bp-meta a',
+			]
+		);
 		$this->add_control(
 			'meta_color',
 			[

@@ -312,6 +312,54 @@
 		});
 	}
 
+	function sinaPostsCarousel($scope, $) {
+		$scope.find('.sina-posts-carousel').each(function () {
+
+			var $this = $(this),
+				itemLg = $this.data('item-lg'),
+				itemLg = itemLg ? itemLg : 2,
+				itemMd = $this.data('item-md'),
+				itemMd = itemMd ? itemMd : 2,
+				itemSm = $this.data('item-sm'),
+				itemSm = itemSm ? itemSm : 1,
+				play = $this.data('autoplay') ? true : false,
+				pause = $this.data('pause') ? true : false,
+				nav = $this.data('nav') ? true : false,
+				dots = $this.data('dots') ? true : false,
+				mouse = $this.data('mouse-drag') ? true : false,
+				touch = $this.data('touch-drag') ? true : false,
+				loop = $this.data('loop') ? true : false,
+				speed = $this.data('speed'),
+				speed = speed ? speed : 500,
+				delay = $this.data('delay');
+
+			// Initialize carousel
+			$this.owlCarousel({
+				autoplay: play,
+				autoplayHoverPause: pause,
+				nav: nav,
+				dots: dots,
+				mouseDrag: mouse,
+				touchDrag: touch,
+				loop: loop,
+				smartSpeed: speed,
+				autoplayTimeout: delay,
+				responsive: {
+					0: {
+						items: itemSm
+					},
+					600: {
+						items: itemMd
+					},
+					900: {
+						items: itemLg
+					},
+				}
+			});
+
+		});
+	}
+
 	function sinaCountdown($scope, $) {
 		$scope.find('.sina-countdown').each(function (item , index) {
 			var $this = $(this),
@@ -776,6 +824,7 @@
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_brand_carousel.default', sinaBrandCarousel);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_contact_form.default', sinaContactForm);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_content_slider.default', sinaContentSlider);
+		elementorFrontend.hooks.addAction('frontend/element_ready/sina_posts_carousel.default', sinaPostsCarousel);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_countdown.default', sinaCountdown);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_counter.default', sinaCounter);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_fancytext.default', sinaFancytext);

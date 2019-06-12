@@ -142,7 +142,7 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 						'type' => Controls_Manager::SELECT,
 						'default' => 'fadeInLeft',
 						'options' => [
-							'none' => __( 'none', 'sina-ext' ),
+							'none' => __( 'None', 'sina-ext' ),
 							'fadeIn' => __( 'Fade', 'sina-ext' ),
 							'fadeInUp' => __( 'Fade Up', 'sina-ext' ),
 							'fadeInDown' => __( 'Fade Down', 'sina-ext' ),
@@ -182,7 +182,7 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 						'type' => Controls_Manager::SELECT,
 						'default' => 'fadeInRight',
 						'options' => [
-							'none' => __( 'none', 'sina-ext' ),
+							'none' => __( 'None', 'sina-ext' ),
 							'fadeIn' => __( 'Fade', 'sina-ext' ),
 							'fadeInUp' => __( 'Fade Up', 'sina-ext' ),
 							'fadeInDown' => __( 'Fade Down', 'sina-ext' ),
@@ -222,7 +222,7 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 						'type' => Controls_Manager::SELECT,
 						'default' => 'fadeInUp',
 						'options' => [
-							'none' => __( 'none', 'sina-ext' ),
+							'none' => __( 'None', 'sina-ext' ),
 							'fadeIn' => __( 'Fade', 'sina-ext' ),
 							'fadeInUp' => __( 'Fade Up', 'sina-ext' ),
 							'fadeInDown' => __( 'Fade Down', 'sina-ext' ),
@@ -280,7 +280,7 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 						'type' => Controls_Manager::SELECT,
 						'default' => 'fadeInUp',
 						'options' => [
-							'none' => __( 'none', 'sina-ext' ),
+							'none' => __( 'None', 'sina-ext' ),
 							'fadeIn' => __( 'Fade', 'sina-ext' ),
 							'fadeInUp' => __( 'Fade Up', 'sina-ext' ),
 							'fadeInDown' => __( 'Fade Down', 'sina-ext' ),
@@ -1410,7 +1410,7 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 			<?php foreach ($data['slides'] as $index => $slide) :
 					$invisible = '';
 					if ( $data['part_anim'] ) {
-						$invisible = 'sina-sinvisible';
+						$invisible = 'sina-anim-invisible';
 					}
 
 					$title_key = $this->get_repeater_setting_key( 'title', 'slides', $index );
