@@ -122,6 +122,7 @@ class Sina_Progressbar_Widget extends Widget_Base {
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __('Enter Title', 'sina-ext'),
+				'description' => __( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'Progressbars title',
 			]
 		);
@@ -418,9 +419,10 @@ class Sina_Progressbar_Widget extends Widget_Base {
 		?>
 		<div class="sina-progressbars">
 			<div class="sina-bar">
-				<div class="sina-bar-title">
-					<?php echo esc_html( $data['title'] ); ?>
-				</div>
+				<?php if ( $data['title'] ): ?>
+					<?php printf( '<h3 class="sina-bar-title">%1$s</h3>', $data['title'] ); ?>
+				<?php endif; ?>
+
 				<div class="sina-bar-bg">
 					<div class="sina-bar-content sina-flex" data-percentage="<?php echo esc_attr( $data['percentage'] ); ?>">
 						<span class="sina-bar-percent">

@@ -1340,21 +1340,6 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 
 	protected function render() {
 		$data = $this->get_settings_for_display();
-
-		$this->add_render_attribute( 'title', 'class', 'sina-banner-title animated '. $data['title_anim'] );
-		$this->add_inline_editing_attributes( 'title' );
-
-		$this->add_render_attribute( 'subtitle', 'class', 'sina-banner-subtitle animated '. $data['subtitle_anim'] );
-		$this->add_inline_editing_attributes( 'subtitle' );
-
-		$this->add_render_attribute( 'desc', 'class', 'sina-banner-desc animated '. $data['desc_anim'] );
-		$this->add_inline_editing_attributes( 'desc' );
-
-		$this->add_render_attribute( 'pbtn_text', 'class', 'sina-banner-pbtn-text' );
-		$this->add_inline_editing_attributes( 'pbtn_text' );
-
-		$this->add_render_attribute( 'sbtn_text', 'class', 'sina-banner-sbtn-text' );
-		$this->add_inline_editing_attributes( 'sbtn_text' );
 		?>
 		<div class="sina-particle-layer">
 			<div class="sina-banner-container">
@@ -1365,19 +1350,19 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 					}
 				?>
 				<?php if ( $data['title'] ): ?>
-					<div <?php echo $this->get_render_attribute_string( 'title' ); ?>>
+					<div class="sina-banner-title animated <?php echo esc_attr( $data['title_anim'] ); ?>">
 						<?php echo wp_kses_post( $data['title'] ); ?>
 					</div>
 				<?php endif; ?>
 
 				<?php if ( $data['subtitle'] ): ?>
-					<div <?php echo $this->get_render_attribute_string( 'subtitle' ); ?>>
+					<div class="sina-banner-subtitle animated <?php echo esc_attr( $data['subtitle_anim'] ); ?>">
 						<?php echo wp_kses_post( $data['subtitle'] ); ?>
 					</div>
 				<?php endif; ?>
 
 				<?php if ( $data['desc'] ): ?>
-					<div <?php echo $this->get_render_attribute_string( 'desc' ); ?>>
+					<div class="sina-banner-desc animated <?php echo esc_attr( $data['desc_anim'] ); ?>">
 						<?php echo wp_kses_post( $data['desc'] ); ?>
 					</div>
 				<?php endif; ?>
@@ -1397,7 +1382,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 								<?php if ( $data['pbtn_icon'] && $data['pbtn_icon_align'] == 'left' ): ?>
 									<i class="<?php echo esc_attr($data['pbtn_icon']); ?> sina-icon-left"></i>
 								<?php endif; ?>
-								<span <?php echo $this->get_render_attribute_string( 'pbtn_text' ); ?>>
+								<span>
 									<?php echo esc_html( $data['pbtn_text'] ); ?>
 								</span>
 								<?php if ( $data['pbtn_icon'] && $data['pbtn_icon_align'] == 'right' ): ?>
@@ -1419,7 +1404,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 								<?php if ( $data['sbtn_icon'] && $data['sbtn_icon_align'] == 'left' ): ?>
 									<i class="<?php echo esc_attr($data['sbtn_icon']); ?> sina-icon-left"></i>
 								<?php endif; ?>
-								<span <?php echo $this->get_render_attribute_string( 'sbtn_text' ); ?>>
+								<span>
 									<?php echo esc_html( $data['sbtn_text'] ); ?>
 								</span>
 								<?php if ( $data['sbtn_icon'] && $data['sbtn_icon_align'] == 'right' ): ?>

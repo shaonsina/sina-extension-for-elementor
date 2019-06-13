@@ -132,6 +132,7 @@ class Sina_Video_Widget extends Widget_Base {
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter Title', 'sina-ext' ),
+				'description' => __( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'Watch video',
 			]
 		);
@@ -444,9 +445,6 @@ class Sina_Video_Widget extends Widget_Base {
 
 	protected function render() {
 		$data = $this->get_settings_for_display();
-
-		$this->add_render_attribute( 'title', 'class', 'sina-video-title' );
-		$this->add_inline_editing_attributes( 'title' );
 		?>
 		<div class="sina-video">
 			<?php if ( $data['icon'] ): ?>
@@ -456,9 +454,7 @@ class Sina_Video_Widget extends Widget_Base {
 			<?php endif ?>
 
 			<?php if ( $data['title'] ): ?>
-				<h4 <?php echo $this->get_render_attribute_string( 'title' ); ?>>
-					<?php echo esc_html( $data['title'] ); ?>
-				</h4>
+				<?php printf( '<h3 class="sina-video-title">%1$s</h3>', $data['title'] ); ?>
 			<?php endif ?>
 		</div><!-- .sina-video -->
 		<?php
@@ -466,24 +462,6 @@ class Sina_Video_Widget extends Widget_Base {
 
 
 	protected function _content_template() {
-		?>
-		<#
-		view.addRenderAttribute( 'title', 'class', 'sina-video-title' );
-		view.addInlineEditingAttributes( 'title' );
-		#>
-		<div class="sina-video">
-			<# if ( settings.icon ) { #>
-				<a class="sina-video-play" href="{{{settings.video_link}}}">
-					<i class="{{{settings.icon}}}"></i>
-				</a>
-			<# } #>
 
-			<# if ( settings.title ) { #>
-				<h4 {{{ view.getRenderAttributeString( 'title' ) }}}>
-					{{{settings.title}}}
-				</h4>
-			<# } #>
-		</div>
-		<?php
 	}
 }

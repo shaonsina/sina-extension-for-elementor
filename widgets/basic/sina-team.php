@@ -647,32 +647,24 @@ class Sina_Team_Widget extends Widget_Base {
 	protected function render() {
 		$data = $this->get_settings_for_display();
 		if ( $data['image']['url'] ):
-			$this->add_render_attribute( 'name', 'class', 'sina-team-name' );
-			$this->add_inline_editing_attributes( 'name' );
-
-			$this->add_render_attribute( 'position', 'class', 'sina-team-position' );
-			$this->add_inline_editing_attributes( 'position' );
-
-			$this->add_render_attribute( 'desc', 'class', 'sina-team-desc' );
-			$this->add_inline_editing_attributes( 'desc' );
 			?>
 			<div class="sina-team <?php echo esc_attr( $data['effects'] ); ?>">
 				<img src="<?php echo esc_url( $data['image']['url'] ); ?>" alt="<?php echo esc_attr( $data['name'] ); ?>">
 				<div class="sina-team-overlay sina-overlay">
 					<?php if ( $data['name'] ): ?>
-						<h5 <?php echo $this->get_render_attribute_string( 'name' ); ?>>
+						<h5 class="sina-team-name">
 							<?php echo esc_html( $data['name'] ); ?>
 						</h5>
 					<?php endif; ?>
 
 					<?php if ( $data['position'] ): ?>
-						<h6 <?php echo $this->get_render_attribute_string( 'position' ); ?>>
+						<h6 class="sina-team-position">
 							<?php echo esc_html( $data['position'] ); ?>
 						</h6>
 					<?php endif; ?>
 
 					<?php if ( $data['desc'] ): ?>
-						<div <?php echo $this->get_render_attribute_string( 'desc' ); ?>>
+						<div class="sina-team-desc">
 							<?php echo esc_html( $data['desc'] ); ?>
 						</div>
 					<?php endif; ?>

@@ -645,20 +645,6 @@ class Sina_Search_Form_Widget extends Widget_Base {
 
 
 	protected function _content_template() {
-		?>
-		<div class="sina-search-form">
-			<form class="sina-search-box" action="">
-				<input type="search" class="sina-input-field" placeholder="{{{settings.placeholder}}}">
 
-				<button type="submit" class="sina-button sina-search-btn">
-					{{{settings.btn_text}}}
-
-					<# if ( settings.icon ) { #>
-						<i class="{{{settings.icon}}} sina-btn-icon-right"></i>
-					<# } #>
-				</button>
-			</form>
-		</div>
-		<?php
 	}
 }

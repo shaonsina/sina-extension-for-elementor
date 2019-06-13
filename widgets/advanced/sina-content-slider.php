@@ -820,15 +820,15 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 							echo $frontend->get_builder_content( $slide['template'], true );
 						else :
 					?>
-						<?php if ( '' != $slide['title'] ): ?>
+						<?php if ( $slide['title'] ): ?>
 							<?php printf( '<%1$s class="%2$s">%3$s</%1$s>', $slide['title_tag'], 'sina-cs-title', $slide['title'] ); ?>
 						<?php endif; ?>
 
-						<?php if ( '' != $slide['subtitle'] ): ?>
+						<?php if ( $slide['subtitle'] ): ?>
 							<?php printf( '<%1$s class="%2$s">%3$s</%1$s>', $slide['subtitle_tag'], 'sina-cs-subtitle', $slide['subtitle'] ); ?>
 						<?php endif; ?>
 
-						<?php if ( '' != $slide['desc'] ): ?>
+						<?php if ( $slide['desc'] ): ?>
 							<?php printf( '<div class="sina-cs-desc">%1$s</div>', $slide['desc'] ); ?>
 						<?php endif; ?>
 					<?php endif; ?>

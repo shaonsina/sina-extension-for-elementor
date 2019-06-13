@@ -119,6 +119,7 @@ class Sina_Piechart_Widget extends Widget_Base {
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter title', 'sina-ext' ),
+				'description' => __( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'Web Development',
 			]
 		);
@@ -161,11 +162,16 @@ class Sina_Piechart_Widget extends Widget_Base {
 			'size',
 			[
 				'label' => __( 'Size', 'sina-ext' ),
-				'type' => Controls_Manager::NUMBER,
-				'min' => 50,
-				'max' => 500,
-				'step' => 1,
-				'default' => 250,
+				'type' => Controls_Manager::SLIDER,
+				'range' => [
+					'px' => [
+						'min' => 50,
+						'max' => 500,
+					],
+				],
+				'default' => [
+					'size' => 250,
+				],
 			]
 		);
 		$this->add_control(
@@ -207,10 +213,10 @@ class Sina_Piechart_Widget extends Widget_Base {
 			'bar_width',
 			[
 				'label' => __('Bar Width', 'sina-ext'),
-				'type' => Controls_Manager::NUMBER,
-				'default' => 20,
-				'min' => 5,
-				'step' => 1,
+				'type' => Controls_Manager::SLIDER,
+				'default' => [
+					'size' => 20,
+				],
 			]
 		);
 		$this->add_control(
@@ -237,10 +243,10 @@ class Sina_Piechart_Widget extends Widget_Base {
 			'track_width',
 			[
 				'label' => __('Track Width', 'sina-ext'),
-				'type' => Controls_Manager::NUMBER,
-				'default' => 20,
-				'min' => 5,
-				'step' => 1,
+				'type' => Controls_Manager::SLIDER,
+				'default' => [
+					'size' => 20,
+				],
 			]
 		);
 		$this->add_control(
@@ -379,27 +385,26 @@ class Sina_Piechart_Widget extends Widget_Base {
 	protected function render() {
 		$data = $this->get_settings_for_display();
 		$percent = round( $data['value'] / $data['max_value'] * 100 );
-
-		$this->add_render_attribute( 'title', 'class', 'sina-piechart-title' );
-		$this->add_inline_editing_attributes( 'title' );
 		?>
-		<div class="sina-piechart sina-flex" style="width: <?php echo esc_attr( $data['size'] ); ?>px; height: <?php echo esc_attr( $data['size'] ); ?>px;">
+		<div class="sina-piechart sina-flex" style="width: <?php echo esc_attr( $data['size']['size'] ); ?>px; height: <?php echo esc_attr( $data['size']['size'] ); ?>px;">
 			<div class="sina-piechart-wrap"
 			data-track="<?php echo esc_attr( $data['track_color'] ); ?>"
-			data-track-width="<?php echo esc_attr( $data['track_width'] ); ?>"
+			data-track-width="<?php echo esc_attr( $data['track_width']['size'] ); ?>"
 			data-bar="<?php echo esc_attr( $data['bar_color'] ); ?>"
-			data-line="<?php echo esc_attr( $data['bar_width'] ); ?>"
+			data-line="<?php echo esc_attr( $data['bar_width']['size'] ); ?>"
 			data-cap="<?php echo esc_attr( $data['bar_cap'] ); ?>"
 			data-speed="<?php echo esc_attr( $data['speed'] ); ?>"
 			data-scale="<?php echo esc_attr( $data['scale_color'] ); ?>"
-			data-size="<?php echo esc_attr( $data['size'] ); ?>"
+			data-size="<?php echo esc_attr( $data['size']['size'] ); ?>"
 			data-percent="<?php echo esc_attr( $percent ); ?>">
 			</div>
-			<div class="sina-piechart-content" style="padding: <?php echo esc_attr( $data['bar_width']+10 .'px' ) ?>;">
+			<div class="sina-piechart-content">
 				<span class="sina-piechart-percent">
 					<?php echo esc_html( $data['prefix'].$data['value'].$data['suffix'] ); ?>
 				</span>
-				<div <?php echo $this->get_render_attribute_string( 'title' ); ?>><?php echo esc_html( $data['title'] ); ?></div>
+				<?php if ( $data['title'] ): ?>
+					<?php printf( '<h3 class="sina-piechart-title">%1$s</h3>', $data['title'] ); ?>
+				<?php endif; ?>
 			</div>
 		</div><!-- .sina-piechart -->
 		<?php
@@ -407,19 +412,6 @@ class Sina_Piechart_Widget extends Widget_Base {
 
 
 	protected function _content_template() {
-		?>
-		<#
-		view.addRenderAttribute( 'title', 'class', 'sina-piechart-title' );
-		view.addInlineEditingAttributes( 'title' );
-		#>
-		<div class="sina-piechart sina-flex" style="width: {{{settings.size}}}px; height: {{{settings.size}}}px;">
-			<div class="sina-piechart-wrap" data-track="{{{settings.track_color}}}" data-track-width="{{{settings.track_width}}}" data-bar="{{{settings.bar_color}}}" data-line="{{{settings.bar_width}}}" data-cap="{{{settings.bar_cap}}}" data-speed="{{{settings.speed}}}" data-scale="{{{settings.scale_color}}}" data-size="{{{settings.size}}}" data-percent="{{{Math.round(settings.value / settings.max_value * 100)}}}">
-			</div>
-			<div class="sina-piechart-content" style="padding: {{{settings.bar_width + 10}}}px;">
-				<span class="sina-piechart-percent">{{{settings.prefix + settings.value + settings.suffix}}}</span>
-				<div {{{ view.getRenderAttributeString( 'title' ) }}}>{{{settings.title}}}</div>
-			</div>
-		</div>
-		<?php
+
 	}
 }

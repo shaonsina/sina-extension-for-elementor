@@ -127,6 +127,7 @@ class Sina_User_Counter_Widget extends Widget_Base {
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter prefix text', 'sina-ext' ),
+				'description' => __( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'Already registered',
 			]
 		);
@@ -137,6 +138,7 @@ class Sina_User_Counter_Widget extends Widget_Base {
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter suffix text', 'sina-ext' ),
+				'description' => __( 'You can use HTML.', 'sina-ext' ),
 			]
 		);
 		$this->add_responsive_control(
@@ -298,21 +300,15 @@ class Sina_User_Counter_Widget extends Widget_Base {
 			}
 			$data_roles = implode(',', $data['roles']);
 		}
-
-		$this->add_render_attribute( 'prefix', 'class', 'sina-uc-text' );
-		$this->add_inline_editing_attributes( 'prefix' );
-
-		$this->add_render_attribute( 'suffix', 'class', 'sina-uc-text' );
-		$this->add_inline_editing_attributes( 'suffix' );
 		?>
 		<div class="sina-user-counter" data-roles="<?php echo esc_attr( $data_roles ); ?>">
 			<?php wp_nonce_field( 'sina_user_counter', 'sina_user_counter_nonce' ); ?>
 			<?php if ( $data['prefix'] ): ?>
-				<h3 <?php echo $this->get_render_attribute_string( 'prefix' ); ?>><?php echo esc_html( $data['prefix'] ); ?></h3>
+				<?php printf( '<h3 class="sina-uc-text">%1$s</h3>', $data['prefix'] ); ?>
 			<?php endif; ?>
 			<span class="sina-uc-number"><?php echo esc_html( $count ); ?></span>
 			<?php if ( $data['suffix'] ): ?>
-				<h3 <?php echo $this->get_render_attribute_string( 'suffix' ); ?>><?php echo esc_html( $data['suffix'] ); ?></h3>
+				<?php printf( '<h3 class="sina-uc-text">%1$s</h3>', $data['suffix'] ); ?>
 			<?php endif; ?>
 		</div><!-- .sina-user-counter -->
 		<?php

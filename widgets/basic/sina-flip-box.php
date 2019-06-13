@@ -117,6 +117,7 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter Title', 'sina-ext' ),
+				'description' => __( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'Apps Development',
 			]
 		);
@@ -127,6 +128,7 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 				'label_block' => true,
 				'type' => Controls_Manager::TEXTAREA,
 				'placeholder' => __( 'Enter Description', 'sina-ext' ),
+				'description' => __( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'This is flip box description.',
 			]
 		);
@@ -162,6 +164,7 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter Title', 'sina-ext' ),
+				'description' => __( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'Web Development',
 			]
 		);
@@ -172,6 +175,7 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 				'label_block' => true,
 				'type' => Controls_Manager::TEXTAREA,
 				'placeholder' => __( 'Enter Description', 'sina-ext' ),
+				'description' => __( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'This is flip box description.',
 			]
 		);
@@ -618,7 +622,7 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 					'isLinked' => false,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-flipbox-front .sina-flipbox-title' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .sina-flipbox-front .sina-flipbox-title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -801,13 +805,11 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 
 				<div class="sina-flipbox-content">
 					<?php if ( $data['front_title'] ): ?>
-						<h3 class="sina-flipbox-title">
-						<?php echo esc_html( $data['front_title'] ); ?>
-						</h3>
+						<?php printf( '<h3 class="sina-flipbox-title">%1$s</h3>', $data['front_title'] ); ?>
 					<?php endif; ?>
 
 					<?php if ( $data['front_desc'] ): ?>
-						<div class="sina-flipbox-desc"><?php echo esc_html( $data['front_desc'] ); ?></div>
+						<?php printf( '<div class="sina-flipbox-desc">%1$s</div>', $data['front_desc'] ); ?>
 					<?php endif; ?>
 				</div>
 			</div>
@@ -820,13 +822,11 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 
 				<div class="sina-flipbox-content">
 					<?php if ( $data['back_title'] ): ?>
-						<h3 class="sina-flipbox-title">
-						<?php echo esc_html( $data['back_title'] ); ?>
-						</h3>
+						<?php printf( '<h3 class="sina-flipbox-title">%1$s</h3>', $data['back_title'] ); ?>
 					<?php endif; ?>
 
 					<?php if ( $data['back_desc'] ): ?>
-						<div class="sina-flipbox-desc"><?php echo esc_html( $data['back_desc'] ); ?></div>
+						<?php printf( '<div class="sina-flipbox-desc">%1$s</div>', $data['back_desc'] ); ?>
 					<?php endif; ?>
 				</div>
 			</div>
@@ -836,65 +836,6 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 
 
 	protected function _content_template() {
-		?>
-		<#
-		view.addRenderAttribute( 'front_title' );
-		view.addInlineEditingAttributes( 'front_title' );
 
-		view.addRenderAttribute( 'front_desc' );
-		view.addInlineEditingAttributes( 'front_desc' );
-
-		view.addRenderAttribute( 'back_title' );
-		view.addInlineEditingAttributes( 'back_title' );
-
-		view.addRenderAttribute( 'back_desc' );
-		view.addInlineEditingAttributes( 'back_desc' );
-		#>
-		<div class="sina-flipbox">
-			<div class="sina-flipbox-front {{{settings.effects}}}">
-				<# if ( settings.front_icon ) { #>
-					<div class="sina-flipbox-icon">
-						<i class="{{{settings.front_icon}}}"></i>
-					</div>
-				<# } #>
-
-				<div class="sina-flipbox-content">
-					<# if ( settings.front_title ) { #>
-						<h3 class="sina-flipbox-title" {{{ view.getRenderAttributeString( 'front_title' ) }}}>
-							{{{settings.front_title}}}
-						</h3>
-					<# } #>
-
-					<# if ( settings.front_desc ) { #>
-						<div class="sina-flipbox-desc" {{{ view.getRenderAttributeString( 'front_desc' ) }}}>
-							{{{settings.front_desc}}}
-						</div>
-					<# } #>
-				</div>
-			</div>
-
-			<div class="sina-flipbox-back {{{settings.effects}}}">
-				<# if ( settings.back_icon ) { #>
-					<div class="sina-flipbox-icon">
-						<i class="{{{settings.back_icon}}}"></i>
-					</div>
-				<# } #>
-
-				<div class="sina-flipbox-content">
-					<# if ( settings.back_title ) { #>
-						<h3 class="sina-flipbox-title" {{{ view.getRenderAttributeString( 'back_title' ) }}}>
-							{{{settings.back_title}}}
-						</h3>
-					<# } #>
-
-					<# if ( settings.back_desc ) { #>
-						<div class="sina-flipbox-desc" {{{ view.getRenderAttributeString( 'back_desc' ) }}}>
-							{{{settings.back_desc}}}
-						</div>
-					<# } #>
-				</div>
-			</div>
-		</div>
-		<?php
 	}
 }

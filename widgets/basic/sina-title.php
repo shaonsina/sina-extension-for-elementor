@@ -468,15 +468,15 @@ class Sina_Title_Widget extends Widget_Base {
 		$data = $this->get_settings_for_display();
 		?>
 		<div class="sina-title">
-			<?php if ( '' != $data['title'] ): ?>
+			<?php if ( $data['title'] ): ?>
 				<?php printf( '<%1$s class="sina-title-title">%2$s</%1$s>', $data['title_tag'], $data['title'] ); ?>
 			<?php endif; ?>
 
-			<?php if ( '' != $data['subtitle'] ): ?>
+			<?php if ( $data['subtitle'] ): ?>
 				<?php printf( '<%1$s class="sina-title-subtitle">%2$s</%1$s>', $data['subtitle_tag'], $data['subtitle'] ); ?>
 			<?php endif; ?>
 
-			<?php if ( '' != $data['desc'] ): ?>
+			<?php if ( $data['desc'] ): ?>
 				<?php printf( '<div class="sina-title-desc">%1$s</div>', $data['desc'] ); ?>
 			<?php endif; ?>
 		</div><!-- .sina-title -->

@@ -1103,47 +1103,6 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 
 
 	protected function _content_template() {
-		?>
-		<#
-		var displayClass = ('block' == settings.display) ? 'sina-input-block' : '';
-		#>
-		<div class="sina-form">
-			<form class="sina-subs-form"
-			data-link="{{{settings.link}}}">
-				<div class="sina-subs-input">
-					<# if( settings.fname ) { #>
-						<input class="sina-input-field sina-input-fname {{{displayClass}}}" type="text" name="{{{settings.fname_tag}}}" placeholder="{{{settings.fname_placeholder}}}">
-					<# } #>
 
-					<# if( settings.lname ) { #>
-						<input class="sina-input-field sina-input-lname {{{displayClass}}}" type="text" name="{{{settings.lname_tag}}}" placeholder="{{{settings.lname_placeholder}}}">
-					<# } #>
-
-					<input class="sina-input-field sina-input-email {{{displayClass}}}" type="email" name="{{{settings.email_tag}}}" placeholder="{{{settings.email_placeholder}}} *">
-
-					<# if( settings.phone ) { #>
-						<input class="sina-input-field sina-input-phone {{{displayClass}}}" type="text" name="{{{settings.phone_tag}}}" placeholder="{{{settings.phone_placeholder}}}">
-					<# } #>
-
-					<# if( settings.label || settings.icon ) { #>
-						<button type="submit" class="sina-button sina-subs-btn">
-							<# if ( settings.icon && 'left' == settings.icon_position ) { #>
-								<i class="{{{settings.icon}}} sina-btn-icon-left"></i>
-							<# } #>
-
-							{{{settings.label}}}
-
-							<# if ( settings.icon && 'right' == settings.icon_position ) { #>
-								<i class="{{{settings.icon}}} sina-btn-icon-right"></i>
-							<# } #>
-						</button>
-					<# } #>
-				</div>
-				<p class="sina-subs-success"></p>
-				<p class="sina-subs-error"></p>
-				<p class="sina-subs-process"><?php _e( 'Processing...', 'sina-ext' ); ?></p>
-			</form>
-		</div>
-		<?php
 	}
 }

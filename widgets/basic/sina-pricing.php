@@ -105,8 +105,10 @@ class Sina_Pricing_Widget extends Widget_Base {
 			'title',
 			[
 				'label' => __( 'Title', 'sina-ext' ),
+				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter Title', 'sina-ext' ),
+				'description' => __( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'Basic',
 			]
 		);
@@ -1125,9 +1127,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 			<?php endif; ?>
 
 			<?php if ( $data['title'] ): ?>
-				<h3 class="sina-pricing-title">
-					<?php echo esc_html( $data['title'] ); ?>
-				</h3>
+				<?php printf( '<h3 class="sina-pricing-title">%1$s</h3>', $data['title'] ); ?>
 			<?php endif; ?>
 
 			<?php if ( 'yes' == $data['thumbs'] && 'middle' == $data['img_position'] ): ?>
@@ -1174,66 +1174,6 @@ class Sina_Pricing_Widget extends Widget_Base {
 
 
 	protected function _content_template() {
-		?>
-		<# if ( 'sina-pricing-move' == settings.effects ) { #>
-			<style type="text/css">
-				[data-id="{{{view.getID()}}}"] .sina-pricing:hover{
-					transform: translate( {{{settings.translateX.size +'px'}}}, {{{settings.translateY.size + 'px'}}} );
-				}
-			</style>
-		<# } #>
-		<div class="sina-pricing {{{settings.effects}}}">
-			<# if ( settings.ribbon_title && settings.ribbon_position ) { #>
-				<div class="{{{settings.ribbon_position}}}">
-					{{{settings.ribbon_title}}}
-				</div>
-			<# } #>
 
-			<# if ( 'yes' == settings.thumbs && 'top' == settings.img_position ) { #>
-				<div class="sina-pricing-img">
-					<img src="{{{settings.image.url}}}" alt="{{{settings.title}}}">
-				</div>
-			<# } #>
-
-			<# if ( settings.title ) { #>
-				<h3 class="sina-pricing-title">
-					{{{settings.title}}}
-				</h3>
-			<# } #>
-
-			<# if ( 'yes' == settings.thumbs && 'middle' == settings.img_position ) { #>
-				<div class="sina-pricing-img">
-					<img src="{{{settings.image.url}}}" alt="{{{settings.title}}}">
-				</div>
-			<# } #>
-
-			<# if ( settings.price ) { #>
-				<h4 class="sina-price-tag">
-					<span>{{{settings.price}}}</span><span class="sina-price-suffix">{{{settings.price_suffix}}}</span>
-				</h4>
-			<# } #>
-
-			<# if ( 'yes' == settings.thumbs && 'bottom' == settings.img_position ) { #>
-				<div class="sina-pricing-img">
-					<img src="{{{settings.image.url}}}" alt="{{{settings.title}}}">
-				</div>
-			<# } #>
-
-			<ul class="sina-pricing-body">
-				<# _.each( settings.item, function( item, index ) { #>
-					<li>{{{item.title}}}</li>
-				<# }); #>
-			</ul>
-
-			<# if ( settings.btn_label) { #>
-				<div class="sina-pricing-btn">
-					<a class="sina-order-btn"
-					href="{{{settings.btn_link.url}}}">
-						{{{settings.btn_label}}}
-					</a>
-				</div>
-			<# } #>
-		</div>
-		<?php
 	}
 }

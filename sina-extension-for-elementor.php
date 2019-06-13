@@ -26,6 +26,7 @@ define('SINA_EXT_SLUG', basename( SINA_EXT_FILE, '.php' ));
 define('SINA_EXT_DIR', __DIR__);
 define('SINA_EXT_URL', plugins_url('/', SINA_EXT_FILE));
 define('SINA_EXT_BASENAME', plugin_basename( SINA_EXT_FILE ));
+define('SINA_EXT_LAYOUT', SINA_EXT_DIR .'/widgets/layout');
 
 /**
  * SINA WIDGETS Constant

@@ -169,6 +169,7 @@ class Sina_Content_Box_Widget extends Widget_Base {
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter Title', 'sina-ext' ),
+				'description' => __( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'Apps Development',
 				'condition' => [
 					'save_templates' => '',
@@ -182,6 +183,7 @@ class Sina_Content_Box_Widget extends Widget_Base {
 				'label_block' => true,
 				'type' => Controls_Manager::TEXTAREA,
 				'placeholder' => __( 'Enter Description', 'sina-ext' ),
+				'description' => __( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, autem amet. Labore eos cum at, et illo ducimus.',
 				'condition' => [
 					'save_templates' => '',
@@ -811,12 +813,6 @@ class Sina_Content_Box_Widget extends Widget_Base {
 	protected function render() {
 		$data = $this->get_settings_for_display();
 
-		$this->add_render_attribute( 'title', 'class', 'sina-content-box-title' );
-		$this->add_inline_editing_attributes( 'title' );
-
-		$this->add_render_attribute( 'desc', 'class', 'sina-content-box-desc' );
-		$this->add_inline_editing_attributes( 'desc' );
-
 		if ( 'sina-content-box-move' == $data['effects'] ):
 			?>
 			<style type="text/css">
@@ -847,15 +843,11 @@ class Sina_Content_Box_Widget extends Widget_Base {
 
 					<div class="sina-content-box-content">
 						<?php if ( $data['title'] ): ?>
-							<h3 <?php echo $this->get_render_attribute_string( 'title' ); ?>>
-								<?php echo esc_html( $data['title'] ); ?>
-							</h3>
+							<?php printf( '<h3 class="sina-content-box-title">%1$s</h3>', $data['title'] ); ?>
 						<?php endif; ?>
 
 						<?php if ( $data['desc'] ): ?>
-							<div <?php echo $this->get_render_attribute_string( 'desc' ); ?>>
-								<?php echo esc_html( $data['desc'] ); ?>
-							</div>
+							<?php printf( '<div class="sina-content-box-desc">%1$s</div>', $data['desc'] ); ?>
 						<?php endif; ?>
 					</div>
 			<?php endif; ?>

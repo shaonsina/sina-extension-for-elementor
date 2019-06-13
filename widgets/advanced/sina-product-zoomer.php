@@ -218,6 +218,7 @@ class Sina_Product_Zoomer_Widget extends Widget_Base {
 				'label' => __( 'Title', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
+				'placeholder' => __( 'Enter Product Title', 'sina-ext' ),
 				'default' => 'Nice Car',
 			]
 		);
@@ -227,6 +228,7 @@ class Sina_Product_Zoomer_Widget extends Widget_Base {
 				'label' => __( 'Description', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::TEXTAREA,
+				'placeholder' => __( 'Enter Product Description', 'sina-ext' ),
 				'default' => 'Price: $100',
 			]
 		);
