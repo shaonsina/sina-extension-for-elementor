@@ -142,7 +142,7 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 			[
 				'label' => __( 'Title', 'sina-ext' ),
 				'label_block' => true,
-				'type' => Controls_Manager::TEXTAREA,
+				'type' => Controls_Manager::TEXT,
 				'placeholder' => __('Enter Title', 'sina-ext'),
 				'description' => __( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'Web Development',
@@ -175,7 +175,7 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 			[
 				'label' => __( 'Sub Title', 'sina-ext' ),
 				'label_block' => true,
-				'type' => Controls_Manager::TEXTAREA,
+				'type' => Controls_Manager::TEXT,
 				'placeholder' => __('Enter Title', 'sina-ext'),
 				'description' => __( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
@@ -197,6 +197,9 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 					'h6' => 'H6',
 				],
 				'default' => 'h3',
+				'condition' => [
+					'save_templates' => '',
+				],
 			]
 		);
 		$repeater->add_control(

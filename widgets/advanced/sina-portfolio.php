@@ -511,7 +511,7 @@ class Sina_Portfolio_Widget extends Widget_Base {
 		$this->add_control(
 			'note',
 			[
-				'label' => 'If you want to change the <strong>Height</strong> or <strong>Padding</strong> then the page need to <strong>Refresh</strong> for seeing the actual result',
+				'label' => 'If you change the <strong>Padding</strong> or <strong>Border</strong> then the page need to <strong>Refresh</strong> for seeing the actual result',
 				'type' => Controls_Manager::RAW_HTML,
 				'separator' => 'after',
 			]

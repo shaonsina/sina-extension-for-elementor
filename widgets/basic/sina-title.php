@@ -100,7 +100,7 @@ class Sina_Title_Widget extends Widget_Base {
 			[
 				'label' => __( 'Title', 'sina-ext' ),
 				'label_block' => true,
-				'type' => Controls_Manager::TEXTAREA,
+				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter Title', 'sina-ext' ),
 				'description' => __( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'Welcome to get start your business.',
@@ -127,7 +127,7 @@ class Sina_Title_Widget extends Widget_Base {
 			[
 				'label' => __( 'Sub Title', 'sina-ext' ),
 				'label_block' => true,
-				'type' => Controls_Manager::TEXTAREA,
+				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter Sub Title', 'sina-ext' ),
 				'description' => __( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',

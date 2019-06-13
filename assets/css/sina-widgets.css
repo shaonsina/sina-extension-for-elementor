@@ -64,6 +64,7 @@
 .sina-banner-slider{
 	direction: ltr;
 }
+.sina-bp-list .sina-bp,
 .sina-modal-content,
 .sina-transform-overflow,
 .sina-accordion-item,
@@ -100,6 +101,8 @@
 .sina-accordion-item.open > .sina-accordion-header > .sina-accordion-icon .on{
 	display: block;
 }
+.sina-bp-list .sina-bg-thumb,
+.sina-bp-list .sina-bp-content,
 .sina-bp-col,
 .sina-news,
 .sina-news-content,
@@ -327,6 +330,10 @@ img.mfp-img{
 }
 .sina-load-more .sina-load-more-btn{
 	min-width: 160px;
+}
+/*List Style*/
+.sina-bp-list .sina-bp-content{
+	align-items: center;
 }
 
 /*--------------------------------- Posts Carousel -------------------------------------- */
@@ -763,6 +770,8 @@ img.mfp-img{
 .sina-pt-content .sina-pt-post:last-child{
 	border-bottom: 0 !important;
 }
+.sina-bp-thumb-right .sina-bg-thumb,
+.sina-bp-thumb-right .sina-bp-content,
 .sina-pt-content-right .sina-pt-posts{
 	float: right;
 }

@@ -120,8 +120,9 @@ class Sina_Fancytext_Widget extends Widget_Base {
 				'fields' => [
 					[
 						'name' => 'fancy_items',
+						'label_block' => true,
 						'label' => __( 'Text', 'sina-ext' ),
-						'type' => Controls_Manager::TEXTAREA,
+						'type' => Controls_Manager::TEXT,
 						'default' => 'Fancy text',
 					],
 				],
@@ -180,7 +181,6 @@ class Sina_Fancytext_Widget extends Widget_Base {
 			'display',
 			[
 				'label' => __( 'Display', 'sina-ext' ),
-				'label_block' => true,
 				'type' => Controls_Manager::SELECT,
 				'options' => [
 					'inline' => __( 'Inline', 'sina-ext' ),
@@ -225,7 +225,6 @@ class Sina_Fancytext_Widget extends Widget_Base {
 			'animation_type',
 			[
 				'label' => __( 'Animation Type', 'sina-ext' ),
-				'label_block' => true,
 				'type' => Controls_Manager::SELECT,
 				'default' => 'typing',
 				'options' => [

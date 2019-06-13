@@ -136,10 +136,10 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 			[
 				'label' => __( 'Header Text', 'sina-ext' ),
 				'label_block' => true,
-				'type' => Controls_Manager::TEXTAREA,
+				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter Header Text', 'sina-ext' ),
 				'description' => __( 'You can use HTML.', 'sina-ext' ),
-				'default' => 'Welcome for using the modal box',
+				'default' => 'This is the modal box',
 			]
 		);
 		$this->add_control(
@@ -147,7 +147,7 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 			[
 				'label' => __( 'Title', 'sina-ext' ),
 				'label_block' => true,
-				'type' => Controls_Manager::TEXTAREA,
+				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter Title', 'sina-ext' ),
 				'description' => __( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'This is the modal title',
@@ -677,7 +677,7 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 					],
 					'font_size'   => [
 						'default' => [
-							'size' => '24',
+							'size' => '20',
 						],
 					],
 					'line_height'   => [

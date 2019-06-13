@@ -1,4 +1,4 @@
-/* Sina Extension for Elementor v2.1.0 */
+/* Sina Extension for Elementor v2.2.0 */
 
 (function ($) {
 
@@ -125,8 +125,11 @@
 				excerpt = $this.data('excerpt'),
 				postsMeta = $this.data('posts-meta'),
 				contentLength = $this.data('content-length'),
+				layout = $this.data('layout'),
+				thumbRight = $this.data('thumb-right'),
 				nonce = $this.find('#sina_load_more_posts'+uid),
 				loadMore = $this.find('.sina-load-more'),
+				btn = loadMore.children('.sina-load-more-btn'),
 				btn = loadMore.children('.sina-load-more-btn'),
 				btnText = btn.html();
 
@@ -145,6 +148,8 @@
 						excerpt: excerpt,
 						posts_meta: postsMeta,
 						content_length: contentLength,
+						layout: layout,
+						thumb_right: thumbRight,
 						nonce: nonce.val(),
 					},
 					function( data, status, code ) {

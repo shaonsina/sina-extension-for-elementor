@@ -118,6 +118,18 @@ class Sina_Blogpost_Widget extends Widget_Base {
 		);
 
 		$this->add_control(
+			'layout',
+			[
+				'label' => __( 'Layout', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					'grid' => __( 'Grid', 'sina-ext' ),
+					'list' => __( 'List', 'sina-ext' ),
+				],
+				'default' => 'grid',
+			]
+		);
+		$this->add_control(
 			'columns',
 			[
 				'label' => __( 'Number of Columns', 'sina-ext' ),
@@ -201,6 +213,15 @@ class Sina_Blogpost_Widget extends Widget_Base {
 			]
 		);
 		$this->add_control(
+			'thumb_right',
+			[
+				'label' => __( 'Thumb Right', 'sina-ext' ),
+				'type' => Controls_Manager::SWITCHER,
+				'label_on' => __( 'Yes', 'sina-ext' ),
+				'label_off' => __( 'No', 'sina-ext' ),
+			]
+		);
+		$this->add_control(
 			'excerpt',
 			[
 				'label' => __( 'Excerpt', 'sina-ext' ),
@@ -273,7 +294,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 		$this->add_control(
 			'note',
 			[
-				'label' => 'If you want to change the <strong>Padding</strong> or <strong>Border</strong> then the page need to <strong>Refresh</strong> for seeing the actual result',
+				'label' => 'If you change the <strong>Padding</strong> or <strong>Border</strong> then the page need to <strong>Refresh</strong> for seeing the actual result',
 				'type' => Controls_Manager::RAW_HTML,
 				'separator' => 'after',
 			]
@@ -416,6 +437,71 @@ class Sina_Blogpost_Widget extends Widget_Base {
 			]
 		);
 
+		$this->add_responsive_control(
+			'thumb_width',
+			[
+				'label' => __( 'Thumb Width (%)', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ '%' ],
+				'desktop_default' => [
+					'unit' => '%',
+					'size' => '40',
+				],
+				'mobile_default' => [
+					'unit' => '%',
+					'size' => '100',
+				],
+				'condition' => [
+					'layout' => 'list',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-bp-list .sina-bg-thumb' => 'width: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'thumb_height',
+			[
+				'label' => __( 'Thumb Height', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px' ],
+				'desktop_default' => [
+					'size' => 200,
+				],
+				'tablet_default' => [
+					'size' => 250,
+				],
+				'condition' => [
+					'layout' => 'list',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-bp-list .sina-bg-thumb' => 'height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .sina-bp-list .sina-bp-content' => 'height: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'content_width',
+			[
+				'label' => __( 'Content Width (%)', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ '%' ],
+				'desktop_default' => [
+					'unit' => '%',
+					'size' => '60',
+				],
+				'mobile_default' => [
+					'unit' => '%',
+					'size' => '100',
+				],
+				'condition' => [
+					'layout' => 'list',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-bp-list .sina-bp-content' => 'width: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
 		$this->add_control(
 			'content_color',
 			[
@@ -1311,56 +1397,28 @@ class Sina_Blogpost_Widget extends Widget_Base {
 		$post_query = new WP_Query( $default );
 
 		if ( $post_query->have_posts() ) :
+			$columns = $data['columns'];
+			$excerpt = $data['excerpt'];
+			$content_length = $data['content_length'];
+			$posts_meta = $data['posts_meta'];
+			$layout = $data['layout'];
+			$thumb_right = $data['thumb_right'];
 			?>
 			<div class="sina-blogpost <?php echo esc_attr( 'sina-bp-'.$this->get_id() ); ?>"
 			data-uid="<?php echo esc_attr( $this->get_id() ); ?>"
-			data-columns="<?php echo esc_attr( $data['columns'] ); ?>"
+			data-columns="<?php echo esc_attr( $columns ); ?>"
 			data-categories="<?php echo esc_attr( $category ); ?>"
 			data-posts-num="<?php echo esc_attr( $data['posts_num'] ); ?>"
 			data-total-posts="<?php echo esc_attr( $post_query->found_posts ); ?>"
-			data-posts-meta="<?php echo esc_attr( $data['posts_meta'] ); ?>"
-			data-content-length="<?php echo esc_attr( $data['content_length'] ); ?>"
+			data-posts-meta="<?php echo esc_attr( $posts_meta ); ?>"
+			data-content-length="<?php echo esc_attr( $content_length ); ?>"
 			data-offset="<?php echo esc_attr( $new_offset + $data['posts_num'] ); ?>"
-			data-excerpt="<?php echo esc_attr( $data['excerpt'] ); ?>">
+			data-layout="<?php echo esc_attr( $layout ); ?>"
+			data-thumb-right="<?php echo esc_attr( $thumb_right ); ?>"
+			data-excerpt="<?php echo esc_attr( $excerpt ); ?>">
 				<div class="sina-bp-grid">
-					<?php while ( $post_query->have_posts() ) : $post_query->the_post(); ?>
-						<div class="sina-bp-col <?php echo esc_attr( $data['columns'] ) ?>">
-							<div class="sina-bp">
-								<?php if ( has_post_thumbnail() ): ?>
-									<div class="sina-bg-thumb">
-										<?php the_post_thumbnail(); ?>
-										<div class="sina-overlay">
-											<a href="<?php the_permalink(); ?>"></a>
-										</div>
-									</div>
-								<?php endif; ?>
-								<div class="sina-bp-content">
-									<h2 class="sina-bp-title">
-										<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-									</h2>
-									<div class="sina-bp-text">
-										<?php
-											if ( has_excerpt() &&  'yes' == $data['excerpt'] ):
-												$excerpt = preg_replace( '/'. get_shortcode_regex() .'/', '', get_the_excerpt() );
-												echo wp_kses_post( wp_trim_words( $excerpt, $data['content_length'] ) );
-											else:
-												$content = preg_replace( '/'. get_shortcode_regex() .'/', '', get_the_content() );
-												echo wp_kses_post( wp_trim_words( $content, $data['content_length'] ) );
-											endif;
-										?>
-									</div>
-									<?php if ( 'yes' == $data['posts_meta'] ): ?>
-										<div class="sina-bp-meta">
-											<?php _e('by', 'sina-ext'); ?>
-											<?php the_author_posts_link(); ?>
-											|
-											<?php echo esc_html( get_the_date() ); ?>
-										</div>
-									<?php endif; ?>
-								</div>
-							</div>
-						</div>
-					<?php endwhile; wp_reset_query(); ?>
+					<?php include SINA_EXT_LAYOUT.'/blogpost/'.$layout.'.php'; ?>
+					<?php wp_reset_query(); ?>
 				</div>
 
 				<?php if ( 'yes' == $data['loadmore'] && $data['btn_text'] && ($data['posts_num'] + $new_offset) < $post_query->found_posts ): ?>

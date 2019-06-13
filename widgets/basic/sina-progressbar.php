@@ -123,17 +123,42 @@ class Sina_Progressbar_Widget extends Widget_Base {
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __('Enter Title', 'sina-ext'),
 				'description' => __( 'You can use HTML.', 'sina-ext' ),
-				'default' => 'Progressbars title',
+				'default' => 'Web Development',
 			]
 		);
 		$this->add_control(
 			'percentage',
 			[
-				'label' => __( 'Percentage', 'sina-ext' ),
+				'label' => __( 'Value', 'sina-ext' ),
 				'type' => Controls_Manager::NUMBER,
 				'min' => 0,
-				'max' => 100,
 				'default' => 90,
+			]
+		);
+		$this->add_control(
+			'max_value',
+			[
+				'label' => __( 'Max Value', 'sina-ext' ),
+				'type' => Controls_Manager::NUMBER,
+				'min' => 1,
+				'default' => 100,
+			]
+		);
+		$this->add_control(
+			'prefix',
+			[
+				'label' => __( 'Prefix', 'sina-ext' ),
+				'type' => Controls_Manager::TEXT,
+				'placeholder' => __( 'Enter prefix', 'sina-ext' ),
+			]
+		);
+		$this->add_control(
+			'suffix',
+			[
+				'label' => __( 'Suffix', 'sina-ext' ),
+				'type' => Controls_Manager::TEXT,
+				'placeholder' => __( 'Enter suffix', 'sina-ext' ),
+				'default' => '%',
 			]
 		);
 
@@ -416,6 +441,7 @@ class Sina_Progressbar_Widget extends Widget_Base {
 
 	protected function render() {
 		$data = $this->get_settings_for_display();
+		$percent = round( $data['percentage'] / $data['max_value'] * 100 );
 		?>
 		<div class="sina-progressbars">
 			<div class="sina-bar">
@@ -424,9 +450,9 @@ class Sina_Progressbar_Widget extends Widget_Base {
 				<?php endif; ?>
 
 				<div class="sina-bar-bg">
-					<div class="sina-bar-content sina-flex" data-percentage="<?php echo esc_attr( $data['percentage'] ); ?>">
+					<div class="sina-bar-content sina-flex" data-percentage="<?php echo esc_attr( $percent ); ?>">
 						<span class="sina-bar-percent">
-							<?php echo esc_html( $data['percentage'] ); ?>
+								<?php echo esc_html( $data['prefix'].$data['percentage'].$data['suffix'] ); ?>
 						</span>
 					</div>
 				</div>

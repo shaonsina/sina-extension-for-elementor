@@ -228,7 +228,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 						'name' => 'title',
 						'label' => __( 'Content', 'sina-ext' ),
 						'label_block' => true,
-						'type' => Controls_Manager::TEXTAREA,
+						'type' => Controls_Manager::TEXT,
 						'placeholder' => __( 'Enter Content', 'sina-ext' ),
 					],
 				],

@@ -105,7 +105,6 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 			'front_icon',
 			[
 				'label' => __( 'Icon', 'sina-ext' ),
-				'label_block' => true,
 				'type' => Controls_Manager::ICON,
 				'default' => 'fa fa-android',
 			]
@@ -152,7 +151,6 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 			'back_icon',
 			[
 				'label' => __( 'Icon', 'sina-ext' ),
-				'label_block' => true,
 				'type' => Controls_Manager::ICON,
 				'default' => 'fa fa-desktop',
 			]
