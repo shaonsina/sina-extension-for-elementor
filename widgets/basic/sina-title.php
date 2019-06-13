@@ -469,11 +469,11 @@ class Sina_Title_Widget extends Widget_Base {
 		?>
 		<div class="sina-title">
 			<?php if ( '' != $data['title'] ): ?>
-				<?php printf( '<%1$s class="%2$s">%3$s</%1$s>', $data['title_tag'], 'sina-title-title', $data['title'] ); ?>
+				<?php printf( '<%1$s class="sina-title-title">%2$s</%1$s>', $data['title_tag'], $data['title'] ); ?>
 			<?php endif; ?>
 
 			<?php if ( '' != $data['subtitle'] ): ?>
-				<?php printf( '<%1$s class="%2$s">%3$s</%1$s>', $data['subtitle_tag'], 'sina-title-subtitle', $data['subtitle'] ); ?>
+				<?php printf( '<%1$s class="sina-title-subtitle">%2$s</%1$s>', $data['subtitle_tag'], $data['subtitle'] ); ?>
 			<?php endif; ?>
 
 			<?php if ( '' != $data['desc'] ): ?>

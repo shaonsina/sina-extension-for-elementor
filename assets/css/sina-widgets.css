@@ -39,13 +39,10 @@
 .sina-flipbox-icon i,
 .sina-content-box-icon i,
 .sina-content-box .sina-content-box-title,
-.sina-load-more-btn,
 .sina-pricing-btn .sina-order-btn,
 .sina-banner-btns .sina-banner-pbtn,
 .sina-banner-btns .sina-banner-sbtn,
-.sina-search-btn,
-.sina-contact-btn,
-.sina-subs-btn,
+.sina-button,
 .sina-pt-cat-btn,
 .sina-portfolio-btn {
 	transition: all 0.4s ease-in-out;
@@ -67,6 +64,7 @@
 .sina-banner-slider{
 	direction: ltr;
 }
+.sina-modal-content,
 .sina-transform-overflow,
 .sina-accordion-item,
 .sina-accordion-body,
@@ -84,6 +82,7 @@
 }
 
 /* Template Editor button hide */
+.sina-modal-content .elementor-element-overlay,
 .sina-transform .elementor-element-overlay,
 .sina-accordion-body .elementor-element-overlay,
 .sina-content-box .elementor-element-overlay,
@@ -126,9 +125,6 @@
 }
 .sina-input-field:focus,
 .sina-input-field:focus,
-.sina-load-more .sina-load-more-btn:active,
-.sina-load-more .sina-load-more-btn:focus,
-.sina-load-more .sina-load-more-btn,
 .sina-video-play,
 .sina-video-play:focus,
 .mfp-arrow.mfp-prevent-close{
@@ -331,7 +327,6 @@ img.mfp-img{
 }
 .sina-load-more .sina-load-more-btn{
 	min-width: 160px;
-	cursor: pointer;
 }
 
 /*--------------------------------- Posts Carousel -------------------------------------- */
@@ -565,6 +560,27 @@ img.mfp-img{
 	display: none;
 	margin: 15px 0 0;
 	color: #ccc;
+}
+
+/*-------------------------- Modal Box --------------------------*/
+.sina-modal-overlay{
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	display: none;
+	z-index: 99999;
+}
+.sina-modal-area{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	align-items: center;
+	justify-content: center;
+}
+.sina-modal-body{
+	overflow-y: auto;
 }
 
 /*-------------------------- News Ticker --------------------------*/

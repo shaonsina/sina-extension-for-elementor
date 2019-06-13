@@ -755,6 +755,23 @@
 		});
 	}
 
+	function sinaModalBox($scope, $) {
+		$scope.find('.sina-modal-box').each(function () {
+			var $this = $(this),
+				$id = $this.data('modal-id'),
+				$btn = $('#'+$id),
+				$cBtn = $('.sina-modal-close.'+$id),
+				$modal = $('.sina-modal-overlay.'+$id);
+
+				$btn.click( function() {
+					$modal.fadeIn( 400 );
+				});
+				$cBtn.click( function() {
+					$modal.fadeOut('400');
+				});
+		});
+	}
+
 	function sinaUserCounter($scope, $) {
 		$scope.find('.sina-user-counter').each(function () {
 			var $this = $(this),
@@ -838,6 +855,7 @@
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_progressbar.default', sinaProgressbars);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_review_carousel.default', sinaReviewCarousel);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_mc_subscribe.default', sinaMCSubscribe);
+		elementorFrontend.hooks.addAction('frontend/element_ready/sina_modal_box.default', sinaModalBox);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_user_counter.default', sinaUserCounter);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_video.default', sinaVideo);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_visit_counter.default', sinaVisitCounter);

@@ -1365,7 +1365,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 
 				<?php if ( 'yes' == $data['loadmore'] && $data['btn_text'] && ($data['posts_num'] + $new_offset) < $post_query->found_posts ): ?>
 					<div class="sina-load-more">
-						<button class="sina-load-more-btn">
+						<button class="sina-button sina-load-more-btn">
 							<?php echo esc_html( $data['btn_text'] ); ?>
 						</button>
 					</div>
