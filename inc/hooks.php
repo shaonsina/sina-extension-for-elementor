@@ -12,7 +12,7 @@ function sina_ajax_contact(){
 		$name = sanitize_text_field( $_POST['name'] );
 		$subject = sanitize_text_field( $_POST['subject'] );
 		$message = sanitize_textarea_field( $_POST['message'] );
-		$admin_email = get_option('admin_email');
+		$inbox = sanitize_text_field( $_POST['inbox'] );
 		$err = '';
 
 		if ( '' == $name) {
@@ -21,7 +21,7 @@ function sina_ajax_contact(){
 			$err = __( 'Name too short! Must be contain 3-20 characters.', 'sina-ext' );
 		} elseif ( strlen($name) > 32 ) {
 			$err = __( 'Name too large! Must be contain 3-20 characters.', 'sina-ext' );
-		} elseif ( preg_match("/^[a-zA-Z][ a-z0-9]{2,19}$/", $name) ) {
+		} elseif ( preg_match("/^[a-zA-Z][ a-zA-Z0-9]{2,19}$/", $name) ) {
 			$name = $name;
 		} else {
 			$err = __( 'Special character(s) not allowed in your name!', 'sina-ext' );
@@ -60,7 +60,11 @@ function sina_ajax_contact(){
 				$err = __( 'Invalid message!', 'sina-ext' );
 			}
 
-			if ( '' == $err ) {
+			if ( '' == $err  && $inbox ) {
+				$custom_email = get_option('sina_contact_email'.$inbox);
+				wp_mail( $custom_email, $subject, $message, "From: {$email}\r\n" );
+			} elseif ( '' == $err ) {
+				$admin_email = get_option('admin_email');
 				wp_mail( $admin_email, $subject, $message, "From: {$email}\r\n" );
 			}
 		}

@@ -64,7 +64,7 @@ class Sina_Transform_Widget extends Widget_Base {
 	 * @since 2.1.0
 	 */
 	public function get_keywords() {
-		return [ 'sina transform', 'sina content transform', 'content transform' ];
+		return [ 'sina transform', 'sina shape' ];
 	}
 
 	/**

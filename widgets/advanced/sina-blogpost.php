@@ -67,7 +67,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 	 * @since 1.0.0
 	 */
 	public function get_keywords() {
-		return [ 'sina post', 'sina blog', 'sina blogpost' ];
+		return [ 'sina post', 'sina blog', 'sina blogpost', 'sina blog post' ];
 	}
 
 	/**
@@ -294,7 +294,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 		$this->add_control(
 			'note',
 			[
-				'label' => 'If you change the <strong>Padding</strong> or <strong>Border</strong> then the page need to <strong>Refresh</strong> for seeing the actual result',
+				'label' => 'If you change the <strong>Dimension</strong> then the page need to <strong>Refresh</strong> for seeing the actual result',
 				'type' => Controls_Manager::RAW_HTML,
 				'separator' => 'after',
 			]
@@ -353,7 +353,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'box_padding',
 			[
-				'label' => __( 'Padding', 'sina-ext' ),
+				'label' => __( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -447,7 +447,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 					'unit' => '%',
 					'size' => '40',
 				],
-				'mobile_default' => [
+				'tablet_default' => [
 					'unit' => '%',
 					'size' => '100',
 				],
@@ -490,7 +490,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 					'unit' => '%',
 					'size' => '60',
 				],
-				'mobile_default' => [
+				'tablet_default' => [
 					'unit' => '%',
 					'size' => '100',
 				],
@@ -683,16 +683,16 @@ class Sina_Blogpost_Widget extends Widget_Base {
 						'default' =>'custom', 
 					],
 					'font_weight' => [
-						'default' => '600',
+						'default' => '400',
 					],
 					'font_size'   => [
 						'default' => [
-							'size' => '24',
+							'size' => '14',
 						],
 					],
 					'line_height'   => [
 						'default' => [
-							'size' => '32',
+							'size' => '24',
 						],
 					],
 				],

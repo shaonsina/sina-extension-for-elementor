@@ -63,7 +63,7 @@ class Sina_Visit_Counter_Widget extends Widget_Base {
 	 * @since 1.0.0
 	 */
 	public function get_keywords() {
-		return [ 'sina visit counter', 'sina visitor counter', 'visitor', 'sina' ];
+		return [ 'sina visit counter', 'sina visitor counter', 'sina view counter' ];
 	}
 
 	/**

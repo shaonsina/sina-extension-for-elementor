@@ -65,7 +65,7 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 	 * @since 1.0.0
 	 */
 	public function get_keywords() {
-		return [ 'sina form', 'sina subscribe form', 'sina mailchimp' ];
+		return [ 'sina form', 'sina subscribe form', 'sina mailchimp', 'sina email' ];
 	}
 
 	/**

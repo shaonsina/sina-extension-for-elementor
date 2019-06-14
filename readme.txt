@@ -1,10 +1,10 @@
 == Sina Extension for Elementor ==
 Contributors: shaonsina
 Tags: addon, elementor, elementor addon, elementor extension, extension, page builder, builder, elementor builder, elementor contact form, elementor widget, best elementor addon, best elementor extension
-Requires at least: 4.0
+Requires at least: 4.7
 Tested up to: 5.2
-Requires PHP: 5.6
-Stable tag: 2.1.2
+Requires PHP: 7.0
+Stable tag: 2.2.0
 License: GPLv3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -89,13 +89,19 @@ Yes. It's totally free.
 
 = 2.2.0 - 8-06-2019 =
 
+- New: Modal Box
+- New: Posts Carousel
+- Added: Blog List
+- Added: Custom email to Contact Email
+- Added: Progressbar number based
 - Added: Blogpost pagination button width
 - Fixed: Blogpost pagination Spacing
+- Removed: Inline editing from some widgets
 - Improved
 
 = 2.1.2 - 8-06-2019 =
-- Fixed: Contact form mail
-- Fixed: Google map API key
+- Fixed: Contact Form mail
+- Fixed: Google Map API key
 
 = 2.1.1 - 31-05-2019 =
 - Fixed: Slider issue for RTL
@@ -116,8 +122,8 @@ Yes. It's totally free.
 - Added: Rollback to previous version
 - Added: Default value for various widgets
 - Added: Some control to various widgets
-- Fixed: Some minor issue fixed
-- Optimize: Some script Optimized
+- Fixed: Some minor issue
+- Optimized: Some script
 - Improved
 **NOTE: It's a major release of this plugin. So, please review your site after update.**
 
@@ -125,10 +131,10 @@ Yes. It's totally free.
 - Improved
 
 = 1.2.3 - 16-03-2019 =
-- Blank issue fixed
+- Fixed: Blank issue
 
 = 1.2.2 - 16-03-2019 =
-- Some minor issue fixed
+- Fixed: Some minor issue
 
 = 1.2.1 - 29-01-2019 =
 - Added: Category sorting functionality added to Posts Tab
@@ -140,7 +146,7 @@ Yes. It's totally free.
 - Improved
 
 = 1.1.1 - 03-01-2019 =
-- Added: order & sorting functionality added to Blog post
+- Added: Order & sorting functionality added to Blogpost
 - Added: Contact Form button width added
 - Added: Image functionality added to Pricing
 - Added: Ribbon functionality added to Pricing
@@ -153,17 +159,17 @@ Yes. It's totally free.
 - Improved
 
 = 1.0.3 - 03-12-2018 =
-- Some minor issue fixed
+- Fixed: Some minor issue
 
 = 1.0.2 - 30-11-2018 =
-- Changed: Icon box has been changed to content box
-- Added: templates option to content box
-- Added: templates option to accordion
+- Added: Templates option to Accordion
+- Added: Templates option to Content Box
+- Changed: Icon box has been changed to Content Box
 - Improved
 
 = 1.0.1 - 27-11-2018 =
-- sina-particles added
-- particle layer improved
+- Added: sina-particles js
+- Improved: Particle layer
 
 = 1.0.0 =
 Initial stable release

@@ -64,7 +64,7 @@ class Sina_Counter_Widget extends Widget_Base {
 	 * @since 1.0.0
 	 */
 	public function get_keywords() {
-		return [ 'sina counter', 'sina number' ];
+		return [ 'sina counter', 'sina number', 'sina timer' ];
 	}
 
 	/**

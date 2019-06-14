@@ -65,7 +65,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 	 * @since 1.2.0
 	 */
 	public function get_keywords() {
-		return [ 'sina posts tab', 'sina tab' ];
+		return [ 'sina posts tab', 'sina tab', 'sina blog posts', 'sina blogpost' ];
 	}
 
 	/**

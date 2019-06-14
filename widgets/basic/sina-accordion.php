@@ -67,7 +67,7 @@ class Sina_Accordion_Widget extends Widget_Base {
 	 * @since 1.0.0
 	 */
 	public function get_keywords() {
-		return [  'sina accordion', 'sina panel' ];
+		return [  'sina accordion', 'sina panel', 'sina faq' ];
 	}
 
 	/**

@@ -249,234 +249,6 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 		// ===========================
 
 
-		// Start Trigger Button Style
-		// ===========================
-		$this->start_controls_section(
-			'trigger_btn_style',
-			[
-				'label' => __( 'Trigger Button', 'sina-ext' ),
-				'tab' => Controls_Manager::TAB_STYLE,
-			]
-		);
-
-		$this->add_group_control(
-			Group_Control_Typography::get_type(),
-			[
-				'name' => 'trigger_btn_typography',
-				'fields_options' => [
-					'typography' => [ 
-						'default' =>'custom', 
-					],
-					'font_size'   => [
-						'default' => [
-							'size' => '16',
-						],
-					],
-					'line_height'   => [
-						'default' => [
-							'size' => '24',
-						],
-					],
-				],
-				'selector' => '{{WRAPPER}} .sina-modal-trigger',
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Text_Shadow::get_type(),
-			[
-				'name' => 'trigger_btn_text_shadow',
-				'selector' => '{{WRAPPER}} .sina-modal-trigger',
-			]
-		);
-
-		$this->start_controls_tabs( 'trigger_btn_tabs' );
-
-		$this->start_controls_tab(
-			'trigger_btn_normal',
-			[
-				'label' => __( 'Normal', 'sina-ext' ),
-			]
-		);
-
-		$this->add_control(
-			'trigger_btn_color',
-			[
-				'label' => __( 'Text Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#eee',
-				'selectors' => [
-					'{{WRAPPER}} .sina-modal-trigger' => 'color: {{VALUE}};',
-				],
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Background::get_type(),
-			[
-				'name' => 'trigger_btn_background',
-				'label' => __( 'Background', 'sina-ext' ),
-				'types' => [ 'classic', 'gradient' ],
-				'fields_options' => [
-					'background' => [ 
-						'default' =>'classic', 
-					],
-					'color' => [
-						'default' => '#1085e4',
-					],
-				],
-				'selector' => '{{WRAPPER}} .sina-modal-trigger',
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Border::get_type(),
-			[
-				'name' => 'trigger_btn_border',
-				'selector' => '{{WRAPPER}} .sina-modal-trigger',
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Box_Shadow::get_type(),
-			[
-				'name' => 'trigger_btn_shadow',
-				'selector' => '{{WRAPPER}} .sina-modal-trigger',
-			]
-		);
-
-		$this->end_controls_tab();
-
-		$this->start_controls_tab(
-			'trigger_btn_hover',
-			[
-				'label' => __( 'Hover', 'sina-ext' ),
-			]
-		);
-
-		$this->add_control(
-			'trigger_hover_color',
-			[
-				'label' => __( 'Text Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .sina-modal-trigger:hover' => 'color: {{VALUE}};',
-				],
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Background::get_type(),
-			[
-				'name' => 'trigger_hover_background',
-				'label' => __( 'Background', 'sina-ext' ),
-				'types' => [ 'classic', 'gradient' ],
-				'selector' => '{{WRAPPER}} .sina-modal-trigger:hover',
-			]
-		);
-		$this->add_control(
-			'trigger_hover_border',
-			[
-				'label' => __( 'Border Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .sina-modal-trigger:hover' => 'border-color: {{VALUE}}'
-				],
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Box_Shadow::get_type(),
-			[
-				'name' => 'trigger_btn_hover_shadow',
-				'selector' => '{{WRAPPER}} .sina-modal-trigger:hover',
-			]
-		);
-
-		$this->end_controls_tab();
-
-		$this->end_controls_tabs();
-
-		$this->add_responsive_control(
-			'trigger_btn_width',
-			[
-				'label' => __( 'Width', 'sina-ext' ),
-				'type' => Controls_Manager::SLIDER,
-				'size_units' => [ 'px', 'em', '%' ],
-				'range' => [
-					'px' => [
-						'max' => 1000,
-					],
-					'em' => [
-						'max' => 50,
-					],
-				],
-				'separator' => 'before',
-				'selectors' => [
-					'{{WRAPPER}} .sina-modal-trigger' => 'width: {{SIZE}}{{UNIT}};',
-				],
-			]
-		);
-		$this->add_responsive_control(
-			'trigger_btn_radius',
-			[
-				'label' => __( 'Radius', 'sina-ext' ),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', 'em', '%' ],
-				'default' => [
-					'top' => '4',
-					'right' => '4',
-					'bottom' => '4',
-					'left' => '4',
-					'isLinked' => false,
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-modal-trigger' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
-		);
-		$this->add_responsive_control(
-			'trigger_btn_padding',
-			[
-				'label' => __( 'Padding', 'sina-ext' ),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', 'em', '%' ],
-				'default' => [
-					'top' => '11',
-					'right' => '20',
-					'bottom' => '11',
-					'left' => '20',
-					'isLinked' => false,
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-modal-trigger' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
-		);
-		$this->add_responsive_control(
-			'trigger_alignment',
-			[
-				'label' => __( 'Alignment', 'sina-ext' ),
-				'type' => Controls_Manager::CHOOSE,
-				'options' => [
-					'left' => [
-						'title' => __( 'Left', 'sina-ext' ),
-						'icon' => 'fa fa-align-left',
-					],
-					'center' => [
-						'title' => __( 'Center', 'sina-ext' ),
-						'icon' => 'fa fa-align-center',
-					],
-					'right' => [
-						'title' => __( 'Right', 'sina-ext' ),
-						'icon' => 'fa fa-align-right',
-					],
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-btn-wrap' => 'text-align: {{VALUE}};',
-				],
-			]
-		);
-
-		$this->end_controls_section();
-		// End Trigger Button Style
-		// =========================
-
-
 		// Start Modal Style
 		// ====================
 		$this->start_controls_section(
@@ -1356,6 +1128,234 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 		$this->end_controls_section();
 		// End Desc Style
 		// ================
+
+
+		// Start Trigger Button Style
+		// ===========================
+		$this->start_controls_section(
+			'trigger_btn_style',
+			[
+				'label' => __( 'Trigger Button', 'sina-ext' ),
+				'tab' => Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name' => 'trigger_btn_typography',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_size'   => [
+						'default' => [
+							'size' => '16',
+						],
+					],
+					'line_height'   => [
+						'default' => [
+							'size' => '24',
+						],
+					],
+				],
+				'selector' => '{{WRAPPER}} .sina-modal-trigger',
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Text_Shadow::get_type(),
+			[
+				'name' => 'trigger_btn_text_shadow',
+				'selector' => '{{WRAPPER}} .sina-modal-trigger',
+			]
+		);
+
+		$this->start_controls_tabs( 'trigger_btn_tabs' );
+
+		$this->start_controls_tab(
+			'trigger_btn_normal',
+			[
+				'label' => __( 'Normal', 'sina-ext' ),
+			]
+		);
+
+		$this->add_control(
+			'trigger_btn_color',
+			[
+				'label' => __( 'Text Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#eee',
+				'selectors' => [
+					'{{WRAPPER}} .sina-modal-trigger' => 'color: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
+			[
+				'name' => 'trigger_btn_background',
+				'label' => __( 'Background', 'sina-ext' ),
+				'types' => [ 'classic', 'gradient' ],
+				'fields_options' => [
+					'background' => [ 
+						'default' =>'classic', 
+					],
+					'color' => [
+						'default' => '#1085e4',
+					],
+				],
+				'selector' => '{{WRAPPER}} .sina-modal-trigger',
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Border::get_type(),
+			[
+				'name' => 'trigger_btn_border',
+				'selector' => '{{WRAPPER}} .sina-modal-trigger',
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Box_Shadow::get_type(),
+			[
+				'name' => 'trigger_btn_shadow',
+				'selector' => '{{WRAPPER}} .sina-modal-trigger',
+			]
+		);
+
+		$this->end_controls_tab();
+
+		$this->start_controls_tab(
+			'trigger_btn_hover',
+			[
+				'label' => __( 'Hover', 'sina-ext' ),
+			]
+		);
+
+		$this->add_control(
+			'trigger_hover_color',
+			[
+				'label' => __( 'Text Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .sina-modal-trigger:hover' => 'color: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
+			[
+				'name' => 'trigger_hover_background',
+				'label' => __( 'Background', 'sina-ext' ),
+				'types' => [ 'classic', 'gradient' ],
+				'selector' => '{{WRAPPER}} .sina-modal-trigger:hover',
+			]
+		);
+		$this->add_control(
+			'trigger_hover_border',
+			[
+				'label' => __( 'Border Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .sina-modal-trigger:hover' => 'border-color: {{VALUE}}'
+				],
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Box_Shadow::get_type(),
+			[
+				'name' => 'trigger_btn_hover_shadow',
+				'selector' => '{{WRAPPER}} .sina-modal-trigger:hover',
+			]
+		);
+
+		$this->end_controls_tab();
+
+		$this->end_controls_tabs();
+
+		$this->add_responsive_control(
+			'trigger_btn_width',
+			[
+				'label' => __( 'Width', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', 'em', '%' ],
+				'range' => [
+					'px' => [
+						'max' => 1000,
+					],
+					'em' => [
+						'max' => 50,
+					],
+				],
+				'separator' => 'before',
+				'selectors' => [
+					'{{WRAPPER}} .sina-modal-trigger' => 'width: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'trigger_btn_radius',
+			[
+				'label' => __( 'Radius', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '4',
+					'right' => '4',
+					'bottom' => '4',
+					'left' => '4',
+					'isLinked' => false,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-modal-trigger' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'trigger_btn_padding',
+			[
+				'label' => __( 'Padding', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '11',
+					'right' => '20',
+					'bottom' => '11',
+					'left' => '20',
+					'isLinked' => false,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-modal-trigger' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'trigger_alignment',
+			[
+				'label' => __( 'Alignment', 'sina-ext' ),
+				'type' => Controls_Manager::CHOOSE,
+				'options' => [
+					'left' => [
+						'title' => __( 'Left', 'sina-ext' ),
+						'icon' => 'fa fa-align-left',
+					],
+					'center' => [
+						'title' => __( 'Center', 'sina-ext' ),
+						'icon' => 'fa fa-align-center',
+					],
+					'right' => [
+						'title' => __( 'Right', 'sina-ext' ),
+						'icon' => 'fa fa-align-right',
+					],
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-btn-wrap' => 'text-align: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->end_controls_section();
+		// End Trigger Button Style
+		// =========================
 
 	}
 

@@ -67,7 +67,7 @@ class Sina_Portfolio_Widget extends Widget_Base {
 	 * @since 1.0.0
 	 */
 	public function get_keywords() {
-		return [ 'sina portfolio', 'sina work' ];
+		return [ 'sina portfolio', 'sina work', 'sina gallery', 'sina filter' ];
 	}
 
 	/**
@@ -511,7 +511,7 @@ class Sina_Portfolio_Widget extends Widget_Base {
 		$this->add_control(
 			'note',
 			[
-				'label' => 'If you change the <strong>Padding</strong> or <strong>Border</strong> then the page need to <strong>Refresh</strong> for seeing the actual result',
+				'label' => 'If you change the <strong>Dimension</strong> then the page need to <strong>Refresh</strong> for seeing the actual result',
 				'type' => Controls_Manager::RAW_HTML,
 				'separator' => 'after',
 			]

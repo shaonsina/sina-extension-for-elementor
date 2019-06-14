@@ -63,7 +63,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 	 * @since 2.2.0
 	 */
 	public function get_keywords() {
-		return [ 'sina posts carousel', 'sina carousel' ];
+		return [ 'sina posts carousel', 'sina carousel', 'sina blog post', 'sina blogpost' ];
 	}
 
 	/**

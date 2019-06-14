@@ -441,7 +441,10 @@ class Sina_Progressbar_Widget extends Widget_Base {
 
 	protected function render() {
 		$data = $this->get_settings_for_display();
-		$percent = round( $data['percentage'] / $data['max_value'] * 100 );
+		$percent = 100;
+		if ( $data['percentage'] && $data['max_value']) {
+			$percent = round( $data['percentage'] / $data['max_value'] * 100 );
+		}
 		?>
 		<div class="sina-progressbars">
 			<div class="sina-bar">

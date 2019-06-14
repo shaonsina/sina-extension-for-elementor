@@ -63,7 +63,7 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 	 * @since 1.1.0
 	 */
 	public function get_keywords() {
-		return [ 'sina news ticker', 'sina ticker', 'sina' ];
+		return [ 'sina news ticker', 'sina posts ticker', 'sina ticker', 'sina news scroll', 'sina posts scroll' ];
 	}
 
 	/**

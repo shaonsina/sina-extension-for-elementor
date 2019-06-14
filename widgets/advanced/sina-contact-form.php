@@ -66,7 +66,7 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 	 * @since 1.0.0
 	 */
 	public function get_keywords() {
-		return [ 'sina contact form', 'sina form' ];
+		return [ 'sina contact form', 'sina form', 'sina email' ];
 	}
 
 	/**
@@ -109,11 +109,40 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'form_content',
 			[
-				'label' => __( 'Fields', 'sina-ext' ),
+				'label' => __( 'Form Settings', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
 
+		$this->add_control(
+			'custom_email',
+			[
+				'label' => __( 'Use Custom Email', 'sina-ext' ),
+				'type' => Controls_Manager::SWITCHER,
+				'label_on' => __( 'Yes', 'sina-ext' ),
+				'label_off' => __( 'No', 'sina-ext' ),
+			]
+		);
+		$this->add_control(
+			'contact_email',
+			[
+				'label' => __( 'Mail To', 'sina-ext' ),
+				'label_block' => true,
+				'type' => Controls_Manager::TEXT,
+				'placeholder' => __( 'Enter Custom Email', 'sina-ext' ),
+				'condition' => [
+					'custom_email' => 'yes',
+				]
+			]
+		);
+		$this->add_control(
+			'fields',
+			[
+				'label' => __( 'Fields', 'sina-ext' ),
+				'type' => Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
 		$this->add_control(
 			'name_placeholder',
 			[
@@ -933,9 +962,15 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 
 	protected function render() {
 		$data = $this->get_settings_for_display();
+		$hash = '';
+		if ( $data['contact_email'] ) {
+			$hash = md5( $data['contact_email'] );
+			add_option( 'sina_contact_email'.$hash, $data['contact_email'] );
+		}
 		?>
 		<div class="sina-form">
 			<form class="sina-contact-form"
+			data-inbox="<?php echo esc_attr( $hash ); ?>"
 			data-uid="<?php echo esc_attr( $this->get_id() ); ?>">
 				<?php include SINA_EXT_LAYOUT.'/contact-form/'.$data['form_layout'].'.php'; ?>
 

@@ -384,7 +384,10 @@ class Sina_Piechart_Widget extends Widget_Base {
 
 	protected function render() {
 		$data = $this->get_settings_for_display();
-		$percent = round( $data['value'] / $data['max_value'] * 100 );
+		$percent = 100;
+		if ( $data['value'] && $data['max_value'] ) {
+			$percent = round( $data['value'] / $data['max_value'] * 100 );
+		}
 		?>
 		<div class="sina-piechart sina-flex" style="width: <?php echo esc_attr( $data['size']['size'] ); ?>px; height: <?php echo esc_attr( $data['size']['size'] ); ?>px;">
 			<div class="sina-piechart-wrap"

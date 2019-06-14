@@ -66,7 +66,7 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 	 * @since 1.0.0
 	 */
 	public function get_keywords() {
-		return [ 'sina slider', 'sina banner' ];
+		return [ 'sina slider', 'sina banner', 'sina carousel' ];
 	}
 
 	/**

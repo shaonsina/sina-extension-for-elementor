@@ -218,6 +218,7 @@
 		$scope.find('.sina-contact-form').each(function () {
 			var $this = $(this),
 				$uid = $this.data('uid'),
+				$inbox = $this.data('inbox'),
 				$nonce = $this.children('#sina_contact_nonce'+$uid),
 				$success = $this.children('.sina-contact-success'),
 				$error = $this.children('.sina-contact-error'),
@@ -238,6 +239,7 @@
 					sinaAjax.ajaxURL,
 					{
 						action: "sina_contact",
+						inbox: $inbox,
 						name: $name.val(),
 						email: $email.val(),
 						subject: $subject.val(),
@@ -255,7 +257,7 @@
 								}, 10000 );
 							} else{
 								$process.fadeOut(0);
-								$success.html( "Thanks to contacting us!" ).fadeIn(200);
+								$success.html( "Thanks for contacting us!" ).fadeIn(200);
 
 								setTimeout( function() {
 									$success.fadeOut(200);
