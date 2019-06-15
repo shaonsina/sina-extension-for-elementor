@@ -67,7 +67,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 	 * @since 1.0.0
 	 */
 	public function get_keywords() {
-		return [ 'sina post', 'sina blog', 'sina blogpost', 'sina blog post' ];
+		return [ 'sina posts', 'sina blog', 'sina blogpost', 'sina blog posts' ];
 	}
 
 	/**
@@ -462,9 +462,14 @@ class Sina_Blogpost_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'thumb_height',
 			[
-				'label' => __( 'Thumb Height', 'sina-ext' ),
+				'label' => __( 'Thumb Height (px)', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
+				'range' => [
+					'px' => [
+						'max' => 1000,
+					],
+				],
 				'desktop_default' => [
 					'size' => 200,
 				],
@@ -476,7 +481,6 @@ class Sina_Blogpost_Widget extends Widget_Base {
 				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-bp-list .sina-bg-thumb' => 'height: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .sina-bp-list .sina-bp-content' => 'height: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -499,6 +503,41 @@ class Sina_Blogpost_Widget extends Widget_Base {
 				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-bp-list .sina-bp-content' => 'width: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_control(
+			'is_content_height',
+			[
+				'label' => __( 'Use content Height', 'sina-ext' ),
+				'type' => Controls_Manager::SWITCHER,
+				'label_on' => __( 'Yes', 'sina-ext' ),
+				'label_off' => __( 'No', 'sina-ext' ),
+			]
+		);
+		$this->add_responsive_control(
+			'content_height',
+			[
+				'label' => __( 'Content Height (px)', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px' ],
+				'range' => [
+					'px' => [
+						'max' => 1000,
+					],
+				],
+				'desktop_default' => [
+					'size' => 200,
+				],
+				'tablet_default' => [
+					'size' => 250,
+				],
+				'condition' => [
+					'layout' => 'list',
+					'is_content_height' => 'yes',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-bp-list .sina-bp-content' => 'height: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
