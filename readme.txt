@@ -1,11 +1,12 @@
 == Sina Extension for Elementor ==
 Contributors: shaonsina
 Tags: addon, elementor, elementor addon, elementor extension, extension, page builder, builder, elementor builder, elementor contact form, elementor widget, best elementor addon, best elementor extension
+Donate link: https://shaonsina.com/plugins/sina-extension/
 Requires at least: 4.7
 Tested up to: 5.2
 Requires PHP: 7.0
 Stable tag: 2.2.0
-License: GPLv3
+License: GPL v3
 License URI: https://opensource.org/licenses/GPL-3.0
 
 A collection of high-quality widgets for Elementor page builder.
@@ -13,20 +14,32 @@ A collection of high-quality widgets for Elementor page builder.
 
 == Description ==
 
-This is an extension for Elementor (https://wordpress.org/plugins/elementor/) page builder. It will extend the Elementor and increase web page building experience. It has 30 useful & high-quality widgets. Which you may use for easy & fast make the page & display your content far better way.
+This is an extension for Elementor [Elementor](https://wordpress.org/plugins/elementor/) page builder. It will extend the Elementor and increase web page building experience. It has 32 useful & high-quality widgets. Which you may use for easy & fast make the page & display your content far better way.
 
 
-Basic use of Blogpost
+= Basic use of Blogpost =
 https://youtu.be/ZnxKYO7-Urw
 
-Basic use of Particle Layer
+= Basic use of Particle Layer =
 https://youtu.be/xYMzXFVQri8
 
-Basic use of Banner Slider
+= Basic use of Banner Slider =
 https://youtu.be/9HB3UF2dO70
 
 
-== 30 FREE WIDGETS
+== Features ==
+
+* 30+ Fully Customizable widgets.
+* Options panel for enable/disable widgets.
+* Free Support through the forum.
+* Fully Responsive
+
+
+== What can you do with this plugin? ==
+[See demo](https://shaonsina.com/plugins/sina-extension/)
+
+
+== 30+ FREE WIDGETS ==
 
 1. Accordion: Use accordion for display FAQ or custom content which you want.
 2. Banner Slider: Add an animated text or image slider into your web page.
@@ -41,23 +54,25 @@ https://youtu.be/9HB3UF2dO70
 11. Flipbox: Use animated Flip Box to highlight any content on your web page.
 12. Google Map: Add Google map with API key into the web page.
 13. MailChimp: Add MailChimp subscribe form for collect subscribers data.
-14. News Ticker: Use it for scrolling post or news title.
-15. Particle Layer: Use particle layer with lots of style, layout & more.
-16. Piechart: Works the same as the Counter, but with a circle.
-17. Portfolio: Easily display your works.
-18. Posts Tab: Show your latest posts with a tab.
-19. Pricing: Add Pricing for display your services rate.
-20. Product Zoomer: Add multiple images of product for zoom in.
-21. Progressbar: Display progress bars with different styles.
-22. Review Carousel: Show what others said about your brand.
-23. Table: Use table for showing your expected data.
-24. Team: Add your team members just a few clicks.
-25. Title: Use title, subtitle & description anywhere into your web page.
-26. Transform: Display content by transforming in the different dimensions.
-27. Search Form: Display search form for searching the users.
-28. User Counter: Display how many users registered.
-29. Video: Show a video in a popup.
-30. Visit Counter: Display how many users visit.
+14. Modal Box: You can use any template (which made by Elementor) into a modal box with 20+ animation effects.
+15. News Ticker: Use it for scrolling post or news title.
+16. Particle Layer: Use particle layer with lots of style, layout & more.
+17. Piechart: Works the same as the Counter, but with a circle.
+18. Portfolio: Easily display your works.
+19. Posts Carousel: Latest posts you can use into a carousel as full width or grid view.
+20. Posts Tab: Show your latest posts with a tab.
+21. Pricing: Add Pricing for display your services rate.
+22. Product Zoomer: Add multiple images of product for zoom in.
+23. Progressbar: Display progress bars with different styles.
+24. Review Carousel: Show what others said about your brand.
+25. Table: Use table for showing your expected data.
+26. Team: Add your team members just a few clicks.
+27. Title: Use title, subtitle & description anywhere into your web page.
+28. Transform: Display content by transforming in the different dimensions.
+29. Search Form: Display search form for searching the users.
+30. User Counter: Display how many users registered.
+31. Video: Show a video in a popup.
+32. Visit Counter: Display how many users visit.
 
 Cool things are coming soon...
 
@@ -83,15 +98,19 @@ No. You can't use without Elementor since it's an extension for Elementor.
 
 Yes. It's totally free.
 
+= What can I do with this plugin? =
+
+You can make unlimited design & layout without coding knowledge.
+Please [See demo](https://shaonsina.com/plugins/sina-extension/)
+
 
 == Changelog ==
 
-
-= 2.2.0 - 8-06-2019 =
+= 2.2.0 - 15-06-2019 =
 
 - New: Modal Box
 - New: Posts Carousel
-- Added: Blog List
+- Added: List option to Blogpost
 - Added: Custom email to Contact Email
 - Added: Progressbar number based
 - Added: Blogpost pagination button width
