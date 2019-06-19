@@ -5,7 +5,7 @@ Donate link: https://shaonsina.com/plugins/sina-extension/
 Requires at least: 4.7
 Tested up to: 5.2
 Requires PHP: 7.0
-Stable tag: 2.2.0
+Stable tag: 2.2.1
 License: GPL v3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -102,8 +102,10 @@ Yes. It's totally free.
 
 == Changelog ==
 
-= 2.2.0 - 15-06-2019 =
+= 2.2.1 - 19-06-2019 =
+- Fixed: Security issue
 
+= 2.2.0 - 15-06-2019 =
 - New: Modal Box
 - New: Posts Carousel
 - Added: List option to Blogpost

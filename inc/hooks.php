@@ -91,8 +91,9 @@ function sina_ajax_load_more_posts() {
 		$excerpt = sanitize_text_field( $_POST['excerpt'] );
 		$content_length = (int) sanitize_text_field( $_POST['content_length'] );
 		$posts_meta = sanitize_text_field( $_POST['posts_meta'] );
-		$layout = sanitize_text_field( $_POST['layout'] );
 		$thumb_right = sanitize_text_field( $_POST['thumb_right'] );
+		$layout = sanitize_text_field( $_POST['layout'] );
+		$layout_file = pathinfo( SINA_EXT_LAYOUT.'/blogpost/'.$layout.'.php' );
 
 		// Post Query
 		$post_query = new WP_Query( $default );
@@ -100,7 +101,7 @@ function sina_ajax_load_more_posts() {
 		if ( $post_query->have_posts() ) {
 			?>
 			<div class="sina-ajax-posts">
-				<?php include SINA_EXT_LAYOUT.'/blogpost/'.$layout.'.php'; ?>
+				<?php include $layout_file['dirname'].'/'.$layout_file['basename']; ?>
 				<?php wp_reset_query(); ?>
 			</div>
 			<?php

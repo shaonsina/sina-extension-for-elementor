@@ -1434,14 +1434,14 @@ class Sina_Blogpost_Widget extends Widget_Base {
 
 		// Post Query
 		$post_query = new WP_Query( $default );
-
 		if ( $post_query->have_posts() ) :
 			$columns = $data['columns'];
 			$excerpt = $data['excerpt'];
 			$content_length = $data['content_length'];
 			$posts_meta = $data['posts_meta'];
-			$layout = $data['layout'];
 			$thumb_right = $data['thumb_right'];
+			$layout = $data['layout'];
+			$layout_file = pathinfo( SINA_EXT_LAYOUT.'/blogpost/'.$layout.'.php' );
 			?>
 			<div class="sina-blogpost <?php echo esc_attr( 'sina-bp-'.$this->get_id() ); ?>"
 			data-uid="<?php echo esc_attr( $this->get_id() ); ?>"
@@ -1456,7 +1456,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 			data-thumb-right="<?php echo esc_attr( $thumb_right ); ?>"
 			data-excerpt="<?php echo esc_attr( $excerpt ); ?>">
 				<div class="sina-bp-grid">
-					<?php include SINA_EXT_LAYOUT.'/blogpost/'.$layout.'.php'; ?>
+					<?php include $layout_file['dirname'].'/'.$layout_file['basename']; ?>
 					<?php wp_reset_query(); ?>
 				</div>
 
