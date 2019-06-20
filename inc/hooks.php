@@ -93,7 +93,6 @@ function sina_ajax_load_more_posts() {
 		$posts_meta = sanitize_text_field( $_POST['posts_meta'] );
 		$thumb_right = sanitize_text_field( $_POST['thumb_right'] );
 		$layout = sanitize_text_field( $_POST['layout'] );
-		$layout_file = pathinfo( SINA_EXT_LAYOUT.'/blogpost/'.$layout.'.php' );
 
 		// Post Query
 		$post_query = new WP_Query( $default );
@@ -101,7 +100,10 @@ function sina_ajax_load_more_posts() {
 		if ( $post_query->have_posts() ) {
 			?>
 			<div class="sina-ajax-posts">
-				<?php include $layout_file['dirname'].'/'.$layout_file['basename']; ?>
+				<?php if ( 'grid' == $layout || 'list' == $layout): ?>
+					<?php $layout_file = pathinfo( SINA_EXT_LAYOUT.'/blogpost/'.$layout.'.php' ); ?>
+					<?php include $layout_file['dirname'].'/'.$layout_file['basename']; ?>
+				<?php endif; ?>
 				<?php wp_reset_query(); ?>
 			</div>
 			<?php
