@@ -101,8 +101,7 @@ function sina_ajax_load_more_posts() {
 			?>
 			<div class="sina-ajax-posts">
 				<?php if ( 'grid' == $layout || 'list' == $layout): ?>
-					<?php $layout_file = pathinfo( SINA_EXT_LAYOUT.'/blogpost/'.$layout.'.php' ); ?>
-					<?php include $layout_file['dirname'].'/'.$layout_file['basename']; ?>
+					<?php include realpath( SINA_EXT_LAYOUT.'/blogpost/'.$layout.'.php' ); ?>
 				<?php endif; ?>
 				<?php wp_reset_query(); ?>
 			</div>
