@@ -13,6 +13,7 @@ use Elementor\Group_Control_Background;
 use Elementor\Group_Control_Box_Shadow;
 use Elementor\Group_Control_Text_Shadow;
 use Elementor\Group_Control_Border;
+use Elementor\Plugin;
 
 
 // Exit if accessed directly.
@@ -130,7 +131,7 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter Custom Email', 'sina-ext' ),
-				'description' => __( 'If you keep the field empty or use an invalid email address, then the emails will send to the admin email.', 'sina-ext' ),
+				'description' => __( 'If the field is empty or enter an invalid email or try to send email from the editor, then the emails will send to the admin email. This email will work only in the front-end.', 'sina-ext' ),
 				'condition' => [
 					'custom_email' => 'yes',
 				]
@@ -964,7 +965,7 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 	protected function render() {
 		$data = $this->get_settings_for_display();
 		$hash = '';
-		if ( sanitize_email( $data['contact_email'] ) ) {
+		if ( sanitize_email( $data['contact_email'] ) && !Plugin::instance()->editor->is_edit_mode() ) {
 			$hash = md5( $data['contact_email'] );
 			add_option( 'sina_contact_email'.$hash, $data['contact_email'] );
 		}
