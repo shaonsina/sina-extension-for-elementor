@@ -387,6 +387,23 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 			]
 		);
 		$this->add_control(
+			'nav_top',
+			[
+				'label' => __( 'Navigation Top (%)', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'default' => [
+					'unit' => '%',
+					'size' => '50',
+				],
+				'condition' => [
+					'nav!' => '',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-content-slider .owl-next, {{WRAPPER}} .sina-content-slider .owl-prev' => 'top: calc({{SIZE}}{{UNIT}} - 18px);',
+				],
+			]
+		);
+		$this->add_control(
 			'delay',
 			[
 				'label' => __( 'Delay', 'sina-ext' ),

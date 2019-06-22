@@ -133,6 +133,28 @@ class Sina_Visit_Counter_Widget extends Widget_Base {
 				'default' => 'Yesterday\'s visit',
 			]
 		);
+		$this->add_control(
+			'position',
+			[
+				'label' => __( 'Today at Top', 'sina-ext' ),
+				'type' => Controls_Manager::SWITCHER,
+			]
+		);
+		$this->add_responsive_control(
+			'display',
+			[
+				'label' => __( 'Display', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					'block' => __( 'Block', 'sina-ext' ),
+					'inline-block' => __( 'Inline', 'sina-ext' ),
+				],
+				'default' => 'block',
+				'selectors' => [
+					'{{WRAPPER}} .sina-visit-counter .sina-visit-number, {{WRAPPER}} .sina-visit-counter .sina-visit-text' => 'display: {{VALUE}};',
+				],
+			]
+		);
 		$this->add_responsive_control(
 			'alignment',
 			[
@@ -175,7 +197,7 @@ class Sina_Visit_Counter_Widget extends Widget_Base {
 		);
 
 		$this->add_control(
-			'color',
+			'text_color',
 			[
 				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
@@ -188,7 +210,7 @@ class Sina_Visit_Counter_Widget extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
-				'name' => 'typography',
+				'name' => 'text_typography',
 				'fields_options' => [
 					'typography' => [ 
 						'default' =>'custom', 
@@ -201,6 +223,11 @@ class Sina_Visit_Counter_Widget extends Widget_Base {
 							'size' => '24',
 						],
 					],
+					'line_height'   => [
+						'default' => [
+							'size' => '32',
+						],
+					],
 				],
 				'selector' => '{{WRAPPER}} .sina-visit-text',
 			]
@@ -208,7 +235,7 @@ class Sina_Visit_Counter_Widget extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Text_Shadow::get_type(),
 			[
-				'name' => 'shadow',
+				'name' => 'text_shadow',
 				'selector' => '{{WRAPPER}} .sina-visit-text',
 			]
 		);
@@ -252,12 +279,12 @@ class Sina_Visit_Counter_Widget extends Widget_Base {
 					],
 					'font_size'   => [
 						'default' => [
-							'size' => '32',
+							'size' => '24',
 						],
 					],
 					'line_height'   => [
 						'default' => [
-							'size' => '40',
+							'size' => '32',
 						],
 					],
 				],
@@ -269,6 +296,24 @@ class Sina_Visit_Counter_Widget extends Widget_Base {
 			[
 				'name' => 'number_shadow',
 				'selector' => '{{WRAPPER}} .sina-visit-number',
+			]
+		);
+		$this->add_responsive_control(
+			'number_margin',
+			[
+				'label' => __( 'Margin', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '10',
+					'right' => '10',
+					'bottom' => '10',
+					'left' => '10',
+					'isLinked' => false,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-visit-counter .sina-visit-number' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
 			]
 		);
 
@@ -315,26 +360,37 @@ class Sina_Visit_Counter_Widget extends Widget_Base {
 		?>
 		<div class="sina-visit-counter" data-page="<?php echo esc_attr( $page_id ); ?>">
 			<?php wp_nonce_field( 'sina_visit_counter', 'sina_visit_counter_nonce' ); ?>
-			<?php if ( $data['yesterday'] ): ?>
-				<?php printf( '<h3 class="sina-visit-text">%1$s</h3>', $data['yesterday'] ); ?>
-				<span class="sina-visit-number sina-visit-yesterday">
-				<?php
-					if ( isset($visit_data['sina_visit_yesterday']) ) :
-						echo esc_html( $visit_data['sina_visit_yesterday'] );
-					endif;
-				?>
-				</span>
+			<?php if ( $data['today'] && 'yes' == $data['position'] ): ?>
+				<div class="sina-today">
+					<?php printf( '<h3 class="sina-visit-text">%1$s</h3>', $data['today'] ); ?>
+					<?php if ( isset($visit_data['sina_visit_today']) ): ?>
+						<span class="sina-visit-number sina-visit-today">
+							<?php echo esc_html( $visit_data['sina_visit_today'] ); ?>
+						</span>
+					<?php endif; ?>
+				</div>
 			<?php endif; ?>
 
-			<?php if ( $data['today'] ): ?>
-				<?php printf( '<h3 class="sina-visit-text">%1$s</h3>', $data['today'] ); ?>
-				<span class="sina-visit-number sina-visit-today">
-					<?php
-						if ( isset($visit_data['sina_visit_today']) ) :
-							echo esc_html( $visit_data['sina_visit_today'] );
-						endif;
-					?>
-				</span>
+			<?php if ( $data['yesterday'] ): ?>
+				<div class="sina-yesterday">
+					<?php printf( '<h3 class="sina-visit-text">%1$s</h3>', $data['yesterday'] ); ?>
+					<?php if ( isset($visit_data['sina_visit_yesterday']) ): ?>
+						<span class="sina-visit-number sina-visit-yesterday">
+							<?php echo esc_html( $visit_data['sina_visit_yesterday'] ); ?>
+						</span>
+					<?php endif; ?>
+				</div>
+			<?php endif; ?>
+
+			<?php if ( $data['today'] && '' == $data['position'] ): ?>
+				<div class="sina-today">
+					<?php printf( '<h3 class="sina-visit-text">%1$s</h3>', $data['today'] ); ?>
+					<?php if ( isset($visit_data['sina_visit_today']) ): ?>
+						<span class="sina-visit-number sina-visit-today">
+							<?php echo esc_html( $visit_data['sina_visit_today'] ); ?>
+						</span>
+					<?php endif; ?>
+				</div>
 			<?php endif; ?>
 		</div><!-- .sina-visit-counter -->
 		<?php

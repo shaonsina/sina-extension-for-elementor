@@ -274,6 +274,18 @@ class Sina_Piechart_Widget extends Widget_Base {
 		);
 
 		$this->add_control(
+			'title_position',
+			[
+				'label' => __( 'Position', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					'top' => __( 'Top', 'sina-ext' ),
+					'bottom' => __( 'Bottom', 'sina-ext' ),
+				],
+				'default' => 'bottom',
+			]
+		);
+		$this->add_control(
 			'title_color',
 			[
 				'label' => __('Text Color', 'sina-ext'),
@@ -314,6 +326,24 @@ class Sina_Piechart_Widget extends Widget_Base {
 			[
 				'name' => 'title_shadow',
 				'selector' => '{{WRAPPER}} .sina-piechart-title',
+			]
+		);
+		$this->add_responsive_control(
+			'title_margin',
+			[
+				'label' => __( 'Margin', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '10',
+					'right' => '0',
+					'bottom' => '10',
+					'left' => '0',
+					'isLinked' => false,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-piechart .sina-piechart-title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
 			]
 		);
 
@@ -389,7 +419,7 @@ class Sina_Piechart_Widget extends Widget_Base {
 			$percent = round( $data['value'] / $data['max_value'] * 100 );
 		}
 		?>
-		<div class="sina-piechart sina-flex" style="width: <?php echo esc_attr( $data['size']['size'] ); ?>px; height: <?php echo esc_attr( $data['size']['size'] ); ?>px;">
+		<div class="sina-piechart" style="width: <?php echo esc_attr( $data['size']['size'] ); ?>px; height: <?php echo esc_attr( $data['size']['size'] ); ?>px;">
 			<div class="sina-piechart-wrap"
 			data-track="<?php echo esc_attr( $data['track_color'] ); ?>"
 			data-track-width="<?php echo esc_attr( $data['track_width']['size'] ); ?>"
@@ -401,13 +431,22 @@ class Sina_Piechart_Widget extends Widget_Base {
 			data-size="<?php echo esc_attr( $data['size']['size'] ); ?>"
 			data-percent="<?php echo esc_attr( $percent ); ?>">
 			</div>
-			<div class="sina-piechart-content">
-				<span class="sina-piechart-percent">
-					<?php echo esc_html( $data['prefix'].$data['value'].$data['suffix'] ); ?>
-				</span>
-				<?php if ( $data['title'] ): ?>
-					<?php printf( '<h3 class="sina-piechart-title">%1$s</h3>', $data['title'] ); ?>
-				<?php endif; ?>
+			<div class="sina-piechart-content sina-flex">
+				<div class="sina-piechart-center">
+					<?php if ( 'bottom' == $data['title_position'] ): ?>
+						<span class="sina-piechart-percent">
+							<?php echo esc_html( $data['prefix'].$data['value'].$data['suffix'] ); ?>
+						</span>
+					<?php endif; ?>
+					<?php if ( $data['title'] ): ?>
+						<?php printf( '<h3 class="sina-piechart-title">%1$s</h3>', $data['title'] ); ?>
+					<?php endif; ?>
+					<?php if ( 'top' == $data['title_position'] ): ?>
+						<span class="sina-piechart-percent">
+							<?php echo esc_html( $data['prefix'].$data['value'].$data['suffix'] ); ?>
+						</span>
+					<?php endif; ?>
+				</div>
 			</div>
 		</div><!-- .sina-piechart -->
 		<?php

@@ -5,7 +5,7 @@ Donate link: https://shaonsina.com/plugins/sina-extension/
 Requires at least: 4.7
 Tested up to: 5.2
 Requires PHP: 7.0
-Stable tag: 2.2.1
+Stable tag: 2.2.2
 License: GPL v3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -101,6 +101,14 @@ Yes. It's totally free.
 
 
 == Changelog ==
+
+= 2.2.2 - 22-06-2019 =
+- Fixed: Piechart browser issue
+- Fiexd: Blogpost height
+- Added: Navigation top option to Banner Slider, Content Slider, Posts Carousel & Review Carousel
+- Added: Inline & Margin option to User Counter & Visit Counter
+- Improved
+**NOTE: Banner Slider, Content Slider, Posts Carousel, Review Carousel, User Counter & Visit Counter widgets has been changed. So, please review your site after update.**
 
 = 2.2.1 - 19-06-2019 =
 - Fixed: Security issue

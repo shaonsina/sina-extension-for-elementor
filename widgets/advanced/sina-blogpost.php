@@ -513,6 +513,9 @@ class Sina_Blogpost_Widget extends Widget_Base {
 				'type' => Controls_Manager::SWITCHER,
 				'label_on' => __( 'Yes', 'sina-ext' ),
 				'label_off' => __( 'No', 'sina-ext' ),
+				'condition' => [
+					'layout' => 'list',
+				],
 			]
 		);
 		$this->add_responsive_control(
@@ -537,7 +540,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 					'is_content_height' => 'yes',
 				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-bp-list .sina-bp-content' => 'height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .sina-bp-list .sina-pb-inner-content' => 'height: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);

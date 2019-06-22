@@ -106,7 +106,7 @@ class Sina_User_Counter_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'uc_content',
 			[
-				'label' => __( 'User Count', 'sina-ext' ),
+				'label' => __( 'User Counter', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -142,6 +142,21 @@ class Sina_User_Counter_Widget extends Widget_Base {
 			]
 		);
 		$this->add_responsive_control(
+			'display',
+			[
+				'label' => __( 'Display', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					'block' => __( 'Block', 'sina-ext' ),
+					'inline-block' => __( 'Inline', 'sina-ext' ),
+				],
+				'default' => 'block',
+				'selectors' => [
+					'{{WRAPPER}} .sina-user-counter .sina-uc-number, {{WRAPPER}} .sina-user-counter .sina-uc-text' => 'display: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
 			'alignment',
 			[
 				'label' => __( 'Alignment', 'sina-ext' ),
@@ -172,18 +187,18 @@ class Sina_User_Counter_Widget extends Widget_Base {
 		// =================
 
 
-		// Start Prefix & Suffix Style
+		// Start Text Style
 		// ============================
 		$this->start_controls_section(
-			'prefix_suffix_style',
+			'text_style',
 			[
-				'label' => __( 'Prefix & Suffix Text', 'sina-ext' ),
+				'label' => __( 'Text', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
 
 		$this->add_control(
-			'color',
+			'text_color',
 			[
 				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
@@ -196,7 +211,7 @@ class Sina_User_Counter_Widget extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
-				'name' => 'typography',
+				'name' => 'text_typography',
 				'fields_options' => [
 					'typography' => [ 
 						'default' =>'custom', 
@@ -209,6 +224,11 @@ class Sina_User_Counter_Widget extends Widget_Base {
 							'size' => '24',
 						],
 					],
+					'line_height'   => [
+						'default' => [
+							'size' => '32',
+						],
+					],
 				],
 				'selector' => '{{WRAPPER}} .sina-uc-text',
 			]
@@ -216,13 +236,13 @@ class Sina_User_Counter_Widget extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Text_Shadow::get_type(),
 			[
-				'name' => 'shadow',
+				'name' => 'text_shadow',
 				'selector' => '{{WRAPPER}} .sina-uc-text',
 			]
 		);
 
 		$this->end_controls_section();
-		// End Prefix & Suffix Style
+		// End Text Style
 		// ===========================
 
 
@@ -260,12 +280,12 @@ class Sina_User_Counter_Widget extends Widget_Base {
 					],
 					'font_size'   => [
 						'default' => [
-							'size' => '32',
+							'size' => '24',
 						],
 					],
 					'line_height'   => [
 						'default' => [
-							'size' => '40',
+							'size' => '32',
 						],
 					],
 				],
@@ -277,6 +297,24 @@ class Sina_User_Counter_Widget extends Widget_Base {
 			[
 				'name' => 'number_shadow',
 				'selector' => '{{WRAPPER}} .sina-uc-number',
+			]
+		);
+		$this->add_responsive_control(
+			'number_margin',
+			[
+				'label' => __( 'Margin', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '10',
+					'right' => '10',
+					'bottom' => '10',
+					'left' => '10',
+					'isLinked' => false,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-user-counter .sina-uc-number' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
 			]
 		);
 

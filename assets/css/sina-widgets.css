@@ -1,4 +1,4 @@
-/* Sina Extension for Elementor v2.2.1 */
+/* Sina Extension for Elementor v2.2.2 */
 
 /*--------------------------------- General -------------------------------------- */
 .sina-overlay{
@@ -52,11 +52,6 @@
 .sina-table table tr{
 	transition: all 0.1s ease-in-out;
 }
-.sina-pricing-btn .sina-order-btn,
-.sina-banner-btns .sina-banner-pbtn,
-.sina-banner-btns .sina-banner-sbtn{
-	display: inline-block;
-}
 .sina-posts-carousel,
 .sina-brand-carousel,
 .sina-content-slider,
@@ -64,6 +59,7 @@
 .sina-banner-slider{
 	direction: ltr;
 }
+.sina-load-more,
 .sina-bp-list .sina-bp,
 .sina-modal-content,
 .sina-transform-overflow,
@@ -81,7 +77,14 @@
 .sina-pt-content .sina-pt-post {
 	overflow: hidden;
 }
-
+.sina-google-map,
+.sina-pt-title,
+.sina-table table,
+.sina-team img,
+.sina-load-more,
+.sina-bp-item-1{
+	width: 100%;
+}
 /* Template Editor button hide */
 .sina-modal-content .elementor-element-overlay,
 .sina-transform .elementor-element-overlay,
@@ -101,6 +104,14 @@
 .sina-accordion-item.open > .sina-accordion-header > .sina-accordion-icon .on{
 	display: block;
 }
+.sina-fancytext .sina-fancytext-strings > .animated,
+.sina-product-zoomer,
+.sina-pricing-btn .sina-order-btn,
+.sina-banner-btns .sina-banner-pbtn,
+.sina-banner-btns .sina-banner-sbtn{
+	display: inline-block;
+}
+
 .sina-bp-list .sina-bg-thumb,
 .sina-bp-list .sina-bp-content,
 .sina-bp-col,
@@ -205,7 +216,6 @@ img.mfp-img{
 .sina-banner-slider .owl-next,
 .sina-banner-slider .owl-prev {
 	position: absolute;
-	top: calc(50% - 18px);
 	padding: 2px 14px 6px;
 	border: 0;
 	border-radius: 4px;
@@ -290,9 +300,6 @@ img.mfp-img{
 }
 
 /*--------------------------------- Blogpost -------------------------------------- */
-.sina-bp-item-1{
-	width: 100%;
-}
 .sina-bp-item-2{
 	width: 50%;
 }
@@ -323,10 +330,6 @@ img.mfp-img{
 	display: inline-block;
 	text-align: center;
 	transition: all 0.4s ease-in-out;
-}
-.sina-load-more{
-	width: 100%;
-	overflow: hidden;
 }
 .sina-load-more .sina-load-more-btn{
 	min-width: 160px;
@@ -403,9 +406,6 @@ img.mfp-img{
 	opacity: 1;
 	animation: blink_cursor 0.7s infinite;
 }
-.sina-fancytext .sina-fancytext-strings > .animated {
-	display: inline-block;
-}
 
 /*-------------------------- Flip Box --------------------------*/
 .sina-flipbox{
@@ -465,15 +465,7 @@ img.mfp-img{
 	transform: scale(1);
 }
 
-/*--------------------------------- Google Map -------------------------------------- */
-.sina-google-map{
-	width: 100%;
-}
-
 /*--------------------------------- Product Zoomer -------------------------------------- */
-.sina-product-zoomer{
-	display: inline-block;
-}
 .sina-product-title a,
 .sina-product-title{
 	margin: 0 0 6px 0;
@@ -642,8 +634,10 @@ img.mfp-img{
 }
 .sina-piechart .sina-piechart-content {
 	position: absolute;
+	left: 0;
+	top: 0;
 	width: 100%;
-	align-self: center;
+	height: 100%;
 	text-align: center;
 }
 
@@ -783,9 +777,6 @@ img.mfp-img{
 .sina-pt-title-wraper p{
 	margin-bottom: 0;
 }
-.sina-pt-title{
-	width: 100%;
-}
 .sina-pt-title h3{
 	margin: 0;
 	cursor: pointer;
@@ -830,6 +821,7 @@ img.mfp-img{
 	width: 0;
 	height: 100%;
 }
+.sina-piechart .sina-piechart-center,
 .sina-progressbars .sina-bar-percent {
 	width: 100%;
 	align-self: center;
@@ -863,18 +855,12 @@ img.mfp-img{
 .sina-table{
 	overflow-x: auto;
 }
-.sina-table table{
-	width: 100%;
-}
 
 /*--------------------------------- Team -------------------------------------- */
 .sina-team {
 	position: relative;
 	overflow: hidden;
 	text-align: center;
-}
-.sina-team img {
-	width: 100%;
 }
 .sina-team-social {
 	padding-top: 20px;
@@ -919,6 +905,7 @@ img.mfp-img{
 .sina-uc-number,
 .sina-uc-text{
 	margin: 0;
+	display: block;
 }
 
 /*--------------------------------- Video -------------------------------------- */

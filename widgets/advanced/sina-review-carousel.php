@@ -332,6 +332,23 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 			]
 		);
 		$this->add_control(
+			'nav_top',
+			[
+				'label' => __( 'Navigation Top (%)', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'default' => [
+					'unit' => '%',
+					'size' => '58',
+				],
+				'condition' => [
+					'nav!' => '',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-review-carousel .owl-prev, {{WRAPPER}} .sina-review-carousel .owl-next' => 'top: calc({{SIZE}}{{UNIT}} - 18px);',
+				],
+			]
+		);
+		$this->add_control(
 			'delay',
 			[
 				'label' => __( 'Delay', 'sina-ext' ),
