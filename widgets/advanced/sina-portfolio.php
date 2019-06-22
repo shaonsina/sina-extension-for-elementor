@@ -503,7 +503,7 @@ class Sina_Portfolio_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'item_style',
 			[
-				'label' => __( 'Items & Overlay', 'sina-ext' ),
+				'label' => __( 'Items', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -514,23 +514,6 @@ class Sina_Portfolio_Widget extends Widget_Base {
 				'label' => 'If you change the <strong>Dimension</strong> then the page need to <strong>Refresh</strong> for seeing the actual result',
 				'type' => Controls_Manager::RAW_HTML,
 				'separator' => 'after',
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Background::get_type(),
-			[
-				'name' => 'overlay',
-				'label' => __( 'Background', 'sina-ext' ),
-				'types' => [ 'classic', 'gradient' ],
-				'fields_options' => [
-					'background' => [ 
-						'default' =>'classic', 
-					],
-					'color' => [
-						'default' => 'rgba(0,0,0,0.8)',
-					],
-				],
-				'selector' => '{{WRAPPER}} .sina-portfolio-overlay',
 			]
 		);
 		$this->add_responsive_control(
@@ -561,7 +544,7 @@ class Sina_Portfolio_Widget extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
-					'{{WRAPPER}} .sina-portfolio-item-inner' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .sina-portfolio-item-inner, {{WRAPPER}} .sina-portfolio-overlay' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -574,6 +557,31 @@ class Sina_Portfolio_Widget extends Widget_Base {
 				'selectors' => [
 					'{{WRAPPER}} .sina-portfolio-item' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
+			]
+		);
+		$this->add_control(
+			'overlay',
+			[
+				'label' => __( 'Overlay Background', 'sina-ext' ),
+				'type' => Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
+			[
+				'name' => 'overlay_bg',
+				'label' => __( 'Background', 'sina-ext' ),
+				'types' => [ 'classic', 'gradient' ],
+				'fields_options' => [
+					'background' => [ 
+						'default' =>'classic', 
+					],
+					'color' => [
+						'default' => 'rgba(0,0,0,0.8)',
+					],
+				],
+				'selector' => '{{WRAPPER}} .sina-portfolio-overlay',
 			]
 		);
 
