@@ -108,7 +108,7 @@ Yes. It's totally free.
 - Added: Navigation top option to Banner Slider, Content Slider, Posts Carousel & Review Carousel
 - Added: Inline & Margin option to User Counter & Visit Counter
 - Improved
-**NOTE: Banner Slider, Content Slider, Posts Carousel, Review Carousel, User Counter & Visit Counter widgets has been changed. So, please review your site after update.**
+**NOTE: Some widgets has been changed. So, please review your site after update.**
 
 = 2.2.1 - 19-06-2019 =
 - Fixed: Security issue
