@@ -177,139 +177,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
-
-		$this->add_group_control(
-			Group_Control_Typography::get_type(),
-			[
-				'name' => 'cat_typography',
-				'fields_options' => [
-					'typography' => [ 
-						'default' =>'custom', 
-					],
-					'font_size'   => [
-						'default' => [
-							'size' => '16',
-						],
-					],
-					'text_transform' => [
-						'default' => 'uppercase',
-					],
-				],
-				'selector' => '{{WRAPPER}} .sina-pt-cat-btn',
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Text_Shadow::get_type(),
-			[
-				'name' => 'cat_shadow',
-				'selector' => '{{WRAPPER}} .sina-pt-cat-btn',
-			]
-		);
-
-		$this->start_controls_tabs( 'cat_tabs' );
-
-		$this->start_controls_tab(
-			'cat_normal',
-			[
-				'label' => __( 'Normal', 'sina-ext' ),
-			]
-		);
-
-		$this->add_control(
-			'cat_color',
-			[
-				'label' => __( 'Text Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#fff',
-				'selectors' => [
-					'{{WRAPPER}} .sina-pt-cat-btn' => 'color: {{VALUE}}'
-				],
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Background::get_type(),
-			[
-				'name' => 'cat_bg',
-				'label' => __( 'Background', 'sina-ext' ),
-				'types' => [ 'classic', 'gradient' ],
-				'fields_options' => [
-					'background' => [ 
-						'default' =>'classic', 
-					],
-					'color' => [
-						'default' => '#1085e4',
-					],
-				],
-				'selector' => '{{WRAPPER}} .sina-pt-cat-btn',
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Border::get_type(),
-			[
-				'name' => 'cat_border',
-				'selector' => '{{WRAPPER}} .sina-pt-cat-btn',
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Box_Shadow::get_type(),
-			[
-				'name' => 'cat_shadow',
-				'selector' => '{{WRAPPER}} .sina-pt-cat-btn',
-				'separator' => 'before',
-			]
-		);
-
-		$this->end_controls_tab();
-
-		$this->start_controls_tab(
-			'cat_hover',
-			[
-				'label' => __( 'Hover', 'sina-ext' ),
-			]
-		);
-
-		$this->add_control(
-			'cat_hover_color',
-			[
-				'label' => __( 'Text Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .sina-pt-cat-btn:hover' => 'color: {{VALUE}}'
-				],
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Background::get_type(),
-			[
-				'name' => 'cat_hover_bg',
-				'label' => __( 'Background', 'sina-ext' ),
-				'types' => [ 'classic', 'gradient' ],
-				'selector' => '{{WRAPPER}} .sina-pt-cat-btn:hover',
-			]
-		);
-		$this->add_control(
-			'hover_cat_border',
-			[
-				'label' => __( 'Border Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .sina-pt-cat-btn:hover' => 'border-color: {{VALUE}}'
-				],
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Box_Shadow::get_type(),
-			[
-				'name' => 'hover_cat_shadow',
-				'selector' => '{{WRAPPER}} .sina-pt-cat-btn:hover',
-				'separator' => 'before',
-			]
-		);
-
-		$this->end_controls_tab();
-
-		$this->end_controls_tabs();
-
+		Sina_Common_Data::button_style( $this, '.sina-pt-cat-btn', 'cat' );
 		$this->add_responsive_control(
 			'cat_gap',
 			[
@@ -321,31 +189,6 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 				'separator' => 'before',
 				'selectors' => [
 					'{{WRAPPER}} .sina-pt-btns' => 'margin-bottom: {{SIZE}}{{UNIT}};',
-				],
-			]
-		);
-		$this->add_responsive_control(
-			'cat_alignment',
-			[
-				'label' => __( 'Alignment', 'sina-ext' ),
-				'type' => Controls_Manager::CHOOSE,
-				'options' => [
-					'left' => [
-						'title' => __( 'Left', 'sina-ext' ),
-						'icon' => 'fa fa-align-left',
-					],
-					'center' => [
-						'title' => __( 'Center', 'sina-ext' ),
-						'icon' => 'fa fa-align-center',
-					],
-					'right' => [
-						'title' => __( 'Right', 'sina-ext' ),
-						'icon' => 'fa fa-align-right',
-					],
-				],
-				'default' => 'center',
-				'selectors' => [
-					'{{WRAPPER}} .sina-pt-btns' => 'text-align: {{VALUE}};',
 				],
 			]
 		);
@@ -393,6 +236,31 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-pt-cat-btn' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'cat_alignment',
+			[
+				'label' => __( 'Alignment', 'sina-ext' ),
+				'type' => Controls_Manager::CHOOSE,
+				'options' => [
+					'left' => [
+						'title' => __( 'Left', 'sina-ext' ),
+						'icon' => 'fa fa-align-left',
+					],
+					'center' => [
+						'title' => __( 'Center', 'sina-ext' ),
+						'icon' => 'fa fa-align-center',
+					],
+					'right' => [
+						'title' => __( 'Right', 'sina-ext' ),
+						'icon' => 'fa fa-align-right',
+					],
+				],
+				'default' => 'center',
+				'selectors' => [
+					'{{WRAPPER}} .sina-pt-btns' => 'text-align: {{VALUE}};',
 				],
 			]
 		);

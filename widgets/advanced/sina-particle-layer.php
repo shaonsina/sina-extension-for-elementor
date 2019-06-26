@@ -207,7 +207,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
-		Sina_Common_Data::button_content( $this, '.sina-banner-pbtn', 'Read More', 'sbtn' );
+		Sina_Common_Data::button_content( $this, '.sina-banner-sbtn', 'Read More', 'sbtn' );
 		$this->add_responsive_control(
 			'button_space',
 			[

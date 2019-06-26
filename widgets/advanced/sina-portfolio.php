@@ -273,139 +273,7 @@ class Sina_Portfolio_Widget extends Widget_Base {
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
-
-		$this->add_group_control(
-			Group_Control_Typography::get_type(),
-			[
-				'name' => 'btn_typography',
-				'fields_options' => [
-					'typography' => [ 
-						'default' =>'custom', 
-					],
-					'font_size'   => [
-						'default' => [
-							'size' => '16',
-						],
-					],
-					'text_transform' => [
-						'default' => 'uppercase',
-					],
-				],
-				'selector' => '{{WRAPPER}} .sina-portfolio-btn',
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Text_Shadow::get_type(),
-			[
-				'name' => 'btn_shadow',
-				'selector' => '{{WRAPPER}} .sina-portfolio-btn',
-			]
-		);
-
-		$this->start_controls_tabs( 'btn_tabs' );
-
-		$this->start_controls_tab(
-			'btn_normal',
-			[
-				'label' => __( 'Normal', 'sina-ext' ),
-			]
-		);
-
-		$this->add_control(
-			'btn_color',
-			[
-				'label' => __( 'Text Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#fff',
-				'selectors' => [
-					'{{WRAPPER}} .sina-portfolio-btn' => 'color: {{VALUE}}'
-				],
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Background::get_type(),
-			[
-				'name' => 'btn_bg',
-				'label' => __( 'Background', 'sina-ext' ),
-				'types' => [ 'classic', 'gradient' ],
-				'fields_options' => [
-					'background' => [ 
-						'default' =>'classic', 
-					],
-					'color' => [
-						'default' => '#1085e4',
-					],
-				],
-				'selector' => '{{WRAPPER}} .sina-portfolio-btn',
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Border::get_type(),
-			[
-				'name' => 'btn_border',
-				'selector' => '{{WRAPPER}} .sina-portfolio-btn',
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Box_Shadow::get_type(),
-			[
-				'name' => 'btn_shadow',
-				'selector' => '{{WRAPPER}} .sina-portfolio-btn',
-				'separator' => 'before',
-			]
-		);
-
-		$this->end_controls_tab();
-
-		$this->start_controls_tab(
-			'btn_hover',
-			[
-				'label' => __( 'Hover', 'sina-ext' ),
-			]
-		);
-
-		$this->add_control(
-			'btn_hover_color',
-			[
-				'label' => __( 'Text Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .sina-portfolio-btn:hover' => 'color: {{VALUE}}'
-				],
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Background::get_type(),
-			[
-				'name' => 'btn_hover_bg',
-				'label' => __( 'Background', 'sina-ext' ),
-				'types' => [ 'classic', 'gradient' ],
-				'selector' => '{{WRAPPER}} .sina-portfolio-btn:hover',
-			]
-		);
-		$this->add_control(
-			'hover_btn_border',
-			[
-				'label' => __( 'Border Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .sina-portfolio-btn:hover' => 'border-color: {{VALUE}}'
-				],
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Box_Shadow::get_type(),
-			[
-				'name' => 'hover_btn_shadow',
-				'selector' => '{{WRAPPER}} .sina-portfolio-btn:hover',
-				'separator' => 'before',
-			]
-		);
-
-		$this->end_controls_tab();
-
-		$this->end_controls_tabs();
-
+		Sina_Common_Data::button_style( $this, '.sina-portfolio-btn' );
 		$this->add_responsive_control(
 			'menu_btn_gap',
 			[
@@ -417,31 +285,6 @@ class Sina_Portfolio_Widget extends Widget_Base {
 				'separator' => 'before',
 				'selectors' => [
 					'{{WRAPPER}} .sina-portfolio-btns' => 'margin-bottom: {{SIZE}}{{UNIT}};',
-				],
-			]
-		);
-		$this->add_responsive_control(
-			'btn_alignment',
-			[
-				'label' => __( 'Alignment', 'sina-ext' ),
-				'type' => Controls_Manager::CHOOSE,
-				'options' => [
-					'left' => [
-						'title' => __( 'Left', 'sina-ext' ),
-						'icon' => 'fa fa-align-left',
-					],
-					'center' => [
-						'title' => __( 'Center', 'sina-ext' ),
-						'icon' => 'fa fa-align-center',
-					],
-					'right' => [
-						'title' => __( 'Right', 'sina-ext' ),
-						'icon' => 'fa fa-align-right',
-					],
-				],
-				'default' => 'center',
-				'selectors' => [
-					'{{WRAPPER}} .sina-portfolio-btns' => 'text-align: {{VALUE}};',
 				],
 			]
 		);
@@ -489,6 +332,31 @@ class Sina_Portfolio_Widget extends Widget_Base {
 				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-portfolio-btn' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'btn_alignment',
+			[
+				'label' => __( 'Alignment', 'sina-ext' ),
+				'type' => Controls_Manager::CHOOSE,
+				'options' => [
+					'left' => [
+						'title' => __( 'Left', 'sina-ext' ),
+						'icon' => 'fa fa-align-left',
+					],
+					'center' => [
+						'title' => __( 'Center', 'sina-ext' ),
+						'icon' => 'fa fa-align-center',
+					],
+					'right' => [
+						'title' => __( 'Right', 'sina-ext' ),
+						'icon' => 'fa fa-align-right',
+					],
+				],
+				'default' => 'center',
+				'selectors' => [
+					'{{WRAPPER}} .sina-portfolio-btns' => 'text-align: {{VALUE}};',
 				],
 			]
 		);

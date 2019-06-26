@@ -749,7 +749,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 				'label' => __( 'Button', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
-					'btn_label!' => '',
+					'btn_text!' => '',
 				],
 			]
 		);
@@ -1006,7 +1006,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 				<?php endforeach ?>
 			</ul>
 
-			<?php if ( $data['btn_label'] ) : ?>
+			<?php if ( $data['btn_text'] || $data['btn_icon'] ) : ?>
 				<div class="sina-pricing-btn">
 					<a class="sina-order-btn"
 					href="<?php echo esc_url( $data['btn_link']['url'] ); ?>"

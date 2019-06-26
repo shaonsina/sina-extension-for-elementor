@@ -1136,10 +1136,10 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
-					'top' => '11',
-					'right' => '20',
-					'bottom' => '11',
-					'left' => '20',
+					'top' => '12',
+					'right' => '25',
+					'bottom' => '12',
+					'left' => '25',
 					'isLinked' => false,
 				],
 				'selectors' => [
@@ -1184,7 +1184,7 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 		$trigger_id = $data['trigger_id'] ? $data['trigger_id'] : 'sina-modal-'.$this->get_id();
 		?>
 		<div class="sina-modal-box" data-modal-id="<?php echo esc_attr( $trigger_id ); ?>">
-			<?php if ( $data['trigger_label'] ): ?>
+			<?php if ( $data['trigger_text'] ): ?>
 				<div class="sina-btn-wrap">
 					<button id="<?php echo esc_attr( $trigger_id ); ?>" class="sina-button sina-modal-trigger">
 						<?php Sina_Common_Data::button_html($data, 'trigger'); ?>

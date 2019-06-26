@@ -428,9 +428,9 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'desktop_default' => [
-					'top' => '12',
+					'top' => '13',
 					'right' => '25',
-					'bottom' => '12',
+					'bottom' => '13',
 					'left' => '25',
 					'isLinked' => false,
 				],
