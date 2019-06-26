@@ -185,65 +185,16 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
-
+		Sina_Common_Data::button_content( $this, '.sina-modal-box', 'Clicke Here', 'trigger',  false );
 		$this->add_control(
 			'trigger_id',
 			[
-				'label' => __( 'Trigger ID', 'sina-ext' ),
+				'label' => __( 'CSS ID', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter Trigger ID', 'sina-ext' ),
+				'placeholder' => __( 'Enter ID', 'sina-ext' ),
 				'description' => __( 'Make sure this ID unique', 'sina-ext' ),
 			]
 		);
-		$this->add_control(
-			'trigger_label',
-			[
-				'label' => __( 'Button Label', 'sina-ext' ),
-				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter Label', 'sina-ext' ),
-				'default' => 'Clicke Here',
-			]
-		);
-		$this->add_control(
-			'trigger_icon',
-			[
-				'label' => __( 'Button Icon', 'sina-ext' ),
-				'type' => Controls_Manager::ICON,
-			]
-		);
-		$this->add_control(
-			'trigger_icon_position',
-			[
-				'label' => __( 'Icon Position', 'sina-ext' ),
-				'type' => Controls_Manager::SELECT,
-				'options' => [
-					'left' => __( 'Left', 'sina-ext' ),
-					'right' => __( 'Right', 'sina-ext' ),
-				],
-				'condition' => [
-					'trigger_icon!' => '',
-				],
-				'default' => 'right',
-			]
-		);
-		$this->add_responsive_control(
-			'trigger_icon_space',
-			[
-				'label' => __( 'Icon Space', 'sina-ext' ),
-				'type' => Controls_Manager::SLIDER,
-				'default' => [
-					'size' => '5',
-				],
-				'condition' => [
-					'trigger_icon!' => '',
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-modal-box .sina-btn-icon-right' => 'margin-left: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .sina-modal-box .sina-btn-icon-left' => 'margin-right: {{SIZE}}{{UNIT}};',
-				],
-			]
-		);
-
 		$this->end_controls_section();
 		// End Trigger Button Content
 		// ===========================
@@ -1139,139 +1090,7 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
-
-		$this->add_group_control(
-			Group_Control_Typography::get_type(),
-			[
-				'name' => 'trigger_btn_typography',
-				'fields_options' => [
-					'typography' => [ 
-						'default' =>'custom', 
-					],
-					'font_size'   => [
-						'default' => [
-							'size' => '16',
-						],
-					],
-					'line_height'   => [
-						'default' => [
-							'size' => '24',
-						],
-					],
-				],
-				'selector' => '{{WRAPPER}} .sina-modal-trigger',
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Text_Shadow::get_type(),
-			[
-				'name' => 'trigger_btn_text_shadow',
-				'selector' => '{{WRAPPER}} .sina-modal-trigger',
-			]
-		);
-
-		$this->start_controls_tabs( 'trigger_btn_tabs' );
-
-		$this->start_controls_tab(
-			'trigger_btn_normal',
-			[
-				'label' => __( 'Normal', 'sina-ext' ),
-			]
-		);
-
-		$this->add_control(
-			'trigger_btn_color',
-			[
-				'label' => __( 'Text Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#eee',
-				'selectors' => [
-					'{{WRAPPER}} .sina-modal-trigger' => 'color: {{VALUE}};',
-				],
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Background::get_type(),
-			[
-				'name' => 'trigger_btn_background',
-				'label' => __( 'Background', 'sina-ext' ),
-				'types' => [ 'classic', 'gradient' ],
-				'fields_options' => [
-					'background' => [ 
-						'default' =>'classic', 
-					],
-					'color' => [
-						'default' => '#1085e4',
-					],
-				],
-				'selector' => '{{WRAPPER}} .sina-modal-trigger',
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Border::get_type(),
-			[
-				'name' => 'trigger_btn_border',
-				'selector' => '{{WRAPPER}} .sina-modal-trigger',
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Box_Shadow::get_type(),
-			[
-				'name' => 'trigger_btn_shadow',
-				'selector' => '{{WRAPPER}} .sina-modal-trigger',
-			]
-		);
-
-		$this->end_controls_tab();
-
-		$this->start_controls_tab(
-			'trigger_btn_hover',
-			[
-				'label' => __( 'Hover', 'sina-ext' ),
-			]
-		);
-
-		$this->add_control(
-			'trigger_hover_color',
-			[
-				'label' => __( 'Text Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .sina-modal-trigger:hover' => 'color: {{VALUE}};',
-				],
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Background::get_type(),
-			[
-				'name' => 'trigger_hover_background',
-				'label' => __( 'Background', 'sina-ext' ),
-				'types' => [ 'classic', 'gradient' ],
-				'selector' => '{{WRAPPER}} .sina-modal-trigger:hover',
-			]
-		);
-		$this->add_control(
-			'trigger_hover_border',
-			[
-				'label' => __( 'Border Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .sina-modal-trigger:hover' => 'border-color: {{VALUE}}'
-				],
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Box_Shadow::get_type(),
-			[
-				'name' => 'trigger_btn_hover_shadow',
-				'selector' => '{{WRAPPER}} .sina-modal-trigger:hover',
-			]
-		);
-
-		$this->end_controls_tab();
-
-		$this->end_controls_tabs();
-
+		Sina_Common_Data::button_style( $this, '.sina-modal-trigger' );
 		$this->add_responsive_control(
 			'trigger_btn_width',
 			[
@@ -1365,19 +1184,13 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 		$trigger_id = $data['trigger_id'] ? $data['trigger_id'] : 'sina-modal-'.$this->get_id();
 		?>
 		<div class="sina-modal-box" data-modal-id="<?php echo esc_attr( $trigger_id ); ?>">
-			<div class="sina-btn-wrap">
-				<button id="<?php echo esc_attr( $trigger_id ); ?>" class="sina-button sina-modal-trigger">
-					<?php if ( $data['trigger_icon'] && 'left' == $data['trigger_icon_position'] ): ?>
-						<i class="<?php echo esc_attr( $data['trigger_icon'] ); ?> sina-btn-icon-left"></i>
-					<?php endif ?>
-					<span>
-						<?php echo esc_html( $data['trigger_label'] ); ?>
-					</span>
-					<?php if ( $data['trigger_icon'] && 'right' == $data['trigger_icon_position'] ): ?>
-						<i class="<?php echo esc_attr( $data['trigger_icon'] ); ?> sina-btn-icon-right"></i>
-					<?php endif ?>
-				</button>
-			</div>
+			<?php if ( $data['trigger_label'] ): ?>
+				<div class="sina-btn-wrap">
+					<button id="<?php echo esc_attr( $trigger_id ); ?>" class="sina-button sina-modal-trigger">
+						<?php Sina_Common_Data::button_html($data, 'trigger'); ?>
+					</button>
+				</div>
+			<?php endif; ?>
 			<div class="sina-modal-overlay <?php echo esc_attr( $trigger_id ); ?>">
 				<div class="sina-modal-area sina-flex animated <?php echo esc_attr( $data['modal_effects'] ); ?>">
 					<div class="sina-modal-content">

@@ -261,58 +261,7 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
-
-		$this->add_control(
-			'label',
-			[
-				'label' => __( 'Button Label', 'sina-ext' ),
-				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter Label', 'sina-ext' ),
-				'default' => 'Subscribe',
-			]
-		);
-		$this->add_control(
-			'icon',
-			[
-				'label' => __( 'Button Icon', 'sina-ext' ),
-				'type' => Controls_Manager::ICON,
-				'default' => 'fa fa-paper-plane-o',
-			]
-		);
-		$this->add_control(
-			'icon_position',
-			[
-				'label' => __( 'Icon Position', 'sina-ext' ),
-				'type' => Controls_Manager::SELECT,
-				'options' => [
-					'left' => __( 'Left', 'sina-ext' ),
-					'right' => __( 'Right', 'sina-ext' ),
-				],
-				'condition' => [
-					'icon!' => '',
-				],
-				'default' => 'right',
-			]
-		);
-		$this->add_responsive_control(
-			'icon_space',
-			[
-				'label' => __( 'Icon Space', 'sina-ext' ),
-				'type' => Controls_Manager::SLIDER,
-				'default' => [
-					'size' => 5,
-				],
-				'condition' => [
-					'icon!' => '',
-					'label!' => '',
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-btn-icon-right' => 'margin-left: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .sina-btn-icon-left' => 'margin-right: {{SIZE}}{{UNIT}};',
-				],
-			]
-		);
-
+		Sina_Common_Data::button_content($this, '.sina-subs-btn', 'Subscribe', 'btn', false);
 		$this->end_controls_section();
 		// End Button Content
 		// =====================
@@ -340,153 +289,7 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 				'default' => 'inline-block',
 			]
 		);
-		$this->add_group_control(
-			Group_Control_Typography::get_type(),
-			[
-				'name' => 'fields_typography',
-				'fields_options' => [
-					'typography' => [ 
-						'default' =>'custom', 
-					],
-					'font_weight' => [
-						'default' => '400',
-					],
-					'font_size'   => [
-						'default' => [
-							'size' => '16',
-						],
-					],
-					'line_height'   => [
-						'default' => [
-							'size' => '24',
-						],
-					],
-				],
-				'selector' => '{{WRAPPER}} .sina-subs-input .sina-input-field',
-			]
-		);
-		$this->add_control(
-			'placeholder_color',
-			[
-				'label' => __( 'Placeholder Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#aaa',
-				'selectors' => [
-					'{{WRAPPER}} .sina-subs-input .sina-input-field::-webkit-input-placeholder' => 'color: {{VALUE}};',
-					'{{WRAPPER}} .sina-subs-input .sina-input-field::-moz-placeholder' => 'color: {{VALUE}};',
-					'{{WRAPPER}} .sina-subs-input .sina-input-field::-ms-placeholder' => 'color: {{VALUE}};',
-					'{{WRAPPER}} .sina-subs-input .sina-input-field::placeholder' => 'color: {{VALUE}};',
-				],
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Text_Shadow::get_type(),
-			[
-				'name' => 'fields_text_shadow',
-				'selector' => '{{WRAPPER}} .sina-subs-input .sina-input-field',
-			]
-		);
-
-		$this->start_controls_tabs( 'field_tabs' );
-
-		$this->start_controls_tab(
-			'fields_normal',
-			[
-				'label' => __( 'Normal', 'sina-ext' ),
-			]
-		);
-
-		$this->add_control(
-			'color',
-			[
-				'label' => __( 'Text Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#111',
-				'selectors' => [
-					'{{WRAPPER}} .sina-subs-input .sina-input-field' => 'color: {{VALUE}};',
-				],
-			]
-		);
-		$this->add_control(
-			'background',
-			[
-				'label' => __( 'Background', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#fff',
-				'selectors' => [
-					'{{WRAPPER}} .sina-subs-input .sina-input-field' => 'background: {{VALUE}};',
-				],
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Border::get_type(),
-			[
-				'name' => 'border',
-				'fields_options' => [
-					'border' => [
-						'default' => 'solid',
-					],
-					'color' => [
-						'default' => '#1085e4',
-					],
-					'width' => [
-						'default' => [
-							'top' => '1',
-							'right' => '1',
-							'bottom' => '1',
-							'left' => '1',
-							'isLinked' => true,
-						]
-					],
-				],
-				'selector' => '{{WRAPPER}} .sina-subs-input .sina-input-field',
-			]
-		);
-
-		$this->end_controls_tab();
-
-		$this->start_controls_tab(
-			'fields_focus',
-			[
-				'label' => __( 'Focus', 'sina-ext' ),
-			]
-		);
-
-		$this->add_control(
-			'focus_color',
-			[
-				'label' => __( 'Text Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .sina-subs-input .sina-input-field:focus' => 'color: {{VALUE}};',
-				],
-			]
-		);
-		$this->add_control(
-			'focus_background',
-			[
-				'label' => __( 'Background', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .sina-subs-input .sina-input-field:focus' => 'background: {{VALUE}};',
-				],
-			]
-		);
-		$this->add_control(
-			'focus_border',
-			[
-				'label' => __( 'Border Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .sina-subs-input .sina-input-field:focus' => 'border-color: {{VALUE}}'
-				],
-			]
-		);
-
-		$this->end_controls_tab();
-
-		$this->end_controls_tabs();
-
+		Sina_Common_Data::input_fields_style( $this );
 		$this->add_responsive_control(
 			'fields_padding',
 			[
@@ -524,63 +327,7 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 				],
 			]
 		);
-
-		$this->add_responsive_control(
-			'fname_width',
-			[
-				'label' => __( 'Width', 'sina-ext' ),
-				'type' => Controls_Manager::SLIDER,
-				'size_units' => [ 'px', 'em', '%' ],
-				'range' => [
-					'px' => [
-						'max' => 1000,
-					],
-					'em' => [
-						'max' => 50,
-					],
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-subs-input .sina-input-fname' => 'width: {{SIZE}}{{UNIT}};',
-				],
-			]
-		);
-		$this->add_responsive_control(
-			'fname_radius',
-			[
-				'label' => __( 'Radius', 'sina-ext' ),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', 'em', '%' ],
-				'default' => [
-					'top' => '0',
-					'right' => '0',
-					'bottom' => '0',
-					'left' => '0',
-					'isLinked' => true,
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-subs-input .sina-input-fname' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
-		);
-		$this->add_responsive_control(
-			'fname_margin',
-			[
-				'label' => __( 'Margin', 'sina-ext' ),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', 'em', '%' ],
-				'default' => [
-					'top' => '0',
-					'right' => '0',
-					'bottom' => '20',
-					'left' => '0',
-					'isLinked' => false,
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-subs-input .sina-input-fname' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
-		);
-
+		Sina_Common_Data::input_style( $this, '.sina-input-fname', 'fname' );
 		$this->end_controls_section();
 		// End First Name Style
 		// ========================
@@ -598,63 +345,7 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 				],
 			]
 		);
-
-		$this->add_responsive_control(
-			'lname_width',
-			[
-				'label' => __( 'Width', 'sina-ext' ),
-				'type' => Controls_Manager::SLIDER,
-				'size_units' => [ 'px', 'em', '%' ],
-				'range' => [
-					'px' => [
-						'max' => 1000,
-					],
-					'em' => [
-						'max' => 50,
-					],
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-subs-input .sina-input-lname' => 'width: {{SIZE}}{{UNIT}};',
-				],
-			]
-		);
-		$this->add_responsive_control(
-			'lname_radius',
-			[
-				'label' => __( 'Radius', 'sina-ext' ),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', 'em', '%' ],
-				'default' => [
-					'top' => '0',
-					'right' => '0',
-					'bottom' => '0',
-					'left' => '0',
-					'isLinked' => true,
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-subs-input .sina-input-lname' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
-		);
-		$this->add_responsive_control(
-			'lname_margin',
-			[
-				'label' => __( 'Margin', 'sina-ext' ),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', 'em', '%' ],
-				'default' => [
-					'top' => '0',
-					'right' => '0',
-					'bottom' => '20',
-					'left' => '0',
-					'isLinked' => false,
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-subs-input .sina-input-lname' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
-		);
-
+		Sina_Common_Data::input_style( $this, '.sina-input-lname', 'lname' );
 		$this->end_controls_section();
 		// End Last Name Style
 		// ========================
@@ -669,63 +360,7 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
-
-		$this->add_responsive_control(
-			'email_width',
-			[
-				'label' => __( 'Width', 'sina-ext' ),
-				'type' => Controls_Manager::SLIDER,
-				'size_units' => [ 'px', 'em', '%' ],
-				'range' => [
-					'px' => [
-						'max' => 1000,
-					],
-					'em' => [
-						'max' => 50,
-					],
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-subs-input .sina-input-email' => 'width: {{SIZE}}{{UNIT}};',
-				],
-			]
-		);
-		$this->add_responsive_control(
-			'email_radius',
-			[
-				'label' => __( 'Radius', 'sina-ext' ),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', 'em', '%' ],
-				'default' => [
-					'top' => '0',
-					'right' => '0',
-					'bottom' => '0',
-					'left' => '0',
-					'isLinked' => true,
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-subs-input .sina-input-email' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
-		);
-		$this->add_responsive_control(
-			'email_margin',
-			[
-				'label' => __( 'Margin', 'sina-ext' ),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', 'em', '%' ],
-				'default' => [
-					'top' => '0',
-					'right' => '0',
-					'bottom' => '20',
-					'left' => '0',
-					'isLinked' => false,
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-subs-input .sina-input-email' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
-		);
-
+		Sina_Common_Data::input_style( $this, '.sina-input-email' );
 		$this->end_controls_section();
 		// End Email Style
 		// =================
@@ -743,63 +378,7 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 				],
 			]
 		);
-
-		$this->add_responsive_control(
-			'phone_width',
-			[
-				'label' => __( 'Width', 'sina-ext' ),
-				'type' => Controls_Manager::SLIDER,
-				'size_units' => [ 'px', 'em', '%' ],
-				'range' => [
-					'px' => [
-						'max' => 1000,
-					],
-					'em' => [
-						'max' => 50,
-					],
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-subs-input .sina-input-phone' => 'width: {{SIZE}}{{UNIT}};',
-				],
-			]
-		);
-		$this->add_responsive_control(
-			'phone_radius',
-			[
-				'label' => __( 'Radius', 'sina-ext' ),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', 'em', '%' ],
-				'default' => [
-					'top' => '0',
-					'right' => '0',
-					'bottom' => '0',
-					'left' => '0',
-					'isLinked' => true,
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-subs-input .sina-input-phone' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
-		);
-		$this->add_responsive_control(
-			'phone_margin',
-			[
-				'label' => __( 'Phone Margin', 'sina-ext' ),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', 'em', '%' ],
-				'default' => [
-					'top' => '0',
-					'right' => '0',
-					'bottom' => '20',
-					'left' => '0',
-					'isLinked' => false,
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-subs-input .sina-input-phone' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
-		);
-
+		Sina_Common_Data::input_style( $this, '.sina-input-phone', 'phone' );
 		$this->end_controls_section();
 		// End Phone Style
 		// =====================
@@ -814,140 +393,7 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
-
-		$this->add_group_control(
-			Group_Control_Typography::get_type(),
-			[
-				'name' => 'btn_typography',
-				'fields_options' => [
-					'typography' => [ 
-						'default' =>'custom', 
-					],
-					'font_size'   => [
-						'default' => [
-							'size' => '16',
-						],
-					],
-					'line_height'   => [
-						'default' => [
-							'size' => '24',
-						],
-					],
-				],
-				'selector' => '{{WRAPPER}} .sina-subs-btn',
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Text_Shadow::get_type(),
-			[
-				'name' => 'btn_text_shadow',
-				'selector' => '{{WRAPPER}} .sina-subs-btn',
-			]
-		);
-
-		$this->start_controls_tabs( 'btn_tabs' );
-
-		$this->start_controls_tab(
-			'btn_normal',
-			[
-				'label' => __( 'Normal', 'sina-ext' ),
-			]
-		);
-
-		$this->add_control(
-			'btn_color',
-			[
-				'label' => __( 'Text Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#eee',
-				'selectors' => [
-					'{{WRAPPER}} .sina-subs-btn' => 'color: {{VALUE}};',
-				],
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Background::get_type(),
-			[
-				'name' => 'btn_background',
-				'label' => __( 'Background', 'sina-ext' ),
-				'types' => [ 'classic', 'gradient' ],
-				'fields_options' => [
-					'background' => [ 
-						'default' =>'classic', 
-					],
-					'color' => [
-						'default' => '#1085e4',
-					],
-				],
-				'selector' => '{{WRAPPER}} .sina-subs-btn',
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Border::get_type(),
-			[
-				'name' => 'btn_border',
-				'selector' => '{{WRAPPER}} .sina-subs-btn',
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Box_Shadow::get_type(),
-			[
-				'name' => 'btn_shadow',
-				'selector' => '{{WRAPPER}} .sina-subs-btn',
-			]
-		);
-
-		$this->end_controls_tab();
-
-		$this->start_controls_tab(
-			'btn_hover',
-			[
-				'label' => __( 'Hover', 'sina-ext' ),
-			]
-		);
-
-		$this->add_control(
-			'hover_color',
-			[
-				'label' => __( 'Text Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .sina-subs-btn:hover' => 'color: {{VALUE}};',
-				],
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Background::get_type(),
-			[
-				'name' => 'hover_background',
-				'label' => __( 'Background', 'sina-ext' ),
-				'types' => [ 'classic', 'gradient' ],
-				'selector' => '{{WRAPPER}} .sina-subs-btn:hover',
-			]
-		);
-		$this->add_control(
-			'hover_border',
-			[
-				'label' => __( 'Border Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .sina-subs-btn:hover' => 'border-color: {{VALUE}}'
-				],
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Box_Shadow::get_type(),
-			[
-				'name' => 'btn_hover_shadow',
-				'selector' => '{{WRAPPER}} .sina-subs-btn:hover',
-				'separator' => 'after',
-			]
-		);
-
-		$this->end_controls_tab();
-
-		$this->end_controls_tabs();
-
+		Sina_Common_Data::button_style( $this, '.sina-subs-btn' );
 		$this->add_responsive_control(
 			'btn_width',
 			[
@@ -992,11 +438,18 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 				'label' => __( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
-				'default' => [
-					'top' => '11',
-					'right' => '20',
-					'bottom' => '11',
-					'left' => '20',
+				'desktop_default' => [
+					'top' => '13',
+					'right' => '25',
+					'bottom' => '13',
+					'left' => '25',
+					'isLinked' => false,
+				],
+				'mobile_default' => [
+					'top' => '10',
+					'right' => '15',
+					'bottom' => '10',
+					'left' => '15',
 					'isLinked' => false,
 				],
 				'selectors' => [
@@ -1079,19 +532,9 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 						<input class="sina-input-field sina-input-phone <?php echo esc_attr( $display_class ); ?>" type="text" name="<?php echo esc_attr( $data['phone_tag'] ); ?>" placeholder="<?php echo esc_attr( $data['phone_placeholder'] ); ?>">
 					<?php endif; ?>
 
-					<?php if ( $data['label'] || $data['icon'] ): ?>
-						<button type="submit" class="sina-button sina-subs-btn">
-							<?php if ( $data['icon'] && 'left' == $data['icon_position'] ): ?>
-								<i class="<?php echo esc_attr( $data['icon'] ); ?> sina-btn-icon-left"></i>
-							<?php endif ?>
-
-							<?php echo esc_html( $data['label'] ); ?>
-
-							<?php if ( $data['icon'] && 'right' == $data['icon_position'] ): ?>
-								<i class="<?php echo esc_attr( $data['icon'] ); ?> sina-btn-icon-right"></i>
-							<?php endif ?>
-						</button>
-					<?php endif; ?>
+					<button type="submit" class="sina-button sina-subs-btn">
+						<?php Sina_Common_Data::button_html($data); ?>
+					</button>
 				</div>
 				<p class="sina-subs-success"></p>
 				<p class="sina-subs-error"></p>

@@ -10,14 +10,6 @@
 </div>
 <div class="sina-contact-input">
 	<button type="submit" class="sina-button sina-contact-btn">
-		<?php if ( $data['icon'] && 'left' == $data['icon_position'] ): ?>
-			<i class="<?php echo esc_attr( $data['icon'] ); ?> sina-btn-icon-left"></i>
-		<?php endif ?>
-		<span <?php echo $this->get_render_attribute_string( 'label' ); ?>>
-			<?php echo esc_html( $data['label'] ); ?>
-		</span>
-		<?php if ( $data['icon'] && 'right' == $data['icon_position'] ): ?>
-			<i class="<?php echo esc_attr( $data['icon'] ); ?> sina-btn-icon-right"></i>
-		<?php endif ?>
+		<?php Sina_Common_Data::button_html($data); ?>
 	</button>
 </div>

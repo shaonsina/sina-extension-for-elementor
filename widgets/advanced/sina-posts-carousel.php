@@ -110,29 +110,6 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
-
-		$this->add_control(
-			'posts_num',
-			[
-				'label' => __( 'Number of Posts', 'sina-ext' ),
-				'type' => Controls_Manager::NUMBER,
-				'step' => 1,
-				'min' => 1,
-				'max' => 50,
-				'default' => 6,
-			]
-		);
-		$this->add_control(
-			'offset',
-			[
-				'label' => __( 'Number of Offset', 'sina-ext' ),
-				'type' => Controls_Manager::NUMBER,
-				'step' => 1,
-				'min' => 0,
-				'max' => 50,
-				'default' => 0,
-			]
-		);
 		$this->add_control(
 			'categories',
 			[
@@ -142,33 +119,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 				'options' => sina_get_categories(),
 			]
 		);
-		$this->add_control(
-			'order_by',
-			[
-				'label' => __( 'Order by', 'sina-ext' ),
-				'type' => Controls_Manager::SELECT,
-				'options' => [
-					'date' => __( 'Date', 'sina-ext' ),
-					'title' => __( 'Title', 'sina-ext' ),
-					'author' => __( 'Author', 'sina-ext' ),
-					'modified' => __( 'Modified', 'sina-ext' ),
-					'comment_count' => __( 'Comments', 'sina-ext' ),
-				],
-				'default' => 'date',
-			]
-		);
-		$this->add_control(
-			'sort',
-			[
-				'label' => __( 'Sort', 'sina-ext' ),
-				'type' => Controls_Manager::SELECT,
-				'options' => [
-					'ASC' => __( 'ASC', 'sina-ext' ),
-					'DESC' => __( 'DESC', 'sina-ext' ),
-				],
-				'default' => 'DESC',
-			]
-		);
+		Sina_Common_Data::posts_content($this);
 		$this->add_control(
 			'posts_meta',
 			[
@@ -210,147 +161,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 				'mobile_default' => '1',
 			]
 		);
-		$this->add_control(
-			'autoplay',
-			[
-				'label' => __( 'Autoplay', 'sina-ext' ),
-				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'On', 'sina-ext' ),
-				'label_off' => __( 'Off', 'sina-ext' ),
-				'default' => 'yes',
-			]
-		);
-		$this->add_control(
-			'pause',
-			[
-				'label' => __( 'Pause on Hover', 'sina-ext' ),
-				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'On', 'sina-ext' ),
-				'label_off' => __( 'Off', 'sina-ext' ),
-				'default' => 'yes',
-			]
-		);
-		$this->add_control(
-			'mouse_drag',
-			[
-				'label' => __( 'Mouse Drag', 'sina-ext' ),
-				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'On', 'sina-ext' ),
-				'label_off' => __( 'Off', 'sina-ext' ),
-				'default' => 'yes',
-			]
-		);
-		$this->add_control(
-			'touch_drag',
-			[
-				'label' => __( 'Touch Drag', 'sina-ext' ),
-				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'On', 'sina-ext' ),
-				'label_off' => __( 'Off', 'sina-ext' ),
-				'default' => 'yes',
-			]
-		);
-		$this->add_control(
-			'loop',
-			[
-				'label' => __( 'Infinity Loop', 'sina-ext' ),
-				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'On', 'sina-ext' ),
-				'label_off' => __( 'Off', 'sina-ext' ),
-				'default' => 'yes',
-			]
-		);
-		$this->add_control(
-			'dots',
-			[
-				'label' => __( 'Dots', 'sina-ext' ),
-				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Show', 'sina-ext' ),
-				'label_off' => __( 'Hide', 'sina-ext' ),
-				'default' => 'yes',
-			]
-		);
-		$this->add_control(
-			'dots_color',
-			[
-				'label' => __( 'Dots Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'condition' => [
-					'dots!' => '',
-				],
-				'default' => '#1085e4',
-				'selectors' => [
-					'{{WRAPPER}} .sina-posts-carousel .owl-dot' => 'border-color: {{VALUE}}',
-					'{{WRAPPER}} .sina-posts-carousel .owl-dot.active' => 'background-color: {{VALUE}}',
-				]
-			]
-		);
-		$this->add_control(
-			'nav',
-			[
-				'label' => __( 'Navigation', 'sina-ext' ),
-				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Show', 'sina-ext' ),
-				'label_off' => __( 'Hide', 'sina-ext' ),
-				'default' => 'yes',
-			]
-		);
-		$this->add_control(
-			'nav_bg',
-			[
-				'label' => __( 'Navigation Background', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'condition' => [
-					'nav!' => '',
-				],
-				'default' => '#1085e4',
-				'selectors' => [
-					'{{WRAPPER}} .sina-posts-carousel .owl-prev, {{WRAPPER}} .sina-posts-carousel .owl-next' => 'background-color: {{VALUE}}'
-				]
-			]
-		);
-		$this->add_control(
-			'nav_color',
-			[
-				'label' => __( 'Navigation Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'condition' => [
-					'nav!' => '',
-				],
-				'default' => '#eee',
-				'selectors' => [
-					'{{WRAPPER}} .sina-posts-carousel .owl-prev, {{WRAPPER}} .sina-posts-carousel .owl-next' => 'color: {{VALUE}}'
-				],
-			]
-		);
-		$this->add_control(
-			'nav_top',
-			[
-				'label' => __( 'Navigation Top (%)', 'sina-ext' ),
-				'type' => Controls_Manager::SLIDER,
-				'default' => [
-					'unit' => '%',
-					'size' => '50',
-				],
-				'condition' => [
-					'nav!' => '',
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-posts-carousel .owl-prev, {{WRAPPER}} .sina-posts-carousel .owl-next' => 'top: calc({{SIZE}}{{UNIT}} - 18px);',
-				],
-			]
-		);
-		$this->add_control(
-			'delay',
-			[
-				'label' => __( 'Delay', 'sina-ext' ),
-				'type' => Controls_Manager::NUMBER,
-				'default' => 4000,
-				'step' => 100,
-				'min' => 500,
-				'max' => 15000,
-			]
-		);
+		Sina_Common_Data::carousel_content( $this, '.sina-posts-carousel' );
 		$this->add_control(
 			'speed',
 			[

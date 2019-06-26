@@ -111,7 +111,6 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
-
 		$this->add_control(
 			'categories',
 			[
@@ -135,44 +134,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 				'title_field' => '{{{category}}}',
 			]
 		);
-		$this->add_control(
-			'posts_num',
-			[
-				'label' => __( 'Number of Posts', 'sina-ext' ),
-				'type' => Controls_Manager::NUMBER,
-				'step' => 1,
-				'min' => 1,
-				'max' => 5,
-				'default' => 3,
-			]
-		);
-		$this->add_control(
-			'order_by',
-			[
-				'label' => __( 'Order by', 'sina-ext' ),
-				'type' => Controls_Manager::SELECT,
-				'options' => [
-					'date' => __( 'Date', 'sina-ext' ),
-					'title' => __( 'Title', 'sina-ext' ),
-					'author' => __( 'Author', 'sina-ext' ),
-					'modified' => __( 'Modified', 'sina-ext' ),
-					'comment_count' => __( 'Comments', 'sina-ext' ),
-				],
-				'default' => 'date',
-			]
-		);
-		$this->add_control(
-			'sort',
-			[
-				'label' => __( 'Sort', 'sina-ext' ),
-				'type' => Controls_Manager::SELECT,
-				'options' => [
-					'ASC' => __( 'ASC', 'sina-ext' ),
-					'DESC' => __( 'DESC', 'sina-ext' ),
-				],
-				'default' => 'DESC',
-			]
-		);
+		Sina_Common_Data::posts_content($this);
 		$this->add_control(
 			'date',
 			[
@@ -1001,10 +963,21 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 								<div class="sina-pt-content-content">
 									<?php
 										$tc = 0;
+										if ( get_query_var('paged') ) {
+											$paged = get_query_var('paged');
+										} else if ( get_query_var('page') ) {
+											$paged = get_query_var('page');
+										} else {
+											$paged = 1;
+										}
+
+										$new_offset = $data['offset'] + ( ( $paged - 1 ) * $data['posts_num'] );
 										$default	= [
 											'category_name'		=> $cats['category'],
 											'orderby'			=> [ $data['order_by'] => $data['sort'] ],
 											'posts_per_page'	=> $data['posts_num'],
+											'paged'				=> $paged,
+											'offset'			=> $new_offset,
 											'has_password'		=> false,
 											'post_status'		=> 'publish',
 											'post__not_in'		=> get_option( 'sticky_posts' ),

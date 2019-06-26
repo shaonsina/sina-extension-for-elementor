@@ -144,28 +144,6 @@ class Sina_Blogpost_Widget extends Widget_Base {
 			]
 		);
 		$this->add_control(
-			'posts_num',
-			[
-				'label' => __( 'Number of Posts', 'sina-ext' ),
-				'type' => Controls_Manager::NUMBER,
-				'step' => 1,
-				'min' => 1,
-				'max' => 50,
-				'default' => 6,
-			]
-		);
-		$this->add_control(
-			'offset',
-			[
-				'label' => __( 'Number of Offset', 'sina-ext' ),
-				'type' => Controls_Manager::NUMBER,
-				'step' => 1,
-				'min' => 0,
-				'max' => 50,
-				'default' => 0,
-			]
-		);
-		$this->add_control(
 			'categories',
 			[
 				'label' => esc_html__( 'Categories', 'sina-ext' ),
@@ -174,33 +152,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 				'options' => sina_get_categories(),
 			]
 		);
-		$this->add_control(
-			'order_by',
-			[
-				'label' => __( 'Order by', 'sina-ext' ),
-				'type' => Controls_Manager::SELECT,
-				'options' => [
-					'date' => __( 'Date', 'sina-ext' ),
-					'title' => __( 'Title', 'sina-ext' ),
-					'author' => __( 'Author', 'sina-ext' ),
-					'modified' => __( 'Modified', 'sina-ext' ),
-					'comment_count' => __( 'Comments', 'sina-ext' ),
-				],
-				'default' => 'date',
-			]
-		);
-		$this->add_control(
-			'sort',
-			[
-				'label' => __( 'Sort', 'sina-ext' ),
-				'type' => Controls_Manager::SELECT,
-				'options' => [
-					'ASC' => __( 'ASC', 'sina-ext' ),
-					'DESC' => __( 'DESC', 'sina-ext' ),
-				],
-				'default' => 'DESC',
-			]
-		);
+		Sina_Common_Data::posts_content($this);
 		$this->add_control(
 			'content_length',
 			[
@@ -1177,157 +1129,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 				],
 			]
 		);
-
-		$this->add_group_control(
-			Group_Control_Typography::get_type(),
-			[
-				'name' => 'load_btn_typography',
-				'fields_options' => [
-					'typography' => [ 
-						'default' =>'custom', 
-					],
-					'font_size'   => [
-						'default' => [
-							'size' => '16',
-						],
-					],
-				],
-				'selector' => '{{WRAPPER}} .sina-load-more-btn',
-			]
-		);
-
-		$this->add_group_control(
-			Group_Control_Text_Shadow::get_type(),
-			[
-				'name' => 'load_btn_tshadow',
-				'selector' => '{{WRAPPER}} .sina-load-more-btn',
-			]
-		);
-
-		$this->start_controls_tabs( 'load_btn_tabs' );
-
-		$this->start_controls_tab(
-			'load_btn_normal',
-			[
-				'label' => __( 'Normal', 'sina-ext' ),
-			]
-		);
-		$this->add_control(
-			'load_btn_color',
-			[
-				'label' => __( 'Text Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#eee',
-				'selectors' => [
-					'{{WRAPPER}} .sina-load-more-btn' => 'color: {{VALUE}};',
-				],
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Background::get_type(),
-			[
-				'name' => 'load_btn_bg',
-				'label' => __( 'Background', 'sina-ext' ),
-				'types' => [ 'classic', 'gradient' ],
-				'fields_options' => [
-					'background' => [ 
-						'default' =>'classic', 
-					],
-					'color' => [
-						'default' => '#1085e4',
-					],
-				],
-				'selector' => '{{WRAPPER}} .sina-load-more-btn',
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Box_Shadow::get_type(),
-			[
-				'name' => 'load_btn_shadow',
-				'selector' => '{{WRAPPER}} .sina-load-more-btn',
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Border::get_type(),
-			[
-				'name' => 'load_btn_border',
-				'fields_options' => [
-					'border' => [
-						'default' => 'solid',
-					],
-					'color' => [
-						'default' => '#1085e4',
-					],
-					'width' => [
-						'default' => [
-							'top' => '1',
-							'right' => '1',
-							'bottom' => '1',
-							'left' => '1',
-							'isLinked' => true,
-						]
-					],
-				],
-				'selector' => '{{WRAPPER}} .sina-load-more-btn',
-			]
-		);
-		$this->end_controls_tab();
-
-		$this->start_controls_tab(
-			'load_btn_hover',
-			[
-				'label' => __( 'Hover', 'sina-ext' ),
-			]
-		);
-		$this->add_control(
-			'load_btn_hover_color',
-			[
-				'label' => __( 'Text Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#1085e4',
-				'selectors' => [
-					'{{WRAPPER}} .sina-load-more-btn:hover' => 'color: {{VALUE}};',
-				],
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Background::get_type(),
-			[
-				'name' => 'load_btn_hover_bg',
-				'label' => __( 'Background', 'sina-ext' ),
-				'types' => [ 'classic', 'gradient' ],
-				'fields_options' => [
-					'background' => [ 
-						'default' =>'classic', 
-					],
-					'color' => [
-						'default' => '#fff',
-					],
-				],
-				'selector' => '{{WRAPPER}} .sina-load-more-btn:hover',
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Box_Shadow::get_type(),
-			[
-				'name' => 'load_btn_hover_shadow',
-				'selector' => '{{WRAPPER}} .sina-load-more-btn:hover',
-			]
-		);
-		$this->add_control(
-			'load_btn_hover_border',
-			[
-				'label' => __( 'Border Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .sina-load-more-btn:hover' => 'border-color: {{VALUE}};',
-				],
-			]
-		);
-		$this->end_controls_tab();
-
-		$this->end_controls_tabs();
-
+		Sina_Common_Data::button_style( $this, '.sina-load-more-btn', 'load_btn' );
 		$this->add_responsive_control(
 			'load_btn_radius',
 			[
@@ -1341,7 +1143,6 @@ class Sina_Blogpost_Widget extends Widget_Base {
 					'left' => '4',
 					'isLinked' => true,
 				],
-				'separator' => 'before',
 				'selectors' => [
 					'{{WRAPPER}} .sina-load-more-btn' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
@@ -1353,7 +1154,14 @@ class Sina_Blogpost_Widget extends Widget_Base {
 				'label' => __( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
-				'default' => [
+				'desktop_default' => [
+					'top' => '12',
+					'right' => '25',
+					'bottom' => '12',
+					'left' => '25',
+					'isLinked' => false,
+				],
+				'mobile_default' => [
 					'top' => '10',
 					'right' => '15',
 					'bottom' => '10',

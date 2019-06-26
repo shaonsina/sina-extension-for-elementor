@@ -109,41 +109,7 @@ class Sina_Search_Form_Widget extends Widget_Base {
 				'default' => 'Search Here...',
 			]
 		);
-		$this->add_control(
-			'btn_text',
-			[
-				'label' => __( 'Button text', 'sina-ext' ),
-				'label_block' => true,
-				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter button text', 'sina-ext' ),
-			]
-		);
-		$this->add_control(
-			'icon',
-			[
-				'label' => __( 'Button Icon', 'sina-ext' ),
-				'type' => Controls_Manager::ICON,
-				'default' => 'fa fa-search',
-			]
-		);
-		$this->add_responsive_control(
-			'icon_space',
-			[
-				'label' => __( 'Icon Space', 'sina-ext' ),
-				'type' => Controls_Manager::SLIDER,
-				'default' => [
-					'size' => '5',
-				],
-				'condition' => [
-					'icon!' => '',
-					'btn_text!' => '',
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-btn-icon-right' => 'margin-left: {{SIZE}}{{UNIT}};',
-				],
-			]
-		);
-
+		Sina_Common_Data::button_content( $this, '.sina-search-btn', 'Search', 'btn', false );
 		$this->end_controls_section();
 		// End Form Content
 		// ==================
@@ -158,155 +124,7 @@ class Sina_Search_Form_Widget extends Widget_Base {
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
-
-
-		$this->add_group_control(
-			Group_Control_Typography::get_type(),
-			[
-				'name' => 'field_typography',
-				'fields_options' => [
-					'typography' => [ 
-						'default' =>'custom', 
-					],
-					'font_weight' => [
-						'default' => '400',
-					],
-					'font_size'   => [
-						'default' => [
-							'size' => '16',
-						],
-					],
-					'line_height'   => [
-						'default' => [
-							'size' => '24',
-						],
-					],
-				],
-				'selector' => '{{WRAPPER}} .sina-search-box .sina-input-field',
-			]
-		);
-		$this->add_control(
-			'placeholder_color',
-			[
-				'label' => __( 'Placeholder Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#aaa',
-				'selectors' => [
-					'{{WRAPPER}} .sina-search-box .sina-input-field::-webkit-input-placeholder' => 'color: {{VALUE}};',
-					'{{WRAPPER}} .sina-search-box .sina-input-field::-moz-placeholder' => 'color: {{VALUE}};',
-					'{{WRAPPER}} .sina-search-box .sina-input-field::-ms-placeholder' => 'color: {{VALUE}};',
-					'{{WRAPPER}} .sina-search-box .sina-input-field::placeholder' => 'color: {{VALUE}};',
-				],
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Text_Shadow::get_type(),
-			[
-				'name' => 'field_text_shadow',
-				'selector' => '{{WRAPPER}} .sina-search-box .sina-input-field',
-			]
-		);
-
-		$this->start_controls_tabs( 'field_tabs' );
-
-		$this->start_controls_tab(
-			'field_normal',
-			[
-				'label' => __( 'Normal', 'sina-ext' ),
-			]
-		);
-
-		$this->add_control(
-			'color',
-			[
-				'label' => __( 'Text Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#111',
-				'selectors' => [
-					'{{WRAPPER}} .sina-search-box .sina-input-field' => 'color: {{VALUE}};',
-				],
-			]
-		);
-		$this->add_control(
-			'background',
-			[
-				'label' => __( 'Background', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#fff',
-				'selectors' => [
-					'{{WRAPPER}} .sina-search-box .sina-input-field' => 'background: {{VALUE}};',
-				],
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Border::get_type(),
-			[
-				'name' => 'border',
-				'fields_options' => [
-					'border' => [
-						'default' => 'solid',
-					],
-					'color' => [
-						'default' => '#1085e4',
-					],
-					'width' => [
-						'default' => [
-							'top' => '1',
-							'right' => '1',
-							'bottom' => '1',
-							'left' => '1',
-							'isLinked' => true,
-						]
-					],
-				],
-				'selector' => '{{WRAPPER}} .sina-search-box .sina-input-field',
-			]
-		);
-
-		$this->end_controls_tab();
-
-		$this->start_controls_tab(
-			'field_focus',
-			[
-				'label' => __( 'Focus', 'sina-ext' ),
-			]
-		);
-
-		$this->add_control(
-			'focus_color',
-			[
-				'label' => __( 'Text Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .sina-search-box .sina-input-field:focus' => 'color: {{VALUE}};',
-				],
-			]
-		);
-		$this->add_control(
-			'focus_background',
-			[
-				'label' => __( 'Background', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .sina-search-box .sina-input-field:focus' => 'background: {{VALUE}};',
-				],
-			]
-		);
-		$this->add_control(
-			'focus_border',
-			[
-				'label' => __( 'Border Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .sina-search-box .sina-input-field:focus' => 'border-color: {{VALUE}}'
-				],
-			]
-		);
-
-		$this->end_controls_tab();
-
-		$this->end_controls_tabs();
-
+		Sina_Common_Data::input_fields_style( $this );
 		$this->add_responsive_control(
 			'field_width',
 			[
@@ -632,11 +450,7 @@ class Sina_Search_Form_Widget extends Widget_Base {
 				<input type="search" class="sina-input-field" placeholder="<?php echo esc_attr( $data['placeholder'] ); ?>" value="<?php get_search_query(); ?>" name="<?php echo esc_attr( 's' ) ?>">
 
 				<button type="submit" class="sina-button sina-search-btn">
-					<?php echo esc_html( $data['btn_text'] ); ?>
-
-					<?php if ( $data['icon'] ): ?>
-						<i class="<?php echo esc_attr( $data['icon'] ); ?> sina-btn-icon-right"></i>
-					<?php endif ?>
+					<?php Sina_Common_Data::button_html($data); ?>
 				</button>
 			</form>
 		</div><!-- .sina-search-form -->

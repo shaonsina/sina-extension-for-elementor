@@ -770,7 +770,8 @@
 				$cBtn = $('.sina-modal-close.'+$id),
 				$modal = $('.sina-modal-overlay.'+$id);
 
-				$btn.click( function() {
+				$btn.click( function(e) {
+					e.preventDefault();
 					$modal.fadeIn( 400 );
 				});
 				$cBtn.click( function() {

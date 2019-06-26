@@ -235,7 +235,7 @@ class Sina_Video_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'icon_style',
 			[
-				'label' => __( 'Icon', 'sina-ext' ),
+				'label' => __( 'Button', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);

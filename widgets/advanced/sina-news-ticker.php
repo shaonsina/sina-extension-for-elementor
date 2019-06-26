@@ -63,7 +63,7 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 	 * @since 1.1.0
 	 */
 	public function get_keywords() {
-		return [ 'sina news ticker', 'sina posts ticker', 'sina ticker', 'sina news scroll', 'sina posts scroll' ];
+		return [ 'sina news ticker', 'sina posts ticker', 'sina post', 'sina blog post', 'sina news scroll', 'sina posts scroll' ];
 	}
 
 	/**
@@ -109,18 +109,6 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
-
-		$this->add_control(
-			'posts_num',
-			[
-				'label' => __( 'Number of Posts', 'sina-ext' ),
-				'type' => Controls_Manager::NUMBER,
-				'step' => 1,
-				'min' => 2,
-				'max' => 50,
-				'default' => 10,
-			]
-		);
 		$this->add_control(
 			'categories',
 			[
@@ -130,6 +118,7 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 				'options' => sina_get_categories(),        
 			]
 		);
+		Sina_Common_Data::posts_content($this);
 		$this->add_control(
 			'label_position',
 			[
@@ -463,15 +452,28 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 
 	protected function render() {
 		$data = $this->get_settings_for_display();
+		if ( get_query_var('paged') ) {
+			$paged = get_query_var('paged');
+		} else if ( get_query_var('page') ) {
+			$paged = get_query_var('page');
+		} else {
+			$paged = 1;
+		}
+
+		$new_offset = $data['offset'] + ( ( $paged - 1 ) * $data['posts_num'] );
 		$category	= !empty($data['categories']) ? implode( ',', $data['categories'] ) : '';
-		$args = [
-			'posts_per_page'	=> $data['posts_num'],
+		$default	= [
 			'category_name'		=> $category,
+			'orderby'			=> [ $data['order_by'] => $data['sort'] ],
+			'posts_per_page'	=> $data['posts_num'],
+			'paged'				=> $paged,
+			'offset'			=> $new_offset,
 			'has_password'		=> false,
 			'post_status'		=> 'publish',
+			'post__not_in'		=> get_option( 'sticky_posts' ),
 		];
 		// Post Query
-		$post_query = new WP_Query( $args );
+		$post_query = new WP_Query( $default );
 		?>
 		<div class="sina-news-ticker"
 		data-pause="<?php echo esc_attr( $data['pause_on_hover'] ); ?>"

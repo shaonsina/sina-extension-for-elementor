@@ -200,57 +200,7 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
-
-		$this->add_control(
-			'label',
-			[
-				'label' => __( 'Button Label', 'sina-ext' ),
-				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter Label', 'sina-ext' ),
-				'default' => 'Send',
-			]
-		);
-		$this->add_control(
-			'icon',
-			[
-				'label' => __( 'Button Icon', 'sina-ext' ),
-				'type' => Controls_Manager::ICON,
-				'default' => 'fa fa-paper-plane-o',
-			]
-		);
-		$this->add_control(
-			'icon_position',
-			[
-				'label' => __( 'Icon Position', 'sina-ext' ),
-				'type' => Controls_Manager::SELECT,
-				'options' => [
-					'left' => __( 'Left', 'sina-ext' ),
-					'right' => __( 'Right', 'sina-ext' ),
-				],
-				'condition' => [
-					'icon!' => '',
-				],
-				'default' => 'right',
-			]
-		);
-		$this->add_responsive_control(
-			'icon_space',
-			[
-				'label' => __( 'Icon Space', 'sina-ext' ),
-				'type' => Controls_Manager::SLIDER,
-				'default' => [
-					'size' => '5',
-				],
-				'condition' => [
-					'icon!' => '',
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-btn-icon-right' => 'margin-left: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .sina-btn-icon-left' => 'margin-right: {{SIZE}}{{UNIT}};',
-				],
-			]
-		);
-
+		Sina_Common_Data::button_content($this, '.sina-contact-btn', 'Send', 'btn', false);
 		$this->end_controls_section();
 		// End Button Content
 		// ====================
@@ -278,147 +228,7 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 				'default' => 'layout2',
 			]
 		);
-		$this->add_group_control(
-			Group_Control_Typography::get_type(),
-			[
-				'name' => 'fields_typo',
-				'fields_options' => [
-					'typography' => [ 
-						'default' =>'custom', 
-					],
-					'font_weight' => [
-						'default' => '400',
-					],
-					'font_size'   => [
-						'default' => [
-							'size' => '16',
-						],
-					],
-					'line_height'   => [
-						'default' => [
-							'size' => '24',
-						],
-					],
-				],
-				'selector' => '{{WRAPPER}} .sina-contact-input .sina-input-field',
-			]
-		);
-		$this->add_control(
-			'placeholder_color',
-			[
-				'label' => __( 'Placeholder Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#aaa',
-				'selectors' => [
-					'{{WRAPPER}} .sina-contact-input .sina-input-field::-webkit-input-placeholder' => 'color: {{VALUE}};',
-					'{{WRAPPER}} .sina-contact-input .sina-input-field::-moz-placeholder' => 'color: {{VALUE}};',
-					'{{WRAPPER}} .sina-contact-input .sina-input-field::-ms-placeholder' => 'color: {{VALUE}};',
-					'{{WRAPPER}} .sina-contact-input .sina-input-field::placeholder' => 'color: {{VALUE}};',
-				],
-			]
-		);
-
-		$this->start_controls_tabs( 'fields_tabs' );
-
-		$this->start_controls_tab(
-			'fields_normal',
-			[
-				'label' => __( 'Normal', 'sina-ext' ),
-			]
-		);
-
-		$this->add_control(
-			'color',
-			[
-				'label' => __( 'Text Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#111',
-				'selectors' => [
-					'{{WRAPPER}} .sina-contact-input .sina-input-field' => 'color: {{VALUE}};',
-				],
-			]
-		);
-		$this->add_control(
-			'background',
-			[
-				'label' => __( 'Background', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#fff',
-				'selectors' => [
-					'{{WRAPPER}} .sina-contact-input .sina-input-field' => 'background: {{VALUE}};',
-				],
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Border::get_type(),
-			[
-				'name' => 'border',
-				'fields_options' => [
-					'border' => [
-						'default' => 'solid',
-					],
-					'color' => [
-						'default' => '#1085e4',
-					],
-					'width' => [
-						'default' => [
-							'top' => '1',
-							'right' => '1',
-							'bottom' => '1',
-							'left' => '1',
-							'isLinked' => true,
-						]
-					],
-				],
-				'selector' => '{{WRAPPER}} .sina-contact-input .sina-input-field',
-			]
-		);
-
-		$this->end_controls_tab();
-
-		$this->start_controls_tab(
-			'fields_focus',
-			[
-				'label' => __( 'Focus', 'sina-ext' ),
-			]
-		);
-
-		$this->add_control(
-			'focus_color',
-			[
-				'label' => __( 'Text Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#495057',
-				'selectors' => [
-					'{{WRAPPER}} .sina-contact-input .sina-input-field:focus' => 'color: {{VALUE}};',
-				],
-			]
-		);
-		$this->add_control(
-			'focus_background',
-			[
-				'label' => __( 'Background', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .sina-contact-input .sina-input-field:focus' => 'background: {{VALUE}};',
-				],
-			]
-		);
-		$this->add_control(
-			'focus_border',
-			[
-				'label' => __( 'Border Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .sina-contact-input .sina-input-field:focus' => 'border-color: {{VALUE}}'
-				],
-			]
-		);
-
-		$this->end_controls_tab();
-
-		$this->end_controls_tabs();
-
+		Sina_Common_Data::input_fields_style( $this );
 		$this->add_responsive_control(
 			'fields_padding',
 			[
@@ -453,63 +263,7 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
-
-		$this->add_responsive_control(
-			'name_width',
-			[
-				'label' => __( 'Width', 'sina-ext' ),
-				'type' => Controls_Manager::SLIDER,
-				'size_units' => [ 'px', 'em', '%' ],
-				'range' => [
-					'px' => [
-						'max' => 1000,
-					],
-					'em' => [
-						'max' => 50,
-					],
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-contact-input .sina-input-name' => 'width: {{SIZE}}{{UNIT}};',
-				],
-			]
-		);
-		$this->add_responsive_control(
-			'name_radius',
-			[
-				'label' => __( 'Radius', 'sina-ext' ),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', 'em', '%' ],
-				'default' => [
-					'top' => '4',
-					'right' => '4',
-					'bottom' => '4',
-					'left' => '4',
-					'isLinked' => true,
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-contact-input .sina-input-name' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
-		);
-		$this->add_responsive_control(
-			'name_margin',
-			[
-				'label' => __( 'Margin', 'sina-ext' ),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', 'em', '%' ],
-				'default' => [
-					'top' => '0',
-					'right' => '0',
-					'bottom' => '20',
-					'left' => '0',
-					'isLinked' => false,
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-contact-input .sina-input-name' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
-		);
-
+		Sina_Common_Data::input_style( $this, '.sina-input-name', 'name' );
 		$this->end_controls_section();
 		// End Name Style
 		// ================
@@ -524,63 +278,7 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
-
-		$this->add_responsive_control(
-			'email_width',
-			[
-				'label' => __( 'Width', 'sina-ext' ),
-				'type' => Controls_Manager::SLIDER,
-				'size_units' => [ 'px', 'em', '%' ],
-				'range' => [
-					'px' => [
-						'max' => 1000,
-					],
-					'em' => [
-						'max' => 50,
-					],
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-contact-input .sina-input-email' => 'width: {{SIZE}}{{UNIT}};',
-				],
-			]
-		);
-		$this->add_responsive_control(
-			'email_radius',
-			[
-				'label' => __( 'Radius', 'sina-ext' ),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', 'em', '%' ],
-				'default' => [
-					'top' => '4',
-					'right' => '4',
-					'bottom' => '4',
-					'left' => '4',
-					'isLinked' => true,
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-contact-input .sina-input-email' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
-		);
-		$this->add_responsive_control(
-			'email_margin',
-			[
-				'label' => __( 'Margin', 'sina-ext' ),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', 'em', '%' ],
-				'default' => [
-					'top' => '0',
-					'right' => '0',
-					'bottom' => '20',
-					'left' => '0',
-					'isLinked' => false,
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-contact-input .sina-input-email' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
-		);
-
+		Sina_Common_Data::input_style( $this, '.sina-input-email' );
 		$this->end_controls_section();
 		// End Email Style
 		// =================
@@ -595,63 +293,7 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
-
-		$this->add_responsive_control(
-			'subject_width',
-			[
-				'label' => __( 'Width', 'sina-ext' ),
-				'type' => Controls_Manager::SLIDER,
-				'size_units' => [ 'px', 'em', '%' ],
-				'range' => [
-					'px' => [
-						'max' => 1000,
-					],
-					'em' => [
-						'max' => 50,
-					],
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-contact-input .sina-input-subject' => 'width: {{SIZE}}{{UNIT}};',
-				],
-			]
-		);
-		$this->add_responsive_control(
-			'subject_radius',
-			[
-				'label' => __( 'Radius', 'sina-ext' ),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', 'em', '%' ],
-				'default' => [
-					'top' => '4',
-					'right' => '4',
-					'bottom' => '4',
-					'left' => '4',
-					'isLinked' => true,
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-contact-input .sina-input-subject' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
-		);
-		$this->add_responsive_control(
-			'subject_margin',
-			[
-				'label' => __( 'Margin', 'sina-ext' ),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', 'em', '%' ],
-				'default' => [
-					'top' => '0',
-					'right' => '0',
-					'bottom' => '20',
-					'left' => '0',
-					'isLinked' => false,
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-contact-input .sina-input-subject' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
-		);
-
+		Sina_Common_Data::input_style( $this, '.sina-input-subject', 'subject' );
 		$this->end_controls_section();
 		// End Subject Style
 		// =====================
@@ -696,10 +338,10 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
-					'top' => '4',
-					'right' => '4',
-					'bottom' => '4',
-					'left' => '4',
+					'top' => '0',
+					'right' => '0',
+					'bottom' => '0',
+					'left' => '0',
 					'isLinked' => true,
 				],
 				'selectors' => [
@@ -740,141 +382,7 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
-
-		$this->add_group_control(
-			Group_Control_Typography::get_type(),
-			[
-				'name' => 'btn_typography',
-				'fields_options' => [
-					'typography' => [ 
-						'default' =>'custom', 
-					],
-					'font_size'   => [
-						'default' => [
-							'size' => '16',
-						],
-					],
-					'line_height'   => [
-						'default' => [
-							'size' => '24',
-						],
-					],
-				],
-				'selector' => '{{WRAPPER}} .sina-contact-btn',
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Text_Shadow::get_type(),
-			[
-				'name' => 'btn_text_shadow',
-				'selector' => '{{WRAPPER}} .sina-contact-btn',
-			]
-		);
-
-		$this->start_controls_tabs( 'btn_tabs' );
-
-		$this->start_controls_tab(
-			'btn_normal',
-			[
-				'label' => __( 'Normal', 'sina-ext' ),
-			]
-		);
-
-		$this->add_control(
-			'btn_color',
-			[
-				'label' => __( 'Text Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#eee',
-				'selectors' => [
-					'{{WRAPPER}} .sina-contact-btn' => 'color: {{VALUE}};',
-				],
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Background::get_type(),
-			[
-				'name' => 'btn_background',
-				'label' => __( 'Background', 'sina-ext' ),
-				'types' => [ 'classic', 'gradient' ],
-				'fields_options' => [
-					'background' => [ 
-						'default' =>'classic', 
-					],
-					'color' => [
-						'default' => '#1085e4',
-					],
-				],
-				'selector' => '{{WRAPPER}} .sina-contact-btn',
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Border::get_type(),
-			[
-				'name' => 'btn_border',
-				'selector' => '{{WRAPPER}} .sina-contact-btn',
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Box_Shadow::get_type(),
-			[
-				'name' => 'btn_shadow',
-				'selector' => '{{WRAPPER}} .sina-contact-btn',
-				'separator' => 'before',
-			]
-		);
-
-		$this->end_controls_tab();
-
-		$this->start_controls_tab(
-			'btn_hover',
-			[
-				'label' => __( 'Hover', 'sina-ext' ),
-			]
-		);
-
-		$this->add_control(
-			'hover_color',
-			[
-				'label' => __( 'Text Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .sina-contact-btn:hover' => 'color: {{VALUE}};',
-				],
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Background::get_type(),
-			[
-				'name' => 'hover_background',
-				'label' => __( 'Background', 'sina-ext' ),
-				'types' => [ 'classic', 'gradient' ],
-				'selector' => '{{WRAPPER}} .sina-contact-btn:hover',
-			]
-		);
-		$this->add_control(
-			'hover_border',
-			[
-				'label' => __( 'Border Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .sina-contact-btn:hover' => 'border-color: {{VALUE}}'
-				],
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Box_Shadow::get_type(),
-			[
-				'name' => 'btn_hover_shadow',
-				'selector' => '{{WRAPPER}} .sina-contact-btn:hover',
-				'separator' => 'before',
-			]
-		);
-
-		$this->end_controls_tab();
-
-		$this->end_controls_tabs();
-
+		Sina_Common_Data::button_style( $this, '.sina-contact-btn' );
 		$this->add_responsive_control(
 			'btn_width',
 			[
@@ -906,7 +414,7 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 					'right' => '4',
 					'bottom' => '4',
 					'left' => '4',
-					'isLinked' => false,
+					'isLinked' => true,
 				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-contact-btn' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
@@ -919,11 +427,18 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 				'label' => __( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
-				'default' => [
-					'top' => '11',
-					'right' => '20',
-					'bottom' => '11',
-					'left' => '20',
+				'desktop_default' => [
+					'top' => '12',
+					'right' => '25',
+					'bottom' => '12',
+					'left' => '25',
+					'isLinked' => false,
+				],
+				'mobile_default' => [
+					'top' => '10',
+					'right' => '15',
+					'bottom' => '10',
+					'left' => '15',
 					'isLinked' => false,
 				],
 				'selectors' => [

@@ -134,26 +134,6 @@ class Sina_Pricing_Widget extends Widget_Base {
 			]
 		);
 		$this->add_control(
-			'btn_label',
-			[
-				'label' => __( 'Button Label', 'sina-ext' ),
-				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter Label', 'sina-ext' ),
-				'default' => 'Order',
-			]
-		);
-		$this->add_control(
-			'btn_link',
-			[
-				'label' => __( 'Button Link', 'sina-ext' ),
-				'type' => Controls_Manager::URL,
-				'placeholder' => __( 'https://your-link.com', 'sina-ext' ),
-				'default' => [
-					'url' => '#',
-				],
-			]
-		);
-		$this->add_control(
 			'thumbs',
 			[
 				'label' => __( 'Show Image', 'sina-ext' ),
@@ -263,6 +243,21 @@ class Sina_Pricing_Widget extends Widget_Base {
 		$this->end_controls_section();
 		// End Box Content
 		// =====================
+
+
+		// Start Button Content
+		// =====================
+		$this->start_controls_section(
+			'btn_content',
+			[
+				'label' => __( 'Order Button', 'sina-ext' ),
+				'tab' => Controls_Manager::TAB_CONTENT,
+			]
+		);
+		Sina_Common_Data::button_content( $this, '.sina-order-btn', 'Order' );
+		$this->end_controls_section();
+		// End Button Content
+		// ====================
 
 
 		// Start Box Style
@@ -758,150 +753,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 				],
 			]
 		);
-
-		$this->add_group_control(
-			Group_Control_Typography::get_type(),
-			[
-				'name' => 'btn_typography',
-				'fields_options' => [
-					'typography' => [ 
-						'default' =>'custom', 
-					],
-					'font_weight' => [
-						'default' => '600',
-					],
-					'transform'   => [
-						'default' => [
-							'size' => 'uppercase',
-						],
-					],
-				],
-				'separator' => 'before',
-				'selector' => '{{WRAPPER}} .sina-pricing-btn .sina-order-btn',
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Text_Shadow::get_type(),
-			[
-				'name' => 'text_shadow',
-				'selector' => '{{WRAPPER}} .sina-pricing-btn .sina-order-btn',
-			]
-		);
-
-		$this->start_controls_tabs( 'btn_tabs' );
-
-		$this->start_controls_tab(
-			'btn_normal',
-			[
-				'label' => __( 'Normal', 'sina-ext' ),
-			]
-		);
-
-		$this->add_control(
-			'btn_color',
-			[
-				'label' => __( 'Text Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#eee',
-				'selectors' => [
-					'{{WRAPPER}} .sina-pricing-btn .sina-order-btn' => 'color: {{VALUE}};',
-				],
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Background::get_type(),
-			[
-				'name' => 'btn_bg',
-				'label' => __( 'Background', 'sina-ext' ),
-				'types' => [ 'classic', 'gradient' ],
-				'fields_options' => [
-					'background' => [ 
-						'default' =>'classic', 
-					],
-					'color' => [
-						'default' => '#1085e4',
-					],
-				],
-				'selector' => '{{WRAPPER}} .sina-pricing-btn .sina-order-btn',
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Border::get_type(),
-			[
-				'name' => 'btn_border',
-				'fields_options' => [
-					'border' => [
-						'default' => 'solid',
-					],
-					'color' => [
-						'default' => '#1085e4',
-					],
-					'width' => [
-						'default' => [
-							'top' => '1',
-							'right' => '1',
-							'bottom' => '1',
-							'left' => '1',
-							'isLinked' => true,
-						]
-					],
-				],
-				'selector' => '{{WRAPPER}} .sina-pricing-btn .sina-order-btn',
-			]
-		);
-
-		$this->end_controls_tab();
-
-		$this->start_controls_tab(
-			'btn_hover',
-			[
-				'label' => __( 'Hover', 'sina-ext' ),
-			]
-		);
-
-		$this->add_control(
-			'btn_hover_color',
-			[
-				'label' => __( 'Text Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#1085e4',
-				'selectors' => [
-					'{{WRAPPER}} .sina-pricing-btn .sina-order-btn:hover, {{WRAPPER}} .sina-pricing-btn .sina-order-btn:focus' => 'color: {{VALUE}};',
-				],
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Background::get_type(),
-			[
-				'name' => 'btn_hover_bg',
-				'label' => __( 'Background', 'sina-ext' ),
-				'types' => [ 'classic', 'gradient' ],
-				'fields_options' => [
-					'background' => [ 
-						'default' =>'classic', 
-					],
-					'color' => [
-						'default' => '#fff',
-					],
-				],
-				'selector' => '{{WRAPPER}} .sina-pricing-btn .sina-order-btn:hover, {{WRAPPER}} .sina-pricing-btn .sina-order-btn:focus',
-			]
-		);
-		$this->add_control(
-			'btn_hover_border',
-			[
-				'label' => __( 'Border Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .sina-pricing-btn .sina-order-btn:hover, {{WRAPPER}} .sina-pricing-btn .sina-order-btn:focus' => 'border-color: {{VALUE}}'
-				],
-			]
-		);
-
-		$this->end_controls_tab();
-
-		$this->end_controls_tabs();
-
+		Sina_Common_Data::button_style( $this, '.sina-order-btn' );
 		$this->add_responsive_control(
 			'btn_radius',
 			[
@@ -917,7 +769,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 				],
 				'separator' => 'before',
 				'selectors' => [
-					'{{WRAPPER}} .sina-pricing-btn .sina-order-btn' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .sina-order-btn' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -928,14 +780,14 @@ class Sina_Pricing_Widget extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
-					'top' => '15',
-					'right' => '30',
-					'bottom' => '15',
-					'left' => '30',
+					'top' => '12',
+					'right' => '25',
+					'bottom' => '12',
+					'left' => '25',
 					'isLinked' => false,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-pricing-btn .sina-order-btn' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .sina-order-btn' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -1164,7 +1016,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 					<?php if ( 'on' == $data['btn_link']['nofollow'] ): ?>
 						rel="nofollow" 
 					<?php endif; ?>>
-						<?php echo esc_html( $data['btn_label'] ); ?>
+						<?php Sina_Common_Data::button_html($data); ?>
 					</a>
 				</div>
 			<?php endif; ?>

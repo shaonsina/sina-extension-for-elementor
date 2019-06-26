@@ -3,7 +3,7 @@
  * Plugin Name: Sina Extension for Elementor
  * Plugin URI: https://github.com/shaonsina/sina-extension-for-elementor.git
  * Description: A collection of high-quality widgets for Elementor page builder.
- * Version: 2.2.2
+ * Version: 2.3.0
  * Author: shaonsina
  * Author URI: https://github.com/shaonsina
  * Text Domain: sina-ext
@@ -19,8 +19,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 
-define('SINA_EXT_VERSION', '2.2.2');
-define('SINA_EXT_PREVIOUS_VERSION', '2.1.2' );
+define('SINA_EXT_VERSION', '2.3.0');
+define('SINA_EXT_PREVIOUS_VERSION', '2.2.2' );
 define('SINA_EXT_FILE', __FILE__ );
 define('SINA_EXT_SLUG', basename( SINA_EXT_FILE, '.php' ));
 define('SINA_EXT_DIR', __DIR__);
@@ -38,6 +38,7 @@ define('SINA_WIDGETS', [
 		'accordion' 			=> 1,
 		'content-box' 			=> 1,
 		'counter' 				=> 1,
+		'dynamic-button'		=> 1,
 		'fancytext' 			=> 1,
 		'flip-box' 				=> 1,
 		'google-map' 			=> 1,
@@ -356,7 +357,7 @@ final class Sina_Extension {
 		if ( $apikey ) {
 			wp_register_script( 'sina-google-map', '//maps.google.com/maps/api/js?key='. $apikey, [], SINA_EXT_VERSION, true );
 		}
-		wp_register_script( 'sina-widgets', SINA_EXT_URL .'assets/js/sina-widgets.min.js', ['jquery'], SINA_EXT_VERSION, true );
+		wp_register_script( 'sina-widgets', SINA_EXT_URL .'assets/js/sina-widgets.js', ['jquery'], SINA_EXT_VERSION, true );
 		wp_localize_script( 'sina-widgets', 'sinaAjax', ['ajaxURL' => $ajax_url] );
 	}
 
@@ -367,6 +368,7 @@ final class Sina_Extension {
 	 */
 	public function register_widgets( $widgets_manager ) {
 		$active_widgets = get_option( 'sina_widgets' );
+		require_once( SINA_EXT_DIR .'/inc/common-controls.php' );
 
 		if ( is_array($active_widgets) ) {
 			foreach ($active_widgets as $cat => $widgets) {

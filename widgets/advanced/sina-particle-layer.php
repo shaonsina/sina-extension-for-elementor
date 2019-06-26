@@ -182,65 +182,14 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
-
+		Sina_Common_Data::button_content( $this, '.sina-banner-pbtn', 'Learn More', 'pbtn' );
 		$this->add_control(
-			'pbtn_text',
+			'pbtn_id',
 			[
-				'label' => __( 'Label', 'sina-ext' ),
+				'label' => __( 'CSS ID', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter Label', 'sina-ext' ),
-				'default' => 'Learn More',
-			]
-		);
-		$this->add_control(
-			'pbtn_link',
-			[
-				'label' => __( 'Link', 'sina-ext' ),
-				'type' => Controls_Manager::URL,
-				'default' => [
-					'url' => '#',
-				],
-				'placeholder' => __( 'https://your-link.com', 'sina-ext' ),
-			]
-		);
-		$this->add_control(
-			'pbtn_icon',
-			[
-				'label' => __( 'Icon', 'sina-ext' ),
-				'type' => Controls_Manager::ICON,
-				'default' => 'fa fa-user',
-			]
-		);
-		$this->add_control(
-			'pbtn_icon_align',
-			[
-				'label' => __( 'Icon Position', 'sina-ext' ),
-				'type' => Controls_Manager::SELECT,
-				'options' => [
-					'left' => __( 'Before', 'sina-ext' ),
-					'right' => __( 'After', 'sina-ext' ),
-				],
-				'default' => 'left',
-				'condition' => [
-					'pbtn_icon!' => '',
-				],
-			]
-		);
-		$this->add_responsive_control(
-			'pbtn_icon_space',
-			[
-				'label' => __( 'Icon Spacing', 'sina-ext' ),
-				'type' => Controls_Manager::SLIDER,
-				'default' => [
-					'size' => '5',
-				],
-				'condition' => [
-					'pbtn_icon!' => '',
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-banner-pbtn .sina-icon-right' => 'margin-left: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .sina-banner-pbtn .sina-icon-left' => 'margin-right: {{SIZE}}{{UNIT}};',
-				],
+				'placeholder' => __( 'Enter ID', 'sina-ext' ),
+				'description' => __( 'Make sure this ID unique', 'sina-ext' ),
 			]
 		);
 
@@ -258,67 +207,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
-
-		$this->add_control(
-			'sbtn_text',
-			[
-				'label' => __( 'Label', 'sina-ext' ),
-				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter Label', 'sina-ext' ),
-				'default' => 'Learn More',
-			]
-		);
-		$this->add_control(
-			'sbtn_link',
-			[
-				'label' => __( 'Link', 'sina-ext' ),
-				'type' => Controls_Manager::URL,
-				'default' => [
-					'url' => '#',
-				],
-				'placeholder' => __( 'https://your-link.com', 'sina-ext' ),
-			]
-		);
-		$this->add_control(
-			'sbtn_icon',
-			[
-				'label' => __( 'Icon', 'sina-ext' ),
-				'type' => Controls_Manager::ICON,
-				'default' => 'fa fa-user',
-			]
-		);
-		$this->add_control(
-			'sbtn_icon_align',
-			[
-				'label' => __( 'Icon Position', 'sina-ext' ),
-				'type' => Controls_Manager::SELECT,
-				'options' => [
-					'left' => __( 'Before', 'sina-ext' ),
-					'right' => __( 'After', 'sina-ext' ),
-				],
-				'default' => 'left',
-				'condition' => [
-					'sbtn_icon!' => '',
-				],
-			]
-		);
-		$this->add_responsive_control(
-			'sbtn_icon_space',
-			[
-				'label' => __( 'Icon Spacing', 'sina-ext' ),
-				'type' => Controls_Manager::SLIDER,
-				'default' => [
-					'size' => '5',
-				],
-				'condition' => [
-					'sbtn_icon!' => '',
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-banner-sbtn .sina-icon-right' => 'margin-left: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .sina-banner-sbtn .sina-icon-left' => 'margin-right: {{SIZE}}{{UNIT}};',
-				],
-			]
-		);
+		Sina_Common_Data::button_content( $this, '.sina-banner-pbtn', 'Read More', 'sbtn' );
 		$this->add_responsive_control(
 			'button_space',
 			[
@@ -333,6 +222,15 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 				'selectors' => [
 					'{{WRAPPER}} .sina-banner-sbtn' => 'margin-left: {{SIZE}}{{UNIT}};',
 				],
+			]
+		);
+		$this->add_control(
+			'sbtn_id',
+			[
+				'label' => __( 'CSS ID', 'sina-ext' ),
+				'type' => Controls_Manager::TEXT,
+				'placeholder' => __( 'Enter ID', 'sina-ext' ),
+				'description' => __( 'Make sure this ID unique', 'sina-ext' ),
 			]
 		);
 
@@ -955,142 +853,27 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
-
-		$this->add_group_control(
-			Group_Control_Typography::get_type(),
+		Sina_Common_Data::button_style( $this, '.sina-banner-pbtn', 'pbtn' );
+		$this->add_responsive_control(
+			'pbtn_width',
 			[
-				'name' => 'pbtn_typography',
-				'fields_options' => [
-					'typography' => [ 
-						'default' =>'custom', 
+				'label' => __( 'Width', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', 'em', '%' ],
+				'range' => [
+					'px' => [
+						'max' => 1000,
 					],
-					'font_weight' => [
-						'default' => '600',
-					],
-					'transform'   => [
-						'default' => [
-							'size' => 'uppercase',
-						],
+					'em' => [
+						'max' => 50,
 					],
 				],
-				'selector' => '{{WRAPPER}} .sina-banner-pbtn',
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Text_Shadow::get_type(),
-			[
-				'name' => 'pbtn_tshadow',
-				'selector' => '{{WRAPPER}} .sina-banner-pbtn',
-			]
-		);
-
-		$this->start_controls_tabs( 'pbtn_tabs' );
-
-		$this->start_controls_tab(
-			'pbtn_normal',
-			[
-				'label' => __( 'Normal', 'sina-ext' ),
-			]
-		);
-		$this->add_control(
-			'pbtn_color',
-			[
-				'label' => __( 'Text Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#eee',
+				'separator' => 'before',
 				'selectors' => [
-					'{{WRAPPER}} .sina-banner-pbtn' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .sina-banner-pbtn' => 'width: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
-		$this->add_group_control(
-			Group_Control_Background::get_type(),
-			[
-				'name' => 'pbtn_bg',
-				'label' => __( 'Background', 'sina-ext' ),
-				'types' => [ 'classic', 'gradient' ],
-				'fields_options' => [
-					'background' => [ 
-						'default' =>'classic', 
-					],
-					'color' => [
-						'default' => '#1085e4',
-					],
-				],
-				'selector' => '{{WRAPPER}} .sina-banner-pbtn',
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Box_Shadow::get_type(),
-			[
-				'name' => 'pbtn_shadow',
-				'selector' => '{{WRAPPER}} .sina-banner-pbtn',
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Border::get_type(),
-			[
-				'name' => 'pbtn_border',
-				'selector' => '{{WRAPPER}} .sina-banner-pbtn',
-			]
-		);
-		$this->end_controls_tab();
-
-		$this->start_controls_tab(
-			'pbtn_hover',
-			[
-				'label' => __( 'Hover', 'sina-ext' ),
-			]
-		);
-		$this->add_control(
-			'pbtn_hover_color',
-			[
-				'label' => __( 'Text Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#1085e4',
-				'selectors' => [
-					'{{WRAPPER}} .sina-banner-pbtn:hover, {{WRAPPER}} .sina-banner-pbtn:focus' => 'color: {{VALUE}};',
-				],
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Background::get_type(),
-			[
-				'name' => 'pbtn_hover_bg',
-				'label' => __( 'Background', 'sina-ext' ),
-				'types' => [ 'classic', 'gradient' ],
-				'fields_options' => [
-					'background' => [ 
-						'default' =>'classic', 
-					],
-					'color' => [
-						'default' => '#fff',
-					],
-				],
-				'selector' => '{{WRAPPER}} .sina-banner-pbtn:hover, {{WRAPPER}} .sina-banner-pbtn:focus',
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Box_Shadow::get_type(),
-			[
-				'name' => 'pbtn_hover_shadow',
-				'selector' => '{{WRAPPER}} .sina-banner-pbtn:hover, {{WRAPPER}} .sina-banner-pbtn:focus',
-			]
-		);
-		$this->add_control(
-			'pbtn_hover_border',
-			[
-				'label' => __( 'Border Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .sina-banner-pbtn:hover, {{WRAPPER}} .sina-banner-pbtn:focus' => 'border-color: {{VALUE}};',
-				],
-			]
-		);
-		$this->end_controls_tab();
-
-		$this->end_controls_tabs();
-
 		$this->add_responsive_control(
 			'pbtn_radius',
 			[
@@ -1104,7 +887,6 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 					'left' => '4',
 					'isLinked' => true,
 				],
-				'separator' => 'before',
 				'selectors' => [
 					'{{WRAPPER}} .sina-banner-pbtn' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
@@ -1117,10 +899,10 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'desktop_default' => [
-					'top' => '15',
-					'right' => '30',
-					'bottom' => '15',
-					'left' => '30',
+					'top' => '12',
+					'right' => '25',
+					'bottom' => '12',
+					'left' => '25',
 					'isLinked' => false,
 				],
 				'mobile_default' => [
@@ -1135,7 +917,6 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 				],
 			]
 		);
-
 		$this->end_controls_section();
 		// End Primary Button Style
 		// ==========================
@@ -1150,145 +931,29 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
-
-		$this->add_group_control(
-			Group_Control_Typography::get_type(),
-			[
-				'name' => 'sbtn_typography',
-				'fields_options' => [
-					'typography' => [ 
-						'default' =>'custom', 
-					],
-					'font_weight' => [
-						'default' => '600',
-					],
-					'transform'   => [
-						'default' => [
-							'size' => 'uppercase',
-						],
-					],
-				],
-				'selector' => '{{WRAPPER}} .sina-banner-sbtn',
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Text_Shadow::get_type(),
-			[
-				'name' => 'sbtn_tshadow',
-				'selector' => '{{WRAPPER}} .sina-banner-sbtn',
-			]
-		);
-
-		$this->start_controls_tabs( 'sbtn_tabs' );
-
-		$this->start_controls_tab(
-			'sbtn_normal',
-			[
-				'label' => __( 'Normal', 'sina-ext' ),
-			]
-		);
-		$this->add_control(
-			'sbtn_color',
-			[
-				'label' => __( 'Text Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#eee',
-				'selectors' => [
-					'{{WRAPPER}} .sina-banner-sbtn' => 'color: {{VALUE}};',
-				],
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Background::get_type(),
-			[
-				'name' => 'sbtn_bg',
-				'label' => __( 'Background', 'sina-ext' ),
-				'types' => [ 'classic', 'gradient' ],
-				'fields_options' => [
-					'background' => [ 
-						'default' =>'classic', 
-					],
-					'color' => [
-						'default' => '#1085e4',
-					],
-				],
-				'selector' => '{{WRAPPER}} .sina-banner-sbtn',
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Box_Shadow::get_type(),
-			[
-				'name' => 'sbtn_shadow',
-				'selector' => '{{WRAPPER}} .sina-banner-sbtn',
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Border::get_type(),
-			[
-				'name' => 'sbtn_border',
-				'selector' => '{{WRAPPER}} .sina-banner-sbtn',
-			]
-		);
-		
-		$this->end_controls_tab();
-
-		$this->start_controls_tab(
-			'sbtn_hover',
-			[
-				'label' => __( 'Hover', 'sina-ext' ),
-			]
-		);
-		$this->add_control(
-			'sbtn_hover_color',
-			[
-				'label' => __( 'Text Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#1085e4',
-				'selectors' => [
-					'{{WRAPPER}} .sina-banner-sbtn:hover, {{WRAPPER}} .sina-banner-sbtn:focus' => 'color: {{VALUE}};',
-				],
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Background::get_type(),
-			[
-				'name' => 'sbtn_hover_bg',
-				'label' => __( 'Background', 'sina-ext' ),
-				'types' => [ 'classic', 'gradient' ],
-				'fields_options' => [
-					'background' => [ 
-						'default' =>'classic', 
-					],
-					'color' => [
-						'default' => '#fff',
-					],
-				],
-				'selector' => '{{WRAPPER}} .sina-banner-sbtn:hover, {{WRAPPER}} .sina-banner-sbtn:focus',
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Box_Shadow::get_type(),
-			[
-				'name' => 'sbtn_hover_shadow',
-				'selector' => '{{WRAPPER}} .sina-banner-sbtn:hover, {{WRAPPER}} .sina-banner-sbtn:focus',
-			]
-		);
-		$this->add_control(
-			'sbtn_hover_border',
-			[
-				'label' => __( 'Border Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .sina-banner-sbtn:hover, {{WRAPPER}} .sina-banner-sbtn:focus' => 'border-color: {{VALUE}};',
-				],
-			]
-		);
-		$this->end_controls_tab();
-
-		$this->end_controls_tabs();
-
+		Sina_Common_Data::button_style( $this, '.sina-banner-sbtn', 'sbtn' );
 		$this->add_responsive_control(
-			'sbtn_hover_radius',
+			'sbtn_width',
+			[
+				'label' => __( 'Width', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', 'em', '%' ],
+				'range' => [
+					'px' => [
+						'max' => 1000,
+					],
+					'em' => [
+						'max' => 50,
+					],
+				],
+				'separator' => 'before',
+				'selectors' => [
+					'{{WRAPPER}} .sina-banner-sbtn' => 'width: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'sbtn_radius',
 			[
 				'label' => __( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
@@ -1300,7 +965,6 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 					'left' => '4',
 					'isLinked' => true,
 				],
-				'separator' => 'before',
 				'selectors' => [
 					'{{WRAPPER}} .sina-banner-sbtn' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
@@ -1313,10 +977,10 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'desktop_default' => [
-					'top' => '15',
-					'right' => '30',
-					'bottom' => '15',
-					'left' => '30',
+					'top' => '12',
+					'right' => '25',
+					'bottom' => '12',
+					'left' => '25',
 					'isLinked' => false,
 				],
 				'mobile_default' => [
@@ -1331,7 +995,6 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 				],
 			]
 		);
-
 		$this->end_controls_section();
 		// End Secondary Button Style
 		// ==========================
@@ -1372,6 +1035,9 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 						<?php if ( $data['pbtn_text'] ): ?>
 							<a class="sina-banner-pbtn"
 							href="<?php echo esc_url( $data['pbtn_link']['url'] ); ?>"
+							<?php if ( $data['pbtn_id'] ): ?>
+								id="<?php echo esc_attr( $data['pbtn_id'] ); ?>"
+							<?php endif; ?>
 							<?php if ( 'on' == $data['pbtn_link']['is_external'] ): ?>
 								target="_blank" 
 							<?php endif; ?>
@@ -1379,21 +1045,16 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 								rel="nofollow" 
 							<?php endif; ?>
 							role="button">
-								<?php if ( $data['pbtn_icon'] && $data['pbtn_icon_align'] == 'left' ): ?>
-									<i class="<?php echo esc_attr($data['pbtn_icon']); ?> sina-icon-left"></i>
-								<?php endif; ?>
-								<span>
-									<?php echo esc_html( $data['pbtn_text'] ); ?>
-								</span>
-								<?php if ( $data['pbtn_icon'] && $data['pbtn_icon_align'] == 'right' ): ?>
-									<i class="<?php echo esc_attr($data['pbtn_icon']); ?> sina-icon-right"></i>
-								<?php endif; ?>
+								<?php Sina_Common_Data::button_html($data, 'pbtn'); ?>
 							</a>
 						<?php endif ?>
 
 						<?php if ( $data['sbtn_text'] ): ?>
 							<a class="sina-banner-sbtn"
 							href="<?php echo esc_url( $data['sbtn_link']['url'] ); ?>"
+							<?php if ( $data['sbtn_id'] ): ?>
+								id="<?php echo esc_attr( $data['sbtn_id'] ); ?>"
+							<?php endif; ?>
 							<?php if ( 'on' == $data['sbtn_link']['is_external'] ): ?>
 								target="_blank" 
 							<?php endif; ?>
@@ -1401,15 +1062,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 								rel="nofollow" 
 							<?php endif; ?>
 							role="button">
-								<?php if ( $data['sbtn_icon'] && $data['sbtn_icon_align'] == 'left' ): ?>
-									<i class="<?php echo esc_attr($data['sbtn_icon']); ?> sina-icon-left"></i>
-								<?php endif; ?>
-								<span>
-									<?php echo esc_html( $data['sbtn_text'] ); ?>
-								</span>
-								<?php if ( $data['sbtn_icon'] && $data['sbtn_icon_align'] == 'right' ): ?>
-									<i class="<?php echo esc_attr($data['sbtn_icon']); ?> sina-icon-right"></i>
-								<?php endif; ?>
+								<?php Sina_Common_Data::button_html($data, 'sbtn'); ?>
 							</a>
 						<?php endif ?>
 					</div>

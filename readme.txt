@@ -5,7 +5,7 @@ Donate link: https://shaonsina.com/plugins/sina-extension/
 Requires at least: 4.7
 Tested up to: 5.2
 Requires PHP: 7.0
-Stable tag: 2.2.2
+Stable tag: 2.3.0
 License: GPL v3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -101,6 +101,10 @@ Yes. It's totally free.
 
 
 == Changelog ==
+
+= 2.3.0 - 1-07-2019 =
+- Improved & optimized
+**NOTE: Some widgets has been changed. So, please review your site after update.**
 
 = 2.2.2 - 22-06-2019 =
 - Fixed: Piechart browser issue
