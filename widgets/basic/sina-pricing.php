@@ -466,7 +466,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '#111',
 				'selectors' => [
-					'{{WRAPPER}} .sina-pricing .sina-pricing-title' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .sina-pricing-title' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -487,14 +487,14 @@ class Sina_Pricing_Widget extends Widget_Base {
 						],
 					],
 				],
-				'selector' => '{{WRAPPER}} .sina-pricing .sina-pricing-title',
+				'selector' => '{{WRAPPER}} .sina-pricing-title',
 			]
 		);
 		$this->add_group_control(
 			Group_Control_Text_Shadow::get_type(),
 			[
 				'name' => 'title_shadow',
-				'selector' => '{{WRAPPER}} .sina-pricing .sina-pricing-title',
+				'selector' => '{{WRAPPER}} .sina-pricing-title',
 			]
 		);
 		$this->add_group_control(
@@ -503,14 +503,14 @@ class Sina_Pricing_Widget extends Widget_Base {
 				'name' => 'title_bg',
 				'label' => __( 'Background', 'sina-ext' ),
 				'types' => [ 'classic', 'gradient' ],
-				'selector' => '{{WRAPPER}} .sina-pricing .sina-pricing-title',
+				'selector' => '{{WRAPPER}} .sina-pricing-title',
 			]
 		);
 		$this->add_group_control(
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'title_border',
-				'selector' => '{{WRAPPER}} .sina-pricing .sina-pricing-title',
+				'selector' => '{{WRAPPER}} .sina-pricing-title',
 			]
 		);
 		$this->add_responsive_control(
@@ -521,7 +521,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 				'size_units' => [ 'px', 'em', '%' ],
 				'separator' => 'before',
 				'selectors' => [
-					'{{WRAPPER}} .sina-pricing .sina-pricing-title' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .sina-pricing-title' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -539,7 +539,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 					'isLinked' => false,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-pricing .sina-pricing-title' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .sina-pricing-title' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -594,7 +594,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '#eee',
 				'selectors' => [
-					'{{WRAPPER}} .sina-pricing .sina-price-tag' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .sina-price-tag' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -615,14 +615,14 @@ class Sina_Pricing_Widget extends Widget_Base {
 						],
 					],
 				],
-				'selector' => '{{WRAPPER}} .sina-pricing .sina-price-tag',
+				'selector' => '{{WRAPPER}} .sina-price-tag',
 			]
 		);
 		$this->add_group_control(
 			Group_Control_Text_Shadow::get_type(),
 			[
 				'name' => 'price_shadow',
-				'selector' => '{{WRAPPER}} .sina-pricing .sina-price-tag',
+				'selector' => '{{WRAPPER}} .sina-price-tag',
 			]
 		);
 		$this->add_group_control(
@@ -639,14 +639,14 @@ class Sina_Pricing_Widget extends Widget_Base {
 						'default' => '#1085e4',
 					],
 				],
-				'selector' => '{{WRAPPER}} .sina-pricing .sina-price-tag',
+				'selector' => '{{WRAPPER}} .sina-price-tag',
 			]
 		);
 		$this->add_group_control(
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'price_border',
-				'selector' => '{{WRAPPER}} .sina-pricing .sina-price-tag',
+				'selector' => '{{WRAPPER}} .sina-price-tag',
 			]
 		);
 		$this->add_control(
@@ -659,7 +659,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 				],
 				'separator' => 'before',
 				'selectors' => [
-					'{{WRAPPER}} .sina-pricing .sina-price-tag .sina-price-suffix' => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .sina-price-tag .sina-price-suffix' => 'font-size: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -670,7 +670,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
-					'{{WRAPPER}} .sina-pricing .sina-price-tag' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .sina-price-tag' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -688,7 +688,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 					'isLinked' => true,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-pricing .sina-price-tag' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .sina-price-tag' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -706,7 +706,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 					'isLinked' => true,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-pricing .sina-price-tag' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .sina-price-tag' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);

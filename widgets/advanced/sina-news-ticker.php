@@ -119,6 +119,28 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 			]
 		);
 		Sina_Common_Data::posts_content($this);
+		$this->end_controls_section();
+		// End Ticker Content
+		// ===================
+
+
+		// Start Ticker Settings
+		// ======================
+		$this->start_controls_section(
+			'ticker_settings',
+			[
+				'label' => __( 'Ticker Settings', 'sina-ext' ),
+				'tab' => Controls_Manager::TAB_CONTENT,
+			]
+		);
+		$this->add_control(
+			'label_text',
+			[
+				'label' => __( 'Label Text', 'sina-ext' ),
+				'type' => Controls_Manager::TEXT,
+				'default' => 'Latest News',
+			]
+		);
 		$this->add_control(
 			'label_position',
 			[
@@ -129,15 +151,10 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 					'right' => __( 'Right', 'sina-ext' ),
 					'both' => __( 'Both', 'sina-ext' ),
 				],
+				'condition' => [
+					'label_text!' => '',
+				],
 				'default' => 'both',
-			]
-		);
-		$this->add_control(
-			'label_text',
-			[
-				'label' => __( 'Label Text', 'sina-ext' ),
-				'type' => Controls_Manager::TEXT,
-				'default' => 'Latest News',
 			]
 		);
 		$this->add_control(
@@ -166,8 +183,8 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 		);
 
 		$this->end_controls_section();
-		// End Ticker Content
-		// ===================
+		// End Ticker Settings
+		// ====================
 
 
 		// Start Label Style
@@ -478,7 +495,7 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 		<div class="sina-news-ticker"
 		data-pause="<?php echo esc_attr( $data['pause_on_hover'] ); ?>"
 		data-speed="<?php echo esc_attr( $data['speed'] ); ?>">
-			<?php if ( 'left' == $data['label_position'] || 'both' == $data['label_position'] ): ?>
+			<?php if ( $data['label_text'] && ('left' == $data['label_position'] || 'both' == $data['label_position']) ): ?>
 				<div class="sina-nt-left-label"><?php echo esc_html( $data['label_text'] ); ?></div>
 			<?php endif; ?>
 
@@ -506,9 +523,9 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 				</div>
 			</div>
 
-			<?php if ( 'both' == $data['label_position'] ): ?>
+			<?php if ( $data['label_text'] && 'both' == $data['label_position'] ): ?>
 				<div class="sina-nt-right-label sina-nt-label-both"><?php echo esc_html( $data['label_text'] ); ?></div>
-			<?php elseif ( 'right' == $data['label_position'] ): ?>
+			<?php elseif ( $data['label_text'] && 'right' == $data['label_position'] ): ?>
 				<div class="sina-nt-right-label"><?php echo esc_html( $data['label_text'] ); ?></div>
 			<?php endif ?>
 		</div><!-- .sina-news-ticker -->

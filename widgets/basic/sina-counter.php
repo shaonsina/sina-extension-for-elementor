@@ -11,6 +11,7 @@ use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
 use Elementor\Group_Control_Background;
 use Elementor\Group_Control_Text_Shadow;
+use Elementor\Group_Control_Border;
 
 
 // Exit if accessed directly.
@@ -122,6 +123,21 @@ class Sina_Counter_Widget extends Widget_Base {
 				'placeholder' => __( 'Enter Title', 'sina-ext' ),
 				'description' => __( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'Satisfied Customers',
+			]
+		);
+		$this->add_control(
+			'title_position',
+			[
+				'label' => __( 'Title Position', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					'middle' => __( 'Middle', 'sina-ext' ),
+					'bottom' => __( 'Bottom', 'sina-ext' ),
+				],
+				'condition' => [
+					'title!' => '',
+				],
+				'default' => 'bottom',
 			]
 		);
 		$this->add_control(
@@ -313,6 +329,24 @@ class Sina_Counter_Widget extends Widget_Base {
 				'selector' => '{{WRAPPER}} .sina-counter-title',
 			]
 		);
+		$this->add_responsive_control(
+			'title_margin',
+			[
+				'label' => __( 'Margin', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '0',
+					'right' => '0',
+					'bottom' => '0',
+					'left' => '0',
+					'isLinked' => false,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-counter-title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
 
 		$this->end_controls_section();
 		// End Title Style
@@ -394,7 +428,7 @@ class Sina_Counter_Widget extends Widget_Base {
 		$this->add_control(
 			'icon_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => __( 'Icon Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#d300d0',
 				'selectors' => [
@@ -428,6 +462,42 @@ class Sina_Counter_Widget extends Widget_Base {
 				'selector' => '{{WRAPPER}} .sina-counter-icon i',
 			]
 		);
+		$this->add_group_control(
+			Group_Control_Border::get_type(),
+			[
+				'name' => 'icon_border',
+				'selector' => '{{WRAPPER}} .sina-counter-icon i',
+			]
+		);
+		$this->add_responsive_control(
+			'icon_radius',
+			[
+				'label' => __( 'Radius', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'selectors' => [
+					'{{WRAPPER}} .sina-counter-icon i' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'icon_padding',
+			[
+				'label' => __( 'Padding', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '10',
+					'right' => '10',
+					'bottom' => '10',
+					'left' => '10',
+					'isLinked' => true,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-counter-icon i' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
 
 		$this->end_controls_section();
 		// End Icon Style
@@ -443,6 +513,10 @@ class Sina_Counter_Widget extends Widget_Base {
 				<div class="sina-counter-icon">
 					<i class="<?php echo esc_attr($data['icon']); ?>"></i>
 				</div>
+			<?php endif; ?>
+
+			<?php if ( $data['title'] && 'middle' == $data['title_position']): ?>
+				<?php printf( '<h3 class="sina-counter-title">%1$s</h3>', $data['title'] ); ?>
 			<?php endif; ?>
 
 			<?php if ( $data['start_number'] && $data['stop_number'] ): ?>
@@ -466,7 +540,7 @@ class Sina_Counter_Widget extends Widget_Base {
 				</div>
 			<?php endif; ?>
 
-			<?php if ( $data['title'] ): ?>
+			<?php if ( $data['title'] && 'bottom' == $data['title_position'] ): ?>
 				<?php printf( '<h3 class="sina-counter-title">%1$s</h3>', $data['title'] ); ?>
 			<?php endif; ?>
 		</div><!-- .sina-counter -->

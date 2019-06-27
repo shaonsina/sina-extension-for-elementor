@@ -151,14 +151,49 @@ class Sina_Content_Box_Widget extends Widget_Base {
 			]
 		);
 		$this->add_control(
+			'icon_format',
+			[
+				'label' => __( 'Icon Format', 'sina-ext' ),
+				'label_block' => true,
+				'type' => Controls_Manager::CHOOSE,
+				'options' => [
+					'icon' => [
+						'title' => __( 'Icon', 'sina-ext' ),
+						'icon' => 'fa fa-star',
+					],
+					'image' => [
+						'title' => __( 'Image', 'sina-ext' ),
+						'icon' => 'fa fa-image',
+					],
+				],
+				'condition' => [
+					'save_templates' => '',
+				],
+			]
+		);
+		$this->add_control(
 			'icon',
 			[
 				'label' => __( 'Icon', 'sina-ext' ),
-				'label_block' => true,
 				'type' => Controls_Manager::ICON,
-				'default' => 'fa fa-android',
+				'default' => 'fa fa-amazon',
 				'condition' => [
 					'save_templates' => '',
+					'icon_format' => 'icon',
+				],
+			]
+		);
+		$this->add_control(
+			'image',
+			[
+				'label' => __( 'Image', 'sina-ext' ),
+				'type' => Controls_Manager::MEDIA,
+				'condition' => [
+					'save_templates' => '',
+					'icon_format' => 'image',
+				],
+				'default' => [
+					'url' => SINA_EXT_URL .'assets/img/choose-img.jpg',
 				],
 			]
 		);
@@ -185,6 +220,17 @@ class Sina_Content_Box_Widget extends Widget_Base {
 				'placeholder' => __( 'Enter Description', 'sina-ext' ),
 				'description' => __( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, autem amet. Labore eos cum at, et illo ducimus.',
+				'condition' => [
+					'save_templates' => '',
+				],
+			]
+		);
+		$this->add_control(
+			'link',
+			[
+				'label' => __( 'Link', 'sina-ext' ),
+				'type' => Controls_Manager::URL,
+				'placeholder' => __( 'https://your-link.com', 'sina-ext' ),
 				'condition' => [
 					'save_templates' => '',
 				],
@@ -302,7 +348,7 @@ class Sina_Content_Box_Widget extends Widget_Base {
 					'save_templates' => '',
 				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-content-box .sina-content-box-icon i' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .sina-content-box-icon i' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -313,7 +359,7 @@ class Sina_Content_Box_Widget extends Widget_Base {
 				'condition' => [
 					'save_templates' => '',
 				],
-				'selector' => '{{WRAPPER}} .sina-content-box .sina-content-box-icon i',
+				'selector' => '{{WRAPPER}} .sina-content-box-icon i, {{WRAPPER}} .sina-content-box-icon img',
 			]
 		);
 		$this->add_control(
@@ -326,7 +372,7 @@ class Sina_Content_Box_Widget extends Widget_Base {
 					'save_templates' => '',
 				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-content-box .sina-content-box-title' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .sina-content-box-title, {{WRAPPER}} .sina-content-box-title > a' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -340,7 +386,7 @@ class Sina_Content_Box_Widget extends Widget_Base {
 					'save_templates' => '',
 				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-content-box .sina-content-box-desc' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .sina-content-box-desc' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -424,7 +470,7 @@ class Sina_Content_Box_Widget extends Widget_Base {
 					'save_templates' => '',
 				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-content-box:hover .sina-content-box-icon i' => 'border-color: {{VALUE}}'
+					'{{WRAPPER}} .sina-content-box:hover .sina-content-box-icon i, {{WRAPPER}} .sina-content-box:hover .sina-content-box-icon img' => 'border-color: {{VALUE}}'
 				],
 			]
 		);
@@ -437,7 +483,7 @@ class Sina_Content_Box_Widget extends Widget_Base {
 					'save_templates' => '',
 				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-content-box:hover .sina-content-box-title' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .sina-content-box:hover .sina-content-box-title, {{WRAPPER}} .sina-content-box:hover .sina-content-box-title > a' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -575,7 +621,7 @@ class Sina_Content_Box_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'icon_style',
 			[
-				'label' => __( 'Icon', 'sina-ext' ),
+				'label' => __( 'Icon Or Image', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'save_templates' => '',
@@ -588,16 +634,50 @@ class Sina_Content_Box_Widget extends Widget_Base {
 			[
 				'label' => __( 'Size', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', 'em' ],
 				'range' => [
 					'px' => [
 						'max' => 200,
 					],
+					'em' => [
+						'max' => 20,
+					],
 				],
 				'default'=> [
+					'unit' => 'px',
 					'size' => '38',
 				],
+				'condition' => [
+					'icon_format' => 'icon',
+				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-content-box .sina-content-box-icon i' => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .sina-content-box-icon i' => 'font-size: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'image_size',
+			[
+				'label' => __( 'Size', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', 'em', '%' ],
+				'range' => [
+					'px' => [
+						'max' => 300,
+					],
+					'em' => [
+						'max' => 30,
+					],
+				],
+				'default'=> [
+					'unit' => 'px',
+					'size' => '100',
+				],
+				'condition' => [
+					'icon_format' => 'image',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-content-box-icon img' => 'width: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -608,7 +688,7 @@ class Sina_Content_Box_Widget extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
-					'{{WRAPPER}} .sina-content-box .sina-content-box-icon i' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .sina-content-box-icon i, {{WRAPPER}} .sina-content-box-icon img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -620,13 +700,13 @@ class Sina_Content_Box_Widget extends Widget_Base {
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
 					'top' => '15',
-					'right' => '20',
+					'right' => '15',
 					'bottom' => '15',
-					'left' => '20',
-					'isLinked' => false,
+					'left' => '15',
+					'isLinked' => true,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-content-box .sina-content-box-icon i' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .sina-content-box-icon i, {{WRAPPER}} .sina-content-box-icon img' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -671,14 +751,14 @@ class Sina_Content_Box_Widget extends Widget_Base {
 						],
 					],
 				],
-				'selector' => '{{WRAPPER}} .sina-content-box .sina-content-box-title',
+				'selector' => '{{WRAPPER}} .sina-content-box-title, {{WRAPPER}} .sina-content-box-title > a',
 			]
 		);
 		$this->add_group_control(
 			Group_Control_Text_Shadow::get_type(),
 			[
 				'name' => 'title_shadow',
-				'selector' => '{{WRAPPER}} .sina-content-box .sina-content-box-title',
+				'selector' => '{{WRAPPER}} .sina-content-box-title, {{WRAPPER}} .sina-content-box-title > a',
 			]
 		);
 		$this->add_responsive_control(
@@ -695,7 +775,7 @@ class Sina_Content_Box_Widget extends Widget_Base {
 					'isLinked' => false,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-content-box .sina-content-box-title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .sina-content-box-title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -722,14 +802,14 @@ class Sina_Content_Box_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'desc_typography',
-				'selector' => '{{WRAPPER}} .sina-content-box .sina-content-box-desc',
+				'selector' => '{{WRAPPER}} .sina-content-box-desc',
 			]
 		);
 		$this->add_group_control(
 			Group_Control_Text_Shadow::get_type(),
 			[
 				'name' => 'desc_shadow',
-				'selector' => '{{WRAPPER}} .sina-content-box .sina-content-box-desc',
+				'selector' => '{{WRAPPER}} .sina-content-box-desc',
 			]
 		);
 
@@ -822,7 +902,7 @@ class Sina_Content_Box_Widget extends Widget_Base {
 			</style>
 		<?php endif; ?>
 
-		<div class="sina-content-box <?php echo esc_attr( $data['effects'] ); ?>" style="">
+		<div class="sina-content-box <?php echo esc_attr( $data['effects'] ); ?>">
 			<?php if ( $data['ribbon_title'] && $data['ribbon_position'] ): ?>
 				<div class="<?php echo esc_attr( $data['ribbon_position'] ); ?>">
 					<?php echo esc_html( $data['ribbon_title'] ); ?>
@@ -839,11 +919,29 @@ class Sina_Content_Box_Widget extends Widget_Base {
 						<div class="sina-content-box-icon">
 							<i class="<?php echo esc_attr( $data['icon'] ); ?>"></i>
 						</div>
+					<?php elseif( $data['image'] ): ?>
+						<div class="sina-content-box-icon">
+							<img src="<?php echo esc_url( $data['image']['url'] ); ?>" alt="<?php echo esc_attr( $data['title'] ) ?>">
+						</div>
 					<?php endif; ?>
 
 					<div class="sina-content-box-content">
 						<?php if ( $data['title'] ): ?>
-							<?php printf( '<h3 class="sina-content-box-title">%1$s</h3>', $data['title'] ); ?>
+							<h3 class="sina-content-box-title">
+								<?php if ( $data['link']['url'] ): ?>
+									<a href="<?php echo esc_url( $data['link']['url'] ); ?>"
+										<?php if ( 'on' == $data['link']['is_external'] ): ?>
+											target="_blank" 
+										<?php endif; ?>
+										<?php if ( 'on' == $data['link']['nofollow'] ): ?>
+											rel="nofollow" 
+										<?php endif; ?>>
+										<?php printf( '%1$s', $data['title'] ); ?>
+									</a>
+								<?php else: ?>
+									<?php printf( '%1$s', $data['title'] ); ?>
+								<?php endif; ?>
+							</h3>
 						<?php endif; ?>
 
 						<?php if ( $data['desc'] ): ?>

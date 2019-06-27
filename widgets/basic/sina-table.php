@@ -157,7 +157,7 @@ class Sina_Table_Widget extends Widget_Base {
 				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .sina-table table thead tr {{CURRENT_ITEM}}' => 'color: {{VALUE}};',
+					'{{WRAPPER}} table thead tr {{CURRENT_ITEM}}' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -167,7 +167,7 @@ class Sina_Table_Widget extends Widget_Base {
 				'name' => 'header_background',
 				'label' => __( 'Background', 'sina-ext' ),
 				'types' => [ 'classic', 'gradient' ],
-				'selector' => '{{WRAPPER}} .sina-table table thead tr {{CURRENT_ITEM}}',
+				'selector' => '{{WRAPPER}} table thead tr {{CURRENT_ITEM}}',
 			]
 		);
 
@@ -186,7 +186,7 @@ class Sina_Table_Widget extends Widget_Base {
 				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .sina-table table thead tr {{CURRENT_ITEM}}:hover' => 'color: {{VALUE}};',
+					'{{WRAPPER}} table thead tr {{CURRENT_ITEM}}:hover' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -196,7 +196,7 @@ class Sina_Table_Widget extends Widget_Base {
 				'name' => 'header_hover_background',
 				'label' => __( 'Background', 'sina-ext' ),
 				'types' => [ 'classic', 'gradient' ],
-				'selector' => '{{WRAPPER}} .sina-table table thead tr {{CURRENT_ITEM}}:hover',
+				'selector' => '{{WRAPPER}} table thead tr {{CURRENT_ITEM}}:hover',
 			]
 		);
 
@@ -336,7 +336,7 @@ class Sina_Table_Widget extends Widget_Base {
 				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .sina-table table tbody {{CURRENT_ITEM}}' => 'color: {{VALUE}};',
+					'{{WRAPPER}} table tbody {{CURRENT_ITEM}}' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -346,7 +346,7 @@ class Sina_Table_Widget extends Widget_Base {
 				'name' => 'content_background',
 				'label' => __( 'Background', 'sina-ext' ),
 				'types' => [ 'classic', 'gradient' ],
-				'selector' => '{{WRAPPER}} .sina-table table tbody {{CURRENT_ITEM}}',
+				'selector' => '{{WRAPPER}} table tbody {{CURRENT_ITEM}}',
 			]
 		);
 
@@ -365,7 +365,7 @@ class Sina_Table_Widget extends Widget_Base {
 				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .sina-table table tbody {{CURRENT_ITEM}}:hover' => 'color: {{VALUE}};',
+					'{{WRAPPER}} table tbody {{CURRENT_ITEM}}:hover' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -375,7 +375,7 @@ class Sina_Table_Widget extends Widget_Base {
 				'name' => 'content_hover_background',
 				'label' => __( 'Background', 'sina-ext' ),
 				'types' => [ 'classic', 'gradient' ],
-				'selector' => '{{WRAPPER}} .sina-table table tbody {{CURRENT_ITEM}}:hover',
+				'selector' => '{{WRAPPER}} table tbody {{CURRENT_ITEM}}:hover',
 			]
 		);
 
@@ -446,7 +446,7 @@ class Sina_Table_Widget extends Widget_Base {
 					'size' => '16',
 				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-table table thead th > i' => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} table thead th > i' => 'font-size: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -459,8 +459,8 @@ class Sina_Table_Widget extends Widget_Base {
 					'size' => '5',
 				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-table table thead th > .sina-icon-right' => 'margin-left: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .sina-table table thead th > .sina-icon-left' => 'margin-right: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} table thead th > .sina-icon-right' => 'margin-left: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} table thead th > .sina-icon-left' => 'margin-right: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -486,14 +486,14 @@ class Sina_Table_Widget extends Widget_Base {
 						],
 					],
 				],
-				'selector' => '{{WRAPPER}} .sina-table table thead th',
+				'selector' => '{{WRAPPER}} table thead th',
 			]
 		);
 		$this->add_group_control(
 			Group_Control_Text_Shadow::get_type(),
 			[
 				'name' => 'header_text_shadow',
-				'selector' => '{{WRAPPER}} .sina-table table thead th',
+				'selector' => '{{WRAPPER}} table thead th',
 			]
 		);
 
@@ -513,7 +513,7 @@ class Sina_Table_Widget extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '#eee',
 				'selectors' => [
-					'{{WRAPPER}} .sina-table table thead tr' => 'color: {{VALUE}};',
+					'{{WRAPPER}} table thead tr' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -531,7 +531,7 @@ class Sina_Table_Widget extends Widget_Base {
 						'default' => '#1085e4',
 					],
 				],
-				'selector' => '{{WRAPPER}} .sina-table table thead tr',
+				'selector' => '{{WRAPPER}} table thead tr',
 			]
 		);
 		$this->add_group_control(
@@ -555,7 +555,7 @@ class Sina_Table_Widget extends Widget_Base {
 						]
 					],
 				],
-				'selector' => '{{WRAPPER}} .sina-table table thead th',
+				'selector' => '{{WRAPPER}} table thead th',
 			]
 		);
 
@@ -574,7 +574,7 @@ class Sina_Table_Widget extends Widget_Base {
 				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .sina-table table thead tr:hover' => 'color: {{VALUE}};',
+					'{{WRAPPER}} table thead tr:hover' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -584,7 +584,7 @@ class Sina_Table_Widget extends Widget_Base {
 				'name' => 'header_hover_background',
 				'label' => __( 'Background', 'sina-ext' ),
 				'types' => [ 'classic', 'gradient' ],
-				'selector' => '{{WRAPPER}} .sina-table table thead tr:hover',
+				'selector' => '{{WRAPPER}} table thead tr:hover',
 			]
 		);
 		$this->add_control(
@@ -593,7 +593,7 @@ class Sina_Table_Widget extends Widget_Base {
 				'label' => __( 'Border Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .sina-table table thead tr:hover th' => 'border-color: {{VALUE}};',
+					'{{WRAPPER}} table thead tr:hover th' => 'border-color: {{VALUE}};',
 				],
 			]
 		);
@@ -617,7 +617,7 @@ class Sina_Table_Widget extends Widget_Base {
 				],
 				'separator' => 'before',
 				'selectors' => [
-					'{{WRAPPER}} .sina-table table thead th' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} table thead th' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -646,7 +646,7 @@ class Sina_Table_Widget extends Widget_Base {
 				],
 				'default' => 'left',
 				'selectors' => [
-					'{{WRAPPER}} .sina-table table thead th' => 'text-align: {{VALUE}};',
+					'{{WRAPPER}} table thead th' => 'text-align: {{VALUE}};',
 				],
 			]
 		);
@@ -675,7 +675,7 @@ class Sina_Table_Widget extends Widget_Base {
 					'size' => '14',
 				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-table table tbody td > i, {{WRAPPER}} .sina-table table tbody th > i' => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} table tbody td > i, {{WRAPPER}} table tbody th > i' => 'font-size: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -688,8 +688,8 @@ class Sina_Table_Widget extends Widget_Base {
 					'size' => '5',
 				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-table table tbody td > .sina-icon-right, {{WRAPPER}} .sina-table table tbody th > .sina-icon-right' => 'margin-left: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .sina-table table tbody td > .sina-icon-left, {{WRAPPER}} .sina-table table tbody th > .sina-icon-left' => 'margin-right: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} table tbody td > .sina-icon-right, {{WRAPPER}} table tbody th > .sina-icon-right' => 'margin-left: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} table tbody td > .sina-icon-left, {{WRAPPER}} table tbody th > .sina-icon-left' => 'margin-right: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -710,14 +710,14 @@ class Sina_Table_Widget extends Widget_Base {
 						],
 					],
 				],
-				'selector' => '{{WRAPPER}} .sina-table table tbody tr',
+				'selector' => '{{WRAPPER}} table tbody tr',
 			]
 		);
 		$this->add_group_control(
 			Group_Control_Text_Shadow::get_type(),
 			[
 				'name' => 'content_text_shadow',
-				'selector' => '{{WRAPPER}} .sina-table table tbody tr',
+				'selector' => '{{WRAPPER}} table tbody tr',
 			]
 		);
 
@@ -737,7 +737,7 @@ class Sina_Table_Widget extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '#1085e4',
 				'selectors' => [
-					'{{WRAPPER}} .sina-table table tbody tr' => 'color: {{VALUE}};',
+					'{{WRAPPER}} table tbody tr' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -747,7 +747,7 @@ class Sina_Table_Widget extends Widget_Base {
 				'name' => 'content_background',
 				'label' => __( 'Background', 'sina-ext' ),
 				'types' => [ 'classic', 'gradient' ],
-				'selector' => '{{WRAPPER}} .sina-table table tbody tr',
+				'selector' => '{{WRAPPER}} table tbody tr',
 			]
 		);
 		$this->add_group_control(
@@ -771,7 +771,7 @@ class Sina_Table_Widget extends Widget_Base {
 						]
 					],
 				],
-				'selector' => '{{WRAPPER}} .sina-table table tbody td, {{WRAPPER}} .sina-table table tbody th',
+				'selector' => '{{WRAPPER}} table tbody td, {{WRAPPER}} table tbody th',
 			]
 		);
 
@@ -791,7 +791,7 @@ class Sina_Table_Widget extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '#111',
 				'selectors' => [
-					'{{WRAPPER}} .sina-table table tbody tr:hover' => 'color: {{VALUE}};',
+					'{{WRAPPER}} table tbody tr:hover' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -809,7 +809,7 @@ class Sina_Table_Widget extends Widget_Base {
 						'default' => 'rgba(16, 133, 228, 0.2)',
 					],
 				],
-				'selector' => '{{WRAPPER}} .sina-table table tbody tr:hover',
+				'selector' => '{{WRAPPER}} table tbody tr:hover',
 			]
 		);
 		$this->add_control(
@@ -818,7 +818,7 @@ class Sina_Table_Widget extends Widget_Base {
 				'label' => __( 'Border Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .sina-table table tbody tr:hover td, {{WRAPPER}} .sina-table table tbody tr:hover th' => 'border-color: {{VALUE}};',
+					'{{WRAPPER}} table tbody tr:hover td, {{WRAPPER}} table tbody tr:hover th' => 'border-color: {{VALUE}};',
 				],
 			]
 		);
@@ -842,7 +842,7 @@ class Sina_Table_Widget extends Widget_Base {
 				],
 				'separator' => 'before',
 				'selectors' => [
-					'{{WRAPPER}} .sina-table table tbody td, {{WRAPPER}} .sina-table table tbody th' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} table tbody td, {{WRAPPER}} table tbody th' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -871,7 +871,7 @@ class Sina_Table_Widget extends Widget_Base {
 				],
 				'default' => 'left',
 				'selectors' => [
-					'{{WRAPPER}} .sina-table table tbody td, {{WRAPPER}} .sina-table table tbody th' => 'text-align: {{VALUE}};',
+					'{{WRAPPER}} table tbody td, {{WRAPPER}} table tbody th' => 'text-align: {{VALUE}};',
 				],
 			]
 		);

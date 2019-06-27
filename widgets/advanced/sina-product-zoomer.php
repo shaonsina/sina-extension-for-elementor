@@ -219,6 +219,7 @@ class Sina_Product_Zoomer_Widget extends Widget_Base {
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter Product Title', 'sina-ext' ),
+				'description' => __( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'Nice Car',
 			]
 		);
@@ -229,6 +230,7 @@ class Sina_Product_Zoomer_Widget extends Widget_Base {
 				'label_block' => true,
 				'type' => Controls_Manager::TEXTAREA,
 				'placeholder' => __( 'Enter Product Description', 'sina-ext' ),
+				'description' => __( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'Price: $100',
 			]
 		);
@@ -459,16 +461,26 @@ class Sina_Product_Zoomer_Widget extends Widget_Base {
 		<div class="sina-product-zoomer"
 		data-position="<?php echo esc_attr( $data['position'] ) ?>"
 		data-shape="<?php echo esc_attr( $data['lens_shape'] ) ?>">
-			<h2 class="sina-product-title">
-				<?php if ( $data['link']['url'] ): ?>
-					<a href="<?php echo esc_url( $data['link']['url'] ); ?>">
-						<?php echo esc_html( $data['title'] ); ?>
-					</a>
-				<?php else: ?>
-					<?php echo esc_html( $data['title'] ); ?>
-				<?php endif; ?>
-			</h2>
-			<p class="sina-product-desc"><?php echo esc_html( $data['desc'] ); ?></p>
+			<?php if ( $data['title'] ): ?>
+				<h3 class="sina-product-title">
+					<?php if ( $data['link']['url'] ): ?>
+						<a href="<?php echo esc_url( $data['link']['url'] ); ?>"
+							<?php if ( 'on' == $data['link']['is_external'] ): ?>
+								target="_blank" 
+							<?php endif; ?>
+							<?php if ( 'on' == $data['link']['nofollow'] ): ?>
+								rel="nofollow" 
+							<?php endif; ?>>
+							<?php printf( '%1$s', $data['title'] ); ?>
+						</a>
+					<?php else: ?>
+						<?php printf( '%1$s', $data['title'] ); ?>
+					<?php endif; ?>
+				</h3>
+			<?php endif; ?>
+			<?php if ( $data['desc'] ): ?>
+				<?php printf( '<div class="sina-product-desc">%1$s</div>', $data['desc'] ); ?>
+			<?php endif; ?>
 
 			<img class="xzoom" src="<?php echo esc_url( $data['product_imgs'][0]['preview_image']['url'] ); ?>" data-xoriginal="<?php echo esc_url( $data['product_imgs'][0]['original_image']['url'] ); ?>" alt="<?php echo esc_attr( $data['title'] ) ?>">
 

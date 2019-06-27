@@ -151,7 +151,7 @@ class Sina_Visit_Counter_Widget extends Widget_Base {
 				],
 				'default' => 'block',
 				'selectors' => [
-					'{{WRAPPER}} .sina-visit-counter .sina-visit-number, {{WRAPPER}} .sina-visit-counter .sina-visit-text' => 'display: {{VALUE}};',
+					'{{WRAPPER}} .sina-visit-number, {{WRAPPER}} .sina-visit-text' => 'display: {{VALUE}};',
 				],
 			]
 		);
@@ -312,7 +312,7 @@ class Sina_Visit_Counter_Widget extends Widget_Base {
 					'isLinked' => false,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-visit-counter .sina-visit-number' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .sina-visit-number' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);

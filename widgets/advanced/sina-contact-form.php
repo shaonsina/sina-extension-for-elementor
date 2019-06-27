@@ -230,6 +230,25 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 		);
 		Sina_Common_Data::input_fields_style( $this );
 		$this->add_responsive_control(
+			'fields_radius',
+			[
+				'label' => __( 'Radius', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '0',
+					'right' => '0',
+					'bottom' => '0',
+					'left' => '0',
+					'isLinked' => true,
+				],
+				'separator' => 'before',
+				'selectors' => [
+					'{{WRAPPER}} .sina-input-field' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
 			'fields_padding',
 			[
 				'label' => __( 'Padding', 'sina-ext' ),
@@ -242,9 +261,26 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 					'left' => '12',
 					'isLinked' => false,
 				],
-				'separator' => 'before',
 				'selectors' => [
 					'{{WRAPPER}} .sina-input-field' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'fields_margin',
+			[
+				'label' => __( 'Margin', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '0',
+					'right' => '0',
+					'bottom' => '20',
+					'left' => '0',
+					'isLinked' => false,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-input-field' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -327,7 +363,7 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 					'size' => '178',
 				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-contact-input .sina-input-message' => 'height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .sina-input-message' => 'height: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -337,15 +373,8 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 				'label' => __( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
-				'default' => [
-					'top' => '0',
-					'right' => '0',
-					'bottom' => '0',
-					'left' => '0',
-					'isLinked' => true,
-				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-contact-input .sina-input-message' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .sina-input-message' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -355,15 +384,8 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 				'label' => __( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
-				'default' => [
-					'top' => '0',
-					'right' => '0',
-					'bottom' => '20',
-					'left' => '0',
-					'isLinked' => false,
-				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-contact-input .sina-input-message' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .sina-input-message' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);

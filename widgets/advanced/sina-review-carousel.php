@@ -263,8 +263,8 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 					'size' => '130',
 				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-review-carousel .owl-item .sina-review-face' => 'height: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .sina-review-carousel .owl-item .sina-review-face' => 'width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .sina-review-face' => 'height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .sina-review-face' => 'width: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -275,7 +275,7 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
-					'{{WRAPPER}} .sina-review-carousel .owl-item .sina-review-face' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .sina-review-face' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -294,7 +294,7 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 					'isLinked' => true,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-review-carousel .owl-item .sina-review-face' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .sina-review-face' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -302,14 +302,14 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'box_border',
-				'selector' => '{{WRAPPER}} .sina-review-carousel .owl-item .sina-review-face',
+				'selector' => '{{WRAPPER}} .sina-review-face',
 			]
 		);
 		$this->add_group_control(
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'box_shadow',
-				'selector' => '{{WRAPPER}} .sina-review-carousel .owl-item .sina-review-face',
+				'selector' => '{{WRAPPER}} .sina-review-face',
 				'separator' => 'before',
 			]
 		);
@@ -336,7 +336,7 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '#111',
 				'selectors' => [
-					'{{WRAPPER}} .sina-review-carousel .sina-review-name' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .sina-review-name' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -362,14 +362,14 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 						],
 					],
 				],
-				'selector' => '{{WRAPPER}} .sina-review-carousel .sina-review-name',
+				'selector' => '{{WRAPPER}} .sina-review-name',
 			]
 		);
 		$this->add_group_control(
 			Group_Control_Text_Shadow::get_type(),
 			[
 				'name' => 'name_shadow',
-				'selector' => '{{WRAPPER}} .sina-review-carousel .sina-review-name',
+				'selector' => '{{WRAPPER}} .sina-review-name',
 			]
 		);
 		$this->add_responsive_control(
@@ -386,7 +386,7 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 					'isLinked' => false,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-review-carousel .sina-review-name' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .sina-review-name' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -413,7 +413,7 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '#111',
 				'selectors' => [
-					'{{WRAPPER}} .sina-review-carousel .sina-review-position' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .sina-review-position' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -431,14 +431,14 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 						],
 					],
 				],
-				'selector' => '{{WRAPPER}} .sina-review-carousel .sina-review-position',
+				'selector' => '{{WRAPPER}} .sina-review-position',
 			]
 		);
 		$this->add_group_control(
 			Group_Control_Text_Shadow::get_type(),
 			[
 				'name' => 'position_shadow',
-				'selector' => '{{WRAPPER}} .sina-review-carousel .sina-review-position',
+				'selector' => '{{WRAPPER}} .sina-review-position',
 			]
 		);
 		$this->add_responsive_control(
@@ -455,7 +455,7 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 					'isLinked' => true,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-review-carousel .sina-review-position' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .sina-review-position' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -482,7 +482,7 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '#1085e4',
 				'selectors' => [
-					'{{WRAPPER}} .sina-review-carousel .sina-review-company' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .sina-review-company' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -500,14 +500,14 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 						],
 					],
 				],
-				'selector' => '{{WRAPPER}} .sina-review-carousel .sina-review-company',
+				'selector' => '{{WRAPPER}} .sina-review-company',
 			]
 		);
 		$this->add_group_control(
 			Group_Control_Text_Shadow::get_type(),
 			[
 				'name' => 'company_shadow',
-				'selector' => '{{WRAPPER}} .sina-review-carousel .sina-review-company',
+				'selector' => '{{WRAPPER}} .sina-review-company',
 			]
 		);
 		$this->add_responsive_control(
@@ -524,7 +524,7 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 					'isLinked' => false,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-review-carousel .sina-review-company' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .sina-review-company' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -551,7 +551,7 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '#111',
 				'selectors' => [
-					'{{WRAPPER}} .sina-review-carousel .sina-review-comment' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .sina-review-comment' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -559,14 +559,14 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'comment_typography',
-				'selector' => '{{WRAPPER}} .sina-review-carousel .sina-review-comment',
+				'selector' => '{{WRAPPER}} .sina-review-comment',
 			]
 		);
 		$this->add_group_control(
 			Group_Control_Text_Shadow::get_type(),
 			[
 				'name' => 'comment_shadow',
-				'selector' => '{{WRAPPER}} .sina-review-carousel .sina-review-comment',
+				'selector' => '{{WRAPPER}} .sina-review-comment',
 			]
 		);
 		$this->add_responsive_control(
@@ -576,7 +576,7 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
-					'{{WRAPPER}} .sina-review-carousel .sina-review-comment' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .sina-review-comment' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);

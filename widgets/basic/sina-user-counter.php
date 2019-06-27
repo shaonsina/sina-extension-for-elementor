@@ -152,7 +152,7 @@ class Sina_User_Counter_Widget extends Widget_Base {
 				],
 				'default' => 'block',
 				'selectors' => [
-					'{{WRAPPER}} .sina-user-counter .sina-uc-number, {{WRAPPER}} .sina-user-counter .sina-uc-text' => 'display: {{VALUE}};',
+					'{{WRAPPER}} .sina-uc-number, {{WRAPPER}} .sina-uc-text' => 'display: {{VALUE}};',
 				],
 			]
 		);
@@ -313,7 +313,7 @@ class Sina_User_Counter_Widget extends Widget_Base {
 					'isLinked' => false,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-user-counter .sina-uc-number' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .sina-uc-number' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
