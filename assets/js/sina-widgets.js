@@ -1,4 +1,4 @@
-/* Sina Extension for Elementor v2.2.2 */
+/* Sina Extension for Elementor v2.3.0 */
 
 (function ($) {
 
@@ -226,10 +226,12 @@
 				$name = $this.find('.sina-input-name'),
 				$email = $this.find('.sina-input-email'),
 				$subject = $this.find('.sina-input-subject'),
-				$message = $this.find('.sina-input-message');
+				$message = $this.find('.sina-input-message'),
+				timeout;
 
 			$this.on('submit', function(e) {
 				e.preventDefault();
+				clearTimeout(timeout);
 
 				$error.fadeOut(0);
 				$success.fadeOut(0);
@@ -252,15 +254,73 @@
 								$process.fadeOut(0);
 								$error.html( data ).fadeIn(200);
 
-								setTimeout( function() {
+								timeout = setTimeout( function() {
 									$error.fadeOut(200);
 								}, 10000 );
 							} else{
 								$process.fadeOut(0);
-								$success.html( "Thanks for contacting us!" ).fadeIn(200);
+								$success.html( "Thanks for sending Email!" ).fadeIn(200);
 
-								setTimeout( function() {
+								timeout = setTimeout( function() {
 									$success.fadeOut(200);
+								}, 10000 );
+							}
+						}
+					}
+				);
+
+			});
+		});
+	}
+
+	function sinaMCSubscribe($scope, $) {
+		$scope.find('.sina-subs-form').each(function () {
+			var $this = $(this),
+				$uid = $this.data('uid'),
+				$nonce = $this.find('#sina_mc_subscribe_nonce'+$uid),
+				$fname = $this.find('.sina-input-fname'),
+				$lname = $this.find('.sina-input-lname'),
+				$email = $this.find('.sina-input-email'),
+				$phone = $this.find('.sina-input-phone'),
+				$success = $this.children('.sina-subs-success'),
+				$error = $this.children('.sina-subs-error'),
+				$process = $this.children('.sina-subs-process'),
+				timeout;
+
+			$this.on('submit', function(e) {
+				e.preventDefault();
+				clearTimeout(timeout);
+
+				$error.fadeOut(0);
+				$success.fadeOut(0);
+				$process.fadeIn(200);
+
+
+				$.post(
+					sinaAjax.ajaxURL,
+					{
+						action: "sina_mc_subscribe",
+						fname: $fname.val() || ' ',
+						lname: $lname.val() || ' ',
+						phone: $phone.val() || ' ',
+						email: $email.val(),
+						nonce: $nonce.val(),
+					},
+					function( data, status, code ) {
+						if ( status == 'success' ) {
+							if ( 'success' == data ) {
+								$process.fadeOut(0);
+								$success.html( "Thanks for subscribed!" ).fadeIn(200);
+
+								timeout = setTimeout( function() {
+									$success.fadeOut(200);
+								}, 10000 );
+							} else{
+								$process.fadeOut(0);
+								$error.html( data ).fadeIn(200);
+
+								timeout = setTimeout( function() {
+									$error.fadeOut(200);
 								}, 10000 );
 							}
 						}
@@ -724,44 +784,6 @@
 		});
 	}
 
-	function sinaMCSubscribe($scope, $) {
-		$scope.find('.sina-subs-form').each(function () {
-			var $this = $(this),
-				$link = $this.data('link'),
-				$success = $this.children('.sina-subs-success'),
-				$error = $this.children('.sina-subs-error'),
-				$process = $this.children('.sina-subs-process');
-
-			$this.ajaxChimp({
-				language: 'es',
-				callback: mailchimpCallback,
-				url: $link
-			});
-			$this.on('submit', function(e) {
-				$error.fadeOut(0);
-				$success.fadeOut(0);
-				$process.fadeIn(200);
-
-				setTimeout( function() {
-					$error.fadeOut(200);
-					$success.fadeOut(200);
-				}, 10000 );
-
-				return false;
-			});
-			function mailchimpCallback(resp) {
-				if (resp.result === 'success') {
-					$process.fadeOut(0);
-					$success.html( resp.msg ).fadeIn(800);
-
-				} else if (resp.result === 'error') {
-					$process.fadeOut(0);
-					$error.html( resp.msg.replace('0 - ', '') ).fadeIn(800);
-				}
-			}
-		});
-	}
-
 	function sinaModalBox($scope, $) {
 		$scope.find('.sina-modal-box').each(function () {
 			var $this = $(this),
@@ -848,6 +870,7 @@
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_blogpost.default', sinaBlogpost);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_brand_carousel.default', sinaBrandCarousel);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_contact_form.default', sinaContactForm);
+		elementorFrontend.hooks.addAction('frontend/element_ready/sina_mc_subscribe.default', sinaMCSubscribe);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_content_slider.default', sinaContentSlider);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_posts_carousel.default', sinaPostsCarousel);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_countdown.default', sinaCountdown);
@@ -862,7 +885,6 @@
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_posts_tab.default', sinaPostsTab);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_progressbar.default', sinaProgressbars);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_review_carousel.default', sinaReviewCarousel);
-		elementorFrontend.hooks.addAction('frontend/element_ready/sina_mc_subscribe.default', sinaMCSubscribe);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_modal_box.default', sinaModalBox);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_user_counter.default', sinaUserCounter);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_video.default', sinaVideo);

@@ -5,6 +5,103 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+function sina_mailchimp_subscribe() {
+	if ( check_ajax_referer( 'sina_mc_subscribe', 'nonce') && wp_verify_nonce( $_POST['nonce'], 'sina_mc_subscribe' ) ) {
+
+		$email = sanitize_email( $_POST['email'] );
+		$fname = sanitize_text_field( $_POST['fname'] );
+		$lname = sanitize_text_field( $_POST['lname'] );
+		$phone = sanitize_text_field( $_POST['phone'] );
+		$status = 'subscribed';
+		$err = '';
+
+		if ( '' == $fname) {
+			$fname = $fname;
+		} elseif ( strlen($fname) < 3 ) {
+			$err = __( 'First name too short! Must be contain 3-32 characters.', 'sina-ext' );
+		} elseif ( strlen($fname) > 32 ) {
+			$err = __( 'First name too large! Must be contain 3-32 characters.', 'sina-ext' );
+		} elseif ( preg_match("/^[a-zA-Z][ a-zA-Z0-9]{2,31}$/", $fname) ) {
+			$fname = $fname;
+		} else {
+			$err = __( 'Special character(s) not allowed in your first name!', 'sina-ext' );
+		}
+
+		if ( '' == $err ) {
+			if ( '' == $lname) {
+				$lname = $lname;
+			} elseif ( strlen($lname) < 3 ) {
+				$err = __( 'Last name too short! Must be contain 3-32 characters.', 'sina-ext' );
+			} elseif ( strlen($lname) > 32 ) {
+				$err = __( 'Last name too large! Must be contain 3-32 characters.', 'sina-ext' );
+			} elseif ( preg_match("/^[a-zA-Z][ a-zA-Z0-9]{2,31}$/", $lname) ) {
+				$lname = $lname;
+			} else {
+				$err = __( 'Special character(s) not allowed in your last name!', 'sina-ext' );
+			}
+		}
+
+		if ( '' == $err ) {
+			if ( '' == $email) {
+				$err = __( 'Invalid email!', 'sina-ext' );
+			}
+		}
+
+		if ( '' == $err ) {
+			if ( '' == $phone ) {
+				$phone = $phone;
+			} elseif ( preg_match("/^[0-9\(\+][ 0-9-\(\)]{2,19}$/", $phone) ) {
+				$phone = $phone;
+			} else {
+				$err = __( 'Invalid phone number!', 'sina-ext' );
+			}
+		}
+
+		if ( '' == $err ) {
+			$mail_chimp = get_option( 'sina_mailchimp' );
+			$api_parts = explode( '-', $mail_chimp['apikey'] );
+			$list_id = $mail_chimp['list_id'];
+			$url = 'https://'.$api_parts[1].'.api.mailchimp.com/3.0/lists/'.$list_id.'/members';
+
+			$args = [
+				'method' => 'POST',
+				'headers' => [
+					'Authorization'	=> 'Basic ' . base64_encode( 'user:'. implode('-', $api_parts) ),
+					'Content-Type'	=> 'application/json; charset=utf-8',
+				],
+				'body' => json_encode( [
+					'email_address' => $email,
+					'merge_fields'	=> [
+						'FNAME' 		=> $fname,
+						'LNAME' 		=> $lname,
+						'PHONE' 		=> $phone,
+					],
+					'status'        => $status
+				] )
+			];
+
+			$response = wp_remote_post( $url, $args );
+
+			if ( is_wp_error( $response ) ) {
+				$err = "Internal Error!";
+			} else {
+				$body = json_decode( $response['body'] );
+				if ( $response['response']['code'] == 200 && $body->status == $status ) {
+					$err = 'success';
+				} else {
+					$err = '<strong><em>'.$email.'</em></strong> was permanently deleted & cannot be re-subscribed';
+				}
+			}
+		}
+
+		echo $err;
+	}
+	die();
+}
+add_action( 'wp_ajax_sina_mc_subscribe', 'sina_mailchimp_subscribe' );
+add_action( 'wp_ajax_nopriv_sina_mc_subscribe', 'sina_mailchimp_subscribe' );
+
+
 function sina_ajax_contact(){
 	if ( check_ajax_referer( 'sina_contact', 'nonce') && wp_verify_nonce( $_POST['nonce'], 'sina_contact' ) ) {
 
@@ -18,10 +115,10 @@ function sina_ajax_contact(){
 		if ( '' == $name) {
 			$err = __( 'Name can\'t be empty!', 'sina-ext' );
 		} elseif ( strlen($name) < 3 ) {
-			$err = __( 'Name too short! Must be contain 3-20 characters.', 'sina-ext' );
+			$err = __( 'Name too short! Must be contain 3-32 characters.', 'sina-ext' );
 		} elseif ( strlen($name) > 32 ) {
-			$err = __( 'Name too large! Must be contain 3-20 characters.', 'sina-ext' );
-		} elseif ( preg_match("/^[a-zA-Z][ a-zA-Z0-9]{2,19}$/", $name) ) {
+			$err = __( 'Name too large! Must be contain 3-32 characters.', 'sina-ext' );
+		} elseif ( preg_match("/^[a-zA-Z][ a-zA-Z0-9]{2,31}$/", $name) ) {
 			$name = $name;
 		} else {
 			$err = __( 'Special character(s) not allowed in your name!', 'sina-ext' );

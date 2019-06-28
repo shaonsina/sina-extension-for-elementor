@@ -54,7 +54,7 @@ Please [See demo](https://shaonsina.com/plugins/sina-extension/)
 10. [Fancy Text](https://shaonsina.com/plugins/sina-extension/fancy-text): Animated text with 20+ animation effects.
 11. [Flip Box](https://shaonsina.com/plugins/sina-extension/flipbox): Use animated Flip Box to highlight any content on your web page.
 12. [Google Map](https://shaonsina.com/plugins/sina-extension/google-map): Add Google map with API key into the web page.
-13. [MailChimp](https://shaonsina.com/plugins/sina-extension/mailchimp): Add MailChimp subscribe form for collect subscribers data.
+13. [MailChimp](https://shaonsina.com/plugins/sina-extension/mailchimp): Add MailChimp subscribe form for subscriber the users.
 14. [Modal Box](https://shaonsina.com/plugins/sina-extension/modal-box): You can use any template (which made by Elementor) into a modal box with 20+ animation effects.
 15. [News Ticker](https://shaonsina.com/plugins/sina-extension/news-ticker): Use it for scrolling post or news title.
 16. [Particle Layer](https://shaonsina.com/plugins/sina-extension/particle-layer): Use particle layer with lots of style, layout & more.
@@ -103,8 +103,13 @@ Yes. It's totally free.
 == Changelog ==
 
 = 2.3.0 - 1-07-2019 =
+- New: Dynamic Button
+- New: Social Icon
+- Added: Lots of options to some widgets
+- Added: MailChimp API key option
+- Removed: MailChimp link option & jquery.ajaxchimp.min.js
 - Improved & optimized
-**NOTE: Some widgets has been changed. So, please review your site after update.**
+**NOTE: It's a major release of this plugin. Some widgets has been changed. So, please review your site after update.**
 
 = 2.2.2 - 22-06-2019 =
 - Fixed: Piechart browser issue

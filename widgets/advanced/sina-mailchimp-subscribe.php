@@ -115,12 +115,11 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 		);
 
 		$this->add_control(
-			'link',
+			'api_url',
 			[
-				'label' => __( 'Mailchimp Form URL', 'sina-ext' ),
-				'label_block' => true,
-				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter URL', 'sina-ext' ),
+				'label' => 'If you would like to change the API key <a target="_blank" href="admin.php?page=sina_ext_settings">click here</a>',
+				'type' => Controls_Manager::RAW_HTML,
+				'separator' => 'after',
 			]
 		);
 		$this->add_control(
@@ -130,19 +129,7 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter placeholder text', 'sina-ext' ),
-				'separator' => 'before',
 				'default' => 'Enter Email',
-			]
-		);
-		$this->add_control(
-			'email_tag',
-			[
-				'label' => __( 'Field tag', 'sina-ext' ),
-				'label_block' => true,
-				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter field tag', 'sina-ext' ),
-				'separator' => 'after',
-				'default' => 'EMAIL',
 			]
 		);
 		$this->add_control(
@@ -150,6 +137,7 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 			[
 				'label' => __( 'First Name', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
+				'separator' => 'before'
 			]
 		);
 		$this->add_control(
@@ -166,24 +154,11 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 			]
 		);
 		$this->add_control(
-			'fname_tag',
-			[
-				'label' => __( 'Field tag', 'sina-ext' ),
-				'label_block' => true,
-				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter field tag', 'sina-ext' ),
-				'condition' => [
-					'fname!' => '',
-				],
-				'separator' => 'after',
-				'default' => 'FNAME',
-			]
-		);
-		$this->add_control(
 			'lname',
 			[
 				'label' => __( 'Last Name', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
+				'separator' => 'before'
 			]
 		);
 		$this->add_control(
@@ -200,24 +175,11 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 			]
 		);
 		$this->add_control(
-			'lname_tag',
-			[
-				'label' => __( 'Field tag', 'sina-ext' ),
-				'label_block' => true,
-				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter field tag', 'sina-ext' ),
-				'condition' => [
-					'lname!' => '',
-				],
-				'separator' => 'after',
-				'default' => 'LNAME',
-			]
-		);
-		$this->add_control(
 			'phone',
 			[
 				'label' => __( 'Phone Number', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
+				'separator' => 'before'
 			]
 		);
 		$this->add_control(
@@ -231,19 +193,6 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 					'phone!' => '',
 				],
 				'default' => 'Enter Phone Number',
-			]
-		);
-		$this->add_control(
-			'phone_tag',
-			[
-				'label' => __( 'Field tag', 'sina-ext' ),
-				'label_block' => true,
-				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter field tag', 'sina-ext' ),
-				'condition' => [
-					'phone!' => '',
-				],
-				'default' => 'PHONE',
 			]
 		);
 
@@ -552,20 +501,20 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 		?>
 		<div class="sina-form">
 			<form class="sina-subs-form"
-			data-link="<?php echo esc_attr( $data['link'] ); ?>">
+			data-uid="<?php echo esc_attr( $this->get_id() ); ?>">
 				<div class="sina-subs-input">
 					<?php if ( $data['fname'] ): ?>
-						<input class="sina-input-field sina-input-fname <?php echo esc_attr( $display_class ); ?>" type="text" name="<?php echo esc_attr( $data['fname_tag'] ); ?>" placeholder="<?php echo esc_attr( $data['fname_placeholder'] ); ?>">
+						<input class="sina-input-field sina-input-fname <?php echo esc_attr( $display_class ); ?>" type="text" placeholder="<?php echo esc_attr( $data['fname_placeholder'] ); ?>">
 					<?php endif; ?>
 
 					<?php if ( $data['lname'] ): ?>
-						<input class="sina-input-field sina-input-lname <?php echo esc_attr( $display_class ); ?>" type="text" name="<?php echo esc_attr( $data['lname_tag'] ); ?>" placeholder="<?php echo esc_attr( $data['lname_placeholder'] ); ?>">
+						<input class="sina-input-field sina-input-lname <?php echo esc_attr( $display_class ); ?>" type="text" placeholder="<?php echo esc_attr( $data['lname_placeholder'] ); ?>">
 					<?php endif; ?>
 
-					<input class="sina-input-field sina-input-email <?php echo esc_attr( $display_class ); ?>" type="email" name="<?php echo esc_attr( $data['email_tag'] ); ?>" placeholder="<?php echo esc_attr( $data['email_placeholder'] ); ?> *">
+					<input class="sina-input-field sina-input-email <?php echo esc_attr( $display_class ); ?>" type="email" placeholder="<?php echo esc_attr( $data['email_placeholder'] ); ?> *">
 
 					<?php if ( $data['phone'] ): ?>
-						<input class="sina-input-field sina-input-phone <?php echo esc_attr( $display_class ); ?>" type="text" name="<?php echo esc_attr( $data['phone_tag'] ); ?>" placeholder="<?php echo esc_attr( $data['phone_placeholder'] ); ?>">
+						<input class="sina-input-field sina-input-phone <?php echo esc_attr( $display_class ); ?>" type="tel" placeholder="<?php echo esc_attr( $data['phone_placeholder'] ); ?>">
 					<?php endif; ?>
 
 					<button type="submit" class="sina-button sina-subs-btn">
@@ -575,6 +524,8 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 				<p class="sina-subs-success"></p>
 				<p class="sina-subs-error"></p>
 				<p class="sina-subs-process"><?php _e( 'Processing...', 'sina-ext' ); ?></p>
+
+				<?php wp_nonce_field( 'sina_mc_subscribe', 'sina_mc_subscribe_nonce'.$this->get_id() ); ?>
 			</form><!-- .sina-subs-form -->
 		</div><!-- .sina-form -->
 		<?php

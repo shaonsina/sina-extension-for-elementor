@@ -15,6 +15,10 @@ function sina_add_submenu() {
 		'sina_page_content'
 	);
 
+	add_option( 'sina_mailchimp', [
+		'apikey'	=> 'f173db627a5529c0df8f696887ae4362-us19',
+		'list_id'	=> '293db4f4bb',
+	] );
 	add_option( 'sina_map_apikey', '' );
 	add_action( 'admin_init', 'sina_settings_group' );
 }
@@ -22,10 +26,13 @@ add_action( 'admin_menu', 'sina_add_submenu', 550 );
 
 function sina_settings_group() {
 	register_setting( 'sina_settings_group', 'sina_map_apikey' );
+	register_setting( 'sina_settings_group', 'sina_mailchimp' );
 	register_setting( 'sina_settings_group', 'sina_widgets' );
 
 	add_settings_section( 'sina_api_section', '', '', 'sina_ext_settings' );
 	add_settings_field( 'sina_google_map_key', __('Google Map API Key', 'sina-ext'), 'sina_map_api_key', 'sina_ext_settings', 'sina_api_section' );
+	add_settings_field( 'sina_mailchimp_key', __('MailChimp API Key', 'sina-ext'), 'sina_mail_chimp_key', 'sina_ext_settings', 'sina_api_section' );
+	add_settings_field( 'sina_mailchimp_list_id', __('MailChimp List Id', 'sina-ext'), 'sina_mail_chimp_list_id', 'sina_ext_settings', 'sina_api_section' );
 
 	foreach ( SINA_WIDGETS as $cat => $widgets ) {
 		$section = 'sina_'.$cat.'_widgets_section';
@@ -90,6 +97,18 @@ function sina_page_content() {
 function sina_map_api_key() {
 	?>
 	<input type="text" class="regular-text" name="sina_map_apikey" value="<?php echo esc_attr( get_option( 'sina_map_apikey' ) ); ?>">
+	<?php
+}
+
+function sina_mail_chimp_key() {
+	?>
+	<input type="text" class="regular-text" name="sina_mailchimp[apikey]" value="<?php echo esc_attr( get_option( 'sina_mailchimp' )['apikey'] ); ?>">
+	<?php
+}
+
+function sina_mail_chimp_list_id() {
+	?>
+	<input type="text" class="regular-text" name="sina_mailchimp[list_id]" value="<?php echo esc_attr( get_option( 'sina_mailchimp' )['list_id'] ); ?>">
 	<?php
 }
 
