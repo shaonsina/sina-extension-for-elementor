@@ -107,6 +107,7 @@ Yes. It's totally free.
 - New: Social Icon
 - Added: Lots of options to some widgets
 - Added: MailChimp API key option
+- Fixed: Some issues
 - Removed: MailChimp link option & jquery.ajaxchimp.min.js
 - Improved & optimized
 **NOTE: It's a major release of this plugin. Some widgets has been changed. So, please review your site after update.**

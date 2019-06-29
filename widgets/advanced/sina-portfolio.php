@@ -168,7 +168,7 @@ class Sina_Portfolio_Widget extends Widget_Base {
 						'label' => __( 'Category', 'sina-ext' ),
 						'label_block' => true,
 						'type' => Controls_Manager::TEXT,
-						'description' => __( 'Multiple categories must be comma separated.', 'sina-ext' ),
+						'description' => __( 'Multiple category must be comma separated.', 'sina-ext' ),
 						'default' => 'Web Design',
 					],
 					[

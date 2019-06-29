@@ -99,12 +99,15 @@
 .sina-pt-item{
 	display: none;
 }
+.sina-social li a,
+.sina-team-social li a,
 .sina-bg-thumb img,
 .sina-pt-item.active,
 .sina-pt-content .sina-pt-btn,
 .sina-accordion-item.open > .sina-accordion-header > .sina-accordion-icon .on{
 	display: block;
 }
+.sina-team-social li,
 .sina-fancytext .sina-fancytext-strings > .animated,
 .sina-product-zoomer,
 .sina-pricing-btn .sina-order-btn,
@@ -112,7 +115,12 @@
 .sina-banner-btns .sina-banner-sbtn{
 	display: inline-block;
 }
-
+.sina-social li a i,
+.sina-portfolio-overlay i,
+.sina-team-social li i {
+	text-align: center;
+	transition: 0.4s;
+}
 .sina-bp-list .sina-bg-thumb,
 .sina-bp-list .sina-bp-content,
 .sina-bp-col,
@@ -699,10 +707,6 @@ img.mfp-img{
 	justify-content: center;
 	width: 100%;
 }
-.sina-portfolio-overlay i{
-	text-align: center;
-	transition: 0.4s;
-}
 /* Effects */
 .sina-portfolio-overlay.sina-pf-effect-zoom{
 	transform: scale(.1);
@@ -865,14 +869,6 @@ img.mfp-img{
 }
 .sina-team-social {
 	padding-top: 20px;
-}
-.sina-team-social li {
-	display: inline-block;
-	margin: 6px;
-}
-.sina-team-social li i {
-	text-align: center;
-	transition: 0.4s;
 }
 /* Move Effect */
 .sina-team:hover .sina-team-overlay{

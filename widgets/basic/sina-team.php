@@ -637,6 +637,24 @@ class Sina_Team_Widget extends Widget_Base {
 				],
 			]
 		);
+		$this->add_responsive_control(
+			'icon_margin',
+			[
+				'label' => __( 'Margin', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '4',
+					'right' => '4',
+					'bottom' => '4',
+					'left' => '4',
+					'isLinked' => true,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-team-social li a' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
 
 		$this->end_controls_section();
 		// End Icon Style

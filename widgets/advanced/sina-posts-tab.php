@@ -124,6 +124,11 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 						'options' => sina_get_categories(),
 						'default' => 'Uncategorized',
 					],
+					[
+						'name' => 'icon',
+						'label' => __( 'Icon', 'sina-ext' ),
+						'type' => Controls_Manager::ICON,
+					],
 				],
 				'default' => [
 					[
@@ -178,6 +183,33 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 			]
 		);
 		Sina_Common_Data::button_style( $this, '.sina-pt-cat-btn', 'cat' );
+		$this->add_control(
+			'icon_align',
+			[
+				'label' => __( 'Icon Position', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					'left' => __( 'Left', 'sina-ext' ),
+					'right' => __( 'Right', 'sina-ext' ),
+				],
+				'separator' => 'before',
+				'default' => 'left',
+			]
+		);
+		$this->add_responsive_control(
+			'icon_space',
+			[
+				'label' => __( 'Icon Spacing', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'default' => [
+					'size' => '5',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-pt-cat-btn .sina-icon-right' => 'margin-left: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .sina-pt-cat-btn .sina-icon-left' => 'margin-right: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
 		$this->add_responsive_control(
 			'cat_gap',
 			[
@@ -186,7 +218,6 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 				'default' =>[
 					'size' => '40',
 				],
-				'separator' => 'before',
 				'selectors' => [
 					'{{WRAPPER}} .sina-pt-btns' => 'margin-bottom: {{SIZE}}{{UNIT}};',
 				],
@@ -818,7 +849,15 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 						foreach ($data['categories'] as $cats):
 							$bid = $id.'-'.str_replace(' ', '-', $cats['category']);
 							?>
-							<button class="sina-pt-cat-btn sina-button" data-sina-pt="#<?php echo esc_attr($bid); ?>"><?php printf( '%s', $cats['category'] ); ?></button>
+							<button class="sina-pt-cat-btn sina-button" data-sina-pt="#<?php echo esc_attr($bid); ?>">
+								<?php if ( $cats['icon'] && $data['icon_align'] == 'left' ): ?>
+									<i class="<?php echo esc_attr($cats['icon']); ?> sina-icon-left"></i>
+								<?php endif; ?>
+								<?php printf( '%s', $cats['category'] ); ?>
+								<?php if ( $cats['icon'] && $data['icon_align'] == 'right' ): ?>
+									<i class="<?php echo esc_attr($cats['icon']); ?> sina-icon-right"></i>
+								<?php endif; ?>
+							</button>
 					<?php endforeach; ?>
 				</div>
 

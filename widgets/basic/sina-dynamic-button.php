@@ -89,8 +89,8 @@ class Sina_Dynamic_Button_Widget extends Widget_Base {
 	 * @since 2.3.0
 	 */
 	protected function _register_controls() {
-		// Start 
-		// ===================
+		// Start Buttons Content
+		// ======================
 		$this->start_controls_section(
 			'button_content',
 			[
@@ -98,12 +98,72 @@ class Sina_Dynamic_Button_Widget extends Widget_Base {
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
+		$this->add_control(
+			'btn_text',
+			[
+				'label' => __( 'Label', 'sina-ext' ),
+				'type' => Controls_Manager::TEXT,
+				'placeholder' => __( 'Enter Label', 'sina-ext' ),
+				'default' => 'Click Here',
+			]
+		);
+		$this->add_control(
+			'btn_link',
+			[
+				'label' => __( 'Link', 'sina-ext' ),
+				'type' => Controls_Manager::URL,
+				'default' => [
+					'url' => '#',
+				],
+				'placeholder' => __( 'https://your-link.com', 'sina-ext' ),
+			]
+		);
+		$this->add_control(
+			'btn_icon',
+			[
+				'label' => __( 'Icon', 'sina-ext' ),
+				'type' => Controls_Manager::ICON,
+			]
+		);
+		$this->add_control(
+			'btn_icon_align',
+			[
+				'label' => __( 'Icon Position', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					'left' => __( 'Left', 'sina-ext' ),
+					'right' => __( 'Right', 'sina-ext' ),
+				],
+				'default' => 'left',
+				'condition' => [
+					'btn_icon!' => '',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'btn_icon_space',
+			[
+				'label' => __( 'Icon Spacing', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'default' => [
+					'size' => '5',
+				],
+				'condition' => [
+					'btn_icon!' => '',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-dbtn .sina-icon-right' => 'margin-left: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .sina-dbtn .sina-icon-left' => 'margin-right: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
 
 		$this->end_controls_section();
-		// End 
-		// =================
+		// End Button Content
+		// ===================
 
-		// Start 
+
+		// Start Button Style
 		// ===================
 		$this->start_controls_section(
 			'button_style',
@@ -124,7 +184,7 @@ class Sina_Dynamic_Button_Widget extends Widget_Base {
 		);
 
 		$this->end_controls_section();
-		// End 
+		// End Button Style
 		// =================
 	}
 
@@ -133,8 +193,16 @@ class Sina_Dynamic_Button_Widget extends Widget_Base {
 		$data = $this->get_settings_for_display();
 		?>
 		<div class="sina-dynamic-button">
-			<a href="#" class="sina-dbtn">Dynamic Button</a>
-		</div><!-- .sina-gradient-button -->
+			<a href="<?php echo esc_url( $data['btn_link'] ); ?>" class="sina-dbtn">
+				<?php if ( $data['btn_icon'] && $data['btn_icon_align'] == 'left' ): ?>
+					<i class="<?php echo esc_attr($data['btn_icon']); ?> sina-icon-left"></i>
+				<?php endif; ?>
+				<?php printf('%s', $data['btn_text']); ?>
+				<?php if ( $data['btn_icon'] && $data['btn_icon_align'] == 'right' ): ?>
+					<i class="<?php echo esc_attr($data['btn_icon']); ?> sina-icon-right"></i>
+				<?php endif; ?>
+			</a>
+		</div><!-- .sina-dynamic-button -->
 		<?php
 	}
 

@@ -45,6 +45,7 @@ define('SINA_WIDGETS', [
 		'piechart' 				=> 1,
 		'pricing' 				=> 1,
 		'progressbar' 			=> 1,
+		'social-icons'			=> 1,
 		'table'			 		=> 1,
 		'team' 					=> 1,
 		'title'					=> 1,

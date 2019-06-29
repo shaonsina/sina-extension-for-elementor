@@ -614,7 +614,7 @@ class Sina_Common_Data{
 		if ( $data[$prefix.'_icon'] && $data[$prefix.'_icon_align'] == 'left' ): ?>
 			<i class="<?php echo esc_attr($data[$prefix.'_icon']); ?> sina-icon-left"></i>
 		<?php endif; ?>
-		<span><?php printf( '%s', $data[$prefix.'_text'] ); ?></span>
+		<?php printf( '%s', $data[$prefix.'_text'] ); ?>
 		<?php if ( $data[$prefix.'_icon'] && $data[$prefix.'_icon_align'] == 'right' ): ?>
 			<i class="<?php echo esc_attr($data[$prefix.'_icon']); ?> sina-icon-right"></i>
 			<?php
