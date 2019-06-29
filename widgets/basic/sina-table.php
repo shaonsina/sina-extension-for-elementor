@@ -939,7 +939,7 @@ class Sina_Table_Widget extends Widget_Base {
 					<?php foreach ($rows as $key => $row) : ?>
 						<tr class="elementor-repeater-item-<?php echo esc_attr( $key ); ?>">
 							<?php foreach ($row as $content) : ?>
-								<<?php echo esc_html( $content['type'] ); ?>
+								<<?php printf( '%s', $content['type'] ); ?>
 								rowspan="<?php echo esc_attr( $content['row_span'] ); ?>"
 								colspan="<?php echo esc_attr( $content['col_span'] ); ?>"
 								class="elementor-repeater-item-<?php echo esc_attr( $content['id'] ); ?>" >
@@ -951,7 +951,7 @@ class Sina_Table_Widget extends Widget_Base {
 								<?php if ( $content['icon'] && $content['icon_align'] == 'right' ): ?>
 									<i class="<?php echo esc_attr($content['icon']); ?> sina-icon-right"></i>
 								<?php endif; ?>
-								</<?php echo esc_html( $content['type'] ); ?>>
+								</<?php printf( '%s', $content['type'] ); ?>>
 							<?php endforeach; ?>
 						</tr>
 					<?php endforeach; ?>

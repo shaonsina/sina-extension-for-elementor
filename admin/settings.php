@@ -16,8 +16,8 @@ function sina_add_submenu() {
 	);
 
 	add_option( 'sina_mailchimp', [
-		'apikey'	=> 'f173db627a5529c0df8f696887ae4362-us19',
-		'list_id'	=> '293db4f4bb',
+		'apikey'	=> '',
+		'list_id'	=> '',
 	] );
 	add_option( 'sina_map_apikey', '' );
 	add_action( 'admin_init', 'sina_settings_group' );

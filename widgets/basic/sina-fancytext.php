@@ -488,12 +488,12 @@ class Sina_Fancytext_Widget extends Widget_Base {
 		data-delay="<?php echo esc_attr( $data['delay'] ); ?>"
 		data-cursor="<?php echo esc_attr( $data['cursor'] ); ?>"
 		data-loop="<?php echo esc_attr( $data['loop'] ); ?>">
-			<<?php echo esc_html( $data['tag'] ); ?>>
+			<<?php printf( '%s', $data['tag'] ); ?>>
 			<?php
 				if ( $data['fancy_prefix'] ) :
 					?>
 					<span class="sina-fancytext-prefix">
-						<?php echo esc_html( $data['fancy_prefix'] ); ?>
+						<?php printf( '%s', $data['fancy_prefix'] ); ?>
 					</span>
 					<?php
 				endif;
@@ -501,13 +501,13 @@ class Sina_Fancytext_Widget extends Widget_Base {
 				if ( 'typing' == $data['animation_type'] ) :
 					?>
 					<span class="sina-fancytext-strings">
-						<?php echo esc_html( $data['fancy_text'][0]['fancy_items'] ); ?>
+						<?php printf( '%s', $data['fancy_text'][0]['fancy_items'] ); ?>
 					</span>
 					<?php
 				else :
 					?>
 					<span class="sina-fancytext-strings">
-						<?php echo esc_html( rtrim($fancy_text, '@@') ); ?>
+						<?php printf( '%s', rtrim($fancy_text, '@@') ); ?>
 					</span>
 					<?php
 				endif;
@@ -515,12 +515,12 @@ class Sina_Fancytext_Widget extends Widget_Base {
 				if ( $data['fancy_suffix'] ) :
 					?>
 					<span class="sina-fancytext-suffix">
-						<?php echo esc_html( $data['fancy_suffix'] ); ?>
+						<?php printf( '%s', $data['fancy_suffix'] ); ?>
 					</span>
 					<?php
 				endif;
 			?>
-			</<?php echo esc_html( $data['tag'] ); ?>>
+			</<?php printf( '%s', $data['tag'] ); ?>>
 		</div><!-- .sina-fancytext -->
 		<?php
 	}

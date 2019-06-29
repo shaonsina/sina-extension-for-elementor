@@ -897,7 +897,7 @@ class Sina_Content_Box_Widget extends Widget_Base {
 			?>
 			<style type="text/css">
 				[data-id="<?php echo $this->get_id(); ?>"] .sina-content-box:hover{
-					transform: translate(<?php echo esc_html( $data['translateX']['size'].'px' ); ?>, <?php echo esc_html( $data['translateY']['size'].'px' ); ?>);
+					transform: translate(<?php echo esc_attr( $data['translateX']['size'].'px' ); ?>, <?php echo esc_attr( $data['translateY']['size'].'px' ); ?>);
 				}
 			</style>
 		<?php endif; ?>
@@ -905,7 +905,7 @@ class Sina_Content_Box_Widget extends Widget_Base {
 		<div class="sina-content-box <?php echo esc_attr( $data['effects'] ); ?>">
 			<?php if ( $data['ribbon_title'] && $data['ribbon_position'] ): ?>
 				<div class="<?php echo esc_attr( $data['ribbon_position'] ); ?>">
-					<?php echo esc_html( $data['ribbon_title'] ); ?>
+					<?php printf( '%s', $data['ribbon_title'] ); ?>
 				</div>
 			<?php endif; ?>
 

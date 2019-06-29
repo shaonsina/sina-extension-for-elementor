@@ -455,7 +455,7 @@ class Sina_Progressbar_Widget extends Widget_Base {
 				<div class="sina-bar-bg">
 					<div class="sina-bar-content sina-flex" data-percentage="<?php echo esc_attr( $percent ); ?>">
 						<span class="sina-bar-percent">
-								<?php echo esc_html( $data['prefix'].$data['percentage'].$data['suffix'] ); ?>
+								<?php printf( '%s', $data['prefix'].$data['percentage'].$data['suffix'] ); ?>
 						</span>
 					</div>
 				</div>

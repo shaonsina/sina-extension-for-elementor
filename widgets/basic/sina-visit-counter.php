@@ -365,7 +365,7 @@ class Sina_Visit_Counter_Widget extends Widget_Base {
 					<?php printf( '<h3 class="sina-visit-text">%1$s</h3>', $data['today'] ); ?>
 					<?php if ( isset($visit_data['sina_visit_today']) ): ?>
 						<span class="sina-visit-number sina-visit-today">
-							<?php echo esc_html( $visit_data['sina_visit_today'] ); ?>
+							<?php printf( '%s', $visit_data['sina_visit_today'] ); ?>
 						</span>
 					<?php endif; ?>
 				</div>
@@ -376,7 +376,7 @@ class Sina_Visit_Counter_Widget extends Widget_Base {
 					<?php printf( '<h3 class="sina-visit-text">%1$s</h3>', $data['yesterday'] ); ?>
 					<?php if ( isset($visit_data['sina_visit_yesterday']) ): ?>
 						<span class="sina-visit-number sina-visit-yesterday">
-							<?php echo esc_html( $visit_data['sina_visit_yesterday'] ); ?>
+							<?php printf( '%s', $visit_data['sina_visit_yesterday'] ); ?>
 						</span>
 					<?php endif; ?>
 				</div>
@@ -387,7 +387,7 @@ class Sina_Visit_Counter_Widget extends Widget_Base {
 					<?php printf( '<h3 class="sina-visit-text">%1$s</h3>', $data['today'] ); ?>
 					<?php if ( isset($visit_data['sina_visit_today']) ): ?>
 						<span class="sina-visit-number sina-visit-today">
-							<?php echo esc_html( $visit_data['sina_visit_today'] ); ?>
+							<?php printf( '%s', $visit_data['sina_visit_today'] ); ?>
 						</span>
 					<?php endif; ?>
 				</div>

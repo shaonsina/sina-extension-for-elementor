@@ -344,7 +344,7 @@ class Sina_User_Counter_Widget extends Widget_Base {
 			<?php if ( $data['prefix'] ): ?>
 				<?php printf( '<h3 class="sina-uc-text">%1$s</h3>', $data['prefix'] ); ?>
 			<?php endif; ?>
-			<span class="sina-uc-number"><?php echo esc_html( $count ); ?></span>
+			<span class="sina-uc-number"><?php printf( '%s', $count ); ?></span>
 			<?php if ( $data['suffix'] ): ?>
 				<?php printf( '<h3 class="sina-uc-text">%1$s</h3>', $data['suffix'] ); ?>
 			<?php endif; ?>

@@ -818,7 +818,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 						foreach ($data['categories'] as $cats):
 							$bid = $id.'-'.str_replace(' ', '-', $cats['category']);
 							?>
-							<button class="sina-pt-cat-btn sina-button" data-sina-pt="#<?php echo esc_attr($bid); ?>"><?php echo esc_html( $cats['category'] ); ?></button>
+							<button class="sina-pt-cat-btn sina-button" data-sina-pt="#<?php echo esc_attr($bid); ?>"><?php printf( '%s', $cats['category'] ); ?></button>
 					<?php endforeach; ?>
 				</div>
 
@@ -913,7 +913,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 														<div class="sina-pt-title">
 															<h3 data-sina-pt="#<?php echo esc_attr( $pid ); ?>"><?php the_title(); ?></h3>
 															<?php if ('yes' == $data['date']): ?>
-																<p><span class="fa fa-clock-o"></span> <?php echo esc_html( get_the_date() ); ?></p>
+																<p><span class="fa fa-clock-o"></span> <?php printf( '%s', get_the_date() ); ?></p>
 															<?php endif ?>
 														</div>
 													</div>
@@ -922,7 +922,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 														<div class="sina-pt-title">
 															<h3 data-sina-pt="#<?php echo esc_attr( $pid ); ?>"><?php the_title(); ?></h3>
 															<?php if ('yes' == $data['date']): ?>
-																<p><span class="fa fa-clock-o"></span> <?php echo esc_html( get_the_date() ); ?></p>
+																<p><span class="fa fa-clock-o"></span> <?php printf( '%s', get_the_date() ); ?></p>
 															<?php endif ?>
 														</div>
 													</div>

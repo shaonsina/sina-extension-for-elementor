@@ -556,7 +556,7 @@ class Sina_Countdown_Widget extends Widget_Base {
 						<div class="sina-cd-<?php echo esc_attr($value); ?>">00</div>
 						<?php if ( 'yes' == $data['text_state'] ) : ?>
 							<div class="sina-cd-text">
-								<?php echo esc_html( ucfirst($value) ); ?>
+								<?php printf( '%s', ucfirst($value) ); ?>
 							</div>
 						<?php endif; ?>
 					</div>

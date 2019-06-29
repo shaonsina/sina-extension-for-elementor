@@ -986,7 +986,7 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 											<i class="<?php echo esc_attr($data['pbtn_icon']); ?> sina-icon-left"></i>
 										<?php endif; ?>
 										<span <?php echo $this->get_render_attribute_string( 'pbtn_text' ); ?>>
-											<?php echo esc_html( $data['pbtn_text'] ); ?>
+											<?php printf( '%s', $data['pbtn_text'] ); ?>
 										</span>
 										<?php if ( $data['pbtn_icon'] && $data['pbtn_icon_align'] == 'right' ): ?>
 											<i class="<?php echo esc_attr($data['pbtn_icon']); ?> sina-icon-right"></i>
@@ -1007,7 +1007,7 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 											<i class="<?php echo esc_attr($data['sbtn_icon']); ?> sina-icon-left"></i>
 										<?php endif; ?>
 										<span <?php echo $this->get_render_attribute_string( 'pbtn_text' ); ?>>
-											<?php echo esc_html( $data['sbtn_text'] ); ?>
+											<?php printf( '%s', $data['sbtn_text'] ); ?>
 										</span>
 										<?php if ( $data['sbtn_icon'] && $data['sbtn_icon_align'] == 'right' ): ?>
 											<i class="<?php echo esc_attr($data['sbtn_icon']); ?> sina-icon-right"></i>

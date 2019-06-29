@@ -435,7 +435,7 @@ class Sina_Piechart_Widget extends Widget_Base {
 				<div class="sina-piechart-center">
 					<?php if ( 'bottom' == $data['title_position'] ): ?>
 						<span class="sina-piechart-percent">
-							<?php echo esc_html( $data['prefix'].$data['value'].$data['suffix'] ); ?>
+							<?php printf( '%s', $data['prefix'].$data['value'].$data['suffix'] ); ?>
 						</span>
 					<?php endif; ?>
 					<?php if ( $data['title'] ): ?>
@@ -443,7 +443,7 @@ class Sina_Piechart_Widget extends Widget_Base {
 					<?php endif; ?>
 					<?php if ( 'top' == $data['title_position'] ): ?>
 						<span class="sina-piechart-percent">
-							<?php echo esc_html( $data['prefix'].$data['value'].$data['suffix'] ); ?>
+							<?php printf( '%s', $data['prefix'].$data['value'].$data['suffix'] ); ?>
 						</span>
 					<?php endif; ?>
 				</div>

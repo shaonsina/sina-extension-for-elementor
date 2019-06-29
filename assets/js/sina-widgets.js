@@ -839,8 +839,8 @@
 		$scope.find('.sina-visit-counter').each(function () {
 			var $this = $(this),
 				page = $this.data('page'),
-				today = $this.children('.sina-visit-today'),
-				yesterday = $this.children('.sina-visit-yesterday'),
+				today = $this.find('.sina-visit-today'),
+				yesterday = $this.find('.sina-visit-yesterday'),
 				nonce = $this.find('#sina_visit_counter_nonce');
 
 			setInterval( function() {

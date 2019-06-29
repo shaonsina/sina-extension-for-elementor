@@ -496,7 +496,7 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 		data-pause="<?php echo esc_attr( $data['pause_on_hover'] ); ?>"
 		data-speed="<?php echo esc_attr( $data['speed'] ); ?>">
 			<?php if ( $data['label_text'] && ('left' == $data['label_position'] || 'both' == $data['label_position']) ): ?>
-				<div class="sina-nt-left-label"><?php echo esc_html( $data['label_text'] ); ?></div>
+				<div class="sina-nt-left-label"><?php printf( '%s', $data['label_text'] ); ?></div>
 			<?php endif; ?>
 
 			<div class="sina-news-wrapper">
@@ -524,9 +524,9 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 			</div>
 
 			<?php if ( $data['label_text'] && 'both' == $data['label_position'] ): ?>
-				<div class="sina-nt-right-label sina-nt-label-both"><?php echo esc_html( $data['label_text'] ); ?></div>
+				<div class="sina-nt-right-label sina-nt-label-both"><?php printf( '%s', $data['label_text'] ); ?></div>
 			<?php elseif ( $data['label_text'] && 'right' == $data['label_position'] ): ?>
-				<div class="sina-nt-right-label"><?php echo esc_html( $data['label_text'] ); ?></div>
+				<div class="sina-nt-right-label"><?php printf( '%s', $data['label_text'] ); ?></div>
 			<?php endif ?>
 		</div><!-- .sina-news-ticker -->
 		<?php

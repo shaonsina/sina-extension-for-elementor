@@ -960,7 +960,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 			?>
 			<style type="text/css">
 				[data-id="<?php echo $this->get_id(); ?>"] .sina-pricing:hover{
-					transform: translate(<?php echo esc_html( $data['translateX']['size'].'px' ); ?>, <?php echo esc_html( $data['translateY']['size'].'px' ); ?>);
+					transform: translate(<?php echo esc_attr( $data['translateX']['size'].'px' ); ?>, <?php echo esc_attr( $data['translateY']['size'].'px' ); ?>);
 				}
 			</style>
 		<?php endif; ?>
@@ -968,7 +968,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 		<div class="sina-pricing <?php echo esc_attr( $data['effects'] ); ?>">
 			<?php if ( $data['ribbon_title'] && $data['ribbon_position'] ): ?>
 				<div class="<?php echo esc_attr( $data['ribbon_position'] ); ?>">
-					<?php echo esc_html( $data['ribbon_title'] ); ?>
+					<?php printf( '%s', $data['ribbon_title'] ); ?>
 				</div>
 			<?php endif; ?>
 
@@ -990,7 +990,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 
 			<?php if ( $data['price']): ?>
 				<h4 class="sina-price-tag">
-					<span><?php echo esc_html( $data['price'] ); ?></span><span class="sina-price-suffix"><?php echo esc_html( $data['price_suffix'] ); ?></span>
+					<span><?php printf( '%s', $data['price'] ); ?></span><span class="sina-price-suffix"><?php printf( '%s', $data['price_suffix'] ); ?></span>
 				</h4>
 			<?php endif; ?>
 
@@ -1002,7 +1002,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 
 			<ul class="sina-pricing-body">
 				<?php foreach ($data['item'] as $index => $item) : ?>
-					<li><?php echo esc_html( $item['title'] ) ?></li>
+					<li><?php printf( '%s', $item['title'] ); ?></li>
 				<?php endforeach ?>
 			</ul>
 

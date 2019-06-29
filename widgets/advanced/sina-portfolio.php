@@ -646,7 +646,7 @@ class Sina_Portfolio_Widget extends Widget_Base {
 					foreach ( $categories as $cat ) :
 						?>
 						<button class="sina-portfolio-btn sina-button" data-filter=".<?php echo esc_attr( $cat ); ?>">
-							<?php echo esc_html( str_replace( '_', ' ', trim( $cat, '_') ) ); ?>
+							<?php printf( '%s', str_replace( '_', ' ', trim( $cat, '_') ) ); ?>
 						</button>
 				<?php endforeach; ?>
 

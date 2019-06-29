@@ -664,7 +664,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 								<div class="sina-pc-meta">
 									<?php the_author_posts_link(); ?>
 									|
-									<?php echo esc_html( get_the_date() ); ?>
+									<?php printf( '%s', get_the_date() ); ?>
 								</div>
 							<?php endif; ?>
 						</div>

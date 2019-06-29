@@ -653,19 +653,19 @@ class Sina_Team_Widget extends Widget_Base {
 				<div class="sina-team-overlay sina-overlay">
 					<?php if ( $data['name'] ): ?>
 						<h5 class="sina-team-name">
-							<?php echo esc_html( $data['name'] ); ?>
+							<?php printf( '%s', $data['name'] ); ?>
 						</h5>
 					<?php endif; ?>
 
 					<?php if ( $data['position'] ): ?>
 						<h6 class="sina-team-position">
-							<?php echo esc_html( $data['position'] ); ?>
+							<?php printf( '%s', $data['position'] ); ?>
 						</h6>
 					<?php endif; ?>
 
 					<?php if ( $data['desc'] ): ?>
 						<div class="sina-team-desc">
-							<?php echo esc_html( $data['desc'] ); ?>
+							<?php printf( '%s', $data['desc'] ); ?>
 						</div>
 					<?php endif; ?>
 

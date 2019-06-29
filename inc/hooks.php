@@ -89,12 +89,12 @@ function sina_mailchimp_subscribe() {
 				if ( $response['response']['code'] == 200 && $body->status == $status ) {
 					$err = 'success';
 				} else {
-					$err = '<strong><em>'.$email.'</em></strong> was permanently deleted & cannot be re-subscribed';
+					$err = $body->title.'!';
 				}
 			}
 		}
 
-		echo $err;
+		printf( '%s', $err );
 	}
 	die();
 }
@@ -165,7 +165,7 @@ function sina_ajax_contact(){
 				wp_mail( $admin_email, $subject, $message, "From: {$email}\r\n" );
 			}
 		}
-		echo esc_html( $err );
+		printf( '%s', $err );
 	}
 	die();
 }
@@ -224,7 +224,7 @@ function sina_ajax_user_counter() {
 				$count += isset($users[$role]) ? $users[$role] : 0;
 			}
 		}
-		echo esc_html( $count );
+		printf( '%s', $count );
 	}
 	die();
 }
@@ -240,7 +240,7 @@ function sina_ajax_visit_counter() {
 			$visit_data = get_post_meta( $page, 'sina_visit_counter', true);
 
 			$data = $visit_data['sina_visit_today'] . '|' . $visit_data['sina_visit_yesterday'];
-			echo esc_html( $data );
+			printf( '%s', $data );
 		}
 	}
 	die();
