@@ -13,6 +13,7 @@ use Elementor\Group_Control_Background;
 use Elementor\Group_Control_Box_Shadow;
 use Elementor\Group_Control_Text_Shadow;
 use Elementor\Group_Control_Border;
+use Elementor\Repeater;
 use Elementor\Plugin;
 
 
@@ -149,62 +150,75 @@ class Sina_Portfolio_Widget extends Widget_Base {
 				'default' => 'sina-pf-effect-move',
 			]
 		);
+
+		$repeater = new Repeater();
+
+		$repeater->add_control(
+			'item_name',
+			[
+				'label' => __( 'Item Name', 'sina-ext' ),
+				'label_block' => true,
+				'type' => Controls_Manager::TEXT,
+				'placeholder' => __( 'Enter Item Name', 'sina-ext' ),
+				'default' => 'Lorem ipsum dolor sit amet',
+			]
+		);
+		$repeater->add_control(
+			'category',
+			[
+				'label' => __( 'Category', 'sina-ext' ),
+				'label_block' => true,
+				'type' => Controls_Manager::TEXT,
+				'description' => __( 'Multiple category must be comma separated.', 'sina-ext' ),
+				'default' => 'Web Design',
+			]
+		);
+		$repeater->add_control(
+			'image',
+			[
+				'label' => __( 'Choose Image', 'sina-ext' ),
+				'type' => Controls_Manager::MEDIA,
+				'default' => [
+					'url' => SINA_EXT_URL .'assets/img/choose-img.jpg',
+				],
+			]
+		);
+		$repeater->add_control(
+			'size',
+			[
+				'label' => __( 'Size', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					'sina-pf-item-11' => __( '1 Column 1 Row', 'sina-ext' ),
+					'sina-pf-item-12' => __( '1 Column 2 Row', 'sina-ext' ),
+					'sina-pf-item-21' => __( '2 Column 1 Row', 'sina-ext' ),
+					'sina-pf-item-22' => __( '2 Column 2 Row', 'sina-ext' ),
+					'sina-pf-item-31' => __( '3 Column 1 Row', 'sina-ext' ),
+					'sina-pf-item-32' => __( '3 Column 2 Row', 'sina-ext' ),
+					'sina-pf-item-33' => __( '3 Column 3 Row', 'sina-ext' ),
+				],
+				'description' => __( 'Size will work if the <strong>"number of columns"</strong> is <strong>"Masonry"</strong> selected', 'sina-ext' ),
+				'default' => 'sina-pf-item-22',
+			]
+		);
+		$repeater->add_control(
+			'link',
+			[
+				'label' => __( 'Link', 'sina-ext' ),
+				'type' => Controls_Manager::URL,
+				'placeholder' => __( 'https://your-link.com', 'sina-ext' ),
+				'default' => [
+					'url' => '#',
+				],
+			]
+		);
+
 		$this->add_control(
 			'portfolio',
 			[
 				'label' => __( 'Add Image', 'sina-ext' ),
 				'type' => Controls_Manager::REPEATER,
-				'fields' => [
-					[
-						'name' => 'item_name',
-						'label' => __( 'Item Name', 'sina-ext' ),
-						'label_block' => true,
-						'type' => Controls_Manager::TEXT,
-						'placeholder' => __( 'Enter Item Name', 'sina-ext' ),
-						'default' => 'Lorem ipsum dolor sit amet',
-					],
-					[
-						'name' => 'category',
-						'label' => __( 'Category', 'sina-ext' ),
-						'label_block' => true,
-						'type' => Controls_Manager::TEXT,
-						'description' => __( 'Multiple category must be comma separated.', 'sina-ext' ),
-						'default' => 'Web Design',
-					],
-					[
-						'name' => 'image',
-						'label' => __( 'Choose Image', 'sina-ext' ),
-						'type' => Controls_Manager::MEDIA,
-						'default' => [
-							'url' => SINA_EXT_URL .'assets/img/choose-img.jpg',
-						],
-					],
-					[
-						'name' => 'size',
-						'label' => __( 'Size', 'sina-ext' ),
-						'type' => Controls_Manager::SELECT,
-						'options' => [
-							'sina-pf-item-11' => __( '1 Column 1 Row', 'sina-ext' ),
-							'sina-pf-item-12' => __( '1 Column 2 Row', 'sina-ext' ),
-							'sina-pf-item-21' => __( '2 Column 1 Row', 'sina-ext' ),
-							'sina-pf-item-22' => __( '2 Column 2 Row', 'sina-ext' ),
-							'sina-pf-item-31' => __( '3 Column 1 Row', 'sina-ext' ),
-							'sina-pf-item-32' => __( '3 Column 2 Row', 'sina-ext' ),
-							'sina-pf-item-33' => __( '3 Column 3 Row', 'sina-ext' ),
-						],
-						'description' => __( 'Size will work if the <strong>"number of columns"</strong> is <strong>"Masonry"</strong> selected', 'sina-ext' ),
-						'default' => 'sina-pf-item-22',
-					],
-					[
-						'name' => 'link',
-						'label' => __( 'Link', 'sina-ext' ),
-						'type' => Controls_Manager::URL,
-						'placeholder' => __( 'https://your-link.com', 'sina-ext' ),
-						'default' => [
-							'url' => '#',
-						],
-					],
-				],
+				'fields' => $repeater->get_controls(),
 				'default' => [
 					[
 						'item_name' => 'Lorem ipsum dolor sit amet',

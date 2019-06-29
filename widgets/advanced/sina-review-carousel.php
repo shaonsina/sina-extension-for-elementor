@@ -12,6 +12,7 @@ use Elementor\Group_Control_Typography;
 use Elementor\Group_Control_Text_Shadow;
 use Elementor\Group_Control_Box_Shadow;
 use Elementor\Group_Control_Border;
+use Elementor\Repeater;
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -114,62 +115,61 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 			]
 		);
 
-		$this->add_control(
-			'image_position',
+		$repeater = new Repeater();
+
+		$repeater->add_control(
+			'image',
 			[
-				'label' => __( 'Image Position', 'sina-ext' ),
-				'type' => Controls_Manager::SELECT,
-				'options' => [
-					'top' => __( 'Top', 'sina-ext' ),
-					'middle' => __( 'Middle', 'sina-ext' ),
-					'bottom' => __( 'Bottom', 'sina-ext' ),
+				'label' => __( 'Choose Image', 'sina-ext' ),
+				'type' => Controls_Manager::MEDIA,
+				'default' => [
+					'url' => SINA_EXT_URL .'assets/img/choose-img.jpg',
 				],
-				'default' => 'top',
 			]
 		);
+		$repeater->add_control(
+			'name',
+			[
+				'label' => __( 'Name', 'sina-ext' ),
+				'type' => Controls_Manager::TEXT,
+				'placeholder' => __( 'Enter Name', 'sina-ext' ),
+				'default' => 'Jhon Doe',
+			]
+		);
+		$repeater->add_control(
+			'position',
+			[
+				'label' => __( 'Position', 'sina-ext' ),
+				'type' => Controls_Manager::TEXT,
+				'placeholder' => __( 'Enter Position', 'sina-ext' ),
+				'default' => 'CEO',
+			]
+		);
+		$repeater->add_control(
+			'company',
+			[
+				'label' => __( 'Organization', 'sina-ext' ),
+				'type' => Controls_Manager::TEXT,
+				'placeholder' => __( 'Enter Organization', 'sina-ext' ),
+				'default' => 'Google',
+			]
+		);
+		$repeater->add_control(
+			'comment',
+			[
+				'label' => __( 'Comment', 'sina-ext' ),
+				'type' => Controls_Manager::TEXTAREA,
+				'placeholder' => __( 'Enter Comment', 'sina-ext' ),
+				'default' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. At tempora cumque delectus nam obcaecati consectetur ad dolorum neque dolores nemo!',
+			]
+		);
+
 		$this->add_control(
 			'review',
 			[
 				'label' => __( 'Add Image', 'sina-ext' ),
 				'type' => Controls_Manager::REPEATER,
-				'fields' => [
-					[
-						'name' => 'image',
-						'label' => __( 'Choose Image', 'sina-ext' ),
-						'type' => Controls_Manager::MEDIA,
-						'default' => [
-							'url' => SINA_EXT_URL .'assets/img/choose-img.jpg',
-						],
-					],
-					[
-						'name' => 'name',
-						'label' => __( 'Name', 'sina-ext' ),
-						'type' => Controls_Manager::TEXT,
-						'placeholder' => __( 'Enter Name', 'sina-ext' ),
-						'default' => 'Jhon Doe',
-					],
-					[
-						'name' => 'position',
-						'label' => __( 'Position', 'sina-ext' ),
-						'type' => Controls_Manager::TEXT,
-						'placeholder' => __( 'Enter Position', 'sina-ext' ),
-						'default' => 'CEO',
-					],
-					[
-						'name' => 'company',
-						'label' => __( 'Organization', 'sina-ext' ),
-						'type' => Controls_Manager::TEXT,
-						'placeholder' => __( 'Enter Organization', 'sina-ext' ),
-						'default' => 'Google',
-					],
-					[
-						'name' => 'comment',
-						'label' => __( 'Comment', 'sina-ext' ),
-						'type' => Controls_Manager::TEXTAREA,
-						'placeholder' => __( 'Enter Comment', 'sina-ext' ),
-						'default' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. At tempora cumque delectus nam obcaecati consectetur ad dolorum neque dolores nemo!',
-					],
-				],
+				'fields' => $repeater->get_controls(),
 				'default' => [
 					[
 						'image' => [
@@ -245,6 +245,19 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 			]
 		);
 
+		$this->add_control(
+			'image_position',
+			[
+				'label' => __( 'Image Position', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					'top' => __( 'Top', 'sina-ext' ),
+					'middle' => __( 'Middle', 'sina-ext' ),
+					'bottom' => __( 'Bottom', 'sina-ext' ),
+				],
+				'default' => 'top',
+			]
+		);
 		$this->add_responsive_control(
 			'image_size',
 			[

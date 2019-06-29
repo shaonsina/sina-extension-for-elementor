@@ -13,6 +13,7 @@ use Elementor\Group_Control_Background;
 use Elementor\Group_Control_Box_Shadow;
 use Elementor\Group_Control_Text_Shadow;
 use Elementor\Group_Control_Border;
+use Elementor\Repeater;
 
 
 // Exit if accessed directly.
@@ -116,204 +117,118 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 			]
 		);
 
+		$repeater = new Repeater();
+
+		$repeater->add_control(
+			'image',
+			[
+				'label' => __( 'Choose Image', 'sina-ext' ),
+				'type' => Controls_Manager::MEDIA,
+				'default' => [
+					'url' => SINA_EXT_URL .'assets/img/choose-img.jpg',
+				],
+			]
+		);
+		$repeater->add_control(
+			'title',
+			[
+				'label' => __( 'Title', 'sina-ext' ),
+				'type' => Controls_Manager::WYSIWYG,
+				'default' => 'Welcome',
+			]
+		);
+		$repeater->add_control(
+			'title_anim',
+			[
+				'label' => __( 'Title Animation', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'default' => 'fadeInLeft',
+				'options' => Sina_Common_Data::animation(),
+			]
+		);
+		$repeater->add_control(
+			'subtitle',
+			[
+				'label' => __( 'Sub Title', 'sina-ext' ),
+				'type' => Controls_Manager::WYSIWYG,
+				'default' => 'Lorem ipsum dolor sit amet',
+			]
+		);
+		$repeater->add_control(
+			'subtitle_anim',
+			[
+				'label' => __( 'Sub Title Animation', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'default' => 'fadeInRight',
+				'options' => Sina_Common_Data::animation(),
+			]
+		);
+		$repeater->add_control(
+			'desc',
+			[
+				'label' => __( 'Description', 'sina-ext' ),
+				'type' => Controls_Manager::WYSIWYG,
+				'default' => 'Lorem ipsum dolor sit amet',
+			]
+		);
+		$repeater->add_control(
+			'desc_anim',
+			[
+				'label' => __( 'Description Animation', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'default' => 'fadeInUp',
+				'options' => Sina_Common_Data::animation(),
+			]
+		);
+		$repeater->add_control(
+			'buttons_anim',
+			[
+				'label' => __( 'Buttons Animation', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'default' => 'fadeInUp',
+				'options' => Sina_Common_Data::animation(),
+			]
+		);
+		$repeater->add_responsive_control(
+			'alignment',
+			[
+				'label' => __( 'Alignment', 'sina-ext' ),
+				'type' => Controls_Manager::CHOOSE,
+				'options' => [
+					'left' => [
+						'title' => __( 'Left', 'sina-ext' ),
+						'icon' => 'fa fa-align-left',
+					],
+					'center' => [
+						'title' => __( 'Center', 'sina-ext' ),
+						'icon' => 'fa fa-align-center',
+					],
+					'right' => [
+						'title' => __( 'Right', 'sina-ext' ),
+						'icon' => 'fa fa-align-right',
+					],
+					'justify' => [
+						'title' => __( 'justify', 'sina-ext' ),
+						'icon' => 'fa fa-align-justify',
+					],
+				],
+				'default' => 'center',
+				'selectors' => [
+					'{{WRAPPER}} {{CURRENT_ITEM}}' => 'text-align: {{VALUE}};',
+				],
+			]
+		);
+
 		$this->add_control(
 			'slides',
 			[
 				'label' => __( 'Add Slide', 'sina-ext' ),
 				'type' => Controls_Manager::REPEATER,
-				'fields' => [
-					[
-						'name' => 'image',
-						'label' => __( 'Choose Image', 'sina-ext' ),
-						'type' => Controls_Manager::MEDIA,
-						'default' => [
-							'url' => SINA_EXT_URL .'assets/img/choose-img.jpg',
-						],
-					],
-					[
-						'name' => 'title',
-						'label' => __( 'Title', 'sina-ext' ),
-						'type' => Controls_Manager::WYSIWYG,
-						'default' => 'Welcome',
-					],
-					[
-						'name' => 'title_anim',
-						'label' => __( 'Title Animation', 'sina-ext' ),
-						'type' => Controls_Manager::SELECT,
-						'default' => 'fadeInLeft',
-						'options' => [
-							'none' => __( 'None', 'sina-ext' ),
-							'fadeIn' => __( 'Fade', 'sina-ext' ),
-							'fadeInUp' => __( 'Fade Up', 'sina-ext' ),
-							'fadeInDown' => __( 'Fade Down', 'sina-ext' ),
-							'fadeInLeft' => __( 'Fade Left', 'sina-ext' ),
-							'fadeInRight' => __( 'Fade Right', 'sina-ext' ),
-							'zoomIn' => __('Zoom In', 'sina-ext'),
-							'zoomInLeft' => __('Zoom In Left', 'sina-ext'),
-							'zoomInRight' => __('Zoom In Right', 'sina-ext'),
-							'bounceIn' => __('Bounce In', 'sina-ext'),
-							'slideInDown' => __('Slide In Down', 'sina-ext'),
-							'slideInLeft' => __('Slide In Left', 'sina-ext'),
-							'slideInRight' => __('Slide In Right', 'sina-ext'),
-							'slideInUp' => __('Slide In Up', 'sina-ext'),
-							'lightSpeedIn' => __('Light Speed In', 'sina-ext'),
-							'swing' => __( 'Swing', 'sina-ext' ),
-							'bounce' => __('Bounce', 'sina-ext'),
-							'flash' => __('Flash', 'sina-ext'),
-							'pulse' => __('Pulse', 'sina-ext'),
-							'rubberBand' => __('Rubber Band', 'sina-ext'),
-							'shake' => __('Shake', 'sina-ext'),
-							'headShake' => __('Head Shake', 'sina-ext'),
-							'swing' => __('Swing', 'sina-ext'),
-							'tada' => __('Tada', 'sina-ext'),
-							'wobble' => __('Wobble', 'sina-ext'),
-							'jello' => __('Jello', 'sina-ext'),
-						],
-					],
-					[
-						'name' => 'subtitle',
-						'label' => __( 'Sub Title', 'sina-ext' ),
-						'type' => Controls_Manager::WYSIWYG,
-						'default' => 'Lorem ipsum dolor sit amet',
-					],
-					[
-						'name' => 'subtitle_anim',
-						'label' => __( 'Sub Title Animation', 'sina-ext' ),
-						'type' => Controls_Manager::SELECT,
-						'default' => 'fadeInRight',
-						'options' => [
-							'none' => __( 'None', 'sina-ext' ),
-							'fadeIn' => __( 'Fade', 'sina-ext' ),
-							'fadeInUp' => __( 'Fade Up', 'sina-ext' ),
-							'fadeInDown' => __( 'Fade Down', 'sina-ext' ),
-							'fadeInLeft' => __( 'Fade Left', 'sina-ext' ),
-							'fadeInRight' => __( 'Fade Right', 'sina-ext' ),
-							'zoomIn' => __('Zoom In', 'sina-ext'),
-							'zoomInLeft' => __('Zoom In Left', 'sina-ext'),
-							'zoomInRight' => __('Zoom In Right', 'sina-ext'),
-							'bounceIn' => __('Bounce In', 'sina-ext'),
-							'slideInDown' => __('Slide In Down', 'sina-ext'),
-							'slideInLeft' => __('Slide In Left', 'sina-ext'),
-							'slideInRight' => __('Slide In Right', 'sina-ext'),
-							'slideInUp' => __('Slide In Up', 'sina-ext'),
-							'lightSpeedIn' => __('Light Speed In', 'sina-ext'),
-							'swing' => __( 'Swing', 'sina-ext' ),
-							'bounce' => __('Bounce', 'sina-ext'),
-							'flash' => __('Flash', 'sina-ext'),
-							'pulse' => __('Pulse', 'sina-ext'),
-							'rubberBand' => __('Rubber Band', 'sina-ext'),
-							'shake' => __('Shake', 'sina-ext'),
-							'headShake' => __('Head Shake', 'sina-ext'),
-							'swing' => __('Swing', 'sina-ext'),
-							'tada' => __('Tada', 'sina-ext'),
-							'wobble' => __('Wobble', 'sina-ext'),
-							'jello' => __('Jello', 'sina-ext'),
-						],
-					],
-					[
-						'name' => 'desc',
-						'label' => __( 'Description', 'sina-ext' ),
-						'type' => Controls_Manager::WYSIWYG,
-						'default' => 'Lorem ipsum dolor sit amet',
-					],
-					[
-						'name' => 'desc_anim',
-						'label' => __( 'Description Animation', 'sina-ext' ),
-						'type' => Controls_Manager::SELECT,
-						'default' => 'fadeInUp',
-						'options' => [
-							'none' => __( 'None', 'sina-ext' ),
-							'fadeIn' => __( 'Fade', 'sina-ext' ),
-							'fadeInUp' => __( 'Fade Up', 'sina-ext' ),
-							'fadeInDown' => __( 'Fade Down', 'sina-ext' ),
-							'fadeInLeft' => __( 'Fade Left', 'sina-ext' ),
-							'fadeInRight' => __( 'Fade Right', 'sina-ext' ),
-							'zoomIn' => __('Zoom In', 'sina-ext'),
-							'zoomInLeft' => __('Zoom In Left', 'sina-ext'),
-							'zoomInRight' => __('Zoom In Right', 'sina-ext'),
-							'bounceIn' => __('Bounce In', 'sina-ext'),
-							'slideInDown' => __('Slide In Down', 'sina-ext'),
-							'slideInLeft' => __('Slide In Left', 'sina-ext'),
-							'slideInRight' => __('Slide In Right', 'sina-ext'),
-							'slideInUp' => __('Slide In Up', 'sina-ext'),
-							'lightSpeedIn' => __('Light Speed In', 'sina-ext'),
-							'swing' => __( 'Swing', 'sina-ext' ),
-							'bounce' => __('Bounce', 'sina-ext'),
-							'flash' => __('Flash', 'sina-ext'),
-							'pulse' => __('Pulse', 'sina-ext'),
-							'rubberBand' => __('Rubber Band', 'sina-ext'),
-							'shake' => __('Shake', 'sina-ext'),
-							'headShake' => __('Head Shake', 'sina-ext'),
-							'swing' => __('Swing', 'sina-ext'),
-							'tada' => __('Tada', 'sina-ext'),
-							'wobble' => __('Wobble', 'sina-ext'),
-							'jello' => __('Jello', 'sina-ext'),
-						],
-					],
-					[
-						'name' => 'align',
-						'label' => __( 'Alignment', 'sina-ext' ),
-						'type' => Controls_Manager::CHOOSE,
-						'options' => [
-							'left' => [
-								'title' => __( 'Left', 'sina-ext' ),
-								'icon' => 'fa fa-align-left',
-							],
-							'center' => [
-								'title' => __( 'Center', 'sina-ext' ),
-								'icon' => 'fa fa-align-center',
-							],
-							'right' => [
-								'title' => __( 'Right', 'sina-ext' ),
-								'icon' => 'fa fa-align-right',
-							],
-							'justify' => [
-								'title' => __( 'justify', 'sina-ext' ),
-								'icon' => 'fa fa-align-justify',
-							],
-						],
-						'default' => 'center',
-					],
-					[
-						'name' => 'buttons_anim',
-						'label' => __( 'Buttons Animation', 'sina-ext' ),
-						'type' => Controls_Manager::SELECT,
-						'default' => 'fadeInUp',
-						'options' => [
-							'none' => __( 'None', 'sina-ext' ),
-							'fadeIn' => __( 'Fade', 'sina-ext' ),
-							'fadeInUp' => __( 'Fade Up', 'sina-ext' ),
-							'fadeInDown' => __( 'Fade Down', 'sina-ext' ),
-							'fadeInLeft' => __( 'Fade Left', 'sina-ext' ),
-							'fadeInRight' => __( 'Fade Right', 'sina-ext' ),
-							'zoomIn' => __('Zoom In', 'sina-ext'),
-							'zoomInLeft' => __('Zoom In Left', 'sina-ext'),
-							'zoomInRight' => __('Zoom In Right', 'sina-ext'),
-							'bounceIn' => __('Bounce In', 'sina-ext'),
-							'slideInDown' => __('Slide In Down', 'sina-ext'),
-							'slideInLeft' => __('Slide In Left', 'sina-ext'),
-							'slideInRight' => __('Slide In Right', 'sina-ext'),
-							'slideInUp' => __('Slide In Up', 'sina-ext'),
-							'lightSpeedIn' => __('Light Speed In', 'sina-ext'),
-							'swing' => __( 'Swing', 'sina-ext' ),
-							'bounce' => __('Bounce', 'sina-ext'),
-							'flash' => __('Flash', 'sina-ext'),
-							'pulse' => __('Pulse', 'sina-ext'),
-							'rubberBand' => __('Rubber Band', 'sina-ext'),
-							'shake' => __('Shake', 'sina-ext'),
-							'headShake' => __('Head Shake', 'sina-ext'),
-							'swing' => __('Swing', 'sina-ext'),
-							'tada' => __('Tada', 'sina-ext'),
-							'wobble' => __('Wobble', 'sina-ext'),
-							'jello' => __('Jello', 'sina-ext'),
-						],
-					],
-				],
+				'fields' => $repeater->get_controls(),
 				'default' => [
 					[
 						'title' => 'Welcome to get start your business',
 						'subtitle' => 'Lorem ipsum dolor sit amet',
-						'align' => 'center',
 						'title_anim' => 'fadeInLeft',
 						'subtitle_anim' => 'fadeInRight',
 						'buttons_anim' => 'fadeInUp',
@@ -321,7 +236,6 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 					[
 						'title' => 'Lorem ipsum dolor sit amet,',
 						'subtitle' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
-						'align' => 'center',
 						'title_anim' => 'zoomIn',
 						'subtitle_anim' => 'zoomIn',
 						'desc_anim' => 'fadeInUp',
@@ -952,7 +866,7 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 						<div class="sina-overlay"></div>
 					<?php endif ?>
 
-					<div class="sina-banner-container" style="text-align: <?php echo esc_attr( $slide['align'] ); ?>">
+					<div class="sina-banner-container elementor-repeater-item-<?php echo esc_attr( $slide[ '_id' ] ); ?>">
 						<?php if ( $slide['title'] ): ?>
 							<div <?php echo $this->get_render_attribute_string( $title_key ); ?> data-animation="animated <?php echo esc_attr( $slide['title_anim'] ); ?>">
 								<?php echo wp_kses_post( $slide['title'] ); ?>

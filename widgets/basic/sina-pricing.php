@@ -13,6 +13,7 @@ use Elementor\Group_Control_Background;
 use Elementor\Group_Control_Box_Shadow;
 use Elementor\Group_Control_Text_Shadow;
 use Elementor\Group_Control_Border;
+use Elementor\Repeater;
 
 
 // Exit if accessed directly.
@@ -198,20 +199,55 @@ class Sina_Pricing_Widget extends Widget_Base {
 				'default' => 'sina-ribbon-right',
 			]
 		);
+
+		$repeater = new Repeater();
+
+		$repeater->add_control(
+			'title',
+			[
+				'label' => __( 'Content', 'sina-ext' ),
+				'label_block' => true,
+				'type' => Controls_Manager::TEXT,
+				'placeholder' => __( 'Enter Content', 'sina-ext' ),
+			]
+		);
+		$repeater->add_control(
+			'text_color',
+			[
+				'label' => __( 'Text Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#111',
+				'selectors' => [
+					'{{WRAPPER}} .sina-pricing-body {{CURRENT_ITEM}}' => 'color: {{VALUE}};',
+				],
+			]
+		);
+		$repeater->add_control(
+			'icon',
+			[
+				'name' => 'icon',
+				'label' => __( 'Icon', 'sina-ext' ),
+				'type' => Controls_Manager::ICON,
+			]
+		);
+		$repeater->add_control(
+			'icon_color',
+			[
+				'label' => __( 'Icon Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#111',
+				'selectors' => [
+					'{{WRAPPER}} {{CURRENT_ITEM}} i' => 'color: {{VALUE}};',
+				],
+			]
+		);
+
 		$this->add_control(
 			'item',
 			[
 				'label' => __( 'Add Content', 'sina-ext' ),
 				'type' => Controls_Manager::REPEATER,
-				'fields' => [
-					[
-						'name' => 'title',
-						'label' => __( 'Content', 'sina-ext' ),
-						'label_block' => true,
-						'type' => Controls_Manager::TEXT,
-						'placeholder' => __( 'Enter Content', 'sina-ext' ),
-					],
-				],
+				'fields' => $repeater->get_controls(),
 				'default' => [
 					[
 						'title' => '1GB',
@@ -238,7 +274,6 @@ class Sina_Pricing_Widget extends Widget_Base {
 				'title_field' => '{{{ title }}}',
 			]
 		);
-
 
 		$this->end_controls_section();
 		// End Box Content
@@ -826,11 +861,45 @@ class Sina_Pricing_Widget extends Widget_Base {
 		);
 
 		$this->add_control(
+			'content_icon',
+			[
+				'label' => __( 'Icon Styles', 'sina-ext' ),
+				'type' => Controls_Manager::HEADING,
+			]
+		);
+		$this->add_control(
+			'icon_align',
+			[
+				'label' => __( 'Icon Position', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					'left' => __( 'Left', 'sina-ext' ),
+					'right' => __( 'Right', 'sina-ext' ),
+				],
+				'default' => 'left',
+			]
+		);
+		$this->add_responsive_control(
+			'icon_space',
+			[
+				'label' => __( 'Icon Spacing', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'default' => [
+					'size' => '5',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-pricing-body li .sina-icon-right' => 'margin-left: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .sina-pricing-body li .sina-icon-left' => 'margin-right: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_control(
 			'content_color',
 			[
 				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#111',
+				'separator' => 'before',
 				'selectors' => [
 					'{{WRAPPER}} .sina-pricing-body li' => 'color: {{VALUE}};',
 				],
@@ -1002,7 +1071,15 @@ class Sina_Pricing_Widget extends Widget_Base {
 
 			<ul class="sina-pricing-body">
 				<?php foreach ($data['item'] as $index => $item) : ?>
-					<li><?php printf( '%s', $item['title'] ); ?></li>
+					<li class="elementor-repeater-item-<?php echo esc_attr( $item[ '_id' ] ); ?>">
+						<?php if ( $item['icon'] && $data['icon_align'] == 'left' ): ?>
+							<i class="<?php echo esc_attr($item['icon']); ?> sina-icon-left"></i>
+						<?php endif; ?>
+						<?php printf( '%s', $item['title'] ); ?>
+						<?php if ( $item['icon'] && $data['icon_align'] == 'right' ): ?>
+							<i class="<?php echo esc_attr($item['icon']); ?> sina-icon-right"></i>
+						<?php endif; ?>
+					</li>
 				<?php endforeach ?>
 			</ul>
 

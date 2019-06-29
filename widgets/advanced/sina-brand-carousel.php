@@ -11,6 +11,7 @@ use Elementor\Controls_Manager;
 use Elementor\Group_Control_Background;
 use Elementor\Group_Control_Box_Shadow;
 use Elementor\Group_Control_Border;
+use Elementor\Repeater;
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -113,35 +114,116 @@ class Sina_Brand_Carousel_Widget extends Widget_Base {
 			]
 		);
 
+		$repeater = new Repeater();
+
+		$repeater->add_control(
+			'brand_logo',
+			[
+				'label' => __( 'Choose Logo', 'sina-ext' ),
+				'type' => Controls_Manager::MEDIA,
+				'default' => [
+					'url' => SINA_EXT_URL .'assets/img/choose-img.jpg',
+				],
+			]
+		);
+		$repeater->add_control(
+			'link',
+			[
+				'label' => __( 'Brand Link', 'sina-ext' ),
+				'type' => Controls_Manager::URL,
+				'placeholder' => __( 'https://your-link.com', 'sina-ext' ),
+			]
+		);
+		$repeater->add_control(
+			'title',
+			[
+				'label' => __( 'Brand Name', 'sina-ext' ),
+				'type' => Controls_Manager::TEXT,
+				'placeholder' => __( 'Enter Name', 'sina-ext' ),
+				'description' => __( 'This name will show only item header', 'sina-ext' ),
+				'default' => 'Youtube',
+			]
+		);
+
+		$repeater->start_controls_tabs( 'brand_tabs' );
+
+		$repeater->start_controls_tab(
+			'brand_normal',
+			[
+				'label' => __( 'Normal', 'sina-ext' ),
+			]
+		);
+
+		$repeater->add_group_control(
+			Group_Control_Background::get_type(),
+			[
+				'name' => 'brand_bg',
+				'label' => __( 'Background', 'sina-ext' ),
+				'types' => ['classic'],
+				'selector' => '{{WRAPPER}} .sina-brand-item-inner{{CURRENT_ITEM}}',
+			]
+		);
+		$repeater->add_group_control(
+			Group_Control_Border::get_type(),
+			[
+				'name' => 'brand_border',
+				'selector' => '{{WRAPPER}} .sina-brand-item-inner{{CURRENT_ITEM}}',
+			]
+		);
+		$repeater->add_group_control(
+			Group_Control_Box_Shadow::get_type(),
+			[
+				'name' => 'brand_shadow',
+				'selector' => '{{WRAPPER}} .sina-brand-item-inner{{CURRENT_ITEM}}',
+			]
+		);
+
+		$repeater->end_controls_tab();
+
+		$repeater->start_controls_tab(
+			'brand_hover',
+			[
+				'label' => __( 'Hover', 'sina-ext' ),
+			]
+		);
+
+		$repeater->add_group_control(
+			Group_Control_Background::get_type(),
+			[
+				'name' => 'box_hover_bg',
+				'label' => __( 'Background', 'sina-ext' ),
+				'types' => ['classic'],
+				'selector' => '{{WRAPPER}} .sina-brand-item-inner{{CURRENT_ITEM}}:hover',
+			]
+		);
+		$repeater->add_control(
+			'hover_brand_border',
+			[
+				'label' => __( 'Border Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .sina-brand-item-inner{{CURRENT_ITEM}}:hover' => 'border-color: {{VALUE}}'
+				],
+			]
+		);
+		$repeater->add_group_control(
+			Group_Control_Box_Shadow::get_type(),
+			[
+				'name' => 'hover_box_shadow',
+				'selector' => '{{WRAPPER}} .sina-brand-item-inner{{CURRENT_ITEM}}:hover',
+			]
+		);
+
+		$repeater->end_controls_tab();
+
+		$repeater->end_controls_tabs();
+
 		$this->add_control(
 			'brand',
 			[
 				'label' => __( 'Add Logo', 'sina-ext' ),
 				'type' => Controls_Manager::REPEATER,
-				'fields' => [
-					[
-						'name' => 'brand_logo',
-						'label' => __( 'Choose Logo', 'sina-ext' ),
-						'type' => Controls_Manager::MEDIA,
-						'default' => [
-							'url' => SINA_EXT_URL .'assets/img/choose-img.jpg',
-						],
-					],
-					[
-						'name' => 'link',
-						'label' => __( 'Brand Link', 'sina-ext' ),
-						'type' => Controls_Manager::URL,
-						'placeholder' => __( 'https://your-link.com', 'sina-ext' ),
-					],
-					[
-						'name' => 'title',
-						'label' => __( 'Brand Name', 'sina-ext' ),
-						'type' => Controls_Manager::TEXT,
-						'placeholder' => __( 'Enter Name', 'sina-ext' ),
-						'description' => __( 'This name will be show only item header', 'sina-ext' ),
-						'default' => 'Youtube',
-					],
-				],
+				'fields' => $repeater->get_controls(),
 				'default' => [
 					[
 						'title' => __( 'Youtube', 'sina-ext' ),
@@ -382,7 +464,7 @@ class Sina_Brand_Carousel_Widget extends Widget_Base {
 			<?php foreach ($data['brand'] as $logo): ?>
 				<?php if ( $logo['brand_logo']['url'] ): ?>
 					<div class="sina-brand-item">
-						<div class="sina-brand-item-inner">
+						<div class="sina-brand-item-inner elementor-repeater-item-<?php echo esc_attr( $logo[ '_id' ] ); ?>">
 							<a href="<?php echo esc_url( $logo['link']['url'] ); ?>"
 								<?php if ( 'on' == $logo['link']['is_external'] ): ?>
 									target="_blank" 

@@ -10,6 +10,7 @@ use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
 use Elementor\Group_Control_Text_Shadow;
+use Elementor\Repeater;
 
 
 // Exit if accessed directly.
@@ -112,20 +113,24 @@ class Sina_Fancytext_Widget extends Widget_Base {
 			]
 		);
 
+		$repeater = new Repeater();
+
+		$repeater->add_control(
+			'fancy_items',
+			[
+				'label' => __( 'Text', 'sina-ext' ),
+				'label_block' => true,
+				'type' => Controls_Manager::TEXT,
+				'default' => 'Fancy text',
+			]
+		);
+
 		$this->add_control(
 			'fancy_text',
 			[
 				'label' => __( 'Fancy Text', 'sina-ext' ),
 				'type' => Controls_Manager::REPEATER,
-				'fields' => [
-					[
-						'name' => 'fancy_items',
-						'label_block' => true,
-						'label' => __( 'Text', 'sina-ext' ),
-						'type' => Controls_Manager::TEXT,
-						'default' => 'Fancy text',
-					],
-				],
+				'fields' => $repeater->get_controls(),
 				'default' => [
 					[
 						'fancy_items' => 'first text',
@@ -146,8 +151,9 @@ class Sina_Fancytext_Widget extends Widget_Base {
 		$this->add_control(
 			'fancy_prefix',
 			[
-				'label' => __( 'Prefix', 'sina-ext' ),
-				'type' => Controls_Manager::TEXTAREA,
+				'label' => __( 'Prefix Text', 'sina-ext' ),
+				'label_block' => true,
+				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter prefix text', 'sina-ext' ),
 				'default' => 'Prefix text ',
 			]
@@ -155,8 +161,9 @@ class Sina_Fancytext_Widget extends Widget_Base {
 		$this->add_control(
 			'fancy_suffix',
 			[
-				'label' => __( 'Suffix', 'sina-ext' ),
-				'type' => Controls_Manager::TEXTAREA,
+				'label' => __( 'Suffix Text', 'sina-ext' ),
+				'label_block' => true,
+				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter suffix text', 'sina-ext' ),
 				'default' => ' Suffix text',
 			]

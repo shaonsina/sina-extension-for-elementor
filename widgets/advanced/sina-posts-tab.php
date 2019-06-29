@@ -13,6 +13,7 @@ use Elementor\Group_Control_Background;
 use Elementor\Group_Control_Box_Shadow;
 use Elementor\Group_Control_Text_Shadow;
 use Elementor\Group_Control_Border;
+use Elementor\Repeater;
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -111,25 +112,33 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
+
+		$repeater = new Repeater();
+
+		$repeater->add_control(
+			'category',
+			[
+				'label' => __( 'Select Category', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => sina_get_categories(),
+				'default' => 'Uncategorized',
+			]
+		);
+		$repeater->add_control(
+			'icon',
+			[
+				'name' => 'icon',
+				'label' => __( 'Icon', 'sina-ext' ),
+				'type' => Controls_Manager::ICON,
+			]
+		);
+
 		$this->add_control(
 			'categories',
 			[
 				'label' => __('Add Categories', 'sina-ext'),
 				'type' => Controls_Manager::REPEATER,
-				'fields' => [
-					[
-						'name' => 'category',
-						'label' => __( 'Select Category', 'sina-ext' ),
-						'type' => Controls_Manager::SELECT,
-						'options' => sina_get_categories(),
-						'default' => 'Uncategorized',
-					],
-					[
-						'name' => 'icon',
-						'label' => __( 'Icon', 'sina-ext' ),
-						'type' => Controls_Manager::ICON,
-					],
-				],
+				'fields' => $repeater->get_controls(),
 				'default' => [
 					[
 						'title' => 'Uncategorized',

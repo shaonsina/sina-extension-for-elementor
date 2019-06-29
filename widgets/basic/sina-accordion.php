@@ -182,6 +182,7 @@ class Sina_Accordion_Widget extends Widget_Base {
 				],
 			]
 		);
+
 		$this->add_control(
 			'accordion',
 			[

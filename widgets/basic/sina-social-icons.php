@@ -287,7 +287,6 @@ class Sina_Social_Icons_Widget extends Widget_Base {
 				],
 			]
 		);
-
 		$this->add_responsive_control(
 			'font_size',
 			[
