@@ -274,7 +274,6 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'modal_bg',
-				'label' => __( 'Background', 'sina-ext' ),
 				'types' => [ 'classic', 'gradient' ],
 				'fields_options' => [
 					'background' => [ 
@@ -344,7 +343,6 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'overlay_bg',
-				'label' => __( 'Background', 'sina-ext' ),
 				'types' => [ 'classic', 'gradient' ],
 				'fields_options' => [
 					'background' => [ 
@@ -409,7 +407,7 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 						],
 					],
 					'text_transform' => [
-						'default' => 'capitalize',
+						'default' => 'none',
 					],
 				],
 				'selector' => '{{WRAPPER}} .sina-modal-header',
@@ -426,7 +424,6 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'header_bg',
-				'label' => __( 'Background', 'sina-ext' ),
 				'types' => [ 'classic', 'gradient' ],
 				'fields_options' => [
 					'background' => [ 
@@ -529,7 +526,6 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'footer_bg',
-				'label' => __( 'Background', 'sina-ext' ),
 				'types' => [ 'classic', 'gradient' ],
 				'selector' => '{{WRAPPER}} .sina-modal-footer',
 			]
@@ -646,7 +642,6 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'close_btn_background',
-				'label' => __( 'Background', 'sina-ext' ),
 				'types' => [ 'classic', 'gradient' ],
 				'fields_options' => [
 					'background' => [ 
@@ -714,7 +709,6 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'close_hover_background',
-				'label' => __( 'Background', 'sina-ext' ),
 				'types' => [ 'classic', 'gradient' ],
 				'selector' => '{{WRAPPER}} .sina-modal-close:hover',
 			]
@@ -931,6 +925,9 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 						'default' => [
 							'size' => '24',
 						],
+					],
+					'text_transform' => [
+						'default' => 'none',
 					],
 				],
 				'selector' => '{{WRAPPER}} .sina-modal-title',

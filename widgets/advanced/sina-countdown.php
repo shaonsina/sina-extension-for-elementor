@@ -241,7 +241,6 @@ class Sina_Countdown_Widget extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'background',
-				'label' => __( 'Background', 'sina-ext' ),
 				'types' => [ 'classic', 'gradient' ],
 				'fields_options' => [
 					'background' => [ 

@@ -11,7 +11,6 @@ use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
 use Elementor\Group_Control_Background;
 use Elementor\Group_Control_Text_Shadow;
-use Elementor\Group_Control_Box_Shadow;
 use Elementor\Group_Control_Border;
 
 // Exit if accessed directly.
@@ -254,7 +253,6 @@ class Sina_Search_Form_Widget extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'btn_background',
-				'label' => __( 'Background', 'sina-ext' ),
 				'types' => [ 'classic', 'gradient' ],
 				'fields_options' => [
 					'background' => [ 
@@ -271,13 +269,6 @@ class Sina_Search_Form_Widget extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'btn_border',
-				'selector' => '{{WRAPPER}} .sina-search-btn',
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Box_Shadow::get_type(),
-			[
-				'name' => 'btn_shadow',
 				'selector' => '{{WRAPPER}} .sina-search-btn',
 			]
 		);
@@ -305,7 +296,6 @@ class Sina_Search_Form_Widget extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'hover_background',
-				'label' => __( 'Background', 'sina-ext' ),
 				'types' => [ 'classic', 'gradient' ],
 				'selector' => '{{WRAPPER}} .sina-search-btn:hover',
 			]
@@ -318,14 +308,6 @@ class Sina_Search_Form_Widget extends Widget_Base {
 				'selectors' => [
 					'{{WRAPPER}} .sina-search-btn:hover' => 'border-color: {{VALUE}}'
 				],
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Box_Shadow::get_type(),
-			[
-				'name' => 'btn_hover_shadow',
-				'selector' => '{{WRAPPER}} .sina-search-btn:hover',
-				'separator' => 'after',
 			]
 		);
 

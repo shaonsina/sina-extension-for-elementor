@@ -244,7 +244,6 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'label_BG',
-				'label' => __( 'Background', 'sina-ext' ),
 				'types' => [ 'classic', 'gradient' ],
 				'fields_options' => [
 					'background' => [ 
@@ -374,7 +373,6 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'headline_BG',
-				'label' => __( 'Background', 'sina-ext' ),
 				'types' => [ 'classic', 'gradient' ],
 				'fields_options' => [
 					'background' => [ 

@@ -8,10 +8,7 @@
 
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
-use Elementor\Group_Control_Typography;
 use Elementor\Group_Control_Background;
-use Elementor\Group_Control_Box_Shadow;
-use Elementor\Group_Control_Text_Shadow;
 use Elementor\Group_Control_Border;
 use Elementor\Repeater;
 use Elementor\Plugin;
@@ -453,7 +450,6 @@ class Sina_Portfolio_Widget extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'overlay_bg',
-				'label' => __( 'Background', 'sina-ext' ),
 				'types' => [ 'classic', 'gradient' ],
 				'fields_options' => [
 					'background' => [ 

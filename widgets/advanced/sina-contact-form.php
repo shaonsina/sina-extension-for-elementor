@@ -8,11 +8,6 @@
 
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
-use Elementor\Group_Control_Typography;
-use Elementor\Group_Control_Background;
-use Elementor\Group_Control_Box_Shadow;
-use Elementor\Group_Control_Text_Shadow;
-use Elementor\Group_Control_Border;
 use Elementor\Plugin;
 
 
@@ -449,22 +444,33 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 				'label' => __( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
-				'desktop_default' => [
+				'default' => [
 					'top' => '13',
 					'right' => '25',
 					'bottom' => '13',
 					'left' => '25',
 					'isLinked' => false,
 				],
-				'mobile_default' => [
-					'top' => '10',
-					'right' => '15',
-					'bottom' => '10',
-					'left' => '15',
+				'selectors' => [
+					'{{WRAPPER}} .sina-contact-btn' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'btn_margin',
+			[
+				'label' => __( 'Margin', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '20',
+					'right' => '0',
+					'bottom' => '20',
+					'left' => '0',
 					'isLinked' => false,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-contact-btn' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .sina-contact-btn' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);

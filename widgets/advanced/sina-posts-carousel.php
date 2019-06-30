@@ -342,7 +342,6 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'overlay_bg',
-				'label' => __( 'Background', 'sina-ext' ),
 				'types' => [ 'classic', 'gradient' ],
 				'fields_options' => [
 					'background' => [ 
@@ -369,7 +368,6 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'overlay_hover_bg',
-				'label' => __( 'Background', 'sina-ext' ),
 				'types' => [ 'classic', 'gradient' ],
 				'fields_options' => [
 					'background' => [ 

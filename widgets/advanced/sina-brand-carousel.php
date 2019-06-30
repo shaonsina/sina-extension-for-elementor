@@ -158,7 +158,6 @@ class Sina_Brand_Carousel_Widget extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'brand_bg',
-				'label' => __( 'Background', 'sina-ext' ),
 				'types' => ['classic'],
 				'selector' => '{{WRAPPER}} .sina-brand-item-inner{{CURRENT_ITEM}}',
 			]
@@ -191,7 +190,6 @@ class Sina_Brand_Carousel_Widget extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'box_hover_bg',
-				'label' => __( 'Background', 'sina-ext' ),
 				'types' => ['classic'],
 				'selector' => '{{WRAPPER}} .sina-brand-item-inner{{CURRENT_ITEM}}:hover',
 			]
@@ -364,7 +362,6 @@ class Sina_Brand_Carousel_Widget extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'box_bg',
-				'label' => __( 'Background', 'sina-ext' ),
 				'types' => [ 'classic', 'gradient' ],
 				'selector' => '{{WRAPPER}} .sina-brand-item-inner',
 			]
@@ -415,7 +412,6 @@ class Sina_Brand_Carousel_Widget extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'box_hover_bg',
-				'label' => __( 'Background', 'sina-ext' ),
 				'types' => [ 'classic', 'gradient' ],
 				'selector' => '{{WRAPPER}} .sina-brand-item-inner:hover',
 			]

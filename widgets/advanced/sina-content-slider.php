@@ -178,7 +178,6 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __('Enter Title', 'sina-ext'),
 				'description' => __( 'You can use HTML.', 'sina-ext' ),
-				'default' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
 				'condition' => [
 					'save_templates' => '',
 				],
@@ -224,17 +223,17 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 				'default' => [
 					[
 						'title' => 'Web Development',
-						'subtitle' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+						'subtitle' => '',
 						'desc' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
 					],
 					[
 						'title' => 'Graphics Design',
-						'subtitle' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+						'subtitle' => '',
 						'desc' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
 					],
 					[
 						'title' => 'Digital Marketing',
-						'subtitle' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+						'subtitle' => '',
 						'desc' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
 					],
 				],
@@ -305,7 +304,6 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 		    Group_Control_Background::get_type(),
 		    [
 		        'name' => 'box_background',
-		        'label' => __( 'Background', 'sina-ext' ),
 		        'types' => [ 'classic', 'gradient' ],
 		        'selector' => '{{WRAPPER}} .sina-cs-item',
 		    ]
@@ -428,7 +426,7 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 						],
 					],
 					'text_transform' => [
-						'default' => 'capitalize',
+						'default' => 'none',
 					],
 				],
 				'selector' => '{{WRAPPER}} .sina-cs-title',

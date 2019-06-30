@@ -537,13 +537,6 @@ class Sina_Common_Data{
 				],
 			]
 		);
-		$obj->add_group_control(
-			Group_Control_Text_Shadow::get_type(),
-			[
-				'name' => 'fields_text_shadow',
-				'selector' => '{{WRAPPER}} .sina-input-field',
-			]
-		);
 
 		$obj->start_controls_tabs( 'field_tabs' );
 

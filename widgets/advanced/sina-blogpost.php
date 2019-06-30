@@ -896,13 +896,6 @@ class Sina_Blogpost_Widget extends Widget_Base {
 			]
 		);
 		$this->add_group_control(
-			Group_Control_Text_Shadow::get_type(),
-			[
-				'name' => 'pagi_tshadow',
-				'selector' => '{{WRAPPER}} .sina-bp-pagination .page-numbers',
-			]
-		);
-		$this->add_group_control(
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'pagi_bshadow',
@@ -961,13 +954,6 @@ class Sina_Blogpost_Widget extends Widget_Base {
 				'selectors' => [
 					'{{WRAPPER}} .sina-bp-pagination .page-numbers:hover, {{WRAPPER}} .sina-bp-pagination .page-numbers:focus' => 'background: {{VALUE}};',
 				],
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Text_Shadow::get_type(),
-			[
-				'name' => 'pagi_hover_tshadow',
-				'selector' => '{{WRAPPER}} .sina-bp-pagination .page-numbers:hover',
 			]
 		);
 		$this->add_group_control(
@@ -1204,7 +1190,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 				'label' => __( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
-				'desktop_default' => [
+				'default' => [
 					'top' => '12',
 					'right' => '25',
 					'bottom' => '12',
@@ -1222,7 +1208,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 				'label' => __( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
-				'desktop_default' => [
+				'default' => [
 					'top' => '40',
 					'right' => '0',
 					'bottom' => '20',
