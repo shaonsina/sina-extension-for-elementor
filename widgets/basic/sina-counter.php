@@ -9,8 +9,8 @@
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
-use Elementor\Group_Control_Background;
 use Elementor\Group_Control_Text_Shadow;
+use Elementor\Group_Control_Box_Shadow;
 use Elementor\Group_Control_Border;
 
 
@@ -459,6 +459,13 @@ class Sina_Counter_Widget extends Widget_Base {
 			Group_Control_Text_Shadow::get_type(),
 			[
 				'name' => 'icon_shadow',
+				'selector' => '{{WRAPPER}} .sina-counter-icon i',
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Box_Shadow::get_type(),
+			[
+				'name' => 'icon_box_shadow',
 				'selector' => '{{WRAPPER}} .sina-counter-icon i',
 			]
 		);

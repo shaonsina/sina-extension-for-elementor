@@ -7,8 +7,7 @@
 
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
-use Elementor\Group_Control_Typography;
-use Elementor\Group_Control_Text_Shadow;
+use Elementor\Group_Control_Background;
 use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Box_Shadow;
 use Elementor\Repeater;
@@ -140,9 +139,8 @@ class Sina_Social_Icons_Widget extends Widget_Base {
 			[
 				'label' => __( 'Icon Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '#eee',
 				'selectors' => [
-					'{{WRAPPER}} {{CURRENT_ITEM}} a i' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .sina-social {{CURRENT_ITEM}} i' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -151,9 +149,8 @@ class Sina_Social_Icons_Widget extends Widget_Base {
 			[
 				'label' => __( 'Background', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '#1085e4',
 				'selectors' => [
-					'{{WRAPPER}} {{CURRENT_ITEM}} a i' => 'background: {{VALUE}};',
+					'{{WRAPPER}} .sina-social {{CURRENT_ITEM}} i' => 'background: {{VALUE}};',
 				],
 			]
 		);
@@ -161,14 +158,14 @@ class Sina_Social_Icons_Widget extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'icon_border',
-				'selector' => '{{WRAPPER}} {{CURRENT_ITEM}} a i',
+				'selector' => '{{WRAPPER}} .sina-social {{CURRENT_ITEM}} i',
 			]
 		);
 		$repeater->add_group_control(
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'icon_shadow',
-				'selector' => '{{WRAPPER}} {{CURRENT_ITEM}} a i',
+				'selector' => '{{WRAPPER}} .sina-social {{CURRENT_ITEM}} i',
 			]
 		);
 
@@ -187,7 +184,7 @@ class Sina_Social_Icons_Widget extends Widget_Base {
 				'label' => __( 'Icon Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} {{CURRENT_ITEM}} a i:hover' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .sina-social {{CURRENT_ITEM}} i:hover' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -196,9 +193,8 @@ class Sina_Social_Icons_Widget extends Widget_Base {
 			[
 				'label' => __( 'Background', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '#055394',
 				'selectors' => [
-					'{{WRAPPER}} {{CURRENT_ITEM}} a i:hover' => 'background: {{VALUE}}'
+					'{{WRAPPER}} .sina-social {{CURRENT_ITEM}} i:hover' => 'background: {{VALUE}}'
 				],
 			]
 		);
@@ -208,7 +204,7 @@ class Sina_Social_Icons_Widget extends Widget_Base {
 				'label' => __( 'Border Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} {{CURRENT_ITEM}} a i:hover' => 'border-color: {{VALUE}}'
+					'{{WRAPPER}} .sina-social {{CURRENT_ITEM}} i:hover' => 'border-color: {{VALUE}}'
 				],
 			]
 		);
@@ -216,7 +212,7 @@ class Sina_Social_Icons_Widget extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'icon_hover_shadow',
-				'selector' => '{{WRAPPER}} {{CURRENT_ITEM}} a i:hover',
+				'selector' => '{{WRAPPER}} .sina-social {{CURRENT_ITEM}} i:hover',
 			]
 		);
 
@@ -332,6 +328,115 @@ class Sina_Social_Icons_Widget extends Widget_Base {
 				],
 			]
 		);
+
+		$this->start_controls_tabs( 'icon_tabs' );
+
+		$this->start_controls_tab(
+			'social_icon_normal',
+			[
+				'label' => __( 'Normal', 'sina-ext' ),
+			]
+		);
+
+		$this->add_control(
+			'social_icon_color',
+			[
+				'label' => __( 'Icon Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#eee',
+				'selectors' => [
+					'{{WRAPPER}} .sina-social li i' => 'color: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
+			[
+				'name' => 'social_icon_bg',
+				'types' => [ 'classic', 'gradient' ],
+				'fields_options' => [
+					'background' => [ 
+						'default' =>'classic', 
+					],
+					'color' => [
+						'default' => '#1085e4',
+					],
+				],
+				'selector' => '{{WRAPPER}} .sina-social li i',
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Border::get_type(),
+			[
+				'name' => 'social_icon_border',
+				'selector' => '{{WRAPPER}} .sina-social li i',
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Box_Shadow::get_type(),
+			[
+				'name' => 'social_icon_shadow',
+				'selector' => '{{WRAPPER}} .sina-social li i',
+			]
+		);
+
+		$this->end_controls_tab();
+
+		$this->start_controls_tab(
+			'social_icon_hover',
+			[
+				'label' => __( 'Hover', 'sina-ext' ),
+			]
+		);
+
+		$this->add_control(
+			'social_icon_hover_color',
+			[
+				'label' => __( 'Icon Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .sina-social li i:hover' => 'color: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
+			[
+				'name' => 'social_icon_hover_bg',
+				'types' => [ 'classic', 'gradient' ],
+				'fields_options' => [
+					'background' => [ 
+						'default' =>'classic', 
+					],
+					'color' => [
+						'default' => '#055394',
+					],
+				],
+				'selector' => '{{WRAPPER}} .sina-social li i:hover',
+			]
+		);
+		$this->add_control(
+			'social_icon_hover_border',
+			[
+				'label' => __( 'Border Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .sina-social li i:hover' => 'border-color: {{VALUE}}'
+				],
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Box_Shadow::get_type(),
+			[
+				'name' => 'social_icon_hover_shadow',
+				'selector' => '{{WRAPPER}} .sina-social li i:hover',
+			]
+		);
+
+		$this->end_controls_tab();
+
+		$this->end_controls_tabs();
+
 		$this->add_responsive_control(
 			'icon_radius',
 			[
@@ -366,7 +471,7 @@ class Sina_Social_Icons_Widget extends Widget_Base {
 					'isLinked' => true,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-social li a' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .sina-social li' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);

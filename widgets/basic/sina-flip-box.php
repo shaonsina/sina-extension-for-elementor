@@ -102,11 +102,46 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 		);
 
 		$this->add_control(
+			'front_icon_format',
+			[
+				'label' => __( 'Icon Format', 'sina-ext' ),
+				'label_block' => true,
+				'type' => Controls_Manager::CHOOSE,
+				'options' => [
+					'icon' => [
+						'title' => __( 'Icon', 'sina-ext' ),
+						'icon' => 'fa fa-star',
+					],
+					'image' => [
+						'title' => __( 'Image', 'sina-ext' ),
+						'icon' => 'fa fa-image',
+					],
+				],
+				'default' => 'icon',
+			]
+		);
+		$this->add_control(
 			'front_icon',
 			[
 				'label' => __( 'Icon', 'sina-ext' ),
 				'type' => Controls_Manager::ICON,
-				'default' => 'fa fa-android',
+				'default' => 'fa fa-amazon',
+				'condition' => [
+					'front_icon_format' => 'icon',
+				],
+			]
+		);
+		$this->add_control(
+			'front_image',
+			[
+				'label' => __( 'Image', 'sina-ext' ),
+				'type' => Controls_Manager::MEDIA,
+				'condition' => [
+					'front_icon_format' => 'image',
+				],
+				'default' => [
+					'url' => SINA_EXT_URL .'assets/img/choose-img.jpg',
+				],
 			]
 		);
 		$this->add_control(
@@ -148,11 +183,46 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 		);
 
 		$this->add_control(
+			'back_icon_format',
+			[
+				'label' => __( 'Icon Format', 'sina-ext' ),
+				'label_block' => true,
+				'type' => Controls_Manager::CHOOSE,
+				'options' => [
+					'icon' => [
+						'title' => __( 'Icon', 'sina-ext' ),
+						'icon' => 'fa fa-star',
+					],
+					'image' => [
+						'title' => __( 'Image', 'sina-ext' ),
+						'icon' => 'fa fa-image',
+					],
+				],
+				'default' => 'icon',
+			]
+		);
+		$this->add_control(
 			'back_icon',
 			[
 				'label' => __( 'Icon', 'sina-ext' ),
 				'type' => Controls_Manager::ICON,
-				'default' => 'fa fa-desktop',
+				'default' => 'fa fa-android',
+				'condition' => [
+					'back_icon_format' => 'icon',
+				],
+			]
+		);
+		$this->add_control(
+			'back_image',
+			[
+				'label' => __( 'Image', 'sina-ext' ),
+				'type' => Controls_Manager::MEDIA,
+				'condition' => [
+					'back_icon_format' => 'image',
+				],
+				'default' => [
+					'url' => SINA_EXT_URL .'assets/img/choose-img.jpg',
+				],
 			]
 		);
 		$this->add_control(
@@ -220,7 +290,6 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'front_bg_color',
-				'label' => __( 'Background', 'sina-ext' ),
 				'types' => [ 'classic', 'gradient' ],
 				'fields_options' => [
 					'background' => [ 
@@ -272,7 +341,6 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'back_bg_color',
-				'label' => __( 'Background', 'sina-ext' ),
 				'types' => [ 'classic', 'gradient' ],
 				'fields_options' => [
 					'background' => [ 
@@ -385,7 +453,7 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'icons_style',
 			[
-				'label' => __( 'Icons', 'sina-ext' ),
+				'label' => __( 'Icon or Image', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -423,16 +491,52 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 				'default' => [
 					'size' => '38',
 				],
+				'condition' => [
+					'front_icon_format' => 'icon',
+				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-flipbox-front .sina-flipbox-icon i' => 'font-size: {{SIZE}}{{UNIT}};',
 				],
+			]
+		);
+		$this->add_responsive_control(
+			'front_image_size',
+			[
+				'label' => __( 'Size', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', 'em', '%' ],
+				'range' => [
+					'px' => [
+						'max' => 300,
+					],
+					'em' => [
+						'max' => 30,
+					],
+				],
+				'default'=> [
+					'unit' => 'px',
+					'size' => '100',
+				],
+				'condition' => [
+					'front_icon_format' => 'image',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-flipbox-front .sina-flipbox-icon img' => 'width: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Box_Shadow::get_type(),
+			[
+				'name' => 'front_icon_image_shadow',
+				'selector' => '{{WRAPPER}} .sina-flipbox-front .sina-flipbox-icon i, {{WRAPPER}} .sina-flipbox-front .sina-flipbox-icon img',
 			]
 		);
 		$this->add_group_control(
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'front_icon_border',
-				'selector' => '{{WRAPPER}} .sina-flipbox-front .sina-flipbox-icon i',
+				'selector' => '{{WRAPPER}} .sina-flipbox-front .sina-flipbox-icon i, {{WRAPPER}} .sina-flipbox-front .sina-flipbox-icon img',
 			]
 		);
 		$this->add_responsive_control(
@@ -442,7 +546,7 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
-					'{{WRAPPER}} .sina-flipbox-front .sina-flipbox-icon i' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .sina-flipbox-front .sina-flipbox-icon i, {{WRAPPER}} .sina-flipbox-front .sina-flipbox-icon img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -454,13 +558,13 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
 					'top' => '15',
-					'right' => '20',
+					'right' => '15',
 					'bottom' => '15',
-					'left' => '20',
-					'isLinked' => false,
+					'left' => '15',
+					'isLinked' => true,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-flipbox-front .sina-flipbox-icon i' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .sina-flipbox-front .sina-flipbox-icon i, {{WRAPPER}} .sina-flipbox-front .sina-flipbox-icon img' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -496,18 +600,54 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 					],
 				],
 				'default' => [
-					'size' => '38'
+					'size' => '38',
+				],
+				'condition' => [
+					'back_icon_format' => 'icon',
 				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-flipbox-back .sina-flipbox-icon i' => 'font-size: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
+		$this->add_responsive_control(
+			'back_image_size',
+			[
+				'label' => __( 'Size', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', 'em', '%' ],
+				'range' => [
+					'px' => [
+						'max' => 300,
+					],
+					'em' => [
+						'max' => 30,
+					],
+				],
+				'default'=> [
+					'unit' => 'px',
+					'size' => '100',
+				],
+				'condition' => [
+					'back_icon_format' => 'image',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-flipbox-back .sina-flipbox-icon img' => 'width: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Box_Shadow::get_type(),
+			[
+				'name' => 'back_icon_image_shadow',
+				'selector' => '{{WRAPPER}} .sina-flipbox-back .sina-flipbox-icon i, {{WRAPPER}} .sina-flipbox-back .sina-flipbox-icon img',
+			]
+		);
 		$this->add_group_control(
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'back_icon_border',
-				'selector' => '{{WRAPPER}} .sina-flipbox-back .sina-flipbox-icon i',
+				'selector' => '{{WRAPPER}} .sina-flipbox-back .sina-flipbox-icon i, {{WRAPPER}} .sina-flipbox-back .sina-flipbox-icon img',
 			]
 		);
 		$this->add_responsive_control(
@@ -517,7 +657,7 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
-					'{{WRAPPER}} .sina-flipbox-back .sina-flipbox-icon i' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .sina-flipbox-back .sina-flipbox-icon i, {{WRAPPER}} .sina-flipbox-back .sina-flipbox-icon img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -529,13 +669,13 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
 					'top' => '15',
-					'right' => '20',
+					'right' => '15',
 					'bottom' => '15',
-					'left' => '20',
-					'isLinked' => false,
+					'left' => '15',
+					'isLinked' => true,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-flipbox-back .sina-flipbox-icon i' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .sina-flipbox-back .sina-flipbox-icon i, {{WRAPPER}} .sina-flipbox-back .sina-flipbox-icon img' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -799,6 +939,10 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 					<div class="sina-flipbox-icon">
 						<i class="<?php echo esc_attr( $data['front_icon'] ); ?>"></i>
 					</div>
+				<?php elseif( $data['front_image'] ): ?>
+					<div class="sina-flipbox-icon">
+						<img src="<?php echo esc_url( $data['front_image']['url'] ); ?>" alt="<?php echo esc_attr( $data['title'] ) ?>">
+					</div>
 				<?php endif; ?>
 
 				<div class="sina-flipbox-content">
@@ -815,6 +959,10 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 				<?php if ( $data['back_icon'] ): ?>
 					<div class="sina-flipbox-icon">
 						<i class="<?php echo esc_attr( $data['back_icon'] ); ?>"></i>
+					</div>
+				<?php elseif( $data['back_image'] ): ?>
+					<div class="sina-flipbox-icon">
+						<img src="<?php echo esc_url( $data['back_image']['url'] ); ?>" alt="<?php echo esc_attr( $data['title'] ) ?>">
 					</div>
 				<?php endif; ?>
 

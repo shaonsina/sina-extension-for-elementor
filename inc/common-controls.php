@@ -341,13 +341,6 @@ class Sina_Common_Data{
 				'selector' => '{{WRAPPER}} '.$class,
 			]
 		);
-		$obj->add_group_control(
-			Group_Control_Text_Shadow::get_type(),
-			[
-				'name' => $prefix.'_tshadow',
-				'selector' => '{{WRAPPER}} '.$class,
-			]
-		);
 
 		$obj->start_controls_tabs( $prefix.'_tabs' );
 
@@ -372,7 +365,6 @@ class Sina_Common_Data{
 			Group_Control_Background::get_type(),
 			[
 				'name' => $prefix.'_bg',
-				'label' => __( 'Background', 'sina-ext' ),
 				'types' => [ 'classic', 'gradient' ],
 				'fields_options' => [
 					'background' => [ 
@@ -382,6 +374,13 @@ class Sina_Common_Data{
 						'default' => '#1085e4',
 					],
 				],
+				'selector' => '{{WRAPPER}} '.$class,
+			]
+		);
+		$obj->add_group_control(
+			Group_Control_Text_Shadow::get_type(),
+			[
+				'name' => $prefix.'_tshadow',
 				'selector' => '{{WRAPPER}} '.$class,
 			]
 		);
@@ -421,8 +420,14 @@ class Sina_Common_Data{
 			Group_Control_Background::get_type(),
 			[
 				'name' => $prefix.'_hover_bg',
-				'label' => __( 'Background', 'sina-ext' ),
 				'types' => [ 'classic', 'gradient' ],
+				'selector' => '{{WRAPPER}} '.$class.':hover, {{WRAPPER}} '.$class.':focus',
+			]
+		);
+		$obj->add_group_control(
+			Group_Control_Text_Shadow::get_type(),
+			[
+				'name' => $prefix.'_hover_tshadow',
 				'selector' => '{{WRAPPER}} '.$class.':hover, {{WRAPPER}} '.$class.':focus',
 			]
 		);

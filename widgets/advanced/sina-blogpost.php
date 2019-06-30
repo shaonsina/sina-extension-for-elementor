@@ -255,7 +255,6 @@ class Sina_Blogpost_Widget extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'background',
-				'label' => __( 'Background', 'sina-ext' ),
 				'types' => [ 'classic', 'gradient' ],
 				'selector' => '{{WRAPPER}} .sina-bp',
 			]
@@ -360,7 +359,6 @@ class Sina_Blogpost_Widget extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'overlay_bg',
-				'label' => __( 'Background', 'sina-ext' ),
 				'types' => [ 'classic', 'gradient' ],
 				'fields_options' => [
 					'background' => [ 
@@ -515,6 +513,13 @@ class Sina_Blogpost_Widget extends Widget_Base {
 			]
 		);
 		$this->add_group_control(
+			Group_Control_Text_Shadow::get_type(),
+			[
+				'name' => 'content_shadow',
+				'selector' => '{{WRAPPER}} .sina-bp-content',
+			]
+		);
+		$this->add_group_control(
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'content_border',
@@ -580,13 +585,6 @@ class Sina_Blogpost_Widget extends Widget_Base {
 				'selector' => '{{WRAPPER}} .sina-bp-title, {{WRAPPER}} .sina-bp-title a',
 			]
 		);
-		$this->add_group_control(
-			Group_Control_Text_Shadow::get_type(),
-			[
-				'name' => 'title_shadow',
-				'selector' => '{{WRAPPER}} .sina-bp-title a',
-			]
-		);
 
 		$this->start_controls_tabs( 'title_tabs' );
 
@@ -607,6 +605,14 @@ class Sina_Blogpost_Widget extends Widget_Base {
 				],
 			]
 		);
+		$this->add_group_control(
+			Group_Control_Text_Shadow::get_type(),
+			[
+				'name' => 'title_shadow',
+				'selector' => '{{WRAPPER}} .sina-bp-title a',
+			]
+		);
+
 		$this->end_controls_tab();
 
 		$this->start_controls_tab(
@@ -626,6 +632,14 @@ class Sina_Blogpost_Widget extends Widget_Base {
 				],
 			]
 		);
+		$this->add_group_control(
+			Group_Control_Text_Shadow::get_type(),
+			[
+				'name' => 'title_hover_shadow',
+				'selector' => '{{WRAPPER}} .sina-bp-title a:hover',
+			]
+		);
+
 		$this->end_controls_tab();
 
 		$this->end_controls_tabs();
@@ -852,14 +866,6 @@ class Sina_Blogpost_Widget extends Widget_Base {
 			]
 		);
 
-		$this->add_group_control(
-			Group_Control_Text_Shadow::get_type(),
-			[
-				'name' => 'pagi_tshadow',
-				'selector' => '{{WRAPPER}} .sina-bp-pagination .page-numbers',
-			]
-		);
-
 		$this->start_controls_tabs( 'pagi_link_tabs' );
 
 		$this->start_controls_tab(
@@ -887,6 +893,20 @@ class Sina_Blogpost_Widget extends Widget_Base {
 				'selectors' => [
 					'{{WRAPPER}} .sina-bp-pagination .page-numbers' => 'background: {{VALUE}};',
 				],
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Text_Shadow::get_type(),
+			[
+				'name' => 'pagi_tshadow',
+				'selector' => '{{WRAPPER}} .sina-bp-pagination .page-numbers',
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Box_Shadow::get_type(),
+			[
+				'name' => 'pagi_bshadow',
+				'selector' => '{{WRAPPER}} .sina-bp-pagination .page-numbers',
 			]
 		);
 		$this->add_group_control(
@@ -943,6 +963,20 @@ class Sina_Blogpost_Widget extends Widget_Base {
 				],
 			]
 		);
+		$this->add_group_control(
+			Group_Control_Text_Shadow::get_type(),
+			[
+				'name' => 'pagi_hover_tshadow',
+				'selector' => '{{WRAPPER}} .sina-bp-pagination .page-numbers:hover',
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Box_Shadow::get_type(),
+			[
+				'name' => 'pagi_hover_bshadow',
+				'selector' => '{{WRAPPER}} .sina-bp-pagination .page-numbers:hover',
+			]
+		);
 		$this->add_control(
 			'pagi_link_hover_border',
 			[
@@ -981,6 +1015,20 @@ class Sina_Blogpost_Widget extends Widget_Base {
 				'selectors' => [
 					'{{WRAPPER}} .sina-bp-pagination .page-numbers.current' => 'background: {{VALUE}};',
 				],
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Text_Shadow::get_type(),
+			[
+				'name' => 'pagi_current_tshadow',
+				'selector' => '{{WRAPPER}} .sina-bp-pagination .page-numbers.current',
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Box_Shadow::get_type(),
+			[
+				'name' => 'pagi_current_bshadow',
+				'selector' => '{{WRAPPER}} .sina-bp-pagination .page-numbers.current',
 			]
 		);
 		$this->add_group_control(
@@ -1106,6 +1154,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 						'icon' => 'fa fa-align-right',
 					],
 				],
+				'default' => 'center',
 				'selectors' => [
 					'{{WRAPPER}} .sina-bp-pagination' => 'text-align: {{VALUE}};',
 				],
@@ -1143,6 +1192,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 					'left' => '4',
 					'isLinked' => true,
 				],
+				'separator' => 'before',
 				'selectors' => [
 					'{{WRAPPER}} .sina-load-more-btn' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
@@ -1161,13 +1211,6 @@ class Sina_Blogpost_Widget extends Widget_Base {
 					'left' => '25',
 					'isLinked' => false,
 				],
-				'mobile_default' => [
-					'top' => '10',
-					'right' => '15',
-					'bottom' => '10',
-					'left' => '15',
-					'isLinked' => false,
-				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-load-more-btn' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
@@ -1176,14 +1219,18 @@ class Sina_Blogpost_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'load_btn_margin',
 			[
-				'label' => __( 'Margin Top', 'sina-ext' ),
-				'type' => Controls_Manager::SLIDER,
+				'label' => __( 'Margin', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
-				'default' => [
-					'size' => '40',
+				'desktop_default' => [
+					'top' => '40',
+					'right' => '0',
+					'bottom' => '20',
+					'left' => '0',
+					'isLinked' => false,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-load-more-btn' => 'margin-top: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .sina-load-more-btn' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);

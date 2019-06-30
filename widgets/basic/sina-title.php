@@ -130,7 +130,6 @@ class Sina_Title_Widget extends Widget_Base {
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter Sub Title', 'sina-ext' ),
 				'description' => __( 'You can use HTML.', 'sina-ext' ),
-				'default' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
 			]
 		);
 		$this->add_control(
@@ -156,7 +155,6 @@ class Sina_Title_Widget extends Widget_Base {
 				'type' => Controls_Manager::TEXTAREA,
 				'placeholder' => __( 'Enter Description', 'sina-ext' ),
 				'description' => __( 'You can use HTML.', 'sina-ext' ),
-				'default' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
 			]
 		);
 
@@ -211,7 +209,7 @@ class Sina_Title_Widget extends Widget_Base {
 						],
 					],
 					'text_transform' => [
-						'default' => 'capitalize',
+						'default' => 'none',
 					],
 				],
 				'selector' => '{{WRAPPER}} .sina-title-title',

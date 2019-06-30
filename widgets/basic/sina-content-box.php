@@ -394,7 +394,6 @@ class Sina_Content_Box_Widget extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'background',
-				'label' => __( 'Background', 'sina-ext' ),
 				'types' => [ 'classic', 'gradient' ],
 				'fields_options' => [
 					'background' => [ 
@@ -504,7 +503,6 @@ class Sina_Content_Box_Widget extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'hover_background',
-				'label' => __( 'Background', 'sina-ext' ),
 				'types' => [ 'classic', 'gradient' ],
 				'selector' => '{{WRAPPER}} .sina-content-box:hover',
 			]
@@ -621,10 +619,11 @@ class Sina_Content_Box_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'icon_style',
 			[
-				'label' => __( 'Icon Or Image', 'sina-ext' ),
+				'label' => __( 'Icon or Image', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'save_templates' => '',
+					'icon_format' => ['icon', 'image'],
 				],
 			]
 		);
@@ -679,6 +678,13 @@ class Sina_Content_Box_Widget extends Widget_Base {
 				'selectors' => [
 					'{{WRAPPER}} .sina-content-box-icon img' => 'width: {{SIZE}}{{UNIT}};',
 				],
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Box_Shadow::get_type(),
+			[
+				'name' => 'icon_image_shadow',
+				'selector' => '{{WRAPPER}} .sina-content-box-icon i, {{WRAPPER}} .sina-content-box-icon img',
 			]
 		);
 		$this->add_responsive_control(
@@ -870,7 +876,6 @@ class Sina_Content_Box_Widget extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'ribbon_bg',
-				'label' => __( 'Background', 'sina-ext' ),
 				'types' => [ 'classic', 'gradient' ],
 				'fields_options' => [
 					'background' => [ 

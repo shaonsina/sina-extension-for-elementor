@@ -536,7 +536,6 @@ class Sina_Pricing_Widget extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'title_bg',
-				'label' => __( 'Background', 'sina-ext' ),
 				'types' => [ 'classic', 'gradient' ],
 				'selector' => '{{WRAPPER}} .sina-pricing-title',
 			]
@@ -661,10 +660,16 @@ class Sina_Pricing_Widget extends Widget_Base {
 			]
 		);
 		$this->add_group_control(
+			Group_Control_Box_Shadow::get_type(),
+			[
+				'name' => 'price_box_shadow',
+				'selector' => '{{WRAPPER}} .sina-price-tag',
+			]
+		);
+		$this->add_group_control(
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'price_bg',
-				'label' => __( 'Background', 'sina-ext' ),
 				'types' => [ 'classic', 'gradient' ],
 				'fields_options' => [
 					'background' => [ 
@@ -1003,7 +1008,6 @@ class Sina_Pricing_Widget extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'ribbon_bg',
-				'label' => __( 'Background', 'sina-ext' ),
 				'types' => [ 'classic', 'gradient' ],
 				'fields_options' => [
 					'background' => [ 

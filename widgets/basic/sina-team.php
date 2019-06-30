@@ -183,9 +183,8 @@ class Sina_Team_Widget extends Widget_Base {
 			[
 				'label' => __( 'Icon Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '#eee',
 				'selectors' => [
-					'{{WRAPPER}} {{CURRENT_ITEM}} a i' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .sina-team-social {{CURRENT_ITEM}} i' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -194,9 +193,8 @@ class Sina_Team_Widget extends Widget_Base {
 			[
 				'label' => __( 'Background', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '#111',
 				'selectors' => [
-					'{{WRAPPER}} {{CURRENT_ITEM}} a i' => 'background: {{VALUE}};',
+					'{{WRAPPER}} .sina-team-social {{CURRENT_ITEM}} i' => 'background: {{VALUE}};',
 				],
 			]
 		);
@@ -204,14 +202,14 @@ class Sina_Team_Widget extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'icon_border',
-				'selector' => '{{WRAPPER}} {{CURRENT_ITEM}} a i',
+				'selector' => '{{WRAPPER}} .sina-team-social {{CURRENT_ITEM}} i',
 			]
 		);
 		$repeater->add_group_control(
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'icon_shadow',
-				'selector' => '{{WRAPPER}} {{CURRENT_ITEM}} a i',
+				'selector' => '{{WRAPPER}} .sina-team-social {{CURRENT_ITEM}} i',
 			]
 		);
 
@@ -229,9 +227,8 @@ class Sina_Team_Widget extends Widget_Base {
 			[
 				'label' => __( 'Icon Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '#1085e4',
 				'selectors' => [
-					'{{WRAPPER}} {{CURRENT_ITEM}} a i:hover' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .sina-team-social {{CURRENT_ITEM}} i:hover' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -240,9 +237,8 @@ class Sina_Team_Widget extends Widget_Base {
 			[
 				'label' => __( 'Background', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '#eee',
 				'selectors' => [
-					'{{WRAPPER}} {{CURRENT_ITEM}} a i:hover' => 'background: {{VALUE}}'
+					'{{WRAPPER}} .sina-team-social {{CURRENT_ITEM}} i:hover' => 'background: {{VALUE}}'
 				],
 			]
 		);
@@ -252,7 +248,7 @@ class Sina_Team_Widget extends Widget_Base {
 				'label' => __( 'Border Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} {{CURRENT_ITEM}} a i:hover' => 'border-color: {{VALUE}}'
+					'{{WRAPPER}} .sina-team-social {{CURRENT_ITEM}} i:hover' => 'border-color: {{VALUE}}'
 				],
 			]
 		);
@@ -260,7 +256,7 @@ class Sina_Team_Widget extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'icon_hover_shadow',
-				'selector' => '{{WRAPPER}} {{CURRENT_ITEM}} a i:hover',
+				'selector' => '{{WRAPPER}} .sina-team-social {{CURRENT_ITEM}} i:hover',
 			]
 		);
 
@@ -300,7 +296,6 @@ class Sina_Team_Widget extends Widget_Base {
 				'title_field' => '{{{ social_name }}}',
 			]
 		);
-
 
 		$this->end_controls_section();
 		// End Team Content
@@ -376,7 +371,6 @@ class Sina_Team_Widget extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'overlay_bg',
-				'label' => __( 'Background', 'sina-ext' ),
 				'types' => [ 'classic', 'gradient' ],
 				'fields_options' => [
 					'background' => [ 
@@ -617,6 +611,116 @@ class Sina_Team_Widget extends Widget_Base {
 				],
 			]
 		);
+
+		$this->start_controls_tabs( 'team_icon_tabs' );
+
+		$this->start_controls_tab(
+			'team_icon_normal',
+			[
+				'label' => __( 'Normal', 'sina-ext' ),
+			]
+		);
+
+		$this->add_control(
+			'team_icon_color',
+			[
+				'label' => __( 'Icon Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#eee',
+				'selectors' => [
+					'{{WRAPPER}} .sina-team-social li i' => 'color: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
+			[
+				'name' => 'team_icon_bg',
+				'types' => [ 'classic', 'gradient' ],
+				'fields_options' => [
+					'background' => [ 
+						'default' =>'classic', 
+					],
+					'color' => [
+						'default' => '#111',
+					],
+				],
+				'selector' => '{{WRAPPER}} .sina-team-social li i',
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Border::get_type(),
+			[
+				'name' => 'team_icon_border',
+				'selector' => '{{WRAPPER}} .sina-team-social li i',
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Box_Shadow::get_type(),
+			[
+				'name' => 'team_icon_shadow',
+				'selector' => '{{WRAPPER}} .sina-team-social li i',
+			]
+		);
+
+		$this->end_controls_tab();
+
+		$this->start_controls_tab(
+			'team_icon_hover',
+			[
+				'label' => __( 'Hover', 'sina-ext' ),
+			]
+		);
+
+		$this->add_control(
+			'team_icon_hover_color',
+			[
+				'label' => __( 'Icon Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#1085e4',
+				'selectors' => [
+					'{{WRAPPER}} .sina-team-social li i:hover' => 'color: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
+			[
+				'name' => 'team_icon_hover_bg',
+				'types' => [ 'classic', 'gradient' ],
+				'fields_options' => [
+					'background' => [ 
+						'default' =>'classic', 
+					],
+					'color' => [
+						'default' => '#eee',
+					],
+				],
+				'selector' => '{{WRAPPER}} .sina-team-social li i:hover',
+			]
+		);
+		$this->add_control(
+			'team_icon_hover_border',
+			[
+				'label' => __( 'Border Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .sina-team-social li i:hover' => 'border-color: {{VALUE}}'
+				],
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Box_Shadow::get_type(),
+			[
+				'name' => 'team_icon_hover_shadow',
+				'selector' => '{{WRAPPER}} .sina-team-social li i:hover',
+			]
+		);
+
+		$this->end_controls_tab();
+
+		$this->end_controls_tabs();
+
 		$this->add_responsive_control(
 			'icon_radius',
 			[

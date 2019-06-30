@@ -181,7 +181,6 @@ class Sina_Progressbar_Widget extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'bar_bg',
-				'label' => __( 'Bar Background', 'sina-ext' ),
 				'types' => [ 'classic', 'gradient' ],
 				'fields_options' => [
 					'background' => [ 
@@ -238,7 +237,6 @@ class Sina_Progressbar_Widget extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'track_bg',
-				'label' => __( 'Track Background', 'sina-ext' ),
 				'types' => [ 'classic', 'gradient' ],
 				'fields_options' => [
 					'background' => [ 
@@ -298,6 +296,13 @@ class Sina_Progressbar_Widget extends Widget_Base {
 						],
 					],
 				],
+				'selector' => '{{WRAPPER}} .sina-bar-title',
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Text_Shadow::get_type(),
+			[
+				'name' => 'title_tshadow',
 				'selector' => '{{WRAPPER}} .sina-bar-title',
 			]
 		);
@@ -384,6 +389,13 @@ class Sina_Progressbar_Widget extends Widget_Base {
 						],
 					],
 				],
+				'selector' => '{{WRAPPER}} .sina-bar-percent',
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Text_Shadow::get_type(),
+			[
+				'name' => 'percentage_tshadow',
 				'selector' => '{{WRAPPER}} .sina-bar-percent',
 			]
 		);

@@ -353,7 +353,6 @@ class Sina_Transform_Widget extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'transform_bg',
-				'label' => __( 'Background', 'sina-ext' ),
 				'types' => [ 'classic', 'gradient' ],
 				'selector' => '{{WRAPPER}} .sina-transform-content',
 			]
@@ -511,7 +510,6 @@ class Sina_Transform_Widget extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'transform_hover_bg',
-				'label' => __( 'Background', 'sina-ext' ),
 				'types' => [ 'classic', 'gradient' ],
 				'selector' => '{{WRAPPER}} {{WRAPPER}} .sina-transform:hover .sina-transform-content',
 			]

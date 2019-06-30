@@ -11,6 +11,7 @@ use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
 use Elementor\Group_Control_Background;
 use Elementor\Group_Control_Text_Shadow;
+use Elementor\Group_Control_Box_Shadow;
 use Elementor\Group_Control_Border;
 use Elementor\Frontend;
 use Elementor\Repeater;
@@ -175,7 +176,8 @@ class Sina_Accordion_Widget extends Widget_Base {
 			[
 				'label' => __('Description', 'sina-ext'),
 				'label_block' => true,
-				'type' => Controls_Manager::WYSIWYG,
+				'type' => Controls_Manager::TEXTAREA,
+				'description' => __( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
 				'condition' => [
 					'save_templates' => '',
@@ -226,8 +228,14 @@ class Sina_Accordion_Widget extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'box_bg',
-				'label' => __( 'Background', 'sina-ext' ),
 				'types' => [ 'classic', 'gradient' ],
+				'selector' => '{{WRAPPER}} .sina-accordion-item',
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Box_Shadow::get_type(),
+			[
+				'name' => 'box_shadow',
 				'selector' => '{{WRAPPER}} .sina-accordion-item',
 			]
 		);
@@ -287,14 +295,7 @@ class Sina_Accordion_Widget extends Widget_Base {
 						],
 					],
 				],
-				'selector' => '{{WRAPPER}} .sina-accordion-title, {{WRAPPER}} .sina-accordion-icon',
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Text_Shadow::get_type(),
-			[
-				'name' => 'title_shadow',
-				'selector' => '{{WRAPPER}} .sina-accordion-title',
+				'selector' => '{{WRAPPER}} .sina-accordion-header, {{WRAPPER}} .sina-accordion-icon',
 			]
 		);
 
@@ -313,7 +314,7 @@ class Sina_Accordion_Widget extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '#eee',
 				'selectors' => [
-					'{{WRAPPER}} .sina-accordion-title, {{WRAPPER}} .sina-accordion-icon i' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .sina-accordion-header, {{WRAPPER}} .sina-accordion-icon i' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -321,7 +322,6 @@ class Sina_Accordion_Widget extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'header_bg',
-				'label' => __( 'Background', 'sina-ext' ),
 				'types' => [ 'classic', 'gradient' ],
 				'fields_options' => [
 					'background' => [ 
@@ -331,6 +331,20 @@ class Sina_Accordion_Widget extends Widget_Base {
 						'default' => '#1085e4',
 					],
 				],
+				'selector' => '{{WRAPPER}} .sina-accordion-header',
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Text_Shadow::get_type(),
+			[
+				'name' => 'title_shadow',
+				'selector' => '{{WRAPPER}} .sina-accordion-header',
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Box_Shadow::get_type(),
+			[
+				'name' => 'header_shadow',
 				'selector' => '{{WRAPPER}} .sina-accordion-header',
 			]
 		);
@@ -350,7 +364,7 @@ class Sina_Accordion_Widget extends Widget_Base {
 				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .sina-accordion-item.open .sina-accordion-title, {{WRAPPER}} .sina-accordion-item.open .sina-accordion-icon i' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .sina-accordion-item.open .sina-accordion-header, {{WRAPPER}} .sina-accordion-item.open .sina-accordion-icon i' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -358,8 +372,21 @@ class Sina_Accordion_Widget extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'active_background',
-				'label' => __( 'Background', 'sina-ext' ),
 				'types' => [ 'classic', 'gradient' ],
+				'selector' => '{{WRAPPER}} .sina-accordion-item.open .sina-accordion-header',
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Text_Shadow::get_type(),
+			[
+				'name' => 'title_active_shadow',
+				'selector' => '{{WRAPPER}} .sina-accordion-item.open .sina-accordion-header',
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Box_Shadow::get_type(),
+			[
+				'name' => 'header_active_shadow',
 				'selector' => '{{WRAPPER}} .sina-accordion-item.open .sina-accordion-header',
 			]
 		);
@@ -381,6 +408,7 @@ class Sina_Accordion_Widget extends Widget_Base {
 					'left' => '25',
 					'isLinked' => false,
 				],
+				'separator' => 'before',
 				'selectors' => [
 					'{{WRAPPER}} .sina-accordion-header' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
@@ -469,35 +497,6 @@ class Sina_Accordion_Widget extends Widget_Base {
 				],
 			]
 		);
-		$this->add_responsive_control(
-			'alignment',
-			[
-				'label' => __( 'Alignment', 'sina-ext' ),
-				'type' => Controls_Manager::CHOOSE,
-				'options' => [
-					'left' => [
-						'title' => __( 'Left', 'sina-ext' ),
-						'icon' => 'fa fa-align-left',
-					],
-					'center' => [
-						'title' => __( 'Center', 'sina-ext' ),
-						'icon' => 'fa fa-align-center',
-					],
-					'right' => [
-						'title' => __( 'Right', 'sina-ext' ),
-						'icon' => 'fa fa-align-right',
-					],
-					'justify' => [
-						'title' => __( 'justify', 'sina-ext' ),
-						'icon' => 'fa fa-align-justify',
-					],
-				],
-				'default' => 'left',
-				'selectors' => [
-					'{{WRAPPER}} .sina-accordion-desc' => 'text-align: {{VALUE}};',
-				],
-			]
-		);
 
 		$this->end_controls_section();
 		// End Desc Style
@@ -517,20 +516,14 @@ class Sina_Accordion_Widget extends Widget_Base {
 						$open_class = 'open';
 					}
 
-					$title_key = $this->get_repeater_setting_key( 'title', 'accordion', $index );
 					$desc_key = $this->get_repeater_setting_key( 'desc', 'accordion', $index );
-
-					$this->add_render_attribute( $title_key, 'class', 'sina-accordion-title' );
-					$this->add_inline_editing_attributes( $title_key );
 
 					$this->add_render_attribute( $desc_key, 'class', 'sina-accordion-desc' );
 					$this->add_inline_editing_attributes( $desc_key );
 				?>
 				<div class="sina-accordion-item <?php echo esc_attr( $open_class ); ?>">
 					<h4 class="sina-accordion-header sina-flex">
-						<span <?php echo $this->get_render_attribute_string( $title_key ); ?>>
-							<?php printf( '%s', $item['title'] ); ?>
-						</span>
+						<?php printf( '%s', $item['title'] ); ?>
 						<span class="sina-accordion-icon">
 							<i class="<?php echo esc_attr( $data['icon']); ?> off"></i>
 							<i class="<?php echo esc_attr( $data['active_icon']); ?> on"></i>
@@ -544,7 +537,7 @@ class Sina_Accordion_Widget extends Widget_Base {
 							else:
 								?>
 								<div <?php echo $this->get_render_attribute_string( $desc_key ); ?>>
-									<?php echo wp_kses_post( $item['desc'] ); ?>
+									<?php printf( '%s', $item['desc'] ); ?>
 								</div>
 						<?php endif; ?>
 					</div>

@@ -165,7 +165,6 @@ class Sina_Table_Widget extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'header_background',
-				'label' => __( 'Background', 'sina-ext' ),
 				'types' => [ 'classic', 'gradient' ],
 				'selector' => '{{WRAPPER}} table thead tr {{CURRENT_ITEM}}',
 			]
@@ -194,7 +193,6 @@ class Sina_Table_Widget extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'header_hover_background',
-				'label' => __( 'Background', 'sina-ext' ),
 				'types' => [ 'classic', 'gradient' ],
 				'selector' => '{{WRAPPER}} table thead tr {{CURRENT_ITEM}}:hover',
 			]
@@ -344,7 +342,6 @@ class Sina_Table_Widget extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'content_background',
-				'label' => __( 'Background', 'sina-ext' ),
 				'types' => [ 'classic', 'gradient' ],
 				'selector' => '{{WRAPPER}} table tbody {{CURRENT_ITEM}}',
 			]
@@ -373,7 +370,6 @@ class Sina_Table_Widget extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'content_hover_background',
-				'label' => __( 'Background', 'sina-ext' ),
 				'types' => [ 'classic', 'gradient' ],
 				'selector' => '{{WRAPPER}} table tbody {{CURRENT_ITEM}}:hover',
 			]
@@ -521,7 +517,6 @@ class Sina_Table_Widget extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'header_background',
-				'label' => __( 'Background', 'sina-ext' ),
 				'types' => [ 'classic', 'gradient' ],
 				'fields_options' => [
 					'background' => [ 
@@ -582,7 +577,6 @@ class Sina_Table_Widget extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'header_hover_background',
-				'label' => __( 'Background', 'sina-ext' ),
 				'types' => [ 'classic', 'gradient' ],
 				'selector' => '{{WRAPPER}} table thead tr:hover',
 			]
@@ -745,7 +739,6 @@ class Sina_Table_Widget extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'content_background',
-				'label' => __( 'Background', 'sina-ext' ),
 				'types' => [ 'classic', 'gradient' ],
 				'selector' => '{{WRAPPER}} table tbody tr',
 			]
@@ -799,7 +792,6 @@ class Sina_Table_Widget extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'content_hover_background',
-				'label' => __( 'Background', 'sina-ext' ),
 				'types' => [ 'classic', 'gradient' ],
 				'fields_options' => [
 					'background' => [ 
