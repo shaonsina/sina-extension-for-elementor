@@ -18,7 +18,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-
 define('SINA_EXT_VERSION', '2.3.0');
 define('SINA_EXT_PREVIOUS_VERSION', '2.2.2' );
 define('SINA_EXT_FILE', __FILE__ );
@@ -129,56 +128,11 @@ final class Sina_Extension {
 		add_action( 'plugins_loaded', [ $this, 'init' ] );
 		add_action( 'init', [ $this, 'i18n' ] );
 
-		register_activation_hook(SINA_EXT_FILE, [ $this, 'activation' ] );
-		add_action('admin_init', [ $this, 'redirection' ] );
+		register_activation_hook(SINA_EXT_FILE, 'sina_activation' );
+		add_action('admin_init', 'sina_redirection' );
 
 		$this->include_files();
-		$this->create_admin_page();
-	}
-
-	/**
-	 * For activation
-	 *
-	 * @since 1.0.3
-	 */
-	public function activation() {
-		add_option('sina_extension_activation', true);
-	}
-
-	/**
-	 * Redirect after activation
-	 *
-	 * @since 1.0.3
-	 */
-	public function redirection() {
-		add_option( 'sina_widgets', SINA_WIDGETS);
-
-		if ( get_option('sina_extension_activation', false ) ) {
-			delete_option('sina_extension_activation');
-
-			if ( ! is_network_admin() ) {
-				wp_redirect("admin.php?page=sina_ext_settings");
-			}
-		}
-	}
-
-	/**
-	 * Create sub-page under 'Elementor' parent page
-	 *
-	 * @since 1.0.0
-	 */
-	protected function create_admin_page() {
-		add_filter( 'plugin_action_links_'. SINA_EXT_BASENAME, [ $this, 'settings_link' ] );
-	}
-
-	/**
-	 * Create settings link
-	 *
-	 * @since 1.0.0
-	 */
-	public function settings_link( $links ) {
-		$links[] = '<a href="admin.php?page=sina_ext_settings">Settings</a>';
-		return $links;
+		sina_create_admin_page();
 	}
 
 	/**
@@ -187,11 +141,14 @@ final class Sina_Extension {
 	 * @since 1.0.0
 	 */
 	public function include_files() {
+		require_once( SINA_EXT_DIR .'/inc/plugin-func.php' );
+		require_once( SINA_EXT_DIR .'/inc/scripts.php' );
+		require_once( SINA_EXT_DIR .'/inc/helper.php' );
+		require_once( SINA_EXT_DIR .'/inc/hooks.php' );
+		require_once( SINA_EXT_DIR .'/inc/controls.php' );
 		require_once( SINA_EXT_DIR .'/admin/settings.php' );
 		require_once( SINA_EXT_DIR .'/admin/rollback.php' );
 		require_once( SINA_EXT_DIR .'/admin/scripts.php' );
-		require_once( SINA_EXT_DIR .'/inc/helper.php' );
-		require_once( SINA_EXT_DIR .'/inc/hooks.php' );
 	}
 
 	/**
@@ -290,102 +247,17 @@ final class Sina_Extension {
 		}
 
 		// Register Widget Category
-		add_action( 'elementor/elements/categories_registered', [ $this, 'widget_category' ] );
+		add_action( 'elementor/elements/categories_registered', 'sina_widget_category' );
 
 		// Register Widgets
-		add_action( 'elementor/widgets/widgets_registered', [ $this, 'register_widgets' ] );
+		add_action( 'elementor/widgets/widgets_registered', 'sina_register_widgets' );
 
 		// Enqueue Widget Styles
-		add_action( 'elementor/frontend/after_register_styles', [ $this, 'widget_styles' ] );
+		add_action( 'elementor/frontend/after_register_styles', 'sina_widget_styles' );
 
 		// Register Widget Scripts
-		add_action( 'elementor/frontend/after_register_scripts', [ $this, 'widget_scripts' ] );
+		add_action( 'elementor/frontend/after_register_scripts', 'sina_widget_scripts' );
 	}
-
-	/**
-	 * Create widget category
-	 *
-	 * @since 1.0.0
-	 */
-	public function widget_category( $elements_manager ) {
-		$elements_manager->add_category(
-			'sina-extension',
-			[
-				'title' => __( 'Sina Basic Widgets', 'sina-ext' ),
-				'icon' => 'fa fa-plug',
-			]
-		);
-		$elements_manager->add_category(
-			'sina-ext-advanced',
-			[
-				'title' => __( 'Sina Advaced Widgets', 'sina-ext' ),
-				'icon' => 'fa fa-plug',
-			]
-		);
-	}
-
-	/**
-	 * Enqueue CSS files
-	 *
-	 * @since 1.0.0
-	 */
-	public function widget_styles() {
-		wp_enqueue_style( 'owl-carousel', SINA_EXT_URL .'assets/css/owl.carousel.min.css', [], '2.3.4' );
-		wp_enqueue_style( 'magnific-popup', SINA_EXT_URL .'assets/css/magnific-popup.min.css', [], '1.1.0' );
-		wp_enqueue_style( 'sina-widgets', SINA_EXT_URL .'assets/css/sina-widgets.css', [], SINA_EXT_VERSION );
-	}
-
-	/**
-	 * Enqueue JS files
-	 *
-	 * @since 1.0.0
-	 */
-	public function widget_scripts() {
-		$apikey = get_option( 'sina_map_apikey', true );
-		$ajax_url = admin_url('admin-ajax.php');
-
-		wp_register_script( 'imagesLoaded', SINA_EXT_URL .'assets/js/imagesloaded.pkgd.min.js', [], '4.1.4', true );
-		wp_register_script( 'typed', SINA_EXT_URL .'assets/js/typed.min.js', ['jquery'], SINA_EXT_VERSION, true );
-		wp_register_script( 'jquery-owl', SINA_EXT_URL .'assets/js/owl.carousel.min.js', ['jquery'], '2.3.4', true );
-		wp_register_script( 'jquery-particle', SINA_EXT_URL .'assets/js/sina-particles.min.js', ['jquery'], '1.0', true );
-		wp_register_script( 'magnific-popup', SINA_EXT_URL .'assets/js/jquery.magnific-popup.min.js', ['jquery'], '1.1.0', true );
-		wp_register_script( 'countdown', SINA_EXT_URL .'assets/js/jquery.countdown.min.js', ['jquery'], '2.2.0', true );
-		wp_register_script( 'easypiechart', SINA_EXT_URL .'assets/js/jquery.easypiechart.min.js', ['jquery'], '2.1.7', true );
-		wp_register_script( 'mailchimp', SINA_EXT_URL .'assets/js/jquery.ajaxchimp.js', ['jquery'], SINA_EXT_VERSION, true );
-		wp_register_script( 'isotope', SINA_EXT_URL .'assets/js/isotope.min.js', ['jquery', 'imagesLoaded', 'magnific-popup'], '3.0.6', true );
-		wp_register_script( 'xzoom', SINA_EXT_URL .'assets/js/xzoom.min.js', ['jquery'], '1.0.14', true );
-
-		if ( $apikey ) {
-			wp_register_script( 'sina-google-map', '//maps.google.com/maps/api/js?key='. $apikey, [], SINA_EXT_VERSION, true );
-		}
-		wp_register_script( 'sina-widgets', SINA_EXT_URL .'assets/js/sina-widgets.js', ['jquery'], SINA_EXT_VERSION, true );
-		wp_localize_script( 'sina-widgets', 'sinaAjax', ['ajaxURL' => $ajax_url] );
-	}
-
-	/**
-	 * Register widgets
-	 *
-	 * @since 2.0.0
-	 */
-	public function register_widgets( $widgets_manager ) {
-		$active_widgets = get_option( 'sina_widgets' );
-		require_once( SINA_EXT_DIR .'/inc/common-controls.php' );
-
-		if ( is_array($active_widgets) ) {
-			foreach ($active_widgets as $cat => $widgets) {
-				foreach ($widgets as $widget => $status) {
-					$file = SINA_EXT_DIR .'/widgets/'.$cat.'/sina-'.$widget.'.php';
-					if (1 == $status && file_exists( $file )) {
-						require_once( $file );
-						$widget = str_replace(' ', '_', ucwords( str_replace('-', ' ', $widget) ) );
-						$widget = 'Sina_'.$widget.'_Widget';
-						$widgets_manager->register_widget_type( new $widget() );
-					}
-				}
-			}
-		}
-	}
-
 }
 
 Sina_Extension::instance();

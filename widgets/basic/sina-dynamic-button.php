@@ -99,12 +99,66 @@ class Sina_Dynamic_Button_Widget extends Widget_Base {
 			]
 		);
 		$this->add_control(
+			'btn_type',
+			[
+				'label' => __( 'Button Type', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					'static' => __( 'Static', 'sina-ext' ),
+					'page' => __( 'Page', 'sina-ext' ),
+					'taxonomy' => __( 'Taxonomy', 'sina-ext' ),
+				],
+				'default' => 'static',
+			]
+		);
+		$this->add_control(
+			'btn_page',
+			[
+				'label' => __( 'Select Page', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => sina_get_page_lists(),
+				'condition' => [
+					'btn_type' => 'page',
+				]
+			]
+		);
+		$taxonomy_lists = sina_get_taxonomy_lists();
+		$this->add_control(
+			'btn_taxonomy',
+			[
+				'label' => __( 'Select Taxonomy', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => $taxonomy_lists,
+				'default' => 'category',
+				'condition' => [
+					'btn_type' => 'taxonomy',
+				]
+			]
+		);
+		foreach ( $taxonomy_lists as $tax_name => $tax_val) {
+			$this->add_control(
+				'btn_'.$tax_name,
+				[
+					'label' => __( 'Select '.$tax_val, 'sina-ext' ),
+					'type' => Controls_Manager::SELECT,
+					'options' => sina_get_term_lists($tax_name),
+					'condition' => [
+						'btn_type' => 'taxonomy',
+						'btn_taxonomy' => $tax_name,
+					]
+				]
+			);
+		}
+		$this->add_control(
 			'btn_text',
 			[
 				'label' => __( 'Label', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter Label', 'sina-ext' ),
 				'default' => 'Click Here',
+				'condition' => [
+					'btn_type' => 'static',
+				]
 			]
 		);
 		$this->add_control(
@@ -116,6 +170,9 @@ class Sina_Dynamic_Button_Widget extends Widget_Base {
 					'url' => '#',
 				],
 				'placeholder' => __( 'https://your-link.com', 'sina-ext' ),
+				'condition' => [
+					'btn_type' => 'static',
+				]
 			]
 		);
 		$this->add_control(
@@ -152,9 +209,21 @@ class Sina_Dynamic_Button_Widget extends Widget_Base {
 					'btn_icon!' => '',
 				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-dbtn .sina-icon-right' => 'margin-left: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .sina-dbtn .sina-icon-left' => 'margin-right: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .sina-dynamic-btn .sina-icon-right' => 'margin-left: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .sina-dynamic-btn .sina-icon-left' => 'margin-right: {{SIZE}}{{UNIT}};',
 				],
+			]
+		);
+		$this->add_control(
+			'css_id',
+			[
+				'label' => __( 'CSS ID', 'sina-ext' ),
+				'type' => Controls_Manager::TEXT,
+				'placeholder' => __( 'Enter ID', 'sina-ext' ),
+				'description' => __( 'Make sure this ID unique', 'sina-ext' ),
+				'condition' => [
+					'btn_type' => 'static',
+				]
 			]
 		);
 
@@ -172,14 +241,66 @@ class Sina_Dynamic_Button_Widget extends Widget_Base {
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
-
-		$this->add_group_control(
-			Group_Control_Background::get_type(),
+		Sina_Common_Data::button_style( $this, '.sina-dynamic-btn' );
+		$this->add_responsive_control(
+			'btn_radius',
 			[
-				'name' => 'background',
-				'label' => __( 'Background', 'sina-ext' ),
-				'types' => [ 'classic', 'gradient' ],
-				'selector' => '{{WRAPPER}} .sina-gb',
+				'label' => __( 'Radius', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '4',
+					'right' => '4',
+					'bottom' => '4',
+					'left' => '4',
+					'isLinked' => true,
+				],
+				'separator' => 'before',
+				'selectors' => [
+					'{{WRAPPER}} .sina-dynamic-btn' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'btn_padding',
+			[
+				'label' => __( 'Padding', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '12',
+					'right' => '25',
+					'bottom' => '12',
+					'left' => '25',
+					'isLinked' => false,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-dynamic-btn' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'alignment',
+			[
+				'label' => __( 'Alignment', 'sina-ext' ),
+				'type' => Controls_Manager::CHOOSE,
+				'options' => [
+					'left' => [
+						'title' => __( 'Left', 'sina-ext' ),
+						'icon' => 'fa fa-align-left',
+					],
+					'center' => [
+						'title' => __( 'Center', 'sina-ext' ),
+						'icon' => 'fa fa-align-center',
+					],
+					'right' => [
+						'title' => __( 'Right', 'sina-ext' ),
+						'icon' => 'fa fa-align-right',
+					],
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-dynamic-button' => 'text-align: {{VALUE}};',
+				],
 			]
 		);
 
@@ -191,13 +312,33 @@ class Sina_Dynamic_Button_Widget extends Widget_Base {
 
 	protected function render() {
 		$data = $this->get_settings_for_display();
+		$btn_text = $data['btn_text'];
+		if ( 'page' == $data['btn_type'] ) {
+			$btn_text = get_the_title( $data['btn_page'] );
+			$btn_link = get_page_link( $data['btn_page'] );
+		} elseif ( 'taxonomy' == $data['btn_type'] && $data['btn_'.$data['btn_taxonomy']] ) {
+			$term_id = (int)$data['btn_'.$data['btn_taxonomy']];
+			$btn_text = get_term( $term_id )->name;
+			$btn_link = get_term_link( $term_id );
+		} else{
+			$btn_link = $data['btn_link']['url'];
+		}
 		?>
 		<div class="sina-dynamic-button">
-			<a href="<?php echo esc_url( $data['btn_link'] ); ?>" class="sina-dbtn">
+			<a  class="sina-dynamic-btn" href="<?php echo esc_url( $btn_link ); ?>"
+				<?php if ( $data['css_id'] ): ?>
+					id="<?php echo esc_attr( $data['css_id'] ); ?>"
+				<?php endif; ?>
+				<?php if ('static' == $data['btn_type'] && 'on' == $data['btn_link']['is_external']): ?>
+					target="_blank" 
+				<?php endif; ?>
+				<?php if ('static' == $data['btn_type'] && 'on' == $data['btn_link']['nofollow']): ?>
+					rel="nofollow" 
+				<?php endif; ?>>
 				<?php if ( $data['btn_icon'] && $data['btn_icon_align'] == 'left' ): ?>
 					<i class="<?php echo esc_attr($data['btn_icon']); ?> sina-icon-left"></i>
 				<?php endif; ?>
-				<?php printf('%s', $data['btn_text']); ?>
+				<?php printf('%s', $btn_text); ?>
 				<?php if ( $data['btn_icon'] && $data['btn_icon_align'] == 'right' ): ?>
 					<i class="<?php echo esc_attr($data['btn_icon']); ?> sina-icon-right"></i>
 				<?php endif; ?>

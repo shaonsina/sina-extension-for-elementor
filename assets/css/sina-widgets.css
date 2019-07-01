@@ -1,4 +1,4 @@
-/* Sina Extension for Elementor v2.2.2 */
+/* Sina Extension for Elementor v2.3.0 */
 
 /*--------------------------------- General -------------------------------------- */
 .sina-overlay{
@@ -40,6 +40,7 @@
 .sina-content-box-icon i,
 .sina-content-box-icon img,
 .sina-content-box .sina-content-box-title,
+.sina-content-box .sina-content-box-title > a,
 .sina-pricing-btn .sina-order-btn,
 .sina-banner-btns .sina-banner-pbtn,
 .sina-banner-btns .sina-banner-sbtn,
@@ -107,6 +108,7 @@
 .sina-accordion-item.open > .sina-accordion-header > .sina-accordion-icon .on{
 	display: block;
 }
+.sina-dynamic-btn,
 .sina-team-social li,
 .sina-fancytext .sina-fancytext-strings > .animated,
 .sina-product-zoomer,
@@ -115,6 +117,7 @@
 .sina-banner-btns .sina-banner-sbtn{
 	display: inline-block;
 }
+.sina-dynamic-btn,
 .sina-social li a i,
 .sina-portfolio-overlay i,
 .sina-team-social li i {

@@ -5,6 +5,51 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+function sina_get_page_lists() {
+	$page_ids = get_all_page_ids();
+	$page_lists = [];
+	foreach ($page_ids as $id) {
+		if ( !in_array($id, $page_lists) ) {
+			$page_title = get_the_title( $id );
+			$page_lists[$id] = $page_title;
+		}
+	}
+	return $page_lists;
+}
+
+function sina_get_term_lists( $term ) {
+	$terms = get_terms(
+		$term,
+		[
+			'hide_empty' => false,
+		]
+	);
+	$term_lists = [];
+	foreach ($terms as $term) {
+		if ( !in_array($term->term_taxonomy_id, $term_lists) ) {
+			$term_lists[$term->term_taxonomy_id] = ucfirst(str_replace('_', ' ', $term->name));
+		}
+	}
+	return $term_lists;
+}
+
+function sina_get_taxonomy_lists() {
+	$terms = get_terms();
+	$term_lists = [];
+	$exclude_terms = [
+		'nav_menu',
+		'elementor_library_type',
+	];
+	foreach ($terms as $term) {
+		if ( !in_array($term->taxonomy, $exclude_terms) ) {
+			if ( !in_array($term->taxonomy, $term_lists) ) {
+				$term_lists[$term->taxonomy] = ucfirst(str_replace('_', ' ', $term->taxonomy));
+			}
+		}
+	}
+	return $term_lists;
+}
+
 function sina_get_portfolio_cat( $portfolio ) {
 	$category_in = [];
 
