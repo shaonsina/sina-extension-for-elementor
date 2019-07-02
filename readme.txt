@@ -51,7 +51,7 @@ Please [See demo](https://shaonsina.com/plugins/sina-extension/)
 7. [Content Slider](https://shaonsina.com/plugins/sina-extension/content-slider): You can slide any content with that. Also can sliding any template. Enjoy!
 8. [Countdown](https://shaonsina.com/plugins/sina-extension/countdown): Add countdown timer into your web page.
 9. [Counter](https://shaonsina.com/plugins/sina-extension/counter): Show number with animate counting.
-10. [Dynamic Button](https://shaonsina.com/plugins/sina-extension/dynamic-button): Add a button with static or dynamic ().
+10. [Dynamic Button](https://shaonsina.com/plugins/sina-extension/dynamic-button): Add a button with static or dynamic (page, category or tag).
 11. [Fancy Text](https://shaonsina.com/plugins/sina-extension/fancy-text): Animated text with 20+ animation effects.
 12. [Flip Box](https://shaonsina.com/plugins/sina-extension/flipbox): Use animated Flip Box to highlight any content on your web page.
 13. [Google Map](https://shaonsina.com/plugins/sina-extension/google-map): Add Google map with API key into the web page.
@@ -67,12 +67,12 @@ Please [See demo](https://shaonsina.com/plugins/sina-extension/)
 23. [Product Zoomer](https://shaonsina.com/plugins/sina-extension/product-zoomer): Add multiple images of product for zoom in.
 24. [Progressbar](https://shaonsina.com/plugins/sina-extension/progressbar): Display progress bars with different styles.
 25. [Review Carousel](https://shaonsina.com/plugins/sina-extension/review-carousel): Show what others said about your brand.
-26. [Social Icons](https://shaonsina.com/plugins/sina-extension/social-icons): Add your social icons like Facebook / Twitter etc.
-27. [Table](https://shaonsina.com/plugins/sina-extension/table): Use table for showing your expected data.
-28. [Team](https://shaonsina.com/plugins/sina-extension/team): Add your team members just a few clicks.
-29. [Title](https://shaonsina.com/plugins/sina-extension/title): Use title, subtitle & description anywhere into your web page.
-30. [Transform](https://shaonsina.com/plugins/sina-extension/transform): Display content by transforming in the different dimensions.
-31. [Search Form](https://shaonsina.com/plugins/sina-extension/search-form): Display search form for searching the users.
+26. [Search Form](https://shaonsina.com/plugins/sina-extension/search-form): Display search form for searching the users.
+27. [Social Icons](https://shaonsina.com/plugins/sina-extension/social-icons): Add your social icons like Facebook / Twitter etc.
+28. [Table](https://shaonsina.com/plugins/sina-extension/table): Use table for showing your expected data.
+29. [Team](https://shaonsina.com/plugins/sina-extension/team): Add your team members just a few clicks.
+30. [Title](https://shaonsina.com/plugins/sina-extension/title): Use title, subtitle & description anywhere into your web page.
+31. [Transform](https://shaonsina.com/plugins/sina-extension/transform): Display content by transforming in the different dimensions.
 32. [User Counter](https://shaonsina.com/plugins/sina-extension/user-counter): Display how many users registered.
 33. [Video](https://shaonsina.com/plugins/sina-extension/video): Show a video in a popup.
 34. [Visit](https://shaonsina.com/plugins/sina-extension/visit) Counter: Display how many users visit.
