@@ -75,7 +75,7 @@ Please [See demo](https://shaonsina.com/plugins/sina-extension/)
 31. [Transform](https://shaonsina.com/plugins/sina-extension/transform): Display content by transforming in the different dimensions.
 32. [User Counter](https://shaonsina.com/plugins/sina-extension/user-counter): Display how many users registered.
 33. [Video](https://shaonsina.com/plugins/sina-extension/video): Show a video in a popup.
-34. [Visit](https://shaonsina.com/plugins/sina-extension/visit) Counter: Display how many users visit.
+34. [Visit Counter](https://shaonsina.com/plugins/sina-extension/visit-counter): Display how many users visit.
 
 Cool things are coming soon...
 
