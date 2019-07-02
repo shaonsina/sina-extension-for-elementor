@@ -85,7 +85,6 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 	 */
 	public function get_script_depends() {
 	    return [
-	        'mailchimp',
 	        'sina-widgets',
 	    ];
 	}
