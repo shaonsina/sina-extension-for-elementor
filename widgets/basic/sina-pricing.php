@@ -318,7 +318,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 				'default' => '',
 			]
 		);
-		$this->add_control(
+		$this->add_responsive_control(
 			'scale',
 			[
 				'label' => __( 'Scale', 'sina-ext' ),
@@ -342,34 +342,36 @@ class Sina_Pricing_Widget extends Widget_Base {
 			]
 		);
 		$this->add_control(
-			'translateY',
+			'move',
 			[
-				'label' => __( 'Vertical', 'sina-ext' ),
-				'type' => Controls_Manager::SLIDER,
-				'range' => [
-					'px' => [
-						'min' => -100,
-					],
-				],
-				'default' => [
-					'size' => '-10',
-				],
+				'label' => __( 'Move', 'sina-ext' ),
+				'type' => Controls_Manager::POPOVER_TOGGLE,
 				'condition' => [
 					'effects' => 'sina-pricing-move',
 				],
 			]
 		);
-		$this->add_control(
+
+		$this->start_popover();
+		$this->add_responsive_control(
 			'translateX',
 			[
 				'label' => __( 'Horizontal', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
-						'min' => -100
+						'step' => 1,
+						'min' => -100,
+						'max' => 100,
 					],
 				],
-				'default' => [
+				'desktop_default' => [
+					'size' => '0',
+				],
+				'tablet_default' => [
+					'size' => '0',
+				],
+				'mobile_default' => [
 					'size' => '0',
 				],
 				'condition' => [
@@ -377,6 +379,38 @@ class Sina_Pricing_Widget extends Widget_Base {
 				],
 			]
 		);
+		$this->add_responsive_control(
+			'translateY',
+			[
+				'label' => __( 'Vertical', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'range' => [
+					'px' => [
+						'step' => 1,
+						'min' => -100,
+						'max' => 100,
+					],
+				],
+				'desktop_default' => [
+					'size' => '-10',
+				],
+				'tablet_default' => [
+					'size' => '-10',
+				],
+				'mobile_default' => [
+					'size' => '-10',
+				],
+				'condition' => [
+					'effects' => 'sina-pricing-move',
+				],
+				'selectors' => [
+					'(desktop){{WRAPPER}} .sina-pricing:hover' => 'transform: translate({{translateX.SIZE || 0}}px, {{translateY.SIZE || 0}}px);',
+					'(tablet){{WRAPPER}} .sina-pricing:hover' => 'transform: translate({{translateX_tablet.SIZE || 0}}px, {{translateY_tablet.SIZE || 0}}px);',
+					'(mobile){{WRAPPER}} .sina-pricing:hover' => 'transform: translate({{translateX_mobile.SIZE || 0}}px, {{translateY_mobile.SIZE || 0}}px);',
+				],
+			]
+		);
+		$this->end_popover();
 
 		$this->start_controls_tabs( 'box_tabs' );
 
@@ -387,6 +421,22 @@ class Sina_Pricing_Widget extends Widget_Base {
 			]
 		);
 
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
+			[
+				'name' => 'box_background',
+				'types' => [ 'classic', 'gradient' ],
+				'fields_options' => [
+					'background' => [ 
+						'default' =>'classic', 
+					],
+					'color' => [
+						'default' => '#fff',
+					],
+				],
+				'selector' => '{{WRAPPER}} .sina-pricing',
+			]
+		);
 		$this->add_group_control(
 			Group_Control_Border::get_type(),
 			[
@@ -429,6 +479,14 @@ class Sina_Pricing_Widget extends Widget_Base {
 			]
 		);
 
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
+			[
+				'name' => 'box_hover_background',
+				'types' => [ 'classic', 'gradient' ],
+				'selector' => '{{WRAPPER}} .sina-pricing:hover',
+			]
+		);
 		$this->add_control(
 			'box_hover_border',
 			[
@@ -1029,15 +1087,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 
 	protected function render() {
 		$data = $this->get_settings_for_display();
-		if ( 'sina-pricing-move' == $data['effects'] ):
-			?>
-			<style type="text/css">
-				[data-id="<?php echo $this->get_id(); ?>"] .sina-pricing:hover{
-					transform: translate(<?php echo esc_attr( $data['translateX']['size'].'px' ); ?>, <?php echo esc_attr( $data['translateY']['size'].'px' ); ?>);
-				}
-			</style>
-		<?php endif; ?>
-
+		?>
 		<div class="sina-pricing <?php echo esc_attr( $data['effects'] ); ?>">
 			<?php if ( $data['ribbon_title'] && $data['ribbon_position'] ): ?>
 				<div class="<?php echo esc_attr( $data['ribbon_position'] ); ?>">

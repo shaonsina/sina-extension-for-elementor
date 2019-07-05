@@ -1,4 +1,4 @@
-/* Sina Extension for Elementor v2.3.0 */
+/* Sina Extension for Elementor v2.3.1 */
 
 /*--------------------------------- General -------------------------------------- */
 .sina-overlay{
@@ -24,10 +24,10 @@
 }
 
 /* Common */
-.sina-content-box.sina-content-box-move:hover,
-.sina-content-box.sina-content-box-zoom:hover,
-.sina-pricing.sina-pricing-move:hover,
-.sina-pricing.sina-pricing-zoom:hover{
+.sina-content-box-move:hover,
+.sina-content-box-zoom:hover,
+.sina-pricing-move:hover,
+.sina-pricing-zoom:hover{
 	z-index: 999;
 }
 .sina-pc-meta a,
@@ -387,9 +387,9 @@ img.mfp-img{
 }
 
 /*-------------------------- Content Box ----------------------- */
+.sina-pricing,
 .sina-content-box{
 	position: relative;
-	z-index: 1;
 	transition: 0.4s;
 	overflow: hidden;
 }
@@ -802,10 +802,7 @@ img.mfp-img{
 
 /*--------------------------------- Pricing -------------------------------------- */
 .sina-pricing {
-	position: relative;
-	overflow: hidden;
 	text-align: center;
-	transition: 0.4s;
 }
 .sina-pricing .sina-pricing-title{
 	margin: 0;

@@ -5,7 +5,7 @@ Donate link: https://shaonsina.com/plugins/sina-extension/
 Requires at least: 4.7
 Tested up to: 5.2
 Requires PHP: 7.0
-Stable tag: 2.3.0
+Stable tag: 2.3.1
 License: GPL v3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -104,9 +104,14 @@ Yes. It's totally free.
 
 == Changelog ==
 
+= 2.3.1 - 11-07-2019 =
+- Added: Background option to Pricing
+- Improved: Content Box & Pricing effects option
+- Optimized
+
 = 2.3.0 - 1-07-2019 =
 - New: Dynamic Button
-- New: Social Icon
+- New: Social Icons
 - Added: Lots of options to some widgets
 - Added: MailChimp API key option
 - Fixed: Some issues
@@ -117,7 +122,7 @@ Yes. It's totally free.
 = 2.2.2 - 22-06-2019 =
 - Fixed: Piechart browser issue
 - Fiexd: Blogpost height
-- Added: Navigation top option to Banner Slider, Content Slider, Posts Carousel & Review Carousel
+- Added: Navigation top option to all Slider & Carousel
 - Added: Inline & Margin option to User Counter & Visit Counter
 - Improved
 **NOTE: Some widgets has been changed. So, please review your site after update.**
@@ -129,7 +134,7 @@ Yes. It's totally free.
 - New: Modal Box
 - New: Posts Carousel
 - Added: List option to Blogpost
-- Added: Custom email to Contact Email
+- Added: Custom email to Contact Form
 - Added: Progressbar number based
 - Added: Blogpost pagination button width
 - Fixed: Blogpost pagination Spacing
@@ -160,7 +165,7 @@ Yes. It's totally free.
 - Added: Default value for various widgets
 - Added: Some control to various widgets
 - Fixed: Some minor issue
-- Optimized: Some script
+- Optimized
 - Improved
 **NOTE: It's a major release of this plugin. So, please review your site after update.**
 
@@ -174,7 +179,7 @@ Yes. It's totally free.
 - Fixed: Some minor issue
 
 = 1.2.1 - 29-01-2019 =
-- Added: Category sorting functionality added to Posts Tab
+- Added: Category sorting functionality to Posts Tab
 - Improved
 
 = 1.2.0 - 27-01-2019 =
@@ -183,11 +188,11 @@ Yes. It's totally free.
 - Improved
 
 = 1.1.1 - 03-01-2019 =
-- Added: Order & sorting functionality added to Blogpost
-- Added: Contact Form button width added
-- Added: Image functionality added to Pricing
-- Added: Ribbon functionality added to Pricing
-- Added: Ribbon functionality added to Content Box
+- Added: Order & sorting functionality to Blogpost
+- Added: Contact Form button width
+- Added: Image functionality to Pricing
+- Added: Ribbon functionality to Pricing
+- Added: Ribbon functionality to Content Box
 - Improved
 
 = 1.1.0 - 21-12-2018 =
