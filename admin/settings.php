@@ -22,7 +22,7 @@ function sina_add_submenu() {
 		'list_id'	=> '',
 	] );
 	add_option( 'sina_template_options', [
-		'sina_templates' => 1,
+		'sina_templates_only' => 0,
 		'sina_templates_merge' => 1,
 	] );
 }
@@ -38,16 +38,20 @@ function sina_settings_group() {
 	add_settings_field( 'sina_google_map_key', __('Google Map API Key', 'sina-ext'), 'sina_map_api_key', 'sina_ext_settings', 'sina_api_section' );
 	add_settings_field( 'sina_mailchimp_key', __('MailChimp API Key', 'sina-ext'), 'sina_mail_chimp_key', 'sina_ext_settings', 'sina_api_section' );
 	add_settings_field( 'sina_mailchimp_list_id', __('MailChimp List Id', 'sina-ext'), 'sina_mail_chimp_list_id', 'sina_ext_settings', 'sina_api_section' );
-	add_settings_section( 'sina_api_section', '', '', 'sina_template_options' );
 
+	$templates = get_option( 'sina_template_options' );
+	add_settings_section( 'sina_templates_section', '', '', 'sina_ext_templates' );
+	add_settings_field( 'sina_ext_templates_only', __('Sina Templates Only', 'sina-ext'), 'sina_template_options', 'sina_ext_templates', 'sina_templates_section', ['temps' => 'sina_templates_only', 'get_temps' => $templates] );
+	add_settings_field( 'sina_ext_templates_merge', __('Sina Templates Merge', 'sina-ext'), 'sina_template_options', 'sina_ext_templates', 'sina_templates_section', ['temps' => 'sina_templates_merge', 'get_temps' => $templates] );
 
+	$get_widgets = get_option( 'sina_widgets' );
 	foreach ( SINA_WIDGETS as $cat => $widgets ) {
 		$section = 'sina_'.$cat.'_widgets_section';
 		$page = 'sina_widgets_'.$cat;
 		add_settings_section( $section, '', '', $page );
 
 		foreach ($widgets as $widget => $status) {
-			add_settings_field( 'sina_'.str_replace('-', '_', $widget), __('Sina '. ucwords( str_replace('-', ' ', $widget) ), 'sina-ext'), 'sina_widgets_ac_dc', $page, $section, ['widget' => $widget, 'cat' => $cat]  );
+			add_settings_field( 'sina_'.str_replace('-', '_', $widget), __('Sina '. ucwords( str_replace('-', ' ', $widget) ), 'sina-ext'), 'sina_widgets_ac_dc', $page, $section, ['widget' => $widget, 'cat' => $cat, 'get_widgets' => $get_widgets]  );
 		}
 	}
 }
@@ -55,38 +59,36 @@ function sina_settings_group() {
 function sina_page_content() {
 	?>
 	<h1><?php echo __( 'Sina Extension Settings', 'sina-ext' ); ?></h1>
-	<p><?php _e('Thank you for using <strong><i>Sina Extension</i></strong>. This plugin has been developed by <a href="https://github.com/shaonsina" target="_blank">shaonsina</a> and I hope you enjoy using it.', 'sina-ext'); ?></p>
+	<p class="sina-ext-pb"><?php _e('Thank you for using <strong><i>Sina Extension</i></strong>. This plugin has been developed by <a href="https://github.com/shaonsina" target="_blank">shaonsina</a> and I hope you enjoy using it.', 'sina-ext'); ?></p>
 
 	<form action="options.php" method="POST">
 		<?php settings_errors(); ?>
-		<h2><?php echo __( 'API Settings', 'sina-ext' ); ?></h2>
-		<?php do_settings_sections( 'sina_ext_settings' ); ?>
+		<h2 class="sina-ext-pt"><?php echo __( 'API Settings', 'sina-ext' ); ?></h2>
+		<div class="sina-ext-pb">
+			<?php do_settings_sections( 'sina_ext_settings' ); ?>
+		</div>
 
-		<div class="sina-ext-options">
+		<div class="sina-ext-options sina-ext-pt">
 			<h2><?php echo __( 'Widget Settings', 'sina-ext' ); ?></h2>
-			<p><?php echo __( 'You can disable the widgets if you would like to not using on your site.', 'sina-ext' ); ?></p>
+			<p class="sina-ext-pb"><?php echo __( 'You can disable the widgets if you would like to not using on your site.', 'sina-ext' ); ?></p>
 
 			<?php
 				foreach (SINA_WIDGETS as $cat => $data) {
-					printf("<div class='sina-ext-switch'><h2>%s</h2>", __( ucfirst($cat), 'sina-ext' ));
+					printf("<div class='sina-ext-pb'><h2>%s</h2>", __( ucfirst($cat), 'sina-ext' ));
 					do_settings_sections( 'sina_widgets_'.$cat );
 					echo '</div>';
 				}
 				settings_fields( 'sina_settings_group' );
 			?>
 		</div>
-		<div class="sina-ext-options">
+		<div class="sina-ext-options sina-ext-wfull sina-ext-pt sina-ext-pb">
 			<h2><?php echo __( 'Template Settings', 'sina-ext' ); ?></h2>
-			<p><?php echo __( 'You can use SINA TEMPLATES on your site.', 'sina-ext' ); ?></p>
+			<p class="sina-ext-pb"><?php echo __( 'You can use <strong><i>SINA TEMPLATES</i></strong> on your site.', 'sina-ext' ); ?></p>
 
-			<?php
-				foreach (SINA_WIDGETS as $cat => $data) {
-					printf("<div class='sina-ext-switch'><h2>%s</h2>", __( ucfirst($cat), 'sina-ext' ));
-					do_settings_sections( 'sina_template_options' );
-					echo '</div>';
-				}
-				submit_button();
-			?>
+			<div class="sina-ext-pb">
+				<?php do_settings_sections( 'sina_ext_templates' ); ?>
+			</div>
+			<?php submit_button(); ?>
 		</div>
 	</form>
 
@@ -131,13 +133,21 @@ function sina_mail_chimp_list_id() {
 	<?php
 }
 
-function sina_widgets_ac_dc($data) {
-	$widget 		= $data['widget'];
-	$cat 			= $data['cat'];
-	$name 			= 'sina-'.$widget;
-	$option_name	= 'sina_widgets';
-	$checkbox 		= get_option( $option_name );
-	$checked		= isset( $checkbox[ $cat ][ $widget ] ) && 1 == $checkbox[ $cat ][ $widget ]  ? 'checked' : '';
+function sina_template_options($data) {
+	$get_temps 	= $data['get_temps'];
+	$temps 		= $data['temps'];
+	$name 		= 'sina-'.$temps;
+	$checked	= isset($get_temps[ $temps ]) && 1 == $get_temps[ $temps ] ? 'checked' : '';
 
-	echo '<div class="sina-widget-toggle"><input type="checkbox" id="'. $name .'" name="'.$option_name.'['.$cat.']['. $widget .']" value="1" '. $checked.'><label for="'. $name .'"><div></div></label></div>';
+	echo '<div class="sina-ext-toggle"><input type="checkbox" id="'. $name .'" name="sina_template_options['.$temps.']" value="1" '. $checked.'><label for="'. $name .'"><div></div></label></div>';
+}
+
+function sina_widgets_ac_dc($data) {
+	$widgets 	= $data['get_widgets'];
+	$widget 	= $data['widget'];
+	$cat 		= $data['cat'];
+	$name 		= 'sina-'.$widget;
+	$checked	= isset($widgets[ $cat ][ $widget ]) && 1 == $widgets[ $cat ][ $widget ] ? 'checked' : '';
+
+	echo '<div class="sina-ext-toggle"><input type="checkbox" id="'. $name .'" name="sina_widgets['.$cat.']['. $widget .']" value="1" '. $checked.'><label for="'. $name .'"><div></div></label></div>';
 }

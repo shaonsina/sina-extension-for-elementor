@@ -1,14 +1,19 @@
-/* Sina Extension for Elementor v2.0.0 */
-
-.sina-ext-options {
-    margin-top: 25px;
-}
-.sina-ext-switch{
+/* Sina Extension for Elementor v2.3.1 */
+.sina-ext-pt{
     padding-top: 15px;
+}
+.sina-ext-pb{
+    padding-bottom: 15px;
+}
+.sina-ext-options {
+    margin-bottom: 15px;
 }
 .sina-ext-options table tr{
     width: 33%;
     float: left;
+}
+.sina-ext-wfull table tr{
+    width: 100%;
 }
 .sina-ext-options table tr th{
     width: 180px;
@@ -19,19 +24,18 @@
     padding-top: 5px;
     padding-bottom: 5px;
 }
-
-.sina-widget-toggle input[type='checkbox'] {
+.sina-ext-toggle input[type='checkbox'] {
     display: none
 }
-.sina-widget-toggle input[type='checkbox']:checked+label {
+.sina-ext-toggle input[type='checkbox']:checked+label {
     border-color: #1085e4;
     background: #1085e4;
     box-shadow: inset 0 0 0 10px #1085e4
 }
-.sina-widget-toggle input[type='checkbox']:checked+label>div {
+.sina-ext-toggle input[type='checkbox']:checked+label>div {
     margin-left: 17px
 }
-.sina-widget-toggle label {
+.sina-ext-toggle label {
     display: inline-block;
     position: relative;
     width: 32px;
@@ -47,7 +51,7 @@
     -ms-user-select: none;
     user-select: none;
 }
-.sina-widget-toggle label div {
+.sina-ext-toggle label div {
     transition: all 200ms ease;
     background: #fdfdfd;
     width: 15px;

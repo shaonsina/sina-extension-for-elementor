@@ -250,8 +250,7 @@ add_action( 'wp_ajax_sina_visit_counter', 'sina_ajax_visit_counter' );
 add_action( 'wp_ajax_nopriv_sina_visit_counter', 'sina_ajax_visit_counter' );
 
 
-$sina_templates = get_option( 'sina_template_options' );
-if ( $sina_templates['sina_templates'] || $sina_templates['sina_templates_merge'] ) {
+if ( !empty( get_option( 'sina_template_options' ) ) ) {
 	function sina_library_source() {
 	    Plugin::instance()->templates_manager->unregister_source( 'remote' );
 	    Plugin::instance()->templates_manager->register_source( 'Elementor\TemplateLibrary\Sina_Library' );
