@@ -197,8 +197,8 @@ class Sina_Library extends Source_Base {
 	 */
 	public static function get_library_data( $force_update = false ) {
 		self::get_info_data( $force_update );
-		$sina_templates = get_option( 'sina_template_options' );
-		if ( $sina_templates['sina_templates_merge'] ) {
+		$temps = get_option( 'sina_templates_option' );
+		if ( isset($temps['sina_templates_merge']) ) {
 			$library_data = get_option( self::SINA_LIBRARY_PREPEND_OPTION_KEY );
 		} else {
 			$library_data = get_option( self::SINA_LIBRARY_OPTION_KEY );

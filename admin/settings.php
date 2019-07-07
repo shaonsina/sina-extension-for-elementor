@@ -21,10 +21,7 @@ function sina_add_submenu() {
 		'apikey'	=> '',
 		'list_id'	=> '',
 	] );
-	add_option( 'sina_template_options', [
-		'sina_templates_only' => 0,
-		'sina_templates_merge' => 1,
-	] );
+	add_option( 'sina_templates_option', [] );
 }
 add_action( 'admin_menu', 'sina_add_submenu', 550 );
 
@@ -32,17 +29,17 @@ function sina_settings_group() {
 	register_setting( 'sina_settings_group', 'sina_map_apikey' );
 	register_setting( 'sina_settings_group', 'sina_mailchimp' );
 	register_setting( 'sina_settings_group', 'sina_widgets' );
-	register_setting( 'sina_settings_group', 'sina_template_options' );
+	register_setting( 'sina_settings_group', 'sina_templates_option' );
 
 	add_settings_section( 'sina_api_section', '', '', 'sina_ext_settings' );
 	add_settings_field( 'sina_google_map_key', __('Google Map API Key', 'sina-ext'), 'sina_map_api_key', 'sina_ext_settings', 'sina_api_section' );
 	add_settings_field( 'sina_mailchimp_key', __('MailChimp API Key', 'sina-ext'), 'sina_mail_chimp_key', 'sina_ext_settings', 'sina_api_section' );
 	add_settings_field( 'sina_mailchimp_list_id', __('MailChimp List Id', 'sina-ext'), 'sina_mail_chimp_list_id', 'sina_ext_settings', 'sina_api_section' );
 
-	$templates = get_option( 'sina_template_options' );
+	$templates = get_option( 'sina_templates_option' );
 	add_settings_section( 'sina_templates_section', '', '', 'sina_ext_templates' );
-	add_settings_field( 'sina_ext_templates_only', __('Sina Templates Only', 'sina-ext'), 'sina_template_options', 'sina_ext_templates', 'sina_templates_section', ['temps' => 'sina_templates_only', 'get_temps' => $templates] );
-	add_settings_field( 'sina_ext_templates_merge', __('Sina Templates Merge', 'sina-ext'), 'sina_template_options', 'sina_ext_templates', 'sina_templates_section', ['temps' => 'sina_templates_merge', 'get_temps' => $templates] );
+	add_settings_field( 'sina_ext_templates_only', __('Sina Templates', 'sina-ext'), 'sina_templates_option', 'sina_ext_templates', 'sina_templates_section', ['temps' => 'sina_templates_only', 'get_temps' => $templates] );
+	add_settings_field( 'sina_ext_templates_merge', __('Sina Templates Merge', 'sina-ext'), 'sina_templates_option', 'sina_ext_templates', 'sina_templates_section', ['temps' => 'sina_templates_merge', 'get_temps' => $templates] );
 
 	$get_widgets = get_option( 'sina_widgets' );
 	foreach ( SINA_WIDGETS as $cat => $widgets ) {
@@ -133,13 +130,13 @@ function sina_mail_chimp_list_id() {
 	<?php
 }
 
-function sina_template_options($data) {
+function sina_templates_option($data) {
 	$get_temps 	= $data['get_temps'];
 	$temps 		= $data['temps'];
 	$name 		= 'sina-'.$temps;
 	$checked	= isset($get_temps[ $temps ]) && 1 == $get_temps[ $temps ] ? 'checked' : '';
 
-	echo '<div class="sina-ext-toggle"><input type="checkbox" id="'. $name .'" name="sina_template_options['.$temps.']" value="1" '. $checked.'><label for="'. $name .'"><div></div></label></div>';
+	echo '<div class="sina-ext-toggle"><input type="checkbox" id="'. $name .'" name="sina_templates_option['.$temps.']" value="1" '. $checked.'><label for="'. $name .'"><div></div></label></div>';
 }
 
 function sina_widgets_ac_dc($data) {
