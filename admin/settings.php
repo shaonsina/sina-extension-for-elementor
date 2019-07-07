@@ -15,12 +15,16 @@ function sina_add_submenu() {
 		'sina_page_content'
 	);
 
+	add_action( 'admin_init', 'sina_settings_group' );
+	add_option( 'sina_map_apikey', '' );
 	add_option( 'sina_mailchimp', [
 		'apikey'	=> '',
 		'list_id'	=> '',
 	] );
-	add_option( 'sina_map_apikey', '' );
-	add_action( 'admin_init', 'sina_settings_group' );
+	add_option( 'sina_template_options', [
+		'sina_templates' => 1,
+		'sina_templates_merge' => 1,
+	] );
 }
 add_action( 'admin_menu', 'sina_add_submenu', 550 );
 
@@ -28,11 +32,14 @@ function sina_settings_group() {
 	register_setting( 'sina_settings_group', 'sina_map_apikey' );
 	register_setting( 'sina_settings_group', 'sina_mailchimp' );
 	register_setting( 'sina_settings_group', 'sina_widgets' );
+	register_setting( 'sina_settings_group', 'sina_template_options' );
 
 	add_settings_section( 'sina_api_section', '', '', 'sina_ext_settings' );
 	add_settings_field( 'sina_google_map_key', __('Google Map API Key', 'sina-ext'), 'sina_map_api_key', 'sina_ext_settings', 'sina_api_section' );
 	add_settings_field( 'sina_mailchimp_key', __('MailChimp API Key', 'sina-ext'), 'sina_mail_chimp_key', 'sina_ext_settings', 'sina_api_section' );
 	add_settings_field( 'sina_mailchimp_list_id', __('MailChimp List Id', 'sina-ext'), 'sina_mail_chimp_list_id', 'sina_ext_settings', 'sina_api_section' );
+	add_settings_section( 'sina_api_section', '', '', 'sina_template_options' );
+
 
 	foreach ( SINA_WIDGETS as $cat => $widgets ) {
 		$section = 'sina_'.$cat.'_widgets_section';
@@ -55,23 +62,35 @@ function sina_page_content() {
 		<h2><?php echo __( 'API Settings', 'sina-ext' ); ?></h2>
 		<?php do_settings_sections( 'sina_ext_settings' ); ?>
 
-		<div class="sina-widget-options">
+		<div class="sina-ext-options">
 			<h2><?php echo __( 'Widget Settings', 'sina-ext' ); ?></h2>
 			<p><?php echo __( 'You can disable the widgets if you would like to not using on your site.', 'sina-ext' ); ?></p>
 
 			<?php
 				foreach (SINA_WIDGETS as $cat => $data) {
-					printf("<div class='sina-widget-cats'><h2>%s</h2>", __( ucfirst($cat), 'sina-ext' ));
+					printf("<div class='sina-ext-switch'><h2>%s</h2>", __( ucfirst($cat), 'sina-ext' ));
 					do_settings_sections( 'sina_widgets_'.$cat );
 					echo '</div>';
 				}
 				settings_fields( 'sina_settings_group' );
+			?>
+		</div>
+		<div class="sina-ext-options">
+			<h2><?php echo __( 'Template Settings', 'sina-ext' ); ?></h2>
+			<p><?php echo __( 'You can use SINA TEMPLATES on your site.', 'sina-ext' ); ?></p>
+
+			<?php
+				foreach (SINA_WIDGETS as $cat => $data) {
+					printf("<div class='sina-ext-switch'><h2>%s</h2>", __( ucfirst($cat), 'sina-ext' ));
+					do_settings_sections( 'sina_template_options' );
+					echo '</div>';
+				}
 				submit_button();
 			?>
 		</div>
 	</form>
 
-	<div class="sina-widget-options">
+	<div class="sina-ext-options">
 		<h2><?php echo __( 'Rollback to Previous Version', 'sina-ext' ); ?></h2>
 		<p><?php echo __( 'Experiencing an issue with this version? You can rollback the previous version.', 'sina-ext' ); ?></p>
 		<?php
@@ -88,7 +107,7 @@ function sina_page_content() {
 		</p>
 	</div>
 
-	<div class="sina-widget-options">
+	<div class="sina-ext-options">
 	    <p>Did you like <strong><i>Sina Extension</i></strong> Plugin? Please <a href="https://wordpress.org/support/plugin/sina-extension-for-elementor/reviews/#new-post" target="_blank">Click Here to Rate it ★★★★★</a></p>
 	</div>
 	<?php

@@ -1,4 +1,5 @@
-<?php 
+<?php
+use Elementor\Plugin;
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -247,3 +248,13 @@ function sina_ajax_visit_counter() {
 }
 add_action( 'wp_ajax_sina_visit_counter', 'sina_ajax_visit_counter' );
 add_action( 'wp_ajax_nopriv_sina_visit_counter', 'sina_ajax_visit_counter' );
+
+
+$sina_templates = get_option( 'sina_template_options' );
+if ( $sina_templates['sina_templates'] || $sina_templates['sina_templates_merge'] ) {
+	function sina_library_source() {
+	    Plugin::instance()->templates_manager->unregister_source( 'remote' );
+	    Plugin::instance()->templates_manager->register_source( 'Elementor\TemplateLibrary\Sina_Library' );
+	}
+	add_action( 'elementor/init', 'sina_library_source', 15 );
+}

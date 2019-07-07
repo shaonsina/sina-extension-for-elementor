@@ -1,21 +1,21 @@
 /* Sina Extension for Elementor v2.0.0 */
 
-.sina-widget-options {
+.sina-ext-options {
     margin-top: 25px;
 }
-.sina-widget-cats{
+.sina-ext-switch{
     padding-top: 15px;
 }
-.sina-widget-options table tr{
+.sina-ext-options table tr{
     width: 33%;
     float: left;
 }
-.sina-widget-options table tr th{
+.sina-ext-options table tr th{
     width: 180px;
     padding-top: 10px;
     padding-bottom: 10px;
 }
-.sina-widget-options table tr td{
+.sina-ext-options table tr td{
     padding-top: 5px;
     padding-bottom: 5px;
 }
@@ -57,7 +57,7 @@
 
 
 @media (max-width: 879px) {
-    .sina-widget-options table tr{
+    .sina-ext-options table tr{
         width: 50%;
     }
 }

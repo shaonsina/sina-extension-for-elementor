@@ -142,10 +142,11 @@ final class Sina_Extension {
 	 */
 	public function include_files() {
 		require_once( SINA_EXT_DIR .'/inc/plugin-func.php' );
+		require_once( SINA_EXT_DIR .'/inc/hooks.php' );
 		require_once( SINA_EXT_DIR .'/inc/scripts.php' );
 		require_once( SINA_EXT_DIR .'/inc/helper.php' );
-		require_once( SINA_EXT_DIR .'/inc/hooks.php' );
 		require_once( SINA_EXT_DIR .'/inc/controls.php' );
+		require_once( SINA_EXT_DIR .'/inc/library.php' );
 		require_once( SINA_EXT_DIR .'/admin/settings.php' );
 		require_once( SINA_EXT_DIR .'/admin/rollback.php' );
 		require_once( SINA_EXT_DIR .'/admin/scripts.php' );
