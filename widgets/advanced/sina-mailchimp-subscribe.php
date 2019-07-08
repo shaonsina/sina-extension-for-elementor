@@ -425,9 +425,9 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 					'isLinked' => false,
 				],
 				'mobile_default' => [
-					'top' => '10',
+					'top' => '13',
 					'right' => '15',
-					'bottom' => '10',
+					'bottom' => '13',
 					'left' => '15',
 					'isLinked' => false,
 				],

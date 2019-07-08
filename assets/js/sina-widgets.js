@@ -1,6 +1,74 @@
 /* Sina Extension for Elementor v2.3.1 */
 
 (function ($) {
+	// Owl Carousel for some Slider or Carousel
+	function sinaOwl(owl) {
+		var itemLg = owl.data('item-lg'),
+			itemLg = itemLg ? itemLg : 2,
+			itemMd = owl.data('item-md'),
+			itemMd = itemMd ? itemMd : 2,
+			itemSm = owl.data('item-sm'),
+			itemSm = itemSm ? itemSm : 1,
+			play = owl.data('autoplay') ? true : false,
+			pause = owl.data('pause') ? true : false,
+			nav = owl.data('nav') ? true : false,
+			dots = owl.data('dots') ? true : false,
+			mouse = owl.data('mouse-drag') ? true : false,
+			touch = owl.data('touch-drag') ? true : false,
+			loop = owl.data('loop') ? true : false,
+			speed = owl.data('speed'),
+			speed = speed ? speed : 500,
+			delay = owl.data('delay');
+
+		// Initialize carousel
+		owl.owlCarousel({
+			autoplay: play,
+			autoplayHoverPause: pause,
+			nav: nav,
+			dots: dots,
+			mouseDrag: mouse,
+			touchDrag: touch,
+			loop: loop,
+			smartSpeed: speed,
+			autoplayTimeout: delay,
+			responsive: {
+				0: {
+					items: itemSm
+				},
+				600: {
+					items: itemMd
+				},
+				900: {
+					items: itemLg
+				},
+			}
+		});
+	}
+
+
+	function sinaBrandCarousel($scope, $) {
+		$scope.find('.sina-brand-carousel').each(function () {
+			sinaOwl( $(this) );
+		});
+	}
+
+	function sinaContentSlider($scope, $) {
+		$scope.find('.sina-content-slider').each(function () {
+			sinaOwl( $(this) );
+		});
+	}
+
+	function sinaPostsCarousel($scope, $) {
+		$scope.find('.sina-posts-carousel').each(function () {
+			sinaOwl( $(this) );
+		});
+	}
+
+	function sinaReviewCarousel($scope, $) {
+		$scope.find('.sina-review-carousel').each(function () {
+			sinaOwl( $(this) );
+		});
+	}
 
 	function sinaAccordion($scope, $) {
 		$scope.find('.sina-accordion').each(function () {
@@ -174,46 +242,6 @@
 		});
 	}
 
-	function sinaBrandCarousel($scope, $) {
-		$scope.find('.sina-brand-carousel').each(function () {
-
-			var $this = $(this),
-				play = $this.data('autoplay') ? true : false,
-				pause = $this.data('pause') ? true : false,
-				mouse = $this.data('mouse-drag') ? true : false,
-				touch = $this.data('touch-drag') ? true : false,
-				loop = $this.data('loop') ? true : false,
-				speed = $this.data('speed'),
-				speed = speed ? speed : 500,
-				delay = $this.data('delay');
-
-			//Initialize carousel
-			$this.owlCarousel({
-				autoplay: play,
-				autoplayHoverPause: pause,
-				nav: false,
-				dots: false,
-				mouseDrag: mouse,
-				touchDrag: touch,
-				loop: loop,
-				smartSpeed: speed,
-				autoplayTimeout: delay,
-				responsive: {
-					0: {
-						items: 2
-					},
-					600: {
-						items: 3
-					},
-					900: {
-						items: 4
-					},
-				}
-			});
-
-		});
-	}
-
 	function sinaContactForm($scope, $) {
 		$scope.find('.sina-contact-form').each(function () {
 			var $this = $(this),
@@ -328,102 +356,6 @@
 				);
 
 			});
-		});
-	}
-
-	function sinaContentSlider($scope, $) {
-		$scope.find('.sina-content-slider').each(function () {
-
-			var $this = $(this),
-				itemLg = $this.data('item-lg'),
-				itemLg = itemLg ? itemLg : 2,
-				itemMd = $this.data('item-md'),
-				itemMd = itemMd ? itemMd : 2,
-				itemSm = $this.data('item-sm'),
-				itemSm = itemSm ? itemSm : 1,
-				play = $this.data('autoplay') ? true : false,
-				pause = $this.data('pause') ? true : false,
-				nav = $this.data('nav') ? true : false,
-				dots = $this.data('dots') ? true : false,
-				mouse = $this.data('mouse-drag') ? true : false,
-				touch = $this.data('touch-drag') ? true : false,
-				loop = $this.data('loop') ? true : false,
-				speed = $this.data('speed'),
-				speed = speed ? speed : 500,
-				delay = $this.data('delay');
-
-			// Initialize carousel
-			$this.owlCarousel({
-				autoplay: play,
-				autoplayHoverPause: pause,
-				nav: nav,
-				dots: dots,
-				mouseDrag: mouse,
-				touchDrag: touch,
-				loop: loop,
-				smartSpeed: speed,
-				autoplayTimeout: delay,
-				responsive: {
-					0: {
-						items: itemSm
-					},
-					600: {
-						items: itemMd
-					},
-					900: {
-						items: itemLg
-					},
-				}
-			});
-
-		});
-	}
-
-	function sinaPostsCarousel($scope, $) {
-		$scope.find('.sina-posts-carousel').each(function () {
-
-			var $this = $(this),
-				itemLg = $this.data('item-lg'),
-				itemLg = itemLg ? itemLg : 2,
-				itemMd = $this.data('item-md'),
-				itemMd = itemMd ? itemMd : 2,
-				itemSm = $this.data('item-sm'),
-				itemSm = itemSm ? itemSm : 1,
-				play = $this.data('autoplay') ? true : false,
-				pause = $this.data('pause') ? true : false,
-				nav = $this.data('nav') ? true : false,
-				dots = $this.data('dots') ? true : false,
-				mouse = $this.data('mouse-drag') ? true : false,
-				touch = $this.data('touch-drag') ? true : false,
-				loop = $this.data('loop') ? true : false,
-				speed = $this.data('speed'),
-				speed = speed ? speed : 500,
-				delay = $this.data('delay');
-
-			// Initialize carousel
-			$this.owlCarousel({
-				autoplay: play,
-				autoplayHoverPause: pause,
-				nav: nav,
-				dots: dots,
-				mouseDrag: mouse,
-				touchDrag: touch,
-				loop: loop,
-				smartSpeed: speed,
-				autoplayTimeout: delay,
-				responsive: {
-					0: {
-						items: itemSm
-					},
-					600: {
-						items: itemMd
-					},
-					900: {
-						items: itemLg
-					},
-				}
-			});
-
 		});
 	}
 
@@ -746,41 +678,6 @@
 				$perc = $this.data('percentage');
 
 			$this.animate({ width: $perc + '%' }, $perc * 20 );
-		});
-	}
-
-	function sinaReviewCarousel($scope, $) {
-		$scope.find('.sina-review-carousel').each(function () {
-			var $this = $(this),
-				play = $this.data('autoplay') ? true : false,
-				pause = $this.data('pause') ? true : false,
-				nav = $this.data('nav') ? true : false,
-				dots = $this.data('dots') ? true : false,
-				mouse = $this.data('mouse-drag') ? true : false,
-				touch = $this.data('touch-drag') ? true : false,
-				loop = $this.data('loop') ? true : false,
-				speed = $this.data('speed'),
-				speed = speed ? speed : 500,
-				delay = $this.data('delay');
-
-			//Initialize carousel
-			$this.owlCarousel({
-				autoplay: play,
-				autoplayHoverPause: pause,
-				nav: nav,
-				dots: dots,
-				mouseDrag: mouse,
-				touchDrag: touch,
-				loop: loop,
-				smartSpeed: speed,
-				autoplayTimeout: delay,
-				responsive: {
-					0: {
-						items: 1
-					},
-				}
-			});
-
 		});
 	}
 

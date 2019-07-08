@@ -604,6 +604,7 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 		$data = $this->get_settings_for_display();
 		?>
 		<div class="sina-review-carousel owl-carousel"
+		data-item-lg="1" data-item-md="1" data-item-sm="1"
 		data-autoplay="<?php echo esc_attr( $data['autoplay'] ); ?>"
 		data-pause="<?php echo esc_attr( $data['pause'] ); ?>"
 		data-nav="<?php echo esc_attr( $data['nav'] ); ?>"

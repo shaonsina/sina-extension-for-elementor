@@ -343,8 +343,8 @@ class Sina_Search_Form_Widget extends Widget_Base {
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
 					'top' => '0',
-					'right' => '20',
-					'bottom' => '20',
+					'right' => '25',
+					'bottom' => '25',
 					'left' => '0',
 					'isLinked' => true,
 				],

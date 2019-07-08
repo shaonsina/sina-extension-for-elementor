@@ -107,6 +107,16 @@ class Sina_Title_Widget extends Widget_Base {
 			]
 		);
 		$this->add_control(
+			'title_span',
+			[
+				'label' => __( 'Title Span', 'sina-ext' ),
+				'label_block' => true,
+				'type' => Controls_Manager::TEXT,
+				'placeholder' => __( 'Enter Title Span', 'sina-ext' ),
+				'description' => __( 'You can use SPAN for multi-color title.', 'sina-ext' ),
+			]
+		);
+		$this->add_control(
 			'title_tag',
 			[
 				'label' => __( 'Select Tag', 'sina-ext' ),
@@ -269,6 +279,50 @@ class Sina_Title_Widget extends Widget_Base {
 		$this->end_controls_section();
 		// End Title Style
 		// =================
+
+
+		// Start Title Span Style
+		// =======================
+		$this->start_controls_section(
+			'title_span_style',
+			[
+				'label' => __( 'Title Span', 'sina-ext' ),
+				'tab' => Controls_Manager::TAB_STYLE,
+				'condition' => [
+					'title_span!' => '',
+				],
+			]
+		);
+
+		$this->add_control(
+			'title_span_color',
+			[
+				'label' => __( 'Text Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#1085e4',
+				'selectors' => [
+					'{{WRAPPER}} .sina-title-title > span' => 'color: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name' => 'title_span_typography',
+				'selector' => '{{WRAPPER}} .sina-title-title > span',
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Text_Shadow::get_type(),
+			[
+				'name' => 'title_span_shadow',
+				'selector' => '{{WRAPPER}} .sina-title-title > span',
+			]
+		);
+
+		$this->end_controls_section();
+		// End Title Span Style
+		// =====================
 
 
 		// Start Subtitle Style
@@ -464,10 +518,11 @@ class Sina_Title_Widget extends Widget_Base {
 
 	protected function render() {
 		$data = $this->get_settings_for_display();
+		$title_span = $data['title_span'] ? '<span>'.$data['title_span'].'</span>' : '';
 		?>
 		<div class="sina-title">
 			<?php if ( $data['title'] ): ?>
-				<?php printf( '<%1$s class="sina-title-title">%2$s</%1$s>', $data['title_tag'], $data['title'] ); ?>
+				<?php printf( '<%1$s class="sina-title-title">%2$s%3$s</%1$s>', $data['title_tag'], $data['title'], $title_span ); ?>
 			<?php endif; ?>
 
 			<?php if ( $data['subtitle'] ): ?>

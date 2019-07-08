@@ -266,6 +266,23 @@ class Sina_Brand_Carousel_Widget extends Widget_Base {
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
+
+		$this->add_responsive_control(
+			'show_item',
+			[
+				'label' => __( 'Show Item', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					'1' => __( '1', 'sina-ext' ),
+					'2' => __( '2', 'sina-ext' ),
+					'3' => __( '3', 'sina-ext' ),
+					'4' => __( '4', 'sina-ext' ),
+				],
+				'desktop_default' => '4',
+				'tablet_default' => '4',
+				'mobile_default' => '2',
+			]
+		);
 		Sina_Common_Data::carousel_content($this, '', false);
 		$this->add_control(
 			'speed',
@@ -450,8 +467,12 @@ class Sina_Brand_Carousel_Widget extends Widget_Base {
 		$data = $this->get_settings_for_display();
 		?>
 		<div class="sina-brand-carousel owl-carousel"
+		data-item-lg="<?php echo esc_attr( $data['show_item'] ); ?>"
+		data-item-md="<?php echo esc_attr( $data['show_item_tablet'] ); ?>"
+		data-item-sm="<?php echo esc_attr( $data['show_item_mobile'] ); ?>"
 		data-autoplay="<?php echo esc_attr( $data['autoplay'] ); ?>"
 		data-pause="<?php echo esc_attr( $data['pause'] ); ?>"
+		data-nav="" data-dots=""
 		data-mouse-drag="<?php echo esc_attr( $data['mouse_drag'] ); ?>"
 		data-touch-drag="<?php echo esc_attr( $data['touch_drag'] ); ?>"
 		data-loop="<?php echo esc_attr( $data['loop'] ); ?>"

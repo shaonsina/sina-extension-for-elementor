@@ -291,13 +291,12 @@ class Sina_Library extends Source_Base {
 	 *
 	 * @since 2.5.0
 	 */
-	public static $api_info_url = 'https://plugins.shaonsina.com/wp-content/uploads/sina_ext/test.json';
+	public static $api_info_url = 'https://api.shaonsina.com/sina_ext/info.json';
 
 	/**
 	 * API get template content URL.
 	 *
 	 * @since 2.5.0
 	 */
-	private static $api_get_template_content_url = 'https://plugins.shaonsina.com/wp-content/uploads/sina_ext/templates/%d.json';
+	private static $api_get_template_content_url = 'https://api.shaonsina.com/sina_ext/templates/%d.json';
 }
-

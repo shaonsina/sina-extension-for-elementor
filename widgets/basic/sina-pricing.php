@@ -216,7 +216,6 @@ class Sina_Pricing_Widget extends Widget_Base {
 			[
 				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '#111',
 				'selectors' => [
 					'{{WRAPPER}} .sina-pricing-body {{CURRENT_ITEM}}' => 'color: {{VALUE}};',
 				],
@@ -235,7 +234,6 @@ class Sina_Pricing_Widget extends Widget_Base {
 			[
 				'label' => __( 'Icon Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '#111',
 				'selectors' => [
 					'{{WRAPPER}} {{CURRENT_ITEM}} i' => 'color: {{VALUE}};',
 				],
@@ -250,19 +248,19 @@ class Sina_Pricing_Widget extends Widget_Base {
 				'fields' => $repeater->get_controls(),
 				'default' => [
 					[
-						'title' => '1GB',
+						'title' => '1GB Storage',
 					],
 					[
-						'title' => '15GB Bandwith',
+						'title' => '1 Web Hosting',
+					],
+					[
+						'title' => '20GB Bandwith',
 					],
 					[
 						'title' => '5 Subdomain',
 					],
 					[
 						'title' => 'SSD Server',
-					],
-					[
-						'title' => '1 Web Hosting',
 					],
 					[
 						'title' => 'Free SSL',
@@ -557,7 +555,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 			[
 				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '#111',
+				'default' => '#222',
 				'selectors' => [
 					'{{WRAPPER}} .sina-pricing-title' => 'color: {{VALUE}};',
 				],
@@ -961,7 +959,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 			[
 				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '#111',
+				'default' => '#222',
 				'separator' => 'before',
 				'selectors' => [
 					'{{WRAPPER}} .sina-pricing-body li' => 'color: {{VALUE}};',
