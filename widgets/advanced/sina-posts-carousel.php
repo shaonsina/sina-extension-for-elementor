@@ -129,6 +129,35 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 				'label_off' => __( 'No', 'sina-ext' ),
 			]
 		);
+		$this->add_control(
+			'posts_excerpt',
+			[
+				'label' => __( 'Excerpt', 'sina-ext' ),
+				'type' => Controls_Manager::SWITCHER,
+				'label_on' => __( 'Yes', 'sina-ext' ),
+				'label_off' => __( 'No', 'sina-ext' ),
+			]
+		);
+		$this->add_control(
+			'posts_text',
+			[
+				'label' => __( 'Content', 'sina-ext' ),
+				'type' => Controls_Manager::SWITCHER,
+				'label_on' => __( 'Yes', 'sina-ext' ),
+				'label_off' => __( 'No', 'sina-ext' ),
+			]
+		);
+		$this->add_control(
+			'posts_txt_len',
+			[
+				'label' => __( 'Text Word', 'sina-ext' ),
+				'type' => Controls_Manager::NUMBER,
+				'step' => 1,
+				'min' => 1,
+				'max' => 500,
+				'default' => 10,
+			]
+		);
 
 		$this->end_controls_section();
 		// End Posts Content
@@ -475,26 +504,6 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 
 		$this->end_controls_tabs();
 
-		$this->add_responsive_control(
-			'title_margin',
-			[
-				'label' => __( 'Margin', 'sina-ext' ),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', 'em', '%' ],
-				'default' => [
-					'top' => '0',
-					'right' => '0',
-					'bottom' => '10',
-					'left' => '0',
-					'isLinked' => false,
-				],
-				'separator' => 'before',
-				'selectors' => [
-					'{{WRAPPER}} .sina-pc-title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
-		);
-
 		$this->end_controls_section();
 		// End Title Style
 		// =====================
@@ -599,9 +608,88 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 
 		$this->end_controls_tabs();
 
+		$this->add_responsive_control(
+			'meta_margin',
+			[
+				'label' => __( 'Margin', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '8',
+					'right' => '0',
+					'bottom' => '15',
+					'left' => '0',
+					'isLinked' => false,
+				],
+				'separator' => 'before',
+				'selectors' => [
+					'{{WRAPPER}} .sina-pc-meta' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
 		$this->end_controls_section();
 		// End Meta Style
 		// =====================
+
+
+		// Start Text Style
+		// =====================
+		$this->start_controls_section(
+			'text_style',
+			[
+				'label' => __( 'Text', 'sina-ext' ),
+				'tab' => Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name' => 'text_typography',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_weight' => [
+						'default' => '400',
+					],
+					'font_size'   => [
+						'default' => [
+							'size' => '14',
+						],
+					],
+					'line_height'   => [
+						'default' => [
+							'size' => '20',
+						],
+					],
+				],
+				'selector' => '{{WRAPPER}} .sina-pc-text',
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Text_Shadow::get_type(),
+			[
+				'name' => 'text_shadow',
+				'selector' => '{{WRAPPER}} .sina-pc-text',
+			]
+		);
+		$this->add_control(
+			'text_color',
+			[
+				'label' => __( 'Text Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#eee',
+				'selectors' => [
+					'{{WRAPPER}} .sina-pc-text' => 'color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->end_controls_section();
+		// End Text Style
+		// =================
 	}
 
 
@@ -629,6 +717,8 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 			'post__not_in'		=> get_option( 'sticky_posts' ),
 		];
 
+		$excerpt = $data['posts_excerpt'];
+		$txt_len = $data['posts_txt_len'];
 		// Post Query
 		$post_query = new WP_Query( $default );
 		if ( $post_query->have_posts() ) :
@@ -663,6 +753,21 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 									<?php the_author_posts_link(); ?>
 									|
 									<?php printf( '%s', get_the_date() ); ?>
+								</div>
+							<?php endif; ?>
+							<?php if (  'yes' == $excerpt && has_excerpt() ): ?>
+								<div class="sina-pc-text">
+									<?php
+										$excerpt = preg_replace( '/'. get_shortcode_regex() .'/', '', get_the_excerpt() );
+										echo wp_kses_post( wp_trim_words( $excerpt, $txt_len ) );
+									?>
+								</div>
+							<?php elseif ( 'yes' == $data['posts_text'] ): ?>
+								<div class="sina-pc-text">
+									<?php
+										$content = preg_replace( '/'. get_shortcode_regex() .'/', '', get_the_content() );
+										echo wp_kses_post( wp_trim_words( $content, $txt_len ) );
+									?>
 								</div>
 							<?php endif; ?>
 						</div>

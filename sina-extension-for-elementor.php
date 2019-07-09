@@ -12,7 +12,6 @@
  * Tags: elementor, addon, extension, elementor extension, elementor addon, page builder, builder, elementor builder, elementor contact form, elementor widget, best elementor addon, best elementor extension
  */
 
-
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -26,6 +25,7 @@ define('SINA_EXT_DIR', __DIR__);
 define('SINA_EXT_URL', plugins_url('/', SINA_EXT_FILE));
 define('SINA_EXT_BASENAME', plugin_basename( SINA_EXT_FILE ));
 define('SINA_EXT_LAYOUT', SINA_EXT_DIR .'/widgets/layout');
+define('SINA_EXT_INC', SINA_EXT_DIR .'/inc/');
 
 /**
  * SINA WIDGETS Constant
@@ -73,29 +73,14 @@ define('SINA_WIDGETS', [
 	],
 ]);
 
+require_once( SINA_EXT_INC .'func-class.php' );
 
 /**
- * Sina Extension Class
+ * Sina_Extension Class
  *
  * @since 1.0.0
  */
-final class Sina_Extension {
-	/**
-	 * Minimum Elementor Version
-	 *
-	 * @since 1.0.0
-	 * @var string Minimum Elementor version required to run the plugin.
-	 */
-	const MINIMUM_ELEMENTOR_VERSION = '2.0.0';
-
-	/**
-	 * Minimum PHP Version
-	 *
-	 * @since 1.0.0
-	 * @var string Minimum PHP version required to run the plugin.
-	 */
-	const MINIMUM_PHP_VERSION = '7.0';
-
+class Sina_Extension extends Sina_Functions {
 	/**
 	 * Instance
 	 *
@@ -128,137 +113,12 @@ final class Sina_Extension {
 		add_action( 'plugins_loaded', [ $this, 'init' ] );
 		add_action( 'init', [ $this, 'i18n' ] );
 
-		register_activation_hook(SINA_EXT_FILE, 'sina_activation' );
-		add_action('admin_init', 'sina_redirection' );
+		register_activation_hook(SINA_EXT_FILE, [ $this, 'activation' ] );
+		add_action('admin_init', [ $this, 'redirection' ] );
+		add_action( 'admin_menu', [$this, 'add_submenu'], 550 );
 
-		$this->include_files();
-		sina_create_admin_page();
-	}
-
-	/**
-	 * Include helper & hooks files
-	 *
-	 * @since 1.0.0
-	 */
-	public function include_files() {
-		require_once( SINA_EXT_DIR .'/inc/plugin-func.php' );
-		require_once( SINA_EXT_DIR .'/inc/hooks.php' );
-		require_once( SINA_EXT_DIR .'/inc/scripts.php' );
-		require_once( SINA_EXT_DIR .'/inc/helper.php' );
-		require_once( SINA_EXT_DIR .'/inc/controls.php' );
-		require_once( SINA_EXT_DIR .'/inc/library.php' );
-		require_once( SINA_EXT_DIR .'/admin/settings.php' );
-		require_once( SINA_EXT_DIR .'/admin/rollback.php' );
-		require_once( SINA_EXT_DIR .'/admin/scripts.php' );
-	}
-
-	/**
-	 * Load Textdomain
-	 *
-	 * @since 1.0.0
-	 */
-	public function i18n() {
-		load_plugin_textdomain( 'sina-ext' );
-	}
-
-	/**
-	 * Admin notice
-	 *
-	 * Warning when the site doesn't have Elementor installed or activated.
-	 *
-	 * @since 1.0.0
-	 */
-	public function admin_notice_missing_main_plugin() {
-		if ( isset( $_GET['activate'] ) ) unset( $_GET['activate'] );
-
-		$message = sprintf(
-			/* translators: 1: Plugin name 2: Elementor */
-			esc_html__( '"%1$s" requires "%2$s" to be installed and activated.', 'sina-ext' ),
-			'<strong>' . esc_html__( 'Sina Extension for Elementor', 'sina-ext' ) . '</strong>',
-			'<strong>' . esc_html__( 'Elementor', 'sina-ext' ) . '</strong>'
-		);
-
-		printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', $message );
-	}
-
-	/**
-	 * Admin notice
-	 *
-	 * Warning when the site doesn't have a minimum required Elementor version.
-	 *
-	 * @since 1.0.0
-	 */
-	public function admin_notice_minimum_elementor_version() {
-		if ( isset( $_GET['activate'] ) ) unset( $_GET['activate'] );
-
-		$message = sprintf(
-			/* translators: 1: Plugin name 2: Elementor 3: Required Elementor version */
-			esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'sina-ext' ),
-			'<strong>' . esc_html__( 'Sina Extension for Elementor', 'sina-ext' ) . '</strong>',
-			'<strong>' . esc_html__( 'Elementor', 'sina-ext' ) . '</strong>',
-			 self::MINIMUM_ELEMENTOR_VERSION
-		);
-
-		printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', $message );
-	}
-
-	/**
-	 * Admin notice
-	 *
-	 * Warning when the site doesn't have a minimum required PHP version.
-	 *
-	 * @since 1.0.0
-	 */
-	public function admin_notice_minimum_php_version() {
-		if ( isset( $_GET['activate'] ) ) unset( $_GET['activate'] );
-
-		$message = sprintf(
-			/* translators: 1: Plugin name 2: PHP 3: Required PHP version */
-			esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'sina-ext' ),
-			'<strong>' . esc_html__( 'Sina Extension for Elementor', 'sina-ext' ) . '</strong>',
-			'<strong>' . esc_html__( 'PHP', 'sina-ext' ) . '</strong>',
-			 self::MINIMUM_PHP_VERSION
-		);
-
-		printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', $message );
-	}
-
-	/**
-	 * Initialize the plugin
-	 *
-	 * @since 1.0.0
-	 */
-	public function init() {
-		// Check if Elementor installed and activated
-		if ( ! did_action( 'elementor/loaded' ) ) {
-			add_action( 'admin_notices', [ $this, 'admin_notice_missing_main_plugin' ] );
-			return;
-		}
-
-		// Check for required Elementor version
-		if ( ! version_compare( ELEMENTOR_VERSION, self::MINIMUM_ELEMENTOR_VERSION, '>=' ) ) {
-			add_action( 'admin_notices', [ $this, 'admin_notice_minimum_elementor_version' ] );
-			return;
-		}
-
-		// Check for required PHP version
-		if ( version_compare( PHP_VERSION, self::MINIMUM_PHP_VERSION, '<' ) ) {
-			add_action( 'admin_notices', [ $this, 'admin_notice_minimum_php_version' ] );
-			return;
-		}
-
-		// Register Widget Category
-		add_action( 'elementor/elements/categories_registered', 'sina_widget_category' );
-
-		// Register Widgets
-		add_action( 'elementor/widgets/widgets_registered', 'sina_register_widgets' );
-
-		// Enqueue Widget Styles
-		add_action( 'elementor/frontend/after_register_styles', 'sina_widget_styles' );
-
-		// Register Widget Scripts
-		add_action( 'elementor/frontend/after_register_scripts', 'sina_widget_scripts' );
+		$this->files();
+		$this->admin_page();
 	}
 }
-
 Sina_Extension::instance();

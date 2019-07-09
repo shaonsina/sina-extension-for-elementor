@@ -14,7 +14,7 @@ A collection of high-quality widgets for Elementor page builder.
 
 == Description ==
 
-This is an extension for Elementor [Elementor](https://wordpress.org/plugins/elementor/) page builder. It will extend the Elementor and increase web page building experience. It has 34 useful & high-quality widgets. Which you may use for easy & fast make the page & display your content far better way.
+This is an extension for [Elementor](https://wordpress.org/plugins/elementor/) page builder. It will extend the Elementor and increase web page building experience. It has 34 useful & high-quality widgets. Which you may use for easy & fast make the page & display your content far better way.
 
 
 = Basic use of Blogpost =
