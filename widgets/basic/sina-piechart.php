@@ -290,7 +290,7 @@ class Sina_Piechart_Widget extends Widget_Base {
 			[
 				'label' => __('Text Color', 'sina-ext'),
 				'type' => Controls_Manager::COLOR,
-				'default' => '#111',
+				'default' => '#222',
 				'selectors' => [
 					'{{WRAPPER}} .sina-piechart-title' => 'color: {{VALUE}};',
 				],
@@ -367,7 +367,7 @@ class Sina_Piechart_Widget extends Widget_Base {
 			[
 				'label' => __('Text Color', 'sina-ext'),
 				'type' => Controls_Manager::COLOR,
-				'default' => '#111',
+				'default' => '#222',
 				'selectors' => [
 					'{{WRAPPER}} .sina-piechart-percent' => 'color: {{VALUE}};',
 				],

@@ -711,7 +711,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 			[
 				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '#111',
+				'default' => '#222',
 				'selectors' => [
 					'{{WRAPPER}} .sina-pt-title h3' => 'color: {{VALUE}}'
 				],

@@ -105,7 +105,6 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 			'front_icon_format',
 			[
 				'label' => __( 'Icon Format', 'sina-ext' ),
-				'label_block' => true,
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'icon' => [
@@ -186,7 +185,6 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 			'back_icon_format',
 			[
 				'label' => __( 'Icon Format', 'sina-ext' ),
-				'label_block' => true,
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'icon' => [

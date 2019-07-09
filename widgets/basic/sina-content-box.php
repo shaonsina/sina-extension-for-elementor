@@ -154,7 +154,6 @@ class Sina_Content_Box_Widget extends Widget_Base {
 			'icon_format',
 			[
 				'label' => __( 'Icon Format', 'sina-ext' ),
-				'label_block' => true,
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'icon' => [
@@ -411,7 +410,7 @@ class Sina_Content_Box_Widget extends Widget_Base {
 			[
 				'label' => __( 'Description Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '#111',
+				'default' => '#222',
 				'condition' => [
 					'save_templates' => '',
 				],

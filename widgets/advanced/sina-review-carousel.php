@@ -347,7 +347,7 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 			[
 				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '#111',
+				'default' => '#222',
 				'selectors' => [
 					'{{WRAPPER}} .sina-review-name' => 'color: {{VALUE}};',
 				],
@@ -424,7 +424,7 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 			[
 				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '#111',
+				'default' => '#222',
 				'selectors' => [
 					'{{WRAPPER}} .sina-review-position' => 'color: {{VALUE}};',
 				],
@@ -562,7 +562,7 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 			[
 				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '#111',
+				'default' => '#222',
 				'selectors' => [
 					'{{WRAPPER}} .sina-review-comment' => 'color: {{VALUE}};',
 				],

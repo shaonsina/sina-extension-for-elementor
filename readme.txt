@@ -105,6 +105,7 @@ Yes. It's totally free.
 == Changelog ==
 
 = 2.3.1 - 11-07-2019 =
+- Added: Show item option to Brand Carousel
 - Added: Title Span to Title for multi-color title
 - Added: Background option to Pricing
 - Improved: Content Box & Pricing effects option

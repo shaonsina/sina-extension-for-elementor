@@ -422,7 +422,7 @@ class Sina_Team_Widget extends Widget_Base {
 			[
 				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '#111',
+				'default' => '#222',
 				'selectors' => [
 					'{{WRAPPER}} .sina-team-name' => 'color: {{VALUE}};',
 				],
@@ -476,7 +476,7 @@ class Sina_Team_Widget extends Widget_Base {
 			[
 				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '#111',
+				'default' => '#222',
 				'selectors' => [
 					'{{WRAPPER}} .sina-team-position' => 'color: {{VALUE}};',
 				],
@@ -530,7 +530,7 @@ class Sina_Team_Widget extends Widget_Base {
 			[
 				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '#111',
+				'default' => '#222',
 				'selectors' => [
 					'{{WRAPPER}} .sina-team-desc' => 'color: {{VALUE}};',
 				],
@@ -642,7 +642,7 @@ class Sina_Team_Widget extends Widget_Base {
 						'default' =>'classic', 
 					],
 					'color' => [
-						'default' => '#111',
+						'default' => '#222',
 					],
 				],
 				'selector' => '{{WRAPPER}} .sina-team-social li i',

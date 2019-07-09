@@ -599,10 +599,6 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 						'title' => __( 'Right', 'sina-ext' ),
 						'icon' => 'fa fa-align-right',
 					],
-					'justify' => [
-						'title' => __( 'justify', 'sina-ext' ),
-						'icon' => 'fa fa-align-justify',
-					],
 				],
 				'default' => 'center',
 				'selectors' => [

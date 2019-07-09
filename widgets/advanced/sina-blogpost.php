@@ -171,6 +171,9 @@ class Sina_Blogpost_Widget extends Widget_Base {
 				'type' => Controls_Manager::SWITCHER,
 				'label_on' => __( 'Yes', 'sina-ext' ),
 				'label_off' => __( 'No', 'sina-ext' ),
+				'condition' => [
+					'layout' => 'list',
+				],
 			]
 		);
 		$this->add_control(
@@ -499,7 +502,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 			[
 				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '#111',
+				'default' => '#222',
 				'selectors' => [
 					'{{WRAPPER}} .sina-bp-content' => 'color: {{VALUE}};',
 				],
@@ -599,7 +602,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 			[
 				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '#111',
+				'default' => '#222',
 				'selectors' => [
 					'{{WRAPPER}} .sina-bp-title a' => 'color: {{VALUE}};',
 				],
@@ -719,7 +722,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 			[
 				'label' => __( 'Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '#111',
+				'default' => '#222',
 				'selectors' => [
 					'{{WRAPPER}} .sina-bp-meta' => 'color: {{VALUE}};',
 				],

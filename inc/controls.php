@@ -552,7 +552,7 @@ class Sina_Common_Data{
 			[
 				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '#111',
+				'default' => '#222',
 				'selectors' => [
 					'{{WRAPPER}} .sina-input-field' => 'color: {{VALUE}};',
 				],

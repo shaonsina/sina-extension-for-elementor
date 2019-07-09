@@ -82,7 +82,7 @@ abstract class Sina_Settings extends Sina_Base {
 
 			<div class="sina-ext-options sina-ext-pt">
 				<h2><?php echo __( 'Widget Settings', 'sina-ext' ); ?></h2>
-				<p class="sina-ext-pb"><?php echo __( 'You can disable the widgets if you would like to not using on your site.', 'sina-ext' ); ?></p>
+				<p class="sina-ext-pb"><?php echo __( 'You can disable widget(s) if you would like to not using on your site.', 'sina-ext' ); ?></p>
 
 				<?php
 					foreach (SINA_WIDGETS as $cat => $data) {

@@ -633,10 +633,6 @@ class Sina_Table_Widget extends Widget_Base {
 						'title' => __( 'Right', 'sina-ext' ),
 						'icon' => 'fa fa-align-right',
 					],
-					'justify' => [
-						'title' => __( 'justify', 'sina-ext' ),
-						'icon' => 'fa fa-align-justify',
-					],
 				],
 				'default' => 'left',
 				'selectors' => [
@@ -782,7 +778,7 @@ class Sina_Table_Widget extends Widget_Base {
 			[
 				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '#111',
+				'default' => '#222',
 				'selectors' => [
 					'{{WRAPPER}} table tbody tr:hover' => 'color: {{VALUE}};',
 				],
@@ -855,10 +851,6 @@ class Sina_Table_Widget extends Widget_Base {
 					'right' => [
 						'title' => __( 'Right', 'sina-ext' ),
 						'icon' => 'fa fa-align-right',
-					],
-					'justify' => [
-						'title' => __( 'justify', 'sina-ext' ),
-						'icon' => 'fa fa-align-justify',
 					],
 				],
 				'default' => 'left',
