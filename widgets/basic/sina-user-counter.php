@@ -43,7 +43,7 @@ class Sina_User_Counter_Widget extends Widget_Base {
 	 * @since 1.0.0
 	 */
 	public function get_icon() {
-		return 'fa fa-user';
+		return 'eicon-number-field';
 	}
 
 	/**

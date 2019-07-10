@@ -44,7 +44,7 @@ class Sina_Product_Zoomer_Widget extends Widget_Base {
 	 * @since 1.1.0
 	 */
 	public function get_icon() {
-		return 'fa fa-search-plus';
+		return 'eicon-zoom-in';
 	}
 
 	/**

@@ -47,7 +47,7 @@ class Sina_Team_Widget extends Widget_Base {
 	 * @since 1.0.0
 	 */
 	public function get_icon() {
-		return 'fa fa-group';
+		return 'eicon-person';
 	}
 
 	/**

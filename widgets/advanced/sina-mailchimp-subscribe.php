@@ -40,7 +40,7 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 	 * @since 1.0.0
 	 */
 	public function get_icon() {
-		return 'fa fa-wpforms';
+		return 'eicon-call-to-action';
 	}
 
 	/**

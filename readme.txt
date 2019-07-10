@@ -105,8 +105,9 @@ Yes. It's totally free.
 == Changelog ==
 
 = 2.3.1 - 11-07-2019 =
+- Added: Post excerpt & post content to Posts Carousel
 - Added: Show item option to Brand Carousel
-- Added: Title Span to Title for multi-color title
+- Added: Title span to Title for multi-color title
 - Added: Background option to Pricing
 - Improved: Content Box & Pricing effects option
 - Optimized

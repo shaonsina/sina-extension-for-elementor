@@ -46,7 +46,7 @@ class Sina_Video_Widget extends Widget_Base {
 	 * @since 1.0.0
 	 */
 	public function get_icon() {
-		return 'fa fa-video-camera ';
+		return 'eicon-play';
 	}
 
 	/**

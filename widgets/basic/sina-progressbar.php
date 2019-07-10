@@ -47,7 +47,7 @@ class Sina_Progressbar_Widget extends Widget_Base {
 	 * @since 1.0.0
 	 */
 	public function get_icon() {
-		return 'fa fa-tasks';
+		return 'eicon-skill-bar';
 	}
 
 	/**

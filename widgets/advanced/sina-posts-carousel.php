@@ -652,7 +652,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 					],
 					'font_size'   => [
 						'default' => [
-							'size' => '14',
+							'size' => '15',
 						],
 					],
 					'line_height'   => [

@@ -41,7 +41,7 @@ class Sina_Title_Widget extends Widget_Base {
 	 * @since 2.0.0
 	 */
 	public function get_icon() {
-		return 'fa fa-font';
+		return 'eicon-font';
 	}
 
 	/**

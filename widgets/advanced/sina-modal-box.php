@@ -45,7 +45,7 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 	 * @since 2.2.0
 	 */
 	public function get_icon() {
-		return 'eicon-info-box';
+		return 'eicon-archive-title';
 	}
 
 	/**

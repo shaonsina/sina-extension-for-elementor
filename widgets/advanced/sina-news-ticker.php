@@ -43,7 +43,7 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 	 * @since 1.1.0
 	 */
 	public function get_icon() {
-		return 'fa fa-text-width';
+		return 'eicon-type-tool';
 	}
 
 	/**
