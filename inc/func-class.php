@@ -131,6 +131,9 @@ abstract class Sina_Functions extends Sina_Settings {
 			return;
 		}
 
+		// For Rollback Option
+		add_action( 'admin_post_sina_ext_rollback', ['Sina_Rollback', 'rollback'] );
+
 		// Register Widget Category
 		add_action( 'elementor/elements/categories_registered', [ $this, 'widget_category' ] );
 
@@ -144,4 +147,3 @@ abstract class Sina_Functions extends Sina_Settings {
 		add_action( 'elementor/frontend/after_register_scripts', [ $this, 'widget_scripts' ] );
 	}
 }
-
