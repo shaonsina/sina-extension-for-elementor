@@ -1,4 +1,4 @@
-/* Sina Extension for Elementor v2.3.1 */
+/* Sina Extension for Elementor v2.4.0 */
 
 (function ($) {
 	// Owl Carousel for some Slider or Carousel

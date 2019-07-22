@@ -1,22 +1,19 @@
 <?php 
-
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-require_once( SINA_EXT_DIR .'/admin/settings.php' );
-
 /**
- * Sina_Functions Class
+ * Sina_Ext_Functions Class For widgets functionality
  *
- * @since 2.3.2
+ * @since 2.4.0
  */
-abstract class Sina_Functions extends Sina_Settings {
+abstract class Sina_Ext_Functions extends Sina_Extension_Base{
 	/**
 	 * Enqueue CSS files
 	 *
-	 * @since 2.3.2
+	 * @since 2.4.0
 	 */
 	public function widget_styles() {
 		wp_enqueue_style( 'owl-carousel', SINA_EXT_URL .'assets/css/owl.carousel.min.css', [], '2.3.4' );
@@ -27,7 +24,7 @@ abstract class Sina_Functions extends Sina_Settings {
 	/**
 	 * Enqueue JS files
 	 *
-	 * @since 2.3.2
+	 * @since 2.4.0
 	 */
 	public function widget_scripts() {
 		$apikey = get_option( 'sina_map_apikey', true );
@@ -53,7 +50,7 @@ abstract class Sina_Functions extends Sina_Settings {
 	/**
 	 * Create widget category
 	 *
-	 * @since 2.3.2
+	 * @since 2.4.0
 	 */
 	public function widget_category( $elements_manager ) {
 		$elements_manager->add_category(
@@ -96,21 +93,9 @@ abstract class Sina_Functions extends Sina_Settings {
 	}
 
 	/**
-	 * Include helper & hooks files
-	 *
-	 * @since 2.3.2
-	 */
-	public function files() {
-		require_once( SINA_EXT_INC .'hooks.php' );
-		require_once( SINA_EXT_INC .'helper.php' );
-		require_once( SINA_EXT_INC .'controls.php' );
-		require_once( SINA_EXT_DIR .'/admin/rollback.php' );
-	}
-
-	/**
 	 * Initialize the plugin
 	 *
-	 * @since 2.3.2
+	 * @since 2.4.0
 	 */
 	public function init() {
 		// Check if Elementor installed and activated
@@ -130,9 +115,6 @@ abstract class Sina_Functions extends Sina_Settings {
 			add_action( 'admin_notices', [ $this, 'admin_notice_minimum_php_version' ] );
 			return;
 		}
-
-		// For Rollback Option
-		add_action( 'admin_post_sina_ext_rollback', ['Sina_Rollback', 'rollback'] );
 
 		// Register Widget Category
 		add_action( 'elementor/elements/categories_registered', [ $this, 'widget_category' ] );

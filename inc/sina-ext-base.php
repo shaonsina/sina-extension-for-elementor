@@ -5,15 +5,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Sina_Base Class
+ * Sina_Extension_Base Class for basic functionality
  *
- * @since 2.3.2
+ * @since 2.4.0
  */
-abstract class Sina_Base {
+abstract class Sina_Extension_Base{
 	/**
 	 * Minimum Elementor Version
 	 *
-	 * @since 2.3.2
+	 * @since 1.0.0
 	 * @var string Minimum Elementor version required to run the plugin.
 	 */
 	const MINIMUM_ELEMENTOR_VERSION = '2.0.0';
@@ -21,26 +21,17 @@ abstract class Sina_Base {
 	/**
 	 * Minimum PHP Version
 	 *
-	 * @since 2.3.2
+	 * @since 1.0.0
 	 * @var string Minimum PHP version required to run the plugin.
 	 */
 	const MINIMUM_PHP_VERSION = '7.0';
-
-	/**
-	 * Load Textdomain
-	 *
-	 * @since 2.3.2
-	 */
-	public function i18n() {
-		load_plugin_textdomain( 'sina-ext' );
-	}
 
 	/**
 	 * Admin notice
 	 *
 	 * Warning when the site doesn't have Elementor installed or activated.
 	 *
-	 * @since 2.3.2
+	 * @since 1.0.0
 	 */
 	public function admin_notice_missing_main_plugin() {
 		if ( isset( $_GET['activate'] ) ) unset( $_GET['activate'] );
@@ -60,7 +51,7 @@ abstract class Sina_Base {
 	 *
 	 * Warning when the site doesn't have a minimum required Elementor version.
 	 *
-	 * @since 2.3.2
+	 * @since 1.0.0
 	 */
 	public function admin_notice_minimum_elementor_version() {
 		if ( isset( $_GET['activate'] ) ) unset( $_GET['activate'] );
@@ -81,7 +72,7 @@ abstract class Sina_Base {
 	 *
 	 * Warning when the site doesn't have a minimum required PHP version.
 	 *
-	 * @since 2.3.2
+	 * @since 1.0.0
 	 */
 	public function admin_notice_minimum_php_version() {
 		if ( isset( $_GET['activate'] ) ) unset( $_GET['activate'] );
@@ -98,18 +89,62 @@ abstract class Sina_Base {
 	}
 
 	/**
+	 * Load Action Hooks
+	 *
+	 * @since 2.4.0
+	 */
+	public function load_actions() {
+		add_action( 'init', [ $this, 'i18n' ] );
+		add_action('admin_init', [$this, 'redirection']);
+		add_action( 'admin_post_sina_ext_rollback', ['Sina_Ext_Rollback', 'rollback'] );
+
+		add_action( 'wp_ajax_sina_mc_subscribe', ['Sina_Ext_Hooks', 'mailchimp_subscribe'] );
+		add_action( 'wp_ajax_nopriv_sina_mc_subscribe', ['Sina_Ext_Hooks', 'mailchimp_subscribe'] );
+
+		add_action( 'wp_ajax_sina_contact', ['Sina_Ext_Hooks', 'ajax_contact'] );
+		add_action( 'wp_ajax_nopriv_sina_contact', ['Sina_Ext_Hooks', 'ajax_contact'] );
+
+		add_action( 'wp_ajax_sina_load_more_posts', ['Sina_Ext_Hooks', 'ajax_load_more_posts'] );
+		add_action( 'wp_ajax_nopriv_sina_load_more_posts', ['Sina_Ext_Hooks', 'ajax_load_more_posts'] );
+
+		add_action( 'wp_ajax_sina_user_counter', ['Sina_Ext_Hooks', 'ajax_user_counter'] );
+		add_action( 'wp_ajax_nopriv_sina_user_counter', ['Sina_Ext_Hooks', 'ajax_user_counter'] );
+
+		add_action( 'wp_ajax_sina_visit_counter', ['Sina_Ext_Hooks', 'ajax_visit_counter'] );
+		add_action( 'wp_ajax_nopriv_sina_visit_counter', ['Sina_Ext_Hooks', 'ajax_visit_counter'] );
+	}
+
+	/**
+	 * Load Action Hooks
+	 *
+	 * @since 2.4.0
+	 */
+	public function load_filters() {
+		add_filter( 'plugin_action_links_'. SINA_EXT_BASENAME, [ $this, 'settings' ] );
+	}
+
+	/**
+	 * Load Textdomain
+	 *
+	 * @since 1.0.0
+	 */
+	public function i18n() {
+		load_plugin_textdomain( 'sina-ext' );
+	}
+
+	/**
 	 * For activation
 	 *
-	 * @since 1.0.3
+	 * @since 2.4.0
 	 */
-	public function activation() {
+	public static function activation() {
 		add_option('sina_extension_activation', true);
 	}
 
 	/**
 	 * Redirect after activation
 	 *
-	 * @since 1.0.3
+	 * @since 2.4.0
 	 */
 	public function redirection() {
 		add_option( 'sina_widgets', SINA_WIDGETS);
@@ -124,20 +159,11 @@ abstract class Sina_Base {
 	}
 
 	/**
-	 * Create sub-page under 'Elementor' parent page
-	 *
-	 * @since 2.3.2
-	 */
-	public function admin_page() {
-		add_filter( 'plugin_action_links_'. SINA_EXT_BASENAME, [ $this, 'settings_link' ] );
-	}
-
-	/**
 	 * Create settings link
 	 *
-	 * @since 2.3.2
+	 * @since 2.4.0
 	 */
-	public function settings_link( $links ) {
+	public function settings( $links ) {
 		$links[] = '<a href="admin.php?page=sina_ext_settings">Settings</a>';
 		return $links;
 	}

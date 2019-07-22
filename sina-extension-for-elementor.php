@@ -3,7 +3,7 @@
  * Plugin Name: Sina Extension for Elementor
  * Plugin URI: https://shaonsina.com/plugin/sina-extension/
  * Description: A collection of high-quality widgets for Elementor page builder.
- * Version: 2.3.1
+ * Version: 2.4.0
  * Author: shaonsina
  * Author URI: https://shaonsina.com/
  * Text Domain: sina-ext
@@ -17,8 +17,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define('SINA_EXT_VERSION', '2.3.1');
-define('SINA_EXT_PREVIOUS_VERSION', '2.2.2' );
+define('SINA_EXT_VERSION', '2.4.0');
+define('SINA_EXT_PREVIOUS_VERSION', '2.3.1' );
 define('SINA_EXT_FILE', __FILE__ );
 define('SINA_EXT_SLUG', basename( SINA_EXT_FILE, '.php' ));
 define('SINA_EXT_DIR', __DIR__);
@@ -26,6 +26,7 @@ define('SINA_EXT_URL', plugins_url('/', SINA_EXT_FILE));
 define('SINA_EXT_BASENAME', plugin_basename( SINA_EXT_FILE ));
 define('SINA_EXT_LAYOUT', SINA_EXT_DIR .'/widgets/layout');
 define('SINA_EXT_INC', SINA_EXT_DIR .'/inc/');
+define('SINA_EXT_ADMIN', SINA_EXT_DIR .'/admin/');
 
 /**
  * SINA WIDGETS Constant
@@ -73,52 +74,20 @@ define('SINA_WIDGETS', [
 	],
 ]);
 
-require_once( SINA_EXT_INC .'func-class.php' );
 
-/**
- * Sina_Extension Class
- *
- * @since 1.0.0
- */
-class Sina_Extension extends Sina_Functions {
-	/**
-	 * Instance
-	 *
-	 * @since 1.0.0
-	 * @var Sina_Extension The single instance of the class.
-	 */
-	private static $_instance = null;
+require SINA_EXT_INC . 'sina-ext-base.php';
+require SINA_EXT_INC . 'sina-ext-func.php';
+require SINA_EXT_INC . 'sina-ext.php';
 
-	/**
-	 * Instance
-	 *
-	 * Ensures only one instance of the class is loaded or can be loaded.
-	 *
-	 * @since 1.0.0
-	 * @return Sina_Extension An Instance of the class.
-	 */
-	public static function instance() {
-		if ( is_null( self::$_instance ) ) {
-			self::$_instance = new self();
-		}
-		return self::$_instance;
-	}
+add_action('plugins_loaded', function () {
+	Sina_Extension::instance();
+});
 
-	/**
-	 * Constructor
-	 *
-	 * @since 1.0.3
-	 */
-	public function __construct() {
-		add_action( 'plugins_loaded', [ $this, 'init' ] );
-		add_action( 'init', [ $this, 'i18n' ] );
+register_activation_hook( SINA_EXT_FILE, function() {
+	Sina_Extension::activation();
+	flush_rewrite_rules();
+});
 
-		register_activation_hook(SINA_EXT_FILE, [ $this, 'activation' ] );
-		add_action('admin_init', [ $this, 'redirection' ] );
-		add_action( 'admin_menu', [$this, 'add_submenu'], 550 );
-
-		$this->files();
-		$this->admin_page();
-	}
-}
-Sina_Extension::instance();
+register_deactivation_hook( SINA_EXT_FILE, function() {
+	flush_rewrite_rules();
+});

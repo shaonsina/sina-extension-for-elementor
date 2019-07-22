@@ -7,8 +7,13 @@ use Elementor\Group_Control_Box_Shadow;
 use Elementor\Group_Control_Text_Shadow;
 use Elementor\Group_Control_Border;
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
- * Common Controls.
+ * Sina_Common_Data Class for Common Controls.
  *
  * @since 2.3.0
  */

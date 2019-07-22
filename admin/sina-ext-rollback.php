@@ -1,11 +1,15 @@
 <?php
-
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class Sina_Rollback{
+/**
+ * Sina_Ext_Rollback Class
+ *
+ * @since 2.4.0
+ */
+class Sina_Ext_Rollback{
 	public static function print_inline_style() {
 		?>
 		<style>
