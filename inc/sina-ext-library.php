@@ -96,7 +96,7 @@ class Sina_Ext_Library extends Source_Base {
 	 *
 	 * @since 2.4.0
 	 */
-	public function get_data( array $args, $context = 'display' ) {
+	public function get_data( Array $args, $context = 'display' ) {
 		$data = self::get_template_content( $args['template_id'] );
 
 		if ( is_wp_error( $data ) ) {
@@ -260,7 +260,7 @@ class Sina_Ext_Library extends Source_Base {
 	/**
 	 * @since 2.4.0
 	 */
-	private function prepare_template( array $template_data ) {
+	private function prepare_template( Array $template_data ) {
 		$favorite_templates = $this->get_user_meta( 'favorites' );
 
 		return [

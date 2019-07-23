@@ -34,7 +34,7 @@ class Sina_Ext_Settings{
 			'list_id'	=> '',
 		] );
 		add_option( 'sina_templates_option', [] );
-		add_option( 'sina_ext_license_key', md5(time().microtime()) );
+		add_option( 'sina_ext_license_key', substr( md5( microtime() ), 0, 16 ) );
 	}
 
 	public function admin_scripts( $hook ) {
