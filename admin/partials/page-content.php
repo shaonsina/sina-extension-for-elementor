@@ -1,5 +1,5 @@
 <h1><?php echo __( 'Sina Extension Settings', 'sina-ext' ); ?></h1>
-<p class="sina-ext-pb"><?php _e('Thank you for using <strong><i>Sina Extension</i></strong>. This plugin has been developed by <a href="https://github.com/shaonsina" target="_blank">shaonsina</a> and I hope you enjoy using it.', 'sina-ext'); ?></p>
+<p class="sina-ext-pb"><?php _e('Thank you for using <strong><i>Sina Extension</i></strong>. This plugin has been developed by <a href="https://shaonsina.com/shaonsina" target="_blank">shaonsina</a> and I hope you enjoy using it.', 'sina-ext'); ?></p>
 
 <form action="options.php" method="POST">
 	<?php settings_errors(); ?>

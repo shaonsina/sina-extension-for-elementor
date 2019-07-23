@@ -5,7 +5,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Sina_Ext_Settings Class
+ * Sina_Ext_Settings Class for settings panel
  *
  * @since 2.4.0
  */
@@ -57,8 +57,8 @@ class Sina_Ext_Settings{
 
 		$templates = get_option( 'sina_templates_option' );
 		add_settings_section( 'sina_templates_section', '', '', 'sina_ext_templates' );
-		add_settings_field( 'sina_ext_templates_only', __('Sina Templates', 'sina-ext'), [$this, 'templates_option'], 'sina_ext_templates', 'sina_templates_section', ['temps' => 'sina_templates_only', 'get_temps' => $templates] );
-		add_settings_field( 'sina_ext_templates_merge', __('Sina Templates Merge', 'sina-ext'), [$this, 'templates_option'], 'sina_ext_templates', 'sina_templates_section', ['temps' => 'sina_templates_merge', 'get_temps' => $templates] );
+		add_settings_field( 'sina_ext_templates_only', __('Sina Templates', 'sina-ext'), [$this, 'templates_option'], 'sina_ext_templates', 'sina_templates_section', ['temps' => 'templates_only', 'get_temps' => $templates] );
+		add_settings_field( 'sina_ext_templates_merge', __('Sina Templates Merge', 'sina-ext'), [$this, 'templates_option'], 'sina_ext_templates', 'sina_templates_section', ['temps' => 'templates_merge', 'get_temps' => $templates] );
 
 		$get_widgets = get_option( 'sina_widgets' );
 		foreach ( SINA_WIDGETS as $cat => $widgets ) {
