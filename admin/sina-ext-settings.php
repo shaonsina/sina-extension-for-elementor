@@ -84,7 +84,8 @@ class Sina_Ext_Settings{
 			$data = $data[ $field['index'] ];
 			$key = $key.'['. $field['index'] .']';
 		}
-		require SINA_EXT_ADMIN.'partials/text-field.php';
+		$data = sanitize_text_field( $data );
+		printf('<input class="regular-text" type="text" name="%s" value="%s">', $key, $data);
 	}
 
 	public function templates_option($data) {

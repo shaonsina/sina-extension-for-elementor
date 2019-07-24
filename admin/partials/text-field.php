@@ -1,1 +1,0 @@
-<input class="regular-text" type="text" name="<?php echo esc_attr( $key ); ?>" value="<?php echo esc_attr( $data ); ?>">
