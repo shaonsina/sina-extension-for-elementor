@@ -57,14 +57,12 @@ abstract class Sina_Ext_Functions extends Sina_Extension_Base{
 			'sina-extension',
 			[
 				'title' => __( 'Sina Basic Widgets', 'sina-ext' ),
-				'icon' => 'fa fa-plug',
 			]
 		);
 		$elements_manager->add_category(
 			'sina-ext-advanced',
 			[
-				'title' => __( 'Sina Advaced Widgets', 'sina-ext' ),
-				'icon' => 'fa fa-plug',
+				'title' => __( 'Sina Advanced Widgets', 'sina-ext' ),
 			]
 		);
 	}
