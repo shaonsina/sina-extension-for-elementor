@@ -622,11 +622,6 @@ img.mfp-img{
 	z-index: 1;
 	margin: 0 auto;
 }
-.sina-banner-title > *,
-.sina-banner-subtitle > *,
-.sina-banner-desc > *{
-	margin: 0 !important;
-}
 .sina-banner-desc > p{
 	margin: 0 0 10px 0 !important;
 }
