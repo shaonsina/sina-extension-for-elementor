@@ -27,7 +27,7 @@ abstract class Sina_Ext_Functions extends Sina_Extension_Base{
 	 * @since 2.4.0
 	 */
 	public function widget_scripts() {
-		$apikey = get_option( 'sina_map_apikey', true );
+		$apikey = get_option( 'sina_map_apikey' );
 		$ajax_url = admin_url('admin-ajax.php');
 
 		wp_register_script( 'imagesLoaded', SINA_EXT_URL .'assets/js/imagesloaded.pkgd.min.js', [], '4.1.4', true );

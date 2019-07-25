@@ -77,7 +77,7 @@ class Sina_Ext_Settings{
 	}
 
 	public function text_field($field) {
-		$data = get_option( $field['key'], true );
+		$data = get_option( $field['key'] );
 		$key = $field['key'];
 
 		if ( is_array($data) ) {

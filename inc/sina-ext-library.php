@@ -122,7 +122,7 @@ class Sina_Ext_Library extends Source_Base {
 	 */
 	public static function get_template_content( $template_id ) {
 		if ( $template_id > 10000000) {
-			$url = sprintf( self::$api_get_template_content_url.'&dom='.get_option( 'siteurl', true ).'&key='.get_option( 'sina_ext_license_key', true ), $template_id );
+			$url = sprintf( self::$api_get_template_content_url.'&dom='.get_option( 'siteurl' ).'&key='.get_option( 'sina_ext_license_key' ), $template_id );
 		} else{
 			$url = sprintf( 'https://my.elementor.com/api/v1/templates/%d', $template_id );
 		}
@@ -228,7 +228,7 @@ class Sina_Ext_Library extends Source_Base {
 		if ( ! $update_timestamp ) {
 			$timeout = ( $force_update ) ? 25 : 8;
 
-			$response = wp_remote_get( self::$api_info_url.'&dom='.get_option( 'siteurl', true ).'&key='.get_option( 'sina_ext_license_key', true ), [
+			$response = wp_remote_get( self::$api_info_url.'&dom='.get_option( 'siteurl' ).'&key='.get_option( 'sina_ext_license_key' ), [
 				'timeout' => $timeout,
 				'body' => [
 					// Which API version is used.
