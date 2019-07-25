@@ -597,6 +597,21 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 		$this->end_controls_section();
 		// End Company Style
 		// =====================
+
+
+		// Start Nav & Dots Style
+		// ===========================
+		$this->start_controls_section(
+			'nav_dots_style',
+			[
+				'label' => __( 'Nav & Dots', 'sina-ext' ),
+				'tab' => Controls_Manager::TAB_STYLE,
+			]
+		);
+		Sina_Common_Data::nav_dots_style( $this, '.sina-review-carousel' );
+		$this->end_controls_section();
+		// End Nav & Dots Style
+		// ==========================
 	}
 
 

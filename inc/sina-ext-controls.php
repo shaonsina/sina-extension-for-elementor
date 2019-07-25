@@ -166,21 +166,6 @@ class Sina_Common_Data{
 				]
 			);
 			$obj->add_control(
-				'dots_color',
-				[
-					'label' => __( 'Dots Color', 'sina-ext' ),
-					'type' => Controls_Manager::COLOR,
-					'condition' => [
-						'dots!' => '',
-					],
-					'default' => '#1085e4',
-					'selectors' => [
-						'{{WRAPPER}} '.$class.' .owl-dot' => 'border-color: {{VALUE}}',
-						'{{WRAPPER}} '.$class.' .owl-dot.active' => 'background-color: {{VALUE}}',
-					]
-				]
-			);
-			$obj->add_control(
 				'nav',
 				[
 					'label' => __( 'Navigation', 'sina-ext' ),
@@ -188,51 +173,6 @@ class Sina_Common_Data{
 					'label_on' => __( 'Show', 'sina-ext' ),
 					'label_off' => __( 'Hide', 'sina-ext' ),
 					'default' => 'yes',
-				]
-			);
-			$obj->add_control(
-				'nav_bg',
-				[
-					'label' => __( 'Navigation Background', 'sina-ext' ),
-					'type' => Controls_Manager::COLOR,
-					'condition' => [
-						'nav!' => '',
-					],
-					'default' => '#1085e4',
-					'selectors' => [
-						'{{WRAPPER}} '.$class.' .owl-prev, {{WRAPPER}} '.$class.' .owl-next' => 'background-color: {{VALUE}}'
-					]
-				]
-			);
-			$obj->add_control(
-				'nav_color',
-				[
-					'label' => __( 'Navigation Color', 'sina-ext' ),
-					'type' => Controls_Manager::COLOR,
-					'condition' => [
-						'nav!' => '',
-					],
-					'default' => '#eee',
-					'selectors' => [
-						'{{WRAPPER}} '.$class.' .owl-prev, {{WRAPPER}} '.$class.' .owl-next' => 'color: {{VALUE}}'
-					],
-				]
-			);
-			$obj->add_control(
-				'nav_top',
-				[
-					'label' => __( 'Navigation Top (%)', 'sina-ext' ),
-					'type' => Controls_Manager::SLIDER,
-					'default' => [
-						'unit' => '%',
-						'size' => '50',
-					],
-					'condition' => [
-						'nav!' => '',
-					],
-					'selectors' => [
-						'{{WRAPPER}} '.$class.' .owl-prev, {{WRAPPER}} '.$class.' .owl-next' => 'top: calc({{SIZE}}{{UNIT}} - 18px);',
-					],
 				]
 			);
 		}
@@ -309,6 +249,127 @@ class Sina_Common_Data{
 				'selectors' => [
 					'{{WRAPPER}} '.$class.' .sina-icon-right' => 'margin-left: {{SIZE}}{{UNIT}};',
 					'{{WRAPPER}} '.$class.' .sina-icon-left' => 'margin-right: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+	}
+
+	public static function nav_dots_style($obj, $class = '') {
+		$obj->add_control(
+			'dots_color',
+			[
+				'label' => __( 'Dots Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'condition' => [
+					'dots!' => '',
+				],
+				'default' => '#1085e4',
+				'selectors' => [
+					'{{WRAPPER}} '.$class.' .owl-dot' => 'border-color: {{VALUE}}',
+					'{{WRAPPER}} '.$class.' .owl-dot.active' => 'background-color: {{VALUE}}',
+				]
+			]
+		);
+		$obj->add_control(
+			'nav_styles',
+			[
+				'label' => __( 'Navigation', 'sina-ext' ),
+				'type' => Controls_Manager::HEADING,
+				'separator' => 'before',
+				'condition' => [
+					'nav!' => '',
+				],
+			]
+		);
+		$obj->add_group_control(
+			Group_Control_Background::get_type(),
+			[
+				'name' => 'nav_bg',
+				'types' => [ 'classic', 'gradient' ],
+				'fields_options' => [
+					'background' => [ 
+						'default' =>'classic', 
+					],
+					'color' => [
+						'default' => '#1085e4',
+					],
+				],
+				'condition' => [
+					'nav!' => '',
+				],
+				'selector' => '{{WRAPPER}} '.$class.' .owl-prev, {{WRAPPER}} '.$class.' .owl-next',
+			]
+		);
+		$obj->add_control(
+			'nav_color',
+			[
+				'label' => __( 'Arrow Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'condition' => [
+					'nav!' => '',
+				],
+				'default' => '#eee',
+				'selectors' => [
+					'{{WRAPPER}} '.$class.' .owl-prev, {{WRAPPER}} '.$class.' .owl-next' => 'color: {{VALUE}}'
+				],
+			]
+		);
+		$obj->add_control(
+			'nav_top',
+			[
+				'label' => __( 'Nav Top (%)', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'default' => [
+					'unit' => '%',
+					'size' => '50',
+				],
+				'condition' => [
+					'nav!' => '',
+				],
+				'selectors' => [
+					'{{WRAPPER}} '.$class.' .owl-prev, {{WRAPPER}} '.$class.' .owl-next' => 'top: calc({{SIZE}}{{UNIT}} - 18px);',
+				],
+			]
+		);
+		$obj->add_responsive_control(
+			'nav_next_radius',
+			[
+				'label' => __( 'Nav Next Radius', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '4',
+					'right' => '4',
+					'bottom' => '4',
+					'left' => '4',
+					'isLinked' => true,
+				],
+				'condition' => [
+					'nav!' => '',
+				],
+				'selectors' => [
+					'{{WRAPPER}} '.$class.' .owl-next' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+		$obj->add_responsive_control(
+			'nav_prev_radius',
+			[
+				'label' => __( 'Nav Prev Radius', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '4',
+					'right' => '4',
+					'bottom' => '4',
+					'left' => '4',
+					'isLinked' => true,
+				],
+				'condition' => [
+					'nav!' => '',
+				],
+				'selectors' => [
+					'{{WRAPPER}} '.$class.' .owl-prev' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);

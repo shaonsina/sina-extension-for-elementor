@@ -131,8 +131,33 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 			'title',
 			[
 				'label' => __( 'Title', 'sina-ext' ),
-				'type' => Controls_Manager::WYSIWYG,
+				'label_block' => true,
+				'type' => Controls_Manager::TEXT,
+				'description' => __( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'Welcome',
+			]
+		);
+		$repeater->add_control(
+			'title_span',
+			[
+				'label' => __( 'Title Span', 'sina-ext' ),
+				'label_block' => true,
+				'type' => Controls_Manager::TEXT,
+				'placeholder' => __( 'Enter Title Span', 'sina-ext' ),
+				'description' => __( 'You can use SPAN for multi-color title.', 'sina-ext' ),
+			]
+		);
+		$repeater->add_control(
+			'title_tag',
+			[
+				'label' => __( 'Selct Tag', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					'h1' => 'H1',
+					'h2' => 'H2',
+					'h3' => 'H3',
+				],
+				'default' => 'h1',
 			]
 		);
 		$repeater->add_control(
@@ -148,8 +173,25 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 			'subtitle',
 			[
 				'label' => __( 'Sub Title', 'sina-ext' ),
-				'type' => Controls_Manager::WYSIWYG,
+				'label_block' => true,
+				'type' => Controls_Manager::TEXT,
+				'description' => __( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'Lorem ipsum dolor sit amet',
+			]
+		);
+		$repeater->add_control(
+			'subtitle_tag',
+			[
+				'label' => __( 'Selct Tag', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					'h2' => 'H2',
+					'h3' => 'H3',
+					'h4' => 'H4',
+					'h5' => 'H5',
+					'h6' => 'H6',
+				],
+				'default' => 'h2',
 			]
 		);
 		$repeater->add_control(
@@ -165,7 +207,8 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 			'desc',
 			[
 				'label' => __( 'Description', 'sina-ext' ),
-				'type' => Controls_Manager::WYSIWYG,
+				'type' => Controls_Manager::TEXTAREA,
+				'description' => __( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'Lorem ipsum dolor sit amet',
 			]
 		);
@@ -452,7 +495,7 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '#eee',
 				'selectors' => [
-					'{{WRAPPER}} .sina-banner-title, {{WRAPPER}} .sina-banner-title > *' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .sina-banner-title' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -478,14 +521,14 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 						],
 					],
 				],
-				'selector' => '{{WRAPPER}} .sina-banner-title, {{WRAPPER}} .sina-banner-title > *',
+				'selector' => '{{WRAPPER}} .sina-banner-title',
 			]
 		);
 		$this->add_group_control(
 			Group_Control_Text_Shadow::get_type(),
 			[
 				'name' => 'title_shadow',
-				'selector' => '{{WRAPPER}} .sina-banner-title > *',
+				'selector' => '{{WRAPPER}} .sina-banner-title',
 			]
 		);
 		$this->add_responsive_control(
@@ -508,6 +551,47 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 		// =====================
 
 
+		// Start Title Span Style
+		// =======================
+		$this->start_controls_section(
+			'title_span_style',
+			[
+				'label' => __( 'Title Span', 'sina-ext' ),
+				'tab' => Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_control(
+			'title_span_color',
+			[
+				'label' => __( 'Text Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#1085e4',
+				'selectors' => [
+					'{{WRAPPER}} .sina-banner-title > span' => 'color: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name' => 'title_span_typography',
+				'selector' => '{{WRAPPER}} .sina-banner-title > span',
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Text_Shadow::get_type(),
+			[
+				'name' => 'title_span_shadow',
+				'selector' => '{{WRAPPER}} .sina-banner-title > span',
+			]
+		);
+
+		$this->end_controls_section();
+		// End Title Span Style
+		// =====================
+
+
 		// Start Sub Title Style
 		// =====================
 		$this->start_controls_section(
@@ -525,7 +609,7 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '#eee',
 				'selectors' => [
-					'{{WRAPPER}} .sina-banner-subtitle, {{WRAPPER}} .sina-banner-subtitle > *' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .sina-banner-subtitle' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -551,14 +635,14 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 						],
 					],
 				],
-				'selector' => '{{WRAPPER}} .sina-banner-subtitle, {{WRAPPER}} .sina-banner-subtitle > *',
+				'selector' => '{{WRAPPER}} .sina-banner-subtitle',
 			]
 		);
 		$this->add_group_control(
 			Group_Control_Text_Shadow::get_type(),
 			[
 				'name' => 'subtitle_shadow',
-				'selector' => '{{WRAPPER}} .sina-banner-subtitle > *',
+				'selector' => '{{WRAPPER}} .sina-banner-subtitle',
 			]
 		);
 		$this->add_responsive_control(
@@ -598,7 +682,7 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '#eee',
 				'selectors' => [
-					'{{WRAPPER}} .sina-banner-desc, {{WRAPPER}} .sina-banner-desc > *' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .sina-banner-desc' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -621,14 +705,14 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 						],
 					],
 				],
-				'selector' => '{{WRAPPER}} .sina-banner-desc, {{WRAPPER}} .sina-banner-desc > *',
+				'selector' => '{{WRAPPER}} .sina-banner-desc',
 			]
 		);
 		$this->add_group_control(
 			Group_Control_Text_Shadow::get_type(),
 			[
 				'name' => 'desc_shadow',
-				'selector' => '{{WRAPPER}} .sina-banner-desc > *',
+				'selector' => '{{WRAPPER}} .sina-banner-desc',
 			]
 		);
 		$this->add_responsive_control(
@@ -811,6 +895,21 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 		$this->end_controls_section();
 		// End Secondary Button Style
 		// ==========================
+
+
+		// Start Nav & Dots Style
+		// ===========================
+		$this->start_controls_section(
+			'nav_dots_style',
+			[
+				'label' => __( 'Nav & Dots', 'sina-ext' ),
+				'tab' => Controls_Manager::TAB_STYLE,
+			]
+		);
+		Sina_Common_Data::nav_dots_style($this, '.sina-banner-slider');
+		$this->end_controls_section();
+		// End Nav & Dots Style
+		// ==========================
 	}
 
 
@@ -860,22 +959,18 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 					<?php endif ?>
 
 					<div class="sina-banner-container elementor-repeater-item-<?php echo esc_attr( $slide[ '_id' ] ); ?>">
+
 						<?php if ( $slide['title'] ): ?>
-							<div <?php echo $this->get_render_attribute_string( $title_key ); ?> data-animation="animated <?php echo esc_attr( $slide['title_anim'] ); ?>">
-								<?php echo wp_kses_post( $slide['title'] ); ?>
-							</div>
+							<?php $title_span = $slide['title_span'] ? '<span>'.$slide['title_span'].'</span>' : ''; ?>
+							<?php printf('<%4$s %1$s data-animation="animated %2$s">%3$s%5$s</%4$s>', $this->get_render_attribute_string( $title_key ), $slide['title_anim'], $slide['title'], $slide['title_tag'], $title_span); ?>
 						<?php endif; ?>
 
 						<?php if ( $slide['subtitle'] ): ?>
-							<div <?php echo $this->get_render_attribute_string( $subtitle_key ); ?> data-animation="animated <?php echo esc_attr( $slide['subtitle_anim'] ); ?>">
-								<?php echo wp_kses_post( $slide['subtitle'] ); ?>
-							</div>
+							<?php printf('<%4$s %1$s data-animation="animated %2$s">%3$s</%4$s>', $this->get_render_attribute_string( $subtitle_key ), $slide['subtitle_anim'], $slide['subtitle'], $slide['subtitle_tag']); ?>
 						<?php endif; ?>
 
 						<?php if ( $slide['desc'] ): ?>
-							<div <?php echo $this->get_render_attribute_string( $desc_key ); ?> data-animation="animated <?php echo esc_attr( $slide['desc_anim'] ); ?>">
-								<?php echo wp_kses_post( $slide['desc'] ); ?>
-							</div>
+							<?php printf('<div %1$s data-animation="animated %2$s">%3$s</div>', $this->get_render_attribute_string( $desc_key ), $slide['desc_anim'], $slide['desc']); ?>
 						<?php endif; ?>
 
 						<?php if ( $data['pbtn_text'] || $data['sbtn_text'] ): ?>

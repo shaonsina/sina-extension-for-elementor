@@ -137,9 +137,32 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 			[
 				'label' => __( 'Title', 'sina-ext' ),
 				'label_block' => true,
-				'type' => Controls_Manager::WYSIWYG,
+				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter Title', 'sina-ext' ),
 				'default' => 'Welcome to get start your business',
+			]
+		);
+		$this->add_control(
+			'title_span',
+			[
+				'label' => __( 'Title Span', 'sina-ext' ),
+				'label_block' => true,
+				'type' => Controls_Manager::TEXT,
+				'placeholder' => __( 'Enter Title Span', 'sina-ext' ),
+				'description' => __( 'You can use SPAN for multi-color title.', 'sina-ext' ),
+			]
+		);
+		$this->add_control(
+			'title_tag',
+			[
+				'label' => __( 'Selct Tag', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					'h1' => 'H1',
+					'h2' => 'H2',
+					'h3' => 'H3',
+				],
+				'default' => 'h1',
 			]
 		);
 		$this->add_control(
@@ -147,10 +170,25 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 			[
 				'label' => __( 'Sub Title', 'sina-ext' ),
 				'label_block' => true,
-				'type' => Controls_Manager::WYSIWYG,
+				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter Title', 'sina-ext' ),
 				'separator' => 'before',
 				'default' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
+			]
+		);
+		$this->add_control(
+			'subtitle_tag',
+			[
+				'label' => __( 'Selct Tag', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					'h2' => 'H2',
+					'h3' => 'H3',
+					'h4' => 'H4',
+					'h5' => 'H5',
+					'h6' => 'H6',
+				],
+				'default' => 'h2',
 			]
 		);
 		$this->add_control(
@@ -158,7 +196,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 			[
 				'label' => __( 'Description', 'sina-ext' ),
 				'label_block' => true,
-				'type' => Controls_Manager::WYSIWYG,
+				'type' => Controls_Manager::TEXTAREA,
 				'placeholder' => __( 'Enter Description', 'sina-ext' ),
 				'separator' => 'before',
 				'default' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
@@ -632,7 +670,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '#eee',
 				'selectors' => [
-					'{{WRAPPER}} .sina-banner-title, {{WRAPPER}} .sina-banner-title > *' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .sina-banner-title' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -658,14 +696,14 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 						],
 					],
 				],
-				'selector' => '{{WRAPPER}} .sina-banner-title, {{WRAPPER}} .sina-banner-title > *',
+				'selector' => '{{WRAPPER}} .sina-banner-title',
 			]
 		);
 		$this->add_group_control(
 			Group_Control_Text_Shadow::get_type(),
 			[
 				'name' => 'title_shadow',
-				'selector' => '{{WRAPPER}} .sina-banner-title > *',
+				'selector' => '{{WRAPPER}} .sina-banner-title',
 			]
 		);
 		$this->add_responsive_control(
@@ -685,6 +723,50 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 
 		$this->end_controls_section();
 		// End Title Style
+		// =====================
+
+
+		// Start Title Span Style
+		// =======================
+		$this->start_controls_section(
+			'title_span_style',
+			[
+				'label' => __( 'Title Span', 'sina-ext' ),
+				'tab' => Controls_Manager::TAB_STYLE,
+				'condition' => [
+					'title_span!' => '',
+				],
+			]
+		);
+
+		$this->add_control(
+			'title_span_color',
+			[
+				'label' => __( 'Text Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#1085e4',
+				'selectors' => [
+					'{{WRAPPER}} .sina-banner-title > span' => 'color: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name' => 'title_span_typography',
+				'selector' => '{{WRAPPER}} .sina-banner-title > span',
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Text_Shadow::get_type(),
+			[
+				'name' => 'title_span_shadow',
+				'selector' => '{{WRAPPER}} .sina-banner-title > span',
+			]
+		);
+
+		$this->end_controls_section();
+		// End Title Span Style
 		// =====================
 
 
@@ -708,7 +790,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '#eee',
 				'selectors' => [
-					'{{WRAPPER}} .sina-banner-subtitle, {{WRAPPER}} .sina-banner-subtitle > *' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .sina-banner-subtitle' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -734,14 +816,14 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 						],
 					],
 				],
-				'selector' => '{{WRAPPER}} .sina-banner-subtitle, {{WRAPPER}} .sina-banner-subtitle > *',
+				'selector' => '{{WRAPPER}} .sina-banner-subtitle',
 			]
 		);
 		$this->add_group_control(
 			Group_Control_Text_Shadow::get_type(),
 			[
 				'name' => 'subtitle_shadow',
-				'selector' => '{{WRAPPER}} .sina-banner-subtitle > *',
+				'selector' => '{{WRAPPER}} .sina-banner-subtitle',
 			]
 		);
 		$this->add_responsive_control(
@@ -784,7 +866,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '#eee',
 				'selectors' => [
-					'{{WRAPPER}} .sina-banner-desc, {{WRAPPER}} .sina-banner-desc > *' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .sina-banner-desc' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -807,14 +889,14 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 						],
 					],
 				],
-				'selector' => '{{WRAPPER}} .sina-banner-desc, {{WRAPPER}} .sina-banner-desc > *',
+				'selector' => '{{WRAPPER}} .sina-banner-desc',
 			]
 		);
 		$this->add_group_control(
 			Group_Control_Text_Shadow::get_type(),
 			[
 				'name' => 'desc_shadow',
-				'selector' => '{{WRAPPER}} .sina-banner-desc > *',
+				'selector' => '{{WRAPPER}} .sina-banner-desc',
 			]
 		);
 		$this->add_responsive_control(
@@ -1005,22 +1087,18 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 						echo $frontend->get_builder_content( $data['template'], true );
 					}
 				?>
+
 				<?php if ( $data['title'] ): ?>
-					<div class="sina-banner-title animated <?php echo esc_attr( $data['title_anim'] ); ?>">
-						<?php echo wp_kses_post( $data['title'] ); ?>
-					</div>
+					<?php $title_span = $data['title_span'] ? '<span>'.$data['title_span'].'</span>' : ''; ?>
+					<?php printf('<%3$s class="sina-banner-title animated %1$s">%2$s%4$s</%3$s>', $data['title_anim'], $data['title'], $data['title_tag'], $title_span); ?>
 				<?php endif; ?>
 
 				<?php if ( $data['subtitle'] ): ?>
-					<div class="sina-banner-subtitle animated <?php echo esc_attr( $data['subtitle_anim'] ); ?>">
-						<?php echo wp_kses_post( $data['subtitle'] ); ?>
-					</div>
+					<?php printf('<%3$s class="sina-banner-subtitle animated %1$s">%2$s</%3$s>', $data['subtitle_anim'], $data['subtitle'], $data['title_tag']); ?>
 				<?php endif; ?>
 
 				<?php if ( $data['desc'] ): ?>
-					<div class="sina-banner-desc animated <?php echo esc_attr( $data['desc_anim'] ); ?>">
-						<?php echo wp_kses_post( $data['desc'] ); ?>
-					</div>
+					<?php printf('<div class="sina-banner-desc animated %1$s">%2$s</div>', $data['desc_anim'], $data['desc']); ?>
 				<?php endif; ?>
 
 				<?php if ( $data['pbtn_text'] || $data['sbtn_text'] ): ?>

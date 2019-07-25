@@ -33,7 +33,7 @@ https://youtu.be/9HB3UF2dO70
 * Options panel for enable/disable widgets.
 * Free Support through the forum.
 * Fully Responsive
-* Fully Responsive predefined Block & Page.
+* 20+ Fully Responsive predefined Blocks & Pages.
 
 
 == What can you do with this plugin? ==
@@ -105,8 +105,10 @@ Yes. It's totally free.
 
 == Changelog ==
 
-= 2.4.0 - 25-07-2019 =
+= 2.4.0 - 27-07-2019 =
 - New: Template options
+- Added: More options to Slider & Carousel navigation
+- Changed: Banner Slider & Particle Layer structure
 - Improved
 
 = 2.3.1 - 11-07-2019 =
