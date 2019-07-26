@@ -1,4 +1,6 @@
 <?php
+namespace Sina_Extension;
+
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;

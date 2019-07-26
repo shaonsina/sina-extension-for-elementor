@@ -4,6 +4,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+use \Sina_Extension\Sina_Ext_Functions;
+
 /**
  * Sina_Extension Class
  *
@@ -44,7 +46,7 @@ class Sina_Extension extends Sina_Ext_Functions{
 		$this->load_filters();
 		$this->init();
 
-		new Sina_Ext_Settings();
+		new \Sina_Extension\Admin\Sina_Ext_Settings();
 	}
 
 	/**

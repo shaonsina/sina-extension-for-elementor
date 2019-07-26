@@ -1,4 +1,6 @@
 <?php
+namespace Sina_Extension\Admin;
+
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -12,7 +14,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Sina_Ext_Settings{
 	public function __construct() {
 		add_action( 'admin_menu', [$this, 'add_submenu'], 550 );
-
 	}
 
 	public function add_submenu() {

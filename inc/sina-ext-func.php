@@ -1,8 +1,12 @@
-<?php 
+<?php
+namespace Sina_Extension;
+
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
+
+use \Sina_Extension\Sina_Extension_Base;
 
 /**
  * Sina_Ext_Functions Class For widgets functionality
