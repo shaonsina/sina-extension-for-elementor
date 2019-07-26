@@ -11,13 +11,13 @@ use \Sina_Extension\Sina_Extension_Base;
 /**
  * Sina_Ext_Functions Class For widgets functionality
  *
- * @since 2.4.0
+ * @since 3.0.0
  */
 abstract class Sina_Ext_Functions extends Sina_Extension_Base{
 	/**
 	 * Enqueue CSS files
 	 *
-	 * @since 2.4.0
+	 * @since 3.0.0
 	 */
 	public function widget_styles() {
 		wp_enqueue_style( 'owl-carousel', SINA_EXT_URL .'assets/css/owl.carousel.min.css', [], '2.3.4' );
@@ -28,7 +28,7 @@ abstract class Sina_Ext_Functions extends Sina_Extension_Base{
 	/**
 	 * Enqueue JS files
 	 *
-	 * @since 2.4.0
+	 * @since 3.0.0
 	 */
 	public function widget_scripts() {
 		$apikey = get_option( 'sina_map_apikey' );
@@ -54,7 +54,7 @@ abstract class Sina_Ext_Functions extends Sina_Extension_Base{
 	/**
 	 * Create widget category
 	 *
-	 * @since 2.4.0
+	 * @since 3.0.0
 	 */
 	public function widget_category( $elements_manager ) {
 		$elements_manager->add_category(
@@ -97,7 +97,7 @@ abstract class Sina_Ext_Functions extends Sina_Extension_Base{
 	/**
 	 * Initialize the plugin
 	 *
-	 * @since 2.4.0
+	 * @since 3.0.0
 	 */
 	public function init() {
 		// Check if Elementor installed and activated

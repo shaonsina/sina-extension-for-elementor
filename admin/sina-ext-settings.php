@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Sina_Ext_Settings Class for settings panel
  *
- * @since 2.4.0
+ * @since 3.0.0
  */
 class Sina_Ext_Settings{
 

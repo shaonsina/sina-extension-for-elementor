@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Sina_Ext_Library Class for remote library.
  *
- * @since 2.4.0
+ * @since 3.0.0
  */
 class Sina_Ext_Library extends Source_Base {
 
@@ -33,7 +33,7 @@ class Sina_Ext_Library extends Source_Base {
 	/**
 	 * Get remote template ID.
 	 *
-	 * @since 2.4.0
+	 * @since 3.0.0
 	 */
 	public function get_id() {
 		return 'remote';
@@ -42,7 +42,7 @@ class Sina_Ext_Library extends Source_Base {
 	/**
 	 * Get remote template title.
 	 *
-	 * @asince 2.4.0
+	 * @asince 3.0.0
 	 */
 	public function get_title() {
 		return __( 'Remote', 'sina-ext' );
@@ -51,14 +51,14 @@ class Sina_Ext_Library extends Source_Base {
 	/**
 	 * Register remote template data.
 	 *
-	 * @since 2.4.0
+	 * @since 3.0.0
 	 */
 	public function register_data() {}
 
 	/**
 	 * Save remote template.
 	 *
-	 * @since 2.4.0
+	 * @since 3.0.0
 	 */
 	public function save_item( $template_data ) {
 		return new \WP_Error( 'invalid_request', 'Cannot save template to a remote source' );
@@ -67,7 +67,7 @@ class Sina_Ext_Library extends Source_Base {
 	/**
 	 * Update remote template.
 	 *
-	 * @since 2.4.0
+	 * @since 3.0.0
 	 */
 	public function update_item( $new_data ) {
 		return new \WP_Error( 'invalid_request', 'Cannot update template to a remote source' );
@@ -76,7 +76,7 @@ class Sina_Ext_Library extends Source_Base {
 	/**
 	 * Delete remote template.
 	 *
-	 * @since 2.4.0
+	 * @since 3.0.0
 	 */
 	public function delete_template( $template_id ) {
 		return new \WP_Error( 'invalid_request', 'Cannot delete template from a remote source' );
@@ -85,7 +85,7 @@ class Sina_Ext_Library extends Source_Base {
 	/**
 	 * Export remote template.
 	 *
-	 * @since 2.4.0
+	 * @since 3.0.0
 	 */
 	public function export_template( $template_id ) {
 		return new \WP_Error( 'invalid_request', 'Cannot export template from a remote source' );
@@ -94,7 +94,7 @@ class Sina_Ext_Library extends Source_Base {
 	/**
 	 * Get remote template data.
 	 *
-	 * @since 2.4.0
+	 * @since 3.0.0
 	 */
 	public function get_data( Array $args, $context = 'display' ) {
 		$data = self::get_template_content( $args['template_id'] );
@@ -118,7 +118,7 @@ class Sina_Ext_Library extends Source_Base {
 	/**
 	 * Get template content.
 	 *
-	 * @since 2.4.0
+	 * @since 3.0.0
 	 */
 	public static function get_template_content( $template_id ) {
 		if ( $template_id > 10000000) {
@@ -139,7 +139,7 @@ class Sina_Ext_Library extends Source_Base {
 		/**
 		 * API: Template body args.
 		 *
-		 * @since 2.4.0
+		 * @since 3.0.0
 		 */
 		$body_args = apply_filters( 'elementor/api/get_templates/body_args', $body_args );
 
@@ -174,7 +174,7 @@ class Sina_Ext_Library extends Source_Base {
 	/**
 	 * Get remote template.
 	 *
-	 * @since 2.4.0
+	 * @since 3.0.0
 	 */
 	public function get_item( $template_id ) {
 		$templates = $this->get_items();
@@ -185,7 +185,7 @@ class Sina_Ext_Library extends Source_Base {
 	/**
 	 * Get remote templates.
 	 *
-	 * @since 2.4.0
+	 * @since 3.0.0
 	 */
 	public function get_items( $args = [] ) {
 		$library_data = self::get_library_data();
@@ -202,7 +202,7 @@ class Sina_Ext_Library extends Source_Base {
 	/**
 	 * Get templates data.
 	 *
-	 * @since 2.4.0
+	 * @since 3.0.0
 	 */
 	public static function get_library_data( $force_update = false ) {
 		self::get_info_data( $force_update );
@@ -222,7 +222,7 @@ class Sina_Ext_Library extends Source_Base {
 	/**
 	 * Get info data.
 	 *
-	 * @since 2.4.0
+	 * @since 3.0.0
 	 */
 	private static function get_info_data( $force_update = false ) {
 		$update_timestamp = get_transient( self::SINA_TIMESTAMP_CACHE_KEY );
@@ -261,7 +261,7 @@ class Sina_Ext_Library extends Source_Base {
 	}
 
 	/**
-	 * @since 2.4.0
+	 * @since 3.0.0
 	 */
 	private function prepare_template( Array $template_data ) {
 		$favorite_templates = $this->get_user_meta( 'favorites' );
@@ -288,14 +288,14 @@ class Sina_Ext_Library extends Source_Base {
 	/**
 	 * API info URL.
 	 *
-	 * @since 2.4.0
+	 * @since 3.0.0
 	 */
 	public static $api_info_url = 'https://plugins.shaonsina.com/api/v1/sina-ext/get/?data=lib';
 
 	/**
 	 * API get template content URL.
 	 *
-	 * @since 2.4.0
+	 * @since 3.0.0
 	 */
 	private static $api_get_template_content_url = 'https://plugins.shaonsina.com/api/v1/sina-ext/get/?data=%d';
 }

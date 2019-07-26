@@ -5,7 +5,7 @@ Donate link: https://shaonsina.com/plugin/sina-extension/
 Requires at least: 4.7
 Tested up to: 5.2
 Requires PHP: 7.0
-Stable tag: 2.4.0
+Stable tag: 3.0.0
 License: GPL v3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -105,10 +105,11 @@ Yes. It's totally free.
 
 == Changelog ==
 
-= 2.4.0 - 27-07-2019 =
+= 3.0.0 - 30-07-2019 =
 - New: Template options
 - Added: More options to Slider & Carousel navigation
 - Changed: Banner Slider & Particle Layer structure
+- Changed: Core functionality rewrite
 - Improved
 
 = 2.3.1 - 11-07-2019 =

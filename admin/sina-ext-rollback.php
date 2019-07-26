@@ -7,7 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Sina_Ext_Rollback Class
  *
- * @since 2.4.0
+ * @since 3.0.0
  */
 class Sina_Ext_Rollback{
 	public static function print_inline_style() {

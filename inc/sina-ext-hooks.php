@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Sina_Ext_Hooks Class for all widgets related hook functions
  *
- * @since 2.4.0
+ * @since 3.0.0
  */
 Class Sina_Ext_Hooks{
 	public static function mailchimp_subscribe() {

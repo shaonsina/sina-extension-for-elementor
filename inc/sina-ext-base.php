@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Sina_Extension_Base Class for basic functionality
  *
- * @since 2.4.0
+ * @since 3.0.0
  */
 abstract class Sina_Extension_Base{
 	/**
@@ -93,7 +93,7 @@ abstract class Sina_Extension_Base{
 	/**
 	 * Load Action Hooks
 	 *
-	 * @since 2.4.0
+	 * @since 3.0.0
 	 */
 	public function load_actions() {
 		add_action( 'init', [ $this, 'i18n' ] );
@@ -119,7 +119,7 @@ abstract class Sina_Extension_Base{
 	/**
 	 * Load Action Hooks
 	 *
-	 * @since 2.4.0
+	 * @since 3.0.0
 	 */
 	public function load_filters() {
 		add_filter( 'plugin_action_links_'. SINA_EXT_BASENAME, [ $this, 'settings' ] );
@@ -137,7 +137,7 @@ abstract class Sina_Extension_Base{
 	/**
 	 * For activation
 	 *
-	 * @since 2.4.0
+	 * @since 3.0.0
 	 */
 	public static function activation() {
 		add_option( 'sina_extension_activation', true );
@@ -155,7 +155,7 @@ abstract class Sina_Extension_Base{
 	/**
 	 * Redirect after activation
 	 *
-	 * @since 2.4.0
+	 * @since 3.0.0
 	 */
 	public function redirection() {
 		if ( get_option('sina_extension_activation', false ) ) {
@@ -170,7 +170,7 @@ abstract class Sina_Extension_Base{
 	/**
 	 * Create settings link
 	 *
-	 * @since 2.4.0
+	 * @since 3.0.0
 	 */
 	public function settings( $links ) {
 		$links[] = '<a href="admin.php?page=sina_ext_settings">Settings</a>';
