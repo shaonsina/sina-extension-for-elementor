@@ -6,9 +6,9 @@
  * @since 1.0.0
  */
 
-use Elementor\Widget_Base;
-use Elementor\Controls_Manager;
-use Elementor\Plugin;
+use \Elementor\Widget_Base;
+use \Elementor\Controls_Manager;
+use \Elementor\Plugin;
 
 
 // Exit if accessed directly.

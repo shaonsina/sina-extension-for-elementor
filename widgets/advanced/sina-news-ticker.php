@@ -6,11 +6,11 @@
  * @since 1.1.0
  */
 
-use Elementor\Widget_Base;
-use Elementor\Controls_Manager;
-use Elementor\Group_Control_Typography;
-use Elementor\Group_Control_Background;
-use Elementor\Group_Control_Text_Shadow;
+use \Elementor\Widget_Base;
+use \Elementor\Controls_Manager;
+use \Elementor\Group_Control_Typography;
+use \Elementor\Group_Control_Background;
+use \Elementor\Group_Control_Text_Shadow;
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {

@@ -6,12 +6,12 @@
  * @since 1.0.0
  */
 
-use Elementor\Widget_Base;
-use Elementor\Controls_Manager;
-use Elementor\Group_Control_Background;
-use Elementor\Group_Control_Border;
-use Elementor\Repeater;
-use Elementor\Plugin;
+use \Elementor\Widget_Base;
+use \Elementor\Controls_Manager;
+use \Elementor\Group_Control_Background;
+use \Elementor\Group_Control_Border;
+use \Elementor\Repeater;
+use \Elementor\Plugin;
 
 
 // Exit if accessed directly.

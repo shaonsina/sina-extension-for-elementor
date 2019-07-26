@@ -6,8 +6,8 @@
  * @since 1.0.0
  */
 
-use Elementor\Widget_Base;
-use Elementor\Controls_Manager;
+use \Elementor\Widget_Base;
+use \Elementor\Controls_Manager;
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {

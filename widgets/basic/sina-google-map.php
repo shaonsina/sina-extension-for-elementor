@@ -6,9 +6,9 @@
  * @since 1.0.0
  */
 
-use Elementor\Widget_Base;
-use Elementor\Controls_Manager;
-use Elementor\Group_Control_Css_Filter;
+use \Elementor\Widget_Base;
+use \Elementor\Controls_Manager;
+use \Elementor\Group_Control_Css_Filter;
 
 
 // Exit if accessed directly.

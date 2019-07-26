@@ -7,13 +7,13 @@
  */
 
 
-use Elementor\Widget_Base;
-use Elementor\Controls_Manager;
-use Elementor\Group_Control_Typography;
-use Elementor\Group_Control_Background;
-use Elementor\Group_Control_Text_Shadow;
-use Elementor\Group_Control_Border;
-use Elementor\Repeater;
+use \Elementor\Widget_Base;
+use \Elementor\Controls_Manager;
+use \Elementor\Group_Control_Typography;
+use \Elementor\Group_Control_Background;
+use \Elementor\Group_Control_Text_Shadow;
+use \Elementor\Group_Control_Border;
+use \Elementor\Repeater;
 
 
 // Exit if accessed directly.
