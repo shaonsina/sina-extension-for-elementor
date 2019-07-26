@@ -141,7 +141,13 @@ abstract class Sina_Extension_Base{
 	 */
 	public static function activation() {
 		add_option( 'sina_extension_activation', true );
-		add_option( 'sina_widgets', SINA_WIDGETS);
+		$data = get_option( 'sina_widgets' );
+		if ( !empty($data) ) {
+			$data = array_merge(SINA_WIDGETS, $data);
+			update_option( 'sina_widgets', $data);
+			return true;
+		}
+		update_option( 'sina_widgets', SINA_WIDGETS);
 		add_option( 'sina_ext_type', 'free' );
 		add_option( 'sina_map_apikey', '' );
 		add_option( 'sina_mailchimp', [
