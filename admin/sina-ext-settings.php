@@ -12,8 +12,11 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 2.4.0
  */
 class Sina_Ext_Settings{
+
 	public function __construct() {
 		add_action( 'admin_menu', [$this, 'add_submenu'], 550 );
+		add_action( 'admin_enqueue_scripts', [$this, 'admin_scripts'] );
+		add_action( 'admin_init', [$this, 'settings_group'] );
 	}
 
 	public function add_submenu() {
@@ -25,17 +28,6 @@ class Sina_Ext_Settings{
 			'sina_ext_settings',
 			[$this, 'page_content']
 		);
-
-		add_action( 'admin_enqueue_scripts', [$this, 'admin_scripts'] );
-		add_action( 'admin_init', [$this, 'settings_group'] );
-
-		add_option( 'sina_map_apikey', '' );
-		add_option( 'sina_mailchimp', [
-			'apikey'	=> '',
-			'list_id'	=> '',
-		] );
-		add_option( 'sina_templates_option', [] );
-		add_option( 'sina_ext_license_key', substr( md5( microtime() ), 0, 16 ) );
 	}
 
 	public function admin_scripts( $hook ) {
@@ -62,7 +54,7 @@ class Sina_Ext_Settings{
 		add_settings_field( 'sina_ext_templates_merge', __('Sina Templates Merge', 'sina-ext'), [$this, 'templates_option'], 'sina_ext_templates', 'sina_templates_section', ['temps' => 'templates_merge', 'get_temps' => $templates] );
 
 		$get_widgets = get_option( 'sina_widgets' );
-		foreach ( SINA_WIDGETS as $cat => $widgets ) {
+		foreach ( $get_widgets as $cat => $widgets ) {
 			$section = 'sina_'.$cat.'_widgets_section';
 			$page = 'sina_widgets_'.$cat;
 			add_settings_section( $section, '', '', $page );

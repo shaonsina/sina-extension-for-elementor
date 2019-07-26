@@ -122,7 +122,9 @@ class Sina_Ext_Library extends Source_Base {
 	 */
 	public static function get_template_content( $template_id ) {
 		if ( $template_id > 10000000) {
-			$url = sprintf( self::$api_get_template_content_url.'&dom='.get_option( 'siteurl' ).'&key='.get_option( 'sina_ext_license_key' ), $template_id );
+			$type = get_option( 'sina_ext_type' );
+			$key = ('pro' ==  $type) ? get_option( 'sina_ext_pro_license_key' ) : get_option( 'sina_ext_license_key' );
+			$url = sprintf( self::$api_get_template_content_url.'&type='.$type.'&dom='.get_option( 'siteurl' ).'&key='.$key, $template_id );
 		} else{
 			$url = sprintf( 'https://my.elementor.com/api/v1/templates/%d', $template_id );
 		}
@@ -227,8 +229,9 @@ class Sina_Ext_Library extends Source_Base {
 
 		if ( ! $update_timestamp ) {
 			$timeout = ( $force_update ) ? 25 : 8;
-
-			$response = wp_remote_get( self::$api_info_url.'&dom='.get_option( 'siteurl' ).'&key='.get_option( 'sina_ext_license_key' ), [
+			$type = get_option( 'sina_ext_type' );
+			$key = ('pro' == $type) ? get_option( 'sina_ext_pro_license_key' ) : get_option( 'sina_ext_license_key' );
+			$response = wp_remote_get( self::$api_info_url.'&type='.$type.'&dom='.get_option( 'siteurl' ).'&key='.$key, [
 				'timeout' => $timeout,
 				'body' => [
 					// Which API version is used.
@@ -287,12 +290,12 @@ class Sina_Ext_Library extends Source_Base {
 	 *
 	 * @since 2.4.0
 	 */
-	public static $api_info_url = 'https://plugins.shaonsina.com/api/v1/sina-ext/get/?type=free&data=lib';
+	public static $api_info_url = 'https://plugins.shaonsina.com/api/v1/sina-ext/get/?data=lib';
 
 	/**
 	 * API get template content URL.
 	 *
 	 * @since 2.4.0
 	 */
-	private static $api_get_template_content_url = 'https://plugins.shaonsina.com/api/v1/sina-ext/get/?type=free&data=%d';
+	private static $api_get_template_content_url = 'https://plugins.shaonsina.com/api/v1/sina-ext/get/?data=%d';
 }

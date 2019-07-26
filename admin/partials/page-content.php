@@ -5,6 +5,8 @@
 
 <form action="options.php" method="POST">
 	<?php settings_errors(); ?>
+	<?php do_settings_sections( 'sina_ext_license_info' ); ?>
+
 	<h2 class="sina-ext-pt"><?php _e( 'API Settings', 'sina-ext' ); ?></h2>
 	<div class="sina-ext-pb">
 		<?php do_settings_sections( 'sina_ext_settings' ); ?>
@@ -17,7 +19,8 @@
 		</p>
 
 		<?php
-			foreach (SINA_WIDGETS as $cat => $data) {
+			$get_widgets = get_option( 'sina_widgets' );
+			foreach ($get_widgets as $cat => $data) {
 				printf("<div class='sina-ext-pb'><h2>%s</h2>", __( ucfirst($cat), 'sina-ext' ));
 				do_settings_sections( 'sina_widgets_'.$cat );
 				echo '</div>';
