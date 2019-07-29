@@ -366,6 +366,17 @@ class Sina_Common_Data{
 		$obj->end_controls_tabs();
 
 		$obj->add_control(
+			'nav_font',
+			[
+				'label' => __( 'Font Family', 'sina-ext' ),
+				'type' => Controls_Manager::FONT,
+				'separator' => 'before',
+				'selectors' => [
+					'{{WRAPPER}} '.$class.' .owl-prev, {{WRAPPER}} '.$class.' .owl-next' => 'font-family: {{VALUE}}',
+				],
+			]
+		);
+		$obj->add_control(
 			'nav_top',
 			[
 				'label' => __( 'Nav Top (%)', 'sina-ext' ),
@@ -377,7 +388,6 @@ class Sina_Common_Data{
 				'condition' => [
 					'nav!' => '',
 				],
-				'separator' => 'before',
 				'selectors' => [
 					'{{WRAPPER}} '.$class.' .owl-prev, {{WRAPPER}} '.$class.' .owl-next' => 'top: calc({{SIZE}}{{UNIT}} - 18px);',
 				],
