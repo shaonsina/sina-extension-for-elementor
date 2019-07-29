@@ -283,6 +283,16 @@ class Sina_Common_Data{
 				],
 			]
 		);
+
+		$obj->start_controls_tabs( 'nav_tabs' );
+
+		$obj->start_controls_tab(
+			'nav_normal',
+			[
+				'label' => __( 'Normal', 'sina-ext' ),
+			]
+		);
+
 		$obj->add_group_control(
 			Group_Control_Background::get_type(),
 			[
@@ -316,6 +326,45 @@ class Sina_Common_Data{
 				],
 			]
 		);
+
+		$obj->end_controls_tab();
+
+		$obj->start_controls_tab(
+			'nav_hover',
+			[
+				'label' => __( 'Hover', 'sina-ext' ),
+			]
+		);
+
+		$obj->add_group_control(
+			Group_Control_Background::get_type(),
+			[
+				'name' => 'nav_hover_bg',
+				'types' => [ 'classic', 'gradient' ],
+				'condition' => [
+					'nav!' => '',
+				],
+				'selector' => '{{WRAPPER}} '.$class.' .owl-prev:hover, {{WRAPPER}} '.$class.' .owl-next:hover',
+			]
+		);
+		$obj->add_control(
+			'nav_hover_color',
+			[
+				'label' => __( 'Arrow Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'condition' => [
+					'nav!' => '',
+				],
+				'selectors' => [
+					'{{WRAPPER}} '.$class.' .owl-prev:hover, {{WRAPPER}} '.$class.' .owl-next:hover' => 'color: {{VALUE}}'
+				],
+			]
+		);
+
+		$obj->end_controls_tab();
+
+		$obj->end_controls_tabs();
+
 		$obj->add_control(
 			'nav_top',
 			[
@@ -328,6 +377,7 @@ class Sina_Common_Data{
 				'condition' => [
 					'nav!' => '',
 				],
+				'separator' => 'before',
 				'selectors' => [
 					'{{WRAPPER}} '.$class.' .owl-prev, {{WRAPPER}} '.$class.' .owl-next' => 'top: calc({{SIZE}}{{UNIT}} - 18px);',
 				],
