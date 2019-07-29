@@ -38,14 +38,18 @@ abstract class Sina_Extension_Base{
 	public function admin_notice_missing_main_plugin() {
 		if ( isset( $_GET['activate'] ) ) unset( $_GET['activate'] );
 
+		$plugin = 'elementor/elementor.php';
+		$action_url = wp_nonce_url('plugins.php?action=activate&amp;plugin=' . $plugin . '&amp;plugin_status=all&amp;paged=1&amp;s', 'activate-plugin_' . $plugin);
+
 		$message = sprintf(
-			/* translators: 1: Plugin name 2: Elementor */
 			esc_html__( '"%1$s" requires "%2$s" to be installed and activated.', 'sina-ext' ),
 			'<strong>' . esc_html__( 'Sina Extension for Elementor', 'sina-ext' ) . '</strong>',
 			'<strong>' . esc_html__( 'Elementor', 'sina-ext' ) . '</strong>'
 		);
 
-		printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', $message );
+		$button = '<p><a href="' . $action_url . '" class="button-primary">' . __('Activate Elementor', 'sina-ext') . '</a></p>';
+
+		printf('<div class="error"><p>%1$s</p>%2$s</div>', __($message), $button);
 	}
 
 	/**
@@ -59,14 +63,13 @@ abstract class Sina_Extension_Base{
 		if ( isset( $_GET['activate'] ) ) unset( $_GET['activate'] );
 
 		$message = sprintf(
-			/* translators: 1: Plugin name 2: Elementor 3: Required Elementor version */
 			esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'sina-ext' ),
 			'<strong>' . esc_html__( 'Sina Extension for Elementor', 'sina-ext' ) . '</strong>',
 			'<strong>' . esc_html__( 'Elementor', 'sina-ext' ) . '</strong>',
 			 self::MINIMUM_ELEMENTOR_VERSION
 		);
 
-		printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', $message );
+		printf( '<div class="error"><p>%1$s</p></div>', $message );
 	}
 
 	/**
