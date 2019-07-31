@@ -47,6 +47,7 @@ class Sina_Extension extends Sina_Ext_Functions{
 		$this->init();
 
 		new \Sina_Extension\Admin\Sina_Ext_Settings();
+		new \Sina_Extension\Sina_Ext_Controls();
 	}
 
 	/**
@@ -60,5 +61,6 @@ class Sina_Extension extends Sina_Ext_Functions{
 		require_once( SINA_EXT_INC .'sina-ext-hooks.php' );
 		require_once( SINA_EXT_INC .'sina-ext-helpers.php' );
 		require_once( SINA_EXT_INC .'sina-ext-controls.php' );
+		require_once( SINA_EXT_INC .'sina-ext-controls-extend.php' );
 	}
 }
