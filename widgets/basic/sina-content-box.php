@@ -367,58 +367,6 @@ class Sina_Content_Box_Widget extends Widget_Base {
 			]
 		);
 
-		$this->add_control(
-			'icon_color',
-			[
-				'label' => __( 'Icon Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#1085e4',
-				'condition' => [
-					'save_templates' => '',
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-content-box-icon i' => 'color: {{VALUE}};',
-				],
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Border::get_type(),
-			[
-				'name' => 'icon_border',
-				'condition' => [
-					'save_templates' => '',
-				],
-				'selector' => '{{WRAPPER}} .sina-content-box-icon i, {{WRAPPER}} .sina-content-box-icon img',
-			]
-		);
-		$this->add_control(
-			'title_color',
-			[
-				'label' => __( 'Title Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#1085e4',
-				'condition' => [
-					'save_templates' => '',
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-content-box-title, {{WRAPPER}} .sina-content-box-title > a' => 'color: {{VALUE}};',
-				],
-			]
-		);
-		$this->add_control(
-			'desc_color',
-			[
-				'label' => __( 'Description Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#222',
-				'condition' => [
-					'save_templates' => '',
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-content-box-desc' => 'color: {{VALUE}};',
-				],
-			]
-		);
 		$this->add_group_control(
 			Group_Control_Background::get_type(),
 			[
@@ -467,6 +415,82 @@ class Sina_Content_Box_Widget extends Widget_Base {
 			]
 		);
 
+		$this->add_control(
+			'icon_heading',
+			[
+				'label' => __( 'Icon', 'sina-ext' ),
+				'type' => Controls_Manager::HEADING,
+			]
+		);
+		$this->add_control(
+			'icon_color',
+			[
+				'label' => __( 'Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#1085e4',
+				'condition' => [
+					'save_templates' => '',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-content-box-icon i' => 'color: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
+			[
+				'name' => 'icon_background',
+				'types' => [ 'classic', 'gradient' ],
+				'selector' => '{{WRAPPER}} .sina-content-box-icon i',
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Border::get_type(),
+			[
+				'name' => 'icon_border',
+				'condition' => [
+					'save_templates' => '',
+				],
+				'selector' => '{{WRAPPER}} .sina-content-box-icon i, {{WRAPPER}} .sina-content-box-icon img',
+			]
+		);
+
+		$this->add_control(
+			'title_desc_heading',
+			[
+				'label' => __( 'Title & Description', 'sina-ext' ),
+				'type' => Controls_Manager::HEADING,
+			]
+		);
+		$this->add_control(
+			'title_color',
+			[
+				'label' => __( 'Title Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#1085e4',
+				'condition' => [
+					'save_templates' => '',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-content-box-title, {{WRAPPER}} .sina-content-box-title > a' => 'color: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_control(
+			'desc_color',
+			[
+				'label' => __( 'Description Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#222',
+				'condition' => [
+					'save_templates' => '',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-content-box-desc' => 'color: {{VALUE}};',
+				],
+			]
+		);
+
 		$this->end_controls_tab();
 
 		$this->start_controls_tab(
@@ -476,10 +500,56 @@ class Sina_Content_Box_Widget extends Widget_Base {
 			]
 		);
 
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
+			[
+				'name' => 'hover_background',
+				'types' => [ 'classic', 'gradient' ],
+				'selector' => '{{WRAPPER}} .sina-content-box:hover',
+			]
+		);
+		$this->add_control(
+			'box_hover_border',
+			[
+				'label' => __( 'Border Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .sina-content-box:hover' => 'border-color: {{VALUE}}'
+				],
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Box_Shadow::get_type(),
+			[
+				'name' => 'box_hover_shadow',
+				'fields_options' => [
+					'box_shadow_type' => [ 
+						'default' =>'yes' 
+					],
+					'box_shadow' => [
+						'default' => [
+							'horizontal' => '0',
+							'vertical' => '10',
+							'blur' => '10',
+							'color' => 'rgba(0,0,0,0.1)'
+						]
+					]
+				],
+				'selector' => '{{WRAPPER}} .sina-content-box:hover',
+			]
+		);
+
+		$this->add_control(
+			'icon_hover_heading',
+			[
+				'label' => __( 'Icon', 'sina-ext' ),
+				'type' => Controls_Manager::HEADING,
+			]
+		);
 		$this->add_control(
 			'icon_hover_color',
 			[
-				'label' => __( 'Icon Color', 'sina-ext' ),
+				'label' => __( 'Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'condition' => [
 					'save_templates' => '',
@@ -492,7 +562,7 @@ class Sina_Content_Box_Widget extends Widget_Base {
 		$this->add_control(
 			'icon_hover_border',
 			[
-				'label' => __( 'Icon Border Color', 'sina-ext' ),
+				'label' => __( 'Border Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'condition' => [
 					'save_templates' => '',
@@ -500,6 +570,21 @@ class Sina_Content_Box_Widget extends Widget_Base {
 				'selectors' => [
 					'{{WRAPPER}} .sina-content-box:hover .sina-content-box-icon i, {{WRAPPER}} .sina-content-box:hover .sina-content-box-icon img' => 'border-color: {{VALUE}}'
 				],
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
+			[
+				'name' => 'icon_hover_background',
+				'types' => [ 'classic', 'gradient' ],
+				'selector' => '{{WRAPPER}} .sina-content-box:hover .sina-content-box-icon i',
+			]
+		);
+		$this->add_control(
+			'title_desc_hover_heading',
+			[
+				'label' => __( 'Title & Description', 'sina-ext' ),
+				'type' => Controls_Manager::HEADING,
 			]
 		);
 		$this->add_control(
@@ -526,44 +611,6 @@ class Sina_Content_Box_Widget extends Widget_Base {
 				'selectors' => [
 					'{{WRAPPER}} .sina-content-box:hover .sina-content-box-desc' => 'color: {{VALUE}};',
 				],
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Background::get_type(),
-			[
-				'name' => 'hover_background',
-				'types' => [ 'classic', 'gradient' ],
-				'selector' => '{{WRAPPER}} .sina-content-box:hover',
-			]
-		);
-		$this->add_control(
-			'box_hover_border',
-			[
-				'label' => __( 'Box Border Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .sina-content-box:hover' => 'border-color: {{VALUE}}'
-				],
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Box_Shadow::get_type(),
-			[
-				'name' => 'box_hover_shadow',
-				'fields_options' => [
-					'box_shadow_type' => [ 
-						'default' =>'yes' 
-					],
-					'box_shadow' => [
-						'default' => [
-							'horizontal' => '0',
-							'vertical' => '10',
-							'blur' => '10',
-							'color' => 'rgba(0,0,0,0.1)'
-						]
-					]
-				],
-				'selector' => '{{WRAPPER}} .sina-content-box:hover',
 			]
 		);
 

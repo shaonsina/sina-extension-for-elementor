@@ -17,14 +17,14 @@ A collection of high-quality widgets for Elementor page builder.
 This is an extension for [Elementor](https://wordpress.org/plugins/elementor/) page builder. It will extend the Elementor and increase web page building experience. It has 34 useful & high-quality widgets. Which you may use for easy & fast make the page & display your content far better way.
 
 
-= Basic use of Blogpost =
-https://youtu.be/ZnxKYO7-Urw
-
 = Basic use of Particle Layer =
 https://youtu.be/xYMzXFVQri8
 
 = Basic use of Banner Slider =
 https://youtu.be/9HB3UF2dO70
+
+= Use of Sina Templates =
+https://youtu.be/4P546eZSGcg
 
 
 == Features ==
@@ -104,6 +104,9 @@ Yes. It's totally free.
 
 
 == Changelog ==
+
+= 3.0.1 - 10-08-2019 =
+- Added: Background option to Content Box icon
 
 = 3.0.0 - 30-07-2019 =
 - New: Template options
