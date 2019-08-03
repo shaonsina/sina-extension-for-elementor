@@ -139,6 +139,22 @@ class Sina_Accordion_Widget extends Widget_Base {
 				'default' => 'fa fa-angle-up',
 			]
 		);
+		$this->add_control(
+			'icon_position',
+			[
+				'label' => __( 'Icon Position', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					'left' => __( 'Left', 'sina-ext' ),
+					'right' => __( 'Right', 'sina-ext' ),
+				],
+				'default' => 'right',
+				'condition' => [
+					'icon!' => '',
+					'active_icon!' => '',
+				],
+			]
+		);
 
 		$repeater = new Repeater();
 
@@ -239,6 +255,24 @@ class Sina_Accordion_Widget extends Widget_Base {
 				'selector' => '{{WRAPPER}} .sina-accordion-item',
 			]
 		);
+		$this->add_group_control(
+			Group_Control_Border::get_type(),
+			[
+				'name' => 'box_border',
+				'selector' => '{{WRAPPER}} .sina-accordion-item',
+			]
+		);
+		$this->add_responsive_control(
+			'box_radius',
+			[
+				'label' => __( 'Radius', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'selectors' => [
+					'{{WRAPPER}} .sina-accordion-item' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
 		$this->add_responsive_control(
 			'box_margin',
 			[
@@ -314,7 +348,18 @@ class Sina_Accordion_Widget extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '#eee',
 				'selectors' => [
-					'{{WRAPPER}} .sina-accordion-header, {{WRAPPER}} .sina-accordion-icon i' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .sina-accordion-header' => 'color: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_control(
+			'icon_color',
+			[
+				'label' => __( 'Icon Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#eee',
+				'selectors' => [
+					'{{WRAPPER}} .sina-accordion-icon i' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -364,7 +409,17 @@ class Sina_Accordion_Widget extends Widget_Base {
 				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .sina-accordion-item.open .sina-accordion-header, {{WRAPPER}} .sina-accordion-item.open .sina-accordion-icon i' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .sina-accordion-item.open .sina-accordion-header' => 'color: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_control(
+			'icon_active_color',
+			[
+				'label' => __( 'Icon Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					' {{WRAPPER}} .sina-accordion-item.open .sina-accordion-icon i' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -403,7 +458,7 @@ class Sina_Accordion_Widget extends Widget_Base {
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
 					'top' => '15',
-					'right' => '25',
+					'right' => '5',
 					'bottom' => '15',
 					'left' => '25',
 					'isLinked' => false,
@@ -523,11 +578,19 @@ class Sina_Accordion_Widget extends Widget_Base {
 				?>
 				<div class="sina-accordion-item <?php echo esc_attr( $open_class ); ?>">
 					<h4 class="sina-accordion-header sina-flex">
+						<?php if ( 'left' == $data['icon_position']): ?>
+							<span class="sina-accordion-icon">
+								<i class="<?php echo esc_attr( $data['icon']); ?> off"></i>
+								<i class="<?php echo esc_attr( $data['active_icon']); ?> on"></i>
+							</span>
+						<?php endif ?>
 						<?php printf( '%s', $item['title'] ); ?>
-						<span class="sina-accordion-icon">
-							<i class="<?php echo esc_attr( $data['icon']); ?> off"></i>
-							<i class="<?php echo esc_attr( $data['active_icon']); ?> on"></i>
-						</span>
+						<?php if ( 'right' == $data['icon_position']): ?>
+							<span class="sina-accordion-icon">
+								<i class="<?php echo esc_attr( $data['icon']); ?> off"></i>
+								<i class="<?php echo esc_attr( $data['active_icon']); ?> on"></i>
+							</span>
+						<?php endif ?>
 					</h4>
 					<div class="sina-accordion-body">
 						<?php

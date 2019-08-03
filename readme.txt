@@ -107,6 +107,9 @@ Yes. It's totally free.
 
 = 3.0.1 - 10-08-2019 =
 - Added: Background option to Content Box icon
+- Added: Icon color option to Accordion icon
+- Added: Icon position option to Accordion box
+- Added: Box radius & border option to Accordion box
 
 = 3.0.0 - 30-07-2019 =
 - New: Template options
