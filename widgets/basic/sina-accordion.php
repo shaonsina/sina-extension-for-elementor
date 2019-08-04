@@ -458,7 +458,7 @@ class Sina_Accordion_Widget extends Widget_Base {
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
 					'top' => '15',
-					'right' => '5',
+					'right' => '25',
 					'bottom' => '15',
 					'left' => '25',
 					'isLinked' => false,

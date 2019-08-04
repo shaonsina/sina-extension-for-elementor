@@ -48,12 +48,12 @@ Please [See demo](https://shaonsina.com/plugin/sina-extension/)
 3. [Blogpost](https://shaonsina.com/plugin/sina-extension/blogpost): Show your blog posts with masonry grid.
 4. [Brand Carousel](https://shaonsina.com/plugin/sina-extension/brand-carousel): Display clients logo in a carousel.
 5. [Contact Form](https://shaonsina.com/plugin/sina-extension/contact-form): Use contact form with lots of style & layout.
-6. [Content Box](https://shaonsina.com/plugin/sina-extension/content-box): Works the same as the flip box, But it's more powerful because it can be used in any template.
+6. [Content Box](https://shaonsina.com/plugin/sina-extension/content-box): Use for display services or custom content that you want.
 7. [Content Slider](https://shaonsina.com/plugin/sina-extension/content-slider): You can slide any content with that. Also can sliding any template. Enjoy!
 8. [Countdown](https://shaonsina.com/plugin/sina-extension/countdown): Add countdown timer into your web page.
 9. [Counter](https://shaonsina.com/plugin/sina-extension/counter): Show number with animate counting.
-10. [Dynamic Button](https://shaonsina.com/plugin/sina-extension/dynamic-button): Add a button with static or dynamic (page, category or tag).
-11. [Fancy Text](https://shaonsina.com/plugin/sina-extension/fancy-text): Animated text with 20+ animation effects.
+10. [Dynamic Button](https://shaonsina.com/plugin/sina-extension/dynamic-button): Add a button as a static or dynamic (page, category, tag or post formate).
+11. [Fancy Text](https://shaonsina.com/plugin/sina-extension/fancy-text): Use animated text with 20+ animation effects.
 12. [Flip Box](https://shaonsina.com/plugin/sina-extension/flipbox): Use animated Flip Box to highlight any content on your web page.
 13. [Google Map](https://shaonsina.com/plugin/sina-extension/google-map): Add Google map with API key into the web page.
 14. [MailChimp](https://shaonsina.com/plugin/sina-extension/mailchimp): Add MailChimp form for subscriber the users.
@@ -106,10 +106,10 @@ Yes. It's totally free.
 == Changelog ==
 
 = 3.0.1 - 10-08-2019 =
-- Added: Background option to Content Box icon
-- Added: Icon color option to Accordion icon
-- Added: Icon position option to Accordion box
-- Added: Box radius & border option to Accordion box
+- Added: Some option to Content Box
+- Added: Some option to Accordion
+- Added: Some option to Counter
+- Added: Some option to Dynamic Button
 
 = 3.0.0 - 30-07-2019 =
 - New: Template options

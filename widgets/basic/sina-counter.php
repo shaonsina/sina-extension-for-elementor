@@ -406,6 +406,17 @@ class Sina_Counter_Widget extends Widget_Base {
 				'selector' => '{{WRAPPER}} .sina-counter-number-wrap',
 			]
 		);
+		$this->add_responsive_control(
+			'number_margin',
+			[
+				'label' => __( 'Margin', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'selectors' => [
+					'{{WRAPPER}} .sina-counter-number-wrap' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
 
 		$this->end_controls_section();
 		// End Title Style

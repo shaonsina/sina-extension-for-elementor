@@ -243,6 +243,32 @@ class Sina_Dynamic_Button_Widget extends Widget_Base {
 		);
 		Sina_Common_Data::button_style( $this, '.sina-dynamic-btn' );
 		$this->add_responsive_control(
+			'btn_width',
+			[
+				'label' => __( 'Min Width', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', 'em', '%' ],
+				'range' => [
+					'px' => [
+						'min' => 0,
+						'max' => 1000,
+					],
+					'em' => [
+						'min' => 0,
+						'max' => 100,
+					],
+					'%' => [
+						'min' => 0,
+						'max' => 100,
+					],
+				],
+				'separator' => 'before',
+				'selectors' => [
+					'{{WRAPPER}} .sina-dynamic-btn' => 'min-width: {{SIZE}}{{UNIT}};;',
+				],
+			]
+		);
+		$this->add_responsive_control(
 			'btn_radius',
 			[
 				'label' => __( 'Radius', 'sina-ext' ),
@@ -255,7 +281,6 @@ class Sina_Dynamic_Button_Widget extends Widget_Base {
 					'left' => '4',
 					'isLinked' => true,
 				],
-				'separator' => 'before',
 				'selectors' => [
 					'{{WRAPPER}} .sina-dynamic-btn' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
