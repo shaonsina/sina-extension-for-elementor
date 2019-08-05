@@ -107,6 +107,10 @@ Yes. It's totally free.
 
 = 3.0.1 - 10-08-2019 =
 - Added: Some option to Content Box
+- Added: Some option to Flip Box
+
+= 3.0.1 - 10-08-2019 =
+- Added: Some option to Content Box
 - Added: Some option to Accordion
 - Added: Some option to Counter
 - Added: Some option to Dynamic Button

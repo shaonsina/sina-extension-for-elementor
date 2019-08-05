@@ -441,7 +441,10 @@ class Sina_Content_Box_Widget extends Widget_Base {
 			[
 				'name' => 'icon_background',
 				'types' => [ 'classic', 'gradient' ],
-				'selector' => '{{WRAPPER}} .sina-content-box-icon i',
+				'condition' => [
+					'save_templates' => '',
+				],
+				'selector' => '{{WRAPPER}} .sina-content-box-icon i, {{WRAPPER}} .sina-content-box-icon img',
 			]
 		);
 		$this->add_group_control(
@@ -577,7 +580,10 @@ class Sina_Content_Box_Widget extends Widget_Base {
 			[
 				'name' => 'icon_hover_background',
 				'types' => [ 'classic', 'gradient' ],
-				'selector' => '{{WRAPPER}} .sina-content-box:hover .sina-content-box-icon i',
+				'condition' => [
+					'save_templates' => '',
+				],
+				'selector' => '{{WRAPPER}} .sina-content-box:hover .sina-content-box-icon i, {{WRAPPER}} .sina-content-box:hover .sina-content-box-icon img',
 			]
 		);
 		$this->add_control(
@@ -640,7 +646,7 @@ class Sina_Content_Box_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'box_padding',
 			[
-				'label' => __( 'Padding', 'sina-ext' ),
+				'label' => __( 'Box Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -652,6 +658,21 @@ class Sina_Content_Box_Widget extends Widget_Base {
 				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-content-box' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'content_padding',
+			[
+				'label' => __( 'Content Padding', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'condition' => [
+					'save_templates' => '',
+					'icon_format' => 'image',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-content-box-content' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);

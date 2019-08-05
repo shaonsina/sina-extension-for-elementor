@@ -124,7 +124,7 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 			[
 				'label' => __( 'Icon', 'sina-ext' ),
 				'type' => Controls_Manager::ICON,
-				'default' => 'fa fa-amazon',
+				'default' => 'fa fa-android',
 				'condition' => [
 					'front_icon_format' => 'icon',
 				],
@@ -204,7 +204,7 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 			[
 				'label' => __( 'Icon', 'sina-ext' ),
 				'type' => Controls_Manager::ICON,
-				'default' => 'fa fa-android',
+				'default' => 'fa fa-tablet',
 				'condition' => [
 					'back_icon_format' => 'icon',
 				],
@@ -325,6 +325,20 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 				],
 			]
 		);
+		$this->add_responsive_control(
+			'front_content_padding',
+			[
+				'label' => __( 'Content Padding', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'condition' => [
+					'front_icon_format' => 'image',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-flipbox-front .sina-flipbox-content' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
 
 		$this->end_controls_tab();
 
@@ -373,6 +387,20 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-flipbox-back' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'back_content_padding',
+			[
+				'label' => __( 'Content Padding', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'condition' => [
+					'back_icon_format' => 'image',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-flipbox-back .sina-flipbox-content' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -524,6 +552,14 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 			]
 		);
 		$this->add_group_control(
+			Group_Control_Background::get_type(),
+			[
+				'name' => 'front_icon_background',
+				'types' => [ 'classic', 'gradient' ],
+				'selector' => '{{WRAPPER}} .sina-flipbox-front .sina-flipbox-icon i, {{WRAPPER}} .sina-flipbox-front .sina-flipbox-icon img',
+			]
+		);
+		$this->add_group_control(
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'front_icon_image_shadow',
@@ -632,6 +668,14 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 				'selectors' => [
 					'{{WRAPPER}} .sina-flipbox-back .sina-flipbox-icon img' => 'width: {{SIZE}}{{UNIT}};',
 				],
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
+			[
+				'name' => 'back_icon_background',
+				'types' => [ 'classic', 'gradient' ],
+				'selector' => '{{WRAPPER}} .sina-flipbox-back .sina-flipbox-icon i, {{WRAPPER}} .sina-flipbox-back .sina-flipbox-icon img',
 			]
 		);
 		$this->add_group_control(
@@ -882,6 +926,17 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 				'selector' => '{{WRAPPER}} .sina-flipbox-front .sina-flipbox-desc',
 			]
 		);
+		$this->add_responsive_control(
+			'front_desc_padding',
+			[
+				'label' => __( 'Padding', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'selectors' => [
+					'{{WRAPPER}} .sina-flipbox-front .sina-flipbox-desc' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
 
 		$this->end_controls_tab();
 
@@ -915,6 +970,17 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 			[
 				'name' => 'back_desc_shadow',
 				'selector' => '{{WRAPPER}} .sina-flipbox-back .sina-flipbox-desc',
+			]
+		);
+		$this->add_responsive_control(
+			'back_desc_padding',
+			[
+				'label' => __( 'Padding', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'selectors' => [
+					'{{WRAPPER}} .sina-flipbox-back .sina-flipbox-desc' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
 			]
 		);
 
