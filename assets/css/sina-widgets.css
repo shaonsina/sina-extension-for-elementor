@@ -61,10 +61,10 @@
 .sina-banner-slider{
 	direction: ltr;
 }
+.sina-transform-content,
 .sina-load-more,
 .sina-bp-list .sina-bp,
 .sina-modal-content,
-.sina-transform-overflow,
 .sina-accordion-item,
 .sina-accordion-body,
 .sina-blogpost,
@@ -802,11 +802,6 @@ img.mfp-img{
 }
 
 /*-------------------------- Progressbars --------------------------*/
-.sina-progressbars .sina-bar {
-	display: block;
-	width: 100%;
-	overflow: hidden;
-}
 .sina-progressbars .sina-bar-bg {
 	display: block;
 	width: 100%;
@@ -902,6 +897,65 @@ img.mfp-img{
 	display: inline-block;
 	text-align: center;
 	transition: all 0.5s;
+}
+
+
+/*ANIMATIONS*/
+.sina-rubber-anim{
+	-webkit-animation: sina-rubber-anim 1.5s ease-in infinite;
+	animation: sina-rubber-anim 1.5s ease-in infinite;
+}
+.sina-scale-anim{
+	-webkit-animation: sina-scale-anim 1.5s ease-in infinite;
+	animation: sina-scale-anim 1.5s ease-in infinite;
+}
+.sina-wave-anim{
+	-webkit-animation: sina-wave-anim 2s ease-in infinite;
+	animation: sina-wave-anim 2s ease-in infinite;
+}
+@keyframes sina-rubber-anim{
+	0% {transform: scale(1);}
+	15% {transform: scale(1.15, 0.9);}
+	40% {transform: scale(1.15, 0.9);}
+	45% {transform: scale(1);}
+	55% {transform: scale(1.1, 0.95);}
+	65% {transform: scale(1.1, 0.95);}
+	70% {transform: scale(1);}
+	75% {transform: scale(1.05, 0.97);}
+	100% {transform: scale(1);}
+}
+@-webkit-keyframes sina-rubber-anim{
+	0% {transform: scale(1);}
+	15% {transform: scale(1.15, 0.9);}
+	40% {transform: scale(1.15, 0.9);}
+	45% {transform: scale(1);}
+	55% {transform: scale(1.1, 0.95);}
+	65% {transform: scale(1.1, 0.95);}
+	70% {transform: scale(1);}
+	75% {transform: scale(1.05, 0.97);}
+	100% {transform: scale(1);}
+}
+@keyframes sina-scale-anim{
+	0% {transform: scale(1);}
+	40% {transform: scale(0.8);}
+	80% {transform: scale(0.8);}
+	100% {transform: scale(1);}
+}
+@-webkit-keyframes sina-scale-anim{
+	0% {transform: scale(1);}
+	40% {transform: scale(0.8);}
+	80% {transform: scale(0.8);}
+	100% {transform: scale(1);}
+}
+@keyframes sina-wave-anim{
+	0% {box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5);}
+	60% {box-shadow: 0 0 0 25px rgba(255, 255, 255, 0);}
+	100% {box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);}
+}
+@-webkit-keyframes sina-wave-anim{
+	0% {box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5);}
+	60% {box-shadow: 0 0 0 25px rgba(255, 255, 255, 0);}
+	100% {box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);}
 }
 
 

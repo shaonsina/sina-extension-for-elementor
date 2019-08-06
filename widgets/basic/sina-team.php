@@ -455,6 +455,21 @@ class Sina_Team_Widget extends Widget_Base {
 				'selector' => '{{WRAPPER}} .sina-team-name',
 			]
 		);
+		$this->add_responsive_control(
+			'name_margin',
+			[
+				'label' => __( 'Margin Bottom', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'unit' => 'px',
+					'size' => '15',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-team-name' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
 
 		$this->end_controls_section();
 		// End Name Style
@@ -507,6 +522,21 @@ class Sina_Team_Widget extends Widget_Base {
 			[
 				'name' => 'position_shadow',
 				'selector' => '{{WRAPPER}} .sina-team-position',
+			]
+		);
+		$this->add_responsive_control(
+			'position_margin',
+			[
+				'label' => __( 'Margin Bottom', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'unit' => 'px',
+					'size' => '15',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-team-position' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+				],
 			]
 		);
 

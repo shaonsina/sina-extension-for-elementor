@@ -12,6 +12,7 @@ use \Elementor\Controls_Manager;
 use \Elementor\Group_Control_Typography;
 use \Elementor\Group_Control_Background;
 use \Elementor\Group_Control_Text_Shadow;
+use \Elementor\Group_Control_Box_Shadow;
 use \Elementor\Group_Control_Border;
 use \Elementor\Repeater;
 
@@ -177,6 +178,20 @@ class Sina_Progressbar_Widget extends Widget_Base {
 			]
 		);
 
+		$this->add_responsive_control(
+			'bars_height',
+			[
+				'label' => __('Height', 'sina-ext'),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => ['px', 'em'],
+				'default' => [
+					'size' => 16,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-bar-bg' => 'height: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
 		$this->add_group_control(
 			Group_Control_Background::get_type(),
 			[
@@ -193,18 +208,18 @@ class Sina_Progressbar_Widget extends Widget_Base {
 				'selector' => '{{WRAPPER}} .sina-bar-bg',
 			]
 		);
-		$this->add_responsive_control(
-			'bars_height',
+		$this->add_group_control(
+			Group_Control_Box_Shadow::get_type(),
 			[
-				'label' => __('Height', 'sina-ext'),
-				'type' => Controls_Manager::SLIDER,
-				'size_units' => ['px', 'em'],
-				'default' => [
-					'size' => 16,
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-bar-bg' => 'height: {{SIZE}}{{UNIT}};',
-				],
+				'name' => 'bar_shadow',
+				'selector' => '{{WRAPPER}} .sina-bar-bg',
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Border::get_type(),
+			[
+				'name' => 'bars_border',
+				'selector' => '{{WRAPPER}} .sina-bar-bg',
 			]
 		);
 		$this->add_responsive_control(
@@ -218,17 +233,10 @@ class Sina_Progressbar_Widget extends Widget_Base {
 				],
 			]
 		);
-		$this->add_group_control(
-			Group_Control_Border::get_type(),
-			[
-				'name' => 'bars_border',
-				'selector' => '{{WRAPPER}} .sina-bar-bg',
-			]
-		);
 		$this->add_control(
 			'track',
 			[
-				'label' => __( 'Track Background', 'sina-ext' ),
+				'label' => __( 'Track Style', 'sina-ext' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -246,6 +254,13 @@ class Sina_Progressbar_Widget extends Widget_Base {
 						'default' => '#1085e4',
 					],
 				],
+				'selector' => '{{WRAPPER}} .sina-bar-content',
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Box_Shadow::get_type(),
+			[
+				'name' => 'track_shadow',
 				'selector' => '{{WRAPPER}} .sina-bar-content',
 			]
 		);
@@ -459,17 +474,15 @@ class Sina_Progressbar_Widget extends Widget_Base {
 		}
 		?>
 		<div class="sina-progressbars">
-			<div class="sina-bar">
-				<?php if ( $data['title'] ): ?>
-					<?php printf( '<h3 class="sina-bar-title">%1$s</h3>', $data['title'] ); ?>
-				<?php endif; ?>
+			<?php if ( $data['title'] ): ?>
+				<?php printf( '<h3 class="sina-bar-title">%1$s</h3>', $data['title'] ); ?>
+			<?php endif; ?>
 
-				<div class="sina-bar-bg">
-					<div class="sina-bar-content sina-flex" data-percentage="<?php echo esc_attr( $percent ); ?>">
-						<span class="sina-bar-percent">
-								<?php printf( '%s', $data['prefix'].$data['percentage'].$data['suffix'] ); ?>
-						</span>
-					</div>
+			<div class="sina-bar-bg">
+				<div class="sina-bar-content sina-flex" data-percentage="<?php echo esc_attr( $percent ); ?>">
+					<span class="sina-bar-percent">
+							<?php printf( '%s', $data['prefix'].$data['percentage'].$data['suffix'] ); ?>
+					</span>
 				</div>
 			</div>
 		</div><!-- .sina-progressbars -->

@@ -157,6 +157,9 @@ class Sina_Video_Widget extends Widget_Base {
 			[
 				'label' => __( 'Title', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
+				'condition' => [
+					'title!' => '',
+				],
 			]
 		);
 
@@ -237,6 +240,20 @@ class Sina_Video_Widget extends Widget_Base {
 			[
 				'label' => __( 'Button', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_control(
+			'animation',
+			[
+				'label' => __( 'Animation', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					'' => __( 'None', 'sina-ext' ),
+					'sina-rubber-anim' => __( 'Rubber', 'sina-ext' ),
+					'sina-scale-anim' => __( 'Scale', 'sina-ext' ),
+					'sina-wave-anim' => __( 'Wave', 'sina-ext' ),
+				],
 			]
 		);
 
@@ -448,7 +465,7 @@ class Sina_Video_Widget extends Widget_Base {
 		?>
 		<div class="sina-video">
 			<?php if ( $data['icon'] ): ?>
-				<a class="sina-video-play" href="<?php echo esc_url( $data['video_link'] ); ?>">
+				<a class="sina-video-play <?php echo esc_attr($data['animation']); ?>" href="<?php echo esc_url( $data['video_link'] ); ?>">
 					<i class="<?php echo esc_attr( $data['icon'] ); ?>"></i>
 				</a>
 			<?php endif ?>

@@ -202,19 +202,6 @@ class Sina_Transform_Widget extends Widget_Base {
 			]
 		);
 
-		$this->add_control(
-			'transform_overflow',
-			[
-				'label' => __( 'Overflow', 'sina-ext' ),
-				'type' => Controls_Manager::SELECT,
-				'options' => [
-					'' => 'Default',
-					'sina-transform-overflow' => 'Hidden',
-				],
-				'default' => '',
-			]
-		);
-
 		$this->start_controls_tabs( 'transform_tabs' );
 
 		$this->start_controls_tab(
@@ -224,7 +211,7 @@ class Sina_Transform_Widget extends Widget_Base {
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'rotateX',
 			[
 				'label' => __( 'Rotate X', 'sina-ext' ),
@@ -247,7 +234,7 @@ class Sina_Transform_Widget extends Widget_Base {
 				],
 			]
 		);
-		$this->add_control(
+		$this->add_responsive_control(
 			'rotateY',
 			[
 				'label' => __( 'Rotate Y', 'sina-ext' ),
@@ -270,7 +257,7 @@ class Sina_Transform_Widget extends Widget_Base {
 				],
 			]
 		);
-		$this->add_control(
+		$this->add_responsive_control(
 			'rotateZ',
 			[
 				'label' => __( 'Rotate Z', 'sina-ext' ),
@@ -293,7 +280,7 @@ class Sina_Transform_Widget extends Widget_Base {
 				],
 			]
 		);
-		$this->add_control(
+		$this->add_responsive_control(
 			'skewX',
 			[
 				'label' => __( 'Skew X', 'sina-ext' ),
@@ -316,7 +303,7 @@ class Sina_Transform_Widget extends Widget_Base {
 				],
 			]
 		);
-		$this->add_control(
+		$this->add_responsive_control(
 			'skewY',
 			[
 				'label' => __( 'Skew Y', 'sina-ext' ),
@@ -381,7 +368,7 @@ class Sina_Transform_Widget extends Widget_Base {
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'rotateX_hover',
 			[
 				'label' => __( 'Rotate X', 'sina-ext' ),
@@ -404,7 +391,7 @@ class Sina_Transform_Widget extends Widget_Base {
 				],
 			]
 		);
-		$this->add_control(
+		$this->add_responsive_control(
 			'rotateY_hover',
 			[
 				'label' => __( 'Rotate Y', 'sina-ext' ),
@@ -427,7 +414,7 @@ class Sina_Transform_Widget extends Widget_Base {
 				],
 			]
 		);
-		$this->add_control(
+		$this->add_responsive_control(
 			'rotateZ_hover',
 			[
 				'label' => __( 'Rotate Z', 'sina-ext' ),
@@ -450,7 +437,7 @@ class Sina_Transform_Widget extends Widget_Base {
 				],
 			]
 		);
-		$this->add_control(
+		$this->add_responsive_control(
 			'skewX_hover',
 			[
 				'label' => __( 'Skew X', 'sina-ext' ),
@@ -473,7 +460,7 @@ class Sina_Transform_Widget extends Widget_Base {
 				],
 			]
 		);
-		$this->add_control(
+		$this->add_responsive_control(
 			'skewY_hover',
 			[
 				'label' => __( 'Skew Y', 'sina-ext' ),
@@ -511,7 +498,7 @@ class Sina_Transform_Widget extends Widget_Base {
 			[
 				'name' => 'transform_hover_bg',
 				'types' => [ 'classic', 'gradient' ],
-				'selector' => '{{WRAPPER}} {{WRAPPER}} .sina-transform:hover .sina-transform-content',
+				'selector' => '{{WRAPPER}} .sina-transform:hover .sina-transform-content',
 			]
 		);
 		$this->add_group_control(
@@ -533,6 +520,18 @@ class Sina_Transform_Widget extends Widget_Base {
 
 		$this->end_controls_tabs();
 
+		$this->add_responsive_control(
+			'transform_radius',
+			[
+				'label' => __('Border Radius', 'sina-ext'),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em' , '%' ],
+				'selectors' => [
+					'{{WRAPPER}} .sina-transform-content' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
 		$this->end_controls_section();
 		// End Transform Style
 		// =======================
@@ -542,8 +541,8 @@ class Sina_Transform_Widget extends Widget_Base {
 	protected function render() {
 		$data = $this->get_settings_for_display();
 		?>
-		<div class="sina-transform <?php echo esc_attr( $data['transform_overflow'] ); ?>">
-			<div class="sina-transform-content">
+		<div class="sina-transform">
+			<div class="sina-transform-content <?php echo esc_attr( $data['transform_overflow'] ); ?>">
 				<?php
 					if ( 'yes' == $data['save_templates'] && $data['template'] ) :
 						$frontend = new Frontend;
