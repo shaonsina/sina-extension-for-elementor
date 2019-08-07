@@ -5,7 +5,7 @@ Donate link: https://shaonsina.com/plugin/sina-extension/
 Requires at least: 4.7
 Tested up to: 5.2
 Requires PHP: 7.0
-Stable tag: 3.0.0
+Stable tag: 3.0.2
 License: GPL v3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -105,13 +105,16 @@ Yes. It's totally free.
 
 == Changelog ==
 
-= 3.0.1 - 10-08-2019 =
+= 3.0.3 - 15-08-2019 =
+- Added: Some option to Title
+
+= 3.0.2 - 10-08-2019 =
 - Added: Some option to Content Box
 - Added: Some option to Flip Box
 - Added: Some option to Progress bar
-- Added: Some option to Video
-- Added: Some option to Transform
 - Added: Some option to Team
+- Added: Some option to Transform
+- Added: Some option to Video
 
 = 3.0.1 - 05-08-2019 =
 - Added: Some option to Content Box

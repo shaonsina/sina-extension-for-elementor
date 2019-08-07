@@ -9,6 +9,7 @@ use \Elementor\Widget_Base;
 use \Elementor\Controls_Manager;
 use \Elementor\Group_Control_Typography;
 use \Elementor\Group_Control_Text_Shadow;
+use \Sina_Extension\Sina_Ext_Gradient_Text;
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -61,7 +62,7 @@ class Sina_Title_Widget extends Widget_Base {
 	 * @since 2.0.0
 	 */
 	public function get_keywords() {
-		return [ 'sina title', 'sina subtitle' ];
+		return [ 'sina title', 'sina subtitle', 'sina heading', 'sina sub heading' ];
 	}
 
 	/**
@@ -186,17 +187,6 @@ class Sina_Title_Widget extends Widget_Base {
 			]
 		);
 
-		$this->add_control(
-			'title_color',
-			[
-				'label' => __( 'Text Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#222',
-				'selectors' => [
-					'{{WRAPPER}} .sina-title-title' => 'color: {{VALUE}};',
-				],
-			]
-		);
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
@@ -229,6 +219,13 @@ class Sina_Title_Widget extends Widget_Base {
 			Group_Control_Text_Shadow::get_type(),
 			[
 				'name' => 'title_shadow',
+				'selector' => '{{WRAPPER}} .sina-title-title',
+			]
+		);
+		$this->add_group_control(
+			Sina_Ext_Gradient_Text::get_type(),
+			[
+				'name' => 'title_color',
 				'selector' => '{{WRAPPER}} .sina-title-title',
 			]
 		);

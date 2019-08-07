@@ -897,6 +897,7 @@ class Sina_Content_Box_Widget extends Widget_Base {
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'save_templates' => '',
+					'desc!' => '',
 				],
 			]
 		);
