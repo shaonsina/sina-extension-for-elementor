@@ -291,17 +291,6 @@ class Sina_Title_Widget extends Widget_Base {
 			]
 		);
 
-		$this->add_control(
-			'title_span_color',
-			[
-				'label' => __( 'Text Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#1085e4',
-				'selectors' => [
-					'{{WRAPPER}} .sina-title-title > span' => 'color: {{VALUE}};',
-				],
-			]
-		);
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
@@ -313,6 +302,13 @@ class Sina_Title_Widget extends Widget_Base {
 			Group_Control_Text_Shadow::get_type(),
 			[
 				'name' => 'title_span_shadow',
+				'selector' => '{{WRAPPER}} .sina-title-title > span',
+			]
+		);
+		$this->add_group_control(
+			Sina_Ext_Gradient_Text::get_type(),
+			[
+				'name' => 'title_span_color',
 				'selector' => '{{WRAPPER}} .sina-title-title > span',
 			]
 		);
@@ -335,17 +331,6 @@ class Sina_Title_Widget extends Widget_Base {
 			]
 		);
 
-		$this->add_control(
-			'subtitle_color',
-			[
-				'label' => __( 'Text Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#222',
-				'selectors' => [
-					'{{WRAPPER}} .sina-title-subtitle' => 'color: {{VALUE}};',
-				],
-			]
-		);
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
@@ -372,6 +357,13 @@ class Sina_Title_Widget extends Widget_Base {
 			Group_Control_Text_Shadow::get_type(),
 			[
 				'name' => 'subtitle_shadow',
+				'selector' => '{{WRAPPER}} .sina-title-subtitle',
+			]
+		);
+		$this->add_group_control(
+			Sina_Ext_Gradient_Text::get_type(),
+			[
+				'name' => 'subtitle_color',
 				'selector' => '{{WRAPPER}} .sina-title-subtitle',
 			]
 		);
@@ -437,17 +429,6 @@ class Sina_Title_Widget extends Widget_Base {
 			]
 		);
 
-		$this->add_control(
-			'desc_color',
-			[
-				'label' => __( 'Text Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#222',
-				'selectors' => [
-					'{{WRAPPER}} .sina-title-desc' => 'color: {{VALUE}};',
-				],
-			]
-		);
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
@@ -475,6 +456,17 @@ class Sina_Title_Widget extends Widget_Base {
 			[
 				'name' => 'desc_shadow',
 				'selector' => '{{WRAPPER}} .sina-title-desc',
+			]
+		);
+		$this->add_control(
+			'desc_color',
+			[
+				'label' => __( 'Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#222',
+				'selectors' => [
+					'{{WRAPPER}} .sina-title-desc' => 'color: {{VALUE}};',
+				],
 			]
 		);
 		$this->add_responsive_control(

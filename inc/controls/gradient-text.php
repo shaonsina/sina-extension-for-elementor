@@ -66,7 +66,6 @@ class Sina_Ext_Gradient_Text extends Group_Control_Base {
 					'icon' => 'fa fa-image',
 				],
 			],
-			'toggle' => false,
 			'default' => 'classic',
 		];
 
@@ -79,6 +78,7 @@ class Sina_Ext_Gradient_Text extends Group_Control_Base {
 			'condition' => [
 				'background' => [ 'classic', 'gradient' ],
 			],
+			'default' => '#222',
 		];
 
 		$fields['color_stop'] = [

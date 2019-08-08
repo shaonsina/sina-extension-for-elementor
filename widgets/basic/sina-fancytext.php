@@ -11,6 +11,7 @@ use \Elementor\Controls_Manager;
 use \Elementor\Group_Control_Typography;
 use \Elementor\Group_Control_Text_Shadow;
 use \Elementor\Repeater;
+use \Sina_Extension\Sina_Ext_Gradient_Text;
 
 
 // Exit if accessed directly.
@@ -356,17 +357,6 @@ class Sina_Fancytext_Widget extends Widget_Base {
 			]
 		);
 
-		$this->add_control(
-			'fancy_color',
-			[
-				'label' => __( 'Text Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#1085e4',
-				'selectors' => [
-					'{{WRAPPER}} .sina-fancytext-strings, {{WRAPPER}} .typed-cursor' => 'color: {{VALUE}};',
-				],
-			]
-		);
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
@@ -379,6 +369,18 @@ class Sina_Fancytext_Widget extends Widget_Base {
 			[
 				'name' => 'fancy_shadow',
 				'selector' => '{{WRAPPER}} .sina-fancytext-strings',
+			]
+		);
+		$this->add_group_control(
+			Sina_Ext_Gradient_Text::get_type(),
+			[
+				'name' => 'fancy_color',
+				'fields_options' => [
+					'color' => [
+						'default' => '#1085e4',
+					],
+				],
+				'selector' => '{{WRAPPER}} .sina-fancytext-strings, {{WRAPPER}} .sina-fancytext-strings > span.animated, {{WRAPPER}} .typed-cursor',
 			]
 		);
 
@@ -400,17 +402,6 @@ class Sina_Fancytext_Widget extends Widget_Base {
 			]
 		);
 
-		$this->add_control(
-			'prefix_color',
-			[
-				'label' => __( 'Text Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#d300d0',
-				'selectors' => [
-					'{{WRAPPER}} .sina-fancytext-prefix' => 'color: {{VALUE}};',
-				],
-			]
-		);
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
@@ -422,6 +413,13 @@ class Sina_Fancytext_Widget extends Widget_Base {
 			Group_Control_Text_Shadow::get_type(),
 			[
 				'name' => 'prefix_shadow',
+				'selector' => '{{WRAPPER}} .sina-fancytext-prefix',
+			]
+		);
+		$this->add_group_control(
+			Sina_Ext_Gradient_Text::get_type(),
+			[
+				'name' => 'prefix_color',
 				'selector' => '{{WRAPPER}} .sina-fancytext-prefix',
 			]
 		);
@@ -444,17 +442,6 @@ class Sina_Fancytext_Widget extends Widget_Base {
 			]
 		);
 
-		$this->add_control(
-			'suffix_color',
-			[
-				'label' => __( 'Text Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#00aa00',
-				'selectors' => [
-					'{{WRAPPER}} .sina-fancytext-suffix' => 'color: {{VALUE}};',
-				],
-			]
-		);
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
@@ -466,6 +453,13 @@ class Sina_Fancytext_Widget extends Widget_Base {
 			Group_Control_Text_Shadow::get_type(),
 			[
 				'name' => 'suffix_shadow',
+				'selector' => '{{WRAPPER}} .sina-fancytext-suffix',
+			]
+		);
+		$this->add_group_control(
+			Sina_Ext_Gradient_Text::get_type(),
+			[
+				'name' => 'suffix_color',
 				'selector' => '{{WRAPPER}} .sina-fancytext-suffix',
 			]
 		);

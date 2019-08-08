@@ -105,7 +105,8 @@ Yes. It's totally free.
 
 == Changelog ==
 
-= 3.0.3 - 15-08-2019 =
+= 3.0.3 - 10-08-2019 =
+- Added: Some option to Fancy Text
 - Added: Some option to Title
 
 = 3.0.2 - 10-08-2019 =
@@ -156,7 +157,7 @@ Yes. It's totally free.
 **NOTE: Some widgets has been changed. So, please review your site after update.**
 
 = 2.2.1 - 19-06-2019 =
-- Fixed: Security issue
+- Fixed: Path issue
 
 = 2.2.0 - 15-06-2019 =
 - New: Modal Box

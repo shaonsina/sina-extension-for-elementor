@@ -404,6 +404,10 @@ class Sina_Blogpost_Widget extends Widget_Base {
 					'unit' => '%',
 					'size' => '100',
 				],
+				'mobile_default' => [
+					'unit' => '%',
+					'size' => '100',
+				],
 				'condition' => [
 					'layout' => 'list',
 				],
@@ -448,6 +452,10 @@ class Sina_Blogpost_Widget extends Widget_Base {
 					'size' => '60',
 				],
 				'tablet_default' => [
+					'unit' => '%',
+					'size' => '100',
+				],
+				'mobile_default' => [
 					'unit' => '%',
 					'size' => '100',
 				],
