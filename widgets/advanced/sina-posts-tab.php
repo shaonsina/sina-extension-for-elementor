@@ -231,6 +231,17 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 			]
 		);
 		$this->add_responsive_control(
+			'cat_width',
+			[
+				'label' => __( 'Min Width', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', 'em' ],
+				'selectors' => [
+					'{{WRAPPER}} .sina-pt-cat-btn' => 'min-width: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
 			'cat_radius',
 			[
 				'label' => __( 'Radius', 'sina-ext' ),
@@ -356,6 +367,17 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-pt-content-content .sina-pt-item' => 'height: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'thumb_radius',
+			[
+				'label' => __( 'Radius', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'selectors' => [
+					'{{WRAPPER}} .sina-pt-content-content .sina-pt-item' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -656,6 +678,17 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 					],
 				],
 				'selector' => '{{WRAPPER}} .sina-pt-content .sina-pt-post',
+			]
+		);
+		$this->add_responsive_control(
+			'preview_radius',
+			[
+				'label' => __( 'Radius', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'selectors' => [
+					'{{WRAPPER}} .sina-pt-content .sina-pt-thumb' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
 			]
 		);
 

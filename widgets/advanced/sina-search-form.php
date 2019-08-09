@@ -138,8 +138,17 @@ class Sina_Search_Form_Widget extends Widget_Base {
 						'max' => 50,
 					],
 				],
+				'desktop_default' => [
+					'unit' => 'px',
+					'size' => '300',
+				],
+				'tablet_default' => [
+					'unit' => 'px',
+					'size' => '300',
+				],
 				'mobile_default' => [
-					'size' => '190',
+					'unit' => 'px',
+					'size' => '170',
 				],
 				'separator' => 'before',
 				'selectors' => [
@@ -364,6 +373,20 @@ class Sina_Search_Form_Widget extends Widget_Base {
 					'right' => '25',
 					'bottom' => '11',
 					'left' => '25',
+					'isLinked' => false,
+				],
+				'tablet_default' => [
+					'top' => '11',
+					'right' => '20',
+					'bottom' => '11',
+					'left' => '20',
+					'isLinked' => false,
+				],
+				'mobile_default' => [
+					'top' => '11',
+					'right' => '15',
+					'bottom' => '11',
+					'left' => '15',
 					'isLinked' => false,
 				],
 				'selectors' => [

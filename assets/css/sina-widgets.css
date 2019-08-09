@@ -76,6 +76,7 @@
 .xzoom-hidden,
 .sina-portfolio,
 .sina-posts-tab,
+.sina-pt-item,
 .sina-pt-content,
 .sina-pt-content .sina-pt-post {
 	overflow: hidden;
@@ -527,7 +528,6 @@ img.mfp-img{
 	overflow: hidden;
 	text-align: center;
 }
-.sina-search-box .sina-input-field,
 .sina-subs-input .sina-input-field{
 	width: 300px;
 }
