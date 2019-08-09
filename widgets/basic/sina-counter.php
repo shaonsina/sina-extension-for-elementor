@@ -340,7 +340,7 @@ class Sina_Counter_Widget extends Widget_Base {
 					'right' => '0',
 					'bottom' => '0',
 					'left' => '0',
-					'isLinked' => false,
+					'isLinked' => true,
 				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-counter-title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',

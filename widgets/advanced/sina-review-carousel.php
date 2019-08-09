@@ -465,7 +465,7 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 					'right' => '0',
 					'bottom' => '0',
 					'left' => '0',
-					'isLinked' => true,
+					'isLinked' => false,
 				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-review-position' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',

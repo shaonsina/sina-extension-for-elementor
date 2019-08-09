@@ -158,7 +158,7 @@ class Sina_Search_Form_Widget extends Widget_Base {
 					'right' => '0',
 					'bottom' => '0',
 					'left' => '25',
-					'isLinked' => true,
+					'isLinked' => false,
 				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-input-field' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
@@ -346,7 +346,7 @@ class Sina_Search_Form_Widget extends Widget_Base {
 					'right' => '25',
 					'bottom' => '25',
 					'left' => '0',
-					'isLinked' => true,
+					'isLinked' => false,
 				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-search-btn' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',

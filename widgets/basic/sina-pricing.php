@@ -781,7 +781,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 					'right' => '20',
 					'bottom' => '15',
 					'left' => '20',
-					'isLinked' => true,
+					'isLinked' => false,
 				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-price-tag' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',

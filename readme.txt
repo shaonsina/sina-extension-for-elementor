@@ -56,7 +56,7 @@ Please [See demo](https://shaonsina.com/plugin/sina-extension/)
 11. [Fancy Text](https://shaonsina.com/plugin/sina-extension/fancy-text): Use animated text with 20+ animation effects.
 12. [Flip Box](https://shaonsina.com/plugin/sina-extension/flipbox): Use animated Flip Box to highlight any content on your web page.
 13. [Google Map](https://shaonsina.com/plugin/sina-extension/google-map): Add Google map with API key into the web page.
-14. [MailChimp](https://shaonsina.com/plugin/sina-extension/mailchimp): Add MailChimp form for subscriber the users.
+14. [MailChimp](https://shaonsina.com/plugin/sina-extension/mailchimp): Add MailChimp form for subscribing the users.
 15. [Modal Box](https://shaonsina.com/plugin/sina-extension/modal-box): You can use any template (which made by Elementor) into a modal box with 20+ animation effects.
 16. [News Ticker](https://shaonsina.com/plugin/sina-extension/news-ticker): Use it for scrolling post or news title.
 17. [Particle Layer](https://shaonsina.com/plugin/sina-extension/particle-layer): Use particle layer with lots of style, layout & more.

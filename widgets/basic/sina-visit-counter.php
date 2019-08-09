@@ -309,7 +309,7 @@ class Sina_Visit_Counter_Widget extends Widget_Base {
 					'right' => '10',
 					'bottom' => '10',
 					'left' => '10',
-					'isLinked' => false,
+					'isLinked' => true,
 				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-visit-number' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',

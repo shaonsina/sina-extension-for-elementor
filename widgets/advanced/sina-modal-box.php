@@ -746,7 +746,7 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 					'right' => '4',
 					'bottom' => '4',
 					'left' => '4',
-					'isLinked' => false,
+					'isLinked' => true,
 				],
 				'separator' => 'before',
 				'selectors' => [
@@ -1119,7 +1119,7 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 					'right' => '4',
 					'bottom' => '4',
 					'left' => '4',
-					'isLinked' => false,
+					'isLinked' => true,
 				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-modal-trigger' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
