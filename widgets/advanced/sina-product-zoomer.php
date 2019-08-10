@@ -107,17 +107,67 @@ class Sina_Product_Zoomer_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'product_content',
 			[
-				'label' => __( 'Product Images', 'sina-ext' ),
+				'label' => __( 'Product Content', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
 
 		$this->add_control(
-			'thumbs',
+			'title',
 			[
-				'label' => __( 'Show Preview', 'sina-ext' ),
+				'label' => __( 'Title', 'sina-ext' ),
+				'label_block' => true,
+				'type' => Controls_Manager::TEXT,
+				'placeholder' => __( 'Enter Product Title', 'sina-ext' ),
+				'description' => __( 'You can use HTML.', 'sina-ext' ),
+				'default' => 'Nice Car',
+			]
+		);
+		$this->add_control(
+			'desc',
+			[
+				'label' => __( 'Description', 'sina-ext' ),
+				'label_block' => true,
+				'type' => Controls_Manager::TEXTAREA,
+				'placeholder' => __( 'Enter Product Description', 'sina-ext' ),
+				'description' => __( 'You can use HTML.', 'sina-ext' ),
+				'default' => 'Price: $100',
+			]
+		);
+		$this->add_control(
+			'link',
+			[
+				'label' => __( 'Link', 'sina-ext' ),
+				'type' => Controls_Manager::URL,
+				'placeholder' => __( 'https://your-image-link', 'sina-ext' ),
+				'default' => [
+					'url' => '',
+				],
+				'condition' => [
+					'title!' => '',
+				],
+			]
+		);
+		$this->add_control(
+			'content_position',
+			[
+				'label' => __( 'Content Bottom', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
-				'default' => 'yes',
+			]
+		);
+
+		$this->end_controls_section();
+		// End Product Zoomer Content
+		// ===========================
+
+
+		// Start Product Images
+		// ======================
+		$this->start_controls_section(
+			'product_images',
+			[
+				'label' => __( 'Product Images', 'sina-ext' ),
+				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
 
@@ -212,37 +262,13 @@ class Sina_Product_Zoomer_Widget extends Widget_Base {
 				'title_field' => '{{{ title }}}',
 			]
 		);
+
 		$this->add_control(
-			'title',
+			'thumbs',
 			[
-				'label' => __( 'Title', 'sina-ext' ),
-				'label_block' => true,
-				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter Product Title', 'sina-ext' ),
-				'description' => __( 'You can use HTML.', 'sina-ext' ),
-				'default' => 'Nice Car',
-			]
-		);
-		$this->add_control(
-			'desc',
-			[
-				'label' => __( 'Description', 'sina-ext' ),
-				'label_block' => true,
-				'type' => Controls_Manager::TEXTAREA,
-				'placeholder' => __( 'Enter Product Description', 'sina-ext' ),
-				'description' => __( 'You can use HTML.', 'sina-ext' ),
-				'default' => 'Price: $100',
-			]
-		);
-		$this->add_control(
-			'link',
-			[
-				'label' => __( 'Link', 'sina-ext' ),
-				'type' => Controls_Manager::URL,
-				'placeholder' => __( 'https://your-image-link', 'sina-ext' ),
-				'default' => [
-					'url' => '',
-				],
+				'label' => __( 'Show Preview', 'sina-ext' ),
+				'type' => Controls_Manager::SWITCHER,
+				'default' => 'yes',
 			]
 		);
 		$this->add_control(
@@ -277,8 +303,8 @@ class Sina_Product_Zoomer_Widget extends Widget_Base {
 		);
 
 		$this->end_controls_section();
-		// End Product Zoomer Content
-		// ===========================
+		// End Product Images
+		// ====================
 
 
 		// Start Product Title Style
@@ -360,6 +386,17 @@ class Sina_Product_Zoomer_Widget extends Widget_Base {
 				'default' => 'left',
 				'selectors' => [
 					'{{WRAPPER}} .sina-product-title' => 'text-align: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'title_margin',
+			[
+				'label' => __( 'Margin', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'selectors' => [
+					'{{WRAPPER}} .sina-product-title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -448,6 +485,17 @@ class Sina_Product_Zoomer_Widget extends Widget_Base {
 				],
 			]
 		);
+		$this->add_responsive_control(
+			'desc_margin',
+			[
+				'label' => __( 'Margin', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'selectors' => [
+					'{{WRAPPER}} .sina-product-desc' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
 
 		$this->end_controls_section();
 		// End Product Desc Style
@@ -461,25 +509,27 @@ class Sina_Product_Zoomer_Widget extends Widget_Base {
 		<div class="sina-product-zoomer"
 		data-position="<?php echo esc_attr( $data['position'] ) ?>"
 		data-shape="<?php echo esc_attr( $data['lens_shape'] ) ?>">
-			<?php if ( $data['title'] ): ?>
-				<h3 class="sina-product-title">
-					<?php if ( $data['link']['url'] ): ?>
-						<a href="<?php echo esc_url( $data['link']['url'] ); ?>"
-							<?php if ( 'on' == $data['link']['is_external'] ): ?>
-								target="_blank" 
-							<?php endif; ?>
-							<?php if ( 'on' == $data['link']['nofollow'] ): ?>
-								rel="nofollow" 
-							<?php endif; ?>>
+			<?php if ( '' == $data['content_position'] ): ?>
+				<?php if ( $data['title'] ): ?>
+					<h3 class="sina-product-title">
+						<?php if ( $data['link']['url'] ): ?>
+							<a href="<?php echo esc_url( $data['link']['url'] ); ?>"
+								<?php if ( 'on' == $data['link']['is_external'] ): ?>
+									target="_blank" 
+								<?php endif; ?>
+								<?php if ( 'on' == $data['link']['nofollow'] ): ?>
+									rel="nofollow" 
+								<?php endif; ?>>
+								<?php printf( '%1$s', $data['title'] ); ?>
+							</a>
+						<?php else: ?>
 							<?php printf( '%1$s', $data['title'] ); ?>
-						</a>
-					<?php else: ?>
-						<?php printf( '%1$s', $data['title'] ); ?>
-					<?php endif; ?>
-				</h3>
-			<?php endif; ?>
-			<?php if ( $data['desc'] ): ?>
-				<?php printf( '<div class="sina-product-desc">%1$s</div>', $data['desc'] ); ?>
+						<?php endif; ?>
+					</h3>
+				<?php endif; ?>
+				<?php if ( $data['desc'] ): ?>
+					<?php printf( '<div class="sina-product-desc">%1$s</div>', $data['desc'] ); ?>
+				<?php endif; ?>
 			<?php endif; ?>
 
 			<img class="xzoom" src="<?php echo esc_url( $data['product_imgs'][0]['preview_image']['url'] ); ?>" data-xoriginal="<?php echo esc_url( $data['product_imgs'][0]['original_image']['url'] ); ?>" alt="<?php echo esc_attr( $data['title'] ) ?>">
@@ -498,6 +548,29 @@ class Sina_Product_Zoomer_Widget extends Widget_Base {
 						</div>
 					<?php endforeach; ?>
 				</div>
+			<?php endif; ?>
+
+			<?php if ( 'yes' == $data['content_position'] ): ?>
+				<?php if ( $data['title'] ): ?>
+					<h3 class="sina-product-title">
+						<?php if ( $data['link']['url'] ): ?>
+							<a href="<?php echo esc_url( $data['link']['url'] ); ?>"
+								<?php if ( 'on' == $data['link']['is_external'] ): ?>
+									target="_blank" 
+								<?php endif; ?>
+								<?php if ( 'on' == $data['link']['nofollow'] ): ?>
+									rel="nofollow" 
+								<?php endif; ?>>
+								<?php printf( '%1$s', $data['title'] ); ?>
+							</a>
+						<?php else: ?>
+							<?php printf( '%1$s', $data['title'] ); ?>
+						<?php endif; ?>
+					</h3>
+				<?php endif; ?>
+				<?php if ( $data['desc'] ): ?>
+					<?php printf( '<div class="sina-product-desc">%1$s</div>', $data['desc'] ); ?>
+				<?php endif; ?>
 			<?php endif; ?>
 		</div><!-- .sina-image-zoomer -->
 		<?php

@@ -440,12 +440,12 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 			]
 		);
 
-		$this->start_controls_tabs( 'thumb_tabs' );
-
-		$this->start_controls_tab(
+		$this->add_control(
 			'thumb_title',
 			[
-				'label' => __( 'Title', 'sina-ext' ),
+				'label' => __( 'Title Style', 'sina-ext' ),
+				'type' => Controls_Manager::HEADING,
+				'separator' => 'before',
 			]
 		);
 
@@ -488,12 +488,12 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 			]
 		);
 
-		$this->end_controls_tab();
-
-		$this->start_controls_tab(
+		$this->add_control(
 			'thumb_meta',
 			[
-				'label' => __( 'Meta', 'sina-ext' ),
+				'label' => __( 'Meta Style', 'sina-ext' ),
+				'type' => Controls_Manager::HEADING,
+				'separator' => 'before',
 			]
 		);
 
@@ -530,10 +530,6 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 				],
 			]
 		);
-
-		$this->end_controls_tab();
-
-		$this->end_controls_tabs();
 
 		$this->end_controls_section();
 		// End Thumb style

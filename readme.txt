@@ -5,7 +5,7 @@ Donate link: https://shaonsina.com/plugin/sina-extension/
 Requires at least: 4.7
 Tested up to: 5.2
 Requires PHP: 7.0
-Stable tag: 3.0.3
+Stable tag: 3.0.4
 License: GPL v3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -109,15 +109,17 @@ Yes. It's totally free.
 - Added: Some option to Fancy Text
 - Added: Some option to Title
 - Added: Some option to Posts Tab
+- Added: Some option to Product Zoomer
 - Improved
 
-= 3.0.2 - 10-08-2019 =
+= 3.0.2 - 08-08-2019 =
 - Added: Some option to Content Box
 - Added: Some option to Flip Box
 - Added: Some option to Progress bar
 - Added: Some option to Team
 - Added: Some option to Transform
 - Added: Some option to Video
+- Improved
 
 = 3.0.1 - 05-08-2019 =
 - Added: Some option to Content Box
