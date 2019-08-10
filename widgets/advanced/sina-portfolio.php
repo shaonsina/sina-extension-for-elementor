@@ -286,6 +286,26 @@ class Sina_Portfolio_Widget extends Widget_Base {
 		);
 		Sina_Common_Data::button_style( $this, '.sina-portfolio-btn' );
 		$this->add_responsive_control(
+			'menu_btn_width',
+			[
+				'label' => __( 'Min Width', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', 'em', '%' ],
+				'range' => [
+					'px' => [
+						'max' => 1000,
+					],
+					'em' => [
+						'max' => 50,
+					],
+				],
+				'separator' => 'before',
+				'selectors' => [
+					'{{WRAPPER}} .sina-portfolio-btn' => 'min-width: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
 			'menu_btn_gap',
 			[
 				'label' => __( 'Gap From Items', 'sina-ext' ),
@@ -293,7 +313,6 @@ class Sina_Portfolio_Widget extends Widget_Base {
 				'default' =>[
 					'size' => '40',
 				],
-				'separator' => 'before',
 				'selectors' => [
 					'{{WRAPPER}} .sina-portfolio-btns' => 'margin-bottom: {{SIZE}}{{UNIT}};',
 				],
@@ -619,9 +638,9 @@ class Sina_Portfolio_Widget extends Widget_Base {
 			]
 		);
 		$this->add_responsive_control(
-			'icons_radius',
+			'zoom_btn_radius',
 			[
-				'label' => __( 'Radius', 'sina-ext' ),
+				'label' => __( 'Zoom button radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -633,7 +652,26 @@ class Sina_Portfolio_Widget extends Widget_Base {
 					'isLinked' => true,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-portfolio-overlay i' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .sina-portfolio-zoom i' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'link_btn_radius',
+			[
+				'label' => __( 'Link button radius', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'unit' => '%',
+					'top' => '50',
+					'right' => '50',
+					'bottom' => '50',
+					'left' => '50',
+					'isLinked' => true,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-portfolio-link i' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);

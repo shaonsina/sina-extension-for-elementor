@@ -235,7 +235,15 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 			[
 				'label' => __( 'Min Width', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
-				'size_units' => [ 'px', 'em' ],
+				'size_units' => [ 'px', 'em', '%' ],
+				'range' => [
+					'px' => [
+						'max' => 1000,
+					],
+					'em' => [
+						'max' => 50,
+					],
+				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-pt-cat-btn' => 'min-width: {{SIZE}}{{UNIT}};',
 				],

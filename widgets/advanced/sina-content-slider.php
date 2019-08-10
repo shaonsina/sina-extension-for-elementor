@@ -328,13 +328,6 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 				'label' => __( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
-				'default' => [
-					'top' => '6',
-					'right' => '6',
-					'bottom' => '6',
-					'left' => '6',
-					'isLinked' => true,
-				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-cs-item' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],

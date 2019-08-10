@@ -759,7 +759,7 @@ class Sina_Content_Box_Widget extends Widget_Base {
 				'size_units' => [ 'px', 'em', '%' ],
 				'range' => [
 					'px' => [
-						'max' => 300,
+						'max' => 1000,
 					],
 					'em' => [
 						'max' => 30,

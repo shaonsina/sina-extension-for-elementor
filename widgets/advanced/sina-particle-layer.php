@@ -407,34 +407,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 				'label_block' => true,
 				'type' => Controls_Manager::SELECT,
 				'default' => 'fadeInLeft',
-				'options' => [
-					'none' => __( 'none', 'sina-ext' ),
-					'fadeIn' => __( 'Fade', 'sina-ext' ),
-					'fadeInUp' => __( 'Fade Up', 'sina-ext' ),
-					'fadeInDown' => __( 'Fade Down', 'sina-ext' ),
-					'fadeInLeft' => __( 'Fade Left', 'sina-ext' ),
-					'fadeInRight' => __( 'Fade Right', 'sina-ext' ),
-					'zoomIn' => __('Zoom In', 'sina-ext'),
-					'zoomInLeft' => __('Zoom In Left', 'sina-ext'),
-					'zoomInRight' => __('Zoom In Right', 'sina-ext'),
-					'bounceIn' => __('Bounce In', 'sina-ext'),
-					'slideInDown' => __('Slide In Down', 'sina-ext'),
-					'slideInLeft' => __('Slide In Left', 'sina-ext'),
-					'slideInRight' => __('Slide In Right', 'sina-ext'),
-					'slideInUp' => __('Slide In Up', 'sina-ext'),
-					'lightSpeedIn' => __('Light Speed In', 'sina-ext'),
-					'swing' => __( 'Swing', 'sina-ext' ),
-					'bounce' => __('Bounce', 'sina-ext'),
-					'flash' => __('Flash', 'sina-ext'),
-					'pulse' => __('Pulse', 'sina-ext'),
-					'rubberBand' => __('Rubber Band', 'sina-ext'),
-					'shake' => __('Shake', 'sina-ext'),
-					'headShake' => __('Head Shake', 'sina-ext'),
-					'swing' => __('Swing', 'sina-ext'),
-					'tada' => __('Tada', 'sina-ext'),
-					'wobble' => __('Wobble', 'sina-ext'),
-					'jello' => __('Jello', 'sina-ext'),
-				],
+				'options' => Sina_Common_Data::animation(),
 			]
 		);
 		$this->add_control(
@@ -444,34 +417,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 				'label_block' => true,
 				'type' => Controls_Manager::SELECT,
 				'default' => 'fadeInRight',
-				'options' => [
-					'none' => __( 'none', 'sina-ext' ),
-					'fadeIn' => __( 'Fade', 'sina-ext' ),
-					'fadeInUp' => __( 'Fade Up', 'sina-ext' ),
-					'fadeInDown' => __( 'Fade Down', 'sina-ext' ),
-					'fadeInLeft' => __( 'Fade Left', 'sina-ext' ),
-					'fadeInRight' => __( 'Fade Right', 'sina-ext' ),
-					'zoomIn' => __('Zoom In', 'sina-ext'),
-					'zoomInLeft' => __('Zoom In Left', 'sina-ext'),
-					'zoomInRight' => __('Zoom In Right', 'sina-ext'),
-					'bounceIn' => __('Bounce In', 'sina-ext'),
-					'slideInDown' => __('Slide In Down', 'sina-ext'),
-					'slideInLeft' => __('Slide In Left', 'sina-ext'),
-					'slideInRight' => __('Slide In Right', 'sina-ext'),
-					'slideInUp' => __('Slide In Up', 'sina-ext'),
-					'lightSpeedIn' => __('Light Speed In', 'sina-ext'),
-					'swing' => __( 'Swing', 'sina-ext' ),
-					'bounce' => __('Bounce', 'sina-ext'),
-					'flash' => __('Flash', 'sina-ext'),
-					'pulse' => __('Pulse', 'sina-ext'),
-					'rubberBand' => __('Rubber Band', 'sina-ext'),
-					'shake' => __('Shake', 'sina-ext'),
-					'headShake' => __('Head Shake', 'sina-ext'),
-					'swing' => __('Swing', 'sina-ext'),
-					'tada' => __('Tada', 'sina-ext'),
-					'wobble' => __('Wobble', 'sina-ext'),
-					'jello' => __('Jello', 'sina-ext'),
-				],
+				'options' => Sina_Common_Data::animation(),
 			]
 		);
 		$this->add_control(
@@ -481,34 +427,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 				'label_block' => true,
 				'type' => Controls_Manager::SELECT,
 				'default' => 'fadeInUp',
-				'options' => [
-					'none' => __( 'none', 'sina-ext' ),
-					'fadeIn' => __( 'Fade', 'sina-ext' ),
-					'fadeInUp' => __( 'Fade Up', 'sina-ext' ),
-					'fadeInDown' => __( 'Fade Down', 'sina-ext' ),
-					'fadeInLeft' => __( 'Fade Left', 'sina-ext' ),
-					'fadeInRight' => __( 'Fade Right', 'sina-ext' ),
-					'zoomIn' => __('Zoom In', 'sina-ext'),
-					'zoomInLeft' => __('Zoom In Left', 'sina-ext'),
-					'zoomInRight' => __('Zoom In Right', 'sina-ext'),
-					'bounceIn' => __('Bounce In', 'sina-ext'),
-					'slideInDown' => __('Slide In Down', 'sina-ext'),
-					'slideInLeft' => __('Slide In Left', 'sina-ext'),
-					'slideInRight' => __('Slide In Right', 'sina-ext'),
-					'slideInUp' => __('Slide In Up', 'sina-ext'),
-					'lightSpeedIn' => __('Light Speed In', 'sina-ext'),
-					'swing' => __( 'Swing', 'sina-ext' ),
-					'bounce' => __('Bounce', 'sina-ext'),
-					'flash' => __('Flash', 'sina-ext'),
-					'pulse' => __('Pulse', 'sina-ext'),
-					'rubberBand' => __('Rubber Band', 'sina-ext'),
-					'shake' => __('Shake', 'sina-ext'),
-					'headShake' => __('Head Shake', 'sina-ext'),
-					'swing' => __('Swing', 'sina-ext'),
-					'tada' => __('Tada', 'sina-ext'),
-					'wobble' => __('Wobble', 'sina-ext'),
-					'jello' => __('Jello', 'sina-ext'),
-				],
+				'options' => Sina_Common_Data::animation(),
 			]
 		);
 		$this->add_control(
@@ -518,34 +437,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 				'label_block' => true,
 				'type' => Controls_Manager::SELECT,
 				'default' => 'fadeInUp',
-				'options' => [
-					'none' => __( 'none', 'sina-ext' ),
-					'fadeIn' => __( 'Fade', 'sina-ext' ),
-					'fadeInUp' => __( 'Fade Up', 'sina-ext' ),
-					'fadeInDown' => __( 'Fade Down', 'sina-ext' ),
-					'fadeInLeft' => __( 'Fade Left', 'sina-ext' ),
-					'fadeInRight' => __( 'Fade Right', 'sina-ext' ),
-					'zoomIn' => __('Zoom In', 'sina-ext'),
-					'zoomInLeft' => __('Zoom In Left', 'sina-ext'),
-					'zoomInRight' => __('Zoom In Right', 'sina-ext'),
-					'bounceIn' => __('Bounce In', 'sina-ext'),
-					'slideInDown' => __('Slide In Down', 'sina-ext'),
-					'slideInLeft' => __('Slide In Left', 'sina-ext'),
-					'slideInRight' => __('Slide In Right', 'sina-ext'),
-					'slideInUp' => __('Slide In Up', 'sina-ext'),
-					'lightSpeedIn' => __('Light Speed In', 'sina-ext'),
-					'swing' => __( 'Swing', 'sina-ext' ),
-					'bounce' => __('Bounce', 'sina-ext'),
-					'flash' => __('Flash', 'sina-ext'),
-					'pulse' => __('Pulse', 'sina-ext'),
-					'rubberBand' => __('Rubber Band', 'sina-ext'),
-					'shake' => __('Shake', 'sina-ext'),
-					'headShake' => __('Head Shake', 'sina-ext'),
-					'swing' => __('Swing', 'sina-ext'),
-					'tada' => __('Tada', 'sina-ext'),
-					'wobble' => __('Wobble', 'sina-ext'),
-					'jello' => __('Jello', 'sina-ext'),
-				],
+				'options' => Sina_Common_Data::animation(),
 			]
 		);
 
@@ -641,6 +533,26 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 				'default' => 'center',
 				'selectors' => [
 					'{{WRAPPER}} .sina-banner-container' => 'text-align: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'template_style',
+			[
+				'label' => __( 'Template Style', 'sina-ext' ),
+				'type' => Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+		$this->add_responsive_control(
+			'template_padding',
+			[
+				'label' => __( 'Padding', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'selectors' => [
+					'{{WRAPPER}} .sina-particle-template' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -1084,7 +996,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 				<?php
 					if ( 'yes' == $data['save_templates'] && $data['template'] ) {
 						$frontend = new Frontend;
-						echo $frontend->get_builder_content( $data['template'], true );
+						echo '<div class="sina-particle-template">'. $frontend->get_builder_content( $data['template'], true ) .'</div>';
 					}
 				?>
 
