@@ -45,9 +45,6 @@ class Sina_Extension extends Sina_Ext_Functions{
 		$this->load_actions();
 		$this->load_filters();
 		$this->init();
-
-		new \Sina_Extension\Admin\Sina_Ext_Settings();
-		new \Sina_Extension\Sina_Ext_Controls();
 	}
 
 	/**

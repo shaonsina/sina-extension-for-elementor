@@ -299,17 +299,52 @@ class Sina_Social_Icons_Widget extends Widget_Base {
 			]
 		);
 		$this->add_responsive_control(
-			'icon_size',
+			'icon_width',
 			[
-				'label' => __( 'Icon Size', 'sina-ext' ),
+				'label' => __( 'Width', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em' ],
+				'range' => [
+					'px' => [
+						'min' => 0,
+						'max' => 500,
+					],
+					'em' => [
+						'min' => 0,
+						'max' => 50,
+					],
+				],
 				'default' => [
 					'unit' => 'px',
 					'size' => '40',
 				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-social li i' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .sina-social li i' => 'width: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'icon_height',
+			[
+				'label' => __( 'Height', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', 'em' ],
+				'range' => [
+					'px' => [
+						'min' => 0,
+						'max' => 500,
+					],
+					'em' => [
+						'min' => 0,
+						'max' => 50,
+					],
+				],
+				'default' => [
+					'unit' => 'px',
+					'size' => '40',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-social li i' => 'height: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);

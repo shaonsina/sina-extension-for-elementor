@@ -129,5 +129,8 @@ abstract class Sina_Ext_Functions extends Sina_Extension_Base{
 
 		// Register Widget Scripts
 		add_action( 'elementor/frontend/after_register_scripts', [ $this, 'widget_scripts' ] );
+
+		new \Sina_Extension\Admin\Sina_Ext_Settings();
+		new \Sina_Extension\Sina_Ext_Controls();
 	}
 }

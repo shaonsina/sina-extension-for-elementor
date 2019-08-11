@@ -108,12 +108,13 @@ Yes. It's totally free.
 = 3.0.4 - 12-08-2019 =
 - Added: Some option to Portfolio
 - Added: Some option to Particle Layer
+- Added: Some option to Social Icons
 
 = 3.0.3 - 10-08-2019 =
 - Added: Some option to Fancy Text
-- Added: Some option to Title
 - Added: Some option to Posts Tab
 - Added: Some option to Product Zoomer
+- Added: Some option to Title
 - Improved
 
 = 3.0.2 - 08-08-2019 =
