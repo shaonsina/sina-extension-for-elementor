@@ -38,18 +38,13 @@ abstract class Sina_Extension_Base{
 	public function admin_notice_missing_main_plugin() {
 		if ( isset( $_GET['activate'] ) ) unset( $_GET['activate'] );
 
-		$plugin = 'elementor/elementor.php';
-		$action_url = wp_nonce_url('plugins.php?action=activate&amp;plugin=' . $plugin . '&amp;plugin_status=all&amp;paged=1&amp;s', 'activate-plugin_' . $plugin);
-
 		$message = sprintf(
 			esc_html__( '"%1$s" requires "%2$s" to be installed and activated.', 'sina-ext' ),
 			'<strong>' . esc_html__( 'Sina Extension for Elementor', 'sina-ext' ) . '</strong>',
 			'<strong>' . esc_html__( 'Elementor', 'sina-ext' ) . '</strong>'
 		);
 
-		$button = '<p><a href="' . $action_url . '" class="button-primary">' . __('Activate Elementor', 'sina-ext') . '</a></p>';
-
-		printf('<div class="error"><p>%1$s</p>%2$s</div>', __($message), $button);
+		printf('<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', __($message));
 	}
 
 	/**
@@ -69,7 +64,7 @@ abstract class Sina_Extension_Base{
 			 self::MINIMUM_ELEMENTOR_VERSION
 		);
 
-		printf( '<div class="error"><p>%1$s</p></div>', $message );
+		printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', $message );
 	}
 
 	/**
@@ -167,7 +162,7 @@ abstract class Sina_Extension_Base{
 	 * @since 3.0.0
 	 */
 	public function redirection() {
-		if ( get_option('sina_extension_activation', false ) ) {
+		if ( did_action( 'elementor/loaded' ) && get_option('sina_extension_activation', false ) ) {
 			delete_option('sina_extension_activation');
 
 			if ( ! is_network_admin() ) {
