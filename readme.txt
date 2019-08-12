@@ -1,7 +1,7 @@
 == Sina Extension for Elementor ==
 Contributors: shaonsina
 Tags: addon, elementor, elementor addon, elementor extension, extension, page builder, builder, elementor builder, elementor contact form, elementor widget, best elementor addon, best elementor extension
-Donate link: https://shaonsina.com/plugin/sina-extension/
+Donate link: https://plugins.shaonsina.com/sina-extension/
 Requires at least: 4.7
 Tested up to: 5.2
 Requires PHP: 7.0
@@ -38,45 +38,45 @@ https://youtu.be/4P546eZSGcg
 
 == What can you do by this plugin? ==
 You can make unlimited design without coding knowledge.
-[See demo](https://shaonsina.com/plugin/sina-extension/)
+[See demo](https://plugins.shaonsina.com/sina-extension/)
 
 
 == 34 FREE WIDGETS ==
 
-1. [Accordion](https://shaonsina.com/plugin/sina-extension/accordion): Use accordion for display FAQ or custom content that you want.
-2. [Banner Slider](https://shaonsina.com/plugin/sina-extension/banner-slider): Add an animated text or image slider into your web page.
-3. [Blogpost](https://shaonsina.com/plugin/sina-extension/blogpost): Show your blog posts with grid, masonry or list.
-4. [Brand Carousel](https://shaonsina.com/plugin/sina-extension/brand-carousel): Display clients logo in a carousel.
-5. [Contact Form](https://shaonsina.com/plugin/sina-extension/contact-form): Use contact form with lots of style.
-6. [Content Box](https://shaonsina.com/plugin/sina-extension/content-box): Display services or custom content that you want.
-7. [Content Slider](https://shaonsina.com/plugin/sina-extension/content-slider): You can slide any content with that. Also can sliding any template. Enjoy!
-8. [Countdown](https://shaonsina.com/plugin/sina-extension/countdown): Add countdown timer into your web page.
-9. [Counter](https://shaonsina.com/plugin/sina-extension/counter): Show number with animate counting.
-10. [Dynamic Button](https://shaonsina.com/plugin/sina-extension/dynamic-button): Add a button as a static or dynamic (page, category, tag or post formate).
-11. [Fancy Text](https://shaonsina.com/plugin/sina-extension/fancy-text): Use animated text with 20+ animation effects.
-12. [Flip Box](https://shaonsina.com/plugin/sina-extension/flipbox): Show animated Flip Box to highlight any content on your web page.
-13. [Google Map](https://shaonsina.com/plugin/sina-extension/google-map): Add Google map with API key into the web page.
-14. [MailChimp](https://shaonsina.com/plugin/sina-extension/mailchimp): Add MailChimp form for subscribing the users.
-15. [Modal Box](https://shaonsina.com/plugin/sina-extension/modal-box): Display any template (which made by the Elementor) into a modal box with 20+ animation effects.
-16. [News Ticker](https://shaonsina.com/plugin/sina-extension/news-ticker): Show scrolling post or news title.
-17. [Particle Layer](https://shaonsina.com/plugin/sina-extension/particle-layer): Use particle layer with lots of style, layout & more.
-18. [Piechart](https://shaonsina.com/plugin/sina-extension/piechart): Works the same as the Counter, but with a circle.
-19. [Portfolio](https://shaonsina.com/plugin/sina-extension/portfolio): Display your works just by few clicks.
-20. [Posts Carousel](https://shaonsina.com/plugin/sina-extension/posts-carousel): Latest posts display into a carousel as full width or grid.
-21. [Posts Tab](https://shaonsina.com/plugin/sina-extension/posts-tab): Show your latest posts in a tab.
-22. [Pricing](https://shaonsina.com/plugin/sina-extension/pricing): Add pricing for display your services rate.
-23. [Product Zoomer](https://shaonsina.com/plugin/sina-extension/product-zoomer): Add multiple images of product for zoom in.
-24. [Progressbar](https://shaonsina.com/plugin/sina-extension/progressbar): Display progress bars with different styles.
-25. [Review Carousel](https://shaonsina.com/plugin/sina-extension/review-carousel): Show what others said about your brand.
-26. [Search Form](https://shaonsina.com/plugin/sina-extension/search-form): Display search form for searching the users.
-27. [Social Icons](https://shaonsina.com/plugin/sina-extension/social-icons): Add your social icons like Facebook / Twitter etc.
-28. [Table](https://shaonsina.com/plugin/sina-extension/table): Use table for showing your expected data.
-29. [Team](https://shaonsina.com/plugin/sina-extension/team): Add your team members just a few clicks.
-30. [Title](https://shaonsina.com/plugin/sina-extension/title): Use title, subtitle & description anywhere into your web page.
-31. [Transform](https://shaonsina.com/plugin/sina-extension/transform): Display content by transforming in the different dimensions.
-32. [User Counter](https://shaonsina.com/plugin/sina-extension/user-counter): Display how many users registered.
-33. [Video](https://shaonsina.com/plugin/sina-extension/video): Show a video in a popup.
-34. [Visit Counter](https://shaonsina.com/plugin/sina-extension/visit-counter): Display how many users visit the page.
+1. [Accordion](https://plugins.shaonsina.com/sina-extension/accordion): Use accordion for display FAQ or custom content that you want.
+2. [Banner Slider](https://plugins.shaonsina.com/sina-extension/banner-slider): Add an animated text or image slider into your web page.
+3. [Blogpost](https://plugins.shaonsina.com/sina-extension/blogpost): Show your blog posts with grid, masonry or list.
+4. [Brand Carousel](https://plugins.shaonsina.com/sina-extension/brand-carousel): Display clients logo in a carousel.
+5. [Contact Form](https://plugins.shaonsina.com/sina-extension/contact-form): Use contact form with lots of style.
+6. [Content Box](https://plugins.shaonsina.com/sina-extension/content-box): Display services or custom content that you want.
+7. [Content Slider](https://plugins.shaonsina.com/sina-extension/content-slider): You can slide any content with that. Also can sliding any template. Enjoy!
+8. [Countdown](https://plugins.shaonsina.com/sina-extension/countdown): Add countdown timer into your web page.
+9. [Counter](https://plugins.shaonsina.com/sina-extension/counter): Show number with animate counting.
+10. [Dynamic Button](https://plugins.shaonsina.com/sina-extension/dynamic-button): Add a button as a static or dynamic (page, category, tag or post formate).
+11. [Fancy Text](https://plugins.shaonsina.com/sina-extension/fancy-text): Use animated text with 20+ animation effects.
+12. [Flip Box](https://plugins.shaonsina.com/sina-extension/flipbox): Show animated Flip Box to highlight any content on your web page.
+13. [Google Map](https://plugins.shaonsina.com/sina-extension/google-map): Add Google map with API key into the web page.
+14. [MailChimp](https://plugins.shaonsina.com/sina-extension/mailchimp): Add MailChimp form for subscribing the users.
+15. [Modal Box](https://plugins.shaonsina.com/sina-extension/modal-box): Display any template (which made by the Elementor) into a modal box with 20+ animation effects.
+16. [News Ticker](https://plugins.shaonsina.com/sina-extension/news-ticker): Show scrolling post or news title.
+17. [Particle Layer](https://plugins.shaonsina.com/sina-extension/particle-layer): Use particle layer with lots of style, layout & more.
+18. [Piechart](https://plugins.shaonsina.com/sina-extension/piechart): Works the same as the Counter, but with a circle.
+19. [Portfolio](https://plugins.shaonsina.com/sina-extension/portfolio): Display your works just by few clicks.
+20. [Posts Carousel](https://plugins.shaonsina.com/sina-extension/posts-carousel): Latest posts display into a carousel as full width or grid.
+21. [Posts Tab](https://plugins.shaonsina.com/sina-extension/posts-tab): Show your latest posts in a tab.
+22. [Pricing](https://plugins.shaonsina.com/sina-extension/pricing): Add pricing for display your services rate.
+23. [Product Zoomer](https://plugins.shaonsina.com/sina-extension/product-zoomer): Add multiple images of product for zoom in.
+24. [Progressbar](https://plugins.shaonsina.com/sina-extension/progressbar): Display progress bars with different styles.
+25. [Review Carousel](https://plugins.shaonsina.com/sina-extension/review-carousel): Show what others said about your brand.
+26. [Search Form](https://plugins.shaonsina.com/sina-extension/search-form): Display search form for searching the users.
+27. [Social Icons](https://plugins.shaonsina.com/sina-extension/social-icons): Add your social icons like Facebook / Twitter etc.
+28. [Table](https://plugins.shaonsina.com/sina-extension/table): Use table for showing your expected data.
+29. [Team](https://plugins.shaonsina.com/sina-extension/team): Add your team members just a few clicks.
+30. [Title](https://plugins.shaonsina.com/sina-extension/title): Use title, subtitle & description anywhere into your web page.
+31. [Transform](https://plugins.shaonsina.com/sina-extension/transform): Display content by transforming in the different dimensions.
+32. [User Counter](https://plugins.shaonsina.com/sina-extension/user-counter): Display how many users registered.
+33. [Video](https://plugins.shaonsina.com/sina-extension/video): Show a video in a popup.
+34. [Visit Counter](https://plugins.shaonsina.com/sina-extension/visit-counter): Display how many users visit the page.
 
 Cool things are coming soon...
 
