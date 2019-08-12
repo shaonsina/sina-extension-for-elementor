@@ -17,12 +17,6 @@ A collection of high-quality widgets for Elementor page builder.
 This is an extension for [Elementor](https://wordpress.org/plugins/elementor/) page builder. It will extend the Elementor and increase web page building experience. It has 34 useful & high-quality widgets. Which you may use for easy & fast make the page & display your content far better way.
 
 
-= Basic use of Particle Layer =
-https://youtu.be/xYMzXFVQri8
-
-= Basic use of Banner Slider =
-https://youtu.be/9HB3UF2dO70
-
 = Use of Sina Templates =
 https://youtu.be/4P546eZSGcg
 
@@ -45,7 +39,7 @@ You can make unlimited design without coding knowledge.
 
 1. [Accordion](https://plugins.shaonsina.com/sina-extension/accordion): Use accordion for display FAQ or custom content that you want.
 2. [Banner Slider](https://plugins.shaonsina.com/sina-extension/banner-slider): Add an animated text or image slider into your web page.
-3. [Blogpost](https://plugins.shaonsina.com/sina-extension/blogpost): Show your blog posts with grid, masonry or list.
+3. [Blogpost](https://plugins.shaonsina.com/sina-extension/blog-post): Show your blog posts with grid, masonry or list.
 4. [Brand Carousel](https://plugins.shaonsina.com/sina-extension/brand-carousel): Display clients logo in a carousel.
 5. [Contact Form](https://plugins.shaonsina.com/sina-extension/contact-form): Use contact form with lots of style.
 6. [Content Box](https://plugins.shaonsina.com/sina-extension/content-box): Display services or custom content that you want.
@@ -54,7 +48,7 @@ You can make unlimited design without coding knowledge.
 9. [Counter](https://plugins.shaonsina.com/sina-extension/counter): Show number with animate counting.
 10. [Dynamic Button](https://plugins.shaonsina.com/sina-extension/dynamic-button): Add a button as a static or dynamic (page, category, tag or post formate).
 11. [Fancy Text](https://plugins.shaonsina.com/sina-extension/fancy-text): Use animated text with 20+ animation effects.
-12. [Flip Box](https://plugins.shaonsina.com/sina-extension/flipbox): Show animated Flip Box to highlight any content on your web page.
+12. [Flip Box](https://plugins.shaonsina.com/sina-extension/flip-box): Show animated Flip Box to highlight any content on your web page.
 13. [Google Map](https://plugins.shaonsina.com/sina-extension/google-map): Add Google map with API key into the web page.
 14. [MailChimp](https://plugins.shaonsina.com/sina-extension/mailchimp): Add MailChimp form for subscribing the users.
 15. [Modal Box](https://plugins.shaonsina.com/sina-extension/modal-box): Display any template (which made by the Elementor) into a modal box with 20+ animation effects.
@@ -109,6 +103,7 @@ Yes. It's totally free.
 - Added: Some option to Portfolio
 - Added: Some option to Particle Layer
 - Added: Some option to Social Icons
+- Improved
 
 = 3.0.3 - 10-08-2019 =
 - Added: Some option to Fancy Text
