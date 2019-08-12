@@ -202,7 +202,7 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 			[
 				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '#eee',
+				'default' => '#fafafa',
 				'selectors' => [
 					'{{WRAPPER}} .sina-nt-left-label, {{WRAPPER}} .sina-nt-right-label' => 'color: {{VALUE}}'
 				],

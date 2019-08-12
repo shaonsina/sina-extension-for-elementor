@@ -498,7 +498,7 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 			[
 				'label' => __( 'Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '#eee',
+				'default' => '#fafafa',
 				'selectors' => [
 					'{{WRAPPER}} .sina-flipbox-front .sina-flipbox-icon i' => 'color: {{VALUE}};',
 				],
@@ -617,7 +617,7 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 			[
 				'label' => __( 'Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '#eee',
+				'default' => '#fafafa',
 				'selectors' => [
 					'{{WRAPPER}} .sina-flipbox-back .sina-flipbox-icon i' => 'color: {{VALUE}};',
 				],
@@ -755,7 +755,7 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 			[
 				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '#eee',
+				'default' => '#fafafa',
 				'selectors' => [
 					'{{WRAPPER}} .sina-flipbox-front .sina-flipbox-title' => 'color: {{VALUE}};',
 				],
@@ -821,7 +821,7 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 			[
 				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '#eee',
+				'default' => '#fafafa',
 				'selectors' => [
 					'{{WRAPPER}} .sina-flipbox-back .sina-flipbox-title' => 'color: {{VALUE}};',
 				],
@@ -906,7 +906,7 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 			[
 				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '#eee',
+				'default' => '#fafafa',
 				'selectors' => [
 					'{{WRAPPER}} .sina-flipbox-front .sina-flipbox-desc' => 'color: {{VALUE}};',
 				],
@@ -952,7 +952,7 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 			[
 				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '#eee',
+				'default' => '#fafafa',
 				'selectors' => [
 					'{{WRAPPER}} .sina-flipbox-back .sina-flipbox-desc' => 'color: {{VALUE}};',
 				],

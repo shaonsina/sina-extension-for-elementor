@@ -301,7 +301,7 @@ class Sina_Common_Data{
 				'condition' => [
 					'nav!' => '',
 				],
-				'default' => '#eee',
+				'default' => '#fafafa',
 				'selectors' => [
 					'{{WRAPPER}} '.$class.' .owl-prev, {{WRAPPER}} '.$class.' .owl-next' => 'color: {{VALUE}}'
 				],
@@ -483,7 +483,7 @@ class Sina_Common_Data{
 			[
 				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '#eee',
+				'default' => '#fafafa',
 				'selectors' => [
 					'{{WRAPPER}} '.$class => 'color: {{VALUE}};',
 				],

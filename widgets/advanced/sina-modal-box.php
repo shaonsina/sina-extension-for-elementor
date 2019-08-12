@@ -379,7 +379,7 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 			[
 				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '#eee',
+				'default' => '#fafafa',
 				'selectors' => [
 					'{{WRAPPER}} .sina-modal-header' => 'color: {{VALUE}};',
 				],
@@ -539,7 +539,7 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 						'default' => 'solid',
 					],
 					'color' => [
-						'default' => '#eee',
+						'default' => '#fafafa',
 					],
 					'width' => [
 						'default' => [

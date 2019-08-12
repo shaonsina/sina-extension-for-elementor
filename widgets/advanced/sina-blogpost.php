@@ -278,7 +278,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 						'default' => 'solid',
 					],
 					'color' => [
-						'default' => '#eee',
+						'default' => '#fafafa',
 					],
 					'width' => [
 						'default' => [
@@ -950,7 +950,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 			[
 				'label' => __( 'Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '#eee',
+				'default' => '#fafafa',
 				'selectors' => [
 					'{{WRAPPER}} .sina-bp-pagination .page-numbers:hover, {{WRAPPER}} .sina-bp-pagination .page-numbers:focus' => 'color: {{VALUE}};',
 				],
@@ -997,7 +997,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 			[
 				'label' => __( 'Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '#eee',
+				'default' => '#fafafa',
 				'selectors' => [
 					'{{WRAPPER}} .sina-bp-pagination .page-numbers.current' => 'color: {{VALUE}};',
 				],

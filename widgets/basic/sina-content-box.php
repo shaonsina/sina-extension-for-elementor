@@ -392,7 +392,7 @@ class Sina_Content_Box_Widget extends Widget_Base {
 						'default' => 'solid',
 					],
 					'color' => [
-						'default' => '#eee',
+						'default' => '#fafafa',
 					],
 					'width' => [
 						'default' => [

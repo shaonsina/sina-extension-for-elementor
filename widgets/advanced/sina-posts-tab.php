@@ -487,7 +487,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 			[
 				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '#eee',
+				'default' => '#fafafa',
 				'selectors' => [
 					'{{WRAPPER}} .sina-pt-thumb-content h2 a,
 					{{WRAPPER}} .sina-pt-thumb-content h2 a:hover,
@@ -518,7 +518,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 			[
 				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '#eee',
+				'default' => '#fafafa',
 				'selectors' => [
 					'{{WRAPPER}} .sina-pt-thumb-content p,
 					{{WRAPPER}} .sina-pt-thumb-content p a' => 'color: {{VALUE}};',
@@ -669,7 +669,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 						'default' => 'solid',
 					],
 					'color' => [
-						'default' => '#eee',
+						'default' => '#fafafa',
 					],
 					'width' => [
 						'default' => [

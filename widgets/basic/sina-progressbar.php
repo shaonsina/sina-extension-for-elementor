@@ -202,7 +202,7 @@ class Sina_Progressbar_Widget extends Widget_Base {
 						'default' =>'classic', 
 					],
 					'color' => [
-						'default' => '#eee',
+						'default' => '#fafafa',
 					],
 				],
 				'selector' => '{{WRAPPER}} .sina-bar-bg',
@@ -379,7 +379,7 @@ class Sina_Progressbar_Widget extends Widget_Base {
 			[
 				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '#eee',
+				'default' => '#fafafa',
 				'selectors' => [
 					'{{WRAPPER}} .sina-bar-percent' => 'color: {{VALUE}};',
 				],

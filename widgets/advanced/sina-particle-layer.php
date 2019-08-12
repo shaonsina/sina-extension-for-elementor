@@ -289,7 +289,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 			[
 				'label' => __( 'Link Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '#eee',
+				'default' => '#fafafa',
 			]
 		);
 		$this->add_control(
@@ -297,7 +297,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 			[
 				'label' => __( 'Ball Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '#eee',
+				'default' => '#fafafa',
 			]
 		);
 		$this->add_control(
@@ -580,7 +580,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 			[
 				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '#eee',
+				'default' => '#fafafa',
 				'selectors' => [
 					'{{WRAPPER}} .sina-banner-title' => 'color: {{VALUE}};',
 				],
@@ -700,7 +700,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 			[
 				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '#eee',
+				'default' => '#fafafa',
 				'selectors' => [
 					'{{WRAPPER}} .sina-banner-subtitle' => 'color: {{VALUE}};',
 				],
@@ -776,7 +776,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 			[
 				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '#eee',
+				'default' => '#fafafa',
 				'selectors' => [
 					'{{WRAPPER}} .sina-banner-desc' => 'color: {{VALUE}};',
 				],

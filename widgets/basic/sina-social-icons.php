@@ -378,7 +378,7 @@ class Sina_Social_Icons_Widget extends Widget_Base {
 			[
 				'label' => __( 'Icon Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '#eee',
+				'default' => '#fafafa',
 				'selectors' => [
 					'{{WRAPPER}} .sina-social li i' => 'color: {{VALUE}};',
 				],

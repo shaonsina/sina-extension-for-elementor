@@ -236,7 +236,7 @@ class Sina_Piechart_Widget extends Widget_Base {
 			[
 				'label' => __('Track Color', 'sina-ext'),
 				'type' => Controls_Manager::COLOR,
-				'default' => '#eee',
+				'default' => '#fafafa',
 			]
 		);
 		$this->add_control(

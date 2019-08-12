@@ -346,7 +346,7 @@ class Sina_Accordion_Widget extends Widget_Base {
 			[
 				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '#eee',
+				'default' => '#fafafa',
 				'selectors' => [
 					'{{WRAPPER}} .sina-accordion-header' => 'color: {{VALUE}};',
 				],
@@ -357,7 +357,7 @@ class Sina_Accordion_Widget extends Widget_Base {
 			[
 				'label' => __( 'Icon Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '#eee',
+				'default' => '#fafafa',
 				'selectors' => [
 					'{{WRAPPER}} .sina-accordion-icon i' => 'color: {{VALUE}};',
 				],

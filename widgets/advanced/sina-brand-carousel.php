@@ -392,7 +392,7 @@ class Sina_Brand_Carousel_Widget extends Widget_Base {
 						'default' => 'solid',
 					],
 					'color' => [
-						'default' => '#eee',
+						'default' => '#fafafa',
 					],
 					'width' => [
 						'default' => [

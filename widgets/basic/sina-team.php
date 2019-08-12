@@ -656,7 +656,7 @@ class Sina_Team_Widget extends Widget_Base {
 			[
 				'label' => __( 'Icon Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '#eee',
+				'default' => '#fafafa',
 				'selectors' => [
 					'{{WRAPPER}} .sina-team-social li i' => 'color: {{VALUE}};',
 				],
@@ -723,7 +723,7 @@ class Sina_Team_Widget extends Widget_Base {
 						'default' =>'classic', 
 					],
 					'color' => [
-						'default' => '#eee',
+						'default' => '#fafafa',
 					],
 				],
 				'selector' => '{{WRAPPER}} .sina-team-social li i:hover',

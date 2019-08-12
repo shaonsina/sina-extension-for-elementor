@@ -168,7 +168,7 @@ class Sina_Video_Widget extends Widget_Base {
 			[
 				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '#eee',
+				'default' => '#fafafa',
 				'selectors' => [
 					'{{WRAPPER}} .sina-video-title' => 'color: {{VALUE}};',
 				],
@@ -277,7 +277,7 @@ class Sina_Video_Widget extends Widget_Base {
 						'default' =>'classic', 
 					],
 					'color' => [
-						'default' => '#eee',
+						'default' => '#fafafa',
 					],
 				],
 				'selector' => '{{WRAPPER}} .sina-video-play',
@@ -340,7 +340,7 @@ class Sina_Video_Widget extends Widget_Base {
 			[
 				'label' => __( 'Icon Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '#eee',
+				'default' => '#fafafa',
 				'selectors' => [
 					'{{WRAPPER}} .sina-video-play:hover' => 'color: {{VALUE}};',
 				],
