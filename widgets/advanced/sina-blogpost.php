@@ -132,7 +132,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 		$this->add_control(
 			'columns',
 			[
-				'label' => __( 'Number of Columns', 'sina-ext' ),
+				'label' => __( 'Number of Column', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
 					'sina-bp-item-1' => __( '1', 'sina-ext' ),
@@ -153,6 +153,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 			]
 		);
 		Sina_Common_Data::posts_content($this);
+		Sina_Common_Data::button_content( $this, '.sina-read-more', '', 'read_more', false, 'Read More');
 		$this->add_control(
 			'content_length',
 			[
@@ -677,6 +678,80 @@ class Sina_Blogpost_Widget extends Widget_Base {
 
 		$this->end_controls_section();
 		// End Title Style
+		// =====================
+
+
+		// Start Read More Style
+		// ========================
+		$this->start_controls_section(
+			'read_more_style',
+			[
+				'label' => __( 'Read More', 'sina-ext' ),
+				'tab' => Controls_Manager::TAB_STYLE,
+				'condition' => [
+					'read_more_text!' => '',
+				],
+			]
+		);
+		Sina_Common_Data::button_style( $this, '.sina-read-more' );
+		$this->add_responsive_control(
+			'read_more_radius',
+			[
+				'label' => __( 'Radius', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '4',
+					'right' => '4',
+					'bottom' => '4',
+					'left' => '4',
+					'isLinked' => true,
+				],
+				'separator' => 'before',
+				'selectors' => [
+					'{{WRAPPER}} .sina-read-more' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'read_more_padding',
+			[
+				'label' => __( 'Padding', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '10',
+					'right' => '20',
+					'bottom' => '10',
+					'left' => '20',
+					'isLinked' => false,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-read-more' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'read_more_margin',
+			[
+				'label' => __( 'Margin', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '25',
+					'right' => '0',
+					'bottom' => '0',
+					'left' => '0',
+					'isLinked' => false,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-read-more' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->end_controls_section();
+		// End Read More Style
 		// =====================
 
 
@@ -1296,6 +1371,9 @@ class Sina_Blogpost_Widget extends Widget_Base {
 			$posts_meta = $data['posts_meta'];
 			$thumb_right = $data['thumb_right'];
 			$layout = $data['layout'];
+			$read_more_text = $data['read_more_text'];
+			$read_more_icon = $data['read_more_icon'];
+			$read_more_icon_align = $data['read_more_icon_align'];
 			?>
 			<div class="sina-blogpost <?php echo esc_attr( 'sina-bp-'.$this->get_id() ); ?>"
 			data-uid="<?php echo esc_attr( $this->get_id() ); ?>"
@@ -1304,6 +1382,9 @@ class Sina_Blogpost_Widget extends Widget_Base {
 			data-posts-num="<?php echo esc_attr( $data['posts_num'] ); ?>"
 			data-total-posts="<?php echo esc_attr( $post_query->found_posts ); ?>"
 			data-posts-meta="<?php echo esc_attr( $posts_meta ); ?>"
+			data-read-more-text="<?php echo esc_attr( $read_more_text ); ?>"
+			data-read-more-icon="<?php echo esc_attr( $read_more_icon ); ?>"
+			data-read-more-icon-align="<?php echo esc_attr( $read_more_icon_align ); ?>"
 			data-content-length="<?php echo esc_attr( $content_length ); ?>"
 			data-offset="<?php echo esc_attr( $new_offset + $data['posts_num'] ); ?>"
 			data-layout="<?php echo esc_attr( $layout ); ?>"

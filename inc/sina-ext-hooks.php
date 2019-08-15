@@ -191,6 +191,9 @@ Class Sina_Ext_Hooks{
 			$posts_meta = sanitize_text_field( $_POST['posts_meta'] );
 			$thumb_right = sanitize_text_field( $_POST['thumb_right'] );
 			$layout = sanitize_text_field( $_POST['layout'] );
+			$read_more_text = sanitize_text_field( $_POST['read_more_text'] );
+			$read_more_icon = sanitize_text_field( $_POST['read_more_icon'] );
+			$read_more_icon_align = sanitize_text_field( $_POST['read_more_icon_align'] );
 
 			// Post Query
 			$post_query = new WP_Query( $default );

@@ -28,6 +28,14 @@
 							endif;
 						?>
 					</div>
+					<?php if ( $read_more_text ): ?>
+						<?php $btn_data = ['read_more_icon' => $read_more_icon, 'read_more_icon_align' => $read_more_icon_align, 'read_more_text' => $read_more_text]; ?>
+						<div class="sina-btn-wrapper">
+							<a href="<?php the_permalink(); ?>">
+								<?php Sina_Common_Data::button_html($btn_data, 'read_more'); ?>
+							</a>
+						</div>
+					<?php endif; ?>
 				</div>
 				<?php if ( 'yes' == $posts_meta ): ?>
 					<div class="sina-bp-meta">

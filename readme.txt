@@ -99,6 +99,11 @@ Yes. It's totally free.
 
 == Changelog ==
 
+= 3.0.5 - 16-08-2019 =
+- Added: Read More added to Blogpost
+- Added: Button added to Content Box
+- Added: Some option to Video
+
 = 3.0.4 - 12-08-2019 =
 - Added: Some option to Portfolio
 - Added: Some option to Particle Layer

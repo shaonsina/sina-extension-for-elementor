@@ -241,6 +241,21 @@ class Sina_Content_Box_Widget extends Widget_Base {
 		// =====================
 
 
+		// Start Button Content
+		// =====================
+		$this->start_controls_section(
+			'button_content',
+			[
+				'label' => __( 'Button', 'sina-ext' ),
+				'tab' => Controls_Manager::TAB_CONTENT,
+			]
+		);
+		Sina_Common_Data::button_content( $this, '.sina-read-more', '');
+		$this->end_controls_section();
+		// End Button Content
+		// =====================
+
+
 		// Start Box Style
 		// =====================
 		$this->start_controls_section(
@@ -990,6 +1005,80 @@ class Sina_Content_Box_Widget extends Widget_Base {
 		$this->end_controls_section();
 		// End Ribbon Style
 		// =====================
+
+
+		// Start Button Style
+		// =====================
+		$this->start_controls_section(
+			'button_style',
+			[
+				'label' => __( 'Button', 'sina-ext' ),
+				'tab' => Controls_Manager::TAB_STYLE,
+				'condition' => [
+					'btn_text!' => '',
+				],
+			]
+		);
+		Sina_Common_Data::button_style( $this, '.sina-read-more' );
+		$this->add_responsive_control(
+			'btn_radius',
+			[
+				'label' => __( 'Radius', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '4',
+					'right' => '4',
+					'bottom' => '4',
+					'left' => '4',
+					'isLinked' => true,
+				],
+				'separator' => 'before',
+				'selectors' => [
+					'{{WRAPPER}} .sina-read-more' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'btn_padding',
+			[
+				'label' => __( 'Padding', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '12',
+					'right' => '25',
+					'bottom' => '12',
+					'left' => '25',
+					'isLinked' => false,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-read-more' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'btn_margin',
+			[
+				'label' => __( 'Margin', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '30',
+					'right' => '0',
+					'bottom' => '10',
+					'left' => '0',
+					'isLinked' => false,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-read-more' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->end_controls_section();
+		// End Button Style
+		// =====================
 	}
 
 
@@ -1040,6 +1129,21 @@ class Sina_Content_Box_Widget extends Widget_Base {
 
 						<?php if ( $data['desc'] ): ?>
 							<?php printf( '<div class="sina-content-box-desc">%1$s</div>', $data['desc'] ); ?>
+						<?php endif; ?>
+
+						<?php if ( $data['btn_text'] ): ?>
+							<div class="sina-btn-wrapper">
+								<a class="sina-read-more"
+								href="<?php echo esc_url( $data['btn_link']['url'] ); ?>"
+								<?php if ( 'on' == $data['btn_link']['is_external'] ): ?>
+									target="_blank" 
+								<?php endif; ?>
+								<?php if ( 'on' == $data['btn_link']['nofollow'] ): ?>
+									rel="nofollow" 
+								<?php endif; ?>>
+									<?php Sina_Common_Data::button_html($data); ?>
+								</a>
+							</div>
 						<?php endif; ?>
 					</div>
 			<?php endif; ?>

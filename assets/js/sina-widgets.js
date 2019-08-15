@@ -1,4 +1,4 @@
-/* Sina Extension for Elementor v3.0.0 */
+/* Sina Extension for Elementor v3.0.5 */
 
 (function ($) {
 	// Owl Carousel for some Slider or Carousel
@@ -191,6 +191,9 @@
 				totalPosts = $this.data('total-posts'),
 				columns = $this.data('columns'),
 				excerpt = $this.data('excerpt'),
+				readMoreText = $this.data('read-more-text'),
+				readMoreIcon = $this.data('read-more-icon'),
+				readMoreIconAlign = $this.data('read-more-icon-align'),
 				postsMeta = $this.data('posts-meta'),
 				contentLength = $this.data('content-length'),
 				layout = $this.data('layout'),
@@ -214,6 +217,9 @@
 						posts_num: postsNum,
 						offset: offset,
 						excerpt: excerpt,
+						read_more_text: readMoreText,
+						read_more_icon: readMoreIcon,
+						read_more_icon_align: readMoreIconAlign,
 						posts_meta: postsMeta,
 						content_length: contentLength,
 						layout: layout,

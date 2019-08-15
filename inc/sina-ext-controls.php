@@ -192,14 +192,14 @@ class Sina_Common_Data{
 		);
 	}
 
-	public static function button_content( $obj, $class = '', $label = 'Learn More', $prefix = 'btn', $cond = true ) {
+	public static function button_content( $obj, $class = '', $btn_text = 'Learn More', $prefix = 'btn', $cond = true, $label = 'Button' ) {
 		$obj->add_control(
 			$prefix.'_text',
 			[
-				'label' => __( 'Label', 'sina-ext' ),
+				'label' => __( $label.' Text', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter Label', 'sina-ext' ),
-				'default' => $label,
+				'placeholder' => __( 'Enter Text', 'sina-ext' ),
+				'default' => $btn_text,
 			]
 		);
 		if ($cond) {
@@ -218,7 +218,7 @@ class Sina_Common_Data{
 		$obj->add_control(
 			$prefix.'_icon',
 			[
-				'label' => __( 'Icon', 'sina-ext' ),
+				'label' => __( $label.' Icon', 'sina-ext' ),
 				'type' => Controls_Manager::ICON,
 			]
 		);
