@@ -31,7 +31,7 @@
 					<?php if ( $read_more_text ): ?>
 						<?php $btn_data = ['read_more_icon' => $read_more_icon, 'read_more_icon_align' => $read_more_icon_align, 'read_more_text' => $read_more_text]; ?>
 						<div class="sina-btn-wrapper">
-							<a href="<?php the_permalink(); ?>">
+							<a href="<?php the_permalink(); ?>" class="sina-read-more">
 								<?php Sina_Common_Data::button_html($btn_data, 'read_more'); ?>
 							</a>
 						</div>
