@@ -245,6 +245,14 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 				'default' => 'This is flip box description.',
 			]
 		);
+		$this->add_control(
+			'back_link',
+			[
+				'label' => __( 'Link', 'sina-ext' ),
+				'type' => Controls_Manager::URL,
+				'placeholder' => __( 'https://your-link.com', 'sina-ext' ),
+			]
+		);
 
 		$this->end_controls_section();
 		// End Back Side Content
@@ -823,7 +831,7 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '#fafafa',
 				'selectors' => [
-					'{{WRAPPER}} .sina-flipbox-back .sina-flipbox-title' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .sina-flipbox-back .sina-flipbox-title, {{WRAPPER}} .sina-flipbox-back .sina-flipbox-title > a' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -844,14 +852,14 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 						],
 					],
 				],
-				'selector' => '{{WRAPPER}} .sina-flipbox-back .sina-flipbox-title',
+				'selector' => '{{WRAPPER}} .sina-flipbox-back .sina-flipbox-title, {{WRAPPER}} .sina-flipbox-back .sina-flipbox-title > a',
 			]
 		);
 		$this->add_group_control(
 			Group_Control_Text_Shadow::get_type(),
 			[
 				'name' => 'back_title_shadow',
-				'selector' => '{{WRAPPER}} .sina-flipbox-back .sina-flipbox-title',
+				'selector' => '{{WRAPPER}} .sina-flipbox-back .sina-flipbox-title, {{WRAPPER}} .sina-flipbox-back .sina-flipbox-title > a',
 			]
 		);
 		$this->add_responsive_control(
@@ -1032,7 +1040,21 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 
 				<div class="sina-flipbox-content">
 					<?php if ( $data['back_title'] ): ?>
-						<?php printf( '<h3 class="sina-flipbox-title">%1$s</h3>', $data['back_title'] ); ?>
+						<h3 class="sina-flipbox-title">
+							<?php if ( $data['back_link']['url'] ): ?>
+								<a href="<?php echo esc_url( $data['back_link']['url'] ); ?>"
+									<?php if ( 'on' == $data['back_link']['is_external'] ): ?>
+										target="_blank" 
+									<?php endif; ?>
+									<?php if ( 'on' == $data['back_link']['nofollow'] ): ?>
+										rel="nofollow" 
+									<?php endif; ?>>
+									<?php printf( '%1$s', $data['back_title'] ); ?>
+								</a>
+							<?php else: ?>
+								<?php printf( '%1$s', $data['back_title'] ); ?>
+							<?php endif; ?>
+						</h3>
 					<?php endif; ?>
 
 					<?php if ( $data['back_desc'] ): ?>

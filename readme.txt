@@ -5,7 +5,7 @@ Donate link: https://plugins.shaonsina.com/sina-extension/
 Requires at least: 4.7
 Tested up to: 5.2
 Requires PHP: 7.0
-Stable tag: 3.0.4
+Stable tag: 3.0.6
 License: GPL v3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -99,9 +99,12 @@ Yes. It's totally free.
 
 == Changelog ==
 
+= 3.0.6 - 20-08-2019 =
+- Added: Link option to Flip Box
+
 = 3.0.5 - 16-08-2019 =
-- Added: Read More added to Blogpost
-- Added: Button added to Content Box
+- Added: Read More to Blogpost
+- Added: Button to Content Box
 - Added: Some option to Video
 
 = 3.0.4 - 12-08-2019 =
