@@ -225,40 +225,17 @@ class Sina_Fancytext_Widget extends Widget_Base {
 				],
 			]
 		);
+		$animation = Sina_Common_Data::animation();
+		unset( $animation['none'] );
+		$animation['typing'] = __( 'Typing', 'sina-ext' );
+
 		$this->add_control(
 			'animation_type',
 			[
 				'label' => __( 'Animation Type', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'typing',
-				'options' => [
-					'typing' => __( 'Typing', 'sina-ext' ),
-					'fadeIn' => __( 'Fade', 'sina-ext' ),
-					'fadeInUp' => __( 'Fade Up', 'sina-ext' ),
-					'fadeInDown' => __( 'Fade Down', 'sina-ext' ),
-					'fadeInLeft' => __( 'Fade Left', 'sina-ext' ),
-					'fadeInRight' => __( 'Fade Right', 'sina-ext' ),
-					'zoomIn' => __('Zoom In', 'sina-ext'),
-					'zoomInLeft' => __('Zoom In Left', 'sina-ext'),
-					'zoomInRight' => __('Zoom In Right', 'sina-ext'),
-					'bounceIn' => __('Bounce In', 'sina-ext'),
-					'slideInDown' => __('Slide In Down', 'sina-ext'),
-					'slideInLeft' => __('Slide In Left', 'sina-ext'),
-					'slideInRight' => __('Slide In Right', 'sina-ext'),
-					'slideInUp' => __('Slide In Up', 'sina-ext'),
-					'lightSpeedIn' => __('Light Speed In', 'sina-ext'),
-					'swing' => __( 'Swing', 'sina-ext' ),
-					'bounce' => __('Bounce', 'sina-ext'),
-					'flash' => __('Flash', 'sina-ext'),
-					'pulse' => __('Pulse', 'sina-ext'),
-					'rubberBand' => __('Rubber Band', 'sina-ext'),
-					'shake' => __('Shake', 'sina-ext'),
-					'headShake' => __('Head Shake', 'sina-ext'),
-					'swing' => __('Swing', 'sina-ext'),
-					'tada' => __('Tada', 'sina-ext'),
-					'wobble' => __('Wobble', 'sina-ext'),
-					'jello' => __('Jello', 'sina-ext'),
-				],
+				'options' => $animation,
 			]
 		);
 		$this->add_control(

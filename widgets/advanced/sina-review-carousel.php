@@ -218,17 +218,6 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 			]
 		);
 		Sina_Common_Data::carousel_content( $this, '.sina-review-carousel' );
-		$this->add_control(
-			'speed',
-			[
-				'label' => __( 'Speed', 'sina-ext' ),
-				'type' => Controls_Manager::NUMBER,
-				'default' => 500,
-				'step' => 100,
-				'min' => 100,
-				'max' => 5000,
-			]
-		);
 
 		$this->end_controls_section();
 		// End Carousel Settings
@@ -609,6 +598,7 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 			]
 		);
 		Sina_Common_Data::nav_dots_style( $this, '.sina-review-carousel' );
+
 		$this->end_controls_section();
 		// End Nav & Dots Style
 		// ==========================
@@ -622,6 +612,8 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 		data-item-lg="1" data-item-md="1" data-item-sm="1"
 		data-autoplay="<?php echo esc_attr( $data['autoplay'] ); ?>"
 		data-pause="<?php echo esc_attr( $data['pause'] ); ?>"
+		data-center=""
+		data-slide-anim="<?php echo esc_attr( $data['slide_anim'] ); ?>"
 		data-nav="<?php echo esc_attr( $data['nav'] ); ?>"
 		data-dots="<?php echo esc_attr( $data['dots'] ); ?>"
 		data-mouse-drag="<?php echo esc_attr( $data['mouse_drag'] ); ?>"

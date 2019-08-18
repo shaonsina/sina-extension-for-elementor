@@ -327,7 +327,7 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 				'selector' => '{{WRAPPER}} .sina-slider-content .sina-overlay',
 			]
 		);
-		Sina_Common_Data::carousel_content($this, '.sina-banner-slider');
+		Sina_Common_Data::carousel_content($this, '.sina-banner-slider', true, false);
 		$this->add_control(
 			'part_anim',
 			[
@@ -339,7 +339,7 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 			]
 		);
 		$this->add_control(
-			'speed',
+			'slide_speed',
 			[
 				'label' => __( 'Speed', 'sina-ext' ),
 				'type' => Controls_Manager::NUMBER,
@@ -930,7 +930,7 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 		data-mouse-drag="<?php echo esc_attr( $data['mouse_drag'] ); ?>"
 		data-touch-drag="<?php echo esc_attr( $data['touch_drag'] ); ?>"
 		data-loop="<?php echo esc_attr( $data['loop'] ); ?>"
-		data-speed="<?php echo esc_attr( $data['speed'] ); ?>"
+		data-speed="<?php echo esc_attr( $data['slide_speed'] ); ?>"
 		data-part-anim="<?php echo esc_attr( $data['part_anim'] ); ?>"
 		data-delay="<?php echo esc_attr( $data['delay'] ); ?>">
 

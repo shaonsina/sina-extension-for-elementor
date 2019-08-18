@@ -273,17 +273,6 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 			]
 		);
 		Sina_Common_Data::carousel_content( $this, '.sina-content-slider' );
-		$this->add_control(
-			'speed',
-			[
-				'label' => __( 'Speed', 'sina-ext' ),
-				'type' => Controls_Manager::NUMBER,
-				'default' => 500,
-				'step' => 100,
-				'min' => 100,
-				'max' => 5000,
-			]
-		);
 
 		$this->end_controls_section();
 		// End Slider Settings
@@ -678,6 +667,67 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 		$this->end_controls_section();
 		// End Nav & Dots Style
 		// ==========================
+
+
+		// Start Center Style
+		// =====================
+		$this->start_controls_section(
+			'center_item_style',
+			[
+				'label' => __( 'Center Item', 'sina-ext' ),
+				'tab' => Controls_Manager::TAB_STYLE,
+				'condition' => [
+					'center!' => '',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'scale',
+			[
+				'label' => __( 'Scale', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'range' => [
+					'px' => [
+						'step' => 0.1,
+						'min' => 0.1,
+						'max' => 5,
+					],
+				],
+				'default' => [
+					'size' => '1',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .active.center.owl-item' => 'transform: scale({{SIZE}}); z-index: 2;',
+				],
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
+			[
+				'name' => 'center_item_bg',
+				'types' => [ 'classic', 'gradient' ],
+				'selector' => '{{WRAPPER}} .active.center .sina-cs-item',
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Border::get_type(),
+			[
+				'name' => 'center_item_border',
+				'selector' => '{{WRAPPER}} .active.center  .sina-cs-item',
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Box_Shadow::get_type(),
+			[
+				'name' => 'center_item_shadow',
+				'selector' => '{{WRAPPER}} .active.center  .sina-cs-item',
+			]
+		);
+
+		$this->end_controls_section();
+		// End Center Style
+		// =====================
 	}
 
 
@@ -690,6 +740,8 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 		data-item-sm="<?php echo esc_attr( $data['show_item_mobile'] ); ?>"
 		data-autoplay="<?php echo esc_attr( $data['autoplay'] ); ?>"
 		data-pause="<?php echo esc_attr( $data['pause'] ); ?>"
+		data-center="<?php echo esc_attr( $data['center'] ); ?>"
+		data-slide-anim="<?php echo esc_attr( $data['slide_anim'] ); ?>"
 		data-nav="<?php echo esc_attr( $data['nav'] ); ?>"
 		data-dots="<?php echo esc_attr( $data['dots'] ); ?>"
 		data-mouse-drag="<?php echo esc_attr( $data['mouse_drag'] ); ?>"

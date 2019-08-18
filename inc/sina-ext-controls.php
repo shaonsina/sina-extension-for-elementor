@@ -24,7 +24,7 @@ class Sina_Common_Data{
 	public static function animation() {
 		return [
 			'none' => __( 'None', 'sina-ext' ),
-			'fadeIn' => __( 'Fade', 'sina-ext' ),
+			'fadeIn' => __( 'Fade In', 'sina-ext' ),
 			'fadeInUp' => __( 'Fade Up', 'sina-ext' ),
 			'fadeInDown' => __( 'Fade Down', 'sina-ext' ),
 			'fadeInLeft' => __( 'Fade Left', 'sina-ext' ),
@@ -32,11 +32,22 @@ class Sina_Common_Data{
 			'zoomIn' => __('Zoom In', 'sina-ext'),
 			'zoomInLeft' => __('Zoom In Left', 'sina-ext'),
 			'zoomInRight' => __('Zoom In Right', 'sina-ext'),
+			'zoomInDown' => __('Zoom In Down', 'sina-ext'),
+			'zoomInUp' => __('Zoom In Up', 'sina-ext'),
 			'bounceIn' => __('Bounce In', 'sina-ext'),
+			'bounceInDown' => __('Bounce In Down', 'sina-ext'),
+			'bounceInLeft' => __('Bounce In Left', 'sina-ext'),
+			'bounceInRight' => __('Bounce In Right', 'sina-ext'),
+			'bounceInUp' => __('Bounce In Up', 'sina-ext'),
 			'slideInDown' => __('Slide In Down', 'sina-ext'),
 			'slideInLeft' => __('Slide In Left', 'sina-ext'),
 			'slideInRight' => __('Slide In Right', 'sina-ext'),
 			'slideInUp' => __('Slide In Up', 'sina-ext'),
+			'rotateIn' => __('Rotate In', 'sina-ext'),
+			'rotateInDownLeft' => __('Rotate In Down Left', 'sina-ext'),
+			'rotateInDownRight' => __('Rotate In Down Right', 'sina-ext'),
+			'rotateInUpLeft' => __('Rotate In Up Left', 'sina-ext'),
+			'rotateInUpRight' => __('Rotate In Up Right', 'sina-ext'),
 			'lightSpeedIn' => __('Light Speed In', 'sina-ext'),
 			'swing' => __( 'Swing', 'sina-ext' ),
 			'bounce' => __('Bounce', 'sina-ext'),
@@ -49,6 +60,7 @@ class Sina_Common_Data{
 			'tada' => __('Tada', 'sina-ext'),
 			'wobble' => __('Wobble', 'sina-ext'),
 			'jello' => __('Jello', 'sina-ext'),
+			'rollIn' => __('Roll In', 'sina-ext'),
 		];
 	}
 
@@ -104,7 +116,7 @@ class Sina_Common_Data{
 		);
 	}
 
-	public static function carousel_content( $obj, $class = '', $cond = true ) {
+	public static function carousel_content( $obj, $class = '', $cond = true, $speed = true ) {
 		$obj->add_control(
 			'autoplay',
 			[
@@ -155,6 +167,18 @@ class Sina_Common_Data{
 				'default' => 'yes',
 			]
 		);
+		$obj->add_control(
+			'center',
+			[
+				'label' => __( 'Center', 'sina-ext' ),
+				'type' => Controls_Manager::SWITCHER,
+				'label_on' => __( 'On', 'sina-ext' ),
+				'label_off' => __( 'Off', 'sina-ext' ),
+				'condition' => [
+					'show_item!' => '1'
+				],
+			]
+		);
 
 		if ($cond) {
 			$obj->add_control(
@@ -190,6 +214,35 @@ class Sina_Common_Data{
 				'max' => 15000,
 			]
 		);
+		$obj->add_control(
+			'slide_anim',
+			[
+				'label' => __( 'Slide Animation', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'default' => 'none',
+				'options' => self::animation(),
+				'condition' => [
+					'show_item' => '1',
+				],
+			]
+		);
+
+		if ( $speed ) {
+			$obj->add_control(
+				'speed',
+				[
+					'label' => __( 'Speed', 'sina-ext' ),
+					'type' => Controls_Manager::NUMBER,
+					'step' => 100,
+					'min' => 100,
+					'max' => 5000,
+					'default' => 500,
+					'condition' => [
+						'slide_anim' => 'none',
+					],
+				]
+			);
+		}
 	}
 
 	public static function button_content( $obj, $class = '', $btn_text = 'Learn More', $prefix = 'btn', $cond = true, $label = 'Button' ) {
