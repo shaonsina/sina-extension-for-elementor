@@ -777,7 +777,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
-					'top' => '20',
+					'top' => '15',
 					'right' => '20',
 					'bottom' => '15',
 					'left' => '20',

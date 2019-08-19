@@ -237,6 +237,44 @@ class Sina_Countdown_Widget extends Widget_Base {
 			]
 		);
 
+		$this->add_responsive_control(
+			'width',
+			[
+				'label' => __( 'Width', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'range' => [
+					'px' => [
+						'min' => 50,
+						'max' => 200,
+					],
+				],
+				'default' => [
+					'size' => '100',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-cd' => 'width: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'height',
+			[
+				'label' => __( 'Height', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'range' => [
+					'px' => [
+						'min' => 50,
+						'max' => 200,
+					],
+				],
+				'default' => [
+					'size' => '110',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-cd' => 'height: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
 		$this->add_group_control(
 			Group_Control_Background::get_type(),
 			[
@@ -268,45 +306,6 @@ class Sina_Countdown_Widget extends Widget_Base {
 			]
 		);
 		$this->add_responsive_control(
-			'width',
-			[
-				'label' => __( 'Width', 'sina-ext' ),
-				'type' => Controls_Manager::SLIDER,
-				'range' => [
-					'px' => [
-						'min' => 50,
-						'max' => 200,
-					],
-				],
-				'default' => [
-					'size' => '100',
-				],
-				'separator' => 'before',
-				'selectors' => [
-					'{{WRAPPER}} .sina-cd' => 'width: {{SIZE}}{{UNIT}};',
-				],
-			]
-		);
-		$this->add_responsive_control(
-			'height',
-			[
-				'label' => __( 'Height', 'sina-ext' ),
-				'type' => Controls_Manager::SLIDER,
-				'range' => [
-					'px' => [
-						'min' => 50,
-						'max' => 200,
-					],
-				],
-				'default' => [
-					'size' => '110',
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-cd' => 'height: {{SIZE}}{{UNIT}};',
-				],
-			]
-		);
-		$this->add_responsive_control(
 			'box_radius',
 			[
 				'label' => __( 'Radius', 'sina-ext' ),
@@ -322,7 +321,6 @@ class Sina_Countdown_Widget extends Widget_Base {
 				'selectors' => [
 					'{{WRAPPER}} .sina-cd' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
-				'separator' => 'before',
 			]
 		);
 		$this->add_responsive_control(

@@ -423,6 +423,7 @@ class Sina_Common_Data{
 			[
 				'label' => __( 'Font Family', 'sina-ext' ),
 				'type' => Controls_Manager::FONT,
+				'default' => 'Arial',
 				'separator' => 'before',
 				'selectors' => [
 					'{{WRAPPER}} '.$class.' .owl-prev, {{WRAPPER}} '.$class.' .owl-next' => 'font-family: {{VALUE}}',

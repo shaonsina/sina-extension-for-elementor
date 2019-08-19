@@ -103,6 +103,7 @@ Yes. It's totally free.
 - Added: Animation option to Slider & Carousel
 - Added: Center option to Slider & Carousel
 - Added: Link option to Flip Box
+- Improved
 
 = 3.0.5 - 16-08-2019 =
 - Added: Read More to Blogpost

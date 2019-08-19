@@ -8,6 +8,7 @@
 
 use \Elementor\Widget_Base;
 use \Elementor\Controls_Manager;
+use \Elementor\Group_Control_Background;
 use \Elementor\Group_Control_Typography;
 use \Elementor\Group_Control_Text_Shadow;
 use \Elementor\Group_Control_Box_Shadow;
@@ -215,6 +216,14 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 			[
 				'label' => __( 'Carousel Settings', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
+			]
+		);
+		$this->add_responsive_control(
+			'show_item',
+			[
+				'label' => __( 'Show Item', 'sina-ext' ),
+				'type' => Controls_Manager::HIDDEN,
+				'default' => '1',
 			]
 		);
 		Sina_Common_Data::carousel_content( $this, '.sina-review-carousel' );

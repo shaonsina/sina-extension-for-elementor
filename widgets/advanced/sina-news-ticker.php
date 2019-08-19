@@ -358,6 +358,11 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 							'size' => '14',
 						],
 					],
+					'line_height' => [
+						'default' => [
+							'size' => '18',
+						],
+					],
 				],
 				'selector' => '{{WRAPPER}} .sina-news a',
 			]

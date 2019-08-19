@@ -539,7 +539,7 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 						'default' => 'solid',
 					],
 					'color' => [
-						'default' => '#fafafa',
+						'default' => '#eee',
 					],
 					'width' => [
 						'default' => [

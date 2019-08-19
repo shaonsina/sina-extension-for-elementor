@@ -171,6 +171,16 @@
 	outline: none;
 	cursor: pointer;
 }
+.sina-pt-thumb-content h2,
+.sina-pt-thumb-content p,
+.sina-pricing-title,
+.sina-modal-header{
+	margin: 0;
+}
+.sina-social{
+	margin: 0;
+	padding: 0;
+}
 
 /* Magnific Popup */
 .mfp-image-holder .mfp-close,
@@ -377,7 +387,7 @@ img.mfp-img{
 	margin-left: 20px;
 }
 .sina-contact-input .sina-input-field{
-	width: calc(33.33333% - 2.45px);
+	width: calc(33.33333% - 3.12px);
 }
 .sina-contact-input .sina-input-block{
 	display: block;
@@ -754,10 +764,6 @@ img.mfp-img{
 	padding: 20px 15px;
 	opacity: 1;
 }
-.sina-pt-thumb-content h2,
-.sina-pt-thumb-content p {
-	margin: 0;
-}
 .sina-pt-thumb-content p span{
 	margin-right: 10px;
 }
@@ -800,12 +806,10 @@ img.mfp-img{
 .sina-pricing {
 	text-align: center;
 }
-.sina-pricing .sina-pricing-title{
-	margin: 0;
-}
 .sina-pricing-body{
-	margin-top: 10px;
-	margin-bottom: 20px;
+	margin: 10px 0 20px;
+	padding: 0;
+	list-style: none;
 }
 
 /*-------------------------- Progressbars --------------------------*/
@@ -859,7 +863,7 @@ img.mfp-img{
 	text-align: center;
 }
 .sina-team-social {
-	padding-top: 20px;
+	padding: 20px 0 0;
 }
 /* Move Effect */
 .sina-team:hover .sina-team-overlay{
@@ -873,7 +877,7 @@ img.mfp-img{
 	margin-top: 0;
 }
 .sina-team.sina-team-move .sina-team-social{
-	margin-top: 50px;
+	margin: 50px 0 0;
 	transition: 0.7s;
 }
 .sina-team.sina-team-move:hover .sina-team-social{
