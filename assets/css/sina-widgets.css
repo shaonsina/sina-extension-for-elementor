@@ -150,11 +150,11 @@
 .sina-banner-slider .owl-prev span{
 	float: left;
 }
-.sina-input-field,
 .sina-input-field{
 	display: inline-block;
 	width: inherit;
 	height: inherit;
+	vertical-align: inherit !important;
 	transition: 0.4s;
 }
 .sina-input-field:focus,
