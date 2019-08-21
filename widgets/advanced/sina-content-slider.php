@@ -138,6 +138,29 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 			]
 		);
 		$repeater->add_control(
+			'is_video',
+			[
+				'label' => __( 'Use video', 'sina-ext' ),
+				'type' => Controls_Manager::SWITCHER,
+				'condition' => [
+					'save_templates' => '',
+				],
+			]
+		);
+		$repeater->add_control(
+			'video_link',
+			[
+				'label' => __( 'Video Link', 'sina-ext' ),
+				'label_block' => true,
+				'type' => Controls_Manager::TEXT,
+				'placeholder' => __('Enter video link', 'sina-ext'),
+				'condition' => [
+					'save_templates' => '',
+					'is_video' => 'yes',
+				],
+			]
+		);
+		$repeater->add_control(
 			'title',
 			[
 				'label' => __( 'Title', 'sina-ext' ),
@@ -148,6 +171,7 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 				'default' => 'Web Development',
 				'condition' => [
 					'save_templates' => '',
+					'is_video' => '',
 				],
 			]
 		);
@@ -166,6 +190,7 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 				],
 				'condition' => [
 					'save_templates' => '',
+					'is_video' => '',
 				],
 				'default' => 'h2',
 			]
@@ -180,6 +205,7 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 				'description' => __( 'You can use HTML.', 'sina-ext' ),
 				'condition' => [
 					'save_templates' => '',
+					'is_video' => '',
 				],
 			]
 		);
@@ -198,6 +224,7 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 				'default' => 'h3',
 				'condition' => [
 					'save_templates' => '',
+					'is_video' => '',
 				],
 			]
 		);
@@ -211,7 +238,24 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 				'default' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
 				'condition' => [
 					'save_templates' => '',
+					'is_video' => '',
 				],
+			]
+		);
+		$repeater->add_control(
+			'item_styles',
+			[
+				'label' => __( 'Styles', 'sina-ext' ),
+				'type' => Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+		$repeater->add_group_control(
+			Group_Control_Background::get_type(),
+			[
+				'name' => 'item_background',
+				'types' => [ 'classic' ],
+				'selector' => '{{WRAPPER}} {{CURRENT_ITEM}}.sina-cs-item',
 			]
 		);
 		$this->add_control(
@@ -289,13 +333,35 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 			]
 		);
 
+		$this->add_responsive_control(
+			'height',
+			[
+				'label' => __( 'Height', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', 'em' ],
+				'range' => [
+					'px' => [
+						'max' => 1000,
+					],
+					'em' => [
+						'max' => 50,
+					],
+				],
+				'default' => [
+					'size' => '300',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-cs-item' => 'height: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
 		$this->add_group_control(
-		    Group_Control_Background::get_type(),
-		    [
-		        'name' => 'box_background',
-		        'types' => [ 'classic', 'gradient' ],
-		        'selector' => '{{WRAPPER}} .sina-cs-item',
-		    ]
+			Group_Control_Background::get_type(),
+			[
+				'name' => 'box_background',
+				'types' => [ 'classic', 'gradient' ],
+				'selector' => '{{WRAPPER}} .sina-cs-item',
+			]
 		);
 		$this->add_group_control(
 			Group_Control_Border::get_type(),
@@ -751,13 +817,15 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 		data-delay="<?php echo esc_attr( $data['delay'] ); ?>">
 
 			<?php foreach ($data['slides'] as $slide): ?>
-				<div class="sina-cs-item">
+				<div class="sina-cs-item elementor-repeater-item-<?php echo esc_attr( $slide[ '_id' ] ); ?>">
 					<?php
 						if ( 'yes' == $slide['save_templates'] && $slide['template'] ) :
 							$frontend = new Frontend;
 							echo $frontend->get_builder_content( $slide['template'], true );
-						else :
+						elseif ( 'yes' == $slide['is_video'] && '' !== $slide['video_link'] ) :
 					?>
+							<a class="owl-video" href="<?php echo esc_url( $slide['video_link'] ) ?>"></a>
+					<?php else: ?>
 						<?php if ( $slide['title'] ): ?>
 							<?php printf( '<%1$s class="%2$s">%3$s</%1$s>', $slide['title_tag'], 'sina-cs-title', $slide['title'] ); ?>
 						<?php endif; ?>
