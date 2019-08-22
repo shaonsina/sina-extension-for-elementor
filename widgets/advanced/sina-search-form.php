@@ -454,7 +454,7 @@ class Sina_Search_Form_Widget extends Widget_Base {
 			<form class="sina-search-box" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 				<input type="search" class="sina-input-field" placeholder="<?php echo esc_attr( $data['placeholder'] ); ?>" value="<?php get_search_query(); ?>" name="<?php echo esc_attr( 's' ) ?>">
 
-				<button type="submit" class="sina-button sina-search-btn">
+				<button type="submit" class="sina-button sina-search-btn <?php echo esc_attr( $data['btn_effect']); ?>">
 					<?php Sina_Common_Data::button_html($data); ?>
 				</button>
 			</form>

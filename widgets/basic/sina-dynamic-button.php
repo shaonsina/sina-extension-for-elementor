@@ -99,6 +99,24 @@ class Sina_Dynamic_Button_Widget extends Widget_Base {
 			]
 		);
 		$this->add_control(
+			'btn_effect',
+			[
+				'label' => __( 'Hover Effects', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					'' => __( 'None', 'sina-ext' ),
+					'sina-anim-right-move' => __( 'Icon Right Move', 'sina-ext' ),
+					'sina-anim-right-moving' => __( 'Icon Right Moving', 'sina-ext' ),
+					'sina-anim-right-bouncing' => __( 'Icon Right Bouncing', 'sina-ext' ),
+					'sina-anim-left-move' => __( 'Icon Left Move', 'sina-ext' ),
+					'sina-anim-left-moving' => __( 'Icon Left Moving', 'sina-ext' ),
+					'sina-anim-left-bouncing' => __( 'Icon Left Bouncing', 'sina-ext' ),
+					'sina-anim-zooming' => __( 'Icon Zooming', 'sina-ext' ),
+				],
+				'default' => '',
+			]
+		);
+		$this->add_control(
 			'btn_type',
 			[
 				'label' => __( 'Button Type', 'sina-ext' ),
@@ -191,7 +209,7 @@ class Sina_Dynamic_Button_Widget extends Widget_Base {
 					'left' => __( 'Left', 'sina-ext' ),
 					'right' => __( 'Right', 'sina-ext' ),
 				],
-				'default' => 'left',
+				'default' => 'right',
 				'condition' => [
 					'btn_icon!' => '',
 				],
@@ -348,9 +366,10 @@ class Sina_Dynamic_Button_Widget extends Widget_Base {
 		} else{
 			$btn_link = $data['btn_link']['url'];
 		}
+		$data['btn_text'] = $btn_text;
 		?>
 		<div class="sina-dynamic-button">
-			<a  class="sina-dynamic-btn" href="<?php echo esc_url( $btn_link ); ?>"
+			<a  class="sina-dynamic-btn <?php echo esc_attr($data['btn_effect']); ?>" href="<?php echo esc_url( $btn_link ); ?>"
 				<?php if ( $data['css_id'] ): ?>
 					id="<?php echo esc_attr( $data['css_id'] ); ?>"
 				<?php endif; ?>
@@ -360,13 +379,7 @@ class Sina_Dynamic_Button_Widget extends Widget_Base {
 				<?php if ('static' == $data['btn_type'] && 'on' == $data['btn_link']['nofollow']): ?>
 					rel="nofollow" 
 				<?php endif; ?>>
-				<?php if ( $data['btn_icon'] && $data['btn_icon_align'] == 'left' ): ?>
-					<i class="<?php echo esc_attr($data['btn_icon']); ?> sina-icon-left"></i>
-				<?php endif; ?>
-				<?php printf('%s', $btn_text); ?>
-				<?php if ( $data['btn_icon'] && $data['btn_icon_align'] == 'right' ): ?>
-					<i class="<?php echo esc_attr($data['btn_icon']); ?> sina-icon-right"></i>
-				<?php endif; ?>
+					<?php Sina_Common_Data::button_html($data); ?>
 			</a>
 		</div><!-- .sina-dynamic-button -->
 		<?php

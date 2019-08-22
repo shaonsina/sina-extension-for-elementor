@@ -177,23 +177,21 @@ Class Sina_Ext_Hooks{
 	public static function ajax_load_more_posts() {
 		if ( check_ajax_referer( 'sina_load_more_posts', 'nonce') && wp_verify_nonce( $_POST['nonce'], 'sina_load_more_posts' ) ) {
 
+			// $data = json_decode( sanitize_text_field( $_POST['posts_data'] ) );
+			$offset = sanitize_text_field( $_POST['offset'] );
+			$data = sanitize_text_field( $_POST['posts_data'] );
+			$data = json_decode(stripslashes($data), true);
+			$content_length = (int) $data['content_length'];
+
 			$default = [
-				'cat'				=> sanitize_text_field( $_POST['categories'] ),
-				'posts_per_page'	=> (int) sanitize_text_field( $_POST['posts_num'] ),
-				'offset'			=> (int) sanitize_text_field( $_POST['offset'] ),
+				'cat'				=> $data['categories'],
+				'posts_per_page'	=> (int) $data['posts_num'],
+				'offset'			=> (int) $offset,
+				'orderby'			=> [ $data['order_by'] => $data['sort'] ],
 				'has_password'		=> false,
 				'post_status'		=> 'publish',
 				'post__not_in'		=> get_option( 'sticky_posts' ),
 			];
-			$columns = sanitize_text_field( $_POST['columns'] );
-			$excerpt = sanitize_text_field( $_POST['excerpt'] );
-			$content_length = (int) sanitize_text_field( $_POST['content_length'] );
-			$posts_meta = sanitize_text_field( $_POST['posts_meta'] );
-			$thumb_right = sanitize_text_field( $_POST['thumb_right'] );
-			$layout = sanitize_text_field( $_POST['layout'] );
-			$read_more_text = sanitize_text_field( $_POST['read_more_text'] );
-			$read_more_icon = sanitize_text_field( $_POST['read_more_icon'] );
-			$read_more_icon_align = sanitize_text_field( $_POST['read_more_icon_align'] );
 
 			// Post Query
 			$post_query = new WP_Query( $default );
@@ -201,8 +199,8 @@ Class Sina_Ext_Hooks{
 			if ( $post_query->have_posts() ) {
 				?>
 				<div class="sina-ajax-posts">
-					<?php if ( 'grid' == $layout || 'list' == $layout): ?>
-						<?php include realpath( SINA_EXT_LAYOUT.'/blogpost/'.$layout.'.php' ); ?>
+					<?php if ( 'grid' == $data['layout'] || 'list' == $data['layout']): ?>
+						<?php include realpath( SINA_EXT_LAYOUT.'/blogpost/'.$data['layout'].'.php' ); ?>
 					<?php endif; ?>
 					<?php wp_reset_query(); ?>
 				</div>

@@ -1016,7 +1016,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 				<?php if ( $data['pbtn_text'] || $data['sbtn_text'] ): ?>
 					<div class="sina-banner-btns animated <?php echo esc_attr( $data['buttons_anim'] ); ?>">
 						<?php if ( $data['pbtn_text'] ): ?>
-							<a class="sina-banner-pbtn"
+							<a class="sina-banner-pbtn <?php echo esc_attr( $data['pbtn_effect']) ?>"
 							href="<?php echo esc_url( $data['pbtn_link']['url'] ); ?>"
 							<?php if ( $data['pbtn_id'] ): ?>
 								id="<?php echo esc_attr( $data['pbtn_id'] ); ?>"
@@ -1033,7 +1033,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 						<?php endif ?>
 
 						<?php if ( $data['sbtn_text'] ): ?>
-							<a class="sina-banner-sbtn"
+							<a class="sina-banner-sbtn <?php echo esc_attr( $data['sbtn_effect']) ?>"
 							href="<?php echo esc_url( $data['sbtn_link']['url'] ); ?>"
 							<?php if ( $data['sbtn_id'] ): ?>
 								id="<?php echo esc_attr( $data['sbtn_id'] ); ?>"

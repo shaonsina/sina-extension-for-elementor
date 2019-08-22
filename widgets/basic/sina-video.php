@@ -117,6 +117,19 @@ class Sina_Video_Widget extends Widget_Base {
 		);
 
 		$this->add_control(
+			'animation',
+			[
+				'label' => __( 'Effects', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					'' => __( 'None', 'sina-ext' ),
+					'sina-rubber-anim' => __( 'Rubber', 'sina-ext' ),
+					'sina-scale-anim' => __( 'Zoom', 'sina-ext' ),
+					'sina-wave-anim' => __( 'Wave', 'sina-ext' ),
+				],
+			]
+		);
+		$this->add_control(
 			'video_link',
 			[
 				'label' => __( 'Video Link', 'sina-ext' ),
@@ -240,20 +253,6 @@ class Sina_Video_Widget extends Widget_Base {
 			[
 				'label' => __( 'Button', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
-			]
-		);
-
-		$this->add_control(
-			'animation',
-			[
-				'label' => __( 'Animation', 'sina-ext' ),
-				'type' => Controls_Manager::SELECT,
-				'options' => [
-					'' => __( 'None', 'sina-ext' ),
-					'sina-rubber-anim' => __( 'Rubber', 'sina-ext' ),
-					'sina-scale-anim' => __( 'Scale', 'sina-ext' ),
-					'sina-wave-anim' => __( 'Wave', 'sina-ext' ),
-				],
 			]
 		);
 

@@ -76,6 +76,8 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 	 */
 	public function get_style_depends() {
 		return [
+			'owl-carousel',
+			'animate-merge',
 			'sina-widgets',
 		];
 	}
@@ -792,6 +794,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 			data-pause="<?php echo esc_attr( $data['pause'] ); ?>"
 			data-center="<?php echo esc_attr( $data['center'] ); ?>"
 			data-slide-anim="<?php echo esc_attr( $data['slide_anim'] ); ?>"
+			data-slide-anim-out="<?php echo esc_attr( $data['slide_anim_out'] ); ?>"
 			data-nav="<?php echo esc_attr( $data['nav'] ); ?>"
 			data-dots="<?php echo esc_attr( $data['dots'] ); ?>"
 			data-mouse-drag="<?php echo esc_attr( $data['mouse_drag'] ); ?>"

@@ -118,6 +118,20 @@ class Sina_Portfolio_Widget extends Widget_Base {
 		);
 
 		$this->add_control(
+			'effects',
+			[
+				'label' => __( 'Overlay Effects', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					'sina-pf-effect-fade' => __( 'Fade', 'sina-ext' ),
+					'sina-pf-effect-zoom' => __( 'Zoom', 'sina-ext' ),
+					'sina-pf-effect-move' => __( 'Fade & Buttons Move', 'sina-ext' ),
+					'sina-pf-effect-zoom sina-pf-effect-move' => __( 'Zoom & Buttons Move', 'sina-ext' ),
+				],
+				'default' => 'sina-pf-effect-move',
+			]
+		);
+		$this->add_control(
 			'columns',
 			[
 				'label' => __( 'Number of Column', 'sina-ext' ),
@@ -131,20 +145,6 @@ class Sina_Portfolio_Widget extends Widget_Base {
 					'masonry' => __( 'Masonry', 'sina-ext' ),
 				],
 				'default' => 'sina-pf-item-3',
-			]
-		);
-		$this->add_control(
-			'effects',
-			[
-				'label' => __( 'Effects', 'sina-ext' ),
-				'type' => Controls_Manager::SELECT,
-				'options' => [
-					'sina-pf-effect-fade' => __( 'Fade', 'sina-ext' ),
-					'sina-pf-effect-zoom' => __( 'Zoom', 'sina-ext' ),
-					'sina-pf-effect-move' => __( 'Fade & Buttons Move', 'sina-ext' ),
-					'sina-pf-effect-zoom sina-pf-effect-move' => __( 'Zoom & Buttons Move', 'sina-ext' ),
-				],
-				'default' => 'sina-pf-effect-move',
 			]
 		);
 
@@ -460,7 +460,7 @@ class Sina_Portfolio_Widget extends Widget_Base {
 		$this->add_control(
 			'overlay',
 			[
-				'label' => __( 'Overlay Background', 'sina-ext' ),
+				'label' => __( 'Overlay Styles', 'sina-ext' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]

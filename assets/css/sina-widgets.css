@@ -16,10 +16,6 @@
 	background-position: center;
 }
 .sina-flex{
-	display: -webkit-flex;
-	display: -moz-flex;
-	display: -ms-flex;
-	display: -o-flex;
 	display: flex;
 }
 
@@ -44,15 +40,24 @@
 .sina-flipbox-icon i,
 .sina-content-box-icon i,
 .sina-content-box-icon img,
-.sina-content-box .sina-content-box-title,
-.sina-content-box .sina-content-box-title > a,
-.sina-pricing-btn .sina-order-btn,
-.sina-banner-btns .sina-banner-pbtn,
-.sina-banner-btns .sina-banner-sbtn,
+.sina-content-box-title,
+.sina-content-box-title > a,
+.sina-order-btn,
+.sina-banner-pbtn,
+.sina-banner-sbtn,
 .sina-button,
 .sina-pt-cat-btn,
 .sina-portfolio-btn {
 	transition: all 0.4s ease-in-out;
+}
+.sina-button i,
+.sina-dynamic-btn i,
+.sina-read-more i,
+.sina-order-btn i,
+.sina-banner-pbtn i,
+.sina-banner-sbtn i{
+	display: inline-block;
+	transition: 0.2s cubic-bezier(0.1, 0.8, 0.8, 1);
 }
 .sina-table table th,
 .sina-table table td,
@@ -280,10 +285,6 @@ img.mfp-img{
 .sina-content-slider .owl-dots,
 .sina-banner-slider .owl-dots,
 .sina-review-carousel .owl-dots {
-	display: -webkit-flex;
-	display: -moz-flex;
-	display: -ms-flex;
-	display: -o-flex;
 	display: flex;
 	-webkit-box-align: center;
 	-ms-flex-align: center;
@@ -413,17 +414,6 @@ img.mfp-img{
 }
 
 /*-------------------------- Fancytext --------------------------*/
-@keyframes blink_cursor {
-	0% {
-		opacity: 1;
-	}
-	50% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
-	}
-}
 .sina-fancytext .typed-cursor {
 	font-weight: 400  !important;
 	font-style: normal !important;
@@ -443,8 +433,6 @@ img.mfp-img{
 	left: 0;
 	width: 100%;
 	height: 100%;
-	-moz-backface-visibility: hidden;
-	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
 	overflow: hidden;
 	transition: 0.5s;
@@ -912,61 +900,86 @@ img.mfp-img{
 
 
 /*ANIMATIONS*/
+.sina-anim-right-move:hover i{
+	transform: translate(8px);
+}
+.sina-anim-left-move:hover i{
+	transform: translate(-8px);
+}
+.sina-anim-zooming:hover i{
+	animation: sina-anim-zooming 1s cubic-bezier(0.1, 0.8, 0.8, 1) infinite;
+}
+.sina-anim-right-moving:hover i{
+	animation: sina-anim-right-moving 0.8s cubic-bezier(0.1, 0.8, 0.8, 1) infinite;
+}
+.sina-anim-left-moving:hover i{
+	animation: sina-anim-left-moving 0.8s cubic-bezier(0.1, 0.8, 0.8, 1) infinite;
+}
+.sina-anim-right-bouncing:hover i{
+	animation: sina-anim-right-bouncing 1s cubic-bezier(0.1, 0.8, 0.8, 1) infinite;
+}
+.sina-anim-left-bouncing:hover i{
+	animation: sina-anim-left-bouncing 1s cubic-bezier(0.1, 0.8, 0.8, 1) infinite;
+}
 .sina-rubber-anim{
-	-webkit-animation: sina-rubber-anim 1.5s ease-in infinite;
 	animation: sina-rubber-anim 1.5s ease-in infinite;
 }
 .sina-scale-anim{
-	-webkit-animation: sina-scale-anim 1.5s ease-in infinite;
-	animation: sina-scale-anim 1.5s ease-in infinite;
+	animation: sina-scale-anim 1.5s cubic-bezier(0.1, 0.8, 0.8, 1) infinite;
 }
 .sina-wave-anim{
-	-webkit-animation: sina-wave-anim 2s ease-in infinite;
 	animation: sina-wave-anim 2s ease-in infinite;
 }
-@keyframes sina-rubber-anim{
-	0% {transform: scale(1);}
-	15% {transform: scale(1.15, 0.9);}
-	40% {transform: scale(1.15, 0.9);}
-	45% {transform: scale(1);}
-	55% {transform: scale(1.1, 0.95);}
-	65% {transform: scale(1.1, 0.95);}
-	70% {transform: scale(1);}
-	75% {transform: scale(1.05, 0.97);}
-	100% {transform: scale(1);}
+@keyframes sina-anim-zooming{
+	0%, 100%{transform: scale(1);}
+	30%{transform: scale(1.5);}
 }
-@-webkit-keyframes sina-rubber-anim{
-	0% {transform: scale(1);}
-	15% {transform: scale(1.15, 0.9);}
-	40% {transform: scale(1.15, 0.9);}
-	45% {transform: scale(1);}
-	55% {transform: scale(1.1, 0.95);}
-	65% {transform: scale(1.1, 0.95);}
-	70% {transform: scale(1);}
+@keyframes sina-anim-right-bouncing{
+	0%{transform: translate(0);}
+	20% {transform: translate(3px, -6px);}
+	40% {transform: translate(6px, 6px);}
+	60% {transform: translate(9px, -6px); opacity: 1;}
+	100% {transform: translate(12px, 6px); opacity: 0;}
+}
+@keyframes sina-anim-left-bouncing{
+	0%{transform: translate(0);}
+	20% {transform: translate(-3px, -6px);}
+	40% {transform: translate(-6px, 6px);}
+	60% {transform: translate(-9px, -6px); opacity: 1;}
+	100% {transform: translate(-12px, 6px); opacity: 0;}
+}
+@keyframes sina-anim-right-moving{
+	0%{transform: translate(0);}
+	60% {opacity: 1;}
+	100% {transform: translate(12px); opacity: 0;}
+}
+@keyframes sina-anim-left-moving{
+	0%{transform: translate(0);}
+	60% {opacity: 1;}
+	100% {transform: translate(-12px); opacity: 0;}
+}
+@keyframes sina-rubber-anim{
+	0%, 45%, 70%, 100% {transform: scale(1);}
+	15%, 40% {transform: scale(1.15, 0.9);}
+	55%, 65% {transform: scale(1.1, 0.95);}
 	75% {transform: scale(1.05, 0.97);}
-	100% {transform: scale(1);}
 }
 @keyframes sina-scale-anim{
-	0% {transform: scale(1);}
-	40% {transform: scale(0.8);}
-	80% {transform: scale(0.8);}
-	100% {transform: scale(1);}
-}
-@-webkit-keyframes sina-scale-anim{
-	0% {transform: scale(1);}
-	40% {transform: scale(0.8);}
-	80% {transform: scale(0.8);}
-	100% {transform: scale(1);}
+	0%, 100%{transform: scale(0.85);}
+	25%{transform: scale(1.05);}
 }
 @keyframes sina-wave-anim{
 	0% {box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5);}
 	60% {box-shadow: 0 0 0 25px rgba(255, 255, 255, 0);}
 	100% {box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);}
 }
-@-webkit-keyframes sina-wave-anim{
-	0% {box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5);}
-	60% {box-shadow: 0 0 0 25px rgba(255, 255, 255, 0);}
-	100% {box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);}
+@keyframes blink_cursor {
+	0%, 100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
 }
 
 

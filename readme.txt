@@ -47,11 +47,11 @@ You can make unlimited design without coding knowledge.
 8. [Countdown](https://plugins.shaonsina.com/sina-extension/countdown): Add countdown timer into your web page.
 9. [Counter](https://plugins.shaonsina.com/sina-extension/counter): Show number with animate counting.
 10. [Dynamic Button](https://plugins.shaonsina.com/sina-extension/dynamic-button): Add a button as a static or dynamic (page, category, tag or post formate).
-11. [Fancy Text](https://plugins.shaonsina.com/sina-extension/fancy-text): Use animated text with 30+ animation effects.
+11. [Fancy Text](https://plugins.shaonsina.com/sina-extension/fancy-text): Use animated text with 45+ animation effects.
 12. [Flip Box](https://plugins.shaonsina.com/sina-extension/flip-box): Show animated Flip Box to highlight any content on your web page.
 13. [Google Map](https://plugins.shaonsina.com/sina-extension/google-map): Add Google map with API key into the web page.
 14. [MailChimp](https://plugins.shaonsina.com/sina-extension/mailchimp): Add MailChimp form for subscribing the users.
-15. [Modal Box](https://plugins.shaonsina.com/sina-extension/modal-box): Display any template (which made by the Elementor) into a modal box with 30+ animation effects.
+15. [Modal Box](https://plugins.shaonsina.com/sina-extension/modal-box): Display any template (which made by the Elementor) into a modal box with 45+ animation effects.
 16. [News Ticker](https://plugins.shaonsina.com/sina-extension/news-ticker): Show scrolling post or news title.
 17. [Particle Layer](https://plugins.shaonsina.com/sina-extension/particle-layer): Use particle layer with lots of style, layout & more.
 18. [Piechart](https://plugins.shaonsina.com/sina-extension/piechart): Works the same as the Counter, but with a circle.
@@ -101,6 +101,8 @@ Yes. It's totally free.
 
 = 3.0.6 - 24-08-2019 =
 - Added: Some option to Content Slider
+- Added: Some option to All buttons
+- Added: Animation option for Slider & Carousel
 
 = 3.0.6 - 20-08-2019 =
 - Added: Animation option to Slider & Carousel

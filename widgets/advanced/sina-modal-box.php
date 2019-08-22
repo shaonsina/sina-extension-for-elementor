@@ -1157,7 +1157,7 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 		<div class="sina-modal-box" data-modal-id="<?php echo esc_attr( $trigger_id ); ?>">
 			<?php if ( $data['trigger_text'] ): ?>
 				<div class="sina-btn-wrap">
-					<button id="<?php echo esc_attr( $trigger_id ); ?>" class="sina-button sina-modal-trigger">
+					<button id="<?php echo esc_attr( $trigger_id ); ?>" class="sina-button sina-modal-trigger <?php echo esc_attr( $data['trigger_effect']); ?>">
 						<?php Sina_Common_Data::button_html($data, 'trigger'); ?>
 					</button>
 				</div>

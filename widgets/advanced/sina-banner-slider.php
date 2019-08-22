@@ -976,7 +976,7 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 						<?php if ( $data['pbtn_text'] || $data['sbtn_text'] ): ?>
 							<div class="sina-banner-btns <?php echo esc_attr($invisible); ?>" data-animation="animated <?php echo esc_attr( $slide['buttons_anim'] ); ?>">
 								<?php if ( $data['pbtn_text'] ): ?>
-									<a class="sina-banner-pbtn"
+									<a class="sina-banner-pbtn <?php echo esc_attr( $data['pbtn_effect']); ?>"
 									href="<?php echo esc_url( $data['pbtn_link']['url'] ); ?>"
 									<?php if ( 'on' == $data['pbtn_link']['is_external'] ): ?>
 										target="_blank" 
@@ -984,20 +984,12 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 									<?php if ( 'on' == $data['pbtn_link']['nofollow'] ): ?>
 										rel="nofollow" 
 									<?php endif; ?>>
-										<?php if ( $data['pbtn_icon'] && $data['pbtn_icon_align'] == 'left' ): ?>
-											<i class="<?php echo esc_attr($data['pbtn_icon']); ?> sina-icon-left"></i>
-										<?php endif; ?>
-										<span <?php echo $this->get_render_attribute_string( 'pbtn_text' ); ?>>
-											<?php printf( '%s', $data['pbtn_text'] ); ?>
-										</span>
-										<?php if ( $data['pbtn_icon'] && $data['pbtn_icon_align'] == 'right' ): ?>
-											<i class="<?php echo esc_attr($data['pbtn_icon']); ?> sina-icon-right"></i>
-										<?php endif; ?>
+										<?php Sina_Common_Data::button_html($data, 'pbtn'); ?>
 									</a>
 								<?php endif ?>
 
 								<?php if ( $data['sbtn_text'] ): ?>
-									<a class="sina-banner-sbtn"
+									<a class="sina-banner-sbtn <?php echo esc_attr( $data['sbtn_effect']); ?>"
 									href="<?php echo esc_url( $data['sbtn_link']['url'] ); ?>"
 									<?php if ( 'on' == $data['sbtn_link']['is_external'] ): ?>
 										target="_blank" 
@@ -1005,15 +997,7 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 									<?php if ( 'on' == $data['sbtn_link']['nofollow'] ): ?>
 										rel="nofollow" 
 									<?php endif; ?>>
-										<?php if ( $data['sbtn_icon'] && $data['sbtn_icon_align'] == 'left' ): ?>
-											<i class="<?php echo esc_attr($data['sbtn_icon']); ?> sina-icon-left"></i>
-										<?php endif; ?>
-										<span <?php echo $this->get_render_attribute_string( 'pbtn_text' ); ?>>
-											<?php printf( '%s', $data['sbtn_text'] ); ?>
-										</span>
-										<?php if ( $data['sbtn_icon'] && $data['sbtn_icon_align'] == 'right' ): ?>
-											<i class="<?php echo esc_attr($data['sbtn_icon']); ?> sina-icon-right"></i>
-										<?php endif; ?>
+										<?php Sina_Common_Data::button_html($data, 'sbtn'); ?>
 									</a>
 								<?php endif ?>
 							</div>

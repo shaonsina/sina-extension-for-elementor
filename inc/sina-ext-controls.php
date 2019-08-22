@@ -25,10 +25,10 @@ class Sina_Common_Data{
 		return [
 			'none' => __( 'None', 'sina-ext' ),
 			'fadeIn' => __( 'Fade In', 'sina-ext' ),
-			'fadeInUp' => __( 'Fade Up', 'sina-ext' ),
-			'fadeInDown' => __( 'Fade Down', 'sina-ext' ),
-			'fadeInLeft' => __( 'Fade Left', 'sina-ext' ),
-			'fadeInRight' => __( 'Fade Right', 'sina-ext' ),
+			'fadeInUp' => __( 'Fade In Up', 'sina-ext' ),
+			'fadeInDown' => __( 'Fade In Down', 'sina-ext' ),
+			'fadeInLeft' => __( 'Fade In Left', 'sina-ext' ),
+			'fadeInRight' => __( 'Fade In Right', 'sina-ext' ),
 			'zoomIn' => __('Zoom In', 'sina-ext'),
 			'zoomInLeft' => __('Zoom In Left', 'sina-ext'),
 			'zoomInRight' => __('Zoom In Right', 'sina-ext'),
@@ -48,6 +48,8 @@ class Sina_Common_Data{
 			'rotateInDownRight' => __('Rotate In Down Right', 'sina-ext'),
 			'rotateInUpLeft' => __('Rotate In Up Left', 'sina-ext'),
 			'rotateInUpRight' => __('Rotate In Up Right', 'sina-ext'),
+			'flipInX' => __( 'Flip In X', 'sina-ext' ),
+			'flipInY' => __( 'Flip In Y', 'sina-ext' ),
 			'lightSpeedIn' => __('Light Speed In', 'sina-ext'),
 			'swing' => __( 'Swing', 'sina-ext' ),
 			'bounce' => __('Bounce', 'sina-ext'),
@@ -61,6 +63,40 @@ class Sina_Common_Data{
 			'wobble' => __('Wobble', 'sina-ext'),
 			'jello' => __('Jello', 'sina-ext'),
 			'rollIn' => __('Roll In', 'sina-ext'),
+		];
+	}
+
+	public static function animation_out() {
+		return [
+			'none' => __( 'None', 'sina-ext' ),
+			'fadeOut' => __( 'Fade Out', 'sina-ext' ),
+			'fadeOutUp' => __( 'Fade Out Up', 'sina-ext' ),
+			'fadeOutDown' => __( 'Fade Out Down', 'sina-ext' ),
+			'fadeOutLeft' => __( 'Fade Out Left', 'sina-ext' ),
+			'fadeOutRight' => __( 'Fade Out Right', 'sina-ext' ),
+			'zoomOut' => __('Zoom Out', 'sina-ext'),
+			'zoomOutLeft' => __('Zoom Out Left', 'sina-ext'),
+			'zoomOutRight' => __('Zoom Out Right', 'sina-ext'),
+			'zoomOutDown' => __('Zoom Out Down', 'sina-ext'),
+			'zoomOutUp' => __('Zoom Out Up', 'sina-ext'),
+			'bounceOut' => __('Bounce Out', 'sina-ext'),
+			'bounceOutDown' => __('Bounce Out Down', 'sina-ext'),
+			'bounceOutLeft' => __('Bounce Out Left', 'sina-ext'),
+			'bounceOutRight' => __('Bounce Out Right', 'sina-ext'),
+			'bounceOutUp' => __('Bounce Out Up', 'sina-ext'),
+			'slideOutDown' => __('Slide Out Down', 'sina-ext'),
+			'slideOutLeft' => __('Slide Out Left', 'sina-ext'),
+			'slideOutRight' => __('Slide Out Right', 'sina-ext'),
+			'slideOutUp' => __('Slide Out Up', 'sina-ext'),
+			'rotateOut' => __('Rotate Out', 'sina-ext'),
+			'rotateOutDownLeft' => __('Rotate Out Down Left', 'sina-ext'),
+			'rotateOutDownRight' => __('Rotate Out Down Right', 'sina-ext'),
+			'rotateOutUpLeft' => __('Rotate Out Up Left', 'sina-ext'),
+			'rotateOutUpRight' => __('Rotate Out Up Right', 'sina-ext'),
+			'flipOutX' => __( 'Flip Out X', 'sina-ext' ),
+			'flipOutY' => __( 'Flip Out Y', 'sina-ext' ),
+			'lightSpeedOut' => __('Light Speed Out', 'sina-ext'),
+			'rollOut' => __('Roll Out', 'sina-ext'),
 		];
 	}
 
@@ -217,10 +253,22 @@ class Sina_Common_Data{
 		$obj->add_control(
 			'slide_anim',
 			[
-				'label' => __( 'Slide Animation', 'sina-ext' ),
+				'label' => __( 'Slide Animation In', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'none',
 				'options' => self::animation(),
+				'condition' => [
+					'show_item' => '1',
+				],
+			]
+		);
+		$obj->add_control(
+			'slide_anim_out',
+			[
+				'label' => __( 'Slide Animation Out', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'default' => 'none',
+				'options' => self::animation_out(),
 				'condition' => [
 					'show_item' => '1',
 				],
@@ -245,11 +293,32 @@ class Sina_Common_Data{
 		}
 	}
 
-	public static function button_content( $obj, $class = '', $btn_text = 'Learn More', $prefix = 'btn', $cond = true, $label = 'Button' ) {
+	public static function button_content( $obj, $class = '', $btn_text = 'Learn More', $prefix = 'btn', $cond = true ) {
+		$obj->add_control(
+			$prefix.'_effect',
+			[
+				'label' => __( 'Hover Effects', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					'' => __( 'None', 'sina-ext' ),
+					'sina-anim-right-move' => __( 'Icon Right Move', 'sina-ext' ),
+					'sina-anim-right-moving' => __( 'Icon Right Moving', 'sina-ext' ),
+					'sina-anim-right-bouncing' => __( 'Icon Right Bouncing', 'sina-ext' ),
+					'sina-anim-left-move' => __( 'Icon Left Move', 'sina-ext' ),
+					'sina-anim-left-moving' => __( 'Icon Left Moving', 'sina-ext' ),
+					'sina-anim-left-bouncing' => __( 'Icon Left Bouncing', 'sina-ext' ),
+					'sina-anim-zooming' => __( 'Icon Zooming', 'sina-ext' ),
+				],
+				'default' => '',
+				'condition' => [
+					$prefix.'_text!' => '',
+				],
+			]
+		);
 		$obj->add_control(
 			$prefix.'_text',
 			[
-				'label' => __( $label.' Text', 'sina-ext' ),
+				'label' => __( 'Label', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter Text', 'sina-ext' ),
 				'default' => $btn_text,
@@ -261,18 +330,24 @@ class Sina_Common_Data{
 				[
 					'label' => __( 'Link', 'sina-ext' ),
 					'type' => Controls_Manager::URL,
+					'placeholder' => __( 'https://your-link.com', 'sina-ext' ),
 					'default' => [
 						'url' => '#',
 					],
-					'placeholder' => __( 'https://your-link.com', 'sina-ext' ),
+					'condition' => [
+						$prefix.'_text!' => '',
+					],
 				]
 			);
 		}
 		$obj->add_control(
 			$prefix.'_icon',
 			[
-				'label' => __( $label.' Icon', 'sina-ext' ),
+				'label' => __( 'Icon', 'sina-ext' ),
 				'type' => Controls_Manager::ICON,
+				'condition' => [
+					$prefix.'_text!' => '',
+				],
 			]
 		);
 		$obj->add_control(
@@ -284,8 +359,9 @@ class Sina_Common_Data{
 					'left' => __( 'Left', 'sina-ext' ),
 					'right' => __( 'Right', 'sina-ext' ),
 				],
-				'default' => 'left',
+				'default' => 'right',
 				'condition' => [
+					$prefix.'_text!' => '',
 					$prefix.'_icon!' => '',
 				],
 			]
@@ -299,6 +375,7 @@ class Sina_Common_Data{
 					'size' => '5',
 				],
 				'condition' => [
+					$prefix.'_text!' => '',
 					$prefix.'_icon!' => '',
 				],
 				'selectors' => [

@@ -10,7 +10,8 @@
 			itemSm = owl.data('item-sm'),
 			itemSm = itemSm ? itemSm : 1,
 			slideIn = owl.data('slide-anim'),
-			slideOut = 'none' == slideIn ? false : 'fadeOut';
+			slideOut = owl.data('slide-anim-out'),
+			slideOut = 'none' == slideOut ? false : slideOut;
 			slideIn = 'none' == slideIn ? false : slideIn,
 			play = owl.data('autoplay') ? true : false,
 			pause = owl.data('pause') ? true : false,
@@ -192,19 +193,9 @@
 			});
 
 			var uid = $this.data('uid'),
-				columns = $this.data('columns'),
-				categories = $this.data('categories'),
-				postsNum = $this.data('posts-num'),
-				totalPosts = $this.data('total-posts'),
-				columns = $this.data('columns'),
-				excerpt = $this.data('excerpt'),
-				readMoreText = $this.data('read-more-text'),
-				readMoreIcon = $this.data('read-more-icon'),
-				readMoreIconAlign = $this.data('read-more-icon-align'),
-				postsMeta = $this.data('posts-meta'),
-				contentLength = $this.data('content-length'),
-				layout = $this.data('layout'),
-				thumbRight = $this.data('thumb-right'),
+				postsData = $this.data('posts-data'),
+				totalPosts = postsData.total_posts,
+				postsNum = postsData.posts_num,
 				nonce = $this.find('#sina_load_more_posts'+uid),
 				loadMore = $this.find('.sina-load-more'),
 				btn = loadMore.children('.sina-load-more-btn'),
@@ -213,24 +204,13 @@
 
 			btn.on('click', function(e) {
 				var offset = $this.data('offset');
-
 				btn.html('Loading...');
 				$.post(
 					sinaAjax.ajaxURL,
 					{
 						action: "sina_load_more_posts",
-						columns: columns,
-						categories: categories,
-						posts_num: postsNum,
+						posts_data: JSON.stringify(postsData),
 						offset: offset,
-						excerpt: excerpt,
-						read_more_text: readMoreText,
-						read_more_icon: readMoreIcon,
-						read_more_icon_align: readMoreIconAlign,
-						posts_meta: postsMeta,
-						content_length: contentLength,
-						layout: layout,
-						thumb_right: thumbRight,
 						nonce: nonce.val(),
 					},
 					function( data, status, code ) {

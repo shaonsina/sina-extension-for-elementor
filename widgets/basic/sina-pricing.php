@@ -1137,7 +1137,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 
 			<?php if ( $data['btn_text'] || $data['btn_icon'] ) : ?>
 				<div class="sina-pricing-btn">
-					<a class="sina-order-btn"
+					<a class="sina-order-btn <?php echo esc_attr( $data['btn_effect']); ?>"
 					href="<?php echo esc_url( $data['btn_link']['url'] ); ?>"
 					<?php if ( 'on' == $data['btn_link']['is_external'] ): ?>
 						target="_blank" 

@@ -1133,7 +1133,7 @@ class Sina_Content_Box_Widget extends Widget_Base {
 
 						<?php if ( $data['btn_text'] ): ?>
 							<div class="sina-btn-wrapper">
-								<a class="sina-read-more"
+								<a class="sina-read-more <?php echo esc_attr( $data['btn_effect']); ?>"
 								href="<?php echo esc_url( $data['btn_link']['url'] ); ?>"
 								<?php if ( 'on' == $data['btn_link']['is_external'] ): ?>
 									target="_blank" 

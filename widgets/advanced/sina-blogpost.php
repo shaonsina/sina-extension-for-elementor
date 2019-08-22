@@ -153,7 +153,6 @@ class Sina_Blogpost_Widget extends Widget_Base {
 			]
 		);
 		Sina_Common_Data::posts_content($this);
-		Sina_Common_Data::button_content( $this, '.sina-read-more', '', 'read_more', false, 'Read More');
 		$this->add_control(
 			'content_length',
 			[
@@ -235,6 +234,22 @@ class Sina_Blogpost_Widget extends Widget_Base {
 		$this->end_controls_section();
 		// End Blogpost Content
 		// =====================
+
+
+		// Start Read More Content
+		// ========================
+		$this->start_controls_section(
+			'read_more_content',
+			[
+				'label' => __( 'Read More', 'sina-ext' ),
+				'tab' => Controls_Manager::TAB_CONTENT,
+			]
+		);
+		Sina_Common_Data::button_content( $this, '.sina-read-more', '', 'read_more', false);
+
+		$this->end_controls_section();
+		// End Read More Content
+		// ======================
 
 
 		// Start Post Style
@@ -1365,33 +1380,34 @@ class Sina_Blogpost_Widget extends Widget_Base {
 		// Post Query
 		$post_query = new WP_Query( $default );
 		if ( $post_query->have_posts() ) :
-			$columns = $data['columns'];
-			$excerpt = $data['excerpt'];
+			$offset = $new_offset + $data['posts_num'];
 			$content_length = $data['content_length'];
-			$posts_meta = $data['posts_meta'];
-			$thumb_right = $data['thumb_right'];
-			$layout = $data['layout'];
-			$read_more_text = $data['read_more_text'];
-			$read_more_icon = $data['read_more_icon'];
-			$read_more_icon_align = $data['read_more_icon_align'];
+
+			$posts_data = [
+				'posts_num'=> $data['posts_num'],
+				'offset'=> $offset,
+				'total_posts'=> $post_query->found_posts,
+				'layout'=> $data['layout'],
+				'columns'=> $data['columns'],
+				'categories'=> $data['categories'],
+				'order_by'=> $data['order_by'],
+				'sort'=> $data['sort'],
+				'content_length'=> $content_length,
+				'excerpt'=> $data['excerpt'],
+				'posts_meta'=> $data['posts_meta'],
+				'thumb_right'=> $data['thumb_right'],
+				'read_more_effect'=> $data['read_more_effect'],
+				'read_more_text'=> $data['read_more_text'],
+				'read_more_icon'=> $data['read_more_icon'],
+				'read_more_icon_align'=> $data['read_more_icon_align'],
+			];
 			?>
 			<div class="sina-blogpost <?php echo esc_attr( 'sina-bp-'.$this->get_id() ); ?>"
 			data-uid="<?php echo esc_attr( $this->get_id() ); ?>"
-			data-columns="<?php echo esc_attr( $columns ); ?>"
-			data-categories="<?php echo esc_attr( $category ); ?>"
-			data-posts-num="<?php echo esc_attr( $data['posts_num'] ); ?>"
-			data-total-posts="<?php echo esc_attr( $post_query->found_posts ); ?>"
-			data-posts-meta="<?php echo esc_attr( $posts_meta ); ?>"
-			data-read-more-text="<?php echo esc_attr( $read_more_text ); ?>"
-			data-read-more-icon="<?php echo esc_attr( $read_more_icon ); ?>"
-			data-read-more-icon-align="<?php echo esc_attr( $read_more_icon_align ); ?>"
-			data-content-length="<?php echo esc_attr( $content_length ); ?>"
-			data-offset="<?php echo esc_attr( $new_offset + $data['posts_num'] ); ?>"
-			data-layout="<?php echo esc_attr( $layout ); ?>"
-			data-thumb-right="<?php echo esc_attr( $thumb_right ); ?>"
-			data-excerpt="<?php echo esc_attr( $excerpt ); ?>">
+			data-offset="<?php echo esc_attr( $offset ); ?>"
+			data-posts-data='<?php echo json_encode( $posts_data ); ?>'>
 				<div class="sina-bp-grid">
-					<?php include SINA_EXT_LAYOUT.'/blogpost/'.$layout.'.php'; ?>
+					<?php include SINA_EXT_LAYOUT.'/blogpost/'.$data['layout'].'.php'; ?>
 					<?php wp_reset_query(); ?>
 				</div>
 
