@@ -310,9 +310,6 @@ class Sina_Common_Data{
 					'sina-anim-zooming' => __( 'Icon Zooming', 'sina-ext' ),
 				],
 				'default' => '',
-				'condition' => [
-					$prefix.'_text!' => '',
-				],
 			]
 		);
 		$obj->add_control(
@@ -334,9 +331,6 @@ class Sina_Common_Data{
 					'default' => [
 						'url' => '#',
 					],
-					'condition' => [
-						$prefix.'_text!' => '',
-					],
 				]
 			);
 		}
@@ -345,9 +339,6 @@ class Sina_Common_Data{
 			[
 				'label' => __( 'Icon', 'sina-ext' ),
 				'type' => Controls_Manager::ICON,
-				'condition' => [
-					$prefix.'_text!' => '',
-				],
 			]
 		);
 		$obj->add_control(
@@ -361,7 +352,6 @@ class Sina_Common_Data{
 				],
 				'default' => 'right',
 				'condition' => [
-					$prefix.'_text!' => '',
 					$prefix.'_icon!' => '',
 				],
 			]
