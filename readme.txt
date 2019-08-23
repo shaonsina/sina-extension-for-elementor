@@ -99,7 +99,7 @@ Yes. It's totally free.
 
 == Changelog ==
 
-= 3.0.6 - 24-08-2019 =
+= 3.0.7 - 23-08-2019 =
 - Added: Some option to Content Slider
 - Added: Some option to All buttons
 - Added: Animation option for Slider & Carousel
