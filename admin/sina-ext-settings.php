@@ -54,7 +54,11 @@ class Sina_Ext_Settings{
 		add_settings_field( 'sina_ext_templates_merge', __('Sina Templates Merge', 'sina-ext'), [$this, 'templates_option'], 'sina_ext_templates', 'sina_templates_section', ['temps' => 'templates_merge', 'get_temps' => $templates] );
 
 		$get_widgets = get_option( 'sina_widgets' );
-		foreach ( $get_widgets as $cat => $widgets ) {
+		$set_widgets = SINA_WIDGETS;
+		if ( defined('SINA_EXT_PRO_WIDGETS')) {
+			$set_widgets = array_merge(SINA_WIDGETS, SINA_EXT_PRO_WIDGETS);
+		}
+		foreach ( $set_widgets as $cat => $widgets ) {
 			$section = 'sina_'.$cat.'_widgets_section';
 			$page = 'sina_widgets_'.$cat;
 			add_settings_section( $section, '', '', $page );

@@ -5,7 +5,7 @@ Donate link: https://plugins.shaonsina.com/sina-extension/
 Requires at least: 4.7
 Tested up to: 5.2
 Requires PHP: 7.0
-Stable tag: 3.0.8
+Stable tag: 3.0.9
 License: GPL v3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -98,6 +98,9 @@ Yes. It's totally free.
 
 
 == Changelog ==
+
+= 3.0.9 - 25-08-2019 =
+- Fixed: Widgets enable/disable issue
 
 = 3.0.8 - 23-08-2019 =
 - Fixed: Some minor issues

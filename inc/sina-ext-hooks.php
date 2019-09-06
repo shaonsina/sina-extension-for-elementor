@@ -27,7 +27,7 @@ Class Sina_Ext_Hooks{
 			} elseif ( strlen($fname) < 3 ) {
 				$err = __( 'First name too short! Must be contain 3-32 characters.', 'sina-ext' );
 			} elseif ( strlen($fname) > 32 ) {
-				$err = __( 'First name too large! Must be contain 3-32 characters.', 'sina-ext' );
+				$err = __( 'First name too long! Must be contain 3-32 characters.', 'sina-ext' );
 			} elseif ( preg_match("/^[a-zA-Z][ a-zA-Z0-9]{2,31}$/", $fname) ) {
 				$fname = $fname;
 			} else {
@@ -40,7 +40,7 @@ Class Sina_Ext_Hooks{
 				} elseif ( strlen($lname) < 3 ) {
 					$err = __( 'Last name too short! Must be contain 3-32 characters.', 'sina-ext' );
 				} elseif ( strlen($lname) > 32 ) {
-					$err = __( 'Last name too large! Must be contain 3-32 characters.', 'sina-ext' );
+					$err = __( 'Last name too long! Must be contain 3-32 characters.', 'sina-ext' );
 				} elseif ( preg_match("/^[a-zA-Z][ a-zA-Z0-9]{2,31}$/", $lname) ) {
 					$lname = $lname;
 				} else {
@@ -121,7 +121,7 @@ Class Sina_Ext_Hooks{
 			} elseif ( strlen($name) < 3 ) {
 				$err = __( 'Name too short! Must be contain 3-32 characters.', 'sina-ext' );
 			} elseif ( strlen($name) > 32 ) {
-				$err = __( 'Name too large! Must be contain 3-32 characters.', 'sina-ext' );
+				$err = __( 'Name too long! Must be contain 3-32 characters.', 'sina-ext' );
 			} elseif ( preg_match("/^[a-zA-Z][ a-zA-Z0-9]{2,31}$/", $name) ) {
 				$name = $name;
 			} else {
@@ -140,7 +140,7 @@ Class Sina_Ext_Hooks{
 				} elseif ( strlen($subject) < 3 ) {
 					$err = __( 'Subject too short! Must be contain 3-200 characters.', 'sina-ext' );
 				} elseif ( strlen($subject) > 200 ) {
-					$err = __( 'Subject too large! Must be contain 3-200 characters.', 'sina-ext' );
+					$err = __( 'Subject too long! Must be contain 3-200 characters.', 'sina-ext' );
 				} elseif ( $subject ) {
 					$subject = $subject;
 				} else{
@@ -154,7 +154,7 @@ Class Sina_Ext_Hooks{
 				} elseif ( strlen($message) < 3 ) {
 					$err = __( 'Message too short! Must be contain 3-2000 characters.', 'sina-ext' );
 				} elseif ( strlen($message) > 2000 ) {
-					$err = 'Message too large! Must be contain 3-2000 characters.';
+					$err = 'Message too long! Must be contain 3-2000 characters.';
 				} elseif ( $message ) {
 					$message = $message;
 				} else{
