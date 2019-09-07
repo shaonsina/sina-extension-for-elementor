@@ -217,7 +217,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
-		Sina_Common_Data::button_content( $this, '.sina-banner-pbtn', 'Learn More', 'pbtn' );
+		Sina_Common_Data::button_content( $this, '.sina-banner-pbtn', 'Learn More', 'pbtn', true, true );
 		$this->add_control(
 			'pbtn_id',
 			[
@@ -242,7 +242,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
-		Sina_Common_Data::button_content( $this, '.sina-banner-sbtn', 'Read More', 'sbtn' );
+		Sina_Common_Data::button_content( $this, '.sina-banner-sbtn', 'Read More', 'sbtn', true, true );
 		$this->add_responsive_control(
 			'button_space',
 			[
@@ -904,6 +904,8 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 				],
 			]
 		);
+		Sina_Common_Data::tooltip_style( $this, 'pbtn', '.sina-banner-pbtn' );
+
 		$this->end_controls_section();
 		// End Primary Button Style
 		// ==========================
@@ -982,6 +984,8 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 				],
 			]
 		);
+		Sina_Common_Data::tooltip_style( $this, 'sbtn', '.sina-banner-sbtn' );
+
 		$this->end_controls_section();
 		// End Secondary Button Style
 		// ==========================

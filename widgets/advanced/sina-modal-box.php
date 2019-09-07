@@ -213,10 +213,32 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 		$this->add_control(
 			'modal_effects',
 			[
-				'label' => __( 'Effects', 'sina-ext' ),
+				'label' => __( 'Animation', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'slideInDown',
 				'options' => Sina_Common_Data::animation(),
+			]
+		);
+
+		$this->add_responsive_control(
+			'modal_anim_speed',
+			[
+				'label' => __( 'Animation Speed', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px' ],
+				'range' => [
+					'px' => [
+						'step' => 50,
+						'max' => 10000,
+					],
+				],
+				'condition' => [
+					'modal_effects!' => 'none',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-modal-area.animated' => 'animation-duration: {{SIZE}}ms;',
+					'{{WRAPPER}} .sina-modal-area.animated' => '-webkit-animation-duration: {{SIZE}}ms;',
+				],
 			]
 		);
 		$this->add_responsive_control(

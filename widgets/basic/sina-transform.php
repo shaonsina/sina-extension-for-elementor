@@ -196,6 +196,7 @@ class Sina_Transform_Widget extends Widget_Base {
 					'rotateZ' => __( 'Rotate Z', 'sina-ext' ),
 					'skewX' => __( 'Skew X', 'sina-ext' ),
 					'skewY' => __( 'Skew Y', 'sina-ext' ),
+					'translate' => __( 'Translate', 'sina-ext' ),
 					'none' => __( 'None', 'sina-ext' ),
 				],
 				'default' => 'rotateY',
@@ -323,6 +324,52 @@ class Sina_Transform_Widget extends Widget_Base {
 				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-transform-content' => 'transform: skewY({{SIZE}}deg);',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'translateX',
+			[
+				'label' => __( 'Translate X', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'range' => [
+					'px' => [
+						'min' => -100,
+						'max' => 100,
+					],
+				],
+				'default' => [
+					'size' => 10,
+				],
+				'condition' => [
+					'transform_effects' => 'translate',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'translateY',
+			[
+				'label' => __( 'Translate Y', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'range' => [
+					'px' => [
+						'min' => -100,
+						'max' => 100,
+					],
+				],
+				'default' => [
+					'size' => 10,
+				],
+				'condition' => [
+					'transform_effects' => 'translate',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-transform-content' => 'transform: translate({{SIZE}}{{UNIT}});',
+				],
+				'selectors' => [
+					'(desktop){{WRAPPER}} .sina-transform-content' => 'transform: translate({{translateX.SIZE || 0}}px, {{translateY.SIZE || 0}}px);',
+					'(tablet){{WRAPPER}} .sina-transform-content' => 'transform: translate({{translateX_tablet.SIZE || 0}}px, {{translateY_tablet.SIZE || 0}}px);',
+					'(mobile){{WRAPPER}} .sina-transform-content' => 'transform: translate({{translateX_mobile.SIZE || 0}}px, {{translateY_mobile.SIZE || 0}}px);',
 				],
 			]
 		);
@@ -480,6 +527,52 @@ class Sina_Transform_Widget extends Widget_Base {
 				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-transform:hover .sina-transform-content' => 'transform: skewY({{SIZE}}deg);',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'translateX_hover',
+			[
+				'label' => __( 'Translate X', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'range' => [
+					'px' => [
+						'min' => -100,
+						'max' => 100,
+					],
+				],
+				'default' => [
+					'size' => 10,
+				],
+				'condition' => [
+					'transform_effects' => 'translate',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'translateY_hover',
+			[
+				'label' => __( 'Translate Y', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'range' => [
+					'px' => [
+						'min' => -100,
+						'max' => 100,
+					],
+				],
+				'default' => [
+					'size' => 10,
+				],
+				'condition' => [
+					'transform_effects' => 'translate',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-transform-content' => 'transform: translate({{SIZE}}{{UNIT}});',
+				],
+				'selectors' => [
+					'(desktop){{WRAPPER}} .sina-transform-content:hover' => 'transform: translate({{translateX_hover.SIZE || 0}}px, {{translateY_hover.SIZE || 0}}px);',
+					'(tablet){{WRAPPER}} .sina-transform-content:hover' => 'transform: translate({{translateX_hover_tablet.SIZE || 0}}px, {{translateY_hover_tablet.SIZE || 0}}px);',
+					'(mobile){{WRAPPER}} .sina-transform-content:hover' => 'transform: translate({{translateX_hover_mobile.SIZE || 0}}px, {{translateY_hover_mobile.SIZE || 0}}px);',
 				],
 			]
 		);

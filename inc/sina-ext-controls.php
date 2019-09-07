@@ -293,7 +293,7 @@ class Sina_Common_Data{
 		}
 	}
 
-	public static function button_content( $obj, $class = '', $btn_text = 'Learn More', $prefix = 'btn', $cond = true ) {
+	public static function button_content( $obj, $class = '', $btn_text = 'Learn More', $prefix = 'btn', $cond = true, $tooltip = false ) {
 		$obj->add_control(
 			$prefix.'_effect',
 			[
@@ -321,6 +321,16 @@ class Sina_Common_Data{
 				'default' => $btn_text,
 			]
 		);
+		if ( $tooltip ) {
+			$obj->add_control(
+				$prefix.'_tooltip_text',
+				[
+					'label' => __( 'Tooltip text', 'sina-ext' ),
+					'type' => Controls_Manager::TEXT,
+					'placeholder' => __( 'Enter Tooltip Text', 'sina-ext' ),
+				]
+			);
+		}
 		if ($cond) {
 			$obj->add_control(
 				$prefix.'_link',
@@ -371,6 +381,143 @@ class Sina_Common_Data{
 				'selectors' => [
 					'{{WRAPPER}} '.$class.' .sina-icon-right' => 'margin-left: {{SIZE}}{{UNIT}};',
 					'{{WRAPPER}} '.$class.' .sina-icon-left' => 'margin-right: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+	}
+
+	public static function tooltip_style( $obj, $prefix, $class ) {
+		$obj->add_control(
+			$prefix.'_tooptip',
+			[
+				'label' => __( 'Tooptip Styles', 'sina-ext' ),
+				'type' => Controls_Manager::HEADING,
+				'separator' => 'before',
+				'condition' => [
+					$prefix.'_tooltip_text!' => '',
+				],
+			]
+		);
+		$obj->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name' => $prefix.'_tooptip_typography',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_size'   => [
+						'default' => [
+							'size' => '12',
+						],
+					],
+					'line_height'   => [
+						'default' => [
+							'size' => '16',
+						],
+					],
+				],
+				'condition' => [
+					$prefix.'_tooltip_text!' => '',
+				],
+				'selector' => '{{WRAPPER}} '.$class.' .sina-tooltip-text',
+			]
+		);
+		$obj->add_control(
+			$prefix.'_tooptip_color',
+			[
+				'label' => __( 'Text Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#fafafa',
+				'condition' => [
+					$prefix.'_tooltip_text!' => '',
+				],
+				'selectors' => [
+					'{{WRAPPER}} '.$class.' .sina-tooltip-text' => 'color: {{VALUE}};',
+				],
+			]
+		);
+		$obj->add_control(
+			$prefix.'_tooptip_bg',
+			[
+				'label' => __( 'Background Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#222',
+				'condition' => [
+					$prefix.'_tooltip_text!' => '',
+				],
+				'selectors' => [
+					'{{WRAPPER}} '.$class.' .sina-tooltip-text' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} '.$class.' .sina-tooltip-text::after' => 'border-top-color: {{VALUE}};',
+				],
+			]
+		);
+		$obj->add_responsive_control(
+			$prefix.'_tooptip_dist',
+			[
+				'label' => __( 'Distance', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', 'em' ],
+				'range' => [
+					'px' => [
+						'min' => -200,
+						'max' => 0,
+					],
+					'em' => [
+						'min' => -5,
+						'max' => 0,
+					],
+				],
+				'default' => [
+					'size' => -40,
+				],
+				'condition' => [
+					$prefix.'_tooltip_text!' => '',
+				],
+				'selectors' => [
+					'{{WRAPPER}} '.$class.' .sina-tooltip-text' => 'top: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+		$obj->add_responsive_control(
+			$prefix.'_tooltip_radius',
+			[
+				'label' => __( 'Radius', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '4',
+					'right' => '4',
+					'bottom' => '4',
+					'left' => '4',
+					'isLinked' => true,
+				],
+				'condition' => [
+					$prefix.'_tooltip_text!' => '',
+				],
+				'selectors' => [
+					'{{WRAPPER}} '.$class.' .sina-tooltip-text' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+		$obj->add_responsive_control(
+			$prefix.'_tooltip_padding',
+			[
+				'label' => __( 'Padding', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '5',
+					'right' => '10',
+					'bottom' => '5',
+					'left' => '10',
+					'isLinked' => false,
+				],
+				'condition' => [
+					$prefix.'_tooltip_text!' => '',
+				],
+				'selectors' => [
+					'{{WRAPPER}} '.$class.' .sina-tooltip-text' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -889,6 +1036,10 @@ class Sina_Common_Data{
 	}
 
 	public static function button_html( $data, $prefix = 'btn' ) {
+		if ( isset($data[$prefix.'_tooltip_text']) && $data[$prefix.'_tooltip_text'] ) : ?>
+			<?php printf( '<span class="sina-tooltip-text">%s</span>', $data[$prefix.'_tooltip_text'] ); ?>
+		<?php
+		endif;
 		if ( $data[$prefix.'_icon'] && $data[$prefix.'_icon_align'] == 'left' ): ?>
 			<i class="<?php echo esc_attr($data[$prefix.'_icon']); ?> sina-icon-left"></i>
 		<?php endif; ?>
