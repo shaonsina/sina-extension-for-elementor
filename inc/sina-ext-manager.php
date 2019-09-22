@@ -41,7 +41,7 @@ class Sina_Ext_Manager {
 
 		// Template request
 		if ( defined( 'ELEMENTOR_VERSION' ) && version_compare( ELEMENTOR_VERSION, '2.3.0', '>' ) ) {
-			add_action( 'elementor/ajax/register_actions', array( $this, 'register_ajax' ), 30 );
+			add_action( 'elementor/ajax/register_actions', array( $this, 'register_ajax' ), 25 );
 		}
 	}
 
@@ -56,30 +56,24 @@ class Sina_Ext_Manager {
 			return;
 		}
 
-		$actions = json_decode( stripslashes( $_REQUEST['actions'] ), true );
-		$data    = false;
+		$axax_actions = json_decode( stripslashes( $_REQUEST['actions'] ), true );
+		$template = false;
 
-		foreach ( $actions as $id => $action_data ) {
+		foreach ( $axax_actions as $data => $action_data ) {
 			if ( !isset( $action_data['get_template_data'] ) ) {
-				$data = $action_data;
+				$template = $action_data;
 			}
 		}
 
-		if ( ! $data ) {
+		if ( !isset( $template['data'] ) || empty( $template['data'] ) ) {
 			return;
 		}
 
-		if ( ! isset( $data['data'] ) ) {
+		if ( empty( $template['data']['template_id'] ) ) {
 			return;
 		}
 
-		$data = $data['data'];
-
-		if ( empty( $data['template_id'] ) ) {
-			return;
-		}
-
-		if ( false === strpos( $data['template_id'], 'sina_ext_' ) ) {
+		if ( false === strpos( $template['data']['template_id'], 'sina_ext_' ) ) {
 			return;
 		}
 
@@ -92,10 +86,10 @@ class Sina_Ext_Manager {
 	 * @since 3.0.11
 	 */
 	public function get_template( $args ) {
-		$source = Plugin::instance()->templates_manager->get_source( 'sina_ext_templates' );
-		$data 	= $source->get_data( $args );
+		$template_source = Plugin::instance()->templates_manager->get_source( 'sina_ext_templates' );
+		$template 	= $template_source->get_data( $args );
 
-		return $data;
+		return $template;
 	}
 
 	/**
