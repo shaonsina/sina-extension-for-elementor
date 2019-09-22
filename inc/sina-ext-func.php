@@ -7,6 +7,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 use \Sina_Extension\Sina_Extension_Base;
+use \Sina_Extension\Manager\Sina_Ext_Manager;
+use \Sina_Extension\Admin\Sina_Ext_Settings;
+use \Sina_Extension\Sina_Ext_Controls;
 
 /**
  * Sina_Ext_Functions Class For widgets functionality
@@ -131,7 +134,8 @@ abstract class Sina_Ext_Functions extends Sina_Extension_Base{
 		// Register Widget Scripts
 		add_action( 'elementor/frontend/after_register_scripts', [ $this, 'widget_scripts' ] );
 
-		new \Sina_Extension\Admin\Sina_Ext_Settings();
-		new \Sina_Extension\Sina_Ext_Controls();
+		new Sina_Ext_Settings();
+		new Sina_Ext_Controls();
+		Sina_Ext_Manager::instance();
 	}
 }

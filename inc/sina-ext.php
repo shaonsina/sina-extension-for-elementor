@@ -57,6 +57,7 @@ class Sina_Extension extends Sina_Ext_Functions{
 		require_once( SINA_EXT_ADMIN .'sina-ext-settings.php' );
 		require_once( SINA_EXT_INC .'sina-ext-hooks.php' );
 		require_once( SINA_EXT_INC .'sina-ext-helpers.php' );
+		require_once( SINA_EXT_INC .'sina-ext-manager.php' );
 		require_once( SINA_EXT_INC .'sina-ext-controls.php' );
 		require_once( SINA_EXT_INC .'sina-ext-controls-extend.php' );
 	}

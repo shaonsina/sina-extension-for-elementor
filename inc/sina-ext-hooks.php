@@ -243,11 +243,11 @@ Class Sina_Ext_Hooks{
 	}
 }
 
-if ( !empty( get_option( 'sina_templates_option' ) ) ) {
-	function sina_library_source() {
-		require_once( SINA_EXT_INC .'sina-ext-library.php' );
-	    Plugin::instance()->templates_manager->unregister_source( 'remote' );
-	    Plugin::instance()->templates_manager->register_source( 'Elementor\TemplateLibrary\Sina_Ext_Library' );
-	}
-	add_action( 'elementor/init', 'sina_library_source', 15 );
-}
+// if ( !empty( get_option( 'sina_templates_option' ) ) ) {
+// 	function sina_library_source() {
+// 		require_once( SINA_EXT_INC .'sina-ext-library.php' );
+// 	    // Plugin::instance()->templates_manager->unregister_source( 'remote' );
+// 	    Plugin::instance()->templates_manager->register_source( 'Elementor\TemplateLibrary\Sina_Ext_Library' );
+// 	}
+// 	add_action( 'elementor/init', 'sina_library_source', 15 );
+// }

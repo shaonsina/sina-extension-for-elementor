@@ -16,27 +16,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Sina_Ext_Library extends Source_Base {
 
 	/**
-	 * New library option key.
-	 */
-	const SINA_LIBRARY_OPTION_KEY = 'sina_remote_info_library';
-
-	/**
-	 * Prepend library option key.
-	 */
-	const SINA_LIBRARY_PREPEND_OPTION_KEY = 'sina_prepend_remote_info_library';
-
-	/**
-	 * Timestamp cache key to trigger library sync.
-	 */
-	const SINA_TIMESTAMP_CACHE_KEY = 'sina_remote_update_timestamp';
-
-	/**
 	 * Get remote template ID.
 	 *
 	 * @since 3.0.0
 	 */
 	public function get_id() {
-		return 'remote';
+		return 'sina_ext_templates';
 	}
 
 	/**
@@ -45,7 +30,7 @@ class Sina_Ext_Library extends Source_Base {
 	 * @asince 3.0.0
 	 */
 	public function get_title() {
-		return __( 'Remote', 'sina-ext' );
+		return __( 'Sina Templates', 'sina-ext' );
 	}
 
 	/**
@@ -97,78 +82,19 @@ class Sina_Ext_Library extends Source_Base {
 	 * @since 3.0.0
 	 */
 	public function get_data( Array $args, $context = 'display' ) {
-		$data = self::get_template_content( $args['template_id'] );
+		$type 		= get_option( 'sina_ext_type' );
+		$key 		= ('pro' ==  $type) ? get_option( 'sina_ext_pro_license_key' ) : get_option( 'sina_ext_license_key' );
+		$temp_id 	= str_replace( 'sina_ext_', '', $args['template_id'] );
+		$url 		= sprintf( self::$api_get_template_content_url.'&type='.$type.'&dom='.get_option( 'siteurl' ).'&key='.$key, $temp_id );
+		$response 	= wp_remote_get( $url, ['timeout' => 60] );
+		$data 		= json_decode( wp_remote_retrieve_body( $response ), true );
+		$template 	= [];
 
-		if ( is_wp_error( $data ) ) {
-			return $data;
-		}
+		$template['content'] = $this->replace_elements_ids( $data['content'] );
+		$template['content'] = $this->process_export_import_content( $template['content'], 'on_import' );
+		$template['page_settings'] = [];
 
-		$data['content'] = $this->replace_elements_ids( $data['content'] );
-		$data['content'] = $this->process_export_import_content( $data['content'], 'on_import' );
-
-		$post_id = $args['editor_post_id'];
-		$document = Plugin::$instance->documents->get( $post_id );
-		if ( $document ) {
-			$data['content'] = $document->get_elements_raw_data( $data['content'], true );
-		}
-
-		return $data;
-	}
-
-	/**
-	 * Get template content.
-	 *
-	 * @since 3.0.0
-	 */
-	public static function get_template_content( $template_id ) {
-		if ( $template_id > 10000000) {
-			$type = get_option( 'sina_ext_type' );
-			$key = ('pro' ==  $type) ? get_option( 'sina_ext_pro_license_key' ) : get_option( 'sina_ext_license_key' );
-			$url = sprintf( self::$api_get_template_content_url.'&type='.$type.'&dom='.get_option( 'siteurl' ).'&key='.$key, $template_id );
-		} else{
-			$url = sprintf( 'https://my.elementor.com/api/v1/templates/%d', $template_id );
-		}
-
-		$body_args = [
-			// Which API version is used.
-			'api_version' => ELEMENTOR_VERSION,
-			// Which language to return.
-			'site_lang' => get_bloginfo( 'language' ),
-		];
-
-		/**
-		 * API: Template body args.
-		 *
-		 * @since 3.0.0
-		 */
-		$body_args = apply_filters( 'elementor/api/get_templates/body_args', $body_args );
-
-		$response = wp_remote_get( $url, [
-			'timeout' => 40,
-			'body' => $body_args,
-		] );
-
-		if ( is_wp_error( $response ) ) {
-			return $response;
-		}
-
-		$response_code = (int) wp_remote_retrieve_response_code( $response );
-
-		if ( 200 !== $response_code ) {
-			return new \WP_Error( 'response_code_error', sprintf( 'The request returned with a status code of %s.', $response_code ) );
-		}
-
-		$template_content = json_decode( wp_remote_retrieve_body( $response ), true );
-
-		if ( isset( $template_content['error'] ) ) {
-			return new \WP_Error( 'response_error', $template_content['error'] );
-		}
-
-		if ( empty( $template_content['data'] ) && empty( $template_content['content'] ) ) {
-			return new \WP_Error( 'template_data_error', 'An invalid data was returned.' );
-		}
-
-		return $template_content;
+		return $template;
 	}
 
 	/**
@@ -176,99 +102,12 @@ class Sina_Ext_Library extends Source_Base {
 	 *
 	 * @since 3.0.0
 	 */
-	public function get_item( $template_id ) {
-		$templates = $this->get_items();
-
-		return $templates[ $template_id ];
-	}
-
-	/**
-	 * Get remote templates.
-	 *
-	 * @since 3.0.0
-	 */
-	public function get_items( $args = [] ) {
-		$library_data = self::get_library_data();
-		$templates = [];
-
-		if ( ! empty( $library_data['templates'] ) ) {
-			foreach ( $library_data['templates'] as $template_data ) {
-				$templates[] = $this->prepare_template( $template_data );
-			}
-		}
-		return $templates;
-	}
-
-	/**
-	 * Get templates data.
-	 *
-	 * @since 3.0.0
-	 */
-	public static function get_library_data( $force_update = false ) {
-		self::get_info_data( $force_update );
-		$temps = get_option( 'sina_templates_option' );
-		if ( isset($temps['templates_merge']) ) {
-			$library_data = get_option( self::SINA_LIBRARY_PREPEND_OPTION_KEY );
-		} else {
-			$library_data = get_option( self::SINA_LIBRARY_OPTION_KEY );
-		}
-
-		if ( empty( $library_data ) ) {
-			return [];
-		}
-		return $library_data;
-	}
-
-	/**
-	 * Get info data.
-	 *
-	 * @since 3.0.0
-	 */
-	private static function get_info_data( $force_update = false ) {
-		$update_timestamp = get_transient( self::SINA_TIMESTAMP_CACHE_KEY );
-
-		if ( ! $update_timestamp ) {
-			$timeout = ( $force_update ) ? 25 : 8;
-			$type = get_option( 'sina_ext_type' );
-			$key = ('pro' == $type) ? get_option( 'sina_ext_pro_license_key' ) : get_option( 'sina_ext_license_key' );
-			$response = wp_remote_get( self::$api_info_url.'&type='.$type.'&dom='.get_option( 'siteurl' ).'&key='.$key, [
-				'timeout' => $timeout,
-				'body' => [
-					// Which API version is used.
-					'api_version' => ELEMENTOR_VERSION,
-					// Which language to return.
-					'site_lang' => get_bloginfo( 'language' ),
-				],
-			] );
-
-			if ( is_wp_error( $response ) ) {
-				return false;
-			}
-
-			$info_data = json_decode( wp_remote_retrieve_body( $response ), true );
-
-			if ( isset( $info_data['library']['templates'] ) ) {
-				$default_tems = get_option( 'elementor_remote_info_library' );
-				$merge_tems = array_merge($info_data['library']['templates'], $default_tems['templates']);
-				$default_tems['templates'] = $merge_tems;
-				update_option( self::SINA_LIBRARY_OPTION_KEY, $info_data['library'], 'no' );
-				update_option( self::SINA_LIBRARY_PREPEND_OPTION_KEY, $default_tems, 'no' );
-			}
-
-			set_transient( self::SINA_TIMESTAMP_CACHE_KEY, time(), HOUR_IN_SECONDS );
-			return $info_data;
-		}
-	}
-
-	/**
-	 * @since 3.0.0
-	 */
-	private function prepare_template( Array $template_data ) {
+	public function get_item( $template_data ) {
 		$favorite_templates = $this->get_user_meta( 'favorites' );
 
 		return [
-			'template_id' => $template_data['id'],
-			'source' => $this->get_id(),
+			'template_id' => 'sina_ext_'. $template_data['id'],
+			'source' => 'remote',
 			'type' => $template_data['type'],
 			'subtype' => $template_data['subtype'],
 			'title' => $template_data['title'],
@@ -284,6 +123,37 @@ class Sina_Ext_Library extends Source_Base {
 			'favorite' => ! empty( $favorite_templates[ $template_data['id'] ] ),
 		];
 	}
+
+	/**
+	 * Get remote templates.
+	 *
+	 * @since 3.0.0
+	 */
+
+	public function get_items( $args = [] ) {
+		$type 		= get_option( 'sina_ext_type' );
+		$key 		= ('pro' == $type) ? get_option( 'sina_ext_pro_license_key' ) : get_option( 'sina_ext_license_key' );
+		$url 		= self::$api_info_url.'&type='.$type.'&dom='.get_option( 'siteurl' ).'&key='.$key;
+		$response 	= wp_remote_get( $url, ['timeout' => 60] );
+		$info_data 	= json_decode( wp_remote_retrieve_body( $response ), true );
+		$templates 	= [];
+
+		if ( isset( $info_data['library']['templates'] ) && !empty( $info_data['library']['templates'] ) ) {
+			$templates_data = $info_data['library']['templates'];
+			// update_option( 'elementor_remote_info_library', $info_data['library'], 'no' );
+		} else{
+			$templates_data = [];
+		}
+
+		if ( ! empty( $templates_data ) ) {
+			foreach ( $templates_data as $template_data ) {
+				$templates[] = $this->get_item( $template_data );
+			}
+		}
+
+		return $templates;
+	}
+
 
 	/**
 	 * API info URL.
