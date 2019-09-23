@@ -41,7 +41,7 @@ class Sina_Ext_Manager {
 
 		// Template request
 		if ( defined( 'ELEMENTOR_VERSION' ) && version_compare( ELEMENTOR_VERSION, '2.3.0', '>' ) ) {
-			add_action( 'elementor/ajax/register_actions', array( $this, 'register_ajax' ), 25 );
+			add_action( 'elementor/ajax/register_actions', [$this, 'register_ajax'], 25 );
 		}
 	}
 
