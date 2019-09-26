@@ -174,6 +174,37 @@ Class Sina_Ext_Hooks{
 		die();
 	}
 
+	public static function ajax_login() {
+		if ( check_ajax_referer( 'sina_login', 'nonce') && wp_verify_nonce( $_POST['nonce'], 'sina_login' ) ) {
+
+			$email = sanitize_email( $_POST['email'] );
+			$password = sanitize_text_field( $_POST['password'] );
+			$err = '';
+
+			if ( '' == $email ) {
+				$err = __( 'Invalid email!', 'sina-ext' );
+			}
+
+			if ( '' == $err ) {
+				if ( '' == $password) {
+					$err = __( 'Password can\'t be empty!', 'sina-ext' );
+				} else {
+					$user = wp_signon( array(
+						'user_login'    => $email,
+						'user_password' => $password,
+						'remember'      => true
+					), false );
+
+					if ( is_wp_error( $user ) ) {
+						$err = __( 'Email and password don\'t matched!', 'sina-ext' );
+					}
+				}
+			}
+			printf( '%s', $err );
+		}
+		die();
+	}
+
 	public static function ajax_load_more_posts() {
 		if ( check_ajax_referer( 'sina_load_more_posts', 'nonce') && wp_verify_nonce( $_POST['nonce'], 'sina_load_more_posts' ) ) {
 

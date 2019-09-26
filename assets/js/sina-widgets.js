@@ -294,6 +294,49 @@
 		});
 	}
 
+	function sinaLoginForm($scope, $) {
+		$scope.find('.sina-login-form').each(function () {
+			var $this = $(this),
+				$uid = $this.data('uid'),
+				$url = $this.data('url'),
+				$nonce = $this.children('#sina_login_nonce'+$uid),
+				$error = $this.children('.sina-login-error'),
+				$password = $this.children('.sina-input-password'),
+				$email = $this.children('.sina-input-email'),
+				timeout;
+
+			$this.on('submit', function(e) {
+				e.preventDefault();
+				clearTimeout(timeout);
+
+				$error.fadeOut(0);
+
+				$.post(
+					sinaAjax.ajaxURL,
+					{
+						action: "sina_login",
+						password: $password.val(),
+						email: $email.val(),
+						nonce: $nonce.val(),
+					},
+					function( data, status, code ) {
+						if ( status == 'success' ) {
+							if ( data ) {
+								$error.html( data ).fadeIn(200);
+
+								timeout = setTimeout( function() {
+									$error.fadeOut(200);
+								}, 10000 );
+							} else{
+								location.href = $url;
+							}
+						}
+					}
+				);
+			});
+		});
+	}
+
 	function sinaMCSubscribe($scope, $) {
 		$scope.find('.sina-subs-form').each(function () {
 			var $this = $(this),
@@ -760,6 +803,7 @@
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_blogpost.default', sinaBlogpost);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_brand_carousel.default', sinaBrandCarousel);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_contact_form.default', sinaContactForm);
+		elementorFrontend.hooks.addAction('frontend/element_ready/sina_login_form.default', sinaLoginForm);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_mc_subscribe.default', sinaMCSubscribe);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_content_slider.default', sinaContentSlider);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_posts_carousel.default', sinaPostsCarousel);

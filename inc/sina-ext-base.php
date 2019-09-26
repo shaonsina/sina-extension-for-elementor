@@ -104,6 +104,9 @@ abstract class Sina_Extension_Base{
 		add_action( 'wp_ajax_sina_contact', ['Sina_Ext_Hooks', 'ajax_contact'] );
 		add_action( 'wp_ajax_nopriv_sina_contact', ['Sina_Ext_Hooks', 'ajax_contact'] );
 
+		add_action( 'wp_ajax_sina_login', ['Sina_Ext_Hooks', 'ajax_login'] );
+		add_action( 'wp_ajax_nopriv_sina_login', ['Sina_Ext_Hooks', 'ajax_login'] );
+
 		add_action( 'wp_ajax_sina_load_more_posts', ['Sina_Ext_Hooks', 'ajax_load_more_posts'] );
 		add_action( 'wp_ajax_nopriv_sina_load_more_posts', ['Sina_Ext_Hooks', 'ajax_load_more_posts'] );
 

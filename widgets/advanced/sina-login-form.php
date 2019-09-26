@@ -121,13 +121,23 @@ class Sina_Login_Form_Widget extends Widget_Base {
 			]
 		);
 		$this->add_control(
-			'name_placeholder',
+			'password_placeholder',
 			[
 				'label' => __( 'Password Placeholder Text', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter Placeholder Text', 'sina-ext' ),
 				'default' => 'Enter Password *',
+			]
+		);
+		$this->add_control(
+			'redirect_url',
+			[
+				'label' => __( 'Redirect URL after login', 'sina-ext' ),
+				'label_block' => true,
+				'type' => Controls_Manager::TEXT,
+				'placeholder' => __( 'Enter Redirect URL', 'sina-ext' ),
+				'default' => admin_url(),
 			]
 		);
 
@@ -145,7 +155,7 @@ class Sina_Login_Form_Widget extends Widget_Base {
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
-		Sina_Common_Data::button_content($this, '.sina-login-btn', 'Send', 'btn', false);
+		Sina_Common_Data::button_content($this, '.sina-login-btn', 'Login', 'btn', false);
 		$this->end_controls_section();
 		// End Button Content
 		// ====================
@@ -372,7 +382,16 @@ class Sina_Login_Form_Widget extends Widget_Base {
 		$data = $this->get_settings_for_display();
 		?>
 		<div class="sina-form">
-			<form class="sina-login-form">
+			<form class="sina-login-form"
+			data-uid="<?php echo esc_attr( $this->get_id() ); ?>"
+			data-url="<?php echo esc_url( $data['redirect_url'] ); ?>">
+
+				<input class="sina-input-field sina-input-email" type="email" placeholder="<?php echo esc_attr( $data['email_placeholder'] ); ?>" >
+				<input class="sina-input-field sina-input-password" type="password" placeholder="<?php echo esc_attr( $data['password_placeholder'] ); ?>" >
+
+				<button type="submit" class="sina-button sina-login-btn <?php echo esc_attr( $data['btn_effect']); ?>">
+					<?php Sina_Common_Data::button_html($data); ?>
+				</button>
 
 				<p class="sina-login-error"></p>
 
