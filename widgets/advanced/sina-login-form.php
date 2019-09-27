@@ -8,6 +8,7 @@
 
 use \Elementor\Widget_Base;
 use \Elementor\Controls_Manager;
+use \Elementor\Group_Control_Typography;
 use \Elementor\Plugin;
 
 
@@ -140,6 +141,16 @@ class Sina_Login_Form_Widget extends Widget_Base {
 				'default' => admin_url(),
 			]
 		);
+		$this->add_control(
+			'remember_login',
+			[
+				'label' => __( 'Remember text', 'sina-ext' ),
+				'label_block' => true,
+				'type' => Controls_Manager::TEXT,
+				'placeholder' => __( 'Enter Remember Text', 'sina-ext' ),
+				'default' => 'Keep me logged in',
+			]
+		);
 
 		$this->end_controls_section();
 		// End Form Content
@@ -166,7 +177,7 @@ class Sina_Login_Form_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'fields_style',
 			[
-				'label' => __( 'Fields', 'sina-ext' ),
+				'label' => __( 'Fields & Remember text', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -228,6 +239,57 @@ class Sina_Login_Form_Widget extends Widget_Base {
 			]
 		);
 
+		$this->add_control(
+			'remember',
+			[
+				'label' => __( 'Remember styles', 'sina-ext' ),
+				'type' => Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name' => 'remember_typography',
+				'selector' => '{{WRAPPER}} .sina-login-remember-wrap',
+			]
+		);
+		$this->add_control(
+			'remember_color',
+			[
+				'label' => __( 'Text Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#222',
+				'selectors' => [
+					'{{WRAPPER}} .sina-login-remember-wrap' => 'color: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'remember_alignment',
+			[
+				'label' => __( 'Alignment', 'sina-ext' ),
+				'type' => Controls_Manager::CHOOSE,
+				'options' => [
+					'left' => [
+						'title' => __( 'Left', 'sina-ext' ),
+						'icon' => 'fa fa-align-left',
+					],
+					'center' => [
+						'title' => __( 'Center', 'sina-ext' ),
+						'icon' => 'fa fa-align-center',
+					],
+					'right' => [
+						'title' => __( 'Right', 'sina-ext' ),
+						'icon' => 'fa fa-align-right',
+					],
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-login-remember-wrap' => 'text-align: {{VALUE}};',
+				],
+			]
+		);
+
 		$this->end_controls_section();
 		// End Fields Style
 		// ==================
@@ -257,7 +319,7 @@ class Sina_Login_Form_Widget extends Widget_Base {
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
-		Sina_Common_Data::input_style( $this, '.sina-input-pass', 'password' );
+		Sina_Common_Data::input_style( $this, '.sina-input-password', 'password' );
 		$this->end_controls_section();
 		// End Password Style
 		// ====================
@@ -380,6 +442,7 @@ class Sina_Login_Form_Widget extends Widget_Base {
 
 	protected function render() {
 		$data = $this->get_settings_for_display();
+		$id = $this->get_id();
 		?>
 		<div class="sina-form">
 			<form class="sina-login-form"
@@ -388,6 +451,11 @@ class Sina_Login_Form_Widget extends Widget_Base {
 
 				<input class="sina-input-field sina-input-email" type="email" placeholder="<?php echo esc_attr( $data['email_placeholder'] ); ?>" >
 				<input class="sina-input-field sina-input-password" type="password" placeholder="<?php echo esc_attr( $data['password_placeholder'] ); ?>" >
+
+				<div class="sina-login-remember-wrap">
+					<input id="<?php echo esc_attr( $id ); ?>" type="checkbox" class="sina-login-remember">
+					<label for="<?php echo esc_attr( $id ); ?>"><?php echo esc_html( $data['remember_login'] ); ?></label>
+				</div>
 
 				<button type="submit" class="sina-button sina-login-btn <?php echo esc_attr( $data['btn_effect']); ?>">
 					<?php Sina_Common_Data::button_html($data); ?>

@@ -91,6 +91,7 @@
 .sina-pt-content .sina-pt-post {
 	overflow: hidden;
 }
+.sina-login-remember-wrap,
 .sina-google-map,
 .sina-pt-title,
 .sina-table table,
@@ -556,6 +557,11 @@ img.mfp-img{
 	border: 1px solid #4aaad2
 }
 
+/*-------------------------- Login Form --------------------------*/
+.sina-login-remember{
+	height: inherit;
+}
+
 /*--------------------------------- Mailchimp Subscribe Form -------------------------------------- */
 .sina-search-form,
 .sina-subs-form{
@@ -577,16 +583,18 @@ img.mfp-img{
 	width: inherit;
 	margin-left: 0;
 }
+.sina-login-error,
 .sina-contact-error,
 .sina-contact-success,
 .sina-subs-error,
 .sina-subs-success{
 	display: none;
-	margin: 15px 0 0;
+	margin: 0;
 	padding: 0;
 	color: #0a0;
 	text-transform: inherit;
 }
+.sina-login-error,
 .sina-contact-error,
 .sina-subs-error{
 	color: #f40;

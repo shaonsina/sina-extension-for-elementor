@@ -179,6 +179,7 @@ Class Sina_Ext_Hooks{
 
 			$email = sanitize_email( $_POST['email'] );
 			$password = sanitize_text_field( $_POST['password'] );
+			$remember = sanitize_text_field( $_POST['remember'] );
 			$err = '';
 
 			if ( '' == $email ) {
@@ -189,10 +190,11 @@ Class Sina_Ext_Hooks{
 				if ( '' == $password) {
 					$err = __( 'Password can\'t be empty!', 'sina-ext' );
 				} else {
+					$rem = $remember == 'true' ? true : false;
 					$user = wp_signon( array(
 						'user_login'    => $email,
 						'user_password' => $password,
-						'remember'      => true
+						'remember'      => $rem
 					), false );
 
 					if ( is_wp_error( $user ) ) {

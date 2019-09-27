@@ -303,7 +303,9 @@
 				$error = $this.children('.sina-login-error'),
 				$password = $this.children('.sina-input-password'),
 				$email = $this.children('.sina-input-email'),
+				$remember = $this.find('.sina-login-remember'),
 				timeout;
+
 
 			$this.on('submit', function(e) {
 				e.preventDefault();
@@ -317,6 +319,7 @@
 						action: "sina_login",
 						password: $password.val(),
 						email: $email.val(),
+						remember: $remember.prop('checked'),
 						nonce: $nonce.val(),
 					},
 					function( data, status, code ) {
