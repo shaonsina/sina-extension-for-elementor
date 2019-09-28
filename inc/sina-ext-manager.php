@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Sina_Ext_Manager Class for remote library.
  *
- * @since 3.0.11
+ * @since 3.1.0
  */
 class Sina_Ext_Manager {
 
@@ -19,7 +19,7 @@ class Sina_Ext_Manager {
 	/**
 	 * Instance
 	 *
-	 * @since 3.0.11
+	 * @since 3.1.0
 	 * @var Sina_Ext_Manager The single instance of the class.
 	 */
 	public static function instance() {
@@ -32,7 +32,7 @@ class Sina_Ext_Manager {
 	/**
 	 * Constructor
 	 *
-	 * @since 3.0.11
+	 * @since 3.1.0
 	 */
 	public function __construct() {
 		if ( !empty( get_option( 'sina_templates_option' ) ) ) {
@@ -49,7 +49,7 @@ class Sina_Ext_Manager {
 	/**
 	 * Register AJAX
 	 *
-	 * @since 3.0.11
+	 * @since 3.1.0
 	 */
 	public function register_ajax( $ajax ) {
 		if ( !isset( $_REQUEST['actions'] ) ) {
@@ -83,7 +83,7 @@ class Sina_Ext_Manager {
 	/**
 	 * Get template.
 	 *
-	 * @since 3.0.11
+	 * @since 3.1.0
 	 */
 	public function get_template( $args ) {
 		$template_source = Plugin::instance()->templates_manager->get_source( 'sina_ext_templates' );
@@ -95,7 +95,7 @@ class Sina_Ext_Manager {
 	/**
 	 * Register template source.
 	 *
-	 * @since 3.0.11
+	 * @since 3.1.0
 	 */
 	public function library_source() {
 		require_once( SINA_EXT_INC .'sina-ext-library.php' );

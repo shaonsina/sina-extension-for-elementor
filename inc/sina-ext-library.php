@@ -1,6 +1,5 @@
 <?php
 namespace Elementor\TemplateLibrary;
-
 use \Elementor\Plugin;
 
 // Exit if accessed directly.

@@ -43,7 +43,7 @@ class Sina_Login_Form_Widget extends Widget_Base {
 	 * @since 3.1.0
 	 */
 	public function get_icon() {
-		return 'eicon-mail';
+		return 'eicon-editor-external-link';
 	}
 
 	/**

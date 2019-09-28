@@ -26,6 +26,7 @@ abstract class Sina_Ext_Functions extends Sina_Extension_Base{
 		wp_enqueue_style( 'owl-carousel', SINA_EXT_URL .'assets/css/owl.carousel.min.css', [], '2.3.4' );
 		wp_enqueue_style( 'magnific-popup', SINA_EXT_URL .'assets/css/magnific-popup.min.css', [], '1.1.0' );
 		wp_enqueue_style( 'animate-merge', SINA_EXT_URL .'assets/css/animate-merge.min.css', [], SINA_EXT_VERSION );
+		wp_enqueue_style( 'twentytwenty', SINA_EXT_URL .'assets/css/twentytwenty.min.css', [], SINA_EXT_VERSION );
 		wp_enqueue_style( 'sina-widgets', SINA_EXT_URL .'assets/css/sina-widgets.css', [], SINA_EXT_VERSION );
 	}
 
@@ -47,6 +48,8 @@ abstract class Sina_Ext_Functions extends Sina_Extension_Base{
 		wp_register_script( 'easypiechart', SINA_EXT_URL .'assets/js/jquery.easypiechart.min.js', ['jquery'], '2.1.7', true );
 		wp_register_script( 'isotope', SINA_EXT_URL .'assets/js/isotope.min.js', ['jquery', 'imagesLoaded', 'magnific-popup'], '3.0.6', true );
 		wp_register_script( 'xzoom', SINA_EXT_URL .'assets/js/xzoom.min.js', ['jquery'], '1.0.14', true );
+		wp_register_script( 'jquery-event-move', SINA_EXT_URL .'assets/js/jquery.event.move.min.js', ['jquery'], '2.0.0', true );
+		wp_register_script( 'jquery-twentytwenty', SINA_EXT_URL .'assets/js/jquery.twentytwenty.min.js', ['jquery'], '2.0.0', true );
 
 		if ( $apikey ) {
 			wp_register_script( 'sina-google-map', '//maps.google.com/maps/api/js?key='. $apikey, [], SINA_EXT_VERSION, true );

@@ -42,6 +42,7 @@ define('SINA_WIDGETS', [
 		'fancytext' 			=> 1,
 		'flip-box' 				=> 1,
 		'google-map' 			=> 1,
+		'image-differ'			=> 1,
 		'piechart' 				=> 1,
 		'pricing' 				=> 1,
 		'progressbar' 			=> 1,

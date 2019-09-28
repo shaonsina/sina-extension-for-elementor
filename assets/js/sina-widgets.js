@@ -536,6 +536,15 @@
 		});
 	}
 
+	function sinaImageDiffer($scope, $) {
+		$scope.find('.sina-image-differ').each(function () {
+			var $this = $(this)
+				$cont = $this.children('.twentytwenty-container');
+
+			$cont.twentytwenty({orientation: 'vertical'});
+		});
+	}
+
 	function sinaNewsTicker($scope, $) {
 		$scope.find('.sina-news-ticker').each(function () {
 			var ticker = $(this),
@@ -813,6 +822,7 @@
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_countdown.default', sinaCountdown);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_counter.default', sinaCounter);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_fancytext.default', sinaFancytext);
+		elementorFrontend.hooks.addAction('frontend/element_ready/sina_image_differ.default', sinaImageDiffer);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_google_map.default', sinaGoogleMap);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_news_ticker.default', sinaNewsTicker);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_product_zoomer.default', sinaProductZoomer);
