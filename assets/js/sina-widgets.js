@@ -538,10 +538,25 @@
 
 	function sinaImageDiffer($scope, $) {
 		$scope.find('.sina-image-differ').each(function () {
-			var $this = $(this)
+			var $this = $(this),
+				orientation = $this.data('orientation'),
+				before = $this.data('before'),
+				after = $this.data('after'),
+				offset = $this.data('offset'),
+				overlay = $this.data('overlay') ? true : false,
+				click = $this.data('click') ? true : false,
+				hover = $this.data('hover') ? true : false,
 				$cont = $this.children('.twentytwenty-container');
 
-			$cont.twentytwenty({orientation: 'vertical'});
+			$cont.twentytwenty({
+				default_offset_pct: offset,
+				orientation: orientation,
+				before_label: before,
+				after_label: after,
+				no_overlay: overlay,
+				move_slider_on_hover: hover,
+				click_to_move: click,
+			});
 		});
 	}
 

@@ -131,6 +131,8 @@
 .sina-banner-btns .sina-banner-sbtn{
 	display: inline-block;
 }
+.twentytwenty-before-label:before,
+.twentytwenty-after-label:before,
 .sina-dynamic-btn,
 .sina-social li a i,
 .sina-portfolio-overlay i,

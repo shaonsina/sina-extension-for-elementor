@@ -5,7 +5,7 @@ Donate link: https://plugins.shaonsina.com/sina-extension/
 Requires at least: 4.7
 Tested up to: 5.2
 Requires PHP: 7.0
-Stable tag: 3.0.10
+Stable tag: 3.1.0
 License: GPL v3
 License URI: https://opensource.org/licenses/GPL-3.0
 
