@@ -9,7 +9,6 @@ use \Elementor\Widget_Base;
 use \Elementor\Controls_Manager;
 use \Elementor\Group_Control_Typography;
 use \Elementor\Group_Control_Background;
-use \Elementor\Group_Control_Text_Shadow;
 use \Elementor\Group_Control_Box_Shadow;
 use \Elementor\Group_Control_Border;
 
@@ -222,6 +221,92 @@ class Sina_Image_Differ_Widget extends Widget_Base {
 		// ====================
 
 
+		// Start Differ Style
+		// =====================
+		$this->start_controls_section(
+			'differ_style',
+			[
+				'label' => __( 'Differ', 'sina-ext' ),
+				'tab' => Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_control(
+			'overlay_bg',
+			[
+				'label' => __( 'Overlay Background', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => 'rgba(0,0,0,0.3)',
+				'selectors' => [
+					'{{WRAPPER}} .twentytwenty-overlay:hover' => 'background-color: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_control(
+			'handle_bg',
+			[
+				'label' => __( 'Handle Background', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#1085e4',
+				'selectors' => [
+					'{{WRAPPER}} .twentytwenty-handle' => 'background-color: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_control(
+			'handle_separator',
+			[
+				'label' => __( 'Handle Separator Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#fff',
+				'selectors' => [
+					'{{WRAPPER}} .twentytwenty-handle:before' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .twentytwenty-handle:after' => 'background-color: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_control(
+			'handle_arrow',
+			[
+				'label' => __( 'Arrow Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#fff',
+				'selectors' => [
+					'{{WRAPPER}} .twentytwenty-left-arrow' => 'border-right-color: {{VALUE}};',
+					'{{WRAPPER}} .twentytwenty-right-arrow' => 'border-left-color: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Border::get_type(),
+			[
+				'name' => 'handle_border',
+				'fields_options' => [
+					'border' => [
+						'default' => 'solid',
+					],
+					'color' => [
+						'default' => '#fff',
+					],
+					'width' => [
+						'default' => [
+							'top' => '4',
+							'right' => '4',
+							'bottom' => '4',
+							'left' => '4',
+							'isLinked' => true,
+						]
+					],
+				],
+				'selector' => 'twentytwenty-handle',
+			]
+		);
+
+		$this->end_controls_section();
+		// End Labels Style
+		// ==================
+
+
 		// Start Labels Style
 		// =====================
 		$this->start_controls_section(
@@ -245,6 +330,9 @@ class Sina_Image_Differ_Widget extends Widget_Base {
 					'em' => [
 						'max' => 20,
 					],
+				],
+				'default' => [
+					'size' => 100,
 				],
 				'selectors' => [
 					'{{WRAPPER}} .twentytwenty-before-label:before, {{WRAPPER}} .twentytwenty-after-label:before' => 'min-width: {{SIZE}}{{UNIT}};',
@@ -329,9 +417,9 @@ class Sina_Image_Differ_Widget extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
-					'top' => '10',
+					'top' => '0',
 					'right' => '15',
-					'bottom' => '10',
+					'bottom' => '0',
 					'left' => '15',
 					'isLinked' => false,
 				],
@@ -347,6 +435,13 @@ class Sina_Image_Differ_Widget extends Widget_Base {
 				'label' => __( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '20',
+					'right' => '20',
+					'bottom' => '20',
+					'left' => '20',
+					'isLinked' => true,
+				],
 				'selectors' => [
 					'{{WRAPPER}} .twentytwenty-before-label:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 					'{{WRAPPER}} .twentytwenty-after-label:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
@@ -357,29 +452,6 @@ class Sina_Image_Differ_Widget extends Widget_Base {
 		$this->end_controls_section();
 		// End Labels Style
 		// ==================
-
-
-		// Start Labels Style
-		// =====================
-		$this->start_controls_section(
-			'lables_style',
-			[
-				'label' => __( 'Labels', 'sina-ext' ),
-				'tab' => Controls_Manager::TAB_STYLE,
-			]
-		);
-
-
-
-		$this->end_controls_section();
-		// End Labels Style
-		// ==================
-
-		// twentytwenty-handle
-		// twentytwenty-handle:before
-		// twentytwenty-handle:after
-		// twentytwenty-left-arrow
-		// twentytwenty-right-arrow
 	}
 
 
