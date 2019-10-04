@@ -274,6 +274,8 @@ class Sina_Image_Differ_Widget extends Widget_Base {
 				'selectors' => [
 					'{{WRAPPER}} .twentytwenty-left-arrow' => 'border-right-color: {{VALUE}};',
 					'{{WRAPPER}} .twentytwenty-right-arrow' => 'border-left-color: {{VALUE}};',
+					'{{WRAPPER}} .twentytwenty-down-arrow' => 'border-top-color: {{VALUE}};',
+					'{{WRAPPER}} .twentytwenty-up-arrow' => 'border-bottom-color: {{VALUE}};',
 				],
 			]
 		);
@@ -298,7 +300,7 @@ class Sina_Image_Differ_Widget extends Widget_Base {
 						]
 					],
 				],
-				'selector' => 'twentytwenty-handle',
+				'selector' => '{{WRAPPER}} .twentytwenty-handle',
 			]
 		);
 

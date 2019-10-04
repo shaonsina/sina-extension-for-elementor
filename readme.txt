@@ -17,17 +17,13 @@ A collection of high-quality widgets for Elementor page builder.
 This is an extension for [Elementor](https://wordpress.org/plugins/elementor/) page builder. It will extend the Elementor and increase web page building experience. It has 35+ useful & high-quality widgets. Which you may use for easy & fast make the page & display your content far better way.
 
 
-= Use of Sina Templates =
-https://youtu.be/4P546eZSGcg
-
-
 == Features ==
 
 * 36 Fully Customizable widgets.
 * Options panel for enable/disable widgets.
 * Free Support through the forum.
 * Fully Responsive
-* 50+ Fully Responsive predefined Blocks & Pages.
+* 60+ Fully Responsive predefined Blocks & Pages.
 
 
 == What can you do by this plugin? ==

@@ -18,6 +18,10 @@
 .sina-flex{
 	display: flex;
 }
+.sina-login-remember-wrap input[type="checkbox"],
+.sina-login-remember-wrap input[type="radio"]{
+	height: inherit;
+}
 
 /* Common */
 .sina-content-box-move:hover,

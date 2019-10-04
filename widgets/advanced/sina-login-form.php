@@ -166,7 +166,7 @@ class Sina_Login_Form_Widget extends Widget_Base {
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
-		Sina_Common_Data::button_content($this, '.sina-login-btn', 'Login', 'btn', false);
+		Sina_Common_Data::button_content($this, '.sina-login-btn', 'Log In', 'btn', false);
 		$this->end_controls_section();
 		// End Button Content
 		// ====================
@@ -245,6 +245,18 @@ class Sina_Login_Form_Widget extends Widget_Base {
 				'label' => __( 'Remember styles', 'sina-ext' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
+			]
+		);
+		$this->add_control(
+			'position',
+			[
+				'label' => __( 'Position', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					'middle' => __( 'Middle', 'sina-ext' ),
+					'bottom' => __( 'Bottom', 'sina-ext' ),
+				],
+				'default' => 'middle',
 			]
 		);
 		$this->add_group_control(
@@ -452,14 +464,23 @@ class Sina_Login_Form_Widget extends Widget_Base {
 				<input class="sina-input-field sina-input-email" type="email" placeholder="<?php echo esc_attr( $data['email_placeholder'] ); ?>" >
 				<input class="sina-input-field sina-input-password" type="password" placeholder="<?php echo esc_attr( $data['password_placeholder'] ); ?>" >
 
-				<div class="sina-login-remember-wrap">
-					<input id="<?php echo esc_attr( $id ); ?>" type="checkbox" class="sina-login-remember">
-					<label for="<?php echo esc_attr( $id ); ?>"><?php echo esc_html( $data['remember_login'] ); ?></label>
-				</div>
+				<?php if ( 'middle' == $data['position'] ): ?>
+					<div class="sina-login-remember-wrap">
+						<input id="<?php echo esc_attr( $id ); ?>" type="checkbox" class="sina-login-remember">
+						<label for="<?php echo esc_attr( $id ); ?>"><?php echo esc_html( $data['remember_login'] ); ?></label>
+					</div>
+				<?php endif ?>
 
 				<button type="submit" class="sina-button sina-login-btn <?php echo esc_attr( $data['btn_effect']); ?>">
 					<?php Sina_Common_Data::button_html($data); ?>
 				</button>
+
+				<?php if ( 'bottom' == $data['position'] ): ?>
+					<div class="sina-login-remember-wrap">
+						<input id="<?php echo esc_attr( $id ); ?>" type="checkbox" class="sina-login-remember">
+						<label for="<?php echo esc_attr( $id ); ?>"><?php echo esc_html( $data['remember_login'] ); ?></label>
+					</div>
+				<?php endif ?>
 
 				<p class="sina-login-error"></p>
 
