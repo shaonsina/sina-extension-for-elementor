@@ -240,6 +240,7 @@
 			var $this = $(this),
 				$uid = $this.data('uid'),
 				$inbox = $this.data('inbox'),
+				$sucMsg = $this.data('msg'),
 				$nonce = $this.children('#sina_contact_nonce'+$uid),
 				$success = $this.children('.sina-contact-success'),
 				$error = $this.children('.sina-contact-error'),
@@ -280,7 +281,7 @@
 								}, 10000 );
 							} else{
 								$process.fadeOut(0);
-								$success.html( "Thanks for sending Email!" ).fadeIn(200);
+								$success.html( $sucMsg ).fadeIn(200);
 
 								timeout = setTimeout( function() {
 									$success.fadeOut(200);
@@ -344,6 +345,7 @@
 		$scope.find('.sina-subs-form').each(function () {
 			var $this = $(this),
 				$uid = $this.data('uid'),
+				$sucMsg = $this.data('msg'),
 				$nonce = $this.find('#sina_mc_subscribe_nonce'+$uid),
 				$fname = $this.find('.sina-input-fname'),
 				$lname = $this.find('.sina-input-lname'),
@@ -377,7 +379,7 @@
 						if ( status == 'success' ) {
 							if ( 'success' == data ) {
 								$process.fadeOut(0);
-								$success.html( "Thanks for subscribed!" ).fadeIn(200);
+								$success.html( $sucMsg ).fadeIn(200);
 
 								timeout = setTimeout( function() {
 									$success.fadeOut(200);

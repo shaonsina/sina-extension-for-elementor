@@ -11,6 +11,7 @@ use \Elementor\Controls_Manager;
 use \Elementor\Group_Control_Background;
 use \Elementor\Group_Control_Box_Shadow;
 use \Elementor\Group_Control_Border;
+use \Elementor\Group_Control_Css_Filter;
 use \Elementor\Repeater;
 
 // Exit if accessed directly.
@@ -177,6 +178,13 @@ class Sina_Brand_Carousel_Widget extends Widget_Base {
 				'selector' => '{{WRAPPER}} .sina-brand-item-inner{{CURRENT_ITEM}}',
 			]
 		);
+		$repeater->add_group_control(
+			Group_Control_Css_Filter::get_type(),
+			[
+				'name' => 'brand_filters',
+				'selector' => '{{WRAPPER}} .sina-brand-item-inner{{CURRENT_ITEM}}',
+			]
+		);
 
 		$repeater->end_controls_tab();
 
@@ -190,13 +198,13 @@ class Sina_Brand_Carousel_Widget extends Widget_Base {
 		$repeater->add_group_control(
 			Group_Control_Background::get_type(),
 			[
-				'name' => 'box_hover_bg',
+				'name' => 'brand_hover_bg',
 				'types' => ['classic'],
 				'selector' => '{{WRAPPER}} .sina-brand-item-inner{{CURRENT_ITEM}}:hover',
 			]
 		);
 		$repeater->add_control(
-			'hover_brand_border',
+			'brand_hover_border',
 			[
 				'label' => __( 'Border Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
@@ -208,7 +216,14 @@ class Sina_Brand_Carousel_Widget extends Widget_Base {
 		$repeater->add_group_control(
 			Group_Control_Box_Shadow::get_type(),
 			[
-				'name' => 'hover_box_shadow',
+				'name' => 'brand_hover_shadow',
+				'selector' => '{{WRAPPER}} .sina-brand-item-inner{{CURRENT_ITEM}}:hover',
+			]
+		);
+		$repeater->add_group_control(
+			Group_Control_Css_Filter::get_type(),
+			[
+				'name' => 'brand_hover_filters',
 				'selector' => '{{WRAPPER}} .sina-brand-item-inner{{CURRENT_ITEM}}:hover',
 			]
 		);
@@ -405,6 +420,13 @@ class Sina_Brand_Carousel_Widget extends Widget_Base {
 				'separator' => 'before',
 			]
 		);
+		$this->add_group_control(
+			Group_Control_Css_Filter::get_type(),
+			[
+				'name' => 'box_filters',
+				'selector' => '{{WRAPPER}} .sina-brand-item-inner',
+			]
+		);
 
 		$this->end_controls_tab();
 
@@ -440,6 +462,13 @@ class Sina_Brand_Carousel_Widget extends Widget_Base {
 				'name' => 'hover_box_shadow',
 				'selector' => '{{WRAPPER}} .sina-brand-item-inner:hover',
 				'separator' => 'before',
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Css_Filter::get_type(),
+			[
+				'name' => 'box_hover_filters',
+				'selector' => '{{WRAPPER}} .sina-brand-item-inner:hover',
 			]
 		);
 

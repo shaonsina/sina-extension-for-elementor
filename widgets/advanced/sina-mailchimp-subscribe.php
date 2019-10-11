@@ -127,6 +127,16 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 			]
 		);
 		$this->add_control(
+			'successs_message',
+			[
+				'label' => __( 'Success Message', 'sina-ext' ),
+				'label_block' => true,
+				'type' => Controls_Manager::TEXT,
+				'placeholder' => __( 'Enter Success Message', 'sina-ext' ),
+				'default' => 'Thanks for subscribed!',
+			]
+		);
+		$this->add_control(
 			'fname',
 			[
 				'label' => __( 'First Name', 'sina-ext' ),
@@ -495,6 +505,7 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 		?>
 		<div class="sina-form">
 			<form class="sina-subs-form"
+			data-msg="<?php echo esc_attr( $data['successs_message'] ); ?>"
 			data-uid="<?php echo esc_attr( $this->get_id() ); ?>">
 				<div class="sina-subs-input">
 					<?php if ( $data['fname'] ): ?>

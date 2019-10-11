@@ -133,6 +133,16 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 			]
 		);
 		$this->add_control(
+			'successs_message',
+			[
+				'label' => __( 'Success Message', 'sina-ext' ),
+				'label_block' => true,
+				'type' => Controls_Manager::TEXT,
+				'placeholder' => __( 'Enter Success Message', 'sina-ext' ),
+				'default' => 'Thanks for sending Email!',
+			]
+		);
+		$this->add_control(
 			'fields',
 			[
 				'label' => __( 'Fields', 'sina-ext' ),
@@ -515,6 +525,7 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 		?>
 		<div class="sina-form">
 			<form class="sina-contact-form"
+			data-msg="<?php echo esc_attr( $data['successs_message'] ); ?>"
 			data-inbox="<?php echo esc_attr( $hash ); ?>"
 			data-uid="<?php echo esc_attr( $this->get_id() ); ?>">
 				<?php include SINA_EXT_LAYOUT.'/contact-form/'.$data['form_layout'].'.php'; ?>

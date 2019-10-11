@@ -850,6 +850,13 @@ class Sina_Common_Data{
 	}
 
 	public static function input_style( $obj, $class = '', $prefix = 'email' ) {
+		$obj->add_group_control(
+			Group_Control_Box_Shadow::get_type(),
+			[
+				'name' => $prefix.'_shadow',
+				'selector' => '{{WRAPPER}} '.$class,
+			]
+		);
 		$obj->add_responsive_control(
 			$prefix.'_width',
 			[
@@ -894,6 +901,20 @@ class Sina_Common_Data{
 	}
 
 	public static function input_fields_style( $obj ) {
+		$obj->add_control(
+			'placeholder_color',
+			[
+				'label' => __( 'Placeholder Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#aaa',
+				'selectors' => [
+					'{{WRAPPER}} .sina-input-field::-webkit-input-placeholder' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .sina-input-field::-moz-placeholder' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .sina-input-field::-ms-placeholder' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .sina-input-field::placeholder' => 'color: {{VALUE}};',
+				],
+			]
+		);
 		$obj->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
@@ -919,18 +940,11 @@ class Sina_Common_Data{
 				'selector' => '{{WRAPPER}} .sina-input-field',
 			]
 		);
-		$obj->add_control(
-			'placeholder_color',
+		$obj->add_group_control(
+			Group_Control_Box_Shadow::get_type(),
 			[
-				'label' => __( 'Placeholder Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#aaa',
-				'selectors' => [
-					'{{WRAPPER}} .sina-input-field::-webkit-input-placeholder' => 'color: {{VALUE}};',
-					'{{WRAPPER}} .sina-input-field::-moz-placeholder' => 'color: {{VALUE}};',
-					'{{WRAPPER}} .sina-input-field::-ms-placeholder' => 'color: {{VALUE}};',
-					'{{WRAPPER}} .sina-input-field::placeholder' => 'color: {{VALUE}};',
-				],
+				'name' => 'fields_shadow',
+				'selector' => '{{WRAPPER}} .sina-input-field',
 			]
 		);
 

@@ -13,6 +13,7 @@ use \Elementor\Group_Control_Background;
 use \Elementor\Group_Control_Box_Shadow;
 use \Elementor\Group_Control_Text_Shadow;
 use \Elementor\Group_Control_Border;
+use \Elementor\Repeater;
 
 
 // Exit if accessed directly.
@@ -126,29 +127,136 @@ class Sina_Countdown_Widget extends Widget_Base {
 				'default' => date( "Y/m/d H:m:s", strtotime("+ 1 Day") ),
 			]
 		);
+
+		$repeater = new Repeater();
+
+		$repeater->add_control(
+			'unit',
+			[
+				'label' => __( 'Select Unit', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					'year' => __( 'Years', 'sina-ext' ),
+					'month' => __( 'Months', 'sina-ext' ),
+					'week' => __( 'Weeks', 'sina-ext' ),
+					'day' => __( 'Days', 'sina-ext' ),
+					'hour' => __( 'Hours', 'sina-ext' ),
+					'minute' => __( 'Minutes', 'sina-ext' ),
+					'second' => __( 'Seconds', 'sina-ext' ),
+				],
+				'default' => 'day',
+			]
+		);
+
+		$repeater->add_control(
+			'unit_style',
+			[
+				'label' => __( 'Styles', 'sina-ext' ),
+				'type' => Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+		$repeater->add_responsive_control(
+			'unit_width',
+			[
+				'label' => __( 'Width', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'range' => [
+					'px' => [
+						'min' => 50,
+						'max' => 200,
+					],
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-cd{{CURRENT_ITEM}}' => 'width: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+		$repeater->add_responsive_control(
+			'unit_height',
+			[
+				'label' => __( 'Height', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'range' => [
+					'px' => [
+						'min' => 50,
+						'max' => 200,
+					],
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-cd{{CURRENT_ITEM}}' => 'height: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+		$repeater->add_group_control(
+			Group_Control_Background::get_type(),
+			[
+				'name' => 'unit_bg',
+				'types' => ['classic'],
+				'selector' => '{{WRAPPER}} .sina-cd{{CURRENT_ITEM}}',
+			]
+		);
+		$repeater->add_group_control(
+			Group_Control_Box_Shadow::get_type(),
+			[
+				'name' => 'unit_shadow',
+				'selector' => '{{WRAPPER}} .sina-cd{{CURRENT_ITEM}}',
+			]
+		);
+		$repeater->add_group_control(
+			Group_Control_Border::get_type(),
+			[
+				'name' => 'unit_border',
+				'selector' => '{{WRAPPER}} .sina-cd{{CURRENT_ITEM}}',
+			]
+		);
+		$repeater->add_responsive_control(
+			'unit_radius',
+			[
+				'label' => __( 'Radius', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'selectors' => [
+					'{{WRAPPER}} .sina-cd{{CURRENT_ITEM}}' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+		$repeater->add_responsive_control(
+			'unit_padding',
+			[
+				'label' => __( 'Padding', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'selectors' => [
+					'{{WRAPPER}} .sina-cd{{CURRENT_ITEM}}' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
 		$this->add_control(
 			'units',
 			[
-				'label' => __( 'Time Units', 'sina-ext' ),
-				'type' => Controls_Manager::SELECT2,
-				'options' => [
-					'year' => __( 'Years', 'sina-ext' ),
-					'month' => __( 'Month', 'sina-ext' ),
-					'week' => __( 'Week', 'sina-ext' ),
-					'day' => __( 'Day', 'sina-ext' ),
-					'hour' => __( 'Hours', 'sina-ext' ),
-					'minute' => __( 'Minutes', 'sina-ext' ),
-					'second' => __( 'Second', 'sina-ext' ),
-				],
+				'label' => __('Add Item', 'sina-ext'),
+				'type' => Controls_Manager::REPEATER,
+				'fields' => $repeater->get_controls(),
 				'default' => [
-					'day',
-					'hour',
-					'minute',
-					'second',
+					[
+						'unit' => 'day',
+					],
+					[
+						'unit' => 'hour',
+					],
+					[
+						'unit' => 'minute',
+					],
+					[
+						'unit' => 'second',
+					],
 				],
-				'multiple' => true,
+				'title_field' => '{{{ unit }}}',
 			]
 		);
+
 		$this->add_responsive_control(
 			'alignment',
 			[
@@ -474,6 +582,17 @@ class Sina_Countdown_Widget extends Widget_Base {
 				'selector' => '{{WRAPPER}} .sina-cd .sina-cd-text',
 			]
 		);
+		$this->add_responsive_control(
+			'text_margin',
+			[
+				'label' => __( 'Margin', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'selectors' => [
+					'{{WRAPPER}} .sina-cd .sina-cd-text' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
 
 		$this->end_controls_section();
 		// End Text Style
@@ -549,11 +668,11 @@ class Sina_Countdown_Widget extends Widget_Base {
 			if( date_timestamp_get( date_create( $data['countdown_time'] ) ) > time() ) :
 				foreach ($data['units'] as $value) :
 				?>
-					<div class="sina-cd">
-						<div class="sina-cd-<?php echo esc_attr($value); ?>">00</div>
+					<div class="sina-cd elementor-repeater-item-<?php echo esc_attr($value['_id']); ?>">
+						<div class="sina-cd-<?php echo esc_attr($value['unit']); ?>">00</div>
 						<?php if ( 'yes' == $data['text_state'] ) : ?>
 							<div class="sina-cd-text">
-								<?php printf( '%s', ucfirst($value) ); ?>
+								<?php printf( '%s', $value['unit'] ); ?>
 							</div>
 						<?php endif; ?>
 					</div>

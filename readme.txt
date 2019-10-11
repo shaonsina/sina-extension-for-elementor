@@ -9,7 +9,7 @@ Stable tag: 3.1.0
 License: GPL v3
 License URI: https://opensource.org/licenses/GPL-3.0
 
-A collection of high-quality widgets for Elementor page builder.
+A collection of high-quality widgets for Elementor page builder. 70+ predefined blocks & pages with unlimited customization ability.
 
 
 == Description ==
@@ -25,9 +25,9 @@ https://youtu.be/stwNbFgKdbw
 
 * 36 Fully Customizable widgets.
 * Options panel for enable/disable widgets.
-* Free Support through the forum.
 * Fully Responsive
-* 70+ Fully Responsive predefined Blocks & Pages.
+* 70+ Fully Responsive predefined [Blocks & Pages](https://plugins.shaonsina.com/sina-templates/).
+* Free Support through the forum.
 
 
 == What can you do by this plugin? ==
@@ -100,6 +100,11 @@ Yes. It's totally free.
 
 
 == Changelog ==
+
+= 3.1.1 - 15-16-2019 =
+- Added: Multi-color options to Accordion & Countdown
+- Added: Some other options to some widgets
+- Fixed: 
 
 = 3.1.0 - 04-16-2019 =
 - New: Login Form

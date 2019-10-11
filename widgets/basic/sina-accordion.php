@@ -159,16 +159,6 @@ class Sina_Accordion_Widget extends Widget_Base {
 		$repeater = new Repeater();
 
 		$repeater->add_control(
-			'title',
-			[
-				'label' => __( 'Title', 'sina-ext' ),
-				'label_block' => true,
-				'type' => Controls_Manager::TEXT,
-				'placeholder' => __('Enter Title', 'sina-ext'),
-				'default' => 'Web Development',
-			]
-		);
-		$repeater->add_control(
 			'save_templates',
 			[
 				'label' => __( 'Use Save Templates', 'sina-ext' ),
@@ -188,6 +178,16 @@ class Sina_Accordion_Widget extends Widget_Base {
 			]
 		);
 		$repeater->add_control(
+			'title',
+			[
+				'label' => __( 'Title', 'sina-ext' ),
+				'label_block' => true,
+				'type' => Controls_Manager::TEXT,
+				'placeholder' => __('Enter Title', 'sina-ext'),
+				'default' => 'Web Development',
+			]
+		);
+		$repeater->add_control(
 			'desc',
 			[
 				'label' => __('Description', 'sina-ext'),
@@ -197,6 +197,83 @@ class Sina_Accordion_Widget extends Widget_Base {
 				'default' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
 				'condition' => [
 					'save_templates' => '',
+				],
+			]
+		);
+
+		$repeater->add_control(
+			'single_box_style',
+			[
+				'label' => __( 'Box Styles', 'sina-ext' ),
+				'type' => Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+		$repeater->add_group_control(
+			Group_Control_Background::get_type(),
+			[
+				'name' => 'single_box_bg',
+				'types' => [ 'classic' ],
+				'selector' => '{{WRAPPER}} .sina-accordion-item{{CURRENT_ITEM}}',
+			]
+		);
+		$repeater->add_group_control(
+			Group_Control_Box_Shadow::get_type(),
+			[
+				'name' => 'single_box_shadow',
+				'selector' => '{{WRAPPER}} .sina-accordion-item{{CURRENT_ITEM}}',
+			]
+		);
+		$repeater->add_control(
+			'single_box_border',
+			[
+				'label' => __( 'Border Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .sina-accordion-item{{CURRENT_ITEM}}' => 'border-color: {{VALUE}};',
+				],
+			]
+		);
+
+		$repeater->add_control(
+			'single_header_style',
+			[
+				'label' => __( 'Header Styles', 'sina-ext' ),
+				'type' => Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+		$repeater->add_group_control(
+			Group_Control_Background::get_type(),
+			[
+				'name' => 'single_header_bg',
+				'types' => ['classic'],
+				'selector' => '{{WRAPPER}} .sina-accordion-item{{CURRENT_ITEM}} .sina-accordion-header',
+			]
+		);
+		$repeater->add_group_control(
+			Group_Control_Box_Shadow::get_type(),
+			[
+				'name' => 'single_header_shadow',
+				'selector' => '{{WRAPPER}} .sina-accordion-item{{CURRENT_ITEM}} .sina-accordion-header',
+			]
+		);
+
+		$repeater->add_control(
+			'single_content_style',
+			[
+				'label' => __( 'Content Styles', 'sina-ext' ),
+				'type' => Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+		$repeater->add_control(
+			'single_content_border',
+			[
+				'label' => __( 'Border Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .sina-accordion-item{{CURRENT_ITEM}} .sina-accordion-body' => 'border-color: {{VALUE}};',
 				],
 			]
 		);
@@ -576,7 +653,7 @@ class Sina_Accordion_Widget extends Widget_Base {
 					$this->add_render_attribute( $desc_key, 'class', 'sina-accordion-desc' );
 					$this->add_inline_editing_attributes( $desc_key );
 				?>
-				<div class="sina-accordion-item <?php echo esc_attr( $open_class ); ?>">
+				<div class="sina-accordion-item elementor-repeater-item-<?php echo esc_attr($item['_id'].' '.$open_class); ?>">
 					<h4 class="sina-accordion-header sina-flex">
 						<?php if ( 'left' == $data['icon_position']): ?>
 							<span class="sina-accordion-icon">
