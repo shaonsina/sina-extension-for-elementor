@@ -179,7 +179,16 @@ class Sina_Blogpost_Widget extends Widget_Base {
 		$this->add_control(
 			'excerpt',
 			[
-				'label' => __( 'Excerpt', 'sina-ext' ),
+				'label' => __( 'Show Excerpt', 'sina-ext' ),
+				'type' => Controls_Manager::SWITCHER,
+				'label_on' => __( 'Yes', 'sina-ext' ),
+				'label_off' => __( 'No', 'sina-ext' ),
+			]
+		);
+		$this->add_control(
+			'posts_cats',
+			[
+				'label' => __( 'Show Categories', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
 				'label_on' => __( 'Yes', 'sina-ext' ),
 				'label_off' => __( 'No', 'sina-ext' ),
@@ -188,16 +197,28 @@ class Sina_Blogpost_Widget extends Widget_Base {
 		$this->add_control(
 			'posts_meta',
 			[
-				'label' => __( 'Meta', 'sina-ext' ),
+				'label' => __( 'Show Meta', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
 				'label_on' => __( 'Yes', 'sina-ext' ),
 				'label_off' => __( 'No', 'sina-ext' ),
 			]
 		);
 		$this->add_control(
+			'posts_avatar',
+			[
+				'label' => __( 'Show Avatar', 'sina-ext' ),
+				'type' => Controls_Manager::SWITCHER,
+				'label_on' => __( 'Yes', 'sina-ext' ),
+				'label_off' => __( 'No', 'sina-ext' ),
+				'condition' => [
+					'posts_meta!' => '',
+				],
+			]
+		);
+		$this->add_control(
 			'pagination',
 			[
-				'label' => __( 'Pagination', 'sina-ext' ),
+				'label' => __( 'Show Pagination', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
 				'label_on' => __( 'Yes', 'sina-ext' ),
 				'label_off' => __( 'No', 'sina-ext' ),
@@ -209,7 +230,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 		$this->add_control(
 			'loadmore',
 			[
-				'label' => __( 'Load More', 'sina-ext' ),
+				'label' => __( 'Show Load More', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
 				'label_on' => __( 'Yes', 'sina-ext' ),
 				'label_off' => __( 'No', 'sina-ext' ),
@@ -221,7 +242,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 		$this->add_control(
 			'btn_text',
 			[
-				'label' => __( 'Label', 'sina-ext' ),
+				'label' => __( 'Load More Label', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter Label', 'sina-ext' ),
 				'condition' => [
@@ -270,6 +291,113 @@ class Sina_Blogpost_Widget extends Widget_Base {
 				'separator' => 'after',
 			]
 		);
+		$this->add_control(
+			'effects',
+			[
+				'label' => __( 'Effects', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					'sina-hover-move' => __( 'Move', 'sina-ext' ),
+					'sina-hover-zoom' => __( 'Zoom', 'sina-ext' ),
+					'' => __( 'None', 'sina-ext' ),
+				],
+				'default' => '',
+			]
+		);
+		$this->add_responsive_control(
+			'scale',
+			[
+				'label' => __( 'Scale', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'range' => [
+					'px' => [
+						'step' => 0.1,
+						'min' => 0.1,
+						'max' => 5,
+					],
+				],
+				'default' => [
+					'size' => '1.1',
+				],
+				'condition' => [
+					'effects' => 'sina-hover-zoom',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-bp-col.sina-hover-zoom:hover' => 'transform: scale({{SIZE}});',
+				],
+			]
+		);
+		$this->add_control(
+			'move',
+			[
+				'label' => __( 'Move', 'sina-ext' ),
+				'type' => Controls_Manager::POPOVER_TOGGLE,
+				'condition' => [
+					'effects' => 'sina-hover-move',
+				],
+			]
+		);
+
+		$this->start_popover();
+		$this->add_responsive_control(
+			'translateX',
+			[
+				'label' => __( 'Horizontal', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'range' => [
+					'px' => [
+						'step' => 1,
+						'min' => -100,
+						'max' => 100,
+					],
+				],
+				'desktop_default' => [
+					'size' => '0',
+				],
+				'tablet_default' => [
+					'size' => '0',
+				],
+				'mobile_default' => [
+					'size' => '0',
+				],
+				'condition' => [
+					'effects' => 'sina-hover-move',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'translateY',
+			[
+				'label' => __( 'Vertical', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'range' => [
+					'px' => [
+						'step' => 1,
+						'min' => -100,
+						'max' => 100,
+					],
+				],
+				'desktop_default' => [
+					'size' => '-10',
+				],
+				'tablet_default' => [
+					'size' => '-10',
+				],
+				'mobile_default' => [
+					'size' => '-10',
+				],
+				'condition' => [
+					'effects' => 'sina-hover-move',
+				],
+				'selectors' => [
+					'(desktop){{WRAPPER}} .sina-bp-col:hover' => 'transform: translate({{translateX.SIZE || 0}}px, {{translateY.SIZE || 0}}px);',
+					'(tablet){{WRAPPER}} .sina-bp-col:hover' => 'transform: translate({{translateX_tablet.SIZE || 0}}px, {{translateY_tablet.SIZE || 0}}px);',
+					'(mobile){{WRAPPER}} .sina-bp-col:hover' => 'transform: translate({{translateX_mobile.SIZE || 0}}px, {{translateY_mobile.SIZE || 0}}px);',
+				],
+			]
+		);
+		$this->end_popover();
+
 		$this->add_group_control(
 			Group_Control_Background::get_type(),
 			[
@@ -770,6 +898,145 @@ class Sina_Blogpost_Widget extends Widget_Base {
 		// =====================
 
 
+		// Start Cats Style
+		// =====================
+		$this->start_controls_section(
+			'cats_style',
+			[
+				'label' => __( 'Categories', 'sina-ext' ),
+				'tab' => Controls_Manager::TAB_STYLE,
+				'condition' => [
+					'posts_cats!' => '',
+				],
+			]
+		);
+
+		$this->add_control(
+			'cats_position',
+			[
+				'label' => __( 'Position', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					'before' => __( 'Before Title', 'sina-ext' ),
+					'after' => __( 'After Title', 'sina-ext' ),
+				],
+				'default' => 'after',
+			]
+		);
+		$this->add_control(
+			'cats_icon',
+			[
+				'label' => __( 'Icon', 'sina-ext' ),
+				'type' => Controls_Manager::ICON,
+				'default' => 'fa fa-folder-open-o',
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name' => 'cats_typography',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_weight' => [
+						'default' => '400',
+					],
+					'font_size'   => [
+						'default' => [
+							'size' => '14',
+						],
+					],
+					'line_height'   => [
+						'default' => [
+							'size' => '24',
+						],
+					],
+				],
+				'selector' => '{{WRAPPER}} .sina-bp-cats, {{WRAPPER}} .sina-bp-cats a',
+			]
+		);
+		$this->add_control(
+			'cats_color',
+			[
+				'label' => __( 'Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#222',
+				'selectors' => [
+					'{{WRAPPER}} .sina-bp-cats, {{WRAPPER}} .sina-bp-cats a' => 'color: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_control(
+			'cats_bg',
+			[
+				'label' => __( 'Background Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .sina-bp-cats' => 'background-color: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Border::get_type(),
+			[
+				'name' => 'cats_border',
+				'selector' => '{{WRAPPER}} .sina-bp-cats',
+			]
+		);
+		$this->add_responsive_control(
+			'cats_radius',
+			[
+				'label' => __( 'Radius', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '4',
+					'right' => '4',
+					'bottom' => '4',
+					'left' => '4',
+					'isLinked' => true,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-bp-cats' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'cats_padding',
+			[
+				'label' => __( 'Padding', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'selectors' => [
+					'{{WRAPPER}} .sina-bp-cats' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'cats_margin',
+			[
+				'label' => __( 'Margin', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '0',
+					'right' => '0',
+					'bottom' => '10',
+					'left' => '0',
+					'isLinked' => false,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-bp-cats' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->end_controls_section();
+		// End Cats Style
+		// =====================
+
+
 		// Start Meta Style
 		// =====================
 		$this->start_controls_section(
@@ -805,13 +1072,6 @@ class Sina_Blogpost_Widget extends Widget_Base {
 						],
 					],
 				],
-				'selector' => '{{WRAPPER}} .sina-bp-meta, {{WRAPPER}} .sina-bp-meta a',
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Text_Shadow::get_type(),
-			[
-				'name' => 'meta_shadow',
 				'selector' => '{{WRAPPER}} .sina-bp-meta, {{WRAPPER}} .sina-bp-meta a',
 			]
 		);
@@ -868,6 +1128,91 @@ class Sina_Blogpost_Widget extends Widget_Base {
 		$this->end_controls_tab();
 
 		$this->end_controls_tabs();
+
+		$this->add_control(
+			'avatar_style',
+			[
+				'label' => __( 'Avatar styles', 'sina-ext' ),
+				'type' => Controls_Manager::HEADING,
+				'separator' => 'before',
+				'condition' => [
+					'posts_avatar!' => '',
+				],
+			]
+		);
+
+		$this->add_control(
+			'avatar_size',
+			[
+				'label' => __( 'Size', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px'],
+				'default' => [
+					'size' => '32',
+				],
+				'condition' => [
+					'posts_avatar!' => '',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'avatar_gap',
+			[
+				'label' => __( 'Spacing', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', 'em' ],
+				'default' => [
+					'size' => '8',
+				],
+				'condition' => [
+					'posts_avatar!' => '',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-bp-meta .avatar' => 'margin-right: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Box_Shadow::get_type(),
+			[
+				'name' => 'avatar_bshadow',
+				'selector' => '{{WRAPPER}} .sina-bp-meta .avatar',
+				'condition' => [
+					'posts_avatar!' => '',
+				],
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Border::get_type(),
+			[
+				'name' => 'avatar_border',
+				'selector' => '{{WRAPPER}} .sina-bp-meta .avatar',
+				'condition' => [
+					'posts_avatar!' => '',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'avatar_radius',
+			[
+				'label' => __( 'Radius', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '16',
+					'right' => '16',
+					'bottom' => '16',
+					'left' => '16',
+					'isLinked' => true,
+				],
+				'condition' => [
+					'posts_avatar!' => '',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-bp-meta .avatar' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
 
 		$this->add_group_control(
 			Group_Control_Border::get_type(),
@@ -1400,6 +1745,11 @@ class Sina_Blogpost_Widget extends Widget_Base {
 				'read_more_text'=> $data['read_more_text'],
 				'read_more_icon'=> $data['read_more_icon'],
 				'read_more_icon_align'=> $data['read_more_icon_align'],
+				'effects' => $data['effects'],
+				'cats_position' => $data['cats_position'],
+				'cats_icon' => $data['cats_icon'],
+				'posts_avatar' => $data['posts_avatar'],
+				'avatar_size' => $data['avatar_size'],
 			];
 			?>
 			<div class="sina-blogpost <?php echo esc_attr( 'sina-bp-'.$this->get_id() ); ?>"

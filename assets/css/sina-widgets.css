@@ -24,12 +24,16 @@
 }
 
 /* Common */
+.sina-hover-move:hover,
+.sina-hover-zoom:hover,
 .sina-content-box-move:hover,
 .sina-content-box-zoom:hover,
 .sina-pricing-move:hover,
 .sina-pricing-zoom:hover{
 	z-index: 999;
 }
+.sina-bp-col,
+.sina-bp-cats a,
 .sina-pc-meta a,
 .sina-bp-meta a,
 .sina-transform-content,
@@ -52,7 +56,7 @@
 .sina-button,
 .sina-pt-cat-btn,
 .sina-portfolio-btn {
-	transition: all 0.4s ease-in-out;
+	transition: all 0.4s;
 }
 .sina-button i,
 .sina-dynamic-btn i,
@@ -125,6 +129,8 @@
 .sina-accordion-item.open > .sina-accordion-header > .sina-accordion-icon .on{
 	display: block;
 }
+.sina-bp-cats,
+.sina-bp-cats a
 .sina-dynamic-btn,
 .sina-team-social li,
 .sina-fancytext .sina-fancytext-strings > .animated,
@@ -440,8 +446,8 @@ img.mfp-img{
 .sina-pricing,
 .sina-content-box{
 	position: relative;
-	transition: 0.4s;
 	overflow: hidden;
+	transition: 0.4s;
 }
 
 /*-------------------------- Countdown --------------------------*/
