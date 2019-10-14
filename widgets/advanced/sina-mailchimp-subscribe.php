@@ -417,7 +417,7 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 					'isLinked' => true,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-subs-btn' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .sina-subs-btn, {{WRAPPER}} .sina-subs-btn:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -492,6 +492,7 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 				],
 			]
 		);
+		Sina_Common_Data::BG_hover_effects($this, '.sina-button', 'btn_bg_layer');
 
 		$this->end_controls_section();
 		// End Button Style
@@ -522,7 +523,7 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 						<input class="sina-input-field sina-input-phone <?php echo esc_attr( $display_class ); ?>" type="tel" placeholder="<?php echo esc_attr( $data['phone_placeholder'] ); ?>">
 					<?php endif; ?>
 
-					<button type="submit" class="sina-button sina-subs-btn <?php echo esc_attr( $data['btn_effect']); ?>">
+					<button type="submit" class="sina-button sina-subs-btn <?php echo esc_attr( $data['btn_effect'].' '.$data['btn_bg_layer_effects'] ); ?>">
 						<?php Sina_Common_Data::button_html($data); ?>
 					</button>
 				</div>

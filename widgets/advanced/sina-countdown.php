@@ -164,7 +164,7 @@ class Sina_Countdown_Widget extends Widget_Base {
 				'range' => [
 					'px' => [
 						'min' => 50,
-						'max' => 200,
+						'max' => 500,
 					],
 				],
 				'selectors' => [
@@ -180,12 +180,32 @@ class Sina_Countdown_Widget extends Widget_Base {
 				'range' => [
 					'px' => [
 						'min' => 50,
-						'max' => 200,
+						'max' => 500,
 					],
 				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-cd{{CURRENT_ITEM}}' => 'height: {{SIZE}}{{UNIT}};',
 				],
+			]
+		);
+		$repeater->add_control(
+			'unit_digit_color',
+			[
+				'label' => __( 'Digit Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .sina-cd{{CURRENT_ITEM}}' => 'color: {{VALUE}};'
+				]
+			]
+		);
+		$repeater->add_control(
+			'unit_text_color',
+			[
+				'label' => __( 'Text Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .sina-cd{{CURRENT_ITEM}} .sina-cd-text' => 'color: {{VALUE}};'
+				]
 			]
 		);
 		$repeater->add_group_control(

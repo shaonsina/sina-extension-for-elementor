@@ -5,7 +5,7 @@ Donate link: https://plugins.shaonsina.com/sina-extension/
 Requires at least: 4.7
 Tested up to: 5.2
 Requires PHP: 7.0
-Stable tag: 3.1.1
+Stable tag: 3.1.2
 License: GPL v3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -101,7 +101,9 @@ Yes. It's totally free.
 
 == Changelog ==
 
-= 3.1.1 - 12-10-2019 =
+= 3.1.2 - 16-10-2019 =
+- Added: Some options to Some widgets
+
 - Added: Multi-color options to Accordion & Countdown
 - Added: Some options to Blogpost & all the form fields
 

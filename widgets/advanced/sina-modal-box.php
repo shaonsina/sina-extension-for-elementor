@@ -1118,7 +1118,7 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 					'isLinked' => true,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-modal-trigger' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .sina-modal-trigger, {{WRAPPER}} .sina-modal-trigger:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -1164,6 +1164,7 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 				],
 			]
 		);
+		Sina_Common_Data::BG_hover_effects($this, '.sina-button', 'trigger_bg_layer');
 
 		$this->end_controls_section();
 		// End Trigger Button Style
@@ -1179,7 +1180,7 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 		<div class="sina-modal-box" data-modal-id="<?php echo esc_attr( $trigger_id ); ?>">
 			<?php if ( $data['trigger_text'] ): ?>
 				<div class="sina-btn-wrap">
-					<button id="<?php echo esc_attr( $trigger_id ); ?>" class="sina-button sina-modal-trigger <?php echo esc_attr( $data['trigger_effect']); ?>">
+					<button id="<?php echo esc_attr( $trigger_id ); ?>" class="sina-button sina-modal-trigger <?php echo esc_attr( $data['trigger_effect'].' '.$data['trigger_bg_layer_effects'] ); ?>">
 						<?php Sina_Common_Data::button_html($data, 'trigger'); ?>
 					</button>
 				</div>

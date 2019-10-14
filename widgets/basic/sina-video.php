@@ -119,7 +119,7 @@ class Sina_Video_Widget extends Widget_Base {
 		$this->add_control(
 			'animation',
 			[
-				'label' => __( 'Effects', 'sina-ext' ),
+				'label' => __( 'Animation Effects', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
 					'' => __( 'None', 'sina-ext' ),
@@ -475,10 +475,11 @@ class Sina_Video_Widget extends Widget_Base {
 					'isLinked' => true,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-video-play' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .sina-video-play, {{WRAPPER}} .sina-video-play:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
+		Sina_Common_Data::BG_hover_effects($this, '.sina-video-play', 'btn_bg_layer');
 
 		$this->end_controls_section();
 		// End Icon Style
@@ -491,7 +492,7 @@ class Sina_Video_Widget extends Widget_Base {
 		?>
 		<div class="sina-video">
 			<?php if ( $data['icon'] ): ?>
-				<a class="sina-video-play <?php echo esc_attr($data['animation']); ?>" href="<?php echo esc_url( $data['video_link'] ); ?>">
+				<a class="sina-video-play <?php echo esc_attr($data['animation'].' '.$data['btn_bg_layer_effects']); ?>" href="<?php echo esc_url( $data['video_link'] ); ?>">
 					<i class="<?php echo esc_attr( $data['icon'] ); ?>"></i>
 				</a>
 			<?php endif ?>

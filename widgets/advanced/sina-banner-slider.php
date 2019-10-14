@@ -782,7 +782,7 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 					'isLinked' => true,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-banner-pbtn' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .sina-banner-pbtn, {{WRAPPER}} .sina-banner-pbtn:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -812,6 +812,7 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 			]
 		);
 		Sina_Common_Data::tooltip_style( $this, 'pbtn', '.sina-banner-pbtn' );
+		Sina_Common_Data::BG_hover_effects($this, '.sina-banner-pbtn', 'pbtn_bg_layer');
 
 		$this->end_controls_section();
 		// End Primary Button Style
@@ -865,7 +866,7 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 					'isLinked' => true,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-banner-sbtn' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .sina-banner-sbtn, {{WRAPPER}} .sina-banner-sbtn:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -895,6 +896,7 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 			]
 		);
 		Sina_Common_Data::tooltip_style( $this, 'sbtn', '.sina-banner-sbtn' );
+		Sina_Common_Data::BG_hover_effects($this, '.sina-banner-sbtn', 'sbtn_bg_layer');
 
 		$this->end_controls_section();
 		// End Secondary Button Style
@@ -980,7 +982,7 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 						<?php if ( $data['pbtn_text'] || $data['sbtn_text'] ): ?>
 							<div class="sina-banner-btns <?php echo esc_attr($invisible); ?>" data-animation="animated <?php echo esc_attr( $slide['buttons_anim'] ); ?>">
 								<?php if ( $data['pbtn_text'] ): ?>
-									<a class="sina-banner-pbtn <?php echo esc_attr( $data['pbtn_effect']); ?>"
+									<a class="sina-banner-pbtn <?php echo esc_attr( $data['pbtn_effect'].' '.$data['pbtn_bg_layer_effects'] ); ?>"
 									href="<?php echo esc_url( $data['pbtn_link']['url'] ); ?>"
 									<?php if ( 'on' == $data['pbtn_link']['is_external'] ): ?>
 										target="_blank" 
@@ -993,7 +995,7 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 								<?php endif ?>
 
 								<?php if ( $data['sbtn_text'] ): ?>
-									<a class="sina-banner-sbtn <?php echo esc_attr( $data['sbtn_effect']); ?>"
+									<a class="sina-banner-sbtn <?php echo esc_attr( $data['sbtn_effect'].' '.$data['sbtn_bg_layer_effects'] ); ?>"
 									href="<?php echo esc_url( $data['sbtn_link']['url'] ); ?>"
 									<?php if ( 'on' == $data['sbtn_link']['is_external'] ): ?>
 										target="_blank" 

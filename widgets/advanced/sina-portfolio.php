@@ -325,7 +325,7 @@ class Sina_Portfolio_Widget extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
-					'{{WRAPPER}} .sina-portfolio-btn' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .sina-portfolio-btn, {{WRAPPER}} .sina-portfolio-btn:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -390,6 +390,7 @@ class Sina_Portfolio_Widget extends Widget_Base {
 				],
 			]
 		);
+		Sina_Common_Data::BG_hover_effects($this, '.sina-button', 'btn_bg_layer');
 
 		$this->end_controls_section();
 		// End Menu Style
@@ -688,12 +689,12 @@ class Sina_Portfolio_Widget extends Widget_Base {
 		<div class="sina-portfolio <?php echo esc_attr( 'sina-pf-'.$this->get_id() ); ?>"
 		data-layout="<?php echo esc_attr( $data['columns'] ); ?>">
 			<div class="sina-portfolio-btns">
-				<button class="sina-portfolio-btn sina-button is-checked" data-filter="*">All</button>
+				<button class="sina-portfolio-btn sina-button is-checked <?php echo esc_attr( $data['btn_bg_layer_effects'] ); ?>" data-filter="*">All</button>
 				<?php
 					$categories = sina_get_portfolio_cat( $data['portfolio'] );
 					foreach ( $categories as $cat ) :
 						?>
-						<button class="sina-portfolio-btn sina-button" data-filter=".<?php echo esc_attr( $cat ); ?>">
+						<button class="sina-button sina-portfolio-btn <?php echo esc_attr( $data['btn_bg_layer_effects'] ); ?>" data-filter=".<?php echo esc_attr( $cat ); ?>">
 							<?php printf( '%s', str_replace( '_', ' ', trim( $cat, '_') ) ); ?>
 						</button>
 				<?php endforeach; ?>

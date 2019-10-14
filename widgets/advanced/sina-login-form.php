@@ -381,7 +381,7 @@ class Sina_Login_Form_Widget extends Widget_Base {
 					'isLinked' => true,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-login-btn' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .sina-login-btn, {{WRAPPER}} .sina-login-btn:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -445,6 +445,7 @@ class Sina_Login_Form_Widget extends Widget_Base {
 				],
 			]
 		);
+		Sina_Common_Data::BG_hover_effects($this, '.sina-button', 'btn_bg_layer');
 
 		$this->end_controls_section();
 		// End Button Style
@@ -471,7 +472,7 @@ class Sina_Login_Form_Widget extends Widget_Base {
 					</div>
 				<?php endif ?>
 
-				<button type="submit" class="sina-button sina-login-btn <?php echo esc_attr( $data['btn_effect']); ?>">
+				<button type="submit" class="sina-button sina-login-btn <?php echo esc_attr( $data['btn_effect'].' '.$data['btn_bg_layer_effects'] ); ?>">
 					<?php Sina_Common_Data::button_html($data); ?>
 				</button>
 

@@ -865,7 +865,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 				],
 				'separator' => 'before',
 				'selectors' => [
-					'{{WRAPPER}} .sina-order-btn' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .sina-order-btn, {{WRAPPER}} .sina-order-btn:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -905,6 +905,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 				],
 			]
 		);
+		Sina_Common_Data::BG_hover_effects($this, '.sina-order-btn');
 
 		$this->end_controls_section();
 		// End Button Style
@@ -1137,7 +1138,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 
 			<?php if ( $data['btn_text'] || $data['btn_icon'] ) : ?>
 				<div class="sina-pricing-btn">
-					<a class="sina-order-btn <?php echo esc_attr( $data['btn_effect']); ?>"
+					<a class="sina-order-btn <?php echo esc_attr( $data['btn_effect'].' '.$data['bg_layer_effects']); ?>"
 					href="<?php echo esc_url( $data['btn_link']['url'] ); ?>"
 					<?php if ( 'on' == $data['btn_link']['is_external'] ): ?>
 						target="_blank" 

@@ -18,8 +18,8 @@ function sina_get_page_lists() {
 
 function sina_get_term_lists( $term ) {
 	$terms = get_terms(
-		$term,
 		[
+			$term,
 			'hide_empty' => false,
 		]
 	);

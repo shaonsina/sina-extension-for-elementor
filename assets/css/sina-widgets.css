@@ -1,4 +1,4 @@
-/* Sina Extension for Elementor v3.1.0 */
+/* Sina Extension for Elementor v3.1.2 */
 
 /*--------------------------------- General -------------------------------------- */
 .sina-overlay{
@@ -50,10 +50,7 @@
 .sina-content-box-icon img,
 .sina-content-box-title,
 .sina-content-box-title > a,
-.sina-order-btn,
-.sina-banner-pbtn,
-.sina-banner-sbtn,
-.sina-button,
+.sina-content-box-desc,
 .sina-pt-cat-btn,
 .sina-portfolio-btn {
 	transition: all 0.4s;
@@ -79,6 +76,7 @@
 .sina-banner-slider{
 	direction: ltr;
 }
+.sina-content-box-icon,
 .sina-transform-content,
 .sina-load-more,
 .sina-bp-list .sina-bp,
@@ -121,29 +119,21 @@
 .sina-pt-item{
 	display: none;
 }
-.sina-social li a,
-.sina-team-social li a,
 .sina-bg-thumb img,
 .sina-pt-item.active,
 .sina-pt-content .sina-pt-btn,
 .sina-accordion-item.open > .sina-accordion-header > .sina-accordion-icon .on{
 	display: block;
 }
-.sina-bp-cats,
-.sina-bp-cats a
-.sina-dynamic-btn,
 .sina-team-social li,
+.sina-bp-cats,
+.sina-bp-cats a,
 .sina-fancytext .sina-fancytext-strings > .animated,
-.sina-product-zoomer,
-.sina-read-more,
-.sina-pricing-btn .sina-order-btn,
-.sina-banner-btns .sina-banner-pbtn,
-.sina-banner-btns .sina-banner-sbtn{
+.sina-product-zoomer{
 	display: inline-block;
 }
 .twentytwenty-before-label:before,
 .twentytwenty-after-label:before,
-.sina-dynamic-btn,
 .sina-social li a i,
 .sina-portfolio-overlay i,
 .sina-team-social li i {
@@ -216,7 +206,7 @@ img.mfp-img{
 
 /* Ribbon */
 .sina-ribbon-left,
-.sina-ribbon-right {
+.sina-ribbon-right{
 	position: absolute;
 	top: 25px;
 	right: -85px;
@@ -226,7 +216,7 @@ img.mfp-img{
 	transform: rotate( 45deg );
 	text-align: center;
 }
-.sina-ribbon-left {
+.sina-ribbon-left{
 	left: -85px;
 	right: auto;
 	transform: rotate( -45deg );
@@ -358,7 +348,7 @@ img.mfp-img{
 .sina-posts-carousel .owl-dot.active,
 .sina-content-slider .owl-dot.active,
 .sina-banner-slider .owl-dot.active,
-.sina-review-carousel .owl-dot.active {
+.sina-review-carousel .owl-dot.active{
 	width: 10px;
 	height: 10px;
 	border-radius: 50%
@@ -394,13 +384,29 @@ img.mfp-img{
 	display: block;
 	transition: 0.4s;
 }
-.sina-bp-pagination .page-numbers {
+.sina-bp-pagination .page-numbers{
 	display: inline-block;
 	text-align: center;
 	transition: all 0.4s ease-in-out;
 }
 .sina-load-more .sina-load-more-btn{
 	min-width: 160px;
+}
+
+/*--------------------------------- Dynamic Button -------------------------------------- */
+.sina-button,
+.sina-banner-pbtn,
+.sina-banner-sbtn,
+.sina-video-play,
+.sina-social a,
+.sina-team-social a,
+.sina-order-btn,
+.sina-read-more,
+.sina-dynamic-btn{
+	display: inline-block;
+	text-align: center;
+	overflow: hidden;
+	transition: 0.4s;
 }
 
 /*--------------------------------- Posts Carousel -------------------------------------- */
@@ -448,6 +454,9 @@ img.mfp-img{
 	position: relative;
 	overflow: hidden;
 	transition: 0.4s;
+}
+.sina-content-box:hover .sina-content-box-icon.sina-img-zoom img{
+	transform: scale(1.15);
 }
 
 /*-------------------------- Countdown --------------------------*/
@@ -942,14 +951,168 @@ img.mfp-img{
 .sina-video{
 	text-align: center;
 }
-.sina-video-play {
-	display: inline-block;
-	text-align: center;
-	transition: all 0.5s;
+
+
+/* HOVER EFFECTS */
+.sina-hv-slide-b,
+.sina-hv-slide-t,
+.sina-hv-slide-l,
+.sina-hv-slide-r,
+.sina-hv-slide-rt,
+.sina-hv-slide-lt,
+.sina-hv-slide-rb,
+.sina-hv-slide-lb,
+.sina-hv-fade,
+.sina-hv-door-v,
+.sina-hv-door-h,
+.sina-hv-zoom{
+	position: relative;
+	z-index: 1;
+}
+.sina-hv-fade:before,
+.sina-hv-zoom:before,
+.sina-hv-door-v:before,
+.sina-hv-door-h:before,
+.sina-hv-slide-lt:before,
+.sina-hv-slide-rt:before,
+.sina-hv-slide-lb:before,
+.sina-hv-slide-rb:before,
+.sina-hv-slide-b:before,
+.sina-hv-slide-t:before,
+.sina-hv-slide-l:before,
+.sina-hv-slide-r:before{
+	position: absolute;
+	content: '';
+	z-index: -1;
+	opacity: 0;
+	transition: 0.35s;
+}
+.sina-hv-fade:hover:before,
+.sina-hv-zoom:hover:before,
+.sina-hv-door-v:hover:before,
+.sina-hv-door-h:hover:before,
+.sina-hv-slide-lt:hover:before,
+.sina-hv-slide-rt:hover:before,
+.sina-hv-slide-lb:hover:before,
+.sina-hv-slide-rb:hover:before,
+.sina-hv-slide-b:hover:before,
+.sina-hv-slide-t:hover:before,
+.sina-hv-slide-l:hover:before,
+.sina-hv-slide-r:hover:before{
+	opacity: 1;
+}
+
+.sina-hv-slide-b:before,
+.sina-hv-slide-t:before{
+	width: 100%;
+	height: 0;
+	left: 0;
+}
+.sina-hv-slide-b:before{
+	bottom: 0;
+}
+.sina-hv-slide-t:before{
+	top: 0;
+}
+.sina-hv-slide-b:hover:before,
+.sina-hv-slide-t:hover:before{
+	height: 100%;
+}
+
+.sina-hv-slide-l:before,
+.sina-hv-slide-r:before{
+	width: 0;
+	height: 100%;
+	bottom: 0;
+}
+.sina-hv-slide-l:before{
+	left: 0;
+}
+.sina-hv-slide-r:before{
+	right: 0;
+}
+.sina-hv-slide-l:hover:before,
+.sina-hv-slide-r:hover:before{
+	width: 100%;
+}
+
+.sina-hv-slide-lt:before,
+.sina-hv-slide-rt:before,
+.sina-hv-slide-lb:before,
+.sina-hv-slide-rb:before{
+	width: 100%;
+	height: 100%;
+}
+.sina-hv-slide-lb:before{
+	top: 100%;
+	left: -100%;
+	transform: rotate(-45deg);
+}
+.sina-hv-slide-rb:before{
+	top: 100%;
+	right: -100%;
+	transform: rotate(45deg);
+}
+.sina-hv-slide-lt:before{
+	top: -100%;
+	left: -100%;
+	transform: rotate(45deg);
+}
+.sina-hv-slide-rt:before{
+	top: -100%;
+	right: -100%;
+	transform: rotate(-45deg);
+}
+
+.sina-hv-slide-lb:hover:before,
+.sina-hv-slide-lt:hover:before{
+	top: 0;
+	left: 0;
+	transform: rotate(0deg);
+}
+.sina-hv-slide-rb:hover:before,
+.sina-hv-slide-rt:hover:before{
+	top: 0;
+	right: 0;
+	transform: rotate(0deg);
+}
+
+.sina-hv-zoom:before,
+.sina-hv-fade:before{
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+}
+.sina-hv-zoom:before{
+	transform: scale(0.3);
+}
+.sina-hv-zoom:hover:before{
+	transform: scale(1);
+}
+.sina-hv-door-v:before{
+	width: 100%;
+	height: 0;
+	top: 50%;
+	left: 0;
+}
+.sina-hv-door-v:hover:before{
+	height: 100%;
+	top: 0;
+}
+.sina-hv-door-h:before{
+	width: 0;
+	height: 100%;
+	left: 50%;
+	top: 0;
+}
+.sina-hv-door-h:hover:before{
+	width: 100%;
+	left: 0;
 }
 
 
-/*ANIMATIONS*/
+/* ANIMATIONS */
 .sina-anim-right-move:hover i{
 	transform: translate(8px);
 }

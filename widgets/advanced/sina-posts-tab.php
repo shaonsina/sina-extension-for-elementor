@@ -256,7 +256,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
-					'{{WRAPPER}} .sina-pt-cat-btn' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .sina-pt-cat-btn, {{WRAPPER}} .sina-pt-cat-btn:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -321,6 +321,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 				],
 			]
 		);
+		Sina_Common_Data::BG_hover_effects($this, '.sina-button', 'cats_bg_layer');
 
 		$this->end_controls_section();
 		// End Categories style
@@ -893,7 +894,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 						foreach ($data['categories'] as $cats):
 							$bid = $id.'-'.str_replace(' ', '-', $cats['category']);
 							?>
-							<button class="sina-pt-cat-btn sina-button" data-sina-pt="#<?php echo esc_attr($bid); ?>">
+							<button class="sina-pt-cat-btn sina-button <?php echo esc_attr( $data['cats_bg_layer_effects'] ); ?>" data-sina-pt="#<?php echo esc_attr($bid); ?>">
 								<?php if ( $cats['icon'] && $data['icon_align'] == 'left' ): ?>
 									<i class="<?php echo esc_attr($cats['icon']); ?> sina-icon-left"></i>
 								<?php endif; ?>

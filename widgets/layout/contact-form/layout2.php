@@ -9,7 +9,7 @@
 	</div>
 </div>
 <div class="sina-contact-input">
-	<button type="submit" class="sina-button sina-contact-btn <?php echo esc_attr( $data['btn_effect']); ?>">
+	<button type="submit" class="sina-button sina-contact-btn <?php echo esc_attr( $data['btn_effect'].' '.$data['btn_bg_layer_effects'] ); ?>">
 		<?php Sina_Common_Data::button_html($data); ?>
 	</button>
 </div>

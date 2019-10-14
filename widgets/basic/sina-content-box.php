@@ -635,6 +635,42 @@ class Sina_Content_Box_Widget extends Widget_Base {
 			]
 		);
 
+		$this->add_control(
+			'button_heading',
+			[
+				'label' => __( 'Button', 'sina-ext' ),
+				'type' => Controls_Manager::HEADING,
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
+			[
+				'name' => 'button_background',
+				'types' => [ 'classic', 'gradient' ],
+				'selector' => '{{WRAPPER}} .sina-content-box:hover .sina-read-more',
+			]
+		);
+		$this->add_control(
+			'button_color',
+			[
+				'label' => __( 'Text Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .sina-content-box:hover .sina-read-more' => 'color: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_control(
+			'button_border_color',
+			[
+				'label' => __( 'Border Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .sina-content-box:hover .sina-read-more' => 'border-color: {{VALUE}};',
+				],
+			]
+		);
+
 		$this->end_controls_tab();
 
 		$this->end_controls_tabs();
@@ -654,7 +690,7 @@ class Sina_Content_Box_Widget extends Widget_Base {
 				],
 				'separator' => 'before',
 				'selectors' => [
-					'{{WRAPPER}} .sina-content-box' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .sina-content-box, {{WRAPPER}} .sina-content-box:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -720,6 +756,7 @@ class Sina_Content_Box_Widget extends Widget_Base {
 				],
 			]
 		);
+		Sina_Common_Data::BG_hover_effects($this, '.sina-content-box');
 
 		$this->end_controls_section();
 		// End Box Style
@@ -740,6 +777,21 @@ class Sina_Content_Box_Widget extends Widget_Base {
 			]
 		);
 
+		$this->add_control(
+			'image_effects',
+			[
+				'label' => __( 'Effects', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					'sina-img-zoom' => __( 'Zoom', 'sina-ext' ),
+					'' => __( 'None', 'sina-ext' ),
+				],
+				'condition' => [
+					'icon_format' => 'image',
+				],
+				'default' => '',
+			]
+		);
 		$this->add_responsive_control(
 			'icon_size',
 			[
@@ -1019,7 +1071,7 @@ class Sina_Content_Box_Widget extends Widget_Base {
 				],
 			]
 		);
-		Sina_Common_Data::button_style( $this, '.sina-read-more' );
+		Sina_Common_Data::button_style( $this, '.sina-content-box .sina-read-more' );
 		$this->add_responsive_control(
 			'btn_radius',
 			[
@@ -1035,7 +1087,7 @@ class Sina_Content_Box_Widget extends Widget_Base {
 				],
 				'separator' => 'before',
 				'selectors' => [
-					'{{WRAPPER}} .sina-read-more' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .sina-read-more, {{WRAPPER}} .sina-read-more:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -1075,6 +1127,7 @@ class Sina_Content_Box_Widget extends Widget_Base {
 				],
 			]
 		);
+		Sina_Common_Data::BG_hover_effects($this, '.sina-read-more', 'btn_bg_layer');
 
 		$this->end_controls_section();
 		// End Button Style
@@ -1085,7 +1138,7 @@ class Sina_Content_Box_Widget extends Widget_Base {
 	protected function render() {
 		$data = $this->get_settings_for_display();
 		?>
-		<div class="sina-content-box <?php echo esc_attr( $data['effects'] ); ?>">
+		<div class="sina-content-box <?php echo esc_attr( $data['effects'].' '.$data['bg_layer_effects'] ); ?>">
 			<?php if ( $data['ribbon_title'] && $data['ribbon_position'] ): ?>
 				<div class="<?php echo esc_attr( $data['ribbon_position'] ); ?>">
 					<?php printf( '%s', $data['ribbon_title'] ); ?>
@@ -1103,7 +1156,7 @@ class Sina_Content_Box_Widget extends Widget_Base {
 							<i class="<?php echo esc_attr( $data['icon'] ); ?>"></i>
 						</div>
 					<?php elseif( $data['image'] ): ?>
-						<div class="sina-content-box-icon">
+						<div class="sina-content-box-icon <?php echo esc_attr( $data['image_effects'] ); ?>">
 							<img src="<?php echo esc_url( $data['image']['url'] ); ?>" alt="<?php echo esc_attr( $data['title'] ) ?>">
 						</div>
 					<?php endif; ?>
@@ -1133,7 +1186,7 @@ class Sina_Content_Box_Widget extends Widget_Base {
 
 						<?php if ( $data['btn_text'] ): ?>
 							<div class="sina-btn-wrapper">
-								<a class="sina-read-more <?php echo esc_attr( $data['btn_effect']); ?>"
+								<a class="sina-read-more <?php echo esc_attr( $data['btn_effect'].' '.$data['btn_bg_layer_effects'] ); ?>"
 								href="<?php echo esc_url( $data['btn_link']['url'] ); ?>"
 								<?php if ( 'on' == $data['btn_link']['is_external'] ): ?>
 									target="_blank" 

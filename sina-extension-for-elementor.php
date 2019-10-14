@@ -3,7 +3,7 @@
  * Plugin Name: Sina Extension for Elementor
  * Plugin URI: https://plugins.shaonsina.com/sina-extension/
  * Description: A collection of high-quality widgets for Elementor page builder.
- * Version: 3.1.1
+ * Version: 3.1.2
  * Author: shaonsina
  * Author URI: https://shaonsina.com/
  * Text Domain: sina-ext

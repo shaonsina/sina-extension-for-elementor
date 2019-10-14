@@ -150,7 +150,7 @@ class Sina_Social_Icons_Widget extends Widget_Base {
 				'label' => __( 'Background', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .sina-social {{CURRENT_ITEM}} i' => 'background: {{VALUE}};',
+					'{{WRAPPER}} .sina-social {{CURRENT_ITEM}} a' => 'background: {{VALUE}};',
 				],
 			]
 		);
@@ -158,14 +158,14 @@ class Sina_Social_Icons_Widget extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'icon_border',
-				'selector' => '{{WRAPPER}} .sina-social {{CURRENT_ITEM}} i',
+				'selector' => '{{WRAPPER}} .sina-social {{CURRENT_ITEM}} a',
 			]
 		);
 		$repeater->add_group_control(
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'icon_shadow',
-				'selector' => '{{WRAPPER}} .sina-social {{CURRENT_ITEM}} i',
+				'selector' => '{{WRAPPER}} .sina-social {{CURRENT_ITEM}} a',
 			]
 		);
 
@@ -184,7 +184,7 @@ class Sina_Social_Icons_Widget extends Widget_Base {
 				'label' => __( 'Icon Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .sina-social {{CURRENT_ITEM}} i:hover' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .sina-social {{CURRENT_ITEM}} a:hover' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -194,7 +194,7 @@ class Sina_Social_Icons_Widget extends Widget_Base {
 				'label' => __( 'Background', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .sina-social {{CURRENT_ITEM}} i:hover' => 'background: {{VALUE}}'
+					'{{WRAPPER}} .sina-social {{CURRENT_ITEM}} a:hover' => 'background: {{VALUE}}'
 				],
 			]
 		);
@@ -204,7 +204,7 @@ class Sina_Social_Icons_Widget extends Widget_Base {
 				'label' => __( 'Border Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .sina-social {{CURRENT_ITEM}} i:hover' => 'border-color: {{VALUE}}'
+					'{{WRAPPER}} .sina-social {{CURRENT_ITEM}} a:hover' => 'border-color: {{VALUE}}'
 				],
 			]
 		);
@@ -212,7 +212,7 @@ class Sina_Social_Icons_Widget extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'icon_hover_shadow',
-				'selector' => '{{WRAPPER}} .sina-social {{CURRENT_ITEM}} i:hover',
+				'selector' => '{{WRAPPER}} .sina-social {{CURRENT_ITEM}} a:hover',
 			]
 		);
 
@@ -294,7 +294,7 @@ class Sina_Social_Icons_Widget extends Widget_Base {
 					'size' => '14',
 				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-social li i' => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .sina-social li a' => 'font-size: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -319,7 +319,7 @@ class Sina_Social_Icons_Widget extends Widget_Base {
 					'size' => '40',
 				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-social li i' => 'width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .sina-social a' => 'width: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -344,7 +344,7 @@ class Sina_Social_Icons_Widget extends Widget_Base {
 					'size' => '40',
 				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-social li i' => 'height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .sina-social a' => 'height: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -359,7 +359,7 @@ class Sina_Social_Icons_Widget extends Widget_Base {
 					'size' => '40',
 				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-social li i' => 'line-height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .sina-social a' => 'line-height: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -380,7 +380,7 @@ class Sina_Social_Icons_Widget extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '#fafafa',
 				'selectors' => [
-					'{{WRAPPER}} .sina-social li i' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .sina-social a' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -397,21 +397,21 @@ class Sina_Social_Icons_Widget extends Widget_Base {
 						'default' => '#1085e4',
 					],
 				],
-				'selector' => '{{WRAPPER}} .sina-social li i',
+				'selector' => '{{WRAPPER}} .sina-social a',
 			]
 		);
 		$this->add_group_control(
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'social_icon_border',
-				'selector' => '{{WRAPPER}} .sina-social li i',
+				'selector' => '{{WRAPPER}} .sina-social a',
 			]
 		);
 		$this->add_group_control(
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'social_icon_shadow',
-				'selector' => '{{WRAPPER}} .sina-social li i',
+				'selector' => '{{WRAPPER}} .sina-social a',
 			]
 		);
 
@@ -430,7 +430,7 @@ class Sina_Social_Icons_Widget extends Widget_Base {
 				'label' => __( 'Icon Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .sina-social li i:hover' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .sina-social a:hover' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -447,7 +447,7 @@ class Sina_Social_Icons_Widget extends Widget_Base {
 						'default' => '#055394',
 					],
 				],
-				'selector' => '{{WRAPPER}} .sina-social li i:hover',
+				'selector' => '{{WRAPPER}} .sina-social a:hover',
 			]
 		);
 		$this->add_control(
@@ -456,7 +456,7 @@ class Sina_Social_Icons_Widget extends Widget_Base {
 				'label' => __( 'Border Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .sina-social li i:hover' => 'border-color: {{VALUE}}'
+					'{{WRAPPER}} .sina-social a:hover' => 'border-color: {{VALUE}}'
 				],
 			]
 		);
@@ -464,7 +464,7 @@ class Sina_Social_Icons_Widget extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'social_icon_hover_shadow',
-				'selector' => '{{WRAPPER}} .sina-social li i:hover',
+				'selector' => '{{WRAPPER}} .sina-social a:hover',
 			]
 		);
 
@@ -488,7 +488,7 @@ class Sina_Social_Icons_Widget extends Widget_Base {
 				],
 				'separator' => 'before',
 				'selectors' => [
-					'{{WRAPPER}} .sina-social li i' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .sina-social a, {{WRAPPER}} .sina-social a:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -535,6 +535,7 @@ class Sina_Social_Icons_Widget extends Widget_Base {
 				],
 			]
 		);
+		Sina_Common_Data::BG_hover_effects($this, '.sina-social li a', 'btn_bg_layer');
 
 		$this->end_controls_section();
 		// End Social Icons
@@ -551,7 +552,8 @@ class Sina_Social_Icons_Widget extends Widget_Base {
 					foreach ($data['social_icons'] as $index => $icon):
 					?>
 					<li class="elementor-repeater-item-<?php echo esc_attr( $icon[ '_id' ] ); ?>">
-						<a href="<?php echo esc_url( $icon['link']['url'] ); ?>"
+						<a class="<?php echo esc_attr( $data['btn_bg_layer_effects'] ); ?>"
+						href="<?php echo esc_url( $icon['link']['url'] ); ?>"
 						<?php if ( 'on' == $icon['link']['is_external'] ): ?>
 							target="_blank" 
 						<?php endif; ?>

@@ -243,6 +243,26 @@ class Sina_Accordion_Widget extends Widget_Base {
 				'separator' => 'before',
 			]
 		);
+		$repeater->add_control(
+			'single_title_color',
+			[
+				'label' => __( 'Text Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .sina-accordion-item{{CURRENT_ITEM}} .sina-accordion-header' => 'color: {{VALUE}};',
+				],
+			]
+		);
+		$repeater->add_control(
+			'single_icon_color',
+			[
+				'label' => __( 'Icon Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .sina-accordion-item{{CURRENT_ITEM}} .sina-accordion-icon i' => 'color: {{VALUE}};',
+				],
+			]
+		);
 		$repeater->add_group_control(
 			Group_Control_Background::get_type(),
 			[
@@ -265,6 +285,16 @@ class Sina_Accordion_Widget extends Widget_Base {
 				'label' => __( 'Content Styles', 'sina-ext' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
+			]
+		);
+		$repeater->add_control(
+			'single_desc_color',
+			[
+				'label' => __( 'Text Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .sina-accordion-item{{CURRENT_ITEM}} .sina-accordion-desc' => 'color: {{VALUE}};',
+				],
 			]
 		);
 		$repeater->add_control(

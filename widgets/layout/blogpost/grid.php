@@ -44,7 +44,7 @@
 
 				<?php if ( $data['read_more_text'] ): ?>
 					<div class="sina-btn-wrapper">
-						<a href="<?php the_permalink(); ?>" class="sina-read-more <?php echo esc_attr( $data['read_more_effect'] ); ?>">
+						<a href="<?php the_permalink(); ?>" class="sina-read-more <?php echo esc_attr( $data['read_more_effect'].' '.$data['read_btn_bg_layer_effects'] ); ?>">
 							<?php Sina_Common_Data::button_html($data, 'read_more'); ?>
 						</a>
 					</div>

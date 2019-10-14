@@ -852,7 +852,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 				],
 				'separator' => 'before',
 				'selectors' => [
-					'{{WRAPPER}} .sina-read-more' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .sina-read-more, {{WRAPPER}} .sina-read-more:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -892,6 +892,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 				],
 			]
 		);
+		Sina_Common_Data::BG_hover_effects($this, '.sina-read-more', 'read_btn_bg_layer');
 
 		$this->end_controls_section();
 		// End Read More Style
@@ -1626,7 +1627,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 				],
 				'separator' => 'before',
 				'selectors' => [
-					'{{WRAPPER}} .sina-load-more-btn' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .sina-load-more-btn, {{WRAPPER}} .sina-load-more-btn:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -1691,6 +1692,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 				],
 			]
 		);
+		Sina_Common_Data::BG_hover_effects($this, '.sina-load-more-btn', 'load_btn_bg_layer');
 
 		$this->end_controls_section();
 		// End Load Button Style
@@ -1750,6 +1752,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 				'cats_icon' => $data['cats_icon'],
 				'posts_avatar' => $data['posts_avatar'],
 				'avatar_size' => $data['avatar_size'],
+				'read_btn_bg_layer_effects' => $data['read_btn_bg_layer_effects'],
 			];
 			?>
 			<div class="sina-blogpost <?php echo esc_attr( 'sina-bp-'.$this->get_id() ); ?>"
@@ -1763,7 +1766,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 
 				<?php if ( 'yes' == $data['loadmore'] && $data['btn_text'] && ($data['posts_num'] + $new_offset) < $post_query->found_posts ): ?>
 					<div class="sina-load-more">
-						<button class="sina-button sina-load-more-btn">
+						<button class="sina-button sina-load-more-btn <?php echo esc_attr( $data['load_btn_bg_layer_effects'] ); ?>">
 							<?php printf( '%s', $data['btn_text'] ); ?>
 						</button>
 					</div>

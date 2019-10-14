@@ -21,6 +21,57 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 
 class Sina_Common_Data{
+	public static function BG_hover_effects( $obj, $class, $prefix = 'bg_layer' ) {
+
+		$obj->add_control(
+			$prefix.'_styles',
+			[
+				'label' => __( 'Background Styles', 'sina-ext' ),
+				'type' => Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+		$obj->add_control(
+			$prefix.'_effects',
+			[
+				'label' => __( 'Background Effects', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					'sina-hv-door-v' => __( 'Door Vertical', 'sina-ext' ),
+					'sina-hv-door-h' => __( 'Door Horizontal', 'sina-ext' ),
+					'sina-hv-zoom' => __( 'Zoom In', 'sina-ext' ),
+					'sina-hv-fade' => __( 'Fade In', 'sina-ext' ),
+					'sina-hv-slide-l' => __( 'Slide Left', 'sina-ext' ),
+					'sina-hv-slide-r' => __( 'Slide Right', 'sina-ext' ),
+					'sina-hv-slide-b' => __( 'Slide Down', 'sina-ext' ),
+					'sina-hv-slide-t' => __( 'Slide Up', 'sina-ext' ),
+					'sina-hv-slide-lb' => __( 'Slide Left-Down', 'sina-ext' ),
+					'sina-hv-slide-rb' => __( 'Slide Right-Down', 'sina-ext' ),
+					'sina-hv-slide-lt' => __( 'Slide Left-Top', 'sina-ext' ),
+					'sina-hv-slide-rt' => __( 'Slide Right-Top', 'sina-ext' ),
+					'' => __( 'None', 'sina-ext' ),
+				],
+				'default' => '',
+			]
+		);
+		$obj->add_group_control(
+			Group_Control_Background::get_type(),
+			[
+				'name' => $prefix.'_color',
+				'types' => [ 'classic', 'gradient' ],
+				'fields_options' => [
+					'background' => [ 
+						'default' =>'classic', 
+					],
+					'color' => [
+						'default' => '#055394',
+					],
+				],
+				'selector' => '{{WRAPPER}} '.$class.':before',
+			]
+		);
+	}
+
 	public static function animation() {
 		return [
 			'none' => __( 'None', 'sina-ext' ),
@@ -297,7 +348,7 @@ class Sina_Common_Data{
 		$obj->add_control(
 			$prefix.'_effect',
 			[
-				'label' => __( 'Hover Effects', 'sina-ext' ),
+				'label' => __( 'Icon Effects', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
 					'' => __( 'None', 'sina-ext' ),

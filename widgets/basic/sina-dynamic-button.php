@@ -101,7 +101,7 @@ class Sina_Dynamic_Button_Widget extends Widget_Base {
 		$this->add_control(
 			'btn_effect',
 			[
-				'label' => __( 'Hover Effects', 'sina-ext' ),
+				'label' => __( 'Icon Effects', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
 					'' => __( 'None', 'sina-ext' ),
@@ -300,7 +300,7 @@ class Sina_Dynamic_Button_Widget extends Widget_Base {
 					'isLinked' => true,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-dynamic-btn' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .sina-dynamic-btn, {{WRAPPER}} .sina-dynamic-btn:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -346,6 +346,7 @@ class Sina_Dynamic_Button_Widget extends Widget_Base {
 				],
 			]
 		);
+		Sina_Common_Data::BG_hover_effects($this, '.sina-dynamic-btn');
 
 		$this->end_controls_section();
 		// End Button Style
@@ -369,7 +370,7 @@ class Sina_Dynamic_Button_Widget extends Widget_Base {
 		$data['btn_text'] = $btn_text;
 		?>
 		<div class="sina-dynamic-button">
-			<a  class="sina-dynamic-btn <?php echo esc_attr($data['btn_effect']); ?>" href="<?php echo esc_url( $btn_link ); ?>"
+			<a  class="sina-dynamic-btn <?php echo esc_attr($data['btn_effect'].' '.$data['bg_layer_effects']); ?>" href="<?php echo esc_url( $btn_link ); ?>"
 				<?php if ( $data['css_id'] ): ?>
 					id="<?php echo esc_attr( $data['css_id'] ); ?>"
 				<?php endif; ?>
