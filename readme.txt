@@ -102,7 +102,9 @@ Yes. It's totally free.
 == Changelog ==
 
 = 3.1.2 - 16-10-2019 =
+- Added: Background hover effects to Some widgets
 - Added: Some options to Some widgets
+- Fixed: Some minor issue
 
 - Added: Multi-color options to Accordion & Countdown
 - Added: Some options to Blogpost & all the form fields
