@@ -123,6 +123,17 @@ class Sina_Pricing_Widget extends Widget_Base {
 			]
 		);
 		$this->add_control(
+			'price_prefix',
+			[
+				'label' => __( 'Price Prefix', 'sina-ext' ),
+				'type' => Controls_Manager::TEXT,
+				'placeholder' => __( 'Enter Prefix', 'sina-ext' ),
+				'condition' => [
+					'price!' => '',
+				],
+			]
+		);
+		$this->add_control(
 			'price_suffix',
 			[
 				'label' => __( 'Price Suffix', 'sina-ext' ),
@@ -745,6 +756,56 @@ class Sina_Pricing_Widget extends Widget_Base {
 				'selector' => '{{WRAPPER}} .sina-price-tag',
 			]
 		);
+		
+		$this->add_control(
+			'price_prefix_heading',
+			[
+				'label' => __( 'Price Prefix', 'sina-ext' ),
+				'type' => Controls_Manager::HEADING,
+				'separator' => 'before',
+				'condition' => [
+					'price_prefix!' => '',
+				],
+			]
+		);
+		$this->add_control(
+			'price_prefix_color',
+			[
+				'label' => __( 'Text Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#fafafa',
+				'condition' => [
+					'price_prefix!' => '',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-price-prefix' => 'color: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name' => 'price_prefix_typography',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_weight' => [
+						'default' => '600',
+					],
+					'font_size'   => [
+						'default' => [
+							'size' => '20',
+						],
+					],
+				],
+				'condition' => [
+					'price_prefix!' => '',
+				],
+				'selector' => '{{WRAPPER}} .sina-price-prefix',
+			]
+		);
+
 		$this->add_control(
 			'suffix_size',
 			[
@@ -865,7 +926,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 				],
 				'separator' => 'before',
 				'selectors' => [
-					'{{WRAPPER}} .sina-order-btn, {{WRAPPER}} .sina-order-btn:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .sina-order-btn' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -905,7 +966,6 @@ class Sina_Pricing_Widget extends Widget_Base {
 				],
 			]
 		);
-		Sina_Common_Data::BG_hover_effects($this, '.sina-order-btn');
 
 		$this->end_controls_section();
 		// End Button Style
@@ -1112,6 +1172,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 
 			<?php if ( $data['price']): ?>
 				<h4 class="sina-price-tag">
+				    <span class="sina-price-prefix"><?php printf( '%s', $data['price_prefix'] ); ?></span>
 					<span><?php printf( '%s', $data['price'] ); ?></span><span class="sina-price-suffix"><?php printf( '%s', $data['price_suffix'] ); ?></span>
 				</h4>
 			<?php endif; ?>
@@ -1138,7 +1199,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 
 			<?php if ( $data['btn_text'] || $data['btn_icon'] ) : ?>
 				<div class="sina-pricing-btn">
-					<a class="sina-order-btn <?php echo esc_attr( $data['btn_effect'].' '.$data['bg_layer_effects']); ?>"
+					<a class="sina-order-btn <?php echo esc_attr( $data['btn_effect']); ?>"
 					href="<?php echo esc_url( $data['btn_link']['url'] ); ?>"
 					<?php if ( 'on' == $data['btn_link']['is_external'] ): ?>
 						target="_blank" 

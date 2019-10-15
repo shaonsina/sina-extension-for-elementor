@@ -102,6 +102,7 @@ Yes. It's totally free.
 == Changelog ==
 
 = 3.1.2 - 16-10-2019 =
+- Added: Sorting options to Table
 - Added: Background hover effects to Some widgets
 - Added: Some options to Some widgets
 - Fixed: Some minor issue

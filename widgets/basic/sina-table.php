@@ -76,6 +76,21 @@ class Sina_Table_Widget extends Widget_Base {
 	 */
 	public function get_style_depends() {
 		return [
+			'data-table',
+			'sina-widgets',
+		];
+	}
+
+	/**
+	 * Get widget scripts.
+	 *
+	 * Retrieve the list of scripts the widget belongs to.
+	 *
+	 * @since 3.1.2
+	 */
+	public function get_script_depends() {
+		return [
+			'data-table',
 			'sina-widgets',
 		];
 	}
@@ -95,6 +110,14 @@ class Sina_Table_Widget extends Widget_Base {
 			[
 				'label' => __( 'Header', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
+			]
+		);
+
+		$this->add_control(
+			'sorting',
+			[
+				'label' => __( 'Sorting', 'sina-ext' ),
+				'type' => Controls_Manager::SWITCHER,
 			]
 		);
 
@@ -861,13 +884,125 @@ class Sina_Table_Widget extends Widget_Base {
 		);
 
 		$this->end_controls_section();
-		// End Table Header Style
+		// End Table Content Style
+		// =======================
+
+
+		// Start Table Content Style
+		// =========================
+		$this->start_controls_section(
+			'accent_style',
+			[
+				'label' => __( 'Accent', 'sina-ext' ),
+				'tab' => Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_control(
+			'accent_color',
+			[
+				'label' => __( 'Accent Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#1085e4',
+				'selectors' => [
+					'{{WRAPPER}} .dataTables_info, {{WRAPPER}} .dataTables_filter input, {{WRAPPER}} .dataTables_filter, {{WRAPPER}} .dataTables_length, {{WRAPPER}} .dataTables_length select' => 'color: {{VALUE}}; border-color: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name' => 'accent_typography',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_weight' => [
+						'default' => '400',
+					],
+					'font_size'   => [
+						'default' => [
+							'size' => '14',
+						],
+					],
+					'line_height'   => [
+						'default' => [
+							'size' => '18',
+						],
+					],
+					'text_transform' => [
+						'default' => 'uppercase',
+					],
+				],
+				'selector' => '{{WRAPPER}} .dataTables_info, {{WRAPPER}} .dataTables_filter, {{WRAPPER}} .dataTables_length',
+			]
+		);
+
+		$this->add_control(
+			'pagination_heading',
+			[
+				'label' => __( 'Pagination', 'sina-ext' ),
+				'type' => Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+		$this->add_control(
+			'pagi_color',
+			[
+				'label' => __( 'Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#1085e4',
+				'selectors' => [
+					'{{WRAPPER}} .dataTables_wrapper .dataTables_paginate .paginate_button' => 'color: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_control(
+			'pagi_active_color',
+			[
+				'label' => __( 'Hover & Active Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#055394',
+				'selectors' => [
+					'{{WRAPPER}} .dataTables_wrapper .dataTables_paginate .paginate_button:hover, {{WRAPPER}} .dataTables_wrapper .dataTables_paginate .paginate_button.current' => 'color: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name' => 'pagi_typography',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_weight' => [
+						'default' => '400',
+					],
+					'font_size'   => [
+						'default' => [
+							'size' => '14',
+						],
+					],
+					'line_height'   => [
+						'default' => [
+							'size' => '18',
+						],
+					],
+				],
+				'selector' => '{{WRAPPER}} .dataTables_wrapper .dataTables_paginate .paginate_button, {{WRAPPER}} .dataTables_wrapper .dataTables_paginate .paginate_button.current',
+			]
+		);
+
+		$this->end_controls_section();
+		// End Table Content Style
 		// =======================
 	}
 
 
 	protected function render() {
 		$data = $this->get_settings_for_display();
+		$sort_class = ('yes' == $data['sorting']) ? 'sina-data-table' : '';
 
 		$rows = [];
 		$tid = 0;
@@ -899,7 +1034,7 @@ class Sina_Table_Widget extends Widget_Base {
 		}
 		?>
 		<div class="sina-table">
-			<table>
+			<table class="<?php echo esc_attr( $sort_class ); ?>">
 				<?php if ( !empty( $data['header_content'] ) ): ?>
 					<thead>
 						<tr>
