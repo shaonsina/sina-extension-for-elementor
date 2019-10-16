@@ -903,7 +903,7 @@ class Sina_Table_Widget extends Widget_Base {
 			[
 				'label' => __( 'Accent Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '#1085e4',
+				'default' => '#bbb',
 				'selectors' => [
 					'{{WRAPPER}} .dataTables_info, {{WRAPPER}} .dataTables_filter input, {{WRAPPER}} .dataTables_filter, {{WRAPPER}} .dataTables_length, {{WRAPPER}} .dataTables_length select' => 'color: {{VALUE}}; border-color: {{VALUE}};',
 				],
@@ -951,7 +951,7 @@ class Sina_Table_Widget extends Widget_Base {
 			[
 				'label' => __( 'Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '#1085e4',
+				'default' => '#bbb',
 				'selectors' => [
 					'{{WRAPPER}} .dataTables_wrapper .dataTables_paginate .paginate_button' => 'color: {{VALUE}};',
 				],
@@ -962,7 +962,7 @@ class Sina_Table_Widget extends Widget_Base {
 			[
 				'label' => __( 'Hover & Active Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '#055394',
+				'default' => '#1085e4',
 				'selectors' => [
 					'{{WRAPPER}} .dataTables_wrapper .dataTables_paginate .paginate_button:hover, {{WRAPPER}} .dataTables_wrapper .dataTables_paginate .paginate_button.current' => 'color: {{VALUE}};',
 				],

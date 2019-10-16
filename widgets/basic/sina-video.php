@@ -130,6 +130,20 @@ class Sina_Video_Widget extends Widget_Base {
 			]
 		);
 		$this->add_control(
+			'wave_color',
+			[
+				'label' => __( 'Wave Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#fafafa',
+				'condition' => [
+					'animation' => 'sina-wave-anim',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-video-play:after' => 'color: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_control(
 			'video_link',
 			[
 				'label' => __( 'Video Link', 'sina-ext' ),
@@ -475,7 +489,7 @@ class Sina_Video_Widget extends Widget_Base {
 					'isLinked' => true,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-video-play, {{WRAPPER}} .sina-video-play:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .sina-video-play, {{WRAPPER}} .sina-video-play:before, {{WRAPPER}} .sina-video-play:after' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
