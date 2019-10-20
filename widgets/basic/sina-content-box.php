@@ -14,6 +14,7 @@ use \Elementor\Group_Control_Box_Shadow;
 use \Elementor\Group_Control_Text_Shadow;
 use \Elementor\Group_Control_Border;
 use \Elementor\Frontend;
+use \Sina_Extension\Sina_Ext_Gradient_Text;
 
 
 // Exit if accessed directly.
@@ -437,18 +438,22 @@ class Sina_Content_Box_Widget extends Widget_Base {
 				'type' => Controls_Manager::HEADING,
 			]
 		);
-		$this->add_control(
-			'icon_color',
+		$this->add_group_control(
+			Sina_Ext_Gradient_Text::get_type(),
 			[
-				'label' => __( 'Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#1085e4',
+				'name' => 'icon_color',
+				'fields_options' => [
+					'background' => [ 
+						'default' =>'classic', 
+					],
+					'color' => [
+						'default' => '#1085e4',
+					],
+				],
 				'condition' => [
 					'save_templates' => '',
 				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-content-box-icon i' => 'color: {{VALUE}};',
-				],
+				'selector' => '{{WRAPPER}} .sina-content-box-icon i',
 			]
 		);
 		$this->add_group_control(
@@ -564,17 +569,22 @@ class Sina_Content_Box_Widget extends Widget_Base {
 				'type' => Controls_Manager::HEADING,
 			]
 		);
-		$this->add_control(
-			'icon_hover_color',
+		$this->add_group_control(
+			Sina_Ext_Gradient_Text::get_type(),
 			[
-				'label' => __( 'Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
+				'name' => 'icon_hover_color',
+				'fields_options' => [
+					'background' => [ 
+						'default' =>'classic', 
+					],
+					'color' => [
+						'default' => '',
+					],
+				],
 				'condition' => [
 					'save_templates' => '',
 				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-content-box:hover .sina-content-box-icon i' => 'color: {{VALUE}};',
-				],
+				'selector' => '{{WRAPPER}} .sina-content-box:hover .sina-content-box-icon i',
 			]
 		);
 		$this->add_control(

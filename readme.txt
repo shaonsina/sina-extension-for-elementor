@@ -5,11 +5,11 @@ Donate link: https://plugins.shaonsina.com/sina-extension/
 Requires at least: 4.7
 Tested up to: 5.2
 Requires PHP: 7.0
-Stable tag: 3.1.2
+Stable tag: 3.1.3
 License: GPL v3
 License URI: https://opensource.org/licenses/GPL-3.0
 
-A collection of high-quality widgets for Elementor page builder. 70+ predefined blocks & pages with unlimited customization ability.
+A collection of high-quality widgets for Elementor page builder. 100+ predefined blocks & pages with unlimited customization ability.
 
 
 == Description ==
@@ -101,7 +101,10 @@ Yes. It's totally free.
 
 == Changelog ==
 
-= 3.1.2 - 16-10-2019 =
+= 3.1.3 - 26-10-2019 =
+- Added: Some options to Some widgets
+
+= 3.1.2 - 20-10-2019 =
 - Added: Sorting options to Table
 - Added: Background hover effects to Some widgets
 - Added: Some options to Some widgets

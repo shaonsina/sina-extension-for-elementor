@@ -14,6 +14,7 @@ use \Elementor\Group_Control_Box_Shadow;
 use \Elementor\Group_Control_Text_Shadow;
 use \Elementor\Group_Control_Border;
 use \Elementor\Repeater;
+use \Sina_Extension\Sina_Ext_Gradient_Text;
 
 
 // Exit if accessed directly.
@@ -503,15 +504,19 @@ class Sina_Countdown_Widget extends Widget_Base {
 			]
 		);
 
-		$this->add_control(
-			'digit_color',
+		$this->add_group_control(
+			Sina_Ext_Gradient_Text::get_type(),
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#fafafa',
-				'selectors' => [
-					'{{WRAPPER}} .sina-cd' => 'color: {{VALUE}};'
-				]
+				'name' => 'digit_color',
+				'fields_options' => [
+					'background' => [ 
+						'default' =>'classic', 
+					],
+					'color' => [
+						'default' => '#fafafa',
+					],
+				],
+				'selector' => '{{WRAPPER}} .sina-cd',
 			]
 		);
 		$this->add_group_control(

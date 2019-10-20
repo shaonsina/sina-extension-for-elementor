@@ -10,6 +10,7 @@ use \Elementor\Widget_Base;
 use \Elementor\Controls_Manager;
 use \Elementor\Group_Control_Typography;
 use \Elementor\Group_Control_Text_Shadow;
+use \Sina_Extension\Sina_Ext_Gradient_Text;
 
 
 // Exit if accessed directly.
@@ -362,15 +363,19 @@ class Sina_Piechart_Widget extends Widget_Base {
 			]
 		);
 
-		$this->add_control(
-			'value_color',
+		$this->add_group_control(
+			Sina_Ext_Gradient_Text::get_type(),
 			[
-				'label' => __('Text Color', 'sina-ext'),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#222',
-				'selectors' => [
-					'{{WRAPPER}} .sina-piechart-percent' => 'color: {{VALUE}};',
+				'name' => 'value_color',
+				'fields_options' => [
+					'background' => [ 
+						'default' =>'classic', 
+					],
+					'color' => [
+						'default' => '#222',
+					],
 				],
+				'selector' => '{{WRAPPER}} .sina-piechart-percent',
 			]
 		);
 		$this->add_group_control(
