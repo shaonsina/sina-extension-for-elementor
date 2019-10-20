@@ -26,7 +26,7 @@ https://youtu.be/stwNbFgKdbw
 * 36 Fully Customizable widgets.
 * Options panel for enable/disable widgets.
 * Fully Responsive
-* 70+ Fully Responsive predefined [Blocks & Pages](https://plugins.shaonsina.com/sina-templates/).
+* 100+ Fully Responsive predefined [Blocks & Pages](https://plugins.shaonsina.com/sina-templates/).
 * Free Support through the forum.
 
 

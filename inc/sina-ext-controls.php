@@ -26,7 +26,7 @@ class Sina_Common_Data{
 		$obj->add_control(
 			$prefix.'_styles',
 			[
-				'label' => __( 'Background Styles', 'sina-ext' ),
+				'label' => __( 'Background Hover Styles', 'sina-ext' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -34,7 +34,7 @@ class Sina_Common_Data{
 		$obj->add_control(
 			$prefix.'_effects',
 			[
-				'label' => __( 'Background Effects', 'sina-ext' ),
+				'label' => __( 'Hover Effects', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
 					'sina-hv-door-v' => __( 'Door Vertical', 'sina-ext' ),
