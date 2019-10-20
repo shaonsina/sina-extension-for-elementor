@@ -107,6 +107,7 @@ Yes. It's totally free.
 - Added: Some options to Some widgets
 - Fixed: Some minor issue
 
+= 3.1.1 - 12-10-2019 =
 - Added: Multi-color options to Accordion & Countdown
 - Added: Some options to Blogpost & all the form fields
 
