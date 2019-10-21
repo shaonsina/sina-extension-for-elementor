@@ -147,6 +147,15 @@ class Sina_Portfolio_Widget extends Widget_Base {
 				'default' => 'sina-pf-item-3',
 			]
 		);
+		$this->add_control(
+			'reset_text',
+			[
+				'label' => __( 'Reset Text', 'sina-ext' ),
+				'type' => Controls_Manager::TEXT,
+				'placeholder' => __( 'Enter Reset Text', 'sina-ext' ),
+				'default' => 'all',
+			]
+		);
 
 		$repeater = new Repeater();
 
@@ -689,7 +698,7 @@ class Sina_Portfolio_Widget extends Widget_Base {
 		<div class="sina-portfolio <?php echo esc_attr( 'sina-pf-'.$this->get_id() ); ?>"
 		data-layout="<?php echo esc_attr( $data['columns'] ); ?>">
 			<div class="sina-portfolio-btns">
-				<button class="sina-portfolio-btn sina-button is-checked <?php echo esc_attr( $data['btn_bg_layer_effects'] ); ?>" data-filter="*">All</button>
+				<button class="sina-portfolio-btn sina-button is-checked <?php echo esc_attr( $data['btn_bg_layer_effects'] ); ?>" data-filter="*"><?php printf('%s', $data['reset_text']); ?></button>
 				<?php
 					$categories = sina_get_portfolio_cat( $data['portfolio'] );
 					foreach ( $categories as $cat ) :
@@ -698,7 +707,6 @@ class Sina_Portfolio_Widget extends Widget_Base {
 							<?php printf( '%s', str_replace( '_', ' ', trim( $cat, '_') ) ); ?>
 						</button>
 				<?php endforeach; ?>
-
 			</div>
 
 			<div class="sina-portfolio-grid">

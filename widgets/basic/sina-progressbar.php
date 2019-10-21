@@ -162,6 +162,45 @@ class Sina_Progressbar_Widget extends Widget_Base {
 				'default' => '%',
 			]
 		);
+		$this->add_control(
+			'icon',
+			[
+				'label' => __( 'Icon', 'sina-ext' ),
+				'type' => Controls_Manager::ICON,
+			]
+		);
+		$this->add_control(
+			'icon_align',
+			[
+				'label' => __( 'Icon Position', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					'left' => __( 'Left', 'sina-ext' ),
+					'right' => __( 'Right', 'sina-ext' ),
+				],
+				'default' => 'left',
+				'condition' => [
+					'icon!' => '',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'icon_space',
+			[
+				'label' => __( 'Icon Spacing', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'default' => [
+					'size' => '5',
+				],
+				'condition' => [
+					'icon!' => '',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-bar-title .sina-icon-right' => 'margin-left: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .sina-bar-title .sina-icon-left' => 'margin-right: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
 
 		$this->end_controls_section();
 		// End Progressbars Content
@@ -475,7 +514,15 @@ class Sina_Progressbar_Widget extends Widget_Base {
 		?>
 		<div class="sina-progressbars">
 			<?php if ( $data['title'] ): ?>
-				<?php printf( '<h3 class="sina-bar-title">%1$s</h3>', $data['title'] ); ?>
+				<h3 class="sina-bar-title">
+					<?php if ( $data['icon'] && 'left' == $data['icon_align'] ): ?>
+						<i class="<?php echo esc_attr( $data['icon']); ?> sina-icon-left"></i>
+					<?php endif ?>
+					<?php printf( '%1$s', $data['title'] ); ?>
+					<?php if ( $data['icon'] && 'right' == $data['icon_align'] ): ?>
+						<i class="<?php echo esc_attr( $data['icon']); ?> sina-icon-right"></i>
+					<?php endif ?>
+				</h3>
 			<?php endif; ?>
 
 			<div class="sina-bar-bg">
