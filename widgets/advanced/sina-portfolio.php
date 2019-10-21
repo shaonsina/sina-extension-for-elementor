@@ -9,6 +9,7 @@
 use \Elementor\Widget_Base;
 use \Elementor\Controls_Manager;
 use \Elementor\Group_Control_Background;
+use \Elementor\Group_Control_Typography;
 use \Elementor\Group_Control_Border;
 use \Elementor\Repeater;
 use \Elementor\Plugin;
@@ -120,13 +121,13 @@ class Sina_Portfolio_Widget extends Widget_Base {
 		$this->add_control(
 			'effects',
 			[
-				'label' => __( 'Overlay Effects', 'sina-ext' ),
+				'label' => __( 'Effects', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
 					'sina-pf-effect-fade' => __( 'Fade', 'sina-ext' ),
 					'sina-pf-effect-zoom' => __( 'Zoom', 'sina-ext' ),
-					'sina-pf-effect-move' => __( 'Fade & Buttons Move', 'sina-ext' ),
-					'sina-pf-effect-zoom sina-pf-effect-move' => __( 'Zoom & Buttons Move', 'sina-ext' ),
+					'sina-pf-effect-move' => __( 'Fade & Move', 'sina-ext' ),
+					'sina-pf-effect-zoom sina-pf-effect-move' => __( 'Zoom & Move', 'sina-ext' ),
 				],
 				'default' => 'sina-pf-effect-move',
 			]
@@ -156,17 +157,37 @@ class Sina_Portfolio_Widget extends Widget_Base {
 				'default' => 'all',
 			]
 		);
+		$this->add_control(
+			'show_content',
+			[
+				'label' => __( 'Show Content', 'sina-ext' ),
+				'type' => Controls_Manager::SWITCHER,
+				'label_on' => __( 'Yes', 'sina-ext' ),
+				'label_off' => __( 'No', 'sina-ext' ),
+			]
+		);
 
 		$repeater = new Repeater();
 
 		$repeater->add_control(
 			'item_name',
 			[
-				'label' => __( 'Item Name', 'sina-ext' ),
+				'label' => __( 'Title', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter Item Name', 'sina-ext' ),
-				'default' => 'Lorem ipsum dolor sit amet',
+				'placeholder' => __( 'Enter Title', 'sina-ext' ),
+				'default' => 'Short Description',
+			]
+		);
+		$repeater->add_control(
+			'item_desc',
+			[
+				'label' => __( 'Description', 'sina-ext' ),
+				'label_block' => true,
+				'type' => Controls_Manager::TEXTAREA,
+				'placeholder' => __( 'Enter Description', 'sina-ext' ),
+				'default' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua.',
 			]
 		);
 		$repeater->add_control(
@@ -222,12 +243,11 @@ class Sina_Portfolio_Widget extends Widget_Base {
 		$this->add_control(
 			'portfolio',
 			[
-				'label' => __( 'Add Image', 'sina-ext' ),
+				'label' => __( 'Add Item', 'sina-ext' ),
 				'type' => Controls_Manager::REPEATER,
 				'fields' => $repeater->get_controls(),
 				'default' => [
 					[
-						'item_name' => 'Lorem ipsum dolor sit amet',
 						'category' => 'Graphic Design',
 						'size' => 'sina-pf-item-11',
 						'image' => [
@@ -235,7 +255,6 @@ class Sina_Portfolio_Widget extends Widget_Base {
 						]
 					],
 					[
-						'item_name' => 'Lorem ipsum dolor sit amet',
 						'category' => 'Web Design',
 						'size' => 'sina-pf-item-22',
 						'image' => [
@@ -243,7 +262,6 @@ class Sina_Portfolio_Widget extends Widget_Base {
 						]
 					],
 					[
-						'item_name' => 'Lorem ipsum dolor sit amet',
 						'category' => 'Graphic Design',
 						'size' => 'sina-pf-item-11',
 						'image' => [
@@ -251,7 +269,6 @@ class Sina_Portfolio_Widget extends Widget_Base {
 						]
 					],
 					[
-						'item_name' => 'Lorem ipsum dolor sit amet',
 						'category' => 'Photography',
 						'size' => 'sina-pf-item-22',
 						'image' => [
@@ -259,7 +276,6 @@ class Sina_Portfolio_Widget extends Widget_Base {
 						]
 					],
 					[
-						'item_name' => 'Lorem ipsum dolor sit amet',
 						'category' => 'Web Design',
 						'size' => 'sina-pf-item-11',
 						'image' => [
@@ -267,7 +283,6 @@ class Sina_Portfolio_Widget extends Widget_Base {
 						]
 					],
 					[
-						'item_name' => 'Lorem ipsum dolor sit amet',
 						'category' => 'Photography',
 						'size' => 'sina-pf-item-11',
 						'image' => [
@@ -459,7 +474,7 @@ class Sina_Portfolio_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'items_padding',
 			[
-				'label' => __( 'Padding', 'sina-ext' ),
+				'label' => __( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -495,6 +510,181 @@ class Sina_Portfolio_Widget extends Widget_Base {
 		$this->end_controls_section();
 		// End Items Style
 		// =====================
+
+
+		// Start Content Style
+		// ====================
+		$this->start_controls_section(
+			'content_style',
+			[
+				'label' => __( 'Content', 'sina-ext' ),
+				'tab' => Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_control(
+			'title_styles',
+			[
+				'label' => __( 'Title', 'sina-ext' ),
+				'type' => Controls_Manager::HEADING,
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name' => 'title_typography',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_weight' => [
+						'default' => '600',
+					],
+					'font_size'   => [
+						'default' => [
+							'size' => '24',
+						],
+					],
+					'line_height'   => [
+						'default' => [
+							'size' => '32',
+						],
+					],
+				],
+				'selector' => '{{WRAPPER}} .sina-portfolio-title',
+			]
+		);
+		$this->add_control(
+			'title_color',
+			[
+				'label' => __( 'Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#fff',
+				'selectors' => [
+					'{{WRAPPER}} .sina-portfolio-title' => 'color: {{VALUE}}'
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'title_margin',
+			[
+				'label' => __( 'Margin Bottom', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'default' => [
+					'size' => '10',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-portfolio-title' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'desc_styles',
+			[
+				'label' => __( 'Description', 'sina-ext' ),
+				'type' => Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name' => 'desc_typography',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_weight' => [
+						'default' => '400',
+					],
+					'font_size'   => [
+						'default' => [
+							'size' => '14',
+						],
+					],
+					'line_height'   => [
+						'default' => [
+							'size' => '22',
+						],
+					],
+				],
+				'selector' => '{{WRAPPER}} .sina-portfolio-desc',
+			]
+		);
+		$this->add_control(
+			'desc_color',
+			[
+				'label' => __( 'Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#fff',
+				'selectors' => [
+					'{{WRAPPER}} .sina-portfolio-desc' => 'color: {{VALUE}}'
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'desc_margin',
+			[
+				'label' => __( 'Margin Bottom', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'default' => [
+					'size' => '30',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-portfolio-desc' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'content_padding',
+			[
+				'label' => __( 'Padding', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '20',
+					'right' => '25',
+					'bottom' => '20',
+					'left' => '25',
+					'isLinked' => false,
+				],
+				'separator' => 'before',
+				'selectors' => [
+					'{{WRAPPER}} .sina-portfolio-content' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'alignment',
+			[
+				'label' => __( 'Alignment', 'sina-ext' ),
+				'type' => Controls_Manager::CHOOSE,
+				'options' => [
+					'left' => [
+						'title' => __( 'Left', 'sina-ext' ),
+						'icon' => 'fa fa-align-left',
+					],
+					'center' => [
+						'title' => __( 'Center', 'sina-ext' ),
+						'icon' => 'fa fa-align-center',
+					],
+					'right' => [
+						'title' => __( 'Right', 'sina-ext' ),
+						'icon' => 'fa fa-align-right',
+					],
+				],
+				'default' => 'center',
+				'selectors' => [
+					'{{WRAPPER}} .sina-portfolio-content' => 'text-align: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->end_controls_section();
+		// End Content Style
+		// ====================
 
 
 		// Start Icons Style
@@ -727,18 +917,31 @@ class Sina_Portfolio_Widget extends Widget_Base {
 							style="background-image: url(<?php echo esc_url( $item['image']['url'] ); ?>);">
 							<div class="sina-portfolio-overlay sina-overlay sina-flex <?php echo esc_attr( $data['effects'] ); ?>">
 								<div class="sina-portfolio-icons sina-flex">
-									<a title="<?php echo esc_attr( $item['item_name'] ); ?>" href="#" data-mfp-src="<?php echo esc_url( $item['image']['url'] ); ?>" class="sina-portfolio-zoom">
-										<i class="fa fa-search-plus"></i>
-									</a>
-									<a href="<?php echo esc_url( $item['link']['url'] ); ?>"
-									<?php if ( 'on' == $item['link']['is_external'] ): ?>
-										target="_blank" 
-									<?php endif; ?>
-									<?php if ( 'on' == $item['link']['nofollow'] ): ?>
-										rel="nofollow" 
-									<?php endif; ?> class="sina-portfolio-link">
-										<i class="fa fa-link"></i>
-									</a>
+									<div class="sina-portfolio-content">
+										<?php if ( 'yes' == $data['show_content'] ): ?>
+											<?php if ($item['item_name']): ?>
+												<?php printf('<h3 class="sina-portfolio-title">%s</h3>', $item['item_name']); ?>
+											<?php endif; ?>
+											<?php if ($item['item_desc']): ?>
+												<?php printf('<div class="sina-portfolio-desc">%s</div>', $item['item_desc']); ?>
+											<?php endif; ?>
+										<?php endif ?>
+
+										<div class="btns-wrap">
+											<a title="<?php echo esc_attr( $item['item_name'] ); ?>" href="#" data-mfp-src="<?php echo esc_url( $item['image']['url'] ); ?>" class="sina-portfolio-zoom">
+												<i class="fa fa-search-plus"></i>
+											</a>
+											<a href="<?php echo esc_url( $item['link']['url'] ); ?>"
+											<?php if ( 'on' == $item['link']['is_external'] ): ?>
+												target="_blank" 
+											<?php endif; ?>
+											<?php if ( 'on' == $item['link']['nofollow'] ): ?>
+												rel="nofollow" 
+											<?php endif; ?> class="sina-portfolio-link">
+												<i class="fa fa-link"></i>
+											</a>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>

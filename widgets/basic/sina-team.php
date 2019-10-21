@@ -103,6 +103,20 @@ class Sina_Team_Widget extends Widget_Base {
 		);
 
 		$this->add_control(
+			'effects',
+			[
+				'label' => __( 'Effects', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					'sina-team-move' => __( 'Move', 'sina-ext' ),
+					'sina-team-zoom' => __( 'Zoom', 'sina-ext' ),
+					'sina-team-zoom sina-team-move' => __( 'Move & Zoom', 'sina-ext' ),
+					'' => __( 'None', 'sina-ext' ),
+				],
+				'default' => 'sina-team-move',
+			]
+		);
+		$this->add_control(
 			'name',
 			[
 				'label' => __( 'Name', 'sina-ext' ),
@@ -353,20 +367,6 @@ class Sina_Team_Widget extends Widget_Base {
 			]
 		);
 
-		$this->add_control(
-			'effects',
-			[
-				'label' => __( 'Effects', 'sina-ext' ),
-				'type' => Controls_Manager::SELECT,
-				'options' => [
-					'sina-team-move' => __( 'Move', 'sina-ext' ),
-					'sina-team-zoom' => __( 'Zoom', 'sina-ext' ),
-					'sina-team-zoom sina-team-move' => __( 'Move & Zoom', 'sina-ext' ),
-					'' => __( 'None', 'sina-ext' ),
-				],
-				'default' => 'sina-team-move',
-			]
-		);
 		$this->add_group_control(
 			Group_Control_Background::get_type(),
 			[

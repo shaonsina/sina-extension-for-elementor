@@ -52,6 +52,8 @@
 .sina-content-box-title > a,
 .sina-content-box-desc,
 .sina-pt-cat-btn,
+.sina-portfolio-title,
+.sina-portfolio-desc,
 .sina-portfolio-btn {
 	transition: all 0.4s;
 }
@@ -758,11 +760,15 @@ img.mfp-img{
 .sina-portfolio-item-inner:hover .sina-portfolio-overlay{
 	opacity: 1;
 }
-.sina-portfolio-icons {
+.sina-portfolio-icons{
 	align-items: center;
 	justify-content: center;
 	width: 100%;
 }
+.sina-portfolio-content{
+	width: 100%;
+}
+
 /* Effects */
 .sina-portfolio-overlay.sina-pf-effect-zoom{
 	transform: scale(.1);
@@ -771,19 +777,27 @@ img.mfp-img{
 	transform: scale(1);
 }
 .sina-portfolio-item-inner:hover .sina-pf-effect-move .sina-portfolio-zoom,
-.sina-portfolio-item-inner:hover .sina-pf-effect-move .sina-portfolio-link{
-	margin-top: 0;
-	margin-bottom: 0;
+.sina-portfolio-item-inner:hover .sina-pf-effect-move .sina-portfolio-link,
+.sina-portfolio-item-inner:hover .sina-pf-effect-move .sina-portfolio-desc,
+.sina-portfolio-item-inner:hover .sina-pf-effect-move .sina-portfolio-title{
+	transform: translate(0);
 }
 .sina-portfolio-link,
 .sina-portfolio-zoom{
+	display: inline-block;
 	transition: 0.5s;
 }
+.sina-pf-effect-move .sina-portfolio-title{
+	transform: translate(0, -50px);
+}
+.sina-pf-effect-move .sina-portfolio-desc{
+	transform: translate(0, 50px);
+}
 .sina-pf-effect-move .sina-portfolio-zoom{
-	margin-top: 100px;
+	transform: translate(-50px, 0);
 }
 .sina-pf-effect-move .sina-portfolio-link{
-	margin-bottom: 100px;
+	transform: translate(50px, 0);
 }
 
 /*--------------------------------- Posts Tab -------------------------------------- */
@@ -919,20 +933,26 @@ img.mfp-img{
 .sina-team:hover .sina-team-overlay{
 	opacity: 1;
 }
-.sina-team.sina-team-move .sina-team-name{
-	margin-top: 50px;
+.sina-team.sina-team-move .sina-team-social{
+	margin: 0;
+}
+.sina-team.sina-team-move .sina-team-name,
+.sina-team.sina-team-move .sina-team-position{
+	transform: translate(0, -50px);
+	transition: 0.4s;
+}
+.sina-team.sina-team-move .sina-team-desc,
+.sina-team.sina-team-move .sina-team-social{
+	transform: translate(0, 50px);
 	transition: 0.6s;
 }
+.sina-team.sina-team-move:hover .sina-team-social,
+.sina-team.sina-team-move:hover .sina-team-desc,
+.sina-team.sina-team-move:hover .sina-team-position,
 .sina-team.sina-team-move:hover .sina-team-name{
-	margin-top: 0;
+	transform: translate(0);
 }
-.sina-team.sina-team-move .sina-team-social{
-	margin: 50px 0 0;
-	transition: 0.7s;
-}
-.sina-team.sina-team-move:hover .sina-team-social{
-	margin-top: 0;
-}
+
 /* Zoom Effect */
 .sina-team.sina-team-zoom .sina-team-overlay{
 	transform: scale(0.1);

@@ -102,7 +102,11 @@ Yes. It's totally free.
 == Changelog ==
 
 = 3.1.3 - 26-10-2019 =
-- Added: Some options to Some widgets
+- Added: Some options to Portfolio
+- Added: Icon option to Progressbar
+- Added: Icon gradient option to Content Box
+- Added: Number gradient option to Counter
+- Added: Number gradient option to Piechart
 
 = 3.1.2 - 20-10-2019 =
 - Added: Sorting options to Table
