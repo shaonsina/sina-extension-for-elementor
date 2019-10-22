@@ -101,7 +101,7 @@ Yes. It's totally free.
 
 == Changelog ==
 
-= 3.1.3 - 26-10-2019 =
+= 3.1.3 - 27-10-2019 =
 - Added: Some options to Portfolio
 - Added: Icon option to Progressbar
 - Added: Icon gradient option to Content Box

@@ -28,7 +28,7 @@ abstract class Sina_Ext_Functions extends Sina_Extension_Base{
 		wp_register_style( 'animate-merge', SINA_EXT_URL .'assets/css/animate-merge.min.css', [], SINA_EXT_VERSION );
 		wp_register_style( 'twentytwenty', SINA_EXT_URL .'assets/css/twentytwenty.min.css', [], SINA_EXT_VERSION );
 		wp_register_style( 'data-table', SINA_EXT_URL .'assets/css/datatables.min.css', [], '1.10.20' );
-		wp_register_style( 'sina-widgets', SINA_EXT_URL .'assets/css/sina-widgets.css', [], SINA_EXT_VERSION );
+		wp_register_style( 'sina-widgets', SINA_EXT_URL .'assets/css/sina-widgets.min.css', [], SINA_EXT_VERSION );
 	}
 
 	/**
