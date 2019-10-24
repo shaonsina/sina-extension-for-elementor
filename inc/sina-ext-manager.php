@@ -1,6 +1,7 @@
 <?php
 namespace Sina_Extension\Manager;
 use \Elementor\Plugin;
+use \Elementor\Api;
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -43,8 +44,35 @@ class Sina_Ext_Manager {
 		if ( defined( 'ELEMENTOR_VERSION' ) && version_compare( ELEMENTOR_VERSION, '2.3.0', '>' ) ) {
 			add_action( 'elementor/ajax/register_actions', [$this, 'register_ajax'], 25 );
 		}
+
+		// Add Special Categories
+		if ( defined( 'Elementor\Api::LIBRARY_OPTION_KEY' ) ) {
+			add_filter( 'option_'.Api::LIBRARY_OPTION_KEY, [$this, 'add_categories'] );
+		}
 	}
 
+	/**
+	 * Register categories.
+	 *
+	 * @since 3.1.4
+	 */
+	public function add_categories( $data ) {
+		$categories = [
+			'contact form',
+			'countdown',
+			'login form',
+			'posts',
+			'others',
+		];
+
+		if ( defined( 'ELEMENTOR_VERSION' ) && version_compare( ELEMENTOR_VERSION, '2.3.9', '>' ) ) {
+			$data['types_data']['block']['categories'] = array_merge( $categories, $data['types_data']['block']['categories'] );
+		} else {
+			$data['categories'] = array_merge( $categories, $data['categories'] );
+		}
+
+		return $data;
+	}
 
 	/**
 	 * Register AJAX

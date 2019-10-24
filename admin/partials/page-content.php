@@ -21,7 +21,11 @@
 
 			<?php
 				$get_widgets = get_option( 'sina_widgets' );
-				foreach ($get_widgets as $cat => $data) {
+				$set_widgets = SINA_WIDGETS;
+				if ( defined('SINA_EXT_PRO_WIDGETS')) {
+					$set_widgets = array_merge(SINA_WIDGETS, SINA_EXT_PRO_WIDGETS);
+				}
+				foreach ($set_widgets as $cat => $data) {
 					printf("<div class='sina-ext-pb'><h2>%s</h2>", __( ucfirst($cat), 'sina-ext' ));
 					do_settings_sections( 'sina_widgets_'.$cat );
 					echo '</div>';
