@@ -38,16 +38,16 @@ class Sina_Ext_Manager {
 	public function __construct() {
 		if ( !empty( get_option( 'sina_templates_option' ) ) ) {
 			add_action( 'elementor/init', [$this, 'library_source'], 15 );
-		}
 
-		// Template request
-		if ( defined( 'ELEMENTOR_VERSION' ) && version_compare( ELEMENTOR_VERSION, '2.3.0', '>' ) ) {
-			add_action( 'elementor/ajax/register_actions', [$this, 'register_ajax'], 25 );
-		}
+			// Template request
+			if ( defined( 'ELEMENTOR_VERSION' ) && version_compare( ELEMENTOR_VERSION, '2.3.0', '>' ) ) {
+				add_action( 'elementor/ajax/register_actions', [$this, 'register_ajax'], 25 );
+			}
 
-		// Add Special Categories
-		if ( defined( 'Elementor\Api::LIBRARY_OPTION_KEY' ) ) {
-			add_filter( 'option_'.Api::LIBRARY_OPTION_KEY, [$this, 'add_categories'] );
+			// Add Special Categories
+			if ( defined( 'Elementor\Api::LIBRARY_OPTION_KEY' ) ) {
+				add_filter( 'option_'.Api::LIBRARY_OPTION_KEY, [$this, 'add_categories'] );
+			}
 		}
 	}
 
