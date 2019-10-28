@@ -364,19 +364,15 @@ class Sina_Counter_Widget extends Widget_Base {
 			]
 		);
 
-		$this->add_group_control(
-			Sina_Ext_Gradient_Text::get_type(),
+		$this->add_control(
+			'number_color',
 			[
-				'name' => 'number_color',
-				'fields_options' => [
-					'background' => [ 
-						'default' =>'classic', 
-					],
-					'color' => [
-						'default' => '#1085e4',
-					],
+				'label' => __( 'Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#1085e4',
+				'selectors' => [
+					'{{WRAPPER}} .sina-counter-number-wrap' => 'color: {{VALUE}};',
 				],
-				'selector' => '{{WRAPPER}} .sina-counter-number-wrap',
 			]
 		);
 		$this->add_group_control(

@@ -105,11 +105,9 @@ Yes. It's totally free.
 - Added: Some options to Blogpost
 - Added: Some options to Pricing
 
-
-= 3.1.3 - 27-10-2019 =
+= 3.1.3 - 28-10-2019 =
 - Added: Some options to Portfolio
 - Added: Icon option to Progressbar
-- Added: Icon gradient option to Content Box
 - Added: Number gradient option to Counter
 - Added: Number gradient option to Piechart
 
