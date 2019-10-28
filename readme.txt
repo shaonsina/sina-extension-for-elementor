@@ -102,6 +102,8 @@ Yes. It's totally free.
 == Changelog ==
 
 = 3.1.4 - 04-11-2019 =
+- Added: Some options to Blogpost
+- Added: Some options to Pricing
 
 
 = 3.1.3 - 27-10-2019 =
