@@ -146,9 +146,9 @@ abstract class Sina_Extension_Base{
 		if ( !empty($data) ) {
 			$data = array_merge(SINA_WIDGETS, $data);
 			update_option( 'sina_widgets', $data);
-			return true;
+		} else{
+			update_option( 'sina_widgets', SINA_WIDGETS);
 		}
-		update_option( 'sina_widgets', SINA_WIDGETS);
 		add_option( 'sina_ext_type', 'free' );
 		add_option( 'sina_map_apikey', '' );
 		add_option( 'sina_mailchimp', [
