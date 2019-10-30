@@ -186,8 +186,7 @@ class Sina_Portfolio_Widget extends Widget_Base {
 				'label_block' => true,
 				'type' => Controls_Manager::TEXTAREA,
 				'placeholder' => __( 'Enter Description', 'sina-ext' ),
-				'default' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua.',
+				'default' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
 			]
 		);
 		$repeater->add_control(
@@ -308,7 +307,7 @@ tempor incididunt ut labore et dolore magna aliqua.',
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
-		Sina_Common_Data::button_style( $this, '.sina-portfolio-btn' );
+		Sina_Common_Data::button_style( $this, '.sina-portfolio-btn', 'btn', 'Active' );
 		$this->add_responsive_control(
 			'menu_btn_width',
 			[

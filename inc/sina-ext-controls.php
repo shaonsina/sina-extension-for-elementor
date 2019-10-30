@@ -754,7 +754,7 @@ class Sina_Common_Data{
 		);
 	}
 
-	public static function button_style( $obj, $class = '', $prefix = 'btn' ) {
+	public static function button_style( $obj, $class = '', $prefix = 'btn', $active = 'Hover') {
 		$obj->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
@@ -848,7 +848,7 @@ class Sina_Common_Data{
 		$obj->start_controls_tab(
 			$prefix.'_hover',
 			[
-				'label' => __( 'Hover', 'sina-ext' ),
+				'label' => __( $active, 'sina-ext' ),
 			]
 		);
 		$obj->add_control(
