@@ -95,7 +95,7 @@ abstract class Sina_Extension_Base{
 	 */
 	public function load_actions() {
 		add_action( 'init', [ $this, 'i18n' ] );
-		add_action('admin_init', [$this, 'redirection']);
+		add_action( 'admin_init', [$this, 'redirection'] );
 		add_action( 'admin_post_sina_ext_rollback', ['Sina_Ext_Rollback', 'rollback'] );
 
 		add_action( 'wp_ajax_sina_mc_subscribe', ['Sina_Ext_Hooks', 'mailchimp_subscribe'] );
