@@ -754,7 +754,7 @@ class Sina_Common_Data{
 		);
 	}
 
-	public static function button_style( $obj, $class = '', $prefix = 'btn', $active = 'Hover') {
+	public static function button_style( $obj, $class = '', $prefix = 'btn') {
 		$obj->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
@@ -848,7 +848,7 @@ class Sina_Common_Data{
 		$obj->start_controls_tab(
 			$prefix.'_hover',
 			[
-				'label' => __( $active, 'sina-ext' ),
+				'label' => __( 'Hover', 'sina-ext' ),
 			]
 		);
 		$obj->add_control(
@@ -891,6 +891,147 @@ class Sina_Common_Data{
 				'selectors' => [
 					'{{WRAPPER}} '.$class.':hover, {{WRAPPER}} '.$class.':focus' => 'border-color: {{VALUE}};',
 				],
+			]
+		);
+		$obj->end_controls_tab();
+
+		$obj->end_controls_tabs();
+	}
+
+	public static function button_style_active( $obj, $class = '', $prefix = 'btn') {
+		$obj->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name' => $prefix.'_typography',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_size'   => [
+						'default' => [
+							'size' => '15',
+						],
+					],
+					'line_height'   => [
+						'default' => [
+							'unit' => 'px',
+							'size' => '20',
+						],
+					],
+					'font_weight' => [
+						'default' => '400',
+					],
+					'transform'   => [
+						'default' => [
+							'size' => 'uppercase',
+						],
+					],
+				],
+				'selector' => '{{WRAPPER}} '.$class,
+			]
+		);
+
+		$obj->start_controls_tabs( $prefix.'_tabs' );
+
+		$obj->start_controls_tab(
+			$prefix.'_normal',
+			[
+				'label' => __( 'Normal', 'sina-ext' ),
+			]
+		);
+		$obj->add_control(
+			$prefix.'_color',
+			[
+				'label' => __( 'Text Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#fafafa',
+				'selectors' => [
+					'{{WRAPPER}} '.$class => 'color: {{VALUE}};',
+				],
+			]
+		);
+		$obj->add_group_control(
+			Group_Control_Background::get_type(),
+			[
+				'name' => $prefix.'_bg',
+				'types' => [ 'classic', 'gradient' ],
+				'fields_options' => [
+					'background' => [ 
+						'default' =>'classic', 
+					],
+					'color' => [
+						'default' => '#1085e4',
+					],
+				],
+				'selector' => '{{WRAPPER}} '.$class,
+			]
+		);
+		$obj->add_group_control(
+			Group_Control_Text_Shadow::get_type(),
+			[
+				'name' => $prefix.'_tshadow',
+				'selector' => '{{WRAPPER}} '.$class,
+			]
+		);
+		$obj->add_group_control(
+			Group_Control_Box_Shadow::get_type(),
+			[
+				'name' => $prefix.'_shadow',
+				'selector' => '{{WRAPPER}} '.$class,
+			]
+		);
+		$obj->add_group_control(
+			Group_Control_Border::get_type(),
+			[
+				'name' => $prefix.'_border',
+				'selector' => '{{WRAPPER}} '.$class,
+			]
+		);
+		$obj->end_controls_tab();
+
+		$obj->start_controls_tab(
+			$prefix.'_active',
+			[
+				'label' => __( 'Active', 'sina-ext' ),
+			]
+		);
+		$obj->add_control(
+			$prefix.'_active_color',
+			[
+				'label' => __( 'Text Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} '.$class.'.active' => 'color: {{VALUE}};',
+				],
+			]
+		);
+		$obj->add_group_control(
+			Group_Control_Background::get_type(),
+			[
+				'name' => $prefix.'_active_bg',
+				'types' => [ 'classic', 'gradient' ],
+				'selector' => '{{WRAPPER}} '.$class.'.active',
+			]
+		);
+		$obj->add_group_control(
+			Group_Control_Text_Shadow::get_type(),
+			[
+				'name' => $prefix.'_active_tshadow',
+				'selector' => '{{WRAPPER}} '.$class.'.active',
+			]
+		);
+		$obj->add_group_control(
+			Group_Control_Box_Shadow::get_type(),
+			[
+				'name' => $prefix.'_active_shadow',
+				'selector' => '{{WRAPPER}} '.$class.'.active',
+			]
+		);
+		$obj->add_group_control(
+			Group_Control_Border::get_type(),
+			[
+				'name' => $prefix.'_active_border',
+				'selector' => '{{WRAPPER}} '.$class.'.active',
 			]
 		);
 		$obj->end_controls_tab();

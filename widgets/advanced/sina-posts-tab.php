@@ -189,7 +189,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
-		Sina_Common_Data::button_style( $this, '.sina-pt-cat-btn', 'cat', 'Active' );
+		Sina_Common_Data::button_style( $this, '.sina-pt-cat-btn', 'cat' );
 		$this->add_control(
 			'icon_align',
 			[

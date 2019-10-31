@@ -307,7 +307,7 @@ class Sina_Portfolio_Widget extends Widget_Base {
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
-		Sina_Common_Data::button_style( $this, '.sina-portfolio-btn', 'btn', 'Active' );
+		Sina_Common_Data::button_style( $this, '.sina-portfolio-btn' );
 		$this->add_responsive_control(
 			'menu_btn_width',
 			[
