@@ -659,6 +659,31 @@ class Sina_Accordion_Widget extends Widget_Base {
 				],
 			]
 		);
+		$this->add_responsive_control(
+			'desc_alignment',
+			[
+				'label' => __( 'Alignment', 'sina-ext-pro' ),
+				'type' => Controls_Manager::CHOOSE,
+				'options' => [
+					'left' => [
+						'title' => __( 'Left', 'sina-ext-pro' ),
+						'icon' => 'fa fa-align-left',
+					],
+					'center' => [
+						'title' => __( 'Center', 'sina-ext-pro' ),
+						'icon' => 'fa fa-align-center',
+					],
+					'right' => [
+						'title' => __( 'Right', 'sina-ext-pro' ),
+						'icon' => 'fa fa-align-right',
+					],
+				],
+				'default' => 'left',
+				'selectors' => [
+					'{{WRAPPER}} .sina-accordion-body' => 'text-align: {{VALUE}};',
+				],
+			]
+		);
 
 		$this->end_controls_section();
 		// End Desc Style

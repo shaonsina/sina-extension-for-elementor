@@ -22,6 +22,11 @@
 .sina-login-remember-wrap input[type="radio"]{
 	height: inherit;
 }
+.clearfix::after {
+	content: "";
+	clear: both;
+	display: table;
+}
 
 /* Common */
 .sina-hover-move:hover,
