@@ -1080,6 +1080,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 			'cats_icon',
 			[
 				'label' => __( 'Icon', 'sina-ext' ),
+				'label_block' => true,
 				'type' => Controls_Manager::ICON,
 				'default' => 'fa fa-folder-open-o',
 			]

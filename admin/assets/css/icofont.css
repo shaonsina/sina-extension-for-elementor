@@ -10505,3 +10505,7 @@
 {
   content: "\f02e";
 }
+
+.select2-results__options li i{
+  font-size: 25px;
+}

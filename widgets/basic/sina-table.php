@@ -146,6 +146,7 @@ class Sina_Table_Widget extends Widget_Base {
 			'header_icon',
 			[
 				'label' => __( 'Icon', 'sina-ext' ),
+				'label_block' => true,
 				'type' => Controls_Manager::ICON,
 			]
 		);
@@ -319,6 +320,7 @@ class Sina_Table_Widget extends Widget_Base {
 			'content_icon',
 			[
 				'label' => __( 'Icon', 'sina-ext' ),
+				'label_block' => true,
 				'type' => Controls_Manager::ICON,
 				'condition' => [
 					'content_type' => ['cell', 'head'],

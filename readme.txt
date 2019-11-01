@@ -104,6 +104,7 @@ Yes. It's totally free.
 = 3.1.4 - 04-11-2019 =
 - Added: Some options to Blogpost
 - Added: Some options to Pricing
+- Added: Icofont (2000+ icons)
 
 = 3.1.3 - 28-10-2019 =
 - Added: Some options to Portfolio

@@ -66,7 +66,7 @@ abstract class Sina_Ext_Functions extends Sina_Extension_Base{
 	 * @since 3.1.4
 	 */
 	public function require_scripts() {
-		wp_enqueue_style( 'icofont', SINA_EXT_URL .'admin/assets/css/icofont.css', [], '1.0.1' );
+		wp_enqueue_style( 'icofont', SINA_EXT_URL .'admin/assets/css/icofont.min.css', [], '1.0.1' );
 	}
 
 	/**

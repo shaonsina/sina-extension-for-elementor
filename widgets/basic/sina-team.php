@@ -161,6 +161,7 @@ class Sina_Team_Widget extends Widget_Base {
 			'icon',
 			[
 				'label' => __( 'Icon', 'sina-ext' ),
+				'label_block' => true,
 				'type' => Controls_Manager::ICON,
 				'default' => 'fa fa-facebook',
 			]

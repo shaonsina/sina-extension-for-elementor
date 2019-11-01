@@ -127,6 +127,7 @@ class Sina_Accordion_Widget extends Widget_Base {
 			'icon',
 			[
 				'label' => __( 'Icon', 'sina-ext' ),
+				'label_block' => true,
 				'type' => Controls_Manager::ICON,
 				'default' => 'fa fa-angle-down',
 			]
@@ -135,6 +136,7 @@ class Sina_Accordion_Widget extends Widget_Base {
 			'active_icon',
 			[
 				'label' => __( 'Active Icon', 'sina-ext' ),
+				'label_block' => true,
 				'type' => Controls_Manager::ICON,
 				'default' => 'fa fa-angle-up',
 			]

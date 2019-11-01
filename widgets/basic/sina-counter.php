@@ -116,6 +116,15 @@ class Sina_Counter_Widget extends Widget_Base {
 		);
 
 		$this->add_control(
+			'icon',
+			[
+				'label' => __( 'Icon', 'sina-ext' ),
+				'label_block' => true,
+				'type' => Controls_Manager::ICON,
+				'default' => 'fa fa-user',
+			]
+		);
+		$this->add_control(
 			'title',
 			[
 				'label' => __( 'Title', 'sina-ext' ),
@@ -139,57 +148,6 @@ class Sina_Counter_Widget extends Widget_Base {
 					'title!' => '',
 				],
 				'default' => 'bottom',
-			]
-		);
-		$this->add_control(
-			'icon',
-			[
-				'label' => __( 'Icon', 'sina-ext' ),
-				'type' => Controls_Manager::ICON,
-				'default' => 'fa fa-user',
-			]
-		);
-		$this->add_control(
-			'start_number',
-			[
-				'label' => __( 'Start Number', 'sina-ext' ),
-				'type' => Controls_Manager::NUMBER,
-				'default' => 100,
-				'step' => 1,
-			]
-		);
-		$this->add_control(
-			'stop_number',
-			[
-				'label' => __( 'Stop Number', 'sina-ext' ),
-				'type' => Controls_Manager::NUMBER,
-				'default' => 500,
-				'step' => 1,
-			]
-		);
-		$this->add_control(
-			'delimiter',
-			[
-				'label' => __( 'Thousand Delimiter', 'sina-ext' ),
-				'type' => Controls_Manager::SELECT,
-				'options' => [
-					',' => __( 'Comma', 'sina-ext' ),
-					'.' => __( 'Dot', 'sina-ext' ),
-					'|' => __( 'Pipe', 'sina-ext' ),
-					' ' => __( 'space', 'sina-ext' ),
-				],
-				'default' => ',',
-			]
-		);
-		$this->add_control(
-			'speed',
-			[
-				'label' => __( 'Counting Duration', 'sina-ext' ),
-				'type' => Controls_Manager::NUMBER,
-				'default' => 2000,
-				'min' => 100,
-				'max' => 10000,
-				'step' => 100,
 			]
 		);
 		$this->add_control(
@@ -244,6 +202,49 @@ class Sina_Counter_Widget extends Widget_Base {
 				'selectors' => [
 					'{{WRAPPER}} .sina-counter-suffix' => 'margin-left: {{SIZE}}{{UNIT}};',
 				],
+			]
+		);
+		$this->add_control(
+			'delimiter',
+			[
+				'label' => __( 'Thousand Delimiter', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					',' => __( 'Comma', 'sina-ext' ),
+					'.' => __( 'Dot', 'sina-ext' ),
+					'|' => __( 'Pipe', 'sina-ext' ),
+					' ' => __( 'space', 'sina-ext' ),
+				],
+				'default' => ',',
+			]
+		);
+		$this->add_control(
+			'start_number',
+			[
+				'label' => __( 'Start Number', 'sina-ext' ),
+				'type' => Controls_Manager::NUMBER,
+				'default' => 100,
+				'step' => 1,
+			]
+		);
+		$this->add_control(
+			'stop_number',
+			[
+				'label' => __( 'Stop Number', 'sina-ext' ),
+				'type' => Controls_Manager::NUMBER,
+				'default' => 500,
+				'step' => 1,
+			]
+		);
+		$this->add_control(
+			'speed',
+			[
+				'label' => __( 'Counting Duration', 'sina-ext' ),
+				'type' => Controls_Manager::NUMBER,
+				'default' => 2000,
+				'min' => 100,
+				'max' => 10000,
+				'step' => 100,
 			]
 		);
 		$this->add_responsive_control(

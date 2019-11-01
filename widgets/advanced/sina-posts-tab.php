@@ -127,6 +127,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 			[
 				'name' => 'icon',
 				'label' => __( 'Icon', 'sina-ext' ),
+				'label_block' => true,
 				'type' => Controls_Manager::ICON,
 			]
 		);

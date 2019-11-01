@@ -423,6 +423,10 @@ img.mfp-img{
 	overflow: hidden;
 	transition: all 0.4s;
 }
+.sina-banner-pbtn,
+.sina-banner-sbtn{
+	overflow: inherit;
+}
 
 /*--------------------------------- Posts Carousel -------------------------------------- */
 .sina-pc-thumb{

@@ -128,44 +128,10 @@ class Sina_Progressbar_Widget extends Widget_Base {
 			]
 		);
 		$this->add_control(
-			'percentage',
-			[
-				'label' => __( 'Value', 'sina-ext' ),
-				'type' => Controls_Manager::NUMBER,
-				'min' => 0,
-				'default' => 90,
-			]
-		);
-		$this->add_control(
-			'max_value',
-			[
-				'label' => __( 'Max Value', 'sina-ext' ),
-				'type' => Controls_Manager::NUMBER,
-				'min' => 1,
-				'default' => 100,
-			]
-		);
-		$this->add_control(
-			'prefix',
-			[
-				'label' => __( 'Prefix', 'sina-ext' ),
-				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter prefix', 'sina-ext' ),
-			]
-		);
-		$this->add_control(
-			'suffix',
-			[
-				'label' => __( 'Suffix', 'sina-ext' ),
-				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter suffix', 'sina-ext' ),
-				'default' => '%',
-			]
-		);
-		$this->add_control(
 			'icon',
 			[
 				'label' => __( 'Icon', 'sina-ext' ),
+				'label_block' => true,
 				'type' => Controls_Manager::ICON,
 			]
 		);
@@ -199,6 +165,41 @@ class Sina_Progressbar_Widget extends Widget_Base {
 					'{{WRAPPER}} .sina-bar-title .sina-icon-right' => 'margin-left: {{SIZE}}{{UNIT}};',
 					'{{WRAPPER}} .sina-bar-title .sina-icon-left' => 'margin-right: {{SIZE}}{{UNIT}};',
 				],
+			]
+		);
+		$this->add_control(
+			'percentage',
+			[
+				'label' => __( 'Value', 'sina-ext' ),
+				'type' => Controls_Manager::NUMBER,
+				'min' => 0,
+				'default' => 90,
+			]
+		);
+		$this->add_control(
+			'max_value',
+			[
+				'label' => __( 'Max Value', 'sina-ext' ),
+				'type' => Controls_Manager::NUMBER,
+				'min' => 1,
+				'default' => 100,
+			]
+		);
+		$this->add_control(
+			'prefix',
+			[
+				'label' => __( 'Prefix', 'sina-ext' ),
+				'type' => Controls_Manager::TEXT,
+				'placeholder' => __( 'Enter prefix', 'sina-ext' ),
+			]
+		);
+		$this->add_control(
+			'suffix',
+			[
+				'label' => __( 'Suffix', 'sina-ext' ),
+				'type' => Controls_Manager::TEXT,
+				'placeholder' => __( 'Enter suffix', 'sina-ext' ),
+				'default' => '%',
 			]
 		);
 

@@ -192,6 +192,7 @@ class Sina_Dynamic_Button_Widget extends Widget_Base {
 			'btn_icon',
 			[
 				'label' => __( 'Icon', 'sina-ext' ),
+				'label_block' => true,
 				'type' => Controls_Manager::ICON,
 			]
 		);

@@ -146,6 +146,35 @@ class Sina_Pricing_Widget extends Widget_Base {
 			]
 		);
 		$this->add_control(
+			'ribbon_title',
+			[
+				'label' => __( 'Ribbon Title', 'sina-ext' ),
+				'type' => Controls_Manager::TEXT,
+			]
+		);
+		$this->add_control(
+			'ribbon_position',
+			[
+				'label' => __( 'Ribbon Position', 'sina-ext' ),
+				'type' => Controls_Manager::CHOOSE,
+				'label_block' => false,
+				'options' => [
+					'sina-ribbon-left' => [
+						'title' => __( 'Left', 'sina-ext' ),
+						'icon' => 'eicon-h-align-left',
+					],
+					'sina-ribbon-right' => [
+						'title' => __( 'Right', 'sina-ext' ),
+						'icon' => 'eicon-h-align-right',
+					],
+				],
+				'condition' => [
+					'ribbon_title!' => '',
+				],
+				'default' => 'sina-ribbon-right',
+			]
+		);
+		$this->add_control(
 			'thumbs',
 			[
 				'label' => __( 'Show Image', 'sina-ext' ),
@@ -181,42 +210,13 @@ class Sina_Pricing_Widget extends Widget_Base {
 				],
 			]
 		);
-		$this->add_control(
-			'ribbon_title',
-			[
-				'label' => __( 'Ribbon Title', 'sina-ext' ),
-				'type' => Controls_Manager::TEXT,
-			]
-		);
-		$this->add_control(
-			'ribbon_position',
-			[
-				'label' => __( 'Ribbon Position', 'sina-ext' ),
-				'type' => Controls_Manager::CHOOSE,
-				'label_block' => false,
-				'options' => [
-					'sina-ribbon-left' => [
-						'title' => __( 'Left', 'sina-ext' ),
-						'icon' => 'eicon-h-align-left',
-					],
-					'sina-ribbon-right' => [
-						'title' => __( 'Right', 'sina-ext' ),
-						'icon' => 'eicon-h-align-right',
-					],
-				],
-				'condition' => [
-					'ribbon_title!' => '',
-				],
-				'default' => 'sina-ribbon-right',
-			]
-		);
 
 		$repeater = new Repeater();
 
 		$repeater->add_control(
 			'title',
 			[
-				'label' => __( 'Content', 'sina-ext' ),
+				'label' => __( 'Text', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter Content', 'sina-ext' ),
@@ -237,6 +237,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 			[
 				'name' => 'icon',
 				'label' => __( 'Icon', 'sina-ext' ),
+				'label_block' => true,
 				'type' => Controls_Manager::ICON,
 			]
 		);

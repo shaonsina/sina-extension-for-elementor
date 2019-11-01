@@ -167,6 +167,7 @@ class Sina_Video_Widget extends Widget_Base {
 			'icon',
 			[
 				'label' => __( 'Icon', 'sina-ext' ),
+				'label_block' => true,
 				'type' => Controls_Manager::ICON,
 				'default' => 'fa fa-play',
 			]
