@@ -4,6 +4,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+function sina_ext_custom_css($desktop_css = '', $tablet_css = '', $tablet_break = 1024) {
+	$output_css = $desktop_css;
+	if ( $tablet_css ) {
+		$output_css .= '@media (max-width: '. $tablet_break .'px) {'. $tablet_css .'}';
+	}
+	?>
+	<style type="text/css">
+		<?php echo esc_attr( $output_css ); ?>
+	</style>
+	<?php
+}
+
 function sina_get_page_lists() {
 	$page_ids = get_all_page_ids();
 	$page_lists = [];

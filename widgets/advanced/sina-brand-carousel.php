@@ -240,25 +240,25 @@ class Sina_Brand_Carousel_Widget extends Widget_Base {
 				'fields' => $repeater->get_controls(),
 				'default' => [
 					[
-						'title' => __( 'Youtube', 'sina-ext' ),
+						'title' => 'Youtube',
 						'brand_logo' => [
 							'url' => SINA_EXT_URL .'assets/img/brand1.png',
 						]
 					],
 					[
-						'title' => __( 'Behance', 'sina-ext' ),
+						'title' => 'Behance',
 						'brand_logo' => [
 							'url' => SINA_EXT_URL .'assets/img/brand2.png',
 						]
 					],
 					[
-						'title' => __( 'Vimeo', 'sina-ext' ),
+						'title' => 'Vimeo',
 						'brand_logo' => [
 							'url' => SINA_EXT_URL .'assets/img/brand3.png',
 						]
 					],
 					[
-						'title' => __( 'Linkedin', 'sina-ext' ),
+						'title' => 'Linkedin',
 						'brand_logo' => [
 							'url' => SINA_EXT_URL .'assets/img/brand4.png',
 						]
