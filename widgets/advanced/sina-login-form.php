@@ -9,7 +9,6 @@
 use \Elementor\Widget_Base;
 use \Elementor\Controls_Manager;
 use \Elementor\Group_Control_Typography;
-use \Elementor\Plugin;
 
 
 // Exit if accessed directly.
@@ -455,11 +454,11 @@ class Sina_Login_Form_Widget extends Widget_Base {
 
 	protected function render() {
 		$data = $this->get_settings_for_display();
-		$id = $this->get_id();
+		$id   = uniqid('sina-login-');
 		?>
 		<div class="sina-form">
 			<form class="sina-login-form"
-			data-uid="<?php echo esc_attr( $this->get_id() ); ?>"
+			data-uid="<?php echo esc_attr( $id ); ?>"
 			data-url="<?php echo esc_url( $data['redirect_url'] ); ?>">
 
 				<input class="sina-input-field sina-input-email" type="email" placeholder="<?php echo esc_attr( $data['email_placeholder'] ); ?>" >
@@ -483,9 +482,9 @@ class Sina_Login_Form_Widget extends Widget_Base {
 					</div>
 				<?php endif ?>
 
-				<p class="sina-login-error"></p>
+				<p class="sina-error-text"></p>
 
-				<?php wp_nonce_field( 'sina_login', 'sina_login_nonce'.$this->get_id() ); ?>
+				<?php wp_nonce_field( 'sina_login', 'sina_login_nonce'.$id ); ?>
 			</form><!-- .sina-login-form -->
 		</div><!-- .sina-form -->
 		<?php

@@ -506,7 +506,6 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 		?>
 		<div class="sina-form">
 			<form class="sina-subs-form"
-			data-msg="<?php echo esc_attr( $data['successs_message'] ); ?>"
 			data-uid="<?php echo esc_attr( $this->get_id() ); ?>">
 				<div class="sina-subs-input">
 					<?php if ( $data['fname'] ): ?>
@@ -527,9 +526,10 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 						<?php Sina_Common_Data::button_html($data); ?>
 					</button>
 				</div>
-				<p class="sina-subs-success"></p>
-				<p class="sina-subs-error"></p>
-				<p class="sina-subs-process"><?php _e( 'Processing...', 'sina-ext' ); ?></p>
+
+				<?php printf('<p class="sina-success-text">%s</p>', $data['successs_message']); ?>
+				<p class="sina-error-text"></p>
+				<p class="sina-process-text"><?php _e( 'Processing...', 'sina-ext' ); ?></p>
 
 				<?php wp_nonce_field( 'sina_mc_subscribe', 'sina_mc_subscribe_nonce'.$this->get_id() ); ?>
 			</form><!-- .sina-subs-form -->

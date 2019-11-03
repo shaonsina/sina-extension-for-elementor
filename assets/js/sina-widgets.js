@@ -53,6 +53,12 @@
 		});
 	}
 
+	function addZero(val) {
+		if ( val < 10 ) {
+			return '0'+val;
+		}
+		return val;
+	}
 
 	function sinaBrandCarousel($scope, $) {
 		$scope.find('.sina-brand-carousel').each(function () {
@@ -240,11 +246,10 @@
 			var $this = $(this),
 				$uid = $this.data('uid'),
 				$inbox = $this.data('inbox'),
-				$sucMsg = $this.data('msg'),
 				$nonce = $this.children('#sina_contact_nonce'+$uid),
-				$success = $this.children('.sina-contact-success'),
-				$error = $this.children('.sina-contact-error'),
-				$process = $this.children('.sina-contact-process'),
+				$success = $this.children('.sina-success-text'),
+				$error = $this.children('.sina-error-text'),
+				$process = $this.children('.sina-process-text'),
 				$name = $this.find('.sina-input-name'),
 				$email = $this.find('.sina-input-email'),
 				$subject = $this.find('.sina-input-subject'),
@@ -281,7 +286,7 @@
 								}, 10000 );
 							} else{
 								$process.fadeOut(0);
-								$success.html( $sucMsg ).fadeIn(200);
+								$success.fadeIn(200);
 
 								timeout = setTimeout( function() {
 									$success.fadeOut(200);
@@ -310,7 +315,7 @@
 				$uid = $this.data('uid'),
 				$url = $this.data('url'),
 				$nonce = $this.children('#sina_login_nonce'+$uid),
-				$error = $this.children('.sina-login-error'),
+				$error = $this.children('.sina-error-text'),
 				$password = $this.children('.sina-input-password'),
 				$email = $this.children('.sina-input-email'),
 				$remember = $this.find('.sina-login-remember'),
@@ -354,15 +359,14 @@
 		$scope.find('.sina-subs-form').each(function () {
 			var $this = $(this),
 				$uid = $this.data('uid'),
-				$sucMsg = $this.data('msg'),
 				$nonce = $this.find('#sina_mc_subscribe_nonce'+$uid),
 				$fname = $this.find('.sina-input-fname'),
 				$lname = $this.find('.sina-input-lname'),
 				$email = $this.find('.sina-input-email'),
 				$phone = $this.find('.sina-input-phone'),
-				$success = $this.children('.sina-subs-success'),
-				$error = $this.children('.sina-subs-error'),
-				$process = $this.children('.sina-subs-process'),
+				$success = $this.children('.sina-success-text'),
+				$error = $this.children('.sina-error-text'),
+				$process = $this.children('.sina-process-text'),
 				timeout;
 
 			$this.on('submit', function(e) {
@@ -388,7 +392,7 @@
 						if ( status == 'success' ) {
 							if ( 'success' == data ) {
 								$process.fadeOut(0);
-								$success.html( $sucMsg ).fadeIn(200);
+								$success.fadeIn(200);
 
 								timeout = setTimeout( function() {
 									$success.fadeOut(200);
@@ -431,12 +435,6 @@
 					m = m % 12,
 					w = w % 4;
 
-				function addZero(val) {
-					if ( val < 10 ) {
-						return '0'+val;
-					}
-					return val;
-				}
 
 				year.html( addZero(Y) );
 				month.html( addZero(m) );
