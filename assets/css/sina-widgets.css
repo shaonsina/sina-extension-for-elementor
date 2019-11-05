@@ -240,7 +240,6 @@ img.mfp-img{
 .sina-tooltip-text{
 	position: absolute;
 	left: 0;
-	right: 0;
 	visibility: hidden;
 	z-index: 1;
 	opacity: 0;
@@ -249,14 +248,29 @@ img.mfp-img{
 }
 .sina-tooltip-text::after{
 	position: absolute;
-	top: 100%;
-	left: 50%;
 	content: "";
-	margin-left: -5px;
 	border-width: 5px;
 	border-style: solid;
+}
+.sina-tooltip-text.sina-tooltip-top::after{
+	margin-left: -5px;
+	left: 50%;
+	top: 100%;
 	border-color: black transparent transparent transparent;
 }
+.sina-tooltip-text.sina-tooltip-left::after{
+	margin-top: -5px;
+	top: 50%;
+	left: 100%;
+	border-color: transparent transparent transparent black;
+}
+.sina-tooltip-text.sina-tooltip-right::after{
+	margin-top: -5px;
+	top: 50%;
+	left: -10px;
+	border-color: transparent black transparent transparent;
+}
+
 .sina-banner-pbtn,
 .sina-banner-sbtn{
 	position: relative;

@@ -549,11 +549,37 @@ class Sina_Common_Data{
 			]
 		);
 		$obj->add_responsive_control(
+			$prefix.'_tooptip_width',
+			[
+				'label' => __( 'Width', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', 'em', '%'],
+				'range' => [
+					'px' => [
+						'max' => 300,
+					],
+					'em' => [
+						'max' => 30,
+					],
+				],
+				'default' => [
+					'unit' => 'px',
+					'size' => 120,
+				],
+				'condition' => [
+					$prefix.'_tooltip_text!' => '',
+				],
+				'selectors' => [
+					'{{WRAPPER}} '.$class.' .sina-tooltip-text' => 'width: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+		$obj->add_responsive_control(
 			$prefix.'_tooptip_dist',
 			[
 				'label' => __( 'Distance', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
-				'size_units' => [ 'px', 'em' ],
+				'size_units' => [ 'px' ],
 				'range' => [
 					'px' => [
 						'min' => -200,
@@ -571,7 +597,7 @@ class Sina_Common_Data{
 					$prefix.'_tooltip_text!' => '',
 				],
 				'selectors' => [
-					'{{WRAPPER}} '.$class.' .sina-tooltip-text' => 'top: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} '.$class.' .sina-tooltip-text.sina-tooltip-top' => 'top: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -1310,7 +1336,7 @@ class Sina_Common_Data{
 
 	public static function button_html( $data, $prefix = 'btn' ) {
 		if ( isset($data[$prefix.'_tooltip_text']) && $data[$prefix.'_tooltip_text'] ) : ?>
-			<?php printf( '<span class="sina-tooltip-text">%s</span>', $data[$prefix.'_tooltip_text'] ); ?>
+			<?php printf( '<span class="sina-tooltip-text sina-tooltip-top">%s</span>', $data[$prefix.'_tooltip_text'] ); ?>
 		<?php
 		endif;
 		if ( $data[$prefix.'_icon'] && $data[$prefix.'_icon_align'] == 'left' ): ?>
