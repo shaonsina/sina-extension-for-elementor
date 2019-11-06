@@ -43,7 +43,7 @@ class Sina_Image_Differ_Widget extends Widget_Base {
 	 * @since 3.1.0
 	 */
 	public function get_icon() {
-		return 'eicon-post-navigation';
+		return 'eicon-image-before-after';
 	}
 
 	/**

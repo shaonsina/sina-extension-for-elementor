@@ -756,18 +756,29 @@
 	function sinaModalBox($scope, $) {
 		$scope.find('.sina-modal-box').each(function () {
 			var $this = $(this),
+				$click = $this.data('click') ? true : false,
 				$id = $this.data('modal-id'),
 				$btn = $('#'+$id),
 				$cBtn = $('.sina-modal-close.'+$id),
 				$modal = $('.sina-modal-overlay.'+$id);
 
-				$btn.click( function(e) {
+			$btn.click( function(e) {
+				e.preventDefault();
+				$modal.fadeIn( 400 );
+			});
+
+			$cBtn.click( function() {
+				$modal.fadeOut('400');
+			});
+
+			if ( $click ) {
+				$(document).on('click', function(e) {
 					e.preventDefault();
-					$modal.fadeIn( 400 );
+					if ( $(e.target).is('.sina-modal-area') ) {
+						$modal.fadeOut('400');
+					}
 				});
-				$cBtn.click( function() {
-					$modal.fadeOut('400');
-				});
+			}
 		});
 	}
 

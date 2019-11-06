@@ -113,6 +113,13 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 		);
 
 		$this->add_control(
+			'is_outside_click',
+			[
+				'label' => __( 'Outside Click', 'sina-ext' ),
+				'type' => Controls_Manager::SWITCHER,
+			]
+		);
+		$this->add_control(
 			'save_templates',
 			[
 				'label' => __( 'Use Save Templates', 'sina-ext' ),
@@ -1177,7 +1184,9 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 		$data = $this->get_settings_for_display();
 		$trigger_id = $data['trigger_id'] ? $data['trigger_id'] : 'sina-modal-'.$this->get_id();
 		?>
-		<div class="sina-modal-box" data-modal-id="<?php echo esc_attr( $trigger_id ); ?>">
+		<div class="sina-modal-box"
+		data-click="<?php echo esc_attr( $data['is_outside_click'] ); ?>"
+		data-modal-id="<?php echo esc_attr( $trigger_id ); ?>">
 			<?php if ( $data['trigger_text'] ): ?>
 				<div class="sina-btn-wrap">
 					<button id="<?php echo esc_attr( $trigger_id ); ?>" class="sina-button sina-modal-trigger <?php echo esc_attr( $data['trigger_effect'].' '.$data['trigger_bg_layer_effects'] ); ?>">
