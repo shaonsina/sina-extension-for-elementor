@@ -101,9 +101,10 @@ Yes. It's totally free.
 
 == Changelog ==
 
-= 3.1.4 - 04-11-2019 =
+= 3.1.4 - 07-11-2019 =
 - Added: Some options to Blogpost
 - Added: Some options to Pricing
+- Added: Some option to Modal Box
 - Added: Icofont (2000+ icons)
 
 = 3.1.3 - 28-10-2019 =
