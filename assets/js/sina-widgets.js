@@ -734,7 +734,7 @@
 	}
 
 	function sinaPostsTab($scope, $) {
-		elementorFrontend.waypoint($scope.find('.sina-posts-tab'), function () {
+		$scope.find('.sina-posts-tab').each(function () {
 			var $btn = $("[data-sina-pt]");
 
 			$btn.on('click', function(e) {
@@ -758,9 +758,9 @@
 			var $this = $(this),
 				$click = $this.data('click') ? true : false,
 				$id = $this.data('modal-id'),
-				$btn = $('#'+$id),
-				$cBtn = $('.sina-modal-close.'+$id),
-				$modal = $('.sina-modal-overlay.'+$id);
+				$btn = $('.'+$id),
+				$cBtn = $this.find('.close-'+$id),
+				$modal = $('.sina-modal-'+$id);
 
 			$btn.click( function(e) {
 				e.preventDefault();

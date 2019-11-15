@@ -192,14 +192,14 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
-		Sina_Common_Data::button_content( $this, '.sina-modal-box', 'Clicke Here', 'trigger',  false );
+		Sina_Common_Data::button_content( $this, '.sina-modal-trigger', 'Clicke Here', 'trigger',  false );
 		$this->add_control(
 			'trigger_id',
 			[
 				'label' => __( 'CSS ID', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter ID', 'sina-ext' ),
-				'description' => __( 'Make sure this ID unique', 'sina-ext' ),
+				'placeholder' => __( 'Enter CLASS', 'sina-ext' ),
+				'description' => __( 'Make sure this CLASS unique', 'sina-ext' ),
 			]
 		);
 		$this->end_controls_section();
@@ -1189,12 +1189,12 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 		data-modal-id="<?php echo esc_attr( $trigger_id ); ?>">
 			<?php if ( $data['trigger_text'] ): ?>
 				<div class="sina-btn-wrap">
-					<button id="<?php echo esc_attr( $trigger_id ); ?>" class="sina-button sina-modal-trigger <?php echo esc_attr( $data['trigger_effect'].' '.$data['trigger_bg_layer_effects'] ); ?>">
+					<button class="sina-button sina-modal-trigger <?php echo esc_attr( $trigger_id.' '.$data['trigger_effect'].' '.$data['trigger_bg_layer_effects'] ); ?>">
 						<?php Sina_Common_Data::button_html($data, 'trigger'); ?>
 					</button>
 				</div>
 			<?php endif; ?>
-			<div class="sina-modal-overlay <?php echo esc_attr( $trigger_id ); ?>">
+			<div class="sina-modal-overlay sina-modal-<?php echo esc_attr( $trigger_id ); ?>">
 				<div class="sina-modal-area sina-flex animated <?php echo esc_attr( $data['modal_effects'] ); ?>">
 					<div class="sina-modal-content">
 						<?php if ( '' != $data['modal_header'] ): ?>
@@ -1217,7 +1217,7 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 							<?php endif; ?>
 						</div>
 						<div class="sina-modal-footer">
-							<button class="sina-button sina-modal-close <?php echo esc_attr( $trigger_id ); ?>"><?php _e( 'Close', 'sina-ext' ); ?></button>
+							<button class="sina-button sina-modal-close close-<?php echo esc_attr( $trigger_id ); ?>"><?php _e( 'Close', 'sina-ext' ); ?></button>
 						</div>
 					</div>
 				</div>
