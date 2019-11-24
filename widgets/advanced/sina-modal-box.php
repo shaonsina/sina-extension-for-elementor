@@ -115,7 +115,14 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 		$this->add_control(
 			'is_outside_click',
 			[
-				'label' => __( 'Outside Click', 'sina-ext' ),
+				'label' => __( 'Close to click outside', 'sina-ext' ),
+				'type' => Controls_Manager::SWITCHER,
+			]
+		);
+		$this->add_control(
+			'is_esc_press',
+			[
+				'label' => __( 'Close to press ESC', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
 			]
 		);
@@ -1186,6 +1193,7 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 		?>
 		<div class="sina-modal-box"
 		data-click="<?php echo esc_attr( $data['is_outside_click'] ); ?>"
+		data-esc="<?php echo esc_attr( $data['is_esc_press'] ); ?>"
 		data-modal-id="<?php echo esc_attr( $trigger_id ); ?>">
 			<?php if ( $data['trigger_text'] ): ?>
 				<div class="sina-btn-wrap">

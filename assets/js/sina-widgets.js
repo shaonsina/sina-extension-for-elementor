@@ -757,6 +757,7 @@
 		$scope.find('.sina-modal-box').each(function () {
 			var $this = $(this),
 				$click = $this.data('click') ? true : false,
+				$esc = $this.data('esc') ? true : false,
 				$id = $this.data('modal-id'),
 				$btn = $('.'+$id),
 				$cBtn = $this.find('.close-'+$id),
@@ -775,6 +776,15 @@
 				$(document).on('click', function(e) {
 					e.preventDefault();
 					if ( $(e.target).is('.sina-modal-area') ) {
+						$modal.fadeOut('400');
+					}
+				});
+			}
+
+			if ( $esc ) {
+				$(window).on('keydown', function(e) {
+					var key = e.which || e.keyCode;
+					if ( 192 == key ) {
 						$modal.fadeOut('400');
 					}
 				});
