@@ -111,6 +111,9 @@ class Sina_Pricing_Widget extends Widget_Base {
 				'placeholder' => __( 'Enter Title', 'sina-ext' ),
 				'description' => __( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'Basic',
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$this->add_control(
@@ -120,6 +123,9 @@ class Sina_Pricing_Widget extends Widget_Base {
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter Price', 'sina-ext' ),
 				'default' => '$20',
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$this->add_control(
@@ -130,6 +136,9 @@ class Sina_Pricing_Widget extends Widget_Base {
 				'placeholder' => __( 'Enter Prefix', 'sina-ext' ),
 				'condition' => [
 					'price!' => '',
+				],
+				'dynamic' => [
+					'active' => true,
 				],
 			]
 		);
@@ -143,6 +152,41 @@ class Sina_Pricing_Widget extends Widget_Base {
 					'price!' => '',
 				],
 				'default' => 'M',
+				'dynamic' => [
+					'active' => true,
+				],
+			]
+		);
+		$this->add_control(
+			'ribbon_title',
+			[
+				'label' => __( 'Ribbon Title', 'sina-ext' ),
+				'type' => Controls_Manager::TEXT,
+				'dynamic' => [
+					'active' => true,
+				],
+			]
+		);
+		$this->add_control(
+			'ribbon_position',
+			[
+				'label' => __( 'Ribbon Position', 'sina-ext' ),
+				'type' => Controls_Manager::CHOOSE,
+				'label_block' => false,
+				'options' => [
+					'sina-ribbon-left' => [
+						'title' => __( 'Left', 'sina-ext' ),
+						'icon' => 'eicon-h-align-left',
+					],
+					'sina-ribbon-right' => [
+						'title' => __( 'Right', 'sina-ext' ),
+						'icon' => 'eicon-h-align-right',
+					],
+				],
+				'condition' => [
+					'ribbon_title!' => '',
+				],
+				'default' => 'sina-ribbon-right',
 			]
 		);
 		$this->add_control(
@@ -179,35 +223,9 @@ class Sina_Pricing_Widget extends Widget_Base {
 				'default' => [
 					'url' => SINA_EXT_URL .'assets/img/choose-img.jpg',
 				],
-			]
-		);
-		$this->add_control(
-			'ribbon_title',
-			[
-				'label' => __( 'Ribbon Title', 'sina-ext' ),
-				'type' => Controls_Manager::TEXT,
-			]
-		);
-		$this->add_control(
-			'ribbon_position',
-			[
-				'label' => __( 'Ribbon Position', 'sina-ext' ),
-				'type' => Controls_Manager::CHOOSE,
-				'label_block' => false,
-				'options' => [
-					'sina-ribbon-left' => [
-						'title' => __( 'Left', 'sina-ext' ),
-						'icon' => 'eicon-h-align-left',
-					],
-					'sina-ribbon-right' => [
-						'title' => __( 'Right', 'sina-ext' ),
-						'icon' => 'eicon-h-align-right',
-					],
+				'dynamic' => [
+					'active' => true,
 				],
-				'condition' => [
-					'ribbon_title!' => '',
-				],
-				'default' => 'sina-ribbon-right',
 			]
 		);
 
@@ -216,7 +234,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 		$repeater->add_control(
 			'title',
 			[
-				'label' => __( 'Content', 'sina-ext' ),
+				'label' => __( 'Text', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter Content', 'sina-ext' ),
@@ -237,6 +255,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 			[
 				'name' => 'icon',
 				'label' => __( 'Icon', 'sina-ext' ),
+				'label_block' => true,
 				'type' => Controls_Manager::ICON,
 			]
 		);
@@ -515,6 +534,219 @@ class Sina_Pricing_Widget extends Widget_Base {
 			]
 		);
 
+		$this->add_control(
+			'title_hover_heading',
+			[
+				'label' => __( 'Title Styles', 'sina-ext' ),
+				'type' => Controls_Manager::HEADING,
+				'condition' => [
+					'title!' => '',
+				],
+			]
+		);
+		$this->add_control(
+			'title_hover_color',
+			[
+				'label' => __( 'Text Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'condition' => [
+					'title!' => '',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-pricing:hover .sina-pricing-title' => 'color: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Text_Shadow::get_type(),
+			[
+				'name' => 'title_hover_shadow',
+				'condition' => [
+					'title!' => '',
+				],
+				'selector' => '{{WRAPPER}} .sina-pricing:hover .sina-pricing-title',
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
+			[
+				'name' => 'title_hover_bg',
+				'types' => [ 'classic', 'gradient' ],
+				'condition' => [
+					'title!' => '',
+				],
+				'selector' => '{{WRAPPER}} .sina-pricing:hover .sina-pricing-title',
+			]
+		);
+		$this->add_control(
+			'title_hover_border',
+			[
+				'label' => __( 'Border Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'condition' => [
+					'title!' => '',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-pricing:hover .sina-pricing-title' => 'border-color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'price_hover_heading',
+			[
+				'label' => __( 'Price Styles', 'sina-ext' ),
+				'type' => Controls_Manager::HEADING,
+				'condition' => [
+					'price!' => '',
+				],
+			]
+		);
+		$this->add_control(
+			'price_hover_color',
+			[
+				'label' => __( 'Text Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'condition' => [
+					'price!' => '',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-pricing:hover .sina-price-tag' => 'color: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Text_Shadow::get_type(),
+			[
+				'name' => 'price_hover_shadow',
+				'condition' => [
+					'price!' => '',
+				],
+				'selector' => '{{WRAPPER}} .sina-pricing:hover .sina-price-tag',
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
+			[
+				'name' => 'price_hover_bg',
+				'types' => [ 'classic', 'gradient' ],
+				'condition' => [
+					'price!' => '',
+				],
+				'selector' => '{{WRAPPER}} .sina-pricing:hover .sina-price-tag',
+			]
+		);
+		$this->add_control(
+			'price_hover_border',
+			[
+				'label' => __( 'Border Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'condition' => [
+					'price!' => '',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-pricing:hover .sina-price-tag' => 'border-color: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Box_Shadow::get_type(),
+			[
+				'name' => 'price_box_hover_shadow',
+				'condition' => [
+					'price!' => '',
+				],
+				'selector' => '{{WRAPPER}} .sina-pricing:hover .sina-price-tag',
+			]
+		);
+
+		$this->add_control(
+			'prefix_price_hover_heading',
+			[
+				'label' => __( 'Price Prefix Styles', 'sina-ext' ),
+				'type' => Controls_Manager::HEADING,
+				'condition' => [
+					'price!' => '',
+					'price_prefix!' => '',
+				],
+			]
+		);
+		$this->add_control(
+			'price_prefix_hover_color',
+			[
+				'label' => __( 'Text Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'condition' => [
+					'price!' => '',
+					'price_prefix!' => '',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-pricing:hover .sina-price-prefix' => 'color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'content_hover_heading',
+			[
+				'label' => __( 'Content Styles', 'sina-ext' ),
+				'type' => Controls_Manager::HEADING,
+			]
+		);
+		$this->add_control(
+			'content_hover_color',
+			[
+				'label' => __( 'Text Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .sina-pricing:hover .sina-pricing-body li' => 'color: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Text_Shadow::get_type(),
+			[
+				'name' => 'content_hover_shadow',
+				'selector' => '{{WRAPPER}} .sina-pricing:hover .sina-pricing-body li',
+			]
+		);
+
+		$this->add_control(
+			'button_heading',
+			[
+				'label' => __( 'Button', 'sina-ext' ),
+				'type' => Controls_Manager::HEADING,
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
+			[
+				'name' => 'button_background',
+				'types' => [ 'classic', 'gradient' ],
+				'selector' => '{{WRAPPER}} .sina-pricing:hover .sina-order-btn',
+			]
+		);
+		$this->add_control(
+			'button_color',
+			[
+				'label' => __( 'Text Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .sina-pricing:hover .sina-order-btn' => 'color: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_control(
+			'button_border_color',
+			[
+				'label' => __( 'Border Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .sina-pricing:hover .sina-order-btn' => 'border-color: {{VALUE}};',
+				],
+			]
+		);
+
 		$this->end_controls_tab();
 
 		$this->end_controls_tabs();
@@ -542,6 +774,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 				],
 			]
 		);
+		Sina_Common_Data::BG_hover_effects($this, '.sina-pricing');
 
 		$this->end_controls_section();
 		// End Box Style
@@ -620,7 +853,6 @@ class Sina_Pricing_Widget extends Widget_Base {
 				'label' => __( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
-				'separator' => 'before',
 				'selectors' => [
 					'{{WRAPPER}} .sina-pricing-title' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
@@ -756,7 +988,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 				'selector' => '{{WRAPPER}} .sina-price-tag',
 			]
 		);
-		
+
 		$this->add_control(
 			'price_prefix_heading',
 			[
@@ -815,6 +1047,9 @@ class Sina_Pricing_Widget extends Widget_Base {
 					'size' => '12',
 				],
 				'separator' => 'before',
+				'condition' => [
+					'price_suffix!' => '',
+				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-price-tag .sina-price-suffix' => 'font-size: {{SIZE}}{{UNIT}};',
 				],
@@ -898,80 +1133,6 @@ class Sina_Pricing_Widget extends Widget_Base {
 		// =====================
 
 
-		// Start Button Style
-		// =====================
-		$this->start_controls_section(
-			'btn_style',
-			[
-				'label' => __( 'Button', 'sina-ext' ),
-				'tab' => Controls_Manager::TAB_STYLE,
-				'condition' => [
-					'btn_text!' => '',
-				],
-			]
-		);
-		Sina_Common_Data::button_style( $this, '.sina-order-btn' );
-		$this->add_responsive_control(
-			'btn_radius',
-			[
-				'label' => __( 'Radius', 'sina-ext' ),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', 'em', '%' ],
-				'default' => [
-					'top' => '4',
-					'right' => '4',
-					'bottom' => '4',
-					'left' => '4',
-					'isLinked' => true,
-				],
-				'separator' => 'before',
-				'selectors' => [
-					'{{WRAPPER}} .sina-order-btn' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
-		);
-		$this->add_responsive_control(
-			'btn_padding',
-			[
-				'label' => __( 'Padding', 'sina-ext' ),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', 'em', '%' ],
-				'default' => [
-					'top' => '12',
-					'right' => '25',
-					'bottom' => '12',
-					'left' => '25',
-					'isLinked' => false,
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-order-btn' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
-		);
-		$this->add_responsive_control(
-			'btn_margin',
-			[
-				'label' => __( 'Margin', 'sina-ext' ),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', 'em', '%' ],
-				'default' => [
-					'top' => '30',
-					'right' => '0',
-					'bottom' => '40',
-					'left' => '0',
-					'isLinked' => false,
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-pricing-btn' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
-		);
-
-		$this->end_controls_section();
-		// End Button Style
-		// =====================
-
-
 		// Start Content Style
 		// =====================
 		$this->start_controls_section(
@@ -982,39 +1143,6 @@ class Sina_Pricing_Widget extends Widget_Base {
 			]
 		);
 
-		$this->add_control(
-			'content_icon',
-			[
-				'label' => __( 'Icon Styles', 'sina-ext' ),
-				'type' => Controls_Manager::HEADING,
-			]
-		);
-		$this->add_control(
-			'icon_align',
-			[
-				'label' => __( 'Icon Position', 'sina-ext' ),
-				'type' => Controls_Manager::SELECT,
-				'options' => [
-					'left' => __( 'Left', 'sina-ext' ),
-					'right' => __( 'Right', 'sina-ext' ),
-				],
-				'default' => 'left',
-			]
-		);
-		$this->add_responsive_control(
-			'icon_space',
-			[
-				'label' => __( 'Icon Spacing', 'sina-ext' ),
-				'type' => Controls_Manager::SLIDER,
-				'default' => [
-					'size' => '5',
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-pricing-body li .sina-icon-right' => 'margin-left: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .sina-pricing-body li .sina-icon-left' => 'margin-right: {{SIZE}}{{UNIT}};',
-				],
-			]
-		);
 		$this->add_control(
 			'content_color',
 			[
@@ -1056,12 +1184,48 @@ class Sina_Pricing_Widget extends Widget_Base {
 				'selector' => '{{WRAPPER}} .sina-pricing-body li',
 			]
 		);
+
+		$this->add_control(
+			'content_icon',
+			[
+				'label' => __( 'Icon Styles', 'sina-ext' ),
+				'type' => Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+		$this->add_control(
+			'icon_align',
+			[
+				'label' => __( 'Icon Position', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					'left' => __( 'Left', 'sina-ext' ),
+					'right' => __( 'Right', 'sina-ext' ),
+				],
+				'default' => 'left',
+			]
+		);
+		$this->add_responsive_control(
+			'icon_space',
+			[
+				'label' => __( 'Icon Spacing', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'default' => [
+					'size' => '5',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-pricing-body li .sina-icon-right' => 'margin-left: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .sina-pricing-body li .sina-icon-left' => 'margin-right: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
 		$this->add_responsive_control(
 			'content_padding',
 			[
 				'label' => __( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
+				'separator' => 'before',
 				'selectors' => [
 					'{{WRAPPER}} .sina-pricing-body' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
@@ -1070,6 +1234,81 @@ class Sina_Pricing_Widget extends Widget_Base {
 
 		$this->end_controls_section();
 		// End Content Style
+		// =====================
+
+
+		// Start Button Style
+		// =====================
+		$this->start_controls_section(
+			'btn_style',
+			[
+				'label' => __( 'Button', 'sina-ext' ),
+				'tab' => Controls_Manager::TAB_STYLE,
+				'condition' => [
+					'btn_text!' => '',
+				],
+			]
+		);
+		Sina_Common_Data::button_style( $this, '.sina-pricing .sina-order-btn' );
+		$this->add_responsive_control(
+			'btn_radius',
+			[
+				'label' => __( 'Radius', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '4',
+					'right' => '4',
+					'bottom' => '4',
+					'left' => '4',
+					'isLinked' => true,
+				],
+				'separator' => 'before',
+				'selectors' => [
+					'{{WRAPPER}} .sina-order-btn, {{WRAPPER}} .sina-order-btn:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'btn_padding',
+			[
+				'label' => __( 'Padding', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '12',
+					'right' => '25',
+					'bottom' => '12',
+					'left' => '25',
+					'isLinked' => false,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-order-btn' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'btn_margin',
+			[
+				'label' => __( 'Margin', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '30',
+					'right' => '0',
+					'bottom' => '40',
+					'left' => '0',
+					'isLinked' => false,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-pricing-btn' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+		Sina_Common_Data::BG_hover_effects($this, '.sina-order-btn', 'btn_bg_layer');
+
+		$this->end_controls_section();
+		// End Button Style
 		// =====================
 
 
@@ -1103,13 +1342,6 @@ class Sina_Pricing_Widget extends Widget_Base {
 				'selector' => '{{WRAPPER}} .sina-ribbon-right, {{WRAPPER}} .sina-ribbon-left',
 			]
 		);
-		$this->add_group_control(
-			Group_Control_Text_Shadow::get_type(),
-			[
-				'name' => 'ribbon_shadow',
-				'selector' => '{{WRAPPER}} .sina-ribbon-right, {{WRAPPER}} .sina-ribbon-left',
-			]
-		);
 		$this->add_control(
 			'ribbon_color',
 			[
@@ -1119,6 +1351,13 @@ class Sina_Pricing_Widget extends Widget_Base {
 				'selectors' => [
 					'{{WRAPPER}} .sina-ribbon-right, {{WRAPPER}} .sina-ribbon-left' => 'color: {{VALUE}};',
 				],
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Text_Shadow::get_type(),
+			[
+				'name' => 'ribbon_shadow',
+				'selector' => '{{WRAPPER}} .sina-ribbon-right, {{WRAPPER}} .sina-ribbon-left',
 			]
 		);
 		$this->add_group_control(
@@ -1147,7 +1386,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 	protected function render() {
 		$data = $this->get_settings_for_display();
 		?>
-		<div class="sina-pricing <?php echo esc_attr( $data['effects'] ); ?>">
+		<div class="sina-pricing <?php echo esc_attr( $data['effects'].' '.$data['bg_layer_effects'] ); ?>">
 			<?php if ( $data['ribbon_title'] && $data['ribbon_position'] ): ?>
 				<div class="<?php echo esc_attr( $data['ribbon_position'] ); ?>">
 					<?php printf( '%s', $data['ribbon_title'] ); ?>
@@ -1199,7 +1438,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 
 			<?php if ( $data['btn_text'] || $data['btn_icon'] ) : ?>
 				<div class="sina-pricing-btn">
-					<a class="sina-order-btn <?php echo esc_attr( $data['btn_effect']); ?>"
+					<a class="sina-order-btn <?php echo esc_attr( $data['btn_effect'].' '.$data['btn_bg_layer_effects'] ); ?>"
 					href="<?php echo esc_url( $data['btn_link']['url'] ); ?>"
 					<?php if ( 'on' == $data['btn_link']['is_external'] ): ?>
 						target="_blank" 

@@ -43,7 +43,7 @@ class Sina_Image_Differ_Widget extends Widget_Base {
 	 * @since 3.1.0
 	 */
 	public function get_icon() {
-		return 'eicon-post-navigation';
+		return 'eicon-image-before-after';
 	}
 
 	/**
@@ -121,6 +121,9 @@ class Sina_Image_Differ_Widget extends Widget_Base {
 				'default' => [
 					'url' => SINA_EXT_URL .'assets/img/car-original1.jpg',
 				],
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$this->add_control(
@@ -130,6 +133,9 @@ class Sina_Image_Differ_Widget extends Widget_Base {
 				'type' => Controls_Manager::MEDIA,
 				'default' => [
 					'url' => SINA_EXT_URL .'assets/img/car-original2.jpg',
+				],
+				'dynamic' => [
+					'active' => true,
 				],
 			]
 		);

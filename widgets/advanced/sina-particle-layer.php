@@ -104,7 +104,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 	 */
 	protected function _register_controls() {
 		// Start Content
-		// =====================
+		// ===============
 		$this->start_controls_section(
 			'particle_content',
 			[
@@ -140,6 +140,9 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter Title', 'sina-ext' ),
 				'default' => 'Welcome to get start your business',
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$this->add_control(
@@ -150,6 +153,9 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter Title Span', 'sina-ext' ),
 				'description' => __( 'You can use SPAN for multi-color title.', 'sina-ext' ),
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$this->add_control(
@@ -174,6 +180,9 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 				'placeholder' => __( 'Enter Title', 'sina-ext' ),
 				'separator' => 'before',
 				'default' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$this->add_control(
@@ -200,12 +209,15 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 				'placeholder' => __( 'Enter Description', 'sina-ext' ),
 				'separator' => 'before',
 				'default' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 
 		$this->end_controls_section();
 		// End Content
-		// =====================
+		// =============
 
 
 		// Start Primary Button
@@ -905,7 +917,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 			]
 		);
 		Sina_Common_Data::tooltip_style( $this, 'pbtn', '.sina-banner-pbtn' );
-		Sina_Common_Data::BG_hover_effects($this, '.sina-banner-pbtn', 'pbtn_bg_layer');
+		Sina_Common_Data::BG_hover_effects_alt($this, '.sina-banner-pbtn', 'pbtn_bg_layer');
 
 		$this->end_controls_section();
 		// End Primary Button Style
@@ -986,7 +998,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 			]
 		);
 		Sina_Common_Data::tooltip_style( $this, 'sbtn', '.sina-banner-sbtn' );
-		Sina_Common_Data::BG_hover_effects($this, '.sina-banner-sbtn', 'sbtn_bg_layer');
+		Sina_Common_Data::BG_hover_effects_alt($this, '.sina-banner-sbtn', 'sbtn_bg_layer');
 
 		$this->end_controls_section();
 		// End Secondary Button Style

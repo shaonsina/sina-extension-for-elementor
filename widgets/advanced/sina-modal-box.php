@@ -113,6 +113,20 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 		);
 
 		$this->add_control(
+			'is_outside_click',
+			[
+				'label' => __( 'Close to click outside', 'sina-ext' ),
+				'type' => Controls_Manager::SWITCHER,
+			]
+		);
+		$this->add_control(
+			'is_esc_press',
+			[
+				'label' => __( 'Close to press ESC', 'sina-ext' ),
+				'type' => Controls_Manager::SWITCHER,
+			]
+		);
+		$this->add_control(
 			'save_templates',
 			[
 				'label' => __( 'Use Save Templates', 'sina-ext' ),
@@ -140,6 +154,9 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 				'placeholder' => __( 'Enter Header Text', 'sina-ext' ),
 				'description' => __( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'This is the modal box',
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$this->add_control(
@@ -154,6 +171,9 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 				'condition' => [
 					'save_templates' => '',
 				],
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$this->add_control(
@@ -167,6 +187,9 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 				'default' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
 				'condition' => [
 					'save_templates' => '',
+				],
+				'dynamic' => [
+					'active' => true,
 				],
 			]
 		);
@@ -185,14 +208,14 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
-		Sina_Common_Data::button_content( $this, '.sina-modal-box', 'Clicke Here', 'trigger',  false );
+		Sina_Common_Data::button_content( $this, '.sina-modal-trigger', 'Clicke Here', 'trigger',  false );
 		$this->add_control(
 			'trigger_id',
 			[
-				'label' => __( 'CSS ID', 'sina-ext' ),
+				'label' => __( 'CSS class', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter ID', 'sina-ext' ),
-				'description' => __( 'Make sure this ID unique', 'sina-ext' ),
+				'placeholder' => __( 'Enter CLASS', 'sina-ext' ),
+				'description' => __( 'Make sure this CLASS unique', 'sina-ext' ),
 			]
 		);
 		$this->end_controls_section();
@@ -1177,15 +1200,18 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 		$data = $this->get_settings_for_display();
 		$trigger_id = $data['trigger_id'] ? $data['trigger_id'] : 'sina-modal-'.$this->get_id();
 		?>
-		<div class="sina-modal-box" data-modal-id="<?php echo esc_attr( $trigger_id ); ?>">
+		<div class="sina-modal-box"
+		data-click="<?php echo esc_attr( $data['is_outside_click'] ); ?>"
+		data-esc="<?php echo esc_attr( $data['is_esc_press'] ); ?>"
+		data-modal-id="<?php echo esc_attr( $trigger_id ); ?>">
 			<?php if ( $data['trigger_text'] ): ?>
 				<div class="sina-btn-wrap">
-					<button id="<?php echo esc_attr( $trigger_id ); ?>" class="sina-button sina-modal-trigger <?php echo esc_attr( $data['trigger_effect'].' '.$data['trigger_bg_layer_effects'] ); ?>">
+					<button class="sina-button sina-modal-trigger <?php echo esc_attr( $trigger_id.' '.$data['trigger_effect'].' '.$data['trigger_bg_layer_effects'] ); ?>">
 						<?php Sina_Common_Data::button_html($data, 'trigger'); ?>
 					</button>
 				</div>
 			<?php endif; ?>
-			<div class="sina-modal-overlay <?php echo esc_attr( $trigger_id ); ?>">
+			<div class="sina-modal-overlay sina-modal-<?php echo esc_attr( $trigger_id ); ?>">
 				<div class="sina-modal-area sina-flex animated <?php echo esc_attr( $data['modal_effects'] ); ?>">
 					<div class="sina-modal-content">
 						<?php if ( '' != $data['modal_header'] ): ?>
@@ -1208,7 +1234,7 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 							<?php endif; ?>
 						</div>
 						<div class="sina-modal-footer">
-							<button class="sina-button sina-modal-close <?php echo esc_attr( $trigger_id ); ?>"><?php _e( 'Close', 'sina-ext' ); ?></button>
+							<button class="sina-button sina-modal-close close-<?php echo esc_attr( $trigger_id ); ?>"><?php _e( 'Close', 'sina-ext' ); ?></button>
 						</div>
 					</div>
 				</div>

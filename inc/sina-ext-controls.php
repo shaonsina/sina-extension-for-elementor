@@ -1,6 +1,4 @@
 <?php
-// namespace Sina_Extension;
-
 use \Elementor\Widget_Base;
 use \Elementor\Controls_Manager;
 use \Elementor\Group_Control_Typography;
@@ -49,6 +47,52 @@ class Sina_Common_Data{
 					'sina-hv-slide-rb' => __( 'Slide Right-Bottom', 'sina-ext' ),
 					'sina-hv-slide-lt' => __( 'Slide Left-Top', 'sina-ext' ),
 					'sina-hv-slide-rt' => __( 'Slide Right-Top', 'sina-ext' ),
+					'' => __( 'None', 'sina-ext' ),
+				],
+				'default' => '',
+			]
+		);
+		$obj->add_group_control(
+			Group_Control_Background::get_type(),
+			[
+				'name' => $prefix.'_color',
+				'types' => [ 'classic', 'gradient' ],
+				'fields_options' => [
+					'background' => [ 
+						'default' =>'classic', 
+					],
+					'color' => [
+						'default' => '#055394',
+					],
+				],
+				'selector' => '{{WRAPPER}} '.$class.':before',
+			]
+		);
+	}
+	public static function BG_hover_effects_alt( $obj, $class, $prefix = 'bg_layer' ) {
+
+		$obj->add_control(
+			$prefix.'_styles',
+			[
+				'label' => __( 'Background Hover Styles', 'sina-ext' ),
+				'type' => Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+		$obj->add_control(
+			$prefix.'_effects',
+			[
+				'label' => __( 'Hover Effects', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					'sina-hv-door-v' => __( 'Door Vertical', 'sina-ext' ),
+					'sina-hv-door-h' => __( 'Door Horizontal', 'sina-ext' ),
+					'sina-hv-zoom' => __( 'Zoom In', 'sina-ext' ),
+					'sina-hv-fade' => __( 'Fade In', 'sina-ext' ),
+					'sina-hv-slide-l' => __( 'Slide Left', 'sina-ext' ),
+					'sina-hv-slide-r' => __( 'Slide Right', 'sina-ext' ),
+					'sina-hv-slide-b' => __( 'Slide Bottom', 'sina-ext' ),
+					'sina-hv-slide-t' => __( 'Slide Top', 'sina-ext' ),
 					'' => __( 'None', 'sina-ext' ),
 				],
 				'default' => '',
@@ -382,23 +426,11 @@ class Sina_Common_Data{
 				]
 			);
 		}
-		if ($cond) {
-			$obj->add_control(
-				$prefix.'_link',
-				[
-					'label' => __( 'Link', 'sina-ext' ),
-					'type' => Controls_Manager::URL,
-					'placeholder' => __( 'https://your-link.com', 'sina-ext' ),
-					'default' => [
-						'url' => '#',
-					],
-				]
-			);
-		}
 		$obj->add_control(
 			$prefix.'_icon',
 			[
 				'label' => __( 'Icon', 'sina-ext' ),
+				'label_block' => true,
 				'type' => Controls_Manager::ICON,
 			]
 		);
@@ -435,6 +467,19 @@ class Sina_Common_Data{
 				],
 			]
 		);
+		if ($cond) {
+			$obj->add_control(
+				$prefix.'_link',
+				[
+					'label' => __( 'Link', 'sina-ext' ),
+					'type' => Controls_Manager::URL,
+					'placeholder' => __( 'https://your-link.com', 'sina-ext' ),
+					'default' => [
+						'url' => '#',
+					],
+				]
+			);
+		}
 	}
 
 	public static function tooltip_style( $obj, $prefix, $class ) {
@@ -504,11 +549,37 @@ class Sina_Common_Data{
 			]
 		);
 		$obj->add_responsive_control(
+			$prefix.'_tooptip_width',
+			[
+				'label' => __( 'Width', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', 'em', '%'],
+				'range' => [
+					'px' => [
+						'max' => 300,
+					],
+					'em' => [
+						'max' => 30,
+					],
+				],
+				'default' => [
+					'unit' => 'px',
+					'size' => 120,
+				],
+				'condition' => [
+					$prefix.'_tooltip_text!' => '',
+				],
+				'selectors' => [
+					'{{WRAPPER}} '.$class.' .sina-tooltip-text' => 'width: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+		$obj->add_responsive_control(
 			$prefix.'_tooptip_dist',
 			[
 				'label' => __( 'Distance', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
-				'size_units' => [ 'px', 'em' ],
+				'size_units' => [ 'px' ],
 				'range' => [
 					'px' => [
 						'min' => -200,
@@ -526,7 +597,7 @@ class Sina_Common_Data{
 					$prefix.'_tooltip_text!' => '',
 				],
 				'selectors' => [
-					'{{WRAPPER}} '.$class.' .sina-tooltip-text' => 'top: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} '.$class.' .sina-tooltip-text.sina-tooltip-top' => 'top: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -756,7 +827,7 @@ class Sina_Common_Data{
 		);
 	}
 
-	public static function button_style( $obj, $class = '', $prefix = 'btn' ) {
+	public static function button_style( $obj, $class = '', $prefix = 'btn') {
 		$obj->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
@@ -892,6 +963,169 @@ class Sina_Common_Data{
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} '.$class.':hover, {{WRAPPER}} '.$class.':focus' => 'border-color: {{VALUE}};',
+				],
+			]
+		);
+		$obj->end_controls_tab();
+
+		$obj->end_controls_tabs();
+	}
+
+	public static function button_style_active( $obj, $class = '', $prefix = 'btn') {
+		$obj->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name' => $prefix.'_typography',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_size'   => [
+						'default' => [
+							'size' => '15',
+						],
+					],
+					'line_height'   => [
+						'default' => [
+							'unit' => 'px',
+							'size' => '20',
+						],
+					],
+					'font_weight' => [
+						'default' => '400',
+					],
+					'transform'   => [
+						'default' => [
+							'size' => 'uppercase',
+						],
+					],
+				],
+				'selector' => '{{WRAPPER}} '.$class,
+			]
+		);
+
+		$obj->start_controls_tabs( $prefix.'_tabs' );
+
+		$obj->start_controls_tab(
+			$prefix.'_normal',
+			[
+				'label' => __( 'Normal', 'sina-ext' ),
+			]
+		);
+		$obj->add_control(
+			$prefix.'_color',
+			[
+				'label' => __( 'Text Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#fafafa',
+				'selectors' => [
+					'{{WRAPPER}} '.$class => 'color: {{VALUE}};',
+				],
+			]
+		);
+		$obj->add_group_control(
+			Group_Control_Background::get_type(),
+			[
+				'name' => $prefix.'_bg',
+				'types' => [ 'classic', 'gradient' ],
+				'fields_options' => [
+					'background' => [ 
+						'default' =>'classic', 
+					],
+					'color' => [
+						'default' => '#1085e4',
+					],
+				],
+				'selector' => '{{WRAPPER}} '.$class,
+			]
+		);
+		$obj->add_group_control(
+			Group_Control_Text_Shadow::get_type(),
+			[
+				'name' => $prefix.'_tshadow',
+				'selector' => '{{WRAPPER}} '.$class,
+			]
+		);
+		$obj->add_group_control(
+			Group_Control_Box_Shadow::get_type(),
+			[
+				'name' => $prefix.'_shadow',
+				'selector' => '{{WRAPPER}} '.$class,
+			]
+		);
+		$obj->add_group_control(
+			Group_Control_Border::get_type(),
+			[
+				'name' => $prefix.'_border',
+				'selector' => '{{WRAPPER}} '.$class,
+			]
+		);
+		$obj->add_responsive_control(
+			$prefix.'_radius',
+			[
+				'label' => __( 'Radius', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'selectors' => [
+					'{{WRAPPER}} '.$class => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+		$obj->end_controls_tab();
+
+		$obj->start_controls_tab(
+			$prefix.'_active',
+			[
+				'label' => __( 'Active', 'sina-ext' ),
+			]
+		);
+		$obj->add_control(
+			$prefix.'_active_color',
+			[
+				'label' => __( 'Text Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} '.$class.'.active' => 'color: {{VALUE}};',
+				],
+			]
+		);
+		$obj->add_group_control(
+			Group_Control_Background::get_type(),
+			[
+				'name' => $prefix.'_active_bg',
+				'types' => [ 'classic', 'gradient' ],
+				'selector' => '{{WRAPPER}} '.$class.'.active',
+			]
+		);
+		$obj->add_group_control(
+			Group_Control_Text_Shadow::get_type(),
+			[
+				'name' => $prefix.'_active_tshadow',
+				'selector' => '{{WRAPPER}} '.$class.'.active',
+			]
+		);
+		$obj->add_group_control(
+			Group_Control_Box_Shadow::get_type(),
+			[
+				'name' => $prefix.'_active_shadow',
+				'selector' => '{{WRAPPER}} '.$class.'.active',
+			]
+		);
+		$obj->add_group_control(
+			Group_Control_Border::get_type(),
+			[
+				'name' => $prefix.'_active_border',
+				'selector' => '{{WRAPPER}} '.$class.'.active',
+			]
+		);
+		$obj->add_responsive_control(
+			$prefix.'_active_radius',
+			[
+				'label' => __( 'Radius', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'selectors' => [
+					'{{WRAPPER}} '.$class.'.active' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -1102,7 +1336,7 @@ class Sina_Common_Data{
 
 	public static function button_html( $data, $prefix = 'btn' ) {
 		if ( isset($data[$prefix.'_tooltip_text']) && $data[$prefix.'_tooltip_text'] ) : ?>
-			<?php printf( '<span class="sina-tooltip-text">%s</span>', $data[$prefix.'_tooltip_text'] ); ?>
+			<?php printf( '<span class="sina-tooltip-text sina-tooltip-top">%s</span>', $data[$prefix.'_tooltip_text'] ); ?>
 		<?php
 		endif;
 		if ( $data[$prefix.'_icon'] && $data[$prefix.'_icon_align'] == 'left' ): ?>

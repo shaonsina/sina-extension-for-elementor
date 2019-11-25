@@ -8,11 +8,6 @@
 
 use \Elementor\Widget_Base;
 use \Elementor\Controls_Manager;
-use \Elementor\Group_Control_Typography;
-use \Elementor\Group_Control_Text_Shadow;
-use \Elementor\Group_Control_Border;
-use \Elementor\Group_Control_Box_Shadow;
-use \Elementor\Group_Control_Background;
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -94,7 +89,7 @@ class Sina_Dynamic_Button_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'button_content',
 			[
-				'label' => __( 'Button Content', 'sina-ext' ),
+				'label' => __( 'Button', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -197,6 +192,7 @@ class Sina_Dynamic_Button_Widget extends Widget_Base {
 			'btn_icon',
 			[
 				'label' => __( 'Icon', 'sina-ext' ),
+				'label_block' => true,
 				'type' => Controls_Manager::ICON,
 			]
 		);
@@ -255,7 +251,7 @@ class Sina_Dynamic_Button_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'button_style',
 			[
-				'label' => __( 'Button Style', 'sina-ext' ),
+				'label' => __( 'Button', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);

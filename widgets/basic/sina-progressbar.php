@@ -125,47 +125,16 @@ class Sina_Progressbar_Widget extends Widget_Base {
 				'placeholder' => __('Enter Title', 'sina-ext'),
 				'description' => __( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'Web Development',
-			]
-		);
-		$this->add_control(
-			'percentage',
-			[
-				'label' => __( 'Value', 'sina-ext' ),
-				'type' => Controls_Manager::NUMBER,
-				'min' => 0,
-				'default' => 90,
-			]
-		);
-		$this->add_control(
-			'max_value',
-			[
-				'label' => __( 'Max Value', 'sina-ext' ),
-				'type' => Controls_Manager::NUMBER,
-				'min' => 1,
-				'default' => 100,
-			]
-		);
-		$this->add_control(
-			'prefix',
-			[
-				'label' => __( 'Prefix', 'sina-ext' ),
-				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter prefix', 'sina-ext' ),
-			]
-		);
-		$this->add_control(
-			'suffix',
-			[
-				'label' => __( 'Suffix', 'sina-ext' ),
-				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter suffix', 'sina-ext' ),
-				'default' => '%',
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$this->add_control(
 			'icon',
 			[
 				'label' => __( 'Icon', 'sina-ext' ),
+				'label_block' => true,
 				'type' => Controls_Manager::ICON,
 			]
 		);
@@ -198,6 +167,53 @@ class Sina_Progressbar_Widget extends Widget_Base {
 				'selectors' => [
 					'{{WRAPPER}} .sina-bar-title .sina-icon-right' => 'margin-left: {{SIZE}}{{UNIT}};',
 					'{{WRAPPER}} .sina-bar-title .sina-icon-left' => 'margin-right: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_control(
+			'percentage',
+			[
+				'label' => __( 'Value', 'sina-ext' ),
+				'type' => Controls_Manager::NUMBER,
+				'min' => 0,
+				'default' => 90,
+				'dynamic' => [
+					'active' => true,
+				],
+			]
+		);
+		$this->add_control(
+			'max_value',
+			[
+				'label' => __( 'Max Value', 'sina-ext' ),
+				'type' => Controls_Manager::NUMBER,
+				'min' => 1,
+				'default' => 100,
+				'dynamic' => [
+					'active' => true,
+				],
+			]
+		);
+		$this->add_control(
+			'prefix',
+			[
+				'label' => __( 'Prefix', 'sina-ext' ),
+				'type' => Controls_Manager::TEXT,
+				'placeholder' => __( 'Enter prefix', 'sina-ext' ),
+				'dynamic' => [
+					'active' => true,
+				],
+			]
+		);
+		$this->add_control(
+			'suffix',
+			[
+				'label' => __( 'Suffix', 'sina-ext' ),
+				'type' => Controls_Manager::TEXT,
+				'placeholder' => __( 'Enter suffix', 'sina-ext' ),
+				'default' => '%',
+				'dynamic' => [
+					'active' => true,
 				],
 			]
 		);

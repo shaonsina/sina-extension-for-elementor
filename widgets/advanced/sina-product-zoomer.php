@@ -121,6 +121,9 @@ class Sina_Product_Zoomer_Widget extends Widget_Base {
 				'placeholder' => __( 'Enter Product Title', 'sina-ext' ),
 				'description' => __( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'Nice Car',
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$this->add_control(
@@ -132,6 +135,9 @@ class Sina_Product_Zoomer_Widget extends Widget_Base {
 				'placeholder' => __( 'Enter Product Description', 'sina-ext' ),
 				'description' => __( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'Price: $100',
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$this->add_control(
@@ -145,6 +151,9 @@ class Sina_Product_Zoomer_Widget extends Widget_Base {
 				],
 				'condition' => [
 					'title!' => '',
+				],
+				'dynamic' => [
+					'active' => true,
 				],
 			]
 		);
@@ -192,6 +201,9 @@ class Sina_Product_Zoomer_Widget extends Widget_Base {
 				'default' => [
 					'url' => SINA_EXT_URL .'assets/img/choose-img.jpg',
 				],
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$repeater->add_control(
@@ -202,6 +214,9 @@ class Sina_Product_Zoomer_Widget extends Widget_Base {
 				'default' => [
 					'url' => SINA_EXT_URL .'assets/img/choose-img.jpg',
 				],
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$repeater->add_control(
@@ -211,6 +226,9 @@ class Sina_Product_Zoomer_Widget extends Widget_Base {
 				'type' => Controls_Manager::MEDIA,
 				'default' => [
 					'url' => SINA_EXT_URL .'assets/img/choose-img.jpg',
+				],
+				'dynamic' => [
+					'active' => true,
 				],
 			]
 		);

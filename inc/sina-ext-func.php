@@ -17,7 +17,7 @@ use \Sina_Extension\Sina_Ext_Controls;
  * @since 3.0.0
  */
 abstract class Sina_Ext_Functions extends Sina_Extension_Base{
-	/**
+	 /**
 	 * Enqueue CSS files
 	 *
 	 * @since 3.0.0
@@ -58,6 +58,15 @@ abstract class Sina_Ext_Functions extends Sina_Extension_Base{
 		}
 		wp_register_script( 'sina-widgets', SINA_EXT_URL .'assets/js/sina-widgets.min.js', ['jquery'], SINA_EXT_VERSION, true );
 		wp_localize_script( 'sina-widgets', 'sinaAjax', ['ajaxURL' => $ajax_url] );
+	}
+
+	/**
+	 * Require Scripts
+	 *
+	 * @since 3.1.4
+	 */
+	public function require_scripts() {
+		wp_enqueue_style( 'icofont', SINA_EXT_URL .'admin/assets/css/icofont.min.css', [], '1.0.1' );
 	}
 
 	/**
@@ -126,6 +135,9 @@ abstract class Sina_Ext_Functions extends Sina_Extension_Base{
 			add_action( 'admin_notices', [ $this, 'admin_notice_minimum_php_version' ] );
 			return;
 		}
+
+		add_action( 'elementor/editor/before_enqueue_scripts', [ $this, 'require_scripts' ] );
+		add_action( 'wp_enqueue_scripts', [$this, 'require_scripts'] );
 
 		// Register Widget Category
 		add_action( 'elementor/elements/categories_registered', [ $this, 'widget_category' ] );

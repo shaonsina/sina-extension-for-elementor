@@ -317,7 +317,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 					],
 				],
 				'default' => [
-					'size' => '1.1',
+					'size' => '1.05',
 				],
 				'condition' => [
 					'effects' => 'sina-hover-zoom',
@@ -398,6 +398,16 @@ class Sina_Blogpost_Widget extends Widget_Base {
 		);
 		$this->end_popover();
 
+
+		$this->start_controls_tabs( 'post_tabs' );
+
+		$this->start_controls_tab(
+			'post_normal',
+			[
+				'label' => __( 'Normal', 'sina-ext' ),
+			]
+		);
+
 		$this->add_group_control(
 			Group_Control_Background::get_type(),
 			[
@@ -437,12 +447,228 @@ class Sina_Blogpost_Widget extends Widget_Base {
 				'selector' => '{{WRAPPER}} .sina-bp',
 			]
 		);
+
+		$this->end_controls_tab();
+
+		$this->start_controls_tab(
+			'post_hover',
+			[
+				'label' => __( 'Hover', 'sina-ext' ),
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
+			[
+				'name' => 'hover_background',
+				'types' => [ 'classic', 'gradient' ],
+				'selector' => '{{WRAPPER}} .sina-bp:hover',
+			]
+		);
+		$this->add_control(
+			'box_hover_border',
+			[
+				'label' => __( 'Border Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .sina-bp:hover' => 'border-color: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Box_Shadow::get_type(),
+			[
+				'name' => 'box_hover_shadow',
+				'selector' => '{{WRAPPER}} .sina-bp:hover',
+			]
+		);
+
+		$this->add_control(
+			'post_hover_title_heading',
+			[
+				'label' => __( 'Title Styles', 'sina-ext' ),
+				'type' => Controls_Manager::HEADING,
+			]
+		);
+		$this->add_control(
+			'post_hover_title_color',
+			[
+				'label' => __( 'Text Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .sina-bp:hover .sina-bp-title a' => 'color: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Text_Shadow::get_type(),
+			[
+				'name' => 'post_hover_title_shadow',
+				'selector' => '{{WRAPPER}} .sina-bp:hover .sina-bp-title a',
+			]
+		);
+
+		$this->add_control(
+			'post_hover_cats_heading',
+			[
+				'label' => __( 'Categories Styles', 'sina-ext' ),
+				'type' => Controls_Manager::HEADING,
+				'condition' => [
+					'posts_cats!' => '',
+				],
+			]
+		);
+		$this->add_control(
+			'post_cats_color',
+			[
+				'label' => __( 'Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'condition' => [
+					'posts_cats!' => '',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-bp:hover .sina-bp-cats, {{WRAPPER}} .sina-bp:hover .sina-bp-cats a' => 'color: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_control(
+			'post_cats_bg',
+			[
+				'label' => __( 'Background Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'condition' => [
+					'posts_cats!' => '',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-bp:hover .sina-bp-cats' => 'background-color: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_control(
+			'post_cats_border',
+			[
+				'label' => __( 'Border Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'condition' => [
+					'posts_cats!' => '',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-bp:hover .sina-bp-cats, {{WRAPPER}} .sina-bp-cats a' => 'border-color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'post_hover_content_heading',
+			[
+				'label' => __( 'Content Styles', 'sina-ext' ),
+				'type' => Controls_Manager::HEADING,
+			]
+		);
+		$this->add_control(
+			'post_hover_content_color',
+			[
+				'label' => __( 'Text Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .sina-bp:hover .sina-bp-content' => 'color: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Text_Shadow::get_type(),
+			[
+				'name' => 'post_hover_content_shadow',
+				'selector' => '{{WRAPPER}} .sina-bp:hover .sina-bp-content',
+			]
+		);
+		$this->add_control(
+			'post_hover_content_border',
+			[
+				'label' => __( 'Border Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .sina-bp:hover .sina-bp-content' => 'border-color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'post_hover_btn_heading',
+			[
+				'label' => __( 'Button', 'sina-ext' ),
+				'type' => Controls_Manager::HEADING,
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
+			[
+				'name' => 'post_hover_btn_bg',
+				'types' => [ 'classic', 'gradient' ],
+				'selector' => '{{WRAPPER}} .sina-bp:hover .sina-read-more',
+			]
+		);
+		$this->add_control(
+			'post_hover_btn_color',
+			[
+				'label' => __( 'Text Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .sina-bp:hover .sina-read-more' => 'color: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_control(
+			'post_hover_btn_border',
+			[
+				'label' => __( 'Border Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .sina-bp:hover .sina-read-more' => 'border-color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'post_hover_meta_heading',
+			[
+				'label' => __( 'Meta Styles', 'sina-ext' ),
+				'type' => Controls_Manager::HEADING,
+			]
+		);
+		$this->add_control(
+			'post_hover_meta_color',
+			[
+				'label' => __( 'Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .sina-bp:hover .sina-bp-meta' => 'color: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_control(
+			'post_hover_link_color',
+			[
+				'label' => __( 'Link Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#1085e4',
+				'selectors' => [
+					'{{WRAPPER}} .sina-bp:hover .sina-bp-meta a' => 'color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->end_controls_tab();
+
+		$this->end_controls_tabs();
+
 		$this->add_responsive_control(
 			'box_radius',
 			[
 				'label' => __( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
+				'separator' => 'before',
 				'selectors' => [
 					'{{WRAPPER}} .sina-bp' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
@@ -518,6 +744,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 				'selector' => '{{WRAPPER}} .sina-bg-thumb .sina-overlay',
 			]
 		);
+		Sina_Common_Data::BG_hover_effects($this, '.sina-bp');
 
 		$this->end_controls_section();
 		// End Post Style
@@ -783,7 +1010,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '#1085e4',
 				'selectors' => [
-					'{{WRAPPER}} .sina-bp-title a:hover, {{WRAPPER}} .sina-bp-title a:focus' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .sina-bp .sina-bp-title a:hover, {{WRAPPER}} .sina-bp .sina-bp-title a:focus' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -791,7 +1018,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 			Group_Control_Text_Shadow::get_type(),
 			[
 				'name' => 'title_hover_shadow',
-				'selector' => '{{WRAPPER}} .sina-bp-title a:hover',
+				'selector' => '{{WRAPPER}} .sina-bp .sina-bp-title a:hover',
 			]
 		);
 
@@ -824,81 +1051,6 @@ class Sina_Blogpost_Widget extends Widget_Base {
 		// =====================
 
 
-		// Start Read More Style
-		// ========================
-		$this->start_controls_section(
-			'read_more_style',
-			[
-				'label' => __( 'Read More', 'sina-ext' ),
-				'tab' => Controls_Manager::TAB_STYLE,
-				'condition' => [
-					'read_more_text!' => '',
-				],
-			]
-		);
-		Sina_Common_Data::button_style( $this, '.sina-read-more' );
-		$this->add_responsive_control(
-			'read_more_radius',
-			[
-				'label' => __( 'Radius', 'sina-ext' ),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', 'em', '%' ],
-				'default' => [
-					'top' => '4',
-					'right' => '4',
-					'bottom' => '4',
-					'left' => '4',
-					'isLinked' => true,
-				],
-				'separator' => 'before',
-				'selectors' => [
-					'{{WRAPPER}} .sina-read-more, {{WRAPPER}} .sina-read-more:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
-		);
-		$this->add_responsive_control(
-			'read_more_padding',
-			[
-				'label' => __( 'Padding', 'sina-ext' ),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', 'em', '%' ],
-				'default' => [
-					'top' => '10',
-					'right' => '20',
-					'bottom' => '10',
-					'left' => '20',
-					'isLinked' => false,
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-read-more' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
-		);
-		$this->add_responsive_control(
-			'read_more_margin',
-			[
-				'label' => __( 'Margin', 'sina-ext' ),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', 'em', '%' ],
-				'default' => [
-					'top' => '25',
-					'right' => '0',
-					'bottom' => '0',
-					'left' => '0',
-					'isLinked' => false,
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-read-more' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
-		);
-		Sina_Common_Data::BG_hover_effects($this, '.sina-read-more', 'read_btn_bg_layer');
-
-		$this->end_controls_section();
-		// End Read More Style
-		// =====================
-
-
 		// Start Cats Style
 		// =====================
 		$this->start_controls_section(
@@ -928,6 +1080,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 			'cats_icon',
 			[
 				'label' => __( 'Icon', 'sina-ext' ),
+				'label_block' => true,
 				'type' => Controls_Manager::ICON,
 				'default' => 'fa fa-folder-open-o',
 			]
@@ -1038,6 +1191,81 @@ class Sina_Blogpost_Widget extends Widget_Base {
 		// =====================
 
 
+		// Start Read More Style
+		// ========================
+		$this->start_controls_section(
+			'read_more_style',
+			[
+				'label' => __( 'Read More', 'sina-ext' ),
+				'tab' => Controls_Manager::TAB_STYLE,
+				'condition' => [
+					'read_more_text!' => '',
+				],
+			]
+		);
+		Sina_Common_Data::button_style( $this, '.sina-bp .sina-read-more' );
+		$this->add_responsive_control(
+			'read_more_radius',
+			[
+				'label' => __( 'Radius', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '4',
+					'right' => '4',
+					'bottom' => '4',
+					'left' => '4',
+					'isLinked' => true,
+				],
+				'separator' => 'before',
+				'selectors' => [
+					'{{WRAPPER}} .sina-read-more, {{WRAPPER}} .sina-read-more:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'read_more_padding',
+			[
+				'label' => __( 'Padding', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '10',
+					'right' => '20',
+					'bottom' => '10',
+					'left' => '20',
+					'isLinked' => false,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-read-more' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'read_more_margin',
+			[
+				'label' => __( 'Margin', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '25',
+					'right' => '0',
+					'bottom' => '0',
+					'left' => '0',
+					'isLinked' => false,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-read-more' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+		Sina_Common_Data::BG_hover_effects($this, '.sina-read-more', 'read_btn_bg_layer');
+
+		$this->end_controls_section();
+		// End Read More Style
+		// =====================
+
+
 		// Start Meta Style
 		// =====================
 		$this->start_controls_section(
@@ -1122,7 +1350,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '#1085e4',
 				'selectors' => [
-					'{{WRAPPER}} .sina-bp-meta a:hover, {{WRAPPER}} .sina-bp-meta a:focus' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .sina-bp:hover .sina-bp-meta a:hover, {{WRAPPER}} .sina-bp:hover .sina-bp-meta a:focus' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -1753,6 +1981,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 				'posts_avatar' => $data['posts_avatar'],
 				'avatar_size' => $data['avatar_size'],
 				'read_btn_bg_layer_effects' => $data['read_btn_bg_layer_effects'],
+				'bg_layer_effects' => $data['bg_layer_effects'],
 			];
 			?>
 			<div class="sina-blogpost <?php echo esc_attr( 'sina-bp-'.$this->get_id() ); ?>"

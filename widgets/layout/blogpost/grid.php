@@ -1,6 +1,6 @@
 <?php while ( $post_query->have_posts() ) : $post_query->the_post(); ?>
 	<div class="sina-bp-col <?php echo esc_attr( $data['columns'].' '.$data['effects'] ); ?>">
-		<div class="sina-bp">
+		<div class="sina-bp <?php echo esc_attr( $data['bg_layer_effects'] ); ?>">
 			<?php if ( has_post_thumbnail() ): ?>
 				<div class="sina-bg-thumb">
 					<?php the_post_thumbnail(); ?>

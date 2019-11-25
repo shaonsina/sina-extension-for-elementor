@@ -125,6 +125,9 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 				'default' => [
 					'url' => SINA_EXT_URL .'assets/img/choose-img.jpg',
 				],
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$repeater->add_control(
@@ -135,6 +138,9 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 				'type' => Controls_Manager::TEXT,
 				'description' => __( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'Welcome',
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$repeater->add_control(
@@ -145,6 +151,9 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter Title Span', 'sina-ext' ),
 				'description' => __( 'You can use SPAN for multi-color title.', 'sina-ext' ),
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$repeater->add_control(
@@ -177,6 +186,9 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 				'type' => Controls_Manager::TEXT,
 				'description' => __( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'Lorem ipsum dolor sit amet',
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$repeater->add_control(
@@ -210,6 +222,9 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 				'type' => Controls_Manager::TEXTAREA,
 				'description' => __( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'Lorem ipsum dolor sit amet',
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$repeater->add_control(
@@ -812,7 +827,7 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 			]
 		);
 		Sina_Common_Data::tooltip_style( $this, 'pbtn', '.sina-banner-pbtn' );
-		Sina_Common_Data::BG_hover_effects($this, '.sina-banner-pbtn', 'pbtn_bg_layer');
+		Sina_Common_Data::BG_hover_effects_alt($this, '.sina-banner-pbtn', 'pbtn_bg_layer');
 
 		$this->end_controls_section();
 		// End Primary Button Style
@@ -896,7 +911,7 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 			]
 		);
 		Sina_Common_Data::tooltip_style( $this, 'sbtn', '.sina-banner-sbtn' );
-		Sina_Common_Data::BG_hover_effects($this, '.sina-banner-sbtn', 'sbtn_bg_layer');
+		Sina_Common_Data::BG_hover_effects_alt($this, '.sina-banner-sbtn', 'sbtn_bg_layer');
 
 		$this->end_controls_section();
 		// End Secondary Button Style

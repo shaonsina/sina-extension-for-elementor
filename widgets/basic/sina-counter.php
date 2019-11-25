@@ -116,6 +116,15 @@ class Sina_Counter_Widget extends Widget_Base {
 		);
 
 		$this->add_control(
+			'icon',
+			[
+				'label' => __( 'Icon', 'sina-ext' ),
+				'label_block' => true,
+				'type' => Controls_Manager::ICON,
+				'default' => 'fa fa-user',
+			]
+		);
+		$this->add_control(
 			'title',
 			[
 				'label' => __( 'Title', 'sina-ext' ),
@@ -124,6 +133,9 @@ class Sina_Counter_Widget extends Widget_Base {
 				'placeholder' => __( 'Enter Title', 'sina-ext' ),
 				'description' => __( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'Satisfied Customers',
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$this->add_control(
@@ -142,62 +154,14 @@ class Sina_Counter_Widget extends Widget_Base {
 			]
 		);
 		$this->add_control(
-			'icon',
-			[
-				'label' => __( 'Icon', 'sina-ext' ),
-				'type' => Controls_Manager::ICON,
-				'default' => 'fa fa-user',
-			]
-		);
-		$this->add_control(
-			'start_number',
-			[
-				'label' => __( 'Start Number', 'sina-ext' ),
-				'type' => Controls_Manager::NUMBER,
-				'default' => 100,
-				'step' => 1,
-			]
-		);
-		$this->add_control(
-			'stop_number',
-			[
-				'label' => __( 'Stop Number', 'sina-ext' ),
-				'type' => Controls_Manager::NUMBER,
-				'default' => 500,
-				'step' => 1,
-			]
-		);
-		$this->add_control(
-			'delimiter',
-			[
-				'label' => __( 'Thousand Delimiter', 'sina-ext' ),
-				'type' => Controls_Manager::SELECT,
-				'options' => [
-					',' => __( 'Comma', 'sina-ext' ),
-					'.' => __( 'Dot', 'sina-ext' ),
-					'|' => __( 'Pipe', 'sina-ext' ),
-					' ' => __( 'space', 'sina-ext' ),
-				],
-				'default' => ',',
-			]
-		);
-		$this->add_control(
-			'speed',
-			[
-				'label' => __( 'Counting Duration', 'sina-ext' ),
-				'type' => Controls_Manager::NUMBER,
-				'default' => 2000,
-				'min' => 100,
-				'max' => 10000,
-				'step' => 100,
-			]
-		);
-		$this->add_control(
 			'prefix',
 			[
 				'label' => __( 'Prefix', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter Prefix', 'sina-ext' ),
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$this->add_control(
@@ -225,6 +189,9 @@ class Sina_Counter_Widget extends Widget_Base {
 				'label' => __( 'Suffix', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter Suffix', 'sina-ext' ),
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$this->add_control(
@@ -244,6 +211,55 @@ class Sina_Counter_Widget extends Widget_Base {
 				'selectors' => [
 					'{{WRAPPER}} .sina-counter-suffix' => 'margin-left: {{SIZE}}{{UNIT}};',
 				],
+			]
+		);
+		$this->add_control(
+			'delimiter',
+			[
+				'label' => __( 'Thousand Delimiter', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					',' => __( 'Comma', 'sina-ext' ),
+					'.' => __( 'Dot', 'sina-ext' ),
+					'|' => __( 'Pipe', 'sina-ext' ),
+					' ' => __( 'space', 'sina-ext' ),
+				],
+				'default' => ',',
+			]
+		);
+		$this->add_control(
+			'start_number',
+			[
+				'label' => __( 'Start Number', 'sina-ext' ),
+				'type' => Controls_Manager::NUMBER,
+				'default' => 100,
+				'step' => 1,
+				'dynamic' => [
+					'active' => true,
+				],
+			]
+		);
+		$this->add_control(
+			'stop_number',
+			[
+				'label' => __( 'Stop Number', 'sina-ext' ),
+				'type' => Controls_Manager::NUMBER,
+				'default' => 500,
+				'step' => 1,
+				'dynamic' => [
+					'active' => true,
+				],
+			]
+		);
+		$this->add_control(
+			'speed',
+			[
+				'label' => __( 'Counting Duration', 'sina-ext' ),
+				'type' => Controls_Manager::NUMBER,
+				'default' => 2000,
+				'min' => 100,
+				'max' => 10000,
+				'step' => 100,
 			]
 		);
 		$this->add_responsive_control(
@@ -364,19 +380,15 @@ class Sina_Counter_Widget extends Widget_Base {
 			]
 		);
 
-		$this->add_group_control(
-			Sina_Ext_Gradient_Text::get_type(),
+		$this->add_control(
+			'number_color',
 			[
-				'name' => 'number_color',
-				'fields_options' => [
-					'background' => [ 
-						'default' =>'classic', 
-					],
-					'color' => [
-						'default' => '#1085e4',
-					],
+				'label' => __( 'Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#1085e4',
+				'selectors' => [
+					'{{WRAPPER}} .sina-counter-number-wrap' => 'color: {{VALUE}};',
 				],
-				'selector' => '{{WRAPPER}} .sina-counter-number-wrap',
 			]
 		);
 		$this->add_group_control(

@@ -120,6 +120,9 @@ class Sina_Visit_Counter_Widget extends Widget_Base {
 				'placeholder' => __( 'Enter text', 'sina-ext' ),
 				'description' => __( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'Today\'s visit',
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$this->add_control(
@@ -131,6 +134,9 @@ class Sina_Visit_Counter_Widget extends Widget_Base {
 				'placeholder' => __( 'Enter text', 'sina-ext' ),
 				'description' => __( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'Yesterday\'s visit',
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$this->add_control(

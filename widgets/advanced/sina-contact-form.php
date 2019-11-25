@@ -129,7 +129,10 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 				'description' => __( 'If the field is empty or enter an invalid email or try to send email from the editor, then the emails will send to the admin email. This email will work only in the front-end.', 'sina-ext' ),
 				'condition' => [
 					'custom_email' => 'yes',
-				]
+				],
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$this->add_control(
@@ -140,6 +143,9 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter Success Message', 'sina-ext' ),
 				'default' => 'Thanks for sending Email!',
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$this->add_control(
@@ -526,14 +532,13 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 		?>
 		<div class="sina-form">
 			<form class="sina-contact-form"
-			data-msg="<?php echo esc_attr( $data['successs_message'] ); ?>"
 			data-inbox="<?php echo esc_attr( $hash ); ?>"
 			data-uid="<?php echo esc_attr( $this->get_id() ); ?>">
 				<?php include SINA_EXT_LAYOUT.'/contact-form/'.$data['form_layout'].'.php'; ?>
 
-				<p class="sina-contact-success"></p>
-				<p class="sina-contact-error"></p>
-				<p class="sina-contact-process"><?php _e( 'Processing...', 'sina-ext' ); ?></p>
+				<?php printf('<p class="sina-success-text">%s</p>', $data['successs_message']); ?>
+				<p class="sina-error-text"></p>
+				<p class="sina-process-text"><?php _e( 'Processing...', 'sina-ext' ); ?></p>
 
 				<?php wp_nonce_field( 'sina_contact', 'sina_contact_nonce'.$this->get_id() ); ?>
 			</form><!-- .sina-contact-form -->

@@ -139,7 +139,6 @@ class Sina_Ext_Library extends Source_Base {
 
 		if ( isset( $info_data['library']['templates'] ) && !empty( $info_data['library']['templates'] ) ) {
 			$templates_data = $info_data['library']['templates'];
-			// update_option( 'elementor_remote_info_library', $info_data['library'], 'no' );
 		} else{
 			$templates_data = [];
 		}

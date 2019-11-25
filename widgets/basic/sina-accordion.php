@@ -127,6 +127,7 @@ class Sina_Accordion_Widget extends Widget_Base {
 			'icon',
 			[
 				'label' => __( 'Icon', 'sina-ext' ),
+				'label_block' => true,
 				'type' => Controls_Manager::ICON,
 				'default' => 'fa fa-angle-down',
 			]
@@ -135,6 +136,7 @@ class Sina_Accordion_Widget extends Widget_Base {
 			'active_icon',
 			[
 				'label' => __( 'Active Icon', 'sina-ext' ),
+				'label_block' => true,
 				'type' => Controls_Manager::ICON,
 				'default' => 'fa fa-angle-up',
 			]
@@ -185,6 +187,9 @@ class Sina_Accordion_Widget extends Widget_Base {
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __('Enter Title', 'sina-ext'),
 				'default' => 'Web Development',
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$repeater->add_control(
@@ -197,6 +202,9 @@ class Sina_Accordion_Widget extends Widget_Base {
 				'default' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
 				'condition' => [
 					'save_templates' => '',
+				],
+				'dynamic' => [
+					'active' => true,
 				],
 			]
 		);
@@ -656,6 +664,31 @@ class Sina_Accordion_Widget extends Widget_Base {
 				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-accordion-body' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'desc_alignment',
+			[
+				'label' => __( 'Alignment', 'sina-ext-pro' ),
+				'type' => Controls_Manager::CHOOSE,
+				'options' => [
+					'left' => [
+						'title' => __( 'Left', 'sina-ext-pro' ),
+						'icon' => 'fa fa-align-left',
+					],
+					'center' => [
+						'title' => __( 'Center', 'sina-ext-pro' ),
+						'icon' => 'fa fa-align-center',
+					],
+					'right' => [
+						'title' => __( 'Right', 'sina-ext-pro' ),
+						'icon' => 'fa fa-align-right',
+					],
+				],
+				'default' => 'left',
+				'selectors' => [
+					'{{WRAPPER}} .sina-accordion-body' => 'text-align: {{VALUE}};',
 				],
 			]
 		);

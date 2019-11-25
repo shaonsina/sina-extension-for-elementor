@@ -1,7 +1,7 @@
 <?php while ( $post_query->have_posts() ) : $post_query->the_post(); ?>
 	<?php $thumb_float = $data['thumb_right'] ? 'sina-bp-thumb-right' : ''; ?>
 	<div class="sina-bp-col <?php echo esc_attr( $data['columns'].' sina-bp-'.$data['layout'].' '.$data['effects'].' '.$thumb_float ); ?>">
-		<div class="sina-bp">
+		<div class="sina-bp <?php echo esc_attr( $data['bg_layer_effects'] ); ?>">
 			<div class="sina-bg-thumb sina-bg-cover"
 				<?php if ( has_post_thumbnail() ): ?>
 					style="background-image: url(<?php the_post_thumbnail_url(); ?>);"
