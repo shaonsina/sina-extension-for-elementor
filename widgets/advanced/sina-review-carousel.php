@@ -126,6 +126,9 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 				'default' => [
 					'url' => SINA_EXT_URL .'assets/img/choose-img.jpg',
 				],
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$repeater->add_control(
@@ -135,6 +138,9 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter Name', 'sina-ext' ),
 				'default' => 'Jhon Doe',
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$repeater->add_control(
@@ -144,6 +150,9 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter Position', 'sina-ext' ),
 				'default' => 'CEO',
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$repeater->add_control(
@@ -153,6 +162,9 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter Organization', 'sina-ext' ),
 				'default' => 'Google',
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$repeater->add_control(
@@ -162,6 +174,9 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 				'type' => Controls_Manager::TEXTAREA,
 				'placeholder' => __( 'Enter Comment', 'sina-ext' ),
 				'default' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. At tempora cumque delectus nam obcaecati consectetur ad dolorum neque dolores nemo!',
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 

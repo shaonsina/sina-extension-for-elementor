@@ -123,6 +123,9 @@ class Sina_Fancytext_Widget extends Widget_Base {
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
 				'default' => 'Fancy text',
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 
@@ -157,6 +160,9 @@ class Sina_Fancytext_Widget extends Widget_Base {
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter prefix text', 'sina-ext' ),
 				'default' => 'Prefix text ',
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$this->add_control(
@@ -167,6 +173,9 @@ class Sina_Fancytext_Widget extends Widget_Base {
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter suffix text', 'sina-ext' ),
 				'default' => ' Suffix text',
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 

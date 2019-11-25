@@ -177,6 +177,9 @@ class Sina_Portfolio_Widget extends Widget_Base {
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter Title', 'sina-ext' ),
 				'default' => 'Short Description',
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$repeater->add_control(
@@ -187,6 +190,9 @@ class Sina_Portfolio_Widget extends Widget_Base {
 				'type' => Controls_Manager::TEXTAREA,
 				'placeholder' => __( 'Enter Description', 'sina-ext' ),
 				'default' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$repeater->add_control(
@@ -197,6 +203,9 @@ class Sina_Portfolio_Widget extends Widget_Base {
 				'type' => Controls_Manager::TEXT,
 				'description' => __( 'Multiple category must be comma separated.', 'sina-ext' ),
 				'default' => 'Web Design',
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$repeater->add_control(
@@ -206,6 +215,9 @@ class Sina_Portfolio_Widget extends Widget_Base {
 				'type' => Controls_Manager::MEDIA,
 				'default' => [
 					'url' => SINA_EXT_URL .'assets/img/choose-img.jpg',
+				],
+				'dynamic' => [
+					'active' => true,
 				],
 			]
 		);
@@ -235,6 +247,9 @@ class Sina_Portfolio_Widget extends Widget_Base {
 				'placeholder' => __( 'https://your-link.com', 'sina-ext' ),
 				'default' => [
 					'url' => '#',
+				],
+				'dynamic' => [
+					'active' => true,
 				],
 			]
 		);

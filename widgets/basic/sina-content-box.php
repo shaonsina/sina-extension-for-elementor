@@ -126,6 +126,9 @@ class Sina_Content_Box_Widget extends Widget_Base {
 			[
 				'label' => __( 'Ribbon Title', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$this->add_control(
@@ -195,6 +198,9 @@ class Sina_Content_Box_Widget extends Widget_Base {
 				'default' => [
 					'url' => SINA_EXT_URL .'assets/img/choose-img.jpg',
 				],
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$this->add_control(
@@ -208,6 +214,9 @@ class Sina_Content_Box_Widget extends Widget_Base {
 				'default' => 'Apps Development',
 				'condition' => [
 					'save_templates' => '',
+				],
+				'dynamic' => [
+					'active' => true,
 				],
 			]
 		);
@@ -223,6 +232,9 @@ class Sina_Content_Box_Widget extends Widget_Base {
 				'condition' => [
 					'save_templates' => '',
 				],
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$this->add_control(
@@ -233,6 +245,9 @@ class Sina_Content_Box_Widget extends Widget_Base {
 				'placeholder' => __( 'https://your-link.com', 'sina-ext' ),
 				'condition' => [
 					'save_templates' => '',
+				],
+				'dynamic' => [
+					'active' => true,
 				],
 			]
 		);

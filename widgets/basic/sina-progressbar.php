@@ -125,6 +125,9 @@ class Sina_Progressbar_Widget extends Widget_Base {
 				'placeholder' => __('Enter Title', 'sina-ext'),
 				'description' => __( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'Web Development',
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$this->add_control(
@@ -174,6 +177,9 @@ class Sina_Progressbar_Widget extends Widget_Base {
 				'type' => Controls_Manager::NUMBER,
 				'min' => 0,
 				'default' => 90,
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$this->add_control(
@@ -183,6 +189,9 @@ class Sina_Progressbar_Widget extends Widget_Base {
 				'type' => Controls_Manager::NUMBER,
 				'min' => 1,
 				'default' => 100,
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$this->add_control(
@@ -191,6 +200,9 @@ class Sina_Progressbar_Widget extends Widget_Base {
 				'label' => __( 'Prefix', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter prefix', 'sina-ext' ),
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$this->add_control(
@@ -200,6 +212,9 @@ class Sina_Progressbar_Widget extends Widget_Base {
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter suffix', 'sina-ext' ),
 				'default' => '%',
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 

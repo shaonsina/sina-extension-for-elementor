@@ -123,6 +123,9 @@ class Sina_Team_Widget extends Widget_Base {
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter Name', 'sina-ext' ),
 				'default' => 'Jhon Doe',
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$this->add_control(
@@ -132,6 +135,9 @@ class Sina_Team_Widget extends Widget_Base {
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter Position', 'sina-ext' ),
 				'default' => 'CEO',
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$this->add_control(
@@ -142,6 +148,9 @@ class Sina_Team_Widget extends Widget_Base {
 				'type' => Controls_Manager::TEXTAREA,
 				'placeholder' => __( 'Enter Description', 'sina-ext' ),
 				'default' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, autem amet. Labore eos cum at, et illo ducimus.',
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$this->add_control(
@@ -151,6 +160,9 @@ class Sina_Team_Widget extends Widget_Base {
 				'type' => Controls_Manager::MEDIA,
 				'default' => [
 					'url' => SINA_EXT_URL .'assets/img/team.jpg',
+				],
+				'dynamic' => [
+					'active' => true,
 				],
 			]
 		);
@@ -172,6 +184,9 @@ class Sina_Team_Widget extends Widget_Base {
 				'label' => __( 'Link', 'sina-ext' ),
 				'type' => Controls_Manager::URL,
 				'placeholder' => __( 'https://your-link.com', 'sina-ext' ),
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$repeater->add_control(
@@ -181,6 +196,9 @@ class Sina_Team_Widget extends Widget_Base {
 				'description' => __( 'This name will be show in the item header', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
 				'default' => 'Facebook',
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 

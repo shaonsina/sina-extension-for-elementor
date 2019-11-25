@@ -187,6 +187,9 @@ class Sina_Accordion_Widget extends Widget_Base {
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __('Enter Title', 'sina-ext'),
 				'default' => 'Web Development',
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$repeater->add_control(
@@ -199,6 +202,9 @@ class Sina_Accordion_Widget extends Widget_Base {
 				'default' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
 				'condition' => [
 					'save_templates' => '',
+				],
+				'dynamic' => [
+					'active' => true,
 				],
 			]
 		);

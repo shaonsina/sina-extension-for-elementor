@@ -134,6 +134,9 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter Success Message', 'sina-ext' ),
 				'default' => 'Thanks for subscribed!',
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$this->add_control(

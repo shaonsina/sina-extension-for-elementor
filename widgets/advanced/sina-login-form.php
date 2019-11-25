@@ -138,6 +138,9 @@ class Sina_Login_Form_Widget extends Widget_Base {
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter Redirect URL', 'sina-ext' ),
 				'default' => admin_url(),
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$this->add_control(

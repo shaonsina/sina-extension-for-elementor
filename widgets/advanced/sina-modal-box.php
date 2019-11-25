@@ -154,6 +154,9 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 				'placeholder' => __( 'Enter Header Text', 'sina-ext' ),
 				'description' => __( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'This is the modal box',
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$this->add_control(
@@ -168,6 +171,9 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 				'condition' => [
 					'save_templates' => '',
 				],
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$this->add_control(
@@ -181,6 +187,9 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 				'default' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
 				'condition' => [
 					'save_templates' => '',
+				],
+				'dynamic' => [
+					'active' => true,
 				],
 			]
 		);
@@ -203,7 +212,7 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 		$this->add_control(
 			'trigger_id',
 			[
-				'label' => __( 'CSS ID', 'sina-ext' ),
+				'label' => __( 'CSS class', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter CLASS', 'sina-ext' ),
 				'description' => __( 'Make sure this CLASS unique', 'sina-ext' ),

@@ -150,6 +150,9 @@ class Sina_Video_Widget extends Widget_Base {
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter video link', 'sina-ext' ),
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$this->add_control(
@@ -161,6 +164,9 @@ class Sina_Video_Widget extends Widget_Base {
 				'placeholder' => __( 'Enter Title', 'sina-ext' ),
 				'description' => __( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'Watch video',
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$this->add_control(

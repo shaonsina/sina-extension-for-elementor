@@ -129,7 +129,10 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 				'description' => __( 'If the field is empty or enter an invalid email or try to send email from the editor, then the emails will send to the admin email. This email will work only in the front-end.', 'sina-ext' ),
 				'condition' => [
 					'custom_email' => 'yes',
-				]
+				],
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$this->add_control(
@@ -140,6 +143,9 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter Success Message', 'sina-ext' ),
 				'default' => 'Thanks for sending Email!',
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$this->add_control(

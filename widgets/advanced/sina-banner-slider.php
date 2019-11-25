@@ -125,6 +125,9 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 				'default' => [
 					'url' => SINA_EXT_URL .'assets/img/choose-img.jpg',
 				],
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$repeater->add_control(
@@ -135,6 +138,9 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 				'type' => Controls_Manager::TEXT,
 				'description' => __( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'Welcome',
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$repeater->add_control(
@@ -145,6 +151,9 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter Title Span', 'sina-ext' ),
 				'description' => __( 'You can use SPAN for multi-color title.', 'sina-ext' ),
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$repeater->add_control(
@@ -177,6 +186,9 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 				'type' => Controls_Manager::TEXT,
 				'description' => __( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'Lorem ipsum dolor sit amet',
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$repeater->add_control(
@@ -210,6 +222,9 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 				'type' => Controls_Manager::TEXTAREA,
 				'description' => __( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'Lorem ipsum dolor sit amet',
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$repeater->add_control(

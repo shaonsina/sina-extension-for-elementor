@@ -104,7 +104,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 	 */
 	protected function _register_controls() {
 		// Start Content
-		// =====================
+		// ===============
 		$this->start_controls_section(
 			'particle_content',
 			[
@@ -140,6 +140,9 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter Title', 'sina-ext' ),
 				'default' => 'Welcome to get start your business',
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$this->add_control(
@@ -150,6 +153,9 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter Title Span', 'sina-ext' ),
 				'description' => __( 'You can use SPAN for multi-color title.', 'sina-ext' ),
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$this->add_control(
@@ -174,6 +180,9 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 				'placeholder' => __( 'Enter Title', 'sina-ext' ),
 				'separator' => 'before',
 				'default' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$this->add_control(
@@ -200,12 +209,15 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 				'placeholder' => __( 'Enter Description', 'sina-ext' ),
 				'separator' => 'before',
 				'default' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 
 		$this->end_controls_section();
 		// End Content
-		// =====================
+		// =============
 
 
 		// Start Primary Button

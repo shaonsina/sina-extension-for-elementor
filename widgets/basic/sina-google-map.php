@@ -125,6 +125,9 @@ class Sina_Google_Map_Widget extends Widget_Base {
 				'label' => __( 'Latitude', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
 				'default' => '23.810332',
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$this->add_control(
@@ -133,6 +136,9 @@ class Sina_Google_Map_Widget extends Widget_Base {
 				'label' => __( 'Longitude', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
 				'default' => '90.412518',
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$this->add_control(
@@ -142,6 +148,9 @@ class Sina_Google_Map_Widget extends Widget_Base {
 				'type' => Controls_Manager::NUMBER,
 				'min' => '1',
 				'default' => '12',
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$this->add_control(
@@ -174,6 +183,9 @@ class Sina_Google_Map_Widget extends Widget_Base {
 				],
 				'condition' => [
 					'marker!' => '',
+				],
+				'dynamic' => [
+					'active' => true,
 				],
 			]
 		);

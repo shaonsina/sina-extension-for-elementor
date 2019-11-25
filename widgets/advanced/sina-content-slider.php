@@ -159,6 +159,9 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 					'save_templates' => '',
 					'is_video' => 'yes',
 				],
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$repeater->add_control(
@@ -173,6 +176,9 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 				'condition' => [
 					'save_templates' => '',
 					'is_video' => '',
+				],
+				'dynamic' => [
+					'active' => true,
 				],
 			]
 		);
@@ -208,6 +214,9 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 					'save_templates' => '',
 					'is_video' => '',
 				],
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$repeater->add_control(
@@ -240,6 +249,9 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 				'condition' => [
 					'save_templates' => '',
 					'is_video' => '',
+				],
+				'dynamic' => [
+					'active' => true,
 				],
 			]
 		);

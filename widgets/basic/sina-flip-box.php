@@ -142,6 +142,9 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 				'default' => [
 					'url' => SINA_EXT_URL .'assets/img/choose-img.jpg',
 				],
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$this->add_control(
@@ -153,6 +156,9 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 				'placeholder' => __( 'Enter Title', 'sina-ext' ),
 				'description' => __( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'Apps Development',
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$this->add_control(
@@ -164,6 +170,9 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 				'placeholder' => __( 'Enter Description', 'sina-ext' ),
 				'description' => __( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'This is flip box description.',
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 
@@ -223,6 +232,9 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 				'default' => [
 					'url' => SINA_EXT_URL .'assets/img/choose-img.jpg',
 				],
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$this->add_control(
@@ -234,6 +246,9 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 				'placeholder' => __( 'Enter Title', 'sina-ext' ),
 				'description' => __( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'Web Development',
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$this->add_control(
@@ -245,6 +260,9 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 				'placeholder' => __( 'Enter Description', 'sina-ext' ),
 				'description' => __( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'This is flip box description.',
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$this->add_control(
@@ -253,6 +271,9 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 				'label' => __( 'Link', 'sina-ext' ),
 				'type' => Controls_Manager::URL,
 				'placeholder' => __( 'https://your-link.com', 'sina-ext' ),
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 

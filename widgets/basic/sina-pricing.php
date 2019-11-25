@@ -111,6 +111,9 @@ class Sina_Pricing_Widget extends Widget_Base {
 				'placeholder' => __( 'Enter Title', 'sina-ext' ),
 				'description' => __( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'Basic',
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$this->add_control(
@@ -120,6 +123,9 @@ class Sina_Pricing_Widget extends Widget_Base {
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter Price', 'sina-ext' ),
 				'default' => '$20',
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$this->add_control(
@@ -130,6 +136,9 @@ class Sina_Pricing_Widget extends Widget_Base {
 				'placeholder' => __( 'Enter Prefix', 'sina-ext' ),
 				'condition' => [
 					'price!' => '',
+				],
+				'dynamic' => [
+					'active' => true,
 				],
 			]
 		);
@@ -143,6 +152,9 @@ class Sina_Pricing_Widget extends Widget_Base {
 					'price!' => '',
 				],
 				'default' => 'M',
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$this->add_control(
@@ -150,6 +162,9 @@ class Sina_Pricing_Widget extends Widget_Base {
 			[
 				'label' => __( 'Ribbon Title', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$this->add_control(
@@ -207,6 +222,9 @@ class Sina_Pricing_Widget extends Widget_Base {
 				],
 				'default' => [
 					'url' => SINA_EXT_URL .'assets/img/choose-img.jpg',
+				],
+				'dynamic' => [
+					'active' => true,
 				],
 			]
 		);

@@ -133,6 +133,9 @@ class Sina_Counter_Widget extends Widget_Base {
 				'placeholder' => __( 'Enter Title', 'sina-ext' ),
 				'description' => __( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'Satisfied Customers',
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$this->add_control(
@@ -156,6 +159,9 @@ class Sina_Counter_Widget extends Widget_Base {
 				'label' => __( 'Prefix', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter Prefix', 'sina-ext' ),
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$this->add_control(
@@ -183,6 +189,9 @@ class Sina_Counter_Widget extends Widget_Base {
 				'label' => __( 'Suffix', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter Suffix', 'sina-ext' ),
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$this->add_control(
@@ -225,6 +234,9 @@ class Sina_Counter_Widget extends Widget_Base {
 				'type' => Controls_Manager::NUMBER,
 				'default' => 100,
 				'step' => 1,
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$this->add_control(
@@ -234,6 +246,9 @@ class Sina_Counter_Widget extends Widget_Base {
 				'type' => Controls_Manager::NUMBER,
 				'default' => 500,
 				'step' => 1,
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$this->add_control(

@@ -3,9 +3,9 @@ Contributors: shaonsina
 Tags: addon, elementor, elementor addon, elementor extension, extension, page builder, builder, elementor builder, elementor contact form, elementor widget, best elementor addon, best elementor extension
 Donate link: https://plugins.shaonsina.com/sina-extension/
 Requires at least: 4.7
-Tested up to: 5.2
+Tested up to: 5.3
 Requires PHP: 7.0
-Stable tag: 3.1.4
+Stable tag: 3.1.5
 License: GPL v3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -100,6 +100,11 @@ Yes. It's totally free.
 
 
 == Changelog ==
+
+= 3.1.5 - 25-11-2019 =
+- Added: Some options to some widgets
+- Added: Dynamic content to all the widgets
+
 
 = 3.1.4 - 07-11-2019 =
 - Added: Some options to Blogpost

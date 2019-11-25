@@ -140,6 +140,9 @@ class Sina_Table_Widget extends Widget_Base {
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __('Enter Text', 'sina-ext'),
 				'default' => 'WordPress',
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$thead->add_control(
@@ -313,6 +316,9 @@ class Sina_Table_Widget extends Widget_Base {
 				'description' => __( 'You can use HTML.', 'sina-ext' ),
 				'condition' => [
 					'content_type' => ['cell', 'head'],
+				],
+				'dynamic' => [
+					'active' => true,
 				],
 			]
 		);

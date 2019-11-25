@@ -126,6 +126,9 @@ class Sina_Brand_Carousel_Widget extends Widget_Base {
 				'default' => [
 					'url' => SINA_EXT_URL .'assets/img/choose-img.jpg',
 				],
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$repeater->add_control(
@@ -134,6 +137,9 @@ class Sina_Brand_Carousel_Widget extends Widget_Base {
 				'label' => __( 'Brand Link', 'sina-ext' ),
 				'type' => Controls_Manager::URL,
 				'placeholder' => __( 'https://your-link.com', 'sina-ext' ),
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$repeater->add_control(

@@ -129,6 +129,9 @@ class Sina_User_Counter_Widget extends Widget_Base {
 				'placeholder' => __( 'Enter prefix text', 'sina-ext' ),
 				'description' => __( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'Already registered',
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$this->add_control(
@@ -139,6 +142,9 @@ class Sina_User_Counter_Widget extends Widget_Base {
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter suffix text', 'sina-ext' ),
 				'description' => __( 'You can use HTML.', 'sina-ext' ),
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$this->add_responsive_control(
