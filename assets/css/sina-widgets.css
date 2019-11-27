@@ -1,4 +1,4 @@
-/* Sina Extension for Elementor v3.1.5 */
+/* Sina Extension for Elementor v3.1.6 */
 
 /*--------------------------------- General -------------------------------------- */
 .sina-overlay{
@@ -235,50 +235,6 @@ img.mfp-img{
 	left: -85px;
 	right: auto;
 	transform: rotate(-45deg);
-}
-
-.sina-tooltip-text{
-	position: absolute;
-	left: 0;
-	visibility: hidden;
-	z-index: 1;
-	opacity: 0;
-	text-align: center;
-	transition: all 0.4s;
-}
-.sina-tooltip-text::after{
-	position: absolute;
-	content: "";
-	border-width: 5px;
-	border-style: solid;
-}
-.sina-tooltip-text.sina-tooltip-top::after{
-	margin-left: -5px;
-	left: 50%;
-	top: 100%;
-	border-color: black transparent transparent transparent;
-}
-.sina-tooltip-text.sina-tooltip-left::after{
-	margin-top: -5px;
-	top: 50%;
-	left: 100%;
-	border-color: transparent transparent transparent black;
-}
-.sina-tooltip-text.sina-tooltip-right::after{
-	margin-top: -5px;
-	top: 50%;
-	left: -10px;
-	border-color: transparent black transparent transparent;
-}
-
-.sina-banner-pbtn,
-.sina-banner-sbtn{
-	position: relative;
-}
-.sina-banner-pbtn:hover .sina-tooltip-text,
-.sina-banner-sbtn:hover .sina-tooltip-text{
-	opacity: 1;
-	visibility: visible;
 }
 
 

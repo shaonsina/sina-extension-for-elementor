@@ -483,17 +483,6 @@ class Sina_Common_Data{
 	}
 
 	public static function tooltip_style( $obj, $prefix, $class ) {
-		$obj->add_control(
-			$prefix.'_tooptip',
-			[
-				'label' => __( 'Tooptip Styles', 'sina-ext' ),
-				'type' => Controls_Manager::HEADING,
-				'separator' => 'before',
-				'condition' => [
-					$prefix.'_tooltip_text!' => '',
-				],
-			]
-		);
 		$obj->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
@@ -513,10 +502,7 @@ class Sina_Common_Data{
 						],
 					],
 				],
-				'condition' => [
-					$prefix.'_tooltip_text!' => '',
-				],
-				'selector' => '{{WRAPPER}} '.$class.' .sina-tooltip-text',
+				'selector' => '{{WRAPPER}} '.$class.' .tooltip',
 			]
 		);
 		$obj->add_control(
@@ -525,11 +511,8 @@ class Sina_Common_Data{
 				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#fafafa',
-				'condition' => [
-					$prefix.'_tooltip_text!' => '',
-				],
 				'selectors' => [
-					'{{WRAPPER}} '.$class.' .sina-tooltip-text' => 'color: {{VALUE}};',
+					'{{WRAPPER}} '.$class.' .tooltip-inner' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -539,19 +522,19 @@ class Sina_Common_Data{
 				'label' => __( 'Background Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#222',
-				'condition' => [
-					$prefix.'_tooltip_text!' => '',
-				],
 				'selectors' => [
-					'{{WRAPPER}} '.$class.' .sina-tooltip-text' => 'background-color: {{VALUE}};',
-					'{{WRAPPER}} '.$class.' .sina-tooltip-text::after' => 'border-top-color: {{VALUE}};',
+					'{{WRAPPER}} '.$class.' .tooltip-inner' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} '.$class.' .tooltip.top .tooltip-arrow' => 'border-top-color: {{VALUE}};',
+					'{{WRAPPER}} '.$class.' .tooltip.bottom .tooltip-arrow' => 'border-bottom-color: {{VALUE}};',
+					'{{WRAPPER}} '.$class.' .tooltip.left .tooltip-arrow' => 'border-left-color: {{VALUE}};',
+					'{{WRAPPER}} '.$class.' .tooltip.right .tooltip-arrow' => 'border-right-color: {{VALUE}};',
 				],
 			]
 		);
 		$obj->add_responsive_control(
 			$prefix.'_tooptip_width',
 			[
-				'label' => __( 'Width', 'sina-ext' ),
+				'label' => __( 'Max Width', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', '%'],
 				'range' => [
@@ -566,38 +549,8 @@ class Sina_Common_Data{
 					'unit' => 'px',
 					'size' => 120,
 				],
-				'condition' => [
-					$prefix.'_tooltip_text!' => '',
-				],
 				'selectors' => [
-					'{{WRAPPER}} '.$class.' .sina-tooltip-text' => 'width: {{SIZE}}{{UNIT}};',
-				],
-			]
-		);
-		$obj->add_responsive_control(
-			$prefix.'_tooptip_dist',
-			[
-				'label' => __( 'Distance', 'sina-ext' ),
-				'type' => Controls_Manager::SLIDER,
-				'size_units' => [ 'px' ],
-				'range' => [
-					'px' => [
-						'min' => -200,
-						'max' => 0,
-					],
-					'em' => [
-						'min' => -5,
-						'max' => 0,
-					],
-				],
-				'default' => [
-					'size' => -40,
-				],
-				'condition' => [
-					$prefix.'_tooltip_text!' => '',
-				],
-				'selectors' => [
-					'{{WRAPPER}} '.$class.' .sina-tooltip-text.sina-tooltip-top' => 'top: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} '.$class.' .tooltip-inner' => 'max-width: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -614,11 +567,8 @@ class Sina_Common_Data{
 					'left' => '4',
 					'isLinked' => true,
 				],
-				'condition' => [
-					$prefix.'_tooltip_text!' => '',
-				],
 				'selectors' => [
-					'{{WRAPPER}} '.$class.' .sina-tooltip-text' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} '.$class.' .tooltip-inner' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -635,11 +585,8 @@ class Sina_Common_Data{
 					'left' => '10',
 					'isLinked' => false,
 				],
-				'condition' => [
-					$prefix.'_tooltip_text!' => '',
-				],
 				'selectors' => [
-					'{{WRAPPER}} '.$class.' .sina-tooltip-text' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} '.$class.' .tooltip-inner' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -1335,10 +1282,6 @@ class Sina_Common_Data{
 	}
 
 	public static function button_html( $data, $prefix = 'btn' ) {
-		if ( isset($data[$prefix.'_tooltip_text']) && $data[$prefix.'_tooltip_text'] ) : ?>
-			<?php printf( '<span class="sina-tooltip-text sina-tooltip-top">%s</span>', $data[$prefix.'_tooltip_text'] ); ?>
-		<?php
-		endif;
 		if ( $data[$prefix.'_icon'] && $data[$prefix.'_icon_align'] == 'left' ): ?>
 			<i class="<?php echo esc_attr($data[$prefix.'_icon']); ?> sina-icon-left"></i>
 		<?php endif; ?>

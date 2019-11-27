@@ -1,4 +1,4 @@
-/* Sina Extension for Elementor v3.1.5 */
+/* Sina Extension for Elementor v3.1.6 */
 
 !(function ($) {
 	// Owl Carousel for some Slider or Carousel
@@ -180,6 +180,7 @@
 				});
 			}
 
+			$this.find('.sina-tooltip').tooltip();
 		});
 	}
 
@@ -656,7 +657,10 @@
 				disableLinks: dlink,
 				disableMouse: dmouse
 			});
+
 		});
+
+		$('.sina-particle-layer .sina-tooltip').tooltip();
 	}
 
 	function sinaPiechart($scope, $) {
@@ -774,7 +778,6 @@
 
 			if ( $click ) {
 				$(document).on('click', function(e) {
-					e.preventDefault();
 					if ( $(e.target).is('.sina-modal-area') ) {
 						$modal.fadeOut('400');
 					}

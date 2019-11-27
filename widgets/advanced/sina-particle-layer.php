@@ -916,7 +916,6 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 				],
 			]
 		);
-		Sina_Common_Data::tooltip_style( $this, 'pbtn', '.sina-banner-pbtn' );
 		Sina_Common_Data::BG_hover_effects_alt($this, '.sina-banner-pbtn', 'pbtn_bg_layer');
 
 		$this->end_controls_section();
@@ -997,17 +996,34 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 				],
 			]
 		);
-		Sina_Common_Data::tooltip_style( $this, 'sbtn', '.sina-banner-sbtn' );
 		Sina_Common_Data::BG_hover_effects_alt($this, '.sina-banner-sbtn', 'sbtn_bg_layer');
 
 		$this->end_controls_section();
 		// End Secondary Button Style
 		// ==========================
+
+
+		// Start Tooltips Style
+		// ======================
+		$this->start_controls_section(
+			'tooltips_style',
+			[
+				'label' => __( 'Tooltips', 'sina-ext' ),
+				'tab' => Controls_Manager::TAB_STYLE,
+			]
+		);
+		Sina_Common_Data::tooltip_style( $this, 'btn', '' );
+		$this->end_controls_section();
+		// End Tooltips Style
+		// ====================
 	}
 
 
 	protected function render() {
 		$data = $this->get_settings_for_display();
+
+		$pbtn_tooltip = $data['pbtn_tooltip_text'] ? 'sina-tooltip' : '';
+		$sbtn_tooltip = $data['sbtn_tooltip_text'] ? 'sina-tooltip' : '';
 		?>
 		<div class="sina-particle-layer">
 			<div class="sina-banner-container">
@@ -1034,16 +1050,20 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 				<?php if ( $data['pbtn_text'] || $data['sbtn_text'] ): ?>
 					<div class="sina-banner-btns animated <?php echo esc_attr( $data['buttons_anim'] ); ?>">
 						<?php if ( $data['pbtn_text'] ): ?>
-							<a class="sina-banner-pbtn <?php echo esc_attr( $data['pbtn_effect'].' '.$data['pbtn_bg_layer_effects'] ) ?>"
-							href="<?php echo esc_url( $data['pbtn_link']['url'] ); ?>"
+							<a class="sina-banner-pbtn <?php echo esc_attr( $pbtn_tooltip.' '.$data['pbtn_effect'].' '.$data['pbtn_bg_layer_effects'] ) ?>"
 							<?php if ( $data['pbtn_id'] ): ?>
 								id="<?php echo esc_attr( $data['pbtn_id'] ); ?>"
 							<?php endif; ?>
+							href="<?php echo esc_url( $data['pbtn_link']['url'] ); ?>"
 							<?php if ( 'on' == $data['pbtn_link']['is_external'] ): ?>
 								target="_blank" 
 							<?php endif; ?>
 							<?php if ( 'on' == $data['pbtn_link']['nofollow'] ): ?>
 								rel="nofollow" 
+							<?php endif; ?>
+							<?php if ( $data['pbtn_tooltip_text'] ): ?>
+								data-toggle="tooltip" 
+								title="<?php echo esc_attr( $data['pbtn_tooltip_text'] ); ?>" 
 							<?php endif; ?>
 							role="button">
 								<?php Sina_Common_Data::button_html($data, 'pbtn'); ?>
@@ -1051,16 +1071,20 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 						<?php endif ?>
 
 						<?php if ( $data['sbtn_text'] ): ?>
-							<a class="sina-banner-sbtn <?php echo esc_attr( $data['sbtn_effect'].' '.$data['sbtn_bg_layer_effects'] ) ?>"
-							href="<?php echo esc_url( $data['sbtn_link']['url'] ); ?>"
+							<a class="sina-banner-sbtn <?php echo esc_attr(  $sbtn_tooltip.' '.$data['sbtn_effect'].' '.$data['sbtn_bg_layer_effects'] ) ?>"
 							<?php if ( $data['sbtn_id'] ): ?>
 								id="<?php echo esc_attr( $data['sbtn_id'] ); ?>"
 							<?php endif; ?>
+							href="<?php echo esc_url( $data['sbtn_link']['url'] ); ?>"
 							<?php if ( 'on' == $data['sbtn_link']['is_external'] ): ?>
 								target="_blank" 
 							<?php endif; ?>
 							<?php if ( 'on' == $data['sbtn_link']['nofollow'] ): ?>
 								rel="nofollow" 
+							<?php endif; ?>
+							<?php if ( $data['sbtn_tooltip_text'] ): ?>
+								data-toggle="tooltip" 
+								title="<?php echo esc_attr( $data['sbtn_tooltip_text'] ); ?>" 
 							<?php endif; ?>
 							role="button">
 								<?php Sina_Common_Data::button_html($data, 'sbtn'); ?>

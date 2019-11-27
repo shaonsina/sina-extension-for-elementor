@@ -78,6 +78,7 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 	public function get_style_depends() {
 	    return [
 	        'owl-carousel',
+	        'sina-tooltip',
 	        'sina-widgets',
 	    ];
 	}
@@ -92,6 +93,7 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 	public function get_script_depends() {
 	    return [
 	    	'jquery-owl',
+	        'sina-tooltip',
 	        'sina-widgets',
 	    ];
 	}
@@ -826,7 +828,6 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 				],
 			]
 		);
-		Sina_Common_Data::tooltip_style( $this, 'pbtn', '.sina-banner-pbtn' );
 		Sina_Common_Data::BG_hover_effects_alt($this, '.sina-banner-pbtn', 'pbtn_bg_layer');
 
 		$this->end_controls_section();
@@ -910,12 +911,26 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 				],
 			]
 		);
-		Sina_Common_Data::tooltip_style( $this, 'sbtn', '.sina-banner-sbtn' );
 		Sina_Common_Data::BG_hover_effects_alt($this, '.sina-banner-sbtn', 'sbtn_bg_layer');
 
 		$this->end_controls_section();
 		// End Secondary Button Style
 		// ==========================
+
+
+		// Start Tooltips Style
+		// ======================
+		$this->start_controls_section(
+			'tooltips_style',
+			[
+				'label' => __( 'Tooltips', 'sina-ext' ),
+				'tab' => Controls_Manager::TAB_STYLE,
+			]
+		);
+		Sina_Common_Data::tooltip_style( $this, 'btn', '' );
+		$this->end_controls_section();
+		// End Tooltips Style
+		// ====================
 
 
 		// Start Nav & Dots Style
@@ -942,6 +957,9 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 
 		$this->add_render_attribute( 'sbtn_text', 'class', 'sina-banner-sbtn-text' );
 		$this->add_inline_editing_attributes( 'sbtn_text' );
+
+		$pbtn_tooltip = $data['pbtn_tooltip_text'] ? 'sina-tooltip' : '';
+		$sbtn_tooltip = $data['sbtn_tooltip_text'] ? 'sina-tooltip' : '';
 		?>
 		<div class="sina-banner-slider owl-carousel"
 		data-autoplay="<?php echo esc_attr( $data['autoplay'] ); ?>"
@@ -997,7 +1015,11 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 						<?php if ( $data['pbtn_text'] || $data['sbtn_text'] ): ?>
 							<div class="sina-banner-btns <?php echo esc_attr($invisible); ?>" data-animation="animated <?php echo esc_attr( $slide['buttons_anim'] ); ?>">
 								<?php if ( $data['pbtn_text'] ): ?>
-									<a class="sina-banner-pbtn <?php echo esc_attr( $data['pbtn_effect'].' '.$data['pbtn_bg_layer_effects'] ); ?>"
+									<a class="sina-banner-pbtn <?php echo esc_attr( $pbtn_tooltip.' '.$data['pbtn_effect'].' '.$data['pbtn_bg_layer_effects'] ); ?>"
+									<?php if ( $data['pbtn_tooltip_text'] ): ?>
+										data-toggle="tooltip" 
+										title="<?php echo esc_attr( $data['pbtn_tooltip_text'] ); ?>" 
+									<?php endif; ?>
 									href="<?php echo esc_url( $data['pbtn_link']['url'] ); ?>"
 									<?php if ( 'on' == $data['pbtn_link']['is_external'] ): ?>
 										target="_blank" 
@@ -1010,7 +1032,11 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 								<?php endif ?>
 
 								<?php if ( $data['sbtn_text'] ): ?>
-									<a class="sina-banner-sbtn <?php echo esc_attr( $data['sbtn_effect'].' '.$data['sbtn_bg_layer_effects'] ); ?>"
+									<a class="sina-banner-sbtn <?php echo esc_attr( $sbtn_tooltip.' '.$data['sbtn_effect'].' '.$data['sbtn_bg_layer_effects'] ); ?>"
+									<?php if ( $data['sbtn_tooltip_text'] ): ?>
+										data-toggle="tooltip" 
+										title="<?php echo esc_attr( $data['sbtn_tooltip_text'] ); ?>" 
+									<?php endif; ?>
 									href="<?php echo esc_url( $data['sbtn_link']['url'] ); ?>"
 									<?php if ( 'on' == $data['sbtn_link']['is_external'] ): ?>
 										target="_blank" 
