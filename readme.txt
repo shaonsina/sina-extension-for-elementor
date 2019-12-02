@@ -5,7 +5,7 @@ Donate link: https://plugins.shaonsina.com/sina-extension/
 Requires at least: 4.7
 Tested up to: 5.3
 Requires PHP: 7.0
-Stable tag: 3.1.5
+Stable tag: 3.1.6
 License: GPL v3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -100,6 +100,10 @@ Yes. It's totally free.
 
 
 == Changelog ==
+
+= 3.1.6 - 05-12-2019 =
+- Improved: Tooltip
+
 
 = 3.1.5 - 25-11-2019 =
 - Added: Some options to some widgets
