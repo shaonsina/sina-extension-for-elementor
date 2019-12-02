@@ -299,18 +299,6 @@ img.mfp-img{
 	opacity: 1;
 	transform: translate(0);
 }
-.sina-posts-carousel .owl-dots,
-.sina-content-slider .owl-dots,
-.sina-banner-slider .owl-dots,
-.sina-review-carousel .owl-dots {
-	display: flex;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	align-items: center;
-	-webkit-box-pack: center;
-	-ms-flex-pack: center;
-	justify-content: center;
-}
 .sina-banner-slider .owl-dots{
 	position: absolute;
 	bottom: 0;
@@ -321,8 +309,9 @@ img.mfp-img{
 .sina-banner-slider .owl-dot,
 .sina-review-carousel .owl-dot {
 	width: 20px;
-	height: 10px; 
-	margin: 25px .2rem;
+	height: 10px;
+	margin: 25px 5px;
+	padding: 0;
 	background: transparent;
 	border: 1px solid #1085e4;
 	border-radius: 10px;
@@ -335,7 +324,6 @@ img.mfp-img{
 .sina-banner-slider .owl-dot.active,
 .sina-review-carousel .owl-dot.active{
 	width: 10px;
-	height: 10px;
 	border-radius: 50%
 }
 .sina-anim-invisible{
