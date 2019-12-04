@@ -82,7 +82,7 @@ class Sina_Ext_Library extends Source_Base {
 	 */
 	public function get_data( Array $args, $context = 'display' ) {
 		$type 		= get_option( 'sina_ext_type' );
-		$key 		= get_option( 'sina_ext_license_key' );
+		$key 		= ('pro' ==  $type) ? get_option( 'sina_ext_pro_license_key' ) : get_option( 'sina_ext_license_key' );
 		$temp_id 	= str_replace( 'sina_ext_', '', $args['template_id'] );
 		$url 		= sprintf( self::$api_get_template_content_url.'&type='.$type.'&dom='.get_option( 'siteurl' ).'&key='.$key, $temp_id );
 		$response 	= wp_remote_get( $url, ['timeout' => 60] );
@@ -131,7 +131,7 @@ class Sina_Ext_Library extends Source_Base {
 
 	public function get_items( $args = [] ) {
 		$type 		= get_option( 'sina_ext_type' );
-		$key 		= get_option( 'sina_ext_license_key' );
+		$key 		= ('pro' ==  $type) ? get_option( 'sina_ext_pro_license_key' ) : get_option( 'sina_ext_license_key' );
 		$url 		= self::$api_info_url.'&type='.$type.'&dom='.get_option( 'siteurl' ).'&key='.$key;
 		$response 	= wp_remote_get( $url, ['timeout' => 60] );
 		$info_data 	= json_decode( wp_remote_retrieve_body( $response ), true );

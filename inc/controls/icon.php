@@ -2930,7 +2930,6 @@ class Sina_Ext_Icon extends Base_Data_Control{
 
 			'eicon-accordion' => 'eicon-accordion',
 			'eicon-icon-box' => 'eicon-icon-box',
-			'eicon-post-navigation' => 'eicon-post-navigation',
 			'eicon-counter' => 'eicon-counter',
 			'eicon-button' => 'eicon-button',
 			'eicon-animation-text' => 'eicon-animation-text',
@@ -2947,8 +2946,10 @@ class Sina_Ext_Icon extends Base_Data_Control{
 			'eicon-number-field' => 'eicon-number-field',
 			'eicon-play' => 'eicon-play',
 			'eicon-eye' => 'eicon-eye',
-			'eicon-eye' => 'eicon-eye',
-
+			'eicon-zoom-in' => 'eicon-zoom-in',
+			'eicon-testimonial' => 'eicon-testimonial',
+			'eicon-search' => 'eicon-search',
+			'eicon-editor-external-link' => 'eicon-editor-external-link',
 			'eicon-slider-push' => 'eicon-slider-push',
 			'eicon-pencil' => 'eicon-pencil',
 			'eicon-t-letter' => 'eicon-t-letter',
@@ -2964,11 +2965,17 @@ class Sina_Ext_Icon extends Base_Data_Control{
 			'eicon-parallax' => 'eicon-parallax',
 			'eicon-gallery-grid' => 'eicon-gallery-grid',
 			'eicon-posts-carousel' => 'eicon-posts-carousel',
+			'eicon-image-before-after' => 'eicon-image-before-after',
+
+			'eicon-post-navigation' => 'eicon-post-navigation',
+			'eicon-testimonial-carousel' => 'eicon-testimonial-carousel',
 			'eicon-tabs' => 'eicon-tabs',
-			'eicon-zoom-in' => 'eicon-zoom-in',
-			'eicon-testimonial' => 'eicon-testimonial',
-			'eicon-search' => 'eicon-search',
-			'eicon-editor-external-link' => 'eicon-editor-external-link',
+			'eicon-ellipsis-v' => 'eicon-ellipsis-v',
+			'eicon-form-horizontal' => 'eicon-form-horizontal',
+			'eicon-sidebar' => 'eicon-sidebar',
+			'eicon-image-rollover' => 'eicon-image-rollover',
+			'eicon-featured-image' => 'eicon-featured-image',
+			'eicon-info-box' => 'eicon-info-box',
 		];
 	}
 

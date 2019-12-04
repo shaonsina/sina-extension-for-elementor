@@ -103,6 +103,7 @@ Yes. It's totally free.
 
 = 3.1.6 - 05-12-2019 =
 - Improved: Tooltip
+- Fixed: Some css issue
 
 
 = 3.1.5 - 25-11-2019 =
