@@ -5,7 +5,7 @@ Donate link: https://plugins.shaonsina.com/sina-extension/
 Requires at least: 4.7
 Tested up to: 5.3
 Requires PHP: 7.0
-Stable tag: 3.1.6
+Stable tag: 3.1.7
 License: GPL v3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -33,6 +33,10 @@ https://youtu.be/stwNbFgKdbw
 == What can you do by this plugin? ==
 You can make unlimited design without coding knowledge.
 [See demo](https://plugins.shaonsina.com/sina-extension/)
+
+
+== Support ==
+Need Help? Please [create support ticket](https://plugins.shaonsina.com/support/)
 
 
 == 36 FREE WIDGETS ==
@@ -101,15 +105,16 @@ Yes. It's totally free.
 
 == Changelog ==
 
+= 3.1.7 - 05-12-2019 =
+- 
+
 = 3.1.6 - 05-12-2019 =
 - Improved: Tooltip
 - Fixed: Some css issue
 
-
 = 3.1.5 - 25-11-2019 =
 - Added: Some options to some widgets
 - Added: Dynamic content to all the widgets
-
 
 = 3.1.4 - 07-11-2019 =
 - Added: Some options to Blogpost

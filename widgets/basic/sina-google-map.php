@@ -73,9 +73,9 @@ class Sina_Google_Map_Widget extends Widget_Base {
 	 * @since 1.0.0
 	 */
 	public function get_style_depends() {
-	    return [
-	        'sina-widgets',
-	    ];
+		return [
+			'sina-widgets',
+		];
 	}
 
 	/**
@@ -86,10 +86,10 @@ class Sina_Google_Map_Widget extends Widget_Base {
 	 * @since 1.0.0
 	 */
 	public function get_script_depends() {
-	    return [
-	        'sina-google-map',
-	        'sina-widgets',
-	    ];
+		return [
+			'sina-google-map',
+			'sina-widgets',
+		];
 	}
 
 	/**

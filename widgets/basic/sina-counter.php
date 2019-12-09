@@ -90,10 +90,10 @@ class Sina_Counter_Widget extends Widget_Base {
 	 * @since 1.0.0
 	 */
 	public function get_script_depends() {
-	    return [
-	        'jquery-numerator',
-	        'sina-widgets',
-	    ];
+		return [
+			'jquery-numerator',
+			'sina-widgets',
+		];
 	}
 
 	/**

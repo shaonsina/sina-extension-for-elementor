@@ -78,9 +78,9 @@ class Sina_Content_Box_Widget extends Widget_Base {
 	 * @since 1.0.2
 	 */
 	public function get_style_depends() {
-	    return [
-	        'sina-widgets',
-	    ];
+		return [
+			'sina-widgets',
+		];
 	}
 
 	/**

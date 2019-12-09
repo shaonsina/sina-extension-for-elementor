@@ -76,11 +76,11 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 	 * @since 1.0.0
 	 */
 	public function get_style_depends() {
-	    return [
-	        'owl-carousel',
-	        'sina-tooltip',
-	        'sina-widgets',
-	    ];
+		return [
+			'owl-carousel',
+			'sina-tooltip',
+			'sina-widgets',
+		];
 	}
 
 	/**
@@ -91,11 +91,11 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 	 * @since 1.0.0
 	 */
 	public function get_script_depends() {
-	    return [
-	    	'jquery-owl',
-	        'sina-tooltip',
-	        'sina-widgets',
-	    ];
+		return [
+			'jquery-owl',
+			'sina-tooltip',
+			'sina-widgets',
+		];
 	}
 
 	/**

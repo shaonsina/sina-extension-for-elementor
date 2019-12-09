@@ -1,7 +1,7 @@
 <div class="sina-ext-wrap">
 	<h1><?php _e( 'Sina Extension Settings', 'sina-ext' ); ?></h1>
 	<p class="sina-ext-pb">
-		<?php _e('Thank you for using <strong><i>Sina Extension</i></strong>. This plugin has been developed by <a href="https://shaonsina.com/shaonsina" target="_blank">shaonsina</a> and I hope you enjoy using it.', 'sina-ext'); ?>
+		<?php _e('Thank you for using <strong><i>Sina Extension</i></strong>. This plugin has been developed by <a href="https://shaonsina.com/" target="_blank">shaonsina</a> and I hope you enjoy using it.', 'sina-ext'); ?>
 	</p>
 
 	<form action="options.php" method="POST">
@@ -47,6 +47,11 @@
 		</div>
 	</form>
 
+	<p class="sina-ext-pb">
+		Found any issue or need help?
+		<a class="" href="http://plugins.shaonsina.com/support" target="_blank">Open Ticket?</a>
+	</p>
+
 	<div class="sina-ext-options">
 		<h2><?php _e( 'Rollback to Previous Version', 'sina-ext' ); ?></h2>
 		<p>
@@ -67,6 +72,6 @@
 	</div>
 
 	<div class="sina-ext-options">
-	    <p>Did you like <strong><i>Sina Extension</i></strong> Plugin? Please <a href="https://wordpress.org/support/plugin/sina-extension-for-elementor/reviews/#new-post" target="_blank">Click Here to Rate it ★★★★★</a></p>
+	    <p>Did you like <strong><i>Sina Extension</i></strong> Plugin? <a href="https://wordpress.org/support/plugin/sina-extension-for-elementor/reviews/#new-post" target="_blank">Leave a Review</a></p>
 	</div>
 </div>

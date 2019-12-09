@@ -76,11 +76,11 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 	 * @since 1.0.0
 	 */
 	public function get_style_depends() {
-	    return [
-	    	'owl-carousel',
-	    	'animate-merge',
-	        'sina-widgets',
-	    ];
+		return [
+			'owl-carousel',
+			'animate-merge',
+			'sina-widgets',
+		];
 	}
 
 	/**
@@ -91,10 +91,10 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 	 * @since 1.0.0
 	 */
 	public function get_script_depends() {
-	    return [
-	    	'jquery-owl',
-	        'sina-widgets',
-	    ];
+		return [
+			'jquery-owl',
+			'sina-widgets',
+		];
 	}
 
 	/**

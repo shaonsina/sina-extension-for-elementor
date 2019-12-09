@@ -77,10 +77,10 @@ class Sina_Video_Widget extends Widget_Base {
 	 * @since 1.0.0
 	 */
 	public function get_style_depends() {
-	    return [
-	        'magnific-popup',
-	        'sina-widgets',
-	    ];
+		return [
+			'magnific-popup',
+			'sina-widgets',
+		];
 	}
 
 	/**
@@ -91,10 +91,10 @@ class Sina_Video_Widget extends Widget_Base {
 	 * @since 1.0.0
 	 */
 	public function get_script_depends() {
-	    return [
-	        'magnific-popup',
-	        'sina-widgets',
-	    ];
+		return [
+			'magnific-popup',
+			'sina-widgets',
+		];
 	}
 
 	/**
