@@ -363,12 +363,19 @@ class Sina_Visit_Counter_Widget extends Widget_Base {
 				add_post_meta( $page_id, 'sina_visit_counter', $visit_info );
 			}
 		}
+
+		$this->add_render_attribute( 'today', 'class', 'sina-visit-text' );
+		$this->add_inline_editing_attributes( 'today' );
+
+		$this->add_render_attribute( 'yesterday', 'class', 'sina-visit-text' );
+		$this->add_inline_editing_attributes( 'yesterday' );
 		?>
-		<div class="sina-visit-counter" data-page="<?php echo esc_attr( $page_id ); ?>">
+		<div class="sina-visit-counter"
+		data-page="<?php echo esc_attr( $page_id ); ?>">
 			<?php wp_nonce_field( 'sina_visit_counter', 'sina_visit_counter_nonce' ); ?>
 			<?php if ( $data['today'] && 'yes' == $data['position'] ): ?>
 				<div class="sina-today">
-					<?php printf( '<h3 class="sina-visit-text">%1$s</h3>', $data['today'] ); ?>
+					<h3 <?php echo $this->get_render_attribute_string( 'today' ); ?>><?php printf( $data['today'] ); ?></h3>
 					<?php if ( isset($visit_data['sina_visit_today']) ): ?>
 						<span class="sina-visit-number sina-visit-today">
 							<?php printf( '%s', $visit_data['sina_visit_today'] ); ?>
@@ -379,7 +386,7 @@ class Sina_Visit_Counter_Widget extends Widget_Base {
 
 			<?php if ( $data['yesterday'] ): ?>
 				<div class="sina-yesterday">
-					<?php printf( '<h3 class="sina-visit-text">%1$s</h3>', $data['yesterday'] ); ?>
+					<h3 <?php echo $this->get_render_attribute_string( 'yesterday' ); ?>><?php printf( $data['yesterday'] ); ?></h3>
 					<?php if ( isset($visit_data['sina_visit_yesterday']) ): ?>
 						<span class="sina-visit-number sina-visit-yesterday">
 							<?php printf( '%s', $visit_data['sina_visit_yesterday'] ); ?>
@@ -390,7 +397,7 @@ class Sina_Visit_Counter_Widget extends Widget_Base {
 
 			<?php if ( $data['today'] && '' == $data['position'] ): ?>
 				<div class="sina-today">
-					<?php printf( '<h3 class="sina-visit-text">%1$s</h3>', $data['today'] ); ?>
+					<h3 <?php echo $this->get_render_attribute_string( 'today' ); ?>><?php printf( $data['today'] ); ?></h3>
 					<?php if ( isset($visit_data['sina_visit_today']) ): ?>
 						<span class="sina-visit-number sina-visit-today">
 							<?php printf( '%s', $visit_data['sina_visit_today'] ); ?>

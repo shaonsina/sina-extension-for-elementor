@@ -539,6 +539,33 @@ class Sina_Title_Widget extends Widget_Base {
 
 
 	protected function _content_template() {
+		?>
+		<div class="sina-title">
+			<#
+				var titleSpan = settings.title_span ? '<span>' + settings.title_span + '</span>' : '';
 
+				view.addRenderAttribute( 'title', 'class', 'sina-title-title' );
+				view.addInlineEditingAttributes( 'title' );
+
+				view.addRenderAttribute( 'subtitle', 'class', 'sina-title-subtitle' );
+				view.addInlineEditingAttributes( 'subtitle' );
+
+				view.addRenderAttribute( 'desc', 'class', 'sina-title-desc' );
+				view.addInlineEditingAttributes( 'desc' );
+			#>
+
+			<# if (settings.title) { #>
+				<{{{settings.title_tag}}} {{{ view.getRenderAttributeString( 'title' ) }}}>{{{settings.title + titleSpan}}}</{{{settings.title_tag}}}>
+			<# } #>
+
+			<# if (settings.subtitle) { #>
+				<{{{settings.subtitle_tag}}} {{{ view.getRenderAttributeString( 'subtitle' ) }}}>{{{settings.subtitle}}}</{{{settings.subtitle_tag}}}>
+			<# } #>
+
+			<# if (settings.desc) { #>
+				<div {{{ view.getRenderAttributeString( 'desc' ) }}}>{{{settings.desc}}}</div>
+			<# } #>
+		</div><!-- .sina-title -->
+		<?php
 	}
 }

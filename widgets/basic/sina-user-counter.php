@@ -344,15 +344,22 @@ class Sina_User_Counter_Widget extends Widget_Base {
 			}
 			$data_roles = implode(',', $data['roles']);
 		}
+
+		$this->add_render_attribute( 'prefix', 'class', 'sina-uc-text' );
+		$this->add_inline_editing_attributes( 'prefix' );
+
+		$this->add_render_attribute( 'suffix', 'class', 'sina-uc-text' );
+		$this->add_inline_editing_attributes( 'suffix' );
 		?>
-		<div class="sina-user-counter" data-roles="<?php echo esc_attr( $data_roles ); ?>">
+		<div class="sina-user-counter"
+		data-roles="<?php echo esc_attr( $data_roles ); ?>">
 			<?php wp_nonce_field( 'sina_user_counter', 'sina_user_counter_nonce' ); ?>
 			<?php if ( $data['prefix'] ): ?>
-				<?php printf( '<h3 class="sina-uc-text">%1$s</h3>', $data['prefix'] ); ?>
+				<h3 <?php echo $this->get_render_attribute_string( 'prefix' ); ?>><?php printf( $data['prefix'] ); ?></h3>
 			<?php endif; ?>
 			<span class="sina-uc-number"><?php printf( '%s', $count ); ?></span>
 			<?php if ( $data['suffix'] ): ?>
-				<?php printf( '<h3 class="sina-uc-text">%1$s</h3>', $data['suffix'] ); ?>
+				<h3 <?php echo $this->get_render_attribute_string( 'suffix' ); ?>><?php printf( $data['suffix'] ); ?></h3>
 			<?php endif; ?>
 		</div><!-- .sina-user-counter -->
 		<?php

@@ -1458,8 +1458,15 @@ class Sina_Pricing_Widget extends Widget_Base {
 	protected function _content_template() {
 		?>
 		<div class="sina-pricing {{{settings.effects + ' ' + settings.bg_layer_effects}}}">
+			<#
+				view.addRenderAttribute( 'ribbon_title', 'class', settings.ribbon_position );
+				view.addInlineEditingAttributes( 'ribbon_title' );
+
+				view.addRenderAttribute( 'title', 'class', 'sina-pricing-title' );
+				view.addInlineEditingAttributes( 'title' );
+			#>
 			<# if (settings.ribbon_title && settings.ribbon_position) { #>
-				<div class="{{{settings.ribbon_position}}}">
+				<div {{{ view.getRenderAttributeString( 'ribbon_title' ) }}}>
 					{{{settings.ribbon_title}}}
 				</div>
 			<# } #>
@@ -1471,7 +1478,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 			<# } #>
 
 			<# if (settings.title) { #>
-				<h3 class="sina-pricing-title">{{{settings.title}}}</h3>
+				<h3 {{{ view.getRenderAttributeString( 'title' ) }}}>{{{settings.title}}}</h3>
 			<# } #>
 
 			<# if ('yes' == settings.thumbs && 'middle' == settings.img_position) { #>

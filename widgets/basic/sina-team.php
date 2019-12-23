@@ -867,6 +867,54 @@ class Sina_Team_Widget extends Widget_Base {
 
 
 	protected function _content_template() {
+		?>
+		<div class="sina-team {{{settings.effects}}}">
+			<#
+				view.addRenderAttribute( 'name', 'class', 'sina-team-name' );
+				view.addInlineEditingAttributes( 'name' );
 
+				view.addRenderAttribute( 'position', 'class', 'sina-team-position' );
+				view.addInlineEditingAttributes( 'position' );
+
+				view.addRenderAttribute( 'desc', 'class', 'sina-team-desc' );
+				view.addInlineEditingAttributes( 'desc' );
+			#>
+
+			<# if (settings.image.url) { #>
+			<img src="{{{settings.image.url}}}" alt="{{{settings.name}}}">
+			<# } #>
+
+			<div class="sina-team-overlay sina-overlay">
+				<# if (settings.name) { #>
+					<h5 {{{ view.getRenderAttributeString( 'name' ) }}}>
+						{{{settings.name}}}
+					</h5>
+				<# } #>
+
+				<# if (settings.position) { #>
+					<h6 {{{ view.getRenderAttributeString( 'position' ) }}}>
+						{{{settings.position}}}
+					</h6>
+				<# } #>
+
+				<# if (settings.desc) { #>
+					<div {{{ view.getRenderAttributeString( 'desc' ) }}}>
+						{{{settings.desc}}}
+					</div>
+				<# } #>
+
+				<ul class="sina-team-social">
+					<# _.each( settings.social_icons, function( icon, index )  { #>
+					<li class="elementor-repeater-item-{{{icon._id}}}">
+						<a class="{{{settings.icon_bg_layer_effects}}}"
+							href="{{{icon.link.url}}}">
+							<i class="{{{icon.icon}}}"></i>
+						</a>
+					</li>
+					<# }); #>
+				</ul>
+			</div>
+		</div><!-- .sina-team -->
+		<?php
 	}
 }
