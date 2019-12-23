@@ -309,6 +309,17 @@ class Sina_Google_Map_Widget extends Widget_Base {
 
 
 	protected function _content_template() {
-
+		?>
+		<# var id = view.getID(); #>
+		<div id="sina-google-map-{{{id}}}" class="sina-google-map"
+		data-id="sina-google-map-{{{id}}}"
+		data-anim="{{{settings.anim}}}"
+		data-zoom="{{{settings.zoom}}}"
+		data-lat="{{{settings.lat}}}"
+		data-long="{{{settings.long}}}"
+		data-marker="{{{settings.marker}}}"
+		data-marker-link="{{{settings.custom_marker.url}}}">
+		</div><!-- .sina-google-map -->
+		<?php
 	}
 }

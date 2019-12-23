@@ -588,6 +588,45 @@ class Sina_Counter_Widget extends Widget_Base {
 
 
 	protected function _content_template() {
+		?>
+		<#
+		view.addRenderAttribute( 'title', 'class', 'sina-counter-title' );
+		view.addInlineEditingAttributes( 'title' );
+		#>
+		<div class="sina-counter">
+			<# if (settings.icon) { #>
+				<div class="sina-counter-icon">
+					<i class="{{{settings.icon}}}"></i>
+				</div>
+			<# } #>
 
+			<# if (settings.title && 'middle' == settings.title_position) { #>
+				<div {{{ view.getRenderAttributeString( 'title' ) }}}>{{{settings.title}}}</div>
+			<# } #>
+
+			<# if ( settings.start_number && settings.stop_number ) { #>
+				<div class="sina-counter-number-wrap">
+					<# if (settings.prefix) { #>
+						<span class="sina-counter-prefix">{{{settings.prefix}}}</span>
+					<# } #>
+
+					<span class="sina-counter-number" 
+					data-duration="{{{settings.speed}}}"
+					data-to-value="{{{settings.stop_number}}}"
+					data-delimiter="{{{settings.delimiter}}}">
+						{{{settings.start_number}}}
+					</span>
+
+					<# if (settings.suffix) { #>
+						<span class="sina-counter-suffix">{{{settings.suffix}}}</span>
+					<# } #>
+				</div>
+			<# } #>
+
+			<# if (settings.title && 'bottom' == settings.title_position) { #>
+				<div {{{ view.getRenderAttributeString( 'title' ) }}}>{{{settings.title}}}</div>
+			<# } #>
+		</div>
+		<?php
 	}
 }

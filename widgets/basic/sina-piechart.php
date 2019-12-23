@@ -435,11 +435,14 @@ class Sina_Piechart_Widget extends Widget_Base {
 	protected function render() {
 		$data = $this->get_settings_for_display();
 		$percent = 100;
+		$bar_width = $data['bar_width']['size'] + 10;
+
 		if ( $data['value'] && $data['max_value'] ) {
 			$percent = round( $data['value'] / $data['max_value'] * 100 );
 		}
 		?>
-		<div class="sina-piechart" style="width: <?php echo esc_attr( $data['size']['size'] ); ?>px; height: <?php echo esc_attr( $data['size']['size'] ); ?>px;">
+		<div class="sina-piechart"
+		style="width: <?php echo esc_attr( $data['size']['size'] ); ?>px; height: <?php echo esc_attr( $data['size']['size'] ); ?>px;">
 			<div class="sina-piechart-wrap"
 			data-track="<?php echo esc_attr( $data['track_color'] ); ?>"
 			data-track-width="<?php echo esc_attr( $data['track_width']['size'] ); ?>"
@@ -451,7 +454,9 @@ class Sina_Piechart_Widget extends Widget_Base {
 			data-size="<?php echo esc_attr( $data['size']['size'] ); ?>"
 			data-percent="<?php echo esc_attr( $percent ); ?>">
 			</div>
-			<div class="sina-piechart-content sina-flex">
+
+			<div class="sina-piechart-content sina-flex"
+			style="padding: <?php echo esc_attr( $bar_width ) ?>;px">
 				<div class="sina-piechart-center">
 					<?php if ( 'bottom' == $data['title_position'] ): ?>
 						<span class="sina-piechart-percent">
@@ -474,6 +479,53 @@ class Sina_Piechart_Widget extends Widget_Base {
 
 
 	protected function _content_template() {
+		?>
+		<#
+		var percent = 100;
+		if ( settings.value && settings.max_value ) {
+			percent = Math.round( settings.value / settings.max_value * 100 );
+		}
 
+		view.addRenderAttribute( 'title', 'class', 'sina-piechart-title' );
+		view.addInlineEditingAttributes( 'title' );
+		#>
+		<div class="sina-piechart"
+		style="width: {{{settings.size.size}}}px; height: {{{settings.size.size}}}px;">
+			<div class="sina-piechart-wrap"
+			data-track="{{{settings.track_color}}}"
+			data-track-width="{{{settings.track_width.size}}}"
+			data-bar="{{{settings.bar_color}}}"
+			data-line="{{{settings.bar_width.size}}}"
+			data-cap="{{{settings.bar_cap}}}"
+			data-speed="{{{settings.speed}}}"
+			data-scale="{{{settings.scale_color}}}"
+			data-size="{{{settings.size.size}}}"
+			data-percent="{{{Math.round(settings.value / settings.max_value * 100)}}}">
+			</div>
+
+			<div class="sina-piechart-content sina-flex"
+			style="padding: {{{settings.bar_width.size + 10}}}px;">
+
+				<div class="sina-piechart-center">
+					<# if ( 'bottom' == settings.title_position ) { #>
+						<span class="sina-piechart-percent">
+							{{{settings.prefix + settings.value + settings.suffix}}}
+						</span>
+					<# } #>
+
+					<# if ( settings.title ) { #>
+						<h3 {{{ view.getRenderAttributeString( 'title' ) }}}>{{{settings.title}}}</h3>
+					<# } #>
+
+					<# if ( 'top' == settings.title_position ) { #>
+						<span class="sina-piechart-percent">
+							{{{settings.prefix + settings.value + settings.suffix}}}
+						</span>
+					<# } #>
+				</div>
+
+			</div>
+		</div>
+		<?php
 	}
 }

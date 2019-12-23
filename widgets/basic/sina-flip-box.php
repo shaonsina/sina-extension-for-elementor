@@ -1030,11 +1030,11 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 		?>
 		<div class="sina-flipbox">
 			<div class="sina-flipbox-front <?php echo esc_attr( $data['effects'] ); ?>">
-				<?php if ( $data['front_icon'] ): ?>
+				<?php if ( 'icon' == $data['front_icon_format'] && $data['front_icon'] ): ?>
 					<div class="sina-flipbox-icon">
 						<i class="<?php echo esc_attr( $data['front_icon'] ); ?>"></i>
 					</div>
-				<?php elseif( $data['front_image'] ): ?>
+				<?php elseif( 'image' == $data['front_icon_format'] && $data['front_image']['url'] ): ?>
 					<div class="sina-flipbox-icon">
 						<img src="<?php echo esc_url( $data['front_image']['url'] ); ?>" alt="<?php echo esc_attr( $data['title'] ) ?>">
 					</div>
@@ -1051,11 +1051,11 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 				</div>
 			</div>
 			<div class="sina-flipbox-back <?php echo esc_attr( $data['effects'] ); ?>">
-				<?php if ( $data['back_icon'] ): ?>
+				<?php if ( 'icon' == $data['back_icon_format'] && $data['back_icon'] ): ?>
 					<div class="sina-flipbox-icon">
 						<i class="<?php echo esc_attr( $data['back_icon'] ); ?>"></i>
 					</div>
-				<?php elseif( $data['back_image'] ): ?>
+				<?php elseif( 'image' == $data['back_icon_format'] && $data['back_image']['url'] ): ?>
 					<div class="sina-flipbox-icon">
 						<img src="<?php echo esc_url( $data['back_image']['url'] ); ?>" alt="<?php echo esc_attr( $data['title'] ) ?>">
 					</div>
@@ -1091,6 +1091,64 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 
 
 	protected function _content_template() {
+		?>
+		<#
+			view.addRenderAttribute( 'front_title', 'class', 'sina-flipbox-title' );
+			view.addInlineEditingAttributes( 'front_title' );
 
+			view.addRenderAttribute( 'back_title', 'class', 'sina-flipbox-title' );
+			view.addInlineEditingAttributes( 'back_title' );
+
+			view.addRenderAttribute( 'front_desc', 'class', 'sina-flipbox-desc' );
+			view.addInlineEditingAttributes( 'front_desc' );
+
+			view.addRenderAttribute( 'back_desc', 'class', 'sina-flipbox-desc' );
+			view.addInlineEditingAttributes( 'back_desc' );
+		#>
+		<div class="sina-flipbox">
+			<div class="sina-flipbox-front {{{settings.effects}}}">
+				<# if ( 'icon' == settings.front_icon_format && settings.front_icon ) { #>
+					<div class="sina-flipbox-icon">
+						<i class="{{{settings.front_icon}}}"></i>
+					</div>
+				<# } else if ( 'image' == settings.front_icon_format && settings.front_image.url) { #>
+					<div class="sina-flipbox-icon">
+						<img src="{{{settings.front_image.url}}}" alt="{{{settings.front_title}}}">
+					</div>
+				<# } #>
+
+				<div class="sina-flipbox-content">
+					<# if ( settings.front_title ) { #>
+						<h3 {{{ view.getRenderAttributeString( 'front_title' ) }}}>{{{settings.front_title}}}</h3>
+					<# } #>
+
+					<# if ( settings.front_desc ) { #>
+						<div {{{ view.getRenderAttributeString( 'front_desc' ) }}}>{{{settings.front_desc}}}</div>
+					<# } #>
+				</div>
+			</div>
+			<div class="sina-flipbox-back {{{settings.effects}}}">
+				<# if ( 'icon' == settings.back_icon_format && settings.back_icon ) { #>
+					<div class="sina-flipbox-icon">
+						<i class="{{{settings.back_icon}}}"></i>
+					</div>
+				<# } else if ( 'image' == settings.back_icon_format && settings.back_image.url ) { #>
+					<div class="sina-flipbox-icon">
+						<img src="{{{settings.back_image.url}}}" alt="{{{settings.back_title}}}">
+					</div>
+				<# } #>
+
+				<div class="sina-flipbox-content">
+					<# if ( settings.back_title ) { #>
+						<h3 {{{ view.getRenderAttributeString( 'back_title' ) }}}>{{{settings.back_title}}}</h3>
+					<# } #>
+
+					<# if ( settings.back_desc ) { #>
+						<div {{{ view.getRenderAttributeString( 'front_desc' ) }}}>{{{settings.back_desc}}}</div>
+					<# } #>
+				</div>
+			</div>
+		</div><!-- .sina-flipbox -->
+		<?php
 	}
 }
