@@ -554,6 +554,37 @@ class Sina_Progressbar_Widget extends Widget_Base {
 
 
 	protected function _content_template() {
+		?>
+		<div class="sina-progressbars">
+			<# if (settings.title) { #>
+			<h3 class="sina-bar-title">
+				<# if (settings.icon && 'left' == settings.icon_align) { #>
+					<i class="{{{settings.icon}}} sina-icon-left"></i>
+				<# } #>
 
+				{{{settings.title}}}
+
+				<# if (settings.icon && 'right' == settings.icon_align) { #>
+					<i class="{{{settings.icon}}} sina-icon-right"></i>
+				<# } #>
+			</h3>
+			<# } #>
+
+			<#
+			var percent = 100;
+			if ( settings.percentage && settings.max_value ) {
+				percent = Math.round( settings.percentage / settings.max_value * 100 );
+			}
+			#>
+			<div class="sina-bar-bg">
+				<div class="sina-bar-content sina-flex"
+				data-percentage="{{{percent}}}">
+					<span class="sina-bar-percent">
+						{{{settings.prefix + settings.percentage + settings.suffix}}}
+					</span>
+				</div>
+			</div>
+		</div><!-- .sina-progressbars -->
+		<?php
 	}
 }

@@ -572,6 +572,19 @@ class Sina_Social_Icons_Widget extends Widget_Base {
 
 
 	protected function _content_template() {
-
+		?>
+		<div class="sina-social-icons">
+			<ul class="sina-social">
+				<# _.each( settings.social_icons, function( icon, index )  { #>
+				<li class="elementor-repeater-item-{{{icon._id}}}">
+					<a class="{{{settings.btn_bg_layer_effects}}}"
+					href="{{{icon.link.url}}}">
+						<i class="{{{icon.icon}}}"></i>
+					</a>
+				</li>
+				<# }); #>
+			</ul>
+		</div><!-- .sina-social-icons -->
+		<?php
 	}
 }

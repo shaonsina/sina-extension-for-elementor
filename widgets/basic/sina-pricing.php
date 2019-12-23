@@ -1425,11 +1425,11 @@ class Sina_Pricing_Widget extends Widget_Base {
 			<ul class="sina-pricing-body">
 				<?php foreach ($data['item'] as $index => $item) : ?>
 					<li class="elementor-repeater-item-<?php echo esc_attr( $item[ '_id' ] ); ?>">
-						<?php if ( $item['icon'] && $data['icon_align'] == 'left' ): ?>
+						<?php if ( $item['icon'] && 'left' == $data['icon_align'] ): ?>
 							<i class="<?php echo esc_attr($item['icon']); ?> sina-icon-left"></i>
 						<?php endif; ?>
 						<?php printf( '%s', $item['title'] ); ?>
-						<?php if ( $item['icon'] && $data['icon_align'] == 'right' ): ?>
+						<?php if ( $item['icon'] && 'right' == $data['icon_align'] ): ?>
 							<i class="<?php echo esc_attr($item['icon']); ?> sina-icon-right"></i>
 						<?php endif; ?>
 					</li>
@@ -1456,6 +1456,76 @@ class Sina_Pricing_Widget extends Widget_Base {
 
 
 	protected function _content_template() {
+		?>
+		<div class="sina-pricing {{{settings.effects + ' ' + settings.bg_layer_effects}}}">
+			<# if (settings.ribbon_title && settings.ribbon_position) { #>
+				<div class="{{{settings.ribbon_position}}}">
+					{{{settings.ribbon_title}}}
+				</div>
+			<# } #>
 
+			<# if ('yes' == settings.thumbs && 'top' == settings.ribbon_position) { #>
+				<div class="sina-pricing-img">
+					<img src="{{{settings.image.url}}}" alt="{{{settings.title}}}">
+				</div>
+			<# } #>
+
+			<# if (settings.title) { #>
+				<h3 class="sina-pricing-title">{{{settings.title}}}</h3>
+			<# } #>
+
+			<# if ('yes' == settings.thumbs && 'middle' == settings.img_position) { #>
+				<div class="sina-pricing-img">
+					<img src="{{{settings.image.url}}}" alt="{{{settings.title}}}">
+				</div>
+			<# } #>
+
+			<# if (settings.price) { #>
+				<h4 class="sina-price-tag">
+					<span class="sina-price-prefix">{{{settings.price_prefix}}}</span>
+					<span>{{{settings.price}}}</span><span class="sina-price-suffix">{{{settings.price_suffix}}}</span>
+				</h4>
+			<# } #>
+
+			<# if ('yes' == settings.thumbs && 'bottom' == settings.img_position) { #>
+			<div class="sina-pricing-img">
+				<img src="{{{settings.image.url}}}" alt="{{{settings.title}}}">
+			</div>
+			<# } #>
+
+			<ul class="sina-pricing-body">
+				<# _.each( settings.item, function( item, index )  { #>
+					<li class="elementor-repeater-item-{{{item._id}}}">
+						<# if (item.icon && 'left' == settings.icon_align) { #>
+							<i class="{{{item.icon}}} sina-icon-left"></i>
+						<# } #>
+
+						{{{item.title}}}
+
+						<# if (item.icon && 'right' == settings.icon_align) { #>
+							<i class="{{{item.icon}}} sina-icon-right"></i>
+						<# } #>
+					</li>
+				<# }) #>
+			</ul>
+
+			<# if (settings.btn_text || settings.btn_icon) { #>
+			<div class="sina-pricing-btn">
+				<a class="sina-order-btn {{{settings.btn_effect +' '+ settings.btn_bg_layer_effects}}}"
+				href="{{{settings.btn_link.url}}}">
+					<# if (settings.btn_icon && 'left' == settings.btn_icon_align) { #>
+						<i class="{{{settings.btn_icon}}} sina-icon-left"></i>
+					<# } #>
+
+					{{{settings.btn_text}}}
+
+					<# if (settings.btn_icon && 'right' == settings.btn_icon_align) { #>
+						<i class="{{{settings.btn_icon}}} sina-icon-right"></i>
+					<# } #>
+				</a>
+			</div>
+			<# } #>
+		</div><!-- .sina-pricing -->
+		<?php
 	}
 }
