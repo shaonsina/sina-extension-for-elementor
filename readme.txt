@@ -105,8 +105,8 @@ Yes. It's totally free.
 
 == Changelog ==
 
-= 3.1.7 - 05-12-2019 =
-- 
+= 3.1.7 - 24-12-2019 =
+- Added: Inline editing re-implemented to some widgets
 
 = 3.1.6 - 05-12-2019 =
 - Improved: Tooltip
