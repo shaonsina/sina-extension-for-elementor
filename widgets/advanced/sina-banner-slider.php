@@ -1001,15 +1001,16 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 
 						<?php if ( $slide['title'] ): ?>
 							<?php $title_span = $slide['title_span'] ? '<span>'.$slide['title_span'].'</span>' : ''; ?>
-							<?php printf('<%4$s %1$s data-animation="animated %2$s">%3$s%5$s</%4$s>', $this->get_render_attribute_string( $title_key ), $slide['title_anim'], $slide['title'], $slide['title_tag'], $title_span); ?>
+
+							<?php printf('<%3$s class="sina-banner-title animated %1$s">%2$s%4$s</%3$s>', $slide['title_anim'].' '.$invisible, $slide['title'], $slide['title_tag'], $title_span); ?>
 						<?php endif; ?>
 
 						<?php if ( $slide['subtitle'] ): ?>
-							<?php printf('<%4$s %1$s data-animation="animated %2$s">%3$s</%4$s>', $this->get_render_attribute_string( $subtitle_key ), $slide['subtitle_anim'], $slide['subtitle'], $slide['subtitle_tag']); ?>
+							<?php printf('<%3$s class="sina-banner-subtitle animated %1$s">%2$s</%3$s>', $slide['subtitle_anim'].' '.$invisible, $slide['subtitle'], $slide['title_tag']); ?>
 						<?php endif; ?>
 
 						<?php if ( $slide['desc'] ): ?>
-							<?php printf('<div %1$s data-animation="animated %2$s">%3$s</div>', $this->get_render_attribute_string( $desc_key ), $slide['desc_anim'], $slide['desc']); ?>
+							<?php printf('<div class="sina-banner-desc animated %1$s">%2$s</div>', $slide['desc_anim'].' '.$invisible, $slide['desc']); ?>
 						<?php endif; ?>
 
 						<?php if ( $data['pbtn_text'] || $data['sbtn_text'] ): ?>

@@ -592,6 +592,38 @@ class Sina_Brand_Carousel_Widget extends Widget_Base {
 
 
 	protected function _content_template() {
-		
+		?>
+		<div class="sina-brand-carousel owl-carousel"
+		data-item-lg="{{{settings.show_item}}}"
+		data-item-md="{{{settings.show_item_tablet}}}"
+		data-item-sm="{{{settings.show_item_mobile}}}"
+		data-autoplay="{{{settings.autoplay}}}"
+		data-pause="{{{settings.pause}}}"
+		data-center="{{{settings.center}}}"
+		data-slide-anim="{{{settings.slide_anim}}}"
+		data-slide-anim-out="{{{settings.slide_anim_out}}}"
+		data-nav="" data-dots=""
+		data-mouse-drag="{{{settings.mouse_drag}}}"
+		data-touch-drag="{{{settings.touch_drag}}}"
+		data-loop="{{{settings.loop}}}"
+		data-speed="{{{settings.speed}}}"
+		data-delay="{{{settings.delay}}}">
+			<# _.each( settings.brand, function( logo, index )  {
+				if (logo.brand_logo.url) {
+				#>
+				<div class="sina-brand-item">
+					<div class="sina-brand-item-inner elementor-repeater-item-{{{logo._id}}}">
+						<a <# if (logo.link.url) { #>
+								href="{{{logo.link.url}}}"
+							<# } #>>
+							<img src="{{{logo.brand_logo.url}}}" alt="{{{logo.title}}}">
+						</a>
+					</div>
+				</div>
+				<# }
+				});
+			#>
+		</div><!-- .sina-brand-carousel -->
+		<?php
 	}
 }

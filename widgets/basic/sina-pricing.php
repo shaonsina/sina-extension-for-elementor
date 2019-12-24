@@ -1513,7 +1513,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 							<i class="{{{item.icon}}} sina-icon-right"></i>
 						<# } #>
 					</li>
-				<# }) #>
+				<# }); #>
 			</ul>
 
 			<# if (settings.btn_text || settings.btn_icon) { #>

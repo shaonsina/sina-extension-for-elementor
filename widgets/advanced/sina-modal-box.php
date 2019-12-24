@@ -117,6 +117,7 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 			[
 				'label' => __( 'Close to click outside', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
+				'default' => 'yes',
 			]
 		);
 		$this->add_control(
@@ -124,6 +125,7 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 			[
 				'label' => __( 'Close to press ESC', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
+				'default' => 'yes',
 			]
 		);
 		$this->add_control(
@@ -1199,6 +1201,15 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 	protected function render() {
 		$data = $this->get_settings_for_display();
 		$trigger_id = $data['trigger_id'] ? $data['trigger_id'] : 'sina-modal-'.$this->get_id();
+
+		$this->add_render_attribute( 'header', 'class', 'sina-modal-header' );
+		$this->add_inline_editing_attributes( 'header' );
+
+		$this->add_render_attribute( 'title', 'class', 'sina-modal-title' );
+		$this->add_inline_editing_attributes( 'title' );
+
+		$this->add_render_attribute( 'desc', 'class', 'sina-modal-desc' );
+		$this->add_inline_editing_attributes( 'desc' );
 		?>
 		<div class="sina-modal-box"
 		data-click="<?php echo esc_attr( $data['is_outside_click'] ); ?>"
@@ -1215,7 +1226,7 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 				<div class="sina-modal-area sina-flex animated <?php echo esc_attr( $data['modal_effects'] ); ?>">
 					<div class="sina-modal-content">
 						<?php if ( '' != $data['modal_header'] ): ?>
-							<?php printf( '<h2 class="sina-modal-header">%1$s</h2>', $data['modal_header'] ); ?>
+							<?php printf( '<h2 %2$s>%1$s</h2>', $data['modal_header'], $this->get_render_attribute_string( 'header' ) ); ?>
 						<?php endif; ?>
 						<div class="sina-modal-body">
 							<?php
@@ -1225,11 +1236,11 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 								else:
 							?>
 								<?php if ( $data['title'] ): ?>
-									<?php printf( '<h3 class="sina-modal-title">%1$s</h3>', $data['title'] ); ?>
+									<?php printf( '<h3 %2$s>%1$s</h3>', $data['title'], $this->get_render_attribute_string( 'title' ) ); ?>
 								<?php endif; ?>
 
 								<?php if ( $data['desc'] ): ?>
-									<?php printf( '<div class="sina-modal-desc">%1$s</div>', $data['desc'] ); ?>
+									<?php printf( '<div %2$s>%1$s</div>', $data['desc'], $this->get_render_attribute_string( 'desc' ) ); ?>
 								<?php endif; ?>
 							<?php endif; ?>
 						</div>

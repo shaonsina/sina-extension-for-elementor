@@ -830,7 +830,20 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 		data-speed="<?php echo esc_attr( $data['speed'] ); ?>"
 		data-delay="<?php echo esc_attr( $data['delay'] ); ?>">
 
-			<?php foreach ($data['slides'] as $slide): ?>
+			<?php foreach ($data['slides'] as $index => $slide):
+					$title_key = $this->get_repeater_setting_key( 'title', 'slides', $index );
+					$subtitle_key = $this->get_repeater_setting_key( 'subtitle', 'slides', $index );
+					$desc_key = $this->get_repeater_setting_key( 'desc', 'slides', $index );
+
+					$this->add_render_attribute( $title_key, 'class', 'sina-cs-title' );
+					$this->add_inline_editing_attributes( $title_key );
+
+					$this->add_render_attribute( $subtitle_key, 'class', 'sina-cs-subtitle' );
+					$this->add_inline_editing_attributes( $subtitle_key );
+
+					$this->add_render_attribute( $desc_key, 'class', 'sina-cs-desc' );
+					$this->add_inline_editing_attributes( $desc_key );
+				?>
 				<div class="sina-cs-item elementor-repeater-item-<?php echo esc_attr( $slide[ '_id' ] ); ?>">
 					<?php
 						if ( 'yes' == $slide['save_templates'] && $slide['template'] ) :
@@ -841,15 +854,15 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 							<a class="owl-video" href="<?php echo esc_url( $slide['video_link'] ) ?>"></a>
 					<?php else: ?>
 						<?php if ( $slide['title'] ): ?>
-							<?php printf( '<%1$s class="%2$s">%3$s</%1$s>', $slide['title_tag'], 'sina-cs-title', $slide['title'] ); ?>
+							<?php printf( '<%1$s %2$s>%3$s</%1$s>', $slide['title_tag'], $this->get_render_attribute_string( $title_key ), $slide['title'] ); ?>
 						<?php endif; ?>
 
 						<?php if ( $slide['subtitle'] ): ?>
-							<?php printf( '<%1$s class="%2$s">%3$s</%1$s>', $slide['subtitle_tag'], 'sina-cs-subtitle', $slide['subtitle'] ); ?>
+							<?php printf( '<%1$s %2$s>%3$s</%1$s>', $slide['subtitle_tag'], $this->get_render_attribute_string( $subtitle_key ), $slide['subtitle'] ); ?>
 						<?php endif; ?>
 
 						<?php if ( $slide['desc'] ): ?>
-							<?php printf( '<div class="sina-cs-desc">%1$s</div>', $slide['desc'] ); ?>
+							<?php printf( '<div %2$s>%1$s</div>', $slide['desc'], $this->get_render_attribute_string( $desc_key ) ); ?>
 						<?php endif; ?>
 					<?php endif; ?>
 				</div>

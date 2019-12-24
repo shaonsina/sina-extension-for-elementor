@@ -915,7 +915,7 @@ class Sina_Portfolio_Widget extends Widget_Base {
 
 			<div class="sina-portfolio-grid">
 			<?php
-				foreach ( $data['portfolio'] as $item ) :
+				foreach ( $data['portfolio'] as $index => $item ) :
 					$category = strtolower( str_replace( ' ', '_', $item['category'] ) );
 					$category =  str_replace( ',', ' ', $category );
 
@@ -924,6 +924,15 @@ class Sina_Portfolio_Widget extends Widget_Base {
 					} else{
 						$size_class = $data['columns'];
 					}
+
+					$title_key = $this->get_repeater_setting_key( 'title', 'portfolio', $index );
+					$desc_key = $this->get_repeater_setting_key( 'desc', 'portfolio', $index );
+
+					$this->add_render_attribute( $title_key, 'class', 'sina-portfolio-title' );
+					$this->add_inline_editing_attributes( $title_key );
+
+					$this->add_render_attribute( $desc_key, 'class', 'sina-portfolio-desc' );
+					$this->add_inline_editing_attributes( $desc_key );
 				?>
 				<?php if ( $item['image']['url'] ): ?>
 					<div class="sina-portfolio-item <?php echo esc_attr( $category .' '. $size_class ); ?>">
@@ -934,10 +943,10 @@ class Sina_Portfolio_Widget extends Widget_Base {
 									<div class="sina-portfolio-content">
 										<?php if ( 'yes' == $data['show_content'] ): ?>
 											<?php if ($item['item_name']): ?>
-												<?php printf('<h3 class="sina-portfolio-title">%s</h3>', $item['item_name']); ?>
+												<?php printf('<h3 %2$s>%1$s</h3>', $item['item_name'], $this->get_render_attribute_string( $title_key )); ?>
 											<?php endif; ?>
 											<?php if ($item['item_desc']): ?>
-												<?php printf('<div class="sina-portfolio-desc">%s</div>', $item['item_desc']); ?>
+												<?php printf('<div %2$s>%1$s</div>', $item['item_desc'], $this->get_render_attribute_string( $desc_key )); ?>
 											<?php endif; ?>
 										<?php endif ?>
 
