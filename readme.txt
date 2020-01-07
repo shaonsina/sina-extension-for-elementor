@@ -23,9 +23,10 @@ https://youtu.be/stwNbFgKdbw
 
 == Features ==
 
-* 36 Fully Customizable widgets.
-* Options panel for enable/disable widgets.
-* Fully Responsive
+* 36 free elements.
+* Options panel for enable/disable elements.
+* Easy to use
+* Details Customisation ability
 * 100+ Fully Responsive predefined [Blocks & Pages](https://plugins.shaonsina.com/sina-templates/).
 * Free Support through the forum.
 
@@ -39,7 +40,7 @@ You can make unlimited design without coding knowledge.
 Need Help? Please [create support ticket](https://plugins.shaonsina.com/support/)
 
 
-== 36 FREE WIDGETS ==
+== FREE WIDGETS ==
 
 1. [Accordion](https://plugins.shaonsina.com/sina-extension/accordion): Use accordion for display FAQ or custom content that you want.
 2. [Banner Slider](https://plugins.shaonsina.com/sina-extension/banner-slider): Add an animated text or image slider into your web page.
@@ -81,6 +82,20 @@ Need Help? Please [create support ticket](https://plugins.shaonsina.com/support/
 Cool things are coming soon...
 
 
+== PRO WIDGETS ==
+
+1. [Chart](https://plugins.shaonsina.com/sina-extension/chart): Display your company statistics within a chart (bar, pie, line etc.)
+2. [Hover Image](https://plugins.shaonsina.com/sina-extension/hover-image): Show an image with attractive hover effects.
+3. [Image Accordion](https://plugins.shaonsina.com/sina-extension/image-accordion): Display content and images with a new way!
+4. [Image Marker](https://plugins.shaonsina.com/sina-extension/image-marker): Mention or highlight specific area of an image.
+5. [Offcanvas Bar](https://plugins.shaonsina.com/sina-extension/offcanvas-bar): Show your expected content into a offcanvas sidebar.
+6. [Register Form](https://plugins.shaonsina.com/sina-extension/register-form): Add a register form anywhere into your web page.
+7. [Section Navigation](https://plugins.shaonsina.com/sina-extension/section-navigation): To navigate the sections within a page add the fixed navigation.
+8. [Tab](https://plugins.shaonsina.com/sina-extension/tab): Display any content within a tab that you want.
+9. [Testimonial](https://plugins.shaonsina.com/sina-extension/testimonial): Show the testimonials into an interactive carousel.
+10. [Toggle Content](https://plugins.shaonsina.com/sina-extension/toggle-content): Display any content within a toggle tab.
+
+
 == Installation ==
 
 Note: This is an extension for Elementor. So make sure you have Elementor (https://wordpress.org/plugin/elementor/) installed.
@@ -105,8 +120,8 @@ Yes. It's totally free.
 
 == Changelog ==
 
-= 3.1.8 - 10-01-2020 =
-
+= 3.1.8 - 07-01-2020 =
+- Improved
 
 = 3.1.7 - 24-12-2019 =
 - Added: Inline editing re-implemented to some widgets
