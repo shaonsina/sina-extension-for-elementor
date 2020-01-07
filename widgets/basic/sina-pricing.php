@@ -1501,7 +1501,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 			<# } #>
 
 			<ul class="sina-pricing-body">
-				<# _.each( settings.item, function( item, index )  { #>
+				<# _.each( settings.item, function( item, index ) { #>
 					<li class="elementor-repeater-item-{{{item._id}}}">
 						<# if (item.icon && 'left' == settings.icon_align) { #>
 							<i class="{{{item.icon}}} sina-icon-left"></i>

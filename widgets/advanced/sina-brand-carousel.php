@@ -608,7 +608,7 @@ class Sina_Brand_Carousel_Widget extends Widget_Base {
 		data-loop="{{{settings.loop}}}"
 		data-speed="{{{settings.speed}}}"
 		data-delay="{{{settings.delay}}}">
-			<# _.each( settings.brand, function( logo, index )  {
+			<# _.each( settings.brand, function( logo, index ) {
 				if (logo.brand_logo.url) {
 				#>
 				<div class="sina-brand-item">

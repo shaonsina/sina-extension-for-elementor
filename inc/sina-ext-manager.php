@@ -57,13 +57,30 @@ class Sina_Ext_Manager {
 	 * @since 3.1.4
 	 */
 	public function add_categories( $data ) {
-		$categories = [
-			'contact form',
-			'countdown',
-			'login form',
-			'posts',
-			'others',
-		];
+
+		if ( defined('SINA_EXT_PRO_WIDGETS') ) {
+			$categories = [
+				'chart',
+				'contact form',
+				'countdown',
+				'hover image',
+				'image accordion',
+				'image marker',
+				'login form',
+				'register form',
+				'posts',
+				'tab',
+				'others',
+			];
+		} else {
+			$categories = [
+				'contact form',
+				'countdown',
+				'login form',
+				'posts',
+				'others',
+			];
+		}
 
 		if ( defined( 'ELEMENTOR_VERSION' ) && version_compare( ELEMENTOR_VERSION, '2.3.9', '>' ) ) {
 			$data['types_data']['block']['categories'] = array_merge( $categories, $data['types_data']['block']['categories'] );

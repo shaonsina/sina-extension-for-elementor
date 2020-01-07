@@ -550,7 +550,7 @@ class Sina_Common_Data{
 					'size' => 120,
 				],
 				'selectors' => [
-					'{{WRAPPER}} '.$class.' .tooltip-inner' => 'max-width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} '.$class.' .tooltip-inner' => 'width: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);

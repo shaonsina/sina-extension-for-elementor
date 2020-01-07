@@ -575,7 +575,7 @@ class Sina_Social_Icons_Widget extends Widget_Base {
 		?>
 		<div class="sina-social-icons">
 			<ul class="sina-social">
-				<# _.each( settings.social_icons, function( icon, index )  { #>
+				<# _.each( settings.social_icons, function( icon, index ) { #>
 				<li class="elementor-repeater-item-{{{icon._id}}}">
 					<a class="{{{settings.btn_bg_layer_effects}}}"
 					href="{{{icon.link.url}}}">
