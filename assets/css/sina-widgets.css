@@ -1,4 +1,4 @@
-/* Sina Extension for Elementor v3.1.8 */
+/* Sina Extension for Elementor v3.1.9 */
 
 /*--------------------------------- General -------------------------------------- */
 .sina-overlay{
@@ -91,7 +91,6 @@
 .sina-banner-slider{
 	direction: ltr;
 }
-.sina-content-box-icon,
 .sina-transform-content,
 .sina-load-more,
 .sina-bp-list .sina-bp,

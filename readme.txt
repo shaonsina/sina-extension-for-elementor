@@ -28,7 +28,7 @@ https://youtu.be/stwNbFgKdbw
 * Easy to use
 * Details Customisation ability
 * 100+ Fully Responsive predefined [Blocks & Pages](https://plugins.shaonsina.com/sina-templates/).
-* Free Support through the forum.
+* Free Support through the forum & in our [support desk](https://plugins.shaonsina.com/support/).
 
 
 == What can you do by this plugin? ==
@@ -119,6 +119,9 @@ Yes. It's totally free.
 
 
 == Changelog ==
+
+= 3.1.9 - 15-01-2020 =
+- Iproved
 
 = 3.1.8 - 07-01-2020 =
 - Improved
