@@ -1010,7 +1010,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '#1085e4',
 				'selectors' => [
-					'{{WRAPPER}} .sina-bp .sina-bp-title a:hover, {{WRAPPER}} .sina-bp .sina-bp-title a:focus' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .sina-bp .sina-bp-title a:hover' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -1350,7 +1350,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '#1085e4',
 				'selectors' => [
-					'{{WRAPPER}} .sina-bp:hover .sina-bp-meta a:hover, {{WRAPPER}} .sina-bp:hover .sina-bp-meta a:focus' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .sina-bp:hover .sina-bp-meta a:hover' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -1616,7 +1616,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '#fafafa',
 				'selectors' => [
-					'{{WRAPPER}} .sina-bp-pagination .page-numbers:hover, {{WRAPPER}} .sina-bp-pagination .page-numbers:focus' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .sina-bp-pagination .page-numbers:hover' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -1627,7 +1627,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '#1085e4',
 				'selectors' => [
-					'{{WRAPPER}} .sina-bp-pagination .page-numbers:hover, {{WRAPPER}} .sina-bp-pagination .page-numbers:focus' => 'background: {{VALUE}};',
+					'{{WRAPPER}} .sina-bp-pagination .page-numbers:hover' => 'background: {{VALUE}};',
 				],
 			]
 		);
@@ -1644,7 +1644,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 				'label' => __( 'Border Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .sina-bp-pagination .page-numbers:hover, {{WRAPPER}} .sina-bp-pagination .page-numbers:focus',
+					'{{WRAPPER}} .sina-bp-pagination .page-numbers:hover',
 				],
 			]
 		);

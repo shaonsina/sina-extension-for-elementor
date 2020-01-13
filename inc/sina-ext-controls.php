@@ -877,7 +877,7 @@ class Sina_Common_Data{
 				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} '.$class.':hover, {{WRAPPER}} '.$class.':focus' => 'color: {{VALUE}};',
+					'{{WRAPPER}} '.$class.':hover' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -886,21 +886,21 @@ class Sina_Common_Data{
 			[
 				'name' => $prefix.'_hover_bg',
 				'types' => [ 'classic', 'gradient' ],
-				'selector' => '{{WRAPPER}} '.$class.':hover, {{WRAPPER}} '.$class.':focus',
+				'selector' => '{{WRAPPER}} '.$class.':hover',
 			]
 		);
 		$obj->add_group_control(
 			Group_Control_Text_Shadow::get_type(),
 			[
 				'name' => $prefix.'_hover_tshadow',
-				'selector' => '{{WRAPPER}} '.$class.':hover, {{WRAPPER}} '.$class.':focus',
+				'selector' => '{{WRAPPER}} '.$class.':hover',
 			]
 		);
 		$obj->add_group_control(
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => $prefix.'_hover_shadow',
-				'selector' => '{{WRAPPER}} '.$class.':hover, {{WRAPPER}} '.$class.':focus',
+				'selector' => '{{WRAPPER}} '.$class.':hover',
 			]
 		);
 		$obj->add_control(
@@ -909,7 +909,7 @@ class Sina_Common_Data{
 				'label' => __( 'Border Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} '.$class.':hover, {{WRAPPER}} '.$class.':focus' => 'border-color: {{VALUE}};',
+					'{{WRAPPER}} '.$class.':hover' => 'border-color: {{VALUE}};',
 				],
 			]
 		);
