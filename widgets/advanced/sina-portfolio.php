@@ -448,9 +448,9 @@ class Sina_Portfolio_Widget extends Widget_Base {
 		$this->add_control(
 			'note',
 			[
-				'label' => 'If you change the <strong>Dimension</strong> then the page need to <strong>Refresh</strong> for seeing the actual result',
 				'type' => Controls_Manager::RAW_HTML,
-				'separator' => 'after',
+				'raw' => __( 'NOTICE: If you change the <strong>Dimension</strong> then the page need to <strong>Refresh</strong> for seeing the actual result.', 'sina-ext' ),
+				'content_classes' => 'elementor-panel-alert elementor-panel-alert-warning',
 			]
 		);
 		$this->add_responsive_control(

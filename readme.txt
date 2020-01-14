@@ -5,7 +5,7 @@ Donate link: https://plugins.shaonsina.com/sina-extension/
 Requires at least: 4.7
 Tested up to: 5.3
 Requires PHP: 7.0
-Stable tag: 3.1.8
+Stable tag: 3.1.9
 License: GPL v3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -121,7 +121,7 @@ Yes. It's totally free.
 == Changelog ==
 
 = 3.1.9 - 15-01-2020 =
-- Iproved
+- Improved
 
 = 3.1.8 - 07-01-2020 =
 - Improved

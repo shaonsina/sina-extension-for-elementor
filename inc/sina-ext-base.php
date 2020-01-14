@@ -36,13 +36,34 @@ abstract class Sina_Extension_Base{
 	 * @since 1.0.0
 	 */
 	public function admin_notice_missing_main_plugin() {
-		if ( isset( $_GET['activate'] ) ) unset( $_GET['activate'] );
+		if ( isset( $_GET['activate'] ) ) {
+			unset( $_GET['activate'] );
+		};
 
-		$message = sprintf(
-			esc_html__( '"%1$s" requires "%2$s" to be installed and activated.', 'sina-ext' ),
-			'<strong>' . esc_html__( 'Sina Extension for Elementor', 'sina-ext' ) . '</strong>',
-			'<strong>' . esc_html__( 'Elementor', 'sina-ext' ) . '</strong>'
-		);
+		$plugin = 'elementor/elementor.php';
+		$plugins = get_plugins();
+
+		if ( isset($plugins[ $plugin ]) ) {
+			if ( ! current_user_can( 'activate_plugins' ) ) {
+				return;
+			}
+
+			$activation_url = wp_nonce_url( 'plugins.php?action=activate&amp;plugin=' . $plugin . '&amp;plugin_status=all&amp;paged=1&amp;s', 'activate-plugin_' . $plugin );
+
+			$message = sprintf('<p>' . esc_html__( '"%1$s" requires "%2$s" to be activate.', 'sina-ext' ) . '</p>', '<strong>' . esc_html__( 'Sina Extension for Elementor', 'sina-ext' ) . '</strong>', '<strong>' . esc_html__( 'Elementor', 'sina-ext' ) . '</strong>');
+
+			$message .= '<p>' . sprintf( '<a href="%s" class="button-primary">%s</a>', $activation_url, __( 'Activate Elementor', 'sina-ext' ) ) . '</p>';
+		} else {
+			if ( ! current_user_can( 'install_plugins' ) ) {
+				return;
+			}
+
+			$install_url = wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=elementor' ), 'install-plugin_elementor' );
+
+			$message = sprintf('<p>' . esc_html__( '"%1$s" requires "%2$s" to be install.', 'sina-ext' ) . '</p>', '<strong>' . esc_html__( 'Sina Extension for Elementor', 'sina-ext' ) . '</strong>', '<strong>' . esc_html__( 'Elementor', 'sina-ext' ) . '</strong>');
+
+			$message .= '<p>' . sprintf( '<a href="%s" class="button-primary">%s</a>', $install_url, __( 'Install Elementor', 'sina-ext' ) ) . '</p>';
+		}
 
 		printf('<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', __($message));
 	}
@@ -55,11 +76,13 @@ abstract class Sina_Extension_Base{
 	 * @since 1.0.0
 	 */
 	public function admin_notice_minimum_elementor_version() {
-		if ( isset( $_GET['activate'] ) ) unset( $_GET['activate'] );
+		if ( isset( $_GET['activate'] ) ) {
+			unset( $_GET['activate'] );
+		};
 
 		$message = sprintf(
 			esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'sina-ext' ),
-			'<strong>' . esc_html__( 'Sina Extension for Elementor', 'sina-ext' ) . '</strong>',
+			'<strong>' . esc_html__( 'Sina Extension Elementor', 'sina-ext' ) . '</strong>',
 			'<strong>' . esc_html__( 'Elementor', 'sina-ext' ) . '</strong>',
 			 self::MINIMUM_ELEMENTOR_VERSION
 		);
