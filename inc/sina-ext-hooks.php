@@ -208,7 +208,6 @@ Class Sina_Ext_Hooks{
 	public static function ajax_load_more_posts() {
 		if ( check_ajax_referer( 'sina_load_more_posts', 'nonce') && wp_verify_nonce( $_POST['nonce'], 'sina_load_more_posts' ) ) {
 
-			// $data = json_decode( sanitize_text_field( $_POST['posts_data'] ) );
 			$offset = sanitize_text_field( $_POST['offset'] );
 			$data = sanitize_text_field( $_POST['posts_data'] );
 			$data = json_decode(stripslashes($data), true);

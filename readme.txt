@@ -121,6 +121,7 @@ Yes. It's totally free.
 == Changelog ==
 
 = 3.1.9 - 15-01-2020 =
+- Added: Auto show option to Modal Box
 - Improved
 
 = 3.1.8 - 07-01-2020 =

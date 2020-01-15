@@ -389,24 +389,7 @@ class Sina_Common_Data{
 	}
 
 	public static function button_content( $obj, $class = '', $btn_text = 'Learn More', $prefix = 'btn', $cond = true, $tooltip = false ) {
-		$obj->add_control(
-			$prefix.'_effect',
-			[
-				'label' => __( 'Icon Effects', 'sina-ext' ),
-				'type' => Controls_Manager::SELECT,
-				'options' => [
-					'' => __( 'None', 'sina-ext' ),
-					'sina-anim-right-move' => __( 'Icon Right Move', 'sina-ext' ),
-					'sina-anim-right-moving' => __( 'Icon Right Moving', 'sina-ext' ),
-					'sina-anim-right-bouncing' => __( 'Icon Right Bouncing', 'sina-ext' ),
-					'sina-anim-left-move' => __( 'Icon Left Move', 'sina-ext' ),
-					'sina-anim-left-moving' => __( 'Icon Left Moving', 'sina-ext' ),
-					'sina-anim-left-bouncing' => __( 'Icon Left Bouncing', 'sina-ext' ),
-					'sina-anim-zooming' => __( 'Icon Zooming', 'sina-ext' ),
-				],
-				'default' => '',
-			]
-		);
+
 		$obj->add_control(
 			$prefix.'_text',
 			[
@@ -465,6 +448,24 @@ class Sina_Common_Data{
 					'{{WRAPPER}} '.$class.' .sina-icon-right' => 'margin-left: {{SIZE}}{{UNIT}};',
 					'{{WRAPPER}} '.$class.' .sina-icon-left' => 'margin-right: {{SIZE}}{{UNIT}};',
 				],
+			]
+		);
+		$obj->add_control(
+			$prefix.'_effect',
+			[
+				'label' => __( 'Icon Effects', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					'' => __( 'None', 'sina-ext' ),
+					'sina-anim-right-move' => __( 'Icon Right Move', 'sina-ext' ),
+					'sina-anim-right-moving' => __( 'Icon Right Moving', 'sina-ext' ),
+					'sina-anim-right-bouncing' => __( 'Icon Right Bouncing', 'sina-ext' ),
+					'sina-anim-left-move' => __( 'Icon Left Move', 'sina-ext' ),
+					'sina-anim-left-moving' => __( 'Icon Left Moving', 'sina-ext' ),
+					'sina-anim-left-bouncing' => __( 'Icon Left Bouncing', 'sina-ext' ),
+					'sina-anim-zooming' => __( 'Icon Zooming', 'sina-ext' ),
+				],
+				'default' => '',
 			]
 		);
 		if ($cond) {

@@ -81,15 +81,16 @@ function sina_get_portfolio_cat( $portfolio ) {
 }
 
 function sina_get_user_roles() {
-	$users = count_users();
+	global $wp_roles;
+	$all = $wp_roles->roles;
+	$all_roles = [];
 
-	$roles = [];
-	if ( ! empty( $users ) ){
-		foreach ( $users['avail_roles'] as $key => $user ) {
-			$roles[ $key ] = $key;
+	if (!empty($all)) {
+		foreach ($all as $key => $value) {
+			$all_roles[$key] = $all[$key]['name'];
 		}
 	}
-	return $roles;
+	return $all_roles;
 }
 
 function sina_get_categories(){

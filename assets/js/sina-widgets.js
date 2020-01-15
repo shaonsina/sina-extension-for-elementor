@@ -762,6 +762,8 @@
 			var $this = $(this),
 				$click = $this.data('click') ? true : false,
 				$esc = $this.data('esc') ? true : false,
+				$aShow = $this.data('auto-show') ? true : false,
+				$dShow = $this.data('delay-show') ? $this.data('delay-show') : 4000,
 				$id = $this.data('modal-id'),
 				$btn = $('.'+$id),
 				$cBtn = $this.find('.close-'+$id),
@@ -775,6 +777,10 @@
 			$cBtn.click( function() {
 				$modal.fadeOut('400');
 			});
+
+			if ( $aShow ) {
+				setTimeout( function() { $modal.fadeIn( 400 ); }, $dShow );
+			}
 
 			if ( $click ) {
 				$(document).on('click', function(e) {

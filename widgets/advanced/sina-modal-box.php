@@ -113,6 +113,35 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 		);
 
 		$this->add_control(
+			'is_auto_show',
+			[
+				'label' => __( 'Auto Show', 'sina-ext' ),
+				'type' => Controls_Manager::SWITCHER,
+			]
+		);
+		$this->add_control(
+			'delay_show',
+			[
+				'label' => __( 'Delay', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px' ],
+				'range' => [
+					'px' => [
+						'min' => 100,
+						'max' => 60000,
+						'step' => 100,
+					],
+				],
+				'default' => [
+					'unit' => 'px',
+					'size' => 4000,
+				],
+				'condition' => [
+					'is_auto_show' => 'yes',
+				]
+			]
+		);
+		$this->add_control(
 			'is_outside_click',
 			[
 				'label' => __( 'Close to click outside', 'sina-ext' ),
@@ -208,6 +237,9 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 			[
 				'label' => __( 'Trigger Button', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
+				'condition' => [
+					'is_auto_show!' => 'yes',
+				]
 			]
 		);
 		Sina_Common_Data::button_content( $this, '.sina-modal-trigger', 'Clicke Here', 'trigger',  false );
@@ -1212,6 +1244,8 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 		$this->add_inline_editing_attributes( 'desc' );
 		?>
 		<div class="sina-modal-box"
+		data-auto-show="<?php echo esc_attr( $data['is_auto_show'] ); ?>"
+		data-delay-show="<?php echo esc_attr( $data['delay_show']['size'] ); ?>"
 		data-click="<?php echo esc_attr( $data['is_outside_click'] ); ?>"
 		data-esc="<?php echo esc_attr( $data['is_esc_press'] ); ?>"
 		data-modal-id="<?php echo esc_attr( $trigger_id ); ?>">
