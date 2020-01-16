@@ -5,7 +5,7 @@ Donate link: https://plugins.shaonsina.com/sina-extension/
 Requires at least: 4.7
 Tested up to: 5.3
 Requires PHP: 7.0
-Stable tag: 3.1.9
+Stable tag: 3.1.10
 License: GPL v3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -96,6 +96,13 @@ Cool things are coming soon...
 10. [Toggle Content](https://plugins.shaonsina.com/sina-extension/toggle-content): Display any content within a toggle tab.
 
 
+== PRO EXTENDERS ==
+
+1. [Colors Animation](https://plugins.shaonsina.com/sina-extension/colors-animation): Show some colors on the section with animated (fade, horizontal, vertical)
+2. [Content Protection](https://plugins.shaonsina.com/sina-extension/content-protection): Show or hide specific content for the specific users.
+3. [Reading Progressbar](https://plugins.shaonsina.com/sina-extension/reading-progressbar): Display a progressbar into the page or posts for seeing the users how much they are reading or seeing.
+
+
 == Installation ==
 
 Note: This is an extension for Elementor. So make sure you have Elementor (https://wordpress.org/plugin/elementor/) installed.
@@ -119,6 +126,9 @@ Yes. It's totally free.
 
 
 == Changelog ==
+
+= 3.1.10 - 20-01-2020 =
+- Improved
 
 = 3.1.9 - 15-01-2020 =
 - Added: Auto show option to Modal Box

@@ -204,6 +204,9 @@ abstract class Sina_Extension_Base{
 	 */
 	public function settings( $links ) {
 		$links[] = '<a href="admin.php?page=sina_ext_settings">Settings</a>';
+		if ( ! defined('SINA_EXT_PRO_WIDGETS') ) {
+			$links[] = '<a href="https://plugins.shaonsina.com/sina-extension/" target="_blank"><span style="font-weight: 700; color: #1085e4">Go Pro</span></a>';
+		}
 		return $links;
 	}
 }

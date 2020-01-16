@@ -103,7 +103,7 @@ abstract class Sina_Ext_Functions extends Sina_Extension_Base{
 			foreach ($active_widgets as $cat => $widgets) {
 				foreach ($widgets as $widget => $status) {
 					$file = SINA_EXT_DIR .'/widgets/'.$cat.'/sina-'.$widget.'.php';
-					if (1 == $status && file_exists( $file )) {
+					if (file_exists( $file )) {
 						require_once( $file );
 						$widget = str_replace(' ', '_', ucwords( str_replace('-', ' ', $widget) ) );
 						$widget = 'Sina_'.$widget.'_Widget';

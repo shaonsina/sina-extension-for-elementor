@@ -6,14 +6,16 @@
 
 	<form action="options.php" method="POST">
 		<?php settings_errors(); ?>
-		<?php do_settings_sections( 'sina_ext_license_info' ); ?>
+		<?php do_action( 'sina_ext_before_api_settings'); ?>
 
 		<h2 class="sina-ext-pt"><?php _e( 'API Settings', 'sina-ext' ); ?></h2>
 		<div class="sina-ext-pb">
 			<?php do_settings_sections( 'sina_ext_settings' ); ?>
 		</div>
 
-		<div class="sina-ext-options sina-ext-pt">
+		<?php do_action( 'sina_ext_before_widget_settings'); ?>
+
+		<div class="sina-ext-options sina-ext-pt sina-ext-toggle-wrap">
 			<h2><?php _e( 'Widget Settings', 'sina-ext' ); ?></h2>
 			<p class="sina-ext-pb">
 				<?php _e( 'You can disable widget(s) if you would like to not using on your site.', 'sina-ext' ); ?>
@@ -26,7 +28,7 @@
 					$set_widgets = array_merge(SINA_WIDGETS, SINA_EXT_PRO_WIDGETS);
 				}
 				foreach ($set_widgets as $cat => $data) {
-					printf("<div class='sina-ext-pb'><h2>%s</h2>", __( ucfirst($cat), 'sina-ext' ));
+					printf("<div class='sina-ext-pb'><h3 class='sina-ext-pb'>%s</h3>", __( ucfirst($cat), 'sina-ext' ));
 					do_settings_sections( 'sina_widgets_'.$cat );
 					echo '</div>';
 				}
@@ -34,10 +36,21 @@
 			?>
 		</div>
 
+		<?php do_action( 'sina_ext_before_extenders_settings'); ?>
+
+		<div class="sina-ext-options sina-ext-pt">
+			<h2 class="sina-ext-pb"><?php _e( 'Extenders Settings', 'sina-ext' ); ?></h2>
+			<div class="sina-ext-pb">
+				<?php do_settings_sections( 'sina_extenders' ); ?>
+			</div>
+		</div>
+
+		<?php do_action( 'sina_ext_before_templates_settings'); ?>
+
 		<div class="sina-ext-options sina-ext-pt sina-ext-pb">
 			<h2><?php _e( 'Template Settings', 'sina-ext' ); ?></h2>
 			<p class="sina-ext-pb">
-				<?php _e( 'You can use <strong><i>SINA TEMPLATES</i></strong> on your site.', 'sina-ext' ); ?>
+				<?php _e( 'You can use <strong><i>SINA TEMPLATES</i></strong> on your site. Enjoy!', 'sina-ext' ); ?>
 			</p>
 
 			<div class="sina-ext-pb">
@@ -48,8 +61,8 @@
 	</form>
 
 	<p class="sina-ext-pb">
-		Found any issue or need help?
-		<a class="" href="http://plugins.shaonsina.com/support" target="_blank">Open Ticket?</a>
+		<?php _e( 'Found any issue or need help?', 'sina-ext' ); ?>
+		<a href="http://plugins.shaonsina.com/support" target="_blank"><?php _e( 'Open Ticket', 'sina-ext' ); ?></a>
 	</p>
 
 	<div class="sina-ext-options">
@@ -72,6 +85,6 @@
 	</div>
 
 	<div class="sina-ext-options">
-	    <p>Did you like <strong><i>Sina Extension</i></strong> Plugin? <a href="https://wordpress.org/support/plugin/sina-extension-for-elementor/reviews/#new-post" target="_blank">Leave a Review</a></p>
+	    <p><?php _e( 'Did you like', 'sina-ext' ); ?> <strong><i><?php _e( 'Sina Extension', 'sina-ext' ); ?></i></strong> <?php _e( 'Plugin?', 'sina-ext' ); ?> <a href="https://wordpress.org/support/plugin/sina-extension-for-elementor/reviews/#new-post" target="_blank"><?php _e( 'Leave a Review', 'sina-ext' ); ?></a></p>
 	</div>
 </div>

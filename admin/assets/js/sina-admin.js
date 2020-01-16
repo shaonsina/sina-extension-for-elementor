@@ -1,0 +1,1 @@
+jQuery(document).on("click",".sina-ext-toggle.sina-ext-pro",function(o){o.preventDefault(),Swal.fire({title:"Go Pro",html:'Purchase our <a href="https://plugins.shaonsina.com/sina-extension/" target="_blank">pro version</a> to unlock pro features.',icon:"info",showCloseButton:!0})});
