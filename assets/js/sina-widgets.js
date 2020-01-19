@@ -315,13 +315,18 @@
 			var $this = $(this),
 				$uid = $this.data('uid'),
 				$url = $this.data('url'),
+				$remLog = $this.data('rem-login'),
 				$nonce = $this.children('#sina_login_nonce'+$uid),
 				$error = $this.children('.sina-error-text'),
 				$password = $this.children('.sina-input-password'),
 				$email = $this.children('.sina-input-email'),
-				$remember = $this.find('.sina-login-remember'),
-				timeout;
+				$rememberText = $this.find('.sina-login-remember'),
+				timeout,
+				remeber = false;
 
+				if ( 'yes' == $remLog ) {
+					remeber = $rememberText.prop('checked');
+				}
 
 			$this.on('submit', function(e) {
 				e.preventDefault();
@@ -335,7 +340,7 @@
 						action: "sina_login",
 						password: $password.val(),
 						email: $email.val(),
-						remember: $remember.prop('checked'),
+						remember: remeber,
 						nonce: $nonce.val(),
 					},
 					function( data, status, code ) {

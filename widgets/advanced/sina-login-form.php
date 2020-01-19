@@ -144,6 +144,14 @@ class Sina_Login_Form_Widget extends Widget_Base {
 			]
 		);
 		$this->add_control(
+			'is_remember_login',
+			[
+				'label' => __( 'Remember login', 'sina-ext' ),
+				'type' => Controls_Manager::SWITCHER,
+				'default' => 'yes',
+			]
+		);
+		$this->add_control(
 			'remember_login',
 			[
 				'label' => __( 'Remember text', 'sina-ext' ),
@@ -151,6 +159,9 @@ class Sina_Login_Form_Widget extends Widget_Base {
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => __( 'Enter Remember Text', 'sina-ext' ),
 				'default' => 'Keep me logged in',
+				'condition' => [
+					'is_remember_login' => 'yes',
+				],
 			]
 		);
 
@@ -247,6 +258,9 @@ class Sina_Login_Form_Widget extends Widget_Base {
 				'label' => __( 'Remember styles', 'sina-ext' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
+				'condition' => [
+					'is_remember_login' => 'yes',
+				]
 			]
 		);
 		$this->add_control(
@@ -259,6 +273,9 @@ class Sina_Login_Form_Widget extends Widget_Base {
 					'bottom' => __( 'Bottom', 'sina-ext' ),
 				],
 				'default' => 'middle',
+				'condition' => [
+					'is_remember_login' => 'yes',
+				]
 			]
 		);
 		$this->add_group_control(
@@ -266,6 +283,9 @@ class Sina_Login_Form_Widget extends Widget_Base {
 			[
 				'name' => 'remember_typography',
 				'selector' => '{{WRAPPER}} .sina-login-remember-wrap',
+				'condition' => [
+					'is_remember_login' => 'yes',
+				]
 			]
 		);
 		$this->add_control(
@@ -274,6 +294,9 @@ class Sina_Login_Form_Widget extends Widget_Base {
 				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#222',
+				'condition' => [
+					'is_remember_login' => 'yes',
+				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-login-remember-wrap' => 'color: {{VALUE}};',
 				],
@@ -297,6 +320,9 @@ class Sina_Login_Form_Widget extends Widget_Base {
 						'title' => __( 'Right', 'sina-ext' ),
 						'icon' => 'fa fa-align-right',
 					],
+				],
+				'condition' => [
+					'is_remember_login' => 'yes',
 				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-login-remember-wrap' => 'text-align: {{VALUE}};',
@@ -462,12 +488,13 @@ class Sina_Login_Form_Widget extends Widget_Base {
 		<div class="sina-form">
 			<form class="sina-login-form"
 			data-uid="<?php echo esc_attr( $id ); ?>"
+			data-rem-login="<?php echo esc_attr( $data['is_remember_login'] ); ?>"
 			data-url="<?php echo esc_url( $data['redirect_url'] ); ?>">
 
 				<input class="sina-input-field sina-input-email" type="email" placeholder="<?php echo esc_attr( $data['email_placeholder'] ); ?>" >
 				<input class="sina-input-field sina-input-password" type="password" placeholder="<?php echo esc_attr( $data['password_placeholder'] ); ?>" >
 
-				<?php if ( 'middle' == $data['position'] ): ?>
+				<?php if ( 'yes' == $data['is_remember_login'] && 'middle' == $data['position'] ): ?>
 					<div class="sina-login-remember-wrap">
 						<input id="<?php echo esc_attr( $id ); ?>" type="checkbox" class="sina-login-remember">
 						<label for="<?php echo esc_attr( $id ); ?>"><?php echo esc_html( $data['remember_login'] ); ?></label>
@@ -478,7 +505,7 @@ class Sina_Login_Form_Widget extends Widget_Base {
 					<?php Sina_Common_Data::button_html($data); ?>
 				</button>
 
-				<?php if ( 'bottom' == $data['position'] ): ?>
+				<?php if ( 'yes' == $data['is_remember_login'] && 'bottom' == $data['position'] ): ?>
 					<div class="sina-login-remember-wrap">
 						<input id="<?php echo esc_attr( $id ); ?>" type="checkbox" class="sina-login-remember">
 						<label for="<?php echo esc_attr( $id ); ?>"><?php echo esc_html( $data['remember_login'] ); ?></label>

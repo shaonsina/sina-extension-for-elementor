@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 define('SINA_EXT_VERSION', '3.1.10');
-define('SINA_EXT_PREVIOUS_VERSION', '3.1.10' );
+define('SINA_EXT_PREVIOUS_VERSION', '3.1.9' );
 define('SINA_EXT_FILE', __FILE__ );
 define('SINA_EXT_SLUG', basename( SINA_EXT_FILE, '.php' ));
 define('SINA_EXT_DIR', __DIR__);
