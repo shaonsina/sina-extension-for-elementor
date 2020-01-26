@@ -205,6 +205,36 @@ class Sina_Transform_Widget extends Widget_Base {
 				'default' => 'rotateY',
 			]
 		);
+		$this->add_control(
+			'transform_3D',
+			[
+				'label' => __( '3D Transform', 'sina-ext' ),
+				'type' => Controls_Manager::SWITCHER,
+			]
+		);
+		$this->add_responsive_control(
+			'transform_perspective',
+			[
+				'label' => __( 'Perspective Size', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'range' => [
+					'px' => [
+						'step' => 1,
+						'min' => 0,
+						'max' => 2000,
+					],
+				],
+				'default' => [
+					'size' => '800',
+				],
+				'condition' => [
+					'transform_3D' => 'yes',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-transform' => 'perspective: {{SIZE}}px;',
+				],
+			]
+		);
 
 		$this->start_controls_tabs( 'transform_tabs' );
 
@@ -224,7 +254,7 @@ class Sina_Transform_Widget extends Widget_Base {
 					'px' => [
 						'step' => 1,
 						'min' => 0,
-						'max' => 180,
+						'max' => 360,
 					],
 				],
 				'default' => [
@@ -247,7 +277,7 @@ class Sina_Transform_Widget extends Widget_Base {
 					'px' => [
 						'step' => 1,
 						'min' => 0,
-						'max' => 180,
+						'max' => 360,
 					],
 				],
 				'default' => [
@@ -269,8 +299,8 @@ class Sina_Transform_Widget extends Widget_Base {
 				'range' => [
 					'px' => [
 						'step' => 1,
-						'min' => -180,
-						'max' => 180,
+						'min' => 0,
+						'max' => 360,
 					],
 				],
 				'default' => [
@@ -342,7 +372,7 @@ class Sina_Transform_Widget extends Widget_Base {
 					],
 				],
 				'default' => [
-					'size' => 10,
+					'size' => '10',
 				],
 				'condition' => [
 					'transform_effects' => 'translate',
@@ -361,7 +391,7 @@ class Sina_Transform_Widget extends Widget_Base {
 					],
 				],
 				'default' => [
-					'size' => 10,
+					'size' => '10',
 				],
 				'condition' => [
 					'transform_effects' => 'translate',
@@ -427,7 +457,7 @@ class Sina_Transform_Widget extends Widget_Base {
 					'px' => [
 						'step' => 1,
 						'min' => 0,
-						'max' => 180,
+						'max' => 360,
 					],
 				],
 				'default' => [
@@ -450,7 +480,7 @@ class Sina_Transform_Widget extends Widget_Base {
 					'px' => [
 						'step' => 1,
 						'min' => 0,
-						'max' => 180,
+						'max' => 360,
 					],
 				],
 				'default' => [
@@ -472,8 +502,8 @@ class Sina_Transform_Widget extends Widget_Base {
 				'range' => [
 					'px' => [
 						'step' => 1,
-						'min' => -180,
-						'max' => 180,
+						'min' => 0,
+						'max' => 360,
 					],
 				],
 				'default' => [
@@ -545,7 +575,7 @@ class Sina_Transform_Widget extends Widget_Base {
 					],
 				],
 				'default' => [
-					'size' => 10,
+					'size' => '10',
 				],
 				'condition' => [
 					'transform_effects' => 'translate',
@@ -564,7 +594,7 @@ class Sina_Transform_Widget extends Widget_Base {
 					],
 				],
 				'default' => [
-					'size' => 10,
+					'size' => '10',
 				],
 				'condition' => [
 					'transform_effects' => 'translate',

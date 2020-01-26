@@ -118,6 +118,18 @@ class Sina_Blogpost_Widget extends Widget_Base {
 		);
 
 		$this->add_control(
+			'layout_type',
+			[
+				'label' => __( 'Layout Type', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					'default' => __( 'Default', 'sina-ext' ),
+					'custom' => __( 'Custom', 'sina-ext' ),
+				],
+				'default' => 'default',
+			]
+		);
+		$this->add_control(
 			'layout',
 			[
 				'label' => __( 'Layout', 'sina-ext' ),
@@ -130,17 +142,32 @@ class Sina_Blogpost_Widget extends Widget_Base {
 			]
 		);
 		$this->add_control(
+			'custom_columns',
+			[
+				'label' => __( 'Custom Column', 'sina-ext' ),
+				'type' => Controls_Manager::TEXT,
+				'description' => __( 'You have to enter a series of comma-separated values (1-4). That series represents your custom grid. Example: 4/1, 4/2, 4/3, 4/4.', 'sina-ext' ),
+				'default' => '2,3,3,3,3,3,2',
+				'condition' => [
+					'layout_type' => 'custom',
+				],
+			]
+		);
+		$this->add_control(
 			'columns',
 			[
 				'label' => __( 'Number of Column', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'sina-bp-item-1' => __( '1', 'sina-ext' ),
-					'sina-bp-item-2' => __( '2', 'sina-ext' ),
-					'sina-bp-item-3' => __( '3', 'sina-ext' ),
-					'sina-bp-item-4' => __( '4', 'sina-ext' ),
+					'1' => __( '1', 'sina-ext' ),
+					'2' => __( '2', 'sina-ext' ),
+					'3' => __( '3', 'sina-ext' ),
+					'4' => __( '4', 'sina-ext' ),
 				],
-				'default' => 'sina-bp-item-3',
+				'condition' => [
+					'layout_type' => 'default',
+				],
+				'default' => '3',
 			]
 		);
 		$this->add_control(
@@ -1941,8 +1968,9 @@ class Sina_Blogpost_Widget extends Widget_Base {
 
 		$new_offset = $data['offset'] + ( ( $paged - 1 ) * $data['posts_num'] );
 		$category	= !empty($data['categories']) ? implode( ',', $data['categories'] ) : '';
+
 		$default	= [
-			'category_name'		=> $category,
+			'category__in'		=> $category,
 			'orderby'			=> [ $data['order_by'] => $data['sort'] ],
 			'posts_per_page'	=> $data['posts_num'],
 			'paged'				=> $paged,
@@ -1964,7 +1992,9 @@ class Sina_Blogpost_Widget extends Widget_Base {
 				'total_posts'=> $post_query->found_posts,
 				'layout'=> $data['layout'],
 				'columns'=> $data['columns'],
-				'categories'=> $data['categories'],
+				'layout_type'=> $data['layout_type'],
+				'custom_columns'=> $data['custom_columns'],
+				'categories'=> $category,
 				'order_by'=> $data['order_by'],
 				'sort'=> $data['sort'],
 				'content_length'=> $content_length,

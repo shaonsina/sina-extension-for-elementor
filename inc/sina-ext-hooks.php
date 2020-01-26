@@ -214,7 +214,7 @@ Class Sina_Ext_Hooks{
 			$content_length = (int) $data['content_length'];
 
 			$default = [
-				'cat'				=> $data['categories'],
+				'category__in'		=> $data['categories'],
 				'posts_per_page'	=> (int) $data['posts_num'],
 				'offset'			=> (int) $offset,
 				'orderby'			=> [ $data['order_by'] => $data['sort'] ],

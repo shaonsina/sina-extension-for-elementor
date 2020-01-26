@@ -102,7 +102,7 @@ function sina_get_categories(){
 	$options = [];
 	if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
 		foreach ( $terms as $term ) {
-			$options[ $term->name ] = $term->name;
+			$options[ $term->term_id ] = $term->name;
 		}
 	}
 	return $options;
