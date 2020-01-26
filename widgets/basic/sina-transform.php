@@ -221,7 +221,7 @@ class Sina_Transform_Widget extends Widget_Base {
 					'px' => [
 						'step' => 1,
 						'min' => 0,
-						'max' => 2000,
+						'max' => 10000,
 					],
 				],
 				'default' => [

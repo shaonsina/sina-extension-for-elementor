@@ -147,7 +147,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 				'label' => __( 'Custom Column', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
 				'description' => __( 'You have to enter a series of comma-separated values (1-4). That series represents your custom grid. Example: 4/1, 4/2, 4/3, 4/4.', 'sina-ext' ),
-				'default' => '2,3,3,3,3,3,2',
+				'default' => '2,4,4,4,4,2',
 				'condition' => [
 					'layout_type' => 'custom',
 				],
@@ -2019,6 +2019,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 			data-offset="<?php echo esc_attr( $offset ); ?>"
 			data-posts-data='<?php echo json_encode( $posts_data ); ?>'>
 				<div class="sina-bp-grid">
+					<div class="sina-bp-grid-sizer"></div>
 					<?php include SINA_EXT_LAYOUT.'/blogpost/'.$data['layout'].'.php'; ?>
 					<?php wp_reset_query(); ?>
 				</div>
