@@ -96,9 +96,10 @@ define('SINA_WIDGETS', [
  */
 define('SINA_EXTENDERS', [
 	'pro' => [
+		'parallax'				=> 1,
+		'clips-animation'		=> 1,
 		'colors-animation'		=> 1,
 		'content-protection'	=> 1,
-		'parallax'				=> 1,
 		'reading-progressbar'	=> 1,
 	],
 ]);

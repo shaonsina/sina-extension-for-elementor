@@ -127,8 +127,9 @@ Yes. It's totally free.
 
 == Changelog ==
 
-= 3.1.11 - 30-01-2020 =
+= 3.1.11 - 28-01-2020 =
 - Added: 3D option to Transform
+- Added: Custom grid system to Blogpost for generating any kind of layout
 
 = 3.1.10 - 20-01-2020 =
 - Improved
