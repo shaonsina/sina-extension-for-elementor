@@ -176,7 +176,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 				'label' => esc_html__( 'Categories', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT2,
 				'multiple' => true,
-				'options' => sina_get_categories(),
+				'options' => sina_get_category_ids(),
 			]
 		);
 		Sina_Common_Data::posts_content($this);

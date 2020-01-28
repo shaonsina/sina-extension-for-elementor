@@ -93,16 +93,31 @@ function sina_get_user_roles() {
 	return $all_roles;
 }
 
-function sina_get_categories(){
+function sina_get_category_ids(){
 	$terms = get_terms( [ 
 		'taxonomy' => 'category',
-		'hide_empty' => true,
+		'hide_empty' => false,
 	] );
 
 	$options = [];
 	if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
 		foreach ( $terms as $term ) {
 			$options[ $term->term_id ] = $term->name;
+		}
+	}
+	return $options;
+}
+
+function sina_get_categories(){
+	$terms = get_terms( [ 
+		'taxonomy' => 'category',
+		'hide_empty' => false,
+	] );
+
+	$options = [];
+	if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
+		foreach ( $terms as $term ) {
+			$options[ $term->name ] = $term->name;
 		}
 	}
 	return $options;

@@ -119,7 +119,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 				'label' => esc_html__( 'Categories', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT2,
 				'multiple' => true,
-				'options' => sina_get_categories(),
+				'options' => sina_get_category_ids(),
 			]
 		);
 		Sina_Common_Data::posts_content($this);
@@ -770,7 +770,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$new_offset = $data['offset'] + ( ( $paged - 1 ) * $data['posts_num'] );
 		$category	= !empty($data['categories']) ? implode( ',', $data['categories'] ) : '';
 		$default	= [
-			'category_name'		=> $category,
+			'category__in'		=> $category,
 			'orderby'			=> [ $data['order_by'] => $data['sort'] ],
 			'posts_per_page'	=> $data['posts_num'],
 			'paged'				=> $paged,
