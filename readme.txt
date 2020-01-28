@@ -129,6 +129,9 @@ Yes. It's totally free.
 
 == Changelog ==
 
+= 3.1.13 - 05-02-2020 =
+
+
 = 3.1.12 - 28-01-2020 =
 - Fixed: Posts Carousel & Posts Tab issue
 **NOTE: Since we added custom grid system to Blogpost, So please review your Blogpost area after the update. If you face error please first rollback & then update**
