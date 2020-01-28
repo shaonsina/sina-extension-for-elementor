@@ -1,6 +1,6 @@
 == Sina Extension for Elementor ==
 Contributors: shaonsina
-Tags: addon, elementor, elementor addon, elementor extension, extension, page builder, builder, elementor builder, elementor contact form, elementor widget, best elementor addon, best elementor extension
+Tags: elementor addons, elementor extension, elementor widgets pack, elementor layout pack, elementor library pack, elementor pricing, elementor carousel, elementor slider, elementor chart, elementor hover effect, elementor form, elementor table, elementor review, elementor testimonial, elementor advanced tab
 Donate link: https://plugins.shaonsina.com/sina-extension/
 Requires at least: 4.7
 Tested up to: 5.3
@@ -130,6 +130,7 @@ Yes. It's totally free.
 = 3.1.11 - 28-01-2020 =
 - Added: 3D option to Transform
 - Added: Custom grid system to Blogpost for generating any kind of layout
+**NOTE: Since we added custom grid system to Blogpost, So please review your Blogpost area after update.**
 
 = 3.1.10 - 20-01-2020 =
 - Improved
