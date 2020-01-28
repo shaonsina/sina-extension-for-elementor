@@ -1967,7 +1967,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 		}
 
 		$new_offset = $data['offset'] + ( ( $paged - 1 ) * $data['posts_num'] );
-		$category	= !empty($data['categories']) ? implode( ',', $data['categories'] ) : '';
+		$category	= !empty($data['categories']) ? $data['categories'] : ['1'];
 
 		$default	= [
 			'category__in'		=> $category,
