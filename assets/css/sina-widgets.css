@@ -333,12 +333,30 @@ img.mfp-img{
 .sina-bp-grid-sizer{
 	width: 8.333333%;
 }
+.sina-bp-custom-12{
+	width: 100%;
+}
+.sina-bp-custom-9{
+	width: 75%;
+}
+.sina-bp-custom-8{
+	width: 66.666667%;
+}
+.sina-bp-custom-7{
+	width: 58.333333%;
+}
+.sina-bp-custom-5{
+	width: 41.666667%;
+}
+.sina-bp-custom-6,
 .sina-bp-item-2{
 	width: 50%;
 }
+.sina-bp-custom-4,
 .sina-bp-item-3{
 	width: 33.333333%;
 }
+.sina-bp-custom-3,
 .sina-bp-item-4{
 	width: 25%;
 }
@@ -1212,6 +1230,12 @@ img.mfp-img{
 		width: 50%;
 		height: 400px;
 	}
+	.sina-bp-custom-9,
+	.sina-bp-custom-8,
+	.sina-bp-custom-7,
+	.sina-bp-custom-5,
+	.sina-bp-custom-4,
+	.sina-bp-custom-3,
 	.sina-bp-item-2,
 	.sina-bp-item-3,
 	.sina-bp-item-4{
@@ -1268,6 +1292,14 @@ img.mfp-img{
 
 /* RESPONSIVE-Mobile Too Small*/
 @media (max-width: 540px) {
+	.sina-bp-custom-12,
+	.sina-bp-custom-9,
+	.sina-bp-custom-8,
+	.sina-bp-custom-7,
+	.sina-bp-custom-6,
+	.sina-bp-custom-5,
+	.sina-bp-custom-4,
+	.sina-bp-custom-3,
 	.sina-bp-item-1,
 	.sina-bp-item-2,
 	.sina-bp-item-3,

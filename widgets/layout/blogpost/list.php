@@ -1,16 +1,17 @@
 <?php
 	$j = 0;
+	$data['columns'] = 'sina-bp-item-'.$data['columns'];
 	if ( 'custom' == $data['layout_type'] ) {
 		$columns = explode(',', $data['custom_columns']);
 	}
 	while ( $post_query->have_posts() ) : $post_query->the_post();
 		$thumb_float = $data['thumb_right'] ? 'sina-bp-thumb-right' : '';
 		if ( 'custom' == $data['layout_type'] ) {
-			$data['columns'] = $columns[$j];
+			$data['columns'] = 'sina-bp-custom-'.$columns[$j];
 			$j++;
 		}
 	?>
-	<div class="sina-bp-col sina-bp-item-<?php echo esc_attr( $data['columns'].' sina-bp-'.$data['layout'].' '.$data['effects'].' '.$thumb_float ); ?>">
+	<div class="sina-bp-col <?php echo esc_attr( $data['columns'].' sina-bp-'.$data['layout'].' '.$data['effects'].' '.$thumb_float ); ?>">
 		<div class="sina-bp <?php echo esc_attr( $data['bg_layer_effects'] ); ?>">
 			<div class="sina-bg-thumb sina-bg-cover"
 				<?php if ( has_post_thumbnail() ): ?>

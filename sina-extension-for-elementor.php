@@ -9,7 +9,7 @@
  * Text Domain: sina-ext
  * License: GPLv3
  * License URI: https://opensource.org/licenses/GPL-3.0
- * Tags: elementor addons, elementor extension, elementor widgets pack, elementor layout pack, elementor library pack, elementor pricing, elementor carousel, elementor slider, elementor chart, elementor hover effect, elementor form, elementor table, elementor review, elementor testimonial, elementor advanced tab
+ * Tags: addon, elementor addon, elementor, elementor extension, elementor builder, elementor widget
  */
 
 // Exit if accessed directly.

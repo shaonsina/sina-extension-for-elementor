@@ -1,6 +1,6 @@
 == Sina Extension for Elementor ==
 Contributors: shaonsina
-Tags: elementor addons, elementor extension, elementor widgets pack, elementor layout pack, elementor library pack, elementor pricing, elementor carousel, elementor slider, elementor chart, elementor hover effect, elementor form, elementor table, elementor review, elementor testimonial, elementor advanced tab
+Tags: addon, elementor addon, elementor, elementor extension, elementor builder, elementor widget
 Donate link: https://plugins.shaonsina.com/sina-extension/
 Requires at least: 4.7
 Tested up to: 5.3

@@ -146,8 +146,8 @@ class Sina_Blogpost_Widget extends Widget_Base {
 			[
 				'label' => __( 'Custom Column', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
-				'description' => __( 'You have to enter a series of comma-separated values (1-4). That series represents your custom grid. Example: 4/1, 4/2, 4/3, 4/4.', 'sina-ext' ),
-				'default' => '2,4,4,4,4,2',
+				'description' => __( 'You have to enter a series of comma-separated values. That series represents your custom grid. Possible values: 3,4,5,6,7,8,9,12.', 'sina-ext' ),
+				'default' => '6,6,4,4,4',
 				'condition' => [
 					'layout_type' => 'custom',
 				],
