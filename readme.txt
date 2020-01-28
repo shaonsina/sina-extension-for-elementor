@@ -98,9 +98,11 @@ Cool things are coming soon...
 
 == PRO EXTENDERS ==
 
-1. [Colors Animation](https://plugins.shaonsina.com/sina-extension/colors-animation): Show some colors on the section with animated (fade, horizontal, vertical).
-2. [Content Protection](https://plugins.shaonsina.com/sina-extension/content-protection): Show or hide specific element or section for the specific users (based on role).
-3. [Reading Progressbar](https://plugins.shaonsina.com/sina-extension/reading-progressbar): Display a progressbar top of the page or posts for seeing the users how much they have read or seen (based on scroll).
+1. [Clips Animation](https://plugins.shaonsina.com/sina-extension/): You can animate any image(s) at any dimension with that extender.
+2. [Colors Animation](https://plugins.shaonsina.com/sina-extension/colors-animation): Show some colors on the section with animated (fade, horizontal, vertical).
+3. [Content Protection](https://plugins.shaonsina.com/sina-extension/content-protection): Show or hide specific element or section for the specific users (based on role).
+4. [Parallax](https://plugins.shaonsina.com/sina-extension/): Display parallax to any section or entire the page.
+5. [Reading Progressbar](https://plugins.shaonsina.com/sina-extension/reading-progressbar): Display a progressbar top of the page or posts for seeing the users how much they have read or seen (based on scroll).
 
 
 == Installation ==
