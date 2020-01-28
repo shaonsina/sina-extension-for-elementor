@@ -5,7 +5,7 @@ Donate link: https://plugins.shaonsina.com/sina-extension/
 Requires at least: 4.7
 Tested up to: 5.3
 Requires PHP: 7.0
-Stable tag: 3.1.10
+Stable tag: 3.1.12
 License: GPL v3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -129,10 +129,13 @@ Yes. It's totally free.
 
 == Changelog ==
 
+= 3.1.12 - 28-01-2020 =
+- Fixed: Posts Carousel & Posts Tab issue
+**NOTE: Since we added custom grid system to Blogpost, So please review your Blogpost area after the update. If you face error please first rollback & then update**
+
 = 3.1.11 - 28-01-2020 =
 - Added: 3D option to Transform
 - Added: Custom grid system to Blogpost for generating any kind of layout
-**NOTE: Since we added custom grid system to Blogpost, So please review your Blogpost area after update.**
 
 = 3.1.10 - 20-01-2020 =
 - Improved
