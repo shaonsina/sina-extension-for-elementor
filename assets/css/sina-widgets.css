@@ -679,26 +679,23 @@ img.mfp-img{
 .sina-banner-desc > p{
 	margin: 0 0 10px 0 !important;
 }
-.sina-particle{
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-}
 
 /*-------------------------- Pie Chart --------------------------*/
 .sina-piechart {
 	position: relative;
 	margin: 0 auto;
 }
-.sina-piechart .sina-piechart-content {
+.sina-piechart .sina-piechart-content{
+	text-align: center;
+}
+.sina-piechart .sina-piechart-content,
+.sina-content-box-linkable,
+.sina-particle{
 	position: absolute;
-	left: 0;
 	top: 0;
+	left: 0;
 	width: 100%;
 	height: 100%;
-	text-align: center;
 }
 
 /*--------------------------------- Portfolio -------------------------------------- */

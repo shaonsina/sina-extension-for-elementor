@@ -103,6 +103,13 @@ class Sina_Content_Box_Widget extends Widget_Base {
 		);
 
 		$this->add_control(
+			'is_linkable_box',
+			[
+				'label' => __( 'Linkable Entire Box', 'sina-ext' ),
+				'type' => Controls_Manager::SWITCHER,
+			]
+		);
+		$this->add_control(
 			'save_templates',
 			[
 				'label' => __( 'Use Save Templates', 'sina-ext' ),
@@ -1155,6 +1162,18 @@ class Sina_Content_Box_Widget extends Widget_Base {
 		$data = $this->get_settings_for_display();
 		?>
 		<div class="sina-content-box <?php echo esc_attr( $data['effects'].' '.$data['bg_layer_effects'] ); ?>">
+
+			<?php if ( 'yes' == $data['is_linkable_box'] && $data['link']['url'] ): ?>
+				<a class="sina-content-box-linkable"
+				href="<?php echo esc_url( $data['link']['url'] ); ?>"
+				<?php if ( 'on' == $data['link']['is_external'] ): ?>
+					target="_blank" 
+				<?php endif; ?>
+				<?php if ( 'on' == $data['link']['nofollow'] ): ?>
+					rel="nofollow" 
+				<?php endif; ?>></a>
+			<?php endif; ?>
+
 			<?php if ( $data['ribbon_title'] && $data['ribbon_position'] ): ?>
 				<div class="<?php echo esc_attr( $data['ribbon_position'] ); ?>">
 					<?php printf( '%s', $data['ribbon_title'] ); ?>
