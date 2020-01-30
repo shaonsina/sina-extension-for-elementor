@@ -150,11 +150,12 @@ abstract class Sina_Ext_Functions extends Sina_Extension_Base{
 		// Enqueue Widget Styles
 		add_action( 'elementor/frontend/after_register_styles', [ $this, 'widget_styles' ] );
 
-		// Register Widget Scripts
+		// Enqueue Widget Scripts
 		add_action( 'elementor/frontend/after_register_scripts', [ $this, 'widget_scripts' ] );
 
-		new Sina_Ext_Settings();
-		new Sina_Ext_Controls();
+
+		Sina_Ext_Settings::instance();
+		Sina_Ext_Controls::instance();
 		Sina_Ext_Manager::instance();
 	}
 }

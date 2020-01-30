@@ -12,6 +12,28 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 3.0.0
  */
 class Sina_Ext_Settings{
+	/**
+	 * Instance
+	 *
+	 * @since 3.1.13
+	 * @var Sina_Ext_Settings The single instance of the class.
+	 */
+	private static $_instance = null;
+
+	/**
+	 * Instance
+	 *
+	 * Ensures only one instance of the class is loaded or can be loaded.
+	 *
+	 * @since 3.1.13
+	 * @return Sina_Ext_Settings An Instance of the class.
+	 */
+	public static function instance() {
+		if ( is_null( self::$_instance ) ) {
+			self::$_instance = new self();
+		}
+		return self::$_instance;
+	}
 
 	public function __construct() {
 		add_action( 'admin_menu', [$this, 'add_submenu'], 550 );

@@ -158,12 +158,12 @@ class Sina_Ext_Library extends Source_Base {
 	 *
 	 * @since 3.0.0
 	 */
-	public static $api_info_url = 'https://plugins.shaonsina.com/api/v1/sina-ext/get/?data=lib';
+	public static $api_info_url = 'https://sinaextra.com/api/v1/sina-ext/get/?data=lib';
 
 	/**
 	 * API get template content URL.
 	 *
 	 * @since 3.0.0
 	 */
-	private static $api_get_template_content_url = 'https://plugins.shaonsina.com/api/v1/sina-ext/get/?data=%d';
+	private static $api_get_template_content_url = 'https://sinaextra.com/api/v1/sina-ext/get/?data=%d';
 }
