@@ -5,7 +5,7 @@ Donate link: https://plugins.shaonsina.com/sina-extension/
 Requires at least: 4.7
 Tested up to: 5.3
 Requires PHP: 7.0
-Stable tag: 3.1.12
+Stable tag: 3.1.13
 License: GPL v3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -88,12 +88,13 @@ Cool things are coming soon...
 2. [Hover Image](https://plugins.shaonsina.com/sina-extension/hover-image): Show an image with attractive hover effects.
 3. [Image Accordion](https://plugins.shaonsina.com/sina-extension/image-accordion): Display content and images with a new way!
 4. [Image Marker](https://plugins.shaonsina.com/sina-extension/image-marker): Mention or highlight specific area of an image.
-5. [Offcanvas Bar](https://plugins.shaonsina.com/sina-extension/offcanvas-bar): Show your expected content into a offcanvas sidebar.
-6. [Register Form](https://plugins.shaonsina.com/sina-extension/register-form): Add a register form anywhere into your web page.
-7. [Section Navigation](https://plugins.shaonsina.com/sina-extension/section-navigation): To navigate the sections within a page add the fixed navigation.
-8. [Tab](https://plugins.shaonsina.com/sina-extension/tab): Display any content within a tab that you want.
-9. [Testimonial](https://plugins.shaonsina.com/sina-extension/testimonial): Show the testimonials into an interactive carousel.
-10. [Toggle Content](https://plugins.shaonsina.com/sina-extension/toggle-content): Display any content within a toggle tab.
+5. [Lost Password Form](https://plugins.shaonsina.com/sina-extension/lost-password-form): Add a custom "lost password" form anywhere into your web page.
+6. [Offcanvas Bar](https://plugins.shaonsina.com/sina-extension/offcanvas-bar): Show your expected content into a offcanvas sidebar.
+7. [Register Form](https://plugins.shaonsina.com/sina-extension/register-form): Add a register form anywhere into your web page.
+8. [Section Navigation](https://plugins.shaonsina.com/sina-extension/section-navigation): To navigate the sections within a page add the fixed navigation.
+9. [Tab](https://plugins.shaonsina.com/sina-extension/tab): Display any content within a tab that you want.
+10. [Testimonial](https://plugins.shaonsina.com/sina-extension/testimonial): Show the testimonials into an interactive carousel.
+11. [Toggle Content](https://plugins.shaonsina.com/sina-extension/toggle-content): Display any content within a toggle tab.
 
 
 == PRO EXTENDERS ==
@@ -129,12 +130,12 @@ Yes. It's totally free.
 
 == Changelog ==
 
-= 3.1.13 - 05-02-2020 =
+= 3.1.13 - 31-02-2020 =
+- improved
 
 
 = 3.1.12 - 28-01-2020 =
 - Fixed: Posts Carousel & Posts Tab issue
-**NOTE: Since we added custom grid system to Blogpost, So please review your Blogpost area after the update. If you face error please first rollback & then update**
 
 = 3.1.11 - 28-01-2020 =
 - Added: 3D option to Transform
