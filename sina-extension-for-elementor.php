@@ -1,11 +1,11 @@
 <?php
 /**
  * Plugin Name: Sina Extension for Elementor
- * Plugin URI: https://plugins.shaonsina.com/sina-extension/
+ * Plugin URI: https://sinaextra.com/sina-extension/
  * Description: A collection of high-quality widgets for Elementor page builder.
- * Version: 3.1.13
+ * Version: 3.1.14
  * Author: shaonsina
- * Author URI: https://shaonsina.com/
+ * Author URI: https://sinaextra.com/shaonsina/
  * Text Domain: sina-ext
  * License: GPLv3
  * License URI: https://opensource.org/licenses/GPL-3.0
@@ -17,8 +17,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define('SINA_EXT_VERSION', '3.1.13');
-define('SINA_EXT_PREVIOUS_VERSION', '3.1.12' );
+define('SINA_EXT_VERSION', '3.1.14');
+define('SINA_EXT_PREVIOUS_VERSION', '3.1.13' );
 define('SINA_EXT_FILE', __FILE__ );
 define('SINA_EXT_SLUG', basename( SINA_EXT_FILE, '.php' ));
 define('SINA_EXT_DIR', __DIR__);
@@ -79,6 +79,7 @@ define('SINA_WIDGETS', [
 		'hover-image'			=> 1,
 		'image-accordion'		=> 1,
 		'image-marker'			=> 1,
+		'lost-password-form'	=> 1,
 		'offcanvas-bar'			=> 1,
 		'register-form'			=> 1,
 		'section-navigation'	=> 1,

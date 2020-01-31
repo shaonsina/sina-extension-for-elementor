@@ -76,6 +76,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 	 */
 	public function get_style_depends() {
 		return [
+			'sina-tooltip',
 			'sina-widgets',
 		];
 	}
@@ -90,6 +91,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 	public function get_script_depends() {
 		return [
 			'jquery-particle',
+			'sina-tooltip',
 			'sina-widgets',
 		];
 	}

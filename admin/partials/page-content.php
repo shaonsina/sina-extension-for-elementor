@@ -1,7 +1,7 @@
 <div class="sina-ext-wrap">
 	<h1><?php _e( 'Sina Extension Settings', 'sina-ext' ); ?></h1>
 	<p class="sina-ext-pb">
-		<?php _e('Thank you for using <strong><i>Sina Extension</i></strong>. This plugin has been developed by <a href="https://shaonsina.com/" target="_blank">shaonsina</a> and I hope you enjoy using it.', 'sina-ext'); ?>
+		<?php _e('Thank you for using <strong><i>Sina Extension</i></strong>. This plugin has been developed by <a href="https://sinaextra.com/shaonsina/" target="_blank">shaonsina</a> and I hope you enjoy using it.', 'sina-ext'); ?>
 	</p>
 
 	<form action="options.php" method="POST">
@@ -62,7 +62,7 @@
 
 	<p class="sina-ext-pb">
 		<?php _e( 'Found any issue or need help?', 'sina-ext' ); ?>
-		<a href="http://plugins.shaonsina.com/support" target="_blank"><?php _e( 'Open Ticket', 'sina-ext' ); ?></a>
+		<a href="http://sinaextra.com/support/" target="_blank"><?php _e( 'Open Ticket', 'sina-ext' ); ?></a>
 	</p>
 
 	<div class="sina-ext-options">
