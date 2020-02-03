@@ -15,7 +15,7 @@
 
 		<?php do_action( 'sina_ext_before_widget_settings'); ?>
 
-		<div class="sina-ext-options sina-ext-pt sina-ext-toggle-wrap">
+		<div class="sina-ext-options sina-ext-pt">
 			<h2><?php _e( 'Widget Settings', 'sina-ext' ); ?></h2>
 			<p class="sina-ext-pb">
 				<?php _e( 'You can disable widget(s) if you would like to not using on your site.', 'sina-ext' ); ?>
@@ -24,11 +24,23 @@
 			<?php
 				$get_widgets = get_option( 'sina_widgets' );
 				$set_widgets = SINA_WIDGETS;
+				$go_pro = 'sina-ext-pro';
 				if ( defined('SINA_EXT_PRO_WIDGETS')) {
 					$set_widgets = array_merge(SINA_WIDGETS, SINA_EXT_PRO_WIDGETS);
+					$go_pro = '';
 				}
 				foreach ($set_widgets as $cat => $data) {
-					printf("<div class='sina-ext-pb'><h3 class='sina-ext-pb'>%s</h3>", __( ucfirst($cat), 'sina-ext' ));
+					$sina_pro = ('pro' == $cat) ? $go_pro : '';
+					$checked = isset($get_widgets[$cat]) ? 'checked' : '';
+					?>
+					<div class="sina-ext-pb sina-toggle-all-<?php echo esc_attr($cat); ?>">
+						<div class='sina-ext-pb sina-ext-my'>
+							<div class="sina-toggle-section <?php echo esc_attr($sina_pro); ?> sina-ext-toggle" data-cat="<?php echo esc_attr($cat); ?>">
+								<?php printf('<input type="checkbox" id="sina_widgets[%s]" %s value="1">', $cat, $checked); ?>
+								<?php printf('<label for="sina_widgets[%1$s]"><div class="sina-ext-label">%2$s</div><div class="sina-ext-toggle-btn"> <div></div></div></label>', $cat, __( ucfirst($cat), 'sina-ext' )); ?>
+							</div>
+						</div>
+					<?php
 					do_settings_sections( 'sina_widgets_'.$cat );
 					echo '</div>';
 				}
@@ -39,8 +51,17 @@
 		<?php do_action( 'sina_ext_before_extenders_settings'); ?>
 
 		<div class="sina-ext-options sina-ext-pt">
-			<h2 class="sina-ext-pb"><?php _e( 'Extenders Settings', 'sina-ext' ); ?></h2>
-			<div class="sina-ext-pb">
+			<?php
+				$get_extenders = get_option( 'sina_extenders' );
+				$checked = empty($get_extenders) ? '' : 'checked';
+			?>
+			<div class='sina-ext-pb sina-ext-my'>
+				<div class="sina-toggle-section sina-ext-toggle <?php echo esc_attr( $go_pro ); ?>" data-cat="extenders">
+					<?php printf('<input type="checkbox" id="sina_extenders" %s value="1">', $checked); ?>
+					<?php printf('<label for="sina_extenders"><div class="sina-ext-label">%1$s</div><div class="sina-ext-toggle-btn"> <div></div></div></label>', __( 'Extenders', 'sina-ext' )); ?>
+				</div>
+			</div>
+			<div class="sina-ext-pb sina-toggle-all-extenders">
 				<?php do_settings_sections( 'sina_extenders' ); ?>
 			</div>
 		</div>

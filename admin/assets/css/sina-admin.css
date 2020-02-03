@@ -1,4 +1,4 @@
-/* Sina Extension for Elementor v3.1.14 */
+/* Sina Extension for Elementor v3.1.15 */
 .sina-ext-wrap{
 	padding: 10px 20px 15px;
 	background: #fff;
@@ -8,6 +8,9 @@
 }
 .sina-ext-pb{
 	padding-bottom: 15px;
+}
+.sina-ext-my{
+	margin: 20px 0;
 }
 .sina-ext-options {
 	margin-bottom: 15px;
@@ -73,9 +76,22 @@
 	height: 15px;
 	border-radius: 10px
 }
+.sina-toggle-section{
+	width: calc(33% - 18px);
+}
+.sina-toggle-section label{
+	width: 100%;
+}
+.sina-toggle-section .sina-ext-label{
+	width: 60%;
+	float: left;
+	font-size: 18px;
+	font-weight: 600;
+}
 
 
 @media (max-width: 767px) {
+	.sina-toggle-section,
 	.sina-ext-options table tr{
 		width: calc(50% - 18px);
 	}
