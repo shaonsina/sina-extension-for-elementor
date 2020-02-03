@@ -55,11 +55,13 @@ class Sina_Ext_Settings{
 	public function admin_scripts( $hook ) {
 		if ( 'elementor_page_sina_ext_settings' == $hook ) {
 			// CSS Files
-			wp_enqueue_style( 'sina-admin', SINA_EXT_URL .'admin/assets/css/sina-admin.css', [], SINA_EXT_VERSION );
+			wp_enqueue_style( 'sina-admin', SINA_EXT_URL .'admin/assets/css/sina-admin.min.css', [], SINA_EXT_VERSION );
 
 			// JS Files
-			wp_enqueue_script( 'sweetalert2', SINA_EXT_URL .'admin/assets/js/sweetalert2.min.js', ['jquery'], SINA_EXT_VERSION );
-			wp_enqueue_script( 'sina-admin', SINA_EXT_URL .'admin/assets/js/sina-admin.js', ['jquery', 'sweetalert2'], SINA_EXT_VERSION );
+			if ( !defined('SINA_EXT_PRO_VERSION') ) {
+				wp_enqueue_script( 'sweetalert2', SINA_EXT_URL .'admin/assets/js/sweetalert2.min.js', ['jquery'], SINA_EXT_VERSION );
+			}
+			wp_enqueue_script( 'sina-admin', SINA_EXT_URL .'admin/assets/js/sina-admin.min.js', ['jquery'], SINA_EXT_VERSION );
 		}
 	}
 
