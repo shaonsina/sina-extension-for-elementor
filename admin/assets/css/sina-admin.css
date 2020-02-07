@@ -88,7 +88,16 @@
 	font-size: 18px;
 	font-weight: 600;
 }
-
+.sina-ext-wrap .sina-doc-btn{
+	background: #1085e4;
+	color: #fff;
+	transition: 0.3s ease-in-out;
+}
+.sina-ext-wrap .sina-doc-btn:hover,
+.sina-ext-wrap .sina-doc-btn:focus{
+	color: #fff;
+	background: #055394;
+}
 
 @media (max-width: 767px) {
 	.sina-toggle-section,

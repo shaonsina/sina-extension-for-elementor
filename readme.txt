@@ -5,7 +5,7 @@ Donate link: https://sinaextra.com/sina-extension/
 Requires at least: 4.7
 Tested up to: 5.3
 Requires PHP: 7.0
-Stable tag: 3.1.14
+Stable tag: 3.1.15
 License: GPL v3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -14,7 +14,7 @@ A collection of high-quality widgets for Elementor page builder. 100+ predefined
 
 == Description ==
 
-This is an extension for [Elementor](https://wordpress.org/plugins/elementor/) page builder. It will extend the Elementor and increase web page building experience. It has 35+ useful & high-quality widgets. Which you may use for easy & fast make the page & display your content far better way.
+This is an extension for [Elementor](https://wordpress.org/plugins/elementor/) page builder. It will extend the Elementor and increase web page building experience. It has 36 useful & high-quality widgets. Which you may use for easy & fast make the page & display your content far better way.
 
 
 = Use of Sina Templates =
@@ -129,6 +129,11 @@ Yes. It's totally free.
 
 
 == Changelog ==
+
+= 3.1.15 - 10-02-2020 =
+- Fixed: News Ticker issue
+- Added: Global Swithcer (enable/disable) for every section's widgets
+- Added: Documentation button for PRO version
 
 = 3.1.14 - 31-02-2020 =
 - Fixed: Tooltip console error

@@ -3,6 +3,20 @@
 	<p class="sina-ext-pb">
 		<?php _e('Thank you for using <strong><i>Sina Extension</i></strong>. This plugin has been developed by <a href="https://sinaextra.com/shaonsina/" target="_blank">shaonsina</a> and I hope you enjoy using it.', 'sina-ext'); ?>
 	</p>
+	<?php
+		$get_widgets = get_option( 'sina_widgets' );
+		$set_widgets = SINA_WIDGETS;
+		$go_pro = 'sina-ext-pro';
+		if ( defined('SINA_EXT_PRO_WIDGETS')) {
+			$set_widgets = array_merge(SINA_WIDGETS, SINA_EXT_PRO_WIDGETS);
+			$go_pro = '';
+		}
+		if ( '' == $go_pro ) :
+		?>
+		<p class="sina-ext-pb">
+			<a class="button sina-doc-btn" href="https://sinaextra.com/docs/sina-extension/" target="_blank">Documentation</a>
+		</p>
+	<?php endif; ?>
 
 	<form action="options.php" method="POST">
 		<?php settings_errors(); ?>
@@ -22,13 +36,6 @@
 			</p>
 
 			<?php
-				$get_widgets = get_option( 'sina_widgets' );
-				$set_widgets = SINA_WIDGETS;
-				$go_pro = 'sina-ext-pro';
-				if ( defined('SINA_EXT_PRO_WIDGETS')) {
-					$set_widgets = array_merge(SINA_WIDGETS, SINA_EXT_PRO_WIDGETS);
-					$go_pro = '';
-				}
 				foreach ($set_widgets as $cat => $data) {
 					$sina_pro = ('pro' == $cat) ? $go_pro : '';
 					$checked = isset($get_widgets[$cat]) ? 'checked' : '';

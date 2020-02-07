@@ -63,6 +63,7 @@ class Sina_Ext_Manager {
 				'chart',
 				'contact form',
 				'countdown',
+				'fun fact',
 				'hover image',
 				'image accordion',
 				'image marker',
@@ -76,6 +77,7 @@ class Sina_Ext_Manager {
 			$categories = [
 				'contact form',
 				'countdown',
+				'fun fact',
 				'login form',
 				'posts',
 				'others',
