@@ -1,4 +1,6 @@
 !(function ($) {
+	'use strict';
+
 	$(document).on('click', '.sina-ext-toggle', function(e){
 
 		var $this = $(this);
@@ -26,5 +28,15 @@
 				$all.attr('checked', true);
 			}
 		}
+	});
+
+	$(document).on('click', '.sina-ext-btns > a', function(e) {
+		e.preventDefault();
+		var hash = this.hash;
+
+		$(this).siblings().removeClass('active');
+		$('.sina-ext-tab-content').removeClass('show');
+		$(this).addClass('active');
+		$(hash).addClass('show');
 	});
 })(jQuery);

@@ -5,7 +5,7 @@ Donate link: https://sinaextra.com/sina-extension/
 Requires at least: 4.7
 Tested up to: 5.3
 Requires PHP: 7.0
-Stable tag: 3.1.15
+Stable tag: 3.2.0
 License: GPL v3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -99,10 +99,10 @@ Cool things are coming soon...
 
 == PRO EXTENDERS ==
 
-1. [Clips Animation](https://sinaextra.com/sina-extension/): You can animate any image(s) at any dimension with that extender.
+1. [Clips Animation](https://sinaextra.com/sina-extension/clips-animation/): You can animate any image(s) at any dimension with that extender.
 2. [Colors Animation](https://sinaextra.com/sina-extension/colors-animation): Show some colors on the section with animated (fade, horizontal, vertical).
 3. [Content Protection](https://sinaextra.com/sina-extension/content-protection): Show or hide specific element or section for the specific users (based on role).
-4. [Parallax](https://sinaextra.com/sina-extension/): Display parallax to any section or entire the page.
+4. [Parallax](https://sinaextra.com/sina-extension/parallax): Display parallax to any section or entire the page.
 5. [Reading Progressbar](https://sinaextra.com/sina-extension/reading-progressbar): Display a progressbar top of the page or posts for seeing the users how much they have read or seen (based on scroll).
 
 
@@ -130,8 +130,12 @@ Yes. It's totally free.
 
 == Changelog ==
 
-= 3.1.15 - 10-02-2020 =
-- Fixed: News Ticker issue
+= 3.2.0 - 20-02-2020 =
+
+
+
+= 3.1.15 - 11-02-2020 =
+- Improved: News Ticker
 - Added: Global Swithcer (enable/disable) for every section's widgets
 - Added: Documentation button for PRO version
 
