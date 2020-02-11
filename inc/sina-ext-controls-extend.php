@@ -16,7 +16,7 @@ class Sina_Ext_Controls{
 	 * Instance
 	 *
 	 * @since 3.1.13
-	 * @var Sina_Extension The single instance of the class.
+	 * @var Sina_Ext_Controls The single instance of the class.
 	 */
 	private static $_instance = null;
 
@@ -26,7 +26,7 @@ class Sina_Ext_Controls{
 	 * Ensures only one instance of the class is loaded or can be loaded.
 	 *
 	 * @since 3.1.13
-	 * @return Sina_Extension An Instance of the class.
+	 * @return Sina_Ext_Controls An Instance of the class.
 	 */
 	public static function instance() {
 		if ( is_null( self::$_instance ) ) {

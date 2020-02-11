@@ -10,6 +10,7 @@ use \Sina_Extension\Sina_Extension_Base;
 use \Sina_Extension\Manager\Sina_Ext_Manager;
 use \Sina_Extension\Admin\Sina_Ext_Settings;
 use \Sina_Extension\Sina_Ext_Controls;
+use \Sina_Extension\Sina_Ext_Column_Extend;
 
 /**
  * Sina_Ext_Functions Class For widgets functionality
@@ -153,9 +154,27 @@ abstract class Sina_Ext_Functions extends Sina_Extension_Base{
 		// Enqueue Widget Scripts
 		add_action( 'elementor/frontend/after_register_scripts', [ $this, 'widget_scripts' ] );
 
+		$this->files();
+		$this->load_actions();
+		$this->load_filters();
 
 		Sina_Ext_Settings::instance();
 		Sina_Ext_Controls::instance();
 		Sina_Ext_Manager::instance();
+	}
+
+	/**
+	 * Include helper & hooks files
+	 *
+	 * @since 3.0.0
+	 */
+	public function files() {
+		require_once( SINA_EXT_ADMIN .'sina-ext-rollback.php' );
+		require_once( SINA_EXT_ADMIN .'sina-ext-settings.php' );
+		require_once( SINA_EXT_INC .'sina-ext-hooks.php' );
+		require_once( SINA_EXT_INC .'sina-ext-helpers.php' );
+		require_once( SINA_EXT_INC .'sina-ext-manager.php' );
+		require_once( SINA_EXT_INC .'sina-ext-controls.php' );
+		require_once( SINA_EXT_INC .'sina-ext-controls-extend.php' );
 	}
 }
