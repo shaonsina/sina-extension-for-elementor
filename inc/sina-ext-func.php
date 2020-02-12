@@ -10,7 +10,6 @@ use \Sina_Extension\Sina_Extension_Base;
 use \Sina_Extension\Manager\Sina_Ext_Manager;
 use \Sina_Extension\Admin\Sina_Ext_Settings;
 use \Sina_Extension\Sina_Ext_Controls;
-use \Sina_Extension\Sina_Ext_Column_Extend;
 
 /**
  * Sina_Ext_Functions Class For widgets functionality

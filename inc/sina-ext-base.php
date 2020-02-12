@@ -65,7 +65,7 @@ abstract class Sina_Extension_Base{
 			$message .= '<p>' . sprintf( '<a href="%s" class="button-primary">%s</a>', $install_url, __( 'Install Elementor', 'sina-ext' ) ) . '</p>';
 		}
 
-		printf('<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', __($message));
+		printf('<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', $message);
 	}
 
 	/**
