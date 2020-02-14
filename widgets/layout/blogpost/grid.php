@@ -14,7 +14,7 @@
 		<div class="sina-bp <?php echo esc_attr( $data['bg_layer_effects'] ); ?>">
 			<?php if ( has_post_thumbnail() ): ?>
 				<div class="sina-bg-thumb">
-					<?php the_post_thumbnail(); ?>
+					<img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
 					<div class="sina-overlay">
 						<a href="<?php the_permalink(); ?>"></a>
 					</div>

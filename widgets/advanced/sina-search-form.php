@@ -192,6 +192,17 @@ class Sina_Search_Form_Widget extends Widget_Base {
 				],
 			]
 		);
+		$this->add_responsive_control(
+			'field_margin',
+			[
+				'label' => __( 'Margin', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'selectors' => [
+					'{{WRAPPER}} .sina-input-field' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
 
 		$this->end_controls_section();
 		// End Field Style
@@ -431,10 +442,7 @@ class Sina_Search_Form_Widget extends Widget_Base {
 						'icon' => 'fa fa-align-right',
 					],
 				],
-				'condition' => [
-					'display!' => 'inline-block',
-				],
-				'default' => 'left',
+				'default' => 'center',
 				'selectors' => [
 					'{{WRAPPER}} .sina-search-form' => 'text-align: {{VALUE}};',
 				],

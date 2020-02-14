@@ -43,7 +43,7 @@ class Sina_Visit_Counter_Widget extends Widget_Base {
 	 * @since 1.0.0
 	 */
 	public function get_icon() {
-		return 'eicon-eye';
+		return 'eicon-preview-medium';
 	}
 
 	/**

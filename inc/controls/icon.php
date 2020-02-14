@@ -2946,6 +2946,7 @@ class Sina_Ext_Icon extends Base_Data_Control{
 			'eicon-number-field' => 'eicon-number-field',
 			'eicon-play' => 'eicon-play',
 			'eicon-eye' => 'eicon-eye',
+			'eicon-preview-medium' => 'eicon-preview-medium',
 			'eicon-zoom-in' => 'eicon-zoom-in',
 			'eicon-testimonial' => 'eicon-testimonial',
 			'eicon-search' => 'eicon-search',
