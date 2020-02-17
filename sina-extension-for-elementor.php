@@ -79,6 +79,7 @@ define('SINA_WIDGETS', [
 		'hover-image'			=> 1,
 		'image-accordion'		=> 1,
 		'image-marker'			=> 1,
+		'instant-search'		=> 1,
 		'lost-password-form'	=> 1,
 		'offcanvas-bar'			=> 1,
 		'register-form'			=> 1,

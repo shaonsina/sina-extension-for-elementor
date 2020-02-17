@@ -1234,8 +1234,8 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 		$data = $this->get_settings_for_display();
 		$trigger_id = $data['trigger_id'] ? $data['trigger_id'] : 'sina-modal-'.$this->get_id();
 
-		$this->add_render_attribute( 'header', 'class', 'sina-modal-header' );
-		$this->add_inline_editing_attributes( 'header' );
+		$this->add_render_attribute( 'modal_header', 'class', 'sina-modal-header' );
+		$this->add_inline_editing_attributes( 'modal_header' );
 
 		$this->add_render_attribute( 'title', 'class', 'sina-modal-title' );
 		$this->add_inline_editing_attributes( 'title' );
@@ -1259,8 +1259,8 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 			<div class="sina-modal-overlay sina-modal-<?php echo esc_attr( $trigger_id ); ?>">
 				<div class="sina-modal-area sina-flex animated <?php echo esc_attr( $data['modal_effects'] ); ?>">
 					<div class="sina-modal-content">
-						<?php if ( '' != $data['modal_header'] ): ?>
-							<?php printf( '<h2 %2$s>%1$s</h2>', $data['modal_header'], $this->get_render_attribute_string( 'header' ) ); ?>
+						<?php if ( $data['modal_header'] ): ?>
+							<?php printf( '<h2 %2$s>%1$s</h2>', $data['modal_header'], $this->get_render_attribute_string( 'modal_header' ) ); ?>
 						<?php endif; ?>
 						<div class="sina-modal-body">
 							<?php

@@ -131,6 +131,9 @@ Yes. It's totally free.
 == Changelog ==
 
 = 3.2.0 - 20-02-2020 =
+- Changed: Dashboard
+- Improved: Pricing ribbon inline edit
+- Improved: Modal Box header text inline edit
 
 
 
@@ -141,8 +144,8 @@ Yes. It's totally free.
 
 = 3.1.14 - 31-02-2020 =
 - Fixed: Tooltip console error
-- Chaned: API link
-- Chaned: Support link
+- Changed: API link
+- Changed: Support link
 
 = 3.1.13 - 31-02-2020 =
 - Linkable entire Content Box
@@ -380,4 +383,4 @@ Yes. It's totally free.
 - Improved: Particle layer
 
 = 1.0.0 =
-Initial stable release
+Initial release

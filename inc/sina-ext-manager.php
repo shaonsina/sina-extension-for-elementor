@@ -67,6 +67,7 @@ class Sina_Ext_Manager {
 				'hover image',
 				'image accordion',
 				'image marker',
+				'instant search',
 				'login form',
 				'register form',
 				'posts',

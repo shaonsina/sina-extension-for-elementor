@@ -1459,14 +1459,11 @@ class Sina_Pricing_Widget extends Widget_Base {
 		?>
 		<div class="sina-pricing {{{settings.effects + ' ' + settings.bg_layer_effects}}}">
 			<#
-				view.addRenderAttribute( 'ribbon_title', 'class', settings.ribbon_position );
-				view.addInlineEditingAttributes( 'ribbon_title' );
-
 				view.addRenderAttribute( 'title', 'class', 'sina-pricing-title' );
 				view.addInlineEditingAttributes( 'title' );
 			#>
 			<# if (settings.ribbon_title && settings.ribbon_position) { #>
-				<div {{{ view.getRenderAttributeString( 'ribbon_title' ) }}}>
+				<div class="{{{settings.ribbon_position}}}">
 					{{{settings.ribbon_title}}}
 				</div>
 			<# } #>
