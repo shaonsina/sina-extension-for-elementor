@@ -106,6 +106,44 @@ Cool things are coming soon...
 5. [Reading Progressbar](https://sinaextra.com/sina-extension/reading-progressbar): Display a progressbar top of the page or posts for seeing the users how much they have read or seen (based on scroll).
 
 
+== The summary of core Features ==
+
+- **Accordion:** This element not only a generic accordion. It has template option, that means you can use any template inside the description container. So it ensures that you can make complex type of accordion. Like: nested accordion.
+
+- **Chart:** Sina Extension has a Chart widget with 7 types (horizontal bar, vertical bar, line, pie, doughnut, polar area & radar) of chart variations.
+
+- **Clips or Image Animation:** This plugin has a Clips Animation extender. So you can animate any image(s) with that.
+
+- **Colors or Gradient Animation:** Also you can make color(s) or gradient color(s) animation with Colors Animation extender.
+
+- **Content Box:** If you would like to the content will be shown with a ribbon or hover effect then you can by this widget. Also can use background animations or any template inside the container.
+
+- **Content Protection:** Yes, Sina Extension has Content Protection extender that means you can display different content for different users according to the role.
+
+- **Dynamic Button:** This element not only a generic button. It has the capability to use a category or tag or post or page link as a button.
+
+- **Form:** This plugin has various form widgets that ensure without need extra plugin you can make instant search or ajax search form, contact form, register or sign up form, sign in or login form, password recovery or reset form, mailchimp form and native search form.
+
+- **Modal or Popup Box:** Sometimes you need to show some content inside a modal or popup box. So you can show any template inside the Moda Box widget. Also It has an auto show option that means the modal will be shown auto after your expected time delay.
+
+- **Parallax:** Now-a-days parallax is the most attractive way to display the content. Sina Extension has a Parallax extender for display the content up to your expected way.
+
+- **Portfolio or Image Gallery:** Yes, we also covered this feature. Cause, some users want to show their work or some images as a filterable gallery. Remember it has capable of using a masonry grid as well.
+
+- **Posts or Blog:** This plugin has various post widgets that means you can display the posts as column grid, masonry grid, tab, carousel, ticker, load more button or pagination. Also can define your expected grid columns which may add extra benefit for you.
+
+- **Slider or Carousel:** We have added various types of sliders or carousels. And you can make text, image, video, posts, review or testimonial slider or carousel. Also you can be sliding any template with our Content Slider widget which will give you an extra facility.
+
+- **Tab or Virtual Tour:** Sina Extension has a tab element. And it capable of using embed code or virtual tour. Another thing it has the template option. so you can show any template inside the tab description container.
+
+- **Transform:** If you would like to display the content with different dimensions or as a 3D. No worry. Just make a template & display inside the Transform widget.
+
+- **Predefined Blocks:** We provide lots of ready blocks which may save huge time. Also the blocks may work as an example of how to using the elements.
+
+- **Conclusion:** We think it's the all in one plugin. So, why not choose it? Thanks for reading.
+
+
+
 == Installation ==
 
 Note: This is an extension for Elementor. So make sure you have Elementor (https://wordpress.org/plugin/elementor/) installed.
@@ -134,8 +172,6 @@ Yes. It's totally free.
 - Changed: Dashboard
 - Improved: Pricing ribbon inline edit
 - Improved: Modal Box header text inline edit
-
-
 
 = 3.1.15 - 11-02-2020 =
 - Improved: News Ticker

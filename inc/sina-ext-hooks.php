@@ -88,7 +88,7 @@ Class Sina_Ext_Hooks{
 				$response = wp_remote_post( $url, $args );
 
 				if ( is_wp_error( $response ) ) {
-					$err = "Internal Error!";
+					$err = __("Internal Error!", 'sina-ext');
 				} else {
 					$body = json_decode( $response['body'] );
 					if ( $response['response']['code'] == 200 && $body->status == $status ) {
@@ -152,7 +152,7 @@ Class Sina_Ext_Hooks{
 				} elseif ( strlen($message) < 3 ) {
 					$err = __( 'Message too short! Must be contain 3-2000 characters.', 'sina-ext' );
 				} elseif ( strlen($message) > 2000 ) {
-					$err = 'Message too long! Must be contain 3-2000 characters.';
+					$err = __( 'Message too long! Must be contain 3-2000 characters.', 'sina-ext' );
 				} elseif ( $message ) {
 					$message = $message;
 				} else{
