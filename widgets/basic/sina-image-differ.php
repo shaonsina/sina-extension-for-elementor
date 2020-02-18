@@ -119,7 +119,7 @@ class Sina_Image_Differ_Widget extends Widget_Base {
 				'label' => __( 'Before Image', 'sina-ext' ),
 				'type' => Controls_Manager::MEDIA,
 				'default' => [
-					'url' => SINA_EXT_URL .'assets/img/car-original1.jpg',
+					'url' => SINA_EXT_URL .'assets/img/choose-img.jpg',
 				],
 				'dynamic' => [
 					'active' => true,
@@ -132,7 +132,7 @@ class Sina_Image_Differ_Widget extends Widget_Base {
 				'label' => __( 'After Image', 'sina-ext' ),
 				'type' => Controls_Manager::MEDIA,
 				'default' => [
-					'url' => SINA_EXT_URL .'assets/img/car-original2.jpg',
+					'url' => SINA_EXT_URL .'assets/img/choose-img.jpg',
 				],
 				'dynamic' => [
 					'active' => true,
@@ -484,20 +484,6 @@ class Sina_Image_Differ_Widget extends Widget_Base {
 
 
 	protected function _content_template() {
-		?>
-		<div class="sina-image-differ"
-		data-orientation="{{{settings.orientation}}}"
-		data-overlay="{{{settings.no_overlay}}}"
-		data-offset="{{{settings.offset}}}"
-		data-click="{{{settings.click_move}}}"
-		data-hover="{{{settings.hover_move}}}"
-		data-before="{{{settings.before_text}}}"
-		data-after="{{{settings.after_text}}}">
-			<div class="twentytwenty-container">
-				<img src="{{{settings.before_image.url}}}" />
-				<img src="{{{settings.after_image.url}}}" />
-			</div>
-		</div><!-- .sina-image-differ -->
-		<?php
+
 	}
 }

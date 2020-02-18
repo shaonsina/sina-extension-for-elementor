@@ -24,12 +24,12 @@
 
 		<div class="sina-ext-tabs-wrap">
 			<div class="sina-ext-btns">
-				<a class="active" href="#sina-ext-widgets"><?php _e( 'Widgets', 'sina-ext' ); ?></a>
+				<a class="active" href="#sina-ext-settings"><?php _e( 'Settings', 'sina-ext' ); ?></a>
+				<a href="#sina-ext-widgets"><?php _e( 'Widgets', 'sina-ext' ); ?></a>
 				<a href="#sina-ext-extenders"><?php _e( 'Extenders', 'sina-ext' ); ?></a>
-				<a href="#sina-ext-settings"><?php _e( 'Settings', 'sina-ext' ); ?></a>
 			</div>
 
-			<div class="sina-ext-tab-content sina-ext-pt sina-ext-pb" id="sina-ext-settings">
+			<div class="sina-ext-tab-content show sina-ext-pt sina-ext-pb" id="sina-ext-settings">
 				<h2 class="sina-ext-tab-title"><?php _e( 'Settings', 'sina-ext' ); ?></h2>
 				<p class="sina-ext-pb">
 					<?php _e( 'Set your expected options.', 'sina-ext' ); ?>
@@ -75,7 +75,7 @@
 				</div>
 			</div>
 
-			<div class="sina-ext-tab-content show sina-ext-pt sina-ext-pb" id="sina-ext-widgets">
+			<div class="sina-ext-tab-content sina-ext-pt sina-ext-pb" id="sina-ext-widgets">
 				<h2 class="sina-ext-tab-title"><?php _e( 'Widgets', 'sina-ext' ); ?></h2>
 				<p class="sina-ext-pb">
 					<?php _e( 'You can disable widget(s) if you would like to not using on your site.', 'sina-ext' ); ?>
