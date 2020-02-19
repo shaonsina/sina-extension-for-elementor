@@ -913,7 +913,18 @@ class Sina_Table_Widget extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '#bbb',
 				'selectors' => [
-					'{{WRAPPER}} .dataTables_info, {{WRAPPER}} .dataTables_filter input, {{WRAPPER}} .dataTables_filter, {{WRAPPER}} .dataTables_length, {{WRAPPER}} .dataTables_length select' => 'color: {{VALUE}}; border-color: {{VALUE}};',
+					'{{WRAPPER}} .dataTables_info, {{WRAPPER}} .dataTables_filter input, {{WRAPPER}} .dataTables_filter, {{WRAPPER}} .dataTables_length, {{WRAPPER}} .dataTables_length select' => 'color: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_control(
+			'accent_border_color',
+			[
+				'label' => __( 'Border Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#bbb',
+				'selectors' => [
+					'{{WRAPPER}} .dataTables_filter input, {{WRAPPER}} .dataTables_length select' => 'border-color: {{VALUE}};',
 				],
 			]
 		);

@@ -354,10 +354,10 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 				'size_units' => [ 'px', 'em' ],
 				'range' => [
 					'px' => [
-						'max' => 1000,
+						'max' => 3000,
 					],
 					'em' => [
-						'max' => 50,
+						'max' => 200,
 					],
 				],
 				'default' => [
