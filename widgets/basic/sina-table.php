@@ -108,7 +108,7 @@ class Sina_Table_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'table_header',
 			[
-				'label' => __( 'Header', 'sina-ext' ),
+				'label' => __( 'Table', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -232,7 +232,7 @@ class Sina_Table_Widget extends Widget_Base {
 		$this->add_control(
 			'header_content',
 			[
-				'label' => __('Add Item', 'sina-ext'),
+				'label' => __('Add Header Column', 'sina-ext'),
 				'type' => Controls_Manager::REPEATER,
 				'fields' => $thead->get_controls(),
 				'prevent_empty' => false,
@@ -251,21 +251,6 @@ class Sina_Table_Widget extends Widget_Base {
 					],
 				],
 				'title_field' => '{{{ header_text }}}',
-			]
-		);
-
-		$this->end_controls_section();
-		// End Table Header
-		// =================
-
-
-		// Start Table Body
-		// =================
-		$this->start_controls_section(
-			'table_body',
-			[
-				'label' => __( 'Body', 'sina-ext' ),
-				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
 
@@ -413,7 +398,7 @@ class Sina_Table_Widget extends Widget_Base {
 		$this->add_control(
 			'body_content',
 			[
-				'label' => __('Add Item', 'sina-ext'),
+				'label' => __('Add Row', 'sina-ext'),
 				'type' => Controls_Manager::REPEATER,
 				'fields' => $tbody->get_controls(),
 				'default' => [
@@ -450,8 +435,8 @@ class Sina_Table_Widget extends Widget_Base {
 		);
 
 		$this->end_controls_section();
-		// End Table Body
-		// ===============
+		// End Table Header
+		// =================
 
 
 		// Start Table Header Style
@@ -1104,6 +1089,92 @@ class Sina_Table_Widget extends Widget_Base {
 
 
 	protected function _content_template() {
+		?>
+		<#
+			var sortClass = ('yes' == settings.sorting) ? 'sina-data-table' : '';
+			var rows = [];
+			var tid = 0;
+			
+			_.each( settings.body_content, function( content, key ) {
+				if ('row' == content.content_type) {
+					tid = content._id;
+					rows[ tid ] = [];
+				} else if ('head' == content.content_type && rows[ tid ] !== 'undefined') {
+					rows[ tid ].push({
+						type : 'th',
+						id : content._id,
+						row_span : content.row_span,
+						col_span : content.col_span,
+						cell_content : content.cell_content,
+						icon : content.content_icon,
+						icon_align : content.content_icon_align,
 
+					});
+				} else if ('cell' == content.content_type && rows[ tid ] !== 'undefined') {
+					rows[ tid ].push({
+						type : 'td',
+						id : content._id,
+						row_span : content.row_span,
+						col_span : content.col_span,
+						cell_content : content.cell_content,
+						icon : content.content_icon,
+						icon_align : content.content_icon_align,
+
+					});
+				}
+			});
+
+			rows.reverse();
+		#>
+		<div class="sina-table">
+			<table class="{{{sortClass}}}">
+				<# if (settings.header_content.length > 0) { #>
+					<thead>
+						<tr>
+							<# _.each( settings.header_content, function( content, index ) { #>
+								<th colspan="{{{content.header_col_span}}}"
+									class="elementor-repeater-item-{{{content._id}}}">
+									<# if (content.header_icon && content.header_icon_align == 'left') { #>
+										<i class="{{{content.header_icon}}} sina-icon-left"></i>
+									<# } #>
+
+									{{{content.header_text}}}
+
+									<# if (content.header_icon && content.header_icon_align == 'right') { #>
+										<i class="{{{content.header_icon}}} sina-icon-right"></i>
+									<# } #>
+								</th>
+							<# }); #>
+						</tr>
+					</thead>
+				<# } #>
+
+				<tbody>
+					<# for (d in rows) { #>
+						<tr class="elementor-repeater-item-{{{d}}}">
+							<# _.each( rows[d], function( content, index ) { #>
+								<{{{content.type}}}
+								rowspan="{{{content.row_span}}}"
+								colspan="{{{content.col_span}}}"
+								class="elementor-repeater-item-{{{content.id}}}" >
+
+								<# if (content.icon && content.icon_align == 'left') { #>
+									<i class="{{{content.icon}}} sina-icon-left"></i>
+								<# } #>
+
+								{{{content.cell_content}}}
+
+								<# if (content.icon && content.icon_align == 'right') { #>
+									<i class="{{{content.icon}}} sina-icon-right"></i>
+								<# } #>
+
+								</{{{content.type}}}>
+							<# }); #>
+						</tr>
+					<# }; #>
+				</tbody>
+			</table>
+		</div><!-- .sina-table -->
+		<?php
 	}
 }
