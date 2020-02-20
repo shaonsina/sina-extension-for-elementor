@@ -264,6 +264,7 @@ img.mfp-img{
 .sina-banner-slider .owl-next,
 .sina-banner-slider .owl-prev {
 	position: absolute;
+	padding: 2px 14px 6px;
 	border: 0;
 	outline: 0;
 	font-size: 30px;

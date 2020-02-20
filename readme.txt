@@ -88,13 +88,14 @@ Cool things are coming soon...
 2. [Hover Image](https://sinaextra.com/sina-extension/hover-image): Show an image with attractive hover effects.
 3. [Image Accordion](https://sinaextra.com/sina-extension/image-accordion): Display content and images with a new way!
 4. [Image Marker](https://sinaextra.com/sina-extension/image-marker): Mention or highlight specific area of an image.
-5. [Lost Password Form](https://sinaextra.com/sina-extension/lost-password-form): Add a custom "lost password" form anywhere into your web page.
-6. [Offcanvas Bar](https://sinaextra.com/sina-extension/offcanvas-bar): Show your expected content into a offcanvas sidebar.
-7. [Register Form](https://sinaextra.com/sina-extension/register-form): Add a register form anywhere into your web page.
-8. [Section Navigation](https://sinaextra.com/sina-extension/section-navigation): To navigate the sections within a page add the fixed navigation.
-9. [Tab](https://sinaextra.com/sina-extension/tab): Display any content within a tab that you want.
-10. [Testimonial](https://sinaextra.com/sina-extension/testimonial): Show the testimonials into an interactive carousel.
-11. [Toggle Content](https://sinaextra.com/sina-extension/toggle-content): Display any content within a toggle tab.
+5. [Instant Search](https://sinaextra.com/sina-extension/instant-search-form/): Display a search form with AJAX action for searching instantly.
+6. [Lost Password Form](https://sinaextra.com/sina-extension/lost-password-form): Add a custom "lost password" form anywhere into your web page.
+7. [Offcanvas Bar](https://sinaextra.com/sina-extension/offcanvas-bar): Show your expected content into a offcanvas sidebar.
+8. [Register Form](https://sinaextra.com/sina-extension/register-form): Add a register form anywhere into your web page.
+9. [Section Navigation](https://sinaextra.com/sina-extension/section-navigation): To navigate the sections within a page add the fixed navigation.
+10. [Tab](https://sinaextra.com/sina-extension/tab): Display any content within a tab that you want.
+11. [Testimonial](https://sinaextra.com/sina-extension/testimonial): Show the testimonials into an interactive carousel.
+12. [Toggle Content](https://sinaextra.com/sina-extension/toggle-content): Display any content within a toggle tab.
 
 
 == PRO EXTENDERS ==
@@ -169,8 +170,9 @@ Yes. It's totally free.
 == Changelog ==
 
 = 3.2.0 - 20-02-2020 =
-- Changed: Dashboard
-- Added: Some options to all the slider & carousel navigation buttons
+- Changed: Dashboard view
+- Added: Some options to all the navigation buttons of Slider & Carousel 
+- Added: Some options to Table
 - Improved: Pricing ribbon inline edit
 - Improved: Modal Box header text inline edit
 

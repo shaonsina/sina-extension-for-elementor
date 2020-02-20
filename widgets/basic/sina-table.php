@@ -634,10 +634,10 @@ class Sina_Table_Widget extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
-					'top' => '10',
-					'right' => '15',
-					'bottom' => '10',
-					'left' => '15',
+					'top' => '15',
+					'right' => '20',
+					'bottom' => '15',
+					'left' => '20',
 					'isLinked' => false,
 				],
 				'separator' => 'before',
@@ -853,10 +853,10 @@ class Sina_Table_Widget extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
-					'top' => '10',
-					'right' => '15',
-					'bottom' => '10',
-					'left' => '15',
+					'top' => '15',
+					'right' => '20',
+					'bottom' => '15',
+					'left' => '20',
 					'isLinked' => false,
 				],
 				'separator' => 'before',
@@ -903,6 +903,9 @@ class Sina_Table_Widget extends Widget_Base {
 			[
 				'label' => __( 'Accent', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
+				'condition' => [
+					'sorting' => 'yes',
+				],
 			]
 		);
 
@@ -911,7 +914,7 @@ class Sina_Table_Widget extends Widget_Base {
 			[
 				'label' => __( 'Accent Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '#bbb',
+				'default' => '#222',
 				'selectors' => [
 					'{{WRAPPER}} .dataTables_info, {{WRAPPER}} .dataTables_filter input, {{WRAPPER}} .dataTables_filter, {{WRAPPER}} .dataTables_length, {{WRAPPER}} .dataTables_length select' => 'color: {{VALUE}};',
 				],
@@ -922,7 +925,7 @@ class Sina_Table_Widget extends Widget_Base {
 			[
 				'label' => __( 'Border Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '#bbb',
+				'default' => '#ddd',
 				'selectors' => [
 					'{{WRAPPER}} .dataTables_filter input, {{WRAPPER}} .dataTables_length select' => 'border-color: {{VALUE}};',
 				],
