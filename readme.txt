@@ -170,6 +170,7 @@ Yes. It's totally free.
 
 = 3.2.0 - 20-02-2020 =
 - Changed: Dashboard
+- Added: Some options to all the slider & carousel navigation buttons
 - Improved: Pricing ribbon inline edit
 - Improved: Modal Box header text inline edit
 

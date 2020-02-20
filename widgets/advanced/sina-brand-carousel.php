@@ -65,7 +65,7 @@ class Sina_Brand_Carousel_Widget extends Widget_Base {
 	 * @since 1.0.0
 	 */
 	public function get_keywords() {
-		return [ 'sina brand', 'sina carousel', 'sina logo' ];
+		return [ 'sina brand', 'sina carousel', 'sina slider', 'sina image silder', 'sina logo', 'sina client' ];
 	}
 
 	/**

@@ -67,7 +67,7 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 	 * @since 2.0.0
 	 */
 	public function get_keywords() {
-		return [ 'sina slider', 'sina content slider' ];
+		return [ 'sina slider', 'sina carousel', 'sina content slider', 'sina content carousel' ];
 	}
 
 	/**

@@ -264,7 +264,6 @@ img.mfp-img{
 .sina-banner-slider .owl-next,
 .sina-banner-slider .owl-prev {
 	position: absolute;
-	padding: 2px 14px 6px;
 	border: 0;
 	outline: 0;
 	font-size: 30px;
@@ -279,19 +278,21 @@ img.mfp-img{
 .sina-review-carousel .owl-next,
 .sina-banner-slider .owl-next{
 	right: 35px;
-	transform: translate(0, -40px);
+	transform: translate( 20px, 0 );
 }
 .sina-posts-carousel .owl-prev,
 .sina-content-slider .owl-prev,
 .sina-review-carousel .owl-prev,
 .sina-banner-slider .owl-prev{
 	left: 35px;
-	transform: translate(0, 40px);
+	transform: translate( -20px, 0 );
 }
-.sina-content-slider:hover .owl-next,
-.sina-content-slider:hover .owl-prev,
 .sina-posts-carousel:hover .owl-next,
 .sina-posts-carousel:hover .owl-prev,
+.sina-content-slider:hover .owl-next,
+.sina-content-slider:hover .owl-prev,
+.sina-review-carousel:hover .owl-next,
+.sina-review-carousel:hover .owl-prev,
 .sina-banner-slider:hover .owl-next,
 .sina-banner-slider:hover .owl-prev {
 	opacity: 1;
@@ -883,22 +884,6 @@ img.mfp-img{
 }
 .sina-review-carousel .owl-item .sina-review-face {
 	margin: 20px auto;
-	border-radius: 50%;
-}
-.sina-posts-carousel .owl-next,
-.sina-review-carousel .owl-next{
-	transform: translate( 20px, -32px );
-}
-.sina-posts-carousel .owl-prev,
-.sina-review-carousel .owl-prev{
-	transform: translate( -20px, -32px );
-}
-.sina-posts-carousel:hover .owl-next,
-.sina-posts-carousel:hover .owl-prev,
-.sina-review-carousel:hover .owl-next,
-.sina-review-carousel:hover .owl-prev{
-	opacity: 1;
-	transform: translate(0, -32px);
 }
 
 /*--------------------------------- Table -------------------------------------- */

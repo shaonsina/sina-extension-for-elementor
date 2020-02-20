@@ -65,7 +65,7 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 	 * @since 1.0.0
 	 */
 	public function get_keywords() {
-		return [ 'sina client', 'sina review', 'sina testimonial' ];
+		return [ 'sina client', 'sina carousel', 'sina slider', 'sina review', 'sina testimonial' ];
 	}
 
 	/**

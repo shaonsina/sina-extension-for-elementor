@@ -69,6 +69,7 @@ class Sina_Common_Data{
 			]
 		);
 	}
+
 	public static function BG_hover_effects_alt( $obj, $class, $prefix = 'bg_layer' ) {
 
 		$obj->add_control(
@@ -603,6 +604,7 @@ class Sina_Common_Data{
 					'dots!' => '',
 				],
 				'default' => '#1085e4',
+				'separator' => 'after',
 				'selectors' => [
 					'{{WRAPPER}} '.$class.' .owl-dot' => 'border-color: {{VALUE}}',
 					'{{WRAPPER}} '.$class.' .owl-dot.active' => 'background-color: {{VALUE}}',
@@ -614,7 +616,6 @@ class Sina_Common_Data{
 			[
 				'label' => __( 'Navigation', 'sina-ext' ),
 				'type' => Controls_Manager::HEADING,
-				'separator' => 'before',
 				'condition' => [
 					'nav!' => '',
 				],
@@ -627,6 +628,9 @@ class Sina_Common_Data{
 			'nav_normal',
 			[
 				'label' => __( 'Normal', 'sina-ext' ),
+				'condition' => [
+					'nav!' => '',
+				],
 			]
 		);
 
@@ -663,6 +667,20 @@ class Sina_Common_Data{
 				'selector' => '{{WRAPPER}} '.$class.' .owl-prev, {{WRAPPER}} '.$class.' .owl-next',
 			]
 		);
+		$obj->add_group_control(
+			Group_Control_Box_Shadow::get_type(),
+			[
+				'name' => 'nav_shadow',
+				'selector' => '{{WRAPPER}} '.$class.' .owl-prev, {{WRAPPER}} '.$class.' .owl-next',
+			]
+		);
+		$obj->add_group_control(
+			Group_Control_Border::get_type(),
+			[
+				'name' => 'nav_border',
+				'selector' => '{{WRAPPER}} '.$class.' .owl-prev, {{WRAPPER}} '.$class.' .owl-next',
+			]
+		);
 
 		$obj->end_controls_tab();
 
@@ -670,6 +688,9 @@ class Sina_Common_Data{
 			'nav_hover',
 			[
 				'label' => __( 'Hover', 'sina-ext' ),
+				'condition' => [
+					'nav!' => '',
+				],
 			]
 		);
 
@@ -697,6 +718,26 @@ class Sina_Common_Data{
 				'selector' => '{{WRAPPER}} '.$class.' .owl-prev:hover, {{WRAPPER}} '.$class.' .owl-next:hover',
 			]
 		);
+		$obj->add_group_control(
+			Group_Control_Box_Shadow::get_type(),
+			[
+				'name' => 'nav_hover_shadow',
+				'selector' => '{{WRAPPER}} '.$class.' .owl-prev:hover, {{WRAPPER}} '.$class.' .owl-next:hover',
+			]
+		);
+		$obj->add_control(
+			'nav_hover_border',
+			[
+				'label' => __( 'Border Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'condition' => [
+					'nav!' => '',
+				],
+				'selectors' => [
+					'{{WRAPPER}} '.$class.' .owl-prev:hover, {{WRAPPER}} '.$class.' .owl-next:hover' => 'border-color: {{VALUE}}'
+				],
+			]
+		);
 
 		$obj->end_controls_tab();
 
@@ -709,11 +750,40 @@ class Sina_Common_Data{
 				'type' => Controls_Manager::FONT,
 				'default' => 'Arial',
 				'separator' => 'before',
+				'condition' => [
+					'nav!' => '',
+				],
 				'selectors' => [
 					'{{WRAPPER}} '.$class.' .owl-prev, {{WRAPPER}} '.$class.' .owl-next' => 'font-family: {{VALUE}}',
 				],
 			]
 		);
+		// $obj->add_responsive_control(
+		// 	'nav_width',
+		// 	[
+		// 		'label' => __( 'Nav Width', 'sina-ext' ),
+		// 		'type' => Controls_Manager::SLIDER,
+		// 		'condition' => [
+		// 			'nav!' => '',
+		// 		],
+		// 		'selectors' => [
+		// 			'{{WRAPPER}} '.$class.' .owl-prev, {{WRAPPER}} '.$class.' .owl-next' => 'width: {{SIZE}}{{UNIT}};',
+		// 		],
+		// 	]
+		// );
+		// $obj->add_responsive_control(
+		// 	'nav_height',
+		// 	[
+		// 		'label' => __( 'Nav Height', 'sina-ext' ),
+		// 		'type' => Controls_Manager::SLIDER,
+		// 		'condition' => [
+		// 			'nav!' => '',
+		// 		],
+		// 		'selectors' => [
+		// 			'{{WRAPPER}} '.$class.' .owl-prev, {{WRAPPER}} '.$class.' .owl-next' => 'height: {{SIZE}}{{UNIT}};',
+		// 		],
+		// 	]
+		// );
 		$obj->add_control(
 			'nav_top',
 			[
@@ -721,13 +791,13 @@ class Sina_Common_Data{
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
 					'unit' => '%',
-					'size' => '50',
+					'size' => '48',
 				],
 				'condition' => [
 					'nav!' => '',
 				],
 				'selectors' => [
-					'{{WRAPPER}} '.$class.' .owl-prev, {{WRAPPER}} '.$class.' .owl-next' => 'top: calc({{SIZE}}{{UNIT}} - 18px);',
+					'{{WRAPPER}} '.$class.' .owl-prev, {{WRAPPER}} '.$class.' .owl-next' => 'top: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -770,6 +840,27 @@ class Sina_Common_Data{
 				],
 				'selectors' => [
 					'{{WRAPPER}} '.$class.' .owl-prev' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+		$obj->add_responsive_control(
+			'nav_padding',
+			[
+				'label' => __( 'Nav Padding', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '2',
+					'right' => '14',
+					'bottom' => '6',
+					'left' => '14',
+					'isLinked' => false,
+				],
+				'condition' => [
+					'nav!' => '',
+				],
+				'selectors' => [
+					'{{WRAPPER}} '.$class.' .owl-prev, {{WRAPPER}} '.$class.' .owl-next' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
