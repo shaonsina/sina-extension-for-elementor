@@ -169,6 +169,10 @@ Yes. It's totally free.
 
 == Changelog ==
 
+= 3.2.1 - 28-02-2020 =
+- Added: Inline Edit to Table
+- Added: Some options to Flip Box
+
 = 3.2.0 - 20-02-2020 =
 - Changed: Dashboard view
 - Added: Some options to all the navigation buttons of Slider & Carousel 
