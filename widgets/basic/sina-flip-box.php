@@ -301,6 +301,10 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 					'sina-flipbox-effect-h-flip' => __( 'Horizontal Flip', 'sina-ext' ),
 					'sina-flipbox-effect-v-flip' => __( 'Verticle Flip', 'sina-ext' ),
 					'sina-flipbox-effect-zoom' => __( 'Zoom', 'sina-ext' ),
+					'sina-flipbox-effect-s-top' => __( 'Slide Top', 'sina-ext' ),
+					'sina-flipbox-effect-s-bottom' => __( 'Slide Bottom', 'sina-ext' ),
+					'sina-flipbox-effect-s-left' => __( 'Slide Left', 'sina-ext' ),
+					'sina-flipbox-effect-s-right' => __( 'Slide Right', 'sina-ext' ),
 				],
 				'default' => 'sina-flipbox-effect-zoom',
 			]
@@ -1027,8 +1031,9 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 
 	protected function render() {
 		$data = $this->get_settings_for_display();
+		$flip_cls = in_array($data['effects'], ['sina-flipbox-effect-s-top', 'sina-flipbox-effect-s-bottom', 'sina-flipbox-effect-s-left', 'sina-flipbox-effect-s-right']) ? 'sina-flipbox-hidden' : '';
 		?>
-		<div class="sina-flipbox">
+		<div class="sina-flipbox <?php echo esc_attr($flip_cls); ?>">
 			<div class="sina-flipbox-front <?php echo esc_attr( $data['effects'] ); ?>">
 				<?php if ( 'icon' == $data['front_icon_format'] && $data['front_icon'] ): ?>
 					<div class="sina-flipbox-icon">
@@ -1093,6 +1098,9 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 	protected function _content_template() {
 		?>
 		<#
+			var flipClsArr = ['sina-flipbox-effect-s-top', 'sina-flipbox-effect-s-bottom', 'sina-flipbox-effect-s-left', 'sina-flipbox-effect-s-right'];
+			var flipCls = flipClsArr.includes(settings.effects) ? 'sina-flipbox-hidden' : '';
+
 			view.addRenderAttribute( 'front_title', 'class', 'sina-flipbox-title' );
 			view.addInlineEditingAttributes( 'front_title' );
 
@@ -1105,7 +1113,7 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 			view.addRenderAttribute( 'back_desc', 'class', 'sina-flipbox-desc' );
 			view.addInlineEditingAttributes( 'back_desc' );
 		#>
-		<div class="sina-flipbox">
+		<div class="sina-flipbox {{{flipCls}}}">
 			<div class="sina-flipbox-front {{{settings.effects}}}">
 				<# if ( 'icon' == settings.front_icon_format && settings.front_icon ) { #>
 					<div class="sina-flipbox-icon">
