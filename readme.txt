@@ -169,7 +169,7 @@ Yes. It's totally free.
 
 == Changelog ==
 
-= 3.2.1 - 28-02-2020 =
+= 3.2.1 - 25-02-2020 =
 - Added: Inline Edit to Table
 - Added: Some options to Flip Box
 
