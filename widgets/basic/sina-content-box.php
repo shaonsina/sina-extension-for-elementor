@@ -9,9 +9,10 @@
 use \Elementor\Widget_Base;
 use \Elementor\Controls_Manager;
 use \Elementor\Group_Control_Typography;
+use \Elementor\Group_Control_Text_Shadow;
 use \Elementor\Group_Control_Background;
 use \Elementor\Group_Control_Box_Shadow;
-use \Elementor\Group_Control_Text_Shadow;
+use \Elementor\Group_Control_Css_Filter;
 use \Elementor\Group_Control_Border;
 use \Elementor\Frontend;
 
@@ -456,7 +457,7 @@ class Sina_Content_Box_Widget extends Widget_Base {
 		$this->add_control(
 			'icon_heading',
 			[
-				'label' => __( 'Icon', 'sina-ext' ),
+				'label' => __( 'Icon or Image', 'sina-ext' ),
 				'type' => Controls_Manager::HEADING,
 			]
 		);
@@ -470,7 +471,7 @@ class Sina_Content_Box_Widget extends Widget_Base {
 					'save_templates' => '',
 				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-content-box-icon i' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .sina-content-box-icon' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -482,7 +483,21 @@ class Sina_Content_Box_Widget extends Widget_Base {
 				'condition' => [
 					'save_templates' => '',
 				],
-				'selector' => '{{WRAPPER}} .sina-content-box-icon i, {{WRAPPER}} .sina-content-box-icon img',
+				'selector' => '{{WRAPPER}} .sina-content-box-icon',
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Box_Shadow::get_type(),
+			[
+				'name' => 'icon_image_shadow',
+				'selector' => '{{WRAPPER}} .sina-content-box-icon',
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Css_Filter::get_type(),
+			[
+				'name' => 'icon_filters',
+				'selector' => '{{WRAPPER}} .sina-content-box-icon',
 			]
 		);
 		$this->add_group_control(
@@ -492,7 +507,7 @@ class Sina_Content_Box_Widget extends Widget_Base {
 				'condition' => [
 					'save_templates' => '',
 				],
-				'selector' => '{{WRAPPER}} .sina-content-box-icon i, {{WRAPPER}} .sina-content-box-icon img',
+				'selector' => '{{WRAPPER}} .sina-content-box-icon',
 			]
 		);
 
@@ -583,7 +598,7 @@ class Sina_Content_Box_Widget extends Widget_Base {
 		$this->add_control(
 			'icon_hover_heading',
 			[
-				'label' => __( 'Icon', 'sina-ext' ),
+				'label' => __( 'Icon or Image', 'sina-ext' ),
 				'type' => Controls_Manager::HEADING,
 			]
 		);
@@ -596,20 +611,7 @@ class Sina_Content_Box_Widget extends Widget_Base {
 					'save_templates' => '',
 				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-content-box:hover .sina-content-box-icon i' => 'color: {{VALUE}};',
-				],
-			]
-		);
-		$this->add_control(
-			'icon_hover_border',
-			[
-				'label' => __( 'Border Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'condition' => [
-					'save_templates' => '',
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-content-box:hover .sina-content-box-icon i, {{WRAPPER}} .sina-content-box:hover .sina-content-box-icon img' => 'border-color: {{VALUE}}'
+					'{{WRAPPER}} .sina-content-box:hover .sina-content-box-icon' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -621,9 +623,37 @@ class Sina_Content_Box_Widget extends Widget_Base {
 				'condition' => [
 					'save_templates' => '',
 				],
-				'selector' => '{{WRAPPER}} .sina-content-box:hover .sina-content-box-icon i, {{WRAPPER}} .sina-content-box:hover .sina-content-box-icon img',
+				'selector' => '{{WRAPPER}} .sina-content-box:hover .sina-content-box-icon',
 			]
 		);
+		$this->add_control(
+			'icon_hover_border',
+			[
+				'label' => __( 'Border Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'condition' => [
+					'save_templates' => '',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-content-box:hover .sina-content-box-icon' => 'border-color: {{VALUE}}'
+				],
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Box_Shadow::get_type(),
+			[
+				'name' => 'icon_image_hover_shadow',
+				'selector' => '{{WRAPPER}} .sina-content-box:hover .sina-content-box-icon',
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Css_Filter::get_type(),
+			[
+				'name' => 'icon_hover_filters',
+				'selector' => '{{WRAPPER}} .sina-content-box:hover .sina-content-box-icon',
+			]
+		);
+
 		$this->add_control(
 			'title_desc_hover_heading',
 			[
@@ -720,7 +750,7 @@ class Sina_Content_Box_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'box_padding',
 			[
-				'label' => __( 'Box Padding', 'sina-ext' ),
+				'label' => __( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -732,50 +762,6 @@ class Sina_Content_Box_Widget extends Widget_Base {
 				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-content-box' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
-		);
-		$this->add_responsive_control(
-			'content_padding',
-			[
-				'label' => __( 'Content Padding', 'sina-ext' ),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', 'em', '%' ],
-				'condition' => [
-					'save_templates' => '',
-					'icon_format' => 'image',
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-content-box-content' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
-		);
-		$this->add_responsive_control(
-			'alignment',
-			[
-				'label' => __( 'Alignment', 'sina-ext' ),
-				'type' => Controls_Manager::CHOOSE,
-				'options' => [
-					'left' => [
-						'title' => __( 'Left', 'sina-ext' ),
-						'icon' => 'fa fa-align-left',
-					],
-					'center' => [
-						'title' => __( 'Center', 'sina-ext' ),
-						'icon' => 'fa fa-align-center',
-					],
-					'right' => [
-						'title' => __( 'Right', 'sina-ext' ),
-						'icon' => 'fa fa-align-right',
-					],
-					'justify' => [
-						'title' => __( 'justify', 'sina-ext' ),
-						'icon' => 'fa fa-align-justify',
-					],
-				],
-				'default' => 'center',
-				'selectors' => [
-					'{{WRAPPER}} .sina-content-box' => 'text-align: {{VALUE}};',
 				],
 			]
 		);
@@ -813,6 +799,26 @@ class Sina_Content_Box_Widget extends Widget_Base {
 					'icon_format' => 'image',
 				],
 				'default' => '',
+			]
+		);
+		$this->add_responsive_control(
+			'icon_float',
+			[
+				'label' => __( 'Float', 'sina-ext' ),
+				'type' => Controls_Manager::CHOOSE,
+				'options' => [
+					'left' => [
+						'title' => __( 'Left', 'sina-ext' ),
+						'icon' => 'eicon-h-align-left',
+					],
+					'right' => [
+						'title' => __( 'Right', 'sina-ext' ),
+						'icon' => 'eicon-h-align-right',
+					],
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-content-box-icon, {{WRAPPER}} .sina-content-box-content' => 'float: {{VALUE}};',
+				],
 			]
 		);
 		$this->add_responsive_control(
@@ -867,11 +873,42 @@ class Sina_Content_Box_Widget extends Widget_Base {
 				],
 			]
 		);
-		$this->add_group_control(
-			Group_Control_Box_Shadow::get_type(),
+		$this->add_responsive_control(
+			'icon_box_width',
 			[
-				'name' => 'icon_image_shadow',
-				'selector' => '{{WRAPPER}} .sina-content-box-icon i, {{WRAPPER}} .sina-content-box-icon img',
+				'label' => __( 'Width', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', 'em', '%' ],
+				'range' => [
+					'px' => [
+						'max' => 500,
+					],
+					'em' => [
+						'max' => 100,
+					],
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-content-box-icon' => 'width: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'icon_box_height',
+			[
+				'label' => __( 'Height', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', 'em', '%' ],
+				'range' => [
+					'px' => [
+						'max' => 500,
+					],
+					'em' => [
+						'max' => 100,
+					],
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-content-box-icon' => 'height: {{SIZE}}{{UNIT}};',
+				],
 			]
 		);
 		$this->add_responsive_control(
@@ -881,7 +918,7 @@ class Sina_Content_Box_Widget extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
-					'{{WRAPPER}} .sina-content-box-icon i, {{WRAPPER}} .sina-content-box-icon img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .sina-content-box-icon' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -899,7 +936,7 @@ class Sina_Content_Box_Widget extends Widget_Base {
 					'isLinked' => true,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-content-box-icon i, {{WRAPPER}} .sina-content-box-icon img' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .sina-content-box-icon' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -909,16 +946,24 @@ class Sina_Content_Box_Widget extends Widget_Base {
 		// =====================
 
 
-		// Start Title Style
+		// Start Content Style
 		// =====================
 		$this->start_controls_section(
-			'title_style',
+			'content_style',
 			[
-				'label' => __( 'Title', 'sina-ext' ),
+				'label' => __( 'Content', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'save_templates' => '',
 				],
+			]
+		);
+
+		$this->add_control(
+			'title_style',
+			[
+				'label' => __( 'Title', 'sina-ext' ),
+				'type' => Controls_Manager::HEADING,
 			]
 		);
 
@@ -973,22 +1018,12 @@ class Sina_Content_Box_Widget extends Widget_Base {
 			]
 		);
 
-		$this->end_controls_section();
-		// End Title Style
-		// =====================
-
-
-		// Start Desc Style
-		// =====================
-		$this->start_controls_section(
+		$this->add_control(
 			'desc_style',
 			[
 				'label' => __( 'Description', 'sina-ext' ),
-				'tab' => Controls_Manager::TAB_STYLE,
-				'condition' => [
-					'save_templates' => '',
-					'desc!' => '',
-				],
+				'type' => Controls_Manager::HEADING,
+				'separator' => 'before',
 			]
 		);
 
@@ -1006,10 +1041,70 @@ class Sina_Content_Box_Widget extends Widget_Base {
 				'selector' => '{{WRAPPER}} .sina-content-box-desc',
 			]
 		);
+		$this->add_responsive_control(
+			'content_width',
+			[
+				'label' => __( 'Width', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', 'em', '%' ],
+				'range' => [
+					'px' => [
+						'max' => 500,
+					],
+					'em' => [
+						'max' => 100,
+					],
+				],
+				'separator' => 'before',
+				'selectors' => [
+					'{{WRAPPER}} .sina-content-box-content' => 'width: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'content_padding',
+			[
+				'label' => __( 'Padding', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'selectors' => [
+					'{{WRAPPER}} .sina-content-box-content' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'alignment',
+			[
+				'label' => __( 'Alignment', 'sina-ext' ),
+				'type' => Controls_Manager::CHOOSE,
+				'options' => [
+					'left' => [
+						'title' => __( 'Left', 'sina-ext' ),
+						'icon' => 'fa fa-align-left',
+					],
+					'center' => [
+						'title' => __( 'Center', 'sina-ext' ),
+						'icon' => 'fa fa-align-center',
+					],
+					'right' => [
+						'title' => __( 'Right', 'sina-ext' ),
+						'icon' => 'fa fa-align-right',
+					],
+					'justify' => [
+						'title' => __( 'justify', 'sina-ext' ),
+						'icon' => 'fa fa-align-justify',
+					],
+				],
+				'default' => 'center',
+				'selectors' => [
+					'{{WRAPPER}} .sina-content-box' => 'text-align: {{VALUE}};',
+				],
+			]
+		);
 
 		$this->end_controls_section();
-		// End Desc Style
-		// =====================
+		// End Content Style
+		// ===================
 
 
 		// Start Ribbon Style
@@ -1161,7 +1256,7 @@ class Sina_Content_Box_Widget extends Widget_Base {
 	protected function render() {
 		$data = $this->get_settings_for_display();
 		?>
-		<div class="sina-content-box <?php echo esc_attr( $data['effects'].' '.$data['bg_layer_effects'] ); ?>">
+		<div class="sina-content-box clearfix <?php echo esc_attr( $data['effects'].' '.$data['bg_layer_effects'] ); ?>">
 
 			<?php if ( 'yes' == $data['is_linkable_box'] && $data['link']['url'] ): ?>
 				<a class="sina-content-box-linkable"

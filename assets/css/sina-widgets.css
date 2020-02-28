@@ -1,4 +1,4 @@
-/* Sina Extension for Elementor v3.2.1 */
+/* Sina Extension for Elementor v3.2.2 */
 
 /*--------------------------------- General -------------------------------------- */
 .sina-overlay{
@@ -59,6 +59,7 @@
 .sina-brand-item-inner a img,
 .sina-flipbox-title,
 .sina-flipbox-icon i,
+.sina-content-box-icon,
 .sina-content-box-icon i,
 .sina-content-box-icon img,
 .sina-content-box-title,
@@ -91,6 +92,7 @@
 .sina-banner-slider{
 	direction: ltr;
 }
+.sina-content-box-icon,
 .sina-flipbox-hidden,
 .sina-transform-content,
 .sina-load-more,
@@ -459,6 +461,7 @@ img.mfp-img{
 }
 
 /*-------------------------- Countdown --------------------------*/
+.sina-content-box-icon,
 .sina-countdown .sina-cd {
 	display: inline-block;
 	text-align: center;
