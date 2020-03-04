@@ -38,7 +38,8 @@ abstract class Sina_Ext_Functions extends Sina_Extension_Base{
 	 * @since 3.0.0
 	 */
 	public function widget_scripts() {
-		$apikey = get_option( 'sina_map_apikey' );
+		$map_apikey = get_option( 'sina_map_apikey' );
+		$recaptcha_key = get_option( 'sina_ext_pro_recaptcha_key' );
 		$ajax_url = admin_url('admin-ajax.php');
 
 		wp_register_script( 'imagesLoaded', SINA_EXT_URL .'assets/js/imagesloaded.pkgd.min.js', [], SINA_EXT_VERSION, true );
@@ -55,8 +56,11 @@ abstract class Sina_Ext_Functions extends Sina_Extension_Base{
 		wp_register_script( 'data-table', SINA_EXT_URL .'assets/js/datatables.min.js', ['jquery'], SINA_EXT_VERSION, true );
 		wp_register_script( 'sina-tooltip', SINA_EXT_URL .'assets/js/sina-tooltip.min.js', [], SINA_EXT_VERSION, true );
 
-		if ( $apikey ) {
-			wp_register_script( 'sina-google-map', '//maps.google.com/maps/api/js?key='. $apikey, [], SINA_EXT_VERSION, true );
+		if ( $map_apikey ) {
+			wp_register_script( 'sina-google-map', '//maps.google.com/maps/api/js?key='. $map_apikey, [], SINA_EXT_VERSION, true );
+		}
+		if ( $recaptcha_key ) {
+			wp_register_script( 'sina-google-recaptcha-api', '//www.google.com/recaptcha/api.js', [], SINA_EXT_VERSION, true );
 		}
 		wp_register_script( 'sina-widgets', SINA_EXT_URL .'assets/js/sina-widgets.min.js', ['jquery'], SINA_EXT_VERSION, true );
 		wp_localize_script( 'sina-widgets', 'sinaAjax', ['ajaxURL' => $ajax_url] );

@@ -1,4 +1,4 @@
-/* Sina Extension for Elementor v3.2.2 */
+/* Sina Extension for Elementor v3.2.3 */
 
 /*--------------------------------- General -------------------------------------- */
 .sina-overlay{
@@ -60,8 +60,6 @@
 .sina-flipbox-title,
 .sina-flipbox-icon i,
 .sina-content-box-icon,
-.sina-content-box-icon i,
-.sina-content-box-icon img,
 .sina-content-box-title,
 .sina-content-box-title > a,
 .sina-content-box-desc,
@@ -142,6 +140,7 @@
 .sina-accordion-item.open > .sina-accordion-header > .sina-accordion-icon .on{
 	display: block;
 }
+.sina-contact-form .g-recaptcha,
 .sina-team-social li,
 .sina-bp-cats,
 .sina-bp-cats a,

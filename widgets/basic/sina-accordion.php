@@ -670,19 +670,19 @@ class Sina_Accordion_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'desc_alignment',
 			[
-				'label' => __( 'Alignment', 'sina-ext-pro' ),
+				'label' => __( 'Alignment', 'sina-ext' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'sina-ext-pro' ),
+						'title' => __( 'Left', 'sina-ext' ),
 						'icon' => 'fa fa-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'sina-ext-pro' ),
+						'title' => __( 'Center', 'sina-ext' ),
 						'icon' => 'fa fa-align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'sina-ext-pro' ),
+						'title' => __( 'Right', 'sina-ext' ),
 						'icon' => 'fa fa-align-right',
 					],
 				],

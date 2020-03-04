@@ -71,11 +71,16 @@ class Sina_Ext_Settings{
 		register_setting( 'sina_settings_group', 'sina_widgets' );
 		register_setting( 'sina_settings_group', 'sina_templates_option' );
 		register_setting( 'sina_settings_group', 'sina_extenders' );
+		register_setting( 'sina_settings_group', 'sina_ext_pro_recaptcha_key' );
+		register_setting( 'sina_settings_group', 'sina_ext_pro_recaptcha_secret_key' );
 
 		add_settings_section( 'sina_api_section', '', '', 'sina_ext_settings' );
 		add_settings_field( 'sina_google_map_key', __('Google Map API Key', 'sina-ext'), [$this, 'text_field'], 'sina_ext_settings', 'sina_api_section', ['key' => 'sina_map_apikey'] );
 		add_settings_field( 'sina_mailchimp_key', __('MailChimp API Key', 'sina-ext'), [$this, 'text_field'], 'sina_ext_settings', 'sina_api_section', ['key' => 'sina_mailchimp', 'index' => 'apikey' ] );
 		add_settings_field( 'sina_mailchimp_list_id', __('MailChimp List Id', 'sina-ext'), [$this, 'text_field'], 'sina_ext_settings', 'sina_api_section', ['key' => 'sina_mailchimp', 'index' => 'list_id' ] );
+		add_settings_field( 'sina_ext_pro_recaptcha_key', __('Google Recaptcha Site Key', 'sina-ext'), [$this, 'text_field'], 'sina_ext_settings', 'sina_api_section', ['key' => 'sina_ext_pro_recaptcha_key'] );
+		add_settings_field( 'sina_ext_pro_recaptcha_secret_key', __('Google Recaptcha Secret Key', 'sina-ext'), [$this, 'text_field'], 'sina_ext_settings', 'sina_api_section', ['key' => 'sina_ext_pro_recaptcha_secret_key'] );
+
 
 		$templates = get_option( 'sina_templates_option' );
 		add_settings_section( 'sina_templates_section', '', '', 'sina_ext_templates' );

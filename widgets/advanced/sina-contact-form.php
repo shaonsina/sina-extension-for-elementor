@@ -87,6 +87,7 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 	 */
 	public function get_script_depends() {
 		return [
+			'sina-google-recaptcha-api',
 			'sina-widgets',
 		];
 	}
@@ -110,6 +111,23 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 			]
 		);
 
+		$this->add_control(
+			'is_recaptcha',
+			[
+				'label' => __( 'Google Recaptcha', 'sina-ext' ),
+				'type' => Controls_Manager::SWITCHER,
+			]
+		);
+		$this->add_control(
+			'recaptcha_key',
+			[
+				'label' => 'For add/change the <strong>Site Key</strong> & <strong>Secret Key</strong><br><a target="_blank" href="admin.php?page=sina_ext_settings">click here</a>',
+				'type' => Controls_Manager::RAW_HTML,
+				'condition' => [
+					'is_recaptcha' => 'yes',
+				],
+			]
+		);
 		$this->add_control(
 			'custom_email',
 			[
@@ -529,11 +547,13 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 			$hash = md5( $data['contact_email'] );
 			add_option( 'sina_contact_email'.$hash, $data['contact_email'] );
 		}
+		$recaptcha_key = get_option( 'sina_ext_pro_recaptcha_key' );
 		?>
 		<div class="sina-form">
 			<form class="sina-contact-form"
 			data-inbox="<?php echo esc_attr( $hash ); ?>"
-			data-uid="<?php echo esc_attr( $this->get_id() ); ?>">
+			data-uid="<?php echo esc_attr( $this->get_id() ); ?>"
+			data-captcha="<?php echo esc_attr( $data['is_recaptcha'] ); ?>">
 				<?php include SINA_EXT_LAYOUT.'/contact-form/'.$data['form_layout'].'.php'; ?>
 
 				<?php printf('<p class="sina-success-text">%s</p>', $data['successs_message']); ?>

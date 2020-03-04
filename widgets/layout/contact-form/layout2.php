@@ -9,6 +9,13 @@
 	</div>
 </div>
 <div class="sina-contact-input">
+	<!-- For Google Recaptcha -->
+	<?php if ( 'yes' == $data['is_recaptcha'] ): ?>
+		<div class="sina-google-recaptcha">
+			<div class="g-recaptcha" data-sitekey="<?php echo esc_attr( $recaptcha_key ); ?>"></div>
+		</div>
+	<?php endif; ?>
+
 	<button type="submit" class="sina-button sina-contact-btn <?php echo esc_attr( $data['btn_effect'].' '.$data['btn_bg_layer_effects'] ); ?>">
 		<?php Sina_Common_Data::button_html($data); ?>
 	</button>

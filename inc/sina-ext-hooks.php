@@ -112,6 +112,8 @@ Class Sina_Ext_Hooks{
 			$subject = sanitize_text_field( $_POST['subject'] );
 			$message = sanitize_textarea_field( $_POST['message'] );
 			$inbox = sanitize_text_field( $_POST['inbox'] );
+			$is_captcha	= sanitize_text_field( $_POST['is_captcha'] );
+			$captcha = sanitize_text_field( $_POST['captcha'] );
 			$err = '';
 
 			if ( '' == $name) {
@@ -157,6 +159,17 @@ Class Sina_Ext_Hooks{
 					$message = $message;
 				} else{
 					$err = __( 'Invalid message!', 'sina-ext' );
+				}
+
+				if ( '' == $err && 'true' == $is_captcha ) {
+					$secret_key = get_option( 'sina_ext_pro_recaptcha_secret_key' );
+					$url 		= 'https://www.google.com/recaptcha/api/siteverify?secret='. $secret_key .'&response='. $captcha;
+					$response 	= wp_remote_get( $url );
+					$data 		= json_decode( wp_remote_retrieve_body( $response ), true );
+
+					if ( !$data["success"] ) {
+						$err = __( 'Invalid reCAPTCHA!', 'sina-ext' );
+					}
 				}
 
 				if ( '' == $err  && $inbox ) {

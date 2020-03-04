@@ -1,4 +1,4 @@
-/* Sina Extension for Elementor v3.2.2 */
+/* Sina Extension for Elementor v3.2.3 */
 
 !(function ($) {
 	// Owl Carousel for some Slider or Carousel
@@ -255,6 +255,7 @@
 				$email = $this.find('.sina-input-email'),
 				$subject = $this.find('.sina-input-subject'),
 				$message = $this.find('.sina-input-message'),
+				$isCaptcha = $this.data('captcha') ? true : false,
 				timeout;
 
 			$this.on('submit', function(e) {
@@ -265,6 +266,11 @@
 				$success.fadeOut(0);
 				$process.fadeIn(200);
 
+				var captcha = '';
+				if ( $isCaptcha ) {
+					captcha = grecaptcha.getResponse();
+				}
+
 				$.post(
 					sinaAjax.ajaxURL,
 					{
@@ -274,6 +280,8 @@
 						email: $email.val(),
 						subject: $subject.val(),
 						message: $message.val(),
+						is_captcha: $isCaptcha,
+						captcha: captcha,
 						nonce: $nonce.val(),
 					},
 					function( data, status, code ) {
