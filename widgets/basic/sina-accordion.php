@@ -584,6 +584,17 @@ class Sina_Accordion_Widget extends Widget_Base {
 				],
 			]
 		);
+		$this->add_responsive_control(
+			'icon_padding',
+			[
+				'label' => __( 'Icon Padding', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'selectors' => [
+					'{{WRAPPER}} .sina-accordion-icon' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
 
 		$this->end_controls_section();
 		// End Header Style

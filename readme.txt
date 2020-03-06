@@ -5,7 +5,7 @@ Donate link: https://sinaextra.com/sina-extension/
 Requires at least: 4.7
 Tested up to: 5.3
 Requires PHP: 7.0
-Stable tag: 3.2.3
+Stable tag: 3.2.4
 License: GPL v3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -169,7 +169,10 @@ Yes. It's totally free.
 
 == Changelog ==
 
-= 3.2.3 - 29-02-2020 =
+= 3.2.4 - 10-03-2020 =
+
+
+= 3.2.3 - 04-03-2020 =
 - Added: Google ReCaptcha added to Contact Form
 
 = 3.2.2 - 29-02-2020 =

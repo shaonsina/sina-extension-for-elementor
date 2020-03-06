@@ -117,7 +117,7 @@ class Sina_User_Counter_Widget extends Widget_Base {
 				'label' => esc_html__( 'Select Roles', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT2,
 				'multiple' => true,
-				'options' => sina_get_user_roles(),        
+				'options' => sina_get_user_roles(),
 			]
 		);
 		$this->add_control(
