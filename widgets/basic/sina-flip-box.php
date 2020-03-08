@@ -13,6 +13,7 @@ use \Elementor\Group_Control_Background;
 use \Elementor\Group_Control_Box_Shadow;
 use \Elementor\Group_Control_Text_Shadow;
 use \Elementor\Group_Control_Border;
+use \Elementor\Control_Media;
 
 
 // Exit if accessed directly.
@@ -1032,6 +1033,9 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 	protected function render() {
 		$data = $this->get_settings_for_display();
 		$flip_cls = in_array($data['effects'], ['sina-flipbox-effect-s-top', 'sina-flipbox-effect-s-bottom', 'sina-flipbox-effect-s-left', 'sina-flipbox-effect-s-right']) ? 'sina-flipbox-hidden' : '';
+
+		$front_img_alt = $data['front_title'] ? $data['front_title'] : Control_Media::get_image_alt( $data['front_image'] );
+		$back_img_alt = $data['back_title'] ? $data['back_title'] : Control_Media::get_image_alt( $data['back_image'] );
 		?>
 		<div class="sina-flipbox <?php echo esc_attr($flip_cls); ?>">
 			<div class="sina-flipbox-front <?php echo esc_attr( $data['effects'] ); ?>">
@@ -1041,7 +1045,7 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 					</div>
 				<?php elseif( 'image' == $data['front_icon_format'] && $data['front_image']['url'] ): ?>
 					<div class="sina-flipbox-icon">
-						<img src="<?php echo esc_url( $data['front_image']['url'] ); ?>" alt="<?php echo esc_attr( $data['title'] ) ?>">
+						<img src="<?php echo esc_url( $data['front_image']['url'] ); ?>" alt="<?php echo esc_attr( $front_img_alt ) ?>">
 					</div>
 				<?php endif; ?>
 
@@ -1062,7 +1066,7 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 					</div>
 				<?php elseif( 'image' == $data['back_icon_format'] && $data['back_image']['url'] ): ?>
 					<div class="sina-flipbox-icon">
-						<img src="<?php echo esc_url( $data['back_image']['url'] ); ?>" alt="<?php echo esc_attr( $data['title'] ) ?>">
+						<img src="<?php echo esc_url( $data['back_image']['url'] ); ?>" alt="<?php echo esc_attr( $back_img_alt ) ?>">
 					</div>
 				<?php endif; ?>
 

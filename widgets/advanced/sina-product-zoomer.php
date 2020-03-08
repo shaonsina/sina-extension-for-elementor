@@ -10,6 +10,7 @@ use \Elementor\Widget_Base;
 use \Elementor\Controls_Manager;
 use \Elementor\Group_Control_Typography;
 use \Elementor\Group_Control_Text_Shadow;
+use \Elementor\Control_Media;
 use \Elementor\Repeater;
 
 
@@ -523,6 +524,7 @@ class Sina_Product_Zoomer_Widget extends Widget_Base {
 
 	protected function render() {
 		$data = $this->get_settings_for_display();
+		$original_img_alt = $data['title'] ? $data['title'] : Control_Media::get_image_alt( $data['product_imgs'][0]['original_image'] );
 		?>
 		<div class="sina-product-zoomer"
 		data-position="<?php echo esc_attr( $data['position'] ) ?>"
@@ -550,18 +552,20 @@ class Sina_Product_Zoomer_Widget extends Widget_Base {
 				<?php endif; ?>
 			<?php endif; ?>
 
-			<img class="xzoom" src="<?php echo esc_url( $data['product_imgs'][0]['preview_image']['url'] ); ?>" data-xoriginal="<?php echo esc_url( $data['product_imgs'][0]['original_image']['url'] ); ?>" alt="<?php echo esc_attr( $data['title'] ) ?>">
+			<img class="xzoom" src="<?php echo esc_url( $data['product_imgs'][0]['preview_image']['url'] ); ?>" data-xoriginal="<?php echo esc_url( $data['product_imgs'][0]['original_image']['url'] ); ?>" alt="<?php echo esc_attr( $original_img_alt ) ?>">
 
 			<?php if ( 'yes' == $data['thumbs'] ): ?>
 				<div class="xzoom-thumbs">
-					<?php foreach ( $data['product_imgs'] as $img ) : ?>
+					<?php foreach ( $data['product_imgs'] as $img ) :
+						$thumb_img_alt = $data['title'] ? $data['title'] : Control_Media::get_image_alt( $img['thumb_image'] );
+						?>
 						<div class="xzoom-thumb-item"
 						style="width: <?php echo esc_attr( 100 / count( $data['product_imgs'] ) ); ?>%;"
 						data-link="<?php echo esc_url( $img['original_image']['url'] ); ?>">
 							<?php if ( $img['preview_image']['url'] && $img['thumb_image']['url']): ?>
 								<img class="xzoom-gallery"
 								src="<?php echo esc_url( $img['thumb_image']['url'] ); ?>"
-								data-xpreview="<?php echo esc_url( $img['preview_image']['url'] ); ?>"  alt="<?php echo esc_attr( $data['title'] ) ?>">
+								data-xpreview="<?php echo esc_url( $img['preview_image']['url'] ); ?>"  alt="<?php echo esc_attr( $thumb_img_alt ) ?>">
 							<?php endif; ?>
 						</div>
 					<?php endforeach; ?>

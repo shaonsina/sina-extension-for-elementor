@@ -11,6 +11,7 @@ use \Elementor\Group_Control_Border;
 use \Elementor\Group_Control_Background;
 use \Elementor\Group_Control_Box_Shadow;
 use \Elementor\Group_Control_Css_Filter;
+use \Elementor\Control_Media;
 use \Elementor\Frontend;
 
 // Exit if accessed directly.
@@ -666,6 +667,7 @@ class Sina_Transform_Widget extends Widget_Base {
 
 	protected function render() {
 		$data = $this->get_settings_for_display();
+		$img_alt = Control_Media::get_image_alt( $data['image'] );
 		?>
 		<div class="sina-transform">
 			<div class="sina-transform-content <?php echo esc_attr( $data['transform_overflow'] ); ?>">
@@ -675,7 +677,7 @@ class Sina_Transform_Widget extends Widget_Base {
 						echo $frontend->get_builder_content( $data['template'], true );
 					elseif ( $data['image']['url'] ) :
 						?>
-						<img src="<?php echo esc_url( $data['image']['url'] ); ?>">
+						<img src="<?php echo esc_url( $data['image']['url'] ); ?>" alt="<?php echo esc_attr( $img_alt ) ?>">
 				<?php endif; ?>
 			</div><!-- .sina-transform-content -->
 		</div><!-- .sina-transform -->

@@ -13,6 +13,7 @@ use \Elementor\Group_Control_Background;
 use \Elementor\Group_Control_Box_Shadow;
 use \Elementor\Group_Control_Text_Shadow;
 use \Elementor\Group_Control_Border;
+use \Elementor\Control_Media;
 use \Elementor\Repeater;
 
 
@@ -1385,6 +1386,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 
 	protected function render() {
 		$data = $this->get_settings_for_display();
+		$img_alt = $data['title'] ? $data['title'] : Control_Media::get_image_alt( $data['image'] );
 		?>
 		<div class="sina-pricing <?php echo esc_attr( $data['effects'].' '.$data['bg_layer_effects'] ); ?>">
 			<?php if ( $data['ribbon_title'] && $data['ribbon_position'] ): ?>
@@ -1395,7 +1397,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 
 			<?php if ( 'yes' == $data['thumbs'] && 'top' == $data['img_position'] ): ?>
 				<div class="sina-pricing-img">
-					<img src="<?php echo esc_url( $data['image']['url'] ); ?>" alt="<?php echo esc_attr( $data['title'] ) ?>">
+					<img src="<?php echo esc_url( $data['image']['url'] ); ?>" alt="<?php echo esc_attr( $img_alt ) ?>">
 				</div>
 			<?php endif; ?>
 
@@ -1405,7 +1407,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 
 			<?php if ( 'yes' == $data['thumbs'] && 'middle' == $data['img_position'] ): ?>
 				<div class="sina-pricing-img">
-					<img src="<?php echo esc_url( $data['image']['url'] ); ?>" alt="<?php echo esc_attr( $data['title'] ) ?>">
+					<img src="<?php echo esc_url( $data['image']['url'] ); ?>" alt="<?php echo esc_attr( $img_alt ) ?>">
 				</div>
 			<?php endif; ?>
 
@@ -1418,7 +1420,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 
 			<?php if ( 'yes' == $data['thumbs'] && 'bottom' == $data['img_position'] ): ?>
 				<div class="sina-pricing-img">
-					<img src="<?php echo esc_url( $data['image']['url'] ); ?>" alt="<?php echo esc_attr( $data['title'] ) ?>">
+					<img src="<?php echo esc_url( $data['image']['url'] ); ?>" alt="<?php echo esc_attr( $img_alt ) ?>">
 				</div>
 			<?php endif; ?>
 

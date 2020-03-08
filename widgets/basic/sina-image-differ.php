@@ -11,6 +11,8 @@ use \Elementor\Group_Control_Typography;
 use \Elementor\Group_Control_Background;
 use \Elementor\Group_Control_Box_Shadow;
 use \Elementor\Group_Control_Border;
+use \Elementor\Control_Media;
+
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -465,6 +467,8 @@ class Sina_Image_Differ_Widget extends Widget_Base {
 
 	protected function render() {
 		$data = $this->get_settings_for_display();
+		$before_img_alt = Control_Media::get_image_alt( $data['before_image'] );
+		$after_img_alt = Control_Media::get_image_alt( $data['after_image'] );
 		?>
 		<div class="sina-image-differ"
 		data-orientation="<?php echo esc_attr( $data['orientation'] ) ?>"
@@ -475,8 +479,8 @@ class Sina_Image_Differ_Widget extends Widget_Base {
 		data-before="<?php echo esc_attr( $data['before_text'] ) ?>"
 		data-after="<?php echo esc_attr( $data['after_text'] ) ?>">
 			<div class="twentytwenty-container">
-				<img src="<?php echo esc_url( $data['before_image']['url'] ); ?>" />
-				<img src="<?php echo esc_url( $data['after_image']['url'] ); ?>" />
+				<img src="<?php echo esc_url( $data['before_image']['url'] ); ?>" alt="<?php echo esc_attr( $before_img_alt ) ?>" />
+				<img src="<?php echo esc_url( $data['after_image']['url'] ); ?>" alt="<?php echo esc_attr( $after_img_alt ) ?>" />
 			</div>
 		</div><!-- .sina-image-differ -->
 		<?php

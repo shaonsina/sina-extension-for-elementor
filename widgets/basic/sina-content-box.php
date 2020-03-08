@@ -14,6 +14,7 @@ use \Elementor\Group_Control_Background;
 use \Elementor\Group_Control_Box_Shadow;
 use \Elementor\Group_Control_Css_Filter;
 use \Elementor\Group_Control_Border;
+use \Elementor\Control_Media;
 use \Elementor\Frontend;
 
 
@@ -1255,6 +1256,7 @@ class Sina_Content_Box_Widget extends Widget_Base {
 
 	protected function render() {
 		$data = $this->get_settings_for_display();
+		$img_alt = $data['title'] ? $data['title'] : Control_Media::get_image_alt( $data['image'] );
 		?>
 		<div class="sina-content-box clearfix <?php echo esc_attr( $data['effects'].' '.$data['bg_layer_effects'] ); ?>">
 
@@ -1287,7 +1289,7 @@ class Sina_Content_Box_Widget extends Widget_Base {
 						</div>
 					<?php elseif( $data['image'] ): ?>
 						<div class="sina-content-box-icon <?php echo esc_attr( $data['image_effects'] ); ?>">
-							<img src="<?php echo esc_url( $data['image']['url'] ); ?>" alt="<?php echo esc_attr( $data['title'] ) ?>">
+							<img src="<?php echo esc_url( $data['image']['url'] ); ?>" alt="<?php echo esc_attr( $img_alt ) ?>">
 						</div>
 					<?php endif; ?>
 
