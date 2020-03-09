@@ -1,4 +1,4 @@
-/* Sina Extension for Elementor v3.2.4 */
+/* Sina Extension for Elementor v3.2.5 */
 
 /*--------------------------------- General -------------------------------------- */
 .sina-overlay{
@@ -488,7 +488,7 @@ img.mfp-img{
 	height: 100%;
 	backface-visibility: hidden;
 	overflow: hidden;
-	transition: all 0.4s;
+	transition: all 0.6s;
 }
 /*Verticle flip*/
 .sina-flipbox-front.sina-flipbox-effect-h-flip{
