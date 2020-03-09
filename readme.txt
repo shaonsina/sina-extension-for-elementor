@@ -3,7 +3,7 @@ Contributors: shaonsina
 Tags: addon, elementor, elementor addon, elementor extension, extension, page builder, builder, elementor builder, elementor contact form, elementor widget, best elementor addon, best elementor extension
 Donate link: https://sinaextra.com/sina-extension/
 Requires at least: 4.7
-Tested up to: 5.3
+Tested up to: 5.4
 Requires PHP: 7.0
 Stable tag: 3.2.4
 License: GPL v3
@@ -169,7 +169,9 @@ Yes. It's totally free.
 
 == Changelog ==
 
-= 3.2.4 - 10-03-2020 =
+= 3.2.4 - 09-03-2020 =
+- Improved for SEO
+- Fixed: Flip Box glitch
 
 
 = 3.2.3 - 04-03-2020 =
