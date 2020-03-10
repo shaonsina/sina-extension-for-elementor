@@ -172,14 +172,12 @@ abstract class Sina_Extension_Base{
 		} else{
 			update_option( 'sina_widgets', SINA_WIDGETS);
 		}
-		add_option( 'sina_ext_type', 'free' );
 		add_option( 'sina_map_apikey', '' );
 		add_option( 'sina_mailchimp', [
 			'apikey'	=> '',
 			'list_id'	=> '',
 		] );
 		add_option( 'sina_templates_option', [] );
-		add_option( 'sina_ext_license_key', substr( md5( microtime() ), 0, 16 ) );
 	}
 
 	/**
@@ -188,6 +186,10 @@ abstract class Sina_Extension_Base{
 	 * @since 3.0.0
 	 */
 	public function redirection() {
+		add_option( 'sina_ext_type', 'free' );
+		add_option( 'sina_ext_license_key', substr( md5( microtime() ), 0, 16 ) );
+		add_option( 'sina_widgets', SINA_WIDGETS);
+
 		if ( did_action( 'elementor/loaded' ) && get_option('sina_extension_activation', false ) ) {
 			delete_option('sina_extension_activation');
 
