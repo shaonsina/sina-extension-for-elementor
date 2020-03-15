@@ -229,6 +229,14 @@ class Sina_Dynamic_Button_Widget extends Widget_Base {
 			]
 		);
 		$this->add_control(
+			'css_class',
+			[
+				'label' => __( 'CSS CLASS', 'sina-ext' ),
+				'type' => Controls_Manager::TEXT,
+				'placeholder' => __( 'Enter CLASS', 'sina-ext' ),
+			]
+		);
+		$this->add_control(
 			'css_id',
 			[
 				'label' => __( 'CSS ID', 'sina-ext' ),
@@ -366,7 +374,7 @@ class Sina_Dynamic_Button_Widget extends Widget_Base {
 		$data['btn_text'] = $btn_text;
 		?>
 		<div class="sina-dynamic-button">
-			<a  class="sina-dynamic-btn <?php echo esc_attr($data['btn_effect'].' '.$data['bg_layer_effects']); ?>" href="<?php echo esc_url( $btn_link ); ?>"
+			<a  class="sina-dynamic-btn <?php echo esc_attr($data['css_class'].' '.$data['btn_effect'].' '.$data['bg_layer_effects']); ?>" href="<?php echo esc_url( $btn_link ); ?>"
 				<?php if ( $data['css_id'] ): ?>
 					id="<?php echo esc_attr( $data['css_id'] ); ?>"
 				<?php endif; ?>

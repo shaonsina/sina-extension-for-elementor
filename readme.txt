@@ -162,14 +162,20 @@ Note: This is an extension for Elementor. So make sure you have Elementor (https
 
 No. You can't use without Elementor since it's an extension for Elementor.
 
+= Can I use the plugin with any WordPress theme? =
+
+Yes. The plugin will work with any WordPress theme as long as you are using the Elementor as a page builder.
+
 = Can I use it free? =
 
-Yes. It's totally free.
+Yes. It's totally free. We also have a PRO version.
 
 
 == Changelog ==
 
 = 3.2.5 - 15-03-2020 =
+- Added: Custom Class option to Dynamic Button
+- Fixed: Multi-site Template issue
 
 
 = 3.2.4 - 09-03-2020 =
