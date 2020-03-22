@@ -1,4 +1,4 @@
-/* Sina Extension for Elementor v3.2.5 */
+/* Sina Extension for Elementor v3.2.6 */
 
 /*--------------------------------- General -------------------------------------- */
 .sina-overlay{
@@ -60,6 +60,7 @@
 .sina-flipbox-title,
 .sina-flipbox-icon i,
 .sina-content-box-icon,
+.sina-content-box-icon img,
 .sina-content-box-title,
 .sina-content-box-title > a,
 .sina-content-box-desc,

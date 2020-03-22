@@ -5,7 +5,7 @@ Donate link: https://sinaextra.com/sina-extension/
 Requires at least: 4.7
 Tested up to: 5.4
 Requires PHP: 7.0
-Stable tag: 3.2.5
+Stable tag: 3.2.6
 License: GPL v3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -14,7 +14,7 @@ A collection of high-quality widgets for Elementor page builder. 100+ predefined
 
 == Description ==
 
-This is an extension for [Elementor](https://wordpress.org/plugins/elementor/) page builder. It will extend the Elementor and increase web page building experience. It has 36 useful & high-quality widgets. Which you may use for easy & fast make the page & display your content far better way.
+This is an extension or addon for [Elementor](https://wordpress.org/plugins/elementor/) page builder. It will extend the Elementor and increase web page building experience. It has 36 useful & high-quality widgets or addon. Which you may use for easy & fast make the page & display your content far better way. After using it, you will feel that it's one of the best addon for Elementor.
 
 
 = Use of Sina Templates =
@@ -141,7 +141,7 @@ Cool things are coming soon...
 
 - **Predefined Blocks:** We provide lots of ready blocks which may save huge time. Also the blocks may work as an example of how to using the elements.
 
-- **Conclusion:** We think it's the all in one plugin. So, why not choose it? Thanks for reading.
+- **Conclusion:** We think it's the all in one plugin or addon for Elementor page builder. So, why not choose it? Thanks for reading.
 
 
 
@@ -172,6 +172,10 @@ Yes. It's totally free. We also have a PRO version.
 
 
 == Changelog ==
+
+= 3.2.6 - 22-03-2020 =
+- Added: New category of blocks (Niche Blocks)
+- Fixed: Content Box glitch
 
 = 3.2.5 - 15-03-2020 =
 - Added: Custom Class option to Dynamic Button
