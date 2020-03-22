@@ -114,10 +114,86 @@ class Sina_Table_Widget extends Widget_Base {
 		);
 
 		$this->add_control(
-			'sorting',
+			'data_table',
 			[
-				'label' => __( 'Sorting', 'sina-ext' ),
+				'label' => __( 'Data Table', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
+				'description' => __('Whether this table use as a data table or not?', 'sina-ext'),
+			]
+		);
+		$this->add_control(
+			'data_export',
+			[
+				'label' => __( 'Data Export', 'sina-ext' ),
+				'type' => Controls_Manager::SWITCHER,
+				'condition' => [
+					'data_table' => 'yes',
+				],
+				'default' => 'yes',
+			]
+		);
+		$this->add_control(
+			'data_searching',
+			[
+				'label' => __( 'Data Searching', 'sina-ext' ),
+				'type' => Controls_Manager::SWITCHER,
+				'condition' => [
+					'data_table' => 'yes',
+				],
+				'default' => 'yes',
+			]
+		);
+		$this->add_control(
+			'data_sorting',
+			[
+				'label' => __( 'Data Sorting', 'sina-ext' ),
+				'type' => Controls_Manager::SWITCHER,
+				'condition' => [
+					'data_table' => 'yes',
+				],
+				'default' => 'yes',
+			]
+		);
+		$this->add_control(
+			'data_info',
+			[
+				'label' => __( 'Data Info', 'sina-ext' ),
+				'type' => Controls_Manager::SWITCHER,
+				'condition' => [
+					'data_table' => 'yes',
+				],
+				'default' => 'yes',
+			]
+		);
+		$this->add_control(
+			'data_paging',
+			[
+				'label' => __( 'Row Pagination', 'sina-ext' ),
+				'type' => Controls_Manager::SWITCHER,
+				'condition' => [
+					'data_table' => 'yes',
+				],
+				'default' => 'yes',
+			]
+		);
+		$this->add_control(
+			'data_paging_type',
+			[
+				'label' => __( 'Pagination Type', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					'numbers' => __( 'Numbers Only', 'sina-ext' ),
+					'simple' => __( 'Prev & Next Only', 'sina-ext' ),
+					'simple_numbers' => __( 'Prev, Next & Numbers', 'sina-ext' ),
+					'first_last_numbers' => __( 'First, Last & Numbers', 'sina-ext' ),
+					'full' => __( 'First, Last, Prev & Next', 'sina-ext' ),
+					'full_numbers' => __( 'All', 'sina-ext' ),
+				],
+				'default' => 'simple_numbers',
+				'condition' => [
+					'data_table' => 'yes',
+					'data_paging' => 'yes',
+				],
 			]
 		);
 
@@ -235,7 +311,7 @@ class Sina_Table_Widget extends Widget_Base {
 				'label' => __('Add Header Column', 'sina-ext'),
 				'type' => Controls_Manager::REPEATER,
 				'fields' => $thead->get_controls(),
-				'prevent_empty' => false,
+				'separator' => 'before',
 				'default' => [
 					[
 						'header_text' => 'ID',
@@ -401,6 +477,7 @@ class Sina_Table_Widget extends Widget_Base {
 				'label' => __('Add Row', 'sina-ext'),
 				'type' => Controls_Manager::REPEATER,
 				'fields' => $tbody->get_controls(),
+				'prevent_empty' => false,
 				'default' => [
 					[
 						'content_type' => 'row',
@@ -889,7 +966,7 @@ class Sina_Table_Widget extends Widget_Base {
 				'label' => __( 'Accent', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
-					'sorting' => 'yes',
+					'data_table' => 'yes',
 				],
 			]
 		);
@@ -901,7 +978,7 @@ class Sina_Table_Widget extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '#222',
 				'selectors' => [
-					'{{WRAPPER}} .dataTables_info, {{WRAPPER}} .dataTables_filter input, {{WRAPPER}} .dataTables_filter, {{WRAPPER}} .dataTables_length, {{WRAPPER}} .dataTables_length select' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dt-button, {{WRAPPER}} .dataTables_info, {{WRAPPER}} .dataTables_filter input, {{WRAPPER}} .dataTables_filter, {{WRAPPER}} .dataTables_length, {{WRAPPER}} .dataTables_length select' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -912,7 +989,7 @@ class Sina_Table_Widget extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '#ddd',
 				'selectors' => [
-					'{{WRAPPER}} .dataTables_filter input, {{WRAPPER}} .dataTables_length select' => 'border-color: {{VALUE}};',
+					'{{WRAPPER}} .dataTables_filter input, {{WRAPPER}} .dataTables_length select, {{WRAPPER}} .dt-button' => 'border-color: {{VALUE}};',
 				],
 			]
 		);
@@ -951,6 +1028,10 @@ class Sina_Table_Widget extends Widget_Base {
 				'label' => __( 'Pagination', 'sina-ext' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
+				'condition' => [
+					'data_table' => 'yes',
+					'data_paging' => 'yes',
+				],
 			]
 		);
 		$this->add_control(
@@ -959,6 +1040,10 @@ class Sina_Table_Widget extends Widget_Base {
 				'label' => __( 'Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#bbb',
+				'condition' => [
+					'data_table' => 'yes',
+					'data_paging' => 'yes',
+				],
 				'selectors' => [
 					'{{WRAPPER}} .dataTables_wrapper .dataTables_paginate .paginate_button' => 'color: {{VALUE}};',
 				],
@@ -970,6 +1055,10 @@ class Sina_Table_Widget extends Widget_Base {
 				'label' => __( 'Hover & Active Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#1085e4',
+				'condition' => [
+					'data_table' => 'yes',
+					'data_paging' => 'yes',
+				],
 				'selectors' => [
 					'{{WRAPPER}} .dataTables_wrapper .dataTables_paginate .paginate_button:hover, {{WRAPPER}} .dataTables_wrapper .dataTables_paginate .paginate_button.current' => 'color: {{VALUE}};',
 				],
@@ -997,6 +1086,10 @@ class Sina_Table_Widget extends Widget_Base {
 						],
 					],
 				],
+				'condition' => [
+					'data_table' => 'yes',
+					'data_paging' => 'yes',
+				],
 				'selector' => '{{WRAPPER}} .dataTables_wrapper .dataTables_paginate .paginate_button, {{WRAPPER}} .dataTables_wrapper .dataTables_paginate .paginate_button.current',
 			]
 		);
@@ -1009,7 +1102,24 @@ class Sina_Table_Widget extends Widget_Base {
 
 	protected function render() {
 		$data = $this->get_settings_for_display();
-		$sort_class = ('yes' == $data['sorting']) ? 'sina-data-table' : '';
+		$table_class = ('yes' == $data['data_table']) ? 'sina-data-table' : '';
+
+		$table_head = [];
+		foreach ($data['header_content'] as $content) {
+			$table_head[] = [
+				'data' => $content['header_text']
+			];
+		}
+
+		$table_info = [
+			'export' 	=> $data['data_export'],
+			'ordering' 	=> $data['data_sorting'],
+			'searching' => $data['data_searching'],
+			'paging' 	=> $data['data_paging'],
+			'pagingType' => $data['data_paging_type'],
+			'info' 		=> $data['data_info'],
+			'head' 		=> $table_head,
+		];
 
 		$rows = [];
 		$tid = 0;
@@ -1040,8 +1150,9 @@ class Sina_Table_Widget extends Widget_Base {
 			}
 		}
 		?>
-		<div class="sina-table">
-			<table class="<?php echo esc_attr( $sort_class ); ?>">
+		<div class="sina-table"
+		data-table-info='<?php echo json_encode( $table_info ); ?>'>
+			<table class="<?php echo esc_attr( $table_class ); ?>">
 				<?php if ( !empty( $data['header_content'] ) ): ?>
 					<thead>
 						<tr>
@@ -1091,7 +1202,24 @@ class Sina_Table_Widget extends Widget_Base {
 	protected function _content_template() {
 		?>
 		<#
-			var sortClass = ('yes' == settings.sorting) ? 'sina-data-table' : '';
+			var tableClass = ('yes' == settings.data_table) ? 'sina-data-table' : '';
+
+			var tableHead = [];
+			_.each( settings.header_content, function( content, key ) {
+				tableHead.push({ 'data' : content.header_text });
+			});
+
+			var tableInfo = {
+				'export' : settings.data_export,
+				'ordering' : settings.data_sorting,
+				'searching' : settings.data_searching,
+				'paging' : settings.data_paging,
+				'pagingType' : settings.data_paging_type,
+				'info' : settings.data_info,
+				'head' : tableHead,
+			}
+			tableInfo = JSON.stringify(tableInfo);
+
 			var rows = [];
 			var tid = 0;
 			
@@ -1126,8 +1254,9 @@ class Sina_Table_Widget extends Widget_Base {
 
 			rows.reverse();
 		#>
-		<div class="sina-table">
-			<table class="{{{sortClass}}}">
+		<div class="sina-table"
+		data-table-info='{{{tableInfo}}}'>
+			<table class="{{{tableClass}}}">
 				<# if (settings.header_content.length > 0) { #>
 					<thead>
 						<tr>

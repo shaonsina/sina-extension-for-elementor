@@ -312,9 +312,26 @@
 	function sinaTable($scope, $) {
 		$scope.find('.sina-table').each(function () {
 			var $this = $(this),
-				$table = $this.find('.sina-data-table');
+				$table = $this.find('.sina-data-table'),
+				$tableInfo = $this.data('table-info'),
+				head = $tableInfo.head ? $tableInfo.head : [],
+				exportBtns = $tableInfo.export ? 'Blftrip' : 'lftrip',
+				ordering = $tableInfo.ordering ? true : false,
+				searching = $tableInfo.searching ? true : false,
+				info = $tableInfo.info ? true : false,
+				paging = $tableInfo.paging ? true : false,
+				pagingType = $tableInfo.pagingType ? $tableInfo.pagingType : 'simple_numbers';
 
-			$table.DataTable();
+			$table.DataTable({
+				ajax: 'http://localhost/onetheme/wp-content/uploads/data.txt',
+				columns: head,
+				ordering : ordering,
+				searching : searching,
+				info : info,
+				paging : paging,
+				pagingType : pagingType,
+				dom: exportBtns,
+			});
 		});
 	}
 
