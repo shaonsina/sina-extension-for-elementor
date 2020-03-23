@@ -1,4 +1,4 @@
-/* Sina Extension for Elementor v3.2.6 */
+/* Sina Extension for Elementor v3.2.7 */
 
 !(function ($) {
 	// Owl Carousel for some Slider or Carousel
@@ -315,6 +315,7 @@
 				$table = $this.find('.sina-data-table'),
 				$tableInfo = $this.data('table-info'),
 				head = $tableInfo.head ? $tableInfo.head : [],
+				source = $tableInfo.external_source ? $tableInfo.external_source : '',
 				exportBtns = $tableInfo.export ? 'Blftrip' : 'lftrip',
 				ordering = $tableInfo.ordering ? true : false,
 				searching = $tableInfo.searching ? true : false,
@@ -323,7 +324,7 @@
 				pagingType = $tableInfo.pagingType ? $tableInfo.pagingType : 'simple_numbers';
 
 			$table.DataTable({
-				ajax: 'http://localhost/onetheme/wp-content/uploads/data.txt',
+				ajax: source,
 				columns: head,
 				ordering : ordering,
 				searching : searching,
