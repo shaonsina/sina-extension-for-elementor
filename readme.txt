@@ -5,7 +5,7 @@ Donate link: https://sinaextra.com/sina-extension/
 Requires at least: 4.7
 Tested up to: 5.4
 Requires PHP: 7.0
-Stable tag: 3.2.7
+Stable tag: 3.2.8
 License: GPL v3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -173,7 +173,11 @@ Yes. It's totally free. We also have a PRO version.
 
 == Changelog ==
 
-= 3.2.7 - 27-03-2020 =
+= 3.2.8 - 05-03-2020 =
+- Added: Grid & List layout for Posts Carousel
+- Added: Tags filtering option to Blogpost, Posts Carousel and News Ticker 
+
+= 3.2.7 - 28-03-2020 =
 - Added: Some options to Table
 
 = 3.2.6 - 22-03-2020 =
@@ -184,11 +188,9 @@ Yes. It's totally free. We also have a PRO version.
 - Added: Custom Class option to Dynamic Button
 - Fixed: Multi-site Template issue
 
-
 = 3.2.4 - 09-03-2020 =
 - Improved for SEO
 - Fixed: Flip Box glitch
-
 
 = 3.2.3 - 04-03-2020 =
 - Added: Google ReCaptcha added to Contact Form
@@ -212,16 +214,16 @@ Yes. It's totally free. We also have a PRO version.
 - Added: Global Swithcer (enable/disable) for every section's widgets
 - Added: Documentation button for PRO version
 
-= 3.1.14 - 31-02-2020 =
+= 3.1.14 - 01-02-2020 =
 - Fixed: Tooltip console error
 - Changed: API link
 - Changed: Support link
 
-= 3.1.13 - 31-02-2020 =
+= 3.1.13 - 30-01-2020 =
 - Linkable entire Content Box
 - improved
 
-= 3.1.12 - 28-01-2020 =
+= 3.1.12 - 29-01-2020 =
 - Fixed: Posts Carousel & Posts Tab issue
 
 = 3.1.11 - 28-01-2020 =
@@ -348,7 +350,7 @@ Yes. It's totally free. We also have a PRO version.
 - Improved: Content Box & Pricing effects option
 - Optimized
 
-= 2.3.0 - 1-07-2019 =
+= 2.3.0 - 01-07-2019 =
 - New: Dynamic Button
 - New: Social Icons
 - Added: Lots of options to some widgets
@@ -380,7 +382,7 @@ Yes. It's totally free. We also have a PRO version.
 - Removed: Inline editing from some widgets
 - Improved
 
-= 2.1.2 - 8-06-2019 =
+= 2.1.2 - 08-06-2019 =
 - Fixed: Contact Form mail
 - Fixed: Google Map API key
 

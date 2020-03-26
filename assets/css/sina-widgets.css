@@ -1,4 +1,4 @@
-/* Sina Extension for Elementor v3.2.6 */
+/* Sina Extension for Elementor v3.2.8 */
 
 /*--------------------------------- General -------------------------------------- */
 .sina-overlay{
@@ -41,10 +41,12 @@
 .sina-price-tag,
 .sina-price-prefix,
 .sina-pricing-body li,
+.sina-pc-col,
 .sina-bp,
 .sina-bp-text,
 .sina-bp-col,
 .sina-bp-meta,
+.sina-pc-meta,
 .sina-bp-cats,
 .sina-bp-cats a,
 .sina-pc-meta a,

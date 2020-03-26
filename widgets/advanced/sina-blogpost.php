@@ -179,6 +179,15 @@ class Sina_Blogpost_Widget extends Widget_Base {
 				'options' => sina_get_category_ids(),
 			]
 		);
+		$this->add_control(
+			'tags',
+			[
+				'label' => esc_html__( 'Tags', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT2,
+				'multiple' => true,
+				'options' => sina_get_tag_ids(),
+			]
+		);
 		Sina_Common_Data::posts_content($this);
 		$this->add_control(
 			'content_length',
@@ -186,7 +195,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 				'label' => __( 'Content Word', 'sina-ext' ),
 				'type' => Controls_Manager::NUMBER,
 				'step' => 1,
-				'min' => 10,
+				'min' => 0,
 				'max' => 2000,
 				'default' => 50,
 			]
@@ -899,7 +908,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 					'is_content_height' => 'yes',
 				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-bp-list .sina-pb-inner-content' => 'height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .sina-bp-list .sina-pb-inner-content' => 'min-height: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -1968,9 +1977,11 @@ class Sina_Blogpost_Widget extends Widget_Base {
 
 		$new_offset = $data['offset'] + ( ( $paged - 1 ) * $data['posts_num'] );
 		$category	= $data['categories'];
+		$tags		= $data['tags'];
 
 		$default	= [
 			'category__in'		=> $category,
+			'tag__in'			=> $tags,
 			'orderby'			=> [ $data['order_by'] => $data['sort'] ],
 			'posts_per_page'	=> $data['posts_num'],
 			'paged'				=> $paged,
@@ -1995,6 +2006,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 				'layout_type'=> $data['layout_type'],
 				'custom_columns'=> $data['custom_columns'],
 				'categories'=> $category,
+				'tags'=> $tags,
 				'order_by'=> $data['order_by'],
 				'sort'=> $data['sort'],
 				'content_length'=> $content_length,

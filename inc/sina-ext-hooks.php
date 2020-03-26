@@ -228,6 +228,7 @@ Class Sina_Ext_Hooks{
 
 			$default = [
 				'category__in'		=> $data['categories'],
+				'tag__in'			=> $data['tags'],
 				'posts_per_page'	=> (int) $data['posts_num'],
 				'offset'			=> (int) $offset,
 				'orderby'			=> [ $data['order_by'] => $data['sort'] ],

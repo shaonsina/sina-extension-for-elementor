@@ -118,6 +118,15 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 				'options' => sina_get_category_ids(),        
 			]
 		);
+		$this->add_control(
+			'tags',
+			[
+				'label' => esc_html__( 'Tags', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT2,
+				'multiple' => true,
+				'options' => sina_get_tag_ids(),        
+			]
+		);
 		Sina_Common_Data::posts_content($this);
 		$this->end_controls_section();
 		// End Ticker Content
@@ -482,8 +491,10 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 
 		$new_offset = $data['offset'] + ( ( $paged - 1 ) * $data['posts_num'] );
 		$category	= $data['categories'];
+		$tags		= $data['tags'];
 		$default	= [
 			'category__in'		=> $category,
+			'tag__in'			=> $tags,
 			'orderby'			=> [ $data['order_by'] => $data['sort'] ],
 			'posts_per_page'	=> $data['posts_num'],
 			'paged'				=> $paged,

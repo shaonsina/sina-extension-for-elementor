@@ -108,6 +108,21 @@ function sina_get_category_ids(){
 	return $options;
 }
 
+function sina_get_tag_ids(){
+	$terms = get_terms( [ 
+		'taxonomy' => 'post_tag',
+		'hide_empty' => false,
+	] );
+
+	$options = [];
+	if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
+		foreach ( $terms as $term ) {
+			$options[ $term->term_id ] = $term->name;
+		}
+	}
+	return $options;
+}
+
 function sina_get_categories(){
 	$terms = get_terms( [ 
 		'taxonomy' => 'category',
