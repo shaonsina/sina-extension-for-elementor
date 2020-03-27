@@ -1,6 +1,6 @@
 == Sina Extension for Elementor ==
 Contributors: shaonsina
-Tags: addon, elementor, elementor addon, elementor extension, extension, page builder, builder, elementor builder, elementor contact form, elementor widget, best elementor addon, best elementor extension
+Tags: elementor, elementor addon, elementor addons, elementor extension, elementor widget, elementor widgets, elementor elements, elementor pack, elementor blocks, elementor templates, elementor plugin, elementor plugins
 Donate link: https://sinaextra.com/sina-extension/
 Requires at least: 4.7
 Tested up to: 5.4

@@ -1013,6 +1013,102 @@ class Sina_Table_Widget extends Widget_Base {
 		// =======================
 
 
+		// Start Even Row Style
+		// ======================
+		$this->start_controls_section(
+			'even_row_style',
+			[
+				'label' => __( 'Even Row', 'sina-ext' ),
+				'tab' => Controls_Manager::TAB_STYLE,
+				'condition' => [
+					'data_table' => 'yes',
+					'data_source' => 'external',
+				]
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Text_Shadow::get_type(),
+			[
+				'name' => 'even_row_text_shadow',
+				'selector' => '{{WRAPPER}} table tbody tr.even',
+			]
+		);
+
+		$this->start_controls_tabs( 'even_row_tabs' );
+
+		$this->start_controls_tab(
+			'even_row_normal',
+			[
+				'label' => __( 'Normal', 'sina-ext' ),
+			]
+		);
+
+		$this->add_control(
+			'even_row_color',
+			[
+				'label' => __( 'Text Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} table tbody tr.even' => 'color: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
+			[
+				'name' => 'even_row_background',
+				'types' => [ 'classic', 'gradient' ],
+				'selector' => '{{WRAPPER}} table tbody tr.even',
+			]
+		);
+
+		$this->end_controls_tab();
+
+		$this->start_controls_tab(
+			'even_row_hover',
+			[
+				'label' => __( 'Hover', 'sina-ext' ),
+			]
+		);
+
+		$this->add_control(
+			'even_row_hover_color',
+			[
+				'label' => __( 'Text Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#222',
+				'selectors' => [
+					'{{WRAPPER}} table tbody tr.even:hover' => 'color: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
+			[
+				'name' => 'even_row_hover_background',
+				'types' => [ 'classic', 'gradient' ],
+				'fields_options' => [
+					'background' => [ 
+						'default' =>'classic', 
+					],
+					'color' => [
+						'default' => 'rgba(16, 133, 228, 0.2)',
+					],
+				],
+				'selector' => '{{WRAPPER}} table tbody tr.even:hover',
+			]
+		);
+
+		$this->end_controls_tab();
+
+		$this->end_controls_tabs();
+
+		$this->end_controls_section();
+		// End Even Row Style
+		// ===================
+
+
 		// Start Table Export Style
 		// =========================
 		$this->start_controls_section(
@@ -1379,7 +1475,7 @@ class Sina_Table_Widget extends Widget_Base {
 		$table_head = [];
 		foreach ($data['header_content'] as $content) {
 			$table_head[] = [
-				'data' => $content['header_text']
+				'data' => strtolower($content['header_text'])
 			];
 		}
 
@@ -1483,7 +1579,8 @@ class Sina_Table_Widget extends Widget_Base {
 
 			var tableHead = [];
 			_.each( settings.header_content, function( content, key ) {
-				tableHead.push({ 'data' : content.header_text });
+				var headerText = content.header_text.toLowerCase();
+				tableHead.push({ 'data' : headerText });
 			});
 
 			var external_source = ( 'external' == settings.data_source && settings.external_source ) ? settings.external_source : '';
