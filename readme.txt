@@ -5,7 +5,7 @@ Donate link: https://sinaextra.com/sina-extension/
 Requires at least: 4.7
 Tested up to: 5.4
 Requires PHP: 7.0
-Stable tag: 3.2.8
+Stable tag: 3.2.9
 License: GPL v3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -173,11 +173,14 @@ Yes. It's totally free. We also have a PRO version.
 
 == Changelog ==
 
+= 3.2.9 - 10-03-2020 =
+
+
 = 3.2.8 - 05-03-2020 =
 - Added: Grid & List layout for Posts Carousel
 - Added: Tags filtering option to Blogpost, Posts Carousel and News Ticker 
 
-= 3.2.7 - 28-03-2020 =
+= 3.2.7 - 29-03-2020 =
 - Added: Some options to Table
 
 = 3.2.6 - 22-03-2020 =
