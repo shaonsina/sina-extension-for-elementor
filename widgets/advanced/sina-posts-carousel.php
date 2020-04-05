@@ -722,7 +722,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .sina-bp:hover .sina-bp-title a' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .sina-bp:hover .sina-pc-title a' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -730,7 +730,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 			Group_Control_Text_Shadow::get_type(),
 			[
 				'name' => 'grid_post_hover_title_shadow',
-				'selector' => '{{WRAPPER}} .sina-bp:hover .sina-bp-title a',
+				'selector' => '{{WRAPPER}} .sina-bp:hover .sina-pc-title a',
 			]
 		);
 
@@ -1055,7 +1055,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '#fff',
 				'selectors' => [
-					'{{WRAPPER}} .sina-pc-title a:hover, {{WRAPPER}} .sina-pc-title a:focus' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .sina-bp .sina-pc-title a:hover, {{WRAPPER}} .sina-bp .sina-pc-title a:focus' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -1063,7 +1063,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 			Group_Control_Text_Shadow::get_type(),
 			[
 				'name' => 'title_hover_shadow',
-				'selector' => '{{WRAPPER}} .sina-pc-title a',
+				'selector' => '{{WRAPPER}} .sina-bp .sina-pc-title a:hover',
 			]
 		);
 		$this->end_controls_tab();

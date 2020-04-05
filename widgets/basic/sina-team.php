@@ -103,17 +103,40 @@ class Sina_Team_Widget extends Widget_Base {
 		);
 
 		$this->add_control(
-			'effects',
+			'layout',
 			[
-				'label' => __( 'Effects', 'sina-ext' ),
+				'label' => __( 'Layout', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'sina-team-move' => __( 'Move', 'sina-ext' ),
-					'sina-team-zoom' => __( 'Zoom', 'sina-ext' ),
-					'sina-team-zoom sina-team-move' => __( 'Move & Zoom', 'sina-ext' ),
-					'' => __( 'None', 'sina-ext' ),
+					'thumb' => __( 'Thumb', 'sina-ext' ),
+					'grid' => __( 'Grid', 'sina-ext' ),
+					'list' => __( 'List', 'sina-ext' ),
 				],
-				'default' => 'sina-team-move',
+				'default' => 'thumb',
+			]
+		);
+		$this->add_control(
+			'image_position',
+			[
+				'label' => __( 'Image Position', 'sina-ext' ),
+				'type' => Controls_Manager::CHOOSE,
+				'options' => [
+					'left' => [
+						'title' => __( 'Left', 'sina-ext' ),
+						'icon' => 'eicon-h-align-left',
+					],
+					'right' => [
+						'title' => __( 'Right', 'sina-ext' ),
+						'icon' => 'eicon-h-align-right',
+					],
+				],
+				'default' => 'left',
+				'selectors' => [
+					'{{WRAPPER}} .sina-team .sina-team-image, {{WRAPPER}} .sina-team .sina-team-content' => 'float: {{VALUE}};',
+				],
+				'condition' => [
+					'layout' => 'list',
+				],
 			]
 		);
 		$this->add_control(
@@ -345,6 +368,132 @@ class Sina_Team_Widget extends Widget_Base {
 			]
 		);
 
+		$this->add_control(
+			'box_effects',
+			[
+				'label' => __( 'Effects', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					'sina-team-box-move' => __( 'Move', 'sina-ext' ),
+					'sina-team-box-zoom' => __( 'Zoom', 'sina-ext' ),
+					'' => __( 'None', 'sina-ext' ),
+				],
+				'default' => '',
+			]
+		);
+		$this->add_responsive_control(
+			'scale',
+			[
+				'label' => __( 'Scale', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'range' => [
+					'px' => [
+						'step' => 0.1,
+						'min' => 0.1,
+						'max' => 5,
+					],
+				],
+				'default' => [
+					'size' => '1.1',
+				],
+				'condition' => [
+					'box_effects' => 'sina-team-box-zoom',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-team.sina-team-box-zoom:hover' => 'transform: scale({{SIZE}});',
+				],
+			]
+		);
+		$this->add_control(
+			'move',
+			[
+				'label' => __( 'Move', 'sina-ext' ),
+				'type' => Controls_Manager::POPOVER_TOGGLE,
+				'condition' => [
+					'box_effects' => 'sina-team-box-move',
+				],
+			]
+		);
+
+		$this->start_popover();
+		$this->add_responsive_control(
+			'translateX',
+			[
+				'label' => __( 'Horizontal', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'range' => [
+					'px' => [
+						'step' => 1,
+						'min' => -100,
+						'max' => 100,
+					],
+				],
+				'desktop_default' => [
+					'size' => '0',
+				],
+				'tablet_default' => [
+					'size' => '0',
+				],
+				'mobile_default' => [
+					'size' => '0',
+				],
+				'condition' => [
+					'box_effects' => 'sina-team-box-move',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'translateY',
+			[
+				'label' => __( 'Vertical', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'range' => [
+					'px' => [
+						'step' => 1,
+						'min' => -100,
+						'max' => 100,
+					],
+				],
+				'desktop_default' => [
+					'size' => '-10',
+				],
+				'tablet_default' => [
+					'size' => '-10',
+				],
+				'mobile_default' => [
+					'size' => '-10',
+				],
+				'condition' => [
+					'box_effects' => 'sina-team-box-move',
+				],
+				'selectors' => [
+					'(desktop){{WRAPPER}} .sina-team-box-move:hover' => 'transform: translate({{translateX.SIZE || 0}}px, {{translateY.SIZE || 0}}px);',
+					'(tablet){{WRAPPER}} .sina-team-box-move:hover' => 'transform: translate({{translateX_tablet.SIZE || 0}}px, {{translateY_tablet.SIZE || 0}}px);',
+					'(mobile){{WRAPPER}} .sina-team-box-move:hover' => 'transform: translate({{translateX_mobile.SIZE || 0}}px, {{translateY_mobile.SIZE || 0}}px);',
+				],
+			]
+		);
+		$this->end_popover();
+
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
+			[
+				'name' => 'box_bg',
+				'types' => [ 'classic', 'gradient' ],
+				'fields_options' => [
+					'background' => [ 
+						'default' =>'classic', 
+					],
+					'color' => [
+						'default' => '#fff',
+					],
+				],
+				'condition' => [
+					'layout!' => 'thumb',
+				],
+				'selector' => '{{WRAPPER}} .sina-team',
+			]
+		);
 		$this->add_group_control(
 			Group_Control_Box_Shadow::get_type(),
 			[
@@ -370,6 +519,45 @@ class Sina_Team_Widget extends Widget_Base {
 				],
 			]
 		);
+		$this->add_responsive_control(
+			'box_padding',
+			[
+				'label' => __( 'Padding', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'condition' => [
+					'layout!' => 'thumb',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-team' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'alignment',
+			[
+				'label' => __( 'Alignment', 'sina-ext' ),
+				'type' => Controls_Manager::CHOOSE,
+				'options' => [
+					'left' => [
+						'title' => __( 'Left', 'sina-ext' ),
+						'icon' => 'fa fa-align-left',
+					],
+					'center' => [
+						'title' => __( 'Center', 'sina-ext' ),
+						'icon' => 'fa fa-align-center',
+					],
+					'right' => [
+						'title' => __( 'Right', 'sina-ext' ),
+						'icon' => 'fa fa-align-right',
+					],
+				],
+				'default' => 'center',
+				'selectors' => [
+					'{{WRAPPER}} .sina-team' => 'text-align: {{VALUE}};',
+				],
+			]
+		);
 
 		$this->end_controls_section();
 		// End Box Style
@@ -383,9 +571,26 @@ class Sina_Team_Widget extends Widget_Base {
 			[
 				'label' => __( 'Overlay', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
+				'condition' => [
+					'layout' => 'thumb',
+				],
 			]
 		);
 
+		$this->add_control(
+			'effects',
+			[
+				'label' => __( 'Effects', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					'sina-team-move' => __( 'Move', 'sina-ext' ),
+					'sina-team-zoom' => __( 'Zoom', 'sina-ext' ),
+					'sina-team-zoom sina-team-move' => __( 'Move & Zoom', 'sina-ext' ),
+					'' => __( 'None', 'sina-ext' ),
+				],
+				'default' => 'sina-team-move',
+			]
+		);
 		$this->add_group_control(
 			Group_Control_Background::get_type(),
 			[
@@ -423,6 +628,187 @@ class Sina_Team_Widget extends Widget_Base {
 
 		$this->end_controls_section();
 		// End Overlay Style
+		// =====================
+
+
+		// Start Image Style
+		// ====================
+		$this->start_controls_section(
+			'image_style',
+			[
+				'label' => __( 'Image', 'sina-ext' ),
+				'tab' => Controls_Manager::TAB_STYLE,
+				'condition' => [
+					'layout!' => 'thumb',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'image_width',
+			[
+				'label' => __( 'Width', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'unit' => '%',
+					'size' => '50',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-team img, {{WRAPPER}} .sina-team-image' => 'width: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'image_height',
+			[
+				'label' => __( 'Height', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', 'em', '%' ],
+				'range' => [
+					'px' => [
+						'max' => 1000,
+					],
+					'em' => [
+						'max' => 1000,
+					],
+				],
+				'default' => [
+					'unit' => 'px',
+					'size' => '300',
+				],
+				'condition' => [
+					'layout' => 'list',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-team-image' => 'height: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
+			[
+				'name' => 'image_bg',
+				'types' => [ 'classic', 'gradient' ],
+				'selector' => '{{WRAPPER}} .sina-team img, {{WRAPPER}} .sina-team-image',
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Border::get_type(),
+			[
+				'name' => 'image_border',
+				'selector' => '{{WRAPPER}} .sina-team img, {{WRAPPER}} .sina-team-image',
+			]
+		);
+		$this->add_responsive_control(
+			'image_radius',
+			[
+				'label' => __( 'Radius', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'selectors' => [
+					'{{WRAPPER}} .sina-team img, {{WRAPPER}} .sina-team-image' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'image_padding',
+			[
+				'label' => __( 'Padding', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'condition' => [
+					'layout' => 'grid',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-team img' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->end_controls_section();
+		// End Image Style
+		// =====================
+
+
+		// Start Content Style
+		// =====================
+		$this->start_controls_section(
+			'content_style',
+			[
+				'label' => __( 'Content', 'sina-ext' ),
+				'tab' => Controls_Manager::TAB_STYLE,
+				'condition' => [
+					'layout!' => 'thumb',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'content_width',
+			[
+				'label' => __( 'Width', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'unit' => '%',
+					'size' => '50',
+				],
+				'condition' => [
+					'layout' => 'list',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-team .sina-team-content' => 'width: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
+			[
+				'name' => 'content_bg',
+				'types' => [ 'classic', 'gradient' ],
+				'selector' => '{{WRAPPER}} .sina-team-content',
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Border::get_type(),
+			[
+				'name' => 'content_border',
+				'selector' => '{{WRAPPER}} .sina-team',
+			]
+		);
+		$this->add_responsive_control(
+			'content_radius',
+			[
+				'label' => __( 'Radius', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'selectors' => [
+					'{{WRAPPER}} .sina-team-content' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'content_padding',
+			[
+				'label' => __( 'Padding', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '30',
+					'right' => '20',
+					'bottom' => '20',
+					'left' => '20',
+					'isLinked' => false,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-team-content' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->end_controls_section();
+		// End Content Style
 		// =====================
 
 
@@ -818,73 +1204,96 @@ class Sina_Team_Widget extends Widget_Base {
 
 	protected function render() {
 		$data = $this->get_settings_for_display();
-		if ( $data['image']['url'] ):
-			?>
-			<div class="sina-team <?php echo esc_attr( $data['effects'] ); ?>">
-				<img src="<?php echo esc_url( $data['image']['url'] ); ?>" alt="<?php echo esc_attr( $data['name'] ); ?>">
-				<div class="sina-team-overlay sina-overlay">
-					<?php if ( $data['name'] ): ?>
-						<h5 class="sina-team-name">
-							<?php printf( '%s', $data['name'] ); ?>
-						</h5>
-					<?php endif; ?>
+		$box_class = 'clearfix '. $data['box_effects'];
+		$content_class = 'sina-team-content';
 
-					<?php if ( $data['position'] ): ?>
-						<h6 class="sina-team-position">
-							<?php printf( '%s', $data['position'] ); ?>
-						</h6>
-					<?php endif; ?>
+		if ( 'thumb' == $data['layout'] ) {
+			$box_class = $data['effects'];
+			$content_class = 'sina-team-overlay sina-overlay';
+		}
+		?>
+		<div class="sina-team <?php echo esc_attr( $box_class ); ?>">
+			<?php if ( $data['image']['url']): ?>
+				<?php if ( 'list' == $data['layout'] ): ?>
+					<div class="sina-team-image sina-bg-cover" style="background-image: url(<?php echo esc_url( $data['image']['url'] ); ?>);"></div>
+				<?php else: ?>
+					<img src="<?php echo esc_url( $data['image']['url'] ); ?>" alt="<?php echo esc_attr( $data['name'] ); ?>">
+				<?php endif; ?>
+			<?php endif; ?>
 
-					<?php if ( $data['desc'] ): ?>
-						<div class="sina-team-desc">
-							<?php printf( '%s', $data['desc'] ); ?>
-						</div>
-					<?php endif; ?>
+			<div class="<?php echo esc_attr( $content_class ); ?>">
+				<?php if ( $data['name'] ): ?>
+					<h5 class="sina-team-name">
+						<?php printf( '%s', $data['name'] ); ?>
+					</h5>
+				<?php endif; ?>
 
-					<ul class="sina-team-social">
-						<?php
-							foreach ($data['social_icons'] as $index => $icon):
-							?>
-							<li class="elementor-repeater-item-<?php echo esc_attr( $icon[ '_id' ] ); ?>">
-								<a class="<?php echo esc_attr( $data['icon_bg_layer_effects'] ); ?>"
-									href="<?php echo esc_url( $icon['link']['url'] ); ?>"
-								<?php if ( 'on' == $icon['link']['is_external'] ): ?>
-									target="_blank" 
-								<?php endif; ?>
-								<?php if ( 'on' == $icon['link']['nofollow'] ): ?>
-									rel="nofollow" 
-								<?php endif; ?>>
-									<i class="<?php echo esc_attr( $icon['icon'] ); ?>"></i>
-								</a>
-							</li>
-						<?php endforeach; ?>
-					</ul>
-				</div>
-			</div><!-- .sina-team -->
+				<?php if ( $data['position'] ): ?>
+					<h6 class="sina-team-position">
+						<?php printf( '%s', $data['position'] ); ?>
+					</h6>
+				<?php endif; ?>
+
+				<?php if ( $data['desc'] ): ?>
+					<div class="sina-team-desc">
+						<?php printf( '%s', $data['desc'] ); ?>
+					</div>
+				<?php endif; ?>
+
+				<ul class="sina-team-social">
+					<?php
+						foreach ($data['social_icons'] as $index => $icon):
+						?>
+						<li class="elementor-repeater-item-<?php echo esc_attr( $icon[ '_id' ] ); ?>">
+							<a class="<?php echo esc_attr( $data['icon_bg_layer_effects'] ); ?>"
+								href="<?php echo esc_url( $icon['link']['url'] ); ?>"
+							<?php if ( 'on' == $icon['link']['is_external'] ): ?>
+								target="_blank" 
+							<?php endif; ?>
+							<?php if ( 'on' == $icon['link']['nofollow'] ): ?>
+								rel="nofollow" 
+							<?php endif; ?>>
+								<i class="<?php echo esc_attr( $icon['icon'] ); ?>"></i>
+							</a>
+						</li>
+					<?php endforeach; ?>
+				</ul>
+			</div>
+		</div><!-- .sina-team -->
 		<?php
-		endif;
 	}
 
 
 	protected function _content_template() {
 		?>
-		<div class="sina-team {{{settings.effects}}}">
-			<#
-				view.addRenderAttribute( 'name', 'class', 'sina-team-name' );
-				view.addInlineEditingAttributes( 'name' );
+		<#
+			var boxClass = 'clearfix '+ settings.box_effects;
+			var contentClass = 'sina-team-content';
 
-				view.addRenderAttribute( 'position', 'class', 'sina-team-position' );
-				view.addInlineEditingAttributes( 'position' );
+			if ( 'thumb' == settings.layout ) {
+				boxClass = settings.effects;
+				contentClass = 'sina-team-overlay sina-overlay';
+			}
 
-				view.addRenderAttribute( 'desc', 'class', 'sina-team-desc' );
-				view.addInlineEditingAttributes( 'desc' );
-			#>
+			view.addRenderAttribute( 'name', 'class', 'sina-team-name' );
+			view.addInlineEditingAttributes( 'name' );
 
-			<# if (settings.image.url) { #>
-			<img src="{{{settings.image.url}}}" alt="{{{settings.name}}}">
-			<# } #>
+			view.addRenderAttribute( 'position', 'class', 'sina-team-position' );
+			view.addInlineEditingAttributes( 'position' );
 
-			<div class="sina-team-overlay sina-overlay">
+			view.addRenderAttribute( 'desc', 'class', 'sina-team-desc' );
+			view.addInlineEditingAttributes( 'desc' );
+		#>
+		<div class="sina-team {{{boxClass}}}">
+			<# if (settings.image.url) {
+				if ('list' == settings.layout) { #>
+				<div class="sina-team-image sina-bg-cover" style="background-image: url({{{settings.image.url}}});"></div>
+				<# } else { #>
+				<img src="{{{settings.image.url}}}" alt="{{{settings.name}}}">
+			<# } } #>
+
+
+			<div class="{{{contentClass}}}">
 				<# if (settings.name) { #>
 					<h5 {{{ view.getRenderAttributeString( 'name' ) }}}>
 						{{{settings.name}}}

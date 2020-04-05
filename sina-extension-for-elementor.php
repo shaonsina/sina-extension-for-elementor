@@ -9,7 +9,7 @@
  * Text Domain: sina-ext
  * License: GPLv3
  * License URI: https://opensource.org/licenses/GPL-3.0
- * Tags: addon, elementor addon, elementor, elementor extension, elementor builder, elementor widget
+ * Tags: elementor, elementor addon, elementor addons, elementor extension, elementor widget, elementor templates
  */
 
 // Exit if accessed directly.

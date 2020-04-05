@@ -33,6 +33,8 @@
 .sina-hover-zoom:hover,
 .sina-content-box-move:hover,
 .sina-content-box-zoom:hover,
+.sina-team-box-move:hover,
+.sina-team-box-zoom:hover,
 .sina-pricing-move:hover,
 .sina-pricing-zoom:hover{
 	z-index: 999;
@@ -452,6 +454,7 @@ img.mfp-img{
 }
 
 /*-------------------------- Content Box ----------------------- */
+.sina-team,
 .sina-pricing,
 .sina-content-box{
 	position: relative;
@@ -924,11 +927,6 @@ img.mfp-img{
 }
 
 /*--------------------------------- Team -------------------------------------- */
-.sina-team {
-	position: relative;
-	overflow: hidden;
-	text-align: center;
-}
 .sina-team-social {
 	padding: 20px 0 0;
 }

@@ -285,11 +285,4 @@ Class Sina_Ext_Hooks{
 		}
 		die();
 	}
-
-	public static function redirect_after_logout(){
-		wp_safe_redirect( home_url() );
-		exit;
-	}
 }
-
-add_action( 'wp_logout', ['Sina_Ext_Hooks', 'redirect_after_logout' ]);

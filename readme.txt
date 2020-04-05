@@ -1,6 +1,6 @@
 == Sina Extension for Elementor ==
 Contributors: shaonsina
-Tags: elementor, elementor addon, elementor addons, elementor extension, elementor widget, elementor widgets, elementor elements, elementor pack, elementor blocks, elementor templates, elementor plugin, elementor plugins
+Tags: elementor, elementor addon, elementor addons, elementor extension, elementor widget, elementor templates
 Donate link: https://sinaextra.com/sina-extension/
 Requires at least: 4.7
 Tested up to: 5.4
@@ -174,10 +174,10 @@ Yes. It's totally free. We also have a PRO version.
 == Changelog ==
 
 = 3.2.9 - 10-03-2020 =
-
+- Added: Grid & List layout to Team
 
 = 3.2.8 - 05-03-2020 =
-- Added: Grid & List layout for Posts Carousel
+- Added: Grid & List layout to Posts Carousel
 - Added: Tags filtering option to Blogpost, Posts Carousel and News Ticker 
 
 = 3.2.7 - 29-03-2020 =
