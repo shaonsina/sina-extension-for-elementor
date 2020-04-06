@@ -1,6 +1,8 @@
 /* Sina Extension for Elementor v3.2.7 */
 
 !(function ($) {
+	'use strict';
+
 	// Owl Carousel for some Slider or Carousel
 	function sinaOwl(owl) {
 		var itemLg = owl.data('item-lg'),
@@ -11,7 +13,7 @@
 			itemSm = itemSm ? itemSm : 1,
 			slideIn = owl.data('slide-anim'),
 			slideOut = owl.data('slide-anim-out'),
-			slideOut = 'none' == slideOut ? false : slideOut;
+			slideOut = 'none' == slideOut ? false : slideOut,
 			slideIn = 'none' == slideIn ? false : slideIn,
 			play = owl.data('autoplay') ? true : false,
 			pause = owl.data('pause') ? true : false,

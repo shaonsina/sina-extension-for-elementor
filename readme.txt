@@ -94,8 +94,9 @@ Cool things are coming soon...
 8. [Register Form](https://sinaextra.com/sina-extension/register-form): Add a register form anywhere into your web page.
 9. [Section Navigation](https://sinaextra.com/sina-extension/section-navigation): To navigate the sections within a page add the fixed navigation.
 10. [Tab](https://sinaextra.com/sina-extension/tab): Display any content within a tab that you want.
-11. [Testimonial](https://sinaextra.com/sina-extension/testimonial): Show the testimonials into an interactive carousel.
-12. [Toggle Content](https://sinaextra.com/sina-extension/toggle-content): Display any content within a toggle tab.
+11. [Team Carousel](https://sinaextra.com/sina-extension/team-carousel): Add your team members and display them in a carousel.
+12. [Testimonial](https://sinaextra.com/sina-extension/testimonial): Show the testimonials into an interactive carousel.
+13. [Toggle Content](https://sinaextra.com/sina-extension/toggle-content): Display any content within a toggle tab.
 
 
 == PRO EXTENDERS ==

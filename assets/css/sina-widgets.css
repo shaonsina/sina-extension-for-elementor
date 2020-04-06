@@ -156,8 +156,7 @@
 .twentytwenty-before-label:before,
 .twentytwenty-after-label:before,
 .sina-social li a i,
-.sina-portfolio-overlay i,
-.sina-team-social li i {
+.sina-portfolio-overlay i {
 	text-align: center;
 	transition: all 0.4s;
 }

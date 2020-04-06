@@ -378,6 +378,9 @@ class Sina_Team_Widget extends Widget_Base {
 					'sina-team-box-zoom' => __( 'Zoom', 'sina-ext' ),
 					'' => __( 'None', 'sina-ext' ),
 				],
+				'condition' => [
+					'layout!' => 'thumb',
+				],
 				'default' => '',
 			]
 		);
@@ -397,6 +400,7 @@ class Sina_Team_Widget extends Widget_Base {
 					'size' => '1.1',
 				],
 				'condition' => [
+					'layout!' => 'thumb',
 					'box_effects' => 'sina-team-box-zoom',
 				],
 				'selectors' => [
@@ -410,6 +414,7 @@ class Sina_Team_Widget extends Widget_Base {
 				'label' => __( 'Move', 'sina-ext' ),
 				'type' => Controls_Manager::POPOVER_TOGGLE,
 				'condition' => [
+					'layout!' => 'thumb',
 					'box_effects' => 'sina-team-box-move',
 				],
 			]
@@ -438,6 +443,7 @@ class Sina_Team_Widget extends Widget_Base {
 					'size' => '0',
 				],
 				'condition' => [
+					'layout!' => 'thumb',
 					'box_effects' => 'sina-team-box-move',
 				],
 			]
@@ -464,6 +470,7 @@ class Sina_Team_Widget extends Widget_Base {
 					'size' => '-10',
 				],
 				'condition' => [
+					'layout!' => 'thumb',
 					'box_effects' => 'sina-team-box-move',
 				],
 				'selectors' => [
