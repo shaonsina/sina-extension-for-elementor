@@ -5,7 +5,7 @@ Donate link: https://sinaextra.com/sina-extension/
 Requires at least: 4.7
 Tested up to: 5.4
 Requires PHP: 7.0
-Stable tag: 3.2.9
+Stable tag: 3.2.10
 License: GPL v3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -134,7 +134,7 @@ Cool things are coming soon...
 
 - **Posts or Blog:** This plugin has various post widgets that means you can display the posts as column grid, masonry grid, tab, carousel, ticker, load more button or pagination. Also can define your expected grid columns which may add extra benefit for you.
 
-- **Slider or Carousel:** We have added various types of sliders or carousels. And you can make text, image, video, posts, review or testimonial slider or carousel. Also you can be sliding any template with our Content Slider widget which will give you an extra facility.
+- **Slider or Carousel:** We have added various types of sliders or carousels. And you can make text, image, video, posts, team, review or testimonial slider or carousel. Also you can be sliding any template with our Content Slider widget which will give you an extra facility.
 
 - **Tab or Virtual Tour:** Sina Extension has a tab element. And it capable of using embed code or virtual tour. Another thing it has the template option. so you can show any template inside the tab description container.
 
@@ -174,10 +174,12 @@ Yes. It's totally free. We also have a PRO version.
 
 == Changelog ==
 
-= 3.2.9 - 10-03-2020 =
+= 3.2.10 - 16-04-2020 =
+
+= 3.2.9 - 11-04-2020 =
 - Added: Grid & List layout to Team
 
-= 3.2.8 - 05-03-2020 =
+= 3.2.8 - 05-04-2020 =
 - Added: Grid & List layout to Posts Carousel
 - Added: Tags filtering option to Blogpost, Posts Carousel and News Ticker 
 

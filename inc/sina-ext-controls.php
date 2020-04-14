@@ -342,7 +342,7 @@ class Sina_Common_Data{
 				'type' => Controls_Manager::NUMBER,
 				'default' => 5000,
 				'step' => 100,
-				'min' => 1000,
+				'min' => 0,
 				'max' => 15000,
 			]
 		);
@@ -378,7 +378,7 @@ class Sina_Common_Data{
 					'label' => __( 'Speed', 'sina-ext' ),
 					'type' => Controls_Manager::NUMBER,
 					'step' => 100,
-					'min' => 100,
+					'min' => 0,
 					'max' => 5000,
 					'default' => 500,
 					'condition' => [

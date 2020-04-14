@@ -1,4 +1,4 @@
-/* Sina Extension for Elementor v3.2.9 */
+/* Sina Extension for Elementor v3.2.10 */
 
 /*--------------------------------- General -------------------------------------- */
 .sina-overlay{
@@ -73,15 +73,6 @@
 .sina-portfolio-desc,
 .sina-portfolio-btn {
 	transition: all 0.4s;
-}
-.sina-button i,
-.sina-dynamic-btn i,
-.sina-read-more i,
-.sina-order-btn i,
-.sina-banner-pbtn i,
-.sina-banner-sbtn i{
-	display: inline-block;
-	transition: all 0.2s cubic-bezier(0.1, 0.8, 0.8, 1);
 }
 .sina-table table th,
 .sina-table table td,
@@ -413,6 +404,15 @@ img.mfp-img{
 	overflow: inherit;
 }
 
+.sina-button i,
+.sina-dynamic-btn i,
+.sina-read-more i,
+.sina-order-btn i,
+.sina-banner-pbtn i,
+.sina-banner-sbtn i{
+	display: inline-block;
+	transition: all 0.2s cubic-bezier(0.1, 0.8, 0.8, 1);
+}
 /*--------------------------------- Posts Carousel -------------------------------------- */
 .sina-pc-thumb{
 	overflow: hidden;
