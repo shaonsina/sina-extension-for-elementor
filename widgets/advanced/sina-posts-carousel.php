@@ -837,7 +837,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->add_control(
 			'grid_post_hover_btn_color',
 			[
-				'label' => __( 'grid_Text Color', 'sina-ext' ),
+				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .sina-bp:hover .sina-read-more' => 'color: {{VALUE}};',

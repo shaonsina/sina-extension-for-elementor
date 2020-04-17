@@ -139,7 +139,7 @@
 
 	<p>
 		<?php _e( 'Found any issue or need help?', 'sina-ext' ); ?>
-		<a href="http://sinaextra.com/support/" target="_blank"><?php _e( 'Open Ticket', 'sina-ext' ); ?></a>
+		<a href="https://sinaextra.com/support/" target="_blank"><?php _e( 'Open Ticket', 'sina-ext' ); ?></a>
 	</p>
 
 	<div class="sina-ext-options">

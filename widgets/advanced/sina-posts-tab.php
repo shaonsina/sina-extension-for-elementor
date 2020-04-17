@@ -951,7 +951,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 														</h2>
 														<?php if ('yes' == $data['tag'] && get_the_tags()): ?>
 															<p>
-																<span class="fa fa-tag"></span>
+																<span class="fas fa fa-tag"></span>
 																<?php the_tags( '' ); ?>
 															</p>
 														<?php endif; ?>
@@ -966,7 +966,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 														</h2>
 														<?php if ('yes' == $data['tag'] && get_the_tags()): ?>
 															<p>
-																<span class="fa fa-tag"></span>
+																<span class="fas fa fa-tag"></span>
 																<?php the_tags( '' ); ?>
 															</p>
 														<?php endif; ?>
@@ -998,7 +998,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 														<div class="sina-pt-title">
 															<h3 data-sina-pt="#<?php echo esc_attr( $pid ); ?>"><?php the_title(); ?></h3>
 															<?php if ('yes' == $data['date']): ?>
-																<p><span class="fa fa-clock-o"></span> <?php printf( '%s', get_the_date() ); ?></p>
+																<p><span class="fa fa-clock-o far fa-clock"></span> <?php printf( '%s', get_the_date() ); ?></p>
 															<?php endif ?>
 														</div>
 													</div>
@@ -1007,7 +1007,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 														<div class="sina-pt-title">
 															<h3 data-sina-pt="#<?php echo esc_attr( $pid ); ?>"><?php the_title(); ?></h3>
 															<?php if ('yes' == $data['date']): ?>
-																<p><span class="fa fa-clock-o"></span> <?php printf( '%s', get_the_date() ); ?></p>
+																<p><span class="fa fa-clock-o far fa-clock"></span> <?php printf( '%s', get_the_date() ); ?></p>
 															<?php endif ?>
 														</div>
 													</div>

@@ -82,6 +82,8 @@ define('SINA_WIDGETS', [
 		'instant-search'		=> 1,
 		'lost-password-form'	=> 1,
 		'offcanvas-bar'			=> 1,
+		'posts-gallery'			=> 1,
+		'posts-on-scroll'		=> 1,
 		'register-form'			=> 1,
 		'section-navigation'	=> 1,
 		'tab' 					=> 1,
