@@ -1,4 +1,4 @@
-/* Sina Extension for Elementor v3.2.7 */
+/* Sina Extension for Elementor v3.2.10 */
 
 !(function ($) {
 	'use strict';
@@ -320,6 +320,8 @@
 				source = $tableInfo.external_source ? $tableInfo.external_source : '',
 				exportBtns = $tableInfo.export ? 'Blftrip' : 'lftrip',
 				ordering = $tableInfo.ordering ? true : false,
+				order = $tableInfo.sort_col ? $tableInfo.sort_col : 2,
+				sortType = $tableInfo.sort_type ? $tableInfo.sort_type : 'desc',
 				searching = $tableInfo.searching ? true : false,
 				info = $tableInfo.info ? true : false,
 				paging = $tableInfo.paging ? true : false,
@@ -329,6 +331,7 @@
 				ajax: source,
 				columns: head,
 				ordering : ordering,
+				order: [[ order - 1, sortType ]],
 				searching : searching,
 				info : info,
 				paging : paging,

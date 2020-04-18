@@ -492,6 +492,36 @@ class Sina_Table_Widget extends Widget_Base {
 			]
 		);
 		$this->add_control(
+			'data_sorting_column',
+			[
+				'label' => esc_html__( 'Sortable Column Position', 'sina-ext' ),
+				'type' => Controls_Manager::NUMBER,
+				'description' => __('Enter the column position to make that column sortable by default. (Ex. 1,2,3...)', 'sina-ext'),
+				'min' => 1,
+				'default' => '2',
+				'condition' => [
+					'data_table' => 'yes',
+					'data_sorting' => 'yes',
+				],
+			]
+		);
+		$this->add_control(
+			'data_sorting_type',
+			[
+				'label' => esc_html__( 'Select Order Type', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					'desc' => esc_html__( 'DESC Order', 'sina-ext' ),
+					'asc' => esc_html__( 'ASC Order', 'sina-ext' ),
+				],
+				'default' => 'desc',
+				'condition' => [
+					'data_table' => 'yes',
+					'data_sorting' => 'yes',
+				],
+			]
+		);
+		$this->add_control(
 			'data_info',
 			[
 				'label' => __( 'Data Info', 'sina-ext' ),
@@ -1485,6 +1515,8 @@ class Sina_Table_Widget extends Widget_Base {
 			'head' 		=> $table_head,
 			'export' 	=> $data['data_export'],
 			'ordering' 	=> $data['data_sorting'],
+			'sort_col' 	=> $data['data_sorting_column'],
+			'sort_type'	=> $data['data_sorting_type'],
 			'searching' => $data['data_searching'],
 			'paging' 	=> $data['data_paging'],
 			'pagingType' => $data['data_paging_type'],
@@ -1589,6 +1621,8 @@ class Sina_Table_Widget extends Widget_Base {
 				'head' : tableHead,
 				'export' : settings.data_export,
 				'ordering' : settings.data_sorting,
+				'sort_col' : settings.data_sorting_column,
+				'sort_type' : settings.data_sorting_type,
 				'searching' : settings.data_searching,
 				'paging' : settings.data_paging,
 				'pagingType' : settings.data_paging_type,

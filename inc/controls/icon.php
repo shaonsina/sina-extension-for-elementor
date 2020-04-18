@@ -2928,6 +2928,7 @@ class Sina_Ext_Icon extends Base_Data_Control{
 			'fa fa-youtube-play' => 'youtube-play',
 			'fa fa-youtube-square' => 'youtube-square',
 
+			'eicon-arrow-down' => 'eicon-arrow-down',
 			'eicon-accordion' => 'eicon-accordion',
 			'eicon-icon-box' => 'eicon-icon-box',
 			'eicon-counter' => 'eicon-counter',
