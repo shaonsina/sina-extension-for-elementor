@@ -91,12 +91,14 @@ Cool things are coming soon...
 5. [Instant Search](https://sinaextra.com/sina-extension/instant-search-form/): Display a search form with AJAX action for searching instantly.
 6. [Lost Password Form](https://sinaextra.com/sina-extension/lost-password-form): Add a custom "lost password" form anywhere into your web page.
 7. [Offcanvas Bar](https://sinaextra.com/sina-extension/offcanvas-bar): Show your expected content into a offcanvas sidebar.
-8. [Register Form](https://sinaextra.com/sina-extension/register-form): Add a register form anywhere into your web page.
-9. [Section Navigation](https://sinaextra.com/sina-extension/section-navigation): To navigate the sections within a page add the fixed navigation.
-10. [Tab](https://sinaextra.com/sina-extension/tab): Display any content within a tab that you want.
-11. [Team Carousel](https://sinaextra.com/sina-extension/team-carousel): Add your team members and display them in a carousel.
-12. [Testimonial](https://sinaextra.com/sina-extension/testimonial): Show the testimonials into an interactive carousel.
-13. [Toggle Content](https://sinaextra.com/sina-extension/toggle-content): Display any content within a toggle tab.
+8. [Posts Gallerys](https://sinaextra.com/sina-extension/posts-gallery): Display the posts into a Gallery with unlimited creative design.
+9. [Posts Load On Scroll](https://sinaextra.com/sina-extension/posts-load-on-scroll): Load the posts (grid, list & thumb) by AJAX on infinite scroll.
+10. [Register Form](https://sinaextra.com/sina-extension/register-form): Add a register form anywhere into your web page.
+11. [Section Navigation](https://sinaextra.com/sina-extension/section-navigation): To navigate the sections within a page add the fixed navigation.
+12. [Tab](https://sinaextra.com/sina-extension/tab): Display any content within a tab that you want.
+13. [Team Carousel](https://sinaextra.com/sina-extension/team-carousel): Add your team members and display them in a carousel.
+14. [Testimonial](https://sinaextra.com/sina-extension/testimonial): Show the testimonials into an interactive carousel.
+15. [Toggle Content](https://sinaextra.com/sina-extension/toggle-content): Display any content within a toggle tab.
 
 
 == PRO EXTENDERS ==
@@ -132,7 +134,7 @@ Cool things are coming soon...
 
 - **Portfolio or Image Gallery:** Yes, we also covered this feature. Cause, some users want to show their work or some images as a filterable gallery. Remember it has capable of using a masonry grid as well.
 
-- **Posts or Blog:** This plugin has various post widgets that means you can display the posts as column grid, masonry grid, tab, carousel, ticker, load more button or pagination. Also can define your expected grid columns which may add extra benefit for you.
+- **Posts or Blog:** This plugin has various post widgets that means you can display the posts as column grid, masonry grid, list, tab, carousel, gallery, ticker, load on scroll, load more button or pagination. Also can define your expected grid columns which may add extra benefit for you.
 
 - **Slider or Carousel:** We have added various types of sliders or carousels. And you can make text, image, video, posts, team, review or testimonial slider or carousel. Also you can be sliding any template with our Content Slider widget which will give you an extra facility.
 
@@ -174,7 +176,8 @@ Yes. It's totally free. We also have a PRO version.
 
 == Changelog ==
 
-= 3.2.10 - 16-04-2020 =
+= 3.2.10 - 19-04-2020 =
+- Added: Default sortable option to Table
 
 = 3.2.9 - 11-04-2020 =
 - Added: Grid & List layout to Team
