@@ -9,7 +9,7 @@
 			e.preventDefault();
 			Swal.fire({
 				title: 'Go Pro',
-				html: 'Purchase our <a href="https://sinaextra.com/sina-extension/" target="_blank">pro version</a> to unlock pro features.',
+				html: 'Purchase our <a href="https://sinaextra.com/sina-addon-for-elementor/" target="_blank">pro version</a> to unlock pro features.',
 				icon: 'info',
 				showCloseButton: true
 			});

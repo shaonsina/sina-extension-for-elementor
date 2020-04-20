@@ -5,7 +5,7 @@ Donate link: https://sinaextra.com/sina-extension/
 Requires at least: 4.7
 Tested up to: 5.4
 Requires PHP: 7.0
-Stable tag: 3.2.10
+Stable tag: 3.2.11
 License: GPL v3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -175,6 +175,9 @@ Yes. It's totally free. We also have a PRO version.
 
 
 == Changelog ==
+
+= 3.2.11 - 25-04-2020 =
+Added: Some options to Posts Tab
 
 = 3.2.10 - 19-04-2020 =
 - Added: Default sortable option to Table
