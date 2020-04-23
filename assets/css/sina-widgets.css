@@ -1,4 +1,4 @@
-/* Sina Extension for Elementor v3.2.10 */
+/* Sina Extension for Elementor v3.2.11 */
 
 /*--------------------------------- General -------------------------------------- */
 .sina-overlay{
@@ -232,6 +232,24 @@ img.mfp-img{
 	transform: rotate(-45deg);
 }
 
+/*--------------------------------- Separator -------------------------------------- */
+.sina-separator{
+	position: relative;
+	display: inline-block;
+}
+.sina-separator.sina-separator-solid-dot:before,
+.sina-separator.sina-separator-solid-dot:after{
+	position: absolute;
+	top: 0;
+	left: 110%;
+	height: 100%;
+	width: 15%;
+	content: '';
+}
+.sina-separator.sina-separator-solid-dot:after{
+	left: 133%;
+	width: 7%;
+}
 
 /*--------------------------------- Accordion -------------------------------------- */
 .sina-accordion-item .sina-accordion-header{

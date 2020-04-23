@@ -9,6 +9,7 @@ use \Elementor\Widget_Base;
 use \Elementor\Controls_Manager;
 use \Elementor\Group_Control_Typography;
 use \Elementor\Group_Control_Text_Shadow;
+use \Elementor\Group_Control_Background;
 use \Sina_Extension\Sina_Ext_Gradient_Text;
 
 // Exit if accessed directly.
@@ -97,6 +98,34 @@ class Sina_Title_Widget extends Widget_Base {
 		);
 
 		$this->add_control(
+			'separator',
+			[
+				'label' => __( 'Separator', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					'none' => __( 'None', 'sina-ext' ),
+					'' => __( 'Solid', 'sina-ext' ),
+					'sina-separator-solid-dot' => __( 'Solid and Dot', 'sina-ext' ),
+				],
+				'default' => 'none',
+			]
+		);
+		$this->add_control(
+			'separator_position',
+			[
+				'label' => __( 'Separator Position', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					'before_title' => __( 'Before Title', 'sina-ext' ),
+					'after_title' => __( 'After Title', 'sina-ext' ),
+				],
+				'condition' => [
+					'separator!' => 'none',
+				],
+				'default' => 'after_title',
+			]
+		);
+		$this->add_control(
 			'title',
 			[
 				'label' => __( 'Title', 'sina-ext' ),
@@ -113,11 +142,11 @@ class Sina_Title_Widget extends Widget_Base {
 		$this->add_control(
 			'title_span',
 			[
-				'label' => __( 'Title Span', 'sina-ext' ),
+				'label' => __( 'Highlight Text', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter Title Span', 'sina-ext' ),
-				'description' => __( 'You can use SPAN for multi-color title.', 'sina-ext' ),
+				'placeholder' => __( 'Enter Highlight Text', 'sina-ext' ),
+				'description' => __( 'You can use SPAN TAG for multi-color title.', 'sina-ext' ),
 				'dynamic' => [
 					'active' => true,
 				],
@@ -177,6 +206,35 @@ class Sina_Title_Widget extends Widget_Base {
 				'description' => __( 'You can use HTML.', 'sina-ext' ),
 				'dynamic' => [
 					'active' => true,
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'alignment',
+			[
+				'label' => __( 'Alignment', 'sina-ext' ),
+				'type' => Controls_Manager::CHOOSE,
+				'options' => [
+					'left' => [
+						'title' => __( 'Left', 'sina-ext' ),
+						'icon' => 'fa fa-align-left',
+					],
+					'center' => [
+						'title' => __( 'Center', 'sina-ext' ),
+						'icon' => 'fa fa-align-center',
+					],
+					'right' => [
+						'title' => __( 'Right', 'sina-ext' ),
+						'icon' => 'fa fa-align-right',
+					],
+					'justify' => [
+						'title' => __( 'justify', 'sina-ext' ),
+						'icon' => 'fa fa-align-justify',
+					],
+				],
+				'default' => 'center',
+				'selectors' => [
+					'{{WRAPPER}} .sina-title' => 'text-align: {{VALUE}};',
 				],
 			]
 		);
@@ -242,20 +300,6 @@ class Sina_Title_Widget extends Widget_Base {
 			]
 		);
 		$this->add_responsive_control(
-			'title_margin',
-			[
-				'label' => __( 'Margin Bottom', 'sina-ext' ),
-				'type' => Controls_Manager::SLIDER,
-				'size_units' => [ 'px', 'em' ],
-				'default' => [
-					'size' => '15',
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-title-title' => 'margin-bottom: {{SIZE}}{{UNIT}};',
-				],
-			]
-		);
-		$this->add_responsive_control(
 			'title_alignment',
 			[
 				'label' => __( 'Alignment', 'sina-ext' ),
@@ -278,9 +322,34 @@ class Sina_Title_Widget extends Widget_Base {
 						'icon' => 'fa fa-align-justify',
 					],
 				],
-				'default' => 'center',
 				'selectors' => [
 					'{{WRAPPER}} .sina-title-title' => 'text-align: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'title_margin',
+			[
+				'label' => __( 'Margin', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'range' => [
+					'px' => [
+						'min' => -100,
+					],
+					'em' => [
+						'min' => -10,
+					],
+				],
+				'default' => [
+					'top' => '0',
+					'right' => '0',
+					'bottom' => '15',
+					'left' => '0',
+					'isLinked' => false,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-title-title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -380,20 +449,6 @@ class Sina_Title_Widget extends Widget_Base {
 			]
 		);
 		$this->add_responsive_control(
-			'subtitle_margin',
-			[
-				'label' => __( 'Margin Bottom', 'sina-ext' ),
-				'type' => Controls_Manager::SLIDER,
-				'size_units' => [ 'px', 'em' ],
-				'default' => [
-					'size' => '5',
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-title-subtitle' => 'margin-bottom: {{SIZE}}{{UNIT}};',
-				],
-			]
-		);
-		$this->add_responsive_control(
 			'subtitle_alignment',
 			[
 				'label' => __( 'Alignment', 'sina-ext' ),
@@ -416,9 +471,26 @@ class Sina_Title_Widget extends Widget_Base {
 						'icon' => 'fa fa-align-justify',
 					],
 				],
-				'default' => 'center',
 				'selectors' => [
 					'{{WRAPPER}} .sina-title-subtitle' => 'text-align: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'subtitle_margin',
+			[
+				'label' => __( 'Margin', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '0',
+					'right' => '0',
+					'bottom' => '5',
+					'left' => '0',
+					'isLinked' => false,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-separator' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -504,7 +576,6 @@ class Sina_Title_Widget extends Widget_Base {
 						'icon' => 'fa fa-align-justify',
 					],
 				],
-				'default' => 'center',
 				'selectors' => [
 					'{{WRAPPER}} .sina-title-desc' => 'text-align: {{VALUE}};',
 				],
@@ -514,6 +585,115 @@ class Sina_Title_Widget extends Widget_Base {
 		$this->end_controls_section();
 		// End Desc Style
 		// ================
+
+
+		// Start Separator Style
+		// ======================
+		$this->start_controls_section(
+			'separator_style',
+			[
+				'label' => __( 'Separator', 'sina-ext' ),
+				'tab' => Controls_Manager::TAB_STYLE,
+				'condition' => [
+					'separator!' => 'none',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
+			[
+				'name' => 'separator_bg',
+				'types' => [ 'classic', 'gradient' ],
+				'fields_options' => [
+					'background' => [ 
+						'default' =>'classic', 
+					],
+					'color' => [
+						'default' => '#1085e4',
+					],
+				],
+				'selector' => '{{WRAPPER}} .sina-separator',
+			]
+		);
+		$this->add_control(
+			'separator_dot_color',
+			[
+				'label' => __( 'Dot Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#1085e4',
+				'condition' => [
+					'separator' => 'sina-separator-solid-dot',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-separator.sina-separator-solid-dot:before, .sina-separator.sina-separator-solid-dot:after' => 'background: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'separator_width',
+			[
+				'label' => __( 'Width', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', 'em', '%' ],
+				'range' => [
+					'px' => [
+						'min' => -100,
+						'max' => 2000,
+					],
+					'em' => [
+						'min' => -10,
+						'max' => 100,
+					],
+				],
+				'default' => [
+					'size' => '100',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-separator' => 'width: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'separator_height',
+			[
+				'label' => __( 'Height', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', 'em' ],
+				'default' => [
+					'size' => '4',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-separator' => 'height: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'separator_radius',
+			[
+				'label' => __( 'Radius', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'selectors' => [
+					'{{WRAPPER}} .sina-separator, .sina-separator.sina-separator-solid-dot:before, .sina-separator.sina-separator-solid-dot:after' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'separator_margin',
+			[
+				'label' => __( 'Margin', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'selectors' => [
+					'{{WRAPPER}} .sina-separator' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->end_controls_section();
+		// End Separator Style
+		// ====================
 	}
 
 
@@ -522,8 +702,16 @@ class Sina_Title_Widget extends Widget_Base {
 		$title_span = $data['title_span'] ? '<span>'.$data['title_span'].'</span>' : '';
 		?>
 		<div class="sina-title">
+			<?php if ( 'none' != $data['separator'] && 'before_title' == $data['separator_position'] ): ?>
+				<div class="sina-separator <?php echo esc_attr( $data['separator'] ); ?>"></div>
+			<?php endif; ?>
+
 			<?php if ( $data['title'] ): ?>
 				<?php printf( '<%1$s class="sina-title-title">%2$s%3$s</%1$s>', $data['title_tag'], $data['title'], $title_span ); ?>
+			<?php endif; ?>
+
+			<?php if ( 'none' != $data['separator'] && 'after_title' == $data['separator_position'] ): ?>
+				<div class="sina-separator <?php echo esc_attr( $data['separator'] ); ?>"></div>
 			<?php endif; ?>
 
 			<?php if ( $data['subtitle'] ): ?>
@@ -552,19 +740,35 @@ class Sina_Title_Widget extends Widget_Base {
 
 				view.addRenderAttribute( 'desc', 'class', 'sina-title-desc' );
 				view.addInlineEditingAttributes( 'desc' );
-			#>
 
-			<# if (settings.title) { #>
-				<{{{settings.title_tag}}} {{{ view.getRenderAttributeString( 'title' ) }}}>{{{settings.title + titleSpan}}}</{{{settings.title_tag}}}>
-			<# } #>
+				if ( 'none' != settings.separator && 'before_title' == settings.separator_position ) {
+					#>
+					<div class="sina-separator {{{settings.separator}}}"></div>
+					<#
+				}
 
-			<# if (settings.subtitle) { #>
-				<{{{settings.subtitle_tag}}} {{{ view.getRenderAttributeString( 'subtitle' ) }}}>{{{settings.subtitle}}}</{{{settings.subtitle_tag}}}>
-			<# } #>
+				if (settings.title) {
+					#>
+					<{{{settings.title_tag}}} {{{ view.getRenderAttributeString( 'title' ) }}}>{{{settings.title + titleSpan}}}</{{{settings.title_tag}}}>
+					<#
+				}
 
-			<# if (settings.desc) { #>
-				<div {{{ view.getRenderAttributeString( 'desc' ) }}}>{{{settings.desc}}}</div>
-			<# } #>
+				if ( 'none' !=  settings.separator && 'after_title' == settings.separator_position ) {
+					#>
+					<div class="sina-separator {{{settings.separator}}}"></div>
+					<#
+				}
+
+				if (settings.subtitle) {
+					#>
+					<{{{settings.subtitle_tag}}} {{{ view.getRenderAttributeString( 'subtitle' ) }}}>{{{settings.subtitle}}}</{{{settings.subtitle_tag}}}>
+					<#
+				}
+
+				if (settings.desc) {
+					#>
+					<div {{{ view.getRenderAttributeString( 'desc' ) }}}>{{{settings.desc}}}</div>
+				<# } #>
 		</div><!-- .sina-title -->
 		<?php
 	}
