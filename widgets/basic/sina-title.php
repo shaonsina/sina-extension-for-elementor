@@ -323,7 +323,7 @@ class Sina_Title_Widget extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-title-title' => 'text-align: {{VALUE}};',
+					'{{WRAPPER}} .sina-title-title, .sina-separator-wrap' => 'text-align: {{VALUE}};',
 				],
 			]
 		);
@@ -490,7 +490,7 @@ class Sina_Title_Widget extends Widget_Base {
 					'isLinked' => false,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-separator' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .sina-title-subtitle' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -669,6 +669,31 @@ class Sina_Title_Widget extends Widget_Base {
 			]
 		);
 		$this->add_responsive_control(
+			'separator_alignment',
+			[
+				'label' => __( 'Alignment', 'sina-ext' ),
+				'type' => Controls_Manager::CHOOSE,
+				'options' => [
+					'flex-start' => [
+						'title' => __( 'Left', 'sina-ext' ),
+						'icon' => 'fa fa-align-left',
+					],
+					'center' => [
+						'title' => __( 'Center', 'sina-ext' ),
+						'icon' => 'fa fa-align-center',
+					],
+					'flex-end' => [
+						'title' => __( 'Right', 'sina-ext' ),
+						'icon' => 'fa fa-align-right',
+					],
+				],
+				'default' => 'center',
+				'selectors' => [
+					'{{WRAPPER}} .sina-separator-wrap' => 'justify-content: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
 			'separator_radius',
 			[
 				'label' => __( 'Radius', 'sina-ext' ),
@@ -686,7 +711,7 @@ class Sina_Title_Widget extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
-					'{{WRAPPER}} .sina-separator' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .sina-separator-wrap' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -703,7 +728,9 @@ class Sina_Title_Widget extends Widget_Base {
 		?>
 		<div class="sina-title">
 			<?php if ( 'none' != $data['separator'] && 'before_title' == $data['separator_position'] ): ?>
-				<div class="sina-separator <?php echo esc_attr( $data['separator'] ); ?>"></div>
+				<div class="sina-separator-wrap sina-flex">
+					<div class="sina-separator <?php echo esc_attr( $data['separator'] ); ?>"></div>
+				</div>
 			<?php endif; ?>
 
 			<?php if ( $data['title'] ): ?>
@@ -711,7 +738,9 @@ class Sina_Title_Widget extends Widget_Base {
 			<?php endif; ?>
 
 			<?php if ( 'none' != $data['separator'] && 'after_title' == $data['separator_position'] ): ?>
-				<div class="sina-separator <?php echo esc_attr( $data['separator'] ); ?>"></div>
+				<div class="sina-separator-wrap sina-flex">
+					<div class="sina-separator <?php echo esc_attr( $data['separator'] ); ?>"></div>
+				</div>
 			<?php endif; ?>
 
 			<?php if ( $data['subtitle'] ): ?>
@@ -743,7 +772,9 @@ class Sina_Title_Widget extends Widget_Base {
 
 				if ( 'none' != settings.separator && 'before_title' == settings.separator_position ) {
 					#>
-					<div class="sina-separator {{{settings.separator}}}"></div>
+					<div class="sina-separator-wrap sina-flex">
+						<div class="sina-separator {{{settings.separator}}}"></div>
+					</div>
 					<#
 				}
 
@@ -755,7 +786,9 @@ class Sina_Title_Widget extends Widget_Base {
 
 				if ( 'none' !=  settings.separator && 'after_title' == settings.separator_position ) {
 					#>
-					<div class="sina-separator {{{settings.separator}}}"></div>
+					<div class="sina-separator-wrap sina-flex">
+						<div class="sina-separator {{{settings.separator}}}"></div>
+					</div>
 					<#
 				}
 

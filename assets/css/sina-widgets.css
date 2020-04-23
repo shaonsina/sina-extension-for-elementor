@@ -231,12 +231,14 @@ img.mfp-img{
 	right: auto;
 	transform: rotate(-45deg);
 }
-
-/*--------------------------------- Separator -------------------------------------- */
+.sina-bg-thumb,
+.sina-banner-slider,
+.sina-pt-content-content .sina-pt-item,
 .sina-separator{
 	position: relative;
-	display: inline-block;
 }
+
+/*--------------------------------- Separator -------------------------------------- */
 .sina-separator.sina-separator-solid-dot:before,
 .sina-separator.sina-separator-solid-dot:after{
 	position: absolute;
@@ -264,9 +266,6 @@ img.mfp-img{
 }
 
 /*------------------- Banner Slider, Brand Carousel & Review Carousel -------------------*/
-.sina-banner-slider{
-	position: relative;
-}
 .sina-slider-content .sina-overlay{
 	opacity: 1;
 }
@@ -376,9 +375,6 @@ img.mfp-img{
 .sina-bp-item-4{
 	width: 25%;
 }
-.sina-bg-thumb{
-	position: relative;
-}
 .sina-bg-thumb .sina-overlay > a{
 	display: block;
 	height: 100%;
@@ -432,9 +428,10 @@ img.mfp-img{
 	transition: all 0.2s cubic-bezier(0.1, 0.8, 0.8, 1);
 }
 /*--------------------------------- Posts Carousel -------------------------------------- */
+.sina-news-ticker,
 .sina-pc-thumb{
-	overflow: hidden;
 	position: relative;
+	overflow: hidden;
 }
 .sina-pc-thumb .sina-overlay{
 	opacity: 1;
@@ -693,10 +690,6 @@ img.mfp-img{
 }
 
 /*-------------------------- News Ticker --------------------------*/
-.sina-news-ticker{
-	position: relative;
-	overflow: hidden;
-}
 .sina-news-ticker .sina-nt-left-label,
 .sina-news-ticker .sina-nt-right-label{
 	position: absolute;
@@ -852,9 +845,6 @@ img.mfp-img{
 .sina-pt-content-content{
 	overflow: hidden;
 	float: right;
-}
-.sina-pt-content-content .sina-pt-item{
-	position: relative;
 }
 .sina-pt-thumb-content{
 	position: absolute;
