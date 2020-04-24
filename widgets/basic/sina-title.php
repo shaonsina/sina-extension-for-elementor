@@ -626,7 +626,7 @@ class Sina_Title_Widget extends Widget_Base {
 					'separator' => 'sina-separator-solid-dot',
 				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-separator.sina-separator-solid-dot:before, .sina-separator.sina-separator-solid-dot:after' => 'background: {{VALUE}};',
+					'{{WRAPPER}} .sina-separator.sina-separator-solid-dot:before, {{WRAPPER}} .sina-separator.sina-separator-solid-dot:after' => 'background: {{VALUE}};',
 				],
 			]
 		);
@@ -700,7 +700,7 @@ class Sina_Title_Widget extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
-					'{{WRAPPER}} .sina-separator, .sina-separator.sina-separator-solid-dot:before, .sina-separator.sina-separator-solid-dot:after' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .sina-separator, {{WRAPPER}} .sina-separator.sina-separator-solid-dot:before, {{WRAPPER}} .sina-separator.sina-separator-solid-dot:after' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);

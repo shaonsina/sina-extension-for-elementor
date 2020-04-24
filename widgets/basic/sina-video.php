@@ -534,7 +534,7 @@ class Sina_Video_Widget extends Widget_Base {
 				view.addInlineEditingAttributes( 'title' );
 			#>
 			<# if (settings.icon) { #>
-			<a class="sina-video-play {{{settings.animation + settings.btn_bg_layer_effects}}}"
+			<a class="sina-video-play {{{settings.animation +' '+ settings.btn_bg_layer_effects}}}"
 			href="{{{settings.video_link}}}">
 				<i class="{{{settings.icon}}}"></i>
 			</a>

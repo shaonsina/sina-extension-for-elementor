@@ -177,7 +177,9 @@ Yes. It's totally free. We also have a PRO version.
 == Changelog ==
 
 = 3.2.11 - 25-04-2020 =
+Added: Separator to Title widget
 Added: Some options to Posts Tab
+Fixed: Background effect issue for Video button
 
 = 3.2.10 - 19-04-2020 =
 - Added: Default sortable option to Table
