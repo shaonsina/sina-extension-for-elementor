@@ -177,7 +177,7 @@ Yes. It's totally free. We also have a PRO version.
 == Changelog ==
 
 = 3.2.12 - 01-05-2020 =
-Added: 
+Added: Some options to News Ticker
 
 = 3.2.11 - 25-04-2020 =
 Added: Separator to Title widget
