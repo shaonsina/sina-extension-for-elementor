@@ -11,6 +11,7 @@ use \Elementor\Controls_Manager;
 use \Elementor\Group_Control_Typography;
 use \Elementor\Group_Control_Background;
 use \Elementor\Group_Control_Text_Shadow;
+use \Elementor\Group_Control_Border;
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -196,27 +197,16 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 		// ====================
 
 
-		// Start Label Style
-		// =====================
+		// Start Left Label Style
+		// =======================
 		$this->start_controls_section(
 			'label_style',
 			[
-				'label' => __( 'Label', 'sina-ext' ),
+				'label' => __( 'Left Label', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
 
-		$this->add_control(
-			'label_color',
-			[
-				'label' => __( 'Text Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#fafafa',
-				'selectors' => [
-					'{{WRAPPER}} .sina-nt-left-label, {{WRAPPER}} .sina-nt-right-label' => 'color: {{VALUE}}'
-				],
-			]
-		);
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
@@ -239,14 +229,25 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 						'default' => 'uppercase',
 					],
 				],
-				'selector' => '{{WRAPPER}} .sina-nt-left-label, {{WRAPPER}} .sina-nt-right-label',
+				'selector' => '{{WRAPPER}} .sina-nt-left-label',
 			]
 		);
 		$this->add_group_control(
 			Group_Control_Text_Shadow::get_type(),
 			[
 				'name' => 'label_shadow',
-				'selector' => '{{WRAPPER}} .sina-nt-left-label, {{WRAPPER}} .sina-nt-right-label',
+				'selector' => '{{WRAPPER}} .sina-nt-left-label',
+			]
+		);
+		$this->add_control(
+			'label_color',
+			[
+				'label' => __( 'Text Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#fafafa',
+				'selectors' => [
+					'{{WRAPPER}} .sina-nt-left-label' => 'color: {{VALUE}}'
+				],
 			]
 		);
 		$this->add_group_control(
@@ -262,7 +263,14 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 						'default' => '#1085e4',
 					],
 				],
-				'selector' => '{{WRAPPER}} .sina-nt-left-label, {{WRAPPER}} .sina-nt-right-label',
+				'selector' => '{{WRAPPER}} .sina-nt-left-label',
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Border::get_type(),
+			[
+				'name' => 'label_border',
+				'selector' => '{{WRAPPER}} .sina-nt-left-label',
 			]
 		);
 		$this->add_responsive_control(
@@ -272,7 +280,7 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
-					'{{WRAPPER}} .sina-nt-left-label, {{WRAPPER}} .sina-nt-right-label' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .sina-nt-left-label' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -290,14 +298,125 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 					'isLinked' => false,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-nt-left-label, {{WRAPPER}} .sina-nt-right-label' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .sina-nt-left-label' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
 
 		$this->end_controls_section();
-		// End label Style
-		// =================
+		// End Left label Style
+		// =====================
+
+
+		// Start Right Label Style
+		// ========================
+		$this->start_controls_section(
+			'right_label_style',
+			[
+				'label' => __( 'Right Label', 'sina-ext' ),
+				'tab' => Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name' => 'right_label_typography',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_size' => [
+						'default' => [
+							'size' => '16',
+						],
+					],
+					'line_height' => [
+						'default' => [
+							'size' => '24',
+						],
+					],
+					'text_transform' => [
+						'default' => 'uppercase',
+					],
+				],
+				'selector' => '{{WRAPPER}} .sina-nt-right-label',
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Text_Shadow::get_type(),
+			[
+				'name' => 'right_label_shadow',
+				'selector' => '{{WRAPPER}} .sina-nt-right-label',
+			]
+		);
+		$this->add_control(
+			'right_label_color',
+			[
+				'label' => __( 'Text Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#fafafa',
+				'selectors' => [
+					'{{WRAPPER}} .sina-nt-right-label' => 'color: {{VALUE}}'
+				],
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
+			[
+				'name' => 'right_label_BG',
+				'types' => [ 'classic', 'gradient' ],
+				'fields_options' => [
+					'background' => [ 
+						'default' =>'classic', 
+					],
+					'color' => [
+						'default' => '#1085e4',
+					],
+				],
+				'selector' => '{{WRAPPER}} .sina-nt-right-label',
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Border::get_type(),
+			[
+				'name' => 'right_label_border',
+				'selector' => '{{WRAPPER}} .sina-nt-right-label',
+			]
+		);
+		$this->add_responsive_control(
+			'right_label_radius',
+			[
+				'label' => __( 'Radius', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'selectors' => [
+					'{{WRAPPER}} .sina-nt-right-label' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'right_label_padding',
+			[
+				'label' => __( 'Padding', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '15',
+					'right' => '20',
+					'bottom' => '15',
+					'left' => '20',
+					'isLinked' => false,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-nt-right-label' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->end_controls_section();
+		// End Right label Style
+		// =====================
 
 
 		// Start Headline Style
@@ -399,6 +518,13 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 				'selector' => '{{WRAPPER}} .sina-news-ticker',
 			]
 		);
+		$this->add_group_control(
+			Group_Control_Border::get_type(),
+			[
+				'name' => 'headline_border',
+				'selector' => '{{WRAPPER}} .sina-news a',
+			]
+		);
 		$this->add_responsive_control(
 			'headline_radius',
 			[
@@ -428,6 +554,17 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 				],
 			]
 		);
+		$this->add_responsive_control(
+			'headline_margin',
+			[
+				'label' => esc_html__( 'Margin', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'selectors' => [
+					'{{WRAPPER}} .sina-news a' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
 
 		$this->end_controls_section();
 		// End Headline Style
@@ -447,17 +584,6 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 			]
 		);
 
-		$this->add_control(
-			'time_color',
-			[
-				'label' => __( 'Text Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#1085e4',
-				'selectors' => [
-					'{{WRAPPER}} .sina-news a span' => 'color: {{VALUE}}'
-				],
-			]
-		);
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
@@ -470,6 +596,17 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 			[
 				'name' => 'time_shadow',
 				'selector' => '{{WRAPPER}} .sina-news a span',
+			]
+		);
+		$this->add_control(
+			'time_color',
+			[
+				'label' => __( 'Text Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#1085e4',
+				'selectors' => [
+					'{{WRAPPER}} .sina-news a span' => 'color: {{VALUE}}'
+				],
 			]
 		);
 

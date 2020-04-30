@@ -1,4 +1,4 @@
-/* Sina Extension for Elementor v3.2.11 */
+/* Sina Extension for Elementor v3.2.12 */
 
 /*--------------------------------- General -------------------------------------- */
 .sina-overlay{
@@ -136,6 +136,13 @@
 .sina-accordion-item.open > .sina-accordion-header > .sina-accordion-icon .on{
 	display: block;
 }
+
+.sina-button i,
+.sina-dynamic-btn i,
+.sina-read-more i,
+.sina-order-btn i,
+.sina-banner-pbtn i,
+.sina-banner-sbtn i,
 .sina-contact-form .g-recaptcha,
 .sina-team-social li,
 .sina-bp-cats,
@@ -418,15 +425,14 @@ img.mfp-img{
 	overflow: inherit;
 }
 
-.sina-button i,
 .sina-dynamic-btn i,
 .sina-read-more i,
 .sina-order-btn i,
 .sina-banner-pbtn i,
 .sina-banner-sbtn i{
-	display: inline-block;
 	transition: all 0.2s cubic-bezier(0.1, 0.8, 0.8, 1);
 }
+
 /*--------------------------------- Posts Carousel -------------------------------------- */
 .sina-news-ticker,
 .sina-pc-thumb{
