@@ -288,8 +288,8 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 		// =====================
 
 
-		// Start Particle Content
-		// =====================
+		// Start Particle Settings
+		// ========================
 		$this->start_controls_section(
 			'particle_settings',
 			[
@@ -317,7 +317,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 		$this->add_control(
 			'particle_number',
 			[
-				'label' => __( 'Number', 'sina-ext' ),
+				'label' => __( 'Particles Number', 'sina-ext' ),
 				'type' => Controls_Manager::NUMBER,
 				'default' => 150,
 				'step' => 1,
@@ -400,8 +400,8 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 		);
 
 		$this->end_controls_section();
-		// End Particle Content
-		// =====================
+		// End Particle Settings
+		// ======================
 
 
 		// Start Animation

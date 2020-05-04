@@ -1,11 +1,11 @@
 == Sina Extension for Elementor ==
 Contributors: shaonsina
 Tags: elementor, elementor addon, elementor addons, elementor extension, elementor widget, elementor templates
-Donate link: https://sinaextra.com/sina-extension/
+Donate link: https://sinaextra.com/sina-addon-for-elementor/
 Requires at least: 4.7
 Tested up to: 5.4
 Requires PHP: 7.0
-Stable tag: 3.2.12
+Stable tag: 3.2.13
 License: GPL v3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -18,7 +18,7 @@ This is an extension or addon for [Elementor](https://wordpress.org/plugins/elem
 
 
 = Use of Sina Templates =
-https://youtu.be/stwNbFgKdbw
+https://youtu.be/4_FEAlX5bz8
 
 
 == Features ==
@@ -33,7 +33,7 @@ https://youtu.be/stwNbFgKdbw
 
 == What can you do by this plugin? ==
 You can make unlimited design without coding knowledge.
-[See demo](https://sinaextra.com/sina-extension/)
+[See demo](https://sinaextra.com/sina-addon-for-elementor/)
 
 
 == Support ==
@@ -91,7 +91,7 @@ Cool things are coming soon...
 5. [Instant Search](https://sinaextra.com/sina-extension/instant-search-form/): Display a search form with AJAX action for searching instantly.
 6. [Lost Password Form](https://sinaextra.com/sina-extension/lost-password-form): Add a custom "lost password" form anywhere into your web page.
 7. [Offcanvas Bar](https://sinaextra.com/sina-extension/offcanvas-bar): Show your expected content into a offcanvas sidebar.
-8. [Posts Gallerys](https://sinaextra.com/sina-extension/posts-gallery): Display the posts into a Gallery with unlimited creative design.
+8. [Posts Gallery](https://sinaextra.com/sina-extension/posts-gallery): Display the posts into a Gallery with unlimited creative design.
 9. [Posts Load On Scroll](https://sinaextra.com/sina-extension/posts-load-on-scroll): Load the posts (grid, list & thumb) by AJAX on infinite scroll.
 10. [Register Form](https://sinaextra.com/sina-extension/register-form): Add a register form anywhere into your web page.
 11. [Section Navigation](https://sinaextra.com/sina-extension/section-navigation): To navigate the sections within a page add the fixed navigation.
@@ -175,6 +175,9 @@ Yes. It's totally free. We also have a PRO version.
 
 
 == Changelog ==
+
+= 3.2.13 - 07-05-2020 =
+Added: 
 
 = 3.2.12 - 01-05-2020 =
 Added: Some options to News Ticker
