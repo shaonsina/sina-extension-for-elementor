@@ -190,14 +190,16 @@ class Sina_Blogpost_Widget extends Widget_Base {
 		);
 		Sina_Common_Data::posts_content($this);
 		$this->add_control(
-			'content_length',
+			'is_thumb',
 			[
-				'label' => __( 'Content Word', 'sina-ext' ),
-				'type' => Controls_Manager::NUMBER,
-				'step' => 1,
-				'min' => 0,
-				'max' => 2000,
-				'default' => 50,
+				'label' => esc_html__( 'Feature Image', 'sina-ext' ),
+				'type' => Controls_Manager::SWITCHER,
+				'label_on' => esc_html__( 'Yes', 'sina-ext' ),
+				'label_off' => esc_html__( 'No', 'sina-ext' ),
+				'default' => 'yes',
+				'condition' => [
+					'layout' => 'grid',
+				],
 			]
 		);
 		$this->add_control(
@@ -210,15 +212,6 @@ class Sina_Blogpost_Widget extends Widget_Base {
 				'condition' => [
 					'layout' => 'list',
 				],
-			]
-		);
-		$this->add_control(
-			'excerpt',
-			[
-				'label' => __( 'Show Excerpt', 'sina-ext' ),
-				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Yes', 'sina-ext' ),
-				'label_off' => __( 'No', 'sina-ext' ),
 			]
 		);
 		$this->add_control(
@@ -248,6 +241,42 @@ class Sina_Blogpost_Widget extends Widget_Base {
 				'label_off' => __( 'No', 'sina-ext' ),
 				'condition' => [
 					'posts_meta!' => '',
+				],
+			]
+		);
+		$this->add_control(
+			'posts_text',
+			[
+				'label' => esc_html__( ' Show Content', 'sina-ext' ),
+				'type' => Controls_Manager::SWITCHER,
+				'label_on' => esc_html__( 'Yes', 'sina-ext' ),
+				'label_off' => esc_html__( 'No', 'sina-ext' ),
+				'default' => 'yes',
+			]
+		);
+		$this->add_control(
+			'excerpt',
+			[
+				'label' => __( 'Show Excerpt', 'sina-ext' ),
+				'type' => Controls_Manager::SWITCHER,
+				'label_on' => __( 'Yes', 'sina-ext' ),
+				'label_off' => __( 'No', 'sina-ext' ),
+				'condition' => [
+					'posts_text' => 'yes',
+				],
+			]
+		);
+		$this->add_control(
+			'content_length',
+			[
+				'label' => __( 'Content Word', 'sina-ext' ),
+				'type' => Controls_Manager::NUMBER,
+				'step' => 1,
+				'min' => 0,
+				'max' => 2000,
+				'default' => 50,
+				'condition' => [
+					'posts_text' => 'yes',
 				],
 			]
 		);
@@ -2009,10 +2038,12 @@ class Sina_Blogpost_Widget extends Widget_Base {
 				'tags'=> $tags,
 				'order_by'=> $data['order_by'],
 				'sort'=> $data['sort'],
-				'content_length'=> $content_length,
+				'posts_text'=> $data['posts_text'],
 				'excerpt'=> $data['excerpt'],
+				'content_length'=> $content_length,
 				'posts_meta'=> $data['posts_meta'],
 				'thumb_right'=> $data['thumb_right'],
+				'is_thumb'=> $data['is_thumb'],
 				'read_more_effect'=> $data['read_more_effect'],
 				'read_more_text'=> $data['read_more_text'],
 				'read_more_icon'=> $data['read_more_icon'],

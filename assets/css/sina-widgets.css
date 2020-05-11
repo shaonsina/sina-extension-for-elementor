@@ -706,6 +706,7 @@ img.mfp-img{
 .sina-news-ticker .sina-news a{
 	display: block;
 	text-decoration: none;
+	transition: all 0.4s;
 }
 
 /*-------------------------- Particle Layer --------------------------*/

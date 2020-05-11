@@ -1,4 +1,4 @@
-/* Sina Extension for Elementor v3.2.10 */
+/* Sina Extension for Elementor v3.2.13 */
 
 !(function ($) {
 	'use strict';
@@ -608,49 +608,50 @@
 
 	function sinaNewsTicker($scope, $) {
 		$scope.find('.sina-news-ticker').each(function () {
-			var ticker = $(this),
-				speed = $(this).data('speed'),
-				pause = 'yes' == $(this).data('pause') ? true : false,
-				newsContainer = ticker.find( '.sina-news-container' ),
-				newsContent = newsContainer.find('.sina-news-content'),
+			var $ticker = $(this),
+				speed = $ticker.data('speed'),
+				pause = ('yes' == $ticker.data('pause')) ? true : false,
+				wrapper = $ticker.children('.sina-news-wrapper'),
+				newsContainer = wrapper.children('.sina-news-container'),
+				newsContent = newsContainer.children('.sina-news-content'),
 				news = newsContent.children('.sina-news'),
-				toWid = 0;
+				wrapWid = wrapper.outerWidth(),
+				newsContentWid = newsContent.outerWidth() + (wrapWid * 0.5);
 
-			newsContent.clone().appendTo( newsContainer );
-			newsContent.clone().appendTo( newsContainer );
+			newsContent.css('width', newsContentWid +'px');
+			newsContent.clone().appendTo(newsContainer);
 
-			function newsTicker( sp, ps ) {
-				newsContainer.css('marginLeft', 0);
-				newsContent.clone().appendTo( newsContainer );
+			function newsTicker(sp, ps) {
+				var duration = newsContentWid*sp;
 
-				news.each(function(index, el) {
-					toWid += $(this).outerWidth();
+				newsContainer.css({
+					width 		: newsContentWid*2 +'px',
+					marginLeft	: 0,
 				});
-				var duration = toWid*sp;
-
-				newsContainer.css('width', toWid*5+'px');
 				newsContainer.animate({
-					marginLeft:'-='+toWid+'px'
+					marginLeft:'-='+newsContentWid+'px'
 				}, duration, 'linear', function () {
-					newsContainer.children('.sina-news-content').first().remove();
-					newsTicker( sp, ps );
+					newsTicker(sp, ps);
 				});
-
-				if ( ps ) {
-					newsContainer.on('mouseenter', function(e) {
-						newsContainer.stop();
-					});
-					newsContainer.on('mouseleave', function(e) {
-						newsContainer.animate({
-							marginLeft:'-='+toWid+'px'
-						}, duration, 'linear', function () {
-							newsContainer.children('.sina-news-content').first().remove();
-							newsTicker( sp, ps );
-						});
-					});
-				}
 			}
-			newsTicker( speed, pause );
+
+			if ( pause ) {
+				newsContainer.on('mouseenter', function(e) {
+					newsContainer.stop();
+				});
+				newsContainer.on('mouseleave', function(e) {
+					var marLeft = newsContainer.css('marginLeft');
+						marLeft = marLeft.replace(/px/i, '');
+					var newContentWid = parseInt(marLeft) + newsContentWid;
+
+					newsContainer.animate({
+						marginLeft:'-='+newContentWid+'px'
+					}, newContentWid*speed, 'linear', function () {
+						newsTicker(speed, pause);
+					});
+				});
+			}
+			newsTicker(speed, pause);
 		});
 	}
 

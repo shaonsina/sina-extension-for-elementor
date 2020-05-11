@@ -88,26 +88,30 @@ Cool things are coming soon...
 2. [Hover Image](https://sinaextra.com/sina-extension/hover-image): Show an image with attractive hover effects.
 3. [Image Accordion](https://sinaextra.com/sina-extension/image-accordion): Display content and images with a new way!
 4. [Image Marker](https://sinaextra.com/sina-extension/image-marker): Mention or highlight specific area of an image.
-5. [Instant Search](https://sinaextra.com/sina-extension/instant-search-form/): Display a search form with AJAX action for searching instantly.
-6. [Lost Password Form](https://sinaextra.com/sina-extension/lost-password-form): Add a custom "lost password" form anywhere into your web page.
-7. [Offcanvas Bar](https://sinaextra.com/sina-extension/offcanvas-bar): Show your expected content into a offcanvas sidebar.
-8. [Posts Gallery](https://sinaextra.com/sina-extension/posts-gallery): Display the posts into a Gallery with unlimited creative design.
-9. [Posts Load On Scroll](https://sinaextra.com/sina-extension/posts-load-on-scroll): Load the posts (grid, list & thumb) by AJAX on infinite scroll.
-10. [Register Form](https://sinaextra.com/sina-extension/register-form): Add a register form anywhere into your web page.
-11. [Section Navigation](https://sinaextra.com/sina-extension/section-navigation): To navigate the sections within a page add the fixed navigation.
-12. [Tab](https://sinaextra.com/sina-extension/tab): Display any content within a tab that you want.
-13. [Team Carousel](https://sinaextra.com/sina-extension/team-carousel): Add your team members and display them in a carousel.
-14. [Testimonial](https://sinaextra.com/sina-extension/testimonial): Show the testimonials into an interactive carousel.
-15. [Toggle Content](https://sinaextra.com/sina-extension/toggle-content): Display any content within a toggle tab.
+5. [Image Scroller](https://sinaextra.com/sina-extension/image-scroller): Show the full preview of your project or work.
+6. [Instant Search](https://sinaextra.com/sina-extension/instant-search-form/): Display a search form with AJAX action for searching instantly.
+7. [Lost Password Form](https://sinaextra.com/sina-extension/lost-password-form): Add a custom "lost password" form anywhere into your web page.
+8. [Offcanvas Bar](https://sinaextra.com/sina-extension/offcanvas-bar): Show your expected content into a offcanvas sidebar.
+9. [Posts Gallery](https://sinaextra.com/sina-extension/posts-gallery): Display the posts into a Gallery with unlimited creative design.
+10. [Posts Load On Scroll](https://sinaextra.com/sina-extension/posts-load-on-scroll): Load the posts (grid, list & thumb) by AJAX on infinite scroll.
+11. [Register Form](https://sinaextra.com/sina-extension/register-form): Add a register form anywhere into your web page.
+12. [Section Navigation](https://sinaextra.com/sina-extension/section-navigation): To navigate the sections within a page add the fixed navigation.
+13. [Tab](https://sinaextra.com/sina-extension/tab): Display any content within a tab that you want.
+14. [Team Carousel](https://sinaextra.com/sina-extension/team-carousel): Add your team members and display them in a carousel.
+15. [Tilt Box](https://sinaextra.com/sina-extension/tilt-box): Display your Content or Image by an eye-catching interactive way..
+16. [Testimonial](https://sinaextra.com/sina-extension/testimonial): Show the testimonials into an interactive carousel.
+17. [Toggle Content](https://sinaextra.com/sina-extension/toggle-content): Display any content within a toggle tab.
 
 
 == PRO EXTENDERS ==
 
 1. [Clips Animation](https://sinaextra.com/sina-extension/clips-animation/): You can animate any image(s) at any dimension with that extender.
 2. [Colors Animation](https://sinaextra.com/sina-extension/colors-animation): Show some colors on the section with animated (fade, horizontal, vertical).
-3. [Content Protection](https://sinaextra.com/sina-extension/content-protection): Show or hide specific element or section for the specific users (based on role).
-4. [Parallax](https://sinaextra.com/sina-extension/parallax): Display parallax to any section or entire the page.
-5. [Reading Progressbar](https://sinaextra.com/sina-extension/reading-progressbar): Display a progressbar top of the page or posts for seeing the users how much they have read or seen (based on scroll).
+3. [Conditional Publish](https://sinaextra.com/sina-extension/conditional-publish): Publish your content when some conditions will fulfill.
+4. [Content Protection](https://sinaextra.com/sina-extension/content-protection): Show or hide specific element or section for the specific users (based on role).
+5. [Parallax](https://sinaextra.com/sina-extension/parallax): Display parallax to any section or entire the page.
+6. [Reading Progressbar](https://sinaextra.com/sina-extension/reading-progressbar): Display a progressbar top of the page or posts for seeing the users how much they have read or seen (based on scroll).
+7. [Section Particles](https://sinaextra.com/sina-extension/section-particles)
 
 
 == The summary of core Features ==
@@ -176,8 +180,10 @@ Yes. It's totally free. We also have a PRO version.
 
 == Changelog ==
 
-= 3.2.13 - 07-05-2020 =
-Added: 
+= 3.2.13 - 12-05-2020 =
+Added: After Logout URL Settings
+Added: Some Optins to Blog Posts
+Added: Some Optins to Posts Carousel
 
 = 3.2.12 - 01-05-2020 =
 Added: Some options to News Ticker

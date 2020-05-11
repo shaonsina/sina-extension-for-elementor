@@ -6,16 +6,40 @@
 	<?php endif; ?>>
 	<div class="sina-overlay"></div>
 	<div class="sina-pc-content">
-		<h2 class="sina-pc-title">
-			<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-		</h2>
-		<?php if ( 'yes' == $data['posts_meta'] ): ?>
+		<?php if ( 'before' == $data['grid_cats_position'] ): ?>
+			<div class="sina-bp-cats">
+				<span class="sina-bp-icon">
+					<i class="<?php echo esc_attr( $data['grid_cats_icon'] ); ?>"></i>
+				</span>
+				<?php echo get_the_category_list( ' | ' ); ?>
+			</div>
+		<?php endif; ?>
+		<?php if ( 'before' == $data['meta_position'] ): ?>
 			<div class="sina-pc-meta">
 				<?php the_author_posts_link(); ?>
 				|
 				<?php printf( '%s', get_the_date() ); ?>
 			</div>
 		<?php endif; ?>
+		<h2 class="sina-pc-title">
+			<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+		</h2>
+		<?php if ( 'after' == $data['grid_cats_position'] ): ?>
+			<div class="sina-bp-cats">
+				<span class="sina-bp-icon">
+					<i class="<?php echo esc_attr( $data['grid_cats_icon'] ); ?>"></i>
+				</span>
+				<?php echo get_the_category_list( ' | ' ); ?>
+			</div>
+		<?php endif; ?>
+		<?php if ( 'after' == $data['meta_position'] ): ?>
+			<div class="sina-pc-meta">
+				<?php the_author_posts_link(); ?>
+				|
+				<?php printf( '%s', get_the_date() ); ?>
+			</div>
+		<?php endif; ?>
+
 		<?php if (  'yes' == $excerpt && has_excerpt() ): ?>
 			<div class="sina-pc-text">
 				<?php

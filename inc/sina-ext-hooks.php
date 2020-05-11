@@ -285,4 +285,15 @@ Class Sina_Ext_Hooks{
 		}
 		die();
 	}
+
+	public static function redirect_after_logout(){
+		$logout_url = get_option( 'sina_ext_after_logout_url' );
+		wp_safe_redirect( $logout_url );
+		exit;
+	}
+}
+
+$sina_ext_logout_url = get_option( 'sina_ext_after_logout_url' );
+if ( $sina_ext_logout_url ) {
+	add_action( 'wp_logout', ['Sina_Ext_Hooks', 'redirect_after_logout' ]);
 }

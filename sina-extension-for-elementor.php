@@ -79,6 +79,7 @@ define('SINA_WIDGETS', [
 		'hover-image'			=> 1,
 		'image-accordion'		=> 1,
 		'image-marker'			=> 1,
+		'image-scroller'		=> 1,
 		'instant-search'		=> 1,
 		'lost-password-form'	=> 1,
 		'offcanvas-bar'			=> 1,
@@ -89,6 +90,7 @@ define('SINA_WIDGETS', [
 		'tab' 					=> 1,
 		'team-carousel'			=> 1,
 		'testimonial'			=> 1,
+		'tilt-box'				=> 1,
 		'toggle-content'		=> 1,
 	],
 ]);

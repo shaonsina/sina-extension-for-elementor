@@ -165,15 +165,12 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 				'type' => Controls_Manager::SWITCHER,
 				'label_on' => __( 'Yes', 'sina-ext' ),
 				'label_off' => __( 'No', 'sina-ext' ),
-				'condition' => [
-					'layout!' => 'thumb',
-				],
 			]
 		);
 		$this->add_control(
 			'posts_meta',
 			[
-				'label' => __( 'Meta', 'sina-ext' ),
+				'label' => __( 'Show Meta', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
 				'label_on' => __( 'Yes', 'sina-ext' ),
 				'label_off' => __( 'No', 'sina-ext' ),
@@ -195,7 +192,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->add_control(
 			'posts_text',
 			[
-				'label' => __( 'Content', 'sina-ext' ),
+				'label' => __( 'Show Content', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
 				'label_on' => __( 'Yes', 'sina-ext' ),
 				'label_off' => __( 'No', 'sina-ext' ),
@@ -1310,8 +1307,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 				'label' => __( 'Categories', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
-					'layout!' => 'thumb',
-					'posts_cats!' => '',
+					'posts_cats' => 'yes',
 				],
 			]
 		);
@@ -1456,6 +1452,21 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 			]
 		);
 
+		$this->add_control(
+			'meta_position',
+			[
+				'label' => esc_html__( 'Position', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					'before' => esc_html__( 'Before Title', 'sina-ext' ),
+					'after' => esc_html__( 'After Title', 'sina-ext' ),
+				],
+				'default' => 'after',
+				'condition' => [
+					'layout' => 'thumb',
+				]
+			]
+		);
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[

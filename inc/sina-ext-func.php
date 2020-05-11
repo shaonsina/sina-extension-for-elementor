@@ -29,7 +29,7 @@ abstract class Sina_Ext_Functions extends Sina_Extension_Base{
 		wp_register_style( 'twentytwenty', SINA_EXT_URL .'assets/css/twentytwenty.min.css', [], SINA_EXT_VERSION );
 		wp_register_style( 'data-table', SINA_EXT_URL .'assets/css/datatables.min.css', [], SINA_EXT_VERSION );
 		wp_register_style( 'sina-tooltip', SINA_EXT_URL .'assets/css/sina-tooltip.min.css', [], SINA_EXT_VERSION );
-		wp_register_style( 'sina-widgets', SINA_EXT_URL .'assets/css/sina-widgets.css', [], SINA_EXT_VERSION );
+		wp_register_style( 'sina-widgets', SINA_EXT_URL .'assets/css/sina-widgets.min.css', [], SINA_EXT_VERSION );
 	}
 
 	/**
@@ -63,7 +63,7 @@ abstract class Sina_Ext_Functions extends Sina_Extension_Base{
 		if ( $recaptcha_key ) {
 			wp_register_script( 'sina-google-recaptcha-api', '//www.google.com/recaptcha/api.js', [], SINA_EXT_VERSION, true );
 		}
-		wp_register_script( 'sina-widgets', SINA_EXT_URL .'assets/js/sina-widgets.js', ['jquery'], SINA_EXT_VERSION, true );
+		wp_register_script( 'sina-widgets', SINA_EXT_URL .'assets/js/sina-widgets.min.js', ['jquery'], SINA_EXT_VERSION, true );
 		wp_localize_script( 'sina-widgets', 'sinaAjax', ['ajaxURL' => $ajax_url] );
 	}
 
