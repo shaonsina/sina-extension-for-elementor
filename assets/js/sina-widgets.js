@@ -616,7 +616,12 @@
 				newsContent = newsContainer.children('.sina-news-content'),
 				news = newsContent.children('.sina-news'),
 				wrapWid = wrapper.outerWidth(),
-				newsContentWid = newsContent.outerWidth() + (wrapWid * 0.5);
+				newsContentWid = 0;
+
+			news.each(function(index, el) {
+				newsContentWid += $(this).outerWidth();
+			});
+			newsContentWid += wrapWid * 0.5;
 
 			newsContent.css('width', newsContentWid +'px');
 			newsContent.clone().appendTo(newsContainer);

@@ -206,7 +206,7 @@ Class Sina_Ext_Hooks{
 						'user_login'    => $email,
 						'user_password' => $password,
 						'remember'      => $rem
-					), false );
+					) );
 
 					if ( is_wp_error( $user ) ) {
 						$err = __( 'Email and password don\'t matched!', 'sina-ext' );

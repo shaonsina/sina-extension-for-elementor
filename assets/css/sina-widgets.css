@@ -708,6 +708,12 @@ img.mfp-img{
 	text-decoration: none;
 	transition: all 0.4s;
 }
+.sina-news:first-child a{
+	border-left: 0 !important;
+}
+.sina-news:last-child a{
+	border-right: 0 !important;
+}
 
 /*-------------------------- Particle Layer --------------------------*/
 .sina-particle-layer{
