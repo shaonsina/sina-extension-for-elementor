@@ -1,4 +1,4 @@
-/* Sina Extension for Elementor v3.2.13 */
+/* Sina Extension for Elementor v3.2.14 */
 
 /*--------------------------------- General -------------------------------------- */
 .sina-overlay{
@@ -117,7 +117,7 @@
 .sina-bp-item-1{
 	width: 100%;
 }
-/* Template Editor button hide */
+/* Elementor */
 .sina-modal-content .elementor-element-overlay,
 .sina-transform .elementor-element-overlay,
 .sina-accordion-body .elementor-element-overlay,
@@ -130,6 +130,10 @@
 .sina-pt-item{
 	display: none;
 }
+.elementor-widget-wrap{
+	perspective: 1000px;
+}
+
 .sina-bg-thumb img,
 .sina-pt-item.active,
 .sina-pt-content .sina-pt-btn,

@@ -116,12 +116,49 @@ class Sina_Counter_Widget extends Widget_Base {
 		);
 
 		$this->add_control(
+			'icon_format',
+			[
+				'label' => __( 'Icon Format', 'sina-ext' ),
+				'type' => Controls_Manager::CHOOSE,
+				'options' => [
+					'icon' => [
+						'title' => __( 'Icon', 'sina-ext' ),
+						'icon' => 'fa fa-star',
+					],
+					'image' => [
+						'title' => __( 'Image', 'sina-ext' ),
+						'icon' => 'fa fa-image',
+					],
+				],
+				'default' => 'icon',
+			]
+		);
+		$this->add_control(
 			'icon',
 			[
 				'label' => __( 'Icon', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::ICON,
 				'default' => 'fa fa-user',
+				'condition' => [
+					'icon_format' => 'icon',
+				],
+			]
+		);
+		$this->add_control(
+			'image',
+			[
+				'label' => __( 'Image', 'sina-ext' ),
+				'type' => Controls_Manager::MEDIA,
+				'condition' => [
+					'icon_format' => 'image',
+				],
+				'default' => [
+					'url' => SINA_EXT_URL .'assets/img/choose-img.jpg',
+				],
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$this->add_control(
@@ -445,10 +482,10 @@ class Sina_Counter_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'icon_style',
 			[
-				'label' => __( 'Icon', 'sina-ext' ),
+				'label' => __( 'Icon or Image', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
-					'icon!' => ''
+					'icon_format!' => ''
 				]
 			]
 		);
@@ -464,6 +501,9 @@ class Sina_Counter_Widget extends Widget_Base {
 					'color' => [
 						'default' => '#d300d0',
 					],
+				],
+				'condition' => [
+					'icon_format' => 'icon'
 				],
 				'selector' => '{{WRAPPER}} .sina-counter-icon i',
 			]
@@ -482,8 +522,37 @@ class Sina_Counter_Widget extends Widget_Base {
 				'default' => [
 					'size' => '40'
 				],
+				'condition' => [
+					'icon_format' => 'icon'
+				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-counter-icon i' => 'font-size: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'image_size',
+			[
+				'label' => __( 'Width', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', 'em', '%' ],
+				'range' => [
+					'px' => [
+						'max' => 1000,
+					],
+					'em' => [
+						'max' => 30,
+					],
+				],
+				'default'=> [
+					'unit' => 'px',
+					'size' => '100',
+				],
+				'condition' => [
+					'icon_format' => 'image',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-counter-icon img' => 'width: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -491,6 +560,9 @@ class Sina_Counter_Widget extends Widget_Base {
 			Group_Control_Text_Shadow::get_type(),
 			[
 				'name' => 'icon_shadow',
+				'condition' => [
+					'icon_format' => 'icon'
+				],
 				'selector' => '{{WRAPPER}} .sina-counter-icon i',
 			]
 		);
@@ -498,14 +570,14 @@ class Sina_Counter_Widget extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'icon_box_shadow',
-				'selector' => '{{WRAPPER}} .sina-counter-icon i',
+				'selector' => '{{WRAPPER}} .sina-counter-icon i, {{WRAPPER}} .sina-counter-icon img',
 			]
 		);
 		$this->add_group_control(
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'icon_border',
-				'selector' => '{{WRAPPER}} .sina-counter-icon i',
+				'selector' => '{{WRAPPER}} .sina-counter-icon i, {{WRAPPER}} .sina-counter-icon img',
 			]
 		);
 		$this->add_responsive_control(
@@ -515,7 +587,7 @@ class Sina_Counter_Widget extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
-					'{{WRAPPER}} .sina-counter-icon i' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .sina-counter-icon i, {{WRAPPER}} .sina-counter-icon img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -532,6 +604,9 @@ class Sina_Counter_Widget extends Widget_Base {
 					'left' => '10',
 					'isLinked' => true,
 				],
+				'condition' => [
+					'icon_format' => 'icon'
+				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-counter-icon i' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
@@ -546,11 +621,16 @@ class Sina_Counter_Widget extends Widget_Base {
 
 	protected function render() {
 		$data = $this->get_settings_for_display();
+		$img_alt = $data['title'] ? $data['title'] : Control_Media::get_image_alt( $data['image'] );
 		?>
 		<div class="sina-counter">
-			<?php if ( $data['icon'] ): ?>
+			<?php if ( 'icon' == $data['icon_format'] ): ?>
 				<div class="sina-counter-icon">
-					<i class="<?php echo esc_attr($data['icon']); ?>"></i>
+					<i class="<?php echo esc_attr( $data['icon'] ); ?>"></i>
+				</div>
+			<?php elseif( 'image' == $data['icon_format'] ): ?>
+				<div class="sina-counter-icon">
+					<img src="<?php echo esc_url( $data['image']['url'] ); ?>" alt="<?php echo esc_attr( $img_alt ) ?>">
 				</div>
 			<?php endif; ?>
 
@@ -594,9 +674,13 @@ class Sina_Counter_Widget extends Widget_Base {
 		view.addInlineEditingAttributes( 'title' );
 		#>
 		<div class="sina-counter">
-			<# if (settings.icon) { #>
+			<# if ( 'icon' == settings.icon_format ) { #>
 				<div class="sina-counter-icon">
 					<i class="{{{settings.icon}}}"></i>
+				</div>
+			<# } else if( 'image' == settings.icon_format ) { #>
+				<div class="sina-counter-icon">
+					<img src="{{{settings.image.url}}}">
 				</div>
 			<# } #>
 

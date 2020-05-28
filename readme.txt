@@ -5,7 +5,7 @@ Donate link: https://sinaextra.com/sina-addon-for-elementor/
 Requires at least: 4.7
 Tested up to: 5.4
 Requires PHP: 7.0
-Stable tag: 3.2.13
+Stable tag: 3.2.14
 License: GPL v3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -181,6 +181,11 @@ Yes. It's totally free. We also have a [PRO](https://sinaextra.com/sina-addon-fo
 
 
 == Changelog ==
+
+= 3.2.14 - 02-06-2020 =
+Added: Some Optins to Counter
+Added: Some Optins to Pricing
+
 
 = 3.2.13 - 12-05-2020 =
 Added: After Logout Redirect URL Settings

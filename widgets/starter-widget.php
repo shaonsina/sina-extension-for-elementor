@@ -1,5 +1,8 @@
 <?php
 /*
+view.getID()
+
+
 For size default value
 'default' => [
 	'size' => '10',
@@ -290,7 +293,7 @@ class Sina_Starter_Widget extends Widget_Base {
 	 * @since 3.0.0
 	 */
 	public function get_title() {
-		return __( 'Sina ', 'sina-ext' );
+		return esc_html__( 'Sina ', 'sina-ext' );
 	}
 
 	/**
@@ -361,7 +364,7 @@ class Sina_Starter_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'_content',
 			[
-				'label' => __( ' Content', 'sina-ext' ),
+				'label' => esc_html__( ' Content', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);

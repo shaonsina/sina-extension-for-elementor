@@ -277,6 +277,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 				'label' => __( 'Add Content', 'sina-ext' ),
 				'type' => Controls_Manager::REPEATER,
 				'fields' => $repeater->get_controls(),
+				'prevent_empty' => false,
 				'default' => [
 					[
 						'title' => '1GB Storage',
@@ -993,7 +994,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 		$this->add_control(
 			'price_prefix_heading',
 			[
-				'label' => __( 'Price Prefix', 'sina-ext' ),
+				'label' => __( 'Price Prefix / Suffix', 'sina-ext' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 				'condition' => [
@@ -1004,7 +1005,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 		$this->add_control(
 			'price_prefix_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => __( 'Prefix Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#fafafa',
 				'condition' => [
@@ -1038,7 +1039,6 @@ class Sina_Pricing_Widget extends Widget_Base {
 				'selector' => '{{WRAPPER}} .sina-price-prefix',
 			]
 		);
-
 		$this->add_control(
 			'suffix_size',
 			[
@@ -1047,7 +1047,6 @@ class Sina_Pricing_Widget extends Widget_Base {
 				'default' => [
 					'size' => '12',
 				],
-				'separator' => 'before',
 				'condition' => [
 					'price_suffix!' => '',
 				],
@@ -1062,6 +1061,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 				'label' => __( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
+				'separator' => 'before',
 				'selectors' => [
 					'{{WRAPPER}} .sina-price-tag' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
@@ -1134,6 +1134,69 @@ class Sina_Pricing_Widget extends Widget_Base {
 		// =====================
 
 
+		// Start Image Style
+		// =====================
+		$this->start_controls_section(
+			'image_style',
+			[
+				'label' => __( 'Image', 'sina-ext' ),
+				'tab' => Controls_Manager::TAB_STYLE,
+				'condition' => [
+					'thumbs' => 'yes',
+				]
+			]
+		);
+
+		$this->add_responsive_control(
+			'image_width',
+			[
+				'label' => __( 'Width', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', 'em', '%' ],
+				'range' => [
+					'px' => [
+						'max' => 1000,
+					],
+					'em' => [
+						'max' => 30,
+					],
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-pricing-img img' => 'width: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Box_Shadow::get_type(),
+			[
+				'name' => 'image_shadow',
+				'selector' => '{{WRAPPER}} .sina-pricing-img img',
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Border::get_type(),
+			[
+				'name' => 'image_border',
+				'selector' => '{{WRAPPER}} .sina-pricing-img img',
+			]
+		);
+		$this->add_responsive_control(
+			'image_radius',
+			[
+				'label' => __( 'Radius', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'selectors' => [
+					'{{WRAPPER}} .sina-pricing-img img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->end_controls_section();
+		// End Image Style
+		// =====================
+
+
 		// Start Content Style
 		// =====================
 		$this->start_controls_section(
@@ -1150,7 +1213,6 @@ class Sina_Pricing_Widget extends Widget_Base {
 				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#222',
-				'separator' => 'before',
 				'selectors' => [
 					'{{WRAPPER}} .sina-pricing-body li' => 'color: {{VALUE}};',
 				],
@@ -1252,6 +1314,32 @@ class Sina_Pricing_Widget extends Widget_Base {
 		);
 		Sina_Common_Data::button_style( $this, '.sina-pricing .sina-order-btn' );
 		$this->add_responsive_control(
+			'btn_width',
+			[
+				'label' => __( 'Min Width', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', 'em', '%' ],
+				'range' => [
+					'px' => [
+						'min' => 0,
+						'max' => 1000,
+					],
+					'em' => [
+						'min' => 0,
+						'max' => 100,
+					],
+					'%' => [
+						'min' => 0,
+						'max' => 100,
+					],
+				],
+				'separator' => 'before',
+				'selectors' => [
+					'{{WRAPPER}} .sina-order-btn' => 'min-width: {{SIZE}}{{UNIT}};;',
+				],
+			]
+		);
+		$this->add_responsive_control(
 			'btn_radius',
 			[
 				'label' => __( 'Radius', 'sina-ext' ),
@@ -1264,7 +1352,6 @@ class Sina_Pricing_Widget extends Widget_Base {
 					'left' => '4',
 					'isLinked' => true,
 				],
-				'separator' => 'before',
 				'selectors' => [
 					'{{WRAPPER}} .sina-order-btn, {{WRAPPER}} .sina-order-btn:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],

@@ -1283,11 +1283,11 @@ class Sina_Content_Box_Widget extends Widget_Base {
 					echo $frontend->get_builder_content( $data['template'], true );
 				else:
 					?>
-					<?php if ( $data['icon'] ): ?>
+					<?php if ( 'icon' == $data['icon_format'] ): ?>
 						<div class="sina-content-box-icon">
 							<i class="<?php echo esc_attr( $data['icon'] ); ?>"></i>
 						</div>
-					<?php elseif( $data['image'] ): ?>
+					<?php elseif( 'image' == $data['icon_format'] ): ?>
 						<div class="sina-content-box-icon <?php echo esc_attr( $data['image_effects'] ); ?>">
 							<img src="<?php echo esc_url( $data['image']['url'] ); ?>" alt="<?php echo esc_attr( $img_alt ) ?>">
 						</div>

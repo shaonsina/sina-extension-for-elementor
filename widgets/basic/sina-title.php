@@ -376,7 +376,7 @@ class Sina_Title_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'title_span_typography',
-				'selector' => '{{WRAPPER}} .sina-title-title > span',
+				'selector' => '{{WRAPPER}} .sina-title-title > span, {{WRAPPER}} .sina-title-title > span *',
 			]
 		);
 		$this->add_group_control(
@@ -390,7 +390,7 @@ class Sina_Title_Widget extends Widget_Base {
 			Sina_Ext_Gradient_Text::get_type(),
 			[
 				'name' => 'title_span_color',
-				'selector' => '{{WRAPPER}} .sina-title-title > span',
+				'selector' => '{{WRAPPER}} .sina-title-title > span, {{WRAPPER}} .sina-title-title > span *',
 			]
 		);
 
