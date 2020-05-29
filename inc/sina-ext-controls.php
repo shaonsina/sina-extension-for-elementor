@@ -758,32 +758,19 @@ class Sina_Common_Data{
 				],
 			]
 		);
-		// $obj->add_responsive_control(
-		// 	'nav_width',
-		// 	[
-		// 		'label' => __( 'Nav Width', 'sina-ext' ),
-		// 		'type' => Controls_Manager::SLIDER,
-		// 		'condition' => [
-		// 			'nav!' => '',
-		// 		],
-		// 		'selectors' => [
-		// 			'{{WRAPPER}} '.$class.' .owl-prev, {{WRAPPER}} '.$class.' .owl-next' => 'width: {{SIZE}}{{UNIT}};',
-		// 		],
-		// 	]
-		// );
-		// $obj->add_responsive_control(
-		// 	'nav_height',
-		// 	[
-		// 		'label' => __( 'Nav Height', 'sina-ext' ),
-		// 		'type' => Controls_Manager::SLIDER,
-		// 		'condition' => [
-		// 			'nav!' => '',
-		// 		],
-		// 		'selectors' => [
-		// 			'{{WRAPPER}} '.$class.' .owl-prev, {{WRAPPER}} '.$class.' .owl-next' => 'height: {{SIZE}}{{UNIT}};',
-		// 		],
-		// 	]
-		// );
+		$obj->add_responsive_control(
+			'nav_font_size',
+			[
+				'label' => __( 'Font Size', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'condition' => [
+					'nav!' => '',
+				],
+				'selectors' => [
+					'{{WRAPPER}} '.$class.' .owl-prev, {{WRAPPER}} '.$class.' .owl-next' => 'font-size: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
 		$obj->add_control(
 			'nav_top',
 			[
