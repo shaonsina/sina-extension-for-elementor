@@ -182,9 +182,10 @@ Yes. It's totally free. We also have a [PRO](https://sinaextra.com/sina-addon-fo
 
 == Changelog ==
 
-= 3.2.14 - 02-06-2020 =
+= 3.2.14 - 31-05-2020 =
 Added: Some Optins to Counter
 Added: Some Optins to Pricing
+Fixed: Transform issue
 
 
 = 3.2.13 - 12-05-2020 =

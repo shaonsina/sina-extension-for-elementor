@@ -130,9 +130,6 @@
 .sina-pt-item{
 	display: none;
 }
-.elementor-widget-wrap{
-	perspective: 1000px;
-}
 
 .sina-bg-thumb img,
 .sina-pt-item.active,
