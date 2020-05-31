@@ -1,4 +1,4 @@
-/* Sina Extension for Elementor v3.2.2 */
+/* Sina Extension for Elementor v3.2.14 */
 .sina-ext-banner{
 	padding: 50px 0;
 	margin-top: 20px;
@@ -101,7 +101,8 @@
 	overflow: hidden;
 }
 .sina-ext-options table .sina-ext-label{
-	width: calc(100% - 36px);
+	width: calc(100% - 50px);
+	padding-right: 14px;
 	float: left;
 	font-size: 14px;
 	font-weight: 600;
@@ -147,6 +148,7 @@
 }
 .sina-toggle-section .sina-ext-label{
 	width: 60%;
+	padding-right: 14px;
 	float: left;
 	font-size: 18px;
 	font-weight: 600;
