@@ -58,6 +58,15 @@ class Sina_Ext_Controls{
 
 	public function register_controls($elems) {
 		$elems->add_control(
+			'sina_is_morphing_animation',
+			[
+				'label' => '<strong>'.__( 'Sina Morphing Animation', 'sina-ext' ).'</strong>',
+				'type' => Controls_Manager::SWITCHER,
+				'prefix_class' => 'sina-morphing-anim-',
+				'separator' => 'before',
+			]
+		);
+		$elems->add_control(
 			'sina_transform_effects',
 			[
 				'label' => '<strong>'.__( 'Sina Transform Effects', 'sina-ext' ).'</strong>',

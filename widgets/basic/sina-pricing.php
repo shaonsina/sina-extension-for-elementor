@@ -319,6 +319,14 @@ class Sina_Pricing_Widget extends Widget_Base {
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
+
+		$this->add_control(
+			'is_morphing_anim_btn',
+			[
+				'label' => __( 'Morphing Animation', 'sina-ext' ),
+				'type' => Controls_Manager::SWITCHER,
+			]
+		);
 		Sina_Common_Data::button_content( $this, '.sina-order-btn', 'Order' );
 		$this->end_controls_section();
 		// End Button Content
@@ -1147,6 +1155,13 @@ class Sina_Pricing_Widget extends Widget_Base {
 			]
 		);
 
+		$this->add_control(
+			'is_morphing_anim_image',
+			[
+				'label' => __( 'Morphing Animation', 'sina-ext' ),
+				'type' => Controls_Manager::SWITCHER,
+			]
+		);
 		$this->add_responsive_control(
 			'image_width',
 			[
@@ -1474,6 +1489,8 @@ class Sina_Pricing_Widget extends Widget_Base {
 	protected function render() {
 		$data = $this->get_settings_for_display();
 		$img_alt = $data['title'] ? $data['title'] : Control_Media::get_image_alt( $data['image'] );
+		$morphing_anim_image = ('yes' == $data['is_morphing_anim_image']) ? 'sina-morphing-anim' : '';
+		$morphing_anim_btn = ('yes' == $data['is_morphing_anim_btn']) ? 'sina-morphing-anim' : '';
 		?>
 		<div class="sina-pricing <?php echo esc_attr( $data['effects'].' '.$data['bg_layer_effects'] ); ?>">
 			<?php if ( $data['ribbon_title'] && $data['ribbon_position'] ): ?>
@@ -1484,7 +1501,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 
 			<?php if ( 'yes' == $data['thumbs'] && 'top' == $data['img_position'] ): ?>
 				<div class="sina-pricing-img">
-					<img src="<?php echo esc_url( $data['image']['url'] ); ?>" alt="<?php echo esc_attr( $img_alt ) ?>">
+					<img class="<?php echo esc_attr( $morphing_anim_image ) ?>" src="<?php echo esc_url( $data['image']['url'] ); ?>" alt="<?php echo esc_attr( $img_alt ) ?>">
 				</div>
 			<?php endif; ?>
 
@@ -1494,7 +1511,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 
 			<?php if ( 'yes' == $data['thumbs'] && 'middle' == $data['img_position'] ): ?>
 				<div class="sina-pricing-img">
-					<img src="<?php echo esc_url( $data['image']['url'] ); ?>" alt="<?php echo esc_attr( $img_alt ) ?>">
+					<img class="<?php echo esc_attr( $morphing_anim_image ) ?>" src="<?php echo esc_url( $data['image']['url'] ); ?>" alt="<?php echo esc_attr( $img_alt ) ?>">
 				</div>
 			<?php endif; ?>
 
@@ -1507,7 +1524,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 
 			<?php if ( 'yes' == $data['thumbs'] && 'bottom' == $data['img_position'] ): ?>
 				<div class="sina-pricing-img">
-					<img src="<?php echo esc_url( $data['image']['url'] ); ?>" alt="<?php echo esc_attr( $img_alt ) ?>">
+					<img class="<?php echo esc_attr( $morphing_anim_image ) ?>" src="<?php echo esc_url( $data['image']['url'] ); ?>" alt="<?php echo esc_attr( $img_alt ) ?>">
 				</div>
 			<?php endif; ?>
 
@@ -1527,7 +1544,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 
 			<?php if ( $data['btn_text'] || $data['btn_icon'] ) : ?>
 				<div class="sina-pricing-btn">
-					<a class="sina-order-btn <?php echo esc_attr( $data['btn_effect'].' '.$data['btn_bg_layer_effects'] ); ?>"
+					<a class="sina-order-btn <?php echo esc_attr( $data['btn_effect'].' '.$morphing_anim_btn.' '.$data['btn_bg_layer_effects'] ); ?>"
 					href="<?php echo esc_url( $data['btn_link']['url'] ); ?>"
 					<?php if ( 'on' == $data['btn_link']['is_external'] ): ?>
 						target="_blank" 
@@ -1550,6 +1567,9 @@ class Sina_Pricing_Widget extends Widget_Base {
 			<#
 				view.addRenderAttribute( 'title', 'class', 'sina-pricing-title' );
 				view.addInlineEditingAttributes( 'title' );
+
+				var morphingAnimImage = ('yes' == settings.is_morphing_anim_image) ? 'sina-morphing-anim' : '';
+				var morphingAnimBtn = ('yes' == settings.is_morphing_anim_btn) ? 'sina-morphing-anim' : '';
 			#>
 			<# if (settings.ribbon_title && settings.ribbon_position) { #>
 				<div class="{{{settings.ribbon_position}}}">
@@ -1557,9 +1577,9 @@ class Sina_Pricing_Widget extends Widget_Base {
 				</div>
 			<# } #>
 
-			<# if ('yes' == settings.thumbs && 'top' == settings.ribbon_position) { #>
+			<# if ('yes' == settings.thumbs && 'top' == settings.img_position) { #>
 				<div class="sina-pricing-img">
-					<img src="{{{settings.image.url}}}" alt="{{{settings.title}}}">
+					<img class="{{{morphingAnimImage}}}" src="{{{settings.image.url}}}" alt="{{{settings.title}}}">
 				</div>
 			<# } #>
 
@@ -1569,7 +1589,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 
 			<# if ('yes' == settings.thumbs && 'middle' == settings.img_position) { #>
 				<div class="sina-pricing-img">
-					<img src="{{{settings.image.url}}}" alt="{{{settings.title}}}">
+					<img class="{{{morphingAnimImage}}}" src="{{{settings.image.url}}}" alt="{{{settings.title}}}">
 				</div>
 			<# } #>
 
@@ -1582,7 +1602,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 
 			<# if ('yes' == settings.thumbs && 'bottom' == settings.img_position) { #>
 			<div class="sina-pricing-img">
-				<img src="{{{settings.image.url}}}" alt="{{{settings.title}}}">
+				<img class="{{{morphingAnimImage}}}" src="{{{settings.image.url}}}" alt="{{{settings.title}}}">
 			</div>
 			<# } #>
 
@@ -1604,7 +1624,7 @@ class Sina_Pricing_Widget extends Widget_Base {
 
 			<# if (settings.btn_text || settings.btn_icon) { #>
 			<div class="sina-pricing-btn">
-				<a class="sina-order-btn {{{settings.btn_effect +' '+ settings.btn_bg_layer_effects}}}"
+				<a class="sina-order-btn {{{settings.btn_effect +' '+morphingAnimBtn+' '+ settings.btn_bg_layer_effects}}}"
 				href="{{{settings.btn_link.url}}}">
 					<# if (settings.btn_icon && 'left' == settings.btn_icon_align) { #>
 						<i class="{{{settings.btn_icon}}} sina-icon-left"></i>

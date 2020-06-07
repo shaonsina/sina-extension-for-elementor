@@ -93,6 +93,14 @@ class Sina_Dynamic_Button_Widget extends Widget_Base {
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
+
+		$this->add_control(
+			'is_morphing_anim',
+			[
+				'label' => __( 'Morphing Animation', 'sina-ext' ),
+				'type' => Controls_Manager::SWITCHER,
+			]
+		);
 		$this->add_control(
 			'btn_effect',
 			[
@@ -372,9 +380,10 @@ class Sina_Dynamic_Button_Widget extends Widget_Base {
 			$btn_link = $data['btn_link']['url'];
 		}
 		$data['btn_text'] = $btn_text;
+		$morphing_anim = ('yes' == $data['is_morphing_anim']) ? 'sina-morphing-anim' : '';
 		?>
 		<div class="sina-dynamic-button">
-			<a  class="sina-dynamic-btn <?php echo esc_attr($data['css_class'].' '.$data['btn_effect'].' '.$data['bg_layer_effects']); ?>" href="<?php echo esc_url( $btn_link ); ?>"
+			<a  class="sina-dynamic-btn <?php echo esc_attr($data['css_class'].' '.$morphing_anim.' '.$data['btn_effect'].' '.$data['bg_layer_effects']); ?>" href="<?php echo esc_url( $btn_link ); ?>"
 				<?php if ( $data['css_id'] ): ?>
 					id="<?php echo esc_attr( $data['css_id'] ); ?>"
 				<?php endif; ?>

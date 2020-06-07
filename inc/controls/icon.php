@@ -2978,6 +2978,7 @@ class Sina_Ext_Icon extends Base_Data_Control{
 			'eicon-image-rollover' => 'eicon-image-rollover',
 			'eicon-featured-image' => 'eicon-featured-image',
 			'eicon-info-box' => 'eicon-info-box',
+			'eicon-editor-code' => 'eicon-editor-code',
 			'eicon-tv' => 'eicon-tv',
 		];
 	}

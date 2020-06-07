@@ -651,6 +651,13 @@ class Sina_Team_Widget extends Widget_Base {
 			]
 		);
 
+		$this->add_control(
+			'is_morphing_anim_image',
+			[
+				'label' => __( 'Morphing Animation', 'sina-ext' ),
+				'type' => Controls_Manager::SWITCHER,
+			]
+		);
 		$this->add_responsive_control(
 			'image_width',
 			[
@@ -1213,6 +1220,7 @@ class Sina_Team_Widget extends Widget_Base {
 		$data = $this->get_settings_for_display();
 		$box_class = 'clearfix '. $data['box_effects'];
 		$content_class = 'sina-team-content';
+		$morphing_anim_image = ('yes' == $data['is_morphing_anim_image']) ? 'sina-morphing-anim' : '';
 
 		if ( 'thumb' == $data['layout'] ) {
 			$box_class = $data['effects'];
@@ -1222,9 +1230,9 @@ class Sina_Team_Widget extends Widget_Base {
 		<div class="sina-team <?php echo esc_attr( $box_class ); ?>">
 			<?php if ( $data['image']['url']): ?>
 				<?php if ( 'list' == $data['layout'] ): ?>
-					<div class="sina-team-image sina-bg-cover" style="background-image: url(<?php echo esc_url( $data['image']['url'] ); ?>);"></div>
+					<div class="sina-team-image sina-bg-cover <?php echo esc_attr( $morphing_anim_image ); ?>" style="background-image: url(<?php echo esc_url( $data['image']['url'] ); ?>);"></div>
 				<?php else: ?>
-					<img src="<?php echo esc_url( $data['image']['url'] ); ?>" alt="<?php echo esc_attr( $data['name'] ); ?>">
+					<img class="<?php echo esc_attr( $morphing_anim_image ); ?>" src="<?php echo esc_url( $data['image']['url'] ); ?>" alt="<?php echo esc_attr( $data['name'] ); ?>">
 				<?php endif; ?>
 			<?php endif; ?>
 
@@ -1276,6 +1284,7 @@ class Sina_Team_Widget extends Widget_Base {
 		<#
 			var boxClass = 'clearfix '+ settings.box_effects;
 			var contentClass = 'sina-team-content';
+			var morphingAnimImage = ('yes' == settings.is_morphing_anim_image) ? 'sina-morphing-anim' : '';
 
 			if ( 'thumb' == settings.layout ) {
 				boxClass = settings.effects;
@@ -1294,9 +1303,9 @@ class Sina_Team_Widget extends Widget_Base {
 		<div class="sina-team {{{boxClass}}}">
 			<# if (settings.image.url) {
 				if ('list' == settings.layout) { #>
-				<div class="sina-team-image sina-bg-cover" style="background-image: url({{{settings.image.url}}});"></div>
+				<div class="sina-team-image sina-bg-cover {{{morphingAnimImage}}}" style="background-image: url({{{settings.image.url}}});"></div>
 				<# } else { #>
-				<img src="{{{settings.image.url}}}" alt="{{{settings.name}}}">
+				<img class="{{{morphingAnimImage}}}" src="{{{settings.image.url}}}" alt="{{{settings.name}}}">
 			<# } } #>
 
 

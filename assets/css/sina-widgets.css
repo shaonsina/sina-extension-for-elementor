@@ -1,4 +1,4 @@
-/* Sina Extension for Elementor v3.2.14 */
+/* Sina Extension for Elementor v3.2.15 */
 
 /*--------------------------------- General -------------------------------------- */
 .sina-overlay{
@@ -87,6 +87,7 @@
 .sina-banner-slider{
 	direction: ltr;
 }
+.sina-morphing-anim-yes > .elementor-widget-container,
 .sina-content-box-icon,
 .sina-flipbox-hidden,
 .sina-transform-content,
@@ -1175,6 +1176,10 @@ img.mfp-img{
 .sina-anim-left-bouncing:hover i{
 	animation: sina-anim-left-bouncing 1s cubic-bezier(0.1, 0.8, 0.8, 1) infinite;
 }
+.sina-morphing-anim-yes > .elementor-widget-container,
+.sina-morphing-anim{
+	animation: sina-morphing-anim 9s linear infinite alternate forwards;
+}
 .sina-rubber-anim{
 	animation: sina-rubber-anim 1.5s ease-in infinite;
 }
@@ -1195,6 +1200,13 @@ img.mfp-img{
 	content: '';
 	z-index: -2;
 	animation: sina-wave-anim 2s ease-in infinite;
+}
+
+@keyframes sina-morphing-anim{
+	0%, 100% {border-radius: 35% 75% 75% 35%/35% 35% 75% 75%;}
+	25% {border-radius: 55% 45% 75% 25%/75% 45% 55% 35%;}
+	50% {border-radius: 50% 50% 30% 65%/55% 25% 70% 45%;}
+	75% {border-radius: 30% 65% 55% 40%/60% 65% 30% 35%;}
 }
 @keyframes sina-anim-zooming{
 	0%, 100%{transform: scale(1);}

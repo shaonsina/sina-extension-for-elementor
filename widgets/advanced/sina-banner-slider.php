@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Slider Banner Widget.
+ * Banner Slider Widget.
  *
  * @since 1.0.0
  */
