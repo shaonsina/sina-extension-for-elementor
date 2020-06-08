@@ -366,6 +366,13 @@ class Sina_Countdown_Widget extends Widget_Base {
 			]
 		);
 
+		$this->add_control(
+			'is_morphing_anim_box',
+			[
+				'label' => __( 'Morphing Animation', 'sina-ext' ),
+				'type' => Controls_Manager::SWITCHER,
+			]
+		);
 		$this->add_responsive_control(
 			'width',
 			[
@@ -421,16 +428,16 @@ class Sina_Countdown_Widget extends Widget_Base {
 			]
 		);
 		$this->add_group_control(
-			Group_Control_Border::get_type(),
+			Group_Control_Box_Shadow::get_type(),
 			[
-				'name' => 'box_border',
+				'name' => 'box_shadow',
 				'selector' => '{{WRAPPER}} .sina-cd',
 			]
 		);
 		$this->add_group_control(
-			Group_Control_Box_Shadow::get_type(),
+			Group_Control_Border::get_type(),
 			[
-				'name' => 'box_shadow',
+				'name' => 'box_border',
 				'selector' => '{{WRAPPER}} .sina-cd',
 			]
 		);
@@ -683,6 +690,7 @@ class Sina_Countdown_Widget extends Widget_Base {
 
 	protected function render() {
 		$data = $this->get_settings_for_display();
+		$morphing_anim_box = ('yes' == $data['is_morphing_anim_box']) ? 'sina-morphing-anim' : '';
 		?>
 		<div class="sina-countdown"
 		data-time="<?php echo esc_attr( $data['countdown_time'] ); ?>"
@@ -693,7 +701,7 @@ class Sina_Countdown_Widget extends Widget_Base {
 			if( date_timestamp_get( date_create( $data['countdown_time'] ) ) > time() ) :
 				foreach ($data['units'] as $value) :
 				?>
-					<div class="sina-cd elementor-repeater-item-<?php echo esc_attr($value['_id']); ?>">
+					<div class="sina-cd elementor-repeater-item-<?php echo esc_attr($value['_id'].' '.$morphing_anim_box); ?>">
 						<div class="sina-cd-<?php echo esc_attr($value['unit']); ?>">00</div>
 						<?php if ( 'yes' == $data['text_state'] ) : ?>
 							<div class="sina-cd-text">

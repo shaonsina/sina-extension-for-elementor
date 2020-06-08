@@ -18,6 +18,6 @@
 	<?php endif; ?>
 
 	<?php if ( $item['image']['url'] ): ?>
-		<img src="<?php echo esc_url( $item['image']['url'] ); ?>" class="sina-review-face" alt="<?php echo esc_attr($item['name']); ?>">
+		<img src="<?php echo esc_url( $item['image']['url'] ); ?>" class="sina-review-face <?php echo esc_attr( $morphing_anim_image ); ?>" alt="<?php echo esc_attr($item['name']); ?>">
 	<?php endif; ?>
 </div>

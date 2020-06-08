@@ -259,6 +259,13 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 		);
 
 		$this->add_control(
+			'is_morphing_anim_image',
+			[
+				'label' => __( 'Morphing Animation', 'sina-ext' ),
+				'type' => Controls_Manager::SWITCHER,
+			]
+		);
+		$this->add_control(
 			'image_position',
 			[
 				'label' => __( 'Image Position', 'sina-ext' ),
@@ -631,6 +638,7 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 
 	protected function render() {
 		$data = $this->get_settings_for_display();
+		$morphing_anim_image = ('yes' == $data['is_morphing_anim_image']) ? 'sina-morphing-anim' : '';
 		?>
 		<div class="sina-review-carousel owl-carousel"
 		data-item-lg="1" data-item-md="1" data-item-sm="1"
