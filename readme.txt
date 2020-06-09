@@ -48,7 +48,7 @@ Need Help? Please [create support ticket](https://sinaextra.com/support/)
 4. [Brand Carousel](https://sinaextra.com/sina-extension/brand-carousel): Display clients logo in a carousel.
 5. [Contact Form](https://sinaextra.com/sina-extension/contact-form): Use contact form with lots of style.
 6. [Content Box](https://sinaextra.com/sina-extension/content-box): Display services or custom content that you want.
-7. [Content Slider](https://sinaextra.com/sina-extension/content-slider): You can slide any content with that. Also can sliding any template. Enjoy!
+7. [Content Slider](https://sinaextra.com/sina-extension/content-slider): You can slide any content with that. Also can sliding any template. Enjoy!!
 8. [Countdown](https://sinaextra.com/sina-extension/countdown): Add countdown timer into your web page.
 9. [Counter](https://sinaextra.com/sina-extension/counter): Show number with animate counting.
 10. [Dynamic Button](https://sinaextra.com/sina-extension/dynamic-button): Add a button as a static or dynamic (page, category, tag or post formate).
@@ -82,6 +82,11 @@ Need Help? Please [create support ticket](https://sinaextra.com/support/)
 Cool things are coming soon...
 
 
+== FREE EXTENDERS ==
+1. [Morphing Animation](https://sinaextra.com/sina-extension/morphing-animation): Apply an animation to any content of the widget.
+2. [Transform](https://sinaextra.com/sina-extension/transform): Display content by transforming in the different dimensions.
+
+
 == PRO WIDGETS ==
 
 1. [Chart](https://sinaextra.com/sina-extension/chart): Display your company statistics within a chart (bar, pie, line etc.)
@@ -96,11 +101,12 @@ Cool things are coming soon...
 10. [Posts Load On Scroll](https://sinaextra.com/sina-extension/posts-load-on-scroll): Load the posts (grid, list & thumb) by AJAX on infinite scroll.
 11. [Register Form](https://sinaextra.com/sina-extension/register-form): Add a register form anywhere into your web page.
 12. [Section Navigation](https://sinaextra.com/sina-extension/section-navigation): To navigate the sections within a page add the fixed navigation.
-13. [Tab](https://sinaextra.com/sina-extension/tab): Display any content within a tab that you want.
-14. [Team Carousel](https://sinaextra.com/sina-extension/team-carousel): Add your team members and display them in a carousel.
-15. [Tilt Box](https://sinaextra.com/sina-extension/tilt-box): Display your Content or Image by an eye-catching interactive way.
-16. [Testimonial](https://sinaextra.com/sina-extension/testimonial): Show the testimonials into an interactive carousel.
-17. [Toggle Content](https://sinaextra.com/sina-extension/toggle-content): Display any content within a toggle tab.
+13. [Source Code](https://sinaextra.com/sina-extension/source-code): Highlight the code of your script if it needs.
+14. [Tab](https://sinaextra.com/sina-extension/tab): Display any content within a tab that you want.
+15. [Team Carousel](https://sinaextra.com/sina-extension/team-carousel): Add your team members and display them in a carousel.
+16. [Tilt Box](https://sinaextra.com/sina-extension/tilt-box): Display your Content or Image by an eye-catching interactive way.
+17. [Testimonial](https://sinaextra.com/sina-extension/testimonial): Show the testimonials into an interactive carousel.
+18. [Toggle Content](https://sinaextra.com/sina-extension/toggle-content): Display any content within a toggle tab.
 
 
 == PRO EXTENDERS ==
@@ -109,12 +115,16 @@ Cool things are coming soon...
 2. [Colors Animation](https://sinaextra.com/sina-extension/colors-animation): Show some colors on the section with animated (fade, horizontal, vertical).
 3. [Conditional Publish](https://sinaextra.com/sina-extension/conditional-publish): Publish your content when some conditions will fulfill.
 4. [Content Protection](https://sinaextra.com/sina-extension/content-protection): Show or hide specific element or section for the specific users (based on role).
-5. [Parallax](https://sinaextra.com/sina-extension/parallax): Display parallax to any section or entire the page.
-6. [Reading Progressbar](https://sinaextra.com/sina-extension/reading-progressbar): Display a progressbar top of the page or posts for seeing the users how much they have read or seen (based on scroll).
-7. [Section Particles](https://sinaextra.com/sina-extension/section-particles)
+5. [Masker](https://sinaextra.com/sina-extension/masker): Apply to mask any content of the widget.
+6. [Parallax](https://sinaextra.com/sina-extension/parallax): Display parallax to any section or entire the page.
+7. [Reading Progressbar](https://sinaextra.com/sina-extension/reading-progressbar): Display a progressbar top of the page or posts for seeing the users how much they have read or seen (based on scroll).
+8. [Section Particles](https://sinaextra.com/sina-extension/section-particles): Apply the particles effect to any section.
+9. [Water Ripples](https://sinaextra.com/sina-extension/water-ripples): Add an interactive water ripples effect, which is the most interesting.
 
 
-- **Accordion:** This element not only a generic accordion. It has template option, that means you can use any template inside the description container. So it ensures that you can make complex type of accordion. Like: nested accordion.
+== The summary of core Features ==
+
+- **Accordion:** This element not only a generic Accordion. It has template option, that means you can use any template inside the description container. So it ensures that you can make complex type of accordion. Like: Nested Accordion.
 
 - **Chart:** Sina Extension has a Chart widget with 7 types (horizontal bar, vertical bar, line, pie, doughnut, polar area & radar) of charts variations.
 
@@ -122,17 +132,25 @@ Cool things are coming soon...
 
 - **Colors or Gradient Animation:** Also you can make color(s) or gradient color(s) animation with Colors Animation extender.
 
-- **Content Box:** By this widget, you can make the Icon or Image Box or List and Step Process. That means you don't need to use those three widgets. If you would like the content will be shown with a ribbon or hover effect then you can by this widget. Also, you can use background and button icon animation and any template inside the container. So it's the huge powerful widget.
+- **Content Box:** By this widget, you can make the Icon or Image or List Box or Step Process. That means you will get those three in one. If you would like the content will be shown with a ribbon or hover effect then you can with this widget. Also, you can use background and button icon animation and any template inside the container. So it's the huge powerful widget.
 
 - **Content Protection:** Yes, Sina Extension has Content Protection extender that means you can display different content for different users according to the role.
 
-- **Conditional Publish:** You also can set the various type of conditions to show or hide your expected contend. Like: Login Status, Specific Day(s), Specific Month(s), Specific Date, Date Range, Time Range etc.
+- **Conditional Publish:** You also can set the different types of conditions to show or hide your expected contend. Like: Login Status, Specific Day(s), Specific Month(s), Specific Date, Date Range, Time Range etc.
 
-- **Dynamic Button:** This element not only a generic button. It has the capability to use a category or tag or post or page link as a button with background and icon animation.
+- **Dynamic Button:** This element not only a generic Button. It has the capability to use a Category or Tag or Post or Page link as a button with background and icon animation.
 
-- **Form:** This plugin has various form widgets that ensure without need extra plugin you can make instant search or ajax search form, contact form, register or sign up form, sign in or login form, password recovery or reset form, mailchimp form and native search form.
+- **Form:** This plugin has various type form widgets that ensure without need extra plugin you can make Instant Search or AJAX Search form, Contact form, Register or Sign Up form, Sign In or Login form, Password Recovery or Reset form, Mailchimp form and native Search form.
 
-- **Modal or Popup Box:** Sometimes you need to show some content inside a modal or popup box. So you can show any template inside the Modal Box widget. Also It has an auto show option that means the modal will be shown auto after your expected time delay.
+- **Image:** Sina Extension has different types of Image widgets. Like: Image Accordion, Image Scroller, Image Marker or Hotspot and Hover Image.
+So that you can display the image(s) with an interactive way.
+
+- **Masking:** Yes, we also added this feature. But it is not only a specific content-based masking feature. Like: Image Masking or Video Masking, which provided other addons or plugins.
+It is more powerful and you can apply to mask any content of your widget. Enjoy!!
+
+- **Modal or Popup Box:** Sometimes you need to show some content inside a Modal or Popup box. So you can show any template inside the Modal Box widget. Also It has an auto show option that means the modal will be shown auto after your expected time delay.
+
+- **Morphing Animation:** It is an attractive animation extender that you can apply to any content of the widget.
 
 - **Parallax:** Now-a-days parallax is the most attractive way to display the content. Sina Extension has a Parallax extender for display the content the way you want.
 
@@ -140,17 +158,21 @@ Cool things are coming soon...
 
 - **Portfolio or Image Gallery:** Yes, we also covered this feature. Cause, some users want to show their work or some images as a filterable gallery. It has capable of using a masonry grid as well.
 
-- **Posts or Blog:** This plugin has various post widgets that means you can display the posts as column grid, masonry grid, list. You can display the posts into Tab, Carousel, Gallery, Ticker, Load on Scroll, Load more Button or Pagination. Also can define your expected grid columns (for custom layout) which may add extra benefit for you.
+- **Posts or Blog:** This plugin has different types of post widgets that mean you can show the posts as column grid, masonry grid, list. You also can display the posts into a Tab, Carousel, Gallery, Ticker, Load on Scroll, Load more Button or Pagination. Also can define your expected grid columns (for custom layout) which may add extra benefit for you.
 
 - **Slider or Carousel:** We have added various types of sliders or carousels. And you can make Text slider, Image slider, Posts slider, Team slider, Video slider, Review slider or carousel and Interactive Testimonial carousel. Also you can be sliding any template with our Content Slider widget which will give you an extra facility.
 
-- **Tab or Virtual Tour:** Sina Extension has a Tab element. And it capable of using embed code or virtual tour. Another thing it has the template option. So you can show any template inside the tab description container.
+- **Source Code:** Sometimes you may need to show the code of your script into the web page. So you can do with the Source Code widget.
 
-- **Transform:** If you would like to display the content with different dimensions or as a 3D. No worry. Just make a template & display inside the Transform widget. Also, you can set the dimensions from the Advanced tab (Sina Transform Effects) of every widget.
+- **Tab or Virtual Tour:** Sina Extension has a Tab element. And it capable of using embed code or Virtual Tour. Another thing it has the template option. So you can show any template inside the tab description container.
+
+- **Transform:** If you would like to display the content with different dimensions or as a 3D. No worry. Just make a template & display inside the Transform widget. Also, you can set the dimensions from the Advanced tab (Sina Transform Effects) of every widget. Enjoy!!
+
+- **Water Ripples:** It is an interesting feature of this plugin. You can set a Water Ripples effect in any section, which may increase the extra attention of your visitors.
 
 - **Predefined Blocks:** We provide lots of ready blocks which may save huge time. On the other hand, the blocks may work as an example of how to using the elements.
 
-- **Conclusion:** We think it's the all in one plugin or addon for Elementor page builder. So, why not choose it? Thanks for reading.
+- **Conclusion:** We think it's the all in one plugin or addons for Elementor page builder. So, why not choose it? Thanks for reading.
 
 
 

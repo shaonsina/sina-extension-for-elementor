@@ -87,6 +87,7 @@ define('SINA_WIDGETS', [
 		'posts-on-scroll'		=> 1,
 		'register-form'			=> 1,
 		'section-navigation'	=> 1,
+		'source-code'			=> 1,
 		'tab' 					=> 1,
 		'team-carousel'			=> 1,
 		'testimonial'			=> 1,
@@ -103,8 +104,10 @@ define('SINA_WIDGETS', [
  */
 define('SINA_EXTENDERS', [
 	'pro' => [
+		'masker'				=> 1,
 		'parallax'				=> 1,
 		'section-particles'		=> 1,
+		'water-ripples'			=> 1,
 		'clips-animation'		=> 1,
 		'colors-animation'		=> 1,
 		'conditional-publish'	=> 1,
