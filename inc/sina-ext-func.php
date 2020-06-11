@@ -42,7 +42,7 @@ abstract class Sina_Ext_Functions extends Sina_Extension_Base{
 		$recaptcha_key = get_option( 'sina_ext_pro_recaptcha_key' );
 		$ajax_url = admin_url('admin-ajax.php');
 
-		wp_register_script( 'imagesLoaded', SINA_EXT_URL .'assets/js/imagesloaded.pkgd.min.js', [], SINA_EXT_VERSION, true );
+		wp_register_script( 'imagesLoaded', SINA_EXT_URL .'assets/js/imagesloaded.pkgd.min.js', ['jquery'], SINA_EXT_VERSION, true );
 		wp_register_script( 'typed', SINA_EXT_URL .'assets/js/typed.min.js', ['jquery'], SINA_EXT_VERSION, true );
 		wp_register_script( 'jquery-owl', SINA_EXT_URL .'assets/js/owl.carousel.min.js', ['jquery'], SINA_EXT_VERSION, true );
 		wp_register_script( 'jquery-particle', SINA_EXT_URL .'assets/js/sina-particles.min.js', ['jquery'], SINA_EXT_VERSION, true );

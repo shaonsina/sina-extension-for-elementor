@@ -5,7 +5,7 @@ Donate link: https://sinaextra.com/sina-addon-for-elementor/
 Requires at least: 4.7
 Tested up to: 5.4
 Requires PHP: 7.0
-Stable tag: 3.2.14
+Stable tag: 3.2.16
 License: GPL v3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -204,14 +204,17 @@ Yes. It's totally free. We also have a [PRO](https://sinaextra.com/sina-addon-fo
 
 == Changelog ==
 
-= 3.2.15 - 12-06-2020 =
+= 3.2.16 - 11-06-2020 =
+Fixed: Counter Media issue
+
+= 3.2.15 - 11-06-2020 =
 Added: Morphing Animation
+Fixed: JS Error
 
 = 3.2.14 - 31-05-2020 =
 Added: Some Optins to Counter
 Added: Some Optins to Pricing
 Fixed: Transform issue
-
 
 = 3.2.13 - 12-05-2020 =
 Added: After Logout Redirect URL Settings

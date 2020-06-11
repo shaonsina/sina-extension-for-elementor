@@ -12,6 +12,7 @@ use \Elementor\Group_Control_Typography;
 use \Elementor\Group_Control_Text_Shadow;
 use \Elementor\Group_Control_Box_Shadow;
 use \Elementor\Group_Control_Border;
+use \Elementor\Control_Media;
 use \Sina_Extension\Sina_Ext_Gradient_Text;
 
 
