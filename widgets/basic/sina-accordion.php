@@ -257,7 +257,7 @@ class Sina_Accordion_Widget extends Widget_Base {
 				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .sina-accordion-item{{CURRENT_ITEM}} .sina-accordion-header' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .sina-accordion-item{{CURRENT_ITEM}} > .sina-accordion-header' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -267,7 +267,7 @@ class Sina_Accordion_Widget extends Widget_Base {
 				'label' => __( 'Icon Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .sina-accordion-item{{CURRENT_ITEM}} .sina-accordion-icon i' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .sina-accordion-item{{CURRENT_ITEM}} > .sina-accordion-icon i' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -276,14 +276,14 @@ class Sina_Accordion_Widget extends Widget_Base {
 			[
 				'name' => 'single_header_bg',
 				'types' => ['classic'],
-				'selector' => '{{WRAPPER}} .sina-accordion-item{{CURRENT_ITEM}} .sina-accordion-header',
+				'selector' => '{{WRAPPER}} .sina-accordion-item{{CURRENT_ITEM}} > .sina-accordion-header',
 			]
 		);
 		$repeater->add_group_control(
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'single_header_shadow',
-				'selector' => '{{WRAPPER}} .sina-accordion-item{{CURRENT_ITEM}} .sina-accordion-header',
+				'selector' => '{{WRAPPER}} .sina-accordion-item{{CURRENT_ITEM}} > .sina-accordion-header',
 			]
 		);
 
@@ -301,7 +301,7 @@ class Sina_Accordion_Widget extends Widget_Base {
 				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .sina-accordion-item{{CURRENT_ITEM}} .sina-accordion-desc' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .sina-accordion-item{{CURRENT_ITEM}} > .sina-accordion-desc' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -311,7 +311,7 @@ class Sina_Accordion_Widget extends Widget_Base {
 				'label' => __( 'Border Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .sina-accordion-item{{CURRENT_ITEM}} .sina-accordion-body' => 'border-color: {{VALUE}};',
+					'{{WRAPPER}} .sina-accordion-item{{CURRENT_ITEM}} > .sina-accordion-body' => 'border-color: {{VALUE}};',
 				],
 			]
 		);
@@ -524,7 +524,7 @@ class Sina_Accordion_Widget extends Widget_Base {
 				'label' => __( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .sina-accordion-item.open .sina-accordion-header' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .sina-accordion-item.open > .sina-accordion-header' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -534,7 +534,7 @@ class Sina_Accordion_Widget extends Widget_Base {
 				'label' => __( 'Icon Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					' {{WRAPPER}} .sina-accordion-item.open .sina-accordion-icon i' => 'color: {{VALUE}};',
+					' {{WRAPPER}} .sina-accordion-item.open > .sina-accordion-icon i' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -543,21 +543,21 @@ class Sina_Accordion_Widget extends Widget_Base {
 			[
 				'name' => 'active_background',
 				'types' => [ 'classic', 'gradient' ],
-				'selector' => '{{WRAPPER}} .sina-accordion-item.open .sina-accordion-header',
+				'selector' => '{{WRAPPER}} .sina-accordion-item.open > .sina-accordion-header',
 			]
 		);
 		$this->add_group_control(
 			Group_Control_Text_Shadow::get_type(),
 			[
 				'name' => 'title_active_shadow',
-				'selector' => '{{WRAPPER}} .sina-accordion-item.open .sina-accordion-header',
+				'selector' => '{{WRAPPER}} .sina-accordion-item.open > .sina-accordion-header',
 			]
 		);
 		$this->add_group_control(
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'header_active_shadow',
-				'selector' => '{{WRAPPER}} .sina-accordion-item.open .sina-accordion-header',
+				'selector' => '{{WRAPPER}} .sina-accordion-item.open > .sina-accordion-header',
 			]
 		);
 
