@@ -2004,7 +2004,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 			$paged = 1;
 		}
 
-		$new_offset = $data['offset'] + ( ( $paged - 1 ) * $data['posts_num'] );
+		$new_offset = (int)$data['offset'] + ( ( $paged - 1 ) * (int)$data['posts_num'] );
 		$category	= $data['categories'];
 		$tags		= $data['tags'];
 
@@ -2023,7 +2023,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 		// Post Query
 		$post_query = new WP_Query( $default );
 		if ( $post_query->have_posts() ) :
-			$offset = $new_offset + $data['posts_num'];
+			$offset = $new_offset + (int)$data['posts_num'];
 			$content_length = $data['content_length'];
 
 			$posts_data = [

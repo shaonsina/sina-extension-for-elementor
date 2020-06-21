@@ -1861,7 +1861,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 			$paged = 1;
 		}
 
-		$new_offset = $data['offset'] + ( ( $paged - 1 ) * $data['posts_num'] );
+		$new_offset = (int)$data['offset'] + ( ( $paged - 1 ) * (int)$data['posts_num'] );
 		$category	= $data['categories'];
 		$tags		= $data['tags'];
 		$default	= [

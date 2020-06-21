@@ -996,7 +996,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 											$paged = 1;
 										}
 
-										$new_offset = $data['offset'] + ( ( $paged - 1 ) * $data['posts_num'] );
+										$new_offset = (int)$data['offset'] + ( ( $paged - 1 ) * (int)$data['posts_num'] );
 										$default	= [
 											'category_name'		=> $cats['category'],
 											'orderby'			=> [ $data['order_by'] => $data['sort'] ],
