@@ -1,4 +1,4 @@
-/* Sina Extension for Elementor v3.2.15 */
+/* Sina Extension for Elementor v3.2.16 */
 
 /*--------------------------------- General -------------------------------------- */
 .sina-overlay{
@@ -88,6 +88,7 @@
 	direction: ltr;
 }
 .sina-morphing-anim-yes > .elementor-widget-container,
+.sina-morphing-anim-yes > .e-widget-container,
 .sina-content-box-icon,
 .sina-flipbox-hidden,
 .sina-transform-content,
@@ -125,6 +126,11 @@
 .sina-accordion-body .elementor-element-overlay,
 .sina-content-box .elementor-element-overlay,
 .sina-content-slider .elementor-element-overlay,
+.sina-modal-content .e-element-overlay,
+.sina-transform .e-element-overlay,
+.sina-accordion-body .e-element-overlay,
+.sina-content-box .e-element-overlay,
+.sina-content-slider .e-element-overlay,
 .sina-accordion-item > .sina-accordion-header > .sina-accordion-icon .on,
 .sina-accordion-item.open > .sina-accordion-header > .sina-accordion-icon .off,
 .sina-accordion-body,
@@ -591,21 +597,23 @@ img.mfp-img{
 	max-width: none;
 	max-height: none
 }
-.xzoom-thumb-item {
+.xzoom-thumb-item{
 	cursor: pointer;
 	float: left
 }
-.elementor .xzoom-gallery {
+.elementor .xzoom-gallery,
+.e .xzoom-gallery{
 	display: inline-block;
 	border: 1px solid #cecece;
 	width: 100%
 }
-.elementor .xzoom {
+.elementor .xzoom,
+.e .xzoom{
 	box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
 	margin-bottom: 20px
 }
 .xzoom-source,
-.xzoom-hidden {
+.xzoom-hidden{
 	display: block;
 	position: static;
 	float: none;
@@ -620,7 +628,8 @@ img.mfp-img{
 	box-shadow: -0 -0 10px rgba(0, 0, 0, 0.50);
 	cursor: crosshair
 }
-.elementor .xactive {
+.elementor .xactive,
+.e .xactive{
 	box-shadow: 0 0 3px 0 rgba(74, 169, 210, 1);
 	border: 1px solid #4aaad2
 }
@@ -1177,6 +1186,7 @@ img.mfp-img{
 	animation: sina-anim-left-bouncing 1s cubic-bezier(0.1, 0.8, 0.8, 1) infinite;
 }
 .sina-morphing-anim-yes > .elementor-widget-container,
+.sina-morphing-anim-yes > .e-widget-container,
 .sina-morphing-anim{
 	animation: sina-morphing-anim 9s linear infinite alternate forwards;
 }
