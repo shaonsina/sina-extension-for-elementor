@@ -5,7 +5,7 @@ Donate link: https://sinaextra.com/sina-addon-for-elementor/
 Requires at least: 4.7
 Tested up to: 5.4
 Requires PHP: 7.0
-Stable tag: 3.2.16
+Stable tag: 3.3.0
 License: GPL v3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -14,7 +14,7 @@ A collection of high-quality widgets for Elementor page builder. 100+ predefined
 
 == Description ==
 
-This is an extension or addon for [Elementor](https://wordpress.org/plugins/elementor/) page builder. It will extend the Elementor and increase web page building experience. It has 36 useful & high-quality widgets or addon. Which you may use for easy & fast make the page & display your content far better way. After using it, you will feel that it's one of the best addon for Elementor.
+This is an extension or addon for [Elementor](https://wordpress.org/plugins/elementor/) page builder. It will extend the Elementor and increase web page building experience. It has 38 useful & high-quality widgets or addon. Which you may use for easy & fast make the page & display your content far better way. After using it, you will feel that it's one of the best addon for Elementor.
 
 
 = Use of Sina Templates =
@@ -23,7 +23,7 @@ https://youtu.be/4_FEAlX5bz8
 
 == Features ==
 
-* 36 free elements.
+* 38 free elements.
 * Options panel for enable/disable elements.
 * Easy to use
 * Details Customisation ability

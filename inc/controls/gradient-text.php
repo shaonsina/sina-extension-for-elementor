@@ -14,7 +14,7 @@ use \Elementor\Controls_Stack;
  *
  * @since 3.0.2
  */
-class Sina_Ext_Gradient_Text extends Group_Control_Base {
+class Sina_Ext_Gradient_Text extends Group_Control_Base{
 
 	/**
 	 * Fields.
