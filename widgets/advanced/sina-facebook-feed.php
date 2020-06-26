@@ -11,10 +11,8 @@ use \Elementor\Controls_Manager;
 use \Elementor\Group_Control_Typography;
 use \Elementor\Group_Control_Background;
 use \Elementor\Group_Control_Box_Shadow;
-use \Elementor\Group_Control_Text_Shadow;
 use \Elementor\Group_Control_Border;
-use \Elementor\Repeater;
-use \Sina_Extension\Sina_Ext_Gradient_Text;
+use \Elementor\Plugin;
 
 
 // Exit if accessed directly.
@@ -93,6 +91,8 @@ class Sina_Facebook_Feed_Widget extends Widget_Base {
 	 */
 	public function get_script_depends() {
 		return [
+			'imagesLoaded',
+			'isotope',
 			'sina-widgets',
 		];
 	}
@@ -206,6 +206,15 @@ class Sina_Facebook_Feed_Widget extends Widget_Base {
 			[
 				'label' => esc_html__( 'Feed', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_control(
+			'note',
+			[
+				'type' => Controls_Manager::RAW_HTML,
+				'raw' => __( 'NOTICE: If you change the <strong>Dimension</strong> then the page need to <strong>Refresh</strong> for seeing the actual result.', 'sina-ext' ),
+				'content_classes' => 'elementor-panel-alert elementor-panel-alert-warning',
 			]
 		);
 		$this->add_control(
@@ -464,7 +473,7 @@ class Sina_Facebook_Feed_Widget extends Widget_Base {
 		$this->add_control(
 			'feed_hover_meta_color',
 			[
-				'label' => esc_html__( 'Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .sina-feed:hover .sina-feed-meta' => 'color: {{VALUE}};',
@@ -513,10 +522,10 @@ class Sina_Facebook_Feed_Widget extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
-					'top' => '15',
-					'right' => '15',
-					'bottom' => '15',
-					'left' => '15',
+					'top' => '10',
+					'right' => '10',
+					'bottom' => '10',
+					'left' => '10',
 					'isLinked' => true,
 				],
 				'selectors' => [
@@ -576,11 +585,164 @@ class Sina_Facebook_Feed_Widget extends Widget_Base {
 				'selector' => '{{WRAPPER}} .sina-feed-thumb .sina-overlay',
 			]
 		);
+		$this->add_control(
+			'play_btn_color',
+			[
+				'label' => esc_html__( 'Play Button Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#fff',
+				'selectors' => [
+					'{{WRAPPER}} .sina-feed-thumb .sina-overlay .sina-feed-video' => 'color: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'play_btn_size',
+			[
+				'label' => esc_html__( 'Play Button Size', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'range' => [
+					'px' => [
+						'min' => 16,
+						'max' => 200,
+					],
+				],
+				'default' => [
+					'size' => '36',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-feed-thumb .sina-overlay .sina-feed-video' => 'font-size: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
 		Sina_Common_Data::BG_hover_effects($this, '.sina-feed');
 
 		$this->end_controls_section();
 		// End Feed Style
 		// =================
+
+
+		// Start Page Name Style
+		// ======================
+		$this->start_controls_section(
+			'page_name_style',
+			[
+				'label' => esc_html__( 'Page Name', 'sina-ext' ),
+				'tab' => Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name' => 'page_name_typography',
+				'selector' => '{{WRAPPER}} .sina-feed-page-name a',
+			]
+		);
+
+		$this->start_controls_tabs( 'page_name_tabs' );
+
+		$this->start_controls_tab(
+			'page_name_normal',
+			[
+				'label' => esc_html__( 'Normal', 'sina-ext' ),
+			]
+		);
+		$this->add_control(
+			'page_name_color',
+			[
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#1085e4',
+				'selectors' => [
+					'{{WRAPPER}} .sina-feed-page-name a' => 'color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->end_controls_tab();
+
+		$this->start_controls_tab(
+			'page_name_hover',
+			[
+				'label' => esc_html__( 'Hover', 'sina-ext' ),
+			]
+		);
+		$this->add_control(
+			'page_name_hover_color',
+			[
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .sina-feed-page-name a:hover' => 'color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->end_controls_tab();
+
+		$this->end_controls_tabs();
+
+		$this->add_control(
+			'page_name_heading',
+			[
+				'label' => esc_html__( 'Thumb Styles', 'sina-ext' ),
+				'type' => Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+		$this->add_responsive_control(
+			'page_name_logo',
+			[
+				'label' => esc_html__( 'Thumb Size', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'range' => [
+					'px' => [
+						'min' => 16,
+						'max' => 200,
+					],
+				],
+				'default' => [
+					'size' => '32',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-feed-page-name img' => 'width: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'page_name_thumb_radius',
+			[
+				'label' => esc_html__( 'Radius', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'selectors' => [
+					'{{WRAPPER}} .sina-feed-page-name img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'page_name_thumb_margin',
+			[
+				'label' => esc_html__( 'Margin', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '0',
+					'right' => '5',
+					'bottom' => '0',
+					'left' => '0',
+					'isLinked' => false,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-feed-page-name img' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->end_controls_section();
+		// End Page Name Style
+		// ====================
 
 
 		// Start Content Style
@@ -812,10 +974,8 @@ class Sina_Facebook_Feed_Widget extends Widget_Base {
 
 
 	protected function render() {
-		// 120432114814310
-		// EAAv9UUM5ZCcABACEfCX7NOnS7cisDGHPqsjWZAXFZAEtPdOTwoISppPw2IViIfCPoUAxgZB7f0eK0WgBke1PP8KMQeQJAo0UYTSh9b77HTmMT1rJZBElIxNrrCZB8pLuGgmLvHHIaPLIEH0ZAO7zYmPHDZB4CeNCVy6aMRqm75do8UTLo5Ua8TcXIzI9ZASIQdnAjALbutnc5WwZDZD
 		$data = $this->get_settings_for_display();
-		$facebook_data = wp_remote_get( 'https://graph.facebook.com/v7.0/'. $data['page_id'] .'/posts?fields=status_type,created_time,from,message,story,full_picture,permalink_url,attachments.limit(1){type,media_type,title,description,unshimmed_url},comments.summary(total_count),reactions.summary(total_count)&access_token='.  $data['access_token']);
+		$facebook_data = wp_remote_get( 'https://graph.facebook.com/v7.0/'. $data['page_id'] .'/posts?fields=id,names,status_type,created_time,from,message,story,full_picture,permalink_url,attachments.limit(1){type,media_type,title,description,unshimmed_url},comments.summary(total_count),reactions.summary(total_count)&access_token='.  $data['access_token']);
 		if ( !is_wp_error( $facebook_data ) ) {
 			$facebook_data = json_decode( $facebook_data['body'], true );
 			$facebook_data = isset($facebook_data['data']) ? $facebook_data['data'] : [];
@@ -824,81 +984,109 @@ class Sina_Facebook_Feed_Widget extends Widget_Base {
 			}
 			$facebook_data = array_slice($facebook_data, $data['feeds_offset'], $data['feeds_num']);
 			?>
-			<div class="sina-social-feed clearfix">
-				<?php foreach ( $facebook_data as $key => $feed ):
-					$likes 	= isset($feed['reactions']) ? $feed['reactions']['summary']['total_count'] : 0;
-					$comnts = isset($feed['comments']) ? $feed['comments']['summary']['total_count'] : 0;
-					?>
-					<div class="sina-feed-col sina-feed-col-<?php echo esc_attr($data['columns']) ?>">
-						<div class="sina-feed <?php echo esc_attr($data['effects'].' '.$data['bg_layer_effects']) ?>">
-							<div class="sina-feed-page-name">
-								<a href="<?php echo esc_url( 'https://www.facebook.com/'. $data['page_id'] ); ?>"
-								target="_blank">
-									<img width="32px" height="32px" src="<?php echo esc_url( 'https://graph.facebook.com/v7.0/'. $data['page_id'] .'/picture' ); ?>" alt="<?php echo esc_attr( $feed['from']['name'] ); ?>">
-									<?php echo esc_html( $feed['from']['name'] ); ?>
-								</a>
-							</div>
-							<div class="sina-feed-meta clearfix">
-								<div class="sina-feed-time">
-									<i class="fa fa-clock-o far fa-clock"></i> <?php echo esc_html( date( "d M Y", strtotime( $feed['created_time'] ) ) ); ?>
+			<div class="sina-social-feed sina-facebook-feed clearfix <?php echo esc_attr( 'sina-fb-feed-'.$this->get_id() ); ?>">
+				<div class="sina-feed-grid">
+					<div class="sina-fb-feed-grid-sizer"></div>
+					<?php foreach ( $facebook_data as $key => $feed ):
+						$likes 	= isset($feed['reactions']) ? $feed['reactions']['summary']['total_count'] : 0;
+						$comnts = isset($feed['comments']) ? $feed['comments']['summary']['total_count'] : 0;
+						?>
+						<div class="sina-feed-col sina-feed-col-<?php echo esc_attr($data['columns']) ?>">
+							<div class="sina-feed <?php echo esc_attr($data['effects'].' '.$data['bg_layer_effects']) ?>">
+								<div class="sina-feed-page-name">
+									<a href="<?php echo esc_url( 'https://www.facebook.com/'. $data['page_id'] ); ?>"
+									target="_blank">
+										<img width="32px" height="32px" src="<?php echo esc_url( 'https://graph.facebook.com/v7.0/'. $data['page_id'] .'/picture' ); ?>" alt="<?php echo esc_attr( $feed['from']['name'] ); ?>">
+										<?php echo esc_html( $feed['from']['name'] ); ?>
+									</a>
 								</div>
-								<div class="sina-feed-info">
-									<span class="sina-feed-comments">
-										<i class="far fa-comments fa fa-comments-o"></i>
-										<?php echo esc_html($comnts); ?>
-									</span>
-									<span class="sina-feed-likes">
-										<i class="far fa-thumbs-up fa fa-thumbs-o-up"></i>
-										<?php echo esc_html($comnts); ?>
-									</span>
+								<div class="sina-feed-meta clearfix">
+									<div class="sina-feed-time">
+										<i class="fa fa-clock-o far fa-clock"></i> <?php echo esc_html( date( "d M Y", strtotime( $feed['created_time'] ) ) ); ?>
+									</div>
+									<div class="sina-feed-info">
+										<span class="sina-feed-likes">
+											<i class="far fa-thumbs-up fa fa-thumbs-o-up"></i>
+											<?php echo esc_html($comnts); ?>
+										</span>
+										<span class="sina-feed-comments">
+											<i class="far fa-comments fa fa-comments-o"></i>
+											<?php echo esc_html($comnts); ?>
+										</span>
+									</div>
 								</div>
-							</div>
-							<?php
-								if ( true && isset( $feed['attachments']['data'][0] ) ):
-									$feed_data = $feed['attachments']['data'][0];
-									if ( 'photo' == $feed_data['media_type'] || 'video' == $feed_data['media_type'] ):
-										if ( isset($feed['full_picture']) ):
-											?>
-											<div class="sina-feed-thumb">
-												<img src="<?php echo esc_url( $feed['full_picture'] ); ?>">
-												<?php if ( 'photo' == $feed_data['media_type'] ): ?>
-													<div class="sina-overlay">
-														<a href="<?php echo esc_url( $feed['permalink_url'] ) ?>"></a>
-													</div>
-												<?php else: ?>
-													<div class="sina-overlay">
-														<a class="sina-feed-video"
-														href="<?php echo esc_url( $feed_data['unshimmed_url'] ) ?>">
-															<i class="fa fa-play far fa-play-circle"></i>
-														</a>
-													</div>
-												<?php endif ?>
-											</div>
-											<?php
+								<?php
+									if ( true && isset( $feed['attachments']['data'][0] ) ):
+										$feed_data = $feed['attachments']['data'][0];
+										if ( 'photo' == $feed_data['media_type'] || 'video' == $feed_data['media_type'] ):
+											if ( isset($feed['full_picture']) ):
+												?>
+												<div class="sina-feed-thumb">
+													<img src="<?php echo esc_url( $feed['full_picture'] ); ?>">
+													<?php if ( 'photo' == $feed_data['media_type'] ): ?>
+														<div class="sina-overlay">
+															<a href="<?php echo esc_url( $feed['permalink_url'] ) ?>"></a>
+														</div>
+													<?php else: ?>
+														<div class="sina-overlay">
+															<a class="sina-feed-video"
+															href="<?php echo esc_url( $feed_data['unshimmed_url'] ) ?>">
+																<i class="fa fa-play far fa-play-circle"></i>
+															</a>
+														</div>
+													<?php endif ?>
+												</div>
+												<?php
+											endif;
 										endif;
+											if ( isset($feed_data['title']) ):
+												?>
+												<h3 class="sina-feed-title">
+													<a href="<?php echo esc_url( $feed['permalink_url'] ) ?>">
+													<?php echo esc_html( $feed_data['title'] ); ?>
+													</a>
+												</h3>
+												<?php
+											endif;
 									endif;
-										if ( isset($feed_data['title']) ):
-											?>
-											<h3 class="sina-feed-title">
-												<a href="<?php echo esc_url( $feed['permalink_url'] ) ?>">
-												<?php echo esc_html( $feed_data['title'] ); ?>
-												</a>
-											</h3>
-											<?php
-										endif;
-								endif;
-							?>
-							<?php if ( isset($feed['message']) ): ?>
-								<div class="sina-feed-content"><?php echo wp_trim_words( $feed['message'], $data['content_length'] ); ?></div>
-							<?php endif; ?>
+								?>
+								<?php if ( isset($feed['message']) ): ?>
+									<div class="sina-feed-content"><?php echo wp_trim_words( $feed['message'], $data['content_length'] ); ?></div>
+								<?php endif; ?>
+							</div>
 						</div>
-					</div>
-				<?php endforeach ?>
-			</div><!-- .sina-social-feed -->
+					<?php endforeach; ?>
+				</div>
+			</div><!-- .sina-facebook-feed -->
 			<?php
+		}
+		if ( Plugin::instance()->editor->is_edit_mode() ) {
+			$this->render_editor_script();
 		}
 	}
 
+
+	protected function render_editor_script() {
+		?>
+		<script type="text/javascript">
+		jQuery( document ).ready(function( $ ) {
+			var sinaFeedClass = '.sina-fb-feed-'+'<?php echo $this->get_id(); ?>',
+				$this = $(sinaFeedClass),
+				$isoGrid = $this.children('.sina-feed-grid');
+
+			$this.imagesLoaded( function() {
+				$isoGrid.isotope({
+					itemSelector: '.sina-feed-col',
+					percentPosition: true,
+					masonry: {
+						columnWidth: '.sina-fb-feed-grid-sizer',
+					}
+				});
+			});
+		});
+		</script>
+		<?php
+	}
 
 	protected function _content_template() {
 

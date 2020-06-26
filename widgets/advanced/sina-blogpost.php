@@ -2107,7 +2107,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 		jQuery( document ).ready(function( $ ) {
 			var sinaBPClass = '.sina-bp-'+'<?php echo $this->get_id(); ?>',
 				$this = $(sinaBPClass),
-				$isoGrid = $this.children('.sina-bp-row');
+				$isoGrid = $this.children('.sina-bp-grid');
 
 			$this.imagesLoaded( function() {
 				$isoGrid.isotope({
@@ -2118,9 +2118,6 @@ class Sina_Blogpost_Widget extends Widget_Base {
 					}
 				});
 			});
-
-			var items = $this.data('items'),
-				btn = $this.find('.sina-load-more-btn');
 		});
 		</script>
 		<?php

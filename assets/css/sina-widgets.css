@@ -41,6 +41,8 @@
 }
 .sina-feed .sina-feed-title a,
 .sina-feed .sina-feed-page-name a,
+.sina-feed .sina-feed-meta,
+.sina-feed .sina-feed-content,
 .sina-pricing-title,
 .sina-price-tag,
 .sina-price-prefix,
@@ -98,8 +100,10 @@
 .sina-modal-content,
 .sina-accordion-item,
 .sina-accordion-body,
+.sina-social-feed,
 .sina-blogpost,
 .sina-bp-list .sina-bp,
+.sina-feed-grid,
 .sina-bp-grid,
 .sina-bp-col,
 .sina-bp,
@@ -358,6 +362,7 @@ img.mfp-img{
 }
 
 /*--------------------------------- Blogpost -------------------------------------- */
+.sina-fb-feed-grid-sizer,
 .sina-bp-grid-sizer{
 	width: 8.333333%;
 }
@@ -952,25 +957,36 @@ img.mfp-img{
 }
 
 /*--------------------------------- Social Feed -------------------------------------- */
-.sina-feed-col{
-	float: left;
-}
 .sina-feed{
 	overflow: hidden;
 	transition: all 0.4s;
 }
 .sina-feed-thumb {
-    position: relative;
+	position: relative;
 }
 .sina-feed-thumb img {
-    width: 100%;
+	width: 100%;
 }
 .sina-feed-thumb:hover .sina-overlay{
 	opacity: 1;
 }
-.sina-feed-thumb .sina-overlay > a{
+.sina-feed-thumb .sina-overlay a{
 	display: block;
 	height: 100%;
+}
+.sina-feed-thumb .sina-overlay .sina-feed-video{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.sina-feed-meta{
+	display: flex;
+}
+.sina-feed-meta .sina-feed-time {
+	margin-right: auto;
+}
+.sina-feed-meta .sina-feed-likes {
+	margin-right: 10px;
 }
 
 

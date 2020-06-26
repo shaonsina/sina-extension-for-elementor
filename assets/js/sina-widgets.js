@@ -1,4 +1,4 @@
-/* Sina Extension for Elementor v3.2.13 */
+/* Sina Extension for Elementor v3.3.0 */
 
 !(function ($) {
 	'use strict';
@@ -241,6 +241,23 @@
 				);
 			});
 
+		});
+	}
+
+	function sinaFbFeed($scope, $) {
+		$scope.find('.sina-facebook-feed').each(function () {
+			var $this = $(this),
+				$isoGrid = $this.children('.sina-feed-grid');
+
+			$this.imagesLoaded( function() {
+				$isoGrid.isotope({
+					itemSelector: '.sina-feed-col',
+					percentPosition: true,
+					masonry: {
+						columnWidth: '.sina-fb-feed-grid-sizer',
+					}
+				});
+			});
 		});
 	}
 
@@ -909,6 +926,7 @@
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_accordion.default', sinaAccordion);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_banner_slider.default', sinaBannerSlider);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_blogpost.default', sinaBlogpost);
+		elementorFrontend.hooks.addAction('frontend/element_ready/sina_facebook_feed.default', sinaFbFeed);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_brand_carousel.default', sinaBrandCarousel);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_contact_form.default', sinaContactForm);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_table.default', sinaTable);
