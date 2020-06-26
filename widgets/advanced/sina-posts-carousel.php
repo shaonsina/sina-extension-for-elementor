@@ -213,7 +213,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->add_control(
 			'posts_txt_len',
 			[
-				'label' => __( 'Text Word', 'sina-ext' ),
+				'label' => __( 'Content Length (Word)', 'sina-ext' ),
 				'type' => Controls_Manager::NUMBER,
 				'step' => 1,
 				'min' => 0,

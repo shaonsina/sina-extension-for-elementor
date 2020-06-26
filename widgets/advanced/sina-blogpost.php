@@ -269,7 +269,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 		$this->add_control(
 			'content_length',
 			[
-				'label' => __( 'Content Word', 'sina-ext' ),
+				'label' => __( 'Content Length (Word)', 'sina-ext' ),
 				'type' => Controls_Manager::NUMBER,
 				'step' => 1,
 				'min' => 0,

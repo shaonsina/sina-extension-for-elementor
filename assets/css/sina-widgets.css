@@ -39,6 +39,8 @@
 .sina-pricing-zoom:hover{
 	z-index: 999;
 }
+.sina-feed .sina-feed-title a,
+.sina-feed .sina-feed-page-name a,
 .sina-pricing-title,
 .sina-price-tag,
 .sina-price-prefix,
@@ -117,6 +119,7 @@
 .sina-table table,
 .sina-team img,
 .sina-load-more,
+.sina-feed-col-1,
 .sina-bp-item-1{
 	width: 100%;
 }
@@ -373,14 +376,17 @@ img.mfp-img{
 .sina-bp-custom-5{
 	width: 41.666667%;
 }
+.sina-feed-col-2,
 .sina-bp-custom-6,
 .sina-bp-item-2{
 	width: 50%;
 }
+.sina-feed-col-3,
 .sina-bp-custom-4,
 .sina-bp-item-3{
 	width: 33.333333%;
 }
+.sina-feed-col-4,
 .sina-bp-custom-3,
 .sina-bp-item-4{
 	width: 25%;
@@ -945,6 +951,29 @@ img.mfp-img{
 	margin: 20px auto;
 }
 
+/*--------------------------------- Social Feed -------------------------------------- */
+.sina-feed-col{
+	float: left;
+}
+.sina-feed{
+	overflow: hidden;
+	transition: all 0.4s;
+}
+.sina-feed-thumb {
+    position: relative;
+}
+.sina-feed-thumb img {
+    width: 100%;
+}
+.sina-feed-thumb:hover .sina-overlay{
+	opacity: 1;
+}
+.sina-feed-thumb .sina-overlay > a{
+	display: block;
+	height: 100%;
+}
+
+
 /*--------------------------------- Table -------------------------------------- */
 .sina-table{
 	overflow-x: auto;
@@ -1277,6 +1306,9 @@ img.mfp-img{
 		width: 50%;
 		height: 400px;
 	}
+	.sina-feed-col-2,
+	.sina-feed-col-3,
+	.sina-feed-col-4,
 	.sina-bp-custom-9,
 	.sina-bp-custom-8,
 	.sina-bp-custom-7,
@@ -1339,6 +1371,9 @@ img.mfp-img{
 
 /* RESPONSIVE-Mobile Too Small*/
 @media (max-width: 540px) {
+	.sina-feed-col-2,
+	.sina-feed-col-3,
+	.sina-feed-col-4,
 	.sina-bp-custom-12,
 	.sina-bp-custom-9,
 	.sina-bp-custom-8,

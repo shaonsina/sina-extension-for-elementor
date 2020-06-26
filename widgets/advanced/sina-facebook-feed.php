@@ -116,89 +116,787 @@ class Sina_Facebook_Feed_Widget extends Widget_Base {
 			]
 		);
 
+		$this->add_control(
+			'page_id',
+			[
+				'label' => esc_html__( 'Page ID', 'sina-ext' ),
+				'label_block' => true,
+				'type' => Controls_Manager::TEXT,
+				'placeholder' => esc_html__( 'Enter Page ID', 'sina-ext' ),
+			]
+		);
+		$this->add_control(
+			'access_token',
+			[
+				'label' => esc_html__( 'Access Token', 'sina-ext' ),
+				'label_block' => true,
+				'type' => Controls_Manager::TEXT,
+				'placeholder' => esc_html__( 'Enter Access Token', 'sina-ext' ),
+			]
+		);
+		$this->add_control(
+			'feeds_num',
+			[
+				'label' => esc_html__( 'Number of Feed', 'sina-ext' ),
+				'type' => Controls_Manager::NUMBER,
+				'step' => 1,
+				'min' => 1,
+				'max' => 50,
+				'default' => 3,
+			]
+		);
+		$this->add_control(
+			'feeds_offset',
+			[
+				'label' => esc_html__( 'Number of Offset', 'sina-ext' ),
+				'type' => Controls_Manager::NUMBER,
+				'step' => 1,
+				'min' => 0,
+				'max' => 50,
+				'default' => 0,
+			]
+		);
+		$this->add_control(
+			'content_length',
+			[
+				'label' => esc_html__( 'Content Length (Word)', 'sina-ext' ),
+				'type' => Controls_Manager::NUMBER,
+				'step' => 1,
+				'min' => 0,
+				'max' => 2000,
+				'default' => 15,
+			]
+		);
+		$this->add_control(
+			'columns',
+			[
+				'label' => esc_html__( 'Number of Column', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					'1' => esc_html__( '1', 'sina-ext' ),
+					'2' => esc_html__( '2', 'sina-ext' ),
+					'3' => esc_html__( '3', 'sina-ext' ),
+					'4' => esc_html__( '4', 'sina-ext' ),
+				],
+				'default' => '3',
+			]
+		);
+		$this->add_control(
+			'sort_by',
+			[
+				'label' => esc_html__( 'Sort By', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					'newest' => esc_html__( 'Newest', 'sina-ext' ),
+					'oldest' => esc_html__( 'Oldest', 'sina-ext' ),
+				],
+				'default' => 'newest',
+			]
+		);
+
 		$this->end_controls_section();
 		// End Feed Content
 		// =================
+
+
+		// Start Feed Style
+		// =====================
+		$this->start_controls_section(
+			'box_style',
+			[
+				'label' => esc_html__( 'Feed', 'sina-ext' ),
+				'tab' => Controls_Manager::TAB_STYLE,
+			]
+		);
+		$this->add_control(
+			'effects',
+			[
+				'label' => esc_html__( 'Effects', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					'sina-hover-move' => esc_html__( 'Move', 'sina-ext' ),
+					'sina-hover-zoom' => esc_html__( 'Zoom', 'sina-ext' ),
+					'' => esc_html__( 'None', 'sina-ext' ),
+				],
+				'default' => '',
+			]
+		);
+		$this->add_responsive_control(
+			'scale',
+			[
+				'label' => esc_html__( 'Scale', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'range' => [
+					'px' => [
+						'step' => 0.1,
+						'min' => 0.1,
+						'max' => 5,
+					],
+				],
+				'default' => [
+					'size' => '1.05',
+				],
+				'condition' => [
+					'effects' => 'sina-hover-zoom',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-feed.sina-hover-zoom:hover' => 'transform: scale({{SIZE}});',
+				],
+			]
+		);
+		$this->add_control(
+			'move',
+			[
+				'label' => esc_html__( 'Move', 'sina-ext' ),
+				'type' => Controls_Manager::POPOVER_TOGGLE,
+				'condition' => [
+					'effects' => 'sina-hover-move',
+				],
+			]
+		);
+
+		$this->start_popover();
+		$this->add_responsive_control(
+			'translateX',
+			[
+				'label' => esc_html__( 'Horizontal', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'range' => [
+					'px' => [
+						'step' => 1,
+						'min' => -100,
+						'max' => 100,
+					],
+				],
+				'desktop_default' => [
+					'size' => '0',
+				],
+				'tablet_default' => [
+					'size' => '0',
+				],
+				'mobile_default' => [
+					'size' => '0',
+				],
+				'condition' => [
+					'effects' => 'sina-hover-move',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'translateY',
+			[
+				'label' => esc_html__( 'Vertical', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'range' => [
+					'px' => [
+						'step' => 1,
+						'min' => -100,
+						'max' => 100,
+					],
+				],
+				'desktop_default' => [
+					'size' => '-10',
+				],
+				'tablet_default' => [
+					'size' => '-10',
+				],
+				'mobile_default' => [
+					'size' => '-10',
+				],
+				'condition' => [
+					'effects' => 'sina-hover-move',
+				],
+				'selectors' => [
+					'(desktop){{WRAPPER}} .sina-feed:hover' => 'transform: translate({{translateX.SIZE || 0}}px, {{translateY.SIZE || 0}}px);',
+					'(tablet){{WRAPPER}} .sina-feed:hover' => 'transform: translate({{translateX_tablet.SIZE || 0}}px, {{translateY_tablet.SIZE || 0}}px);',
+					'(mobile){{WRAPPER}} .sina-feed:hover' => 'transform: translate({{translateX_mobile.SIZE || 0}}px, {{translateY_mobile.SIZE || 0}}px);',
+				],
+			]
+		);
+		$this->end_popover();
+
+
+		$this->start_controls_tabs( 'feed_tabs' );
+
+		$this->start_controls_tab(
+			'feed_normal',
+			[
+				'label' => esc_html__( 'Normal', 'sina-ext' ),
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
+			[
+				'name' => 'background',
+				'types' => [ 'classic', 'gradient' ],
+				'selector' => '{{WRAPPER}} .sina-feed',
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Box_Shadow::get_type(),
+			[
+				'name' => 'box_shadow',
+				'selector' => '{{WRAPPER}} .sina-feed',
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Border::get_type(),
+			[
+				'name' => 'box_border',
+				'fields_options' => [
+					'border' => [
+						'default' => 'solid',
+					],
+					'color' => [
+						'default' => '#fafafa',
+					],
+					'width' => [
+						'default' => [
+							'top' => '1',
+							'right' => '1',
+							'bottom' => '1',
+							'left' => '1',
+							'isLinked' => true,
+						]
+					],
+				],
+				'selector' => '{{WRAPPER}} .sina-feed',
+			]
+		);
+
+		$this->end_controls_tab();
+
+		$this->start_controls_tab(
+			'feed_hover',
+			[
+				'label' => esc_html__( 'Hover', 'sina-ext' ),
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
+			[
+				'name' => 'hover_background',
+				'types' => [ 'classic', 'gradient' ],
+				'selector' => '{{WRAPPER}} .sina-feed:hover',
+			]
+		);
+		$this->add_control(
+			'box_hover_border',
+			[
+				'label' => esc_html__( 'Border Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .sina-feed:hover' => 'border-color: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Box_Shadow::get_type(),
+			[
+				'name' => 'box_hover_shadow',
+				'selector' => '{{WRAPPER}} .sina-feed:hover',
+			]
+		);
+
+		$this->add_control(
+			'feed_hover_page_name_heading',
+			[
+				'label' => esc_html__( 'Page Name Styles', 'sina-ext' ),
+				'type' => Controls_Manager::HEADING,
+			]
+		);
+		$this->add_control(
+			'feed_hover_page_name_color',
+			[
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .sina-feed:hover .sina-feed-page-name a' => 'color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'feed_hover_title_heading',
+			[
+				'label' => esc_html__( 'Title Styles', 'sina-ext' ),
+				'type' => Controls_Manager::HEADING,
+			]
+		);
+		$this->add_control(
+			'feed_hover_title_color',
+			[
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .sina-feed:hover .sina-feed-title a' => 'color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'feed_hover_content_heading',
+			[
+				'label' => esc_html__( 'Content Styles', 'sina-ext' ),
+				'type' => Controls_Manager::HEADING,
+			]
+		);
+		$this->add_control(
+			'feed_hover_content_color',
+			[
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .sina-feed:hover .sina-feed-content' => 'color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'feed_hover_meta_heading',
+			[
+				'label' => esc_html__( 'Meta Styles', 'sina-ext' ),
+				'type' => Controls_Manager::HEADING,
+			]
+		);
+		$this->add_control(
+			'feed_hover_meta_color',
+			[
+				'label' => esc_html__( 'Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .sina-feed:hover .sina-feed-meta' => 'color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->end_controls_tab();
+
+		$this->end_controls_tabs();
+
+		$this->add_responsive_control(
+			'box_radius',
+			[
+				'label' => esc_html__( 'Radius', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'separator' => 'before',
+				'selectors' => [
+					'{{WRAPPER}} .sina-feed' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'box_padding',
+			[
+				'label' => esc_html__( 'Padding', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '15',
+					'right' => '15',
+					'bottom' => '15',
+					'left' => '15',
+					'isLinked' => true,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-feed' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'box_margin',
+			[
+				'label' => esc_html__( 'Margin', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '15',
+					'right' => '15',
+					'bottom' => '15',
+					'left' => '15',
+					'isLinked' => true,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-feed-col' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'alignment',
+			[
+				'label' => esc_html__( 'Alignment', 'sina-ext' ),
+				'type' => Controls_Manager::CHOOSE,
+				'options' => [
+					'left' => [
+						'title' => esc_html__( 'Left', 'sina-ext' ),
+						'icon' => 'fa fa-align-left',
+					],
+					'center' => [
+						'title' => esc_html__( 'Center', 'sina-ext' ),
+						'icon' => 'fa fa-align-center',
+					],
+					'right' => [
+						'title' => esc_html__( 'Right', 'sina-ext' ),
+						'icon' => 'fa fa-align-right',
+					],
+					'justify' => [
+						'title' => esc_html__( 'justify', 'sina-ext' ),
+						'icon' => 'fa fa-align-justify',
+					],
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-feed-content' => 'text-align: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_control(
+			'overlay',
+			[
+				'label' => esc_html__( 'Overlay Background', 'sina-ext' ),
+				'type' => Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
+			[
+				'name' => 'overlay_bg',
+				'types' => [ 'classic', 'gradient' ],
+				'fields_options' => [
+					'background' => [ 
+						'default' =>'classic', 
+					],
+					'color' => [
+						'default' => 'rgba(0,0,0,0.4)',
+					],
+				],
+				'selector' => '{{WRAPPER}} .sina-feed-thumb .sina-overlay',
+			]
+		);
+		Sina_Common_Data::BG_hover_effects($this, '.sina-feed');
+
+		$this->end_controls_section();
+		// End Feed Style
+		// =================
+
+
+		// Start Content Style
+		// =====================
+		$this->start_controls_section(
+			'content_style',
+			[
+				'label' => esc_html__( 'Content', 'sina-ext' ),
+				'tab' => Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_control(
+			'content_color',
+			[
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#222',
+				'selectors' => [
+					'{{WRAPPER}} .sina-feed-content' => 'color: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name' => 'content_typography',
+				'selector' => '{{WRAPPER}} .sina-feed-content',
+			]
+		);
+		$this->add_responsive_control(
+			'content_padding',
+			[
+				'label' => esc_html__( 'Padding', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '15',
+					'right' => '0',
+					'bottom' => '0',
+					'left' => '0',
+					'isLinked' => true,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-feed-content' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->end_controls_section();
+		// End Content Style
+		// =====================
+
+
+		// Start Title Style
+		// =====================
+		$this->start_controls_section(
+			'title_style',
+			[
+				'label' => esc_html__( 'Title', 'sina-ext' ),
+				'tab' => Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name' => 'title_typography',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_weight' => [
+						'default' => '600',
+					],
+					'font_size'   => [
+						'default' => [
+							'size' => '24',
+						],
+					],
+					'line_height'   => [
+						'default' => [
+							'size' => '32',
+						],
+					],
+				],
+				'selector' => '{{WRAPPER}} .sina-feed-title, {{WRAPPER}} .sina-feed-title a',
+			]
+		);
+
+		$this->start_controls_tabs( 'title_tabs' );
+
+		$this->start_controls_tab(
+			'title_normal',
+			[
+				'label' => esc_html__( 'Normal', 'sina-ext' ),
+			]
+		);
+		$this->add_control(
+			'title_color',
+			[
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#222',
+				'selectors' => [
+					'{{WRAPPER}} .sina-feed-title a' => 'color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->end_controls_tab();
+
+		$this->start_controls_tab(
+			'title_hover',
+			[
+				'label' => esc_html__( 'Hover', 'sina-ext' ),
+			]
+		);
+		$this->add_control(
+			'title_hover_color',
+			[
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#1085e4',
+				'selectors' => [
+					'{{WRAPPER}} .sina-feed .sina-feed-title a:hover' => 'color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->end_controls_tab();
+
+		$this->end_controls_tabs();
+
+		$this->add_responsive_control(
+			'title_margin',
+			[
+				'label' => esc_html__( 'Margin', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '20',
+					'right' => '0',
+					'bottom' => '10',
+					'left' => '0',
+					'isLinked' => false,
+				],
+				'separator' => 'before',
+				'selectors' => [
+					'{{WRAPPER}} .sina-feed-title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->end_controls_section();
+		// End Title Style
+		// =====================
+
+
+		// Start Meta Style
+		// =====================
+		$this->start_controls_section(
+			'meta_style',
+			[
+				'label' => esc_html__( 'Meta', 'sina-ext' ),
+				'tab' => Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name' => 'meta_typography',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_weight' => [
+						'default' => '400',
+					],
+					'font_size'   => [
+						'default' => [
+							'size' => '14',
+						],
+					],
+					'line_height'   => [
+						'default' => [
+							'size' => '24',
+						],
+					],
+				],
+				'selector' => '{{WRAPPER}} .sina-feed-meta',
+			]
+		);
+		$this->add_control(
+			'meta_color',
+			[
+				'label' => esc_html__( 'Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#222',
+				'selectors' => [
+					'{{WRAPPER}} .sina-feed-meta' => 'color: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'meta_margin',
+			[
+				'label' => esc_html__( 'Margin', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '15',
+					'right' => '0',
+					'bottom' => '15',
+					'left' => '0',
+					'isLinked' => false,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-feed-meta' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->end_controls_section();
+		// End Meta Style
+		// ================
 	}
 
 
 	protected function render() {
+		// 120432114814310
+		// EAAv9UUM5ZCcABACEfCX7NOnS7cisDGHPqsjWZAXFZAEtPdOTwoISppPw2IViIfCPoUAxgZB7f0eK0WgBke1PP8KMQeQJAo0UYTSh9b77HTmMT1rJZBElIxNrrCZB8pLuGgmLvHHIaPLIEH0ZAO7zYmPHDZB4CeNCVy6aMRqm75do8UTLo5Ua8TcXIzI9ZASIQdnAjALbutnc5WwZDZD
 		$data = $this->get_settings_for_display();
-		$data['page_id'] = '120432114814310';
-		$facebook_data = wp_remote_get( "https://graph.facebook.com/v7.0/120432114814310/posts?fields=status_type,created_time,from,message,story,full_picture,permalink_url,attachments.limit(1){type,media_type,title,description,unshimmed_url},comments.summary(total_count),reactions.summary(total_count)&access_token=EAAv9UUM5ZCcABAGXKFiNHNNPUpYoaArBt5aCWYXxaORWzUtsbKORb0mY4OxztV4BWH7sbQqj3d7lmRQ6aQKlSlnwSHCAsmLj16997R3ZCxd2eQmGgvSLBP0perJWgUdn8NOYSZBZAQT9uYWsn7EcZAzfjGnIsupZACqNFVhHxc6z6zGLvq1uARwhXRSgdmbUdORTgooFnZA5wZDZD" );
-
-		$facebook_data = json_decode( $facebook_data['body'], true );
-		$facebook_data = isset($facebook_data['data']) ? $facebook_data['data'] : [];
-		?>
-		<div class="sina-facebook-feed">
-			<?php foreach ( $facebook_data as $key => $post ): ?>
-				<div class="sina-fb-post">
-					<?php
-						$likes 	= isset($post['reactions']) ? $post['reactions']['summary']['total_count'] : 0;
-						$comnts = isset($post['comments']) ? $post['comments']['summary']['total_count'] : 0;
-						if ( true && isset( $post['attachments']['data'][0] ) ):
-							$post_data = $post['attachments']['data'][0];
-							if ( 'photo' == $post_data['media_type'] || 'video' == $post_data['media_type'] ):
-								if ( isset($post['full_picture']) ):
-									?>
-									<div class="sina-fb-thumb">
-										<?php if ( 'photo' == $post_data['media_type'] ): ?>
-											<a href="<?php echo esc_url( $post['permalink_url'] ) ?>">
-												<img src="<?php echo esc_url( $post['full_picture'] ); ?>">
-											</a>
-										<?php else: ?>
-											<img src="<?php echo esc_url( $post['full_picture'] ); ?>">
-											<a class="sina-fb-video"
-											href="<?php echo esc_url( $post_data['unshimmed_url'] ) ?>">
-												<i class="fa fa-play far fa-play-circle"></i>
-											</a>
-										<?php endif ?>
-									</div>
-									<?php
-								endif;
-							endif;
-								if ( isset($post_data['title']) ):
-									?>
-									<h3 class="sina-fb-title">
-										<a href="<?php echo esc_url( $post['permalink_url'] ) ?>">
-										<?php echo esc_html( $post_data['title'] ); ?>
-										</a>
-									</h3>
-									<?php
-								endif;
-						endif;
+		$facebook_data = wp_remote_get( 'https://graph.facebook.com/v7.0/'. $data['page_id'] .'/posts?fields=status_type,created_time,from,message,story,full_picture,permalink_url,attachments.limit(1){type,media_type,title,description,unshimmed_url},comments.summary(total_count),reactions.summary(total_count)&access_token='.  $data['access_token']);
+		if ( !is_wp_error( $facebook_data ) ) {
+			$facebook_data = json_decode( $facebook_data['body'], true );
+			$facebook_data = isset($facebook_data['data']) ? $facebook_data['data'] : [];
+			if ( 'oldest' == $data['sort_by']) {
+				$facebook_data = array_reverse($facebook_data);
+			}
+			$facebook_data = array_slice($facebook_data, $data['feeds_offset'], $data['feeds_num']);
+			?>
+			<div class="sina-social-feed clearfix">
+				<?php foreach ( $facebook_data as $key => $feed ):
+					$likes 	= isset($feed['reactions']) ? $feed['reactions']['summary']['total_count'] : 0;
+					$comnts = isset($feed['comments']) ? $feed['comments']['summary']['total_count'] : 0;
 					?>
-					<div class="sina-fb-page-name">
-						<a href="<?php echo esc_url( 'https://www.facebook.com/'. $data['page_id'] ); ?>"
-						target="_blank">
-							<img width="32px" height="32px" src="<?php echo esc_url( 'https://graph.facebook.com/v7.0/'. $data['page_id'] .'/picture' ); ?>" alt="<?php echo esc_attr( $post['from']['name'] ); ?>">
-							<?php echo esc_html( $post['from']['name'] ); ?>
-						</a>
-					</div>
-					<div class="sina-fb-post-meta clearfix">
-						<div class="sina-fb-post-time">
-							<i class="fa fa-clock-o far fa-clock"></i> <?php echo esc_html( date( "d M Y", strtotime( $post['created_time'] ) ) ); ?>
+					<div class="sina-feed-col sina-feed-col-<?php echo esc_attr($data['columns']) ?>">
+						<div class="sina-feed <?php echo esc_attr($data['effects'].' '.$data['bg_layer_effects']) ?>">
+							<div class="sina-feed-page-name">
+								<a href="<?php echo esc_url( 'https://www.facebook.com/'. $data['page_id'] ); ?>"
+								target="_blank">
+									<img width="32px" height="32px" src="<?php echo esc_url( 'https://graph.facebook.com/v7.0/'. $data['page_id'] .'/picture' ); ?>" alt="<?php echo esc_attr( $feed['from']['name'] ); ?>">
+									<?php echo esc_html( $feed['from']['name'] ); ?>
+								</a>
+							</div>
+							<div class="sina-feed-meta clearfix">
+								<div class="sina-feed-time">
+									<i class="fa fa-clock-o far fa-clock"></i> <?php echo esc_html( date( "d M Y", strtotime( $feed['created_time'] ) ) ); ?>
+								</div>
+								<div class="sina-feed-info">
+									<span class="sina-feed-comments">
+										<i class="far fa-comments fa fa-comments-o"></i>
+										<?php echo esc_html($comnts); ?>
+									</span>
+									<span class="sina-feed-likes">
+										<i class="far fa-thumbs-up fa fa-thumbs-o-up"></i>
+										<?php echo esc_html($comnts); ?>
+									</span>
+								</div>
+							</div>
+							<?php
+								if ( true && isset( $feed['attachments']['data'][0] ) ):
+									$feed_data = $feed['attachments']['data'][0];
+									if ( 'photo' == $feed_data['media_type'] || 'video' == $feed_data['media_type'] ):
+										if ( isset($feed['full_picture']) ):
+											?>
+											<div class="sina-feed-thumb">
+												<img src="<?php echo esc_url( $feed['full_picture'] ); ?>">
+												<?php if ( 'photo' == $feed_data['media_type'] ): ?>
+													<div class="sina-overlay">
+														<a href="<?php echo esc_url( $feed['permalink_url'] ) ?>"></a>
+													</div>
+												<?php else: ?>
+													<div class="sina-overlay">
+														<a class="sina-feed-video"
+														href="<?php echo esc_url( $feed_data['unshimmed_url'] ) ?>">
+															<i class="fa fa-play far fa-play-circle"></i>
+														</a>
+													</div>
+												<?php endif ?>
+											</div>
+											<?php
+										endif;
+									endif;
+										if ( isset($feed_data['title']) ):
+											?>
+											<h3 class="sina-feed-title">
+												<a href="<?php echo esc_url( $feed['permalink_url'] ) ?>">
+												<?php echo esc_html( $feed_data['title'] ); ?>
+												</a>
+											</h3>
+											<?php
+										endif;
+								endif;
+							?>
+							<?php if ( isset($feed['message']) ): ?>
+								<div class="sina-feed-content"><?php echo wp_trim_words( $feed['message'], $data['content_length'] ); ?></div>
+							<?php endif; ?>
 						</div>
-						<div class="sina-fb-post-info">
-							<span class="sina-fb-post-comments">
-								<i class="far fa-comments fa fa-comments-o"></i>
-								<?php echo esc_html($comnts); ?>
-							</span>
-							<span class="sina-fb-post-likes">
-								<i class="far fa-thumbs-up fa fa-thumbs-o-up"></i>
-								<?php echo esc_html($comnts); ?>
-							</span>
-						</div>
 					</div>
-
-
-					<?php if ( isset($post['message']) ): ?>
-						<div class="sina-fb-content"><?php echo wp_trim_words( $post['message'], 10 ); ?></div>
-					<?php endif; ?>
-				</div>
-			<?php endforeach ?>
-		</div><!-- .sina-facebook-feed -->
-		<?php
+				<?php endforeach ?>
+			</div><!-- .sina-social-feed -->
+			<?php
+		}
 	}
 
 
