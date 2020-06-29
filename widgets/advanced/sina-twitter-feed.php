@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class Sina_Facebook_Feed_Widget extends Widget_Base {
+class Sina_Twitter_Feed_Widget extends Widget_Base {
 
 	/**
 	 * Get widget name.
@@ -28,7 +28,7 @@ class Sina_Facebook_Feed_Widget extends Widget_Base {
 	 * @since 3.3.0
 	 */
 	public function get_name() {
-		return 'sina_facebook_feed';
+		return 'sina_twitter_feed';
 	}
 
 	/**
@@ -37,7 +37,7 @@ class Sina_Facebook_Feed_Widget extends Widget_Base {
 	 * @since 3.3.0
 	 */
 	public function get_title() {
-		return esc_html__( 'Sina Facebook Feed', 'sina-ext' );
+		return esc_html__( 'Sina Twitter Feed', 'sina-ext' );
 	}
 
 	/**
@@ -46,7 +46,7 @@ class Sina_Facebook_Feed_Widget extends Widget_Base {
 	 * @since 3.3.0
 	 */
 	public function get_icon() {
-		return 'eicon-facebook-comments';
+		return 'eicon-twitter-feed';
 	}
 
 	/**
@@ -66,7 +66,7 @@ class Sina_Facebook_Feed_Widget extends Widget_Base {
 	 * @since 3.3.0
 	 */
 	public function get_keywords() {
-		return [ 'sina facebook feed', 'sina facebook post', 'sina facebook page' ];
+		return [ 'sina twitter feed', 'sina twitter post', 'sina twitter page' ];
 	}
 
 	/**
@@ -975,19 +975,24 @@ class Sina_Facebook_Feed_Widget extends Widget_Base {
 
 	protected function render() {
 		$data = $this->get_settings_for_display();
-		$facebook_data = wp_remote_get( 'https://graph.facebook.com/v7.0/'. $data['page_id'] .'/posts?fields=id,names,status_type,created_time,from,message,story,full_picture,permalink_url,attachments.limit(1){type,media_type,title,description,unshimmed_url},comments.summary(total_count),reactions.summary(total_count)&access_token='.  $data['access_token']);
-		if ( !is_wp_error( $facebook_data ) ) {
-			$facebook_data = json_decode( $facebook_data['body'], true );
-			$facebook_data = isset($facebook_data['data']) ? $facebook_data['data'] : [];
+		// $twitter_data = wp_remote_get();
+
+		$twitter_data = wp_remote_get( 'https://graph.facebook.com/v7.0/'. $data['page_id'] .'/posts?fields=id,names,status_type,created_time,from,message,story,full_picture,permalink_url,attachments.limit(1){type,media_type,title,description,unshimmed_url},comments.summary(total_count),reactions.summary(total_count)&access_token='.  $data['access_token']);
+
+
+
+		if ( !is_wp_error( $twitter_data ) ) {
+			$twitter_data = json_decode( $twitter_data['body'], true );
+			$twitter_data = isset($twitter_data['data']) ? $twitter_data['data'] : [];
 			if ( 'oldest' == $data['sort_by']) {
-				$facebook_data = array_reverse($facebook_data);
+				$twitter_data = array_reverse($twitter_data);
 			}
-			$facebook_data = array_slice($facebook_data, $data['feeds_offset'], $data['feeds_num']);
+			$twitter_data = array_slice($twitter_data, $data['feeds_offset'], $data['feeds_num']);
 			?>
-			<div class="sina-social-feed sina-facebook-feed clearfix <?php echo esc_attr( 'sina-fb-feed-'.$this->get_id() ); ?>">
+			<div class="sina-social-feed sina-twitter-feed clearfix <?php echo esc_attr( 'sina-twitter-feed-'.$this->get_id() ); ?>">
 				<div class="sina-feed-grid">
-					<div class="sina-fb-feed-grid-sizer"></div>
-					<?php foreach ( $facebook_data as $key => $feed ):
+					<div class="sina-twitter-feed-grid-sizer"></div>
+					<?php foreach ( $twitter_data as $key => $feed ):
 						$likes 	= isset($feed['reactions']) ? $feed['reactions']['summary']['total_count'] : 0;
 						$comnts = isset($feed['comments']) ? $feed['comments']['summary']['total_count'] : 0;
 						?>
@@ -1057,7 +1062,7 @@ class Sina_Facebook_Feed_Widget extends Widget_Base {
 						</div>
 					<?php endforeach; ?>
 				</div>
-			</div><!-- .sina-facebook-feed -->
+			</div><!-- .sina-twitter-feed -->
 			<?php
 		}
 		if ( Plugin::instance()->editor->is_edit_mode() ) {
@@ -1070,7 +1075,7 @@ class Sina_Facebook_Feed_Widget extends Widget_Base {
 		?>
 		<script type="text/javascript">
 		jQuery( document ).ready(function( $ ) {
-			var sinaFeedClass = '.sina-fb-feed-'+'<?php echo $this->get_id(); ?>',
+			var sinaFeedClass = '.sina-twitter-feed-'+'<?php echo $this->get_id(); ?>',
 				$this = $(sinaFeedClass),
 				$isoGrid = $this.children('.sina-feed-grid');
 
@@ -1079,7 +1084,7 @@ class Sina_Facebook_Feed_Widget extends Widget_Base {
 					itemSelector: '.sina-feed-col',
 					percentPosition: true,
 					masonry: {
-						columnWidth: '.sina-fb-feed-grid-sizer',
+						columnWidth: '.sina-twitter-feed-grid-sizer',
 					}
 				});
 			});

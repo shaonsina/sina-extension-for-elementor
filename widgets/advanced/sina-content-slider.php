@@ -329,7 +329,7 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 				'mobile_default' => '1',
 			]
 		);
-		Sina_Common_Data::carousel_content( $this, '.sina-content-slider' );
+		Sina_Common_Data::carousel_content( $this );
 
 		$this->end_controls_section();
 		// End Slider Settings

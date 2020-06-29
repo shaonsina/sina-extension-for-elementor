@@ -344,7 +344,7 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 				'selector' => '{{WRAPPER}} .sina-slider-content .sina-overlay',
 			]
 		);
-		Sina_Common_Data::carousel_content($this, '.sina-banner-slider', true, false);
+		Sina_Common_Data::carousel_content( $this, true, false );
 		$this->add_control(
 			'part_anim',
 			[

@@ -248,7 +248,7 @@ class Sina_Common_Data{
 		);
 	}
 
-	public static function carousel_content( $obj, $class = '', $cond = true, $speed = true ) {
+	public static function carousel_content( $obj, $cond = true, $speed = true ) {
 		$obj->add_control(
 			'autoplay',
 			[

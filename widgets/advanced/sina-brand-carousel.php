@@ -305,7 +305,7 @@ class Sina_Brand_Carousel_Widget extends Widget_Base {
 				'mobile_default' => '2',
 			]
 		);
-		Sina_Common_Data::carousel_content($this, '', false);
+		Sina_Common_Data::carousel_content( $this, false );
 
 		$this->end_controls_section();
 		// End Carousel Content

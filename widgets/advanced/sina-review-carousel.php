@@ -241,7 +241,7 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 				'default' => '1',
 			]
 		);
-		Sina_Common_Data::carousel_content( $this, '.sina-review-carousel' );
+		Sina_Common_Data::carousel_content( $this );
 
 		$this->end_controls_section();
 		// End Carousel Settings

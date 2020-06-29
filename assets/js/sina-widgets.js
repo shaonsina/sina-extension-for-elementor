@@ -261,6 +261,23 @@
 		});
 	}
 
+	function sinaTwitterFeed($scope, $) {
+		$scope.find('.sina-twitter-feed').each(function () {
+			var $this = $(this),
+				$isoGrid = $this.children('.sina-feed-grid');
+
+			$this.imagesLoaded( function() {
+				$isoGrid.isotope({
+					itemSelector: '.sina-feed-col',
+					percentPosition: true,
+					masonry: {
+						columnWidth: '.sina-twitter-feed-grid-sizer',
+					}
+				});
+			});
+		});
+	}
+
 	function sinaContactForm($scope, $) {
 		$scope.find('.sina-contact-form').each(function () {
 			var $this = $(this),
@@ -927,6 +944,7 @@
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_banner_slider.default', sinaBannerSlider);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_blogpost.default', sinaBlogpost);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_facebook_feed.default', sinaFbFeed);
+		elementorFrontend.hooks.addAction('frontend/element_ready/sina_twitter_feed.default', sinaTwitterFeed);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_brand_carousel.default', sinaBrandCarousel);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_contact_form.default', sinaContactForm);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_table.default', sinaTable);
