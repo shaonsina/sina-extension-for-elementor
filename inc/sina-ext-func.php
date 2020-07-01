@@ -30,6 +30,10 @@ abstract class Sina_Ext_Functions extends Sina_Extension_Base{
 		wp_register_style( 'data-table', SINA_EXT_URL .'assets/css/datatables.min.css', [], SINA_EXT_VERSION );
 		wp_register_style( 'sina-tooltip', SINA_EXT_URL .'assets/css/sina-tooltip.min.css', [], SINA_EXT_VERSION );
 		wp_register_style( 'sina-widgets', SINA_EXT_URL .'assets/css/sina-widgets.css', [], SINA_EXT_VERSION );
+
+		if ( is_rtl() ) {
+			wp_enqueue_style( 'sina-widgets-rtl', SINA_EXT_URL .'assets/css/sina-widgets-rtl.css', [], SINA_EXT_VERSION );
+		}
 	}
 
 	/**

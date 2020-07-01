@@ -421,11 +421,11 @@ class Sina_Common_Data{
 		$obj->add_control(
 			$prefix.'_icon_align',
 			[
-				'label' => __( 'Icon Position', 'sina-ext' ),
+				'label' => __( 'Icon Position Reverse', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'left' => __( 'Left', 'sina-ext' ),
-					'right' => __( 'Right', 'sina-ext' ),
+					'left' => __( 'Yes', 'sina-ext' ),
+					'right' => __( 'No', 'sina-ext' ),
 				],
 				'default' => 'right',
 				'condition' => [
@@ -448,6 +448,8 @@ class Sina_Common_Data{
 				'selectors' => [
 					'{{WRAPPER}} '.$class.' .sina-icon-right' => 'margin-left: {{SIZE}}{{UNIT}};',
 					'{{WRAPPER}} '.$class.' .sina-icon-left' => 'margin-right: {{SIZE}}{{UNIT}};',
+					'.rtl {{WRAPPER}} '.$class.' .sina-icon-right' => 'margin-right: {{SIZE}}{{UNIT}}; margin-left: auto;',
+					'.rtl {{WRAPPER}} '.$class.' .sina-icon-left' => 'margin-left: {{SIZE}}{{UNIT}}; margin-right: auto;',
 				],
 			]
 		);

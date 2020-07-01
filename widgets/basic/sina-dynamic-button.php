@@ -200,11 +200,11 @@ class Sina_Dynamic_Button_Widget extends Widget_Base {
 		$this->add_control(
 			'btn_icon_align',
 			[
-				'label' => __( 'Icon Position', 'sina-ext' ),
+				'label' => __( 'Icon Position Reverse', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'left' => __( 'Left', 'sina-ext' ),
-					'right' => __( 'Right', 'sina-ext' ),
+					'left' => __( 'Yes', 'sina-ext' ),
+					'right' => __( 'No', 'sina-ext' ),
 				],
 				'default' => 'right',
 				'condition' => [
@@ -226,6 +226,8 @@ class Sina_Dynamic_Button_Widget extends Widget_Base {
 				'selectors' => [
 					'{{WRAPPER}} .sina-dynamic-btn .sina-icon-right' => 'margin-left: {{SIZE}}{{UNIT}};',
 					'{{WRAPPER}} .sina-dynamic-btn .sina-icon-left' => 'margin-right: {{SIZE}}{{UNIT}};',
+					'.rtl {{WRAPPER}} .sina-dynamic-btn .sina-icon-right' => 'margin-right: {{SIZE}}{{UNIT}}; margin-left: auto;',
+					'.rtl {{WRAPPER}} .sina-dynamic-btn .sina-icon-left' => 'margin-left: {{SIZE}}{{UNIT}}; margin-right: auto;',
 				],
 			]
 		);

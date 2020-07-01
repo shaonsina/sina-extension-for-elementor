@@ -633,11 +633,11 @@ img.mfp-img{
 }
 .xzoom-preview {
 	border: 1px solid #888;
-	box-shadow: -0 -0 10px rgba(0, 0, 0, 0.50)
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.50)
 }
 .xzoom-lens {
 	border: 1px solid #555;
-	box-shadow: -0 -0 10px rgba(0, 0, 0, 0.50);
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.50);
 	cursor: crosshair
 }
 .elementor .xactive,

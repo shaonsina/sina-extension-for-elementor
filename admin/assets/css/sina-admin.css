@@ -1,4 +1,4 @@
-/* Sina Extension for Elementor v3.2.14 */
+/* Sina Extension for Elementor v3.3.0 */
 .sina-ext-banner{
 	padding: 50px 0;
 	margin-top: 20px;
@@ -30,6 +30,10 @@
 }
 .sina-ext-wrap .sina-doc-btn{
 	margin-left: calc(100% - 250px);
+}
+.rtl .sina-ext-wrap .sina-doc-btn{
+	margin-left: auto;
+	margin-right: calc(100% - 250px);
 }
 .sina-ext-wrap .button:hover,
 .sina-ext-wrap .button:focus,
@@ -70,6 +74,10 @@
 	transition: all 0.3s ease;
 	outline: 0;
 }
+.rtl .sina-ext-btns > a {
+	margin-right: auto;
+	margin-left: 6px;
+}
 .sina-ext-btns > a:focus{
 	outline: 0;
 	box-shadow: 0 0 0;
@@ -87,6 +95,11 @@
 	margin: 0 18px 18px 0;
 	box-sizing: border-box;
 	box-shadow: 5px 5px 15px rgba(0,0,0,0.05);
+}
+.rtl .sina-ext-options table tr{
+	float: right;
+	margin: 0 0 18px 18px;
+	box-shadow: -5px 5px 15px rgba(0,0,0,0.05);
 }
 .sina-ext-options table th{
 	display: none;
@@ -107,6 +120,11 @@
 	font-size: 14px;
 	font-weight: 600;
 }
+.rtl .sina-ext-options table .sina-ext-label{
+	padding-right: 0;
+	padding-left: 14px;
+	float: right;
+}
 .sina-ext-toggle input[type='checkbox'] {
 	display: none
 }
@@ -117,6 +135,10 @@
 }
 .sina-ext-toggle:not(.sina-ext-pro) input[type='checkbox']:checked+label .sina-ext-toggle-btn >div{
 	margin-left: 17px;
+}
+.rtl .sina-ext-toggle:not(.sina-ext-pro) input[type='checkbox']:checked+label .sina-ext-toggle-btn >div{
+	margin-left: auto;
+	margin-right: 17px;
 }
 .sina-ext-toggle .sina-ext-toggle-btn{
 	position: relative;
@@ -132,6 +154,9 @@
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
+}
+.rtl .sina-ext-toggle .sina-ext-toggle-btn{
+	float: right;
 }
 .sina-ext-toggle .sina-ext-toggle-btn div {
 	transition: all 200ms ease;
@@ -153,6 +178,11 @@
 	font-size: 18px;
 	font-weight: 600;
 }
+.rtl .sina-toggle-section .sina-ext-label{
+	float: right;
+	padding-right: 0;
+	padding-left: 14px;
+}
 
 
 .sina-ext-pt{
@@ -169,6 +199,10 @@
 @media (max-width: 784px) {
 	.sina-ext-wrap .sina-doc-btn{
 		margin-left: calc(100% - 262px);
+	}
+	.rtl .sina-ext-wrap .sina-doc-btn{
+		margin-left: auto;
+		margin-right: calc(100% - 262px);
 	}
 }
 
