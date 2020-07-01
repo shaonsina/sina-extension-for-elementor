@@ -20,15 +20,6 @@
 	float: right;
 }
 
-/* Magnific Popup */
-.rtl .mfp-image-holder .mfp-close,
-.rtl .mfp-iframe-holder .mfp-close {
-	right: auto !important;
-	left: 0 !important;
-	padding-right: 0 !important;
-	padding-left: 0 !important;
-}
-
 /*--------------------------------- Separator -------------------------------------- */
 .rtl .sina-separator.sina-separator-solid-dot:before,
 .rtl .sina-separator.sina-separator-solid-dot:after{

@@ -167,6 +167,8 @@ class Sina_Progressbar_Widget extends Widget_Base {
 				'selectors' => [
 					'{{WRAPPER}} .sina-bar-title .sina-icon-right' => 'margin-left: {{SIZE}}{{UNIT}};',
 					'{{WRAPPER}} .sina-bar-title .sina-icon-left' => 'margin-right: {{SIZE}}{{UNIT}};',
+					'.rtl {{WRAPPER}} .sina-bar-title .sina-icon-right' => 'margin-right: {{SIZE}}{{UNIT}}; margin-left: auto;',
+					'.rtl {{WRAPPER}} .sina-bar-title .sina-icon-left' => 'margin-left: {{SIZE}}{{UNIT}}; margin-right: auto;',
 				],
 			]
 		);

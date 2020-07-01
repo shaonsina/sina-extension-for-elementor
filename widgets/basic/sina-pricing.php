@@ -1286,6 +1286,8 @@ class Sina_Pricing_Widget extends Widget_Base {
 				'selectors' => [
 					'{{WRAPPER}} .sina-pricing-body li .sina-icon-right' => 'margin-left: {{SIZE}}{{UNIT}};',
 					'{{WRAPPER}} .sina-pricing-body li .sina-icon-left' => 'margin-right: {{SIZE}}{{UNIT}};',
+					'.rtl {{WRAPPER}} .sina-pricing-body li .sina-icon-right' => 'margin-right: {{SIZE}}{{UNIT}}; margin-left: auto;',
+					'.rtl {{WRAPPER}} .sina-pricing-body li .sina-icon-left' => 'margin-left: {{SIZE}}{{UNIT}}; margin-right: auto;',
 				],
 			]
 		);

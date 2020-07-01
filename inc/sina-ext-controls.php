@@ -421,11 +421,11 @@ class Sina_Common_Data{
 		$obj->add_control(
 			$prefix.'_icon_align',
 			[
-				'label' => __( 'Icon Position Reverse', 'sina-ext' ),
+				'label' => __( 'Icon Position', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'left' => __( 'Yes', 'sina-ext' ),
-					'right' => __( 'No', 'sina-ext' ),
+					'left' => __( 'Left', 'sina-ext' ),
+					'right' => __( 'Right', 'sina-ext' ),
 				],
 				'default' => 'right',
 				'condition' => [

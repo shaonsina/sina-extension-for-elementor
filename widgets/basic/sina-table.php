@@ -151,8 +151,8 @@ class Sina_Table_Widget extends Widget_Base {
 				'label' => __( 'Icon Position', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'left' => __( 'Before', 'sina-ext' ),
-					'right' => __( 'After', 'sina-ext' ),
+					'left' => __( 'Left', 'sina-ext' ),
+					'right' => __( 'Right', 'sina-ext' ),
 				],
 				'default' => 'left',
 				'condition' => [
@@ -315,8 +315,8 @@ class Sina_Table_Widget extends Widget_Base {
 				'label' => __( 'Icon Position', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'left' => __( 'Before', 'sina-ext' ),
-					'right' => __( 'After', 'sina-ext' ),
+					'left' => __( 'Left', 'sina-ext' ),
+					'right' => __( 'Right', 'sina-ext' ),
 				],
 				'default' => 'left',
 				'condition' => [
@@ -635,6 +635,8 @@ class Sina_Table_Widget extends Widget_Base {
 				'selectors' => [
 					'{{WRAPPER}} table thead th > .sina-icon-right' => 'margin-left: {{SIZE}}{{UNIT}};',
 					'{{WRAPPER}} table thead th > .sina-icon-left' => 'margin-right: {{SIZE}}{{UNIT}};',
+					'.rtl {{WRAPPER}} table thead th > .sina-icon-right' => 'margin-right: {{SIZE}}{{UNIT}}; margin-left: auto;',
+					'.rtl {{WRAPPER}} table thead th > .sina-icon-left' => 'margin-left: {{SIZE}}{{UNIT}}; margin-right: auto;',
 				],
 			]
 		);
@@ -858,6 +860,8 @@ class Sina_Table_Widget extends Widget_Base {
 				'selectors' => [
 					'{{WRAPPER}} table tbody td > .sina-icon-right, {{WRAPPER}} table tbody th > .sina-icon-right' => 'margin-left: {{SIZE}}{{UNIT}};',
 					'{{WRAPPER}} table tbody td > .sina-icon-left, {{WRAPPER}} table tbody th > .sina-icon-left' => 'margin-right: {{SIZE}}{{UNIT}};',
+					'.rtl {{WRAPPER}} table tbody td > .sina-icon-right, {{WRAPPER}} table tbody th > .sina-icon-right' => 'margin-right: {{SIZE}}{{UNIT}}; margin-left: auto;',
+					'.rtl {{WRAPPER}} table tbody td > .sina-icon-left, {{WRAPPER}} table tbody th > .sina-icon-left' => 'margin-left: {{SIZE}}{{UNIT}}; margin-right: auto;',
 				],
 			]
 		);
