@@ -805,6 +805,7 @@ class Sina_Portfolio_Widget extends Widget_Base {
 				'separator' => 'before',
 				'selectors' => [
 					'{{WRAPPER}} .sina-portfolio-zoom' => 'margin-right: {{SIZE}}{{UNIT}};',
+					'.rtl {{WRAPPER}} .sina-portfolio-zoom' => 'margin-left: {{SIZE}}{{UNIT}}; margin-right: auto;',
 				],
 			]
 		);

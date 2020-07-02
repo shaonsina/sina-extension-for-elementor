@@ -1,25 +1,5 @@
 /* Sina Extension for Elementor v3.3.0 */
 
-/*--------------------------------- General -------------------------------------- */
-.rtl .sina-bp-list .sina-bg-thumb,
-.rtl .sina-bp-list .sina-bp-content,
-.rtl .sina-bp-col,
-.rtl .sina-news,
-.rtl .sina-news-content,
-.rtl .sina-portfolio-item,
-.rtl .sina-pt-content .sina-pt-posts,
-.rtl .sina-pt-content-right .sina-pt-content-content,
-.rtl .sina-posts-carousel .owl-next span,
-.rtl .sina-posts-carousel .owl-prev span,
-.rtl .sina-content-slider .owl-next span,
-.rtl .sina-content-slider .owl-prev span,
-.rtl .sina-review-carousel .owl-next span,
-.rtl .sina-review-carousel .owl-prev span,
-.rtl .sina-banner-slider .owl-next span,
-.rtl .sina-banner-slider .owl-prev span{
-	float: right;
-}
-
 /*--------------------------------- Separator -------------------------------------- */
 .rtl .sina-separator.sina-separator-solid-dot:before,
 .rtl .sina-separator.sina-separator-solid-dot:after{
@@ -31,71 +11,47 @@
 	right: 133%;
 }
 
+/*--------------------------------- Slider & Carousel -------------------------------------- */
+.rtl .sina-pc-col,
+.rtl .sina-banner-slider .sina-banner-btns{
+	direction: rtl;
+}
+
 /*--------------------------------- Contact Form -------------------------------------- */
-.rtl .sina-contact-input-half{
+.rtl .sina-contact-input-half,
+.rtl .sina-contact-input .sina-input-block,
+.rtl .sina-search-box .sina-input-block,
+.rtl .sina-subs-input .sina-input-block{
 	float: right;
 }
 .rtl .sina-contact-input-half:last-child{
 	margin-left: auto;
 	margin-right: 20px;
 }
-.rtl .sina-contact-input .sina-input-block{
-	float: right;
-}
 
-/*--------------------------------- Mailchimp Subscribe Form -------------------------------------- */
-.rtl .sina-search-box .sina-input-block,
-.rtl .sina-subs-input .sina-input-block{
-	float: right;
+/*--------------------------------- Portfolio -------------------------------------- */
+.rtl .sina-pf-effect-move .sina-portfolio-zoom{
+	transform: translate(50px, 0);
 }
-.rtl .sina-search-box .sina-search-btn.sina-input-block,
-.rtl .sina-subs-input .sina-subs-btn.sina-input-block{
-	margin-left: auto;
-	margin-right: 0;
-}
-
-/*--------------------------------- Posts Tab -------------------------------------- */
-.rtl .sina-pt-content-content{
-	float: left;
-}
-.rtl .sina-pt-thumb-content p span{
-	margin-right: auto;
-	margin-left: 10px;
-}
-.rtl .sina-bp-thumb-right .sina-bg-thumb,
-.rtl .sina-bp-thumb-right .sina-bp-content,
-.rtl .sina-pt-content-right .sina-pt-posts{
-	float: left;
-}
-.rtl .sina-pt-title-wraper{
-	padding-right: 0;
-	padding-left: 20px;
-	float: right;
-}
-.rtl .sina-pt-content-right .sina-pt-title-wraper{
-	padding-left: 0;
-	padding-right: 20px;
-}
-.rtl .sina-pt-thumb{
-	float: right;
-}
-.rtl .sina-pt-content-right .sina-pt-thumb{
-	padding-right: 0;
-	padding-left: 15px;
+.rtl .sina-pf-effect-move .sina-portfolio-link{
+	transform: translate(-50px, 0);
 }
 
 /*--------------------------------- Social Feed -------------------------------------- */
-.rtl .sina-feed-meta .sina-feed-time {
+.rtl .sina-search-box .sina-search-btn.sina-input-block,
+.rtl .sina-subs-input .sina-subs-btn.sina-input-block,
+.rtl .sina-feed-meta .sina-feed-time{
 	margin-right: 0;
 	margin-left: auto;
 }
-.rtl .sina-feed-meta .sina-feed-likes {
+.rtl .sina-feed-meta .sina-feed-likes{
 	margin-right: 0;
 	margin-left: 10px;
 }
 
 /* RESPONSIVE-Mobile*/
 @media (max-width: 767px) {
+	.rtl .sina-contact-input-half:last-child,
 	.rtl .sina-contact-input .sina-input-field,
 	.rtl .sina-subs-input .sina-input-block{
 		margin-left: auto;

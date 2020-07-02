@@ -270,6 +270,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-banner-sbtn' => 'margin-left: {{SIZE}}{{UNIT}};',
+					'.rtl {{WRAPPER}} .sina-banner-sbtn' => 'margin-right: {{SIZE}}{{UNIT}}; margin-left: auto;',
 				],
 			]
 		);

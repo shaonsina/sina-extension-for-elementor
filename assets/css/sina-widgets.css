@@ -339,7 +339,7 @@ img.mfp-img{
 .sina-content-slider .owl-dot,
 .sina-banner-slider .owl-dot,
 .sina-review-carousel .owl-dot {
-	width: 20px;
+	width: 10px;
 	height: 10px;
 	margin: 25px 5px;
 	padding: 0;
@@ -354,8 +354,7 @@ img.mfp-img{
 .sina-content-slider .owl-dot.active,
 .sina-banner-slider .owl-dot.active,
 .sina-review-carousel .owl-dot.active{
-	width: 10px;
-	border-radius: 50%
+	width: 20px;
 }
 .sina-anim-invisible{
 	visibility: hidden;

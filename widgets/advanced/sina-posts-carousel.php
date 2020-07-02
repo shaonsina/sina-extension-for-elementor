@@ -1664,6 +1664,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-pc-meta .avatar' => 'margin-right: {{SIZE}}{{UNIT}};',
+					'.rtl {{WRAPPER}} .sina-pc-meta .avatar' => 'margin-left: {{SIZE}}{{UNIT}}; margin-right: auto;',
 				],
 			]
 		);

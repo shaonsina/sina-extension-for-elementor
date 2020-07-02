@@ -438,6 +438,34 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 				],
 			]
 		);
+		$this->add_responsive_control(
+			'box_alignment',
+			[
+				'label' => __( 'Alignment', 'sina-ext' ),
+				'type' => Controls_Manager::CHOOSE,
+				'options' => [
+					'left' => [
+						'title' => __( 'Left', 'sina-ext' ),
+						'icon' => 'fa fa-align-left',
+					],
+					'center' => [
+						'title' => __( 'Center', 'sina-ext' ),
+						'icon' => 'fa fa-align-center',
+					],
+					'right' => [
+						'title' => __( 'Right', 'sina-ext' ),
+						'icon' => 'fa fa-align-right',
+					],
+					'justify' => [
+						'title' => __( 'justify', 'sina-ext' ),
+						'icon' => 'fa fa-align-justify',
+					],
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-cs-item' => 'text-align: {{VALUE}};',
+				],
+			]
+		);
 
 		$this->end_controls_section();
 		// End Box Style
@@ -537,7 +565,6 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 						'icon' => 'fa fa-align-justify',
 					],
 				],
-				'default' => 'left',
 				'selectors' => [
 					'{{WRAPPER}} .sina-cs-title' => 'text-align: {{VALUE}};',
 				],
@@ -636,7 +663,6 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 						'icon' => 'fa fa-align-justify',
 					],
 				],
-				'default' => 'left',
 				'selectors' => [
 					'{{WRAPPER}} .sina-cs-subtitle' => 'text-align: {{VALUE}};',
 				],
@@ -721,7 +747,6 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 						'icon' => 'fa fa-align-justify',
 					],
 				],
-				'default' => 'justify',
 				'selectors' => [
 					'{{WRAPPER}} .sina-cs-desc' => 'text-align: {{VALUE}};',
 				],

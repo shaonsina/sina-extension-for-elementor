@@ -557,7 +557,7 @@ class Sina_Facebook_Feed_Widget extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-feed-content' => 'text-align: {{VALUE}};',
+					'{{WRAPPER}} .sina-feed' => 'text-align: {{VALUE}};',
 				],
 			]
 		);

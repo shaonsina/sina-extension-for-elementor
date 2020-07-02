@@ -1463,6 +1463,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 				],
 				'selectors' => [
 					'{{WRAPPER}} .sina-bp-meta .avatar' => 'margin-right: {{SIZE}}{{UNIT}};',
+					'.rtl {{WRAPPER}} .sina-bp-meta .avatar' => 'margin-left: {{SIZE}}{{UNIT}}; margin-right: auto;',
 				],
 			]
 		);
