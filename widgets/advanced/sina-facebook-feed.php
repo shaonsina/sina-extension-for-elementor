@@ -996,7 +996,7 @@ class Sina_Facebook_Feed_Widget extends Widget_Base {
 								<div class="sina-feed-page-name">
 									<a href="<?php echo esc_url( 'https://www.facebook.com/'. $data['page_id'] ); ?>"
 									target="_blank">
-										<img width="32px" height="32px" src="<?php echo esc_url( 'https://graph.facebook.com/v7.0/'. $data['page_id'] .'/picture' ); ?>" alt="<?php echo esc_attr( $feed['from']['name'] ); ?>">
+										<img src="<?php echo esc_url( 'https://graph.facebook.com/v7.0/'. $data['page_id'] .'/picture' ); ?>" alt="<?php echo esc_attr( $feed['from']['name'] ); ?>">
 										<?php echo esc_html( $feed['from']['name'] ); ?>
 									</a>
 								</div>
@@ -1016,7 +1016,7 @@ class Sina_Facebook_Feed_Widget extends Widget_Base {
 									</div>
 								</div>
 								<?php
-									if ( true && isset( $feed['attachments']['data'][0] ) ):
+									if ( isset( $feed['attachments']['data'][0] ) ):
 										$feed_data = $feed['attachments']['data'][0];
 										if ( 'photo' == $feed_data['media_type'] || 'video' == $feed_data['media_type'] ):
 											if ( isset($feed['full_picture']) ):

@@ -52,32 +52,34 @@ Need Help? Please [create support ticket](https://sinaextra.com/support/)
 8. [Countdown](https://sinaextra.com/sina-extension/countdown): Add countdown timer into your web page.
 9. [Counter](https://sinaextra.com/sina-extension/counter): Show number with animate counting.
 10. [Dynamic Button](https://sinaextra.com/sina-extension/dynamic-button): Add a button as a static or dynamic (page, category, tag or post formate).
-11. [Fancy Text](https://sinaextra.com/sina-extension/fancy-text): Use animated text with 45+ animation effects.
-12. [Flip Box](https://sinaextra.com/sina-extension/flip-box): Show animated Flip Box to highlight any content on your web page.
-13. [Google Map](https://sinaextra.com/sina-extension/google-map): Add Google map with API key into the web page.
-14. [Image Differ](https://sinaextra.com/sina-extension/image-differ): Compare two images for seeing the difference between before and after. Also you can use vertical & horizontal orientation.
-15. [Login Form](https://sinaextra.com/sina-extension/login-form): Add an attractive & custom login form anywhere into your web page.
-16. [MailChimp](https://sinaextra.com/sina-extension/mailchimp): Add MailChimp form for subscribing the users.
-17. [Modal Box](https://sinaextra.com/sina-extension/modal-box): Display any template (which made by the Elementor) into a modal box with 45+ animation effects.
-18. [News Ticker](https://sinaextra.com/sina-extension/news-ticker): Show scrolling post or news title.
-19. [Particle Layer](https://sinaextra.com/sina-extension/particle-layer): Use particle layer with lots of style, layout & more.
-20. [Piechart](https://sinaextra.com/sina-extension/piechart): Works the same as the Counter, but with a circle.
-21. [Portfolio](https://sinaextra.com/sina-extension/portfolio): Display your works just by few clicks.
-22. [Posts Carousel](https://sinaextra.com/sina-extension/posts-carousel): Latest posts display into a carousel as full width or grid.
-23. [Posts Tab](https://sinaextra.com/sina-extension/posts-tab): Show your latest posts in a tab.
-24. [Pricing](https://sinaextra.com/sina-extension/pricing): Add pricing for display your services rate.
-25. [Product Zoomer](https://sinaextra.com/sina-extension/product-zoomer): Add multiple images of product for zoom in.
-26. [Progressbar](https://sinaextra.com/sina-extension/progressbar): Display progress bars with different styles.
-27. [Review Carousel](https://sinaextra.com/sina-extension/review-carousel): Show what others said about your brand.
-28. [Search Form](https://sinaextra.com/sina-extension/search-form): Display search form for searching the users.
-29. [Social Icons](https://sinaextra.com/sina-extension/social-icons): Add your social icons like Facebook / Twitter etc.
-30. [Table](https://sinaextra.com/sina-extension/table): Use table for showing your expected data.
-31. [Team](https://sinaextra.com/sina-extension/team): Add your team members just a few clicks.
-32. [Title](https://sinaextra.com/sina-extension/title): Use title, subtitle & description anywhere into your web page.
-33. [Transform](https://sinaextra.com/sina-extension/transform): Display content by transforming in the different dimensions.
-34. [User Counter](https://sinaextra.com/sina-extension/user-counter): Display how many users registered.
-35. [Video](https://sinaextra.com/sina-extension/video): Show a video in a popup.
-36. [Visit Counter](https://sinaextra.com/sina-extension/visit-counter): Display how many users visit the page.
+11. [Facebook Feed](https://sinaextra.com/sina-extension/facebook-feed): Show your facebook feed into your web page(s).
+12. [Fancy Text](https://sinaextra.com/sina-extension/fancy-text): Use animated text with 45+ animation effects.
+13. [Flip Box](https://sinaextra.com/sina-extension/flip-box): Show animated Flip Box to highlight any content on your web page.
+14. [Google Map](https://sinaextra.com/sina-extension/google-map): Add Google map with API key into the web page.
+15. [Image Differ](https://sinaextra.com/sina-extension/image-differ): Compare two images for seeing the difference between before and after. Also you can use vertical & horizontal orientation.
+16. [Login Form](https://sinaextra.com/sina-extension/login-form): Add an attractive & custom login form anywhere into your web page.
+17. [MailChimp](https://sinaextra.com/sina-extension/mailchimp): Add MailChimp form for subscribing the users.
+18. [Modal Box](https://sinaextra.com/sina-extension/modal-box): Display any template (which made by the Elementor) into a modal box with 45+ animation effects.
+19. [News Ticker](https://sinaextra.com/sina-extension/news-ticker): Show scrolling post or news title.
+20. [Particle Layer](https://sinaextra.com/sina-extension/particle-layer): Use particle layer with lots of style, layout & more.
+21. [Piechart](https://sinaextra.com/sina-extension/piechart): Works the same as the Counter, but with a circle.
+22. [Portfolio](https://sinaextra.com/sina-extension/portfolio): Display your works just by few clicks.
+23. [Posts Carousel](https://sinaextra.com/sina-extension/posts-carousel): Latest posts display into a carousel as full width or grid.
+24. [Posts Tab](https://sinaextra.com/sina-extension/posts-tab): Show your latest posts in a tab.
+25. [Pricing](https://sinaextra.com/sina-extension/pricing): Add pricing for display your services rate.
+26. [Product Zoomer](https://sinaextra.com/sina-extension/product-zoomer): Add multiple images of product for zoom in.
+27. [Progressbar](https://sinaextra.com/sina-extension/progressbar): Display progress bars with different styles.
+28. [Review Carousel](https://sinaextra.com/sina-extension/review-carousel): Show what others said about your brand.
+29. [Search Form](https://sinaextra.com/sina-extension/search-form): Display search form for searching the users.
+30. [Social Icons](https://sinaextra.com/sina-extension/social-icons): Add your social icons like Facebook / Twitter etc.
+31. [Table](https://sinaextra.com/sina-extension/table): Use table for showing your expected data.
+32. [Team](https://sinaextra.com/sina-extension/team): Add your team members just a few clicks.
+33. [Title](https://sinaextra.com/sina-extension/title): Use title, subtitle & description anywhere into your web page.
+34. [Transform](https://sinaextra.com/sina-extension/transform): Display content by transforming in the different dimensions.
+35. [Twitter Feed](https://sinaextra.com/sina-extension/twitter-feed): Display your twitter feed into your web page(s).
+36. [User Counter](https://sinaextra.com/sina-extension/user-counter): Display how many users registered.
+37. [Video](https://sinaextra.com/sina-extension/video): Show a video in a popup.
+38. [Visit Counter](https://sinaextra.com/sina-extension/visit-counter): Display how many users visit the page.
 
 Cool things are coming soon...
 
@@ -162,6 +164,8 @@ It is more powerful and you can apply to mask any content of your widget. Enjoy!
 
 - **Slider or Carousel:** We have added various types of sliders or carousels. And you can make Text slider, Image slider, Posts slider, Team slider, Video slider, Review slider or carousel and Interactive Testimonial carousel. Also you can be sliding any template with our Content Slider widget which will give you an extra facility.
 
+- **Social Feed:** It also has some social feed widgets. Like: Facebook Feed, Twitter Feed. And you can use these widgets to showing the feed into your web page(s).
+
 - **Source Code:** Sometimes you may need to show the code of your script into the web page. So you can do with the Source Code widget.
 
 - **Tab or Virtual Tour:** Sina Extension has a Tab element. And it capable of using embed code or Virtual Tour. Another thing it has the template option. So you can show any template inside the tab description container.
@@ -203,6 +207,10 @@ Yes. It's totally free. We also have a [PRO](https://sinaextra.com/sina-addon-fo
 
 
 == Changelog ==
+
+= 3.3.0 - 03-07-2020 =
+New: Facebook Feed
+New: Twitter Feed
 
 = 3.2.16 - 11-06-2020 =
 Fixed: Counter Media issue

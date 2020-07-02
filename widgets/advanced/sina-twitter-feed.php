@@ -117,21 +117,34 @@ class Sina_Twitter_Feed_Widget extends Widget_Base {
 		);
 
 		$this->add_control(
-			'page_id',
+			'account_name',
 			[
-				'label' => esc_html__( 'Page ID', 'sina-ext' ),
+				'label' => esc_html__( 'Account Name', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => esc_html__( 'Enter Page ID', 'sina-ext' ),
+				'placeholder' => esc_html__( 'Enter account name', 'sina-ext' ),
+				'description' => esc_html__('Use @ in front of your account name.', 'sina-ext'),
+				'default' => '@Sina_Extra',
 			]
 		);
 		$this->add_control(
-			'access_token',
+			'consumer_key',
 			[
-				'label' => esc_html__( 'Access Token', 'sina-ext' ),
+				'label' => esc_html__( 'Consumer Key', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => esc_html__( 'Enter Access Token', 'sina-ext' ),
+				'placeholder' => esc_html__( 'Enter consumer key', 'sina-ext' ),
+				'description' => '<a href="https://apps.twitter.com/app/" target="_blank">'.esc_html__('Get Consumer Key', 'sina-ext').'</a>',
+			]
+		);
+		$this->add_control(
+			'consumer_secret_key',
+			[
+				'label' => esc_html__( 'Consumer Secret Key', 'sina-ext' ),
+				'label_block' => true,
+				'type' => Controls_Manager::TEXT,
+				'placeholder' => esc_html__( 'Enter consumer secret key', 'sina-ext' ),
+				'description' => '<a href="https://apps.twitter.com/app/" target="_blank">'.esc_html__('Get Consumer Secret Key', 'sina-ext').'</a>',
 			]
 		);
 		$this->add_control(
@@ -197,6 +210,22 @@ class Sina_Twitter_Feed_Widget extends Widget_Base {
 		$this->end_controls_section();
 		// End Feed Content
 		// =================
+
+
+		// Start Read More Content
+		// ========================
+		$this->start_controls_section(
+			'read_more_content',
+			[
+				'label' => __( 'Read More', 'sina-ext' ),
+				'tab' => Controls_Manager::TAB_CONTENT,
+			]
+		);
+		Sina_Common_Data::button_content( $this, '.sina-read-more', 'Read More', 'read_more', false);
+
+		$this->end_controls_section();
+		// End Read More Content
+		// ======================
 
 
 		// Start Feed Style
@@ -412,7 +441,7 @@ class Sina_Twitter_Feed_Widget extends Widget_Base {
 		$this->add_control(
 			'feed_hover_page_name_heading',
 			[
-				'label' => esc_html__( 'Page Name Styles', 'sina-ext' ),
+				'label' => esc_html__( 'Account Name Styles', 'sina-ext' ),
 				'type' => Controls_Manager::HEADING,
 			]
 		);
@@ -423,24 +452,6 @@ class Sina_Twitter_Feed_Widget extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .sina-feed:hover .sina-feed-page-name a' => 'color: {{VALUE}};',
-				],
-			]
-		);
-
-		$this->add_control(
-			'feed_hover_title_heading',
-			[
-				'label' => esc_html__( 'Title Styles', 'sina-ext' ),
-				'type' => Controls_Manager::HEADING,
-			]
-		);
-		$this->add_control(
-			'feed_hover_title_color',
-			[
-				'label' => esc_html__( 'Text Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .sina-feed:hover .sina-feed-title a' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -557,7 +568,7 @@ class Sina_Twitter_Feed_Widget extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-feed-content' => 'text-align: {{VALUE}};',
+					'{{WRAPPER}} .sina-feed' => 'text-align: {{VALUE}};',
 				],
 			]
 		);
@@ -585,36 +596,6 @@ class Sina_Twitter_Feed_Widget extends Widget_Base {
 				'selector' => '{{WRAPPER}} .sina-feed-thumb .sina-overlay',
 			]
 		);
-		$this->add_control(
-			'play_btn_color',
-			[
-				'label' => esc_html__( 'Play Button Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#fff',
-				'selectors' => [
-					'{{WRAPPER}} .sina-feed-thumb .sina-overlay .sina-feed-video' => 'color: {{VALUE}};',
-				],
-			]
-		);
-		$this->add_responsive_control(
-			'play_btn_size',
-			[
-				'label' => esc_html__( 'Play Button Size', 'sina-ext' ),
-				'type' => Controls_Manager::SLIDER,
-				'range' => [
-					'px' => [
-						'min' => 16,
-						'max' => 200,
-					],
-				],
-				'default' => [
-					'size' => '36',
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-feed-thumb .sina-overlay .sina-feed-video' => 'font-size: {{SIZE}}{{UNIT}};',
-				],
-			]
-		);
 		Sina_Common_Data::BG_hover_effects($this, '.sina-feed');
 
 		$this->end_controls_section();
@@ -622,12 +603,12 @@ class Sina_Twitter_Feed_Widget extends Widget_Base {
 		// =================
 
 
-		// Start Page Name Style
+		// Start Account Name Style
 		// ======================
 		$this->start_controls_section(
 			'page_name_style',
 			[
-				'label' => esc_html__( 'Page Name', 'sina-ext' ),
+				'label' => esc_html__( 'Account Name', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -741,7 +722,7 @@ class Sina_Twitter_Feed_Widget extends Widget_Base {
 		);
 
 		$this->end_controls_section();
-		// End Page Name Style
+		// End Account Name Style
 		// ====================
 
 
@@ -794,111 +775,6 @@ class Sina_Twitter_Feed_Widget extends Widget_Base {
 
 		$this->end_controls_section();
 		// End Content Style
-		// =====================
-
-
-		// Start Title Style
-		// =====================
-		$this->start_controls_section(
-			'title_style',
-			[
-				'label' => esc_html__( 'Title', 'sina-ext' ),
-				'tab' => Controls_Manager::TAB_STYLE,
-			]
-		);
-
-		$this->add_group_control(
-			Group_Control_Typography::get_type(),
-			[
-				'name' => 'title_typography',
-				'fields_options' => [
-					'typography' => [ 
-						'default' =>'custom', 
-					],
-					'font_weight' => [
-						'default' => '600',
-					],
-					'font_size'   => [
-						'default' => [
-							'size' => '24',
-						],
-					],
-					'line_height'   => [
-						'default' => [
-							'size' => '32',
-						],
-					],
-				],
-				'selector' => '{{WRAPPER}} .sina-feed-title, {{WRAPPER}} .sina-feed-title a',
-			]
-		);
-
-		$this->start_controls_tabs( 'title_tabs' );
-
-		$this->start_controls_tab(
-			'title_normal',
-			[
-				'label' => esc_html__( 'Normal', 'sina-ext' ),
-			]
-		);
-		$this->add_control(
-			'title_color',
-			[
-				'label' => esc_html__( 'Text Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#222',
-				'selectors' => [
-					'{{WRAPPER}} .sina-feed-title a' => 'color: {{VALUE}};',
-				],
-			]
-		);
-
-		$this->end_controls_tab();
-
-		$this->start_controls_tab(
-			'title_hover',
-			[
-				'label' => esc_html__( 'Hover', 'sina-ext' ),
-			]
-		);
-		$this->add_control(
-			'title_hover_color',
-			[
-				'label' => esc_html__( 'Text Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#1085e4',
-				'selectors' => [
-					'{{WRAPPER}} .sina-feed .sina-feed-title a:hover' => 'color: {{VALUE}};',
-				],
-			]
-		);
-
-		$this->end_controls_tab();
-
-		$this->end_controls_tabs();
-
-		$this->add_responsive_control(
-			'title_margin',
-			[
-				'label' => esc_html__( 'Margin', 'sina-ext' ),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', 'em', '%' ],
-				'default' => [
-					'top' => '20',
-					'right' => '0',
-					'bottom' => '10',
-					'left' => '0',
-					'isLinked' => false,
-				],
-				'separator' => 'before',
-				'selectors' => [
-					'{{WRAPPER}} .sina-feed-title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
-		);
-
-		$this->end_controls_section();
-		// End Title Style
 		// =====================
 
 
@@ -970,100 +846,174 @@ class Sina_Twitter_Feed_Widget extends Widget_Base {
 		$this->end_controls_section();
 		// End Meta Style
 		// ================
+
+
+		// Start Read More Style
+		// ========================
+		$this->start_controls_section(
+			'read_more_style',
+			[
+				'label' => __( 'Read More', 'sina-ext' ),
+				'tab' => Controls_Manager::TAB_STYLE,
+				'condition' => [
+					'read_more_text!' => '',
+				],
+			]
+		);
+		Sina_Common_Data::button_style( $this, '.sina-feed .sina-read-more' );
+		$this->add_responsive_control(
+			'read_more_radius',
+			[
+				'label' => __( 'Radius', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '4',
+					'right' => '4',
+					'bottom' => '4',
+					'left' => '4',
+					'isLinked' => true,
+				],
+				'separator' => 'before',
+				'selectors' => [
+					'{{WRAPPER}} .sina-read-more, {{WRAPPER}} .sina-read-more:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'read_more_padding',
+			[
+				'label' => __( 'Padding', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '10',
+					'right' => '20',
+					'bottom' => '10',
+					'left' => '20',
+					'isLinked' => false,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-read-more' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'read_more_margin',
+			[
+				'label' => __( 'Margin', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '25',
+					'right' => '0',
+					'bottom' => '0',
+					'left' => '0',
+					'isLinked' => false,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-read-more' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+		Sina_Common_Data::BG_hover_effects($this, '.sina-read-more', 'read_btn_bg_layer');
+
+		$this->end_controls_section();
+		// End Read More Style
+		// =====================
 	}
 
 
 	protected function render() {
 		$data = $this->get_settings_for_display();
-		// $twitter_data = wp_remote_get();
+		$access_key = base64_encode( $data['consumer_key'] .':'. $data['consumer_secret_key'] );
+		$response = wp_remote_post( 'https://api.twitter.com/oauth2/token', [
+			'method' => 'POST',
+			'httpversion' => '1.1',
+			'blocking' => true,
+			'headers' => [
+				'Authorization' => 'Basic ' . $access_key,
+				'Content-Type' => 'application/x-www-form-urlencoded;charset=UTF-8',
+			],
+			'body' => ['grant_type' => 'client_credentials'],
+		] );
 
-		$twitter_data = wp_remote_get( 'https://graph.facebook.com/v7.0/'. $data['page_id'] .'/posts?fields=id,names,status_type,created_time,from,message,story,full_picture,permalink_url,attachments.limit(1){type,media_type,title,description,unshimmed_url},comments.summary(total_count),reactions.summary(total_count)&access_token='.  $data['access_token']);
+		if ( !is_wp_error( $response ) ) {
+			$body = json_decode( $response['body'], true );
+			if ( isset($body['access_token']) ) {
+				$twitter_data = wp_remote_get( 'https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name='.$data['account_name'].'&count=999&tweet_mode=extended', [
+					'httpversion' => '1.1',
+					'blocking' => true,
+					'headers' => [
+						'Authorization' => 'Bearer '.$body['access_token'],
+					],
+				] );
+				if ( !is_wp_error( $twitter_data ) ) {
+					$twitter_data = json_decode( $twitter_data['body'], true );
+					$twitter_data = empty($twitter_data) ? [] : $twitter_data;
 
-
-
-		if ( !is_wp_error( $twitter_data ) ) {
-			$twitter_data = json_decode( $twitter_data['body'], true );
-			$twitter_data = isset($twitter_data['data']) ? $twitter_data['data'] : [];
-			if ( 'oldest' == $data['sort_by']) {
-				$twitter_data = array_reverse($twitter_data);
-			}
-			$twitter_data = array_slice($twitter_data, $data['feeds_offset'], $data['feeds_num']);
-			?>
-			<div class="sina-social-feed sina-twitter-feed clearfix <?php echo esc_attr( 'sina-twitter-feed-'.$this->get_id() ); ?>">
-				<div class="sina-feed-grid">
-					<div class="sina-twitter-feed-grid-sizer"></div>
-					<?php foreach ( $twitter_data as $key => $feed ):
-						$likes 	= isset($feed['reactions']) ? $feed['reactions']['summary']['total_count'] : 0;
-						$comnts = isset($feed['comments']) ? $feed['comments']['summary']['total_count'] : 0;
-						?>
-						<div class="sina-feed-col sina-feed-col-<?php echo esc_attr($data['columns']) ?>">
-							<div class="sina-feed <?php echo esc_attr($data['effects'].' '.$data['bg_layer_effects']) ?>">
-								<div class="sina-feed-page-name">
-									<a href="<?php echo esc_url( 'https://www.facebook.com/'. $data['page_id'] ); ?>"
-									target="_blank">
-										<img width="32px" height="32px" src="<?php echo esc_url( 'https://graph.facebook.com/v7.0/'. $data['page_id'] .'/picture' ); ?>" alt="<?php echo esc_attr( $feed['from']['name'] ); ?>">
-										<?php echo esc_html( $feed['from']['name'] ); ?>
-									</a>
-								</div>
-								<div class="sina-feed-meta clearfix">
-									<div class="sina-feed-time">
-										<i class="fa fa-clock-o far fa-clock"></i> <?php echo esc_html( date( "d M Y", strtotime( $feed['created_time'] ) ) ); ?>
-									</div>
-									<div class="sina-feed-info">
-										<span class="sina-feed-likes">
-											<i class="far fa-thumbs-up fa fa-thumbs-o-up"></i>
-											<?php echo esc_html($likes); ?>
-										</span>
-										<span class="sina-feed-comments">
-											<i class="far fa-comments fa fa-comments-o"></i>
-											<?php echo esc_html($comnts); ?>
-										</span>
-									</div>
-								</div>
-								<?php
-									if ( true && isset( $feed['attachments']['data'][0] ) ):
-										$feed_data = $feed['attachments']['data'][0];
-										if ( 'photo' == $feed_data['media_type'] || 'video' == $feed_data['media_type'] ):
-											if ( isset($feed['full_picture']) ):
-												?>
-												<div class="sina-feed-thumb">
-													<img src="<?php echo esc_url( $feed['full_picture'] ); ?>">
-													<?php if ( 'photo' == $feed_data['media_type'] ): ?>
-														<div class="sina-overlay">
-															<a href="<?php echo esc_url( $feed['permalink_url'] ) ?>"></a>
-														</div>
-													<?php else: ?>
-														<div class="sina-overlay">
-															<a class="sina-feed-video"
-															href="<?php echo esc_url( $feed_data['unshimmed_url'] ) ?>">
-																<i class="fa fa-play far fa-play-circle"></i>
-															</a>
-														</div>
-													<?php endif ?>
-												</div>
-												<?php
-											endif;
-										endif;
-											if ( isset($feed_data['title']) ):
-												?>
-												<h3 class="sina-feed-title">
-													<a href="<?php echo esc_url( $feed['permalink_url'] ) ?>">
-													<?php echo esc_html( $feed_data['title'] ); ?>
-													</a>
-												</h3>
-												<?php
-											endif;
-									endif;
+					if ( 'oldest' == $data['sort_by']) {
+						$twitter_data = array_reverse($twitter_data);
+					}
+					$twitter_data = array_slice($twitter_data, $data['feeds_offset'], $data['feeds_num']);
+					?>
+					<div class="sina-social-feed sina-twitter-feed clearfix <?php echo esc_attr( 'sina-twitter-feed-'.$this->get_id() ); ?>">
+						<div class="sina-feed-grid">
+							<div class="sina-twitter-feed-grid-sizer"></div>
+							<?php foreach ( $twitter_data as $key => $feed ):
+								$link = isset($feed['user']['screen_name']) ? 'https://twitter.com/'.$feed['user']['screen_name'].'/status/'.$feed['id_str'] : 'https://twitter.com/'. $data['account_name'];
 								?>
-								<?php if ( isset($feed['message']) ): ?>
-									<div class="sina-feed-content"><?php echo wp_trim_words( $feed['message'], $data['content_length'] ); ?></div>
-								<?php endif; ?>
-							</div>
+								<div class="sina-feed-col sina-feed-col-<?php echo esc_attr($data['columns']) ?>">
+									<div class="sina-feed <?php echo esc_attr($data['effects'].' '.$data['bg_layer_effects']); ?>">
+										<div class="sina-feed-page-name">
+											<a href="<?php echo esc_url( 'https://twitter.com/'. $data['account_name'] ); ?>"
+											target="_blank">
+												<img src="<?php echo esc_url($feed['user']['profile_image_url_https']); ?>" alt="<?php echo esc_attr( $feed['user']['name'] ); ?>">
+												<?php echo esc_html( $feed['user']['name'] ); ?>
+											</a>
+										</div>
+										<div class="sina-feed-meta clearfix">
+											<div class="sina-feed-time">
+												<i class="fa fa-clock-o far fa-clock"></i> <?php echo esc_html( date( "d M Y", strtotime( $feed['created_at'] ) ) ); ?>
+											</div>
+										</div>
+										<?php
+											if ( isset( $feed['extended_entities']['media'][0] ) ):
+												$feed_data = $feed['extended_entities']['media'][0];
+												if ( 'photo' == $feed_data['type'] && isset($feed_data['media_url_https']) ):
+													?>
+													<div class="sina-feed-thumb">
+														<img src="<?php echo esc_url( $feed_data['media_url_https'] ); ?>">
+														<div class="sina-overlay">
+															<a href="<?php echo esc_url($link); ?>"></a>
+														</div>
+													</div>
+													<?php
+												endif;
+											endif;
+										?>
+										<div class="sina-feed-content">
+											<div class="sina-feed-content-inner">
+												<?php echo wp_trim_words( $feed['full_text'], $data['content_length'] ); ?>
+											</div>
+
+											<?php if ( $data['read_more_text'] ): ?>
+												<div class="sina-btn-wrapper">
+													<a href="<?php echo esc_url($link); ?>"
+														class="sina-read-more <?php echo esc_attr( $data['read_more_effect'].' '.$data['read_btn_bg_layer_effects'] ); ?>">
+														<?php Sina_Common_Data::button_html($data, 'read_more'); ?>
+													</a>
+												</div>
+											<?php endif; ?>
+										</div>
+									</div>
+								</div>
+							<?php endforeach; ?>
 						</div>
-					<?php endforeach; ?>
-				</div>
-			</div><!-- .sina-twitter-feed -->
-			<?php
+					</div><!-- .sina-twitter-feed -->
+					<?php
+				}
+			}
 		}
 		if ( Plugin::instance()->editor->is_edit_mode() ) {
 			$this->render_editor_script();
