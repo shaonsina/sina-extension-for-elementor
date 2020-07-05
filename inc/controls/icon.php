@@ -2980,6 +2980,8 @@ class Sina_Ext_Icon extends Base_Data_Control{
 			'eicon-info-box' => 'eicon-info-box',
 			'eicon-editor-code' => 'eicon-editor-code',
 			'eicon-tv' => 'eicon-tv',
+			'eicon-facebook-comments' => 'eicon-facebook-comments',
+			'eicon-twitter-feed' => 'eicon-twitter-feed',
 		];
 	}
 

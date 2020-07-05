@@ -76,7 +76,7 @@ Need Help? Please [create support ticket](https://sinaextra.com/support/)
 32. [Team](https://sinaextra.com/sina-extension/team): Add your team members just a few clicks.
 33. [Title](https://sinaextra.com/sina-extension/title): Use title, subtitle & description anywhere into your web page.
 34. [Transform](https://sinaextra.com/sina-extension/transform): Display content by transforming in the different dimensions.
-35. [Twitter Feed](https://sinaextra.com/sina-extension/twitter-feed): Display your twitter feed into your web page(s).
+35. [Twitter Feed](https://sinaextra.com/sina-extension/twitter-feed): Show your twitter feed into your web page(s).
 36. [User Counter](https://sinaextra.com/sina-extension/user-counter): Display how many users registered.
 37. [Video](https://sinaextra.com/sina-extension/video): Show a video in a popup.
 38. [Visit Counter](https://sinaextra.com/sina-extension/visit-counter): Display how many users visit the page.
@@ -126,15 +126,15 @@ Cool things are coming soon...
 
 == The summary of core Features ==
 
-- **Accordion:** This element not only a generic Accordion. It has template option, that means you can use any template inside the description container. So it ensures that you can make complex type of accordion. Like: Nested Accordion.
+- **Accordion:** This element not only a generic Accordion. It has template option, which means you can use any template inside the description container. So it ensures that you can create complex type of accordion. Like: Nested Accordion.
 
 - **Chart:** Sina Extension has a Chart widget with 7 types (horizontal bar, vertical bar, line, pie, doughnut, polar area & radar) of charts variations.
 
-- **Clips or Image Animation:** This plugin has a Clips Animation extender. So you can animate any image(s) with that.
+- **Clips or Image Animation:** This plugin has a Clips Animation extender. So you can animate any image(s) by it.
 
 - **Colors or Gradient Animation:** Also you can make color(s) or gradient color(s) animation with Colors Animation extender.
 
-- **Content Box:** By this widget, you can make the Icon or Image or List Box or Step Process. That means you will get those three in one. If you would like the content will be shown with a ribbon or hover effect then you can with this widget. Also, you can use background and button icon animation and any template inside the container. So it's the huge powerful widget.
+- **Content Box:** By this widget, you can make the Icon or Image or List Box or Step Process. That means you will get those three in one. If you would like the content will be shown with a ribbon or hover effect then you can by this widget. Also, you can use background and button icon animation and any template inside the container. So it's a huge powerful widget.
 
 - **Content Protection:** Yes, Sina Extension has Content Protection extender that means you can display different content for different users according to the role.
 
@@ -142,7 +142,7 @@ Cool things are coming soon...
 
 - **Dynamic Button:** This element not only a generic Button. It has the capability to use a Category or Tag or Post or Page link as a button with background and icon animation.
 
-- **Form:** This plugin has various type form widgets that ensure without need extra plugin you can make Instant Search or AJAX Search form, Contact form, Register or Sign Up form, Sign In or Login form, Password Recovery or Reset form, Mailchimp form and native Search form.
+- **Form:** This plugin has various types of form widgets that ensure without need extra plugin you can make Instant Search or AJAX Search form, Contact form, Register or Sign Up form, Sign In or Login form, Password Recovery or Reset form, Mailchimp form and native Search form.
 
 - **Image:** Sina Extension has different types of Image widgets. Like: Image Accordion, Image Scroller, Image Marker or Hotspot and Hover Image.
 So that you can display the image(s) with an interactive way.
@@ -160,13 +160,13 @@ It is more powerful and you can apply to mask any content of your widget. Enjoy!
 
 - **Portfolio or Image Gallery:** Yes, we also covered this feature. Cause, some users want to show their work or some images as a filterable gallery. It has capable of using a masonry grid as well.
 
-- **Posts or Blog:** This plugin has different types of post widgets that mean you can show the posts as column grid, masonry grid, list. You also can display the posts into a Tab, Carousel, Gallery, Ticker, Load on Scroll, Load more Button or Pagination. Also can define your expected grid columns (for custom layout) which may add extra benefit for you.
+- **Posts or Blog:** This plugin has different types of post widgets that mean you can show the posts as column grid, masonry grid and list grid. You also can display the posts into a Tab, Carousel, Gallery, Ticker, Load on Scroll, Load more Button or Pagination. Also can define your expected grid columns (for custom layout) which may add extra benefit for you.
 
 - **Slider or Carousel:** We have added various types of sliders or carousels. And you can make Text slider, Image slider, Posts slider, Team slider, Video slider, Review slider or carousel and Interactive Testimonial carousel. Also you can be sliding any template with our Content Slider widget which will give you an extra facility.
 
 - **Social Feed:** It also has some social feed widgets. Like: Facebook Feed, Twitter Feed. And you can use these widgets to showing the feed into your web page(s).
 
-- **Source Code:** Sometimes you may need to show the code of your script into the web page. So you can do with the Source Code widget.
+- **Source Code:** Sometimes you may need to show the code of your script into the web page. So you can do by the Source Code widget.
 
 - **Tab or Virtual Tour:** Sina Extension has a Tab element. And it capable of using embed code or Virtual Tour. Another thing it has the template option. So you can show any template inside the tab description container.
 
@@ -208,7 +208,7 @@ Yes. It's totally free. We also have a [PRO](https://sinaextra.com/sina-addon-fo
 
 == Changelog ==
 
-= 3.3.0 - 03-07-2020 =
+= 3.3.0 - 05-07-2020 =
 New: Facebook Feed
 New: Twitter Feed
 
