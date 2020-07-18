@@ -172,12 +172,14 @@ Class Sina_Ext_Hooks{
 					}
 				}
 
+				$site_name = get_bloginfo( 'name' );
+				$headers = 'From: '. $site_name .'<'. $email .'>';
 				if ( '' == $err  && $inbox ) {
 					$custom_email = get_option('sina_contact_email'.$inbox);
-					wp_mail( $custom_email, $subject, $message, "From: {$email}\r\n" );
+					wp_mail( $custom_email, $subject, $message, $headers );
 				} elseif ( '' == $err ) {
 					$admin_email = get_option('admin_email');
-					wp_mail( $admin_email, $subject, $message, "From: {$email}\r\n" );
+					wp_mail( $admin_email, $subject, $message, $headers );
 				}
 			}
 			printf( '%s', $err );

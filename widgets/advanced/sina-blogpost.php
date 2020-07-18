@@ -2115,7 +2115,7 @@ class Sina_Blogpost_Widget extends Widget_Base {
 					itemSelector: '.sina-bp-col',
 					percentPosition: true,
 					masonry: {
-						columnWidth: '.sina-bp-col',
+						columnWidth: '.sina-bp-grid-sizer',
 					}
 				});
 			});

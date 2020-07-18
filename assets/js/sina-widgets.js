@@ -851,7 +851,7 @@
 			});
 
 			$cBtn.click( function() {
-				$modal.fadeOut('400');
+				$modal.fadeOut(400);
 			});
 
 			if ( $aShow ) {
@@ -861,7 +861,7 @@
 			if ( $click ) {
 				$(document).on('click', function(e) {
 					if ( $(e.target).is('.sina-modal-area') ) {
-						$modal.fadeOut('400');
+						$modal.fadeOut(400);
 					}
 				});
 			}
@@ -870,7 +870,7 @@
 				$(window).on('keydown', function(e) {
 					var key = e.which || e.keyCode;
 					if ( 192 == key ) {
-						$modal.fadeOut('400');
+						$modal.fadeOut(400);
 					}
 				});
 			}

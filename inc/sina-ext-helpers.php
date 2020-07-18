@@ -28,10 +28,10 @@ function sina_get_page_lists() {
 	return $page_lists;
 }
 
-function sina_get_term_lists( $term ) {
+function sina_get_term_lists( $tax ) {
 	$terms = get_terms(
 		[
-			'taxonomy' => $term,
+			'taxonomy' => $tax,
 			'hide_empty' => false,
 		]
 	);
