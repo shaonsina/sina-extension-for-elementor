@@ -190,18 +190,24 @@ Class Sina_Ext_Hooks{
 	public static function ajax_login() {
 		if ( check_ajax_referer( 'sina_login', 'nonce') && wp_verify_nonce( $_POST['nonce'], 'sina_login' ) ) {
 
-			$email = sanitize_email( $_POST['email'] );
+			$username = sanitize_text_field( $_POST['email'] );
 			$password = sanitize_text_field( $_POST['password'] );
 			$remember = sanitize_text_field( $_POST['remember'] );
+			$email = sanitize_email( $username );
 			$err = '';
 
-			if ( '' == $email ) {
-				$err = __( 'Invalid email!', 'sina-ext' );
+			if ( $username ) {
+				$email = sanitize_email( $username );
+				if ( '' == $email ) {
+					$email = $username;
+				}
+			} else{
+				$err = esc_html__( 'Username or Email can\'t be empty!', 'sina-ext' );
 			}
 
 			if ( '' == $err ) {
 				if ( '' == $password) {
-					$err = __( 'Password can\'t be empty!', 'sina-ext' );
+					$err = esc_html__( 'Password can\'t be empty!', 'sina-ext' );
 				} else {
 					$rem = $remember == 'true' ? true : false;
 					$user = wp_signon( array(
@@ -211,7 +217,7 @@ Class Sina_Ext_Hooks{
 					) );
 
 					if ( is_wp_error( $user ) ) {
-						$err = __( 'Email and password don\'t matched!', 'sina-ext' );
+						$err = esc_html__( 'Username or Email and password don\'t matched!', 'sina-ext' );
 					}
 				}
 			}
