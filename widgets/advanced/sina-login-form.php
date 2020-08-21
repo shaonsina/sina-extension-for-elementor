@@ -33,7 +33,7 @@ class Sina_Login_Form_Widget extends Widget_Base {
 	 * @since 3.1.0
 	 */
 	public function get_title() {
-		return __( 'Sina Login Form', 'sina-ext' );
+		return esc_html__( 'Sina Login Form', 'sina-ext' );
 	}
 
 	/**
@@ -105,7 +105,7 @@ class Sina_Login_Form_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'form_content',
 			[
-				'label' => __( 'Form Settings', 'sina-ext' ),
+				'label' => esc_html__( 'Form Settings', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -113,30 +113,30 @@ class Sina_Login_Form_Widget extends Widget_Base {
 		$this->add_control(
 			'email_placeholder',
 			[
-				'label' => __( 'Email Placeholder Text', 'sina-ext' ),
+				'label' => esc_html__( 'Email Placeholder Text', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter Placeholder Text', 'sina-ext' ),
+				'placeholder' => esc_html__( 'Enter Placeholder Text', 'sina-ext' ),
 				'default' => 'Enter Email *',
 			]
 		);
 		$this->add_control(
 			'password_placeholder',
 			[
-				'label' => __( 'Password Placeholder Text', 'sina-ext' ),
+				'label' => esc_html__( 'Password Placeholder Text', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter Placeholder Text', 'sina-ext' ),
+				'placeholder' => esc_html__( 'Enter Placeholder Text', 'sina-ext' ),
 				'default' => 'Enter Password *',
 			]
 		);
 		$this->add_control(
 			'redirect_url',
 			[
-				'label' => __( 'Redirect URL after login', 'sina-ext' ),
+				'label' => esc_html__( 'Redirect URL after login', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter Redirect URL', 'sina-ext' ),
+				'placeholder' => esc_html__( 'Enter Redirect URL', 'sina-ext' ),
 				'default' => admin_url(),
 				'dynamic' => [
 					'active' => true,
@@ -146,7 +146,7 @@ class Sina_Login_Form_Widget extends Widget_Base {
 		$this->add_control(
 			'is_remember_login',
 			[
-				'label' => __( 'Remember login', 'sina-ext' ),
+				'label' => esc_html__( 'Remember login', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => 'yes',
 			]
@@ -154,10 +154,10 @@ class Sina_Login_Form_Widget extends Widget_Base {
 		$this->add_control(
 			'remember_login',
 			[
-				'label' => __( 'Remember text', 'sina-ext' ),
+				'label' => esc_html__( 'Remember text', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter Remember Text', 'sina-ext' ),
+				'placeholder' => esc_html__( 'Enter Remember Text', 'sina-ext' ),
 				'default' => 'Keep me logged in',
 				'condition' => [
 					'is_remember_login' => 'yes',
@@ -175,7 +175,7 @@ class Sina_Login_Form_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'btn_content',
 			[
-				'label' => __( 'Submit Button', 'sina-ext' ),
+				'label' => esc_html__( 'Submit Button', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -190,7 +190,7 @@ class Sina_Login_Form_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'fields_style',
 			[
-				'label' => __( 'Fields & Remember text', 'sina-ext' ),
+				'label' => esc_html__( 'Fields & Remember text', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -199,7 +199,7 @@ class Sina_Login_Form_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'fields_radius',
 			[
-				'label' => __( 'Radius', 'sina-ext' ),
+				'label' => esc_html__( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -218,7 +218,7 @@ class Sina_Login_Form_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'fields_padding',
 			[
-				'label' => __( 'Padding', 'sina-ext' ),
+				'label' => esc_html__( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -236,7 +236,7 @@ class Sina_Login_Form_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'fields_margin',
 			[
-				'label' => __( 'Margin', 'sina-ext' ),
+				'label' => esc_html__( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -255,7 +255,7 @@ class Sina_Login_Form_Widget extends Widget_Base {
 		$this->add_control(
 			'remember',
 			[
-				'label' => __( 'Remember styles', 'sina-ext' ),
+				'label' => esc_html__( 'Remember styles', 'sina-ext' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 				'condition' => [
@@ -266,11 +266,11 @@ class Sina_Login_Form_Widget extends Widget_Base {
 		$this->add_control(
 			'position',
 			[
-				'label' => __( 'Position', 'sina-ext' ),
+				'label' => esc_html__( 'Position', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'middle' => __( 'Middle', 'sina-ext' ),
-					'bottom' => __( 'Bottom', 'sina-ext' ),
+					'middle' => esc_html__( 'Middle', 'sina-ext' ),
+					'bottom' => esc_html__( 'Bottom', 'sina-ext' ),
 				],
 				'default' => 'middle',
 				'condition' => [
@@ -291,7 +291,7 @@ class Sina_Login_Form_Widget extends Widget_Base {
 		$this->add_control(
 			'remember_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#222',
 				'condition' => [
@@ -305,19 +305,19 @@ class Sina_Login_Form_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'remember_alignment',
 			[
-				'label' => __( 'Alignment', 'sina-ext' ),
+				'label' => esc_html__( 'Alignment', 'sina-ext' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'sina-ext' ),
+						'title' => esc_html__( 'Left', 'sina-ext' ),
 						'icon' => 'fa fa-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'sina-ext' ),
+						'title' => esc_html__( 'Center', 'sina-ext' ),
 						'icon' => 'fa fa-align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'sina-ext' ),
+						'title' => esc_html__( 'Right', 'sina-ext' ),
 						'icon' => 'fa fa-align-right',
 					],
 				],
@@ -340,7 +340,7 @@ class Sina_Login_Form_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'email_style',
 			[
-				'label' => __( 'Email', 'sina-ext' ),
+				'label' => esc_html__( 'Email', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -355,7 +355,7 @@ class Sina_Login_Form_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'password_style',
 			[
-				'label' => __( 'Password', 'sina-ext' ),
+				'label' => esc_html__( 'Password', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -370,7 +370,7 @@ class Sina_Login_Form_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'btn_style',
 			[
-				'label' => __( 'Submit Button', 'sina-ext' ),
+				'label' => esc_html__( 'Submit Button', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -378,7 +378,7 @@ class Sina_Login_Form_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'btn_width',
 			[
-				'label' => __( 'Width', 'sina-ext' ),
+				'label' => esc_html__( 'Width', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', '%' ],
 				'range' => [
@@ -398,7 +398,7 @@ class Sina_Login_Form_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'btn_radius',
 			[
-				'label' => __( 'Radius', 'sina-ext' ),
+				'label' => esc_html__( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -416,7 +416,7 @@ class Sina_Login_Form_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'btn_padding',
 			[
-				'label' => __( 'Padding', 'sina-ext' ),
+				'label' => esc_html__( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -434,7 +434,7 @@ class Sina_Login_Form_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'btn_margin',
 			[
-				'label' => __( 'Margin', 'sina-ext' ),
+				'label' => esc_html__( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -452,19 +452,19 @@ class Sina_Login_Form_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'alignment',
 			[
-				'label' => __( 'Alignment', 'sina-ext' ),
+				'label' => esc_html__( 'Alignment', 'sina-ext' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'sina-ext' ),
+						'title' => esc_html__( 'Left', 'sina-ext' ),
 						'icon' => 'fa fa-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'sina-ext' ),
+						'title' => esc_html__( 'Center', 'sina-ext' ),
 						'icon' => 'fa fa-align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'sina-ext' ),
+						'title' => esc_html__( 'Right', 'sina-ext' ),
 						'icon' => 'fa fa-align-right',
 					],
 				],
@@ -491,7 +491,7 @@ class Sina_Login_Form_Widget extends Widget_Base {
 			data-rem-login="<?php echo esc_attr( $data['is_remember_login'] ); ?>"
 			data-url="<?php echo esc_url( $data['redirect_url'] ); ?>">
 
-				<input class="sina-input-field sina-input-email" type="email" placeholder="<?php echo esc_attr( $data['email_placeholder'] ); ?>" >
+				<input class="sina-input-field sina-input-email" type="text" placeholder="<?php echo esc_attr( $data['email_placeholder'] ); ?>" >
 				<input class="sina-input-field sina-input-password" type="password" placeholder="<?php echo esc_attr( $data['password_placeholder'] ); ?>" >
 
 				<?php if ( 'yes' == $data['is_remember_login'] && 'middle' == $data['position'] ): ?>

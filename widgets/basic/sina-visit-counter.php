@@ -34,7 +34,7 @@ class Sina_Visit_Counter_Widget extends Widget_Base {
 	 * @since 1.0.0
 	 */
 	public function get_title() {
-		return __( 'Sina Visit Counter', 'sina-ext' );
+		return esc_html__( 'Sina Visit Counter', 'sina-ext' );
 	}
 
 	/**
@@ -106,7 +106,7 @@ class Sina_Visit_Counter_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'vc_content',
 			[
-				'label' => __( 'Visitor Count', 'sina-ext' ),
+				'label' => esc_html__( 'Visitor Count', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -114,11 +114,11 @@ class Sina_Visit_Counter_Widget extends Widget_Base {
 		$this->add_control(
 			'today',
 			[
-				'label' => __( 'Today Text', 'sina-ext' ),
+				'label' => esc_html__( 'Today Text', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter text', 'sina-ext' ),
-				'description' => __( 'You can use HTML.', 'sina-ext' ),
+				'placeholder' => esc_html__( 'Enter text', 'sina-ext' ),
+				'description' => esc_html__( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'Today\'s visit',
 				'dynamic' => [
 					'active' => true,
@@ -128,11 +128,11 @@ class Sina_Visit_Counter_Widget extends Widget_Base {
 		$this->add_control(
 			'yesterday',
 			[
-				'label' => __( 'Yesterday Text', 'sina-ext' ),
+				'label' => esc_html__( 'Yesterday Text', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter text', 'sina-ext' ),
-				'description' => __( 'You can use HTML.', 'sina-ext' ),
+				'placeholder' => esc_html__( 'Enter text', 'sina-ext' ),
+				'description' => esc_html__( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'Yesterday\'s visit',
 				'dynamic' => [
 					'active' => true,
@@ -142,18 +142,18 @@ class Sina_Visit_Counter_Widget extends Widget_Base {
 		$this->add_control(
 			'position',
 			[
-				'label' => __( 'Today at Top', 'sina-ext' ),
+				'label' => esc_html__( 'Today at Top', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
 			]
 		);
 		$this->add_responsive_control(
 			'display',
 			[
-				'label' => __( 'Display', 'sina-ext' ),
+				'label' => esc_html__( 'Display', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'block' => __( 'Block', 'sina-ext' ),
-					'inline-block' => __( 'Inline', 'sina-ext' ),
+					'block' => esc_html__( 'Block', 'sina-ext' ),
+					'inline-block' => esc_html__( 'Inline', 'sina-ext' ),
 				],
 				'default' => 'block',
 				'selectors' => [
@@ -164,19 +164,19 @@ class Sina_Visit_Counter_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'alignment',
 			[
-				'label' => __( 'Alignment', 'sina-ext' ),
+				'label' => esc_html__( 'Alignment', 'sina-ext' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'sina-ext' ),
+						'title' => esc_html__( 'Left', 'sina-ext' ),
 						'icon' => 'fa fa-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'sina-ext' ),
+						'title' => esc_html__( 'Center', 'sina-ext' ),
 						'icon' => 'fa fa-align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'sina-ext' ),
+						'title' => esc_html__( 'Right', 'sina-ext' ),
 						'icon' => 'fa fa-align-right',
 					],
 				],
@@ -197,7 +197,7 @@ class Sina_Visit_Counter_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'text_style',
 			[
-				'label' => __( 'Text', 'sina-ext' ),
+				'label' => esc_html__( 'Text', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -205,7 +205,7 @@ class Sina_Visit_Counter_Widget extends Widget_Base {
 		$this->add_control(
 			'text_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#1085e4',
 				'selectors' => [
@@ -256,7 +256,7 @@ class Sina_Visit_Counter_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'number_style',
 			[
-				'label' => __( 'Number', 'sina-ext' ),
+				'label' => esc_html__( 'Number', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -264,7 +264,7 @@ class Sina_Visit_Counter_Widget extends Widget_Base {
 		$this->add_control(
 			'number_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#1085e4',
 				'selectors' => [
@@ -307,7 +307,7 @@ class Sina_Visit_Counter_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'number_margin',
 			[
-				'label' => __( 'Margin', 'sina-ext' ),
+				'label' => esc_html__( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [

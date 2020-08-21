@@ -37,7 +37,7 @@ function sina_get_term_lists( $tax ) {
 	);
 	$term_lists = [];
 	foreach ($terms as $term) {
-		if ( !in_array($term->term_taxonomy_id, $term_lists) ) {
+		if ( is_object($term) && !in_array($term->term_taxonomy_id, $term_lists) ) {
 			$term_lists[$term->term_taxonomy_id] = ucfirst(str_replace('_', ' ', $term->name));
 		}
 	}
@@ -52,7 +52,7 @@ function sina_get_taxonomy_lists() {
 		'elementor_library_type',
 	];
 	foreach ($terms as $term) {
-		if ( !in_array($term->taxonomy, $exclude_terms) ) {
+		if ( is_object($term) && !in_array($term->taxonomy, $exclude_terms) ) {
 			if ( !in_array($term->taxonomy, $term_lists) ) {
 				$term_lists[$term->taxonomy] = ucfirst(str_replace('_', ' ', $term->taxonomy));
 			}

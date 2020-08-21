@@ -39,7 +39,7 @@ class Sina_Accordion_Widget extends Widget_Base {
 	 * @since 1.0.0
 	 */
 	public function get_title() {
-		return __( 'Sina Accordion', 'sina-ext' );
+		return esc_html__( 'Sina Accordion', 'sina-ext' );
 	}
 
 	/**
@@ -111,7 +111,7 @@ class Sina_Accordion_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'accordion_content',
 			[
-				'label' => __( 'Accordion', 'sina-ext' ),
+				'label' => esc_html__( 'Accordion', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -119,14 +119,14 @@ class Sina_Accordion_Widget extends Widget_Base {
 		$this->add_control(
 			'first_open',
 			[
-				'label' => __( 'First Item Open', 'sina-ext' ),
+				'label' => esc_html__( 'First Item Open', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
 			]
 		);
 		$this->add_control(
 			'icon',
 			[
-				'label' => __( 'Icon', 'sina-ext' ),
+				'label' => esc_html__( 'Icon', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::ICON,
 				'default' => 'fa fa-angle-down',
@@ -135,7 +135,7 @@ class Sina_Accordion_Widget extends Widget_Base {
 		$this->add_control(
 			'active_icon',
 			[
-				'label' => __( 'Active Icon', 'sina-ext' ),
+				'label' => esc_html__( 'Active Icon', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::ICON,
 				'default' => 'fa fa-angle-up',
@@ -144,11 +144,11 @@ class Sina_Accordion_Widget extends Widget_Base {
 		$this->add_control(
 			'icon_position',
 			[
-				'label' => __( 'Icon Position', 'sina-ext' ),
+				'label' => esc_html__( 'Icon Position', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'left' => __( 'Left', 'sina-ext' ),
-					'right' => __( 'Right', 'sina-ext' ),
+					'left' => esc_html__( 'Left', 'sina-ext' ),
+					'right' => esc_html__( 'Right', 'sina-ext' ),
 				],
 				'default' => 'right',
 				'condition' => [
@@ -163,29 +163,29 @@ class Sina_Accordion_Widget extends Widget_Base {
 		$repeater->add_control(
 			'save_templates',
 			[
-				'label' => __( 'Use Save Templates', 'sina-ext' ),
+				'label' => esc_html__( 'Use Save Templates', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
 			]
 		);
 		$repeater->add_control(
 			'template',
 			[
-				'label' => __( 'Choose Template', 'sina-ext' ),
+				'label' => esc_html__( 'Choose Template', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => sina_get_page_templates(),
 				'condition' => [
 					'save_templates!' => '',
 				],
-				'description' => __('NOTE: Don\'t try to edit after insertion template. If you need to change the style or layout then you try to change the main template then save and then insert', 'sina-ext'),
+				'description' => esc_html__('NOTE: Don\'t try to edit after insertion template. If you need to change the style or layout then you try to change the main template then save and then insert', 'sina-ext'),
 			]
 		);
 		$repeater->add_control(
 			'title',
 			[
-				'label' => __( 'Title', 'sina-ext' ),
+				'label' => esc_html__( 'Title', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __('Enter Title', 'sina-ext'),
+				'placeholder' => esc_html__('Enter Title', 'sina-ext'),
 				'default' => 'Web Development',
 				'dynamic' => [
 					'active' => true,
@@ -195,10 +195,10 @@ class Sina_Accordion_Widget extends Widget_Base {
 		$repeater->add_control(
 			'desc',
 			[
-				'label' => __('Description', 'sina-ext'),
+				'label' => esc_html__('Description', 'sina-ext'),
 				'label_block' => true,
 				'type' => Controls_Manager::TEXTAREA,
-				'description' => __( 'You can use HTML.', 'sina-ext' ),
+				'description' => esc_html__( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
 				'condition' => [
 					'save_templates' => '',
@@ -212,7 +212,7 @@ class Sina_Accordion_Widget extends Widget_Base {
 		$repeater->add_control(
 			'single_box_style',
 			[
-				'label' => __( 'Box Styles', 'sina-ext' ),
+				'label' => esc_html__( 'Box Styles', 'sina-ext' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -235,7 +235,7 @@ class Sina_Accordion_Widget extends Widget_Base {
 		$repeater->add_control(
 			'single_box_border',
 			[
-				'label' => __( 'Border Color', 'sina-ext' ),
+				'label' => esc_html__( 'Border Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .sina-accordion-item{{CURRENT_ITEM}}' => 'border-color: {{VALUE}};',
@@ -246,7 +246,7 @@ class Sina_Accordion_Widget extends Widget_Base {
 		$repeater->add_control(
 			'single_header_style',
 			[
-				'label' => __( 'Header Styles', 'sina-ext' ),
+				'label' => esc_html__( 'Header Styles', 'sina-ext' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -254,7 +254,7 @@ class Sina_Accordion_Widget extends Widget_Base {
 		$repeater->add_control(
 			'single_title_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .sina-accordion-item{{CURRENT_ITEM}} > .sina-accordion-header' => 'color: {{VALUE}};',
@@ -264,10 +264,10 @@ class Sina_Accordion_Widget extends Widget_Base {
 		$repeater->add_control(
 			'single_icon_color',
 			[
-				'label' => __( 'Icon Color', 'sina-ext' ),
+				'label' => esc_html__( 'Icon Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .sina-accordion-item{{CURRENT_ITEM}} > .sina-accordion-icon i' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .sina-accordion-item{{CURRENT_ITEM}} > .sina-accordion-header .sina-accordion-icon i' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -290,7 +290,7 @@ class Sina_Accordion_Widget extends Widget_Base {
 		$repeater->add_control(
 			'single_content_style',
 			[
-				'label' => __( 'Content Styles', 'sina-ext' ),
+				'label' => esc_html__( 'Content Styles', 'sina-ext' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -298,7 +298,7 @@ class Sina_Accordion_Widget extends Widget_Base {
 		$repeater->add_control(
 			'single_desc_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .sina-accordion-item{{CURRENT_ITEM}} > .sina-accordion-desc' => 'color: {{VALUE}};',
@@ -308,7 +308,7 @@ class Sina_Accordion_Widget extends Widget_Base {
 		$repeater->add_control(
 			'single_content_border',
 			[
-				'label' => __( 'Border Color', 'sina-ext' ),
+				'label' => esc_html__( 'Border Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .sina-accordion-item{{CURRENT_ITEM}} > .sina-accordion-body' => 'border-color: {{VALUE}};',
@@ -319,7 +319,7 @@ class Sina_Accordion_Widget extends Widget_Base {
 		$this->add_control(
 			'accordion',
 			[
-				'label' => __('Add Item', 'sina-ext'),
+				'label' => esc_html__('Add Item', 'sina-ext'),
 				'type' => Controls_Manager::REPEATER,
 				'fields' => $repeater->get_controls(),
 				'default' => [
@@ -350,7 +350,7 @@ class Sina_Accordion_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'box_style',
 			[
-				'label' => __( 'Box', 'sina-ext' ),
+				'label' => esc_html__( 'Box', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -380,7 +380,7 @@ class Sina_Accordion_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'box_radius',
 			[
-				'label' => __( 'Radius', 'sina-ext' ),
+				'label' => esc_html__( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -391,7 +391,7 @@ class Sina_Accordion_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'box_margin',
 			[
-				'label' => __( 'Margin', 'sina-ext' ),
+				'label' => esc_html__( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -417,7 +417,7 @@ class Sina_Accordion_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'header_style',
 			[
-				'label' => __( 'Header', 'sina-ext' ),
+				'label' => esc_html__( 'Header', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -453,13 +453,13 @@ class Sina_Accordion_Widget extends Widget_Base {
 		$this->start_controls_tab(
 			'header_normal',
 			[
-				'label' => __( 'Normal', 'sina-ext' ),
+				'label' => esc_html__( 'Normal', 'sina-ext' ),
 			]
 		);
 		$this->add_control(
 			'title_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#fafafa',
 				'selectors' => [
@@ -470,7 +470,7 @@ class Sina_Accordion_Widget extends Widget_Base {
 		$this->add_control(
 			'icon_color',
 			[
-				'label' => __( 'Icon Color', 'sina-ext' ),
+				'label' => esc_html__( 'Icon Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#fafafa',
 				'selectors' => [
@@ -514,14 +514,14 @@ class Sina_Accordion_Widget extends Widget_Base {
 		$this->start_controls_tab(
 			'header_hover',
 			[
-				'label' => __( 'Active', 'sina-ext' ),
+				'label' => esc_html__( 'Active', 'sina-ext' ),
 			]
 		);
 
 		$this->add_control(
 			'title_active_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .sina-accordion-item.open > .sina-accordion-header' => 'color: {{VALUE}};',
@@ -531,10 +531,10 @@ class Sina_Accordion_Widget extends Widget_Base {
 		$this->add_control(
 			'icon_active_color',
 			[
-				'label' => __( 'Icon Color', 'sina-ext' ),
+				'label' => esc_html__( 'Icon Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					' {{WRAPPER}} .sina-accordion-item.open > .sina-accordion-icon i' => 'color: {{VALUE}};',
+					' {{WRAPPER}} .sina-accordion-item.open > .sina-accordion-header .sina-accordion-icon i' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -568,7 +568,7 @@ class Sina_Accordion_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'header_padding',
 			[
-				'label' => __( 'Padding', 'sina-ext' ),
+				'label' => esc_html__( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -587,7 +587,7 @@ class Sina_Accordion_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'icon_padding',
 			[
-				'label' => __( 'Icon Padding', 'sina-ext' ),
+				'label' => esc_html__( 'Icon Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -606,7 +606,7 @@ class Sina_Accordion_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'desc_style',
 			[
-				'label' => __( 'Description', 'sina-ext' ),
+				'label' => esc_html__( 'Description', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -614,7 +614,7 @@ class Sina_Accordion_Widget extends Widget_Base {
 		$this->add_control(
 			'desc_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#222',
 				'selectors' => [
@@ -663,7 +663,7 @@ class Sina_Accordion_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'desc_padding',
 			[
-				'label' => __( 'Padding', 'sina-ext' ),
+				'label' => esc_html__( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -681,19 +681,19 @@ class Sina_Accordion_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'desc_alignment',
 			[
-				'label' => __( 'Alignment', 'sina-ext' ),
+				'label' => esc_html__( 'Alignment', 'sina-ext' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'sina-ext' ),
+						'title' => esc_html__( 'Left', 'sina-ext' ),
 						'icon' => 'fa fa-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'sina-ext' ),
+						'title' => esc_html__( 'Center', 'sina-ext' ),
 						'icon' => 'fa fa-align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'sina-ext' ),
+						'title' => esc_html__( 'Right', 'sina-ext' ),
 						'icon' => 'fa fa-align-right',
 					],
 				],

@@ -37,7 +37,7 @@ class Sina_Video_Widget extends Widget_Base {
 	 * @since 1.0.0
 	 */
 	public function get_title() {
-		return __( 'Sina Video', 'sina-ext' );
+		return esc_html__( 'Sina Video', 'sina-ext' );
 	}
 
 	/**
@@ -111,7 +111,7 @@ class Sina_Video_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'video_content',
 			[
-				'label' => __( 'Video', 'sina-ext' ),
+				'label' => esc_html__( 'Video', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -119,20 +119,20 @@ class Sina_Video_Widget extends Widget_Base {
 		$this->add_control(
 			'animation',
 			[
-				'label' => __( 'Animation Effects', 'sina-ext' ),
+				'label' => esc_html__( 'Animation Effects', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'' => __( 'None', 'sina-ext' ),
-					'sina-rubber-anim' => __( 'Rubber', 'sina-ext' ),
-					'sina-scale-anim' => __( 'Zoom', 'sina-ext' ),
-					'sina-wave-anim' => __( 'Wave', 'sina-ext' ),
+					'' => esc_html__( 'None', 'sina-ext' ),
+					'sina-rubber-anim' => esc_html__( 'Rubber', 'sina-ext' ),
+					'sina-scale-anim' => esc_html__( 'Zoom', 'sina-ext' ),
+					'sina-wave-anim' => esc_html__( 'Wave', 'sina-ext' ),
 				],
 			]
 		);
 		$this->add_control(
 			'wave_color',
 			[
-				'label' => __( 'Wave Color', 'sina-ext' ),
+				'label' => esc_html__( 'Wave Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#fafafa',
 				'condition' => [
@@ -146,10 +146,10 @@ class Sina_Video_Widget extends Widget_Base {
 		$this->add_control(
 			'video_link',
 			[
-				'label' => __( 'Video Link', 'sina-ext' ),
+				'label' => esc_html__( 'Video Link', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter video link', 'sina-ext' ),
+				'placeholder' => esc_html__( 'Enter video link', 'sina-ext' ),
 				'dynamic' => [
 					'active' => true,
 				],
@@ -158,11 +158,11 @@ class Sina_Video_Widget extends Widget_Base {
 		$this->add_control(
 			'title',
 			[
-				'label' => __( 'Title', 'sina-ext' ),
+				'label' => esc_html__( 'Title', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter Title', 'sina-ext' ),
-				'description' => __( 'You can use HTML.', 'sina-ext' ),
+				'placeholder' => esc_html__( 'Enter Title', 'sina-ext' ),
+				'description' => esc_html__( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'Watch video',
 				'dynamic' => [
 					'active' => true,
@@ -172,7 +172,7 @@ class Sina_Video_Widget extends Widget_Base {
 		$this->add_control(
 			'icon',
 			[
-				'label' => __( 'Icon', 'sina-ext' ),
+				'label' => esc_html__( 'Icon', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::ICON,
 				'default' => 'fa fa-play',
@@ -189,7 +189,7 @@ class Sina_Video_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'title_style',
 			[
-				'label' => __( 'Title', 'sina-ext' ),
+				'label' => esc_html__( 'Title', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'title!' => '',
@@ -200,7 +200,7 @@ class Sina_Video_Widget extends Widget_Base {
 		$this->add_control(
 			'title_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#fafafa',
 				'selectors' => [
@@ -246,7 +246,7 @@ class Sina_Video_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'title_margin',
 			[
-				'label' => __( 'Margin', 'sina-ext' ),
+				'label' => esc_html__( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -272,7 +272,7 @@ class Sina_Video_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'icon_style',
 			[
-				'label' => __( 'Button', 'sina-ext' ),
+				'label' => esc_html__( 'Button', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -282,7 +282,7 @@ class Sina_Video_Widget extends Widget_Base {
 		$this->start_controls_tab(
 			'icon_normal',
 			[
-				'label' => __( 'Normal', 'sina-ext' ),
+				'label' => esc_html__( 'Normal', 'sina-ext' ),
 			]
 		);
 
@@ -290,7 +290,7 @@ class Sina_Video_Widget extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'background',
-				'label' => __( 'Background', 'sina-ext' ),
+				'label' => esc_html__( 'Background', 'sina-ext' ),
 				'types' => [ 'classic', 'gradient' ],
 				'fields_options' => [
 					'background' => [ 
@@ -306,7 +306,7 @@ class Sina_Video_Widget extends Widget_Base {
 		$this->add_control(
 			'icon_color',
 			[
-				'label' => __( 'Icon Color', 'sina-ext' ),
+				'label' => esc_html__( 'Icon Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#1085e4',
 				'selectors' => [
@@ -334,7 +334,7 @@ class Sina_Video_Widget extends Widget_Base {
 		$this->start_controls_tab(
 			'icon_hover',
 			[
-				'label' => __( 'Hover', 'sina-ext' ),
+				'label' => esc_html__( 'Hover', 'sina-ext' ),
 			]
 		);
 
@@ -342,7 +342,7 @@ class Sina_Video_Widget extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'hover_background',
-				'label' => __( 'Background', 'sina-ext' ),
+				'label' => esc_html__( 'Background', 'sina-ext' ),
 				'types' => [ 'classic', 'gradient' ],
 				'fields_options' => [
 					'background' => [ 
@@ -358,7 +358,7 @@ class Sina_Video_Widget extends Widget_Base {
 		$this->add_control(
 			'icon_hover_color',
 			[
-				'label' => __( 'Icon Color', 'sina-ext' ),
+				'label' => esc_html__( 'Icon Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#fafafa',
 				'selectors' => [
@@ -376,7 +376,7 @@ class Sina_Video_Widget extends Widget_Base {
 		$this->add_control(
 			'icon_hover_border',
 			[
-				'label' => __( 'Border Color', 'sina-ext' ),
+				'label' => esc_html__( 'Border Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .sina-video-play:hover' => 'border-color: {{VALUE}}'
@@ -391,7 +391,7 @@ class Sina_Video_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'font_size',
 			[
-				'label' => __( 'Font Size', 'sina-ext' ),
+				'label' => esc_html__( 'Font Size', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -411,7 +411,7 @@ class Sina_Video_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'icon_width',
 			[
-				'label' => __( 'Width', 'sina-ext' ),
+				'label' => esc_html__( 'Width', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em' ],
 				'range' => [
@@ -436,7 +436,7 @@ class Sina_Video_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'icon_height',
 			[
-				'label' => __( 'Height', 'sina-ext' ),
+				'label' => esc_html__( 'Height', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em' ],
 				'range' => [
@@ -461,15 +461,15 @@ class Sina_Video_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'font_line_height',
 			[
-				'label' => __( 'Line Height', 'sina-ext' ),
+				'label' => esc_html__( 'Line Height', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em' ],
 				'range' => [
 					'px' => [
-						'max' => 200,
+						'max' => 500,
 					],
 					'em' => [
-						'max' => 20,
+						'max' => 50,
 					],
 				],
 				'default' => [
@@ -484,7 +484,7 @@ class Sina_Video_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'icon_radius',
 			[
-				'label' => __( 'Radius', 'sina-ext' ),
+				'label' => esc_html__( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [

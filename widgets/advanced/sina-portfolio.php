@@ -37,7 +37,7 @@ class Sina_Portfolio_Widget extends Widget_Base {
 	 * @since 1.0.0
 	 */
 	public function get_title() {
-		return __( 'Sina Portfolio', 'sina-ext' );
+		return esc_html__( 'Sina Portfolio', 'sina-ext' );
 	}
 
 	/**
@@ -113,7 +113,7 @@ class Sina_Portfolio_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'portfolio_content',
 			[
-				'label' => __( 'Portfolio', 'sina-ext' ),
+				'label' => esc_html__( 'Portfolio', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -121,13 +121,13 @@ class Sina_Portfolio_Widget extends Widget_Base {
 		$this->add_control(
 			'effects',
 			[
-				'label' => __( 'Effects', 'sina-ext' ),
+				'label' => esc_html__( 'Effects', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'sina-pf-effect-fade' => __( 'Fade', 'sina-ext' ),
-					'sina-pf-effect-zoom' => __( 'Zoom', 'sina-ext' ),
-					'sina-pf-effect-move' => __( 'Fade & Move', 'sina-ext' ),
-					'sina-pf-effect-zoom sina-pf-effect-move' => __( 'Zoom & Move', 'sina-ext' ),
+					'sina-pf-effect-fade' => esc_html__( 'Fade', 'sina-ext' ),
+					'sina-pf-effect-zoom' => esc_html__( 'Zoom', 'sina-ext' ),
+					'sina-pf-effect-move' => esc_html__( 'Fade & Move', 'sina-ext' ),
+					'sina-pf-effect-zoom sina-pf-effect-move' => esc_html__( 'Zoom & Move', 'sina-ext' ),
 				],
 				'default' => 'sina-pf-effect-move',
 			]
@@ -135,15 +135,15 @@ class Sina_Portfolio_Widget extends Widget_Base {
 		$this->add_control(
 			'columns',
 			[
-				'label' => __( 'Number of Column', 'sina-ext' ),
+				'label' => esc_html__( 'Number of Column', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'sina-pf-item-2' => __( '2', 'sina-ext' ),
-					'sina-pf-item-3' => __( '3', 'sina-ext' ),
-					'sina-pf-item-4' => __( '4', 'sina-ext' ),
-					'sina-pf-item-5' => __( '5', 'sina-ext' ),
-					'sina-pf-item-6' => __( '6', 'sina-ext' ),
-					'masonry' => __( 'Masonry', 'sina-ext' ),
+					'sina-pf-item-2' => esc_html__( '2', 'sina-ext' ),
+					'sina-pf-item-3' => esc_html__( '3', 'sina-ext' ),
+					'sina-pf-item-4' => esc_html__( '4', 'sina-ext' ),
+					'sina-pf-item-5' => esc_html__( '5', 'sina-ext' ),
+					'sina-pf-item-6' => esc_html__( '6', 'sina-ext' ),
+					'masonry' => esc_html__( 'Masonry', 'sina-ext' ),
 				],
 				'default' => 'sina-pf-item-3',
 			]
@@ -151,19 +151,19 @@ class Sina_Portfolio_Widget extends Widget_Base {
 		$this->add_control(
 			'reset_text',
 			[
-				'label' => __( 'Reset Text', 'sina-ext' ),
+				'label' => esc_html__( 'Reset Text', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter Reset Text', 'sina-ext' ),
+				'placeholder' => esc_html__( 'Enter Reset Text', 'sina-ext' ),
 				'default' => 'all',
 			]
 		);
 		$this->add_control(
 			'show_content',
 			[
-				'label' => __( 'Show Content', 'sina-ext' ),
+				'label' => esc_html__( 'Show Content', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Yes', 'sina-ext' ),
-				'label_off' => __( 'No', 'sina-ext' ),
+				'label_on' => esc_html__( 'Yes', 'sina-ext' ),
+				'label_off' => esc_html__( 'No', 'sina-ext' ),
 			]
 		);
 
@@ -172,10 +172,10 @@ class Sina_Portfolio_Widget extends Widget_Base {
 		$repeater->add_control(
 			'item_name',
 			[
-				'label' => __( 'Title', 'sina-ext' ),
+				'label' => esc_html__( 'Title', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter Title', 'sina-ext' ),
+				'placeholder' => esc_html__( 'Enter Title', 'sina-ext' ),
 				'default' => 'Short Description',
 				'dynamic' => [
 					'active' => true,
@@ -185,10 +185,10 @@ class Sina_Portfolio_Widget extends Widget_Base {
 		$repeater->add_control(
 			'item_desc',
 			[
-				'label' => __( 'Description', 'sina-ext' ),
+				'label' => esc_html__( 'Description', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::TEXTAREA,
-				'placeholder' => __( 'Enter Description', 'sina-ext' ),
+				'placeholder' => esc_html__( 'Enter Description', 'sina-ext' ),
 				'default' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
 				'dynamic' => [
 					'active' => true,
@@ -198,10 +198,10 @@ class Sina_Portfolio_Widget extends Widget_Base {
 		$repeater->add_control(
 			'category',
 			[
-				'label' => __( 'Category', 'sina-ext' ),
+				'label' => esc_html__( 'Category', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
-				'description' => __( 'Multiple category must be comma separated.', 'sina-ext' ),
+				'description' => esc_html__( 'Multiple category must be comma separated!', 'sina-ext' ),
 				'default' => 'Web Design',
 				'dynamic' => [
 					'active' => true,
@@ -211,7 +211,7 @@ class Sina_Portfolio_Widget extends Widget_Base {
 		$repeater->add_control(
 			'image',
 			[
-				'label' => __( 'Choose Image', 'sina-ext' ),
+				'label' => esc_html__( 'Choose Image', 'sina-ext' ),
 				'type' => Controls_Manager::MEDIA,
 				'default' => [
 					'url' => SINA_EXT_URL .'assets/img/choose-img.jpg',
@@ -224,27 +224,27 @@ class Sina_Portfolio_Widget extends Widget_Base {
 		$repeater->add_control(
 			'size',
 			[
-				'label' => __( 'Size', 'sina-ext' ),
+				'label' => esc_html__( 'Size', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'sina-pf-item-11' => __( '1 Column 1 Row', 'sina-ext' ),
-					'sina-pf-item-12' => __( '1 Column 2 Row', 'sina-ext' ),
-					'sina-pf-item-21' => __( '2 Column 1 Row', 'sina-ext' ),
-					'sina-pf-item-22' => __( '2 Column 2 Row', 'sina-ext' ),
-					'sina-pf-item-31' => __( '3 Column 1 Row', 'sina-ext' ),
-					'sina-pf-item-32' => __( '3 Column 2 Row', 'sina-ext' ),
-					'sina-pf-item-33' => __( '3 Column 3 Row', 'sina-ext' ),
+					'sina-pf-item-11' => esc_html__( '1 Column 1 Row', 'sina-ext' ),
+					'sina-pf-item-12' => esc_html__( '1 Column 2 Row', 'sina-ext' ),
+					'sina-pf-item-21' => esc_html__( '2 Column 1 Row', 'sina-ext' ),
+					'sina-pf-item-22' => esc_html__( '2 Column 2 Row', 'sina-ext' ),
+					'sina-pf-item-31' => esc_html__( '3 Column 1 Row', 'sina-ext' ),
+					'sina-pf-item-32' => esc_html__( '3 Column 2 Row', 'sina-ext' ),
+					'sina-pf-item-33' => esc_html__( '3 Column 3 Row', 'sina-ext' ),
 				],
-				'description' => __( 'Size will work if the <strong>"number of columns"</strong> is <strong>"Masonry"</strong> selected', 'sina-ext' ),
+				'description' => esc_html__( 'Size will work if the <strong>"number of columns"</strong> is <strong>"Masonry"</strong> selected', 'sina-ext' ),
 				'default' => 'sina-pf-item-22',
 			]
 		);
 		$repeater->add_control(
 			'link',
 			[
-				'label' => __( 'Link', 'sina-ext' ),
+				'label' => esc_html__( 'Link', 'sina-ext' ),
 				'type' => Controls_Manager::URL,
-				'placeholder' => __( 'https://your-link.com', 'sina-ext' ),
+				'placeholder' => esc_html__( 'https://your-link.com', 'sina-ext' ),
 				'default' => [
 					'url' => '#',
 				],
@@ -257,7 +257,7 @@ class Sina_Portfolio_Widget extends Widget_Base {
 		$this->add_control(
 			'portfolio',
 			[
-				'label' => __( 'Add Item', 'sina-ext' ),
+				'label' => esc_html__( 'Add Item', 'sina-ext' ),
 				'type' => Controls_Manager::REPEATER,
 				'fields' => $repeater->get_controls(),
 				'default' => [
@@ -318,7 +318,7 @@ class Sina_Portfolio_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'menu_style',
 			[
-				'label' => __( 'Menu Buttons', 'sina-ext' ),
+				'label' => esc_html__( 'Menu Buttons', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -326,7 +326,7 @@ class Sina_Portfolio_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'menu_btn_width',
 			[
-				'label' => __( 'Min Width', 'sina-ext' ),
+				'label' => esc_html__( 'Min Width', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', '%' ],
 				'range' => [
@@ -346,7 +346,7 @@ class Sina_Portfolio_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'menu_btn_gap',
 			[
-				'label' => __( 'Gap From Items', 'sina-ext' ),
+				'label' => esc_html__( 'Gap From Items', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'default' =>[
 					'size' => '40',
@@ -359,7 +359,7 @@ class Sina_Portfolio_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'menu_btn_radius',
 			[
-				'label' => __( 'Radius', 'sina-ext' ),
+				'label' => esc_html__( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -370,7 +370,7 @@ class Sina_Portfolio_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'menu_btn_padding',
 			[
-				'label' => __( 'Padding', 'sina-ext' ),
+				'label' => esc_html__( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -388,7 +388,7 @@ class Sina_Portfolio_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'menu_btn_margin',
 			[
-				'label' => __( 'Margin', 'sina-ext' ),
+				'label' => esc_html__( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -406,19 +406,19 @@ class Sina_Portfolio_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'btn_alignment',
 			[
-				'label' => __( 'Alignment', 'sina-ext' ),
+				'label' => esc_html__( 'Alignment', 'sina-ext' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'sina-ext' ),
+						'title' => esc_html__( 'Left', 'sina-ext' ),
 						'icon' => 'fa fa-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'sina-ext' ),
+						'title' => esc_html__( 'Center', 'sina-ext' ),
 						'icon' => 'fa fa-align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'sina-ext' ),
+						'title' => esc_html__( 'Right', 'sina-ext' ),
 						'icon' => 'fa fa-align-right',
 					],
 				],
@@ -440,7 +440,7 @@ class Sina_Portfolio_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'item_style',
 			[
-				'label' => __( 'Items', 'sina-ext' ),
+				'label' => esc_html__( 'Items', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -456,7 +456,7 @@ class Sina_Portfolio_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'items_height',
 			[
-				'label' => __( 'Height', 'sina-ext' ),
+				'label' => esc_html__( 'Height', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -477,7 +477,7 @@ class Sina_Portfolio_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'items_radius',
 			[
-				'label' => __( 'Radius', 'sina-ext' ),
+				'label' => esc_html__( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -488,7 +488,7 @@ class Sina_Portfolio_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'items_padding',
 			[
-				'label' => __( 'Margin', 'sina-ext' ),
+				'label' => esc_html__( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -499,7 +499,7 @@ class Sina_Portfolio_Widget extends Widget_Base {
 		$this->add_control(
 			'overlay',
 			[
-				'label' => __( 'Overlay Styles', 'sina-ext' ),
+				'label' => esc_html__( 'Overlay Styles', 'sina-ext' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -531,7 +531,7 @@ class Sina_Portfolio_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'content_style',
 			[
-				'label' => __( 'Content', 'sina-ext' ),
+				'label' => esc_html__( 'Content', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -539,7 +539,7 @@ class Sina_Portfolio_Widget extends Widget_Base {
 		$this->add_control(
 			'title_styles',
 			[
-				'label' => __( 'Title', 'sina-ext' ),
+				'label' => esc_html__( 'Title', 'sina-ext' ),
 				'type' => Controls_Manager::HEADING,
 			]
 		);
@@ -571,7 +571,7 @@ class Sina_Portfolio_Widget extends Widget_Base {
 		$this->add_control(
 			'title_color',
 			[
-				'label' => __( 'Color', 'sina-ext' ),
+				'label' => esc_html__( 'Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#fff',
 				'selectors' => [
@@ -582,7 +582,7 @@ class Sina_Portfolio_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'title_margin',
 			[
-				'label' => __( 'Margin Bottom', 'sina-ext' ),
+				'label' => esc_html__( 'Margin Bottom', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
 					'size' => '10',
@@ -596,7 +596,7 @@ class Sina_Portfolio_Widget extends Widget_Base {
 		$this->add_control(
 			'desc_styles',
 			[
-				'label' => __( 'Description', 'sina-ext' ),
+				'label' => esc_html__( 'Description', 'sina-ext' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -629,7 +629,7 @@ class Sina_Portfolio_Widget extends Widget_Base {
 		$this->add_control(
 			'desc_color',
 			[
-				'label' => __( 'Color', 'sina-ext' ),
+				'label' => esc_html__( 'Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#fff',
 				'selectors' => [
@@ -640,7 +640,7 @@ class Sina_Portfolio_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'desc_margin',
 			[
-				'label' => __( 'Margin Bottom', 'sina-ext' ),
+				'label' => esc_html__( 'Margin Bottom', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
 					'size' => '30',
@@ -654,7 +654,7 @@ class Sina_Portfolio_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'content_padding',
 			[
-				'label' => __( 'Padding', 'sina-ext' ),
+				'label' => esc_html__( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -673,19 +673,19 @@ class Sina_Portfolio_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'alignment',
 			[
-				'label' => __( 'Alignment', 'sina-ext' ),
+				'label' => esc_html__( 'Alignment', 'sina-ext' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'sina-ext' ),
+						'title' => esc_html__( 'Left', 'sina-ext' ),
 						'icon' => 'fa fa-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'sina-ext' ),
+						'title' => esc_html__( 'Center', 'sina-ext' ),
 						'icon' => 'fa fa-align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'sina-ext' ),
+						'title' => esc_html__( 'Right', 'sina-ext' ),
 						'icon' => 'fa fa-align-right',
 					],
 				],
@@ -706,7 +706,7 @@ class Sina_Portfolio_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'icons_style',
 			[
-				'label' => __( 'Icons', 'sina-ext' ),
+				'label' => esc_html__( 'Icons', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -716,14 +716,14 @@ class Sina_Portfolio_Widget extends Widget_Base {
 		$this->start_controls_tab(
 			'icons_normal',
 			[
-				'label' => __( 'Normal', 'sina-ext' ),
+				'label' => esc_html__( 'Normal', 'sina-ext' ),
 			]
 		);
 
 		$this->add_control(
 			'icons_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#fff',
 				'selectors' => [
@@ -734,7 +734,7 @@ class Sina_Portfolio_Widget extends Widget_Base {
 		$this->add_control(
 			'icons_bg',
 			[
-				'label' => __( 'Background', 'sina-ext' ),
+				'label' => esc_html__( 'Background', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#1085e4',
 				'selectors' => [
@@ -755,14 +755,14 @@ class Sina_Portfolio_Widget extends Widget_Base {
 		$this->start_controls_tab(
 			'icons_hover',
 			[
-				'label' => __( 'Hover', 'sina-ext' ),
+				'label' => esc_html__( 'Hover', 'sina-ext' ),
 			]
 		);
 
 		$this->add_control(
 			'icons_hover_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .sina-portfolio-overlay i:hover' => 'color: {{VALUE}}'
@@ -772,7 +772,7 @@ class Sina_Portfolio_Widget extends Widget_Base {
 		$this->add_control(
 			'icons_hover_bg',
 			[
-				'label' => __( 'Background', 'sina-ext' ),
+				'label' => esc_html__( 'Background', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .sina-portfolio-overlay i:hover' => 'background: {{VALUE}}'
@@ -782,7 +782,7 @@ class Sina_Portfolio_Widget extends Widget_Base {
 		$this->add_control(
 			'icons_hover_border',
 			[
-				'label' => __( 'Border Color', 'sina-ext' ),
+				'label' => esc_html__( 'Border Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .sina-portfolio-overlay i:hover' => 'border-color: {{VALUE}}'
@@ -797,7 +797,7 @@ class Sina_Portfolio_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'icons_gap',
 			[
-				'label' => __( 'Icons Gap', 'sina-ext' ),
+				'label' => esc_html__( 'Icons Gap', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
 					'size' => '20',
@@ -812,7 +812,7 @@ class Sina_Portfolio_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'icons_size',
 			[
-				'label' => __( 'Icon Size', 'sina-ext' ),
+				'label' => esc_html__( 'Icon Size', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -826,7 +826,7 @@ class Sina_Portfolio_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'icons_width',
 			[
-				'label' => __( 'Width', 'sina-ext' ),
+				'label' => esc_html__( 'Width', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -840,7 +840,7 @@ class Sina_Portfolio_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'icons_height',
 			[
-				'label' => __( 'Height', 'sina-ext' ),
+				'label' => esc_html__( 'Height', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -855,7 +855,7 @@ class Sina_Portfolio_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'zoom_btn_radius',
 			[
-				'label' => __( 'Zoom button radius', 'sina-ext' ),
+				'label' => esc_html__( 'Zoom button radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -874,7 +874,7 @@ class Sina_Portfolio_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'link_btn_radius',
 			[
-				'label' => __( 'Link button radius', 'sina-ext' ),
+				'label' => esc_html__( 'Link button radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [

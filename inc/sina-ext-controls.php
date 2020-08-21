@@ -24,7 +24,7 @@ class Sina_Common_Data{
 		$obj->add_control(
 			$prefix.'_styles',
 			[
-				'label' => __( 'Background Hover Styles', 'sina-ext' ),
+				'label' => esc_html__( 'Background Hover Styles', 'sina-ext' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -32,22 +32,22 @@ class Sina_Common_Data{
 		$obj->add_control(
 			$prefix.'_effects',
 			[
-				'label' => __( 'Hover Effects', 'sina-ext' ),
+				'label' => esc_html__( 'Hover Effects', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'sina-hv-door-v' => __( 'Door Vertical', 'sina-ext' ),
-					'sina-hv-door-h' => __( 'Door Horizontal', 'sina-ext' ),
-					'sina-hv-zoom' => __( 'Zoom In', 'sina-ext' ),
-					'sina-hv-fade' => __( 'Fade In', 'sina-ext' ),
-					'sina-hv-slide-l' => __( 'Slide Left', 'sina-ext' ),
-					'sina-hv-slide-r' => __( 'Slide Right', 'sina-ext' ),
-					'sina-hv-slide-b' => __( 'Slide Bottom', 'sina-ext' ),
-					'sina-hv-slide-t' => __( 'Slide Top', 'sina-ext' ),
-					'sina-hv-slide-lb' => __( 'Slide Left-Bottom', 'sina-ext' ),
-					'sina-hv-slide-rb' => __( 'Slide Right-Bottom', 'sina-ext' ),
-					'sina-hv-slide-lt' => __( 'Slide Left-Top', 'sina-ext' ),
-					'sina-hv-slide-rt' => __( 'Slide Right-Top', 'sina-ext' ),
-					'' => __( 'None', 'sina-ext' ),
+					'sina-hv-door-v' => esc_html__( 'Door Vertical', 'sina-ext' ),
+					'sina-hv-door-h' => esc_html__( 'Door Horizontal', 'sina-ext' ),
+					'sina-hv-zoom' => esc_html__( 'Zoom In', 'sina-ext' ),
+					'sina-hv-fade' => esc_html__( 'Fade In', 'sina-ext' ),
+					'sina-hv-slide-l' => esc_html__( 'Slide Left', 'sina-ext' ),
+					'sina-hv-slide-r' => esc_html__( 'Slide Right', 'sina-ext' ),
+					'sina-hv-slide-b' => esc_html__( 'Slide Bottom', 'sina-ext' ),
+					'sina-hv-slide-t' => esc_html__( 'Slide Top', 'sina-ext' ),
+					'sina-hv-slide-lb' => esc_html__( 'Slide Left-Bottom', 'sina-ext' ),
+					'sina-hv-slide-rb' => esc_html__( 'Slide Right-Bottom', 'sina-ext' ),
+					'sina-hv-slide-lt' => esc_html__( 'Slide Left-Top', 'sina-ext' ),
+					'sina-hv-slide-rt' => esc_html__( 'Slide Right-Top', 'sina-ext' ),
+					'' => esc_html__( 'None', 'sina-ext' ),
 				],
 				'default' => '',
 			]
@@ -75,7 +75,7 @@ class Sina_Common_Data{
 		$obj->add_control(
 			$prefix.'_styles',
 			[
-				'label' => __( 'Background Hover Styles', 'sina-ext' ),
+				'label' => esc_html__( 'Background Hover Styles', 'sina-ext' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -83,18 +83,18 @@ class Sina_Common_Data{
 		$obj->add_control(
 			$prefix.'_effects',
 			[
-				'label' => __( 'Hover Effects', 'sina-ext' ),
+				'label' => esc_html__( 'Hover Effects', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'sina-hv-door-v' => __( 'Door Vertical', 'sina-ext' ),
-					'sina-hv-door-h' => __( 'Door Horizontal', 'sina-ext' ),
-					'sina-hv-zoom' => __( 'Zoom In', 'sina-ext' ),
-					'sina-hv-fade' => __( 'Fade In', 'sina-ext' ),
-					'sina-hv-slide-l' => __( 'Slide Left', 'sina-ext' ),
-					'sina-hv-slide-r' => __( 'Slide Right', 'sina-ext' ),
-					'sina-hv-slide-b' => __( 'Slide Bottom', 'sina-ext' ),
-					'sina-hv-slide-t' => __( 'Slide Top', 'sina-ext' ),
-					'' => __( 'None', 'sina-ext' ),
+					'sina-hv-door-v' => esc_html__( 'Door Vertical', 'sina-ext' ),
+					'sina-hv-door-h' => esc_html__( 'Door Horizontal', 'sina-ext' ),
+					'sina-hv-zoom' => esc_html__( 'Zoom In', 'sina-ext' ),
+					'sina-hv-fade' => esc_html__( 'Fade In', 'sina-ext' ),
+					'sina-hv-slide-l' => esc_html__( 'Slide Left', 'sina-ext' ),
+					'sina-hv-slide-r' => esc_html__( 'Slide Right', 'sina-ext' ),
+					'sina-hv-slide-b' => esc_html__( 'Slide Bottom', 'sina-ext' ),
+					'sina-hv-slide-t' => esc_html__( 'Slide Top', 'sina-ext' ),
+					'' => esc_html__( 'None', 'sina-ext' ),
 				],
 				'default' => '',
 			]
@@ -119,80 +119,80 @@ class Sina_Common_Data{
 
 	public static function animation() {
 		return [
-			'none' => __( 'None', 'sina-ext' ),
-			'fadeIn' => __( 'Fade In', 'sina-ext' ),
-			'fadeInUp' => __( 'Fade In Up', 'sina-ext' ),
-			'fadeInDown' => __( 'Fade In Down', 'sina-ext' ),
-			'fadeInLeft' => __( 'Fade In Left', 'sina-ext' ),
-			'fadeInRight' => __( 'Fade In Right', 'sina-ext' ),
-			'zoomIn' => __('Zoom In', 'sina-ext'),
-			'zoomInLeft' => __('Zoom In Left', 'sina-ext'),
-			'zoomInRight' => __('Zoom In Right', 'sina-ext'),
-			'zoomInDown' => __('Zoom In Down', 'sina-ext'),
-			'zoomInUp' => __('Zoom In Up', 'sina-ext'),
-			'bounceIn' => __('Bounce In', 'sina-ext'),
-			'bounceInDown' => __('Bounce In Down', 'sina-ext'),
-			'bounceInLeft' => __('Bounce In Left', 'sina-ext'),
-			'bounceInRight' => __('Bounce In Right', 'sina-ext'),
-			'bounceInUp' => __('Bounce In Up', 'sina-ext'),
-			'slideInDown' => __('Slide In Down', 'sina-ext'),
-			'slideInLeft' => __('Slide In Left', 'sina-ext'),
-			'slideInRight' => __('Slide In Right', 'sina-ext'),
-			'slideInUp' => __('Slide In Up', 'sina-ext'),
-			'rotateIn' => __('Rotate In', 'sina-ext'),
-			'rotateInDownLeft' => __('Rotate In Down Left', 'sina-ext'),
-			'rotateInDownRight' => __('Rotate In Down Right', 'sina-ext'),
-			'rotateInUpLeft' => __('Rotate In Up Left', 'sina-ext'),
-			'rotateInUpRight' => __('Rotate In Up Right', 'sina-ext'),
-			'flipInX' => __( 'Flip In X', 'sina-ext' ),
-			'flipInY' => __( 'Flip In Y', 'sina-ext' ),
-			'lightSpeedIn' => __('Light Speed In', 'sina-ext'),
-			'swing' => __( 'Swing', 'sina-ext' ),
-			'bounce' => __('Bounce', 'sina-ext'),
-			'flash' => __('Flash', 'sina-ext'),
-			'pulse' => __('Pulse', 'sina-ext'),
-			'rubberBand' => __('Rubber Band', 'sina-ext'),
-			'shake' => __('Shake', 'sina-ext'),
-			'headShake' => __('Head Shake', 'sina-ext'),
-			'swing' => __('Swing', 'sina-ext'),
-			'tada' => __('Tada', 'sina-ext'),
-			'wobble' => __('Wobble', 'sina-ext'),
-			'jello' => __('Jello', 'sina-ext'),
-			'rollIn' => __('Roll In', 'sina-ext'),
+			'none' => esc_html__( 'None', 'sina-ext' ),
+			'fadeIn' => esc_html__( 'Fade In', 'sina-ext' ),
+			'fadeInUp' => esc_html__( 'Fade In Up', 'sina-ext' ),
+			'fadeInDown' => esc_html__( 'Fade In Down', 'sina-ext' ),
+			'fadeInLeft' => esc_html__( 'Fade In Left', 'sina-ext' ),
+			'fadeInRight' => esc_html__( 'Fade In Right', 'sina-ext' ),
+			'zoomIn' => esc_html__('Zoom In', 'sina-ext'),
+			'zoomInLeft' => esc_html__('Zoom In Left', 'sina-ext'),
+			'zoomInRight' => esc_html__('Zoom In Right', 'sina-ext'),
+			'zoomInDown' => esc_html__('Zoom In Down', 'sina-ext'),
+			'zoomInUp' => esc_html__('Zoom In Up', 'sina-ext'),
+			'bounceIn' => esc_html__('Bounce In', 'sina-ext'),
+			'bounceInDown' => esc_html__('Bounce In Down', 'sina-ext'),
+			'bounceInLeft' => esc_html__('Bounce In Left', 'sina-ext'),
+			'bounceInRight' => esc_html__('Bounce In Right', 'sina-ext'),
+			'bounceInUp' => esc_html__('Bounce In Up', 'sina-ext'),
+			'slideInDown' => esc_html__('Slide In Down', 'sina-ext'),
+			'slideInLeft' => esc_html__('Slide In Left', 'sina-ext'),
+			'slideInRight' => esc_html__('Slide In Right', 'sina-ext'),
+			'slideInUp' => esc_html__('Slide In Up', 'sina-ext'),
+			'rotateIn' => esc_html__('Rotate In', 'sina-ext'),
+			'rotateInDownLeft' => esc_html__('Rotate In Down Left', 'sina-ext'),
+			'rotateInDownRight' => esc_html__('Rotate In Down Right', 'sina-ext'),
+			'rotateInUpLeft' => esc_html__('Rotate In Up Left', 'sina-ext'),
+			'rotateInUpRight' => esc_html__('Rotate In Up Right', 'sina-ext'),
+			'flipInX' => esc_html__( 'Flip In X', 'sina-ext' ),
+			'flipInY' => esc_html__( 'Flip In Y', 'sina-ext' ),
+			'lightSpeedIn' => esc_html__('Light Speed In', 'sina-ext'),
+			'swing' => esc_html__( 'Swing', 'sina-ext' ),
+			'bounce' => esc_html__('Bounce', 'sina-ext'),
+			'flash' => esc_html__('Flash', 'sina-ext'),
+			'pulse' => esc_html__('Pulse', 'sina-ext'),
+			'rubberBand' => esc_html__('Rubber Band', 'sina-ext'),
+			'shake' => esc_html__('Shake', 'sina-ext'),
+			'headShake' => esc_html__('Head Shake', 'sina-ext'),
+			'swing' => esc_html__('Swing', 'sina-ext'),
+			'tada' => esc_html__('Tada', 'sina-ext'),
+			'wobble' => esc_html__('Wobble', 'sina-ext'),
+			'jello' => esc_html__('Jello', 'sina-ext'),
+			'rollIn' => esc_html__('Roll In', 'sina-ext'),
 		];
 	}
 
 	public static function animation_out() {
 		return [
-			'none' => __( 'None', 'sina-ext' ),
-			'fadeOut' => __( 'Fade Out', 'sina-ext' ),
-			'fadeOutUp' => __( 'Fade Out Up', 'sina-ext' ),
-			'fadeOutDown' => __( 'Fade Out Down', 'sina-ext' ),
-			'fadeOutLeft' => __( 'Fade Out Left', 'sina-ext' ),
-			'fadeOutRight' => __( 'Fade Out Right', 'sina-ext' ),
-			'zoomOut' => __('Zoom Out', 'sina-ext'),
-			'zoomOutLeft' => __('Zoom Out Left', 'sina-ext'),
-			'zoomOutRight' => __('Zoom Out Right', 'sina-ext'),
-			'zoomOutDown' => __('Zoom Out Down', 'sina-ext'),
-			'zoomOutUp' => __('Zoom Out Up', 'sina-ext'),
-			'bounceOut' => __('Bounce Out', 'sina-ext'),
-			'bounceOutDown' => __('Bounce Out Down', 'sina-ext'),
-			'bounceOutLeft' => __('Bounce Out Left', 'sina-ext'),
-			'bounceOutRight' => __('Bounce Out Right', 'sina-ext'),
-			'bounceOutUp' => __('Bounce Out Up', 'sina-ext'),
-			'slideOutDown' => __('Slide Out Down', 'sina-ext'),
-			'slideOutLeft' => __('Slide Out Left', 'sina-ext'),
-			'slideOutRight' => __('Slide Out Right', 'sina-ext'),
-			'slideOutUp' => __('Slide Out Up', 'sina-ext'),
-			'rotateOut' => __('Rotate Out', 'sina-ext'),
-			'rotateOutDownLeft' => __('Rotate Out Down Left', 'sina-ext'),
-			'rotateOutDownRight' => __('Rotate Out Down Right', 'sina-ext'),
-			'rotateOutUpLeft' => __('Rotate Out Up Left', 'sina-ext'),
-			'rotateOutUpRight' => __('Rotate Out Up Right', 'sina-ext'),
-			'flipOutX' => __( 'Flip Out X', 'sina-ext' ),
-			'flipOutY' => __( 'Flip Out Y', 'sina-ext' ),
-			'lightSpeedOut' => __('Light Speed Out', 'sina-ext'),
-			'rollOut' => __('Roll Out', 'sina-ext'),
+			'none' => esc_html__( 'None', 'sina-ext' ),
+			'fadeOut' => esc_html__( 'Fade Out', 'sina-ext' ),
+			'fadeOutUp' => esc_html__( 'Fade Out Up', 'sina-ext' ),
+			'fadeOutDown' => esc_html__( 'Fade Out Down', 'sina-ext' ),
+			'fadeOutLeft' => esc_html__( 'Fade Out Left', 'sina-ext' ),
+			'fadeOutRight' => esc_html__( 'Fade Out Right', 'sina-ext' ),
+			'zoomOut' => esc_html__('Zoom Out', 'sina-ext'),
+			'zoomOutLeft' => esc_html__('Zoom Out Left', 'sina-ext'),
+			'zoomOutRight' => esc_html__('Zoom Out Right', 'sina-ext'),
+			'zoomOutDown' => esc_html__('Zoom Out Down', 'sina-ext'),
+			'zoomOutUp' => esc_html__('Zoom Out Up', 'sina-ext'),
+			'bounceOut' => esc_html__('Bounce Out', 'sina-ext'),
+			'bounceOutDown' => esc_html__('Bounce Out Down', 'sina-ext'),
+			'bounceOutLeft' => esc_html__('Bounce Out Left', 'sina-ext'),
+			'bounceOutRight' => esc_html__('Bounce Out Right', 'sina-ext'),
+			'bounceOutUp' => esc_html__('Bounce Out Up', 'sina-ext'),
+			'slideOutDown' => esc_html__('Slide Out Down', 'sina-ext'),
+			'slideOutLeft' => esc_html__('Slide Out Left', 'sina-ext'),
+			'slideOutRight' => esc_html__('Slide Out Right', 'sina-ext'),
+			'slideOutUp' => esc_html__('Slide Out Up', 'sina-ext'),
+			'rotateOut' => esc_html__('Rotate Out', 'sina-ext'),
+			'rotateOutDownLeft' => esc_html__('Rotate Out Down Left', 'sina-ext'),
+			'rotateOutDownRight' => esc_html__('Rotate Out Down Right', 'sina-ext'),
+			'rotateOutUpLeft' => esc_html__('Rotate Out Up Left', 'sina-ext'),
+			'rotateOutUpRight' => esc_html__('Rotate Out Up Right', 'sina-ext'),
+			'flipOutX' => esc_html__( 'Flip Out X', 'sina-ext' ),
+			'flipOutY' => esc_html__( 'Flip Out Y', 'sina-ext' ),
+			'lightSpeedOut' => esc_html__('Light Speed Out', 'sina-ext'),
+			'rollOut' => esc_html__('Roll Out', 'sina-ext'),
 		];
 	}
 
@@ -200,7 +200,7 @@ class Sina_Common_Data{
 		$obj->add_control(
 			'posts_num',
 			[
-				'label' => __( 'Number of Posts', 'sina-ext' ),
+				'label' => esc_html__( 'Number of Posts', 'sina-ext' ),
 				'type' => Controls_Manager::NUMBER,
 				'step' => 1,
 				'min' => 1,
@@ -211,7 +211,7 @@ class Sina_Common_Data{
 		$obj->add_control(
 			'offset',
 			[
-				'label' => __( 'Number of Offset', 'sina-ext' ),
+				'label' => esc_html__( 'Number of Offset', 'sina-ext' ),
 				'type' => Controls_Manager::NUMBER,
 				'step' => 1,
 				'min' => 0,
@@ -222,14 +222,14 @@ class Sina_Common_Data{
 		$obj->add_control(
 			'order_by',
 			[
-				'label' => __( 'Order by', 'sina-ext' ),
+				'label' => esc_html__( 'Order by', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'date' => __( 'Date', 'sina-ext' ),
-					'title' => __( 'Title', 'sina-ext' ),
-					'author' => __( 'Author', 'sina-ext' ),
-					'modified' => __( 'Modified', 'sina-ext' ),
-					'comment_count' => __( 'Comments', 'sina-ext' ),
+					'date' => esc_html__( 'Date', 'sina-ext' ),
+					'title' => esc_html__( 'Title', 'sina-ext' ),
+					'author' => esc_html__( 'Author', 'sina-ext' ),
+					'modified' => esc_html__( 'Modified', 'sina-ext' ),
+					'comment_count' => esc_html__( 'Comments', 'sina-ext' ),
 				],
 				'default' => 'date',
 			]
@@ -237,11 +237,11 @@ class Sina_Common_Data{
 		$obj->add_control(
 			'sort',
 			[
-				'label' => __( 'Sort', 'sina-ext' ),
+				'label' => esc_html__( 'Sort', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'ASC' => __( 'ASC', 'sina-ext' ),
-					'DESC' => __( 'DESC', 'sina-ext' ),
+					'ASC' => esc_html__( 'ASC', 'sina-ext' ),
+					'DESC' => esc_html__( 'DESC', 'sina-ext' ),
 				],
 				'default' => 'DESC',
 			]
@@ -252,60 +252,60 @@ class Sina_Common_Data{
 		$obj->add_control(
 			'autoplay',
 			[
-				'label' => __( 'Autoplay', 'sina-ext' ),
+				'label' => esc_html__( 'Autoplay', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'On', 'sina-ext' ),
-				'label_off' => __( 'Off', 'sina-ext' ),
+				'label_on' => esc_html__( 'On', 'sina-ext' ),
+				'label_off' => esc_html__( 'Off', 'sina-ext' ),
 				'default' => 'yes',
 			]
 		);
 		$obj->add_control(
 			'pause',
 			[
-				'label' => __( 'Pause on Hover', 'sina-ext' ),
+				'label' => esc_html__( 'Pause on Hover', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'On', 'sina-ext' ),
-				'label_off' => __( 'Off', 'sina-ext' ),
+				'label_on' => esc_html__( 'On', 'sina-ext' ),
+				'label_off' => esc_html__( 'Off', 'sina-ext' ),
 				'default' => 'yes',
 			]
 		);
 		$obj->add_control(
 			'mouse_drag',
 			[
-				'label' => __( 'Mouse Drag', 'sina-ext' ),
+				'label' => esc_html__( 'Mouse Drag', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'On', 'sina-ext' ),
-				'label_off' => __( 'Off', 'sina-ext' ),
+				'label_on' => esc_html__( 'On', 'sina-ext' ),
+				'label_off' => esc_html__( 'Off', 'sina-ext' ),
 				'default' => 'yes',
 			]
 		);
 		$obj->add_control(
 			'touch_drag',
 			[
-				'label' => __( 'Touch Drag', 'sina-ext' ),
+				'label' => esc_html__( 'Touch Drag', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'On', 'sina-ext' ),
-				'label_off' => __( 'Off', 'sina-ext' ),
+				'label_on' => esc_html__( 'On', 'sina-ext' ),
+				'label_off' => esc_html__( 'Off', 'sina-ext' ),
 				'default' => 'yes',
 			]
 		);
 		$obj->add_control(
 			'loop',
 			[
-				'label' => __( 'Infinity Loop', 'sina-ext' ),
+				'label' => esc_html__( 'Infinity Loop', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'On', 'sina-ext' ),
-				'label_off' => __( 'Off', 'sina-ext' ),
+				'label_on' => esc_html__( 'On', 'sina-ext' ),
+				'label_off' => esc_html__( 'Off', 'sina-ext' ),
 				'default' => 'yes',
 			]
 		);
 		$obj->add_control(
 			'center',
 			[
-				'label' => __( 'Center', 'sina-ext' ),
+				'label' => esc_html__( 'Center', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'On', 'sina-ext' ),
-				'label_off' => __( 'Off', 'sina-ext' ),
+				'label_on' => esc_html__( 'On', 'sina-ext' ),
+				'label_off' => esc_html__( 'Off', 'sina-ext' ),
 				'condition' => [
 					'show_item!' => '1'
 				],
@@ -316,20 +316,20 @@ class Sina_Common_Data{
 			$obj->add_control(
 				'dots',
 				[
-					'label' => __( 'Dots', 'sina-ext' ),
+					'label' => esc_html__( 'Dots', 'sina-ext' ),
 					'type' => Controls_Manager::SWITCHER,
-					'label_on' => __( 'Show', 'sina-ext' ),
-					'label_off' => __( 'Hide', 'sina-ext' ),
+					'label_on' => esc_html__( 'Show', 'sina-ext' ),
+					'label_off' => esc_html__( 'Hide', 'sina-ext' ),
 					'default' => 'yes',
 				]
 			);
 			$obj->add_control(
 				'nav',
 				[
-					'label' => __( 'Navigation', 'sina-ext' ),
+					'label' => esc_html__( 'Navigation', 'sina-ext' ),
 					'type' => Controls_Manager::SWITCHER,
-					'label_on' => __( 'Show', 'sina-ext' ),
-					'label_off' => __( 'Hide', 'sina-ext' ),
+					'label_on' => esc_html__( 'Show', 'sina-ext' ),
+					'label_off' => esc_html__( 'Hide', 'sina-ext' ),
 					'default' => 'yes',
 				]
 			);
@@ -338,7 +338,7 @@ class Sina_Common_Data{
 		$obj->add_control(
 			'delay',
 			[
-				'label' => __( 'Delay', 'sina-ext' ),
+				'label' => esc_html__( 'Delay', 'sina-ext' ),
 				'type' => Controls_Manager::NUMBER,
 				'default' => 5000,
 				'step' => 100,
@@ -349,7 +349,7 @@ class Sina_Common_Data{
 		$obj->add_control(
 			'slide_anim',
 			[
-				'label' => __( 'Slide Animation In', 'sina-ext' ),
+				'label' => esc_html__( 'Slide Animation In', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'none',
 				'options' => self::animation(),
@@ -361,7 +361,7 @@ class Sina_Common_Data{
 		$obj->add_control(
 			'slide_anim_out',
 			[
-				'label' => __( 'Slide Animation Out', 'sina-ext' ),
+				'label' => esc_html__( 'Slide Animation Out', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'none',
 				'options' => self::animation_out(),
@@ -375,7 +375,7 @@ class Sina_Common_Data{
 			$obj->add_control(
 				'speed',
 				[
-					'label' => __( 'Speed', 'sina-ext' ),
+					'label' => esc_html__( 'Speed', 'sina-ext' ),
 					'type' => Controls_Manager::NUMBER,
 					'step' => 100,
 					'min' => 0,
@@ -394,9 +394,9 @@ class Sina_Common_Data{
 		$obj->add_control(
 			$prefix.'_text',
 			[
-				'label' => __( 'Label', 'sina-ext' ),
+				'label' => esc_html__( 'Label', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter Text', 'sina-ext' ),
+				'placeholder' => esc_html__( 'Enter Text', 'sina-ext' ),
 				'default' => $btn_text,
 			]
 		);
@@ -404,16 +404,16 @@ class Sina_Common_Data{
 			$obj->add_control(
 				$prefix.'_tooltip_text',
 				[
-					'label' => __( 'Tooltip text', 'sina-ext' ),
+					'label' => esc_html__( 'Tooltip text', 'sina-ext' ),
 					'type' => Controls_Manager::TEXT,
-					'placeholder' => __( 'Enter Tooltip Text', 'sina-ext' ),
+					'placeholder' => esc_html__( 'Enter Tooltip Text', 'sina-ext' ),
 				]
 			);
 		}
 		$obj->add_control(
 			$prefix.'_icon',
 			[
-				'label' => __( 'Icon', 'sina-ext' ),
+				'label' => esc_html__( 'Icon', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::ICON,
 			]
@@ -421,11 +421,11 @@ class Sina_Common_Data{
 		$obj->add_control(
 			$prefix.'_icon_align',
 			[
-				'label' => __( 'Icon Position', 'sina-ext' ),
+				'label' => esc_html__( 'Icon Position', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'left' => __( 'Left', 'sina-ext' ),
-					'right' => __( 'Right', 'sina-ext' ),
+					'left' => esc_html__( 'Left', 'sina-ext' ),
+					'right' => esc_html__( 'Right', 'sina-ext' ),
 				],
 				'default' => 'right',
 				'condition' => [
@@ -436,7 +436,7 @@ class Sina_Common_Data{
 		$obj->add_responsive_control(
 			$prefix.'_icon_space',
 			[
-				'label' => __( 'Icon Spacing', 'sina-ext' ),
+				'label' => esc_html__( 'Icon Spacing', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
 					'size' => '5',
@@ -456,17 +456,17 @@ class Sina_Common_Data{
 		$obj->add_control(
 			$prefix.'_effect',
 			[
-				'label' => __( 'Icon Effects', 'sina-ext' ),
+				'label' => esc_html__( 'Icon Effects', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'' => __( 'None', 'sina-ext' ),
-					'sina-anim-right-move' => __( 'Icon Right Move', 'sina-ext' ),
-					'sina-anim-right-moving' => __( 'Icon Right Moving', 'sina-ext' ),
-					'sina-anim-right-bouncing' => __( 'Icon Right Bouncing', 'sina-ext' ),
-					'sina-anim-left-move' => __( 'Icon Left Move', 'sina-ext' ),
-					'sina-anim-left-moving' => __( 'Icon Left Moving', 'sina-ext' ),
-					'sina-anim-left-bouncing' => __( 'Icon Left Bouncing', 'sina-ext' ),
-					'sina-anim-zooming' => __( 'Icon Zooming', 'sina-ext' ),
+					'' => esc_html__( 'None', 'sina-ext' ),
+					'sina-anim-right-move' => esc_html__( 'Icon Right Move', 'sina-ext' ),
+					'sina-anim-right-moving' => esc_html__( 'Icon Right Moving', 'sina-ext' ),
+					'sina-anim-right-bouncing' => esc_html__( 'Icon Right Bouncing', 'sina-ext' ),
+					'sina-anim-left-move' => esc_html__( 'Icon Left Move', 'sina-ext' ),
+					'sina-anim-left-moving' => esc_html__( 'Icon Left Moving', 'sina-ext' ),
+					'sina-anim-left-bouncing' => esc_html__( 'Icon Left Bouncing', 'sina-ext' ),
+					'sina-anim-zooming' => esc_html__( 'Icon Zooming', 'sina-ext' ),
 				],
 				'default' => '',
 			]
@@ -475,9 +475,9 @@ class Sina_Common_Data{
 			$obj->add_control(
 				$prefix.'_link',
 				[
-					'label' => __( 'Link', 'sina-ext' ),
+					'label' => esc_html__( 'Link', 'sina-ext' ),
 					'type' => Controls_Manager::URL,
-					'placeholder' => __( 'https://your-link.com', 'sina-ext' ),
+					'placeholder' => esc_html__( 'https://your-link.com', 'sina-ext' ),
 					'default' => [
 						'url' => '#',
 					],
@@ -512,7 +512,7 @@ class Sina_Common_Data{
 		$obj->add_control(
 			$prefix.'_tooptip_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#fafafa',
 				'selectors' => [
@@ -523,7 +523,7 @@ class Sina_Common_Data{
 		$obj->add_control(
 			$prefix.'_tooptip_bg',
 			[
-				'label' => __( 'Background Color', 'sina-ext' ),
+				'label' => esc_html__( 'Background Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#222',
 				'selectors' => [
@@ -538,7 +538,7 @@ class Sina_Common_Data{
 		$obj->add_responsive_control(
 			$prefix.'_tooptip_width',
 			[
-				'label' => __( 'Max Width', 'sina-ext' ),
+				'label' => esc_html__( 'Max Width', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', '%'],
 				'range' => [
@@ -561,7 +561,7 @@ class Sina_Common_Data{
 		$obj->add_responsive_control(
 			$prefix.'_tooltip_radius',
 			[
-				'label' => __( 'Radius', 'sina-ext' ),
+				'label' => esc_html__( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -579,7 +579,7 @@ class Sina_Common_Data{
 		$obj->add_responsive_control(
 			$prefix.'_tooltip_padding',
 			[
-				'label' => __( 'Padding', 'sina-ext' ),
+				'label' => esc_html__( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -600,7 +600,7 @@ class Sina_Common_Data{
 		$obj->add_control(
 			'dots_color',
 			[
-				'label' => __( 'Dots Color', 'sina-ext' ),
+				'label' => esc_html__( 'Dots Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'condition' => [
 					'dots!' => '',
@@ -616,7 +616,7 @@ class Sina_Common_Data{
 		$obj->add_control(
 			'nav_styles',
 			[
-				'label' => __( 'Navigation', 'sina-ext' ),
+				'label' => esc_html__( 'Navigation', 'sina-ext' ),
 				'type' => Controls_Manager::HEADING,
 				'condition' => [
 					'nav!' => '',
@@ -629,7 +629,7 @@ class Sina_Common_Data{
 		$obj->start_controls_tab(
 			'nav_normal',
 			[
-				'label' => __( 'Normal', 'sina-ext' ),
+				'label' => esc_html__( 'Normal', 'sina-ext' ),
 				'condition' => [
 					'nav!' => '',
 				],
@@ -639,7 +639,7 @@ class Sina_Common_Data{
 		$obj->add_control(
 			'nav_color',
 			[
-				'label' => __( 'Arrow Color', 'sina-ext' ),
+				'label' => esc_html__( 'Arrow Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'condition' => [
 					'nav!' => '',
@@ -689,7 +689,7 @@ class Sina_Common_Data{
 		$obj->start_controls_tab(
 			'nav_hover',
 			[
-				'label' => __( 'Hover', 'sina-ext' ),
+				'label' => esc_html__( 'Hover', 'sina-ext' ),
 				'condition' => [
 					'nav!' => '',
 				],
@@ -699,7 +699,7 @@ class Sina_Common_Data{
 		$obj->add_control(
 			'nav_hover_color',
 			[
-				'label' => __( 'Arrow Color', 'sina-ext' ),
+				'label' => esc_html__( 'Arrow Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'condition' => [
 					'nav!' => '',
@@ -730,7 +730,7 @@ class Sina_Common_Data{
 		$obj->add_control(
 			'nav_hover_border',
 			[
-				'label' => __( 'Border Color', 'sina-ext' ),
+				'label' => esc_html__( 'Border Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'condition' => [
 					'nav!' => '',
@@ -748,7 +748,7 @@ class Sina_Common_Data{
 		$obj->add_control(
 			'nav_font',
 			[
-				'label' => __( 'Font Family', 'sina-ext' ),
+				'label' => esc_html__( 'Font Family', 'sina-ext' ),
 				'type' => Controls_Manager::FONT,
 				'default' => 'Arial',
 				'separator' => 'before',
@@ -763,7 +763,7 @@ class Sina_Common_Data{
 		$obj->add_responsive_control(
 			'nav_font_size',
 			[
-				'label' => __( 'Font Size', 'sina-ext' ),
+				'label' => esc_html__( 'Font Size', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'condition' => [
 					'nav!' => '',
@@ -776,7 +776,7 @@ class Sina_Common_Data{
 		$obj->add_control(
 			'nav_top',
 			[
-				'label' => __( 'Nav Top (%)', 'sina-ext' ),
+				'label' => esc_html__( 'Nav Top (%)', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
 					'unit' => '%',
@@ -793,7 +793,7 @@ class Sina_Common_Data{
 		$obj->add_responsive_control(
 			'nav_next_radius',
 			[
-				'label' => __( 'Nav Next Radius', 'sina-ext' ),
+				'label' => esc_html__( 'Nav Next Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -814,7 +814,7 @@ class Sina_Common_Data{
 		$obj->add_responsive_control(
 			'nav_prev_radius',
 			[
-				'label' => __( 'Nav Prev Radius', 'sina-ext' ),
+				'label' => esc_html__( 'Nav Prev Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -835,7 +835,7 @@ class Sina_Common_Data{
 		$obj->add_responsive_control(
 			'nav_padding',
 			[
-				'label' => __( 'Nav Padding', 'sina-ext' ),
+				'label' => esc_html__( 'Nav Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -893,13 +893,13 @@ class Sina_Common_Data{
 		$obj->start_controls_tab(
 			$prefix.'_normal',
 			[
-				'label' => __( 'Normal', 'sina-ext' ),
+				'label' => esc_html__( 'Normal', 'sina-ext' ),
 			]
 		);
 		$obj->add_control(
 			$prefix.'_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#fafafa',
 				'selectors' => [
@@ -949,13 +949,13 @@ class Sina_Common_Data{
 		$obj->start_controls_tab(
 			$prefix.'_hover',
 			[
-				'label' => __( 'Hover', 'sina-ext' ),
+				'label' => esc_html__( 'Hover', 'sina-ext' ),
 			]
 		);
 		$obj->add_control(
 			$prefix.'_hover_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} '.$class.':hover' => 'color: {{VALUE}};',
@@ -987,7 +987,7 @@ class Sina_Common_Data{
 		$obj->add_control(
 			$prefix.'_hover_border',
 			[
-				'label' => __( 'Border Color', 'sina-ext' ),
+				'label' => esc_html__( 'Border Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} '.$class.':hover' => 'border-color: {{VALUE}};',
@@ -1037,13 +1037,13 @@ class Sina_Common_Data{
 		$obj->start_controls_tab(
 			$prefix.'_normal',
 			[
-				'label' => __( 'Normal', 'sina-ext' ),
+				'label' => esc_html__( 'Normal', 'sina-ext' ),
 			]
 		);
 		$obj->add_control(
 			$prefix.'_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#fafafa',
 				'selectors' => [
@@ -1091,7 +1091,7 @@ class Sina_Common_Data{
 		$obj->add_responsive_control(
 			$prefix.'_radius',
 			[
-				'label' => __( 'Radius', 'sina-ext' ),
+				'label' => esc_html__( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -1104,13 +1104,13 @@ class Sina_Common_Data{
 		$obj->start_controls_tab(
 			$prefix.'_active',
 			[
-				'label' => __( 'Active', 'sina-ext' ),
+				'label' => esc_html__( 'Active', 'sina-ext' ),
 			]
 		);
 		$obj->add_control(
 			$prefix.'_active_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} '.$class.'.active' => 'color: {{VALUE}};',
@@ -1149,7 +1149,7 @@ class Sina_Common_Data{
 		$obj->add_responsive_control(
 			$prefix.'_active_radius',
 			[
-				'label' => __( 'Radius', 'sina-ext' ),
+				'label' => esc_html__( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -1173,7 +1173,7 @@ class Sina_Common_Data{
 		$obj->add_responsive_control(
 			$prefix.'_width',
 			[
-				'label' => __( 'Width', 'sina-ext' ),
+				'label' => esc_html__( 'Width', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', '%' ],
 				'range' => [
@@ -1192,7 +1192,7 @@ class Sina_Common_Data{
 		$obj->add_responsive_control(
 			$prefix.'_radius',
 			[
-				'label' => __( 'Radius', 'sina-ext' ),
+				'label' => esc_html__( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -1203,7 +1203,7 @@ class Sina_Common_Data{
 		$obj->add_responsive_control(
 			$prefix.'_margin',
 			[
-				'label' => __( 'Margin', 'sina-ext' ),
+				'label' => esc_html__( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -1217,7 +1217,7 @@ class Sina_Common_Data{
 		$obj->add_control(
 			'placeholder_color',
 			[
-				'label' => __( 'Placeholder Color', 'sina-ext' ),
+				'label' => esc_html__( 'Placeholder Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#aaa',
 				'selectors' => [
@@ -1266,14 +1266,14 @@ class Sina_Common_Data{
 		$obj->start_controls_tab(
 			'fields_normal',
 			[
-				'label' => __( 'Normal', 'sina-ext' ),
+				'label' => esc_html__( 'Normal', 'sina-ext' ),
 			]
 		);
 
 		$obj->add_control(
 			'color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#222',
 				'selectors' => [
@@ -1284,7 +1284,7 @@ class Sina_Common_Data{
 		$obj->add_control(
 			'background',
 			[
-				'label' => __( 'Background', 'sina-ext' ),
+				'label' => esc_html__( 'Background', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#fff',
 				'selectors' => [
@@ -1322,14 +1322,14 @@ class Sina_Common_Data{
 		$obj->start_controls_tab(
 			'fields_focus',
 			[
-				'label' => __( 'Focus', 'sina-ext' ),
+				'label' => esc_html__( 'Focus', 'sina-ext' ),
 			]
 		);
 
 		$obj->add_control(
 			'focus_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .sina-input-field:focus' => 'color: {{VALUE}};',
@@ -1339,7 +1339,7 @@ class Sina_Common_Data{
 		$obj->add_control(
 			'focus_background',
 			[
-				'label' => __( 'Background', 'sina-ext' ),
+				'label' => esc_html__( 'Background', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .sina-input-field:focus' => 'background: {{VALUE}};',
@@ -1349,7 +1349,7 @@ class Sina_Common_Data{
 		$obj->add_control(
 			'focus_border',
 			[
-				'label' => __( 'Border Color', 'sina-ext' ),
+				'label' => esc_html__( 'Border Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .sina-input-field:focus' => 'border-color: {{VALUE}}'

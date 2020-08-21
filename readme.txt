@@ -3,9 +3,9 @@ Contributors: shaonsina
 Tags: elementor, elementor addon, elementor addons, elementor extension, elementor widget, elementor templates
 Donate link: https://sinaextra.com/sina-addon-for-elementor/
 Requires at least: 4.7
-Tested up to: 5.4
+Tested up to: 5.5
 Requires PHP: 7.0
-Stable tag: 3.3.0
+Stable tag: 3.3.2
 License: GPL v3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -208,34 +208,45 @@ Yes. It's totally free. We also have a [PRO](https://sinaextra.com/sina-addon-fo
 
 == Changelog ==
 
+= 3.3.2 - 06-08-2020 =
+- Added: Logging state to Login Form
+- Fixed: Accordion icon color issue
+- Fixed: Contact Form sender name not sent issue
+- Fixed: Dynamic Button notice issue
+- Improvment
+
+= 3.3.1 - 06-08-2020 =
+- Added: Username compatibility to Login Form
+- Improvment
+
 = 3.3.0 - 05-07-2020 =
-New: Facebook Feed
-New: Twitter Feed
+- New: Facebook Feed
+- New: Twitter Feed
 
 = 3.2.16 - 11-06-2020 =
-Fixed: Counter Media issue
+- Fixed: Counter Media issue
 
 = 3.2.15 - 11-06-2020 =
-Added: Morphing Animation
-Fixed: JS Error
+- Added: Morphing Animation
+- Fixed: JS Error
 
 = 3.2.14 - 31-05-2020 =
-Added: Some Optins to Counter
-Added: Some Optins to Pricing
-Fixed: Transform issue
+- Added: Some Optins to Counter
+- Added: Some Optins to Pricing
+- Fixed: Transform issue
 
 = 3.2.13 - 12-05-2020 =
-Added: After Logout Redirect URL Settings
-Added: Some Optins to Blog Posts
-Added: Some Optins to Posts Carousel
+- Added: After Logout Redirect URL Settings
+- Added: Some Optins to Blog Posts
+- Added: Some Optins to Posts Carousel
 
 = 3.2.12 - 01-05-2020 =
-Added: Some options to News Ticker
+- Added: Some options to News Ticker
 
 = 3.2.11 - 25-04-2020 =
-Added: Separator to Title widget
-Added: Some options to Posts Tab
-Fixed: Background effect issue for Video button
+- Added: Separator to Title widget
+- Added: Some options to Posts Tab
+- Fixed: Background effect issue for Video button
 
 = 3.2.10 - 19-04-2020 =
 - Added: Default sortable option to Table
@@ -525,4 +536,4 @@ Fixed: Background effect issue for Video button
 - Improved: Particle layer
 
 = 1.0.0 =
-Initial release
+- Initial release

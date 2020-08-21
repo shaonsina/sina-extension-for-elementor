@@ -2982,6 +2982,8 @@ class Sina_Ext_Icon extends Base_Data_Control{
 			'eicon-tv' => 'eicon-tv',
 			'eicon-facebook-comments' => 'eicon-facebook-comments',
 			'eicon-twitter-feed' => 'eicon-twitter-feed',
+			'eicon-slider-device' => 'eicon-slider-device',
+			'eicon-animation' => 'eicon-animation',
 		];
 	}
 

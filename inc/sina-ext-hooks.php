@@ -174,6 +174,8 @@ Class Sina_Ext_Hooks{
 
 				$site_name = get_bloginfo( 'name' );
 				$headers = 'From: '. $site_name .'<'. $email .'>';
+				$message = esc_html__( 'Name: ', 'sina-ext' ).$name."\n\n".$message;
+
 				if ( '' == $err  && $inbox ) {
 					$custom_email = get_option('sina_contact_email'.$inbox);
 					wp_mail( $custom_email, $subject, $message, $headers );

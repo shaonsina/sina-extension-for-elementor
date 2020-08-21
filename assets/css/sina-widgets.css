@@ -1,4 +1,4 @@
-/* Sina Extension for Elementor v3.3.0 */
+/* Sina Extension for Elementor v3.3.2 */
 
 /*--------------------------------- General -------------------------------------- */
 .sina-overlay{
@@ -175,15 +175,7 @@
 .sina-news-content,
 .sina-portfolio-item,
 .sina-pt-content .sina-pt-posts,
-.sina-pt-content-right .sina-pt-content-content,
-.sina-posts-carousel .owl-next span,
-.sina-posts-carousel .owl-prev span,
-.sina-content-slider .owl-next span,
-.sina-content-slider .owl-prev span,
-.sina-review-carousel .owl-next span,
-.sina-review-carousel .owl-prev span,
-.sina-banner-slider .owl-next span,
-.sina-banner-slider .owl-prev span{
+.sina-pt-content-right .sina-pt-content-content{
 	float: left;
 }
 .sina-input-field{

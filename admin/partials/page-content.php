@@ -64,7 +64,7 @@
 					printf( '<a href="%1$s" class="sina-ext-rollback-btn button elementor-button-spinner elementor-rollback-button">%2$s</a>',
 						wp_nonce_url( admin_url( 'admin-post.php?action=sina_ext_rollback' ), 'sina_ext_rollback' ),
 						sprintf(
-							__( 'Reinstall v%s', 'elementor' ),
+							__( 'Reinstall v%s', 'sina-ext' ),
 							SINA_EXT_PREVIOUS_VERSION
 						)
 					);

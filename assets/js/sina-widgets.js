@@ -1,4 +1,4 @@
-/* Sina Extension for Elementor v3.3.0 */
+/* Sina Extension for Elementor v3.3.2 */
 
 !(function ($) {
 	'use strict';
@@ -386,6 +386,8 @@
 				$password = $this.children('.sina-input-password'),
 				$email = $this.children('.sina-input-email'),
 				$rememberText = $this.find('.sina-login-remember'),
+				$logBtn = $this.find('.sina-login-btn'),
+				btnHtml = $logBtn.html(),
 				timeout,
 				remeber = false;
 
@@ -397,6 +399,7 @@
 				e.preventDefault();
 				clearTimeout(timeout);
 
+				$logBtn.html('Logging...');
 				$error.fadeOut(0);
 
 				$.post(
@@ -419,6 +422,7 @@
 							} else{
 								location.href = $url;
 							}
+							$logBtn.html(btnHtml);
 						}
 					}
 				);
@@ -784,7 +788,6 @@
 						itemSelector: '.sina-portfolio-item',
 						layoutMode: 'fitRows'
 					});
-
 				}
 
 				$btns.on('click', 'button', function () {
@@ -800,7 +803,6 @@
 						$(this).addClass('is-checked');
 					});
 				});
-
 			});
 
 			$this.find('.sina-portfolio-zoom').magnificPopup({
