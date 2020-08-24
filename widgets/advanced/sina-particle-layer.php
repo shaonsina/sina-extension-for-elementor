@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class Sina_Particle_Layer_Widget extends Widget_Base {
+class Sina_Particle_Layer_Widget extends Widget_Base{
 
 	/**
 	 * Get widget name.
@@ -35,7 +35,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 	 * @since 1.0.0
 	 */
 	public function get_title() {
-		return __( 'Sina Particle Layer', 'sina-ext' );
+		return esc_html__( 'Sina Particle Layer', 'sina-ext' );
 	}
 
 	/**
@@ -110,7 +110,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'particle_content',
 			[
-				'label' => __( 'Content', 'sina-ext' ),
+				'label' => esc_html__( 'Content', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -118,29 +118,29 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 		$this->add_control(
 			'save_templates',
 			[
-				'label' => __( 'Use Save Templates', 'sina-ext' ),
+				'label' => esc_html__( 'Use Save Templates', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
 			]
 		);
 		$this->add_control(
 			'template',
 			[
-				'label' => __( 'Choose Template', 'sina-ext' ),
+				'label' => esc_html__( 'Choose Template', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => sina_get_page_templates(),
 				'condition' => [
 					'save_templates!' => '',
 				],
-				'description' => __('NOTE: Don\'t try to edit after insertion template. If you need to change the style or layout then you try to change the main template then save and then insert', 'sina-ext'),
+				'description' => esc_html__('NOTE: Don\'t try to edit after insertion template. If you need to change the style or layout then you try to change the main template then save and then insert', 'sina-ext'),
 			]
 		);
 		$this->add_control(
 			'title',
 			[
-				'label' => __( 'Title', 'sina-ext' ),
+				'label' => esc_html__( 'Title', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter Title', 'sina-ext' ),
+				'placeholder' => esc_html__( 'Enter Title', 'sina-ext' ),
 				'default' => 'Welcome to get start your business',
 				'dynamic' => [
 					'active' => true,
@@ -150,11 +150,11 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 		$this->add_control(
 			'title_span',
 			[
-				'label' => __( 'Title Span', 'sina-ext' ),
+				'label' => esc_html__( 'Title Span', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter Title Span', 'sina-ext' ),
-				'description' => __( 'You can use SPAN for multi-color title.', 'sina-ext' ),
+				'placeholder' => esc_html__( 'Enter Title Span', 'sina-ext' ),
+				'description' => esc_html__( 'You can use SPAN for multi-color title.', 'sina-ext' ),
 				'dynamic' => [
 					'active' => true,
 				],
@@ -163,7 +163,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 		$this->add_control(
 			'title_tag',
 			[
-				'label' => __( 'Selct Tag', 'sina-ext' ),
+				'label' => esc_html__( 'Selct Tag', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
 					'h1' => 'H1',
@@ -176,10 +176,10 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 		$this->add_control(
 			'subtitle',
 			[
-				'label' => __( 'Sub Title', 'sina-ext' ),
+				'label' => esc_html__( 'Sub Title', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter Title', 'sina-ext' ),
+				'placeholder' => esc_html__( 'Enter Title', 'sina-ext' ),
 				'separator' => 'before',
 				'default' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
 				'dynamic' => [
@@ -190,7 +190,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 		$this->add_control(
 			'subtitle_tag',
 			[
-				'label' => __( 'Selct Tag', 'sina-ext' ),
+				'label' => esc_html__( 'Selct Tag', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
 					'h2' => 'H2',
@@ -205,10 +205,10 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 		$this->add_control(
 			'desc',
 			[
-				'label' => __( 'Description', 'sina-ext' ),
+				'label' => esc_html__( 'Description', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::TEXTAREA,
-				'placeholder' => __( 'Enter Description', 'sina-ext' ),
+				'placeholder' => esc_html__( 'Enter Description', 'sina-ext' ),
 				'separator' => 'before',
 				'default' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
 				'dynamic' => [
@@ -227,7 +227,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'primary_btn_content',
 			[
-				'label' => __( 'Primary Button', 'sina-ext' ),
+				'label' => esc_html__( 'Primary Button', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -235,10 +235,10 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 		$this->add_control(
 			'pbtn_id',
 			[
-				'label' => __( 'CSS ID', 'sina-ext' ),
+				'label' => esc_html__( 'CSS ID', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter ID', 'sina-ext' ),
-				'description' => __( 'Make sure this ID unique', 'sina-ext' ),
+				'placeholder' => esc_html__( 'Enter ID', 'sina-ext' ),
+				'description' => esc_html__( 'Make sure this ID unique', 'sina-ext' ),
 			]
 		);
 
@@ -252,7 +252,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'secondary_btn_content',
 			[
-				'label' => __( 'Secondary Button', 'sina-ext' ),
+				'label' => esc_html__( 'Secondary Button', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -260,7 +260,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'button_space',
 			[
-				'label' => __( 'Button Spacing', 'sina-ext' ),
+				'label' => esc_html__( 'Button Spacing', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'desktop_default' => [
 					'size' => 20,
@@ -277,10 +277,10 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 		$this->add_control(
 			'sbtn_id',
 			[
-				'label' => __( 'CSS ID', 'sina-ext' ),
+				'label' => esc_html__( 'CSS ID', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter ID', 'sina-ext' ),
-				'description' => __( 'Make sure this ID unique', 'sina-ext' ),
+				'placeholder' => esc_html__( 'Enter ID', 'sina-ext' ),
+				'description' => esc_html__( 'Make sure this ID unique', 'sina-ext' ),
 			]
 		);
 
@@ -294,7 +294,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'particle_settings',
 			[
-				'label' => __( 'Particle Settings', 'sina-ext' ),
+				'label' => esc_html__( 'Particle Settings', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -302,7 +302,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 		$this->add_control(
 			'link_color',
 			[
-				'label' => __( 'Link Color', 'sina-ext' ),
+				'label' => esc_html__( 'Link Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#fafafa',
 			]
@@ -310,7 +310,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 		$this->add_control(
 			'ball_color',
 			[
-				'label' => __( 'Ball Color', 'sina-ext' ),
+				'label' => esc_html__( 'Ball Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#fafafa',
 			]
@@ -318,7 +318,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 		$this->add_control(
 			'particle_number',
 			[
-				'label' => __( 'Particles Number', 'sina-ext' ),
+				'label' => esc_html__( 'Particles Number', 'sina-ext' ),
 				'type' => Controls_Manager::NUMBER,
 				'default' => 150,
 				'step' => 1,
@@ -329,7 +329,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 		$this->add_control(
 			'particle_link_width',
 			[
-				'label' => __( 'Link Width', 'sina-ext' ),
+				'label' => esc_html__( 'Link Width', 'sina-ext' ),
 				'type' => Controls_Manager::NUMBER,
 				'default' => 1,
 				'step' => 1,
@@ -340,7 +340,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 		$this->add_control(
 			'particle_link',
 			[
-				'label' => __( 'Link Distance', 'sina-ext' ),
+				'label' => esc_html__( 'Link Distance', 'sina-ext' ),
 				'type' => Controls_Manager::NUMBER,
 				'default' => 50,
 				'step' => 1,
@@ -351,7 +351,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 		$this->add_control(
 			'particle_create_link',
 			[
-				'label' => __( 'Create Link', 'sina-ext' ),
+				'label' => esc_html__( 'Create Link', 'sina-ext' ),
 				'type' => Controls_Manager::NUMBER,
 				'default' => 100,
 				'step' => 1,
@@ -362,7 +362,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 		$this->add_control(
 			'particle_ball',
 			[
-				'label' => __( 'Ball Max Size', 'sina-ext' ),
+				'label' => esc_html__( 'Ball Max Size', 'sina-ext' ),
 				'type' => Controls_Manager::NUMBER,
 				'default' => 10,
 				'step' => 1,
@@ -373,7 +373,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 		$this->add_control(
 			'anim_speed',
 			[
-				'label' => __( 'Animation Speed', 'sina-ext' ),
+				'label' => esc_html__( 'Animation Speed', 'sina-ext' ),
 				'type' => Controls_Manager::NUMBER,
 				'default' => 20,
 				'step' => 10,
@@ -384,19 +384,19 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 		$this->add_control(
 			'link_state',
 			[
-				'label' => __( 'Disable Links', 'sina-ext' ),
+				'label' => esc_html__( 'Disable Links', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Yes', 'sina-ext' ),
-				'label_off' => __( 'No', 'sina-ext' ),
+				'label_on' => esc_html__( 'Yes', 'sina-ext' ),
+				'label_off' => esc_html__( 'No', 'sina-ext' ),
 			]
 		);
 		$this->add_control(
 			'mouse_state',
 			[
-				'label' => __( 'Disable Mouse', 'sina-ext' ),
+				'label' => esc_html__( 'Disable Mouse', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Yes', 'sina-ext' ),
-				'label_off' => __( 'No', 'sina-ext' ),
+				'label_on' => esc_html__( 'Yes', 'sina-ext' ),
+				'label_off' => esc_html__( 'No', 'sina-ext' ),
 			]
 		);
 
@@ -410,7 +410,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'animation_settings',
 			[
-				'label' => __( 'Animation Settings', 'sina-ext' ),
+				'label' => esc_html__( 'Animation Settings', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -418,7 +418,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 		$this->add_control(
 			'title_anim',
 			[
-				'label' => __( 'Title Animation', 'sina-ext' ),
+				'label' => esc_html__( 'Title Animation', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::SELECT,
 				'default' => 'fadeInLeft',
@@ -428,7 +428,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 		$this->add_control(
 			'subtitle_anim',
 			[
-				'label' => __( 'Sub Title Animation', 'sina-ext' ),
+				'label' => esc_html__( 'Sub Title Animation', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::SELECT,
 				'default' => 'fadeInRight',
@@ -438,7 +438,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 		$this->add_control(
 			'desc_anim',
 			[
-				'label' => __( 'Description Animation', 'sina-ext' ),
+				'label' => esc_html__( 'Description Animation', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::SELECT,
 				'default' => 'fadeInUp',
@@ -448,7 +448,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 		$this->add_control(
 			'buttons_anim',
 			[
-				'label' => __( 'Buttons Animation', 'sina-ext' ),
+				'label' => esc_html__( 'Buttons Animation', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::SELECT,
 				'default' => 'fadeInUp',
@@ -466,7 +466,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'container_style',
 			[
-				'label' => __( 'Container', 'sina-ext' ),
+				'label' => esc_html__( 'Container', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -474,7 +474,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'container_width',
 			[
-				'label' => __( 'Width', 'sina-ext' ),
+				'label' => esc_html__( 'Width', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', '%' ],
 				'range' => [
@@ -497,7 +497,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'container_padding',
 			[
-				'label' => __( 'Padding', 'sina-ext' ),
+				'label' => esc_html__( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'desktop_default' => [
@@ -529,19 +529,19 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'alignment',
 			[
-				'label' => __( 'Alignment', 'sina-ext' ),
+				'label' => esc_html__( 'Alignment', 'sina-ext' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'sina-ext' ),
+						'title' => esc_html__( 'Left', 'sina-ext' ),
 						'icon' => 'fa fa-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'sina-ext' ),
+						'title' => esc_html__( 'Center', 'sina-ext' ),
 						'icon' => 'fa fa-align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'sina-ext' ),
+						'title' => esc_html__( 'Right', 'sina-ext' ),
 						'icon' => 'fa fa-align-right',
 					],
 				],
@@ -555,7 +555,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 		$this->add_control(
 			'template_style',
 			[
-				'label' => __( 'Template Style', 'sina-ext' ),
+				'label' => esc_html__( 'Template Style', 'sina-ext' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -563,7 +563,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'template_padding',
 			[
-				'label' => __( 'Padding', 'sina-ext' ),
+				'label' => esc_html__( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -582,7 +582,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'title_style',
 			[
-				'label' => __( 'Title', 'sina-ext' ),
+				'label' => esc_html__( 'Title', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'title!' => '',
@@ -593,7 +593,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 		$this->add_control(
 			'title_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#fafafa',
 				'selectors' => [
@@ -636,7 +636,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'title_margin',
 			[
-				'label' => __( 'Margin Bottom', 'sina-ext' ),
+				'label' => esc_html__( 'Margin Bottom', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -658,7 +658,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'title_span_style',
 			[
-				'label' => __( 'Title Span', 'sina-ext' ),
+				'label' => esc_html__( 'Title Span', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'title_span!' => '',
@@ -669,7 +669,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 		$this->add_control(
 			'title_span_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#1085e4',
 				'selectors' => [
@@ -702,7 +702,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'subtitle_style',
 			[
-				'label' => __( 'Sub Title', 'sina-ext' ),
+				'label' => esc_html__( 'Sub Title', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'subtitle!' => '',
@@ -713,7 +713,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 		$this->add_control(
 			'subtitle_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#fafafa',
 				'selectors' => [
@@ -756,7 +756,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'subtitle_margin',
 			[
-				'label' => __( 'Margin Bottom', 'sina-ext' ),
+				'label' => esc_html__( 'Margin Bottom', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -778,7 +778,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'desc_style',
 			[
-				'label' => __( 'Description', 'sina-ext' ),
+				'label' => esc_html__( 'Description', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'desc!' => '',
@@ -789,7 +789,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 		$this->add_control(
 			'desc_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#fafafa',
 				'selectors' => [
@@ -829,7 +829,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'desc_margin',
 			[
-				'label' => __( 'Margin Bottom', 'sina-ext' ),
+				'label' => esc_html__( 'Margin Bottom', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -851,7 +851,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'pbtn_style',
 			[
-				'label' => __( 'Primary Button', 'sina-ext' ),
+				'label' => esc_html__( 'Primary Button', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -859,7 +859,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'pbtn_width',
 			[
-				'label' => __( 'Width', 'sina-ext' ),
+				'label' => esc_html__( 'Width', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', '%' ],
 				'range' => [
@@ -879,7 +879,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'pbtn_radius',
 			[
-				'label' => __( 'Radius', 'sina-ext' ),
+				'label' => esc_html__( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -897,7 +897,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'pbtn_padding',
 			[
-				'label' => __( 'Padding', 'sina-ext' ),
+				'label' => esc_html__( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'desktop_default' => [
@@ -931,7 +931,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'sbtn_style',
 			[
-				'label' => __( 'Secondary Button', 'sina-ext' ),
+				'label' => esc_html__( 'Secondary Button', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -939,7 +939,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'sbtn_width',
 			[
-				'label' => __( 'Width', 'sina-ext' ),
+				'label' => esc_html__( 'Width', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', '%' ],
 				'range' => [
@@ -959,7 +959,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'sbtn_radius',
 			[
-				'label' => __( 'Radius', 'sina-ext' ),
+				'label' => esc_html__( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -977,7 +977,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'sbtn_padding',
 			[
-				'label' => __( 'Padding', 'sina-ext' ),
+				'label' => esc_html__( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'desktop_default' => [
@@ -1011,7 +1011,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'tooltips_style',
 			[
-				'label' => __( 'Tooltips', 'sina-ext' ),
+				'label' => esc_html__( 'Tooltips', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);

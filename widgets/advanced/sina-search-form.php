@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class Sina_Search_Form_Widget extends Widget_Base {
+class Sina_Search_Form_Widget extends Widget_Base{
 
 	/**
 	 * Get widget name.
@@ -35,7 +35,7 @@ class Sina_Search_Form_Widget extends Widget_Base {
 	 * @since 1.2.0
 	 */
 	public function get_title() {
-		return __( 'Sina Search Form', 'sina-ext' );
+		return esc_html__( 'Sina Search Form', 'sina-ext' );
 	}
 
 	/**
@@ -93,7 +93,7 @@ class Sina_Search_Form_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'form_content',
 			[
-				'label' => __( 'Form Content', 'sina-ext' ),
+				'label' => esc_html__( 'Form Content', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -101,10 +101,10 @@ class Sina_Search_Form_Widget extends Widget_Base {
 		$this->add_control(
 			'placeholder',
 			[
-				'label' => __( 'Placeholder text', 'sina-ext' ),
+				'label' => esc_html__( 'Placeholder text', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter placeholder text', 'sina-ext' ),
+				'placeholder' => esc_html__( 'Enter placeholder text', 'sina-ext' ),
 				'default' => 'Search Here...',
 			]
 		);
@@ -119,7 +119,7 @@ class Sina_Search_Form_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'field_style',
 			[
-				'label' => __( 'Field', 'sina-ext' ),
+				'label' => esc_html__( 'Field', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -127,7 +127,7 @@ class Sina_Search_Form_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'field_width',
 			[
-				'label' => __( 'Width', 'sina-ext' ),
+				'label' => esc_html__( 'Width', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', '%' ],
 				'range' => [
@@ -159,7 +159,7 @@ class Sina_Search_Form_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'field_radius',
 			[
-				'label' => __( 'Radius', 'sina-ext' ),
+				'label' => esc_html__( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -177,7 +177,7 @@ class Sina_Search_Form_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'field_padding',
 			[
-				'label' => __( 'Padding', 'sina-ext' ),
+				'label' => esc_html__( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -195,7 +195,7 @@ class Sina_Search_Form_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'field_margin',
 			[
-				'label' => __( 'Margin', 'sina-ext' ),
+				'label' => esc_html__( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -214,7 +214,7 @@ class Sina_Search_Form_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'btn_style',
 			[
-				'label' => __( 'Button', 'sina-ext' ),
+				'label' => esc_html__( 'Button', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -254,14 +254,14 @@ class Sina_Search_Form_Widget extends Widget_Base {
 		$this->start_controls_tab(
 			'btn_normal',
 			[
-				'label' => __( 'Normal', 'sina-ext' ),
+				'label' => esc_html__( 'Normal', 'sina-ext' ),
 			]
 		);
 
 		$this->add_control(
 			'btn_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#fafafa',
 				'selectors' => [
@@ -298,14 +298,14 @@ class Sina_Search_Form_Widget extends Widget_Base {
 		$this->start_controls_tab(
 			'btn_hover',
 			[
-				'label' => __( 'Hover', 'sina-ext' ),
+				'label' => esc_html__( 'Hover', 'sina-ext' ),
 			]
 		);
 
 		$this->add_control(
 			'hover_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .sina-search-btn:hover' => 'color: {{VALUE}};',
@@ -323,7 +323,7 @@ class Sina_Search_Form_Widget extends Widget_Base {
 		$this->add_control(
 			'hover_border',
 			[
-				'label' => __( 'Border Color', 'sina-ext' ),
+				'label' => esc_html__( 'Border Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .sina-search-btn:hover' => 'border-color: {{VALUE}}'
@@ -338,7 +338,7 @@ class Sina_Search_Form_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'btn_width',
 			[
-				'label' => __( 'Width', 'sina-ext' ),
+				'label' => esc_html__( 'Width', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', '%' ],
 				'range' => [
@@ -358,7 +358,7 @@ class Sina_Search_Form_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'btn_radius',
 			[
-				'label' => __( 'Radius', 'sina-ext' ),
+				'label' => esc_html__( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -376,7 +376,7 @@ class Sina_Search_Form_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'btn_padding',
 			[
-				'label' => __( 'Padding', 'sina-ext' ),
+				'label' => esc_html__( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -408,7 +408,7 @@ class Sina_Search_Form_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'btn_margin',
 			[
-				'label' => __( 'Margin', 'sina-ext' ),
+				'label' => esc_html__( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -426,19 +426,19 @@ class Sina_Search_Form_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'alignment',
 			[
-				'label' => __( 'Alignment', 'sina-ext' ),
+				'label' => esc_html__( 'Alignment', 'sina-ext' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'sina-ext' ),
+						'title' => esc_html__( 'Left', 'sina-ext' ),
 						'icon' => 'fa fa-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'sina-ext' ),
+						'title' => esc_html__( 'Center', 'sina-ext' ),
 						'icon' => 'fa fa-align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'sina-ext' ),
+						'title' => esc_html__( 'Right', 'sina-ext' ),
 						'icon' => 'fa fa-align-right',
 					],
 				],

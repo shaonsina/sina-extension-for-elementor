@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class Sina_Image_Differ_Widget extends Widget_Base {
+class Sina_Image_Differ_Widget extends Widget_Base{
 
 	/**
 	 * Get widget name.
@@ -36,7 +36,7 @@ class Sina_Image_Differ_Widget extends Widget_Base {
 	 * @since 3.1.0
 	 */
 	public function get_title() {
-		return __( 'Sina Image Differ', 'sina-ext' );
+		return esc_html__( 'Sina Image Differ', 'sina-ext' );
 	}
 
 	/**
@@ -110,7 +110,7 @@ class Sina_Image_Differ_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'differ_content',
 			[
-				'label' => __( 'Differ Content', 'sina-ext' ),
+				'label' => esc_html__( 'Differ Content', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -118,7 +118,7 @@ class Sina_Image_Differ_Widget extends Widget_Base {
 		$this->add_control(
 			'before_image',
 			[
-				'label' => __( 'Before Image', 'sina-ext' ),
+				'label' => esc_html__( 'Before Image', 'sina-ext' ),
 				'type' => Controls_Manager::MEDIA,
 				'default' => [
 					'url' => SINA_EXT_URL .'assets/img/choose-img.jpg',
@@ -131,7 +131,7 @@ class Sina_Image_Differ_Widget extends Widget_Base {
 		$this->add_control(
 			'after_image',
 			[
-				'label' => __( 'After Image', 'sina-ext' ),
+				'label' => esc_html__( 'After Image', 'sina-ext' ),
 				'type' => Controls_Manager::MEDIA,
 				'default' => [
 					'url' => SINA_EXT_URL .'assets/img/choose-img.jpg',
@@ -152,7 +152,7 @@ class Sina_Image_Differ_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'differ_settings',
 			[
-				'label' => __( 'Differ Settings', 'sina-ext' ),
+				'label' => esc_html__( 'Differ Settings', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -160,7 +160,7 @@ class Sina_Image_Differ_Widget extends Widget_Base {
 		$this->add_control(
 			'before_text',
 			[
-				'label' => __( 'Before Text', 'sina-ext' ),
+				'label' => esc_html__( 'Before Text', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
 				'default' => 'Before',
 			]
@@ -168,7 +168,7 @@ class Sina_Image_Differ_Widget extends Widget_Base {
 		$this->add_control(
 			'after_text',
 			[
-				'label' => __( 'After Text', 'sina-ext' ),
+				'label' => esc_html__( 'After Text', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
 				'default' => 'After',
 			]
@@ -176,11 +176,11 @@ class Sina_Image_Differ_Widget extends Widget_Base {
 		$this->add_control(
 			'orientation',
 			[
-				'label' => __( 'Orientation', 'sina-ext' ),
+				'label' => esc_html__( 'Orientation', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'horizontal' => __( 'Horizontal', 'sina-ext' ),
-					'vertical' => __( 'Vertical', 'sina-ext' ),
+					'horizontal' => esc_html__( 'Horizontal', 'sina-ext' ),
+					'vertical' => esc_html__( 'Vertical', 'sina-ext' ),
 				],
 				'default' => 'horizontal',
 			]
@@ -188,7 +188,7 @@ class Sina_Image_Differ_Widget extends Widget_Base {
 		$this->add_control(
 			'offset',
 			[
-				'label' => __( 'Slider Offset', 'sina-ext' ),
+				'label' => esc_html__( 'Slider Offset', 'sina-ext' ),
 				'type' => Controls_Manager::NUMBER,
 				'step' => 0.01,
 				'min' => 0,
@@ -199,28 +199,28 @@ class Sina_Image_Differ_Widget extends Widget_Base {
 		$this->add_control(
 			'no_overlay',
 			[
-				'label' => __( 'Overlay', 'sina-ext' ),
+				'label' => esc_html__( 'Overlay', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'On', 'sina-ext' ),
-				'label_off' => __( 'Off', 'sina-ext' ),
+				'label_on' => esc_html__( 'On', 'sina-ext' ),
+				'label_off' => esc_html__( 'Off', 'sina-ext' ),
 			]
 		);
 		$this->add_control(
 			'hover_move',
 			[
-				'label' => __( 'Slider move on hover', 'sina-ext' ),
+				'label' => esc_html__( 'Slider move on hover', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'On', 'sina-ext' ),
-				'label_off' => __( 'Off', 'sina-ext' ),
+				'label_on' => esc_html__( 'On', 'sina-ext' ),
+				'label_off' => esc_html__( 'Off', 'sina-ext' ),
 			]
 		);
 		$this->add_control(
 			'click_move',
 			[
-				'label' => __( 'Slider move on click', 'sina-ext' ),
+				'label' => esc_html__( 'Slider move on click', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'On', 'sina-ext' ),
-				'label_off' => __( 'Off', 'sina-ext' ),
+				'label_on' => esc_html__( 'On', 'sina-ext' ),
+				'label_off' => esc_html__( 'Off', 'sina-ext' ),
 			]
 		);
 
@@ -234,7 +234,7 @@ class Sina_Image_Differ_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'differ_style',
 			[
-				'label' => __( 'Differ', 'sina-ext' ),
+				'label' => esc_html__( 'Differ', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -242,7 +242,7 @@ class Sina_Image_Differ_Widget extends Widget_Base {
 		$this->add_control(
 			'overlay_bg',
 			[
-				'label' => __( 'Overlay Background', 'sina-ext' ),
+				'label' => esc_html__( 'Overlay Background', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => 'rgba(0,0,0,0.3)',
 				'selectors' => [
@@ -253,7 +253,7 @@ class Sina_Image_Differ_Widget extends Widget_Base {
 		$this->add_control(
 			'handle_bg',
 			[
-				'label' => __( 'Handle Background', 'sina-ext' ),
+				'label' => esc_html__( 'Handle Background', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#1085e4',
 				'selectors' => [
@@ -264,7 +264,7 @@ class Sina_Image_Differ_Widget extends Widget_Base {
 		$this->add_control(
 			'handle_separator',
 			[
-				'label' => __( 'Handle Separator Color', 'sina-ext' ),
+				'label' => esc_html__( 'Handle Separator Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#fff',
 				'selectors' => [
@@ -276,7 +276,7 @@ class Sina_Image_Differ_Widget extends Widget_Base {
 		$this->add_control(
 			'handle_arrow',
 			[
-				'label' => __( 'Arrow Color', 'sina-ext' ),
+				'label' => esc_html__( 'Arrow Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#fff',
 				'selectors' => [
@@ -322,7 +322,7 @@ class Sina_Image_Differ_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'lables_style',
 			[
-				'label' => __( 'Labels', 'sina-ext' ),
+				'label' => esc_html__( 'Labels', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -330,7 +330,7 @@ class Sina_Image_Differ_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'labels_width',
 			[
-				'label' => __( 'Min Width', 'sina-ext' ),
+				'label' => esc_html__( 'Min Width', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', '%' ],
 				'range' => [
@@ -372,7 +372,7 @@ class Sina_Image_Differ_Widget extends Widget_Base {
 		$this->add_control(
 			'labels_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#fff',
 				'selectors' => [
@@ -423,7 +423,7 @@ class Sina_Image_Differ_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'labels_padding',
 			[
-				'label' => __( 'Padding', 'sina-ext' ),
+				'label' => esc_html__( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -442,7 +442,7 @@ class Sina_Image_Differ_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'lables_radius',
 			[
-				'label' => __( 'Radius', 'sina-ext' ),
+				'label' => esc_html__( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [

@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class Sina_Team_Widget extends Widget_Base {
+class Sina_Team_Widget extends Widget_Base{
 
 	/**
 	 * Get widget name.
@@ -38,7 +38,7 @@ class Sina_Team_Widget extends Widget_Base {
 	 * @since 1.0.0
 	 */
 	public function get_title() {
-		return __( 'Sina Team', 'sina-ext' );
+		return esc_html__( 'Sina Team', 'sina-ext' );
 	}
 
 	/**
@@ -97,7 +97,7 @@ class Sina_Team_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'team_content',
 			[
-				'label' => __( 'Member', 'sina-ext' ),
+				'label' => esc_html__( 'Member', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -105,12 +105,12 @@ class Sina_Team_Widget extends Widget_Base {
 		$this->add_control(
 			'layout',
 			[
-				'label' => __( 'Layout', 'sina-ext' ),
+				'label' => esc_html__( 'Layout', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'thumb' => __( 'Thumb', 'sina-ext' ),
-					'grid' => __( 'Grid', 'sina-ext' ),
-					'list' => __( 'List', 'sina-ext' ),
+					'thumb' => esc_html__( 'Thumb', 'sina-ext' ),
+					'grid' => esc_html__( 'Grid', 'sina-ext' ),
+					'list' => esc_html__( 'List', 'sina-ext' ),
 				],
 				'default' => 'thumb',
 			]
@@ -118,15 +118,15 @@ class Sina_Team_Widget extends Widget_Base {
 		$this->add_control(
 			'image_position',
 			[
-				'label' => __( 'Image Position', 'sina-ext' ),
+				'label' => esc_html__( 'Image Position', 'sina-ext' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'sina-ext' ),
+						'title' => esc_html__( 'Left', 'sina-ext' ),
 						'icon' => 'eicon-h-align-left',
 					],
 					'right' => [
-						'title' => __( 'Right', 'sina-ext' ),
+						'title' => esc_html__( 'Right', 'sina-ext' ),
 						'icon' => 'eicon-h-align-right',
 					],
 				],
@@ -142,9 +142,9 @@ class Sina_Team_Widget extends Widget_Base {
 		$this->add_control(
 			'name',
 			[
-				'label' => __( 'Name', 'sina-ext' ),
+				'label' => esc_html__( 'Name', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter Name', 'sina-ext' ),
+				'placeholder' => esc_html__( 'Enter Name', 'sina-ext' ),
 				'default' => 'Jhon Doe',
 				'dynamic' => [
 					'active' => true,
@@ -154,9 +154,9 @@ class Sina_Team_Widget extends Widget_Base {
 		$this->add_control(
 			'position',
 			[
-				'label' => __( 'Position', 'sina-ext' ),
+				'label' => esc_html__( 'Position', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter Position', 'sina-ext' ),
+				'placeholder' => esc_html__( 'Enter Position', 'sina-ext' ),
 				'default' => 'CEO',
 				'dynamic' => [
 					'active' => true,
@@ -166,10 +166,10 @@ class Sina_Team_Widget extends Widget_Base {
 		$this->add_control(
 			'desc',
 			[
-				'label' => __( 'Description', 'sina-ext' ),
+				'label' => esc_html__( 'Description', 'sina-ext' ),
 				'lable_block' => true,
 				'type' => Controls_Manager::TEXTAREA,
-				'placeholder' => __( 'Enter Description', 'sina-ext' ),
+				'placeholder' => esc_html__( 'Enter Description', 'sina-ext' ),
 				'default' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, autem amet. Labore eos cum at, et illo ducimus.',
 				'dynamic' => [
 					'active' => true,
@@ -179,7 +179,7 @@ class Sina_Team_Widget extends Widget_Base {
 		$this->add_control(
 			'image',
 			[
-				'label' => __( 'Choose Image', 'sina-ext' ),
+				'label' => esc_html__( 'Choose Image', 'sina-ext' ),
 				'type' => Controls_Manager::MEDIA,
 				'default' => [
 					'url' => SINA_EXT_URL .'assets/img/team.jpg',
@@ -195,7 +195,7 @@ class Sina_Team_Widget extends Widget_Base {
 		$repeater->add_control(
 			'icon',
 			[
-				'label' => __( 'Icon', 'sina-ext' ),
+				'label' => esc_html__( 'Icon', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::ICON,
 				'default' => 'fa fa-facebook',
@@ -204,9 +204,9 @@ class Sina_Team_Widget extends Widget_Base {
 		$repeater->add_control(
 			'link',
 			[
-				'label' => __( 'Link', 'sina-ext' ),
+				'label' => esc_html__( 'Link', 'sina-ext' ),
 				'type' => Controls_Manager::URL,
-				'placeholder' => __( 'https://your-link.com', 'sina-ext' ),
+				'placeholder' => esc_html__( 'https://your-link.com', 'sina-ext' ),
 				'dynamic' => [
 					'active' => true,
 				],
@@ -215,8 +215,8 @@ class Sina_Team_Widget extends Widget_Base {
 		$repeater->add_control(
 			'social_name',
 			[
-				'label' => __( 'Name', 'sina-ext' ),
-				'description' => __( 'This name will be show in the item header', 'sina-ext' ),
+				'label' => esc_html__( 'Name', 'sina-ext' ),
+				'description' => esc_html__( 'This name will be show in the item header', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
 				'default' => 'Facebook',
 				'dynamic' => [
@@ -230,14 +230,14 @@ class Sina_Team_Widget extends Widget_Base {
 		$repeater->start_controls_tab(
 			'icon_normal',
 			[
-				'label' => __( 'Normal', 'sina-ext' ),
+				'label' => esc_html__( 'Normal', 'sina-ext' ),
 			]
 		);
 
 		$repeater->add_control(
 			'icon_color',
 			[
-				'label' => __( 'Icon Color', 'sina-ext' ),
+				'label' => esc_html__( 'Icon Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .sina-team-social {{CURRENT_ITEM}} a' => 'color: {{VALUE}};',
@@ -247,7 +247,7 @@ class Sina_Team_Widget extends Widget_Base {
 		$repeater->add_control(
 			'icon_bg',
 			[
-				'label' => __( 'Background', 'sina-ext' ),
+				'label' => esc_html__( 'Background', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .sina-team-social {{CURRENT_ITEM}} a' => 'background: {{VALUE}};',
@@ -274,14 +274,14 @@ class Sina_Team_Widget extends Widget_Base {
 		$repeater->start_controls_tab(
 			'icon_hover',
 			[
-				'label' => __( 'Hover', 'sina-ext' ),
+				'label' => esc_html__( 'Hover', 'sina-ext' ),
 			]
 		);
 
 		$repeater->add_control(
 			'icon_hover_color',
 			[
-				'label' => __( 'Icon Color', 'sina-ext' ),
+				'label' => esc_html__( 'Icon Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .sina-team-social {{CURRENT_ITEM}} a:hover' => 'color: {{VALUE}};',
@@ -291,7 +291,7 @@ class Sina_Team_Widget extends Widget_Base {
 		$repeater->add_control(
 			'icon_hover_bg',
 			[
-				'label' => __( 'Background', 'sina-ext' ),
+				'label' => esc_html__( 'Background', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .sina-team-social {{CURRENT_ITEM}} a:hover' => 'background: {{VALUE}}'
@@ -301,7 +301,7 @@ class Sina_Team_Widget extends Widget_Base {
 		$repeater->add_control(
 			'icon_hover_border',
 			[
-				'label' => __( 'Border Color', 'sina-ext' ),
+				'label' => esc_html__( 'Border Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .sina-team-social {{CURRENT_ITEM}} a:hover' => 'border-color: {{VALUE}}'
@@ -323,7 +323,7 @@ class Sina_Team_Widget extends Widget_Base {
 		$this->add_control(
 			'social_icons',
 			[
-				'label' => __( 'Add Social Icon', 'sina-ext' ),
+				'label' => esc_html__( 'Add Social Icon', 'sina-ext' ),
 				'type' => Controls_Manager::REPEATER,
 				'fields' => $repeater->get_controls(),
 				'default' => [
@@ -363,7 +363,7 @@ class Sina_Team_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'box_style',
 			[
-				'label' => __( 'Box', 'sina-ext' ),
+				'label' => esc_html__( 'Box', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -371,12 +371,12 @@ class Sina_Team_Widget extends Widget_Base {
 		$this->add_control(
 			'box_effects',
 			[
-				'label' => __( 'Effects', 'sina-ext' ),
+				'label' => esc_html__( 'Effects', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'sina-team-box-move' => __( 'Move', 'sina-ext' ),
-					'sina-team-box-zoom' => __( 'Zoom', 'sina-ext' ),
-					'' => __( 'None', 'sina-ext' ),
+					'sina-team-box-move' => esc_html__( 'Move', 'sina-ext' ),
+					'sina-team-box-zoom' => esc_html__( 'Zoom', 'sina-ext' ),
+					'' => esc_html__( 'None', 'sina-ext' ),
 				],
 				'condition' => [
 					'layout!' => 'thumb',
@@ -387,7 +387,7 @@ class Sina_Team_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'scale',
 			[
-				'label' => __( 'Scale', 'sina-ext' ),
+				'label' => esc_html__( 'Scale', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -411,7 +411,7 @@ class Sina_Team_Widget extends Widget_Base {
 		$this->add_control(
 			'move',
 			[
-				'label' => __( 'Move', 'sina-ext' ),
+				'label' => esc_html__( 'Move', 'sina-ext' ),
 				'type' => Controls_Manager::POPOVER_TOGGLE,
 				'condition' => [
 					'layout!' => 'thumb',
@@ -424,7 +424,7 @@ class Sina_Team_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'translateX',
 			[
-				'label' => __( 'Horizontal', 'sina-ext' ),
+				'label' => esc_html__( 'Horizontal', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -451,7 +451,7 @@ class Sina_Team_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'translateY',
 			[
-				'label' => __( 'Vertical', 'sina-ext' ),
+				'label' => esc_html__( 'Vertical', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -518,7 +518,7 @@ class Sina_Team_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'box_radius',
 			[
-				'label' => __( 'Radius', 'sina-ext' ),
+				'label' => esc_html__( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -529,7 +529,7 @@ class Sina_Team_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'box_padding',
 			[
-				'label' => __( 'Padding', 'sina-ext' ),
+				'label' => esc_html__( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'condition' => [
@@ -543,19 +543,19 @@ class Sina_Team_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'alignment',
 			[
-				'label' => __( 'Alignment', 'sina-ext' ),
+				'label' => esc_html__( 'Alignment', 'sina-ext' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'sina-ext' ),
+						'title' => esc_html__( 'Left', 'sina-ext' ),
 						'icon' => 'fa fa-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'sina-ext' ),
+						'title' => esc_html__( 'Center', 'sina-ext' ),
 						'icon' => 'fa fa-align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'sina-ext' ),
+						'title' => esc_html__( 'Right', 'sina-ext' ),
 						'icon' => 'fa fa-align-right',
 					],
 				],
@@ -576,7 +576,7 @@ class Sina_Team_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'overlay_style',
 			[
-				'label' => __( 'Overlay', 'sina-ext' ),
+				'label' => esc_html__( 'Overlay', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'layout' => 'thumb',
@@ -587,13 +587,13 @@ class Sina_Team_Widget extends Widget_Base {
 		$this->add_control(
 			'effects',
 			[
-				'label' => __( 'Effects', 'sina-ext' ),
+				'label' => esc_html__( 'Effects', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'sina-team-move' => __( 'Move', 'sina-ext' ),
-					'sina-team-zoom' => __( 'Zoom', 'sina-ext' ),
-					'sina-team-zoom sina-team-move' => __( 'Move & Zoom', 'sina-ext' ),
-					'' => __( 'None', 'sina-ext' ),
+					'sina-team-move' => esc_html__( 'Move', 'sina-ext' ),
+					'sina-team-zoom' => esc_html__( 'Zoom', 'sina-ext' ),
+					'sina-team-zoom sina-team-move' => esc_html__( 'Move & Zoom', 'sina-ext' ),
+					'' => esc_html__( 'None', 'sina-ext' ),
 				],
 				'default' => 'sina-team-move',
 			]
@@ -617,7 +617,7 @@ class Sina_Team_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'overlay_padding',
 			[
-				'label' => __( 'Padding', 'sina-ext' ),
+				'label' => esc_html__( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -643,7 +643,7 @@ class Sina_Team_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'image_style',
 			[
-				'label' => __( 'Image', 'sina-ext' ),
+				'label' => esc_html__( 'Image', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'layout!' => 'thumb',
@@ -654,14 +654,14 @@ class Sina_Team_Widget extends Widget_Base {
 		$this->add_control(
 			'is_morphing_anim_image',
 			[
-				'label' => __( 'Morphing Animation', 'sina-ext' ),
+				'label' => esc_html__( 'Morphing Animation', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
 			]
 		);
 		$this->add_responsive_control(
 			'image_width',
 			[
-				'label' => __( 'Width', 'sina-ext' ),
+				'label' => esc_html__( 'Width', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -676,7 +676,7 @@ class Sina_Team_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'image_height',
 			[
-				'label' => __( 'Height', 'sina-ext' ),
+				'label' => esc_html__( 'Height', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', '%' ],
 				'range' => [
@@ -717,7 +717,7 @@ class Sina_Team_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'image_radius',
 			[
-				'label' => __( 'Radius', 'sina-ext' ),
+				'label' => esc_html__( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -728,7 +728,7 @@ class Sina_Team_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'image_padding',
 			[
-				'label' => __( 'Padding', 'sina-ext' ),
+				'label' => esc_html__( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'condition' => [
@@ -750,7 +750,7 @@ class Sina_Team_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'content_style',
 			[
-				'label' => __( 'Content', 'sina-ext' ),
+				'label' => esc_html__( 'Content', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'layout!' => 'thumb',
@@ -761,7 +761,7 @@ class Sina_Team_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'content_width',
 			[
-				'label' => __( 'Width', 'sina-ext' ),
+				'label' => esc_html__( 'Width', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -794,7 +794,7 @@ class Sina_Team_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'content_radius',
 			[
-				'label' => __( 'Radius', 'sina-ext' ),
+				'label' => esc_html__( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -805,7 +805,7 @@ class Sina_Team_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'content_padding',
 			[
-				'label' => __( 'Padding', 'sina-ext' ),
+				'label' => esc_html__( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -831,7 +831,7 @@ class Sina_Team_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'name_style',
 			[
-				'label' => __( 'Name', 'sina-ext' ),
+				'label' => esc_html__( 'Name', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -839,7 +839,7 @@ class Sina_Team_Widget extends Widget_Base {
 		$this->add_control(
 			'name_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#222',
 				'selectors' => [
@@ -877,7 +877,7 @@ class Sina_Team_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'name_margin',
 			[
-				'label' => __( 'Margin Bottom', 'sina-ext' ),
+				'label' => esc_html__( 'Margin Bottom', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -900,7 +900,7 @@ class Sina_Team_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'position_style',
 			[
-				'label' => __( 'Position', 'sina-ext' ),
+				'label' => esc_html__( 'Position', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -908,7 +908,7 @@ class Sina_Team_Widget extends Widget_Base {
 		$this->add_control(
 			'position_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#222',
 				'selectors' => [
@@ -946,7 +946,7 @@ class Sina_Team_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'position_margin',
 			[
-				'label' => __( 'Margin Bottom', 'sina-ext' ),
+				'label' => esc_html__( 'Margin Bottom', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -969,7 +969,7 @@ class Sina_Team_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'desc_style',
 			[
-				'label' => __( 'Description', 'sina-ext' ),
+				'label' => esc_html__( 'Description', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -977,7 +977,7 @@ class Sina_Team_Widget extends Widget_Base {
 		$this->add_control(
 			'desc_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#222',
 				'selectors' => [
@@ -1010,7 +1010,7 @@ class Sina_Team_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'icon_style',
 			[
-				'label' => __( 'Social Icon', 'sina-ext' ),
+				'label' => esc_html__( 'Social Icon', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -1018,7 +1018,7 @@ class Sina_Team_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'font_size',
 			[
-				'label' => __( 'Font Size', 'sina-ext' ),
+				'label' => esc_html__( 'Font Size', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em' ],
 				'default' => [
@@ -1033,7 +1033,7 @@ class Sina_Team_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'icon_size',
 			[
-				'label' => __( 'Icon Size', 'sina-ext' ),
+				'label' => esc_html__( 'Icon Size', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em' ],
 				'default' => [
@@ -1048,7 +1048,7 @@ class Sina_Team_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'font_line_height',
 			[
-				'label' => __( 'Line Height', 'sina-ext' ),
+				'label' => esc_html__( 'Line Height', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em' ],
 				'default' => [
@@ -1066,14 +1066,14 @@ class Sina_Team_Widget extends Widget_Base {
 		$this->start_controls_tab(
 			'team_icon_normal',
 			[
-				'label' => __( 'Normal', 'sina-ext' ),
+				'label' => esc_html__( 'Normal', 'sina-ext' ),
 			]
 		);
 
 		$this->add_control(
 			'team_icon_color',
 			[
-				'label' => __( 'Icon Color', 'sina-ext' ),
+				'label' => esc_html__( 'Icon Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#fafafa',
 				'selectors' => [
@@ -1117,14 +1117,14 @@ class Sina_Team_Widget extends Widget_Base {
 		$this->start_controls_tab(
 			'team_icon_hover',
 			[
-				'label' => __( 'Hover', 'sina-ext' ),
+				'label' => esc_html__( 'Hover', 'sina-ext' ),
 			]
 		);
 
 		$this->add_control(
 			'team_icon_hover_color',
 			[
-				'label' => __( 'Icon Color', 'sina-ext' ),
+				'label' => esc_html__( 'Icon Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#1085e4',
 				'selectors' => [
@@ -1151,7 +1151,7 @@ class Sina_Team_Widget extends Widget_Base {
 		$this->add_control(
 			'team_icon_hover_border',
 			[
-				'label' => __( 'Border Color', 'sina-ext' ),
+				'label' => esc_html__( 'Border Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .sina-team-social a:hover' => 'border-color: {{VALUE}}'
@@ -1173,7 +1173,7 @@ class Sina_Team_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'icon_radius',
 			[
-				'label' => __( 'Radius', 'sina-ext' ),
+				'label' => esc_html__( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -1193,7 +1193,7 @@ class Sina_Team_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'icon_margin',
 			[
-				'label' => __( 'Margin', 'sina-ext' ),
+				'label' => esc_html__( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [

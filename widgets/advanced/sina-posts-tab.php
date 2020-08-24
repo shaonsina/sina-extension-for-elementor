@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class Sina_Posts_Tab_Widget extends Widget_Base {
+class Sina_Posts_Tab_Widget extends Widget_Base{
 
 	/**
 	 * Get widget name.
@@ -36,7 +36,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 	 * @since 1.2.0
 	 */
 	public function get_title() {
-		return __( 'Sina Posts Tab', 'sina-ext' );
+		return esc_html__( 'Sina Posts Tab', 'sina-ext' );
 	}
 
 	/**
@@ -107,7 +107,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'tab_content',
 			[
-				'label' => __( 'Tab Content', 'sina-ext' ),
+				'label' => esc_html__( 'Tab Content', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -117,7 +117,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 		$repeater->add_control(
 			'category',
 			[
-				'label' => __( 'Select Category', 'sina-ext' ),
+				'label' => esc_html__( 'Select Category', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => sina_get_categories(),
 				'default' => 'Uncategorized',
@@ -127,7 +127,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 			'icon',
 			[
 				'name' => 'icon',
-				'label' => __( 'Icon', 'sina-ext' ),
+				'label' => esc_html__( 'Icon', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::ICON,
 			]
@@ -136,7 +136,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 		$this->add_control(
 			'categories',
 			[
-				'label' => __('Add Categories', 'sina-ext'),
+				'label' => esc_html__('Add Categories', 'sina-ext'),
 				'type' => Controls_Manager::REPEATER,
 				'fields' => $repeater->get_controls(),
 				'default' => [
@@ -152,28 +152,28 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 		$this->add_control(
 			'date',
 			[
-				'label' => __( 'Date', 'sina-ext' ),
+				'label' => esc_html__( 'Date', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Show', 'sina-ext' ),
-				'label_off' => __( 'Hide', 'sina-ext' ),
+				'label_on' => esc_html__( 'Show', 'sina-ext' ),
+				'label_off' => esc_html__( 'Hide', 'sina-ext' ),
 			]
 		);
 		$this->add_control(
 			'tag',
 			[
-				'label' => __( 'Tag', 'sina-ext' ),
+				'label' => esc_html__( 'Tag', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Show', 'sina-ext' ),
-				'label_off' => __( 'Hide', 'sina-ext' ),
+				'label_on' => esc_html__( 'Show', 'sina-ext' ),
+				'label_off' => esc_html__( 'Hide', 'sina-ext' ),
 			]
 		);
 		$this->add_control(
 			'preview_right',
 			[
-				'label' => __( 'Preview Right', 'sina-ext' ),
+				'label' => esc_html__( 'Preview Right', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Yes', 'sina-ext' ),
-				'label_off' => __( 'No', 'sina-ext' ),
+				'label_on' => esc_html__( 'Yes', 'sina-ext' ),
+				'label_off' => esc_html__( 'No', 'sina-ext' ),
 			]
 		);
 
@@ -187,7 +187,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'menu_wrap_style',
 			[
-				'label' => __( 'Categories Warp', 'sina-ext' ),
+				'label' => esc_html__( 'Categories Warp', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -210,7 +210,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'btns_wrap_radius',
 			[
-				'label' => __( 'Radius', 'sina-ext' ),
+				'label' => esc_html__( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -221,7 +221,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'btns_wrap_padding',
 			[
-				'label' => __( 'Padding', 'sina-ext' ),
+				'label' => esc_html__( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -232,7 +232,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'btns_wrap_margin',
 			[
-				'label' => __( 'Margin', 'sina-ext' ),
+				'label' => esc_html__( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -258,7 +258,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'cat_style',
 			[
-				'label' => __( 'Categories', 'sina-ext' ),
+				'label' => esc_html__( 'Categories', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -266,11 +266,11 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 		$this->add_control(
 			'icon_align',
 			[
-				'label' => __( 'Icon Position', 'sina-ext' ),
+				'label' => esc_html__( 'Icon Position', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'left' => __( 'Left', 'sina-ext' ),
-					'right' => __( 'Right', 'sina-ext' ),
+					'left' => esc_html__( 'Left', 'sina-ext' ),
+					'right' => esc_html__( 'Right', 'sina-ext' ),
 				],
 				'separator' => 'before',
 				'default' => 'left',
@@ -279,7 +279,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'icon_space',
 			[
-				'label' => __( 'Icon Spacing', 'sina-ext' ),
+				'label' => esc_html__( 'Icon Spacing', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
 					'size' => '5',
@@ -293,7 +293,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'cat_gap',
 			[
-				'label' => __( 'Gap From Content', 'sina-ext' ),
+				'label' => esc_html__( 'Gap From Content', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'default' =>[
 					'size' => '40',
@@ -306,7 +306,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'cat_width',
 			[
-				'label' => __( 'Min Width', 'sina-ext' ),
+				'label' => esc_html__( 'Min Width', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', '%' ],
 				'range' => [
@@ -325,7 +325,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'cat_radius',
 			[
-				'label' => __( 'Radius', 'sina-ext' ),
+				'label' => esc_html__( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -336,7 +336,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'cat_padding',
 			[
-				'label' => __( 'Padding', 'sina-ext' ),
+				'label' => esc_html__( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -354,7 +354,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'cat_margin',
 			[
-				'label' => __( 'Margin', 'sina-ext' ),
+				'label' => esc_html__( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -372,19 +372,19 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'cat_alignment',
 			[
-				'label' => __( 'Alignment', 'sina-ext' ),
+				'label' => esc_html__( 'Alignment', 'sina-ext' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'sina-ext' ),
+						'title' => esc_html__( 'Left', 'sina-ext' ),
 						'icon' => 'fa fa-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'sina-ext' ),
+						'title' => esc_html__( 'Center', 'sina-ext' ),
 						'icon' => 'fa fa-align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'sina-ext' ),
+						'title' => esc_html__( 'Right', 'sina-ext' ),
 						'icon' => 'fa fa-align-right',
 					],
 				],
@@ -406,7 +406,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'thumb_style',
 			[
-				'label' => __( 'Thumbnail', 'sina-ext' ),
+				'label' => esc_html__( 'Thumbnail', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -414,7 +414,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'thumb_width',
 			[
-				'label' => __( 'Width (%)', 'sina-ext' ),
+				'label' => esc_html__( 'Width (%)', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ '%' ],
 				'desktop_default' => [
@@ -437,7 +437,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'thumb_height',
 			[
-				'label' => __( 'Height', 'sina-ext' ),
+				'label' => esc_html__( 'Height', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -455,7 +455,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'thumb_radius',
 			[
-				'label' => __( 'Radius', 'sina-ext' ),
+				'label' => esc_html__( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -466,7 +466,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'thumb_padding',
 			[
-				'label' => __( 'Padding', 'sina-ext' ),
+				'label' => esc_html__( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em' ],
 				'desktop_default' => [
@@ -499,19 +499,19 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'thumb_title_alignment',
 			[
-				'label' => __( 'Alignment', 'sina-ext' ),
+				'label' => esc_html__( 'Alignment', 'sina-ext' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'sina-ext' ),
+						'title' => esc_html__( 'Left', 'sina-ext' ),
 						'icon' => 'fa fa-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'sina-ext' ),
+						'title' => esc_html__( 'Center', 'sina-ext' ),
 						'icon' => 'fa fa-align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'sina-ext' ),
+						'title' => esc_html__( 'Right', 'sina-ext' ),
 						'icon' => 'fa fa-align-right',
 					],
 				],
@@ -525,7 +525,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 		$this->add_control(
 			'thumb_title',
 			[
-				'label' => __( 'Title Style', 'sina-ext' ),
+				'label' => esc_html__( 'Title Style', 'sina-ext' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -559,7 +559,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 		$this->add_control(
 			'thumb_title_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#fafafa',
 				'selectors' => [
@@ -573,7 +573,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 		$this->add_control(
 			'thumb_meta',
 			[
-				'label' => __( 'Meta Style', 'sina-ext' ),
+				'label' => esc_html__( 'Meta Style', 'sina-ext' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -590,7 +590,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 		$this->add_control(
 			'thumb_meta_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#fafafa',
 				'selectors' => [
@@ -602,7 +602,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'thumb_meta_gap',
 			[
-				'label' => __( 'Gap From Title', 'sina-ext' ),
+				'label' => esc_html__( 'Gap From Title', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
 					'size' => 10,
@@ -623,7 +623,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'preview_style',
 			[
-				'label' => __( 'Preview List', 'sina-ext' ),
+				'label' => esc_html__( 'Preview List', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -631,7 +631,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'preview_width',
 			[
-				'label' => __( 'List Width (%)', 'sina-ext' ),
+				'label' => esc_html__( 'List Width (%)', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ '%' ],
 				'desktop_default' => [
@@ -654,7 +654,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'list_padding',
 			[
-				'label' => __( 'List Padding', 'sina-ext' ),
+				'label' => esc_html__( 'List Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em' ],
 				'default' => [
@@ -672,7 +672,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'title_width',
 			[
-				'label' => __( 'Title Width (%)', 'sina-ext' ),
+				'label' => esc_html__( 'Title Width (%)', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ '%' ],
 				'desktop_default' => [
@@ -696,7 +696,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'preview_thumb_width',
 			[
-				'label' => __( 'Preview Thumb Width (%)', 'sina-ext' ),
+				'label' => esc_html__( 'Preview Thumb Width (%)', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ '%' ],
 				'desktop_default' => [
@@ -719,7 +719,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'preview_thumb_height',
 			[
-				'label' => __( 'Preview Thumb Height', 'sina-ext' ),
+				'label' => esc_html__( 'Preview Thumb Height', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -761,7 +761,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'preview_radius',
 			[
-				'label' => __( 'Radius', 'sina-ext' ),
+				'label' => esc_html__( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -780,7 +780,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'title_style',
 			[
-				'label' => __( 'Preview Title', 'sina-ext' ),
+				'label' => esc_html__( 'Preview Title', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -813,14 +813,14 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 		$this->start_controls_tab(
 			'title_normal',
 			[
-				'label' => __( 'Normal', 'sina-ext' ),
+				'label' => esc_html__( 'Normal', 'sina-ext' ),
 			]
 		);
 
 		$this->add_control(
 			'title_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#222',
 				'selectors' => [
@@ -841,14 +841,14 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 		$this->start_controls_tab(
 			'title_hover',
 			[
-				'label' => __( 'Hover', 'sina-ext' ),
+				'label' => esc_html__( 'Hover', 'sina-ext' ),
 			]
 		);
 
 		$this->add_control(
 			'title_hover_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .sina-pt-title h3:hover' => 'color: {{VALUE}}'
@@ -870,19 +870,19 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'title_alignment',
 			[
-				'label' => __( 'Alignment', 'sina-ext' ),
+				'label' => esc_html__( 'Alignment', 'sina-ext' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'sina-ext' ),
+						'title' => esc_html__( 'Left', 'sina-ext' ),
 						'icon' => 'fa fa-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'sina-ext' ),
+						'title' => esc_html__( 'Center', 'sina-ext' ),
 						'icon' => 'fa fa-align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'sina-ext' ),
+						'title' => esc_html__( 'Right', 'sina-ext' ),
 						'icon' => 'fa fa-align-right',
 					],
 				],
@@ -904,7 +904,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'meta_style',
 			[
-				'label' => __( 'Date', 'sina-ext' ),
+				'label' => esc_html__( 'Date', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'date' => 'yes',
@@ -915,7 +915,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 		$this->add_control(
 			'meta_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .sina-pt-title p' => 'color: {{VALUE}}'
@@ -939,7 +939,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'meta_gap',
 			[
-				'label' => __( 'Gap From Title', 'sina-ext' ),
+				'label' => esc_html__( 'Gap From Title', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
 					'size' => 10,

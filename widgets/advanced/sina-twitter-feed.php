@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class Sina_Twitter_Feed_Widget extends Widget_Base {
+class Sina_Twitter_Feed_Widget extends Widget_Base{
 
 	/**
 	 * Get widget name.
@@ -217,7 +217,7 @@ class Sina_Twitter_Feed_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'read_more_content',
 			[
-				'label' => __( 'Read More', 'sina-ext' ),
+				'label' => esc_html__( 'Read More', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -853,7 +853,7 @@ class Sina_Twitter_Feed_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'read_more_style',
 			[
-				'label' => __( 'Read More', 'sina-ext' ),
+				'label' => esc_html__( 'Read More', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'read_more_text!' => '',
@@ -864,7 +864,7 @@ class Sina_Twitter_Feed_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'read_more_radius',
 			[
-				'label' => __( 'Radius', 'sina-ext' ),
+				'label' => esc_html__( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -883,7 +883,7 @@ class Sina_Twitter_Feed_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'read_more_padding',
 			[
-				'label' => __( 'Padding', 'sina-ext' ),
+				'label' => esc_html__( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -901,7 +901,7 @@ class Sina_Twitter_Feed_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'read_more_margin',
 			[
-				'label' => __( 'Margin', 'sina-ext' ),
+				'label' => esc_html__( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [

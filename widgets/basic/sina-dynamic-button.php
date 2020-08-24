@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class Sina_Dynamic_Button_Widget extends Widget_Base {
+class Sina_Dynamic_Button_Widget extends Widget_Base{
 
 	/**
 	 * Get widget name.
@@ -31,7 +31,7 @@ class Sina_Dynamic_Button_Widget extends Widget_Base {
 	 * @since 2.3.0
 	 */
 	public function get_title() {
-		return __( 'Sina Dynamic Button', 'sina-ext' );
+		return esc_html__( 'Sina Dynamic Button', 'sina-ext' );
 	}
 
 	/**
@@ -89,7 +89,7 @@ class Sina_Dynamic_Button_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'button_content',
 			[
-				'label' => __( 'Button', 'sina-ext' ),
+				'label' => esc_html__( 'Button', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -97,17 +97,17 @@ class Sina_Dynamic_Button_Widget extends Widget_Base {
 		$this->add_control(
 			'btn_effect',
 			[
-				'label' => __( 'Icon Effects', 'sina-ext' ),
+				'label' => esc_html__( 'Icon Effects', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'' => __( 'None', 'sina-ext' ),
-					'sina-anim-right-move' => __( 'Icon Right Move', 'sina-ext' ),
-					'sina-anim-right-moving' => __( 'Icon Right Moving', 'sina-ext' ),
-					'sina-anim-right-bouncing' => __( 'Icon Right Bouncing', 'sina-ext' ),
-					'sina-anim-left-move' => __( 'Icon Left Move', 'sina-ext' ),
-					'sina-anim-left-moving' => __( 'Icon Left Moving', 'sina-ext' ),
-					'sina-anim-left-bouncing' => __( 'Icon Left Bouncing', 'sina-ext' ),
-					'sina-anim-zooming' => __( 'Icon Zooming', 'sina-ext' ),
+					'' => esc_html__( 'None', 'sina-ext' ),
+					'sina-anim-right-move' => esc_html__( 'Icon Right Move', 'sina-ext' ),
+					'sina-anim-right-moving' => esc_html__( 'Icon Right Moving', 'sina-ext' ),
+					'sina-anim-right-bouncing' => esc_html__( 'Icon Right Bouncing', 'sina-ext' ),
+					'sina-anim-left-move' => esc_html__( 'Icon Left Move', 'sina-ext' ),
+					'sina-anim-left-moving' => esc_html__( 'Icon Left Moving', 'sina-ext' ),
+					'sina-anim-left-bouncing' => esc_html__( 'Icon Left Bouncing', 'sina-ext' ),
+					'sina-anim-zooming' => esc_html__( 'Icon Zooming', 'sina-ext' ),
 				],
 				'default' => '',
 			]
@@ -115,12 +115,12 @@ class Sina_Dynamic_Button_Widget extends Widget_Base {
 		$this->add_control(
 			'btn_type',
 			[
-				'label' => __( 'Button Type', 'sina-ext' ),
+				'label' => esc_html__( 'Button Type', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'static' => __( 'Static', 'sina-ext' ),
-					'page' => __( 'Page', 'sina-ext' ),
-					'taxonomy' => __( 'Taxonomy', 'sina-ext' ),
+					'static' => esc_html__( 'Static', 'sina-ext' ),
+					'page' => esc_html__( 'Page', 'sina-ext' ),
+					'taxonomy' => esc_html__( 'Taxonomy', 'sina-ext' ),
 				],
 				'default' => 'static',
 			]
@@ -128,7 +128,7 @@ class Sina_Dynamic_Button_Widget extends Widget_Base {
 		$this->add_control(
 			'btn_page',
 			[
-				'label' => __( 'Select Page', 'sina-ext' ),
+				'label' => esc_html__( 'Select Page', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => sina_get_page_lists(),
 				'condition' => [
@@ -140,7 +140,7 @@ class Sina_Dynamic_Button_Widget extends Widget_Base {
 		$this->add_control(
 			'btn_taxonomy',
 			[
-				'label' => __( 'Select Taxonomy', 'sina-ext' ),
+				'label' => esc_html__( 'Select Taxonomy', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => $taxonomy_lists,
 				'default' => 'category',
@@ -153,7 +153,7 @@ class Sina_Dynamic_Button_Widget extends Widget_Base {
 			$this->add_control(
 				'btn_'.$tax_name,
 				[
-					'label' => __( 'Select '.$tax_val, 'sina-ext' ),
+					'label' => esc_html__( 'Select '.$tax_val, 'sina-ext' ),
 					'type' => Controls_Manager::SELECT,
 					'options' => sina_get_term_lists($tax_name),
 					'condition' => [
@@ -166,9 +166,9 @@ class Sina_Dynamic_Button_Widget extends Widget_Base {
 		$this->add_control(
 			'btn_text',
 			[
-				'label' => __( 'Label', 'sina-ext' ),
+				'label' => esc_html__( 'Label', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter Label', 'sina-ext' ),
+				'placeholder' => esc_html__( 'Enter Label', 'sina-ext' ),
 				'default' => 'Click Here',
 				'condition' => [
 					'btn_type' => 'static',
@@ -178,12 +178,12 @@ class Sina_Dynamic_Button_Widget extends Widget_Base {
 		$this->add_control(
 			'btn_link',
 			[
-				'label' => __( 'Link', 'sina-ext' ),
+				'label' => esc_html__( 'Link', 'sina-ext' ),
 				'type' => Controls_Manager::URL,
 				'default' => [
 					'url' => '#',
 				],
-				'placeholder' => __( 'https://your-link.com', 'sina-ext' ),
+				'placeholder' => esc_html__( 'https://your-link.com', 'sina-ext' ),
 				'condition' => [
 					'btn_type' => 'static',
 				]
@@ -192,7 +192,7 @@ class Sina_Dynamic_Button_Widget extends Widget_Base {
 		$this->add_control(
 			'btn_icon',
 			[
-				'label' => __( 'Icon', 'sina-ext' ),
+				'label' => esc_html__( 'Icon', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::ICON,
 			]
@@ -200,11 +200,11 @@ class Sina_Dynamic_Button_Widget extends Widget_Base {
 		$this->add_control(
 			'btn_icon_align',
 			[
-				'label' => __( 'Icon Position', 'sina-ext' ),
+				'label' => esc_html__( 'Icon Position', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'left' => __( 'Left', 'sina-ext' ),
-					'right' => __( 'Right', 'sina-ext' ),
+					'left' => esc_html__( 'Left', 'sina-ext' ),
+					'right' => esc_html__( 'Right', 'sina-ext' ),
 				],
 				'default' => 'right',
 				'condition' => [
@@ -215,7 +215,7 @@ class Sina_Dynamic_Button_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'btn_icon_space',
 			[
-				'label' => __( 'Icon Spacing', 'sina-ext' ),
+				'label' => esc_html__( 'Icon Spacing', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
 					'size' => '5',
@@ -234,18 +234,18 @@ class Sina_Dynamic_Button_Widget extends Widget_Base {
 		$this->add_control(
 			'css_class',
 			[
-				'label' => __( 'CSS CLASS', 'sina-ext' ),
+				'label' => esc_html__( 'CSS CLASS', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter CLASS', 'sina-ext' ),
+				'placeholder' => esc_html__( 'Enter CLASS', 'sina-ext' ),
 			]
 		);
 		$this->add_control(
 			'css_id',
 			[
-				'label' => __( 'CSS ID', 'sina-ext' ),
+				'label' => esc_html__( 'CSS ID', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter ID', 'sina-ext' ),
-				'description' => __( 'Make sure this ID unique', 'sina-ext' ),
+				'placeholder' => esc_html__( 'Enter ID', 'sina-ext' ),
+				'description' => esc_html__( 'Make sure this ID unique', 'sina-ext' ),
 				'condition' => [
 					'btn_type' => 'static',
 				]
@@ -262,7 +262,7 @@ class Sina_Dynamic_Button_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'button_style',
 			[
-				'label' => __( 'Button', 'sina-ext' ),
+				'label' => esc_html__( 'Button', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -270,7 +270,7 @@ class Sina_Dynamic_Button_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'btn_width',
 			[
-				'label' => __( 'Min Width', 'sina-ext' ),
+				'label' => esc_html__( 'Min Width', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', '%' ],
 				'range' => [
@@ -296,7 +296,7 @@ class Sina_Dynamic_Button_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'btn_radius',
 			[
-				'label' => __( 'Radius', 'sina-ext' ),
+				'label' => esc_html__( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -314,7 +314,7 @@ class Sina_Dynamic_Button_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'btn_padding',
 			[
-				'label' => __( 'Padding', 'sina-ext' ),
+				'label' => esc_html__( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -332,19 +332,19 @@ class Sina_Dynamic_Button_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'alignment',
 			[
-				'label' => __( 'Alignment', 'sina-ext' ),
+				'label' => esc_html__( 'Alignment', 'sina-ext' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'sina-ext' ),
+						'title' => esc_html__( 'Left', 'sina-ext' ),
 						'icon' => 'fa fa-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'sina-ext' ),
+						'title' => esc_html__( 'Center', 'sina-ext' ),
 						'icon' => 'fa fa-align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'sina-ext' ),
+						'title' => esc_html__( 'Right', 'sina-ext' ),
 						'icon' => 'fa fa-align-right',
 					],
 				],

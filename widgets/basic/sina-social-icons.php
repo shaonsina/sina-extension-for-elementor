@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class Sina_Social_Icons_Widget extends Widget_Base {
+class Sina_Social_Icons_Widget extends Widget_Base{
 
 	/**
 	 * Get widget name.
@@ -34,7 +34,7 @@ class Sina_Social_Icons_Widget extends Widget_Base {
 	 * @since 2.3.0
 	 */
 	public function get_title() {
-		return __( 'Sina Social Icons', 'sina-ext' );
+		return esc_html__( 'Sina Social Icons', 'sina-ext' );
 	}
 
 	/**
@@ -92,7 +92,7 @@ class Sina_Social_Icons_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'social_content',
 			[
-				'label' => __( 'Social Icons', 'sina-ext' ),
+				'label' => esc_html__( 'Social Icons', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -102,7 +102,7 @@ class Sina_Social_Icons_Widget extends Widget_Base {
 		$repeater->add_control(
 			'icon',
 			[
-				'label' => __( 'Icon', 'sina-ext' ),
+				'label' => esc_html__( 'Icon', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::ICON,
 				'default' => 'fa fa-facebook',
@@ -111,16 +111,16 @@ class Sina_Social_Icons_Widget extends Widget_Base {
 		$repeater->add_control(
 			'link',
 			[
-				'label' => __( 'Link', 'sina-ext' ),
+				'label' => esc_html__( 'Link', 'sina-ext' ),
 				'type' => Controls_Manager::URL,
-				'placeholder' => __( 'https://your-link.com', 'sina-ext' ),
+				'placeholder' => esc_html__( 'https://your-link.com', 'sina-ext' ),
 			]
 		);
 		$repeater->add_control(
 			'social_name',
 			[
-				'label' => __( 'Name', 'sina-ext' ),
-				'description' => __( 'This name will be show in the item header', 'sina-ext' ),
+				'label' => esc_html__( 'Name', 'sina-ext' ),
+				'description' => esc_html__( 'This name will be show in the item header', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
 				'default' => 'Facebook',
 			]
@@ -131,14 +131,14 @@ class Sina_Social_Icons_Widget extends Widget_Base {
 		$repeater->start_controls_tab(
 			'icon_normal',
 			[
-				'label' => __( 'Normal', 'sina-ext' ),
+				'label' => esc_html__( 'Normal', 'sina-ext' ),
 			]
 		);
 
 		$repeater->add_control(
 			'icon_color',
 			[
-				'label' => __( 'Icon Color', 'sina-ext' ),
+				'label' => esc_html__( 'Icon Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .sina-social {{CURRENT_ITEM}} i' => 'color: {{VALUE}};',
@@ -148,7 +148,7 @@ class Sina_Social_Icons_Widget extends Widget_Base {
 		$repeater->add_control(
 			'icon_bg',
 			[
-				'label' => __( 'Background', 'sina-ext' ),
+				'label' => esc_html__( 'Background', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .sina-social {{CURRENT_ITEM}} a' => 'background: {{VALUE}};',
@@ -175,14 +175,14 @@ class Sina_Social_Icons_Widget extends Widget_Base {
 		$repeater->start_controls_tab(
 			'icon_hover',
 			[
-				'label' => __( 'Hover', 'sina-ext' ),
+				'label' => esc_html__( 'Hover', 'sina-ext' ),
 			]
 		);
 
 		$repeater->add_control(
 			'icon_hover_color',
 			[
-				'label' => __( 'Icon Color', 'sina-ext' ),
+				'label' => esc_html__( 'Icon Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .sina-social {{CURRENT_ITEM}} a:hover' => 'color: {{VALUE}};',
@@ -192,7 +192,7 @@ class Sina_Social_Icons_Widget extends Widget_Base {
 		$repeater->add_control(
 			'icon_hover_bg',
 			[
-				'label' => __( 'Background', 'sina-ext' ),
+				'label' => esc_html__( 'Background', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .sina-social {{CURRENT_ITEM}} a:hover' => 'background: {{VALUE}}'
@@ -202,7 +202,7 @@ class Sina_Social_Icons_Widget extends Widget_Base {
 		$repeater->add_control(
 			'icon_hover_border',
 			[
-				'label' => __( 'Border Color', 'sina-ext' ),
+				'label' => esc_html__( 'Border Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .sina-social {{CURRENT_ITEM}} a:hover' => 'border-color: {{VALUE}}'
@@ -224,7 +224,7 @@ class Sina_Social_Icons_Widget extends Widget_Base {
 		$this->add_control(
 			'social_icons',
 			[
-				'label' => __( 'Add Social Icon', 'sina-ext' ),
+				'label' => esc_html__( 'Add Social Icon', 'sina-ext' ),
 				'type' => Controls_Manager::REPEATER,
 				'fields' => $repeater->get_controls(),
 				'default' => [
@@ -264,7 +264,7 @@ class Sina_Social_Icons_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'social_style',
 			[
-				'label' => __( 'Social Icons', 'sina-ext' ),
+				'label' => esc_html__( 'Social Icons', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -272,11 +272,11 @@ class Sina_Social_Icons_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'display',
 			[
-				'label' => __( 'Display', 'sina-ext' ),
+				'label' => esc_html__( 'Display', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'inline-block' => __( 'Inline', 'sina-ext' ),
-					'block' => __( 'Block', 'sina-ext' ),
+					'inline-block' => esc_html__( 'Inline', 'sina-ext' ),
+					'block' => esc_html__( 'Block', 'sina-ext' ),
 				],
 				'default' => 'inline-block',
 				'selectors' => [
@@ -287,7 +287,7 @@ class Sina_Social_Icons_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'font_size',
 			[
-				'label' => __( 'Font Size', 'sina-ext' ),
+				'label' => esc_html__( 'Font Size', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em' ],
 				'default' => [
@@ -302,7 +302,7 @@ class Sina_Social_Icons_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'icon_width',
 			[
-				'label' => __( 'Width', 'sina-ext' ),
+				'label' => esc_html__( 'Width', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em' ],
 				'range' => [
@@ -327,7 +327,7 @@ class Sina_Social_Icons_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'icon_height',
 			[
-				'label' => __( 'Height', 'sina-ext' ),
+				'label' => esc_html__( 'Height', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em' ],
 				'range' => [
@@ -352,7 +352,7 @@ class Sina_Social_Icons_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'font_line_height',
 			[
-				'label' => __( 'Line Height', 'sina-ext' ),
+				'label' => esc_html__( 'Line Height', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em' ],
 				'default' => [
@@ -370,14 +370,14 @@ class Sina_Social_Icons_Widget extends Widget_Base {
 		$this->start_controls_tab(
 			'social_icon_normal',
 			[
-				'label' => __( 'Normal', 'sina-ext' ),
+				'label' => esc_html__( 'Normal', 'sina-ext' ),
 			]
 		);
 
 		$this->add_control(
 			'social_icon_color',
 			[
-				'label' => __( 'Icon Color', 'sina-ext' ),
+				'label' => esc_html__( 'Icon Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#fafafa',
 				'selectors' => [
@@ -421,14 +421,14 @@ class Sina_Social_Icons_Widget extends Widget_Base {
 		$this->start_controls_tab(
 			'social_icon_hover',
 			[
-				'label' => __( 'Hover', 'sina-ext' ),
+				'label' => esc_html__( 'Hover', 'sina-ext' ),
 			]
 		);
 
 		$this->add_control(
 			'social_icon_hover_color',
 			[
-				'label' => __( 'Icon Color', 'sina-ext' ),
+				'label' => esc_html__( 'Icon Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .sina-social a:hover' => 'color: {{VALUE}};',
@@ -454,7 +454,7 @@ class Sina_Social_Icons_Widget extends Widget_Base {
 		$this->add_control(
 			'social_icon_hover_border',
 			[
-				'label' => __( 'Border Color', 'sina-ext' ),
+				'label' => esc_html__( 'Border Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .sina-social a:hover' => 'border-color: {{VALUE}}'
@@ -476,7 +476,7 @@ class Sina_Social_Icons_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'icon_radius',
 			[
-				'label' => __( 'Radius', 'sina-ext' ),
+				'label' => esc_html__( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -496,7 +496,7 @@ class Sina_Social_Icons_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'icon_margin',
 			[
-				'label' => __( 'Margin', 'sina-ext' ),
+				'label' => esc_html__( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -514,19 +514,19 @@ class Sina_Social_Icons_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'alignment',
 			[
-				'label' => __( 'Alignment', 'sina-ext' ),
+				'label' => esc_html__( 'Alignment', 'sina-ext' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'sina-ext' ),
+						'title' => esc_html__( 'Left', 'sina-ext' ),
 						'icon' => 'fa fa-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'sina-ext' ),
+						'title' => esc_html__( 'Center', 'sina-ext' ),
 						'icon' => 'fa fa-align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'sina-ext' ),
+						'title' => esc_html__( 'Right', 'sina-ext' ),
 						'icon' => 'fa fa-align-right',
 					],
 				],

@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class Sina_Transform_Widget extends Widget_Base {
+class Sina_Transform_Widget extends Widget_Base{
 
 	/**
 	 * Get widget name.
@@ -36,7 +36,7 @@ class Sina_Transform_Widget extends Widget_Base {
 	 * @since 2.1.0
 	 */
 	public function get_title() {
-		return __( 'Sina Transform', 'sina-ext' );
+		return esc_html__( 'Sina Transform', 'sina-ext' );
 	}
 
 	/**
@@ -94,7 +94,7 @@ class Sina_Transform_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'transform_content',
 			[
-				'label' => __( 'Transform Content', 'sina-ext' ),
+				'label' => esc_html__( 'Transform Content', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -102,26 +102,26 @@ class Sina_Transform_Widget extends Widget_Base {
 		$this->add_control(
 			'save_templates',
 			[
-				'label' => __( 'Use Save Templates', 'sina-ext' ),
+				'label' => esc_html__( 'Use Save Templates', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
 			]
 		);
 		$this->add_control(
 			'template',
 			[
-				'label' => __( 'Choose Template', 'sina-ext' ),
+				'label' => esc_html__( 'Choose Template', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => sina_get_page_templates(),
 				'condition' => [
 					'save_templates!' => '',
 				],
-				'description' => __('NOTE: Don\'t try to edit after insertion template. If you need to change the style or layout then you try to change the main template then save and then insert', 'sina-ext'),
+				'description' => esc_html__('NOTE: Don\'t try to edit after insertion template. If you need to change the style or layout then you try to change the main template then save and then insert', 'sina-ext'),
 			]
 		);
 		$this->add_control(
 			'empty_space',
 			[
-				'label' => __( 'Space', 'sina-ext' ),
+				'label' => esc_html__( 'Space', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
 				'condition' => [
 					'save_templates!' => 'yes',
@@ -131,7 +131,7 @@ class Sina_Transform_Widget extends Widget_Base {
 		$this->add_control(
 			'image',
 			[
-				'label' => __( 'Choose Image', 'sina-ext' ),
+				'label' => esc_html__( 'Choose Image', 'sina-ext' ),
 				'type' => Controls_Manager::MEDIA,
 				'condition' => [
 					'save_templates' => '',
@@ -156,7 +156,7 @@ class Sina_Transform_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'transform_style',
 			[
-				'label' => __( 'Transform Style', 'sina-ext' ),
+				'label' => esc_html__( 'Transform Style', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -164,7 +164,7 @@ class Sina_Transform_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'height',
 			[
-				'label' => __( 'Height', 'sina-ext' ),
+				'label' => esc_html__( 'Height', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em' ],
 				'range' => [
@@ -192,19 +192,19 @@ class Sina_Transform_Widget extends Widget_Base {
 		$this->add_control(
 			'transform_effects',
 			[
-				'label' => __( 'Transform Effects', 'sina-ext' ),
+				'label' => esc_html__( 'Transform Effects', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'translate' => __( 'Translate', 'sina-ext' ),
-					'scaleX' => __( 'Scale X', 'sina-ext' ),
-					'scaleY' => __( 'Scale Y', 'sina-ext' ),
-					'scaleZ' => __( 'Scale Z', 'sina-ext' ),
-					'rotateX' => __( 'Rotate X', 'sina-ext' ),
-					'rotateY' => __( 'Rotate Y', 'sina-ext' ),
-					'rotateZ' => __( 'Rotate Z', 'sina-ext' ),
-					'skewX' => __( 'Skew X', 'sina-ext' ),
-					'skewY' => __( 'Skew Y', 'sina-ext' ),
-					'none' => __( 'None', 'sina-ext' ),
+					'translate' => esc_html__( 'Translate', 'sina-ext' ),
+					'scaleX' => esc_html__( 'Scale X', 'sina-ext' ),
+					'scaleY' => esc_html__( 'Scale Y', 'sina-ext' ),
+					'scaleZ' => esc_html__( 'Scale Z', 'sina-ext' ),
+					'rotateX' => esc_html__( 'Rotate X', 'sina-ext' ),
+					'rotateY' => esc_html__( 'Rotate Y', 'sina-ext' ),
+					'rotateZ' => esc_html__( 'Rotate Z', 'sina-ext' ),
+					'skewX' => esc_html__( 'Skew X', 'sina-ext' ),
+					'skewY' => esc_html__( 'Skew Y', 'sina-ext' ),
+					'none' => esc_html__( 'None', 'sina-ext' ),
 				],
 				'default' => 'rotateY',
 			]
@@ -212,14 +212,14 @@ class Sina_Transform_Widget extends Widget_Base {
 		$this->add_control(
 			'transform_3D',
 			[
-				'label' => __( '3D Transform', 'sina-ext' ),
+				'label' => esc_html__( '3D Transform', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
 			]
 		);
 		$this->add_responsive_control(
 			'transform_perspective',
 			[
-				'label' => __( 'Perspective Size', 'sina-ext' ),
+				'label' => esc_html__( 'Perspective Size', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -245,14 +245,14 @@ class Sina_Transform_Widget extends Widget_Base {
 		$this->start_controls_tab(
 			'transform_normal',
 			[
-				'label' => __( 'Normal', 'sina-ext' ),
+				'label' => esc_html__( 'Normal', 'sina-ext' ),
 			]
 		);
 
 		$this->add_responsive_control(
 			'translateX',
 			[
-				'label' => __( 'Translate X', 'sina-ext' ),
+				'label' => esc_html__( 'Translate X', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -271,7 +271,7 @@ class Sina_Transform_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'translateY',
 			[
-				'label' => __( 'Translate Y', 'sina-ext' ),
+				'label' => esc_html__( 'Translate Y', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -295,7 +295,7 @@ class Sina_Transform_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'scaleX',
 			[
-				'label' => __( 'Scale X', 'sina-ext' ),
+				'label' => esc_html__( 'Scale X', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -318,7 +318,7 @@ class Sina_Transform_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'scaleY',
 			[
-				'label' => __( 'Scale Y', 'sina-ext' ),
+				'label' => esc_html__( 'Scale Y', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -341,7 +341,7 @@ class Sina_Transform_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'scaleZ',
 			[
-				'label' => __( 'Scale Z', 'sina-ext' ),
+				'label' => esc_html__( 'Scale Z', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -364,7 +364,7 @@ class Sina_Transform_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'rotateX',
 			[
-				'label' => __( 'Rotate X', 'sina-ext' ),
+				'label' => esc_html__( 'Rotate X', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -387,7 +387,7 @@ class Sina_Transform_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'rotateY',
 			[
-				'label' => __( 'Rotate Y', 'sina-ext' ),
+				'label' => esc_html__( 'Rotate Y', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -410,7 +410,7 @@ class Sina_Transform_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'rotateZ',
 			[
-				'label' => __( 'Rotate Z', 'sina-ext' ),
+				'label' => esc_html__( 'Rotate Z', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -433,7 +433,7 @@ class Sina_Transform_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'skewX',
 			[
-				'label' => __( 'Skew X', 'sina-ext' ),
+				'label' => esc_html__( 'Skew X', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -456,7 +456,7 @@ class Sina_Transform_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'skewY',
 			[
-				'label' => __( 'Skew Y', 'sina-ext' ),
+				'label' => esc_html__( 'Skew Y', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -514,14 +514,14 @@ class Sina_Transform_Widget extends Widget_Base {
 		$this->start_controls_tab(
 			'transform_hover',
 			[
-				'label' => __( 'Hover', 'sina-ext' ),
+				'label' => esc_html__( 'Hover', 'sina-ext' ),
 			]
 		);
 
 		$this->add_responsive_control(
 			'translateX_hover',
 			[
-				'label' => __( 'Translate X', 'sina-ext' ),
+				'label' => esc_html__( 'Translate X', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -540,7 +540,7 @@ class Sina_Transform_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'translateY_hover',
 			[
-				'label' => __( 'Translate Y', 'sina-ext' ),
+				'label' => esc_html__( 'Translate Y', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -564,7 +564,7 @@ class Sina_Transform_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'scaleX_hover',
 			[
-				'label' => __( 'Scale X', 'sina-ext' ),
+				'label' => esc_html__( 'Scale X', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -587,7 +587,7 @@ class Sina_Transform_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'scaleY_hover',
 			[
-				'label' => __( 'Scale Y', 'sina-ext' ),
+				'label' => esc_html__( 'Scale Y', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -610,7 +610,7 @@ class Sina_Transform_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'scaleZ_hover',
 			[
-				'label' => __( 'Scale Z', 'sina-ext' ),
+				'label' => esc_html__( 'Scale Z', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -633,7 +633,7 @@ class Sina_Transform_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'rotateX_hover',
 			[
-				'label' => __( 'Rotate X', 'sina-ext' ),
+				'label' => esc_html__( 'Rotate X', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -656,7 +656,7 @@ class Sina_Transform_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'rotateY_hover',
 			[
-				'label' => __( 'Rotate Y', 'sina-ext' ),
+				'label' => esc_html__( 'Rotate Y', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -679,7 +679,7 @@ class Sina_Transform_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'rotateZ_hover',
 			[
-				'label' => __( 'Rotate Z', 'sina-ext' ),
+				'label' => esc_html__( 'Rotate Z', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -702,7 +702,7 @@ class Sina_Transform_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'skewX_hover',
 			[
-				'label' => __( 'Skew X', 'sina-ext' ),
+				'label' => esc_html__( 'Skew X', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -725,7 +725,7 @@ class Sina_Transform_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'skewY_hover',
 			[
-				'label' => __( 'Skew Y', 'sina-ext' ),
+				'label' => esc_html__( 'Skew Y', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -785,7 +785,7 @@ class Sina_Transform_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'transform_radius',
 			[
-				'label' => __('Border Radius', 'sina-ext'),
+				'label' => esc_html__('Border Radius', 'sina-ext'),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em' , '%' ],
 				'selectors' => [

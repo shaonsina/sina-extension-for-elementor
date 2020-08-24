@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class Sina_Modal_Box_Widget extends Widget_Base {
+class Sina_Modal_Box_Widget extends Widget_Base{
 
 	/**
 	 * Get widget name.
@@ -36,7 +36,7 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 	 * @since 2.2.0
 	 */
 	public function get_title() {
-		return __( 'Sina Modal Box', 'sina-ext' );
+		return esc_html__( 'Sina Modal Box', 'sina-ext' );
 	}
 
 	/**
@@ -107,7 +107,7 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'modal_content',
 			[
-				'label' => __( 'Modal Content', 'sina-ext' ),
+				'label' => esc_html__( 'Modal Content', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -115,14 +115,14 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 		$this->add_control(
 			'is_auto_show',
 			[
-				'label' => __( 'Auto Show', 'sina-ext' ),
+				'label' => esc_html__( 'Auto Show', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
 			]
 		);
 		$this->add_control(
 			'delay_show',
 			[
-				'label' => __( 'Delay', 'sina-ext' ),
+				'label' => esc_html__( 'Delay', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range' => [
@@ -144,7 +144,7 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 		$this->add_control(
 			'is_outside_click',
 			[
-				'label' => __( 'Close to click outside', 'sina-ext' ),
+				'label' => esc_html__( 'Close to click outside', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => 'yes',
 			]
@@ -152,7 +152,7 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 		$this->add_control(
 			'is_esc_press',
 			[
-				'label' => __( 'Close to press ESC', 'sina-ext' ),
+				'label' => esc_html__( 'Close to press ESC', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => 'yes',
 			]
@@ -160,30 +160,30 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 		$this->add_control(
 			'save_templates',
 			[
-				'label' => __( 'Use Save Templates', 'sina-ext' ),
+				'label' => esc_html__( 'Use Save Templates', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
 			]
 		);
 		$this->add_control(
 			'template',
 			[
-				'label' => __( 'Choose Template', 'sina-ext' ),
+				'label' => esc_html__( 'Choose Template', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => sina_get_page_templates(),
 				'condition' => [
 					'save_templates!' => '',
 				],
-				'description' => __('NOTE: Don\'t try to edit after insertion template. If you need to change the style or layout then you try to change the main template then save and then insert', 'sina-ext'),
+				'description' => esc_html__('NOTE: Don\'t try to edit after insertion template. If you need to change the style or layout then you try to change the main template then save and then insert', 'sina-ext'),
 			]
 		);
 		$this->add_control(
 			'modal_header',
 			[
-				'label' => __( 'Header Text', 'sina-ext' ),
+				'label' => esc_html__( 'Header Text', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter Header Text', 'sina-ext' ),
-				'description' => __( 'You can use HTML.', 'sina-ext' ),
+				'placeholder' => esc_html__( 'Enter Header Text', 'sina-ext' ),
+				'description' => esc_html__( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'This is the modal box',
 				'dynamic' => [
 					'active' => true,
@@ -193,11 +193,11 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 		$this->add_control(
 			'title',
 			[
-				'label' => __( 'Title', 'sina-ext' ),
+				'label' => esc_html__( 'Title', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter Title', 'sina-ext' ),
-				'description' => __( 'You can use HTML.', 'sina-ext' ),
+				'placeholder' => esc_html__( 'Enter Title', 'sina-ext' ),
+				'description' => esc_html__( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'This is the modal title',
 				'condition' => [
 					'save_templates' => '',
@@ -210,11 +210,11 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 		$this->add_control(
 			'desc',
 			[
-				'label' => __( 'Description', 'sina-ext' ),
+				'label' => esc_html__( 'Description', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::TEXTAREA,
-				'placeholder' => __( 'Enter Description', 'sina-ext' ),
-				'description' => __( 'You can use HTML.', 'sina-ext' ),
+				'placeholder' => esc_html__( 'Enter Description', 'sina-ext' ),
+				'description' => esc_html__( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
 				'condition' => [
 					'save_templates' => '',
@@ -235,7 +235,7 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'trigger_button',
 			[
-				'label' => __( 'Trigger Button', 'sina-ext' ),
+				'label' => esc_html__( 'Trigger Button', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 				'condition' => [
 					'is_auto_show!' => 'yes',
@@ -246,10 +246,10 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 		$this->add_control(
 			'trigger_id',
 			[
-				'label' => __( 'CSS class', 'sina-ext' ),
+				'label' => esc_html__( 'CSS class', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter CLASS', 'sina-ext' ),
-				'description' => __( 'Make sure this CLASS unique', 'sina-ext' ),
+				'placeholder' => esc_html__( 'Enter CLASS', 'sina-ext' ),
+				'description' => esc_html__( 'Make sure this CLASS unique', 'sina-ext' ),
 			]
 		);
 		$this->end_controls_section();
@@ -262,7 +262,7 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'modal_style',
 			[
-				'label' => __( 'Modal', 'sina-ext' ),
+				'label' => esc_html__( 'Modal', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -270,7 +270,7 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 		$this->add_control(
 			'modal_effects',
 			[
-				'label' => __( 'Animation', 'sina-ext' ),
+				'label' => esc_html__( 'Animation', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'slideInDown',
 				'options' => Sina_Common_Data::animation(),
@@ -280,7 +280,7 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'modal_anim_speed',
 			[
-				'label' => __( 'Animation Speed', 'sina-ext' ),
+				'label' => esc_html__( 'Animation Speed', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range' => [
@@ -301,7 +301,7 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'modal_width',
 			[
-				'label' => __( 'Width', 'sina-ext' ),
+				'label' => esc_html__( 'Width', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%' ],
 				'range' => [
@@ -349,7 +349,7 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'modal_radius',
 			[
-				'label' => __( 'Radius', 'sina-ext' ),
+				'label' => esc_html__( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -387,7 +387,7 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 		$this->add_control(
 			'modal_overlay',
 			[
-				'label' => __( 'Overlay Background', 'sina-ext' ),
+				'label' => esc_html__( 'Overlay Background', 'sina-ext' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -419,7 +419,7 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'header_style',
 			[
-				'label' => __( 'Header', 'sina-ext' ),
+				'label' => esc_html__( 'Header', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'modal_header!' => '',
@@ -430,7 +430,7 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 		$this->add_control(
 			'header_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#fafafa',
 				'selectors' => [
@@ -519,7 +519,7 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'header_padding',
 			[
-				'label' => __( 'Padding', 'sina-ext' ),
+				'label' => esc_html__( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -537,19 +537,19 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'header_alignment',
 			[
-				'label' => __( 'Alignment', 'sina-ext' ),
+				'label' => esc_html__( 'Alignment', 'sina-ext' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'sina-ext' ),
+						'title' => esc_html__( 'Left', 'sina-ext' ),
 						'icon' => 'fa fa-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'sina-ext' ),
+						'title' => esc_html__( 'Center', 'sina-ext' ),
 						'icon' => 'fa fa-align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'sina-ext' ),
+						'title' => esc_html__( 'Right', 'sina-ext' ),
 						'icon' => 'fa fa-align-right',
 					],
 				],
@@ -570,7 +570,7 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'footer_style',
 			[
-				'label' => __( 'Footer', 'sina-ext' ),
+				'label' => esc_html__( 'Footer', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -617,7 +617,7 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'footer_padding',
 			[
-				'label' => __( 'Padding', 'sina-ext' ),
+				'label' => esc_html__( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -636,7 +636,7 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 		$this->add_control(
 			'close_btn',
 			[
-				'label' => __( 'Close Button Style', 'sina-ext' ),
+				'label' => esc_html__( 'Close Button Style', 'sina-ext' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -676,14 +676,14 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 		$this->start_controls_tab(
 			'close_btn_normal',
 			[
-				'label' => __( 'Normal', 'sina-ext' ),
+				'label' => esc_html__( 'Normal', 'sina-ext' ),
 			]
 		);
 
 		$this->add_control(
 			'close_btn_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#1085e4',
 				'selectors' => [
@@ -744,14 +744,14 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 		$this->start_controls_tab(
 			'close_btn_hover',
 			[
-				'label' => __( 'Hover', 'sina-ext' ),
+				'label' => esc_html__( 'Hover', 'sina-ext' ),
 			]
 		);
 
 		$this->add_control(
 			'close_hover_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .sina-modal-close:hover' => 'color: {{VALUE}};',
@@ -769,7 +769,7 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 		$this->add_control(
 			'close_hover_border',
 			[
-				'label' => __( 'Border Color', 'sina-ext' ),
+				'label' => esc_html__( 'Border Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .sina-modal-close:hover' => 'border-color: {{VALUE}}'
@@ -791,7 +791,7 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'close_btn_radius',
 			[
-				'label' => __( 'Radius', 'sina-ext' ),
+				'label' => esc_html__( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -810,7 +810,7 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'close_btn_padding',
 			[
-				'label' => __( 'Padding', 'sina-ext' ),
+				'label' => esc_html__( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -828,19 +828,19 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'footer_alignment',
 			[
-				'label' => __( 'Alignment', 'sina-ext' ),
+				'label' => esc_html__( 'Alignment', 'sina-ext' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'sina-ext' ),
+						'title' => esc_html__( 'Left', 'sina-ext' ),
 						'icon' => 'fa fa-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'sina-ext' ),
+						'title' => esc_html__( 'Center', 'sina-ext' ),
 						'icon' => 'fa fa-align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'sina-ext' ),
+						'title' => esc_html__( 'Right', 'sina-ext' ),
 						'icon' => 'fa fa-align-right',
 					],
 				],
@@ -861,7 +861,7 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'body_style',
 			[
-				'label' => __( 'Body', 'sina-ext' ),
+				'label' => esc_html__( 'Body', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -869,7 +869,7 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'body_height',
 			[
-				'label' => __( 'Max Height', 'sina-ext' ),
+				'label' => esc_html__( 'Max Height', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range' => [
@@ -891,7 +891,7 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'body_padding',
 			[
-				'label' => __( 'Padding', 'sina-ext' ),
+				'label' => esc_html__( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -909,7 +909,7 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'body_margin',
 			[
-				'label' => __( 'Margin', 'sina-ext' ),
+				'label' => esc_html__( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -938,7 +938,7 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'title_style',
 			[
-				'label' => __( 'Title', 'sina-ext' ),
+				'label' => esc_html__( 'Title', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'title!' => '',
@@ -950,7 +950,7 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 		$this->add_control(
 			'title_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#222',
 				'selectors' => [
@@ -996,7 +996,7 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'title_margin',
 			[
-				'label' => __( 'Margin Bottom', 'sina-ext' ),
+				'label' => esc_html__( 'Margin Bottom', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em' ],
 				'default' => [
@@ -1010,23 +1010,23 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'title_alignment',
 			[
-				'label' => __( 'Alignment', 'sina-ext' ),
+				'label' => esc_html__( 'Alignment', 'sina-ext' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'sina-ext' ),
+						'title' => esc_html__( 'Left', 'sina-ext' ),
 						'icon' => 'fa fa-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'sina-ext' ),
+						'title' => esc_html__( 'Center', 'sina-ext' ),
 						'icon' => 'fa fa-align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'sina-ext' ),
+						'title' => esc_html__( 'Right', 'sina-ext' ),
 						'icon' => 'fa fa-align-right',
 					],
 					'justify' => [
-						'title' => __( 'justify', 'sina-ext' ),
+						'title' => esc_html__( 'justify', 'sina-ext' ),
 						'icon' => 'fa fa-align-justify',
 					],
 				],
@@ -1047,7 +1047,7 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'desc_style',
 			[
-				'label' => __( 'Description', 'sina-ext' ),
+				'label' => esc_html__( 'Description', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'desc!' => '',
@@ -1059,7 +1059,7 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 		$this->add_control(
 			'desc_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#222',
 				'selectors' => [
@@ -1099,23 +1099,23 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'desc_alignment',
 			[
-				'label' => __( 'Alignment', 'sina-ext' ),
+				'label' => esc_html__( 'Alignment', 'sina-ext' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'sina-ext' ),
+						'title' => esc_html__( 'Left', 'sina-ext' ),
 						'icon' => 'fa fa-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'sina-ext' ),
+						'title' => esc_html__( 'Center', 'sina-ext' ),
 						'icon' => 'fa fa-align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'sina-ext' ),
+						'title' => esc_html__( 'Right', 'sina-ext' ),
 						'icon' => 'fa fa-align-right',
 					],
 					'justify' => [
-						'title' => __( 'justify', 'sina-ext' ),
+						'title' => esc_html__( 'justify', 'sina-ext' ),
 						'icon' => 'fa fa-align-justify',
 					],
 				],
@@ -1136,7 +1136,7 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'trigger_btn_style',
 			[
-				'label' => __( 'Trigger Button', 'sina-ext' ),
+				'label' => esc_html__( 'Trigger Button', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -1144,7 +1144,7 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'trigger_btn_width',
 			[
-				'label' => __( 'Width', 'sina-ext' ),
+				'label' => esc_html__( 'Width', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', '%' ],
 				'range' => [
@@ -1164,7 +1164,7 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'trigger_btn_radius',
 			[
-				'label' => __( 'Radius', 'sina-ext' ),
+				'label' => esc_html__( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -1182,7 +1182,7 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'trigger_btn_padding',
 			[
-				'label' => __( 'Padding', 'sina-ext' ),
+				'label' => esc_html__( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -1200,19 +1200,19 @@ class Sina_Modal_Box_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'trigger_alignment',
 			[
-				'label' => __( 'Alignment', 'sina-ext' ),
+				'label' => esc_html__( 'Alignment', 'sina-ext' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'sina-ext' ),
+						'title' => esc_html__( 'Left', 'sina-ext' ),
 						'icon' => 'fa fa-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'sina-ext' ),
+						'title' => esc_html__( 'Center', 'sina-ext' ),
 						'icon' => 'fa fa-align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'sina-ext' ),
+						'title' => esc_html__( 'Right', 'sina-ext' ),
 						'icon' => 'fa fa-align-right',
 					],
 				],

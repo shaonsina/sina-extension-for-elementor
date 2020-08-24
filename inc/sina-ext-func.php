@@ -89,13 +89,13 @@ abstract class Sina_Ext_Functions extends Sina_Extension_Base{
 		$elements_manager->add_category(
 			'sina-extension',
 			[
-				'title' => __( 'Sina Basic Widgets', 'sina-ext' ),
+				'title' => esc_html__( 'Sina Basic Widgets', 'sina-ext' ),
 			]
 		);
 		$elements_manager->add_category(
 			'sina-ext-advanced',
 			[
-				'title' => __( 'Sina Advanced Widgets', 'sina-ext' ),
+				'title' => esc_html__( 'Sina Advanced Widgets', 'sina-ext' ),
 			]
 		);
 	}

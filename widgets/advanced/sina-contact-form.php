@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class Sina_Contact_Form_Widget extends Widget_Base {
+class Sina_Contact_Form_Widget extends Widget_Base{
 
 	/**
 	 * Get widget name.
@@ -33,7 +33,7 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 	 * @since 1.0.0
 	 */
 	public function get_title() {
-		return __( 'Sina Contact Form', 'sina-ext' );
+		return esc_html__( 'Sina Contact Form', 'sina-ext' );
 	}
 
 	/**
@@ -106,7 +106,7 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'form_content',
 			[
-				'label' => __( 'Form Settings', 'sina-ext' ),
+				'label' => esc_html__( 'Form Settings', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -114,7 +114,7 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 		$this->add_control(
 			'is_recaptcha',
 			[
-				'label' => __( 'Google Recaptcha', 'sina-ext' ),
+				'label' => esc_html__( 'Google Recaptcha', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
 			]
 		);
@@ -131,20 +131,20 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 		$this->add_control(
 			'custom_email',
 			[
-				'label' => __( 'Use Custom Email', 'sina-ext' ),
+				'label' => esc_html__( 'Use Custom Email', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Yes', 'sina-ext' ),
-				'label_off' => __( 'No', 'sina-ext' ),
+				'label_on' => esc_html__( 'Yes', 'sina-ext' ),
+				'label_off' => esc_html__( 'No', 'sina-ext' ),
 			]
 		);
 		$this->add_control(
 			'contact_email',
 			[
-				'label' => __( 'Mail To', 'sina-ext' ),
+				'label' => esc_html__( 'Mail To', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter Custom Email', 'sina-ext' ),
-				'description' => __( 'If the field is empty or enter an invalid email or try to send email from the editor, then the emails will send to the admin email. This email will work only in the front-end.', 'sina-ext' ),
+				'placeholder' => esc_html__( 'Enter Custom Email', 'sina-ext' ),
+				'description' => esc_html__( 'If the field is empty or enter an invalid email or try to send email from the editor, then the emails will send to the admin email. This email will work only in the front-end.', 'sina-ext' ),
 				'condition' => [
 					'custom_email' => 'yes',
 				],
@@ -156,10 +156,10 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 		$this->add_control(
 			'successs_message',
 			[
-				'label' => __( 'Success Message', 'sina-ext' ),
+				'label' => esc_html__( 'Success Message', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter Success Message', 'sina-ext' ),
+				'placeholder' => esc_html__( 'Enter Success Message', 'sina-ext' ),
 				'default' => 'Thanks for sending Email!',
 				'dynamic' => [
 					'active' => true,
@@ -169,7 +169,7 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 		$this->add_control(
 			'fields',
 			[
-				'label' => __( 'Fields', 'sina-ext' ),
+				'label' => esc_html__( 'Fields', 'sina-ext' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -177,40 +177,40 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 		$this->add_control(
 			'name_placeholder',
 			[
-				'label' => __( 'Name Placeholder Text', 'sina-ext' ),
+				'label' => esc_html__( 'Name Placeholder Text', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter Placeholder Text', 'sina-ext' ),
+				'placeholder' => esc_html__( 'Enter Placeholder Text', 'sina-ext' ),
 				'default' => 'Enter Your Name *',
 			]
 		);
 		$this->add_control(
 			'email_placeholder',
 			[
-				'label' => __( 'Email Placeholder Text', 'sina-ext' ),
+				'label' => esc_html__( 'Email Placeholder Text', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter Placeholder Text', 'sina-ext' ),
+				'placeholder' => esc_html__( 'Enter Placeholder Text', 'sina-ext' ),
 				'default' => 'Enter Your Email *',
 			]
 		);
 		$this->add_control(
 			'sub_placeholder',
 			[
-				'label' => __( 'Subject Placeholder Text', 'sina-ext' ),
+				'label' => esc_html__( 'Subject Placeholder Text', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter Placeholder Text', 'sina-ext' ),
+				'placeholder' => esc_html__( 'Enter Placeholder Text', 'sina-ext' ),
 				'default' => 'Enter Your Subject *',
 			]
 		);
 		$this->add_control(
 			'msg_placeholder',
 			[
-				'label' => __( 'Message Placeholder Text', 'sina-ext' ),
+				'label' => esc_html__( 'Message Placeholder Text', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter Placeholder Text', 'sina-ext' ),
+				'placeholder' => esc_html__( 'Enter Placeholder Text', 'sina-ext' ),
 				'default' => 'Enter Your Message *',
 			]
 		);
@@ -225,7 +225,7 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'btn_content',
 			[
-				'label' => __( 'Submit Button', 'sina-ext' ),
+				'label' => esc_html__( 'Submit Button', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -240,7 +240,7 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'fields_style',
 			[
-				'label' => __( 'Fields', 'sina-ext' ),
+				'label' => esc_html__( 'Fields', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -248,11 +248,11 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 		$this->add_control(
 			'form_layout',
 			[
-				'label' => __( 'Layout', 'sina-ext' ),
+				'label' => esc_html__( 'Layout', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'layout1' => __( 'Layout 1', 'sina-ext' ),
-					'layout2' => __( 'Layout 2', 'sina-ext' ),
+					'layout1' => esc_html__( 'Layout 1', 'sina-ext' ),
+					'layout2' => esc_html__( 'Layout 2', 'sina-ext' ),
 				],
 				'default' => 'layout2',
 			]
@@ -261,7 +261,7 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'fields_radius',
 			[
-				'label' => __( 'Radius', 'sina-ext' ),
+				'label' => esc_html__( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -280,7 +280,7 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'fields_padding',
 			[
-				'label' => __( 'Padding', 'sina-ext' ),
+				'label' => esc_html__( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -298,7 +298,7 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'fields_margin',
 			[
-				'label' => __( 'Margin', 'sina-ext' ),
+				'label' => esc_html__( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -324,7 +324,7 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'name_style',
 			[
-				'label' => __( 'Name', 'sina-ext' ),
+				'label' => esc_html__( 'Name', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -339,7 +339,7 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'email_style',
 			[
-				'label' => __( 'Email', 'sina-ext' ),
+				'label' => esc_html__( 'Email', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -354,7 +354,7 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'subject_style',
 			[
-				'label' => __( 'Subject', 'sina-ext' ),
+				'label' => esc_html__( 'Subject', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -369,7 +369,7 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'message_style',
 			[
-				'label' => __( 'Message', 'sina-ext' ),
+				'label' => esc_html__( 'Message', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -377,7 +377,7 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'message_height',
 			[
-				'label' => __( 'Height', 'sina-ext' ),
+				'label' => esc_html__( 'Height', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em' ],
 				'range' => [
@@ -399,7 +399,7 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'message_radius',
 			[
-				'label' => __( 'Radius', 'sina-ext' ),
+				'label' => esc_html__( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -410,7 +410,7 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'message_margin',
 			[
-				'label' => __( 'Margin', 'sina-ext' ),
+				'label' => esc_html__( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -429,7 +429,7 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'btn_style',
 			[
-				'label' => __( 'Submit Button', 'sina-ext' ),
+				'label' => esc_html__( 'Submit Button', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -437,7 +437,7 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'btn_width',
 			[
-				'label' => __( 'Width', 'sina-ext' ),
+				'label' => esc_html__( 'Width', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', '%' ],
 				'range' => [
@@ -457,7 +457,7 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'btn_radius',
 			[
-				'label' => __( 'Radius', 'sina-ext' ),
+				'label' => esc_html__( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -475,7 +475,7 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'btn_padding',
 			[
-				'label' => __( 'Padding', 'sina-ext' ),
+				'label' => esc_html__( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -493,7 +493,7 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'btn_margin',
 			[
-				'label' => __( 'Margin', 'sina-ext' ),
+				'label' => esc_html__( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -511,19 +511,19 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'alignment',
 			[
-				'label' => __( 'Alignment', 'sina-ext' ),
+				'label' => esc_html__( 'Alignment', 'sina-ext' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'sina-ext' ),
+						'title' => esc_html__( 'Left', 'sina-ext' ),
 						'icon' => 'fa fa-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'sina-ext' ),
+						'title' => esc_html__( 'Center', 'sina-ext' ),
 						'icon' => 'fa fa-align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'sina-ext' ),
+						'title' => esc_html__( 'Right', 'sina-ext' ),
 						'icon' => 'fa fa-align-right',
 					],
 				],

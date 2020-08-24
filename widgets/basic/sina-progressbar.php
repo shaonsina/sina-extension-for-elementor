@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class Sina_Progressbar_Widget extends Widget_Base {
+class Sina_Progressbar_Widget extends Widget_Base{
 
 	/**
 	 * Get widget name.
@@ -39,7 +39,7 @@ class Sina_Progressbar_Widget extends Widget_Base {
 	 * @since 1.0.0
 	 */
 	public function get_title() {
-		return __( 'Sina Progressbar', 'sina-ext' );
+		return esc_html__( 'Sina Progressbar', 'sina-ext' );
 	}
 
 	/**
@@ -111,7 +111,7 @@ class Sina_Progressbar_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'progressbars_content',
 			[
-				'label' => __( 'Progressbar', 'sina-ext' ),
+				'label' => esc_html__( 'Progressbar', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -119,11 +119,11 @@ class Sina_Progressbar_Widget extends Widget_Base {
 		$this->add_control(
 			'title',
 			[
-				'label' => __( 'Title', 'sina-ext' ),
+				'label' => esc_html__( 'Title', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __('Enter Title', 'sina-ext'),
-				'description' => __( 'You can use HTML.', 'sina-ext' ),
+				'placeholder' => esc_html__('Enter Title', 'sina-ext'),
+				'description' => esc_html__( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'Web Development',
 				'dynamic' => [
 					'active' => true,
@@ -133,7 +133,7 @@ class Sina_Progressbar_Widget extends Widget_Base {
 		$this->add_control(
 			'icon',
 			[
-				'label' => __( 'Icon', 'sina-ext' ),
+				'label' => esc_html__( 'Icon', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::ICON,
 			]
@@ -141,11 +141,11 @@ class Sina_Progressbar_Widget extends Widget_Base {
 		$this->add_control(
 			'icon_align',
 			[
-				'label' => __( 'Icon Position', 'sina-ext' ),
+				'label' => esc_html__( 'Icon Position', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'left' => __( 'Left', 'sina-ext' ),
-					'right' => __( 'Right', 'sina-ext' ),
+					'left' => esc_html__( 'Left', 'sina-ext' ),
+					'right' => esc_html__( 'Right', 'sina-ext' ),
 				],
 				'default' => 'left',
 				'condition' => [
@@ -156,7 +156,7 @@ class Sina_Progressbar_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'icon_space',
 			[
-				'label' => __( 'Icon Spacing', 'sina-ext' ),
+				'label' => esc_html__( 'Icon Spacing', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
 					'size' => '5',
@@ -175,7 +175,7 @@ class Sina_Progressbar_Widget extends Widget_Base {
 		$this->add_control(
 			'percentage',
 			[
-				'label' => __( 'Value', 'sina-ext' ),
+				'label' => esc_html__( 'Value', 'sina-ext' ),
 				'type' => Controls_Manager::NUMBER,
 				'min' => 0,
 				'default' => 90,
@@ -187,7 +187,7 @@ class Sina_Progressbar_Widget extends Widget_Base {
 		$this->add_control(
 			'max_value',
 			[
-				'label' => __( 'Max Value', 'sina-ext' ),
+				'label' => esc_html__( 'Max Value', 'sina-ext' ),
 				'type' => Controls_Manager::NUMBER,
 				'min' => 1,
 				'default' => 100,
@@ -199,9 +199,9 @@ class Sina_Progressbar_Widget extends Widget_Base {
 		$this->add_control(
 			'prefix',
 			[
-				'label' => __( 'Prefix', 'sina-ext' ),
+				'label' => esc_html__( 'Prefix', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter prefix', 'sina-ext' ),
+				'placeholder' => esc_html__( 'Enter prefix', 'sina-ext' ),
 				'dynamic' => [
 					'active' => true,
 				],
@@ -210,9 +210,9 @@ class Sina_Progressbar_Widget extends Widget_Base {
 		$this->add_control(
 			'suffix',
 			[
-				'label' => __( 'Suffix', 'sina-ext' ),
+				'label' => esc_html__( 'Suffix', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter suffix', 'sina-ext' ),
+				'placeholder' => esc_html__( 'Enter suffix', 'sina-ext' ),
 				'default' => '%',
 				'dynamic' => [
 					'active' => true,
@@ -230,7 +230,7 @@ class Sina_Progressbar_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'progressbars_style',
 			[
-				'label' => __( 'Progressbar', 'sina-ext' ),
+				'label' => esc_html__( 'Progressbar', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -238,7 +238,7 @@ class Sina_Progressbar_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'bars_height',
 			[
-				'label' => __('Height', 'sina-ext'),
+				'label' => esc_html__('Height', 'sina-ext'),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => ['px', 'em'],
 				'default' => [
@@ -282,7 +282,7 @@ class Sina_Progressbar_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'bars_border_radius',
 			[
-				'label' => __('Border Radius', 'sina-ext'),
+				'label' => esc_html__('Border Radius', 'sina-ext'),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
@@ -293,7 +293,7 @@ class Sina_Progressbar_Widget extends Widget_Base {
 		$this->add_control(
 			'track',
 			[
-				'label' => __( 'Track Style', 'sina-ext' ),
+				'label' => esc_html__( 'Track Style', 'sina-ext' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -333,7 +333,7 @@ class Sina_Progressbar_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'title_style',
 			[
-				'label' => __('Title', 'sina-ext'),
+				'label' => esc_html__('Title', 'sina-ext'),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -341,7 +341,7 @@ class Sina_Progressbar_Widget extends Widget_Base {
 		$this->add_control(
 			'title_color',
 			[
-				'label' => __('Text Color', 'sina-ext'),
+				'label' => esc_html__('Text Color', 'sina-ext'),
 				'type' => Controls_Manager::COLOR,
 				'default'=> '#222',
 				'selectors' => [
@@ -381,7 +381,7 @@ class Sina_Progressbar_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'title_margin',
 			[
-				'label' => __('Bottom Margin', 'sina-ext'),
+				'label' => esc_html__('Bottom Margin', 'sina-ext'),
 				'type' => Controls_Manager::SLIDER,
 				'default'=> [
 					'size' => '5',
@@ -394,19 +394,19 @@ class Sina_Progressbar_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'title_align',
 			[
-				'label' => __( 'Alignment', 'sina-ext' ),
+				'label' => esc_html__( 'Alignment', 'sina-ext' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'sina-ext' ),
+						'title' => esc_html__( 'Left', 'sina-ext' ),
 						'icon' => 'fa fa-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'sina-ext' ),
+						'title' => esc_html__( 'Center', 'sina-ext' ),
 						'icon' => 'fa fa-align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'sina-ext' ),
+						'title' => esc_html__( 'Right', 'sina-ext' ),
 						'icon' => 'fa fa-align-right',
 					],
 				],
@@ -426,7 +426,7 @@ class Sina_Progressbar_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'percentage_style',
 			[
-				'label' => __('Percentage', 'sina-ext'),
+				'label' => esc_html__('Percentage', 'sina-ext'),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -434,7 +434,7 @@ class Sina_Progressbar_Widget extends Widget_Base {
 		$this->add_control(
 			'bar_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#fafafa',
 				'selectors' => [
@@ -474,7 +474,7 @@ class Sina_Progressbar_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'percentage_padding',
 			[
-				'label' => __( 'Padding', 'sina-ext' ),
+				'label' => esc_html__( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em' ],
 				'default' => [
@@ -494,19 +494,19 @@ class Sina_Progressbar_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'percentage_align',
 			[
-				'label' => __( 'Alignment', 'sina-ext' ),
+				'label' => esc_html__( 'Alignment', 'sina-ext' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'sina-ext' ),
+						'title' => esc_html__( 'Left', 'sina-ext' ),
 						'icon' => 'fa fa-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'sina-ext' ),
+						'title' => esc_html__( 'Center', 'sina-ext' ),
 						'icon' => 'fa fa-align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'sina-ext' ),
+						'title' => esc_html__( 'Right', 'sina-ext' ),
 						'icon' => 'fa fa-align-right',
 					],
 				],

@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class Sina_Title_Widget extends Widget_Base {
+class Sina_Title_Widget extends Widget_Base{
 
 	/**
 	 * Get widget name.
@@ -34,7 +34,7 @@ class Sina_Title_Widget extends Widget_Base {
 	 * @since 2.0.0
 	 */
 	public function get_title() {
-		return __( 'Sina Title', 'sina-ext' );
+		return esc_html__( 'Sina Title', 'sina-ext' );
 	}
 
 	/**
@@ -92,7 +92,7 @@ class Sina_Title_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'title_content',
 			[
-				'label' => __( 'Title Content', 'sina-ext' ),
+				'label' => esc_html__( 'Title Content', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -100,12 +100,12 @@ class Sina_Title_Widget extends Widget_Base {
 		$this->add_control(
 			'separator',
 			[
-				'label' => __( 'Separator', 'sina-ext' ),
+				'label' => esc_html__( 'Separator', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'none' => __( 'None', 'sina-ext' ),
-					'' => __( 'Solid', 'sina-ext' ),
-					'sina-separator-solid-dot' => __( 'Solid and Dot', 'sina-ext' ),
+					'none' => esc_html__( 'None', 'sina-ext' ),
+					'' => esc_html__( 'Solid', 'sina-ext' ),
+					'sina-separator-solid-dot' => esc_html__( 'Solid and Dot', 'sina-ext' ),
 				],
 				'default' => 'none',
 			]
@@ -113,11 +113,11 @@ class Sina_Title_Widget extends Widget_Base {
 		$this->add_control(
 			'separator_position',
 			[
-				'label' => __( 'Separator Position', 'sina-ext' ),
+				'label' => esc_html__( 'Separator Position', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'before_title' => __( 'Before Title', 'sina-ext' ),
-					'after_title' => __( 'After Title', 'sina-ext' ),
+					'before_title' => esc_html__( 'Before Title', 'sina-ext' ),
+					'after_title' => esc_html__( 'After Title', 'sina-ext' ),
 				],
 				'condition' => [
 					'separator!' => 'none',
@@ -128,11 +128,11 @@ class Sina_Title_Widget extends Widget_Base {
 		$this->add_control(
 			'title',
 			[
-				'label' => __( 'Title', 'sina-ext' ),
+				'label' => esc_html__( 'Title', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter Title', 'sina-ext' ),
-				'description' => __( 'You can use HTML.', 'sina-ext' ),
+				'placeholder' => esc_html__( 'Enter Title', 'sina-ext' ),
+				'description' => esc_html__( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'Welcome to get start your business.',
 				'dynamic' => [
 					'active' => true,
@@ -142,11 +142,11 @@ class Sina_Title_Widget extends Widget_Base {
 		$this->add_control(
 			'title_span',
 			[
-				'label' => __( 'Highlight Text', 'sina-ext' ),
+				'label' => esc_html__( 'Highlight Text', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter Highlight Text', 'sina-ext' ),
-				'description' => __( 'You can use SPAN TAG for multi-color title.', 'sina-ext' ),
+				'placeholder' => esc_html__( 'Enter Highlight Text', 'sina-ext' ),
+				'description' => esc_html__( 'You can use SPAN TAG for multi-color title.', 'sina-ext' ),
 				'dynamic' => [
 					'active' => true,
 				],
@@ -155,7 +155,7 @@ class Sina_Title_Widget extends Widget_Base {
 		$this->add_control(
 			'title_tag',
 			[
-				'label' => __( 'Select Tag', 'sina-ext' ),
+				'label' => esc_html__( 'Select Tag', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
 					'h1' => 'H1',
@@ -171,11 +171,11 @@ class Sina_Title_Widget extends Widget_Base {
 		$this->add_control(
 			'subtitle',
 			[
-				'label' => __( 'Sub Title', 'sina-ext' ),
+				'label' => esc_html__( 'Sub Title', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter Sub Title', 'sina-ext' ),
-				'description' => __( 'You can use HTML.', 'sina-ext' ),
+				'placeholder' => esc_html__( 'Enter Sub Title', 'sina-ext' ),
+				'description' => esc_html__( 'You can use HTML.', 'sina-ext' ),
 				'dynamic' => [
 					'active' => true,
 				],
@@ -184,7 +184,7 @@ class Sina_Title_Widget extends Widget_Base {
 		$this->add_control(
 			'subtitle_tag',
 			[
-				'label' => __( 'Select Tag', 'sina-ext' ),
+				'label' => esc_html__( 'Select Tag', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
 					'h2' => 'H2',
@@ -199,11 +199,11 @@ class Sina_Title_Widget extends Widget_Base {
 		$this->add_control(
 			'desc',
 			[
-				'label' => __( 'Description', 'sina-ext' ),
+				'label' => esc_html__( 'Description', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::TEXTAREA,
-				'placeholder' => __( 'Enter Description', 'sina-ext' ),
-				'description' => __( 'You can use HTML.', 'sina-ext' ),
+				'placeholder' => esc_html__( 'Enter Description', 'sina-ext' ),
+				'description' => esc_html__( 'You can use HTML.', 'sina-ext' ),
 				'dynamic' => [
 					'active' => true,
 				],
@@ -212,23 +212,23 @@ class Sina_Title_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'alignment',
 			[
-				'label' => __( 'Alignment', 'sina-ext' ),
+				'label' => esc_html__( 'Alignment', 'sina-ext' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'sina-ext' ),
+						'title' => esc_html__( 'Left', 'sina-ext' ),
 						'icon' => 'fa fa-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'sina-ext' ),
+						'title' => esc_html__( 'Center', 'sina-ext' ),
 						'icon' => 'fa fa-align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'sina-ext' ),
+						'title' => esc_html__( 'Right', 'sina-ext' ),
 						'icon' => 'fa fa-align-right',
 					],
 					'justify' => [
-						'title' => __( 'justify', 'sina-ext' ),
+						'title' => esc_html__( 'justify', 'sina-ext' ),
 						'icon' => 'fa fa-align-justify',
 					],
 				],
@@ -249,7 +249,7 @@ class Sina_Title_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'title_style',
 			[
-				'label' => __( 'Title', 'sina-ext' ),
+				'label' => esc_html__( 'Title', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'title!' => '',
@@ -302,23 +302,23 @@ class Sina_Title_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'title_alignment',
 			[
-				'label' => __( 'Alignment', 'sina-ext' ),
+				'label' => esc_html__( 'Alignment', 'sina-ext' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'sina-ext' ),
+						'title' => esc_html__( 'Left', 'sina-ext' ),
 						'icon' => 'fa fa-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'sina-ext' ),
+						'title' => esc_html__( 'Center', 'sina-ext' ),
 						'icon' => 'fa fa-align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'sina-ext' ),
+						'title' => esc_html__( 'Right', 'sina-ext' ),
 						'icon' => 'fa fa-align-right',
 					],
 					'justify' => [
-						'title' => __( 'justify', 'sina-ext' ),
+						'title' => esc_html__( 'justify', 'sina-ext' ),
 						'icon' => 'fa fa-align-justify',
 					],
 				],
@@ -330,7 +330,7 @@ class Sina_Title_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'title_margin',
 			[
-				'label' => __( 'Margin', 'sina-ext' ),
+				'label' => esc_html__( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'range' => [
@@ -364,7 +364,7 @@ class Sina_Title_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'title_span_style',
 			[
-				'label' => __( 'Title Span', 'sina-ext' ),
+				'label' => esc_html__( 'Title Span', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'title_span!' => '',
@@ -404,7 +404,7 @@ class Sina_Title_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'subtitle_style',
 			[
-				'label' => __( 'Sub Title', 'sina-ext' ),
+				'label' => esc_html__( 'Sub Title', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'subtitle!' => '',
@@ -451,23 +451,23 @@ class Sina_Title_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'subtitle_alignment',
 			[
-				'label' => __( 'Alignment', 'sina-ext' ),
+				'label' => esc_html__( 'Alignment', 'sina-ext' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'sina-ext' ),
+						'title' => esc_html__( 'Left', 'sina-ext' ),
 						'icon' => 'fa fa-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'sina-ext' ),
+						'title' => esc_html__( 'Center', 'sina-ext' ),
 						'icon' => 'fa fa-align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'sina-ext' ),
+						'title' => esc_html__( 'Right', 'sina-ext' ),
 						'icon' => 'fa fa-align-right',
 					],
 					'justify' => [
-						'title' => __( 'justify', 'sina-ext' ),
+						'title' => esc_html__( 'justify', 'sina-ext' ),
 						'icon' => 'fa fa-align-justify',
 					],
 				],
@@ -479,7 +479,7 @@ class Sina_Title_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'subtitle_margin',
 			[
-				'label' => __( 'Margin', 'sina-ext' ),
+				'label' => esc_html__( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -505,7 +505,7 @@ class Sina_Title_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'desc_style',
 			[
-				'label' => __( 'Description', 'sina-ext' ),
+				'label' => esc_html__( 'Description', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'desc!' => '',
@@ -545,7 +545,7 @@ class Sina_Title_Widget extends Widget_Base {
 		$this->add_control(
 			'desc_color',
 			[
-				'label' => __( 'Color', 'sina-ext' ),
+				'label' => esc_html__( 'Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#222',
 				'selectors' => [
@@ -556,23 +556,23 @@ class Sina_Title_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'desc_alignment',
 			[
-				'label' => __( 'Alignment', 'sina-ext' ),
+				'label' => esc_html__( 'Alignment', 'sina-ext' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'sina-ext' ),
+						'title' => esc_html__( 'Left', 'sina-ext' ),
 						'icon' => 'fa fa-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'sina-ext' ),
+						'title' => esc_html__( 'Center', 'sina-ext' ),
 						'icon' => 'fa fa-align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'sina-ext' ),
+						'title' => esc_html__( 'Right', 'sina-ext' ),
 						'icon' => 'fa fa-align-right',
 					],
 					'justify' => [
-						'title' => __( 'justify', 'sina-ext' ),
+						'title' => esc_html__( 'justify', 'sina-ext' ),
 						'icon' => 'fa fa-align-justify',
 					],
 				],
@@ -592,7 +592,7 @@ class Sina_Title_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'separator_style',
 			[
-				'label' => __( 'Separator', 'sina-ext' ),
+				'label' => esc_html__( 'Separator', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'separator!' => 'none',
@@ -619,7 +619,7 @@ class Sina_Title_Widget extends Widget_Base {
 		$this->add_control(
 			'separator_dot_color',
 			[
-				'label' => __( 'Dot Color', 'sina-ext' ),
+				'label' => esc_html__( 'Dot Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#1085e4',
 				'condition' => [
@@ -633,7 +633,7 @@ class Sina_Title_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'separator_width',
 			[
-				'label' => __( 'Width', 'sina-ext' ),
+				'label' => esc_html__( 'Width', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', '%' ],
 				'range' => [
@@ -657,7 +657,7 @@ class Sina_Title_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'separator_height',
 			[
-				'label' => __( 'Height', 'sina-ext' ),
+				'label' => esc_html__( 'Height', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em' ],
 				'default' => [
@@ -671,19 +671,19 @@ class Sina_Title_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'separator_alignment',
 			[
-				'label' => __( 'Alignment', 'sina-ext' ),
+				'label' => esc_html__( 'Alignment', 'sina-ext' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'flex-start' => [
-						'title' => __( 'Left', 'sina-ext' ),
+						'title' => esc_html__( 'Left', 'sina-ext' ),
 						'icon' => 'fa fa-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'sina-ext' ),
+						'title' => esc_html__( 'Center', 'sina-ext' ),
 						'icon' => 'fa fa-align-center',
 					],
 					'flex-end' => [
-						'title' => __( 'Right', 'sina-ext' ),
+						'title' => esc_html__( 'Right', 'sina-ext' ),
 						'icon' => 'fa fa-align-right',
 					],
 				],
@@ -696,7 +696,7 @@ class Sina_Title_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'separator_radius',
 			[
-				'label' => __( 'Radius', 'sina-ext' ),
+				'label' => esc_html__( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -707,7 +707,7 @@ class Sina_Title_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'separator_margin',
 			[
-				'label' => __( 'Margin', 'sina-ext' ),
+				'label' => esc_html__( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [

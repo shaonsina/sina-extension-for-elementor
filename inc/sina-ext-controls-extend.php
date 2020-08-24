@@ -60,7 +60,7 @@ class Sina_Ext_Controls{
 		$elems->add_control(
 			'sina_is_morphing_animation',
 			[
-				'label' => '<strong>'.__( 'Sina Morphing Animation', 'sina-ext' ).'</strong>',
+				'label' => '<strong>'.esc_html__( 'Sina Morphing Animation', 'sina-ext' ).'</strong>',
 				'type' => Controls_Manager::SWITCHER,
 				'prefix_class' => 'sina-morphing-anim-',
 				'separator' => 'before',
@@ -69,19 +69,19 @@ class Sina_Ext_Controls{
 		$elems->add_control(
 			'sina_transform_effects',
 			[
-				'label' => '<strong>'.__( 'Sina Transform Effects', 'sina-ext' ).'</strong>',
+				'label' => '<strong>'.esc_html__( 'Sina Transform Effects', 'sina-ext' ).'</strong>',
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'translate' => __( 'Translate', 'sina-ext' ),
-					'scaleX' => __( 'Scale X', 'sina-ext' ),
-					'scaleY' => __( 'Scale Y', 'sina-ext' ),
-					'scaleZ' => __( 'Scale Z', 'sina-ext' ),
-					'rotateX' => __( 'Rotate X', 'sina-ext' ),
-					'rotateY' => __( 'Rotate Y', 'sina-ext' ),
-					'rotateZ' => __( 'Rotate Z', 'sina-ext' ),
-					'skewX' => __( 'Skew X', 'sina-ext' ),
-					'skewY' => __( 'Skew Y', 'sina-ext' ),
-					'none' => __( 'None', 'sina-ext' ),
+					'translate' => esc_html__( 'Translate', 'sina-ext' ),
+					'scaleX' => esc_html__( 'Scale X', 'sina-ext' ),
+					'scaleY' => esc_html__( 'Scale Y', 'sina-ext' ),
+					'scaleZ' => esc_html__( 'Scale Z', 'sina-ext' ),
+					'rotateX' => esc_html__( 'Rotate X', 'sina-ext' ),
+					'rotateY' => esc_html__( 'Rotate Y', 'sina-ext' ),
+					'rotateZ' => esc_html__( 'Rotate Z', 'sina-ext' ),
+					'skewX' => esc_html__( 'Skew X', 'sina-ext' ),
+					'skewY' => esc_html__( 'Skew Y', 'sina-ext' ),
+					'none' => esc_html__( 'None', 'sina-ext' ),
 				],
 				'default' => 'none',
 			]
@@ -89,7 +89,7 @@ class Sina_Ext_Controls{
 		$elems->add_responsive_control(
 			'sina_transform_perspective',
 			[
-				'label' => __( 'Perspective Size', 'sina-ext' ),
+				'label' => esc_html__( 'Perspective Size', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -115,14 +115,14 @@ class Sina_Ext_Controls{
 		$elems->start_controls_tab(
 			'sina_transform_effects_normal',
 			[
-				'label' => __( 'Normal', 'sina-ext' ),
+				'label' => esc_html__( 'Normal', 'sina-ext' ),
 			]
 		);
 
 		$elems->add_responsive_control(
 			'sina_transform_effects_translateX',
 			[
-				'label' => __( 'Translate X', 'sina-ext' ),
+				'label' => esc_html__( 'Translate X', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -141,7 +141,7 @@ class Sina_Ext_Controls{
 		$elems->add_responsive_control(
 			'sina_transform_effects_translateY',
 			[
-				'label' => __( 'Translate Y', 'sina-ext' ),
+				'label' => esc_html__( 'Translate Y', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -165,7 +165,7 @@ class Sina_Ext_Controls{
 		$elems->add_responsive_control(
 			'sina_transform_effects_scaleX',
 			[
-				'label' => __( 'Scale X', 'sina-ext' ),
+				'label' => esc_html__( 'Scale X', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -188,7 +188,7 @@ class Sina_Ext_Controls{
 		$elems->add_responsive_control(
 			'sina_transform_effects_scaleY',
 			[
-				'label' => __( 'Scale Y', 'sina-ext' ),
+				'label' => esc_html__( 'Scale Y', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -211,7 +211,7 @@ class Sina_Ext_Controls{
 		$elems->add_responsive_control(
 			'sina_transform_effects_scaleZ',
 			[
-				'label' => __( 'Scale Z', 'sina-ext' ),
+				'label' => esc_html__( 'Scale Z', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -234,7 +234,7 @@ class Sina_Ext_Controls{
 		$elems->add_responsive_control(
 			'sina_transform_effects_rotateX',
 			[
-				'label' => __( 'Rotate X', 'sina-ext' ),
+				'label' => esc_html__( 'Rotate X', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -257,7 +257,7 @@ class Sina_Ext_Controls{
 		$elems->add_responsive_control(
 			'sina_transform_effects_rotateY',
 			[
-				'label' => __( 'Rotate Y', 'sina-ext' ),
+				'label' => esc_html__( 'Rotate Y', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -280,7 +280,7 @@ class Sina_Ext_Controls{
 		$elems->add_responsive_control(
 			'sina_transform_effects_rotateZ',
 			[
-				'label' => __( 'Rotate Z', 'sina-ext' ),
+				'label' => esc_html__( 'Rotate Z', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -303,7 +303,7 @@ class Sina_Ext_Controls{
 		$elems->add_responsive_control(
 			'sina_transform_effects_skewX',
 			[
-				'label' => __( 'Skew X', 'sina-ext' ),
+				'label' => esc_html__( 'Skew X', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -326,7 +326,7 @@ class Sina_Ext_Controls{
 		$elems->add_responsive_control(
 			'sina_transform_effects_skewY',
 			[
-				'label' => __( 'Skew Y', 'sina-ext' ),
+				'label' => esc_html__( 'Skew Y', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -359,14 +359,14 @@ class Sina_Ext_Controls{
 		$elems->start_controls_tab(
 			'sina_transform_effects_hover',
 			[
-				'label' => __( 'Hover', 'sina-ext' ),
+				'label' => esc_html__( 'Hover', 'sina-ext' ),
 			]
 		);
 
 		$elems->add_responsive_control(
 			'sina_transform_effects_translateX_hover',
 			[
-				'label' => __( 'Translate X', 'sina-ext' ),
+				'label' => esc_html__( 'Translate X', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -385,7 +385,7 @@ class Sina_Ext_Controls{
 		$elems->add_responsive_control(
 			'sina_transform_effects_translateY_hover',
 			[
-				'label' => __( 'Translate Y', 'sina-ext' ),
+				'label' => esc_html__( 'Translate Y', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -409,7 +409,7 @@ class Sina_Ext_Controls{
 		$elems->add_responsive_control(
 			'sina_transform_effects_scaleX_hover',
 			[
-				'label' => __( 'Scale X', 'sina-ext' ),
+				'label' => esc_html__( 'Scale X', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -432,7 +432,7 @@ class Sina_Ext_Controls{
 		$elems->add_responsive_control(
 			'sina_transform_effects_scaleY_hover',
 			[
-				'label' => __( 'Scale Y', 'sina-ext' ),
+				'label' => esc_html__( 'Scale Y', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -455,7 +455,7 @@ class Sina_Ext_Controls{
 		$elems->add_responsive_control(
 			'sina_transform_effects_scaleZ_hover',
 			[
-				'label' => __( 'Scale Z', 'sina-ext' ),
+				'label' => esc_html__( 'Scale Z', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -478,7 +478,7 @@ class Sina_Ext_Controls{
 		$elems->add_responsive_control(
 			'sina_transform_effects_rotateX_hover',
 			[
-				'label' => __( 'Rotate X', 'sina-ext' ),
+				'label' => esc_html__( 'Rotate X', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -501,7 +501,7 @@ class Sina_Ext_Controls{
 		$elems->add_responsive_control(
 			'sina_transform_effects_rotateY_hover',
 			[
-				'label' => __( 'Rotate Y', 'sina-ext' ),
+				'label' => esc_html__( 'Rotate Y', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -524,7 +524,7 @@ class Sina_Ext_Controls{
 		$elems->add_responsive_control(
 			'sina_transform_effects_rotateZ_hover',
 			[
-				'label' => __( 'Rotate Z', 'sina-ext' ),
+				'label' => esc_html__( 'Rotate Z', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -547,7 +547,7 @@ class Sina_Ext_Controls{
 		$elems->add_responsive_control(
 			'sina_transform_effects_skewX_hover',
 			[
-				'label' => __( 'Skew X', 'sina-ext' ),
+				'label' => esc_html__( 'Skew X', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -570,7 +570,7 @@ class Sina_Ext_Controls{
 		$elems->add_responsive_control(
 			'sina_transform_effects_skewY_hover',
 			[
-				'label' => __( 'Skew Y', 'sina-ext' ),
+				'label' => esc_html__( 'Skew Y', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -600,7 +600,7 @@ class Sina_Ext_Controls{
 		$elems->add_control(
 			'sina_transform_effects_duration',
 			[
-				'label' => __( 'Transition Duration', 'sina-ext' ),
+				'label' => esc_html__( 'Transition Duration', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [

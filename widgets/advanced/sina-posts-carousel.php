@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class Sina_Posts_Carousel_Widget extends Widget_Base {
+class Sina_Posts_Carousel_Widget extends Widget_Base{
 
 	/**
 	 * Get widget name.
@@ -35,7 +35,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 	 * @since 2.2.0
 	 */
 	public function get_title() {
-		return __( 'Sina Posts Carousel', 'sina-ext' );
+		return esc_html__( 'Sina Posts Carousel', 'sina-ext' );
 	}
 
 	/**
@@ -109,7 +109,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'posts_content',
 			[
-				'label' => __( 'Posts Content', 'sina-ext' ),
+				'label' => esc_html__( 'Posts Content', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -149,10 +149,10 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->add_control(
 			'thumb_right',
 			[
-				'label' => __( 'Thumb Right', 'sina-ext' ),
+				'label' => esc_html__( 'Thumb Right', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Yes', 'sina-ext' ),
-				'label_off' => __( 'No', 'sina-ext' ),
+				'label_on' => esc_html__( 'Yes', 'sina-ext' ),
+				'label_off' => esc_html__( 'No', 'sina-ext' ),
 				'condition' => [
 					'layout' => 'list',
 				],
@@ -161,28 +161,28 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->add_control(
 			'posts_cats',
 			[
-				'label' => __( 'Show Categories', 'sina-ext' ),
+				'label' => esc_html__( 'Show Categories', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Yes', 'sina-ext' ),
-				'label_off' => __( 'No', 'sina-ext' ),
+				'label_on' => esc_html__( 'Yes', 'sina-ext' ),
+				'label_off' => esc_html__( 'No', 'sina-ext' ),
 			]
 		);
 		$this->add_control(
 			'posts_meta',
 			[
-				'label' => __( 'Show Meta', 'sina-ext' ),
+				'label' => esc_html__( 'Show Meta', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Yes', 'sina-ext' ),
-				'label_off' => __( 'No', 'sina-ext' ),
+				'label_on' => esc_html__( 'Yes', 'sina-ext' ),
+				'label_off' => esc_html__( 'No', 'sina-ext' ),
 			]
 		);
 		$this->add_control(
 			'posts_avatar',
 			[
-				'label' => __( 'Show Avatar', 'sina-ext' ),
+				'label' => esc_html__( 'Show Avatar', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Yes', 'sina-ext' ),
-				'label_off' => __( 'No', 'sina-ext' ),
+				'label_on' => esc_html__( 'Yes', 'sina-ext' ),
+				'label_off' => esc_html__( 'No', 'sina-ext' ),
 				'condition' => [
 					'layout!' => 'thumb',
 					'posts_meta!' => '',
@@ -192,19 +192,19 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->add_control(
 			'posts_text',
 			[
-				'label' => __( 'Show Content', 'sina-ext' ),
+				'label' => esc_html__( 'Show Content', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Yes', 'sina-ext' ),
-				'label_off' => __( 'No', 'sina-ext' ),
+				'label_on' => esc_html__( 'Yes', 'sina-ext' ),
+				'label_off' => esc_html__( 'No', 'sina-ext' ),
 			]
 		);
 		$this->add_control(
 			'posts_excerpt',
 			[
-				'label' => __( 'Excerpt', 'sina-ext' ),
+				'label' => esc_html__( 'Excerpt', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Yes', 'sina-ext' ),
-				'label_off' => __( 'No', 'sina-ext' ),
+				'label_on' => esc_html__( 'Yes', 'sina-ext' ),
+				'label_off' => esc_html__( 'No', 'sina-ext' ),
 				'condition' => [
 					'posts_text' => 'yes',
 				]
@@ -213,7 +213,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->add_control(
 			'posts_txt_len',
 			[
-				'label' => __( 'Content Length (Word)', 'sina-ext' ),
+				'label' => esc_html__( 'Content Length (Word)', 'sina-ext' ),
 				'type' => Controls_Manager::NUMBER,
 				'step' => 1,
 				'min' => 0,
@@ -235,7 +235,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'read_more_content',
 			[
-				'label' => __( 'Read More', 'sina-ext' ),
+				'label' => esc_html__( 'Read More', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 				'condition' => [
 					'layout!' => 'thumb',
@@ -254,7 +254,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'carousel_settings',
 			[
-				'label' => __( 'Carousel Settings', 'sina-ext' ),
+				'label' => esc_html__( 'Carousel Settings', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -262,13 +262,13 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'show_item',
 			[
-				'label' => __( 'Show Item', 'sina-ext' ),
+				'label' => esc_html__( 'Show Item', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'1' => __( '1', 'sina-ext' ),
-					'2' => __( '2', 'sina-ext' ),
-					'3' => __( '3', 'sina-ext' ),
-					'4' => __( '4', 'sina-ext' ),
+					'1' => esc_html__( '1', 'sina-ext' ),
+					'2' => esc_html__( '2', 'sina-ext' ),
+					'3' => esc_html__( '3', 'sina-ext' ),
+					'4' => esc_html__( '4', 'sina-ext' ),
 				],
 				'desktop_default' => '2',
 				'tablet_default' => '2',
@@ -288,7 +288,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'box_style',
 			[
-				'label' => __( 'Post', 'sina-ext' ),
+				'label' => esc_html__( 'Post', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'layout' => 'thumb',
@@ -299,7 +299,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'box_height',
 			[
-				'label' => __( 'Height', 'sina-ext' ),
+				'label' => esc_html__( 'Height', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em' ],
 				'range' => [
@@ -335,7 +335,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'box_radius',
 			[
-				'label' => __( 'Radius', 'sina-ext' ),
+				'label' => esc_html__( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -346,7 +346,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'box_padding',
 			[
-				'label' => __( 'Padding', 'sina-ext' ),
+				'label' => esc_html__( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -364,7 +364,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'box_margin',
 			[
-				'label' => __( 'Margin', 'sina-ext' ),
+				'label' => esc_html__( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -382,19 +382,19 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'vertical_align',
 			[
-				'label' => __( 'Verticle Align', 'sina-ext' ),
+				'label' => esc_html__( 'Verticle Align', 'sina-ext' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'flex-start' => [
-						'title' => __( 'Left', 'sina-ext' ),
+						'title' => esc_html__( 'Left', 'sina-ext' ),
 						'icon' => 'eicon-v-align-top',
 					],
 					'center' => [
-						'title' => __( 'Center', 'sina-ext' ),
+						'title' => esc_html__( 'Center', 'sina-ext' ),
 						'icon' => 'eicon-v-align-middle',
 					],
 					'flex-end' => [
-						'title' => __( 'Right', 'sina-ext' ),
+						'title' => esc_html__( 'Right', 'sina-ext' ),
 						'icon' => 'eicon-v-align-bottom',
 					],
 				],
@@ -407,19 +407,19 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'alignment',
 			[
-				'label' => __( 'Alignment', 'sina-ext' ),
+				'label' => esc_html__( 'Alignment', 'sina-ext' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'sina-ext' ),
+						'title' => esc_html__( 'Left', 'sina-ext' ),
 						'icon' => 'fa fa-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'sina-ext' ),
+						'title' => esc_html__( 'Center', 'sina-ext' ),
 						'icon' => 'fa fa-align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'sina-ext' ),
+						'title' => esc_html__( 'Right', 'sina-ext' ),
 						'icon' => 'fa fa-align-right',
 					],
 				],
@@ -432,7 +432,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->add_control(
 			'overlay',
 			[
-				'label' => __( 'Overlay Background', 'sina-ext' ),
+				'label' => esc_html__( 'Overlay Background', 'sina-ext' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -443,7 +443,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->start_controls_tab(
 			'box_overlay_normal',
 			[
-				'label' => __( 'Normal', 'sina-ext' ),
+				'label' => esc_html__( 'Normal', 'sina-ext' ),
 			]
 		);
 
@@ -469,7 +469,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->start_controls_tab(
 			'box_overlay_hover',
 			[
-				'label' => __( 'Hover', 'sina-ext' ),
+				'label' => esc_html__( 'Hover', 'sina-ext' ),
 			]
 		);
 
@@ -506,7 +506,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'grid_style',
 			[
-				'label' => __( 'Post', 'sina-ext' ),
+				'label' => esc_html__( 'Post', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'layout!' => 'thumb',
@@ -517,12 +517,12 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->add_control(
 			'effects',
 			[
-				'label' => __( 'Effects', 'sina-ext' ),
+				'label' => esc_html__( 'Effects', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'sina-hover-move' => __( 'Move', 'sina-ext' ),
-					'sina-hover-zoom' => __( 'Zoom', 'sina-ext' ),
-					'' => __( 'None', 'sina-ext' ),
+					'sina-hover-move' => esc_html__( 'Move', 'sina-ext' ),
+					'sina-hover-zoom' => esc_html__( 'Zoom', 'sina-ext' ),
+					'' => esc_html__( 'None', 'sina-ext' ),
 				],
 				'default' => '',
 			]
@@ -530,7 +530,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'zoom',
 			[
-				'label' => __( 'Scale', 'sina-ext' ),
+				'label' => esc_html__( 'Scale', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -553,7 +553,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->add_control(
 			'move',
 			[
-				'label' => __( 'Move', 'sina-ext' ),
+				'label' => esc_html__( 'Move', 'sina-ext' ),
 				'type' => Controls_Manager::POPOVER_TOGGLE,
 				'condition' => [
 					'effects' => 'sina-hover-move',
@@ -565,7 +565,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'translateX',
 			[
-				'label' => __( 'Horizontal', 'sina-ext' ),
+				'label' => esc_html__( 'Horizontal', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -591,7 +591,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'translateY',
 			[
-				'label' => __( 'Vertical', 'sina-ext' ),
+				'label' => esc_html__( 'Vertical', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -627,7 +627,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->start_controls_tab(
 			'grid_post_normal',
 			[
-				'label' => __( 'Normal', 'sina-ext' ),
+				'label' => esc_html__( 'Normal', 'sina-ext' ),
 			]
 		);
 
@@ -676,7 +676,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->start_controls_tab(
 			'grid_post_hover',
 			[
-				'label' => __( 'Hover', 'sina-ext' ),
+				'label' => esc_html__( 'Hover', 'sina-ext' ),
 			]
 		);
 
@@ -691,7 +691,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->add_control(
 			'grid_box_hover_border',
 			[
-				'label' => __( 'Border Color', 'sina-ext' ),
+				'label' => esc_html__( 'Border Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .sina-bp:hover' => 'border-color: {{VALUE}};',
@@ -709,14 +709,14 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->add_control(
 			'grid_post_hover_title_heading',
 			[
-				'label' => __( 'Title Styles', 'sina-ext' ),
+				'label' => esc_html__( 'Title Styles', 'sina-ext' ),
 				'type' => Controls_Manager::HEADING,
 			]
 		);
 		$this->add_control(
 			'grid_post_hover_title_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .sina-bp:hover .sina-pc-title a' => 'color: {{VALUE}};',
@@ -734,7 +734,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->add_control(
 			'grid_post_hover_cats_heading',
 			[
-				'label' => __( 'Categories Styles', 'sina-ext' ),
+				'label' => esc_html__( 'Categories Styles', 'sina-ext' ),
 				'type' => Controls_Manager::HEADING,
 				'condition' => [
 					'posts_cats!' => '',
@@ -744,7 +744,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->add_control(
 			'grid_post_cats_color',
 			[
-				'label' => __( 'Color', 'sina-ext' ),
+				'label' => esc_html__( 'Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'condition' => [
 					'posts_cats!' => '',
@@ -757,7 +757,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->add_control(
 			'grid_post_cats_bg',
 			[
-				'label' => __( 'Background Color', 'sina-ext' ),
+				'label' => esc_html__( 'Background Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'condition' => [
 					'posts_cats!' => '',
@@ -770,7 +770,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->add_control(
 			'grid_post_cats_border',
 			[
-				'label' => __( 'Border Color', 'sina-ext' ),
+				'label' => esc_html__( 'Border Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'condition' => [
 					'posts_cats!' => '',
@@ -784,14 +784,14 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->add_control(
 			'grid_post_hover_content_heading',
 			[
-				'label' => __( 'Content Styles', 'sina-ext' ),
+				'label' => esc_html__( 'Content Styles', 'sina-ext' ),
 				'type' => Controls_Manager::HEADING,
 			]
 		);
 		$this->add_control(
 			'grid_post_hover_content_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .sina-bp:hover .sina-bp-content' => 'color: {{VALUE}};',
@@ -808,7 +808,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->add_control(
 			'grid_post_hover_content_border',
 			[
-				'label' => __( 'Border Color', 'sina-ext' ),
+				'label' => esc_html__( 'Border Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .sina-bp:hover .sina-bp-content' => 'border-color: {{VALUE}};',
@@ -819,7 +819,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->add_control(
 			'grid_post_hover_btn_heading',
 			[
-				'label' => __( 'Button Styles', 'sina-ext' ),
+				'label' => esc_html__( 'Button Styles', 'sina-ext' ),
 				'type' => Controls_Manager::HEADING,
 			]
 		);
@@ -834,7 +834,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->add_control(
 			'grid_post_hover_btn_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .sina-bp:hover .sina-read-more' => 'color: {{VALUE}};',
@@ -844,7 +844,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->add_control(
 			'grid_post_hover_btn_border',
 			[
-				'label' => __( 'Border Color', 'sina-ext' ),
+				'label' => esc_html__( 'Border Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .sina-bp:hover .sina-read-more' => 'border-color: {{VALUE}};',
@@ -855,14 +855,14 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->add_control(
 			'grid_post_hover_meta_heading',
 			[
-				'label' => __( 'Meta Styles', 'sina-ext' ),
+				'label' => esc_html__( 'Meta Styles', 'sina-ext' ),
 				'type' => Controls_Manager::HEADING,
 			]
 		);
 		$this->add_control(
 			'grid_post_hover_meta_color',
 			[
-				'label' => __( 'Color', 'sina-ext' ),
+				'label' => esc_html__( 'Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .sina-bp:hover .sina-pc-meta' => 'color: {{VALUE}};',
@@ -872,7 +872,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->add_control(
 			'grid_post_hover_link_color',
 			[
-				'label' => __( 'Link Color', 'sina-ext' ),
+				'label' => esc_html__( 'Link Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#1085e4',
 				'selectors' => [
@@ -888,7 +888,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'grid_box_radius',
 			[
-				'label' => __( 'Radius', 'sina-ext' ),
+				'label' => esc_html__( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'separator' => 'before',
@@ -900,7 +900,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'grid_box_padding',
 			[
-				'label' => __( 'Margin', 'sina-ext' ),
+				'label' => esc_html__( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -918,23 +918,23 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'grid_alignment',
 			[
-				'label' => __( 'Alignment', 'sina-ext' ),
+				'label' => esc_html__( 'Alignment', 'sina-ext' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'sina-ext' ),
+						'title' => esc_html__( 'Left', 'sina-ext' ),
 						'icon' => 'fa fa-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'sina-ext' ),
+						'title' => esc_html__( 'Center', 'sina-ext' ),
 						'icon' => 'fa fa-align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'sina-ext' ),
+						'title' => esc_html__( 'Right', 'sina-ext' ),
 						'icon' => 'fa fa-align-right',
 					],
 					'justify' => [
-						'title' => __( 'justify', 'sina-ext' ),
+						'title' => esc_html__( 'justify', 'sina-ext' ),
 						'icon' => 'fa fa-align-justify',
 					],
 				],
@@ -946,7 +946,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->add_control(
 			'grid_overlay',
 			[
-				'label' => __( 'Overlay Background', 'sina-ext' ),
+				'label' => esc_html__( 'Overlay Background', 'sina-ext' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -980,7 +980,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'title_style',
 			[
-				'label' => __( 'Title', 'sina-ext' ),
+				'label' => esc_html__( 'Title', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -1016,13 +1016,13 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->start_controls_tab(
 			'title_normal',
 			[
-				'label' => __( 'Normal', 'sina-ext' ),
+				'label' => esc_html__( 'Normal', 'sina-ext' ),
 			]
 		);
 		$this->add_control(
 			'title_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#fafafa',
 				'selectors' => [
@@ -1042,13 +1042,13 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->start_controls_tab(
 			'title_hover',
 			[
-				'label' => __( 'Hover', 'sina-ext' ),
+				'label' => esc_html__( 'Hover', 'sina-ext' ),
 			]
 		);
 		$this->add_control(
 			'title_hover_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#fff',
 				'selectors' => [
@@ -1070,7 +1070,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'title_margin',
 			[
-				'label' => __( 'Margin', 'sina-ext' ),
+				'label' => esc_html__( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -1097,7 +1097,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'text_style',
 			[
-				'label' => __( 'Content', 'sina-ext' ),
+				'label' => esc_html__( 'Content', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -1105,7 +1105,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'list_thumb_width',
 			[
-				'label' => __( 'Thumb Width (%)', 'sina-ext' ),
+				'label' => esc_html__( 'Thumb Width (%)', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ '%' ],
 				'desktop_default' => [
@@ -1131,7 +1131,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'list_thumb_height',
 			[
-				'label' => __( 'Thumb Height (px)', 'sina-ext' ),
+				'label' => esc_html__( 'Thumb Height (px)', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range' => [
@@ -1156,7 +1156,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'list_content_width',
 			[
-				'label' => __( 'Content Width (%)', 'sina-ext' ),
+				'label' => esc_html__( 'Content Width (%)', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ '%' ],
 				'desktop_default' => [
@@ -1182,10 +1182,10 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->add_control(
 			'is_content_height',
 			[
-				'label' => __( 'Use content Height', 'sina-ext' ),
+				'label' => esc_html__( 'Use content Height', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Yes', 'sina-ext' ),
-				'label_off' => __( 'No', 'sina-ext' ),
+				'label_on' => esc_html__( 'Yes', 'sina-ext' ),
+				'label_off' => esc_html__( 'No', 'sina-ext' ),
 				'condition' => [
 					'layout' => 'list',
 				],
@@ -1194,7 +1194,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'list_content_height',
 			[
-				'label' => __( 'Content Height (px)', 'sina-ext' ),
+				'label' => esc_html__( 'Content Height (px)', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range' => [
@@ -1245,7 +1245,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->add_control(
 			'text_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#fafafa',
 				'selectors' => [
@@ -1275,7 +1275,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'grid_content_padding',
 			[
-				'label' => __( 'Padding', 'sina-ext' ),
+				'label' => esc_html__( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -1304,7 +1304,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'grid_cats_style',
 			[
-				'label' => __( 'Categories', 'sina-ext' ),
+				'label' => esc_html__( 'Categories', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'posts_cats' => 'yes',
@@ -1315,11 +1315,11 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->add_control(
 			'grid_cats_position',
 			[
-				'label' => __( 'Position', 'sina-ext' ),
+				'label' => esc_html__( 'Position', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'before' => __( 'Before Title', 'sina-ext' ),
-					'after' => __( 'After Title', 'sina-ext' ),
+					'before' => esc_html__( 'Before Title', 'sina-ext' ),
+					'after' => esc_html__( 'After Title', 'sina-ext' ),
 				],
 				'default' => 'after',
 			]
@@ -1327,7 +1327,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->add_control(
 			'grid_cats_icon',
 			[
-				'label' => __( 'Icon', 'sina-ext' ),
+				'label' => esc_html__( 'Icon', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::ICON,
 				'default' => 'fa fa-folder-open-o',
@@ -1361,7 +1361,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->add_control(
 			'grid_cats_color',
 			[
-				'label' => __( 'Color', 'sina-ext' ),
+				'label' => esc_html__( 'Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#222',
 				'selectors' => [
@@ -1372,7 +1372,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->add_control(
 			'grid_cats_bg',
 			[
-				'label' => __( 'Background Color', 'sina-ext' ),
+				'label' => esc_html__( 'Background Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .sina-bp-cats' => 'background-color: {{VALUE}};',
@@ -1389,7 +1389,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'grid_cats_radius',
 			[
-				'label' => __( 'Radius', 'sina-ext' ),
+				'label' => esc_html__( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -1407,7 +1407,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'grid_cats_padding',
 			[
-				'label' => __( 'Padding', 'sina-ext' ),
+				'label' => esc_html__( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -1418,7 +1418,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'grid_cats_margin',
 			[
-				'label' => __( 'Margin', 'sina-ext' ),
+				'label' => esc_html__( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -1444,7 +1444,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'meta_style',
 			[
-				'label' => __( 'Meta', 'sina-ext' ),
+				'label' => esc_html__( 'Meta', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'posts_meta' => 'yes',
@@ -1502,7 +1502,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->add_control(
 			'meta_color',
 			[
-				'label' => __( 'Color', 'sina-ext' ),
+				'label' => esc_html__( 'Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#fafafa',
 				'selectors' => [
@@ -1516,13 +1516,13 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->start_controls_tab(
 			'link_normal',
 			[
-				'label' => __( 'Normal', 'sina-ext' ),
+				'label' => esc_html__( 'Normal', 'sina-ext' ),
 			]
 		);
 		$this->add_control(
 			'link_color',
 			[
-				'label' => __( 'Link Color', 'sina-ext' ),
+				'label' => esc_html__( 'Link Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#fafafa',
 				'selectors' => [
@@ -1535,13 +1535,13 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->start_controls_tab(
 			'link_hover',
 			[
-				'label' => __( 'Hover', 'sina-ext' ),
+				'label' => esc_html__( 'Hover', 'sina-ext' ),
 			]
 		);
 		$this->add_control(
 			'link_hover_color',
 			[
-				'label' => __( 'Link Color', 'sina-ext' ),
+				'label' => esc_html__( 'Link Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#fff',
 				'selectors' => [
@@ -1556,7 +1556,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'meta_margin',
 			[
-				'label' => __( 'Margin', 'sina-ext' ),
+				'label' => esc_html__( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -1575,7 +1575,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'grid_meta_padding',
 			[
-				'label' => __( 'Padding', 'sina-ext' ),
+				'label' => esc_html__( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -1633,7 +1633,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'grid_avatar_style',
 			[
-				'label' => __( 'Avatar', 'sina-ext' ),
+				'label' => esc_html__( 'Avatar', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'layout!' => 'thumb',
@@ -1645,7 +1645,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->add_control(
 			'grid_avatar_size',
 			[
-				'label' => __( 'Size', 'sina-ext' ),
+				'label' => esc_html__( 'Size', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px'],
 				'default' => [
@@ -1656,7 +1656,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'grid_avatar_gap',
 			[
-				'label' => __( 'Spacing', 'sina-ext' ),
+				'label' => esc_html__( 'Spacing', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em' ],
 				'default' => [
@@ -1685,7 +1685,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'grid_avatar_radius',
 			[
-				'label' => __( 'Radius', 'sina-ext' ),
+				'label' => esc_html__( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -1711,7 +1711,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'grid_read_more_style',
 			[
-				'label' => __( 'Read More', 'sina-ext' ),
+				'label' => esc_html__( 'Read More', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'read_more_text!' => '',
@@ -1722,7 +1722,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'grid_read_more_radius',
 			[
-				'label' => __( 'Radius', 'sina-ext' ),
+				'label' => esc_html__( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -1741,7 +1741,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'grid_read_more_padding',
 			[
-				'label' => __( 'Padding', 'sina-ext' ),
+				'label' => esc_html__( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -1759,7 +1759,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'grid_read_more_margin',
 			[
-				'label' => __( 'Margin', 'sina-ext' ),
+				'label' => esc_html__( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -1786,7 +1786,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'nav_dots_style',
 			[
-				'label' => __( 'Nav & Dots', 'sina-ext' ),
+				'label' => esc_html__( 'Nav & Dots', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -1802,7 +1802,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'center_item_style',
 			[
-				'label' => __( 'Center Item', 'sina-ext' ),
+				'label' => esc_html__( 'Center Item', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'center!' => '',
@@ -1813,7 +1813,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'scale',
 			[
-				'label' => __( 'Scale', 'sina-ext' ),
+				'label' => esc_html__( 'Scale', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [

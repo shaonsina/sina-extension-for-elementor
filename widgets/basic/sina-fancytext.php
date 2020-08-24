@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class Sina_Fancytext_Widget extends Widget_Base {
+class Sina_Fancytext_Widget extends Widget_Base{
 
 	/**
 	 * Get widget name.
@@ -36,7 +36,7 @@ class Sina_Fancytext_Widget extends Widget_Base {
 	 * @since 1.0.0
 	 */
 	public function get_title() {
-		return __( 'Sina Fancy Text', 'sina-ext' );
+		return esc_html__( 'Sina Fancy Text', 'sina-ext' );
 	}
 
 	/**
@@ -109,7 +109,7 @@ class Sina_Fancytext_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'fancytext_content',
 			[
-				'label' => __( 'Fancy Text', 'sina-ext' ),
+				'label' => esc_html__( 'Fancy Text', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -119,7 +119,7 @@ class Sina_Fancytext_Widget extends Widget_Base {
 		$repeater->add_control(
 			'fancy_items',
 			[
-				'label' => __( 'Text', 'sina-ext' ),
+				'label' => esc_html__( 'Text', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
 				'default' => 'Fancy text',
@@ -132,7 +132,7 @@ class Sina_Fancytext_Widget extends Widget_Base {
 		$this->add_control(
 			'fancy_text',
 			[
-				'label' => __( 'Fancy Text', 'sina-ext' ),
+				'label' => esc_html__( 'Fancy Text', 'sina-ext' ),
 				'type' => Controls_Manager::REPEATER,
 				'fields' => $repeater->get_controls(),
 				'default' => [
@@ -155,10 +155,10 @@ class Sina_Fancytext_Widget extends Widget_Base {
 		$this->add_control(
 			'fancy_prefix',
 			[
-				'label' => __( 'Prefix Text', 'sina-ext' ),
+				'label' => esc_html__( 'Prefix Text', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter prefix text', 'sina-ext' ),
+				'placeholder' => esc_html__( 'Enter prefix text', 'sina-ext' ),
 				'default' => 'Prefix text ',
 				'dynamic' => [
 					'active' => true,
@@ -168,10 +168,10 @@ class Sina_Fancytext_Widget extends Widget_Base {
 		$this->add_control(
 			'fancy_suffix',
 			[
-				'label' => __( 'Suffix Text', 'sina-ext' ),
+				'label' => esc_html__( 'Suffix Text', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter suffix text', 'sina-ext' ),
+				'placeholder' => esc_html__( 'Enter suffix text', 'sina-ext' ),
 				'default' => ' Suffix text',
 				'dynamic' => [
 					'active' => true,
@@ -189,7 +189,7 @@ class Sina_Fancytext_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'fancy_settings',
 			[
-				'label' => __( 'Fancy Settings', 'sina-ext' ),
+				'label' => esc_html__( 'Fancy Settings', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -197,11 +197,11 @@ class Sina_Fancytext_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'display',
 			[
-				'label' => __( 'Display', 'sina-ext' ),
+				'label' => esc_html__( 'Display', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'inline' => __( 'Inline', 'sina-ext' ),
-					'block' => __( 'Block', 'sina-ext' ),
+					'inline' => esc_html__( 'Inline', 'sina-ext' ),
+					'block' => esc_html__( 'Block', 'sina-ext' ),
 				],
 				'default' => 'inline',
 				'selectors' => [
@@ -212,19 +212,19 @@ class Sina_Fancytext_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'alignment',
 			[
-				'label' => __( 'Alignment', 'sina-ext' ),
+				'label' => esc_html__( 'Alignment', 'sina-ext' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'sina-ext' ),
+						'title' => esc_html__( 'Left', 'sina-ext' ),
 						'icon' => 'fa fa-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'sina-ext' ),
+						'title' => esc_html__( 'Center', 'sina-ext' ),
 						'icon' => 'fa fa-align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'sina-ext' ),
+						'title' => esc_html__( 'Right', 'sina-ext' ),
 						'icon' => 'fa fa-align-right',
 					],
 				],
@@ -236,12 +236,12 @@ class Sina_Fancytext_Widget extends Widget_Base {
 		);
 		$animation = Sina_Common_Data::animation();
 		unset( $animation['none'] );
-		$animation['typing'] = __( 'Typing', 'sina-ext' );
+		$animation['typing'] = esc_html__( 'Typing', 'sina-ext' );
 
 		$this->add_control(
 			'animation_type',
 			[
-				'label' => __( 'Animation Type', 'sina-ext' ),
+				'label' => esc_html__( 'Animation Type', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'typing',
 				'options' => $animation,
@@ -250,7 +250,7 @@ class Sina_Fancytext_Widget extends Widget_Base {
 		$this->add_control(
 			'delay',
 			[
-				'label' => __( 'Delay', 'sina-ext' ),
+				'label' => esc_html__( 'Delay', 'sina-ext' ),
 				'type' => Controls_Manager::NUMBER,
 				'min' => 100,
 				'max' => 10000,
@@ -261,7 +261,7 @@ class Sina_Fancytext_Widget extends Widget_Base {
 		$this->add_control(
 			'typing_speed',
 			[
-				'label' => __( 'Typing Speed', 'sina-ext' ),
+				'label' => esc_html__( 'Typing Speed', 'sina-ext' ),
 				'type' => Controls_Manager::NUMBER,
 				'min' => 100,
 				'max' => 10000,
@@ -275,7 +275,7 @@ class Sina_Fancytext_Widget extends Widget_Base {
 		$this->add_control(
 			'loop',
 			[
-				'label' => __( 'Loop', 'sina-ext' ),
+				'label' => esc_html__( 'Loop', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
 				'condition' => [
 					'animation_type' => 'typing',
@@ -286,10 +286,10 @@ class Sina_Fancytext_Widget extends Widget_Base {
 		$this->add_control(
 			'cursor',
 			[
-				'label' => __( 'Cursor', 'sina-ext' ),
+				'label' => esc_html__( 'Cursor', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Show', 'sina-ext' ),
-				'label_off' => __( 'Hide', 'sina-ext' ),
+				'label_on' => esc_html__( 'Show', 'sina-ext' ),
+				'label_off' => esc_html__( 'Hide', 'sina-ext' ),
 				'default' => 'yes',
 				'condition' => [
 					'animation_type' => 'typing',
@@ -299,7 +299,7 @@ class Sina_Fancytext_Widget extends Widget_Base {
 		$this->add_control(
 			'cursor_color',
 			[
-				'label' => __( 'Cursor Color', 'sina-ext' ),
+				'label' => esc_html__( 'Cursor Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#1085e4',
 				'condition' => [
@@ -313,7 +313,7 @@ class Sina_Fancytext_Widget extends Widget_Base {
 		$this->add_control(
 			'tag',
 			[
-				'label' => __( 'Selct Tag', 'sina-ext' ),
+				'label' => esc_html__( 'Selct Tag', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
 					'h1' => 'H1',
@@ -338,7 +338,7 @@ class Sina_Fancytext_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'fancy_style',
 			[
-				'label' => __( 'Fancy Text', 'sina-ext' ),
+				'label' => esc_html__( 'Fancy Text', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -380,7 +380,7 @@ class Sina_Fancytext_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'prefix_style',
 			[
-				'label' => __( 'Prefix Text', 'sina-ext' ),
+				'label' => esc_html__( 'Prefix Text', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'fancy_prefix!' => ''
@@ -420,7 +420,7 @@ class Sina_Fancytext_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'suffix_style',
 			[
-				'label' => __( 'Suffix Text', 'sina-ext' ),
+				'label' => esc_html__( 'Suffix Text', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'fancy_suffix!' => ''

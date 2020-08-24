@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class Sina_Counter_Widget extends Widget_Base {
+class Sina_Counter_Widget extends Widget_Base{
 
 	/**
 	 * Get widget name.
@@ -38,7 +38,7 @@ class Sina_Counter_Widget extends Widget_Base {
 	 * @since 1.0.0
 	 */
 	public function get_title() {
-		return __( 'Sina Counter', 'sina-ext' );
+		return esc_html__( 'Sina Counter', 'sina-ext' );
 	}
 
 	/**
@@ -111,7 +111,7 @@ class Sina_Counter_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'counter_content',
 			[
-				'label' => __( 'Counter', 'sina-ext' ),
+				'label' => esc_html__( 'Counter', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -119,15 +119,15 @@ class Sina_Counter_Widget extends Widget_Base {
 		$this->add_control(
 			'icon_format',
 			[
-				'label' => __( 'Icon Format', 'sina-ext' ),
+				'label' => esc_html__( 'Icon Format', 'sina-ext' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'icon' => [
-						'title' => __( 'Icon', 'sina-ext' ),
+						'title' => esc_html__( 'Icon', 'sina-ext' ),
 						'icon' => 'fa fa-star',
 					],
 					'image' => [
-						'title' => __( 'Image', 'sina-ext' ),
+						'title' => esc_html__( 'Image', 'sina-ext' ),
 						'icon' => 'fa fa-image',
 					],
 				],
@@ -137,7 +137,7 @@ class Sina_Counter_Widget extends Widget_Base {
 		$this->add_control(
 			'icon',
 			[
-				'label' => __( 'Icon', 'sina-ext' ),
+				'label' => esc_html__( 'Icon', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::ICON,
 				'default' => 'fa fa-user',
@@ -149,7 +149,7 @@ class Sina_Counter_Widget extends Widget_Base {
 		$this->add_control(
 			'image',
 			[
-				'label' => __( 'Image', 'sina-ext' ),
+				'label' => esc_html__( 'Image', 'sina-ext' ),
 				'type' => Controls_Manager::MEDIA,
 				'condition' => [
 					'icon_format' => 'image',
@@ -165,11 +165,11 @@ class Sina_Counter_Widget extends Widget_Base {
 		$this->add_control(
 			'title',
 			[
-				'label' => __( 'Title', 'sina-ext' ),
+				'label' => esc_html__( 'Title', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
 				'label_block' => true,
-				'placeholder' => __( 'Enter Title', 'sina-ext' ),
-				'description' => __( 'You can use HTML.', 'sina-ext' ),
+				'placeholder' => esc_html__( 'Enter Title', 'sina-ext' ),
+				'description' => esc_html__( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'Satisfied Customers',
 				'dynamic' => [
 					'active' => true,
@@ -179,11 +179,11 @@ class Sina_Counter_Widget extends Widget_Base {
 		$this->add_control(
 			'title_position',
 			[
-				'label' => __( 'Title Position', 'sina-ext' ),
+				'label' => esc_html__( 'Title Position', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'middle' => __( 'Middle', 'sina-ext' ),
-					'bottom' => __( 'Bottom', 'sina-ext' ),
+					'middle' => esc_html__( 'Middle', 'sina-ext' ),
+					'bottom' => esc_html__( 'Bottom', 'sina-ext' ),
 				],
 				'condition' => [
 					'title!' => '',
@@ -194,9 +194,9 @@ class Sina_Counter_Widget extends Widget_Base {
 		$this->add_control(
 			'prefix',
 			[
-				'label' => __( 'Prefix', 'sina-ext' ),
+				'label' => esc_html__( 'Prefix', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter Prefix', 'sina-ext' ),
+				'placeholder' => esc_html__( 'Enter Prefix', 'sina-ext' ),
 				'dynamic' => [
 					'active' => true,
 				],
@@ -205,7 +205,7 @@ class Sina_Counter_Widget extends Widget_Base {
 		$this->add_control(
 			'prefix_space',
 			[
-				'label' => __( 'Prefix Space', 'sina-ext' ),
+				'label' => esc_html__( 'Prefix Space', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => ['px', 'em'],
 				'range' => [
@@ -224,9 +224,9 @@ class Sina_Counter_Widget extends Widget_Base {
 		$this->add_control(
 			'suffix',
 			[
-				'label' => __( 'Suffix', 'sina-ext' ),
+				'label' => esc_html__( 'Suffix', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter Suffix', 'sina-ext' ),
+				'placeholder' => esc_html__( 'Enter Suffix', 'sina-ext' ),
 				'dynamic' => [
 					'active' => true,
 				],
@@ -235,7 +235,7 @@ class Sina_Counter_Widget extends Widget_Base {
 		$this->add_control(
 			'suffix_space',
 			[
-				'label' => __( 'Suffix space', 'sina-ext' ),
+				'label' => esc_html__( 'Suffix space', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => ['px', 'em'],
 				'range' => [
@@ -254,13 +254,13 @@ class Sina_Counter_Widget extends Widget_Base {
 		$this->add_control(
 			'delimiter',
 			[
-				'label' => __( 'Thousand Delimiter', 'sina-ext' ),
+				'label' => esc_html__( 'Thousand Delimiter', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					',' => __( 'Comma', 'sina-ext' ),
-					'.' => __( 'Dot', 'sina-ext' ),
-					'|' => __( 'Pipe', 'sina-ext' ),
-					' ' => __( 'space', 'sina-ext' ),
+					',' => esc_html__( 'Comma', 'sina-ext' ),
+					'.' => esc_html__( 'Dot', 'sina-ext' ),
+					'|' => esc_html__( 'Pipe', 'sina-ext' ),
+					' ' => esc_html__( 'space', 'sina-ext' ),
 				],
 				'default' => ',',
 			]
@@ -268,7 +268,7 @@ class Sina_Counter_Widget extends Widget_Base {
 		$this->add_control(
 			'start_number',
 			[
-				'label' => __( 'Start Number', 'sina-ext' ),
+				'label' => esc_html__( 'Start Number', 'sina-ext' ),
 				'type' => Controls_Manager::NUMBER,
 				'default' => 100,
 				'step' => 1,
@@ -280,7 +280,7 @@ class Sina_Counter_Widget extends Widget_Base {
 		$this->add_control(
 			'stop_number',
 			[
-				'label' => __( 'Stop Number', 'sina-ext' ),
+				'label' => esc_html__( 'Stop Number', 'sina-ext' ),
 				'type' => Controls_Manager::NUMBER,
 				'default' => 500,
 				'step' => 1,
@@ -292,7 +292,7 @@ class Sina_Counter_Widget extends Widget_Base {
 		$this->add_control(
 			'speed',
 			[
-				'label' => __( 'Counting Duration', 'sina-ext' ),
+				'label' => esc_html__( 'Counting Duration', 'sina-ext' ),
 				'type' => Controls_Manager::NUMBER,
 				'default' => 2000,
 				'min' => 100,
@@ -303,19 +303,19 @@ class Sina_Counter_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'alignment',
 			[
-				'label' => __( 'Alignment', 'sina-ext' ),
+				'label' => esc_html__( 'Alignment', 'sina-ext' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'sina-ext' ),
+						'title' => esc_html__( 'Left', 'sina-ext' ),
 						'icon' => 'fa fa-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'sina-ext' ),
+						'title' => esc_html__( 'Center', 'sina-ext' ),
 						'icon' => 'fa fa-align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'sina-ext' ),
+						'title' => esc_html__( 'Right', 'sina-ext' ),
 						'icon' => 'fa fa-align-right',
 					],
 				],
@@ -336,7 +336,7 @@ class Sina_Counter_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'title_style',
 			[
-				'label' => __( 'Title', 'sina-ext' ),
+				'label' => esc_html__( 'Title', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'title!' => ''
@@ -347,7 +347,7 @@ class Sina_Counter_Widget extends Widget_Base {
 		$this->add_control(
 			'title_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#0a0',
 				'selectors' => [
@@ -387,7 +387,7 @@ class Sina_Counter_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'title_margin',
 			[
-				'label' => __( 'Margin', 'sina-ext' ),
+				'label' => esc_html__( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -413,7 +413,7 @@ class Sina_Counter_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'number_style',
 			[
-				'label' => __( 'Number', 'sina-ext' ),
+				'label' => esc_html__( 'Number', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -421,7 +421,7 @@ class Sina_Counter_Widget extends Widget_Base {
 		$this->add_control(
 			'number_color',
 			[
-				'label' => __( 'Color', 'sina-ext' ),
+				'label' => esc_html__( 'Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#1085e4',
 				'selectors' => [
@@ -464,7 +464,7 @@ class Sina_Counter_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'number_margin',
 			[
-				'label' => __( 'Margin', 'sina-ext' ),
+				'label' => esc_html__( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -483,7 +483,7 @@ class Sina_Counter_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'icon_style',
 			[
-				'label' => __( 'Icon or Image', 'sina-ext' ),
+				'label' => esc_html__( 'Icon or Image', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'icon_format!' => ''
@@ -512,7 +512,7 @@ class Sina_Counter_Widget extends Widget_Base {
 		$this->add_control(
 			'icon_size',
 			[
-				'label' => __( 'Size', 'sina-ext' ),
+				'label' => esc_html__( 'Size', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => ['px'],
 				'range' => [
@@ -534,7 +534,7 @@ class Sina_Counter_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'image_size',
 			[
-				'label' => __( 'Width', 'sina-ext' ),
+				'label' => esc_html__( 'Width', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', '%' ],
 				'range' => [
@@ -584,7 +584,7 @@ class Sina_Counter_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'icon_radius',
 			[
-				'label' => __( 'Radius', 'sina-ext' ),
+				'label' => esc_html__( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -595,7 +595,7 @@ class Sina_Counter_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'icon_padding',
 			[
-				'label' => __( 'Padding', 'sina-ext' ),
+				'label' => esc_html__( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [

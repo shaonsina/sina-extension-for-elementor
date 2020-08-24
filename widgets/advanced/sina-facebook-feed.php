@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class Sina_Facebook_Feed_Widget extends Widget_Base {
+class Sina_Facebook_Feed_Widget extends Widget_Base{
 
 	/**
 	 * Get widget name.

@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class Sina_Countdown_Widget extends Widget_Base {
+class Sina_Countdown_Widget extends Widget_Base{
 
 	/**
 	 * Get widget name.
@@ -39,7 +39,7 @@ class Sina_Countdown_Widget extends Widget_Base {
 	 * @since 1.0.0
 	 */
 	public function get_title() {
-		return __( 'Sina Countdown', 'sina-ext' );
+		return esc_html__( 'Sina Countdown', 'sina-ext' );
 	}
 
 	/**
@@ -112,7 +112,7 @@ class Sina_Countdown_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'countdown_content',
 			[
-				'label' => __( 'Countdown', 'sina-ext' ),
+				'label' => esc_html__( 'Countdown', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -120,7 +120,7 @@ class Sina_Countdown_Widget extends Widget_Base {
 		$this->add_control(
 			'countdown_time',
 			[
-				'label'	=> __( 'Due Date', 'sina-ext' ),
+				'label'	=> esc_html__( 'Due Date', 'sina-ext' ),
 				'type' => Controls_Manager::DATE_TIME,
 				'picker_options' => [
 					'format' => 'Ym/d H:m:s'
@@ -134,16 +134,16 @@ class Sina_Countdown_Widget extends Widget_Base {
 		$repeater->add_control(
 			'unit',
 			[
-				'label' => __( 'Select Unit', 'sina-ext' ),
+				'label' => esc_html__( 'Select Unit', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'year' => __( 'Years', 'sina-ext' ),
-					'month' => __( 'Months', 'sina-ext' ),
-					'week' => __( 'Weeks', 'sina-ext' ),
-					'day' => __( 'Days', 'sina-ext' ),
-					'hour' => __( 'Hours', 'sina-ext' ),
-					'minute' => __( 'Minutes', 'sina-ext' ),
-					'second' => __( 'Seconds', 'sina-ext' ),
+					'year' => esc_html__( 'Years', 'sina-ext' ),
+					'month' => esc_html__( 'Months', 'sina-ext' ),
+					'week' => esc_html__( 'Weeks', 'sina-ext' ),
+					'day' => esc_html__( 'Days', 'sina-ext' ),
+					'hour' => esc_html__( 'Hours', 'sina-ext' ),
+					'minute' => esc_html__( 'Minutes', 'sina-ext' ),
+					'second' => esc_html__( 'Seconds', 'sina-ext' ),
 				],
 				'default' => 'day',
 			]
@@ -152,7 +152,7 @@ class Sina_Countdown_Widget extends Widget_Base {
 		$repeater->add_control(
 			'unit_style',
 			[
-				'label' => __( 'Styles', 'sina-ext' ),
+				'label' => esc_html__( 'Styles', 'sina-ext' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -160,7 +160,7 @@ class Sina_Countdown_Widget extends Widget_Base {
 		$repeater->add_responsive_control(
 			'unit_width',
 			[
-				'label' => __( 'Width', 'sina-ext' ),
+				'label' => esc_html__( 'Width', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -176,7 +176,7 @@ class Sina_Countdown_Widget extends Widget_Base {
 		$repeater->add_responsive_control(
 			'unit_height',
 			[
-				'label' => __( 'Height', 'sina-ext' ),
+				'label' => esc_html__( 'Height', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -192,7 +192,7 @@ class Sina_Countdown_Widget extends Widget_Base {
 		$repeater->add_control(
 			'unit_digit_color',
 			[
-				'label' => __( 'Digit Color', 'sina-ext' ),
+				'label' => esc_html__( 'Digit Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .sina-cd{{CURRENT_ITEM}}' => 'color: {{VALUE}};'
@@ -202,7 +202,7 @@ class Sina_Countdown_Widget extends Widget_Base {
 		$repeater->add_control(
 			'unit_text_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .sina-cd{{CURRENT_ITEM}} .sina-cd-text' => 'color: {{VALUE}};'
@@ -234,7 +234,7 @@ class Sina_Countdown_Widget extends Widget_Base {
 		$repeater->add_responsive_control(
 			'unit_radius',
 			[
-				'label' => __( 'Radius', 'sina-ext' ),
+				'label' => esc_html__( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -245,7 +245,7 @@ class Sina_Countdown_Widget extends Widget_Base {
 		$repeater->add_responsive_control(
 			'unit_padding',
 			[
-				'label' => __( 'Padding', 'sina-ext' ),
+				'label' => esc_html__( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -257,7 +257,7 @@ class Sina_Countdown_Widget extends Widget_Base {
 		$this->add_control(
 			'units',
 			[
-				'label' => __('Add Item', 'sina-ext'),
+				'label' => esc_html__('Add Item', 'sina-ext'),
 				'type' => Controls_Manager::REPEATER,
 				'fields' => $repeater->get_controls(),
 				'default' => [
@@ -281,19 +281,19 @@ class Sina_Countdown_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'alignment',
 			[
-				'label' => __( 'Alignment', 'sina-ext' ),
+				'label' => esc_html__( 'Alignment', 'sina-ext' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'sina-ext' ),
+						'title' => esc_html__( 'Left', 'sina-ext' ),
 						'icon' => 'fa fa-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'sina-ext' ),
+						'title' => esc_html__( 'Center', 'sina-ext' ),
 						'icon' => 'fa fa-align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'sina-ext' ),
+						'title' => esc_html__( 'Right', 'sina-ext' ),
 						'icon' => 'fa fa-align-right',
 					],
 				],
@@ -307,30 +307,30 @@ class Sina_Countdown_Widget extends Widget_Base {
 		$this->add_control(
 			'text_state',
 			[
-				'label' => __( 'Text', 'sina-ext' ),
+				'label' => esc_html__( 'Text', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Show', 'sina-ext' ),
-				'label_off' => __( 'Hide', 'sina-ext' ),
+				'label_on' => esc_html__( 'Show', 'sina-ext' ),
+				'label_off' => esc_html__( 'Hide', 'sina-ext' ),
 				'default' => 'yes',
 			]
 		);
 		$this->add_control(
 			'action',
 			[
-				'label' => __('Action', 'sina-ext'),
+				'label' => esc_html__('Action', 'sina-ext'),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'text' => __('Message', 'sina-ext'),
-					'url' => __('Redirection Link', 'sina-ext')
+					'text' => esc_html__('Message', 'sina-ext'),
+					'url' => esc_html__('Redirection Link', 'sina-ext')
 				],
-				'description' => __('Choose whether if you want to set a message or a redirect link', 'sina-ext'),
+				'description' => esc_html__('Choose whether if you want to set a message or a redirect link', 'sina-ext'),
 				'default'		=> 'text'
 			]
 		);
 		$this->add_control(
 			'message',
 			[
-				'label'	=> __('Message', 'sina-ext'),
+				'label'	=> esc_html__('Message', 'sina-ext'),
 				'type' => Controls_Manager::TEXTAREA,
 				'default' => 'Countdown is finished!',
 				'condition' => [
@@ -341,7 +341,7 @@ class Sina_Countdown_Widget extends Widget_Base {
 		$this->add_control(
 			'redirect',
 			[
-				'label'	=> __('Redirect To', 'sina-ext'),
+				'label'	=> esc_html__('Redirect To', 'sina-ext'),
 				'type' => Controls_Manager::TEXT,
 				'label_block' => true,
 				'condition' => [
@@ -361,7 +361,7 @@ class Sina_Countdown_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'box_style',
 			[
-				'label' => __( 'Box', 'sina-ext' ),
+				'label' => esc_html__( 'Box', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -369,14 +369,14 @@ class Sina_Countdown_Widget extends Widget_Base {
 		$this->add_control(
 			'is_morphing_anim_box',
 			[
-				'label' => __( 'Morphing Animation', 'sina-ext' ),
+				'label' => esc_html__( 'Morphing Animation', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
 			]
 		);
 		$this->add_responsive_control(
 			'width',
 			[
-				'label' => __( 'Width', 'sina-ext' ),
+				'label' => esc_html__( 'Width', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -395,7 +395,7 @@ class Sina_Countdown_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'height',
 			[
-				'label' => __( 'Height', 'sina-ext' ),
+				'label' => esc_html__( 'Height', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -444,7 +444,7 @@ class Sina_Countdown_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'box_radius',
 			[
-				'label' => __( 'Radius', 'sina-ext' ),
+				'label' => esc_html__( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -462,7 +462,7 @@ class Sina_Countdown_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'box_padding',
 			[
-				'label' => __( 'Padding', 'sina-ext' ),
+				'label' => esc_html__( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -480,7 +480,7 @@ class Sina_Countdown_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'box_margin',
 			[
-				'label' => __( 'Margin', 'sina-ext' ),
+				'label' => esc_html__( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -506,7 +506,7 @@ class Sina_Countdown_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'digit_style',
 			[
-				'label' => __( 'Digit', 'sina-ext' ),
+				'label' => esc_html__( 'Digit', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -566,7 +566,7 @@ class Sina_Countdown_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'text_style',
 			[
-				'label' => __( 'Text', 'sina-ext' ),
+				'label' => esc_html__( 'Text', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'text_state!' => ''
@@ -577,7 +577,7 @@ class Sina_Countdown_Widget extends Widget_Base {
 		$this->add_control(
 			'text_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#fafafa',
 				'selectors' => [
@@ -617,7 +617,7 @@ class Sina_Countdown_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'text_margin',
 			[
-				'label' => __( 'Margin', 'sina-ext' ),
+				'label' => esc_html__( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -636,7 +636,7 @@ class Sina_Countdown_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'message_style',
 			[
-				'label' => __( 'Message', 'sina-ext' ),
+				'label' => esc_html__( 'Message', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -644,7 +644,7 @@ class Sina_Countdown_Widget extends Widget_Base {
 		$this->add_control(
 			'message_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#1085e4',
 				'selectors' => [

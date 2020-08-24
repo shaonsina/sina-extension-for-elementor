@@ -53,7 +53,7 @@ class Sina_Ext_Rollback{
 			'url' => 'update.php?action=upgrade-plugin&plugin=' . rawurlencode( SINA_EXT_SLUG ),
 			'plugin' => SINA_EXT_SLUG,
 			'nonce' => 'upgrade-plugin_' . SINA_EXT_SLUG,
-			'title' => __( 'Sina Extension Rollback to Previous Version', 'sina-ext' ),
+			'title' => esc_html__( 'Sina Extension Rollback to Previous Version', 'sina-ext' ),
 		];
 
 		self::print_inline_style();
@@ -69,7 +69,7 @@ class Sina_Ext_Rollback{
 		self::upgrade();
 
 		wp_die(
-			'', __( 'Rollback to Previous Version', 'sina-ext' ), [
+			'', esc_html__( 'Rollback to Previous Version', 'sina-ext' ), [
 				'response' => 200,
 			]
 		);

@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class Sina_Portfolio_Widget extends Widget_Base {
+class Sina_Portfolio_Widget extends Widget_Base{
 
 	/**
 	 * Get widget name.
@@ -235,7 +235,7 @@ class Sina_Portfolio_Widget extends Widget_Base {
 					'sina-pf-item-32' => esc_html__( '3 Column 2 Row', 'sina-ext' ),
 					'sina-pf-item-33' => esc_html__( '3 Column 3 Row', 'sina-ext' ),
 				],
-				'description' => esc_html__( 'Size will work if the <strong>"number of columns"</strong> is <strong>"Masonry"</strong> selected', 'sina-ext' ),
+				'description' => __( 'Size will work if the <strong>"number of columns"</strong> is <strong>"Masonry"</strong> selected', 'sina-ext' ),
 				'default' => 'sina-pf-item-22',
 			]
 		);

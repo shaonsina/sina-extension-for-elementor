@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class Sina_Piechart_Widget extends Widget_Base {
+class Sina_Piechart_Widget extends Widget_Base{
 
 	/**
 	 * Get widget name.
@@ -35,7 +35,7 @@ class Sina_Piechart_Widget extends Widget_Base {
 	 * @since 1.0.0
 	 */
 	public function get_title() {
-		return __( 'Sina Piechart', 'sina-ext' );
+		return esc_html__( 'Sina Piechart', 'sina-ext' );
 	}
 
 	/**
@@ -108,7 +108,7 @@ class Sina_Piechart_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'piecharts_content',
 			[
-				'label' => __( 'Piechart', 'sina-ext' ),
+				'label' => esc_html__( 'Piechart', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -116,11 +116,11 @@ class Sina_Piechart_Widget extends Widget_Base {
 		$this->add_control(
 			'title',
 			[
-				'label' => __( 'Title', 'sina-ext' ),
+				'label' => esc_html__( 'Title', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter title', 'sina-ext' ),
-				'description' => __( 'You can use HTML.', 'sina-ext' ),
+				'placeholder' => esc_html__( 'Enter title', 'sina-ext' ),
+				'description' => esc_html__( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'Web Development',
 				'dynamic' => [
 					'active' => true,
@@ -130,7 +130,7 @@ class Sina_Piechart_Widget extends Widget_Base {
 		$this->add_control(
 			'value',
 			[
-				'label' => __( 'Value', 'sina-ext' ),
+				'label' => esc_html__( 'Value', 'sina-ext' ),
 				'type' => Controls_Manager::NUMBER,
 				'min' => 0,
 				'default' => 75,
@@ -142,7 +142,7 @@ class Sina_Piechart_Widget extends Widget_Base {
 		$this->add_control(
 			'max_value',
 			[
-				'label' => __( 'Max Value', 'sina-ext' ),
+				'label' => esc_html__( 'Max Value', 'sina-ext' ),
 				'type' => Controls_Manager::NUMBER,
 				'min' => 1,
 				'default' => 100,
@@ -154,9 +154,9 @@ class Sina_Piechart_Widget extends Widget_Base {
 		$this->add_control(
 			'prefix',
 			[
-				'label' => __( 'Prefix', 'sina-ext' ),
+				'label' => esc_html__( 'Prefix', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter prefix', 'sina-ext' ),
+				'placeholder' => esc_html__( 'Enter prefix', 'sina-ext' ),
 				'dynamic' => [
 					'active' => true,
 				],
@@ -165,9 +165,9 @@ class Sina_Piechart_Widget extends Widget_Base {
 		$this->add_control(
 			'suffix',
 			[
-				'label' => __( 'Suffix', 'sina-ext' ),
+				'label' => esc_html__( 'Suffix', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter suffix', 'sina-ext' ),
+				'placeholder' => esc_html__( 'Enter suffix', 'sina-ext' ),
 				'default' => '%',
 				'dynamic' => [
 					'active' => true,
@@ -177,7 +177,7 @@ class Sina_Piechart_Widget extends Widget_Base {
 		$this->add_control(
 			'size',
 			[
-				'label' => __( 'Size', 'sina-ext' ),
+				'label' => esc_html__( 'Size', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -193,7 +193,7 @@ class Sina_Piechart_Widget extends Widget_Base {
 		$this->add_control(
 			'speed',
 			[
-				'label' => __( 'Animation Duration', 'sina-ext' ),
+				'label' => esc_html__( 'Animation Duration', 'sina-ext' ),
 				'type' => Controls_Manager::NUMBER,
 				'default' => 2000,
 				'min' => 100,
@@ -212,7 +212,7 @@ class Sina_Piechart_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'chart_style',
 			[
-				'label' => __( 'Chart', 'sina-ext' ),
+				'label' => esc_html__( 'Chart', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -220,7 +220,7 @@ class Sina_Piechart_Widget extends Widget_Base {
 		$this->add_control(
 			'bar_color',
 			[
-				'label' => __('Bar Color', 'sina-ext'),
+				'label' => esc_html__('Bar Color', 'sina-ext'),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#1085e4',
 			]
@@ -228,7 +228,7 @@ class Sina_Piechart_Widget extends Widget_Base {
 		$this->add_control(
 			'bar_width',
 			[
-				'label' => __('Bar Width', 'sina-ext'),
+				'label' => esc_html__('Bar Width', 'sina-ext'),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
 					'size' => 20,
@@ -238,11 +238,11 @@ class Sina_Piechart_Widget extends Widget_Base {
 		$this->add_control(
 			'bar_cap',
 			[
-				'label' => __( 'Bar Cap', 'sina-ext' ),
+				'label' => esc_html__( 'Bar Cap', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'round' => __( 'Round', 'sina-ext' ),
-					'square' => __( 'Square', 'sina-ext' ),
+					'round' => esc_html__( 'Round', 'sina-ext' ),
+					'square' => esc_html__( 'Square', 'sina-ext' ),
 				],
 				'default' => 'square',
 			]
@@ -250,7 +250,7 @@ class Sina_Piechart_Widget extends Widget_Base {
 		$this->add_control(
 			'track_color',
 			[
-				'label' => __('Track Color', 'sina-ext'),
+				'label' => esc_html__('Track Color', 'sina-ext'),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#fafafa',
 			]
@@ -258,7 +258,7 @@ class Sina_Piechart_Widget extends Widget_Base {
 		$this->add_control(
 			'track_width',
 			[
-				'label' => __('Track Width', 'sina-ext'),
+				'label' => esc_html__('Track Width', 'sina-ext'),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
 					'size' => 20,
@@ -268,7 +268,7 @@ class Sina_Piechart_Widget extends Widget_Base {
 		$this->add_control(
 			'scale_color',
 			[
-				'label' => __('Scale Color', 'sina-ext'),
+				'label' => esc_html__('Scale Color', 'sina-ext'),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#1085e4',
 			]
@@ -284,7 +284,7 @@ class Sina_Piechart_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'title_style',
 			[
-				'label' => __( 'Title', 'sina-ext' ),
+				'label' => esc_html__( 'Title', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -292,11 +292,11 @@ class Sina_Piechart_Widget extends Widget_Base {
 		$this->add_control(
 			'title_position',
 			[
-				'label' => __( 'Position', 'sina-ext' ),
+				'label' => esc_html__( 'Position', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'top' => __( 'Top', 'sina-ext' ),
-					'bottom' => __( 'Bottom', 'sina-ext' ),
+					'top' => esc_html__( 'Top', 'sina-ext' ),
+					'bottom' => esc_html__( 'Bottom', 'sina-ext' ),
 				],
 				'default' => 'bottom',
 			]
@@ -304,7 +304,7 @@ class Sina_Piechart_Widget extends Widget_Base {
 		$this->add_control(
 			'title_color',
 			[
-				'label' => __('Text Color', 'sina-ext'),
+				'label' => esc_html__('Text Color', 'sina-ext'),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#222',
 				'selectors' => [
@@ -347,7 +347,7 @@ class Sina_Piechart_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'title_margin',
 			[
-				'label' => __( 'Margin', 'sina-ext' ),
+				'label' => esc_html__( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -373,7 +373,7 @@ class Sina_Piechart_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'value_style',
 			[
-				'label' => __( 'Value', 'sina-ext' ),
+				'label' => esc_html__( 'Value', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);

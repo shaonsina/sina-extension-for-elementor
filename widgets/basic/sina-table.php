@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class Sina_Table_Widget extends Widget_Base {
+class Sina_Table_Widget extends Widget_Base{
 
 	/**
 	 * Get widget name.
@@ -35,7 +35,7 @@ class Sina_Table_Widget extends Widget_Base {
 	 * @since 2.1.0
 	 */
 	public function get_title() {
-		return __( 'Sina Table', 'sina-ext' );
+		return esc_html__( 'Sina Table', 'sina-ext' );
 	}
 
 	/**
@@ -108,7 +108,7 @@ class Sina_Table_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'table_header',
 			[
-				'label' => __( 'Table', 'sina-ext' ),
+				'label' => esc_html__( 'Table', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -118,7 +118,7 @@ class Sina_Table_Widget extends Widget_Base {
 		$thead->add_control(
 			'header_col_span',
 			[
-				'label' => __( 'Column Span', 'sina-ext' ),
+				'label' => esc_html__( 'Column Span', 'sina-ext' ),
 				'type' => Controls_Manager::NUMBER,
 				'min' => 1,
 				'default' => 1,
@@ -127,10 +127,10 @@ class Sina_Table_Widget extends Widget_Base {
 		$thead->add_control(
 			'header_text',
 			[
-				'label' => __( 'Header Text', 'sina-ext' ),
+				'label' => esc_html__( 'Header Text', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __('Enter Text', 'sina-ext'),
+				'placeholder' => esc_html__('Enter Text', 'sina-ext'),
 				'default' => 'WordPress',
 				'dynamic' => [
 					'active' => true,
@@ -140,7 +140,7 @@ class Sina_Table_Widget extends Widget_Base {
 		$thead->add_control(
 			'header_icon',
 			[
-				'label' => __( 'Icon', 'sina-ext' ),
+				'label' => esc_html__( 'Icon', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::ICON,
 			]
@@ -148,11 +148,11 @@ class Sina_Table_Widget extends Widget_Base {
 		$thead->add_control(
 			'header_icon_align',
 			[
-				'label' => __( 'Icon Position', 'sina-ext' ),
+				'label' => esc_html__( 'Icon Position', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'left' => __( 'Left', 'sina-ext' ),
-					'right' => __( 'Right', 'sina-ext' ),
+					'left' => esc_html__( 'Left', 'sina-ext' ),
+					'right' => esc_html__( 'Right', 'sina-ext' ),
 				],
 				'default' => 'left',
 				'condition' => [
@@ -166,14 +166,14 @@ class Sina_Table_Widget extends Widget_Base {
 		$thead->start_controls_tab(
 			'header_normal',
 			[
-				'label' => __( 'Normal', 'sina-ext' ),
+				'label' => esc_html__( 'Normal', 'sina-ext' ),
 			]
 		);
 
 		$thead->add_control(
 			'header_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} table thead tr {{CURRENT_ITEM}}' => 'color: {{VALUE}};',
@@ -194,14 +194,14 @@ class Sina_Table_Widget extends Widget_Base {
 		$thead->start_controls_tab(
 			'header_hover',
 			[
-				'label' => __( 'Hover', 'sina-ext' ),
+				'label' => esc_html__( 'Hover', 'sina-ext' ),
 			]
 		);
 
 		$thead->add_control(
 			'header_hover_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} table thead tr {{CURRENT_ITEM}}:hover' => 'color: {{VALUE}};',
@@ -224,7 +224,7 @@ class Sina_Table_Widget extends Widget_Base {
 		$this->add_control(
 			'header_content',
 			[
-				'label' => __('Add Header Column', 'sina-ext'),
+				'label' => esc_html__('Add Header Column', 'sina-ext'),
 				'type' => Controls_Manager::REPEATER,
 				'fields' => $thead->get_controls(),
 				'default' => [
@@ -250,12 +250,12 @@ class Sina_Table_Widget extends Widget_Base {
 		$tbody->add_control(
 			'content_type',
 			[
-				'label' => __( 'Content Type', 'sina-ext' ),
+				'label' => esc_html__( 'Content Type', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'row' => __( 'Row', 'sina-ext' ),
-					'cell' => __( 'Cell', 'sina-ext' ),
-					'head' => __( 'Head', 'sina-ext' ),
+					'row' => esc_html__( 'Row', 'sina-ext' ),
+					'cell' => esc_html__( 'Cell', 'sina-ext' ),
+					'head' => esc_html__( 'Head', 'sina-ext' ),
 				],
 				'default' => 'row',
 			]
@@ -263,7 +263,7 @@ class Sina_Table_Widget extends Widget_Base {
 		$tbody->add_control(
 			'row_span',
 			[
-				'label' => __( 'Row Span', 'sina-ext' ),
+				'label' => esc_html__( 'Row Span', 'sina-ext' ),
 				'type' => Controls_Manager::NUMBER,
 				'default' => 1,
 				'min' => 1,
@@ -275,7 +275,7 @@ class Sina_Table_Widget extends Widget_Base {
 		$tbody->add_control(
 			'col_span',
 			[
-				'label' => __( 'Column Span', 'sina-ext' ),
+				'label' => esc_html__( 'Column Span', 'sina-ext' ),
 				'type' => Controls_Manager::NUMBER,
 				'default' => 1,
 				'min' => 1,
@@ -287,9 +287,9 @@ class Sina_Table_Widget extends Widget_Base {
 		$tbody->add_control(
 			'cell_content',
 			[
-				'label' => __( 'Content', 'sina-ext' ),
+				'label' => esc_html__( 'Content', 'sina-ext' ),
 				'type' => Controls_Manager::TEXTAREA,
-				'description' => __( 'You can use HTML.', 'sina-ext' ),
+				'description' => esc_html__( 'You can use HTML.', 'sina-ext' ),
 				'condition' => [
 					'content_type' => ['cell', 'head'],
 				],
@@ -301,7 +301,7 @@ class Sina_Table_Widget extends Widget_Base {
 		$tbody->add_control(
 			'content_icon',
 			[
-				'label' => __( 'Icon', 'sina-ext' ),
+				'label' => esc_html__( 'Icon', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::ICON,
 				'condition' => [
@@ -312,11 +312,11 @@ class Sina_Table_Widget extends Widget_Base {
 		$tbody->add_control(
 			'content_icon_align',
 			[
-				'label' => __( 'Icon Position', 'sina-ext' ),
+				'label' => esc_html__( 'Icon Position', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'left' => __( 'Left', 'sina-ext' ),
-					'right' => __( 'Right', 'sina-ext' ),
+					'left' => esc_html__( 'Left', 'sina-ext' ),
+					'right' => esc_html__( 'Right', 'sina-ext' ),
 				],
 				'default' => 'left',
 				'condition' => [
@@ -331,14 +331,14 @@ class Sina_Table_Widget extends Widget_Base {
 		$tbody->start_controls_tab(
 			'content_normal',
 			[
-				'label' => __( 'Normal', 'sina-ext' ),
+				'label' => esc_html__( 'Normal', 'sina-ext' ),
 			]
 		);
 
 		$tbody->add_control(
 			'content_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} table tbody {{CURRENT_ITEM}}' => 'color: {{VALUE}};',
@@ -359,14 +359,14 @@ class Sina_Table_Widget extends Widget_Base {
 		$tbody->start_controls_tab(
 			'content_hover',
 			[
-				'label' => __( 'Hover', 'sina-ext' ),
+				'label' => esc_html__( 'Hover', 'sina-ext' ),
 			]
 		);
 
 		$tbody->add_control(
 			'content_hover_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} table tbody {{CURRENT_ITEM}}:hover' => 'color: {{VALUE}};',
@@ -389,7 +389,7 @@ class Sina_Table_Widget extends Widget_Base {
 		$this->add_control(
 			'body_content',
 			[
-				'label' => __('Add Row', 'sina-ext'),
+				'label' => esc_html__('Add Row', 'sina-ext'),
 				'type' => Controls_Manager::REPEATER,
 				'fields' => $tbody->get_controls(),
 				'prevent_empty' => false,
@@ -430,7 +430,7 @@ class Sina_Table_Widget extends Widget_Base {
 			'note',
 			[
 				'type' => Controls_Manager::RAW_HTML,
-				'raw' => __( 'NOTICE: If you using data from the external source,  make sure here is no row or cell except the header row.', 'sina-ext' ),
+				'raw' => esc_html__( 'NOTICE: If you using data from the external source,  make sure here is no row or cell except the header row.', 'sina-ext' ),
 				'content_classes' => 'elementor-panel-alert elementor-panel-alert-warning',
 			]
 		);
@@ -445,7 +445,7 @@ class Sina_Table_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'table_settings',
 			[
-				'label' => __( 'Table Settings', 'sina-ext' ),
+				'label' => esc_html__( 'Table Settings', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -453,15 +453,15 @@ class Sina_Table_Widget extends Widget_Base {
 		$this->add_control(
 			'data_table',
 			[
-				'label' => __( 'Data Table', 'sina-ext' ),
+				'label' => esc_html__( 'Data Table', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
-				'description' => __('Whether this table use as a data table or not?', 'sina-ext'),
+				'description' => esc_html__('Whether this table use as a data table or not?', 'sina-ext'),
 			]
 		);
 		$this->add_control(
 			'data_export',
 			[
-				'label' => __( 'Data Export', 'sina-ext' ),
+				'label' => esc_html__( 'Data Export', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
 				'condition' => [
 					'data_table' => 'yes',
@@ -472,7 +472,7 @@ class Sina_Table_Widget extends Widget_Base {
 		$this->add_control(
 			'data_searching',
 			[
-				'label' => __( 'Data Searching', 'sina-ext' ),
+				'label' => esc_html__( 'Data Searching', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
 				'condition' => [
 					'data_table' => 'yes',
@@ -483,7 +483,7 @@ class Sina_Table_Widget extends Widget_Base {
 		$this->add_control(
 			'data_sorting',
 			[
-				'label' => __( 'Data Sorting', 'sina-ext' ),
+				'label' => esc_html__( 'Data Sorting', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
 				'condition' => [
 					'data_table' => 'yes',
@@ -496,7 +496,7 @@ class Sina_Table_Widget extends Widget_Base {
 			[
 				'label' => esc_html__( 'Sortable Column Position', 'sina-ext' ),
 				'type' => Controls_Manager::NUMBER,
-				'description' => __('Enter the column position to make that column sortable by default. (Ex. 1,2,3...)', 'sina-ext'),
+				'description' => esc_html__('Enter the column position to make that column sortable by default. (Ex. 1,2,3...)', 'sina-ext'),
 				'min' => 1,
 				'default' => '2',
 				'condition' => [
@@ -524,7 +524,7 @@ class Sina_Table_Widget extends Widget_Base {
 		$this->add_control(
 			'data_info',
 			[
-				'label' => __( 'Data Info', 'sina-ext' ),
+				'label' => esc_html__( 'Data Info', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
 				'condition' => [
 					'data_table' => 'yes',
@@ -535,7 +535,7 @@ class Sina_Table_Widget extends Widget_Base {
 		$this->add_control(
 			'data_paging',
 			[
-				'label' => __( 'Pagination', 'sina-ext' ),
+				'label' => esc_html__( 'Pagination', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
 				'condition' => [
 					'data_table' => 'yes',
@@ -546,15 +546,15 @@ class Sina_Table_Widget extends Widget_Base {
 		$this->add_control(
 			'data_paging_type',
 			[
-				'label' => __( 'Pagination Type', 'sina-ext' ),
+				'label' => esc_html__( 'Pagination Type', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'numbers' => __( 'Numbers Only', 'sina-ext' ),
-					'simple' => __( 'Prev & Next Only', 'sina-ext' ),
-					'simple_numbers' => __( 'Prev, Next & Numbers', 'sina-ext' ),
-					'first_last_numbers' => __( 'First, Last & Numbers', 'sina-ext' ),
-					'full' => __( 'First, Last, Prev & Next', 'sina-ext' ),
-					'full_numbers' => __( 'All', 'sina-ext' ),
+					'numbers' => esc_html__( 'Numbers Only', 'sina-ext' ),
+					'simple' => esc_html__( 'Prev & Next Only', 'sina-ext' ),
+					'simple_numbers' => esc_html__( 'Prev, Next & Numbers', 'sina-ext' ),
+					'first_last_numbers' => esc_html__( 'First, Last & Numbers', 'sina-ext' ),
+					'full' => esc_html__( 'First, Last, Prev & Next', 'sina-ext' ),
+					'full_numbers' => esc_html__( 'All', 'sina-ext' ),
 				],
 				'default' => 'simple_numbers',
 				'condition' => [
@@ -566,11 +566,11 @@ class Sina_Table_Widget extends Widget_Base {
 		$this->add_control(
 			'data_source',
 			[
-				'label' => __( 'Data Source', 'sina-ext' ),
+				'label' => esc_html__( 'Data Source', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'none' => __( 'None', 'sina-ext' ),
-					'external' => __( 'External', 'sina-ext' ),
+					'none' => esc_html__( 'None', 'sina-ext' ),
+					'external' => esc_html__( 'External', 'sina-ext' ),
 				],
 				'condition' => [
 					'data_table' => 'yes',
@@ -581,11 +581,11 @@ class Sina_Table_Widget extends Widget_Base {
 		$this->add_control(
 			'external_source',
 			[
-				'label' => __( 'Source Link', 'sina-ext' ),
+				'label' => esc_html__( 'Source Link', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __('Enter Link', 'sina-ext'),
-				'description' => __('The source link must have the data in JSON format!', 'sina-ext'),
+				'placeholder' => esc_html__('Enter Link', 'sina-ext'),
+				'description' => esc_html__('The source link must have the data in JSON format!', 'sina-ext'),
 				'dynamic' => [
 					'active' => true,
 				],
@@ -606,7 +606,7 @@ class Sina_Table_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'table_header_style',
 			[
-				'label' => __( 'Header', 'sina-ext' ),
+				'label' => esc_html__( 'Header', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -614,7 +614,7 @@ class Sina_Table_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'header_icon_size',
 			[
-				'label' => __( 'Icon Size', 'sina-ext' ),
+				'label' => esc_html__( 'Icon Size', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
 					'size' => '16',
@@ -627,7 +627,7 @@ class Sina_Table_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'header_icon_space',
 			[
-				'label' => __( 'Icon Spacing', 'sina-ext' ),
+				'label' => esc_html__( 'Icon Spacing', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
 					'size' => '5',
@@ -678,14 +678,14 @@ class Sina_Table_Widget extends Widget_Base {
 		$this->start_controls_tab(
 			'header_normal',
 			[
-				'label' => __( 'Normal', 'sina-ext' ),
+				'label' => esc_html__( 'Normal', 'sina-ext' ),
 			]
 		);
 
 		$this->add_control(
 			'header_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#fafafa',
 				'selectors' => [
@@ -739,14 +739,14 @@ class Sina_Table_Widget extends Widget_Base {
 		$this->start_controls_tab(
 			'header_hover',
 			[
-				'label' => __( 'Hover', 'sina-ext' ),
+				'label' => esc_html__( 'Hover', 'sina-ext' ),
 			]
 		);
 
 		$this->add_control(
 			'header_hover_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} table thead tr:hover' => 'color: {{VALUE}};',
@@ -764,7 +764,7 @@ class Sina_Table_Widget extends Widget_Base {
 		$this->add_control(
 			'header_hover_border',
 			[
-				'label' => __( 'Border Color', 'sina-ext' ),
+				'label' => esc_html__( 'Border Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} table thead tr:hover th' => 'border-color: {{VALUE}};',
@@ -779,7 +779,7 @@ class Sina_Table_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'header_padding',
 			[
-				'label' => __( 'Padding', 'sina-ext' ),
+				'label' => esc_html__( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -798,19 +798,19 @@ class Sina_Table_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'header_alignment',
 			[
-				'label' => __( 'Alignment', 'sina-ext' ),
+				'label' => esc_html__( 'Alignment', 'sina-ext' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'sina-ext' ),
+						'title' => esc_html__( 'Left', 'sina-ext' ),
 						'icon' => 'fa fa-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'sina-ext' ),
+						'title' => esc_html__( 'Center', 'sina-ext' ),
 						'icon' => 'fa fa-align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'sina-ext' ),
+						'title' => esc_html__( 'Right', 'sina-ext' ),
 						'icon' => 'fa fa-align-right',
 					],
 				],
@@ -831,7 +831,7 @@ class Sina_Table_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'table_content_style',
 			[
-				'label' => __( 'Content', 'sina-ext' ),
+				'label' => esc_html__( 'Content', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -839,7 +839,7 @@ class Sina_Table_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'content_icon_size',
 			[
-				'label' => __( 'Icon Size', 'sina-ext' ),
+				'label' => esc_html__( 'Icon Size', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
 					'size' => '14',
@@ -852,7 +852,7 @@ class Sina_Table_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'content_icon_space',
 			[
-				'label' => __( 'Icon Spacing', 'sina-ext' ),
+				'label' => esc_html__( 'Icon Spacing', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
 					'size' => '5',
@@ -898,14 +898,14 @@ class Sina_Table_Widget extends Widget_Base {
 		$this->start_controls_tab(
 			'content_normal',
 			[
-				'label' => __( 'Normal', 'sina-ext' ),
+				'label' => esc_html__( 'Normal', 'sina-ext' ),
 			]
 		);
 
 		$this->add_control(
 			'content_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#1085e4',
 				'selectors' => [
@@ -951,14 +951,14 @@ class Sina_Table_Widget extends Widget_Base {
 		$this->start_controls_tab(
 			'content_hover',
 			[
-				'label' => __( 'Hover', 'sina-ext' ),
+				'label' => esc_html__( 'Hover', 'sina-ext' ),
 			]
 		);
 
 		$this->add_control(
 			'content_hover_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#222',
 				'selectors' => [
@@ -985,7 +985,7 @@ class Sina_Table_Widget extends Widget_Base {
 		$this->add_control(
 			'content_hover_border',
 			[
-				'label' => __( 'Border Color', 'sina-ext' ),
+				'label' => esc_html__( 'Border Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} table tbody tr:hover td, {{WRAPPER}} table tbody tr:hover th' => 'border-color: {{VALUE}};',
@@ -1000,7 +1000,7 @@ class Sina_Table_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'content_padding',
 			[
-				'label' => __( 'Padding', 'sina-ext' ),
+				'label' => esc_html__( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -1019,19 +1019,19 @@ class Sina_Table_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'content_alignment',
 			[
-				'label' => __( 'Alignment', 'sina-ext' ),
+				'label' => esc_html__( 'Alignment', 'sina-ext' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'sina-ext' ),
+						'title' => esc_html__( 'Left', 'sina-ext' ),
 						'icon' => 'fa fa-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'sina-ext' ),
+						'title' => esc_html__( 'Center', 'sina-ext' ),
 						'icon' => 'fa fa-align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'sina-ext' ),
+						'title' => esc_html__( 'Right', 'sina-ext' ),
 						'icon' => 'fa fa-align-right',
 					],
 				],
@@ -1052,7 +1052,7 @@ class Sina_Table_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'even_row_style',
 			[
-				'label' => __( 'Even Row', 'sina-ext' ),
+				'label' => esc_html__( 'Even Row', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'data_table' => 'yes',
@@ -1074,14 +1074,14 @@ class Sina_Table_Widget extends Widget_Base {
 		$this->start_controls_tab(
 			'even_row_normal',
 			[
-				'label' => __( 'Normal', 'sina-ext' ),
+				'label' => esc_html__( 'Normal', 'sina-ext' ),
 			]
 		);
 
 		$this->add_control(
 			'even_row_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} table tbody tr.even' => 'color: {{VALUE}};',
@@ -1102,14 +1102,14 @@ class Sina_Table_Widget extends Widget_Base {
 		$this->start_controls_tab(
 			'even_row_hover',
 			[
-				'label' => __( 'Hover', 'sina-ext' ),
+				'label' => esc_html__( 'Hover', 'sina-ext' ),
 			]
 		);
 
 		$this->add_control(
 			'even_row_hover_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#222',
 				'selectors' => [
@@ -1148,7 +1148,7 @@ class Sina_Table_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'export_buttons_style',
 			[
-				'label' => __( 'Export Buttons', 'sina-ext' ),
+				'label' => esc_html__( 'Export Buttons', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'data_table' => 'yes',
@@ -1188,14 +1188,14 @@ class Sina_Table_Widget extends Widget_Base {
 		$this->start_controls_tab(
 			'export_btns_normal',
 			[
-				'label' => __( 'Normal', 'sina-ext' ),
+				'label' => esc_html__( 'Normal', 'sina-ext' ),
 			]
 		);
 
 		$this->add_control(
 			'export_btns_color',
 			[
-				'label' => __( 'Color', 'sina-ext' ),
+				'label' => esc_html__( 'Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#bbb',
 				'selectors' => [
@@ -1206,7 +1206,7 @@ class Sina_Table_Widget extends Widget_Base {
 		$this->add_control(
 			'export_btns_bg',
 			[
-				'label' => __( 'Background Color', 'sina-ext' ),
+				'label' => esc_html__( 'Background Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .dt-button' => 'background-color: {{VALUE}};',
@@ -1243,14 +1243,14 @@ class Sina_Table_Widget extends Widget_Base {
 		$this->start_controls_tab(
 			'export_btns_hover',
 			[
-				'label' => __( 'Hover', 'sina-ext' ),
+				'label' => esc_html__( 'Hover', 'sina-ext' ),
 			]
 		);
 
 		$this->add_control(
 			'export_btns_hover_color',
 			[
-				'label' => __( 'Hover Color', 'sina-ext' ),
+				'label' => esc_html__( 'Hover Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#1085e4',
 				'selectors' => [
@@ -1261,7 +1261,7 @@ class Sina_Table_Widget extends Widget_Base {
 		$this->add_control(
 			'export_btns_hover_bg',
 			[
-				'label' => __( 'Background Color', 'sina-ext' ),
+				'label' => esc_html__( 'Background Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .dt-button:hover' => 'background-color: {{VALUE}};',
@@ -1271,7 +1271,7 @@ class Sina_Table_Widget extends Widget_Base {
 		$this->add_control(
 			'export_btns_hovr_border',
 			[
-				'label' => __( 'Border Color', 'sina-ext' ),
+				'label' => esc_html__( 'Border Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#1085e4',
 				'selectors' => [
@@ -1287,7 +1287,7 @@ class Sina_Table_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'export_btns_gap',
 			[
-				'label' => __( 'Bottom Gap', 'sina-ext' ),
+				'label' => esc_html__( 'Bottom Gap', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em' ],
 				'default' => [
@@ -1303,7 +1303,7 @@ class Sina_Table_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'export_btns_padding',
 			[
-				'label' => __( 'Padding', 'sina-ext' ),
+				'label' => esc_html__( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -1321,7 +1321,7 @@ class Sina_Table_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'export_btns_margin',
 			[
-				'label' => __( 'Margin', 'sina-ext' ),
+				'label' => esc_html__( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -1332,19 +1332,19 @@ class Sina_Table_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'export_btns_alignment',
 			[
-				'label' => __( 'Alignment', 'sina-ext' ),
+				'label' => esc_html__( 'Alignment', 'sina-ext' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'sina-ext' ),
+						'title' => esc_html__( 'Left', 'sina-ext' ),
 						'icon' => 'fa fa-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'sina-ext' ),
+						'title' => esc_html__( 'Center', 'sina-ext' ),
 						'icon' => 'fa fa-align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'sina-ext' ),
+						'title' => esc_html__( 'Right', 'sina-ext' ),
 						'icon' => 'fa fa-align-right',
 					],
 				],
@@ -1365,7 +1365,7 @@ class Sina_Table_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'accent_style',
 			[
-				'label' => __( 'Accent', 'sina-ext' ),
+				'label' => esc_html__( 'Accent', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'data_table' => 'yes',
@@ -1404,7 +1404,7 @@ class Sina_Table_Widget extends Widget_Base {
 		$this->add_control(
 			'accent_color',
 			[
-				'label' => __( 'Accent Color', 'sina-ext' ),
+				'label' => esc_html__( 'Accent Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#222',
 				'selectors' => [
@@ -1415,7 +1415,7 @@ class Sina_Table_Widget extends Widget_Base {
 		$this->add_control(
 			'accent_border_color',
 			[
-				'label' => __( 'Border Color', 'sina-ext' ),
+				'label' => esc_html__( 'Border Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#ddd',
 				'selectors' => [
@@ -1427,7 +1427,7 @@ class Sina_Table_Widget extends Widget_Base {
 		$this->add_control(
 			'pagination_heading',
 			[
-				'label' => __( 'Pagination', 'sina-ext' ),
+				'label' => esc_html__( 'Pagination', 'sina-ext' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 				'condition' => [
@@ -1468,7 +1468,7 @@ class Sina_Table_Widget extends Widget_Base {
 		$this->add_control(
 			'pagi_color',
 			[
-				'label' => __( 'Color', 'sina-ext' ),
+				'label' => esc_html__( 'Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#bbb',
 				'condition' => [
@@ -1483,7 +1483,7 @@ class Sina_Table_Widget extends Widget_Base {
 		$this->add_control(
 			'pagi_active_color',
 			[
-				'label' => __( 'Hover & Active Color', 'sina-ext' ),
+				'label' => esc_html__( 'Hover & Active Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#1085e4',
 				'condition' => [

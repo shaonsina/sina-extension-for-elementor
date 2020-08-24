@@ -23,32 +23,32 @@ Class Sina_Ext_Hooks{
 			if ( '' == $fname) {
 				$fname = $fname;
 			} elseif ( strlen($fname) < 3 ) {
-				$err = __( 'First name too short! Must be contain 3-32 characters.', 'sina-ext' );
+				$err = esc_html__( 'First name too short! Must be contain 3-32 characters.', 'sina-ext' );
 			} elseif ( strlen($fname) > 32 ) {
-				$err = __( 'First name too long! Must be contain 3-32 characters.', 'sina-ext' );
+				$err = esc_html__( 'First name too long! Must be contain 3-32 characters.', 'sina-ext' );
 			} elseif ( preg_match("/^[a-zA-Z][ a-zA-Z0-9]{2,31}$/", $fname) ) {
 				$fname = $fname;
 			} else {
-				$err = __( 'Special character(s) not allowed in your first name!', 'sina-ext' );
+				$err = esc_html__( 'Special character(s) not allowed in your first name!', 'sina-ext' );
 			}
 
 			if ( '' == $err ) {
 				if ( '' == $lname) {
 					$lname = $lname;
 				} elseif ( strlen($lname) < 3 ) {
-					$err = __( 'Last name too short! Must be contain 3-32 characters.', 'sina-ext' );
+					$err = esc_html__( 'Last name too short! Must be contain 3-32 characters.', 'sina-ext' );
 				} elseif ( strlen($lname) > 32 ) {
-					$err = __( 'Last name too long! Must be contain 3-32 characters.', 'sina-ext' );
+					$err = esc_html__( 'Last name too long! Must be contain 3-32 characters.', 'sina-ext' );
 				} elseif ( preg_match("/^[a-zA-Z][ a-zA-Z0-9]{2,31}$/", $lname) ) {
 					$lname = $lname;
 				} else {
-					$err = __( 'Special character(s) not allowed in your last name!', 'sina-ext' );
+					$err = esc_html__( 'Special character(s) not allowed in your last name!', 'sina-ext' );
 				}
 			}
 
 			if ( '' == $err ) {
 				if ( '' == $email) {
-					$err = __( 'Invalid email!', 'sina-ext' );
+					$err = esc_html__( 'Invalid email!', 'sina-ext' );
 				}
 			}
 
@@ -58,7 +58,7 @@ Class Sina_Ext_Hooks{
 				} elseif ( preg_match("/^[0-9\(\+][ 0-9-\(\)]{2,19}$/", $phone) ) {
 					$phone = $phone;
 				} else {
-					$err = __( 'Invalid phone number!', 'sina-ext' );
+					$err = esc_html__( 'Invalid phone number!', 'sina-ext' );
 				}
 			}
 
@@ -88,7 +88,7 @@ Class Sina_Ext_Hooks{
 				$response = wp_remote_post( $url, $args );
 
 				if ( is_wp_error( $response ) ) {
-					$err = __("Internal Error!", 'sina-ext');
+					$err = esc_html__("Internal Error!", 'sina-ext');
 				} else {
 					$body = json_decode( $response['body'] );
 					if ( $response['response']['code'] == 200 && $body->status == $status ) {
@@ -117,48 +117,48 @@ Class Sina_Ext_Hooks{
 			$err = '';
 
 			if ( '' == $name) {
-				$err = __( 'Name can\'t be empty!', 'sina-ext' );
+				$err = esc_html__( 'Name can\'t be empty!', 'sina-ext' );
 			} elseif ( strlen($name) < 3 ) {
-				$err = __( 'Name too short! Must be contain 3-32 characters.', 'sina-ext' );
+				$err = esc_html__( 'Name too short! Must be contain 3-32 characters.', 'sina-ext' );
 			} elseif ( strlen($name) > 32 ) {
-				$err = __( 'Name too long! Must be contain 3-32 characters.', 'sina-ext' );
+				$err = esc_html__( 'Name too long! Must be contain 3-32 characters.', 'sina-ext' );
 			} elseif ( preg_match("/^[a-zA-Z][ a-zA-Z0-9]{2,31}$/", $name) ) {
 				$name = $name;
 			} else {
-				$err = __( 'Special character(s) not allowed in your name!', 'sina-ext' );
+				$err = esc_html__( 'Special character(s) not allowed in your name!', 'sina-ext' );
 			}
 
 			if ( '' == $err ) {
 				if ( '' == $email) {
-					$err = __( 'Invalid email!', 'sina-ext' );
+					$err = esc_html__( 'Invalid email!', 'sina-ext' );
 				}
 			}
 
 			if ( '' == $err ) {
 				if ( '' == $subject) {
-					$err = __( 'Subject can\'t be empty!', 'sina-ext' );
+					$err = esc_html__( 'Subject can\'t be empty!', 'sina-ext' );
 				} elseif ( strlen($subject) < 3 ) {
-					$err = __( 'Subject too short! Must be contain 3-200 characters.', 'sina-ext' );
+					$err = esc_html__( 'Subject too short! Must be contain 3-200 characters.', 'sina-ext' );
 				} elseif ( strlen($subject) > 200 ) {
-					$err = __( 'Subject too long! Must be contain 3-200 characters.', 'sina-ext' );
+					$err = esc_html__( 'Subject too long! Must be contain 3-200 characters.', 'sina-ext' );
 				} elseif ( $subject ) {
 					$subject = $subject;
 				} else{
-					$err = __( 'Invalid subject!', 'sina-ext' );
+					$err = esc_html__( 'Invalid subject!', 'sina-ext' );
 				}
 			}
 
 			if ( '' == $err ) {
 				if ( '' == $message) {
-					$err = __( 'Message can\'t be empty!', 'sina-ext' );
+					$err = esc_html__( 'Message can\'t be empty!', 'sina-ext' );
 				} elseif ( strlen($message) < 3 ) {
-					$err = __( 'Message too short! Must be contain 3-2000 characters.', 'sina-ext' );
+					$err = esc_html__( 'Message too short! Must be contain 3-2000 characters.', 'sina-ext' );
 				} elseif ( strlen($message) > 2000 ) {
-					$err = __( 'Message too long! Must be contain 3-2000 characters.', 'sina-ext' );
+					$err = esc_html__( 'Message too long! Must be contain 3-2000 characters.', 'sina-ext' );
 				} elseif ( $message ) {
 					$message = $message;
 				} else{
-					$err = __( 'Invalid message!', 'sina-ext' );
+					$err = esc_html__( 'Invalid message!', 'sina-ext' );
 				}
 
 				if ( '' == $err && 'true' == $is_captcha ) {
@@ -168,7 +168,7 @@ Class Sina_Ext_Hooks{
 					$data 		= json_decode( wp_remote_retrieve_body( $response ), true );
 
 					if ( !$data["success"] ) {
-						$err = __( 'Invalid reCAPTCHA!', 'sina-ext' );
+						$err = esc_html__( 'Invalid reCAPTCHA!', 'sina-ext' );
 					}
 				}
 

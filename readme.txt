@@ -98,17 +98,20 @@ Cool things are coming soon...
 5. [Image Scroller](https://sinaextra.com/sina-extension/image-scroller): Show the full preview of your project or work.
 6. [Instant Search](https://sinaextra.com/sina-extension/instant-search-form/): Display a search form with AJAX action for searching instantly.
 7. [Lost Password Form](https://sinaextra.com/sina-extension/lost-password-form): Add a custom "lost password" form anywhere into your web page.
-8. [Offcanvas Bar](https://sinaextra.com/sina-extension/offcanvas-bar): Show your expected content into a offcanvas sidebar.
-9. [Posts Gallery](https://sinaextra.com/sina-extension/posts-gallery): Display the posts into a Gallery with unlimited creative design.
-10. [Posts Load On Scroll](https://sinaextra.com/sina-extension/posts-load-on-scroll): Load the posts (grid, list & thumb) by AJAX on infinite scroll.
-11. [Register Form](https://sinaextra.com/sina-extension/register-form): Add a register form anywhere into your web page.
-12. [Section Navigation](https://sinaextra.com/sina-extension/section-navigation): To navigate the sections within a page add the fixed navigation.
-13. [Source Code](https://sinaextra.com/sina-extension/source-code): Highlight the code of your script if it needs.
-14. [Tab](https://sinaextra.com/sina-extension/tab): Display any content within a tab that you want.
-15. [Team Carousel](https://sinaextra.com/sina-extension/team-carousel): Add your team members and display them in a carousel.
-16. [Tilt Box](https://sinaextra.com/sina-extension/tilt-box): Display your Content or Image by an eye-catching interactive way.
-17. [Testimonial](https://sinaextra.com/sina-extension/testimonial): Show the testimonials into an interactive carousel.
-18. [Toggle Content](https://sinaextra.com/sina-extension/toggle-content): Display any content within a toggle tab.
+8. [Lottie Animation](https://sinaextra.com/sina-extension/lottie-animation): Display an attractive Lottie Animation on your web page.
+9. [Offcanvas Bar](https://sinaextra.com/sina-extension/offcanvas-bar): Show your expected content into a offcanvas sidebar.
+10. [Posts Gallery](https://sinaextra.com/sina-extension/posts-gallery): Display the posts into a Gallery with unlimited creative design.
+11. [Posts Load On Scroll](https://sinaextra.com/sina-extension/posts-load-on-scroll): Load the posts (grid, list & thumb) by AJAX on infinite scroll.
+12. [Register Form](https://sinaextra.com/sina-extension/register-form): Add a register form anywhere into your web page.
+13. [Section Navigation](https://sinaextra.com/sina-extension/section-navigation): To navigate the sections within a page add the fixed navigation.
+14. [Source Code](https://sinaextra.com/sina-extension/source-code): Highlight the code of your script if it needs.
+15. [Tab](https://sinaextra.com/sina-extension/tab): Display any content within a tab that you want.
+16. [Team Carousel](https://sinaextra.com/sina-extension/team-carousel): Add your team members and display them in a carousel.
+17. [Tilt Box](https://sinaextra.com/sina-extension/tilt-box): Display your Content or Image by an eye-catching interactive way.
+18. [Testimonial](https://sinaextra.com/sina-extension/testimonial): Show the testimonials into an interactive carousel.
+19. [Thumb Carousel](https://sinaextra.com/sina-extension/thumb-carousel): You can display images into a carousel with thumbnail.
+20. [Toggle Content](https://sinaextra.com/sina-extension/toggle-content): Display any content within a toggle tab.
+21. [Video Gallery](https://sinaextra.com/sina-extension/video-gallery): Add some youtube videos link to play on a popup as a gallery.
 
 
 == PRO EXTENDERS ==
@@ -119,9 +122,10 @@ Cool things are coming soon...
 4. [Content Protection](https://sinaextra.com/sina-extension/content-protection): Show or hide specific element or section for the specific users (based on role).
 5. [Masker](https://sinaextra.com/sina-extension/masker): Apply to mask any content of the widget.
 6. [Parallax](https://sinaextra.com/sina-extension/parallax): Display parallax to any section or entire the page.
-7. [Reading Progressbar](https://sinaextra.com/sina-extension/reading-progressbar): Display a progressbar top of the page or posts for seeing the users how much they have read or seen (based on scroll).
-8. [Section Particles](https://sinaextra.com/sina-extension/section-particles): Apply the particles effect to any section.
-9. [Water Ripples](https://sinaextra.com/sina-extension/water-ripples): Add an interactive water ripples effect, which is the most interesting.
+7. [Preloader](https://sinaextra.com/sina-extension/preloader): If there doesn't have a preloader on your website then you can add a Preloader by this extender.
+8. [Reading Progressbar](https://sinaextra.com/sina-extension/reading-progressbar): Display a progressbar top of the page or posts for seeing the users how much they have read or seen (based on scroll).
+9. [Section Particles](https://sinaextra.com/sina-extension/section-particles): Apply the particles effect to any section.
+10. [Water Ripples](https://sinaextra.com/sina-extension/water-ripples): Add an interactive water ripples effect, which is the most interesting.
 
 
 == The summary of core Features ==
@@ -147,6 +151,8 @@ Cool things are coming soon...
 - **Image:** Sina Extension has different types of Image widgets. Like: Image Accordion, Image Scroller, Image Marker or Hotspot and Hover Image.
 So that you can display the image(s) with an interactive way.
 
+- **Lottie Animation:** Nowadays Lottie is the most popular animation feature for the web. So we have added this feature as well.
+
 - **Masking:** Yes, we also added this feature. But it is not only a specific content-based masking feature. Like: Image Masking or Video Masking, which provided other addons or plugins.
 It is more powerful and you can apply to mask any content of your widget. Enjoy!!
 
@@ -160,9 +166,11 @@ It is more powerful and you can apply to mask any content of your widget. Enjoy!
 
 - **Portfolio or Image Gallery:** Yes, we also covered this feature. Cause, some users want to show their work or some images as a filterable gallery. It has capable of using a masonry grid as well.
 
+- **Preloader:** If there doesn't have a preloader on your website then you can add a Preloader by our preloader extender.
+
 - **Posts or Blog:** This plugin has different types of post widgets that mean you can show the posts as column grid, masonry grid and list grid. You also can display the posts into a Tab, Carousel, Gallery, Ticker, Load on Scroll, Load more Button or Pagination. Also can define your expected grid columns (for custom layout) which may add extra benefit for you.
 
-- **Slider or Carousel:** We have added various types of sliders or carousels. And you can make Text slider, Image slider, Posts slider, Team slider, Video slider, Review slider or carousel and Interactive Testimonial carousel. Also you can be sliding any template with our Content Slider widget which will give you an extra facility.
+- **Slider or Carousel:** We have added various types of sliders or carousels. And you can make Text slider, Image slider, Posts slider, Team slider, Thumb slider, Video slider, Review slider or carousel and Interactive Testimonial carousel. Also you can be sliding any template with our Content Slider widget which will give you an extra facility.
 
 - **Social Feed:** It also has some social feed widgets. Like: Facebook Feed, Twitter Feed. And you can use these widgets to showing the feed into your web page(s).
 
@@ -171,6 +179,8 @@ It is more powerful and you can apply to mask any content of your widget. Enjoy!
 - **Tab or Virtual Tour:** Sina Extension has a Tab element. And it capable of using embed code or Virtual Tour. Another thing it has the template option. So you can show any template inside the tab description container.
 
 - **Transform:** If you would like to display the content with different dimensions or as a 3D. No worry. Just make a template & display inside the Transform widget. Also, you can set the dimensions from the Advanced tab (Sina Transform Effects) of every widget. Enjoy!!
+
+- **Video Gallery:** We have a filterable Video Gallery widget for playing some youtube videos on a popup.
 
 - **Water Ripples:** It is an interesting feature of this plugin. You can set a Water Ripples effect in any section, which may increase the extra attention of your visitors.
 

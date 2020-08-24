@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class Sina_Review_Carousel_Widget extends Widget_Base {
+class Sina_Review_Carousel_Widget extends Widget_Base{
 
 	/**
 	 * Get widget name.
@@ -36,7 +36,7 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 	 * @since 1.0.0
 	 */
 	public function get_title() {
-		return __( 'Sina Review Carousel', 'sina-ext' );
+		return esc_html__( 'Sina Review Carousel', 'sina-ext' );
 	}
 
 	/**
@@ -111,7 +111,7 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'review_content',
 			[
-				'label' => __( 'Review', 'sina-ext' ),
+				'label' => esc_html__( 'Review', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -121,7 +121,7 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 		$repeater->add_control(
 			'image',
 			[
-				'label' => __( 'Choose Image', 'sina-ext' ),
+				'label' => esc_html__( 'Choose Image', 'sina-ext' ),
 				'type' => Controls_Manager::MEDIA,
 				'default' => [
 					'url' => SINA_EXT_URL .'assets/img/choose-img.jpg',
@@ -134,9 +134,9 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 		$repeater->add_control(
 			'name',
 			[
-				'label' => __( 'Name', 'sina-ext' ),
+				'label' => esc_html__( 'Name', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter Name', 'sina-ext' ),
+				'placeholder' => esc_html__( 'Enter Name', 'sina-ext' ),
 				'default' => 'Jhon Doe',
 				'dynamic' => [
 					'active' => true,
@@ -146,9 +146,9 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 		$repeater->add_control(
 			'position',
 			[
-				'label' => __( 'Position', 'sina-ext' ),
+				'label' => esc_html__( 'Position', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter Position', 'sina-ext' ),
+				'placeholder' => esc_html__( 'Enter Position', 'sina-ext' ),
 				'default' => 'CEO',
 				'dynamic' => [
 					'active' => true,
@@ -158,9 +158,9 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 		$repeater->add_control(
 			'company',
 			[
-				'label' => __( 'Organization', 'sina-ext' ),
+				'label' => esc_html__( 'Organization', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter Organization', 'sina-ext' ),
+				'placeholder' => esc_html__( 'Enter Organization', 'sina-ext' ),
 				'default' => 'Google',
 				'dynamic' => [
 					'active' => true,
@@ -170,9 +170,9 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 		$repeater->add_control(
 			'comment',
 			[
-				'label' => __( 'Comment', 'sina-ext' ),
+				'label' => esc_html__( 'Comment', 'sina-ext' ),
 				'type' => Controls_Manager::TEXTAREA,
-				'placeholder' => __( 'Enter Comment', 'sina-ext' ),
+				'placeholder' => esc_html__( 'Enter Comment', 'sina-ext' ),
 				'default' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. At tempora cumque delectus nam obcaecati consectetur ad dolorum neque dolores nemo!',
 				'dynamic' => [
 					'active' => true,
@@ -183,7 +183,7 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 		$this->add_control(
 			'review',
 			[
-				'label' => __( 'Add Image', 'sina-ext' ),
+				'label' => esc_html__( 'Add Image', 'sina-ext' ),
 				'type' => Controls_Manager::REPEATER,
 				'fields' => $repeater->get_controls(),
 				'default' => [
@@ -229,14 +229,14 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'carousel_settings',
 			[
-				'label' => __( 'Carousel Settings', 'sina-ext' ),
+				'label' => esc_html__( 'Carousel Settings', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
 		$this->add_responsive_control(
 			'show_item',
 			[
-				'label' => __( 'Show Item', 'sina-ext' ),
+				'label' => esc_html__( 'Show Item', 'sina-ext' ),
 				'type' => Controls_Manager::HIDDEN,
 				'default' => '1',
 			]
@@ -253,7 +253,7 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'image_style',
 			[
-				'label' => __( 'Image', 'sina-ext' ),
+				'label' => esc_html__( 'Image', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -261,19 +261,19 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 		$this->add_control(
 			'is_morphing_anim_image',
 			[
-				'label' => __( 'Morphing Animation', 'sina-ext' ),
+				'label' => esc_html__( 'Morphing Animation', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
 			]
 		);
 		$this->add_control(
 			'image_position',
 			[
-				'label' => __( 'Image Position', 'sina-ext' ),
+				'label' => esc_html__( 'Image Position', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'top' => __( 'Top', 'sina-ext' ),
-					'middle' => __( 'Middle', 'sina-ext' ),
-					'bottom' => __( 'Bottom', 'sina-ext' ),
+					'top' => esc_html__( 'Top', 'sina-ext' ),
+					'middle' => esc_html__( 'Middle', 'sina-ext' ),
+					'bottom' => esc_html__( 'Bottom', 'sina-ext' ),
 				],
 				'default' => 'top',
 			]
@@ -281,7 +281,7 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'image_size',
 			[
-				'label' => __( 'Size', 'sina-ext' ),
+				'label' => esc_html__( 'Size', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em' ],
 				'range' => [
@@ -304,7 +304,7 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'image_padding',
 			[
-				'label' => __( 'Padding', 'sina-ext' ),
+				'label' => esc_html__( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -315,7 +315,7 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'image_radius',
 			[
-				'label' => __( 'Radius', 'sina-ext' ),
+				'label' => esc_html__( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -357,7 +357,7 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'name_style',
 			[
-				'label' => __( 'Name', 'sina-ext' ),
+				'label' => esc_html__( 'Name', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -365,7 +365,7 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 		$this->add_control(
 			'name_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#222',
 				'selectors' => [
@@ -408,7 +408,7 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'name_margin',
 			[
-				'label' => __( 'Margin', 'sina-ext' ),
+				'label' => esc_html__( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -434,7 +434,7 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'position_style',
 			[
-				'label' => __( 'Position', 'sina-ext' ),
+				'label' => esc_html__( 'Position', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -442,7 +442,7 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 		$this->add_control(
 			'position_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#222',
 				'selectors' => [
@@ -477,7 +477,7 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'position_margin',
 			[
-				'label' => __( 'Margin', 'sina-ext' ),
+				'label' => esc_html__( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -503,7 +503,7 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'company_style',
 			[
-				'label' => __( 'Company', 'sina-ext' ),
+				'label' => esc_html__( 'Company', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -511,7 +511,7 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 		$this->add_control(
 			'company_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#1085e4',
 				'selectors' => [
@@ -546,7 +546,7 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'company_margin',
 			[
-				'label' => __( 'Margin', 'sina-ext' ),
+				'label' => esc_html__( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -572,7 +572,7 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'comment_style',
 			[
-				'label' => __( 'Comment', 'sina-ext' ),
+				'label' => esc_html__( 'Comment', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -580,7 +580,7 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 		$this->add_control(
 			'comment_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#222',
 				'selectors' => [
@@ -605,7 +605,7 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'comment_margin',
 			[
-				'label' => __( 'Margin', 'sina-ext' ),
+				'label' => esc_html__( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -624,7 +624,7 @@ class Sina_Review_Carousel_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'nav_dots_style',
 			[
-				'label' => __( 'Nav & Dots', 'sina-ext' ),
+				'label' => esc_html__( 'Nav & Dots', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);

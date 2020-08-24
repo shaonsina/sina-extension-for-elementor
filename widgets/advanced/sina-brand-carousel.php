@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class Sina_Brand_Carousel_Widget extends Widget_Base {
+class Sina_Brand_Carousel_Widget extends Widget_Base{
 
 	/**
 	 * Get widget name.
@@ -36,7 +36,7 @@ class Sina_Brand_Carousel_Widget extends Widget_Base {
 	 * @since 1.0.0
 	 */
 	public function get_title() {
-		return __( 'Sina Brand Carousel', 'sina-ext' );
+		return esc_html__( 'Sina Brand Carousel', 'sina-ext' );
 	}
 
 	/**
@@ -111,7 +111,7 @@ class Sina_Brand_Carousel_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'brand_content',
 			[
-				'label' => __( 'Brand', 'sina-ext' ),
+				'label' => esc_html__( 'Brand', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -121,7 +121,7 @@ class Sina_Brand_Carousel_Widget extends Widget_Base {
 		$repeater->add_control(
 			'brand_logo',
 			[
-				'label' => __( 'Choose Logo', 'sina-ext' ),
+				'label' => esc_html__( 'Choose Logo', 'sina-ext' ),
 				'type' => Controls_Manager::MEDIA,
 				'default' => [
 					'url' => SINA_EXT_URL .'assets/img/choose-img.jpg',
@@ -134,9 +134,9 @@ class Sina_Brand_Carousel_Widget extends Widget_Base {
 		$repeater->add_control(
 			'link',
 			[
-				'label' => __( 'Brand Link', 'sina-ext' ),
+				'label' => esc_html__( 'Brand Link', 'sina-ext' ),
 				'type' => Controls_Manager::URL,
-				'placeholder' => __( 'https://your-link.com', 'sina-ext' ),
+				'placeholder' => esc_html__( 'https://your-link.com', 'sina-ext' ),
 				'dynamic' => [
 					'active' => true,
 				],
@@ -145,10 +145,10 @@ class Sina_Brand_Carousel_Widget extends Widget_Base {
 		$repeater->add_control(
 			'title',
 			[
-				'label' => __( 'Brand Name', 'sina-ext' ),
+				'label' => esc_html__( 'Brand Name', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter Name', 'sina-ext' ),
-				'description' => __( 'This name will show only item header', 'sina-ext' ),
+				'placeholder' => esc_html__( 'Enter Name', 'sina-ext' ),
+				'description' => esc_html__( 'This name will show only item header', 'sina-ext' ),
 				'default' => 'Youtube',
 			]
 		);
@@ -158,7 +158,7 @@ class Sina_Brand_Carousel_Widget extends Widget_Base {
 		$repeater->start_controls_tab(
 			'brand_normal',
 			[
-				'label' => __( 'Normal', 'sina-ext' ),
+				'label' => esc_html__( 'Normal', 'sina-ext' ),
 			]
 		);
 
@@ -197,7 +197,7 @@ class Sina_Brand_Carousel_Widget extends Widget_Base {
 		$repeater->start_controls_tab(
 			'brand_hover',
 			[
-				'label' => __( 'Hover', 'sina-ext' ),
+				'label' => esc_html__( 'Hover', 'sina-ext' ),
 			]
 		);
 
@@ -212,7 +212,7 @@ class Sina_Brand_Carousel_Widget extends Widget_Base {
 		$repeater->add_control(
 			'brand_hover_border',
 			[
-				'label' => __( 'Border Color', 'sina-ext' ),
+				'label' => esc_html__( 'Border Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .sina-brand-item-inner{{CURRENT_ITEM}}:hover' => 'border-color: {{VALUE}}'
@@ -241,7 +241,7 @@ class Sina_Brand_Carousel_Widget extends Widget_Base {
 		$this->add_control(
 			'brand',
 			[
-				'label' => __( 'Add Logo', 'sina-ext' ),
+				'label' => esc_html__( 'Add Logo', 'sina-ext' ),
 				'type' => Controls_Manager::REPEATER,
 				'fields' => $repeater->get_controls(),
 				'default' => [
@@ -284,7 +284,7 @@ class Sina_Brand_Carousel_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'carousel_settings',
 			[
-				'label' => __( 'Carousel Settings', 'sina-ext' ),
+				'label' => esc_html__( 'Carousel Settings', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -292,13 +292,13 @@ class Sina_Brand_Carousel_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'show_item',
 			[
-				'label' => __( 'Show Item', 'sina-ext' ),
+				'label' => esc_html__( 'Show Item', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'1' => __( '1', 'sina-ext' ),
-					'2' => __( '2', 'sina-ext' ),
-					'3' => __( '3', 'sina-ext' ),
-					'4' => __( '4', 'sina-ext' ),
+					'1' => esc_html__( '1', 'sina-ext' ),
+					'2' => esc_html__( '2', 'sina-ext' ),
+					'3' => esc_html__( '3', 'sina-ext' ),
+					'4' => esc_html__( '4', 'sina-ext' ),
 				],
 				'desktop_default' => '4',
 				'tablet_default' => '4',
@@ -317,7 +317,7 @@ class Sina_Brand_Carousel_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'box_style',
 			[
-				'label' => __( 'Brand Box', 'sina-ext' ),
+				'label' => esc_html__( 'Brand Box', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -325,7 +325,7 @@ class Sina_Brand_Carousel_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'logo_padding',
 			[
-				'label' => __( 'Logo Padding', 'sina-ext' ),
+				'label' => esc_html__( 'Logo Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'desktop_default' => [
@@ -350,7 +350,7 @@ class Sina_Brand_Carousel_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'box_padding',
 			[
-				'label' => __( 'Box Margin', 'sina-ext' ),
+				'label' => esc_html__( 'Box Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -368,7 +368,7 @@ class Sina_Brand_Carousel_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'box_radius',
 			[
-				'label' => __( 'Radius', 'sina-ext' ),
+				'label' => esc_html__( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -382,7 +382,7 @@ class Sina_Brand_Carousel_Widget extends Widget_Base {
 		$this->start_controls_tab(
 			'box_normal',
 			[
-				'label' => __( 'Normal', 'sina-ext' ),
+				'label' => esc_html__( 'Normal', 'sina-ext' ),
 			]
 		);
 
@@ -439,7 +439,7 @@ class Sina_Brand_Carousel_Widget extends Widget_Base {
 		$this->start_controls_tab(
 			'box_hover',
 			[
-				'label' => __( 'Hover', 'sina-ext' ),
+				'label' => esc_html__( 'Hover', 'sina-ext' ),
 			]
 		);
 
@@ -454,7 +454,7 @@ class Sina_Brand_Carousel_Widget extends Widget_Base {
 		$this->add_control(
 			'hover_box_border',
 			[
-				'label' => __( 'Border Color', 'sina-ext' ),
+				'label' => esc_html__( 'Border Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#1085e4',
 				'selectors' => [
@@ -492,7 +492,7 @@ class Sina_Brand_Carousel_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'center_item_style',
 			[
-				'label' => __( 'Center Item', 'sina-ext' ),
+				'label' => esc_html__( 'Center Item', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'center!' => '',
@@ -503,7 +503,7 @@ class Sina_Brand_Carousel_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'scale',
 			[
-				'label' => __( 'Scale', 'sina-ext' ),
+				'label' => esc_html__( 'Scale', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [

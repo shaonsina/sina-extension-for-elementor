@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class Sina_Google_Map_Widget extends Widget_Base {
+class Sina_Google_Map_Widget extends Widget_Base{
 
 	/**
 	 * Get widget name.
@@ -33,7 +33,7 @@ class Sina_Google_Map_Widget extends Widget_Base {
 	 * @since 1.0.0
 	 */
 	public function get_title() {
-		return __( 'Sina Google Map', 'sina-ext' );
+		return esc_html__( 'Sina Google Map', 'sina-ext' );
 	}
 
 	/**
@@ -106,7 +106,7 @@ class Sina_Google_Map_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'map_content',
 			[
-				'label' => __( 'Map', 'sina-ext' ),
+				'label' => esc_html__( 'Map', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -114,7 +114,7 @@ class Sina_Google_Map_Widget extends Widget_Base {
 		$this->add_control(
 			'map_api_url',
 			[
-				'label' => 'If you would like to change the API key <a target="_blank" href="admin.php?page=sina_ext_settings">click here</a>',
+				'label' => esc_html__( 'If you would like to change the API key', 'sina-ext' ).' <a target="_blank" href="admin.php?page=sina_ext_settings">click here</a>',
 				'type' => Controls_Manager::RAW_HTML,
 				'separator' => 'after',
 			]
@@ -122,7 +122,7 @@ class Sina_Google_Map_Widget extends Widget_Base {
 		$this->add_control(
 			'lat',
 			[
-				'label' => __( 'Latitude', 'sina-ext' ),
+				'label' => esc_html__( 'Latitude', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
 				'default' => '23.810332',
 				'dynamic' => [
@@ -133,7 +133,7 @@ class Sina_Google_Map_Widget extends Widget_Base {
 		$this->add_control(
 			'long',
 			[
-				'label' => __( 'Longitude', 'sina-ext' ),
+				'label' => esc_html__( 'Longitude', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
 				'default' => '90.412518',
 				'dynamic' => [
@@ -144,7 +144,7 @@ class Sina_Google_Map_Widget extends Widget_Base {
 		$this->add_control(
 			'zoom',
 			[
-				'label' => __( 'Zoom', 'sina-ext' ),
+				'label' => esc_html__( 'Zoom', 'sina-ext' ),
 				'type' => Controls_Manager::NUMBER,
 				'min' => '1',
 				'default' => '12',
@@ -156,11 +156,11 @@ class Sina_Google_Map_Widget extends Widget_Base {
 		$this->add_control(
 			'anim',
 			[
-				'label' => __( 'Animation', 'sina-ext' ),
+				'label' => esc_html__( 'Animation', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'DROP' => __( 'Drop', 'sina-ext' ),
-					'BOUNCE' => __( 'Bounce', 'sina-ext' ),
+					'DROP' => esc_html__( 'Drop', 'sina-ext' ),
+					'BOUNCE' => esc_html__( 'Bounce', 'sina-ext' ),
 				],
 				'default' => 'BOUNCE',
 			]
@@ -168,7 +168,7 @@ class Sina_Google_Map_Widget extends Widget_Base {
 		$this->add_control(
 			'marker',
 			[
-				'label' => __( 'Marker', 'sina-ext' ),
+				'label' => esc_html__( 'Marker', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => 'yes',
 			]
@@ -176,7 +176,7 @@ class Sina_Google_Map_Widget extends Widget_Base {
 		$this->add_control(
 			'custom_marker',
 			[
-				'label' => __( 'Choose Marker', 'sina-ext' ),
+				'label' => esc_html__( 'Choose Marker', 'sina-ext' ),
 				'type' => Controls_Manager::MEDIA,
 				'default' => [
 					'url' => SINA_EXT_URL .'assets/img/marker.png',
@@ -200,7 +200,7 @@ class Sina_Google_Map_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'map_style',
 			[
-				'label' => __( 'Map', 'sina-ext' ),
+				'label' => esc_html__( 'Map', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -208,7 +208,7 @@ class Sina_Google_Map_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'map_height',
 			[
-				'label' => __( 'Height', 'sina-ext' ),
+				'label' => esc_html__( 'Height', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em' ],
 				'range' => [
@@ -233,7 +233,7 @@ class Sina_Google_Map_Widget extends Widget_Base {
 		$this->start_controls_tab(
 			'map_normal',
 			[
-				'label' => __( 'Normal', 'sina-ext' ),
+				'label' => esc_html__( 'Normal', 'sina-ext' ),
 			]
 		);
 
@@ -250,7 +250,7 @@ class Sina_Google_Map_Widget extends Widget_Base {
 		$this->start_controls_tab(
 			'map_hover',
 			[
-				'label' => __( 'Hover', 'sina-ext' ),
+				'label' => esc_html__( 'Hover', 'sina-ext' ),
 			]
 		);
 
@@ -269,7 +269,7 @@ class Sina_Google_Map_Widget extends Widget_Base {
 		$this->add_control(
 			'hover_transition',
 			[
-				'label' => __( 'Transition Duration', 'sina-ext' ),
+				'label' => esc_html__( 'Transition Duration', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [

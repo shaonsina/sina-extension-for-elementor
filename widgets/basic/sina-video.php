@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class Sina_Video_Widget extends Widget_Base {
+class Sina_Video_Widget extends Widget_Base{
 
 	/**
 	 * Get widget name.

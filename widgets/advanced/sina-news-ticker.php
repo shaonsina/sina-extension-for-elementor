@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class Sina_News_Ticker_Widget extends Widget_Base {
+class Sina_News_Ticker_Widget extends Widget_Base{
 
 	/**
 	 * Get widget name.
@@ -35,7 +35,7 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 	 * @since 1.1.0
 	 */
 	public function get_title() {
-		return __( 'Sina News Ticker', 'sina-ext' );
+		return esc_html__( 'Sina News Ticker', 'sina-ext' );
 	}
 
 	/**
@@ -106,7 +106,7 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'ticker_content',
 			[
-				'label' => __( 'Ticker Content', 'sina-ext' ),
+				'label' => esc_html__( 'Ticker Content', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -139,14 +139,14 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'ticker_settings',
 			[
-				'label' => __( 'Ticker Settings', 'sina-ext' ),
+				'label' => esc_html__( 'Ticker Settings', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
 		$this->add_control(
 			'label_text',
 			[
-				'label' => __( 'Label Text', 'sina-ext' ),
+				'label' => esc_html__( 'Label Text', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
 				'default' => 'Latest News',
 			]
@@ -154,12 +154,12 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 		$this->add_control(
 			'label_position',
 			[
-				'label' => __( 'Label Position', 'sina-ext' ),
+				'label' => esc_html__( 'Label Position', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' =>[
-					'left' => __( 'Left', 'sina-ext' ),
-					'right' => __( 'Right', 'sina-ext' ),
-					'both' => __( 'Both', 'sina-ext' ),
+					'left' => esc_html__( 'Left', 'sina-ext' ),
+					'right' => esc_html__( 'Right', 'sina-ext' ),
+					'both' => esc_html__( 'Both', 'sina-ext' ),
 				],
 				'condition' => [
 					'label_text!' => '',
@@ -170,14 +170,14 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 		$this->add_control(
 			'pause_on_hover',
 			[
-				'label' => __( 'Pause On Hover', 'sina-ext' ),
+				'label' => esc_html__( 'Pause On Hover', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
 			]
 		);
 		$this->add_control(
 			'show_time',
 			[
-				'label' => __( 'Time', 'sina-ext' ),
+				'label' => esc_html__( 'Time', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => 'yes',
 			]
@@ -185,7 +185,7 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 		$this->add_control(
 			'speed',
 			[
-				'label' => __( 'Scroll Speed', 'sina-ext' ),
+				'label' => esc_html__( 'Scroll Speed', 'sina-ext' ),
 				'type' => Controls_Manager::NUMBER,
 				'min' => 5,
 				'default' => 15,
@@ -202,7 +202,7 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'label_style',
 			[
-				'label' => __( 'Left Label', 'sina-ext' ),
+				'label' => esc_html__( 'Left Label', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -242,7 +242,7 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 		$this->add_control(
 			'label_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#fafafa',
 				'selectors' => [
@@ -276,7 +276,7 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'label_radius',
 			[
-				'label' => __( 'Radius', 'sina-ext' ),
+				'label' => esc_html__( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -287,7 +287,7 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'label_padding',
 			[
-				'label' => __( 'Padding', 'sina-ext' ),
+				'label' => esc_html__( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -313,7 +313,7 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'right_label_style',
 			[
-				'label' => __( 'Right Label', 'sina-ext' ),
+				'label' => esc_html__( 'Right Label', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -353,7 +353,7 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 		$this->add_control(
 			'right_label_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#fafafa',
 				'selectors' => [
@@ -387,7 +387,7 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'right_label_radius',
 			[
-				'label' => __( 'Radius', 'sina-ext' ),
+				'label' => esc_html__( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -398,7 +398,7 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'right_label_padding',
 			[
-				'label' => __( 'Padding', 'sina-ext' ),
+				'label' => esc_html__( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -424,7 +424,7 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'headline_style',
 			[
-				'label' => __( 'Headline', 'sina-ext' ),
+				'label' => esc_html__( 'Headline', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -434,13 +434,13 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 		$this->start_controls_tab(
 			'headline_normal',
 			[
-				'label' => __( 'Normal', 'sina-ext' ),
+				'label' => esc_html__( 'Normal', 'sina-ext' ),
 			]
 		);
 		$this->add_control(
 			'headline_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#222',
 				'separator' => 'after',
@@ -454,13 +454,13 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 		$this->start_controls_tab(
 			'headline_hover',
 			[
-				'label' => __( 'Hover', 'sina-ext' ),
+				'label' => esc_html__( 'Hover', 'sina-ext' ),
 			]
 		);
 		$this->add_control(
 			'headline_hover_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#1085e4',
 				'separator' => 'after',
@@ -528,7 +528,7 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'headline_radius',
 			[
-				'label' => __( 'Radius', 'sina-ext' ),
+				'label' => esc_html__( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -539,7 +539,7 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'headline_padding',
 			[
-				'label' => __( 'Padding', 'sina-ext' ),
+				'label' => esc_html__( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -576,7 +576,7 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'time_style',
 			[
-				'label' => __( 'Time', 'sina-ext' ),
+				'label' => esc_html__( 'Time', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'show_time' => 'yes',
@@ -601,7 +601,7 @@ class Sina_News_Ticker_Widget extends Widget_Base {
 		$this->add_control(
 			'time_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#1085e4',
 				'selectors' => [

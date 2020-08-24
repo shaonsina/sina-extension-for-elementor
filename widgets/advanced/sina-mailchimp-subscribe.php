@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
+class Sina_Mailchimp_Subscribe_Widget extends Widget_Base{
 
 	/**
 	 * Get widget name.
@@ -31,7 +31,7 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 	 * @since 1.0.0
 	 */
 	public function get_title() {
-		return __( 'Sina MailChimp', 'sina-ext' );
+		return esc_html__( 'Sina MailChimp', 'sina-ext' );
 	}
 
 	/**
@@ -103,7 +103,7 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'fields_content',
 			[
-				'label' => __( 'Fields', 'sina-ext' ),
+				'label' => esc_html__( 'Fields', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -119,20 +119,20 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 		$this->add_control(
 			'email_placeholder',
 			[
-				'label' => __( 'Email placeholder text', 'sina-ext' ),
+				'label' => esc_html__( 'Email placeholder text', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter placeholder text', 'sina-ext' ),
+				'placeholder' => esc_html__( 'Enter placeholder text', 'sina-ext' ),
 				'default' => 'Enter Email',
 			]
 		);
 		$this->add_control(
 			'successs_message',
 			[
-				'label' => __( 'Success Message', 'sina-ext' ),
+				'label' => esc_html__( 'Success Message', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter Success Message', 'sina-ext' ),
+				'placeholder' => esc_html__( 'Enter Success Message', 'sina-ext' ),
 				'default' => 'Thanks for subscribed!',
 				'dynamic' => [
 					'active' => true,
@@ -142,7 +142,7 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 		$this->add_control(
 			'fname',
 			[
-				'label' => __( 'First Name', 'sina-ext' ),
+				'label' => esc_html__( 'First Name', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
 				'separator' => 'before'
 			]
@@ -150,10 +150,10 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 		$this->add_control(
 			'fname_placeholder',
 			[
-				'label' => __( 'First name placeholder text', 'sina-ext' ),
+				'label' => esc_html__( 'First name placeholder text', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter placeholder text', 'sina-ext' ),
+				'placeholder' => esc_html__( 'Enter placeholder text', 'sina-ext' ),
 				'condition' => [
 					'fname!' => '',
 				],
@@ -163,7 +163,7 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 		$this->add_control(
 			'lname',
 			[
-				'label' => __( 'Last Name', 'sina-ext' ),
+				'label' => esc_html__( 'Last Name', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
 				'separator' => 'before'
 			]
@@ -171,10 +171,10 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 		$this->add_control(
 			'lname_placeholder',
 			[
-				'label' => __( 'Last name placeholder text', 'sina-ext' ),
+				'label' => esc_html__( 'Last name placeholder text', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter placeholder text', 'sina-ext' ),
+				'placeholder' => esc_html__( 'Enter placeholder text', 'sina-ext' ),
 				'condition' => [
 					'lname!' => '',
 				],
@@ -184,7 +184,7 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 		$this->add_control(
 			'phone',
 			[
-				'label' => __( 'Phone Number', 'sina-ext' ),
+				'label' => esc_html__( 'Phone Number', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
 				'separator' => 'before'
 			]
@@ -192,10 +192,10 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 		$this->add_control(
 			'phone_placeholder',
 			[
-				'label' => __( 'Phone placeholder text', 'sina-ext' ),
+				'label' => esc_html__( 'Phone placeholder text', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter placeholder text', 'sina-ext' ),
+				'placeholder' => esc_html__( 'Enter placeholder text', 'sina-ext' ),
 				'condition' => [
 					'phone!' => '',
 				],
@@ -213,7 +213,7 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'btn_content',
 			[
-				'label' => __( 'Submit Button', 'sina-ext' ),
+				'label' => esc_html__( 'Submit Button', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -228,7 +228,7 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'fields_style',
 			[
-				'label' => __( 'Fields', 'sina-ext' ),
+				'label' => esc_html__( 'Fields', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -236,11 +236,11 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 		$this->add_control(
 			'display',
 			[
-				'label' => __( 'Display', 'sina-ext' ),
+				'label' => esc_html__( 'Display', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'inline-block' => __( 'Inline', 'sina-ext' ),
-					'block' => __( 'Block', 'sina-ext' ),
+					'inline-block' => esc_html__( 'Inline', 'sina-ext' ),
+					'block' => esc_html__( 'Block', 'sina-ext' ),
 				],
 				'default' => 'inline-block',
 			]
@@ -249,7 +249,7 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'fields_radius',
 			[
-				'label' => __( 'Radius', 'sina-ext' ),
+				'label' => esc_html__( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -268,7 +268,7 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'fields_padding',
 			[
-				'label' => __( 'Padding', 'sina-ext' ),
+				'label' => esc_html__( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -286,7 +286,7 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'fields_margin',
 			[
-				'label' => __( 'Margin', 'sina-ext' ),
+				'label' => esc_html__( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -312,7 +312,7 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'fname_style',
 			[
-				'label' => __( 'First Name', 'sina-ext' ),
+				'label' => esc_html__( 'First Name', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'fname!' => '',
@@ -330,7 +330,7 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'lname_style',
 			[
-				'label' => __( 'Last Name', 'sina-ext' ),
+				'label' => esc_html__( 'Last Name', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'lname!' => '',
@@ -348,7 +348,7 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'email_style',
 			[
-				'label' => __( 'Email', 'sina-ext' ),
+				'label' => esc_html__( 'Email', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -363,7 +363,7 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'phone_style',
 			[
-				'label' => __( 'Phone', 'sina-ext' ),
+				'label' => esc_html__( 'Phone', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'phone!' => '',
@@ -381,7 +381,7 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'btn_style',
 			[
-				'label' => __( 'Submit Button', 'sina-ext' ),
+				'label' => esc_html__( 'Submit Button', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -389,7 +389,7 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'btn_width',
 			[
-				'label' => __( 'Width', 'sina-ext' ),
+				'label' => esc_html__( 'Width', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', '%' ],
 				'range' => [
@@ -409,7 +409,7 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'btn_radius',
 			[
-				'label' => __( 'Radius', 'sina-ext' ),
+				'label' => esc_html__( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -427,7 +427,7 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'btn_padding',
 			[
-				'label' => __( 'Padding', 'sina-ext' ),
+				'label' => esc_html__( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'desktop_default' => [
@@ -452,7 +452,7 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'btn_margin',
 			[
-				'label' => __( 'Margin', 'sina-ext' ),
+				'label' => esc_html__( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -470,19 +470,19 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'alignment',
 			[
-				'label' => __( 'Alignment', 'sina-ext' ),
+				'label' => esc_html__( 'Alignment', 'sina-ext' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'sina-ext' ),
+						'title' => esc_html__( 'Left', 'sina-ext' ),
 						'icon' => 'fa fa-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'sina-ext' ),
+						'title' => esc_html__( 'Center', 'sina-ext' ),
 						'icon' => 'fa fa-align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'sina-ext' ),
+						'title' => esc_html__( 'Right', 'sina-ext' ),
 						'icon' => 'fa fa-align-right',
 					],
 				],

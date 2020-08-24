@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class Sina_Content_Slider_Widget extends Widget_Base {
+class Sina_Content_Slider_Widget extends Widget_Base{
 
 	/**
 	 * Get widget name.
@@ -38,7 +38,7 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 	 * @since 2.0.0
 	 */
 	public function get_title() {
-		return __( 'Sina Content Slider', 'sina-ext' );
+		return esc_html__( 'Sina Content Slider', 'sina-ext' );
 	}
 
 	/**
@@ -112,7 +112,7 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'slider_content',
 			[
-				'label' => __( 'Slider Content', 'sina-ext' ),
+				'label' => esc_html__( 'Slider Content', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -122,26 +122,26 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 		$repeater->add_control(
 			'save_templates',
 			[
-				'label' => __( 'Use Save Templates', 'sina-ext' ),
+				'label' => esc_html__( 'Use Save Templates', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
 			]
 		);
 		$repeater->add_control(
 			'template',
 			[
-				'label' => __( 'Choose Template', 'sina-ext' ),
+				'label' => esc_html__( 'Choose Template', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => sina_get_page_templates(),
 				'condition' => [
 					'save_templates!' => '',
 				],
-				'description' => __('NOTE: Don\'t try to edit after insertion template. If you need to change the style or layout then you try to change the main template then save and then insert', 'sina-ext'),
+				'description' => esc_html__('NOTE: Don\'t try to edit after insertion template. If you need to change the style or layout then you try to change the main template then save and then insert', 'sina-ext'),
 			]
 		);
 		$repeater->add_control(
 			'is_video',
 			[
-				'label' => __( 'Use video', 'sina-ext' ),
+				'label' => esc_html__( 'Use video', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
 				'condition' => [
 					'save_templates' => '',
@@ -151,10 +151,10 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 		$repeater->add_control(
 			'video_link',
 			[
-				'label' => __( 'Video Link', 'sina-ext' ),
+				'label' => esc_html__( 'Video Link', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __('Enter video link', 'sina-ext'),
+				'placeholder' => esc_html__('Enter video link', 'sina-ext'),
 				'condition' => [
 					'save_templates' => '',
 					'is_video' => 'yes',
@@ -167,11 +167,11 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 		$repeater->add_control(
 			'title',
 			[
-				'label' => __( 'Title', 'sina-ext' ),
+				'label' => esc_html__( 'Title', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __('Enter Title', 'sina-ext'),
-				'description' => __( 'You can use HTML.', 'sina-ext' ),
+				'placeholder' => esc_html__('Enter Title', 'sina-ext'),
+				'description' => esc_html__( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'Web Development',
 				'condition' => [
 					'save_templates' => '',
@@ -185,7 +185,7 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 		$repeater->add_control(
 			'title_tag',
 			[
-				'label' => __( 'Select Tag', 'sina-ext' ),
+				'label' => esc_html__( 'Select Tag', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
 					'h1' => 'H1',
@@ -205,11 +205,11 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 		$repeater->add_control(
 			'subtitle',
 			[
-				'label' => __( 'Sub Title', 'sina-ext' ),
+				'label' => esc_html__( 'Sub Title', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __('Enter Title', 'sina-ext'),
-				'description' => __( 'You can use HTML.', 'sina-ext' ),
+				'placeholder' => esc_html__('Enter Title', 'sina-ext'),
+				'description' => esc_html__( 'You can use HTML.', 'sina-ext' ),
 				'condition' => [
 					'save_templates' => '',
 					'is_video' => '',
@@ -222,7 +222,7 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 		$repeater->add_control(
 			'subtitle_tag',
 			[
-				'label' => __( 'Select Tag', 'sina-ext' ),
+				'label' => esc_html__( 'Select Tag', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
 					'h2' => 'H2',
@@ -241,10 +241,10 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 		$repeater->add_control(
 			'desc',
 			[
-				'label' => __('Description', 'sina-ext'),
+				'label' => esc_html__('Description', 'sina-ext'),
 				'label_block' => true,
 				'type' => Controls_Manager::TEXTAREA,
-				'description' => __( 'You can use HTML.', 'sina-ext' ),
+				'description' => esc_html__( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
 				'condition' => [
 					'save_templates' => '',
@@ -258,7 +258,7 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 		$repeater->add_control(
 			'item_styles',
 			[
-				'label' => __( 'Styles', 'sina-ext' ),
+				'label' => esc_html__( 'Styles', 'sina-ext' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -274,7 +274,7 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 		$this->add_control(
 			'slides',
 			[
-				'label' => __('Add Item', 'sina-ext'),
+				'label' => esc_html__('Add Item', 'sina-ext'),
 				'type' => Controls_Manager::REPEATER,
 				'fields' => $repeater->get_controls(),
 				'default' => [
@@ -308,7 +308,7 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'carousel_settings',
 			[
-				'label' => __( 'Slider Settings', 'sina-ext' ),
+				'label' => esc_html__( 'Slider Settings', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -316,13 +316,13 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'show_item',
 			[
-				'label' => __( 'Show Item', 'sina-ext' ),
+				'label' => esc_html__( 'Show Item', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'1' => __( '1', 'sina-ext' ),
-					'2' => __( '2', 'sina-ext' ),
-					'3' => __( '3', 'sina-ext' ),
-					'4' => __( '4', 'sina-ext' ),
+					'1' => esc_html__( '1', 'sina-ext' ),
+					'2' => esc_html__( '2', 'sina-ext' ),
+					'3' => esc_html__( '3', 'sina-ext' ),
+					'4' => esc_html__( '4', 'sina-ext' ),
 				],
 				'desktop_default' => '3',
 				'tablet_default' => '2',
@@ -341,7 +341,7 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'box_style',
 			[
-				'label' => __( 'Box', 'sina-ext' ),
+				'label' => esc_html__( 'Box', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -349,7 +349,7 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'height',
 			[
-				'label' => __( 'Height', 'sina-ext' ),
+				'label' => esc_html__( 'Height', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em' ],
 				'range' => [
@@ -393,7 +393,7 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'box_radius',
 			[
-				'label' => __( 'Radius', 'sina-ext' ),
+				'label' => esc_html__( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -405,7 +405,7 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'box_padding',
 			[
-				'label' => __( 'Padding', 'sina-ext' ),
+				'label' => esc_html__( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -423,7 +423,7 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'box_margin',
 			[
-				'label' => __( 'Margin', 'sina-ext' ),
+				'label' => esc_html__( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -441,23 +441,23 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'box_alignment',
 			[
-				'label' => __( 'Alignment', 'sina-ext' ),
+				'label' => esc_html__( 'Alignment', 'sina-ext' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'sina-ext' ),
+						'title' => esc_html__( 'Left', 'sina-ext' ),
 						'icon' => 'fa fa-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'sina-ext' ),
+						'title' => esc_html__( 'Center', 'sina-ext' ),
 						'icon' => 'fa fa-align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'sina-ext' ),
+						'title' => esc_html__( 'Right', 'sina-ext' ),
 						'icon' => 'fa fa-align-right',
 					],
 					'justify' => [
-						'title' => __( 'justify', 'sina-ext' ),
+						'title' => esc_html__( 'justify', 'sina-ext' ),
 						'icon' => 'fa fa-align-justify',
 					],
 				],
@@ -477,7 +477,7 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'title_style',
 			[
-				'label' => __( 'Title', 'sina-ext' ),
+				'label' => esc_html__( 'Title', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -485,7 +485,7 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 		$this->add_control(
 			'title_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#222',
 				'selectors' => [
@@ -531,7 +531,7 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'title_margin',
 			[
-				'label' => __( 'Margin Bottom', 'sina-ext' ),
+				'label' => esc_html__( 'Margin Bottom', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em' ],
 				'default' => [
@@ -545,23 +545,23 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'title_alignment',
 			[
-				'label' => __( 'Alignment', 'sina-ext' ),
+				'label' => esc_html__( 'Alignment', 'sina-ext' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'sina-ext' ),
+						'title' => esc_html__( 'Left', 'sina-ext' ),
 						'icon' => 'fa fa-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'sina-ext' ),
+						'title' => esc_html__( 'Center', 'sina-ext' ),
 						'icon' => 'fa fa-align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'sina-ext' ),
+						'title' => esc_html__( 'Right', 'sina-ext' ),
 						'icon' => 'fa fa-align-right',
 					],
 					'justify' => [
-						'title' => __( 'justify', 'sina-ext' ),
+						'title' => esc_html__( 'justify', 'sina-ext' ),
 						'icon' => 'fa fa-align-justify',
 					],
 				],
@@ -581,7 +581,7 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'subtitle_style',
 			[
-				'label' => __( 'Sub Title', 'sina-ext' ),
+				'label' => esc_html__( 'Sub Title', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -589,7 +589,7 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 		$this->add_control(
 			'subtitle_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#222',
 				'selectors' => [
@@ -629,7 +629,7 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'subtitle_margin',
 			[
-				'label' => __( 'Margin Bottom', 'sina-ext' ),
+				'label' => esc_html__( 'Margin Bottom', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em' ],
 				'default' => [
@@ -643,23 +643,23 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'subtitle_alignment',
 			[
-				'label' => __( 'Alignment', 'sina-ext' ),
+				'label' => esc_html__( 'Alignment', 'sina-ext' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'sina-ext' ),
+						'title' => esc_html__( 'Left', 'sina-ext' ),
 						'icon' => 'fa fa-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'sina-ext' ),
+						'title' => esc_html__( 'Center', 'sina-ext' ),
 						'icon' => 'fa fa-align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'sina-ext' ),
+						'title' => esc_html__( 'Right', 'sina-ext' ),
 						'icon' => 'fa fa-align-right',
 					],
 					'justify' => [
-						'title' => __( 'justify', 'sina-ext' ),
+						'title' => esc_html__( 'justify', 'sina-ext' ),
 						'icon' => 'fa fa-align-justify',
 					],
 				],
@@ -679,7 +679,7 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'desc_style',
 			[
-				'label' => __( 'Description', 'sina-ext' ),
+				'label' => esc_html__( 'Description', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -687,7 +687,7 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 		$this->add_control(
 			'desc_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#222',
 				'selectors' => [
@@ -727,23 +727,23 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'desc_alignment',
 			[
-				'label' => __( 'Alignment', 'sina-ext' ),
+				'label' => esc_html__( 'Alignment', 'sina-ext' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'sina-ext' ),
+						'title' => esc_html__( 'Left', 'sina-ext' ),
 						'icon' => 'fa fa-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'sina-ext' ),
+						'title' => esc_html__( 'Center', 'sina-ext' ),
 						'icon' => 'fa fa-align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'sina-ext' ),
+						'title' => esc_html__( 'Right', 'sina-ext' ),
 						'icon' => 'fa fa-align-right',
 					],
 					'justify' => [
-						'title' => __( 'justify', 'sina-ext' ),
+						'title' => esc_html__( 'justify', 'sina-ext' ),
 						'icon' => 'fa fa-align-justify',
 					],
 				],
@@ -763,7 +763,7 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'nav_dots_style',
 			[
-				'label' => __( 'Nav & Dots', 'sina-ext' ),
+				'label' => esc_html__( 'Nav & Dots', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -778,7 +778,7 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'center_item_style',
 			[
-				'label' => __( 'Center Item', 'sina-ext' ),
+				'label' => esc_html__( 'Center Item', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'center!' => '',
@@ -789,7 +789,7 @@ class Sina_Content_Slider_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'scale',
 			[
-				'label' => __( 'Scale', 'sina-ext' ),
+				'label' => esc_html__( 'Scale', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [

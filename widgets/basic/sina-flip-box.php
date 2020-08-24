@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class Sina_Flip_Box_Widget extends Widget_Base {
+class Sina_Flip_Box_Widget extends Widget_Base{
 
 	/**
 	 * Get widget name.
@@ -38,7 +38,7 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 	 * @since 1.0.0
 	 */
 	public function get_title() {
-		return __( 'Sina Flip Box', 'sina-ext' );
+		return esc_html__( 'Sina Flip Box', 'sina-ext' );
 	}
 
 	/**
@@ -97,7 +97,7 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'front_content',
 			[
-				'label' => __( 'Front Side', 'sina-ext' ),
+				'label' => esc_html__( 'Front Side', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -105,15 +105,15 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 		$this->add_control(
 			'front_icon_format',
 			[
-				'label' => __( 'Icon Format', 'sina-ext' ),
+				'label' => esc_html__( 'Icon Format', 'sina-ext' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'icon' => [
-						'title' => __( 'Icon', 'sina-ext' ),
+						'title' => esc_html__( 'Icon', 'sina-ext' ),
 						'icon' => 'fa fa-star',
 					],
 					'image' => [
-						'title' => __( 'Image', 'sina-ext' ),
+						'title' => esc_html__( 'Image', 'sina-ext' ),
 						'icon' => 'fa fa-image',
 					],
 				],
@@ -123,7 +123,7 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 		$this->add_control(
 			'front_icon',
 			[
-				'label' => __( 'Icon', 'sina-ext' ),
+				'label' => esc_html__( 'Icon', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::ICON,
 				'default' => 'fa fa-android',
@@ -135,7 +135,7 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 		$this->add_control(
 			'front_image',
 			[
-				'label' => __( 'Image', 'sina-ext' ),
+				'label' => esc_html__( 'Image', 'sina-ext' ),
 				'type' => Controls_Manager::MEDIA,
 				'condition' => [
 					'front_icon_format' => 'image',
@@ -151,11 +151,11 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 		$this->add_control(
 			'front_title',
 			[
-				'label' => __( 'Title', 'sina-ext' ),
+				'label' => esc_html__( 'Title', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter Title', 'sina-ext' ),
-				'description' => __( 'You can use HTML.', 'sina-ext' ),
+				'placeholder' => esc_html__( 'Enter Title', 'sina-ext' ),
+				'description' => esc_html__( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'Apps Development',
 				'dynamic' => [
 					'active' => true,
@@ -165,11 +165,11 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 		$this->add_control(
 			'front_desc',
 			[
-				'label' => __( 'Description', 'sina-ext' ),
+				'label' => esc_html__( 'Description', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::TEXTAREA,
-				'placeholder' => __( 'Enter Description', 'sina-ext' ),
-				'description' => __( 'You can use HTML.', 'sina-ext' ),
+				'placeholder' => esc_html__( 'Enter Description', 'sina-ext' ),
+				'description' => esc_html__( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'This is flip box description.',
 				'dynamic' => [
 					'active' => true,
@@ -187,7 +187,7 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'back_content',
 			[
-				'label' => __( 'Back Side', 'sina-ext' ),
+				'label' => esc_html__( 'Back Side', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -195,15 +195,15 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 		$this->add_control(
 			'back_icon_format',
 			[
-				'label' => __( 'Icon Format', 'sina-ext' ),
+				'label' => esc_html__( 'Icon Format', 'sina-ext' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'icon' => [
-						'title' => __( 'Icon', 'sina-ext' ),
+						'title' => esc_html__( 'Icon', 'sina-ext' ),
 						'icon' => 'fa fa-star',
 					],
 					'image' => [
-						'title' => __( 'Image', 'sina-ext' ),
+						'title' => esc_html__( 'Image', 'sina-ext' ),
 						'icon' => 'fa fa-image',
 					],
 				],
@@ -213,7 +213,7 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 		$this->add_control(
 			'back_icon',
 			[
-				'label' => __( 'Icon', 'sina-ext' ),
+				'label' => esc_html__( 'Icon', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::ICON,
 				'default' => 'fa fa-tablet',
@@ -225,7 +225,7 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 		$this->add_control(
 			'back_image',
 			[
-				'label' => __( 'Image', 'sina-ext' ),
+				'label' => esc_html__( 'Image', 'sina-ext' ),
 				'type' => Controls_Manager::MEDIA,
 				'condition' => [
 					'back_icon_format' => 'image',
@@ -241,11 +241,11 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 		$this->add_control(
 			'back_title',
 			[
-				'label' => __( 'Title', 'sina-ext' ),
+				'label' => esc_html__( 'Title', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter Title', 'sina-ext' ),
-				'description' => __( 'You can use HTML.', 'sina-ext' ),
+				'placeholder' => esc_html__( 'Enter Title', 'sina-ext' ),
+				'description' => esc_html__( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'Web Development',
 				'dynamic' => [
 					'active' => true,
@@ -255,11 +255,11 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 		$this->add_control(
 			'back_desc',
 			[
-				'label' => __( 'Description', 'sina-ext' ),
+				'label' => esc_html__( 'Description', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::TEXTAREA,
-				'placeholder' => __( 'Enter Description', 'sina-ext' ),
-				'description' => __( 'You can use HTML.', 'sina-ext' ),
+				'placeholder' => esc_html__( 'Enter Description', 'sina-ext' ),
+				'description' => esc_html__( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'This is flip box description.',
 				'dynamic' => [
 					'active' => true,
@@ -269,9 +269,9 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 		$this->add_control(
 			'back_link',
 			[
-				'label' => __( 'Link', 'sina-ext' ),
+				'label' => esc_html__( 'Link', 'sina-ext' ),
 				'type' => Controls_Manager::URL,
-				'placeholder' => __( 'https://your-link.com', 'sina-ext' ),
+				'placeholder' => esc_html__( 'https://your-link.com', 'sina-ext' ),
 				'dynamic' => [
 					'active' => true,
 				],
@@ -288,7 +288,7 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'box_style',
 			[
-				'label' => __( 'Box', 'sina-ext' ),
+				'label' => esc_html__( 'Box', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -296,16 +296,16 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 		$this->add_control(
 			'effects',
 			[
-				'label' => __( 'Effects', 'sina-ext' ),
+				'label' => esc_html__( 'Effects', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'sina-flipbox-effect-h-flip' => __( 'Horizontal Flip', 'sina-ext' ),
-					'sina-flipbox-effect-v-flip' => __( 'Verticle Flip', 'sina-ext' ),
-					'sina-flipbox-effect-zoom' => __( 'Zoom', 'sina-ext' ),
-					'sina-flipbox-effect-s-top' => __( 'Slide Top', 'sina-ext' ),
-					'sina-flipbox-effect-s-bottom' => __( 'Slide Bottom', 'sina-ext' ),
-					'sina-flipbox-effect-s-left' => __( 'Slide Left', 'sina-ext' ),
-					'sina-flipbox-effect-s-right' => __( 'Slide Right', 'sina-ext' ),
+					'sina-flipbox-effect-h-flip' => esc_html__( 'Horizontal Flip', 'sina-ext' ),
+					'sina-flipbox-effect-v-flip' => esc_html__( 'Verticle Flip', 'sina-ext' ),
+					'sina-flipbox-effect-zoom' => esc_html__( 'Zoom', 'sina-ext' ),
+					'sina-flipbox-effect-s-top' => esc_html__( 'Slide Top', 'sina-ext' ),
+					'sina-flipbox-effect-s-bottom' => esc_html__( 'Slide Bottom', 'sina-ext' ),
+					'sina-flipbox-effect-s-left' => esc_html__( 'Slide Left', 'sina-ext' ),
+					'sina-flipbox-effect-s-right' => esc_html__( 'Slide Right', 'sina-ext' ),
 				],
 				'default' => 'sina-flipbox-effect-zoom',
 			]
@@ -316,7 +316,7 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 		$this->start_controls_tab(
 			'front_style',
 			[
-				'label' => __( 'Front', 'sina-ext' ),
+				'label' => esc_html__( 'Front', 'sina-ext' ),
 			]
 		);
 
@@ -346,7 +346,7 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'front_padding',
 			[
-				'label' => __( 'Padding', 'sina-ext' ),
+				'label' => esc_html__( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -364,7 +364,7 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'front_content_padding',
 			[
-				'label' => __( 'Content Padding', 'sina-ext' ),
+				'label' => esc_html__( 'Content Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'condition' => [
@@ -381,7 +381,7 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 		$this->start_controls_tab(
 			'back_style',
 			[
-				'label' => __( 'Back', 'sina-ext' ),
+				'label' => esc_html__( 'Back', 'sina-ext' ),
 			]
 		);
 
@@ -411,7 +411,7 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'back_padding',
 			[
-				'label' => __( 'Padding', 'sina-ext' ),
+				'label' => esc_html__( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -429,7 +429,7 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'back_content_padding',
 			[
-				'label' => __( 'Content Padding', 'sina-ext' ),
+				'label' => esc_html__( 'Content Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'condition' => [
@@ -448,7 +448,7 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'box_height',
 			[
-				'label' => __( 'Height', 'sina-ext' ),
+				'label' => esc_html__( 'Height', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em' ],
 				'range' => [
@@ -471,7 +471,7 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'box_radius',
 			[
-				'label' => __( 'Radius', 'sina-ext' ),
+				'label' => esc_html__( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -482,19 +482,19 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'alignment',
 			[
-				'label' => __( 'Alignment', 'sina-ext' ),
+				'label' => esc_html__( 'Alignment', 'sina-ext' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'sina-ext' ),
+						'title' => esc_html__( 'Left', 'sina-ext' ),
 						'icon' => 'fa fa-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'sina-ext' ),
+						'title' => esc_html__( 'Center', 'sina-ext' ),
 						'icon' => 'fa fa-align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'sina-ext' ),
+						'title' => esc_html__( 'Right', 'sina-ext' ),
 						'icon' => 'fa fa-align-right',
 					],
 				],
@@ -515,7 +515,7 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'icons_style',
 			[
-				'label' => __( 'Icon or Image', 'sina-ext' ),
+				'label' => esc_html__( 'Icon or Image', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -525,14 +525,14 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 		$this->start_controls_tab(
 			'front_icon_style',
 			[
-				'label' => __( 'Front', 'sina-ext' ),
+				'label' => esc_html__( 'Front', 'sina-ext' ),
 			]
 		);
 
 		$this->add_control(
 			'front_icon_color',
 			[
-				'label' => __( 'Color', 'sina-ext' ),
+				'label' => esc_html__( 'Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#fafafa',
 				'selectors' => [
@@ -543,7 +543,7 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'front_icon_size',
 			[
-				'label' => __( 'Size', 'sina-ext' ),
+				'label' => esc_html__( 'Size', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -564,7 +564,7 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'front_image_size',
 			[
-				'label' => __( 'Size', 'sina-ext' ),
+				'label' => esc_html__( 'Size', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', '%' ],
 				'range' => [
@@ -612,7 +612,7 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'front_icon_radius',
 			[
-				'label' => __( 'Radius', 'sina-ext' ),
+				'label' => esc_html__( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -623,7 +623,7 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'front_icon_padding',
 			[
-				'label' => __( 'Padding', 'sina-ext' ),
+				'label' => esc_html__( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -644,14 +644,14 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 		$this->start_controls_tab(
 			'back_icon_style',
 			[
-				'label' => __( 'Back', 'sina-ext' ),
+				'label' => esc_html__( 'Back', 'sina-ext' ),
 			]
 		);
 
 		$this->add_control(
 			'back_icon_color',
 			[
-				'label' => __( 'Color', 'sina-ext' ),
+				'label' => esc_html__( 'Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#fafafa',
 				'selectors' => [
@@ -662,7 +662,7 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'back_icon_size',
 			[
-				'label' => __( 'Size', 'sina-ext' ),
+				'label' => esc_html__( 'Size', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -683,7 +683,7 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'back_image_size',
 			[
-				'label' => __( 'Size', 'sina-ext' ),
+				'label' => esc_html__( 'Size', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', '%' ],
 				'range' => [
@@ -731,7 +731,7 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'back_icon_radius',
 			[
-				'label' => __( 'Radius', 'sina-ext' ),
+				'label' => esc_html__( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -742,7 +742,7 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'back_icon_padding',
 			[
-				'label' => __( 'Padding', 'sina-ext' ),
+				'label' => esc_html__( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -772,7 +772,7 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'title_style',
 			[
-				'label' => __( 'Title', 'sina-ext' ),
+				'label' => esc_html__( 'Title', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -782,14 +782,14 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 		$this->start_controls_tab(
 			'front_title_style',
 			[
-				'label' => __( 'Front', 'sina-ext' ),
+				'label' => esc_html__( 'Front', 'sina-ext' ),
 			]
 		);
 
 		$this->add_control(
 			'front_title_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#fafafa',
 				'selectors' => [
@@ -827,7 +827,7 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'front_title_margin',
 			[
-				'label' => __( 'Margin', 'sina-ext' ),
+				'label' => esc_html__( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -848,14 +848,14 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 		$this->start_controls_tab(
 			'back_title_style',
 			[
-				'label' => __( 'Back', 'sina-ext' ),
+				'label' => esc_html__( 'Back', 'sina-ext' ),
 			]
 		);
 
 		$this->add_control(
 			'back_title_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#fafafa',
 				'selectors' => [
@@ -893,7 +893,7 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'back_title_margin',
 			[
-				'label' => __( 'Margin', 'sina-ext' ),
+				'label' => esc_html__( 'Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'default' => [
@@ -923,7 +923,7 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'desc_style',
 			[
-				'label' => __( 'Description', 'sina-ext' ),
+				'label' => esc_html__( 'Description', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -933,14 +933,14 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 		$this->start_controls_tab(
 			'front_desc_style',
 			[
-				'label' => __( 'Front', 'sina-ext' ),
+				'label' => esc_html__( 'Front', 'sina-ext' ),
 			]
 		);
 
 		$this->add_control(
 			'front_desc_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#fafafa',
 				'selectors' => [
@@ -965,7 +965,7 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'front_desc_padding',
 			[
-				'label' => __( 'Padding', 'sina-ext' ),
+				'label' => esc_html__( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -979,14 +979,14 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 		$this->start_controls_tab(
 			'back_desc_style',
 			[
-				'label' => __( 'Back', 'sina-ext' ),
+				'label' => esc_html__( 'Back', 'sina-ext' ),
 			]
 		);
 
 		$this->add_control(
 			'back_desc_color',
 			[
-				'label' => __( 'Text Color', 'sina-ext' ),
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#fafafa',
 				'selectors' => [
@@ -1011,7 +1011,7 @@ class Sina_Flip_Box_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'back_desc_padding',
 			[
-				'label' => __( 'Padding', 'sina-ext' ),
+				'label' => esc_html__( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
