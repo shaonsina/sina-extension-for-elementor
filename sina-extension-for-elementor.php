@@ -17,13 +17,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define('SINA_EXT_VERSION', '3.3.2');
-define('SINA_EXT_PREVIOUS_VERSION', '3.3.1' );
+define('SINA_EXT_VERSION', '3.3.3');
+define('SINA_EXT_PREVIOUS_VERSION', '3.3.2' );
 define('SINA_EXT_FILE', __FILE__ );
 define('SINA_EXT_SLUG', basename( SINA_EXT_FILE, '.php' ));
 define('SINA_EXT_DIR', __DIR__);
 define('SINA_EXT_URL', plugins_url('/', SINA_EXT_FILE));
 define('SINA_EXT_BASENAME', plugin_basename( SINA_EXT_FILE ));
+define('SINA_EXT_DIRNAME', dirname(SINA_EXT_BASENAME));
 define('SINA_EXT_LAYOUT', SINA_EXT_DIR .'/widgets/layout');
 define('SINA_EXT_INC', SINA_EXT_DIR .'/inc/');
 define('SINA_EXT_ADMIN', SINA_EXT_DIR .'/admin/');

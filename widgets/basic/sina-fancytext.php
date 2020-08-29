@@ -313,7 +313,7 @@ class Sina_Fancytext_Widget extends Widget_Base{
 		$this->add_control(
 			'tag',
 			[
-				'label' => esc_html__( 'Selct Tag', 'sina-ext' ),
+				'label' => esc_html__( 'Select Tag', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
 					'h1' => 'H1',

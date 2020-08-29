@@ -161,7 +161,7 @@ class Sina_Banner_Slider_Widget extends Widget_Base{
 		$repeater->add_control(
 			'title_tag',
 			[
-				'label' => esc_html__( 'Selct Tag', 'sina-ext' ),
+				'label' => esc_html__( 'Select Tag', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
 					'h1' => 'H1',
@@ -196,7 +196,7 @@ class Sina_Banner_Slider_Widget extends Widget_Base{
 		$repeater->add_control(
 			'subtitle_tag',
 			[
-				'label' => esc_html__( 'Selct Tag', 'sina-ext' ),
+				'label' => esc_html__( 'Select Tag', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
 					'h2' => 'H2',

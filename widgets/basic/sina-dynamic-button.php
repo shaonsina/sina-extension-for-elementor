@@ -183,7 +183,7 @@ class Sina_Dynamic_Button_Widget extends Widget_Base{
 				'default' => [
 					'url' => '#',
 				],
-				'placeholder' => esc_html__( 'https://your-link.com', 'sina-ext' ),
+				'placeholder' => 'https://your-link.com',
 				'condition' => [
 					'btn_type' => 'static',
 				]

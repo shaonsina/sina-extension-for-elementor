@@ -163,7 +163,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base{
 		$this->add_control(
 			'title_tag',
 			[
-				'label' => esc_html__( 'Selct Tag', 'sina-ext' ),
+				'label' => esc_html__( 'Select Tag', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
 					'h1' => 'H1',
@@ -190,7 +190,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base{
 		$this->add_control(
 			'subtitle_tag',
 			[
-				'label' => esc_html__( 'Selct Tag', 'sina-ext' ),
+				'label' => esc_html__( 'Select Tag', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
 					'h2' => 'H2',

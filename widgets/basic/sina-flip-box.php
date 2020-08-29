@@ -271,7 +271,7 @@ class Sina_Flip_Box_Widget extends Widget_Base{
 			[
 				'label' => esc_html__( 'Link', 'sina-ext' ),
 				'type' => Controls_Manager::URL,
-				'placeholder' => esc_html__( 'https://your-link.com', 'sina-ext' ),
+				'placeholder' => 'https://your-link.com',
 				'dynamic' => [
 					'active' => true,
 				],
@@ -300,7 +300,7 @@ class Sina_Flip_Box_Widget extends Widget_Base{
 				'type' => Controls_Manager::SELECT,
 				'options' => [
 					'sina-flipbox-effect-h-flip' => esc_html__( 'Horizontal Flip', 'sina-ext' ),
-					'sina-flipbox-effect-v-flip' => esc_html__( 'Verticle Flip', 'sina-ext' ),
+					'sina-flipbox-effect-v-flip' => esc_html__( 'Vertical Flip', 'sina-ext' ),
 					'sina-flipbox-effect-zoom' => esc_html__( 'Zoom', 'sina-ext' ),
 					'sina-flipbox-effect-s-top' => esc_html__( 'Slide Top', 'sina-ext' ),
 					'sina-flipbox-effect-s-bottom' => esc_html__( 'Slide Bottom', 'sina-ext' ),

@@ -155,7 +155,7 @@ abstract class Sina_Extension_Base{
 	 * @since 1.0.0
 	 */
 	public function i18n() {
-		load_plugin_textdomain( 'sina-ext' );
+		load_plugin_textdomain( 'sina-ext', false, SINA_EXT_DIRNAME.'/languages' );
 	}
 
 	/**

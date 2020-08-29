@@ -113,7 +113,7 @@ class Sina_Social_Icons_Widget extends Widget_Base{
 			[
 				'label' => esc_html__( 'Link', 'sina-ext' ),
 				'type' => Controls_Manager::URL,
-				'placeholder' => esc_html__( 'https://your-link.com', 'sina-ext' ),
+				'placeholder' => 'https://your-link.com',
 			]
 		);
 		$repeater->add_control(

@@ -218,7 +218,7 @@ Yes. It's totally free. We also have a [PRO](https://sinaextra.com/sina-addon-fo
 
 == Changelog ==
 
-= 3.3.2 - 06-08-2020 =
+= 3.3.2 - 26-08-2020 =
 - Added: Logging state to Login Form
 - Fixed: Accordion icon color issue
 - Fixed: Contact Form sender name not sent issue

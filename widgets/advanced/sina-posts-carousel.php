@@ -382,7 +382,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base{
 		$this->add_responsive_control(
 			'vertical_align',
 			[
-				'label' => esc_html__( 'Verticle Align', 'sina-ext' ),
+				'label' => esc_html__( 'Vertical Align', 'sina-ext' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'flex-start' => [

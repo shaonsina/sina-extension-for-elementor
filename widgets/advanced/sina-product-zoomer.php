@@ -146,7 +146,7 @@ class Sina_Product_Zoomer_Widget extends Widget_Base{
 			[
 				'label' => esc_html__( 'Link', 'sina-ext' ),
 				'type' => Controls_Manager::URL,
-				'placeholder' => esc_html__( 'https://your-image-link', 'sina-ext' ),
+				'placeholder' => 'https://your-image-link',
 				'default' => [
 					'url' => '',
 				],
