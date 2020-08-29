@@ -555,7 +555,7 @@ class Sina_Product_Zoomer_Widget extends Widget_Base{
 			<img class="xzoom" src="<?php echo esc_url( $data['product_imgs'][0]['preview_image']['url'] ); ?>" data-xoriginal="<?php echo esc_url( $data['product_imgs'][0]['original_image']['url'] ); ?>" alt="<?php echo esc_attr( $original_img_alt ) ?>">
 
 			<?php if ( 'yes' == $data['thumbs'] ): ?>
-				<div class="xzoom-thumbs">
+				<div class="xzoom-thumbs clearfix">
 					<?php foreach ( $data['product_imgs'] as $img ) :
 						$thumb_img_alt = $data['title'] ? $data['title'] : Control_Media::get_image_alt( $img['thumb_image'] );
 						?>

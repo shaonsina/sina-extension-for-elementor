@@ -172,7 +172,9 @@ Class Sina_Ext_Hooks{
 					}
 				}
 
+				$from_text = sanitize_text_field( $_POST['from_text'] );
 				$site_name = get_bloginfo( 'name' );
+				$site_name = $from_text ? $from_text : $site_name;
 				$headers = 'From: '. $site_name .'<'. $email .'>';
 				$message = esc_html__( 'Name: ', 'sina-ext' ).$name."\n\n".$message;
 

@@ -6,7 +6,7 @@
 	<form action="options.php" method="POST">
 		<?php settings_errors(); ?>
 
-		<div class="sina-ext-my sina-ext-pt sina-ext-pb">
+		<div class="sina-ext-my sina-ext-pt sina-ext-pb sina-ext-btns-wrap">
 		<?php
 			$get_widgets = get_option( 'sina_widgets' );
 			$set_widgets = SINA_WIDGETS;
@@ -17,7 +17,7 @@
 			}
 			submit_button(null, 'primary', 'submit', false, ['id' => 'submit-top']);
 			if ( '' == $go_pro ) :
-				printf('<a class="button sina-doc-btn" href="%1$s" target="_blank">%2$s</a>', 'https://sinaextra.com/docs/sina-extension/', __( 'Documentation', 'sina-ext' ) );
+				printf('<a class="button sina-doc-btn" href="%1$s" target="_blank">%2$s</a>', 'https://sinaextra.com/docs/sina-extension/', esc_html__( 'Documentation', 'sina-ext' ) );
 			endif;
 		?>
 		</div>
@@ -91,7 +91,7 @@
 								<div class='sina-ext-pb sina-ext-my'>
 									<div class="sina-toggle-section <?php echo esc_attr($sina_pro); ?> sina-ext-toggle" data-cat="<?php echo esc_attr($cat); ?>">
 										<?php printf('<input type="checkbox" id="sina_widgets[%s]" %s value="1">', $cat, $checked); ?>
-										<?php printf('<label for="sina_widgets[%1$s]"><div class="sina-ext-label">%2$s</div><div class="sina-ext-toggle-btn"> <div></div></div></label>', $cat, __( ucfirst($cat), 'sina-ext' )); ?>
+										<?php printf('<label for="sina_widgets[%1$s]"><div class="sina-ext-label">%2$s</div><div class="sina-ext-toggle-btn"> <div></div></div></label>', $cat, esc_html__( ucfirst($cat), 'sina-ext' )); ?>
 									</div>
 								</div>
 							<?php
@@ -117,7 +117,7 @@
 					<div class='sina-ext-pb sina-ext-my'>
 						<div class="sina-toggle-section sina-ext-toggle <?php echo esc_attr( $go_pro ); ?>" data-cat="extenders">
 							<?php printf('<input type="checkbox" id="sina_extenders" %s value="1">', $checked); ?>
-							<?php printf('<label for="sina_extenders"><div class="sina-ext-label">%1$s</div><div class="sina-ext-toggle-btn"> <div></div></div></label>', __( 'Extenders', 'sina-ext' )); ?>
+							<?php printf('<label for="sina_extenders"><div class="sina-ext-label">%1$s</div><div class="sina-ext-toggle-btn"> <div></div></div></label>', esc_html__( 'Extenders', 'sina-ext' )); ?>
 						</div>
 					</div>
 					<div class="sina-ext-pb sina-toggle-all-extenders">
@@ -127,11 +127,11 @@
 			</div>
 		</div>
 
-		<div class="sina-ext-pb">
+		<div class="sina-ext-pb sina-ext-btns-wrap">
 		<?php
 			submit_button(null, 'primary', 'submit', false, ['id' => 'submit-bottom']);
 			if ( '' == $go_pro ) :
-				printf('<a class="button sina-doc-btn" href="%1$s" target="_blank">%2$s</a>', 'https://sinaextra.com/docs/sina-extension/', __( 'Documentation', 'sina-ext' ) );
+				printf('<a class="button sina-doc-btn" href="%1$s" target="_blank">%2$s</a>', 'https://sinaextra.com/docs/sina-extension/', esc_html__( 'Documentation', 'sina-ext' ) );
 			endif;
 		?>
 		</div>

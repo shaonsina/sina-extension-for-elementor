@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sina Extension for Elementor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-29 19:37+0000\n"
+"POT-Creation-Date: 2020-08-29 19:12+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -3627,8 +3627,7 @@ msgid "Enter Position"
 msgstr ""
 
 #: widgets/advanced/sina-review-carousel.php:161
-#: widgets/advanced/sina-review-carousel.php:506
-msgid "Company"
+msgid "Organization"
 msgstr ""
 
 #: widgets/advanced/sina-review-carousel.php:163
@@ -3651,6 +3650,10 @@ msgstr ""
 #: widgets/advanced/sina-review-carousel.php:271
 #: widgets/basic/sina-pricing.php:203 widgets/basic/sina-team.php:121
 msgid "Image Position"
+msgstr ""
+
+#: widgets/advanced/sina-review-carousel.php:506
+msgid "Company"
 msgstr ""
 
 #: widgets/advanced/sina-search-form.php:38

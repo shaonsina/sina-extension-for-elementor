@@ -158,7 +158,7 @@ class Sina_Review_Carousel_Widget extends Widget_Base{
 		$repeater->add_control(
 			'company',
 			[
-				'label' => esc_html__( 'Organization', 'sina-ext' ),
+				'label' => esc_html__( 'Company', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => esc_html__( 'Enter Organization', 'sina-ext' ),
 				'default' => 'Google',

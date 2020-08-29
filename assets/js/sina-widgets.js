@@ -1,4 +1,4 @@
-/* Sina Extension for Elementor v3.3.2 */
+/* Sina Extension for Elementor v3.3.3 */
 
 !(function ($) {
 	'use strict';
@@ -282,6 +282,7 @@
 		$scope.find('.sina-contact-form').each(function () {
 			var $this = $(this),
 				$uid = $this.data('uid'),
+				$from = $this.data('from'),
 				$inbox = $this.data('inbox'),
 				$nonce = $this.children('#sina_contact_nonce'+$uid),
 				$success = $this.children('.sina-success-text'),
@@ -312,6 +313,7 @@
 					{
 						action: "sina_contact",
 						inbox: $inbox,
+						from_text: $from,
 						name: $name.val(),
 						email: $email.val(),
 						subject: $subject.val(),

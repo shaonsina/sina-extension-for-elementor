@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sina Extension for Elementor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-29 13:22+0000\n"
-"PO-Revision-Date: 2020-08-29 13:22+0000\n"
+"POT-Creation-Date: 2020-08-29 19:37+0000\n"
+"PO-Revision-Date: 2020-08-29 19:37+0000\n"
 "Last-Translator: \n"
 "Language-Team: বাংলা\n"
 "Language: bn_BD\n"
@@ -166,7 +166,7 @@ msgstr ""
 #: inc/sina-ext-controls.php:167 inc/sina-ext-controls.php:462
 #: widgets/advanced/sina-blogpost.php:367
 #: widgets/advanced/sina-facebook-feed.php:228
-#: widgets/advanced/sina-posts-carousel.php:525
+#: widgets/advanced/sina-posts-carousel.php:529
 #: widgets/advanced/sina-twitter-feed.php:257
 #: widgets/basic/sina-content-box.php:302
 #: widgets/basic/sina-content-box.php:804
@@ -175,7 +175,7 @@ msgstr ""
 #: widgets/basic/sina-team.php:596 widgets/basic/sina-title.php:106
 #: widgets/basic/sina-transform.php:207 widgets/basic/sina-video.php:125
 msgid "None"
-msgstr ""
+msgstr "কোনটাই না"
 
 #: inc/sina-ext-controls-extend.php:92 widgets/basic/sina-transform.php:222
 msgid "Perspective Size"
@@ -188,17 +188,17 @@ msgstr "পরিপ্রেক্ষিতের আকার"
 #: widgets/advanced/sina-blogpost.php:1389
 #: widgets/advanced/sina-blogpost.php:1615
 #: widgets/advanced/sina-brand-carousel.php:161
-#: widgets/advanced/sina-brand-carousel.php:385
+#: widgets/advanced/sina-brand-carousel.php:389
 #: widgets/advanced/sina-facebook-feed.php:333
 #: widgets/advanced/sina-facebook-feed.php:648
 #: widgets/advanced/sina-facebook-feed.php:841
 #: widgets/advanced/sina-modal-box.php:679
 #: widgets/advanced/sina-news-ticker.php:437
 #: widgets/advanced/sina-portfolio.php:719
-#: widgets/advanced/sina-posts-carousel.php:446
-#: widgets/advanced/sina-posts-carousel.php:630
-#: widgets/advanced/sina-posts-carousel.php:1019
-#: widgets/advanced/sina-posts-carousel.php:1519
+#: widgets/advanced/sina-posts-carousel.php:450
+#: widgets/advanced/sina-posts-carousel.php:634
+#: widgets/advanced/sina-posts-carousel.php:1023
+#: widgets/advanced/sina-posts-carousel.php:1523
 #: widgets/advanced/sina-posts-tab.php:816
 #: widgets/advanced/sina-search-form.php:257
 #: widgets/advanced/sina-twitter-feed.php:362
@@ -231,17 +231,17 @@ msgstr ""
 #: widgets/advanced/sina-blogpost.php:1408
 #: widgets/advanced/sina-blogpost.php:1675
 #: widgets/advanced/sina-brand-carousel.php:200
-#: widgets/advanced/sina-brand-carousel.php:442
+#: widgets/advanced/sina-brand-carousel.php:446
 #: widgets/advanced/sina-facebook-feed.php:382
 #: widgets/advanced/sina-facebook-feed.php:668
 #: widgets/advanced/sina-facebook-feed.php:861
 #: widgets/advanced/sina-modal-box.php:747
 #: widgets/advanced/sina-news-ticker.php:457
 #: widgets/advanced/sina-portfolio.php:758
-#: widgets/advanced/sina-posts-carousel.php:472
-#: widgets/advanced/sina-posts-carousel.php:679
-#: widgets/advanced/sina-posts-carousel.php:1045
-#: widgets/advanced/sina-posts-carousel.php:1538
+#: widgets/advanced/sina-posts-carousel.php:476
+#: widgets/advanced/sina-posts-carousel.php:683
+#: widgets/advanced/sina-posts-carousel.php:1049
+#: widgets/advanced/sina-posts-carousel.php:1542
 #: widgets/advanced/sina-posts-tab.php:844
 #: widgets/advanced/sina-search-form.php:301
 #: widgets/advanced/sina-twitter-feed.php:411
@@ -590,7 +590,7 @@ msgstr "অফসেটের সংখ্যা"
 
 #: inc/sina-ext-controls.php:225
 msgid "Order by"
-msgstr ""
+msgstr "অর্ডারে"
 
 #: inc/sina-ext-controls.php:228 widgets/advanced/sina-posts-tab.php:155
 #: widgets/advanced/sina-posts-tab.php:907
@@ -598,10 +598,10 @@ msgid "Date"
 msgstr "তারিখ"
 
 #: inc/sina-ext-controls.php:229 widgets/advanced/sina-banner-slider.php:138
-#: widgets/advanced/sina-banner-slider.php:504
+#: widgets/advanced/sina-banner-slider.php:544
 #: widgets/advanced/sina-blogpost.php:1005
 #: widgets/advanced/sina-content-slider.php:170
-#: widgets/advanced/sina-content-slider.php:480
+#: widgets/advanced/sina-content-slider.php:484
 #: widgets/advanced/sina-facebook-feed.php:805
 #: widgets/advanced/sina-modal-box.php:196
 #: widgets/advanced/sina-modal-box.php:941
@@ -609,7 +609,7 @@ msgstr "তারিখ"
 #: widgets/advanced/sina-particle-layer.php:585
 #: widgets/advanced/sina-portfolio.php:175
 #: widgets/advanced/sina-portfolio.php:542
-#: widgets/advanced/sina-posts-carousel.php:983
+#: widgets/advanced/sina-posts-carousel.php:987
 #: widgets/advanced/sina-product-zoomer.php:119
 #: widgets/advanced/sina-product-zoomer.php:189
 #: widgets/advanced/sina-product-zoomer.php:334
@@ -657,8 +657,8 @@ msgstr "স্বয়ংক্রিয় ভাবে চালু"
 #: inc/sina-ext-controls.php:257 inc/sina-ext-controls.php:267
 #: inc/sina-ext-controls.php:277 inc/sina-ext-controls.php:287
 #: inc/sina-ext-controls.php:297 inc/sina-ext-controls.php:307
-#: widgets/advanced/sina-banner-slider.php:323
-#: widgets/advanced/sina-banner-slider.php:353
+#: widgets/advanced/sina-banner-slider.php:411
+#: widgets/advanced/sina-banner-slider.php:441
 #: widgets/basic/sina-image-differ.php:204
 #: widgets/basic/sina-image-differ.php:213
 #: widgets/basic/sina-image-differ.php:222
@@ -668,8 +668,8 @@ msgstr "চালু"
 #: inc/sina-ext-controls.php:258 inc/sina-ext-controls.php:268
 #: inc/sina-ext-controls.php:278 inc/sina-ext-controls.php:288
 #: inc/sina-ext-controls.php:298 inc/sina-ext-controls.php:308
-#: widgets/advanced/sina-banner-slider.php:324
-#: widgets/advanced/sina-banner-slider.php:354
+#: widgets/advanced/sina-banner-slider.php:412
+#: widgets/advanced/sina-banner-slider.php:442
 #: widgets/basic/sina-image-differ.php:205
 #: widgets/basic/sina-image-differ.php:214
 #: widgets/basic/sina-image-differ.php:223
@@ -692,15 +692,15 @@ msgstr "স্পর্শে টানা"
 msgid "Infinity Loop"
 msgstr "ইনফিনিটি লুপ"
 
-#: inc/sina-ext-controls.php:305 widgets/advanced/sina-banner-slider.php:261
+#: inc/sina-ext-controls.php:305 widgets/advanced/sina-banner-slider.php:301
 #: widgets/advanced/sina-blogpost.php:771
 #: widgets/advanced/sina-blogpost.php:1876
 #: widgets/advanced/sina-blogpost.php:1975
-#: widgets/advanced/sina-contact-form.php:522
-#: widgets/advanced/sina-content-slider.php:452
-#: widgets/advanced/sina-content-slider.php:556
-#: widgets/advanced/sina-content-slider.php:654
-#: widgets/advanced/sina-content-slider.php:738
+#: widgets/advanced/sina-contact-form.php:531
+#: widgets/advanced/sina-content-slider.php:456
+#: widgets/advanced/sina-content-slider.php:560
+#: widgets/advanced/sina-content-slider.php:658
+#: widgets/advanced/sina-content-slider.php:742
 #: widgets/advanced/sina-countdown.php:292
 #: widgets/advanced/sina-facebook-feed.php:547
 #: widgets/advanced/sina-login-form.php:316
@@ -714,9 +714,9 @@ msgstr "ইনফিনিটি লুপ"
 #: widgets/advanced/sina-particle-layer.php:540
 #: widgets/advanced/sina-portfolio.php:417
 #: widgets/advanced/sina-portfolio.php:684
-#: widgets/advanced/sina-posts-carousel.php:393
-#: widgets/advanced/sina-posts-carousel.php:418
-#: widgets/advanced/sina-posts-carousel.php:929
+#: widgets/advanced/sina-posts-carousel.php:397
+#: widgets/advanced/sina-posts-carousel.php:422
+#: widgets/advanced/sina-posts-carousel.php:933
 #: widgets/advanced/sina-posts-tab.php:383
 #: widgets/advanced/sina-posts-tab.php:510
 #: widgets/advanced/sina-posts-tab.php:881
@@ -775,7 +775,7 @@ msgstr ""
 msgid "Slide Animation Out"
 msgstr ""
 
-#: inc/sina-ext-controls.php:378 widgets/advanced/sina-banner-slider.php:361
+#: inc/sina-ext-controls.php:378 widgets/advanced/sina-banner-slider.php:449
 msgid "Speed"
 msgstr "গতি"
 
@@ -796,7 +796,7 @@ msgid "Enter Tooltip Text"
 msgstr "টুলটিপের লিখা লিখুন"
 
 #: inc/sina-ext-controls.php:416 widgets/advanced/sina-blogpost.php:1147
-#: widgets/advanced/sina-posts-carousel.php:1330
+#: widgets/advanced/sina-posts-carousel.php:1334
 #: widgets/advanced/sina-posts-tab.php:130 widgets/basic/sina-accordion.php:129
 #: widgets/basic/sina-content-box.php:172
 #: widgets/basic/sina-content-box.php:188 widgets/basic/sina-counter.php:126
@@ -818,15 +818,15 @@ msgstr "আইকন"
 msgid "Icon Position"
 msgstr "আইকনের অবস্থান"
 
-#: inc/sina-ext-controls.php:427 widgets/advanced/sina-banner-slider.php:257
+#: inc/sina-ext-controls.php:427 widgets/advanced/sina-banner-slider.php:297
 #: widgets/advanced/sina-blogpost.php:767
 #: widgets/advanced/sina-blogpost.php:1872
 #: widgets/advanced/sina-blogpost.php:1971
-#: widgets/advanced/sina-contact-form.php:518
-#: widgets/advanced/sina-content-slider.php:448
-#: widgets/advanced/sina-content-slider.php:552
-#: widgets/advanced/sina-content-slider.php:650
-#: widgets/advanced/sina-content-slider.php:734
+#: widgets/advanced/sina-contact-form.php:527
+#: widgets/advanced/sina-content-slider.php:452
+#: widgets/advanced/sina-content-slider.php:556
+#: widgets/advanced/sina-content-slider.php:654
+#: widgets/advanced/sina-content-slider.php:738
 #: widgets/advanced/sina-countdown.php:288
 #: widgets/advanced/sina-facebook-feed.php:543
 #: widgets/advanced/sina-login-form.php:312
@@ -841,9 +841,9 @@ msgstr "আইকনের অবস্থান"
 #: widgets/advanced/sina-particle-layer.php:536
 #: widgets/advanced/sina-portfolio.php:413
 #: widgets/advanced/sina-portfolio.php:680
-#: widgets/advanced/sina-posts-carousel.php:389
-#: widgets/advanced/sina-posts-carousel.php:414
-#: widgets/advanced/sina-posts-carousel.php:925
+#: widgets/advanced/sina-posts-carousel.php:393
+#: widgets/advanced/sina-posts-carousel.php:418
+#: widgets/advanced/sina-posts-carousel.php:929
 #: widgets/advanced/sina-posts-tab.php:272
 #: widgets/advanced/sina-posts-tab.php:379
 #: widgets/advanced/sina-posts-tab.php:506
@@ -876,15 +876,15 @@ msgstr "আইকনের অবস্থান"
 msgid "Left"
 msgstr "বামে"
 
-#: inc/sina-ext-controls.php:428 widgets/advanced/sina-banner-slider.php:265
+#: inc/sina-ext-controls.php:428 widgets/advanced/sina-banner-slider.php:305
 #: widgets/advanced/sina-blogpost.php:775
 #: widgets/advanced/sina-blogpost.php:1880
 #: widgets/advanced/sina-blogpost.php:1979
-#: widgets/advanced/sina-contact-form.php:526
-#: widgets/advanced/sina-content-slider.php:456
-#: widgets/advanced/sina-content-slider.php:560
-#: widgets/advanced/sina-content-slider.php:658
-#: widgets/advanced/sina-content-slider.php:742
+#: widgets/advanced/sina-contact-form.php:535
+#: widgets/advanced/sina-content-slider.php:460
+#: widgets/advanced/sina-content-slider.php:564
+#: widgets/advanced/sina-content-slider.php:662
+#: widgets/advanced/sina-content-slider.php:746
 #: widgets/advanced/sina-countdown.php:296
 #: widgets/advanced/sina-facebook-feed.php:551
 #: widgets/advanced/sina-login-form.php:320
@@ -899,9 +899,9 @@ msgstr "বামে"
 #: widgets/advanced/sina-particle-layer.php:544
 #: widgets/advanced/sina-portfolio.php:421
 #: widgets/advanced/sina-portfolio.php:688
-#: widgets/advanced/sina-posts-carousel.php:397
-#: widgets/advanced/sina-posts-carousel.php:422
-#: widgets/advanced/sina-posts-carousel.php:933
+#: widgets/advanced/sina-posts-carousel.php:401
+#: widgets/advanced/sina-posts-carousel.php:426
+#: widgets/advanced/sina-posts-carousel.php:937
 #: widgets/advanced/sina-posts-tab.php:273
 #: widgets/advanced/sina-posts-tab.php:387
 #: widgets/advanced/sina-posts-tab.php:514
@@ -975,7 +975,9 @@ msgstr ""
 msgid "Icon Zooming"
 msgstr ""
 
-#: inc/sina-ext-controls.php:478 widgets/advanced/sina-portfolio.php:245
+#: inc/sina-ext-controls.php:478 widgets/advanced/sina-banner-slider.php:256
+#: widgets/advanced/sina-banner-slider.php:275
+#: widgets/advanced/sina-portfolio.php:245
 #: widgets/advanced/sina-product-zoomer.php:147
 #: widgets/basic/sina-content-box.php:252
 #: widgets/basic/sina-dynamic-button.php:181
@@ -987,19 +989,19 @@ msgstr "লিঙ্ক"
 #: inc/sina-ext-controls.php:515 inc/sina-ext-controls.php:902
 #: inc/sina-ext-controls.php:958 inc/sina-ext-controls.php:1046
 #: inc/sina-ext-controls.php:1113 inc/sina-ext-controls.php:1276
-#: inc/sina-ext-controls.php:1332 widgets/advanced/sina-banner-slider.php:512
-#: widgets/advanced/sina-banner-slider.php:585
-#: widgets/advanced/sina-banner-slider.php:626
-#: widgets/advanced/sina-banner-slider.php:699
+#: inc/sina-ext-controls.php:1332 widgets/advanced/sina-banner-slider.php:552
+#: widgets/advanced/sina-banner-slider.php:625
+#: widgets/advanced/sina-banner-slider.php:666
+#: widgets/advanced/sina-banner-slider.php:739
 #: widgets/advanced/sina-blogpost.php:561
 #: widgets/advanced/sina-blogpost.php:636
 #: widgets/advanced/sina-blogpost.php:679
 #: widgets/advanced/sina-blogpost.php:947
 #: widgets/advanced/sina-blogpost.php:1047
 #: widgets/advanced/sina-blogpost.php:1074
-#: widgets/advanced/sina-content-slider.php:488
-#: widgets/advanced/sina-content-slider.php:592
-#: widgets/advanced/sina-content-slider.php:690
+#: widgets/advanced/sina-content-slider.php:492
+#: widgets/advanced/sina-content-slider.php:596
+#: widgets/advanced/sina-content-slider.php:694
 #: widgets/advanced/sina-countdown.php:205
 #: widgets/advanced/sina-countdown.php:580
 #: widgets/advanced/sina-countdown.php:647
@@ -1029,12 +1031,12 @@ msgstr "লিঙ্ক"
 #: widgets/advanced/sina-particle-layer.php:792
 #: widgets/advanced/sina-portfolio.php:726
 #: widgets/advanced/sina-portfolio.php:765
-#: widgets/advanced/sina-posts-carousel.php:719
-#: widgets/advanced/sina-posts-carousel.php:794
-#: widgets/advanced/sina-posts-carousel.php:837
-#: widgets/advanced/sina-posts-carousel.php:1025
-#: widgets/advanced/sina-posts-carousel.php:1051
-#: widgets/advanced/sina-posts-carousel.php:1248
+#: widgets/advanced/sina-posts-carousel.php:723
+#: widgets/advanced/sina-posts-carousel.php:798
+#: widgets/advanced/sina-posts-carousel.php:841
+#: widgets/advanced/sina-posts-carousel.php:1029
+#: widgets/advanced/sina-posts-carousel.php:1055
+#: widgets/advanced/sina-posts-carousel.php:1252
 #: widgets/advanced/sina-posts-tab.php:562
 #: widgets/advanced/sina-posts-tab.php:593
 #: widgets/advanced/sina-posts-tab.php:823
@@ -1083,8 +1085,8 @@ msgstr "লিখার রঙ"
 
 #: inc/sina-ext-controls.php:526 widgets/advanced/sina-blogpost.php:602
 #: widgets/advanced/sina-blogpost.php:1192
-#: widgets/advanced/sina-posts-carousel.php:760
-#: widgets/advanced/sina-posts-carousel.php:1375
+#: widgets/advanced/sina-posts-carousel.php:764
+#: widgets/advanced/sina-posts-carousel.php:1379
 #: widgets/basic/sina-table.php:1209 widgets/basic/sina-table.php:1264
 msgid "Background Color"
 msgstr "পটভূমির রঙ"
@@ -1095,19 +1097,19 @@ msgstr "সর্বোচ্চ প্রস্থ"
 
 #: inc/sina-ext-controls.php:564 inc/sina-ext-controls.php:1094
 #: inc/sina-ext-controls.php:1152 inc/sina-ext-controls.php:1195
-#: widgets/advanced/sina-banner-slider.php:792
-#: widgets/advanced/sina-banner-slider.php:875
+#: widgets/advanced/sina-banner-slider.php:832
+#: widgets/advanced/sina-banner-slider.php:915
 #: widgets/advanced/sina-blogpost.php:733
 #: widgets/advanced/sina-blogpost.php:1209
 #: widgets/advanced/sina-blogpost.php:1275
 #: widgets/advanced/sina-blogpost.php:1493
 #: widgets/advanced/sina-blogpost.php:1821
 #: widgets/advanced/sina-blogpost.php:1912
-#: widgets/advanced/sina-brand-carousel.php:371
-#: widgets/advanced/sina-contact-form.php:264
-#: widgets/advanced/sina-contact-form.php:402
-#: widgets/advanced/sina-contact-form.php:460
-#: widgets/advanced/sina-content-slider.php:396
+#: widgets/advanced/sina-brand-carousel.php:375
+#: widgets/advanced/sina-contact-form.php:273
+#: widgets/advanced/sina-contact-form.php:411
+#: widgets/advanced/sina-contact-form.php:469
+#: widgets/advanced/sina-content-slider.php:400
 #: widgets/advanced/sina-countdown.php:237
 #: widgets/advanced/sina-countdown.php:447
 #: widgets/advanced/sina-facebook-feed.php:491
@@ -1126,11 +1128,11 @@ msgstr "সর্বোচ্চ প্রস্থ"
 #: widgets/advanced/sina-particle-layer.php:962
 #: widgets/advanced/sina-portfolio.php:362
 #: widgets/advanced/sina-portfolio.php:480
-#: widgets/advanced/sina-posts-carousel.php:338
-#: widgets/advanced/sina-posts-carousel.php:891
-#: widgets/advanced/sina-posts-carousel.php:1392
-#: widgets/advanced/sina-posts-carousel.php:1688
-#: widgets/advanced/sina-posts-carousel.php:1725
+#: widgets/advanced/sina-posts-carousel.php:342
+#: widgets/advanced/sina-posts-carousel.php:895
+#: widgets/advanced/sina-posts-carousel.php:1396
+#: widgets/advanced/sina-posts-carousel.php:1692
+#: widgets/advanced/sina-posts-carousel.php:1729
 #: widgets/advanced/sina-posts-tab.php:213
 #: widgets/advanced/sina-posts-tab.php:328
 #: widgets/advanced/sina-posts-tab.php:458
@@ -1154,20 +1156,20 @@ msgstr "সর্বোচ্চ প্রস্থ"
 #: widgets/basic/sina-team.php:797 widgets/basic/sina-team.php:1176
 #: widgets/basic/sina-title.php:699 widgets/basic/sina-video.php:487
 msgid "Radius"
-msgstr "ব্যাসার্ধ"
+msgstr "ব্যাস"
 
-#: inc/sina-ext-controls.php:582 widgets/advanced/sina-banner-slider.php:464
-#: widgets/advanced/sina-banner-slider.php:810
-#: widgets/advanced/sina-banner-slider.php:893
+#: inc/sina-ext-controls.php:582 widgets/advanced/sina-banner-slider.php:504
+#: widgets/advanced/sina-banner-slider.php:850
+#: widgets/advanced/sina-banner-slider.php:933
 #: widgets/advanced/sina-blogpost.php:979
 #: widgets/advanced/sina-blogpost.php:1227
 #: widgets/advanced/sina-blogpost.php:1294
 #: widgets/advanced/sina-blogpost.php:1540
 #: widgets/advanced/sina-blogpost.php:1832
 #: widgets/advanced/sina-blogpost.php:1931
-#: widgets/advanced/sina-contact-form.php:283
-#: widgets/advanced/sina-contact-form.php:478
-#: widgets/advanced/sina-content-slider.php:408
+#: widgets/advanced/sina-contact-form.php:292
+#: widgets/advanced/sina-contact-form.php:487
+#: widgets/advanced/sina-content-slider.php:412
 #: widgets/advanced/sina-countdown.php:248
 #: widgets/advanced/sina-countdown.php:465
 #: widgets/advanced/sina-facebook-feed.php:503
@@ -1190,11 +1192,11 @@ msgstr "ব্যাসার্ধ"
 #: widgets/advanced/sina-particle-layer.php:980
 #: widgets/advanced/sina-portfolio.php:373
 #: widgets/advanced/sina-portfolio.php:657
-#: widgets/advanced/sina-posts-carousel.php:349
-#: widgets/advanced/sina-posts-carousel.php:1278
-#: widgets/advanced/sina-posts-carousel.php:1410
-#: widgets/advanced/sina-posts-carousel.php:1578
-#: widgets/advanced/sina-posts-carousel.php:1744
+#: widgets/advanced/sina-posts-carousel.php:353
+#: widgets/advanced/sina-posts-carousel.php:1282
+#: widgets/advanced/sina-posts-carousel.php:1414
+#: widgets/advanced/sina-posts-carousel.php:1582
+#: widgets/advanced/sina-posts-carousel.php:1748
 #: widgets/advanced/sina-posts-tab.php:224
 #: widgets/advanced/sina-posts-tab.php:339
 #: widgets/advanced/sina-posts-tab.php:469
@@ -1239,14 +1241,14 @@ msgstr "তীরের রঙ"
 #: widgets/advanced/sina-blogpost.php:689
 #: widgets/advanced/sina-blogpost.php:1710
 #: widgets/advanced/sina-brand-carousel.php:215
-#: widgets/advanced/sina-brand-carousel.php:457
+#: widgets/advanced/sina-brand-carousel.php:461
 #: widgets/advanced/sina-facebook-feed.php:397
 #: widgets/advanced/sina-modal-box.php:772
 #: widgets/advanced/sina-portfolio.php:785
-#: widgets/advanced/sina-posts-carousel.php:694
-#: widgets/advanced/sina-posts-carousel.php:773
-#: widgets/advanced/sina-posts-carousel.php:811
-#: widgets/advanced/sina-posts-carousel.php:847
+#: widgets/advanced/sina-posts-carousel.php:698
+#: widgets/advanced/sina-posts-carousel.php:777
+#: widgets/advanced/sina-posts-carousel.php:815
+#: widgets/advanced/sina-posts-carousel.php:851
 #: widgets/advanced/sina-search-form.php:326
 #: widgets/advanced/sina-twitter-feed.php:426
 #: widgets/basic/sina-accordion.php:238 widgets/basic/sina-accordion.php:311
@@ -1277,11 +1279,11 @@ msgstr "উপর থেকে ন্যাভ (%)"
 
 #: inc/sina-ext-controls.php:796
 msgid "Nav Next Radius"
-msgstr "পরবর্তী ন্যাভের ব্যাসার্ধ"
+msgstr "পরবর্তী ন্যাভের ব্যাস"
 
 #: inc/sina-ext-controls.php:817
 msgid "Nav Prev Radius"
-msgstr "পূর্ববর্তী ন্যাভের ব্যাসার্ধ"
+msgstr "পূর্ববর্তী ন্যাভের ব্যাস"
 
 #: inc/sina-ext-controls.php:838
 msgid "Nav Padding"
@@ -1292,9 +1294,9 @@ msgid "Active"
 msgstr "সক্রিয়"
 
 #: inc/sina-ext-controls.php:1176 inc/controls/gradient-text.php:437
-#: widgets/advanced/sina-banner-slider.php:772
-#: widgets/advanced/sina-banner-slider.php:855
-#: widgets/advanced/sina-contact-form.php:440
+#: widgets/advanced/sina-banner-slider.php:812
+#: widgets/advanced/sina-banner-slider.php:895
+#: widgets/advanced/sina-contact-form.php:449
 #: widgets/advanced/sina-countdown.php:163
 #: widgets/advanced/sina-countdown.php:379
 #: widgets/advanced/sina-login-form.php:381
@@ -1322,10 +1324,10 @@ msgstr "প্রস্থ"
 #: widgets/advanced/sina-blogpost.php:1558
 #: widgets/advanced/sina-blogpost.php:1850
 #: widgets/advanced/sina-blogpost.php:1949
-#: widgets/advanced/sina-contact-form.php:301
-#: widgets/advanced/sina-contact-form.php:413
-#: widgets/advanced/sina-contact-form.php:496
-#: widgets/advanced/sina-content-slider.php:426
+#: widgets/advanced/sina-contact-form.php:310
+#: widgets/advanced/sina-contact-form.php:422
+#: widgets/advanced/sina-contact-form.php:505
+#: widgets/advanced/sina-content-slider.php:430
 #: widgets/advanced/sina-countdown.php:483
 #: widgets/advanced/sina-countdown.php:620
 #: widgets/advanced/sina-facebook-feed.php:521
@@ -1340,12 +1342,12 @@ msgstr "প্রস্থ"
 #: widgets/advanced/sina-news-ticker.php:560
 #: widgets/advanced/sina-portfolio.php:391
 #: widgets/advanced/sina-portfolio.php:491
-#: widgets/advanced/sina-posts-carousel.php:367
-#: widgets/advanced/sina-posts-carousel.php:903
-#: widgets/advanced/sina-posts-carousel.php:1073
-#: widgets/advanced/sina-posts-carousel.php:1421
-#: widgets/advanced/sina-posts-carousel.php:1559
-#: widgets/advanced/sina-posts-carousel.php:1762
+#: widgets/advanced/sina-posts-carousel.php:371
+#: widgets/advanced/sina-posts-carousel.php:907
+#: widgets/advanced/sina-posts-carousel.php:1077
+#: widgets/advanced/sina-posts-carousel.php:1425
+#: widgets/advanced/sina-posts-carousel.php:1563
+#: widgets/advanced/sina-posts-carousel.php:1766
 #: widgets/advanced/sina-posts-tab.php:235
 #: widgets/advanced/sina-posts-tab.php:357
 #: widgets/advanced/sina-product-zoomer.php:414
@@ -1490,19 +1492,19 @@ msgstr "অবৈধ বার্তা!"
 msgid "Invalid reCAPTCHA!"
 msgstr "অবৈধ রেক্যাপচা!"
 
-#: inc/sina-ext-hooks.php:177
+#: inc/sina-ext-hooks.php:179
 msgid "Name: "
 msgstr "নামঃ"
 
-#: inc/sina-ext-hooks.php:207
+#: inc/sina-ext-hooks.php:209
 msgid "Username or Email can't be empty!"
 msgstr "ব্যবহারকারীর নাম বা ইমেল খালি থাকতে পারবে না!"
 
-#: inc/sina-ext-hooks.php:212
+#: inc/sina-ext-hooks.php:214
 msgid "Password can't be empty!"
 msgstr "পাসওয়ার্ড খালি থাকতে পারবে না!"
 
-#: inc/sina-ext-hooks.php:222
+#: inc/sina-ext-hooks.php:224
 msgid "Username or Email and password don't matched!"
 msgstr "ব্যবহারকারীর নাম বা ইমেল এবং পাসওয়ার্ড মিলে নি!"
 
@@ -1546,8 +1548,8 @@ msgstr "টেমপ্লেট সেটিংস"
 #: admin/partials/page-content.php:50
 msgid "You can use <strong><i>SINA TEMPLATES</i></strong> on your site. Enjoy!"
 msgstr ""
-"আপনার সাইটে <strong><i>SINA TEMPLATES</ i></strong> ব্যবহার করতে পারেন। "
-"উপভোগ করুন!"
+"আপনার সাইটে <strong><i>SINA TEMPLATES</i></strong> ব্যবহার করতে পারেন। উপভোগ "
+"করুন!"
 
 #: admin/partials/page-content.php:61
 msgid ""
@@ -1584,7 +1586,7 @@ msgstr "টিকেট খুলুন"
 
 #: admin/partials/page-content.php:146
 msgid "Did you like"
-msgstr "তুমি কি পছন্দ করেছ"
+msgstr "আপনি কি পছন্দ করেছেন"
 
 #: admin/partials/page-content.php:146
 msgid "Plugin?"
@@ -1627,10 +1629,10 @@ msgstr "ছবি"
 #: widgets/advanced/sina-facebook-feed.php:943
 #: widgets/advanced/sina-portfolio.php:574
 #: widgets/advanced/sina-portfolio.php:632
-#: widgets/advanced/sina-posts-carousel.php:747
-#: widgets/advanced/sina-posts-carousel.php:865
-#: widgets/advanced/sina-posts-carousel.php:1364
-#: widgets/advanced/sina-posts-carousel.php:1505
+#: widgets/advanced/sina-posts-carousel.php:751
+#: widgets/advanced/sina-posts-carousel.php:869
+#: widgets/advanced/sina-posts-carousel.php:1368
+#: widgets/advanced/sina-posts-carousel.php:1509
 #: widgets/advanced/sina-twitter-feed.php:819
 #: widgets/basic/sina-content-box.php:468
 #: widgets/basic/sina-content-box.php:609 widgets/basic/sina-counter.php:424
@@ -1667,8 +1669,8 @@ msgstr "কোণ (ডিগ্রি)"
 #: inc/controls/gradient-text.php:164 inc/controls/gradient-text.php:205
 #: widgets/advanced/sina-blogpost.php:1135
 #: widgets/advanced/sina-login-form.php:269
-#: widgets/advanced/sina-posts-carousel.php:1318
-#: widgets/advanced/sina-posts-carousel.php:1458
+#: widgets/advanced/sina-posts-carousel.php:1322
+#: widgets/advanced/sina-posts-carousel.php:1462
 #: widgets/advanced/sina-review-carousel.php:149
 #: widgets/advanced/sina-review-carousel.php:437
 #: widgets/basic/sina-piechart.php:295 widgets/basic/sina-team.php:157
@@ -1765,7 +1767,7 @@ msgstr ""
 
 #: inc/controls/gradient-text.php:416 widgets/advanced/sina-blogpost.php:1441
 #: widgets/advanced/sina-portfolio.php:227
-#: widgets/advanced/sina-posts-carousel.php:1648
+#: widgets/advanced/sina-posts-carousel.php:1652
 #: widgets/advanced/sina-review-carousel.php:284
 #: widgets/basic/sina-content-box.php:835
 #: widgets/basic/sina-content-box.php:861 widgets/basic/sina-counter.php:515
@@ -1787,6 +1789,10 @@ msgstr "আবরণ"
 msgid "Contain"
 msgstr "ধারণ"
 
+#: inc/controls/icon.php:3026 inc/controls/icon.php:3027
+msgid "Select Icon"
+msgstr "আইকন নির্বাচন করুন"
+
 #: widgets/advanced/sina-banner-slider.php:39
 msgid "Sina Banner Slider"
 msgstr "Sina ব্যানার স্লাইডার"
@@ -1804,7 +1810,7 @@ msgstr "ছবি চয়ন করুন"
 
 #: widgets/advanced/sina-banner-slider.php:141
 #: widgets/advanced/sina-banner-slider.php:189
-#: widgets/advanced/sina-banner-slider.php:225
+#: widgets/advanced/sina-banner-slider.php:226
 #: widgets/advanced/sina-content-slider.php:174
 #: widgets/advanced/sina-content-slider.php:212
 #: widgets/advanced/sina-content-slider.php:247
@@ -1828,7 +1834,7 @@ msgid "You can use HTML."
 msgstr "আপনি এইচটিএমএল ব্যবহার করতে পারেন।"
 
 #: widgets/advanced/sina-banner-slider.php:151
-#: widgets/advanced/sina-banner-slider.php:577
+#: widgets/advanced/sina-banner-slider.php:617
 #: widgets/advanced/sina-particle-layer.php:153
 #: widgets/advanced/sina-particle-layer.php:661
 #: widgets/basic/sina-title.php:367
@@ -1846,7 +1852,7 @@ msgid "You can use SPAN for multi-color title."
 msgstr "আপনি বহু রঙের শিরোনামের জন্য SPAN ব্যবহার করতে পারেন।"
 
 #: widgets/advanced/sina-banner-slider.php:164
-#: widgets/advanced/sina-banner-slider.php:199
+#: widgets/advanced/sina-banner-slider.php:200
 #: widgets/advanced/sina-content-slider.php:188
 #: widgets/advanced/sina-content-slider.php:225
 #: widgets/advanced/sina-particle-layer.php:166
@@ -1862,24 +1868,24 @@ msgid "Title Animation"
 msgstr "শিরোনামের অ্যানিমেশন"
 
 #: widgets/advanced/sina-banner-slider.php:186
-#: widgets/advanced/sina-banner-slider.php:618
+#: widgets/advanced/sina-banner-slider.php:658
 #: widgets/advanced/sina-content-slider.php:208
-#: widgets/advanced/sina-content-slider.php:584
+#: widgets/advanced/sina-content-slider.php:588
 #: widgets/advanced/sina-particle-layer.php:179
 #: widgets/advanced/sina-particle-layer.php:705
 #: widgets/basic/sina-title.php:174 widgets/basic/sina-title.php:407
 msgid "Sub Title"
 msgstr "উপ-শিরোনাম"
 
-#: widgets/advanced/sina-banner-slider.php:214
+#: widgets/advanced/sina-banner-slider.php:215
 #: widgets/advanced/sina-particle-layer.php:431
 msgid "Sub Title Animation"
 msgstr "উপ-শিরোনামের অ্যানিমেশন"
 
-#: widgets/advanced/sina-banner-slider.php:223
-#: widgets/advanced/sina-banner-slider.php:691
+#: widgets/advanced/sina-banner-slider.php:224
+#: widgets/advanced/sina-banner-slider.php:731
 #: widgets/advanced/sina-content-slider.php:244
-#: widgets/advanced/sina-content-slider.php:682
+#: widgets/advanced/sina-content-slider.php:686
 #: widgets/advanced/sina-modal-box.php:213
 #: widgets/advanced/sina-modal-box.php:1050
 #: widgets/advanced/sina-particle-layer.php:208
@@ -1897,25 +1903,33 @@ msgstr "উপ-শিরোনামের অ্যানিমেশন"
 msgid "Description"
 msgstr "বর্ণনা"
 
-#: widgets/advanced/sina-banner-slider.php:235
+#: widgets/advanced/sina-banner-slider.php:237
 #: widgets/advanced/sina-particle-layer.php:441
 msgid "Description Animation"
 msgstr "বর্ণনার অ্যানিমেশন"
 
-#: widgets/advanced/sina-banner-slider.php:244
+#: widgets/advanced/sina-banner-slider.php:246
+msgid "Primary Button Text"
+msgstr "প্রাথমিক বোতামের লিখা"
+
+#: widgets/advanced/sina-banner-slider.php:265
+msgid "Secondary Button Text"
+msgstr "মাধ্যমিক বোতামের লিখা"
+
+#: widgets/advanced/sina-banner-slider.php:284
 #: widgets/advanced/sina-particle-layer.php:451
 msgid "Buttons Animation"
 msgstr "বোতাম গুলোর অ্যানিমেশন"
 
-#: widgets/advanced/sina-banner-slider.php:253
+#: widgets/advanced/sina-banner-slider.php:293
 #: widgets/advanced/sina-blogpost.php:763
 #: widgets/advanced/sina-blogpost.php:1868
 #: widgets/advanced/sina-blogpost.php:1967
-#: widgets/advanced/sina-contact-form.php:514
-#: widgets/advanced/sina-content-slider.php:444
-#: widgets/advanced/sina-content-slider.php:548
-#: widgets/advanced/sina-content-slider.php:646
-#: widgets/advanced/sina-content-slider.php:730
+#: widgets/advanced/sina-contact-form.php:523
+#: widgets/advanced/sina-content-slider.php:448
+#: widgets/advanced/sina-content-slider.php:552
+#: widgets/advanced/sina-content-slider.php:650
+#: widgets/advanced/sina-content-slider.php:734
 #: widgets/advanced/sina-countdown.php:284
 #: widgets/advanced/sina-facebook-feed.php:539
 #: widgets/advanced/sina-login-form.php:308
@@ -1929,8 +1943,8 @@ msgstr "বোতাম গুলোর অ্যানিমেশন"
 #: widgets/advanced/sina-particle-layer.php:532
 #: widgets/advanced/sina-portfolio.php:409
 #: widgets/advanced/sina-portfolio.php:676
-#: widgets/advanced/sina-posts-carousel.php:410
-#: widgets/advanced/sina-posts-carousel.php:921
+#: widgets/advanced/sina-posts-carousel.php:414
+#: widgets/advanced/sina-posts-carousel.php:925
 #: widgets/advanced/sina-posts-tab.php:375
 #: widgets/advanced/sina-posts-tab.php:502
 #: widgets/advanced/sina-posts-tab.php:873
@@ -1954,56 +1968,56 @@ msgstr "বোতাম গুলোর অ্যানিমেশন"
 msgid "Alignment"
 msgstr "প্রান্তিককরণ"
 
-#: widgets/advanced/sina-banner-slider.php:279
+#: widgets/advanced/sina-banner-slider.php:319
 msgid "Add Slide"
 msgstr "স্লাইড যুক্ত করুন"
 
-#: widgets/advanced/sina-banner-slider.php:313
-#: widgets/advanced/sina-content-slider.php:311
-msgid "Slider Settings"
-msgstr "স্লাইডার সেটিংস"
-
-#: widgets/advanced/sina-banner-slider.php:321
-#: widgets/basic/sina-image-differ.php:202 widgets/basic/sina-team.php:579
-msgid "Overlay"
-msgstr "আচ্ছাদন"
-
-#: widgets/advanced/sina-banner-slider.php:351
-msgid "Particular Animation"
-msgstr "আলাদা অ্যানিমেশন"
-
-#: widgets/advanced/sina-banner-slider.php:383
-#: widgets/advanced/sina-banner-slider.php:761
+#: widgets/advanced/sina-banner-slider.php:353
+#: widgets/advanced/sina-banner-slider.php:801
 #: widgets/advanced/sina-particle-layer.php:230
 #: widgets/advanced/sina-particle-layer.php:854
 msgid "Primary Button"
 msgstr "প্রাথমিক বোতাম"
 
-#: widgets/advanced/sina-banner-slider.php:398
-#: widgets/advanced/sina-banner-slider.php:844
+#: widgets/advanced/sina-banner-slider.php:368
+#: widgets/advanced/sina-banner-slider.php:884
 #: widgets/advanced/sina-particle-layer.php:255
 #: widgets/advanced/sina-particle-layer.php:934
 msgid "Secondary Button"
 msgstr "মাধ্যমিক বোতাম"
 
-#: widgets/advanced/sina-banner-slider.php:406
+#: widgets/advanced/sina-banner-slider.php:376
 #: widgets/advanced/sina-particle-layer.php:263
 msgid "Button Spacing"
 msgstr "বোতামের ফাকা"
 
-#: widgets/advanced/sina-banner-slider.php:431
+#: widgets/advanced/sina-banner-slider.php:401
+#: widgets/advanced/sina-content-slider.php:311
+msgid "Slider Settings"
+msgstr "স্লাইডার সেটিংস"
+
+#: widgets/advanced/sina-banner-slider.php:409
+#: widgets/basic/sina-image-differ.php:202 widgets/basic/sina-team.php:579
+msgid "Overlay"
+msgstr "আচ্ছাদন"
+
+#: widgets/advanced/sina-banner-slider.php:439
+msgid "Particular Animation"
+msgstr "আলাদা অ্যানিমেশন"
+
+#: widgets/advanced/sina-banner-slider.php:471
 #: widgets/advanced/sina-particle-layer.php:469
 msgid "Container"
 msgstr "ধারক"
 
-#: widgets/advanced/sina-banner-slider.php:439
-#: widgets/advanced/sina-contact-form.php:380
-#: widgets/advanced/sina-content-slider.php:352
+#: widgets/advanced/sina-banner-slider.php:479
+#: widgets/advanced/sina-contact-form.php:389
+#: widgets/advanced/sina-content-slider.php:356
 #: widgets/advanced/sina-countdown.php:179
 #: widgets/advanced/sina-countdown.php:398
 #: widgets/advanced/sina-portfolio.php:459
 #: widgets/advanced/sina-portfolio.php:843
-#: widgets/advanced/sina-posts-carousel.php:302
+#: widgets/advanced/sina-posts-carousel.php:306
 #: widgets/advanced/sina-posts-tab.php:440
 #: widgets/basic/sina-content-box.php:906 widgets/basic/sina-flip-box.php:451
 #: widgets/basic/sina-google-map.php:211 widgets/basic/sina-progressbar.php:241
@@ -2013,11 +2027,11 @@ msgstr "ধারক"
 msgid "Height"
 msgstr "উচ্চতা"
 
-#: widgets/advanced/sina-banner-slider.php:555
-#: widgets/advanced/sina-banner-slider.php:669
-#: widgets/advanced/sina-banner-slider.php:739
-#: widgets/advanced/sina-content-slider.php:534
-#: widgets/advanced/sina-content-slider.php:632
+#: widgets/advanced/sina-banner-slider.php:595
+#: widgets/advanced/sina-banner-slider.php:709
+#: widgets/advanced/sina-banner-slider.php:779
+#: widgets/advanced/sina-content-slider.php:538
+#: widgets/advanced/sina-content-slider.php:636
 #: widgets/advanced/sina-modal-box.php:999
 #: widgets/advanced/sina-particle-layer.php:639
 #: widgets/advanced/sina-particle-layer.php:759
@@ -2028,14 +2042,14 @@ msgstr "উচ্চতা"
 msgid "Margin Bottom"
 msgstr "নিচের প্রান্ত"
 
-#: widgets/advanced/sina-banner-slider.php:927
+#: widgets/advanced/sina-banner-slider.php:967
 #: widgets/advanced/sina-particle-layer.php:1014
 msgid "Tooltips"
 msgstr "টুলটিপগুলো"
 
-#: widgets/advanced/sina-banner-slider.php:942
-#: widgets/advanced/sina-content-slider.php:766
-#: widgets/advanced/sina-posts-carousel.php:1789
+#: widgets/advanced/sina-banner-slider.php:982
+#: widgets/advanced/sina-content-slider.php:770
+#: widgets/advanced/sina-posts-carousel.php:1793
 #: widgets/advanced/sina-review-carousel.php:627
 msgid "Nav & Dots"
 msgstr "ন্যাভ ও বিন্দু"
@@ -2053,7 +2067,7 @@ msgid "Layout Type"
 msgstr "বিন্যাসের ধরণ"
 
 #: widgets/advanced/sina-blogpost.php:135
-#: widgets/advanced/sina-contact-form.php:251
+#: widgets/advanced/sina-contact-form.php:260
 #: widgets/advanced/sina-posts-carousel.php:119 widgets/basic/sina-team.php:108
 msgid "Layout"
 msgstr "বিন্যাস"
@@ -2130,7 +2144,7 @@ msgstr "৪"
 #: widgets/advanced/sina-blogpost.php:1124
 #: widgets/advanced/sina-news-ticker.php:116
 #: widgets/advanced/sina-posts-carousel.php:132
-#: widgets/advanced/sina-posts-carousel.php:1307
+#: widgets/advanced/sina-posts-carousel.php:1311
 #: widgets/advanced/sina-posts-tab.php:261
 msgid "Categories"
 msgstr "বিভাগসমূহ"
@@ -2165,7 +2179,7 @@ msgstr "বৈশিষ্ট্য ছবি"
 #: widgets/advanced/sina-posts-carousel.php:184
 #: widgets/advanced/sina-posts-carousel.php:197
 #: widgets/advanced/sina-posts-carousel.php:206
-#: widgets/advanced/sina-posts-carousel.php:1187
+#: widgets/advanced/sina-posts-carousel.php:1191
 #: widgets/advanced/sina-posts-tab.php:175
 msgid "Yes"
 msgstr "হ্যাঁ"
@@ -2190,7 +2204,7 @@ msgstr "হ্যাঁ"
 #: widgets/advanced/sina-posts-carousel.php:185
 #: widgets/advanced/sina-posts-carousel.php:198
 #: widgets/advanced/sina-posts-carousel.php:207
-#: widgets/advanced/sina-posts-carousel.php:1188
+#: widgets/advanced/sina-posts-carousel.php:1192
 #: widgets/advanced/sina-posts-tab.php:176
 msgid "No"
 msgstr "না"
@@ -2217,7 +2231,7 @@ msgstr "অবতার দেখান"
 
 #: widgets/advanced/sina-blogpost.php:250
 msgid " Show Content"
-msgstr "বিষয়বস্তু প্রদর্শন"
+msgstr "বিষয়বস্তু দেখান"
 
 #: widgets/advanced/sina-blogpost.php:260
 msgid "Show Excerpt"
@@ -2240,7 +2254,7 @@ msgstr "লোড বোতাম দেখান"
 
 #: widgets/advanced/sina-blogpost.php:310
 msgid "Load More Label"
-msgstr "লোড লেবেল"
+msgstr "লোড বোতামের লেবেল"
 
 #: widgets/advanced/sina-blogpost.php:312
 #: widgets/basic/sina-dynamic-button.php:171
@@ -2250,15 +2264,15 @@ msgstr "লেবেল লিখুন"
 #: widgets/advanced/sina-blogpost.php:330
 #: widgets/advanced/sina-blogpost.php:1264
 #: widgets/advanced/sina-posts-carousel.php:238
-#: widgets/advanced/sina-posts-carousel.php:1714
+#: widgets/advanced/sina-posts-carousel.php:1718
 #: widgets/advanced/sina-twitter-feed.php:220
 #: widgets/advanced/sina-twitter-feed.php:856
 msgid "Read More"
 msgstr "আরও পড়ুন"
 
 #: widgets/advanced/sina-blogpost.php:346
-#: widgets/advanced/sina-posts-carousel.php:291
-#: widgets/advanced/sina-posts-carousel.php:509
+#: widgets/advanced/sina-posts-carousel.php:295
+#: widgets/advanced/sina-posts-carousel.php:513
 msgid "Post"
 msgstr "পোস্ট"
 
@@ -2276,7 +2290,7 @@ msgstr ""
 #: widgets/advanced/sina-blogpost.php:362
 #: widgets/advanced/sina-facebook-feed.php:223
 #: widgets/advanced/sina-portfolio.php:124
-#: widgets/advanced/sina-posts-carousel.php:520
+#: widgets/advanced/sina-posts-carousel.php:524
 #: widgets/advanced/sina-twitter-feed.php:252
 #: widgets/basic/sina-content-box.php:297
 #: widgets/basic/sina-content-box.php:800 widgets/basic/sina-flip-box.php:299
@@ -2289,8 +2303,8 @@ msgstr "ইফেক্টগুলো"
 #: widgets/advanced/sina-blogpost.php:398
 #: widgets/advanced/sina-facebook-feed.php:226
 #: widgets/advanced/sina-facebook-feed.php:259
-#: widgets/advanced/sina-posts-carousel.php:523
-#: widgets/advanced/sina-posts-carousel.php:556
+#: widgets/advanced/sina-posts-carousel.php:527
+#: widgets/advanced/sina-posts-carousel.php:560
 #: widgets/advanced/sina-twitter-feed.php:255
 #: widgets/advanced/sina-twitter-feed.php:288
 #: widgets/basic/sina-content-box.php:300
@@ -2303,7 +2317,7 @@ msgstr "নড়ানো"
 #: widgets/advanced/sina-blogpost.php:366
 #: widgets/advanced/sina-facebook-feed.php:227
 #: widgets/advanced/sina-portfolio.php:128
-#: widgets/advanced/sina-posts-carousel.php:524
+#: widgets/advanced/sina-posts-carousel.php:528
 #: widgets/advanced/sina-twitter-feed.php:256
 #: widgets/basic/sina-content-box.php:301
 #: widgets/basic/sina-content-box.php:803 widgets/basic/sina-flip-box.php:304
@@ -2314,11 +2328,11 @@ msgid "Zoom"
 msgstr ""
 
 #: widgets/advanced/sina-blogpost.php:375
-#: widgets/advanced/sina-brand-carousel.php:506
-#: widgets/advanced/sina-content-slider.php:792
+#: widgets/advanced/sina-brand-carousel.php:510
+#: widgets/advanced/sina-content-slider.php:796
 #: widgets/advanced/sina-facebook-feed.php:236
-#: widgets/advanced/sina-posts-carousel.php:533
-#: widgets/advanced/sina-posts-carousel.php:1816
+#: widgets/advanced/sina-posts-carousel.php:537
+#: widgets/advanced/sina-posts-carousel.php:1820
 #: widgets/advanced/sina-twitter-feed.php:265
 #: widgets/basic/sina-content-box.php:310 widgets/basic/sina-pricing.php:354
 #: widgets/basic/sina-team.php:390
@@ -2327,7 +2341,7 @@ msgstr ""
 
 #: widgets/advanced/sina-blogpost.php:410
 #: widgets/advanced/sina-facebook-feed.php:271
-#: widgets/advanced/sina-posts-carousel.php:568
+#: widgets/advanced/sina-posts-carousel.php:572
 #: widgets/advanced/sina-twitter-feed.php:300
 #: widgets/basic/sina-content-box.php:345
 #: widgets/basic/sina-image-differ.php:182 widgets/basic/sina-pricing.php:389
@@ -2337,7 +2351,7 @@ msgstr "অনুভূমিক"
 
 #: widgets/advanced/sina-blogpost.php:436
 #: widgets/advanced/sina-facebook-feed.php:297
-#: widgets/advanced/sina-posts-carousel.php:594
+#: widgets/advanced/sina-posts-carousel.php:598
 #: widgets/advanced/sina-twitter-feed.php:326
 #: widgets/basic/sina-content-box.php:371
 #: widgets/basic/sina-image-differ.php:183 widgets/basic/sina-pricing.php:415
@@ -2347,19 +2361,19 @@ msgstr "উল্লম্ব"
 
 #: widgets/advanced/sina-blogpost.php:554
 #: widgets/advanced/sina-facebook-feed.php:433
-#: widgets/advanced/sina-posts-carousel.php:712
+#: widgets/advanced/sina-posts-carousel.php:716
 #: widgets/basic/sina-pricing.php:542
 msgid "Title Styles"
 msgstr "শিরোনামের শৈলী"
 
 #: widgets/advanced/sina-blogpost.php:579
-#: widgets/advanced/sina-posts-carousel.php:737
+#: widgets/advanced/sina-posts-carousel.php:741
 msgid "Categories Styles"
 msgstr "বিভাগসমূহের শৈলী"
 
 #: widgets/advanced/sina-blogpost.php:629
 #: widgets/advanced/sina-facebook-feed.php:451
-#: widgets/advanced/sina-posts-carousel.php:787
+#: widgets/advanced/sina-posts-carousel.php:791
 #: widgets/advanced/sina-twitter-feed.php:462
 #: widgets/basic/sina-accordion.php:293 widgets/basic/sina-pricing.php:694
 msgid "Content Styles"
@@ -2378,7 +2392,7 @@ msgstr "বোতাম"
 
 #: widgets/advanced/sina-blogpost.php:700
 #: widgets/advanced/sina-facebook-feed.php:469
-#: widgets/advanced/sina-posts-carousel.php:858
+#: widgets/advanced/sina-posts-carousel.php:862
 #: widgets/advanced/sina-twitter-feed.php:480
 msgid "Meta Styles"
 msgstr "মেটার শৈলী"
@@ -2387,21 +2401,21 @@ msgstr "মেটার শৈলী"
 #: widgets/advanced/sina-blogpost.php:1395
 #: widgets/advanced/sina-blogpost.php:1414
 #: widgets/advanced/sina-particle-layer.php:305
-#: widgets/advanced/sina-posts-carousel.php:875
-#: widgets/advanced/sina-posts-carousel.php:1525
-#: widgets/advanced/sina-posts-carousel.php:1544
+#: widgets/advanced/sina-posts-carousel.php:879
+#: widgets/advanced/sina-posts-carousel.php:1529
+#: widgets/advanced/sina-posts-carousel.php:1548
 msgid "Link Color"
 msgstr "লিঙ্কের রঙ"
 
 #: widgets/advanced/sina-blogpost.php:779
-#: widgets/advanced/sina-content-slider.php:460
-#: widgets/advanced/sina-content-slider.php:564
-#: widgets/advanced/sina-content-slider.php:662
-#: widgets/advanced/sina-content-slider.php:746
+#: widgets/advanced/sina-content-slider.php:464
+#: widgets/advanced/sina-content-slider.php:568
+#: widgets/advanced/sina-content-slider.php:666
+#: widgets/advanced/sina-content-slider.php:750
 #: widgets/advanced/sina-facebook-feed.php:555
 #: widgets/advanced/sina-modal-box.php:1029
 #: widgets/advanced/sina-modal-box.php:1118
-#: widgets/advanced/sina-posts-carousel.php:937
+#: widgets/advanced/sina-posts-carousel.php:941
 #: widgets/advanced/sina-twitter-feed.php:566
 #: widgets/basic/sina-content-box.php:1102 widgets/basic/sina-title.php:231
 #: widgets/basic/sina-title.php:321 widgets/basic/sina-title.php:470
@@ -2412,8 +2426,8 @@ msgstr "সমান্তরাল"
 #: widgets/advanced/sina-blogpost.php:791
 #: widgets/advanced/sina-facebook-feed.php:567
 #: widgets/advanced/sina-modal-box.php:390
-#: widgets/advanced/sina-posts-carousel.php:435
-#: widgets/advanced/sina-posts-carousel.php:949
+#: widgets/advanced/sina-posts-carousel.php:439
+#: widgets/advanced/sina-posts-carousel.php:953
 #: widgets/advanced/sina-twitter-feed.php:578
 #: widgets/basic/sina-image-differ.php:245
 msgid "Overlay Background"
@@ -2423,7 +2437,7 @@ msgstr "আচ্ছাদনের পটভূমি"
 #: widgets/advanced/sina-facebook-feed.php:753
 #: widgets/advanced/sina-particle-layer.php:113
 #: widgets/advanced/sina-portfolio.php:534
-#: widgets/advanced/sina-posts-carousel.php:1100
+#: widgets/advanced/sina-posts-carousel.php:1104
 #: widgets/advanced/sina-twitter-feed.php:734
 #: widgets/basic/sina-content-box.php:962 widgets/basic/sina-pricing.php:1212
 #: widgets/basic/sina-table.php:290 widgets/basic/sina-table.php:834
@@ -2432,47 +2446,47 @@ msgid "Content"
 msgstr "সামগ্রী"
 
 #: widgets/advanced/sina-blogpost.php:832
-#: widgets/advanced/sina-posts-carousel.php:1108
+#: widgets/advanced/sina-posts-carousel.php:1112
 msgid "Thumb Width (%)"
 msgstr "থাম্বের প্রস্থ (%)"
 
 #: widgets/advanced/sina-blogpost.php:858
-#: widgets/advanced/sina-posts-carousel.php:1134
+#: widgets/advanced/sina-posts-carousel.php:1138
 msgid "Thumb Height (px)"
 msgstr "থাম্বের উচ্চতা (px)"
 
 #: widgets/advanced/sina-blogpost.php:883
-#: widgets/advanced/sina-posts-carousel.php:1159
+#: widgets/advanced/sina-posts-carousel.php:1163
 msgid "Content Width (%)"
 msgstr "সামগ্রীর প্রস্থ"
 
 #: widgets/advanced/sina-blogpost.php:909
-#: widgets/advanced/sina-posts-carousel.php:1185
+#: widgets/advanced/sina-posts-carousel.php:1189
 msgid "Use content Height"
 msgstr "সামগ্রীর উচ্চতা ব্যবহার হবে"
 
 #: widgets/advanced/sina-blogpost.php:921
-#: widgets/advanced/sina-posts-carousel.php:1197
+#: widgets/advanced/sina-posts-carousel.php:1201
 msgid "Content Height (px)"
 msgstr "সামগ্রীর উচ্চতা (px)"
 
 #: widgets/advanced/sina-blogpost.php:1138
-#: widgets/advanced/sina-posts-carousel.php:1321
-#: widgets/advanced/sina-posts-carousel.php:1461
+#: widgets/advanced/sina-posts-carousel.php:1325
+#: widgets/advanced/sina-posts-carousel.php:1465
 #: widgets/basic/sina-title.php:119
 msgid "Before Title"
 msgstr "শিরোনামের পূর্বে"
 
 #: widgets/advanced/sina-blogpost.php:1139
-#: widgets/advanced/sina-posts-carousel.php:1322
-#: widgets/advanced/sina-posts-carousel.php:1462
+#: widgets/advanced/sina-posts-carousel.php:1326
+#: widgets/advanced/sina-posts-carousel.php:1466
 #: widgets/basic/sina-title.php:120
 msgid "After Title"
 msgstr "শিরোনামের পরে"
 
 #: widgets/advanced/sina-blogpost.php:1339
 #: widgets/advanced/sina-facebook-feed.php:910
-#: widgets/advanced/sina-posts-carousel.php:1447
+#: widgets/advanced/sina-posts-carousel.php:1451
 #: widgets/advanced/sina-twitter-feed.php:786
 msgid "Meta"
 msgstr "মেটা"
@@ -2483,7 +2497,7 @@ msgstr "অবতারের শৈলী"
 
 #: widgets/advanced/sina-blogpost.php:1455
 #: widgets/advanced/sina-blogpost.php:1792
-#: widgets/advanced/sina-posts-carousel.php:1659
+#: widgets/advanced/sina-posts-carousel.php:1663
 msgid "Spacing"
 msgstr "ফাকা"
 
@@ -2509,7 +2523,7 @@ msgid "Load More Button"
 msgstr "লোড বোতাম"
 
 #: widgets/advanced/sina-blogpost.php:2096
-#: widgets/advanced/sina-posts-carousel.php:1909
+#: widgets/advanced/sina-posts-carousel.php:1913
 msgid "No Posts found"
 msgstr "কোনো পোস্ট পাওয়া যায়নি"
 
@@ -2560,21 +2574,47 @@ msgstr "ক্যারোসেল সেটিংস"
 msgid "Show Item"
 msgstr "আইটেম দেখান"
 
-#: widgets/advanced/sina-brand-carousel.php:320
+#: widgets/advanced/sina-brand-carousel.php:302
+#: widgets/advanced/sina-content-slider.php:326
+#: widgets/advanced/sina-portfolio.php:144
+#: widgets/advanced/sina-posts-carousel.php:272
+msgid "5"
+msgstr "৫"
+
+#: widgets/advanced/sina-brand-carousel.php:303
+#: widgets/advanced/sina-content-slider.php:327
+#: widgets/advanced/sina-portfolio.php:145
+#: widgets/advanced/sina-posts-carousel.php:273
+msgid "6"
+msgstr "৬"
+
+#: widgets/advanced/sina-brand-carousel.php:304
+#: widgets/advanced/sina-content-slider.php:328
+#: widgets/advanced/sina-posts-carousel.php:274
+msgid "7"
+msgstr "৭"
+
+#: widgets/advanced/sina-brand-carousel.php:305
+#: widgets/advanced/sina-content-slider.php:329
+#: widgets/advanced/sina-posts-carousel.php:275
+msgid "8"
+msgstr "৮"
+
+#: widgets/advanced/sina-brand-carousel.php:324
 msgid "Brand Box"
 msgstr "ব্র্যান্ডের বাক্স"
 
-#: widgets/advanced/sina-brand-carousel.php:328
+#: widgets/advanced/sina-brand-carousel.php:332
 msgid "Logo Padding"
 msgstr "লোগো প্যাডিং"
 
-#: widgets/advanced/sina-brand-carousel.php:353
+#: widgets/advanced/sina-brand-carousel.php:357
 msgid "Box Margin"
 msgstr "বাক্সের প্রান্ত"
 
-#: widgets/advanced/sina-brand-carousel.php:495
-#: widgets/advanced/sina-content-slider.php:781
-#: widgets/advanced/sina-posts-carousel.php:1805
+#: widgets/advanced/sina-brand-carousel.php:499
+#: widgets/advanced/sina-content-slider.php:785
+#: widgets/advanced/sina-posts-carousel.php:1809
 msgid "Center Item"
 msgstr "কেন্দ্রের আইটেম"
 
@@ -2614,50 +2654,58 @@ msgstr ""
 "কেবল সামনের দিকে কাজ করবে।"
 
 #: widgets/advanced/sina-contact-form.php:159
+msgid "From: "
+msgstr "প্রেরকঃ"
+
+#: widgets/advanced/sina-contact-form.php:162
+msgid "Enter From Address"
+msgstr "প্রেরক ঠিকানা লিখুন"
+
+#: widgets/advanced/sina-contact-form.php:168
 #: widgets/advanced/sina-mailchimp-subscribe.php:132
 msgid "Success Message"
 msgstr "সাফল্যের বার্তা"
 
-#: widgets/advanced/sina-contact-form.php:162
+#: widgets/advanced/sina-contact-form.php:171
 #: widgets/advanced/sina-mailchimp-subscribe.php:135
 msgid "Enter Success Message"
 msgstr "সাফল্যের বার্তা লিখুন"
 
-#: widgets/advanced/sina-contact-form.php:172
-#: widgets/advanced/sina-contact-form.php:243
+#: widgets/advanced/sina-contact-form.php:181
+#: widgets/advanced/sina-contact-form.php:252
 #: widgets/advanced/sina-mailchimp-subscribe.php:106
 #: widgets/advanced/sina-mailchimp-subscribe.php:231
 msgid "Fields"
 msgstr "ক্ষেত্রগুলো"
 
-#: widgets/advanced/sina-contact-form.php:180
+#: widgets/advanced/sina-contact-form.php:189
 msgid "Name Placeholder Text"
 msgstr "নামের স্থানধারক লিখা"
 
-#: widgets/advanced/sina-contact-form.php:183
-#: widgets/advanced/sina-contact-form.php:193
-#: widgets/advanced/sina-contact-form.php:203
-#: widgets/advanced/sina-contact-form.php:213
+#: widgets/advanced/sina-contact-form.php:192
+#: widgets/advanced/sina-contact-form.php:202
+#: widgets/advanced/sina-contact-form.php:212
+#: widgets/advanced/sina-contact-form.php:222
 #: widgets/advanced/sina-login-form.php:119
 #: widgets/advanced/sina-login-form.php:129
 msgid "Enter Placeholder Text"
 msgstr "স্থানধারক লিখুন"
 
-#: widgets/advanced/sina-contact-form.php:190
+#: widgets/advanced/sina-contact-form.php:199
 #: widgets/advanced/sina-login-form.php:116
 msgid "Email Placeholder Text"
 msgstr "ইমেলের স্থানধারক লিখা"
 
-#: widgets/advanced/sina-contact-form.php:200
+#: widgets/advanced/sina-contact-form.php:209
 msgid "Subject Placeholder Text"
 msgstr "বিষয় স্থানধারক লিখা"
 
-#: widgets/advanced/sina-contact-form.php:210
+#: widgets/advanced/sina-contact-form.php:219
 msgid "Message Placeholder Text"
 msgstr "বার্তার স্থানধারক লিখা"
 
-#: widgets/advanced/sina-contact-form.php:228
-#: widgets/advanced/sina-contact-form.php:432
+#: widgets/advanced/sina-contact-form.php:237
+#: widgets/advanced/sina-contact-form.php:441
 #: widgets/advanced/sina-login-form.php:178
 #: widgets/advanced/sina-login-form.php:373
 #: widgets/advanced/sina-mailchimp-subscribe.php:216
@@ -2665,15 +2713,15 @@ msgstr "বার্তার স্থানধারক লিখা"
 msgid "Submit Button"
 msgstr "পাঠানোর বোতাম"
 
-#: widgets/advanced/sina-contact-form.php:254
+#: widgets/advanced/sina-contact-form.php:263
 msgid "Layout 1"
 msgstr "বিন্যাস ১"
 
-#: widgets/advanced/sina-contact-form.php:255
+#: widgets/advanced/sina-contact-form.php:264
 msgid "Layout 2"
 msgstr "বিন্যাস ২"
 
-#: widgets/advanced/sina-contact-form.php:327
+#: widgets/advanced/sina-contact-form.php:336
 #: widgets/advanced/sina-review-carousel.php:137
 #: widgets/advanced/sina-review-carousel.php:360
 #: widgets/basic/sina-social-icons.php:122 widgets/basic/sina-team.php:145
@@ -2681,24 +2729,24 @@ msgstr "বিন্যাস ২"
 msgid "Name"
 msgstr "নাম"
 
-#: widgets/advanced/sina-contact-form.php:342
+#: widgets/advanced/sina-contact-form.php:351
 #: widgets/advanced/sina-login-form.php:343
 #: widgets/advanced/sina-mailchimp-subscribe.php:351
 msgid "Email"
 msgstr "ইমেল"
 
-#: widgets/advanced/sina-contact-form.php:357
+#: widgets/advanced/sina-contact-form.php:366
 msgid "Subject"
 msgstr "বিষয়"
 
-#: widgets/advanced/sina-contact-form.php:372
+#: widgets/advanced/sina-contact-form.php:381
 #: widgets/advanced/sina-countdown.php:323
 #: widgets/advanced/sina-countdown.php:333
 #: widgets/advanced/sina-countdown.php:639
 msgid "Message"
 msgstr "বার্তা"
 
-#: widgets/advanced/sina-contact-form.php:561
+#: widgets/advanced/sina-contact-form.php:571
 #: widgets/advanced/sina-mailchimp-subscribe.php:535
 msgid "Processing..."
 msgstr "প্রক্রিয়া হচ্ছে..."
@@ -2781,7 +2829,7 @@ msgstr "শৈলী"
 msgid "Add Item"
 msgstr "আইটেম যুক্ত করুন"
 
-#: widgets/advanced/sina-content-slider.php:344
+#: widgets/advanced/sina-content-slider.php:348
 #: widgets/advanced/sina-countdown.php:364
 #: widgets/advanced/sina-product-zoomer.php:315
 #: widgets/basic/sina-accordion.php:353 widgets/basic/sina-content-box.php:102
@@ -3302,14 +3350,6 @@ msgstr ""
 msgid "Zoom & Move"
 msgstr ""
 
-#: widgets/advanced/sina-portfolio.php:144
-msgid "5"
-msgstr "৫"
-
-#: widgets/advanced/sina-portfolio.php:145
-msgid "6"
-msgstr "৬"
-
 #: widgets/advanced/sina-portfolio.php:146
 msgid "Masonry"
 msgstr "স্থাপত্য"
@@ -3400,11 +3440,11 @@ msgstr "আইকনের আকার"
 
 #: widgets/advanced/sina-portfolio.php:858
 msgid "Zoom button radius"
-msgstr "জুম বোতামের ব্যাসার্ধ"
+msgstr "জুম বোতামের ব্যাস"
 
 #: widgets/advanced/sina-portfolio.php:877
 msgid "Link button radius"
-msgstr "লিঙ্ক বোতামের ব্যাসার্ধ"
+msgstr "লিঙ্ক বোতামের ব্যাস"
 
 #: widgets/advanced/sina-posts-carousel.php:38
 msgid "Sina Posts Carousel"
@@ -3422,15 +3462,15 @@ msgstr "থাম্ব"
 msgid "Excerpt"
 msgstr "উদ্ধত"
 
-#: widgets/advanced/sina-posts-carousel.php:385
+#: widgets/advanced/sina-posts-carousel.php:389
 msgid "Vertical Align"
-msgstr ""
+msgstr "উল্লম্ব সারি"
 
-#: widgets/advanced/sina-posts-carousel.php:822
+#: widgets/advanced/sina-posts-carousel.php:826
 msgid "Button Styles"
 msgstr "বোতামের শৈলী"
 
-#: widgets/advanced/sina-posts-carousel.php:1636
+#: widgets/advanced/sina-posts-carousel.php:1640
 msgid "Avatar"
 msgstr "অবতার"
 
@@ -3575,7 +3615,7 @@ msgstr "লেন্স"
 #: widgets/advanced/sina-review-carousel.php:274
 #: widgets/basic/sina-piechart.php:298 widgets/basic/sina-pricing.php:206
 msgid "Top"
-msgstr ""
+msgstr "উপরে"
 
 #: widgets/advanced/sina-product-zoomer.php:311
 msgid "Lens Shape"
@@ -3599,8 +3639,9 @@ msgid "Enter Position"
 msgstr "অবস্থান লিখুন"
 
 #: widgets/advanced/sina-review-carousel.php:161
-msgid "Organization"
-msgstr "সংগঠন"
+#: widgets/advanced/sina-review-carousel.php:506
+msgid "Company"
+msgstr "প্রতিষ্ঠান"
 
 #: widgets/advanced/sina-review-carousel.php:163
 msgid "Enter Organization"
@@ -3624,10 +3665,6 @@ msgstr "ছবি যুক্ত করুন"
 msgid "Image Position"
 msgstr "ছবির অবস্থান"
 
-#: widgets/advanced/sina-review-carousel.php:506
-msgid "Company"
-msgstr "প্রতিষ্ঠান"
-
 #: widgets/advanced/sina-search-form.php:38
 msgid "Sina Search Form"
 msgstr "Sina অনুসন্ধানের ফর্ম"
@@ -3638,7 +3675,7 @@ msgstr "ফর্মের সামগ্রী"
 
 #: widgets/advanced/sina-search-form.php:104
 msgid "Placeholder text"
-msgstr "স্থানধারকের লিখা"
+msgstr "স্থানধারক লিখা"
 
 #: widgets/advanced/sina-search-form.php:122
 msgid "Field"
@@ -3928,7 +3965,7 @@ msgstr "অ্যানিমেশনের ধরণ"
 
 #: widgets/basic/sina-fancytext.php:264
 msgid "Typing Speed"
-msgstr ""
+msgstr "লিখার গতি"
 
 #: widgets/basic/sina-fancytext.php:278
 msgid "Loop"
@@ -4010,7 +4047,7 @@ msgstr "চিহ্নিতকারী ছবি চয়ন করুন"
 
 #: widgets/basic/sina-image-differ.php:39
 msgid "Sina Image Differ"
-msgstr "ছবির পৃথকীকরণ"
+msgstr "Sina ছবির পৃথকীকরণ"
 
 #: widgets/basic/sina-image-differ.php:113
 msgid "Differ Content"
@@ -4018,11 +4055,11 @@ msgstr "পার্থক্যের সামগ্রী"
 
 #: widgets/basic/sina-image-differ.php:121
 msgid "Before Image"
-msgstr "ছবির পূর্বে"
+msgstr "পূর্বের ছবি"
 
 #: widgets/basic/sina-image-differ.php:134
 msgid "After Image"
-msgstr "ছবির পরে"
+msgstr "পরের ছবি"
 
 #: widgets/basic/sina-image-differ.php:155
 msgid "Differ Settings"
@@ -4030,11 +4067,11 @@ msgstr "পার্থক্যের সেটিংস"
 
 #: widgets/basic/sina-image-differ.php:163
 msgid "Before Text"
-msgstr "লিখার পূর্বে"
+msgstr "পূর্বের লিখা"
 
 #: widgets/basic/sina-image-differ.php:171
 msgid "After Text"
-msgstr "লিখার পরে"
+msgstr "পরের লিখা"
 
 #: widgets/basic/sina-image-differ.php:179
 msgid "Orientation"
@@ -4070,7 +4107,7 @@ msgstr "লেবেলগুলো"
 
 #: widgets/basic/sina-piechart.php:38
 msgid "Sina Piechart"
-msgstr "Sina পাই চিত্র"
+msgstr "Sina পাইচার্ট"
 
 #: widgets/basic/sina-piechart.php:111
 msgid "Piechart"
@@ -4135,7 +4172,7 @@ msgstr "পথের প্রস্থ"
 
 #: widgets/basic/sina-piechart.php:271
 msgid "Scale Color"
-msgstr ""
+msgstr "স্কেল রঙ"
 
 #: widgets/basic/sina-pricing.php:42
 msgid "Sina Pricing"
@@ -4212,7 +4249,7 @@ msgstr "প্রগতিবার"
 
 #: widgets/basic/sina-progressbar.php:285 widgets/basic/sina-transform.php:788
 msgid "Border Radius"
-msgstr "সীমান্তের ব্যাসার্ধ"
+msgstr "সীমান্তের ব্যাস"
 
 #: widgets/basic/sina-progressbar.php:296
 msgid "Track Style"
@@ -4314,7 +4351,7 @@ msgstr "উপাত্ত রফতানি"
 
 #: widgets/basic/sina-table.php:475
 msgid "Data Searching"
-msgstr "উপাত্ত খোঁজছে"
+msgstr "উপাত্ত খোঁজা"
 
 #: widgets/basic/sina-table.php:486
 msgid "Data Sorting"
@@ -4561,7 +4598,7 @@ msgstr "লিখা লিখুন"
 
 #: widgets/basic/sina-visit-counter.php:131
 msgid "Yesterday Text"
-msgstr "গতকাল লিখা"
+msgstr "গতকাল-এর লিখা"
 
 #: widgets/basic/sina-visit-counter.php:145
 msgid "Today at Top"

@@ -1,4 +1,4 @@
-/* Sina Extension for Elementor v3.3.0 */
+/* Sina Extension for Elementor v3.3.3 */
 .sina-ext-banner{
 	padding: 50px 0;
 	margin-top: 20px;
@@ -21,19 +21,16 @@
 	background: #fff;
 	overflow: hidden;
 }
+.sina-ext-btns-wrap{
+	display: flex;
+	justify-content: space-between;
+}
 .sina-ext-wrap .button{
 	padding: 6px 20px;
 	border: 0;
 	background: #2270af;
 	color: #fff;
 	transition: 0.3s ease-in-out;
-}
-.sina-ext-wrap .sina-doc-btn{
-	margin-left: calc(100% - 250px);
-}
-.rtl .sina-ext-wrap .sina-doc-btn{
-	margin-left: auto;
-	margin-right: calc(100% - 250px);
 }
 .sina-ext-wrap .button:hover,
 .sina-ext-wrap .button:focus,
@@ -57,7 +54,7 @@
 .sina-ext-btns{
 	border-bottom: 4px solid #1085e4;
 }
-.sina-ext-btns > a {
+.sina-ext-btns > a{
 	display: inline-block;
 	padding: 15px 25px;
 	margin-right: 6px;
@@ -73,10 +70,6 @@
 	text-decoration: none;
 	transition: all 0.3s ease;
 	outline: 0;
-}
-.rtl .sina-ext-btns > a {
-	margin-right: auto;
-	margin-left: 6px;
 }
 .sina-ext-btns > a:focus{
 	outline: 0;
@@ -125,7 +118,7 @@
 	padding-left: 14px;
 	float: right;
 }
-.sina-ext-toggle input[type='checkbox'] {
+.sina-ext-toggle input[type='checkbox']{
 	display: none
 }
 .sina-ext-toggle:not(.sina-ext-pro) input[type='checkbox']:checked+label .sina-ext-toggle-btn{
@@ -158,7 +151,7 @@
 .rtl .sina-ext-toggle .sina-ext-toggle-btn{
 	float: right;
 }
-.sina-ext-toggle .sina-ext-toggle-btn div {
+.sina-ext-toggle .sina-ext-toggle-btn div{
 	transition: all 200ms ease;
 	background: #fdfdfd;
 	width: 15px;
@@ -193,17 +186,6 @@
 }
 .sina-ext-my{
 	margin: 20px 0;
-}
-
-
-@media (max-width: 784px) {
-	.sina-ext-wrap .sina-doc-btn{
-		margin-left: calc(100% - 262px);
-	}
-	.rtl .sina-ext-wrap .sina-doc-btn{
-		margin-left: auto;
-		margin-right: calc(100% - 262px);
-	}
 }
 
 

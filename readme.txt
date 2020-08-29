@@ -5,7 +5,7 @@ Donate link: https://sinaextra.com/sina-addon-for-elementor/
 Requires at least: 4.7
 Tested up to: 5.5
 Requires PHP: 7.0
-Stable tag: 3.3.2
+Stable tag: 3.3.3
 License: GPL v3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -219,6 +219,12 @@ Yes. It's totally free. We also have a [PRO](https://sinaextra.com/sina-addon-fo
 == Changelog ==
 
 = 3.3.2 - 26-08-2020 =
+- Added: Multiple link & label for buttons of Banner Slider
+- Added: From field to Contact Form
+- Fixed: Product Zoomer title margin issue
+- Improvment
+
+= 3.3.2 - 10-08-2020 =
 - Added: Logging state to Login Form
 - Fixed: Accordion icon color issue
 - Fixed: Contact Form sender name not sent issue

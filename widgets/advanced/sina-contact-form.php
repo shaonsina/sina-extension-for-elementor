@@ -154,6 +154,15 @@ class Sina_Contact_Form_Widget extends Widget_Base{
 			]
 		);
 		$this->add_control(
+			'from_text',
+			[
+				'label' => esc_html__( 'From: ', 'sina-ext' ),
+				'label_block' => true,
+				'type' => Controls_Manager::TEXT,
+				'placeholder' => esc_html__( 'Enter From Address', 'sina-ext' ),
+			]
+		);
+		$this->add_control(
 			'successs_message',
 			[
 				'label' => esc_html__( 'Success Message', 'sina-ext' ),
@@ -551,8 +560,9 @@ class Sina_Contact_Form_Widget extends Widget_Base{
 		?>
 		<div class="sina-form">
 			<form class="sina-contact-form"
-			data-inbox="<?php echo esc_attr( $hash ); ?>"
 			data-uid="<?php echo esc_attr( $this->get_id() ); ?>"
+			data-from="<?php echo esc_attr( $data['from_text'] ); ?>"
+			data-inbox="<?php echo esc_attr( $hash ); ?>"
 			data-captcha="<?php echo esc_attr( $data['is_recaptcha'] ); ?>">
 				<?php include SINA_EXT_LAYOUT.'/contact-form/'.$data['form_layout'].'.php'; ?>
 

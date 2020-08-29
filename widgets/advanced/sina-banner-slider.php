@@ -188,6 +188,7 @@ class Sina_Banner_Slider_Widget extends Widget_Base{
 				'type' => Controls_Manager::TEXT,
 				'description' => esc_html__( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'Lorem ipsum dolor sit amet',
+				'separator' => 'before',
 				'dynamic' => [
 					'active' => true,
 				],
@@ -224,6 +225,7 @@ class Sina_Banner_Slider_Widget extends Widget_Base{
 				'type' => Controls_Manager::TEXTAREA,
 				'description' => esc_html__( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'Lorem ipsum dolor sit amet',
+				'separator' => 'before',
 				'dynamic' => [
 					'active' => true,
 				],
@@ -236,6 +238,44 @@ class Sina_Banner_Slider_Widget extends Widget_Base{
 				'type' => Controls_Manager::SELECT,
 				'default' => 'fadeInUp',
 				'options' => Sina_Common_Data::animation(),
+			]
+		);
+		$repeater->add_control(
+			'primary_btn_text',
+			[
+				'label' => esc_html__( 'Primary Button Text', 'sina-ext' ),
+				'label_block' => true,
+				'type' => Controls_Manager::TEXT,
+				'options' => Sina_Common_Data::animation(),
+				'separator' => 'before',
+			]
+		);
+		$repeater->add_control(
+			'primary_btn_link',
+			[
+				'label' => esc_html__( 'Link', 'sina-ext' ),
+				'label_block' => true,
+				'type' => Controls_Manager::TEXT,
+				'placeholder' => 'https://your-link.com',
+			]
+		);
+		$repeater->add_control(
+			'secondary_btn_text',
+			[
+				'label' => esc_html__( 'Secondary Button Text', 'sina-ext' ),
+				'label_block' => true,
+				'type' => Controls_Manager::TEXT,
+				'options' => Sina_Common_Data::animation(),
+				'separator' => 'before',
+			]
+		);
+		$repeater->add_control(
+			'secondary_btn_link',
+			[
+				'label' => esc_html__( 'Link', 'sina-ext' ),
+				'label_block' => true,
+				'type' => Controls_Manager::TEXT,
+				'placeholder' => 'https://your-link.com',
 			]
 		);
 		$repeater->add_control(
@@ -302,6 +342,54 @@ class Sina_Banner_Slider_Widget extends Widget_Base{
 
 		$this->end_controls_section();
 		// End Slider Content
+		// =====================
+
+
+		// Start Primary Button
+		// =====================
+		$this->start_controls_section(
+			'primary_btn_content',
+			[
+				'label' => esc_html__( 'Primary Button', 'sina-ext' ),
+				'tab' => Controls_Manager::TAB_CONTENT,
+			]
+		);
+		Sina_Common_Data::button_content( $this, '.sina-banner-pbtn', 'Learn More', 'pbtn', true, true );
+		$this->end_controls_section();
+		// End Primary Button
+		// =====================
+
+
+		// Start Secondary Button
+		// =====================
+		$this->start_controls_section(
+			'secondary_btn_content',
+			[
+				'label' => esc_html__( 'Secondary Button', 'sina-ext' ),
+				'tab' => Controls_Manager::TAB_CONTENT,
+			]
+		);
+		Sina_Common_Data::button_content( $this, '.sina-banner-sbtn', 'Read More', 'sbtn', true, true );
+		$this->add_responsive_control(
+			'button_space',
+			[
+				'label' => esc_html__( 'Button Spacing', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'desktop_default' => [
+					'size' => 20,
+				],
+				'mobile_default' => [
+					'size' => 15,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-banner-sbtn' => 'margin-left: {{SIZE}}{{UNIT}};',
+					'.rtl {{WRAPPER}} .sina-banner-sbtn' => 'margin-right: {{SIZE}}{{UNIT}}; margin-left: auto;',
+				],
+			]
+		);
+
+		$this->end_controls_section();
+		// End Secondary Button
 		// =====================
 
 
@@ -372,54 +460,6 @@ class Sina_Banner_Slider_Widget extends Widget_Base{
 
 		$this->end_controls_section();
 		// End Slider Settings
-		// =====================
-
-
-		// Start Primary Button
-		// =====================
-		$this->start_controls_section(
-			'primary_btn_content',
-			[
-				'label' => esc_html__( 'Primary Button', 'sina-ext' ),
-				'tab' => Controls_Manager::TAB_CONTENT,
-			]
-		);
-		Sina_Common_Data::button_content( $this, '.sina-banner-pbtn', 'Learn More', 'pbtn', true, true );
-		$this->end_controls_section();
-		// End Primary Button
-		// =====================
-
-
-		// Start Secondary Button
-		// =====================
-		$this->start_controls_section(
-			'secondary_btn_content',
-			[
-				'label' => esc_html__( 'Secondary Button', 'sina-ext' ),
-				'tab' => Controls_Manager::TAB_CONTENT,
-			]
-		);
-		Sina_Common_Data::button_content( $this, '.sina-banner-sbtn', 'Read More', 'sbtn', true, true );
-		$this->add_responsive_control(
-			'button_space',
-			[
-				'label' => esc_html__( 'Button Spacing', 'sina-ext' ),
-				'type' => Controls_Manager::SLIDER,
-				'desktop_default' => [
-					'size' => 20,
-				],
-				'mobile_default' => [
-					'size' => 15,
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-banner-sbtn' => 'margin-left: {{SIZE}}{{UNIT}};',
-					'.rtl {{WRAPPER}} .sina-banner-sbtn' => 'margin-right: {{SIZE}}{{UNIT}}; margin-left: auto;',
-				],
-			]
-		);
-
-		$this->end_controls_section();
-		// End Secondary Button
 		// =====================
 
 
@@ -979,6 +1019,11 @@ class Sina_Banner_Slider_Widget extends Widget_Base{
 					if ( $data['part_anim'] ) {
 						$invisible = 'sina-anim-invisible';
 					}
+
+					$data['pbtn_text'] = $slide['primary_btn_text'] ? $slide['primary_btn_text'] : $data['pbtn_text'];
+					$data['pbtn_link']['url'] = $slide['primary_btn_link'] ? $slide['primary_btn_link'] : $data['pbtn_link']['url'];
+					$data['sbtn_text'] = $slide['secondary_btn_text'] ? $slide['secondary_btn_text'] : $data['sbtn_text'];
+					$data['sbtn_link']['url'] = $slide['secondary_btn_link'] ? $slide['secondary_btn_link'] : $data['sbtn_link']['url'];
 
 					$title_key = $this->get_repeater_setting_key( 'title', 'slides', $index );
 					$subtitle_key = $this->get_repeater_setting_key( 'subtitle', 'slides', $index );

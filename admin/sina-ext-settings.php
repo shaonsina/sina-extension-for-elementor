@@ -138,7 +138,7 @@ class Sina_Ext_Settings{
 		$get_temps 	= $data['get_temps'];
 		$temps 		= $data['temps'];
 		$name 		= 'sina-'.$temps;
-		$label 		= __('Sina Templates', 'sina-ext');
+		$label 		= esc_html__('Sina Templates', 'sina-ext');
 		$pro 		= '';
 		$checked	= isset($get_temps[ $temps ]) ? 'checked' : '';
 		$key		= 'sina_templates_option['.$temps.']';
@@ -151,7 +151,7 @@ class Sina_Ext_Settings{
 		$cat 		= $data['cat'];
 		$name 		= 'sina-'.$widget;
 		$pro 		= ( !defined('SINA_EXT_PRO_VERSION') && 'pro' == $cat ) ? 'sina-ext-pro' : '';
-		$label 		= __('Sina '. ucwords( str_replace('-', ' ', $widget) ), 'sina-ext');
+		$label 		= esc_html__('Sina '. ucwords( str_replace('-', ' ', $widget) ), 'sina-ext');
 		$checked	= isset($widgets[ $cat ][ $widget ]) ? 'checked' : '';
 		$key 		= 'sina_widgets['.$cat.']['. $widget .']';
 		require SINA_EXT_ADMIN.'partials/switch.php';
@@ -161,7 +161,7 @@ class Sina_Ext_Settings{
 		$name 		= $data['extender'];
 		$key 		= 'sina_extenders['.$name.']';
 		$pro 		= ( !defined('SINA_EXT_PRO_VERSION') && 'pro' == $data['type'] ) ? 'sina-ext-pro' : '';
-		$label 		= __('Sina '. ucwords( str_replace('-', ' ', $name) ), 'sina-ext');
+		$label 		= esc_html__('Sina '. ucwords( str_replace('-', ' ', $name) ), 'sina-ext');
 		$checked 	= isset($data[ 'get_extenders' ][ $name ]) ? 'checked' : '';
 		$name 		= 'sina-'.$name;
 		require SINA_EXT_ADMIN.'partials/switch.php';
