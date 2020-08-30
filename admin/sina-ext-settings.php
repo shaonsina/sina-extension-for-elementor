@@ -98,22 +98,21 @@ class Sina_Ext_Settings{
 			$page = 'sina_widgets_'.$cat;
 			add_settings_section( $section, '', '', $page );
 
-			foreach ($widgets as $widget => $status) {
-				add_settings_field( 'sina_'.str_replace('-', '_', $widget), '', [$this, 'widgets_switcher'], $page, $section, ['widget' => $widget, 'cat' => $cat, 'get_widgets' => $get_widgets]  );
+			foreach ($widgets as $widget => $trans) {
+				add_settings_field( 'sina_'.str_replace('-', '_', $widget), '', [$this, 'widgets_switcher'], $page, $section, ['widget' => $widget, 'translate' => $trans, 'cat' => $cat, 'get_widgets' => $get_widgets]  );
 			}
 		}
 
 		// Extenders section
 		$get_extenders = get_option( 'sina_extenders' );
 		$set_extenders = SINA_EXTENDERS;
-		if ( defined('SINA_EXT_PRO_WIDGETS') ) {
+		if ( defined('SINA_EXT_PRO_EXTENDERS') ) {
 			$set_extenders = array_merge(SINA_EXTENDERS, SINA_EXT_PRO_EXTENDERS);
 		}
 		add_settings_section( 'sina_extenders_section', '', '', 'sina_extenders' );
-
 		foreach ($set_extenders as $type => $extenders) {
-			foreach ($extenders as $extender => $status) {
-				add_settings_field( 'sina_ext'.str_replace('-', '_', $extender), __('Sina '. ucwords( str_replace('-', ' ', $extender) ), 'sina-ext'), [$this, 'extenders_switcher'], 'sina_extenders', 'sina_extenders_section', ['extender' => $extender, 'type' => $type, 'get_extenders' => $get_extenders]  );
+			foreach ($extenders as $extender => $translate) {
+				add_settings_field( 'sina_ext'.str_replace('-', '_', $extender), '', [$this, 'extenders_switcher'], 'sina_extenders', 'sina_extenders_section', ['extender' => $extender, 'translate' => $translate, 'type' => $type, 'get_extenders' => $get_extenders]  );
 			}
 		}
 	}
@@ -151,9 +150,14 @@ class Sina_Ext_Settings{
 		$cat 		= $data['cat'];
 		$name 		= 'sina-'.$widget;
 		$pro 		= ( !defined('SINA_EXT_PRO_VERSION') && 'pro' == $cat ) ? 'sina-ext-pro' : '';
-		$label 		= esc_html__('Sina '. ucwords( str_replace('-', ' ', $widget) ), 'sina-ext');
 		$checked	= isset($widgets[ $cat ][ $widget ]) ? 'checked' : '';
 		$key 		= 'sina_widgets['.$cat.']['. $widget .']';
+
+		if (defined('SINA_EXT_PRO_VERSION') && 'pro' == $cat) {
+			$label 	= __( $data['translate'], 'sina-ext-pro' );
+		} else{
+			$label	= __( $data['translate'], 'sina-ext' );
+		}
 		require SINA_EXT_ADMIN.'partials/switch.php';
 	}
 
@@ -161,9 +165,14 @@ class Sina_Ext_Settings{
 		$name 		= $data['extender'];
 		$key 		= 'sina_extenders['.$name.']';
 		$pro 		= ( !defined('SINA_EXT_PRO_VERSION') && 'pro' == $data['type'] ) ? 'sina-ext-pro' : '';
-		$label 		= esc_html__('Sina '. ucwords( str_replace('-', ' ', $name) ), 'sina-ext');
 		$checked 	= isset($data[ 'get_extenders' ][ $name ]) ? 'checked' : '';
 		$name 		= 'sina-'.$name;
+
+		if (defined('SINA_EXT_PRO_VERSION') && 'pro' == $data['type']) {
+			$label 	= __( $data['translate'], 'sina-ext-pro' );
+		} else{
+			$label	= __( $data['translate'], 'sina-ext' );
+		}
 		require SINA_EXT_ADMIN.'partials/switch.php';
 	}
 }

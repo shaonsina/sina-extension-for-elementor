@@ -117,7 +117,7 @@
 					<div class='sina-ext-pb sina-ext-my'>
 						<div class="sina-toggle-section sina-ext-toggle <?php echo esc_attr( $go_pro ); ?>" data-cat="extenders">
 							<?php printf('<input type="checkbox" id="sina_extenders" %s value="1">', $checked); ?>
-							<?php printf('<label for="sina_extenders"><div class="sina-ext-label">%1$s</div><div class="sina-ext-toggle-btn"> <div></div></div></label>', esc_html__( 'Extenders', 'sina-ext' )); ?>
+							<?php printf('<label for="sina_extenders"><div class="sina-ext-label">%1$s</div><div class="sina-ext-toggle-btn"> <div></div></div></label>', esc_html__( 'Extender', 'sina-ext' )); ?>
 						</div>
 					</div>
 					<div class="sina-ext-pb sina-toggle-all-extenders">

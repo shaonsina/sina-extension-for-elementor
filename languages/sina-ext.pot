@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sina Extension for Elementor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-29 19:37+0000\n"
+"POT-Creation-Date: 2020-08-30 15:36+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -14,6 +14,292 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/\n"
 "X-Loco-Version: 2.4.3; wp-5.4.2"
+
+#: sina-extension-for-elementor.php:39 widgets/basic/sina-accordion.php:42
+msgid "Sina Accordion"
+msgstr ""
+
+#: sina-extension-for-elementor.php:40 widgets/basic/sina-content-box.php:43
+msgid "Sina Content Box"
+msgstr ""
+
+#: sina-extension-for-elementor.php:41 widgets/basic/sina-counter.php:41
+msgid "Sina Counter"
+msgstr ""
+
+#: sina-extension-for-elementor.php:42 widgets/basic/sina-dynamic-button.php:34
+msgid "Sina Dynamic Button"
+msgstr ""
+
+#: sina-extension-for-elementor.php:43 widgets/basic/sina-fancytext.php:39
+msgid "Sina Fancy Text"
+msgstr ""
+
+#: sina-extension-for-elementor.php:44 widgets/basic/sina-flip-box.php:41
+msgid "Sina Flip Box"
+msgstr ""
+
+#: sina-extension-for-elementor.php:45 widgets/basic/sina-google-map.php:36
+msgid "Sina Google Map"
+msgstr ""
+
+#: sina-extension-for-elementor.php:46 widgets/basic/sina-image-differ.php:39
+msgid "Sina Image Differ"
+msgstr ""
+
+#: sina-extension-for-elementor.php:47 widgets/basic/sina-piechart.php:38
+msgid "Sina Piechart"
+msgstr ""
+
+#: sina-extension-for-elementor.php:48 widgets/basic/sina-pricing.php:42
+msgid "Sina Pricing"
+msgstr ""
+
+#: sina-extension-for-elementor.php:49 widgets/basic/sina-progressbar.php:42
+msgid "Sina Progressbar"
+msgstr ""
+
+#: sina-extension-for-elementor.php:50 widgets/basic/sina-social-icons.php:37
+msgid "Sina Social Icons"
+msgstr ""
+
+#: sina-extension-for-elementor.php:51 widgets/basic/sina-table.php:38
+msgid "Sina Table"
+msgstr ""
+
+#: sina-extension-for-elementor.php:52 widgets/basic/sina-team.php:41
+msgid "Sina Team"
+msgstr ""
+
+#: sina-extension-for-elementor.php:53 widgets/basic/sina-title.php:37
+msgid "Sina Title"
+msgstr ""
+
+#: sina-extension-for-elementor.php:54 widgets/basic/sina-transform.php:39
+msgid "Sina Transform"
+msgstr ""
+
+#: sina-extension-for-elementor.php:55 widgets/basic/sina-user-counter.php:37
+msgid "Sina User Counter"
+msgstr ""
+
+#: sina-extension-for-elementor.php:56 widgets/basic/sina-video.php:40
+msgid "Sina Video"
+msgstr ""
+
+#: sina-extension-for-elementor.php:57 widgets/basic/sina-visit-counter.php:37
+msgid "Sina Visit Counter"
+msgstr ""
+
+#: sina-extension-for-elementor.php:60
+#: widgets/advanced/sina-banner-slider.php:39
+msgid "Sina Banner Slider"
+msgstr ""
+
+#: sina-extension-for-elementor.php:61 widgets/advanced/sina-blogpost.php:41
+msgid "Sina Blog Post"
+msgstr ""
+
+#: sina-extension-for-elementor.php:62
+#: widgets/advanced/sina-brand-carousel.php:39
+msgid "Sina Brand Carousel"
+msgstr ""
+
+#: sina-extension-for-elementor.php:63
+#: widgets/advanced/sina-contact-form.php:36
+msgid "Sina Contact Form"
+msgstr ""
+
+#: sina-extension-for-elementor.php:64
+#: widgets/advanced/sina-content-slider.php:41
+msgid "Sina Content Slider"
+msgstr ""
+
+#: sina-extension-for-elementor.php:65 widgets/advanced/sina-countdown.php:42
+msgid "Sina Countdown"
+msgstr ""
+
+#: sina-extension-for-elementor.php:66
+#: widgets/advanced/sina-facebook-feed.php:40
+msgid "Sina Facebook Feed"
+msgstr ""
+
+#: sina-extension-for-elementor.php:67 widgets/advanced/sina-login-form.php:36
+msgid "Sina Login Form"
+msgstr ""
+
+#: sina-extension-for-elementor.php:68
+msgid "Sina MailChimp Subscribe"
+msgstr ""
+
+#: sina-extension-for-elementor.php:69 widgets/advanced/sina-modal-box.php:39
+msgid "Sina Modal Box"
+msgstr ""
+
+#: sina-extension-for-elementor.php:70 widgets/advanced/sina-news-ticker.php:38
+msgid "Sina News Ticker"
+msgstr ""
+
+#: sina-extension-for-elementor.php:71
+#: widgets/advanced/sina-particle-layer.php:38
+msgid "Sina Particle Layer"
+msgstr ""
+
+#: sina-extension-for-elementor.php:72 widgets/advanced/sina-portfolio.php:40
+msgid "Sina Portfolio"
+msgstr ""
+
+#: sina-extension-for-elementor.php:73
+#: widgets/advanced/sina-posts-carousel.php:38
+msgid "Sina Posts Carousel"
+msgstr ""
+
+#: sina-extension-for-elementor.php:74 widgets/advanced/sina-posts-tab.php:39
+msgid "Sina Posts Tab"
+msgstr ""
+
+#: sina-extension-for-elementor.php:75
+#: widgets/advanced/sina-product-zoomer.php:39
+msgid "Sina Product Zoomer"
+msgstr ""
+
+#: sina-extension-for-elementor.php:76
+#: widgets/advanced/sina-review-carousel.php:39
+msgid "Sina Review Carousel"
+msgstr ""
+
+#: sina-extension-for-elementor.php:77 widgets/advanced/sina-search-form.php:38
+msgid "Sina Search Form"
+msgstr ""
+
+#: sina-extension-for-elementor.php:78
+#: widgets/advanced/sina-twitter-feed.php:40
+msgid "Sina Twitter Feed"
+msgstr ""
+
+#: sina-extension-for-elementor.php:81
+msgid "Sina Pro Chart"
+msgstr ""
+
+#: sina-extension-for-elementor.php:82
+msgid "Sina Pro Hover Image"
+msgstr ""
+
+#: sina-extension-for-elementor.php:83
+msgid "Sina Pro Image Accordion"
+msgstr ""
+
+#: sina-extension-for-elementor.php:84
+msgid "Sina Pro Image Marker"
+msgstr ""
+
+#: sina-extension-for-elementor.php:85
+msgid "Sina Pro Image Scroller"
+msgstr ""
+
+#: sina-extension-for-elementor.php:86
+msgid "Sina Pro Instant Search"
+msgstr ""
+
+#: sina-extension-for-elementor.php:87
+msgid "Sina Pro Lost Password Form"
+msgstr ""
+
+#: sina-extension-for-elementor.php:88
+msgid "Sina Pro Lottie Animation"
+msgstr ""
+
+#: sina-extension-for-elementor.php:89
+msgid "Sina Pro Offcanvas Bar"
+msgstr ""
+
+#: sina-extension-for-elementor.php:90
+msgid "Sina Pro Posts Gallery"
+msgstr ""
+
+#: sina-extension-for-elementor.php:91
+msgid "Sina Pro Posts on Scroll"
+msgstr ""
+
+#: sina-extension-for-elementor.php:92
+msgid "Sina Pro Register Form"
+msgstr ""
+
+#: sina-extension-for-elementor.php:93
+msgid "Sina Pro Section Navigation"
+msgstr ""
+
+#: sina-extension-for-elementor.php:94
+msgid "Sina Pro Source Code"
+msgstr ""
+
+#: sina-extension-for-elementor.php:95
+msgid "Sina Pro Tab"
+msgstr ""
+
+#: sina-extension-for-elementor.php:96
+msgid "Sina Pro Team Carousel"
+msgstr ""
+
+#: sina-extension-for-elementor.php:97
+msgid "Sina Pro Testimonial"
+msgstr ""
+
+#: sina-extension-for-elementor.php:98
+msgid "Sina Pro Thumb Carousel"
+msgstr ""
+
+#: sina-extension-for-elementor.php:99
+msgid "Sina Pro Tilt Box"
+msgstr ""
+
+#: sina-extension-for-elementor.php:100
+msgid "Sina Pro Toggle Content"
+msgstr ""
+
+#: sina-extension-for-elementor.php:101
+msgid "Sina Pro Video Gallery"
+msgstr ""
+
+#: sina-extension-for-elementor.php:113
+msgid "Sina Pro Masker"
+msgstr ""
+
+#: sina-extension-for-elementor.php:114
+msgid "Sina Pro Parallax"
+msgstr ""
+
+#: sina-extension-for-elementor.php:115
+msgid "Sina Pro Section Particles"
+msgstr ""
+
+#: sina-extension-for-elementor.php:116
+msgid "Sina Pro Water Ripples"
+msgstr ""
+
+#: sina-extension-for-elementor.php:117
+msgid "Sina Pro Clips Animation"
+msgstr ""
+
+#: sina-extension-for-elementor.php:118
+msgid "Sina Pro Colors Animation"
+msgstr ""
+
+#: sina-extension-for-elementor.php:119
+msgid "Sina Pro Conditional Publish"
+msgstr ""
+
+#: sina-extension-for-elementor.php:120
+msgid "Sina Pro Content Protection"
+msgstr ""
+
+#: sina-extension-for-elementor.php:121
+msgid "Sina Pro Preloader"
+msgstr ""
+
+#: sina-extension-for-elementor.php:122
+msgid "Sina Pro Reading Progressbar"
+msgstr ""
 
 #: admin/sina-ext-rollback.php:56
 msgid "Sina Extension Rollback to Previous Version"
@@ -56,7 +342,7 @@ msgstr ""
 msgid "After Logout Redirect URL"
 msgstr ""
 
-#: admin/sina-ext-settings.php:89 admin/sina-ext-settings.php:141
+#: admin/sina-ext-settings.php:89 admin/sina-ext-settings.php:140
 #: inc/sina-ext-library-readable.php:32 inc/sina-ext-library.php:1
 msgid "Sina Templates"
 msgstr ""
@@ -356,80 +642,80 @@ msgstr ""
 msgid "Zoom In Up"
 msgstr ""
 
-#: inc/sina-ext-controls.php:133
-msgid "Bounce In"
+#: inc/sina-ext-controls.php:133 widgets/basic/sina-google-map.php:163
+msgid "Bounce"
 msgstr ""
 
 #: inc/sina-ext-controls.php:134
-msgid "Bounce In Down"
+msgid "Bounce In"
 msgstr ""
 
 #: inc/sina-ext-controls.php:135
-msgid "Bounce In Left"
+msgid "Bounce In Down"
 msgstr ""
 
 #: inc/sina-ext-controls.php:136
-msgid "Bounce In Right"
+msgid "Bounce In Left"
 msgstr ""
 
 #: inc/sina-ext-controls.php:137
-msgid "Bounce In Up"
+msgid "Bounce In Right"
 msgstr ""
 
 #: inc/sina-ext-controls.php:138
-msgid "Slide In Down"
+msgid "Bounce In Up"
 msgstr ""
 
 #: inc/sina-ext-controls.php:139
-msgid "Slide In Left"
+msgid "Slide In Down"
 msgstr ""
 
 #: inc/sina-ext-controls.php:140
-msgid "Slide In Right"
+msgid "Slide In Left"
 msgstr ""
 
 #: inc/sina-ext-controls.php:141
-msgid "Slide In Up"
+msgid "Slide In Right"
 msgstr ""
 
 #: inc/sina-ext-controls.php:142
-msgid "Rotate In"
+msgid "Slide In Up"
 msgstr ""
 
 #: inc/sina-ext-controls.php:143
-msgid "Rotate In Down Left"
+msgid "Rotate In"
 msgstr ""
 
 #: inc/sina-ext-controls.php:144
-msgid "Rotate In Down Right"
+msgid "Rotate In Down Left"
 msgstr ""
 
 #: inc/sina-ext-controls.php:145
-msgid "Rotate In Up Left"
+msgid "Rotate In Down Right"
 msgstr ""
 
 #: inc/sina-ext-controls.php:146
-msgid "Rotate In Up Right"
+msgid "Rotate In Up Left"
 msgstr ""
 
 #: inc/sina-ext-controls.php:147
-msgid "Flip In X"
+msgid "Rotate In Up Right"
 msgstr ""
 
 #: inc/sina-ext-controls.php:148
-msgid "Flip In Y"
+msgid "Flip In X"
 msgstr ""
 
 #: inc/sina-ext-controls.php:149
+msgid "Flip In Y"
+msgstr ""
+
+#: inc/sina-ext-controls.php:150
 msgid "Light Speed In"
 msgstr ""
 
-#: inc/sina-ext-controls.php:150 inc/sina-ext-controls.php:157
+#: inc/sina-ext-controls.php:151 inc/sina-ext-controls.php:157
 msgid "Swing"
-msgstr ""
-
-#: inc/sina-ext-controls.php:151 widgets/basic/sina-google-map.php:163
-msgid "Bounce"
 msgstr ""
 
 #: inc/sina-ext-controls.php:152
@@ -1530,7 +1816,6 @@ msgid "Widgets"
 msgstr ""
 
 #: admin/partials/page-content.php:29 admin/partials/page-content.php:107
-#: admin/partials/page-content.php:120
 msgid "Extenders"
 msgstr ""
 
@@ -1572,6 +1857,10 @@ msgstr ""
 #: admin/partials/page-content.php:109
 msgid ""
 "You can disable extender(s) if you would like to not using on your site."
+msgstr ""
+
+#: admin/partials/page-content.php:120
+msgid "Extender"
 msgstr ""
 
 #: admin/partials/page-content.php:141
@@ -1789,10 +2078,6 @@ msgstr ""
 
 #: inc/controls/icon.php:3026 inc/controls/icon.php:3027
 msgid "Select Icon"
-msgstr ""
-
-#: widgets/advanced/sina-banner-slider.php:39
-msgid "Sina Banner Slider"
 msgstr ""
 
 #: widgets/advanced/sina-banner-slider.php:115
@@ -2050,10 +2335,6 @@ msgstr ""
 #: widgets/advanced/sina-posts-carousel.php:1793
 #: widgets/advanced/sina-review-carousel.php:627
 msgid "Nav & Dots"
-msgstr ""
-
-#: widgets/advanced/sina-blogpost.php:41
-msgid "Sina Blog Post"
 msgstr ""
 
 #: widgets/advanced/sina-blogpost.php:115
@@ -2521,10 +2802,6 @@ msgstr ""
 msgid "No Posts found"
 msgstr ""
 
-#: widgets/advanced/sina-brand-carousel.php:39
-msgid "Sina Brand Carousel"
-msgstr ""
-
 #: widgets/advanced/sina-brand-carousel.php:114
 msgid "Brand"
 msgstr ""
@@ -2610,10 +2887,6 @@ msgstr ""
 #: widgets/advanced/sina-content-slider.php:785
 #: widgets/advanced/sina-posts-carousel.php:1809
 msgid "Center Item"
-msgstr ""
-
-#: widgets/advanced/sina-contact-form.php:36
-msgid "Sina Contact Form"
 msgstr ""
 
 #: widgets/advanced/sina-contact-form.php:109
@@ -2742,10 +3015,6 @@ msgstr ""
 msgid "Processing..."
 msgstr ""
 
-#: widgets/advanced/sina-content-slider.php:41
-msgid "Sina Content Slider"
-msgstr ""
-
 #: widgets/advanced/sina-content-slider.php:115
 msgid "Slider Content"
 msgstr ""
@@ -2826,10 +3095,6 @@ msgstr ""
 msgid "Box"
 msgstr ""
 
-#: widgets/advanced/sina-countdown.php:42
-msgid "Sina Countdown"
-msgstr ""
-
 #: widgets/advanced/sina-countdown.php:115
 msgid "Countdown"
 msgstr ""
@@ -2908,10 +3173,6 @@ msgstr ""
 msgid "Digit"
 msgstr ""
 
-#: widgets/advanced/sina-facebook-feed.php:40
-msgid "Sina Facebook Feed"
-msgstr ""
-
 #: widgets/advanced/sina-facebook-feed.php:114
 #: widgets/advanced/sina-twitter-feed.php:114
 msgid "Feed Content"
@@ -2982,10 +3243,6 @@ msgstr ""
 #: widgets/advanced/sina-facebook-feed.php:697
 #: widgets/advanced/sina-twitter-feed.php:678
 msgid "Thumb Size"
-msgstr ""
-
-#: widgets/advanced/sina-login-form.php:36
-msgid "Sina Login Form"
 msgstr ""
 
 #: widgets/advanced/sina-login-form.php:126
@@ -3105,10 +3362,6 @@ msgstr ""
 msgid "Phone"
 msgstr ""
 
-#: widgets/advanced/sina-modal-box.php:39
-msgid "Sina Modal Box"
-msgstr ""
-
 #: widgets/advanced/sina-modal-box.php:110
 msgid "Modal Content"
 msgstr ""
@@ -3199,10 +3452,6 @@ msgstr ""
 msgid "Close"
 msgstr ""
 
-#: widgets/advanced/sina-news-ticker.php:38
-msgid "Sina News Ticker"
-msgstr ""
-
 #: widgets/advanced/sina-news-ticker.php:109
 msgid "Ticker Content"
 msgstr ""
@@ -3250,10 +3499,6 @@ msgstr ""
 
 #: widgets/advanced/sina-news-ticker.php:670
 msgid " not published yet"
-msgstr ""
-
-#: widgets/advanced/sina-particle-layer.php:38
-msgid "Sina Particle Layer"
 msgstr ""
 
 #: widgets/advanced/sina-particle-layer.php:238
@@ -3316,10 +3561,6 @@ msgstr ""
 
 #: widgets/advanced/sina-particle-layer.php:558
 msgid "Template Style"
-msgstr ""
-
-#: widgets/advanced/sina-portfolio.php:40
-msgid "Sina Portfolio"
 msgstr ""
 
 #: widgets/advanced/sina-portfolio.php:116
@@ -3434,10 +3675,6 @@ msgstr ""
 msgid "Link button radius"
 msgstr ""
 
-#: widgets/advanced/sina-posts-carousel.php:38
-msgid "Sina Posts Carousel"
-msgstr ""
-
 #: widgets/advanced/sina-posts-carousel.php:112
 msgid "Posts Content"
 msgstr ""
@@ -3460,10 +3697,6 @@ msgstr ""
 
 #: widgets/advanced/sina-posts-carousel.php:1640
 msgid "Avatar"
-msgstr ""
-
-#: widgets/advanced/sina-posts-tab.php:39
-msgid "Sina Posts Tab"
 msgstr ""
 
 #: widgets/advanced/sina-posts-tab.php:110
@@ -3543,10 +3776,6 @@ msgstr ""
 msgid "Preview Title"
 msgstr ""
 
-#: widgets/advanced/sina-product-zoomer.php:39
-msgid "Sina Product Zoomer"
-msgstr ""
-
 #: widgets/advanced/sina-product-zoomer.php:111
 msgid "Product Content"
 msgstr ""
@@ -3613,10 +3842,6 @@ msgstr ""
 msgid "Circle"
 msgstr ""
 
-#: widgets/advanced/sina-review-carousel.php:39
-msgid "Sina Review Carousel"
-msgstr ""
-
 #: widgets/advanced/sina-review-carousel.php:114
 msgid "Review"
 msgstr ""
@@ -3653,10 +3878,6 @@ msgstr ""
 msgid "Image Position"
 msgstr ""
 
-#: widgets/advanced/sina-search-form.php:38
-msgid "Sina Search Form"
-msgstr ""
-
 #: widgets/advanced/sina-search-form.php:96
 msgid "Form Content"
 msgstr ""
@@ -3667,10 +3888,6 @@ msgstr ""
 
 #: widgets/advanced/sina-search-form.php:122
 msgid "Field"
-msgstr ""
-
-#: widgets/advanced/sina-twitter-feed.php:40
-msgid "Sina Twitter Feed"
 msgstr ""
 
 #: widgets/advanced/sina-twitter-feed.php:122
@@ -3714,10 +3931,6 @@ msgstr ""
 msgid "Account Name Styles"
 msgstr ""
 
-#: widgets/basic/sina-accordion.php:42
-msgid "Sina Accordion"
-msgstr ""
-
 #: widgets/basic/sina-accordion.php:114
 msgid "Accordion"
 msgstr ""
@@ -3752,10 +3965,6 @@ msgstr ""
 
 #: widgets/basic/sina-accordion.php:590
 msgid "Icon Padding"
-msgstr ""
-
-#: widgets/basic/sina-content-box.php:43
-msgid "Sina Content Box"
 msgstr ""
 
 #: widgets/basic/sina-content-box.php:110
@@ -3803,10 +4012,6 @@ msgstr ""
 
 #: widgets/basic/sina-content-box.php:1123 widgets/basic/sina-pricing.php:1417
 msgid "Ribbon"
-msgstr ""
-
-#: widgets/basic/sina-counter.php:41
-msgid "Sina Counter"
 msgstr ""
 
 #: widgets/basic/sina-counter.php:114
@@ -3880,10 +4085,6 @@ msgstr ""
 msgid "Number"
 msgstr ""
 
-#: widgets/basic/sina-dynamic-button.php:34
-msgid "Sina Dynamic Button"
-msgstr ""
-
 #: widgets/basic/sina-dynamic-button.php:118
 msgid "Button Type"
 msgstr ""
@@ -3910,10 +4111,6 @@ msgstr ""
 
 #: widgets/basic/sina-dynamic-button.php:237
 msgid "CSS CLASS"
-msgstr ""
-
-#: widgets/basic/sina-fancytext.php:39
-msgid "Sina Fancy Text"
 msgstr ""
 
 #: widgets/basic/sina-fancytext.php:112 widgets/basic/sina-fancytext.php:135
@@ -3967,10 +4164,6 @@ msgstr ""
 msgid "Cursor Color"
 msgstr ""
 
-#: widgets/basic/sina-flip-box.php:41
-msgid "Sina Flip Box"
-msgstr ""
-
 #: widgets/basic/sina-flip-box.php:100
 msgid "Front Side"
 msgstr ""
@@ -4001,10 +4194,6 @@ msgstr ""
 msgid "Back"
 msgstr ""
 
-#: widgets/basic/sina-google-map.php:36
-msgid "Sina Google Map"
-msgstr ""
-
 #: widgets/basic/sina-google-map.php:109 widgets/basic/sina-google-map.php:203
 msgid "Map"
 msgstr ""
@@ -4031,10 +4220,6 @@ msgstr ""
 
 #: widgets/basic/sina-google-map.php:179
 msgid "Choose Marker"
-msgstr ""
-
-#: widgets/basic/sina-image-differ.php:39
-msgid "Sina Image Differ"
 msgstr ""
 
 #: widgets/basic/sina-image-differ.php:113
@@ -4091,10 +4276,6 @@ msgstr ""
 
 #: widgets/basic/sina-image-differ.php:325
 msgid "Labels"
-msgstr ""
-
-#: widgets/basic/sina-piechart.php:38
-msgid "Sina Piechart"
 msgstr ""
 
 #: widgets/basic/sina-piechart.php:111
@@ -4162,10 +4343,6 @@ msgstr ""
 msgid "Scale Color"
 msgstr ""
 
-#: widgets/basic/sina-pricing.php:42
-msgid "Sina Pricing"
-msgstr ""
-
 #: widgets/basic/sina-pricing.php:101
 msgid "Pricing"
 msgstr ""
@@ -4226,10 +4403,6 @@ msgstr ""
 msgid "Icon Styles"
 msgstr ""
 
-#: widgets/basic/sina-progressbar.php:42
-msgid "Sina Progressbar"
-msgstr ""
-
 #: widgets/basic/sina-progressbar.php:114
 #: widgets/basic/sina-progressbar.php:233
 msgid "Progressbar"
@@ -4251,10 +4424,6 @@ msgstr ""
 msgid "Percentage"
 msgstr ""
 
-#: widgets/basic/sina-social-icons.php:37
-msgid "Sina Social Icons"
-msgstr ""
-
 #: widgets/basic/sina-social-icons.php:95
 #: widgets/basic/sina-social-icons.php:267
 msgid "Social Icons"
@@ -4271,10 +4440,6 @@ msgstr ""
 #: widgets/basic/sina-social-icons.php:355 widgets/basic/sina-team.php:1051
 #: widgets/basic/sina-video.php:464
 msgid "Line Height"
-msgstr ""
-
-#: widgets/basic/sina-table.php:38
-msgid "Sina Table"
 msgstr ""
 
 #: widgets/basic/sina-table.php:111
@@ -4445,10 +4610,6 @@ msgstr ""
 msgid "Hover & Active Color"
 msgstr ""
 
-#: widgets/basic/sina-team.php:41
-msgid "Sina Team"
-msgstr ""
-
 #: widgets/basic/sina-team.php:100
 msgid "Member"
 msgstr ""
@@ -4459,10 +4620,6 @@ msgstr ""
 
 #: widgets/basic/sina-team.php:1013
 msgid "Social Icon"
-msgstr ""
-
-#: widgets/basic/sina-title.php:37
-msgid "Sina Title"
 msgstr ""
 
 #: widgets/basic/sina-title.php:95
@@ -4505,10 +4662,6 @@ msgstr ""
 msgid "Dot Color"
 msgstr ""
 
-#: widgets/basic/sina-transform.php:39
-msgid "Sina Transform"
-msgstr ""
-
 #: widgets/basic/sina-transform.php:97
 msgid "Transform Content"
 msgstr ""
@@ -4529,20 +4682,12 @@ msgstr ""
 msgid "3D Transform"
 msgstr ""
 
-#: widgets/basic/sina-user-counter.php:37
-msgid "Sina User Counter"
-msgstr ""
-
 #: widgets/basic/sina-user-counter.php:109
 msgid "User Counter"
 msgstr ""
 
 #: widgets/basic/sina-user-counter.php:117
 msgid "Select Roles"
-msgstr ""
-
-#: widgets/basic/sina-video.php:40
-msgid "Sina Video"
 msgstr ""
 
 #: widgets/basic/sina-video.php:114
@@ -4563,10 +4708,6 @@ msgstr ""
 
 #: widgets/basic/sina-video.php:135
 msgid "Wave Color"
-msgstr ""
-
-#: widgets/basic/sina-visit-counter.php:37
-msgid "Sina Visit Counter"
 msgstr ""
 
 #: widgets/basic/sina-visit-counter.php:109
