@@ -228,7 +228,7 @@ class Sina_Title_Widget extends Widget_Base{
 						'icon' => 'fa fa-align-right',
 					],
 					'justify' => [
-						'title' => esc_html__( 'justify', 'sina-ext' ),
+						'title' => esc_html__( 'Justify', 'sina-ext' ),
 						'icon' => 'fa fa-align-justify',
 					],
 				],
@@ -318,7 +318,7 @@ class Sina_Title_Widget extends Widget_Base{
 						'icon' => 'fa fa-align-right',
 					],
 					'justify' => [
-						'title' => esc_html__( 'justify', 'sina-ext' ),
+						'title' => esc_html__( 'Justify', 'sina-ext' ),
 						'icon' => 'fa fa-align-justify',
 					],
 				],
@@ -467,7 +467,7 @@ class Sina_Title_Widget extends Widget_Base{
 						'icon' => 'fa fa-align-right',
 					],
 					'justify' => [
-						'title' => esc_html__( 'justify', 'sina-ext' ),
+						'title' => esc_html__( 'Justify', 'sina-ext' ),
 						'icon' => 'fa fa-align-justify',
 					],
 				],
@@ -572,7 +572,7 @@ class Sina_Title_Widget extends Widget_Base{
 						'icon' => 'fa fa-align-right',
 					],
 					'justify' => [
-						'title' => esc_html__( 'justify', 'sina-ext' ),
+						'title' => esc_html__( 'Justify', 'sina-ext' ),
 						'icon' => 'fa fa-align-justify',
 					],
 				],

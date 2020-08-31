@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sina Extension for Elementor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-31 09:09+0000\n"
-"PO-Revision-Date: 2020-08-31 09:21+0000\n"
+"POT-Creation-Date: 2020-08-31 12:00+0000\n"
+"PO-Revision-Date: 2020-08-31 14:23+0000\n"
 "Last-Translator: \n"
 "Language-Team: Bengali (Bangladesh)\n"
 "Language: bn_BD\n"
@@ -214,7 +214,7 @@ msgstr "Sina Pro অফক্যানভাস বার"
 
 #: sina-extension-for-elementor.php:90
 msgid "Sina Pro Posts Gallery"
-msgstr "Sina Pro পোস্ট স্ক্রোলে"
+msgstr "Sina Pro পোস্টের গ্যালারী"
 
 #: sina-extension-for-elementor.php:91
 msgid "Sina Pro Posts on Scroll"
@@ -2701,7 +2701,7 @@ msgstr "লিঙ্কের রঙ"
 #: widgets/basic/sina-content-box.php:1102 widgets/basic/sina-title.php:231
 #: widgets/basic/sina-title.php:321 widgets/basic/sina-title.php:470
 #: widgets/basic/sina-title.php:575
-msgid "justify"
+msgid "Justify"
 msgstr "সমান্তরাল"
 
 #: widgets/advanced/sina-blogpost.php:791

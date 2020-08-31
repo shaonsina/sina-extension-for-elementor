@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sina Extension for Elementor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-31 09:09+0000\n"
+"POT-Creation-Date: 2020-08-31 12:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -2695,7 +2695,7 @@ msgstr ""
 #: widgets/basic/sina-content-box.php:1102 widgets/basic/sina-title.php:231
 #: widgets/basic/sina-title.php:321 widgets/basic/sina-title.php:470
 #: widgets/basic/sina-title.php:575
-msgid "justify"
+msgid "Justify"
 msgstr ""
 
 #: widgets/advanced/sina-blogpost.php:791

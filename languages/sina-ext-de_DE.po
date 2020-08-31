@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sina Extension for Elementor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-31 09:09+0000\n"
-"PO-Revision-Date: 2020-08-31 09:19+0000\n"
+"POT-Creation-Date: 2020-08-31 12:00+0000\n"
+"PO-Revision-Date: 2020-08-31 14:38+0000\n"
 "Last-Translator: \n"
 "Language-Team: German\n"
 "Language: de_DE\n"
@@ -439,13 +439,13 @@ msgstr "Z drehen"
 #: inc/sina-ext-controls-extend.php:550 widgets/basic/sina-transform.php:205
 #: widgets/basic/sina-transform.php:436 widgets/basic/sina-transform.php:705
 msgid "Skew X"
-msgstr "Versatz X."
+msgstr "Kursiv X."
 
 #: inc/sina-ext-controls-extend.php:83 inc/sina-ext-controls-extend.php:329
 #: inc/sina-ext-controls-extend.php:573 widgets/basic/sina-transform.php:206
 #: widgets/basic/sina-transform.php:459 widgets/basic/sina-transform.php:728
 msgid "Skew Y"
-msgstr "Versatz Y."
+msgstr "Kursiv Y."
 
 #: inc/sina-ext-controls-extend.php:84 inc/sina-ext-controls.php:50
 #: inc/sina-ext-controls.php:97 inc/sina-ext-controls.php:122
@@ -1024,7 +1024,7 @@ msgstr "Endlosschleife"
 #: widgets/basic/sina-user-counter.php:176
 #: widgets/basic/sina-visit-counter.php:175
 msgid "Center"
-msgstr "Center"
+msgstr "Zentrum"
 
 #: inc/sina-ext-controls.php:319
 msgid "Dots"
@@ -2709,8 +2709,8 @@ msgstr "Verknüpfungsfarbe"
 #: widgets/basic/sina-content-box.php:1102 widgets/basic/sina-title.php:231
 #: widgets/basic/sina-title.php:321 widgets/basic/sina-title.php:470
 #: widgets/basic/sina-title.php:575
-msgid "justify"
-msgstr "rechtfertigen"
+msgid "Justify"
+msgstr "Rechtfertigen"
 
 #: widgets/advanced/sina-blogpost.php:791
 #: widgets/advanced/sina-facebook-feed.php:567
@@ -2805,7 +2805,7 @@ msgstr "Aktuell"
 #: widgets/basic/sina-dynamic-button.php:273
 #: widgets/basic/sina-image-differ.php:333 widgets/basic/sina-pricing.php:1328
 msgid "Min Width"
-msgstr "Min. Breite"
+msgstr "Min Breite"
 
 #: widgets/advanced/sina-blogpost.php:1901
 msgid "Load More Button"
@@ -2936,7 +2936,7 @@ msgstr ""
 
 #: widgets/advanced/sina-contact-form.php:159
 msgid "From: "
-msgstr "Von:"
+msgstr "Absender:"
 
 #: widgets/advanced/sina-contact-form.php:162
 msgid "Enter From Address"
@@ -3725,7 +3725,7 @@ msgstr "Benutzerbild"
 
 #: widgets/advanced/sina-posts-tab.php:110
 msgid "Tab Content"
-msgstr "Inhalt Tab"
+msgstr "Inhalt der Registerkarte"
 
 #: widgets/advanced/sina-posts-tab.php:120
 msgid "Select Category"
@@ -3753,7 +3753,7 @@ msgstr "Lücke vom Inhalt"
 
 #: widgets/advanced/sina-posts-tab.php:409
 msgid "Thumbnail"
-msgstr "Miniaturansicht"
+msgstr "Vorschaubild"
 
 #: widgets/advanced/sina-posts-tab.php:417
 msgid "Width (%)"
