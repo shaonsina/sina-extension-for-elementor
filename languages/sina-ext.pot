@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sina Extension for Elementor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-30 15:36+0000\n"
+"POT-Creation-Date: 2020-08-31 09:09+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -1792,7 +1792,7 @@ msgid "Password can't be empty!"
 msgstr ""
 
 #: inc/sina-ext-hooks.php:224
-msgid "Username or Email and password don't matched!"
+msgid "Username or Email and password don't match!"
 msgstr ""
 
 #: widgets/starter-widget.php:296
@@ -4064,8 +4064,8 @@ msgstr ""
 msgid "Pipe"
 msgstr ""
 
-#: widgets/basic/sina-counter.php:263
-msgid "space"
+#: widgets/basic/sina-counter.php:263 widgets/basic/sina-transform.php:124
+msgid "Space"
 msgstr ""
 
 #: widgets/basic/sina-counter.php:271
@@ -4664,10 +4664,6 @@ msgstr ""
 
 #: widgets/basic/sina-transform.php:97
 msgid "Transform Content"
-msgstr ""
-
-#: widgets/basic/sina-transform.php:124
-msgid "Space"
 msgstr ""
 
 #: widgets/basic/sina-transform.php:159

@@ -221,7 +221,7 @@ Class Sina_Ext_Hooks{
 					) );
 
 					if ( is_wp_error( $user ) ) {
-						$err = esc_html__( 'Username or Email and password don\'t matched!', 'sina-ext' );
+						$err = esc_html__( 'Username or Email and password don\'t match!', 'sina-ext' );
 					}
 				}
 			}

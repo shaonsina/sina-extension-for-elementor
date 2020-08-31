@@ -260,7 +260,7 @@ class Sina_Counter_Widget extends Widget_Base{
 					',' => esc_html__( 'Comma', 'sina-ext' ),
 					'.' => esc_html__( 'Dot', 'sina-ext' ),
 					'|' => esc_html__( 'Pipe', 'sina-ext' ),
-					' ' => esc_html__( 'space', 'sina-ext' ),
+					' ' => esc_html__( 'Space', 'sina-ext' ),
 				],
 				'default' => ',',
 			]
