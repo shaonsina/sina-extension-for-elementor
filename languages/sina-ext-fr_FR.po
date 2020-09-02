@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Sina Extension for Elementor\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-31 12:00+0000\n"
-"PO-Revision-Date: 2020-09-02 11:12+0000\n"
+"PO-Revision-Date: 2020-09-02 18:27+0000\n"
 "Last-Translator: \n"
 "Language-Team: French (France)\n"
 "Language: fr_FR\n"
@@ -344,7 +344,7 @@ msgstr "Rediriger l'URL après déconnexion"
 #: admin/sina-ext-settings.php:89 admin/sina-ext-settings.php:140
 #: inc/sina-ext-library-readable.php:32 inc/sina-ext-library.php:1
 msgid "Sina Templates"
-msgstr "Sina Modèles"
+msgstr "Sina Gabarits"
 
 #: inc/sina-ext-base.php:53
 #, php-format
@@ -1063,7 +1063,7 @@ msgstr ""
 
 #: inc/sina-ext-controls.php:378 widgets/advanced/sina-banner-slider.php:449
 msgid "Speed"
-msgstr "La vitesse"
+msgstr "Vitesse"
 
 #: inc/sina-ext-controls.php:397 widgets/basic/sina-dynamic-button.php:169
 msgid "Label"
@@ -1160,7 +1160,7 @@ msgstr "Position de l'icône"
 #: widgets/basic/sina-title.php:678 widgets/basic/sina-user-counter.php:172
 #: widgets/basic/sina-visit-counter.php:171
 msgid "Left"
-msgstr "La gauche"
+msgstr "Gauche"
 
 #: inc/sina-ext-controls.php:428 widgets/advanced/sina-banner-slider.php:305
 #: widgets/advanced/sina-blogpost.php:775
@@ -1830,7 +1830,7 @@ msgstr "Paramètres l'API"
 
 #: admin/partials/page-content.php:48
 msgid "Template Settings"
-msgstr "Paramètres du modèle"
+msgstr "Paramètres du gabarit"
 
 #: admin/partials/page-content.php:50
 msgid "You can use <strong><i>SINA TEMPLATES</i></strong> on your site. Enjoy!"
@@ -1990,7 +1990,7 @@ msgstr "Centre Droit"
 
 #: inc/controls/gradient-text.php:170 inc/controls/gradient-text.php:212
 msgid "Top Center"
-msgstr "Centre Haut"
+msgstr "Haut centre"
 
 #: inc/controls/gradient-text.php:171 inc/controls/gradient-text.php:211
 msgid "Top Left"
@@ -2002,7 +2002,7 @@ msgstr "Haut droite"
 
 #: inc/controls/gradient-text.php:173 inc/controls/gradient-text.php:218
 msgid "Bottom Center"
-msgstr "Tous deux"
+msgstr "Bas centre"
 
 #: inc/controls/gradient-text.php:174 inc/controls/gradient-text.php:217
 msgid "Bottom Left"
@@ -2021,7 +2021,7 @@ msgstr "Défaut"
 #: inc/controls/gradient-text.php:220 inc/controls/gradient-text.php:425
 #: widgets/advanced/sina-blogpost.php:127
 msgid "Custom"
-msgstr "Douane"
+msgstr "Personnalisée"
 
 #: inc/controls/gradient-text.php:233
 msgid "X Position"
@@ -2195,7 +2195,7 @@ msgstr "Animation de sous-titres"
 #: widgets/basic/sina-team.php:169 widgets/basic/sina-team.php:972
 #: widgets/basic/sina-title.php:202 widgets/basic/sina-title.php:508
 msgid "Description"
-msgstr "La description"
+msgstr "Description"
 
 #: widgets/advanced/sina-banner-slider.php:237
 #: widgets/advanced/sina-particle-layer.php:441
@@ -2334,7 +2334,7 @@ msgstr "Hauteur"
 #: widgets/advanced/sina-portfolio.php:643 widgets/basic/sina-team.php:880
 #: widgets/basic/sina-team.php:949
 msgid "Margin Bottom"
-msgstr "Marge inférieure"
+msgstr "Bas marge"
 
 #: widgets/advanced/sina-banner-slider.php:967
 #: widgets/advanced/sina-particle-layer.php:1014
@@ -2365,7 +2365,7 @@ msgstr "Agencement"
 #: widgets/advanced/sina-blogpost.php:138
 #: widgets/advanced/sina-posts-carousel.php:123 widgets/basic/sina-team.php:112
 msgid "Grid"
-msgstr "La grille"
+msgstr "Grille"
 
 #: widgets/advanced/sina-blogpost.php:139
 #: widgets/advanced/sina-posts-carousel.php:124 widgets/basic/sina-team.php:113
@@ -2616,7 +2616,7 @@ msgstr "Déplacer"
 #: widgets/basic/sina-team.php:378 widgets/basic/sina-team.php:594
 #: widgets/basic/sina-video.php:127
 msgid "Zoom"
-msgstr "Zoomer"
+msgstr "Zoom"
 
 #: widgets/advanced/sina-blogpost.php:375
 #: widgets/advanced/sina-brand-carousel.php:510
@@ -2952,7 +2952,7 @@ msgstr "Message de réussite"
 #: widgets/advanced/sina-contact-form.php:171
 #: widgets/advanced/sina-mailchimp-subscribe.php:135
 msgid "Enter Success Message"
-msgstr "Entrez le message de réussite"
+msgstr "Entrez message réussite"
 
 #: widgets/advanced/sina-contact-form.php:181
 #: widgets/advanced/sina-contact-form.php:252
@@ -2972,7 +2972,7 @@ msgstr "Texte de l'espace réservé nom"
 #: widgets/advanced/sina-login-form.php:119
 #: widgets/advanced/sina-login-form.php:129
 msgid "Enter Placeholder Text"
-msgstr "Entrez le texte de l'espace réservé"
+msgstr "Entrez texte l'espace réservé"
 
 #: widgets/advanced/sina-contact-form.php:199
 #: widgets/advanced/sina-login-form.php:116
@@ -3044,7 +3044,7 @@ msgstr "Contenu du curseur"
 #: widgets/basic/sina-accordion.php:166 widgets/basic/sina-content-box.php:117
 #: widgets/basic/sina-transform.php:105
 msgid "Use Save Templates"
-msgstr "Utiliser modèles de enregistrez"
+msgstr "Utiliser gabarits enregistrez"
 
 #: widgets/advanced/sina-content-slider.php:132
 #: widgets/advanced/sina-modal-box.php:170
@@ -3100,7 +3100,7 @@ msgstr "Entrez le titre"
 #: widgets/advanced/sina-content-slider.php:261
 #: widgets/advanced/sina-countdown.php:155
 msgid "Styles"
-msgstr "Modes"
+msgstr "Styles"
 
 #: widgets/advanced/sina-content-slider.php:277
 #: widgets/advanced/sina-countdown.php:260
@@ -3248,11 +3248,11 @@ msgstr "Styles de nom page"
 
 #: widgets/advanced/sina-facebook-feed.php:591
 msgid "Play Button Color"
-msgstr "Couleur bouton lecture"
+msgstr "Couleur de bouton jouer"
 
 #: widgets/advanced/sina-facebook-feed.php:602
 msgid "Play Button Size"
-msgstr "Taille bouton lecture"
+msgstr "Taille de bouton jouer"
 
 #: widgets/advanced/sina-facebook-feed.php:630
 msgid "Page Name"
@@ -3332,7 +3332,7 @@ msgstr "Texte de l'espace réservé de l'e-mail"
 #: widgets/advanced/sina-mailchimp-subscribe.php:198
 #: widgets/advanced/sina-search-form.php:107
 msgid "Enter placeholder text"
-msgstr "Entrez le texte de l'espace réservé"
+msgstr "Entrez texte l'espace réservé"
 
 #: widgets/advanced/sina-mailchimp-subscribe.php:145
 #: widgets/advanced/sina-mailchimp-subscribe.php:315
@@ -3584,7 +3584,7 @@ msgstr "Paramètres d'animation"
 
 #: widgets/advanced/sina-particle-layer.php:558
 msgid "Template Style"
-msgstr "Style de modèle"
+msgstr "Style de gabarit"
 
 #: widgets/advanced/sina-portfolio.php:116
 msgid "Portfolio"
@@ -3706,7 +3706,7 @@ msgstr "Contenu des articles"
 
 #: widgets/advanced/sina-posts-carousel.php:122 widgets/basic/sina-team.php:111
 msgid "Thumb"
-msgstr "La vignette"
+msgstr "Vignette"
 
 #: widgets/advanced/sina-posts-carousel.php:204
 msgid "Excerpt"
@@ -3883,7 +3883,7 @@ msgstr "Compagnie"
 
 #: widgets/advanced/sina-review-carousel.php:163
 msgid "Enter Organization"
-msgstr "Entrer l'organisation"
+msgstr "Entrez organisation"
 
 #: widgets/advanced/sina-review-carousel.php:173
 #: widgets/advanced/sina-review-carousel.php:575
@@ -3909,7 +3909,7 @@ msgstr "Contenu formulaire"
 
 #: widgets/advanced/sina-search-form.php:104
 msgid "Placeholder text"
-msgstr "Couleur de l'espace réservé"
+msgstr "Texte d'espace réservé"
 
 #: widgets/advanced/sina-search-form.php:122
 msgid "Field"
@@ -4029,7 +4029,7 @@ msgstr "Couleur du titre"
 #: widgets/basic/sina-content-box.php:539
 #: widgets/basic/sina-content-box.php:681
 msgid "Description Color"
-msgstr "Description Couleur"
+msgstr "Description couleur"
 
 #: widgets/basic/sina-content-box.php:815
 msgid "Float"
@@ -4443,7 +4443,7 @@ msgstr "Style de piste"
 
 #: widgets/basic/sina-progressbar.php:384
 msgid "Bottom Margin"
-msgstr "Marge inférieure"
+msgstr "Bas marge"
 
 #: widgets/basic/sina-progressbar.php:429
 msgid "Percentage"
@@ -4626,7 +4626,7 @@ msgstr "Couleur de survol"
 
 #: widgets/basic/sina-table.php:1290
 msgid "Bottom Gap"
-msgstr "Écart inférieur"
+msgstr "Écart bas"
 
 #: widgets/basic/sina-table.php:1368
 msgid "Accent"
