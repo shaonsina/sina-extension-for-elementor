@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sina Extension for Elementor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-31 12:00+0000\n"
-"PO-Revision-Date: 2020-09-02 18:27+0000\n"
+"POT-Creation-Date: 2020-09-03 08:16+0000\n"
+"PO-Revision-Date: 2020-09-03 08:21+0000\n"
 "Last-Translator: \n"
 "Language-Team: French (France)\n"
 "Language: fr_FR\n"
@@ -3745,8 +3745,8 @@ msgid "Preview Right"
 msgstr "Aperçu à droite"
 
 #: widgets/advanced/sina-posts-tab.php:190
-msgid "Categories Warp"
-msgstr "Catégories Warp"
+msgid "Categories Wrapper"
+msgstr "Catégories Wrapper"
 
 #: widgets/advanced/sina-posts-tab.php:296
 msgid "Gap From Content"

@@ -187,7 +187,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base{
 		$this->start_controls_section(
 			'menu_wrap_style',
 			[
-				'label' => esc_html__( 'Categories Warp', 'sina-ext' ),
+				'label' => esc_html__( 'Categories Wrapper', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);

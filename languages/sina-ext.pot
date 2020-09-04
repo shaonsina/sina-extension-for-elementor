@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sina Extension for Elementor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-31 12:00+0000\n"
+"POT-Creation-Date: 2020-09-03 08:16+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -3720,7 +3720,7 @@ msgid "Preview Right"
 msgstr ""
 
 #: widgets/advanced/sina-posts-tab.php:190
-msgid "Categories Warp"
+msgid "Categories Wrapper"
 msgstr ""
 
 #: widgets/advanced/sina-posts-tab.php:296
