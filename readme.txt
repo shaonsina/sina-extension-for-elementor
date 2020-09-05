@@ -30,6 +30,15 @@ https://youtu.be/4_FEAlX5bz8
 * 100+ Fully Responsive predefined [Blocks & Pages](https://sinaextra.com/sina-templates/).
 * Free Support through the forum & in our [support desk](https://sinaextra.com/support/).
 
+== Translation Ready ==
+
+Translation Ready for:
+* Bengali
+* French
+* German
+* Spanish
+* Portuguese
+Also, the .pot file provided, so you can translate into your local.
 
 == What can you do by this plugin? ==
 You can make unlimited design without coding knowledge.
@@ -218,13 +227,14 @@ Yes. It's totally free. We also have a [PRO](https://sinaextra.com/sina-addon-fo
 
 == Changelog ==
 
-= 3.3.2 - 26-08-2020 =
+= 3.3.3 - 06-09-2020 =
 - Added: Multiple link & label for buttons of Banner Slider
 - Added: From field to Contact Form
 - Fixed: Product Zoomer title margin issue
 - Improvment
+- Translated into: Bengali, French, German, Purtuguese and Spanish
 
-= 3.3.2 - 10-08-2020 =
+= 3.3.2 - 27-08-2020 =
 - Added: Logging state to Login Form
 - Fixed: Accordion icon color issue
 - Fixed: Contact Form sender name not sent issue

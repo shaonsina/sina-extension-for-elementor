@@ -1,0 +1,4767 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Sina Extension for Elementor\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-09-03 08:16+0000\n"
+"PO-Revision-Date: 2020-09-05 09:59+0000\n"
+"Last-Translator: \n"
+"Language-Team: Portuguese (Brazil)\n"
+"Language: pt_BR\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.4.3; wp-5.4.2"
+
+#: sina-extension-for-elementor.php:39 widgets/basic/sina-accordion.php:42
+msgid "Sina Accordion"
+msgstr "Sina Acordeão"
+
+#: sina-extension-for-elementor.php:40 widgets/basic/sina-content-box.php:43
+msgid "Sina Content Box"
+msgstr "Sina Caixa de Conteúdo"
+
+#: sina-extension-for-elementor.php:41 widgets/basic/sina-counter.php:41
+msgid "Sina Counter"
+msgstr "Sina Contador"
+
+#: sina-extension-for-elementor.php:42 widgets/basic/sina-dynamic-button.php:34
+msgid "Sina Dynamic Button"
+msgstr "Sina Botão Dinâmico"
+
+#: sina-extension-for-elementor.php:43 widgets/basic/sina-fancytext.php:39
+msgid "Sina Fancy Text"
+msgstr "Sina Texto Extravagante"
+
+#: sina-extension-for-elementor.php:44 widgets/basic/sina-flip-box.php:41
+msgid "Sina Flip Box"
+msgstr "Sina Giro caixa"
+
+#: sina-extension-for-elementor.php:45 widgets/basic/sina-google-map.php:36
+msgid "Sina Google Map"
+msgstr "Sina Google Mapa"
+
+#: sina-extension-for-elementor.php:46 widgets/basic/sina-image-differ.php:39
+msgid "Sina Image Differ"
+msgstr "Sina Comparar imagens"
+
+#: sina-extension-for-elementor.php:47 widgets/basic/sina-piechart.php:38
+msgid "Sina Piechart"
+msgstr "Sina Gráfico de pizza"
+
+#: sina-extension-for-elementor.php:48 widgets/basic/sina-pricing.php:42
+msgid "Sina Pricing"
+msgstr "Sina Preços"
+
+#: sina-extension-for-elementor.php:49 widgets/basic/sina-progressbar.php:42
+msgid "Sina Progressbar"
+msgstr "Sina Barra de progresso"
+
+#: sina-extension-for-elementor.php:50 widgets/basic/sina-social-icons.php:37
+msgid "Sina Social Icons"
+msgstr "Sina Ícones Sociais"
+
+#: sina-extension-for-elementor.php:51 widgets/basic/sina-table.php:38
+msgid "Sina Table"
+msgstr "Sina Tabela"
+
+#: sina-extension-for-elementor.php:52 widgets/basic/sina-team.php:41
+msgid "Sina Team"
+msgstr "Sina Equipe"
+
+#: sina-extension-for-elementor.php:53 widgets/basic/sina-title.php:37
+msgid "Sina Title"
+msgstr "Sina Título"
+
+#: sina-extension-for-elementor.php:54 widgets/basic/sina-transform.php:39
+msgid "Sina Transform"
+msgstr "Sina Transformar"
+
+#: sina-extension-for-elementor.php:55 widgets/basic/sina-user-counter.php:37
+msgid "Sina User Counter"
+msgstr "Sina Contador de usuário"
+
+#: sina-extension-for-elementor.php:56 widgets/basic/sina-video.php:40
+msgid "Sina Video"
+msgstr "Sina Video"
+
+#: sina-extension-for-elementor.php:57 widgets/basic/sina-visit-counter.php:37
+msgid "Sina Visit Counter"
+msgstr "Sina Visitar contador"
+
+#: sina-extension-for-elementor.php:60
+#: widgets/advanced/sina-banner-slider.php:39
+msgid "Sina Banner Slider"
+msgstr "Sina Controle deslizante banner"
+
+#: sina-extension-for-elementor.php:61 widgets/advanced/sina-blogpost.php:41
+msgid "Sina Blog Post"
+msgstr "Sina Postagem do blog"
+
+#: sina-extension-for-elementor.php:62
+#: widgets/advanced/sina-brand-carousel.php:39
+msgid "Sina Brand Carousel"
+msgstr "Sina Carrossel de Marca"
+
+#: sina-extension-for-elementor.php:63
+#: widgets/advanced/sina-contact-form.php:36
+msgid "Sina Contact Form"
+msgstr "Sina Formulário de Contato"
+
+#: sina-extension-for-elementor.php:64
+#: widgets/advanced/sina-content-slider.php:41
+msgid "Sina Content Slider"
+msgstr "Sina Controle deslizante conteúdo"
+
+#: sina-extension-for-elementor.php:65 widgets/advanced/sina-countdown.php:42
+msgid "Sina Countdown"
+msgstr "Sina Contagem regressiva"
+
+#: sina-extension-for-elementor.php:66
+#: widgets/advanced/sina-facebook-feed.php:40
+msgid "Sina Facebook Feed"
+msgstr "Sina Facebook Feed"
+
+#: sina-extension-for-elementor.php:67 widgets/advanced/sina-login-form.php:36
+msgid "Sina Login Form"
+msgstr "Sina Formulário de login"
+
+#: sina-extension-for-elementor.php:68
+msgid "Sina MailChimp Subscribe"
+msgstr "Sina MailChimp Assine"
+
+#: sina-extension-for-elementor.php:69 widgets/advanced/sina-modal-box.php:39
+msgid "Sina Modal Box"
+msgstr "Sina Caixa Modal"
+
+#: sina-extension-for-elementor.php:70 widgets/advanced/sina-news-ticker.php:38
+msgid "Sina News Ticker"
+msgstr "Sina Notícia Ticker"
+
+#: sina-extension-for-elementor.php:71
+#: widgets/advanced/sina-particle-layer.php:38
+msgid "Sina Particle Layer"
+msgstr "Sina Camada de Partículas"
+
+#: sina-extension-for-elementor.php:72 widgets/advanced/sina-portfolio.php:40
+msgid "Sina Portfolio"
+msgstr "Sina Portfólio"
+
+#: sina-extension-for-elementor.php:73
+#: widgets/advanced/sina-posts-carousel.php:38
+msgid "Sina Posts Carousel"
+msgstr "Sina Carrossel de Postagens"
+
+#: sina-extension-for-elementor.php:74 widgets/advanced/sina-posts-tab.php:39
+msgid "Sina Posts Tab"
+msgstr "Sina Blog aba"
+
+#: sina-extension-for-elementor.php:75
+#: widgets/advanced/sina-product-zoomer.php:39
+msgid "Sina Product Zoomer"
+msgstr "Sina Zoomer de produto"
+
+#: sina-extension-for-elementor.php:76
+#: widgets/advanced/sina-review-carousel.php:39
+msgid "Sina Review Carousel"
+msgstr "Sina Carrossel de avaliações"
+
+#: sina-extension-for-elementor.php:77 widgets/advanced/sina-search-form.php:38
+msgid "Sina Search Form"
+msgstr "Sina Formulário de pesquisa"
+
+#: sina-extension-for-elementor.php:78
+#: widgets/advanced/sina-twitter-feed.php:40
+msgid "Sina Twitter Feed"
+msgstr "Sina Twitter Feed"
+
+#: sina-extension-for-elementor.php:81
+msgid "Sina Pro Chart"
+msgstr "Sina Pro Gráfico"
+
+#: sina-extension-for-elementor.php:82
+msgid "Sina Pro Hover Image"
+msgstr "Sina Pro Imagem hover"
+
+#: sina-extension-for-elementor.php:83
+msgid "Sina Pro Image Accordion"
+msgstr "Sina Pro Imagem Acordeão"
+
+#: sina-extension-for-elementor.php:84
+msgid "Sina Pro Image Marker"
+msgstr "Sina Pro Marcador de imagem"
+
+#: sina-extension-for-elementor.php:85
+msgid "Sina Pro Image Scroller"
+msgstr "Sina Pro Imagem scroller"
+
+#: sina-extension-for-elementor.php:86
+msgid "Sina Pro Instant Search"
+msgstr "Sina Pro Pesquisa Instantânea"
+
+#: sina-extension-for-elementor.php:87
+msgid "Sina Pro Lost Password Form"
+msgstr "Sina Pro Formulário de Senha"
+
+#: sina-extension-for-elementor.php:88
+msgid "Sina Pro Lottie Animation"
+msgstr "Sina Pro Lottie Animação"
+
+#: sina-extension-for-elementor.php:89
+msgid "Sina Pro Offcanvas Bar"
+msgstr "Sina Pro Barra Offcanvas"
+
+#: sina-extension-for-elementor.php:90
+msgid "Sina Pro Posts Gallery"
+msgstr "Sina Pro Galeria de postagens"
+
+#: sina-extension-for-elementor.php:91
+msgid "Sina Pro Posts on Scroll"
+msgstr "Sina Pro Postagens rolagem"
+
+#: sina-extension-for-elementor.php:92
+msgid "Sina Pro Register Form"
+msgstr "Sina Pro Formulário de Registro"
+
+#: sina-extension-for-elementor.php:93
+msgid "Sina Pro Section Navigation"
+msgstr "Sina Pro Seção de navegação"
+
+#: sina-extension-for-elementor.php:94
+msgid "Sina Pro Source Code"
+msgstr "Sina Pro Código fonte"
+
+#: sina-extension-for-elementor.php:95
+msgid "Sina Pro Tab"
+msgstr "Sina Pro Aba"
+
+#: sina-extension-for-elementor.php:96
+msgid "Sina Pro Team Carousel"
+msgstr "Sina Pro Carrossel de equipe"
+
+#: sina-extension-for-elementor.php:97
+msgid "Sina Pro Testimonial"
+msgstr "Sina Pro Testemunho"
+
+#: sina-extension-for-elementor.php:98
+msgid "Sina Pro Thumb Carousel"
+msgstr "Sina Pro Carrossel miniaturas"
+
+#: sina-extension-for-elementor.php:99
+msgid "Sina Pro Tilt Box"
+msgstr "Sina Pro Caixa de inclinação"
+
+#: sina-extension-for-elementor.php:100
+msgid "Sina Pro Toggle Content"
+msgstr "Sina Pro Alternar conteúdo"
+
+#: sina-extension-for-elementor.php:101
+msgid "Sina Pro Video Gallery"
+msgstr "Sina Pro Galeria de vídeo"
+
+#: sina-extension-for-elementor.php:113
+msgid "Sina Pro Masker"
+msgstr "Sina Pro Mascarador"
+
+#: sina-extension-for-elementor.php:114
+msgid "Sina Pro Parallax"
+msgstr "Sina Pro Paralaxe"
+
+#: sina-extension-for-elementor.php:115
+msgid "Sina Pro Section Particles"
+msgstr "Sina Pro Partículas de Seção"
+
+#: sina-extension-for-elementor.php:116
+msgid "Sina Pro Water Ripples"
+msgstr "Sina Pro Ondulações na água"
+
+#: sina-extension-for-elementor.php:117
+msgid "Sina Pro Clips Animation"
+msgstr "Sina Pro Animação de clipes"
+
+#: sina-extension-for-elementor.php:118
+msgid "Sina Pro Colors Animation"
+msgstr "Sina Pro Animação de Cores"
+
+#: sina-extension-for-elementor.php:119
+msgid "Sina Pro Conditional Publish"
+msgstr "Sina Pro Publicação condicional"
+
+#: sina-extension-for-elementor.php:120
+msgid "Sina Pro Content Protection"
+msgstr "Sina Pro Proteção de Conteúdo"
+
+#: sina-extension-for-elementor.php:121
+msgid "Sina Pro Preloader"
+msgstr "Sina Pro Preloader"
+
+#: sina-extension-for-elementor.php:122
+msgid "Sina Pro Reading Progressbar"
+msgstr "Sina Pro Lendo progresso"
+
+#: admin/sina-ext-rollback.php:56
+msgid "Sina Extension Rollback to Previous Version"
+msgstr "Reversão da Sina Extension para a versão anterior"
+
+#: admin/sina-ext-rollback.php:72 admin/partials/page-content.php:59
+msgid "Rollback to Previous Version"
+msgstr "Reverter para a versão anterior"
+
+#: admin/sina-ext-settings.php:47
+msgid "Sina Extension Settings"
+msgstr "Configurações da Sina Extension"
+
+#: admin/sina-ext-settings.php:48 admin/partials/page-content.php:2
+#: admin/partials/page-content.php:146
+msgid "Sina Extension"
+msgstr ""
+
+#: admin/sina-ext-settings.php:79
+msgid "Google Map API Key"
+msgstr "Chave API Google Mapa"
+
+#: admin/sina-ext-settings.php:80
+msgid "MailChimp API Key"
+msgstr "Chave de API MailChimp"
+
+#: admin/sina-ext-settings.php:81
+msgid "MailChimp List Id"
+msgstr "ID da lista MailChimp"
+
+#: admin/sina-ext-settings.php:82
+msgid "Google Recaptcha Site Key"
+msgstr "Chave site Google Recaptcha"
+
+#: admin/sina-ext-settings.php:83
+msgid "Google Recaptcha Secret Key"
+msgstr "Chave secreta Google Recaptcha"
+
+#: admin/sina-ext-settings.php:84
+msgid "After Logout Redirect URL"
+msgstr "URL redirecionamento após logout"
+
+#: admin/sina-ext-settings.php:89 admin/sina-ext-settings.php:140
+#: inc/sina-ext-library-readable.php:32 inc/sina-ext-library.php:1
+msgid "Sina Templates"
+msgstr "Sina Modelos"
+
+#: inc/sina-ext-base.php:53
+#, php-format
+msgid "\"%1$s\" requires \"%2$s\" to be activate."
+msgstr "\"%1$s\" requer \"%2$s\" para ser ativado."
+
+#. Name of the plugin
+#: inc/sina-ext-base.php:53 inc/sina-ext-base.php:63 inc/sina-ext-base.php:106
+msgid "Sina Extension for Elementor"
+msgstr ""
+
+#: inc/sina-ext-base.php:53 inc/sina-ext-base.php:63 inc/sina-ext-base.php:86
+msgid "Elementor"
+msgstr ""
+
+#: inc/sina-ext-base.php:55
+msgid "Activate Elementor"
+msgstr "Ativar Elementor"
+
+#: inc/sina-ext-base.php:63
+#, php-format
+msgid "\"%1$s\" requires \"%2$s\" to be install."
+msgstr "\"%1$s\" requer \"%2$s\" para ser instalado."
+
+#: inc/sina-ext-base.php:65
+msgid "Install Elementor"
+msgstr "Instalar Elementor"
+
+#. 1: Plugin name 2: PHP 3: Required PHP version
+#: inc/sina-ext-base.php:84 inc/sina-ext-base.php:105
+#, php-format
+msgid "\"%1$s\" requires \"%2$s\" version %3$s or greater."
+msgstr "\"%1$s\" requer \"%2$s\" versão%3$s ou superior."
+
+#: inc/sina-ext-base.php:85
+msgid "Sina Extension Elementor"
+msgstr ""
+
+#: inc/sina-ext-base.php:107
+msgid "PHP"
+msgstr ""
+
+#: inc/sina-ext-controls-extend.php:63
+msgid "Sina Morphing Animation"
+msgstr "Sina Morphing Animation"
+
+#: inc/sina-ext-controls-extend.php:72
+msgid "Sina Transform Effects"
+msgstr "Sina Efeitos transformação"
+
+#: inc/sina-ext-controls-extend.php:75 widgets/basic/sina-transform.php:198
+msgid "Translate"
+msgstr "Traduzir"
+
+#: inc/sina-ext-controls-extend.php:76 inc/sina-ext-controls-extend.php:168
+#: inc/sina-ext-controls-extend.php:412 widgets/basic/sina-transform.php:199
+#: widgets/basic/sina-transform.php:298 widgets/basic/sina-transform.php:567
+msgid "Scale X"
+msgstr "Escala X"
+
+#: inc/sina-ext-controls-extend.php:77 inc/sina-ext-controls-extend.php:191
+#: inc/sina-ext-controls-extend.php:435 widgets/basic/sina-transform.php:200
+#: widgets/basic/sina-transform.php:321 widgets/basic/sina-transform.php:590
+msgid "Scale Y"
+msgstr "Escala Y"
+
+#: inc/sina-ext-controls-extend.php:78 inc/sina-ext-controls-extend.php:214
+#: inc/sina-ext-controls-extend.php:458 widgets/basic/sina-transform.php:201
+#: widgets/basic/sina-transform.php:344 widgets/basic/sina-transform.php:613
+msgid "Scale Z"
+msgstr "Escala Z"
+
+#: inc/sina-ext-controls-extend.php:79 inc/sina-ext-controls-extend.php:237
+#: inc/sina-ext-controls-extend.php:481 widgets/basic/sina-transform.php:202
+#: widgets/basic/sina-transform.php:367 widgets/basic/sina-transform.php:636
+msgid "Rotate X"
+msgstr "Rotação X"
+
+#: inc/sina-ext-controls-extend.php:80 inc/sina-ext-controls-extend.php:260
+#: inc/sina-ext-controls-extend.php:504 widgets/basic/sina-transform.php:203
+#: widgets/basic/sina-transform.php:390 widgets/basic/sina-transform.php:659
+msgid "Rotate Y"
+msgstr "Rotação Y"
+
+#: inc/sina-ext-controls-extend.php:81 inc/sina-ext-controls-extend.php:283
+#: inc/sina-ext-controls-extend.php:527 widgets/basic/sina-transform.php:204
+#: widgets/basic/sina-transform.php:413 widgets/basic/sina-transform.php:682
+msgid "Rotate Z"
+msgstr "Rotação Z"
+
+#: inc/sina-ext-controls-extend.php:82 inc/sina-ext-controls-extend.php:306
+#: inc/sina-ext-controls-extend.php:550 widgets/basic/sina-transform.php:205
+#: widgets/basic/sina-transform.php:436 widgets/basic/sina-transform.php:705
+msgid "Skew X"
+msgstr "Skew X"
+
+#: inc/sina-ext-controls-extend.php:83 inc/sina-ext-controls-extend.php:329
+#: inc/sina-ext-controls-extend.php:573 widgets/basic/sina-transform.php:206
+#: widgets/basic/sina-transform.php:459 widgets/basic/sina-transform.php:728
+msgid "Skew Y"
+msgstr "Skew Y"
+
+#: inc/sina-ext-controls-extend.php:84 inc/sina-ext-controls.php:50
+#: inc/sina-ext-controls.php:97 inc/sina-ext-controls.php:122
+#: inc/sina-ext-controls.php:167 inc/sina-ext-controls.php:462
+#: widgets/advanced/sina-blogpost.php:367
+#: widgets/advanced/sina-facebook-feed.php:228
+#: widgets/advanced/sina-posts-carousel.php:529
+#: widgets/advanced/sina-twitter-feed.php:257
+#: widgets/basic/sina-content-box.php:302
+#: widgets/basic/sina-content-box.php:804
+#: widgets/basic/sina-dynamic-button.php:103 widgets/basic/sina-pricing.php:346
+#: widgets/basic/sina-table.php:572 widgets/basic/sina-team.php:379
+#: widgets/basic/sina-team.php:596 widgets/basic/sina-title.php:106
+#: widgets/basic/sina-transform.php:207 widgets/basic/sina-video.php:125
+msgid "None"
+msgstr "Nenhum"
+
+#: inc/sina-ext-controls-extend.php:92 widgets/basic/sina-transform.php:222
+msgid "Perspective Size"
+msgstr "Tamanho da Perspectiva"
+
+#: inc/sina-ext-controls-extend.php:118 inc/sina-ext-controls.php:632
+#: inc/sina-ext-controls.php:896 inc/sina-ext-controls.php:1040
+#: inc/sina-ext-controls.php:1269 widgets/advanced/sina-blogpost.php:472
+#: widgets/advanced/sina-blogpost.php:1041
+#: widgets/advanced/sina-blogpost.php:1389
+#: widgets/advanced/sina-blogpost.php:1615
+#: widgets/advanced/sina-brand-carousel.php:161
+#: widgets/advanced/sina-brand-carousel.php:389
+#: widgets/advanced/sina-facebook-feed.php:333
+#: widgets/advanced/sina-facebook-feed.php:648
+#: widgets/advanced/sina-facebook-feed.php:841
+#: widgets/advanced/sina-modal-box.php:679
+#: widgets/advanced/sina-news-ticker.php:437
+#: widgets/advanced/sina-portfolio.php:719
+#: widgets/advanced/sina-posts-carousel.php:450
+#: widgets/advanced/sina-posts-carousel.php:634
+#: widgets/advanced/sina-posts-carousel.php:1023
+#: widgets/advanced/sina-posts-carousel.php:1523
+#: widgets/advanced/sina-posts-tab.php:816
+#: widgets/advanced/sina-search-form.php:257
+#: widgets/advanced/sina-twitter-feed.php:362
+#: widgets/advanced/sina-twitter-feed.php:629
+#: widgets/basic/sina-accordion.php:456 widgets/basic/sina-content-box.php:406
+#: widgets/basic/sina-google-map.php:236 widgets/basic/sina-pricing.php:450
+#: widgets/basic/sina-social-icons.php:134
+#: widgets/basic/sina-social-icons.php:373 widgets/basic/sina-table.php:169
+#: widgets/basic/sina-table.php:334 widgets/basic/sina-table.php:681
+#: widgets/basic/sina-table.php:901 widgets/basic/sina-table.php:1077
+#: widgets/basic/sina-table.php:1191 widgets/basic/sina-team.php:233
+#: widgets/basic/sina-team.php:1069 widgets/basic/sina-transform.php:248
+#: widgets/basic/sina-video.php:285
+msgid "Normal"
+msgstr "Normal"
+
+#: inc/sina-ext-controls-extend.php:125 inc/sina-ext-controls-extend.php:369
+#: widgets/basic/sina-transform.php:255 widgets/basic/sina-transform.php:524
+msgid "Translate X"
+msgstr "Traduzir X"
+
+#: inc/sina-ext-controls-extend.php:144 inc/sina-ext-controls-extend.php:388
+#: widgets/basic/sina-transform.php:274 widgets/basic/sina-transform.php:543
+msgid "Translate Y"
+msgstr "Traduzir Y"
+
+#: inc/sina-ext-controls-extend.php:362 inc/sina-ext-controls.php:692
+#: inc/sina-ext-controls.php:952 widgets/advanced/sina-blogpost.php:521
+#: widgets/advanced/sina-blogpost.php:1068
+#: widgets/advanced/sina-blogpost.php:1408
+#: widgets/advanced/sina-blogpost.php:1675
+#: widgets/advanced/sina-brand-carousel.php:200
+#: widgets/advanced/sina-brand-carousel.php:446
+#: widgets/advanced/sina-facebook-feed.php:382
+#: widgets/advanced/sina-facebook-feed.php:668
+#: widgets/advanced/sina-facebook-feed.php:861
+#: widgets/advanced/sina-modal-box.php:747
+#: widgets/advanced/sina-news-ticker.php:457
+#: widgets/advanced/sina-portfolio.php:758
+#: widgets/advanced/sina-posts-carousel.php:476
+#: widgets/advanced/sina-posts-carousel.php:683
+#: widgets/advanced/sina-posts-carousel.php:1049
+#: widgets/advanced/sina-posts-carousel.php:1542
+#: widgets/advanced/sina-posts-tab.php:844
+#: widgets/advanced/sina-search-form.php:301
+#: widgets/advanced/sina-twitter-feed.php:411
+#: widgets/advanced/sina-twitter-feed.php:649
+#: widgets/basic/sina-content-box.php:556 widgets/basic/sina-google-map.php:253
+#: widgets/basic/sina-pricing.php:508 widgets/basic/sina-social-icons.php:178
+#: widgets/basic/sina-social-icons.php:424 widgets/basic/sina-table.php:197
+#: widgets/basic/sina-table.php:362 widgets/basic/sina-table.php:742
+#: widgets/basic/sina-table.php:954 widgets/basic/sina-table.php:1105
+#: widgets/basic/sina-table.php:1246 widgets/basic/sina-team.php:277
+#: widgets/basic/sina-team.php:1120 widgets/basic/sina-transform.php:517
+#: widgets/basic/sina-video.php:337
+msgid "Hover"
+msgstr "Hover"
+
+#: inc/sina-ext-controls-extend.php:603 widgets/basic/sina-google-map.php:272
+msgid "Transition Duration"
+msgstr "Duração da transição"
+
+#: inc/sina-ext-controls.php:27 inc/sina-ext-controls.php:78
+msgid "Background Hover Styles"
+msgstr "Estilos hover fundo"
+
+#: inc/sina-ext-controls.php:35 inc/sina-ext-controls.php:86
+msgid "Hover Effects"
+msgstr "Efeitos de hover"
+
+#: inc/sina-ext-controls.php:38 inc/sina-ext-controls.php:89
+msgid "Door Vertical"
+msgstr ""
+
+#: inc/sina-ext-controls.php:39 inc/sina-ext-controls.php:90
+msgid "Door Horizontal"
+msgstr ""
+
+#: inc/sina-ext-controls.php:40 inc/sina-ext-controls.php:91
+#: inc/sina-ext-controls.php:128
+msgid "Zoom In"
+msgstr ""
+
+#: inc/sina-ext-controls.php:41 inc/sina-ext-controls.php:92
+#: inc/sina-ext-controls.php:123
+msgid "Fade In"
+msgstr ""
+
+#: inc/sina-ext-controls.php:42 inc/sina-ext-controls.php:93
+#: widgets/basic/sina-flip-box.php:307
+msgid "Slide Left"
+msgstr ""
+
+#: inc/sina-ext-controls.php:43 inc/sina-ext-controls.php:94
+#: widgets/basic/sina-flip-box.php:308
+msgid "Slide Right"
+msgstr ""
+
+#: inc/sina-ext-controls.php:44 inc/sina-ext-controls.php:95
+#: widgets/basic/sina-flip-box.php:306
+msgid "Slide Bottom"
+msgstr ""
+
+#: inc/sina-ext-controls.php:45 inc/sina-ext-controls.php:96
+#: widgets/basic/sina-flip-box.php:305
+msgid "Slide Top"
+msgstr ""
+
+#: inc/sina-ext-controls.php:46
+msgid "Slide Left-Bottom"
+msgstr ""
+
+#: inc/sina-ext-controls.php:47
+msgid "Slide Right-Bottom"
+msgstr ""
+
+#: inc/sina-ext-controls.php:48
+msgid "Slide Left-Top"
+msgstr ""
+
+#: inc/sina-ext-controls.php:49
+msgid "Slide Right-Top"
+msgstr ""
+
+#: inc/sina-ext-controls.php:124
+msgid "Fade In Up"
+msgstr ""
+
+#: inc/sina-ext-controls.php:125
+msgid "Fade In Down"
+msgstr ""
+
+#: inc/sina-ext-controls.php:126
+msgid "Fade In Left"
+msgstr ""
+
+#: inc/sina-ext-controls.php:127
+msgid "Fade In Right"
+msgstr ""
+
+#: inc/sina-ext-controls.php:129
+msgid "Zoom In Left"
+msgstr ""
+
+#: inc/sina-ext-controls.php:130
+msgid "Zoom In Right"
+msgstr ""
+
+#: inc/sina-ext-controls.php:131
+msgid "Zoom In Down"
+msgstr ""
+
+#: inc/sina-ext-controls.php:132
+msgid "Zoom In Up"
+msgstr ""
+
+#: inc/sina-ext-controls.php:133 widgets/basic/sina-google-map.php:163
+msgid "Bounce"
+msgstr ""
+
+#: inc/sina-ext-controls.php:134
+msgid "Bounce In"
+msgstr ""
+
+#: inc/sina-ext-controls.php:135
+msgid "Bounce In Down"
+msgstr ""
+
+#: inc/sina-ext-controls.php:136
+msgid "Bounce In Left"
+msgstr ""
+
+#: inc/sina-ext-controls.php:137
+msgid "Bounce In Right"
+msgstr ""
+
+#: inc/sina-ext-controls.php:138
+msgid "Bounce In Up"
+msgstr ""
+
+#: inc/sina-ext-controls.php:139
+msgid "Slide In Down"
+msgstr ""
+
+#: inc/sina-ext-controls.php:140
+msgid "Slide In Left"
+msgstr ""
+
+#: inc/sina-ext-controls.php:141
+msgid "Slide In Right"
+msgstr ""
+
+#: inc/sina-ext-controls.php:142
+msgid "Slide In Up"
+msgstr ""
+
+#: inc/sina-ext-controls.php:143
+msgid "Rotate In"
+msgstr ""
+
+#: inc/sina-ext-controls.php:144
+msgid "Rotate In Down Left"
+msgstr ""
+
+#: inc/sina-ext-controls.php:145
+msgid "Rotate In Down Right"
+msgstr ""
+
+#: inc/sina-ext-controls.php:146
+msgid "Rotate In Up Left"
+msgstr ""
+
+#: inc/sina-ext-controls.php:147
+msgid "Rotate In Up Right"
+msgstr ""
+
+#: inc/sina-ext-controls.php:148
+msgid "Flip In X"
+msgstr ""
+
+#: inc/sina-ext-controls.php:149
+msgid "Flip In Y"
+msgstr ""
+
+#: inc/sina-ext-controls.php:150
+msgid "Light Speed In"
+msgstr ""
+
+#: inc/sina-ext-controls.php:151 inc/sina-ext-controls.php:157
+msgid "Swing"
+msgstr ""
+
+#: inc/sina-ext-controls.php:152
+msgid "Flash"
+msgstr ""
+
+#: inc/sina-ext-controls.php:153
+msgid "Pulse"
+msgstr ""
+
+#: inc/sina-ext-controls.php:154
+msgid "Rubber Band"
+msgstr ""
+
+#: inc/sina-ext-controls.php:155
+msgid "Shake"
+msgstr ""
+
+#: inc/sina-ext-controls.php:156
+msgid "Head Shake"
+msgstr ""
+
+#: inc/sina-ext-controls.php:158
+msgid "Tada"
+msgstr ""
+
+#: inc/sina-ext-controls.php:159
+msgid "Wobble"
+msgstr ""
+
+#: inc/sina-ext-controls.php:160
+msgid "Jello"
+msgstr ""
+
+#: inc/sina-ext-controls.php:161
+msgid "Roll In"
+msgstr ""
+
+#: inc/sina-ext-controls.php:168
+msgid "Fade Out"
+msgstr ""
+
+#: inc/sina-ext-controls.php:169
+msgid "Fade Out Up"
+msgstr ""
+
+#: inc/sina-ext-controls.php:170
+msgid "Fade Out Down"
+msgstr ""
+
+#: inc/sina-ext-controls.php:171
+msgid "Fade Out Left"
+msgstr ""
+
+#: inc/sina-ext-controls.php:172
+msgid "Fade Out Right"
+msgstr ""
+
+#: inc/sina-ext-controls.php:173
+msgid "Zoom Out"
+msgstr ""
+
+#: inc/sina-ext-controls.php:174
+msgid "Zoom Out Left"
+msgstr ""
+
+#: inc/sina-ext-controls.php:175
+msgid "Zoom Out Right"
+msgstr ""
+
+#: inc/sina-ext-controls.php:176
+msgid "Zoom Out Down"
+msgstr ""
+
+#: inc/sina-ext-controls.php:177
+msgid "Zoom Out Up"
+msgstr ""
+
+#: inc/sina-ext-controls.php:178
+msgid "Bounce Out"
+msgstr ""
+
+#: inc/sina-ext-controls.php:179
+msgid "Bounce Out Down"
+msgstr ""
+
+#: inc/sina-ext-controls.php:180
+msgid "Bounce Out Left"
+msgstr ""
+
+#: inc/sina-ext-controls.php:181
+msgid "Bounce Out Right"
+msgstr ""
+
+#: inc/sina-ext-controls.php:182
+msgid "Bounce Out Up"
+msgstr ""
+
+#: inc/sina-ext-controls.php:183
+msgid "Slide Out Down"
+msgstr ""
+
+#: inc/sina-ext-controls.php:184
+msgid "Slide Out Left"
+msgstr ""
+
+#: inc/sina-ext-controls.php:185
+msgid "Slide Out Right"
+msgstr ""
+
+#: inc/sina-ext-controls.php:186
+msgid "Slide Out Up"
+msgstr ""
+
+#: inc/sina-ext-controls.php:187
+msgid "Rotate Out"
+msgstr ""
+
+#: inc/sina-ext-controls.php:188
+msgid "Rotate Out Down Left"
+msgstr ""
+
+#: inc/sina-ext-controls.php:189
+msgid "Rotate Out Down Right"
+msgstr ""
+
+#: inc/sina-ext-controls.php:190
+msgid "Rotate Out Up Left"
+msgstr ""
+
+#: inc/sina-ext-controls.php:191
+msgid "Rotate Out Up Right"
+msgstr ""
+
+#: inc/sina-ext-controls.php:192
+msgid "Flip Out X"
+msgstr ""
+
+#: inc/sina-ext-controls.php:193
+msgid "Flip Out Y"
+msgstr ""
+
+#: inc/sina-ext-controls.php:194
+msgid "Light Speed Out"
+msgstr ""
+
+#: inc/sina-ext-controls.php:195
+msgid "Roll Out"
+msgstr ""
+
+#: inc/sina-ext-controls.php:203
+msgid "Number of Posts"
+msgstr "Número de posts"
+
+#: inc/sina-ext-controls.php:214 widgets/advanced/sina-facebook-feed.php:151
+#: widgets/advanced/sina-twitter-feed.php:164
+msgid "Number of Offset"
+msgstr "Número de Offset"
+
+#: inc/sina-ext-controls.php:225
+msgid "Order by"
+msgstr "Ordenar por"
+
+#: inc/sina-ext-controls.php:228 widgets/advanced/sina-posts-tab.php:155
+#: widgets/advanced/sina-posts-tab.php:907
+msgid "Date"
+msgstr "Encontro"
+
+#: inc/sina-ext-controls.php:229 widgets/advanced/sina-banner-slider.php:138
+#: widgets/advanced/sina-banner-slider.php:544
+#: widgets/advanced/sina-blogpost.php:1005
+#: widgets/advanced/sina-content-slider.php:170
+#: widgets/advanced/sina-content-slider.php:484
+#: widgets/advanced/sina-facebook-feed.php:805
+#: widgets/advanced/sina-modal-box.php:196
+#: widgets/advanced/sina-modal-box.php:941
+#: widgets/advanced/sina-particle-layer.php:140
+#: widgets/advanced/sina-particle-layer.php:585
+#: widgets/advanced/sina-portfolio.php:175
+#: widgets/advanced/sina-portfolio.php:542
+#: widgets/advanced/sina-posts-carousel.php:987
+#: widgets/advanced/sina-product-zoomer.php:119
+#: widgets/advanced/sina-product-zoomer.php:189
+#: widgets/advanced/sina-product-zoomer.php:334
+#: widgets/basic/sina-accordion.php:185 widgets/basic/sina-content-box.php:218
+#: widgets/basic/sina-content-box.php:973 widgets/basic/sina-counter.php:168
+#: widgets/basic/sina-counter.php:339 widgets/basic/sina-flip-box.php:154
+#: widgets/basic/sina-flip-box.php:244 widgets/basic/sina-flip-box.php:775
+#: widgets/basic/sina-piechart.php:119 widgets/basic/sina-piechart.php:287
+#: widgets/basic/sina-pricing.php:109 widgets/basic/sina-pricing.php:791
+#: widgets/basic/sina-progressbar.php:122
+#: widgets/basic/sina-progressbar.php:336 widgets/basic/sina-title.php:131
+#: widgets/basic/sina-title.php:252 widgets/basic/sina-video.php:161
+#: widgets/basic/sina-video.php:192
+msgid "Title"
+msgstr "Título"
+
+#: inc/sina-ext-controls.php:230
+msgid "Author"
+msgstr "Autor"
+
+#: inc/sina-ext-controls.php:231
+msgid "Modified"
+msgstr "Modificado"
+
+#: inc/sina-ext-controls.php:232
+msgid "Comments"
+msgstr "Comentários"
+
+#: inc/sina-ext-controls.php:240
+msgid "Sort"
+msgstr "Ordenar"
+
+#: inc/sina-ext-controls.php:243
+msgid "ASC"
+msgstr ""
+
+#: inc/sina-ext-controls.php:244
+msgid "DESC"
+msgstr ""
+
+#: inc/sina-ext-controls.php:255
+msgid "Autoplay"
+msgstr "Reprodução auto"
+
+#: inc/sina-ext-controls.php:257 inc/sina-ext-controls.php:267
+#: inc/sina-ext-controls.php:277 inc/sina-ext-controls.php:287
+#: inc/sina-ext-controls.php:297 inc/sina-ext-controls.php:307
+#: widgets/advanced/sina-banner-slider.php:411
+#: widgets/advanced/sina-banner-slider.php:441
+#: widgets/basic/sina-image-differ.php:204
+#: widgets/basic/sina-image-differ.php:213
+#: widgets/basic/sina-image-differ.php:222
+msgid "On"
+msgstr "Em"
+
+#: inc/sina-ext-controls.php:258 inc/sina-ext-controls.php:268
+#: inc/sina-ext-controls.php:278 inc/sina-ext-controls.php:288
+#: inc/sina-ext-controls.php:298 inc/sina-ext-controls.php:308
+#: widgets/advanced/sina-banner-slider.php:412
+#: widgets/advanced/sina-banner-slider.php:442
+#: widgets/basic/sina-image-differ.php:205
+#: widgets/basic/sina-image-differ.php:214
+#: widgets/basic/sina-image-differ.php:223
+msgid "Off"
+msgstr "Fora"
+
+#: inc/sina-ext-controls.php:265
+msgid "Pause on Hover"
+msgstr "Pausar ao hover"
+
+#: inc/sina-ext-controls.php:275
+msgid "Mouse Drag"
+msgstr "Arrastar do mouse"
+
+#: inc/sina-ext-controls.php:285
+msgid "Touch Drag"
+msgstr "Toque Arraste"
+
+#: inc/sina-ext-controls.php:295
+msgid "Infinity Loop"
+msgstr "Infinity Loop"
+
+#: inc/sina-ext-controls.php:305 widgets/advanced/sina-banner-slider.php:301
+#: widgets/advanced/sina-blogpost.php:771
+#: widgets/advanced/sina-blogpost.php:1876
+#: widgets/advanced/sina-blogpost.php:1975
+#: widgets/advanced/sina-contact-form.php:531
+#: widgets/advanced/sina-content-slider.php:456
+#: widgets/advanced/sina-content-slider.php:560
+#: widgets/advanced/sina-content-slider.php:658
+#: widgets/advanced/sina-content-slider.php:742
+#: widgets/advanced/sina-countdown.php:292
+#: widgets/advanced/sina-facebook-feed.php:547
+#: widgets/advanced/sina-login-form.php:316
+#: widgets/advanced/sina-login-form.php:463
+#: widgets/advanced/sina-mailchimp-subscribe.php:481
+#: widgets/advanced/sina-modal-box.php:548
+#: widgets/advanced/sina-modal-box.php:839
+#: widgets/advanced/sina-modal-box.php:1021
+#: widgets/advanced/sina-modal-box.php:1110
+#: widgets/advanced/sina-modal-box.php:1211
+#: widgets/advanced/sina-particle-layer.php:540
+#: widgets/advanced/sina-portfolio.php:417
+#: widgets/advanced/sina-portfolio.php:684
+#: widgets/advanced/sina-posts-carousel.php:397
+#: widgets/advanced/sina-posts-carousel.php:422
+#: widgets/advanced/sina-posts-carousel.php:933
+#: widgets/advanced/sina-posts-tab.php:383
+#: widgets/advanced/sina-posts-tab.php:510
+#: widgets/advanced/sina-posts-tab.php:881
+#: widgets/advanced/sina-product-zoomer.php:393
+#: widgets/advanced/sina-product-zoomer.php:489
+#: widgets/advanced/sina-search-form.php:437
+#: widgets/advanced/sina-twitter-feed.php:558
+#: widgets/basic/sina-accordion.php:692 widgets/basic/sina-content-box.php:1094
+#: widgets/basic/sina-counter.php:314 widgets/basic/sina-dynamic-button.php:343
+#: widgets/basic/sina-fancytext.php:223 widgets/basic/sina-flip-box.php:493
+#: widgets/basic/sina-pricing.php:892 widgets/basic/sina-pricing.php:1117
+#: widgets/basic/sina-progressbar.php:405
+#: widgets/basic/sina-progressbar.php:505
+#: widgets/basic/sina-social-icons.php:525 widgets/basic/sina-table.php:809
+#: widgets/basic/sina-table.php:1030 widgets/basic/sina-table.php:1343
+#: widgets/basic/sina-team.php:554 widgets/basic/sina-title.php:223
+#: widgets/basic/sina-title.php:313 widgets/basic/sina-title.php:462
+#: widgets/basic/sina-title.php:567 widgets/basic/sina-title.php:682
+#: widgets/basic/sina-user-counter.php:176
+#: widgets/basic/sina-visit-counter.php:175
+msgid "Center"
+msgstr "Centro"
+
+#: inc/sina-ext-controls.php:319
+msgid "Dots"
+msgstr "Pontos"
+
+#: inc/sina-ext-controls.php:321 inc/sina-ext-controls.php:331
+#: widgets/advanced/sina-countdown.php:312
+#: widgets/advanced/sina-posts-tab.php:157
+#: widgets/advanced/sina-posts-tab.php:166 widgets/basic/sina-fancytext.php:291
+msgid "Show"
+msgstr "Mostrar"
+
+#: inc/sina-ext-controls.php:322 inc/sina-ext-controls.php:332
+#: widgets/advanced/sina-countdown.php:313
+#: widgets/advanced/sina-posts-tab.php:158
+#: widgets/advanced/sina-posts-tab.php:167 widgets/basic/sina-fancytext.php:292
+msgid "Hide"
+msgstr "Ocultar"
+
+#: inc/sina-ext-controls.php:329 inc/sina-ext-controls.php:619
+msgid "Navigation"
+msgstr "Navegação"
+
+#: inc/sina-ext-controls.php:341 widgets/advanced/sina-modal-box.php:125
+#: widgets/basic/sina-fancytext.php:253
+msgid "Delay"
+msgstr "Demora"
+
+#: inc/sina-ext-controls.php:352
+msgid "Slide Animation In"
+msgstr ""
+
+#: inc/sina-ext-controls.php:364
+msgid "Slide Animation Out"
+msgstr ""
+
+#: inc/sina-ext-controls.php:378 widgets/advanced/sina-banner-slider.php:449
+msgid "Speed"
+msgstr "Velocidade"
+
+#: inc/sina-ext-controls.php:397 widgets/basic/sina-dynamic-button.php:169
+msgid "Label"
+msgstr "Rótulo"
+
+#: inc/sina-ext-controls.php:399 widgets/basic/sina-table.php:133
+msgid "Enter Text"
+msgstr "Digite o texto"
+
+#: inc/sina-ext-controls.php:407
+msgid "Tooltip text"
+msgstr "Texto de tooltip"
+
+#: inc/sina-ext-controls.php:409
+msgid "Enter Tooltip Text"
+msgstr "Insira texto tooltip"
+
+#: inc/sina-ext-controls.php:416 widgets/advanced/sina-blogpost.php:1147
+#: widgets/advanced/sina-posts-carousel.php:1334
+#: widgets/advanced/sina-posts-tab.php:130 widgets/basic/sina-accordion.php:129
+#: widgets/basic/sina-content-box.php:172
+#: widgets/basic/sina-content-box.php:188 widgets/basic/sina-counter.php:126
+#: widgets/basic/sina-counter.php:140 widgets/basic/sina-dynamic-button.php:195
+#: widgets/basic/sina-flip-box.php:112 widgets/basic/sina-flip-box.php:126
+#: widgets/basic/sina-flip-box.php:202 widgets/basic/sina-flip-box.php:216
+#: widgets/basic/sina-pricing.php:258 widgets/basic/sina-progressbar.php:136
+#: widgets/basic/sina-social-icons.php:105 widgets/basic/sina-table.php:143
+#: widgets/basic/sina-table.php:304 widgets/basic/sina-team.php:198
+#: widgets/basic/sina-video.php:175
+msgid "Icon"
+msgstr "Ícone"
+
+#: inc/sina-ext-controls.php:424 widgets/advanced/sina-posts-tab.php:269
+#: widgets/basic/sina-accordion.php:147
+#: widgets/basic/sina-dynamic-button.php:203
+#: widgets/basic/sina-pricing.php:1269 widgets/basic/sina-progressbar.php:144
+#: widgets/basic/sina-table.php:151 widgets/basic/sina-table.php:315
+msgid "Icon Position"
+msgstr "Posição do ícone"
+
+#: inc/sina-ext-controls.php:427 widgets/advanced/sina-banner-slider.php:297
+#: widgets/advanced/sina-blogpost.php:767
+#: widgets/advanced/sina-blogpost.php:1872
+#: widgets/advanced/sina-blogpost.php:1971
+#: widgets/advanced/sina-contact-form.php:527
+#: widgets/advanced/sina-content-slider.php:452
+#: widgets/advanced/sina-content-slider.php:556
+#: widgets/advanced/sina-content-slider.php:654
+#: widgets/advanced/sina-content-slider.php:738
+#: widgets/advanced/sina-countdown.php:288
+#: widgets/advanced/sina-facebook-feed.php:543
+#: widgets/advanced/sina-login-form.php:312
+#: widgets/advanced/sina-login-form.php:459
+#: widgets/advanced/sina-mailchimp-subscribe.php:477
+#: widgets/advanced/sina-modal-box.php:544
+#: widgets/advanced/sina-modal-box.php:835
+#: widgets/advanced/sina-modal-box.php:1017
+#: widgets/advanced/sina-modal-box.php:1106
+#: widgets/advanced/sina-modal-box.php:1207
+#: widgets/advanced/sina-news-ticker.php:160
+#: widgets/advanced/sina-particle-layer.php:536
+#: widgets/advanced/sina-portfolio.php:413
+#: widgets/advanced/sina-portfolio.php:680
+#: widgets/advanced/sina-posts-carousel.php:393
+#: widgets/advanced/sina-posts-carousel.php:418
+#: widgets/advanced/sina-posts-carousel.php:929
+#: widgets/advanced/sina-posts-tab.php:272
+#: widgets/advanced/sina-posts-tab.php:379
+#: widgets/advanced/sina-posts-tab.php:506
+#: widgets/advanced/sina-posts-tab.php:877
+#: widgets/advanced/sina-product-zoomer.php:303
+#: widgets/advanced/sina-product-zoomer.php:389
+#: widgets/advanced/sina-product-zoomer.php:485
+#: widgets/advanced/sina-search-form.php:433
+#: widgets/advanced/sina-twitter-feed.php:554
+#: widgets/basic/sina-accordion.php:150 widgets/basic/sina-accordion.php:688
+#: widgets/basic/sina-content-box.php:151
+#: widgets/basic/sina-content-box.php:819
+#: widgets/basic/sina-content-box.php:1090 widgets/basic/sina-counter.php:310
+#: widgets/basic/sina-dynamic-button.php:206
+#: widgets/basic/sina-dynamic-button.php:339
+#: widgets/basic/sina-fancytext.php:219 widgets/basic/sina-flip-box.php:489
+#: widgets/basic/sina-pricing.php:179 widgets/basic/sina-pricing.php:888
+#: widgets/basic/sina-pricing.php:1113 widgets/basic/sina-pricing.php:1272
+#: widgets/basic/sina-progressbar.php:147
+#: widgets/basic/sina-progressbar.php:401
+#: widgets/basic/sina-progressbar.php:501
+#: widgets/basic/sina-social-icons.php:521 widgets/basic/sina-table.php:154
+#: widgets/basic/sina-table.php:318 widgets/basic/sina-table.php:805
+#: widgets/basic/sina-table.php:1026 widgets/basic/sina-table.php:1339
+#: widgets/basic/sina-team.php:125 widgets/basic/sina-team.php:550
+#: widgets/basic/sina-title.php:219 widgets/basic/sina-title.php:309
+#: widgets/basic/sina-title.php:458 widgets/basic/sina-title.php:563
+#: widgets/basic/sina-title.php:678 widgets/basic/sina-user-counter.php:172
+#: widgets/basic/sina-visit-counter.php:171
+msgid "Left"
+msgstr "Esquerda"
+
+#: inc/sina-ext-controls.php:428 widgets/advanced/sina-banner-slider.php:305
+#: widgets/advanced/sina-blogpost.php:775
+#: widgets/advanced/sina-blogpost.php:1880
+#: widgets/advanced/sina-blogpost.php:1979
+#: widgets/advanced/sina-contact-form.php:535
+#: widgets/advanced/sina-content-slider.php:460
+#: widgets/advanced/sina-content-slider.php:564
+#: widgets/advanced/sina-content-slider.php:662
+#: widgets/advanced/sina-content-slider.php:746
+#: widgets/advanced/sina-countdown.php:296
+#: widgets/advanced/sina-facebook-feed.php:551
+#: widgets/advanced/sina-login-form.php:320
+#: widgets/advanced/sina-login-form.php:467
+#: widgets/advanced/sina-mailchimp-subscribe.php:485
+#: widgets/advanced/sina-modal-box.php:552
+#: widgets/advanced/sina-modal-box.php:843
+#: widgets/advanced/sina-modal-box.php:1025
+#: widgets/advanced/sina-modal-box.php:1114
+#: widgets/advanced/sina-modal-box.php:1215
+#: widgets/advanced/sina-news-ticker.php:161
+#: widgets/advanced/sina-particle-layer.php:544
+#: widgets/advanced/sina-portfolio.php:421
+#: widgets/advanced/sina-portfolio.php:688
+#: widgets/advanced/sina-posts-carousel.php:401
+#: widgets/advanced/sina-posts-carousel.php:426
+#: widgets/advanced/sina-posts-carousel.php:937
+#: widgets/advanced/sina-posts-tab.php:273
+#: widgets/advanced/sina-posts-tab.php:387
+#: widgets/advanced/sina-posts-tab.php:514
+#: widgets/advanced/sina-posts-tab.php:885
+#: widgets/advanced/sina-product-zoomer.php:301
+#: widgets/advanced/sina-product-zoomer.php:397
+#: widgets/advanced/sina-product-zoomer.php:401
+#: widgets/advanced/sina-product-zoomer.php:493
+#: widgets/advanced/sina-product-zoomer.php:497
+#: widgets/advanced/sina-search-form.php:441
+#: widgets/advanced/sina-twitter-feed.php:562
+#: widgets/basic/sina-accordion.php:151 widgets/basic/sina-accordion.php:696
+#: widgets/basic/sina-content-box.php:155
+#: widgets/basic/sina-content-box.php:823
+#: widgets/basic/sina-content-box.php:1098 widgets/basic/sina-counter.php:318
+#: widgets/basic/sina-dynamic-button.php:207
+#: widgets/basic/sina-dynamic-button.php:347
+#: widgets/basic/sina-fancytext.php:227 widgets/basic/sina-flip-box.php:497
+#: widgets/basic/sina-pricing.php:183 widgets/basic/sina-pricing.php:896
+#: widgets/basic/sina-pricing.php:1121 widgets/basic/sina-pricing.php:1273
+#: widgets/basic/sina-progressbar.php:148
+#: widgets/basic/sina-progressbar.php:409
+#: widgets/basic/sina-progressbar.php:509
+#: widgets/basic/sina-social-icons.php:529 widgets/basic/sina-table.php:155
+#: widgets/basic/sina-table.php:319 widgets/basic/sina-table.php:813
+#: widgets/basic/sina-table.php:1034 widgets/basic/sina-table.php:1347
+#: widgets/basic/sina-team.php:129 widgets/basic/sina-team.php:558
+#: widgets/basic/sina-title.php:227 widgets/basic/sina-title.php:317
+#: widgets/basic/sina-title.php:466 widgets/basic/sina-title.php:571
+#: widgets/basic/sina-title.php:686 widgets/basic/sina-user-counter.php:180
+#: widgets/basic/sina-visit-counter.php:179
+msgid "Right"
+msgstr "Direita"
+
+#: inc/sina-ext-controls.php:439 widgets/advanced/sina-posts-tab.php:282
+#: widgets/basic/sina-dynamic-button.php:218
+#: widgets/basic/sina-pricing.php:1281 widgets/basic/sina-progressbar.php:159
+#: widgets/basic/sina-table.php:630 widgets/basic/sina-table.php:855
+msgid "Icon Spacing"
+msgstr "Espaçamento de ícone"
+
+#: inc/sina-ext-controls.php:459 widgets/basic/sina-dynamic-button.php:100
+msgid "Icon Effects"
+msgstr "Efeitos de ícone"
+
+#: inc/sina-ext-controls.php:463 widgets/basic/sina-dynamic-button.php:104
+msgid "Icon Right Move"
+msgstr ""
+
+#: inc/sina-ext-controls.php:464 widgets/basic/sina-dynamic-button.php:105
+msgid "Icon Right Moving"
+msgstr ""
+
+#: inc/sina-ext-controls.php:465 widgets/basic/sina-dynamic-button.php:106
+msgid "Icon Right Bouncing"
+msgstr ""
+
+#: inc/sina-ext-controls.php:466 widgets/basic/sina-dynamic-button.php:107
+msgid "Icon Left Move"
+msgstr ""
+
+#: inc/sina-ext-controls.php:467 widgets/basic/sina-dynamic-button.php:108
+msgid "Icon Left Moving"
+msgstr ""
+
+#: inc/sina-ext-controls.php:468 widgets/basic/sina-dynamic-button.php:109
+msgid "Icon Left Bouncing"
+msgstr ""
+
+#: inc/sina-ext-controls.php:469 widgets/basic/sina-dynamic-button.php:110
+msgid "Icon Zooming"
+msgstr ""
+
+#: inc/sina-ext-controls.php:478 widgets/advanced/sina-banner-slider.php:256
+#: widgets/advanced/sina-banner-slider.php:275
+#: widgets/advanced/sina-portfolio.php:245
+#: widgets/advanced/sina-product-zoomer.php:147
+#: widgets/basic/sina-content-box.php:252
+#: widgets/basic/sina-dynamic-button.php:181
+#: widgets/basic/sina-flip-box.php:272 widgets/basic/sina-social-icons.php:114
+#: widgets/basic/sina-team.php:207
+msgid "Link"
+msgstr "Ligação"
+
+#: inc/sina-ext-controls.php:515 inc/sina-ext-controls.php:902
+#: inc/sina-ext-controls.php:958 inc/sina-ext-controls.php:1046
+#: inc/sina-ext-controls.php:1113 inc/sina-ext-controls.php:1276
+#: inc/sina-ext-controls.php:1332 widgets/advanced/sina-banner-slider.php:552
+#: widgets/advanced/sina-banner-slider.php:625
+#: widgets/advanced/sina-banner-slider.php:666
+#: widgets/advanced/sina-banner-slider.php:739
+#: widgets/advanced/sina-blogpost.php:561
+#: widgets/advanced/sina-blogpost.php:636
+#: widgets/advanced/sina-blogpost.php:679
+#: widgets/advanced/sina-blogpost.php:947
+#: widgets/advanced/sina-blogpost.php:1047
+#: widgets/advanced/sina-blogpost.php:1074
+#: widgets/advanced/sina-content-slider.php:492
+#: widgets/advanced/sina-content-slider.php:596
+#: widgets/advanced/sina-content-slider.php:694
+#: widgets/advanced/sina-countdown.php:205
+#: widgets/advanced/sina-countdown.php:580
+#: widgets/advanced/sina-countdown.php:647
+#: widgets/advanced/sina-facebook-feed.php:422
+#: widgets/advanced/sina-facebook-feed.php:440
+#: widgets/advanced/sina-facebook-feed.php:458
+#: widgets/advanced/sina-facebook-feed.php:476
+#: widgets/advanced/sina-facebook-feed.php:654
+#: widgets/advanced/sina-facebook-feed.php:674
+#: widgets/advanced/sina-facebook-feed.php:761
+#: widgets/advanced/sina-facebook-feed.php:847
+#: widgets/advanced/sina-facebook-feed.php:867
+#: widgets/advanced/sina-login-form.php:294
+#: widgets/advanced/sina-modal-box.php:433
+#: widgets/advanced/sina-modal-box.php:686
+#: widgets/advanced/sina-modal-box.php:754
+#: widgets/advanced/sina-modal-box.php:953
+#: widgets/advanced/sina-modal-box.php:1062
+#: widgets/advanced/sina-news-ticker.php:245
+#: widgets/advanced/sina-news-ticker.php:356
+#: widgets/advanced/sina-news-ticker.php:443
+#: widgets/advanced/sina-news-ticker.php:463
+#: widgets/advanced/sina-news-ticker.php:604
+#: widgets/advanced/sina-particle-layer.php:596
+#: widgets/advanced/sina-particle-layer.php:672
+#: widgets/advanced/sina-particle-layer.php:716
+#: widgets/advanced/sina-particle-layer.php:792
+#: widgets/advanced/sina-portfolio.php:726
+#: widgets/advanced/sina-portfolio.php:765
+#: widgets/advanced/sina-posts-carousel.php:723
+#: widgets/advanced/sina-posts-carousel.php:798
+#: widgets/advanced/sina-posts-carousel.php:841
+#: widgets/advanced/sina-posts-carousel.php:1029
+#: widgets/advanced/sina-posts-carousel.php:1055
+#: widgets/advanced/sina-posts-carousel.php:1252
+#: widgets/advanced/sina-posts-tab.php:562
+#: widgets/advanced/sina-posts-tab.php:593
+#: widgets/advanced/sina-posts-tab.php:823
+#: widgets/advanced/sina-posts-tab.php:851
+#: widgets/advanced/sina-posts-tab.php:918
+#: widgets/advanced/sina-product-zoomer.php:342
+#: widgets/advanced/sina-product-zoomer.php:441
+#: widgets/advanced/sina-review-carousel.php:368
+#: widgets/advanced/sina-review-carousel.php:445
+#: widgets/advanced/sina-review-carousel.php:514
+#: widgets/advanced/sina-review-carousel.php:583
+#: widgets/advanced/sina-search-form.php:264
+#: widgets/advanced/sina-search-form.php:308
+#: widgets/advanced/sina-twitter-feed.php:451
+#: widgets/advanced/sina-twitter-feed.php:469
+#: widgets/advanced/sina-twitter-feed.php:487
+#: widgets/advanced/sina-twitter-feed.php:635
+#: widgets/advanced/sina-twitter-feed.php:655
+#: widgets/advanced/sina-twitter-feed.php:742
+#: widgets/basic/sina-accordion.php:257 widgets/basic/sina-accordion.php:301
+#: widgets/basic/sina-accordion.php:462 widgets/basic/sina-accordion.php:524
+#: widgets/basic/sina-accordion.php:617 widgets/basic/sina-content-box.php:710
+#: widgets/basic/sina-content-box.php:1158 widgets/basic/sina-counter.php:350
+#: widgets/basic/sina-flip-box.php:792 widgets/basic/sina-flip-box.php:858
+#: widgets/basic/sina-flip-box.php:943 widgets/basic/sina-flip-box.php:989
+#: widgets/basic/sina-image-differ.php:375 widgets/basic/sina-piechart.php:307
+#: widgets/basic/sina-pricing.php:247 widgets/basic/sina-pricing.php:552
+#: widgets/basic/sina-pricing.php:610 widgets/basic/sina-pricing.php:679
+#: widgets/basic/sina-pricing.php:701 widgets/basic/sina-pricing.php:734
+#: widgets/basic/sina-pricing.php:802 widgets/basic/sina-pricing.php:928
+#: widgets/basic/sina-pricing.php:1220 widgets/basic/sina-pricing.php:1445
+#: widgets/basic/sina-progressbar.php:344
+#: widgets/basic/sina-progressbar.php:437 widgets/basic/sina-table.php:176
+#: widgets/basic/sina-table.php:204 widgets/basic/sina-table.php:341
+#: widgets/basic/sina-table.php:369 widgets/basic/sina-table.php:688
+#: widgets/basic/sina-table.php:749 widgets/basic/sina-table.php:908
+#: widgets/basic/sina-table.php:961 widgets/basic/sina-table.php:1084
+#: widgets/basic/sina-table.php:1112 widgets/basic/sina-team.php:842
+#: widgets/basic/sina-team.php:911 widgets/basic/sina-team.php:980
+#: widgets/basic/sina-user-counter.php:209
+#: widgets/basic/sina-user-counter.php:268 widgets/basic/sina-video.php:203
+#: widgets/basic/sina-visit-counter.php:208
+#: widgets/basic/sina-visit-counter.php:267
+msgid "Text Color"
+msgstr "Cor do texto"
+
+#: inc/sina-ext-controls.php:526 widgets/advanced/sina-blogpost.php:602
+#: widgets/advanced/sina-blogpost.php:1192
+#: widgets/advanced/sina-posts-carousel.php:764
+#: widgets/advanced/sina-posts-carousel.php:1379
+#: widgets/basic/sina-table.php:1209 widgets/basic/sina-table.php:1264
+msgid "Background Color"
+msgstr "Cor de fundo"
+
+#: inc/sina-ext-controls.php:541
+msgid "Max Width"
+msgstr "Largura máxima"
+
+#: inc/sina-ext-controls.php:564 inc/sina-ext-controls.php:1094
+#: inc/sina-ext-controls.php:1152 inc/sina-ext-controls.php:1195
+#: widgets/advanced/sina-banner-slider.php:832
+#: widgets/advanced/sina-banner-slider.php:915
+#: widgets/advanced/sina-blogpost.php:733
+#: widgets/advanced/sina-blogpost.php:1209
+#: widgets/advanced/sina-blogpost.php:1275
+#: widgets/advanced/sina-blogpost.php:1493
+#: widgets/advanced/sina-blogpost.php:1821
+#: widgets/advanced/sina-blogpost.php:1912
+#: widgets/advanced/sina-brand-carousel.php:375
+#: widgets/advanced/sina-contact-form.php:273
+#: widgets/advanced/sina-contact-form.php:411
+#: widgets/advanced/sina-contact-form.php:469
+#: widgets/advanced/sina-content-slider.php:400
+#: widgets/advanced/sina-countdown.php:237
+#: widgets/advanced/sina-countdown.php:447
+#: widgets/advanced/sina-facebook-feed.php:491
+#: widgets/advanced/sina-facebook-feed.php:716
+#: widgets/advanced/sina-login-form.php:202
+#: widgets/advanced/sina-login-form.php:401
+#: widgets/advanced/sina-mailchimp-subscribe.php:252
+#: widgets/advanced/sina-mailchimp-subscribe.php:412
+#: widgets/advanced/sina-modal-box.php:352
+#: widgets/advanced/sina-modal-box.php:794
+#: widgets/advanced/sina-modal-box.php:1167
+#: widgets/advanced/sina-news-ticker.php:279
+#: widgets/advanced/sina-news-ticker.php:390
+#: widgets/advanced/sina-news-ticker.php:531
+#: widgets/advanced/sina-particle-layer.php:882
+#: widgets/advanced/sina-particle-layer.php:962
+#: widgets/advanced/sina-portfolio.php:362
+#: widgets/advanced/sina-portfolio.php:480
+#: widgets/advanced/sina-posts-carousel.php:342
+#: widgets/advanced/sina-posts-carousel.php:895
+#: widgets/advanced/sina-posts-carousel.php:1396
+#: widgets/advanced/sina-posts-carousel.php:1692
+#: widgets/advanced/sina-posts-carousel.php:1729
+#: widgets/advanced/sina-posts-tab.php:213
+#: widgets/advanced/sina-posts-tab.php:328
+#: widgets/advanced/sina-posts-tab.php:458
+#: widgets/advanced/sina-posts-tab.php:764
+#: widgets/advanced/sina-review-carousel.php:318
+#: widgets/advanced/sina-search-form.php:162
+#: widgets/advanced/sina-search-form.php:361
+#: widgets/advanced/sina-twitter-feed.php:502
+#: widgets/advanced/sina-twitter-feed.php:697
+#: widgets/advanced/sina-twitter-feed.php:867
+#: widgets/basic/sina-accordion.php:383 widgets/basic/sina-content-box.php:735
+#: widgets/basic/sina-content-box.php:925
+#: widgets/basic/sina-content-box.php:1204 widgets/basic/sina-counter.php:587
+#: widgets/basic/sina-dynamic-button.php:299
+#: widgets/basic/sina-flip-box.php:474 widgets/basic/sina-flip-box.php:615
+#: widgets/basic/sina-flip-box.php:734 widgets/basic/sina-image-differ.php:445
+#: widgets/basic/sina-pricing.php:759 widgets/basic/sina-pricing.php:855
+#: widgets/basic/sina-pricing.php:1061 widgets/basic/sina-pricing.php:1193
+#: widgets/basic/sina-pricing.php:1354 widgets/basic/sina-social-icons.php:479
+#: widgets/basic/sina-team.php:521 widgets/basic/sina-team.php:720
+#: widgets/basic/sina-team.php:797 widgets/basic/sina-team.php:1176
+#: widgets/basic/sina-title.php:699 widgets/basic/sina-video.php:487
+msgid "Radius"
+msgstr "Raio"
+
+#: inc/sina-ext-controls.php:582 widgets/advanced/sina-banner-slider.php:504
+#: widgets/advanced/sina-banner-slider.php:850
+#: widgets/advanced/sina-banner-slider.php:933
+#: widgets/advanced/sina-blogpost.php:979
+#: widgets/advanced/sina-blogpost.php:1227
+#: widgets/advanced/sina-blogpost.php:1294
+#: widgets/advanced/sina-blogpost.php:1540
+#: widgets/advanced/sina-blogpost.php:1832
+#: widgets/advanced/sina-blogpost.php:1931
+#: widgets/advanced/sina-contact-form.php:292
+#: widgets/advanced/sina-contact-form.php:487
+#: widgets/advanced/sina-content-slider.php:412
+#: widgets/advanced/sina-countdown.php:248
+#: widgets/advanced/sina-countdown.php:465
+#: widgets/advanced/sina-facebook-feed.php:503
+#: widgets/advanced/sina-facebook-feed.php:779
+#: widgets/advanced/sina-login-form.php:221
+#: widgets/advanced/sina-login-form.php:419
+#: widgets/advanced/sina-mailchimp-subscribe.php:271
+#: widgets/advanced/sina-mailchimp-subscribe.php:430
+#: widgets/advanced/sina-modal-box.php:522
+#: widgets/advanced/sina-modal-box.php:620
+#: widgets/advanced/sina-modal-box.php:813
+#: widgets/advanced/sina-modal-box.php:894
+#: widgets/advanced/sina-modal-box.php:1185
+#: widgets/advanced/sina-news-ticker.php:290
+#: widgets/advanced/sina-news-ticker.php:401
+#: widgets/advanced/sina-news-ticker.php:542
+#: widgets/advanced/sina-particle-layer.php:500
+#: widgets/advanced/sina-particle-layer.php:566
+#: widgets/advanced/sina-particle-layer.php:900
+#: widgets/advanced/sina-particle-layer.php:980
+#: widgets/advanced/sina-portfolio.php:373
+#: widgets/advanced/sina-portfolio.php:657
+#: widgets/advanced/sina-posts-carousel.php:353
+#: widgets/advanced/sina-posts-carousel.php:1282
+#: widgets/advanced/sina-posts-carousel.php:1414
+#: widgets/advanced/sina-posts-carousel.php:1582
+#: widgets/advanced/sina-posts-carousel.php:1748
+#: widgets/advanced/sina-posts-tab.php:224
+#: widgets/advanced/sina-posts-tab.php:339
+#: widgets/advanced/sina-posts-tab.php:469
+#: widgets/advanced/sina-review-carousel.php:307
+#: widgets/advanced/sina-search-form.php:180
+#: widgets/advanced/sina-search-form.php:379
+#: widgets/advanced/sina-twitter-feed.php:514
+#: widgets/advanced/sina-twitter-feed.php:760
+#: widgets/advanced/sina-twitter-feed.php:886
+#: widgets/basic/sina-accordion.php:571 widgets/basic/sina-accordion.php:666
+#: widgets/basic/sina-content-box.php:754
+#: widgets/basic/sina-content-box.php:936
+#: widgets/basic/sina-content-box.php:1075
+#: widgets/basic/sina-content-box.php:1223 widgets/basic/sina-counter.php:598
+#: widgets/basic/sina-dynamic-button.php:317
+#: widgets/basic/sina-flip-box.php:349 widgets/basic/sina-flip-box.php:414
+#: widgets/basic/sina-flip-box.php:626 widgets/basic/sina-flip-box.php:745
+#: widgets/basic/sina-flip-box.php:968 widgets/basic/sina-flip-box.php:1014
+#: widgets/basic/sina-image-differ.php:426 widgets/basic/sina-pricing.php:771
+#: widgets/basic/sina-pricing.php:866 widgets/basic/sina-pricing.php:1073
+#: widgets/basic/sina-pricing.php:1297 widgets/basic/sina-pricing.php:1372
+#: widgets/basic/sina-progressbar.php:477 widgets/basic/sina-table.php:782
+#: widgets/basic/sina-table.php:1003 widgets/basic/sina-table.php:1306
+#: widgets/basic/sina-team.php:532 widgets/basic/sina-team.php:620
+#: widgets/basic/sina-team.php:731 widgets/basic/sina-team.php:808
+msgid "Padding"
+msgstr "Preenchimento"
+
+#: inc/sina-ext-controls.php:603
+msgid "Dots Color"
+msgstr "Cor dos pontos"
+
+#: inc/sina-ext-controls.php:642 inc/sina-ext-controls.php:702
+#: widgets/basic/sina-image-differ.php:279
+msgid "Arrow Color"
+msgstr "Cor da seta"
+
+#: inc/sina-ext-controls.php:733 inc/sina-ext-controls.php:990
+#: inc/sina-ext-controls.php:1352 widgets/advanced/sina-blogpost.php:536
+#: widgets/advanced/sina-blogpost.php:615
+#: widgets/advanced/sina-blogpost.php:653
+#: widgets/advanced/sina-blogpost.php:689
+#: widgets/advanced/sina-blogpost.php:1710
+#: widgets/advanced/sina-brand-carousel.php:215
+#: widgets/advanced/sina-brand-carousel.php:461
+#: widgets/advanced/sina-facebook-feed.php:397
+#: widgets/advanced/sina-modal-box.php:772
+#: widgets/advanced/sina-portfolio.php:785
+#: widgets/advanced/sina-posts-carousel.php:698
+#: widgets/advanced/sina-posts-carousel.php:777
+#: widgets/advanced/sina-posts-carousel.php:815
+#: widgets/advanced/sina-posts-carousel.php:851
+#: widgets/advanced/sina-search-form.php:326
+#: widgets/advanced/sina-twitter-feed.php:426
+#: widgets/basic/sina-accordion.php:238 widgets/basic/sina-accordion.php:311
+#: widgets/basic/sina-content-box.php:571
+#: widgets/basic/sina-content-box.php:633
+#: widgets/basic/sina-content-box.php:720 widgets/basic/sina-pricing.php:523
+#: widgets/basic/sina-pricing.php:586 widgets/basic/sina-pricing.php:644
+#: widgets/basic/sina-pricing.php:744 widgets/basic/sina-social-icons.php:205
+#: widgets/basic/sina-social-icons.php:457 widgets/basic/sina-table.php:767
+#: widgets/basic/sina-table.php:988 widgets/basic/sina-table.php:1274
+#: widgets/basic/sina-table.php:1418 widgets/basic/sina-team.php:304
+#: widgets/basic/sina-team.php:1154 widgets/basic/sina-video.php:379
+msgid "Border Color"
+msgstr "Cor da borda"
+
+#: inc/sina-ext-controls.php:751
+msgid "Font Family"
+msgstr "Família de fontes"
+
+#: inc/sina-ext-controls.php:766 widgets/basic/sina-social-icons.php:290
+#: widgets/basic/sina-team.php:1021 widgets/basic/sina-video.php:394
+msgid "Font Size"
+msgstr "Tamanho da fonte"
+
+#: inc/sina-ext-controls.php:779
+msgid "Nav Top (%)"
+msgstr "Nav cima (%)"
+
+#: inc/sina-ext-controls.php:796
+msgid "Nav Next Radius"
+msgstr "Próximo raio de nav"
+
+#: inc/sina-ext-controls.php:817
+msgid "Nav Prev Radius"
+msgstr "Nav raio anterior"
+
+#: inc/sina-ext-controls.php:838
+msgid "Nav Padding"
+msgstr "Preenchimento nav"
+
+#: inc/sina-ext-controls.php:1107 widgets/basic/sina-accordion.php:517
+msgid "Active"
+msgstr "Active"
+
+#: inc/sina-ext-controls.php:1176 inc/controls/gradient-text.php:437
+#: widgets/advanced/sina-banner-slider.php:812
+#: widgets/advanced/sina-banner-slider.php:895
+#: widgets/advanced/sina-contact-form.php:449
+#: widgets/advanced/sina-countdown.php:163
+#: widgets/advanced/sina-countdown.php:379
+#: widgets/advanced/sina-login-form.php:381
+#: widgets/advanced/sina-mailchimp-subscribe.php:392
+#: widgets/advanced/sina-modal-box.php:304
+#: widgets/advanced/sina-modal-box.php:1147
+#: widgets/advanced/sina-particle-layer.php:477
+#: widgets/advanced/sina-particle-layer.php:862
+#: widgets/advanced/sina-particle-layer.php:942
+#: widgets/advanced/sina-portfolio.php:829
+#: widgets/advanced/sina-search-form.php:130
+#: widgets/advanced/sina-search-form.php:341
+#: widgets/basic/sina-content-box.php:887
+#: widgets/basic/sina-content-box.php:1055 widgets/basic/sina-counter.php:537
+#: widgets/basic/sina-pricing.php:1160 widgets/basic/sina-social-icons.php:305
+#: widgets/basic/sina-team.php:664 widgets/basic/sina-team.php:764
+#: widgets/basic/sina-title.php:636 widgets/basic/sina-video.php:414
+msgid "Width"
+msgstr "Largura"
+
+#: inc/sina-ext-controls.php:1206 widgets/advanced/sina-blogpost.php:745
+#: widgets/advanced/sina-blogpost.php:1097
+#: widgets/advanced/sina-blogpost.php:1238
+#: widgets/advanced/sina-blogpost.php:1312
+#: widgets/advanced/sina-blogpost.php:1558
+#: widgets/advanced/sina-blogpost.php:1850
+#: widgets/advanced/sina-blogpost.php:1949
+#: widgets/advanced/sina-contact-form.php:310
+#: widgets/advanced/sina-contact-form.php:422
+#: widgets/advanced/sina-contact-form.php:505
+#: widgets/advanced/sina-content-slider.php:430
+#: widgets/advanced/sina-countdown.php:483
+#: widgets/advanced/sina-countdown.php:620
+#: widgets/advanced/sina-facebook-feed.php:521
+#: widgets/advanced/sina-facebook-feed.php:727
+#: widgets/advanced/sina-facebook-feed.php:883
+#: widgets/advanced/sina-facebook-feed.php:954
+#: widgets/advanced/sina-login-form.php:239
+#: widgets/advanced/sina-login-form.php:437
+#: widgets/advanced/sina-mailchimp-subscribe.php:289
+#: widgets/advanced/sina-mailchimp-subscribe.php:455
+#: widgets/advanced/sina-modal-box.php:912
+#: widgets/advanced/sina-news-ticker.php:560
+#: widgets/advanced/sina-portfolio.php:391
+#: widgets/advanced/sina-portfolio.php:491
+#: widgets/advanced/sina-posts-carousel.php:371
+#: widgets/advanced/sina-posts-carousel.php:907
+#: widgets/advanced/sina-posts-carousel.php:1077
+#: widgets/advanced/sina-posts-carousel.php:1425
+#: widgets/advanced/sina-posts-carousel.php:1563
+#: widgets/advanced/sina-posts-carousel.php:1766
+#: widgets/advanced/sina-posts-tab.php:235
+#: widgets/advanced/sina-posts-tab.php:357
+#: widgets/advanced/sina-product-zoomer.php:414
+#: widgets/advanced/sina-product-zoomer.php:510
+#: widgets/advanced/sina-review-carousel.php:411
+#: widgets/advanced/sina-review-carousel.php:480
+#: widgets/advanced/sina-review-carousel.php:549
+#: widgets/advanced/sina-review-carousel.php:608
+#: widgets/advanced/sina-search-form.php:198
+#: widgets/advanced/sina-search-form.php:411
+#: widgets/advanced/sina-twitter-feed.php:532
+#: widgets/advanced/sina-twitter-feed.php:708
+#: widgets/advanced/sina-twitter-feed.php:830
+#: widgets/advanced/sina-twitter-feed.php:904
+#: widgets/basic/sina-accordion.php:394 widgets/basic/sina-content-box.php:1013
+#: widgets/basic/sina-content-box.php:1241 widgets/basic/sina-counter.php:390
+#: widgets/basic/sina-counter.php:467 widgets/basic/sina-flip-box.php:830
+#: widgets/basic/sina-flip-box.php:896 widgets/basic/sina-piechart.php:350
+#: widgets/basic/sina-pricing.php:1091 widgets/basic/sina-pricing.php:1390
+#: widgets/basic/sina-social-icons.php:499 widgets/basic/sina-table.php:1324
+#: widgets/basic/sina-team.php:1196 widgets/basic/sina-title.php:333
+#: widgets/basic/sina-title.php:482 widgets/basic/sina-title.php:710
+#: widgets/basic/sina-user-counter.php:311 widgets/basic/sina-video.php:249
+#: widgets/basic/sina-visit-counter.php:310
+msgid "Margin"
+msgstr "Margem"
+
+#: inc/sina-ext-controls.php:1220
+msgid "Placeholder Color"
+msgstr "Texto espaço reservado cor"
+
+#: inc/sina-ext-controls.php:1287 inc/sina-ext-controls.php:1342
+#: widgets/advanced/sina-blogpost.php:1632
+#: widgets/advanced/sina-blogpost.php:1692
+#: widgets/advanced/sina-blogpost.php:1739
+#: widgets/advanced/sina-portfolio.php:737
+#: widgets/advanced/sina-portfolio.php:775
+#: widgets/basic/sina-social-icons.php:151
+#: widgets/basic/sina-social-icons.php:195 widgets/basic/sina-team.php:250
+#: widgets/basic/sina-team.php:294 widgets/basic/sina-video.php:293
+#: widgets/basic/sina-video.php:345
+msgid "Background"
+msgstr "fundo"
+
+#: inc/sina-ext-controls.php:1325
+msgid "Focus"
+msgstr "Foco"
+
+#: inc/sina-ext-func.php:92
+msgid "Sina Basic Widgets"
+msgstr "Sina Widgets básicos"
+
+#: inc/sina-ext-func.php:98
+msgid "Sina Advanced Widgets"
+msgstr "Sina Widgets Avançados"
+
+#: inc/sina-ext-hooks.php:26
+msgid "First name too short! Must be contain 3-32 characters."
+msgstr "Nome muito curto! Deve conter de 3 a 32 caracteres."
+
+#: inc/sina-ext-hooks.php:28
+msgid "First name too long! Must be contain 3-32 characters."
+msgstr "Nome muito longo! Deve conter de 3 a 32 caracteres."
+
+#: inc/sina-ext-hooks.php:32
+msgid "Special character(s) not allowed in your first name!"
+msgstr "Caracteres especiais não permitidos em seu primeiro nome!"
+
+#: inc/sina-ext-hooks.php:39
+msgid "Last name too short! Must be contain 3-32 characters."
+msgstr "Sobrenome muito curto! Deve conter de 3 a 32 caracteres."
+
+#: inc/sina-ext-hooks.php:41
+msgid "Last name too long! Must be contain 3-32 characters."
+msgstr "Sobrenome muito longo! Deve conter de 3 a 32 caracteres."
+
+#: inc/sina-ext-hooks.php:45
+msgid "Special character(s) not allowed in your last name!"
+msgstr "Caracteres especiais não permitidos em seu sobrenome!"
+
+#: inc/sina-ext-hooks.php:51 inc/sina-ext-hooks.php:133
+msgid "Invalid email!"
+msgstr "E-mail inválido!"
+
+#: inc/sina-ext-hooks.php:61
+msgid "Invalid phone number!"
+msgstr "Número de fone inválido!"
+
+#: inc/sina-ext-hooks.php:91
+msgid "Internal Error!"
+msgstr "Erro interno!"
+
+#: inc/sina-ext-hooks.php:120
+msgid "Name can't be empty!"
+msgstr "Nome não pode estar vazio!"
+
+#: inc/sina-ext-hooks.php:122
+msgid "Name too short! Must be contain 3-32 characters."
+msgstr "Nome muito curto! Deve conter de 3 a 32 caracteres."
+
+#: inc/sina-ext-hooks.php:124
+msgid "Name too long! Must be contain 3-32 characters."
+msgstr "Nome muito longo! Deve conter de 3 a 32 caracteres."
+
+#: inc/sina-ext-hooks.php:128
+msgid "Special character(s) not allowed in your name!"
+msgstr "Caracteres especiais não permitidos em seu nome!"
+
+#: inc/sina-ext-hooks.php:139
+msgid "Subject can't be empty!"
+msgstr "Sujeito não pode estar vazio!"
+
+#: inc/sina-ext-hooks.php:141
+msgid "Subject too short! Must be contain 3-200 characters."
+msgstr "Very short subject! It must contain 3 to 200 characters."
+
+#: inc/sina-ext-hooks.php:143
+msgid "Subject too long! Must be contain 3-200 characters."
+msgstr "Sujeito muito longo! Deve conter de 3 a 200 caracteres."
+
+#: inc/sina-ext-hooks.php:147
+msgid "Invalid subject!"
+msgstr "Assunto inválido!"
+
+#: inc/sina-ext-hooks.php:153
+msgid "Message can't be empty!"
+msgstr "Mensagem não pode estar vazia!"
+
+#: inc/sina-ext-hooks.php:155
+msgid "Message too short! Must be contain 3-2000 characters."
+msgstr "Mensagem muito curta! Deve conter de 3 a 2.000 caracteres."
+
+#: inc/sina-ext-hooks.php:157
+msgid "Message too long! Must be contain 3-2000 characters."
+msgstr "Mensagem muito longa! Deve conter de 3 a 2.000 caracteres."
+
+#: inc/sina-ext-hooks.php:161
+msgid "Invalid message!"
+msgstr "Mensagem inválida!"
+
+#: inc/sina-ext-hooks.php:171
+msgid "Invalid reCAPTCHA!"
+msgstr "reCAPTCHA inválido!"
+
+#: inc/sina-ext-hooks.php:179
+msgid "Name: "
+msgstr "Nome:"
+
+#: inc/sina-ext-hooks.php:209
+msgid "Username or Email can't be empty!"
+msgstr "Nome de usuário ou e-mail não pode estar vazio!"
+
+#: inc/sina-ext-hooks.php:214
+msgid "Password can't be empty!"
+msgstr "Senha não pode estar em branco!"
+
+#: inc/sina-ext-hooks.php:224
+msgid "Username or Email and password don't match!"
+msgstr "Nome de usuário ou e-mail e senha não correspondem!"
+
+#: widgets/starter-widget.php:296
+msgid "Sina "
+msgstr ""
+
+#: widgets/starter-widget.php:367
+msgid " Content"
+msgstr "Conteúdo"
+
+#: admin/partials/page-content.php:20 admin/partials/page-content.php:134
+msgid "Documentation"
+msgstr "Documentação"
+
+#: admin/partials/page-content.php:27 admin/partials/page-content.php:33
+msgid "Settings"
+msgstr "Configurações"
+
+#: admin/partials/page-content.php:28 admin/partials/page-content.php:79
+msgid "Widgets"
+msgstr "Widgets"
+
+#: admin/partials/page-content.php:29 admin/partials/page-content.php:107
+msgid "Extenders"
+msgstr "Extensores"
+
+#: admin/partials/page-content.php:35
+msgid "Set your expected options."
+msgstr "Defina suas opções esperadas."
+
+#: admin/partials/page-content.php:40
+msgid "API Settings"
+msgstr "Configurações de API"
+
+#: admin/partials/page-content.php:48
+msgid "Template Settings"
+msgstr "Configurações de modelo"
+
+#: admin/partials/page-content.php:50
+msgid "You can use <strong><i>SINA TEMPLATES</i></strong> on your site. Enjoy!"
+msgstr ""
+"Você pode usar <strong><i>SINA TEMPLATES</i></strong> em seu site. "
+"Aproveitar!"
+
+#: admin/partials/page-content.php:61
+msgid ""
+"Experiencing an issue with this version? You can rollback the previous "
+"version."
+msgstr ""
+"Está tendo problemas com esta versão? Você pode reverter a versão anterior."
+
+#: admin/partials/page-content.php:67
+#, php-format
+msgid "Reinstall v%s"
+msgstr "Reinstalar v%s"
+
+#: admin/partials/page-content.php:73
+msgid "Warning: Please backup your database before making the rollback."
+msgstr "Aviso: Faça backup de seu banco de dados antes de fazer o rollback."
+
+#: admin/partials/page-content.php:81
+msgid "You can disable widget(s) if you would like to not using on your site."
+msgstr "Você pode desativar os widgets se desejar não usá-los no seu site."
+
+#: admin/partials/page-content.php:109
+msgid ""
+"You can disable extender(s) if you would like to not using on your site."
+msgstr "Você pode desativar os extensores se não quiser usá-los em seu site."
+
+#: admin/partials/page-content.php:120
+msgid "Extender"
+msgstr "Extensor"
+
+#: admin/partials/page-content.php:141
+msgid "Found any issue or need help?"
+msgstr "Encontrou algum problema ou precisa de ajuda?"
+
+#: admin/partials/page-content.php:142
+msgid "Open Ticket"
+msgstr "Bilhete aberto"
+
+#: admin/partials/page-content.php:146
+msgid "Did you like"
+msgstr "Você gostou"
+
+#: admin/partials/page-content.php:146
+msgid "Plugin?"
+msgstr "Plugar?"
+
+#: admin/partials/page-content.php:146
+msgid "Leave a Review"
+msgstr "Dê uma Avaliação"
+
+#: inc/controls/gradient-text.php:51
+msgid "Color Type"
+msgstr "Tipo de Cor"
+
+#: inc/controls/gradient-text.php:57
+msgid "Classic"
+msgstr "Clássico"
+
+#: inc/controls/gradient-text.php:61
+msgid "Gradient"
+msgstr "Gradiente"
+
+#: inc/controls/gradient-text.php:65 inc/controls/gradient-text.php:189
+#: widgets/advanced/sina-review-carousel.php:256
+#: widgets/basic/sina-content-box.php:176
+#: widgets/basic/sina-content-box.php:201 widgets/basic/sina-counter.php:130
+#: widgets/basic/sina-counter.php:152 widgets/basic/sina-flip-box.php:116
+#: widgets/basic/sina-flip-box.php:138 widgets/basic/sina-flip-box.php:206
+#: widgets/basic/sina-flip-box.php:228 widgets/basic/sina-pricing.php:219
+#: widgets/basic/sina-pricing.php:1142 widgets/basic/sina-team.php:646
+msgid "Image"
+msgstr "Imagem"
+
+#: inc/controls/gradient-text.php:73 widgets/advanced/sina-blogpost.php:589
+#: widgets/advanced/sina-blogpost.php:707
+#: widgets/advanced/sina-blogpost.php:1181
+#: widgets/advanced/sina-blogpost.php:1375
+#: widgets/advanced/sina-blogpost.php:1621
+#: widgets/advanced/sina-blogpost.php:1681
+#: widgets/advanced/sina-blogpost.php:1728
+#: widgets/advanced/sina-facebook-feed.php:943
+#: widgets/advanced/sina-portfolio.php:574
+#: widgets/advanced/sina-portfolio.php:632
+#: widgets/advanced/sina-posts-carousel.php:751
+#: widgets/advanced/sina-posts-carousel.php:869
+#: widgets/advanced/sina-posts-carousel.php:1368
+#: widgets/advanced/sina-posts-carousel.php:1509
+#: widgets/advanced/sina-twitter-feed.php:819
+#: widgets/basic/sina-content-box.php:468
+#: widgets/basic/sina-content-box.php:609 widgets/basic/sina-counter.php:424
+#: widgets/basic/sina-flip-box.php:535 widgets/basic/sina-flip-box.php:654
+#: widgets/basic/sina-table.php:1198 widgets/basic/sina-table.php:1471
+#: widgets/basic/sina-title.php:548
+msgid "Color"
+msgstr "Cor"
+
+#: inc/controls/gradient-text.php:85 inc/controls/gradient-text.php:111
+msgid "Location (%)"
+msgstr "Localização (%)"
+
+#: inc/controls/gradient-text.php:100
+msgid "Second Color"
+msgstr "Segunda cor"
+
+#: inc/controls/gradient-text.php:126
+msgid "Type"
+msgstr "Tipo"
+
+#: inc/controls/gradient-text.php:129
+msgid "Linear"
+msgstr ""
+
+#: inc/controls/gradient-text.php:130
+msgid "Radial"
+msgstr "Radial"
+
+#: inc/controls/gradient-text.php:141
+msgid "Angle (deg)"
+msgstr "Ângulo (graus)"
+
+#: inc/controls/gradient-text.php:164 inc/controls/gradient-text.php:205
+#: widgets/advanced/sina-blogpost.php:1135
+#: widgets/advanced/sina-login-form.php:269
+#: widgets/advanced/sina-posts-carousel.php:1322
+#: widgets/advanced/sina-posts-carousel.php:1462
+#: widgets/advanced/sina-review-carousel.php:149
+#: widgets/advanced/sina-review-carousel.php:437
+#: widgets/basic/sina-piechart.php:295 widgets/basic/sina-team.php:157
+#: widgets/basic/sina-team.php:903
+msgid "Position"
+msgstr "Posição"
+
+#: inc/controls/gradient-text.php:167 inc/controls/gradient-text.php:215
+msgid "Center Center"
+msgstr "Centro centro"
+
+#: inc/controls/gradient-text.php:168 inc/controls/gradient-text.php:214
+msgid "Center Left"
+msgstr "Centro esquerdo"
+
+#: inc/controls/gradient-text.php:169 inc/controls/gradient-text.php:216
+msgid "Center Right"
+msgstr "Centro direita"
+
+#: inc/controls/gradient-text.php:170 inc/controls/gradient-text.php:212
+msgid "Top Center"
+msgstr "Centro cima"
+
+#: inc/controls/gradient-text.php:171 inc/controls/gradient-text.php:211
+msgid "Top Left"
+msgstr "Cima esquerda"
+
+#: inc/controls/gradient-text.php:172 inc/controls/gradient-text.php:213
+msgid "Top Right"
+msgstr "Cima direito"
+
+#: inc/controls/gradient-text.php:173 inc/controls/gradient-text.php:218
+msgid "Bottom Center"
+msgstr "Centro Inferior"
+
+#: inc/controls/gradient-text.php:174 inc/controls/gradient-text.php:217
+msgid "Bottom Left"
+msgstr "Inferior esquerdo"
+
+#: inc/controls/gradient-text.php:175 inc/controls/gradient-text.php:219
+msgid "Bottom Right"
+msgstr "Inferior direito"
+
+#: inc/controls/gradient-text.php:210 inc/controls/gradient-text.php:369
+#: inc/controls/gradient-text.php:400 inc/controls/gradient-text.php:421
+#: widgets/advanced/sina-blogpost.php:126
+msgid "Default"
+msgstr "Padrão"
+
+#: inc/controls/gradient-text.php:220 inc/controls/gradient-text.php:425
+#: widgets/advanced/sina-blogpost.php:127
+msgid "Custom"
+msgstr "Personalizados"
+
+#: inc/controls/gradient-text.php:233
+msgid "X Position"
+msgstr ""
+
+#: inc/controls/gradient-text.php:299
+msgid "Y Position"
+msgstr ""
+
+#: inc/controls/gradient-text.php:365
+msgid "Attachment"
+msgstr "Anexo"
+
+#: inc/controls/gradient-text.php:370
+msgid "Scroll"
+msgstr "Rolagem"
+
+#: inc/controls/gradient-text.php:371
+msgid "Fixed"
+msgstr "Fixo"
+
+#: inc/controls/gradient-text.php:385
+msgid "Note: Attachment Fixed works only on desktop."
+msgstr "Nota: Attachment Fixed funciona apenas no desktop."
+
+#: inc/controls/gradient-text.php:395 inc/controls/gradient-text.php:402
+msgid "Repeat"
+msgstr "Repetir"
+
+#: inc/controls/gradient-text.php:401
+msgid "No-repeat"
+msgstr "Não repetir"
+
+#: inc/controls/gradient-text.php:403
+msgid "Repeat-x"
+msgstr "Repetir-X"
+
+#: inc/controls/gradient-text.php:404
+msgid "Repeat-y"
+msgstr "Repetir-Y"
+
+#: inc/controls/gradient-text.php:416 widgets/advanced/sina-blogpost.php:1441
+#: widgets/advanced/sina-portfolio.php:227
+#: widgets/advanced/sina-posts-carousel.php:1652
+#: widgets/advanced/sina-review-carousel.php:284
+#: widgets/basic/sina-content-box.php:835
+#: widgets/basic/sina-content-box.php:861 widgets/basic/sina-counter.php:515
+#: widgets/basic/sina-flip-box.php:546 widgets/basic/sina-flip-box.php:567
+#: widgets/basic/sina-flip-box.php:665 widgets/basic/sina-flip-box.php:686
+#: widgets/basic/sina-piechart.php:180
+msgid "Size"
+msgstr "Tamanho"
+
+#: inc/controls/gradient-text.php:422
+msgid "Auto"
+msgstr "Auto"
+
+#: inc/controls/gradient-text.php:423
+msgid "Cover"
+msgstr "Cobrir"
+
+#: inc/controls/gradient-text.php:424
+msgid "Contain"
+msgstr "Conter"
+
+#: inc/controls/icon.php:3026 inc/controls/icon.php:3027
+msgid "Select Icon"
+msgstr "Selecione ícone"
+
+#: widgets/advanced/sina-banner-slider.php:115
+msgid "Slides"
+msgstr "Slides"
+
+#: widgets/advanced/sina-banner-slider.php:125
+#: widgets/advanced/sina-portfolio.php:214
+#: widgets/advanced/sina-review-carousel.php:124
+#: widgets/basic/sina-team.php:182 widgets/basic/sina-transform.php:134
+msgid "Choose Image"
+msgstr "Escolha imagem"
+
+#: widgets/advanced/sina-banner-slider.php:141
+#: widgets/advanced/sina-banner-slider.php:189
+#: widgets/advanced/sina-banner-slider.php:226
+#: widgets/advanced/sina-content-slider.php:174
+#: widgets/advanced/sina-content-slider.php:212
+#: widgets/advanced/sina-content-slider.php:247
+#: widgets/advanced/sina-modal-box.php:186
+#: widgets/advanced/sina-modal-box.php:200
+#: widgets/advanced/sina-modal-box.php:217
+#: widgets/advanced/sina-product-zoomer.php:123
+#: widgets/advanced/sina-product-zoomer.php:137
+#: widgets/basic/sina-accordion.php:201 widgets/basic/sina-content-box.php:222
+#: widgets/basic/sina-content-box.php:239 widgets/basic/sina-counter.php:172
+#: widgets/basic/sina-flip-box.php:158 widgets/basic/sina-flip-box.php:172
+#: widgets/basic/sina-flip-box.php:248 widgets/basic/sina-flip-box.php:262
+#: widgets/basic/sina-piechart.php:123 widgets/basic/sina-pricing.php:113
+#: widgets/basic/sina-progressbar.php:126 widgets/basic/sina-table.php:292
+#: widgets/basic/sina-title.php:135 widgets/basic/sina-title.php:178
+#: widgets/basic/sina-title.php:206 widgets/basic/sina-user-counter.php:130
+#: widgets/basic/sina-user-counter.php:144 widgets/basic/sina-video.php:165
+#: widgets/basic/sina-visit-counter.php:121
+#: widgets/basic/sina-visit-counter.php:135
+msgid "You can use HTML."
+msgstr "Você pode usar HTML."
+
+#: widgets/advanced/sina-banner-slider.php:151
+#: widgets/advanced/sina-banner-slider.php:617
+#: widgets/advanced/sina-particle-layer.php:153
+#: widgets/advanced/sina-particle-layer.php:661
+#: widgets/basic/sina-title.php:367
+msgid "Title Span"
+msgstr "Título Span"
+
+#: widgets/advanced/sina-banner-slider.php:154
+#: widgets/advanced/sina-particle-layer.php:156
+msgid "Enter Title Span"
+msgstr "Insira span título"
+
+#: widgets/advanced/sina-banner-slider.php:155
+#: widgets/advanced/sina-particle-layer.php:157
+msgid "You can use SPAN for multi-color title."
+msgstr "Você pode usar SPAN para títulos multicoloridos."
+
+#: widgets/advanced/sina-banner-slider.php:164
+#: widgets/advanced/sina-banner-slider.php:200
+#: widgets/advanced/sina-content-slider.php:188
+#: widgets/advanced/sina-content-slider.php:225
+#: widgets/advanced/sina-particle-layer.php:166
+#: widgets/advanced/sina-particle-layer.php:193
+#: widgets/basic/sina-fancytext.php:316 widgets/basic/sina-title.php:158
+#: widgets/basic/sina-title.php:187
+msgid "Select Tag"
+msgstr "Selecione etiqueta"
+
+#: widgets/advanced/sina-banner-slider.php:177
+#: widgets/advanced/sina-particle-layer.php:421
+msgid "Title Animation"
+msgstr "Título de animação"
+
+#: widgets/advanced/sina-banner-slider.php:186
+#: widgets/advanced/sina-banner-slider.php:658
+#: widgets/advanced/sina-content-slider.php:208
+#: widgets/advanced/sina-content-slider.php:588
+#: widgets/advanced/sina-particle-layer.php:179
+#: widgets/advanced/sina-particle-layer.php:705
+#: widgets/basic/sina-title.php:174 widgets/basic/sina-title.php:407
+msgid "Sub Title"
+msgstr "Subtítulo"
+
+#: widgets/advanced/sina-banner-slider.php:215
+#: widgets/advanced/sina-particle-layer.php:431
+msgid "Sub Title Animation"
+msgstr "Animação de subtítulo"
+
+#: widgets/advanced/sina-banner-slider.php:224
+#: widgets/advanced/sina-banner-slider.php:731
+#: widgets/advanced/sina-content-slider.php:244
+#: widgets/advanced/sina-content-slider.php:686
+#: widgets/advanced/sina-modal-box.php:213
+#: widgets/advanced/sina-modal-box.php:1050
+#: widgets/advanced/sina-particle-layer.php:208
+#: widgets/advanced/sina-particle-layer.php:781
+#: widgets/advanced/sina-portfolio.php:188
+#: widgets/advanced/sina-portfolio.php:599
+#: widgets/advanced/sina-product-zoomer.php:133
+#: widgets/advanced/sina-product-zoomer.php:433
+#: widgets/basic/sina-accordion.php:198 widgets/basic/sina-accordion.php:609
+#: widgets/basic/sina-content-box.php:235
+#: widgets/basic/sina-content-box.php:1032 widgets/basic/sina-flip-box.php:168
+#: widgets/basic/sina-flip-box.php:258 widgets/basic/sina-flip-box.php:926
+#: widgets/basic/sina-team.php:169 widgets/basic/sina-team.php:972
+#: widgets/basic/sina-title.php:202 widgets/basic/sina-title.php:508
+msgid "Description"
+msgstr "Descrição"
+
+#: widgets/advanced/sina-banner-slider.php:237
+#: widgets/advanced/sina-particle-layer.php:441
+msgid "Description Animation"
+msgstr "Descrição Animação"
+
+#: widgets/advanced/sina-banner-slider.php:246
+msgid "Primary Button Text"
+msgstr "Texto botão primário"
+
+#: widgets/advanced/sina-banner-slider.php:265
+msgid "Secondary Button Text"
+msgstr "Texto Botão Secundário"
+
+#: widgets/advanced/sina-banner-slider.php:284
+#: widgets/advanced/sina-particle-layer.php:451
+msgid "Buttons Animation"
+msgstr "Animação de botões"
+
+#: widgets/advanced/sina-banner-slider.php:293
+#: widgets/advanced/sina-blogpost.php:763
+#: widgets/advanced/sina-blogpost.php:1868
+#: widgets/advanced/sina-blogpost.php:1967
+#: widgets/advanced/sina-contact-form.php:523
+#: widgets/advanced/sina-content-slider.php:448
+#: widgets/advanced/sina-content-slider.php:552
+#: widgets/advanced/sina-content-slider.php:650
+#: widgets/advanced/sina-content-slider.php:734
+#: widgets/advanced/sina-countdown.php:284
+#: widgets/advanced/sina-facebook-feed.php:539
+#: widgets/advanced/sina-login-form.php:308
+#: widgets/advanced/sina-login-form.php:455
+#: widgets/advanced/sina-mailchimp-subscribe.php:473
+#: widgets/advanced/sina-modal-box.php:540
+#: widgets/advanced/sina-modal-box.php:831
+#: widgets/advanced/sina-modal-box.php:1013
+#: widgets/advanced/sina-modal-box.php:1102
+#: widgets/advanced/sina-modal-box.php:1203
+#: widgets/advanced/sina-particle-layer.php:532
+#: widgets/advanced/sina-portfolio.php:409
+#: widgets/advanced/sina-portfolio.php:676
+#: widgets/advanced/sina-posts-carousel.php:414
+#: widgets/advanced/sina-posts-carousel.php:925
+#: widgets/advanced/sina-posts-tab.php:375
+#: widgets/advanced/sina-posts-tab.php:502
+#: widgets/advanced/sina-posts-tab.php:873
+#: widgets/advanced/sina-product-zoomer.php:385
+#: widgets/advanced/sina-product-zoomer.php:481
+#: widgets/advanced/sina-search-form.php:429
+#: widgets/advanced/sina-twitter-feed.php:550
+#: widgets/basic/sina-accordion.php:684 widgets/basic/sina-content-box.php:1086
+#: widgets/basic/sina-counter.php:306 widgets/basic/sina-dynamic-button.php:335
+#: widgets/basic/sina-fancytext.php:215 widgets/basic/sina-flip-box.php:485
+#: widgets/basic/sina-pricing.php:884 widgets/basic/sina-pricing.php:1109
+#: widgets/basic/sina-progressbar.php:397
+#: widgets/basic/sina-progressbar.php:497
+#: widgets/basic/sina-social-icons.php:517 widgets/basic/sina-table.php:801
+#: widgets/basic/sina-table.php:1022 widgets/basic/sina-table.php:1335
+#: widgets/basic/sina-team.php:546 widgets/basic/sina-title.php:215
+#: widgets/basic/sina-title.php:305 widgets/basic/sina-title.php:454
+#: widgets/basic/sina-title.php:559 widgets/basic/sina-title.php:674
+#: widgets/basic/sina-user-counter.php:168
+#: widgets/basic/sina-visit-counter.php:167
+msgid "Alignment"
+msgstr "Alinhamento"
+
+#: widgets/advanced/sina-banner-slider.php:319
+msgid "Add Slide"
+msgstr "Adicionar slide"
+
+#: widgets/advanced/sina-banner-slider.php:353
+#: widgets/advanced/sina-banner-slider.php:801
+#: widgets/advanced/sina-particle-layer.php:230
+#: widgets/advanced/sina-particle-layer.php:854
+msgid "Primary Button"
+msgstr "Botão Primário"
+
+#: widgets/advanced/sina-banner-slider.php:368
+#: widgets/advanced/sina-banner-slider.php:884
+#: widgets/advanced/sina-particle-layer.php:255
+#: widgets/advanced/sina-particle-layer.php:934
+msgid "Secondary Button"
+msgstr "Botão Secundário"
+
+#: widgets/advanced/sina-banner-slider.php:376
+#: widgets/advanced/sina-particle-layer.php:263
+msgid "Button Spacing"
+msgstr "Espaçamento de botões"
+
+#: widgets/advanced/sina-banner-slider.php:401
+#: widgets/advanced/sina-content-slider.php:311
+msgid "Slider Settings"
+msgstr "Configurações controle deslizante"
+
+#: widgets/advanced/sina-banner-slider.php:409
+#: widgets/basic/sina-image-differ.php:202 widgets/basic/sina-team.php:579
+msgid "Overlay"
+msgstr "Sobreposição"
+
+#: widgets/advanced/sina-banner-slider.php:439
+msgid "Particular Animation"
+msgstr "Animação Particular"
+
+#: widgets/advanced/sina-banner-slider.php:471
+#: widgets/advanced/sina-particle-layer.php:469
+msgid "Container"
+msgstr "Recipiente"
+
+#: widgets/advanced/sina-banner-slider.php:479
+#: widgets/advanced/sina-contact-form.php:389
+#: widgets/advanced/sina-content-slider.php:356
+#: widgets/advanced/sina-countdown.php:179
+#: widgets/advanced/sina-countdown.php:398
+#: widgets/advanced/sina-portfolio.php:459
+#: widgets/advanced/sina-portfolio.php:843
+#: widgets/advanced/sina-posts-carousel.php:306
+#: widgets/advanced/sina-posts-tab.php:440
+#: widgets/basic/sina-content-box.php:906 widgets/basic/sina-flip-box.php:451
+#: widgets/basic/sina-google-map.php:211 widgets/basic/sina-progressbar.php:241
+#: widgets/basic/sina-social-icons.php:330 widgets/basic/sina-team.php:679
+#: widgets/basic/sina-title.php:660 widgets/basic/sina-transform.php:167
+#: widgets/basic/sina-video.php:439
+msgid "Height"
+msgstr "Altura"
+
+#: widgets/advanced/sina-banner-slider.php:595
+#: widgets/advanced/sina-banner-slider.php:709
+#: widgets/advanced/sina-banner-slider.php:779
+#: widgets/advanced/sina-content-slider.php:538
+#: widgets/advanced/sina-content-slider.php:636
+#: widgets/advanced/sina-modal-box.php:999
+#: widgets/advanced/sina-particle-layer.php:639
+#: widgets/advanced/sina-particle-layer.php:759
+#: widgets/advanced/sina-particle-layer.php:832
+#: widgets/advanced/sina-portfolio.php:585
+#: widgets/advanced/sina-portfolio.php:643 widgets/basic/sina-team.php:880
+#: widgets/basic/sina-team.php:949
+msgid "Margin Bottom"
+msgstr "Margem inferior"
+
+#: widgets/advanced/sina-banner-slider.php:967
+#: widgets/advanced/sina-particle-layer.php:1014
+msgid "Tooltips"
+msgstr "Tooltips"
+
+#: widgets/advanced/sina-banner-slider.php:982
+#: widgets/advanced/sina-content-slider.php:770
+#: widgets/advanced/sina-posts-carousel.php:1793
+#: widgets/advanced/sina-review-carousel.php:627
+msgid "Nav & Dots"
+msgstr "Nav e pontos"
+
+#: widgets/advanced/sina-blogpost.php:115
+msgid "Blog Post"
+msgstr "Postagem do blog"
+
+#: widgets/advanced/sina-blogpost.php:123
+msgid "Layout Type"
+msgstr "Tipo de Layout"
+
+#: widgets/advanced/sina-blogpost.php:135
+#: widgets/advanced/sina-contact-form.php:260
+#: widgets/advanced/sina-posts-carousel.php:119 widgets/basic/sina-team.php:108
+msgid "Layout"
+msgstr "Layout"
+
+#: widgets/advanced/sina-blogpost.php:138
+#: widgets/advanced/sina-posts-carousel.php:123 widgets/basic/sina-team.php:112
+msgid "Grid"
+msgstr "Grade"
+
+#: widgets/advanced/sina-blogpost.php:139
+#: widgets/advanced/sina-posts-carousel.php:124 widgets/basic/sina-team.php:113
+msgid "List"
+msgstr "Lista"
+
+#: widgets/advanced/sina-blogpost.php:147
+msgid "Custom Column"
+msgstr "Coluna Personalizada"
+
+#: widgets/advanced/sina-blogpost.php:149
+msgid ""
+"You have to enter a series of comma-separated values. That series represents "
+"your custom grid. Possible values: 3,4,5,6,7,8,9,12."
+msgstr ""
+"Você deve inserir uma série de valores separados por vírgulas. Essa série "
+"representa sua grade personalizada. Valores possíveis: 3,4,5,6,7,8,9,12."
+
+#: widgets/advanced/sina-blogpost.php:159
+#: widgets/advanced/sina-facebook-feed.php:173
+#: widgets/advanced/sina-portfolio.php:138
+#: widgets/advanced/sina-twitter-feed.php:186
+msgid "Number of Column"
+msgstr "Número da Coluna"
+
+#: widgets/advanced/sina-blogpost.php:162
+#: widgets/advanced/sina-brand-carousel.php:298
+#: widgets/advanced/sina-content-slider.php:322
+#: widgets/advanced/sina-facebook-feed.php:176
+#: widgets/advanced/sina-posts-carousel.php:268
+#: widgets/advanced/sina-twitter-feed.php:189
+msgid "1"
+msgstr "1"
+
+#: widgets/advanced/sina-blogpost.php:163
+#: widgets/advanced/sina-brand-carousel.php:299
+#: widgets/advanced/sina-content-slider.php:323
+#: widgets/advanced/sina-facebook-feed.php:177
+#: widgets/advanced/sina-portfolio.php:141
+#: widgets/advanced/sina-posts-carousel.php:269
+#: widgets/advanced/sina-twitter-feed.php:190
+msgid "2"
+msgstr "2"
+
+#: widgets/advanced/sina-blogpost.php:164
+#: widgets/advanced/sina-brand-carousel.php:300
+#: widgets/advanced/sina-content-slider.php:324
+#: widgets/advanced/sina-facebook-feed.php:178
+#: widgets/advanced/sina-portfolio.php:142
+#: widgets/advanced/sina-posts-carousel.php:270
+#: widgets/advanced/sina-twitter-feed.php:191
+msgid "3"
+msgstr "3"
+
+#: widgets/advanced/sina-blogpost.php:165
+#: widgets/advanced/sina-brand-carousel.php:301
+#: widgets/advanced/sina-content-slider.php:325
+#: widgets/advanced/sina-facebook-feed.php:179
+#: widgets/advanced/sina-portfolio.php:143
+#: widgets/advanced/sina-posts-carousel.php:271
+#: widgets/advanced/sina-twitter-feed.php:192
+msgid "4"
+msgstr "4"
+
+#: widgets/advanced/sina-blogpost.php:176
+#: widgets/advanced/sina-blogpost.php:1124
+#: widgets/advanced/sina-news-ticker.php:116
+#: widgets/advanced/sina-posts-carousel.php:132
+#: widgets/advanced/sina-posts-carousel.php:1311
+#: widgets/advanced/sina-posts-tab.php:261
+msgid "Categories"
+msgstr "Categorias"
+
+#: widgets/advanced/sina-blogpost.php:185
+#: widgets/advanced/sina-news-ticker.php:125
+#: widgets/advanced/sina-posts-carousel.php:141
+msgid "Tags"
+msgstr "Etiqueta"
+
+#: widgets/advanced/sina-blogpost.php:195
+msgid "Feature Image"
+msgstr "Imagem em destaque"
+
+#: widgets/advanced/sina-blogpost.php:197
+#: widgets/advanced/sina-blogpost.php:210
+#: widgets/advanced/sina-blogpost.php:222
+#: widgets/advanced/sina-blogpost.php:231
+#: widgets/advanced/sina-blogpost.php:240
+#: widgets/advanced/sina-blogpost.php:252
+#: widgets/advanced/sina-blogpost.php:262
+#: widgets/advanced/sina-blogpost.php:288
+#: widgets/advanced/sina-blogpost.php:300
+#: widgets/advanced/sina-blogpost.php:911
+#: widgets/advanced/sina-contact-form.php:136
+#: widgets/advanced/sina-particle-layer.php:389
+#: widgets/advanced/sina-particle-layer.php:398
+#: widgets/advanced/sina-portfolio.php:165
+#: widgets/advanced/sina-posts-carousel.php:154
+#: widgets/advanced/sina-posts-carousel.php:166
+#: widgets/advanced/sina-posts-carousel.php:175
+#: widgets/advanced/sina-posts-carousel.php:184
+#: widgets/advanced/sina-posts-carousel.php:197
+#: widgets/advanced/sina-posts-carousel.php:206
+#: widgets/advanced/sina-posts-carousel.php:1191
+#: widgets/advanced/sina-posts-tab.php:175
+msgid "Yes"
+msgstr "Sim"
+
+#: widgets/advanced/sina-blogpost.php:198
+#: widgets/advanced/sina-blogpost.php:211
+#: widgets/advanced/sina-blogpost.php:223
+#: widgets/advanced/sina-blogpost.php:232
+#: widgets/advanced/sina-blogpost.php:241
+#: widgets/advanced/sina-blogpost.php:253
+#: widgets/advanced/sina-blogpost.php:263
+#: widgets/advanced/sina-blogpost.php:289
+#: widgets/advanced/sina-blogpost.php:301
+#: widgets/advanced/sina-blogpost.php:912
+#: widgets/advanced/sina-contact-form.php:137
+#: widgets/advanced/sina-particle-layer.php:390
+#: widgets/advanced/sina-particle-layer.php:399
+#: widgets/advanced/sina-portfolio.php:166
+#: widgets/advanced/sina-posts-carousel.php:155
+#: widgets/advanced/sina-posts-carousel.php:167
+#: widgets/advanced/sina-posts-carousel.php:176
+#: widgets/advanced/sina-posts-carousel.php:185
+#: widgets/advanced/sina-posts-carousel.php:198
+#: widgets/advanced/sina-posts-carousel.php:207
+#: widgets/advanced/sina-posts-carousel.php:1192
+#: widgets/advanced/sina-posts-tab.php:176
+msgid "No"
+msgstr "Não"
+
+#: widgets/advanced/sina-blogpost.php:208
+#: widgets/advanced/sina-posts-carousel.php:152
+msgid "Thumb Right"
+msgstr "Miniatura direita"
+
+#: widgets/advanced/sina-blogpost.php:220
+#: widgets/advanced/sina-posts-carousel.php:164
+msgid "Show Categories"
+msgstr "Mostrar categorias"
+
+#: widgets/advanced/sina-blogpost.php:229
+#: widgets/advanced/sina-posts-carousel.php:173
+msgid "Show Meta"
+msgstr "Mostrar Meta"
+
+#: widgets/advanced/sina-blogpost.php:238
+#: widgets/advanced/sina-posts-carousel.php:182
+msgid "Show Avatar"
+msgstr "Mostrar Avatar"
+
+#: widgets/advanced/sina-blogpost.php:250
+msgid " Show Content"
+msgstr "Mostrar conteúdo"
+
+#: widgets/advanced/sina-blogpost.php:260
+msgid "Show Excerpt"
+msgstr "Mostrar excerto"
+
+#: widgets/advanced/sina-blogpost.php:272
+#: widgets/advanced/sina-facebook-feed.php:162
+#: widgets/advanced/sina-posts-carousel.php:216
+#: widgets/advanced/sina-twitter-feed.php:175
+msgid "Content Length (Word)"
+msgstr "Comprimento conteúdo (palavra)"
+
+#: widgets/advanced/sina-blogpost.php:286
+msgid "Show Pagination"
+msgstr "Mostrar paginação"
+
+#: widgets/advanced/sina-blogpost.php:298
+msgid "Show Load More"
+msgstr "Mostrar Carregar Mais"
+
+#: widgets/advanced/sina-blogpost.php:310
+msgid "Load More Label"
+msgstr "Carregar mais rótulo"
+
+#: widgets/advanced/sina-blogpost.php:312
+#: widgets/basic/sina-dynamic-button.php:171
+msgid "Enter Label"
+msgstr "Insira o rótulo"
+
+#: widgets/advanced/sina-blogpost.php:330
+#: widgets/advanced/sina-blogpost.php:1264
+#: widgets/advanced/sina-posts-carousel.php:238
+#: widgets/advanced/sina-posts-carousel.php:1718
+#: widgets/advanced/sina-twitter-feed.php:220
+#: widgets/advanced/sina-twitter-feed.php:856
+msgid "Read More"
+msgstr "Consulte Mais"
+
+#: widgets/advanced/sina-blogpost.php:346
+#: widgets/advanced/sina-posts-carousel.php:295
+#: widgets/advanced/sina-posts-carousel.php:513
+msgid "Post"
+msgstr "Blog"
+
+#: widgets/advanced/sina-blogpost.php:355
+#: widgets/advanced/sina-facebook-feed.php:216
+#: widgets/advanced/sina-portfolio.php:452
+#: widgets/advanced/sina-twitter-feed.php:245
+msgid ""
+"NOTICE: If you change the <strong>Dimension</strong> then the page need to "
+"<strong>Refresh</strong> for seeing the actual result."
+msgstr ""
+"AVISO: Se você alterar a <strong>Dimensão</strong>, a página precisará "
+"<strong>Atualizar</strong> para ver o resultado real."
+
+#: widgets/advanced/sina-blogpost.php:362
+#: widgets/advanced/sina-facebook-feed.php:223
+#: widgets/advanced/sina-portfolio.php:124
+#: widgets/advanced/sina-posts-carousel.php:524
+#: widgets/advanced/sina-twitter-feed.php:252
+#: widgets/basic/sina-content-box.php:297
+#: widgets/basic/sina-content-box.php:800 widgets/basic/sina-flip-box.php:299
+#: widgets/basic/sina-pricing.php:341 widgets/basic/sina-team.php:374
+#: widgets/basic/sina-team.php:590
+msgid "Effects"
+msgstr "Efeitos"
+
+#: widgets/advanced/sina-blogpost.php:365
+#: widgets/advanced/sina-blogpost.php:398
+#: widgets/advanced/sina-facebook-feed.php:226
+#: widgets/advanced/sina-facebook-feed.php:259
+#: widgets/advanced/sina-posts-carousel.php:527
+#: widgets/advanced/sina-posts-carousel.php:560
+#: widgets/advanced/sina-twitter-feed.php:255
+#: widgets/advanced/sina-twitter-feed.php:288
+#: widgets/basic/sina-content-box.php:300
+#: widgets/basic/sina-content-box.php:333 widgets/basic/sina-pricing.php:344
+#: widgets/basic/sina-pricing.php:377 widgets/basic/sina-team.php:377
+#: widgets/basic/sina-team.php:414 widgets/basic/sina-team.php:593
+msgid "Move"
+msgstr "Mover"
+
+#: widgets/advanced/sina-blogpost.php:366
+#: widgets/advanced/sina-facebook-feed.php:227
+#: widgets/advanced/sina-portfolio.php:128
+#: widgets/advanced/sina-posts-carousel.php:528
+#: widgets/advanced/sina-twitter-feed.php:256
+#: widgets/basic/sina-content-box.php:301
+#: widgets/basic/sina-content-box.php:803 widgets/basic/sina-flip-box.php:304
+#: widgets/basic/sina-google-map.php:147 widgets/basic/sina-pricing.php:345
+#: widgets/basic/sina-team.php:378 widgets/basic/sina-team.php:594
+#: widgets/basic/sina-video.php:127
+msgid "Zoom"
+msgstr "Ampliação"
+
+#: widgets/advanced/sina-blogpost.php:375
+#: widgets/advanced/sina-brand-carousel.php:510
+#: widgets/advanced/sina-content-slider.php:796
+#: widgets/advanced/sina-facebook-feed.php:236
+#: widgets/advanced/sina-posts-carousel.php:537
+#: widgets/advanced/sina-posts-carousel.php:1820
+#: widgets/advanced/sina-twitter-feed.php:265
+#: widgets/basic/sina-content-box.php:310 widgets/basic/sina-pricing.php:354
+#: widgets/basic/sina-team.php:390
+msgid "Scale"
+msgstr "Escala"
+
+#: widgets/advanced/sina-blogpost.php:410
+#: widgets/advanced/sina-facebook-feed.php:271
+#: widgets/advanced/sina-posts-carousel.php:572
+#: widgets/advanced/sina-twitter-feed.php:300
+#: widgets/basic/sina-content-box.php:345
+#: widgets/basic/sina-image-differ.php:182 widgets/basic/sina-pricing.php:389
+#: widgets/basic/sina-team.php:427
+msgid "Horizontal"
+msgstr "Horizontal"
+
+#: widgets/advanced/sina-blogpost.php:436
+#: widgets/advanced/sina-facebook-feed.php:297
+#: widgets/advanced/sina-posts-carousel.php:598
+#: widgets/advanced/sina-twitter-feed.php:326
+#: widgets/basic/sina-content-box.php:371
+#: widgets/basic/sina-image-differ.php:183 widgets/basic/sina-pricing.php:415
+#: widgets/basic/sina-team.php:454
+msgid "Vertical"
+msgstr "Vertical"
+
+#: widgets/advanced/sina-blogpost.php:554
+#: widgets/advanced/sina-facebook-feed.php:433
+#: widgets/advanced/sina-posts-carousel.php:716
+#: widgets/basic/sina-pricing.php:542
+msgid "Title Styles"
+msgstr "Estilos de Título"
+
+#: widgets/advanced/sina-blogpost.php:579
+#: widgets/advanced/sina-posts-carousel.php:741
+msgid "Categories Styles"
+msgstr "Estilos de categorias"
+
+#: widgets/advanced/sina-blogpost.php:629
+#: widgets/advanced/sina-facebook-feed.php:451
+#: widgets/advanced/sina-posts-carousel.php:791
+#: widgets/advanced/sina-twitter-feed.php:462
+#: widgets/basic/sina-accordion.php:293 widgets/basic/sina-pricing.php:694
+msgid "Content Styles"
+msgstr "Estilos de conteúdo"
+
+#: widgets/advanced/sina-blogpost.php:664
+#: widgets/advanced/sina-search-form.php:217
+#: widgets/basic/sina-content-box.php:274
+#: widgets/basic/sina-content-box.php:695
+#: widgets/basic/sina-content-box.php:1193
+#: widgets/basic/sina-dynamic-button.php:92
+#: widgets/basic/sina-dynamic-button.php:265 widgets/basic/sina-pricing.php:719
+#: widgets/basic/sina-pricing.php:1317 widgets/basic/sina-video.php:275
+msgid "Button"
+msgstr "Botão"
+
+#: widgets/advanced/sina-blogpost.php:700
+#: widgets/advanced/sina-facebook-feed.php:469
+#: widgets/advanced/sina-posts-carousel.php:862
+#: widgets/advanced/sina-twitter-feed.php:480
+msgid "Meta Styles"
+msgstr "Meta estilos"
+
+#: widgets/advanced/sina-blogpost.php:717
+#: widgets/advanced/sina-blogpost.php:1395
+#: widgets/advanced/sina-blogpost.php:1414
+#: widgets/advanced/sina-particle-layer.php:305
+#: widgets/advanced/sina-posts-carousel.php:879
+#: widgets/advanced/sina-posts-carousel.php:1529
+#: widgets/advanced/sina-posts-carousel.php:1548
+msgid "Link Color"
+msgstr "Cor do link"
+
+#: widgets/advanced/sina-blogpost.php:779
+#: widgets/advanced/sina-content-slider.php:464
+#: widgets/advanced/sina-content-slider.php:568
+#: widgets/advanced/sina-content-slider.php:666
+#: widgets/advanced/sina-content-slider.php:750
+#: widgets/advanced/sina-facebook-feed.php:555
+#: widgets/advanced/sina-modal-box.php:1029
+#: widgets/advanced/sina-modal-box.php:1118
+#: widgets/advanced/sina-posts-carousel.php:941
+#: widgets/advanced/sina-twitter-feed.php:566
+#: widgets/basic/sina-content-box.php:1102 widgets/basic/sina-title.php:231
+#: widgets/basic/sina-title.php:321 widgets/basic/sina-title.php:470
+#: widgets/basic/sina-title.php:575
+msgid "Justify"
+msgstr "Justificar"
+
+#: widgets/advanced/sina-blogpost.php:791
+#: widgets/advanced/sina-facebook-feed.php:567
+#: widgets/advanced/sina-modal-box.php:390
+#: widgets/advanced/sina-posts-carousel.php:439
+#: widgets/advanced/sina-posts-carousel.php:953
+#: widgets/advanced/sina-twitter-feed.php:578
+#: widgets/basic/sina-image-differ.php:245
+msgid "Overlay Background"
+msgstr "Sobreposição de fundo"
+
+#: widgets/advanced/sina-blogpost.php:824
+#: widgets/advanced/sina-facebook-feed.php:753
+#: widgets/advanced/sina-particle-layer.php:113
+#: widgets/advanced/sina-portfolio.php:534
+#: widgets/advanced/sina-posts-carousel.php:1104
+#: widgets/advanced/sina-twitter-feed.php:734
+#: widgets/basic/sina-content-box.php:962 widgets/basic/sina-pricing.php:1212
+#: widgets/basic/sina-table.php:290 widgets/basic/sina-table.php:834
+#: widgets/basic/sina-team.php:753
+msgid "Content"
+msgstr "Conteúdo"
+
+#: widgets/advanced/sina-blogpost.php:832
+#: widgets/advanced/sina-posts-carousel.php:1112
+msgid "Thumb Width (%)"
+msgstr "Largura da miniatura (%)"
+
+#: widgets/advanced/sina-blogpost.php:858
+#: widgets/advanced/sina-posts-carousel.php:1138
+msgid "Thumb Height (px)"
+msgstr "Altura da miniatura (px)"
+
+#: widgets/advanced/sina-blogpost.php:883
+#: widgets/advanced/sina-posts-carousel.php:1163
+msgid "Content Width (%)"
+msgstr "Largura conteúdo (%)"
+
+#: widgets/advanced/sina-blogpost.php:909
+#: widgets/advanced/sina-posts-carousel.php:1189
+msgid "Use content Height"
+msgstr "Usar altura de conteúdo"
+
+#: widgets/advanced/sina-blogpost.php:921
+#: widgets/advanced/sina-posts-carousel.php:1201
+msgid "Content Height (px)"
+msgstr "Altura conteúdo (px)"
+
+#: widgets/advanced/sina-blogpost.php:1138
+#: widgets/advanced/sina-posts-carousel.php:1325
+#: widgets/advanced/sina-posts-carousel.php:1465
+#: widgets/basic/sina-title.php:119
+msgid "Before Title"
+msgstr "Antes do Título"
+
+#: widgets/advanced/sina-blogpost.php:1139
+#: widgets/advanced/sina-posts-carousel.php:1326
+#: widgets/advanced/sina-posts-carousel.php:1466
+#: widgets/basic/sina-title.php:120
+msgid "After Title"
+msgstr "Depois do Título"
+
+#: widgets/advanced/sina-blogpost.php:1339
+#: widgets/advanced/sina-facebook-feed.php:910
+#: widgets/advanced/sina-posts-carousel.php:1451
+#: widgets/advanced/sina-twitter-feed.php:786
+msgid "Meta"
+msgstr "Meta"
+
+#: widgets/advanced/sina-blogpost.php:1429
+msgid "Avatar styles"
+msgstr "Estilos de avatar"
+
+#: widgets/advanced/sina-blogpost.php:1455
+#: widgets/advanced/sina-blogpost.php:1792
+#: widgets/advanced/sina-posts-carousel.php:1663
+msgid "Spacing"
+msgstr "Espaçamento"
+
+#: widgets/advanced/sina-blogpost.php:1584 widgets/basic/sina-table.php:538
+#: widgets/basic/sina-table.php:1430
+msgid "Pagination"
+msgstr "Paginação"
+
+#: widgets/advanced/sina-blogpost.php:1722
+msgid "Current"
+msgstr "Atual"
+
+#: widgets/advanced/sina-blogpost.php:1807
+#: widgets/advanced/sina-portfolio.php:329
+#: widgets/advanced/sina-posts-tab.php:309
+#: widgets/basic/sina-dynamic-button.php:273
+#: widgets/basic/sina-image-differ.php:333 widgets/basic/sina-pricing.php:1328
+msgid "Min Width"
+msgstr "Largura mínima"
+
+#: widgets/advanced/sina-blogpost.php:1901
+msgid "Load More Button"
+msgstr "Botão Carregar Mais"
+
+#: widgets/advanced/sina-blogpost.php:2096
+#: widgets/advanced/sina-posts-carousel.php:1913
+msgid "No Posts found"
+msgstr "Nenhuma postagem encontrada"
+
+#: widgets/advanced/sina-brand-carousel.php:114
+msgid "Brand"
+msgstr "Marca"
+
+#: widgets/advanced/sina-brand-carousel.php:124
+msgid "Choose Logo"
+msgstr "Escolha logotipo"
+
+#: widgets/advanced/sina-brand-carousel.php:137
+msgid "Brand Link"
+msgstr "Link da marca"
+
+#: widgets/advanced/sina-brand-carousel.php:148
+msgid "Brand Name"
+msgstr "Nome de marca"
+
+#: widgets/advanced/sina-brand-carousel.php:150
+#: widgets/advanced/sina-review-carousel.php:139
+#: widgets/basic/sina-team.php:147
+msgid "Enter Name"
+msgstr "Insira o nome"
+
+#: widgets/advanced/sina-brand-carousel.php:151
+msgid "This name will show only item header"
+msgstr "Este nome mostrará apenas o cabeçalho do iten"
+
+#: widgets/advanced/sina-brand-carousel.php:244
+msgid "Add Logo"
+msgstr "Adicionar logotipo"
+
+#: widgets/advanced/sina-brand-carousel.php:287
+#: widgets/advanced/sina-posts-carousel.php:257
+#: widgets/advanced/sina-review-carousel.php:232
+msgid "Carousel Settings"
+msgstr "Configurações do carrossel"
+
+#: widgets/advanced/sina-brand-carousel.php:295
+#: widgets/advanced/sina-content-slider.php:319
+#: widgets/advanced/sina-posts-carousel.php:265
+#: widgets/advanced/sina-review-carousel.php:239
+msgid "Show Item"
+msgstr "Mostrar iten"
+
+#: widgets/advanced/sina-brand-carousel.php:302
+#: widgets/advanced/sina-content-slider.php:326
+#: widgets/advanced/sina-portfolio.php:144
+#: widgets/advanced/sina-posts-carousel.php:272
+msgid "5"
+msgstr "5"
+
+#: widgets/advanced/sina-brand-carousel.php:303
+#: widgets/advanced/sina-content-slider.php:327
+#: widgets/advanced/sina-portfolio.php:145
+#: widgets/advanced/sina-posts-carousel.php:273
+msgid "6"
+msgstr "6"
+
+#: widgets/advanced/sina-brand-carousel.php:304
+#: widgets/advanced/sina-content-slider.php:328
+#: widgets/advanced/sina-posts-carousel.php:274
+msgid "7"
+msgstr "7"
+
+#: widgets/advanced/sina-brand-carousel.php:305
+#: widgets/advanced/sina-content-slider.php:329
+#: widgets/advanced/sina-posts-carousel.php:275
+msgid "8"
+msgstr "8"
+
+#: widgets/advanced/sina-brand-carousel.php:324
+msgid "Brand Box"
+msgstr "Marca caixa"
+
+#: widgets/advanced/sina-brand-carousel.php:332
+msgid "Logo Padding"
+msgstr "Preenchimento de logotipo"
+
+#: widgets/advanced/sina-brand-carousel.php:357
+msgid "Box Margin"
+msgstr "Margem da Caixa"
+
+#: widgets/advanced/sina-brand-carousel.php:499
+#: widgets/advanced/sina-content-slider.php:785
+#: widgets/advanced/sina-posts-carousel.php:1809
+msgid "Center Item"
+msgstr "Iiten central"
+
+#: widgets/advanced/sina-contact-form.php:109
+#: widgets/advanced/sina-login-form.php:108
+msgid "Form Settings"
+msgstr "Configurações do formulário"
+
+#: widgets/advanced/sina-contact-form.php:117
+msgid "Google Recaptcha"
+msgstr "Google Recaptcha"
+
+#: widgets/advanced/sina-contact-form.php:134
+msgid "Use Custom Email"
+msgstr "Use mail personalizado"
+
+#: widgets/advanced/sina-contact-form.php:143
+msgid "Mail To"
+msgstr "Correio para"
+
+#: widgets/advanced/sina-contact-form.php:146
+msgid "Enter Custom Email"
+msgstr "Insira email personalizado"
+
+#: widgets/advanced/sina-contact-form.php:147
+msgid ""
+"If the field is empty or enter an invalid email or try to send email from "
+"the editor, then the emails will send to the admin email. This email will "
+"work only in the front-end."
+msgstr ""
+"Se o campo estiver vazio ou inserir um e-mail inválido ou tentar enviar e-"
+"mail do editor, os e-mails serão enviados para o e-mail do administrador. "
+"Este e-mail funcionará apenas no front-end."
+
+#: widgets/advanced/sina-contact-form.php:159
+msgid "From: "
+msgstr "De:"
+
+#: widgets/advanced/sina-contact-form.php:162
+msgid "Enter From Address"
+msgstr "Insira endereço origem"
+
+#: widgets/advanced/sina-contact-form.php:168
+#: widgets/advanced/sina-mailchimp-subscribe.php:132
+msgid "Success Message"
+msgstr "Mensagem de Sucesso"
+
+#: widgets/advanced/sina-contact-form.php:171
+#: widgets/advanced/sina-mailchimp-subscribe.php:135
+msgid "Enter Success Message"
+msgstr "Digite mensagem sucesso"
+
+#: widgets/advanced/sina-contact-form.php:181
+#: widgets/advanced/sina-contact-form.php:252
+#: widgets/advanced/sina-mailchimp-subscribe.php:106
+#: widgets/advanced/sina-mailchimp-subscribe.php:231
+msgid "Fields"
+msgstr "Campos"
+
+#: widgets/advanced/sina-contact-form.php:189
+msgid "Name Placeholder Text"
+msgstr "Texto espaço reservado nome"
+
+#: widgets/advanced/sina-contact-form.php:192
+#: widgets/advanced/sina-contact-form.php:202
+#: widgets/advanced/sina-contact-form.php:212
+#: widgets/advanced/sina-contact-form.php:222
+#: widgets/advanced/sina-login-form.php:119
+#: widgets/advanced/sina-login-form.php:129
+msgid "Enter Placeholder Text"
+msgstr "Insira espaço reservado"
+
+#: widgets/advanced/sina-contact-form.php:199
+#: widgets/advanced/sina-login-form.php:116
+msgid "Email Placeholder Text"
+msgstr "Texto espaço reservado email"
+
+#: widgets/advanced/sina-contact-form.php:209
+msgid "Subject Placeholder Text"
+msgstr "Sujeito espaço reservado"
+
+#: widgets/advanced/sina-contact-form.php:219
+msgid "Message Placeholder Text"
+msgstr "Texto espaço reservado mensagem"
+
+#: widgets/advanced/sina-contact-form.php:237
+#: widgets/advanced/sina-contact-form.php:441
+#: widgets/advanced/sina-login-form.php:178
+#: widgets/advanced/sina-login-form.php:373
+#: widgets/advanced/sina-mailchimp-subscribe.php:216
+#: widgets/advanced/sina-mailchimp-subscribe.php:384
+msgid "Submit Button"
+msgstr "Botão de envio"
+
+#: widgets/advanced/sina-contact-form.php:263
+msgid "Layout 1"
+msgstr "Layout 1"
+
+#: widgets/advanced/sina-contact-form.php:264
+msgid "Layout 2"
+msgstr "Layout 2"
+
+#: widgets/advanced/sina-contact-form.php:336
+#: widgets/advanced/sina-review-carousel.php:137
+#: widgets/advanced/sina-review-carousel.php:360
+#: widgets/basic/sina-social-icons.php:122 widgets/basic/sina-team.php:145
+#: widgets/basic/sina-team.php:218 widgets/basic/sina-team.php:834
+msgid "Name"
+msgstr "Nome"
+
+#: widgets/advanced/sina-contact-form.php:351
+#: widgets/advanced/sina-login-form.php:343
+#: widgets/advanced/sina-mailchimp-subscribe.php:351
+msgid "Email"
+msgstr "Email"
+
+#: widgets/advanced/sina-contact-form.php:366
+msgid "Subject"
+msgstr "Sujeito"
+
+#: widgets/advanced/sina-contact-form.php:381
+#: widgets/advanced/sina-countdown.php:323
+#: widgets/advanced/sina-countdown.php:333
+#: widgets/advanced/sina-countdown.php:639
+msgid "Message"
+msgstr "Mensagem"
+
+#: widgets/advanced/sina-contact-form.php:571
+#: widgets/advanced/sina-mailchimp-subscribe.php:535
+msgid "Processing..."
+msgstr "Processamento..."
+
+#: widgets/advanced/sina-content-slider.php:115
+msgid "Slider Content"
+msgstr "Conteúdo deslizante"
+
+#: widgets/advanced/sina-content-slider.php:125
+#: widgets/advanced/sina-modal-box.php:163
+#: widgets/advanced/sina-particle-layer.php:121
+#: widgets/basic/sina-accordion.php:166 widgets/basic/sina-content-box.php:117
+#: widgets/basic/sina-transform.php:105
+msgid "Use Save Templates"
+msgstr "Use Salvar Modelos"
+
+#: widgets/advanced/sina-content-slider.php:132
+#: widgets/advanced/sina-modal-box.php:170
+#: widgets/advanced/sina-particle-layer.php:128
+#: widgets/basic/sina-accordion.php:173 widgets/basic/sina-content-box.php:124
+#: widgets/basic/sina-transform.php:112
+msgid "Choose Template"
+msgstr "Escolha modelo"
+
+#: widgets/advanced/sina-content-slider.php:138
+#: widgets/advanced/sina-modal-box.php:176
+#: widgets/advanced/sina-particle-layer.php:134
+#: widgets/basic/sina-accordion.php:179 widgets/basic/sina-content-box.php:130
+#: widgets/basic/sina-transform.php:118
+msgid ""
+"NOTE: Don't try to edit after insertion template. If you need to change the "
+"style or layout then you try to change the main template then save and then "
+"insert"
+msgstr ""
+"NOTA: Não tente editar após o modelo de inserção. Se você precisar alterar o "
+"estilo ou layout, tente alterar o modelo principal, salve e insira"
+
+#: widgets/advanced/sina-content-slider.php:144
+msgid "Use video"
+msgstr "Usar vídeo"
+
+#: widgets/advanced/sina-content-slider.php:154
+#: widgets/basic/sina-video.php:149
+msgid "Video Link"
+msgstr "Link de vídeo"
+
+#: widgets/advanced/sina-content-slider.php:157
+#: widgets/basic/sina-video.php:152
+msgid "Enter video link"
+msgstr "Insira link vídeo"
+
+#: widgets/advanced/sina-content-slider.php:173
+#: widgets/advanced/sina-content-slider.php:211
+#: widgets/advanced/sina-modal-box.php:199
+#: widgets/advanced/sina-particle-layer.php:143
+#: widgets/advanced/sina-particle-layer.php:182
+#: widgets/advanced/sina-portfolio.php:178
+#: widgets/advanced/sina-product-zoomer.php:192
+#: widgets/basic/sina-accordion.php:188 widgets/basic/sina-content-box.php:221
+#: widgets/basic/sina-counter.php:171 widgets/basic/sina-flip-box.php:157
+#: widgets/basic/sina-flip-box.php:247 widgets/basic/sina-pricing.php:112
+#: widgets/basic/sina-progressbar.php:125 widgets/basic/sina-title.php:134
+#: widgets/basic/sina-video.php:164
+msgid "Enter Title"
+msgstr "Digite o título"
+
+#: widgets/advanced/sina-content-slider.php:261
+#: widgets/advanced/sina-countdown.php:155
+msgid "Styles"
+msgstr "Estilos"
+
+#: widgets/advanced/sina-content-slider.php:277
+#: widgets/advanced/sina-countdown.php:260
+#: widgets/advanced/sina-portfolio.php:260 widgets/basic/sina-accordion.php:322
+msgid "Add Item"
+msgstr "Adicionar iten"
+
+#: widgets/advanced/sina-content-slider.php:348
+#: widgets/advanced/sina-countdown.php:364
+#: widgets/advanced/sina-product-zoomer.php:315
+#: widgets/basic/sina-accordion.php:353 widgets/basic/sina-content-box.php:102
+#: widgets/basic/sina-content-box.php:289 widgets/basic/sina-flip-box.php:291
+#: widgets/basic/sina-pricing.php:333 widgets/basic/sina-team.php:366
+msgid "Box"
+msgstr "Caixa"
+
+#: widgets/advanced/sina-countdown.php:115
+msgid "Countdown"
+msgstr "Contagem regressiva"
+
+#: widgets/advanced/sina-countdown.php:123
+msgid "Due Date"
+msgstr "Data de Vencimento"
+
+#: widgets/advanced/sina-countdown.php:137
+msgid "Select Unit"
+msgstr "Selecione unidade"
+
+#: widgets/advanced/sina-countdown.php:140
+msgid "Years"
+msgstr "Anos"
+
+#: widgets/advanced/sina-countdown.php:141
+msgid "Months"
+msgstr "Meses"
+
+#: widgets/advanced/sina-countdown.php:142
+msgid "Weeks"
+msgstr "Semanas"
+
+#: widgets/advanced/sina-countdown.php:143
+msgid "Days"
+msgstr "Dias"
+
+#: widgets/advanced/sina-countdown.php:144
+msgid "Hours"
+msgstr "Horas"
+
+#: widgets/advanced/sina-countdown.php:145
+msgid "Minutes"
+msgstr "Minutos"
+
+#: widgets/advanced/sina-countdown.php:146
+msgid "Seconds"
+msgstr "Segundos"
+
+#: widgets/advanced/sina-countdown.php:195
+msgid "Digit Color"
+msgstr "Cor de Dígito"
+
+#: widgets/advanced/sina-countdown.php:310
+#: widgets/advanced/sina-countdown.php:569 widgets/basic/sina-fancytext.php:122
+#: widgets/basic/sina-pricing.php:238 widgets/basic/sina-user-counter.php:201
+#: widgets/basic/sina-visit-counter.php:200
+msgid "Text"
+msgstr "Texto"
+
+#: widgets/advanced/sina-countdown.php:320
+msgid "Action"
+msgstr "Açao"
+
+#: widgets/advanced/sina-countdown.php:324
+msgid "Redirection Link"
+msgstr "Link de redirecionamento"
+
+#: widgets/advanced/sina-countdown.php:326
+msgid "Choose whether if you want to set a message or a redirect link"
+msgstr "Escolha se deseja definir uma mensagem ou um link de redirecionamento"
+
+#: widgets/advanced/sina-countdown.php:344
+msgid "Redirect To"
+msgstr "Redirecionar ao"
+
+#: widgets/advanced/sina-countdown.php:372
+#: widgets/advanced/sina-review-carousel.php:264
+#: widgets/basic/sina-content-box.php:793 widgets/basic/sina-pricing.php:1153
+#: widgets/basic/sina-team.php:657
+msgid "Morphing Animation"
+msgstr "Morphing Animation"
+
+#: widgets/advanced/sina-countdown.php:509
+msgid "Digit"
+msgstr "Dígito"
+
+#: widgets/advanced/sina-facebook-feed.php:114
+#: widgets/advanced/sina-twitter-feed.php:114
+msgid "Feed Content"
+msgstr "Conteúdo de feed"
+
+#: widgets/advanced/sina-facebook-feed.php:122
+msgid "Page ID"
+msgstr "ID da página"
+
+#: widgets/advanced/sina-facebook-feed.php:125
+msgid "Enter Page ID"
+msgstr "Insira o ID da página"
+
+#: widgets/advanced/sina-facebook-feed.php:131
+msgid "Access Token"
+msgstr "Token de acesso"
+
+#: widgets/advanced/sina-facebook-feed.php:134
+msgid "Enter Access Token"
+msgstr "Insira token acesso"
+
+#: widgets/advanced/sina-facebook-feed.php:140
+#: widgets/advanced/sina-twitter-feed.php:153
+msgid "Number of Feed"
+msgstr "Número de Feed"
+
+#: widgets/advanced/sina-facebook-feed.php:187
+#: widgets/advanced/sina-twitter-feed.php:200
+msgid "Sort By"
+msgstr "Ordenar por"
+
+#: widgets/advanced/sina-facebook-feed.php:190
+#: widgets/advanced/sina-twitter-feed.php:203
+msgid "Newest"
+msgstr "Mais novo"
+
+#: widgets/advanced/sina-facebook-feed.php:191
+#: widgets/advanced/sina-twitter-feed.php:204
+msgid "Oldest"
+msgstr "Mais velho"
+
+#: widgets/advanced/sina-facebook-feed.php:207
+#: widgets/advanced/sina-twitter-feed.php:236
+msgid "Feed"
+msgstr "Feed"
+
+#: widgets/advanced/sina-facebook-feed.php:415
+msgid "Page Name Styles"
+msgstr "Estilos nome página"
+
+#: widgets/advanced/sina-facebook-feed.php:591
+msgid "Play Button Color"
+msgstr "Cor botão reprodução"
+
+#: widgets/advanced/sina-facebook-feed.php:602
+msgid "Play Button Size"
+msgstr "Tamanho botão reprodução"
+
+#: widgets/advanced/sina-facebook-feed.php:630
+msgid "Page Name"
+msgstr "Nome da página"
+
+#: widgets/advanced/sina-facebook-feed.php:689
+#: widgets/advanced/sina-twitter-feed.php:670
+msgid "Thumb Styles"
+msgstr "Estilos de miniatura"
+
+#: widgets/advanced/sina-facebook-feed.php:697
+#: widgets/advanced/sina-twitter-feed.php:678
+msgid "Thumb Size"
+msgstr "Tamanho da miniatura"
+
+#: widgets/advanced/sina-login-form.php:126
+msgid "Password Placeholder Text"
+msgstr "Texto espaço reservado senha"
+
+#: widgets/advanced/sina-login-form.php:136
+msgid "Redirect URL after login"
+msgstr "URL redirecionamento após login"
+
+#: widgets/advanced/sina-login-form.php:139
+msgid "Enter Redirect URL"
+msgstr "Insira URL redirecionamento"
+
+#: widgets/advanced/sina-login-form.php:149
+msgid "Remember login"
+msgstr "Lembre de login"
+
+#: widgets/advanced/sina-login-form.php:157
+msgid "Remember text"
+msgstr "Lembre texto"
+
+#: widgets/advanced/sina-login-form.php:160
+msgid "Enter Remember Text"
+msgstr "Insira texto lembrar"
+
+#: widgets/advanced/sina-login-form.php:193
+msgid "Fields & Remember text"
+msgstr "Campos e texto de memória"
+
+#: widgets/advanced/sina-login-form.php:258
+msgid "Remember styles"
+msgstr "Lembre de estilos"
+
+#: widgets/advanced/sina-login-form.php:272
+#: widgets/advanced/sina-review-carousel.php:275
+#: widgets/basic/sina-counter.php:185 widgets/basic/sina-pricing.php:207
+msgid "Middle"
+msgstr "Meio"
+
+#: widgets/advanced/sina-login-form.php:273
+#: widgets/advanced/sina-product-zoomer.php:302
+#: widgets/advanced/sina-review-carousel.php:276
+#: widgets/basic/sina-counter.php:186 widgets/basic/sina-piechart.php:299
+#: widgets/basic/sina-pricing.php:208
+msgid "Bottom"
+msgstr "Inferior"
+
+#: widgets/advanced/sina-login-form.php:358
+msgid "Password"
+msgstr "Senha"
+
+#: widgets/advanced/sina-mailchimp-subscribe.php:34
+msgid "Sina MailChimp"
+msgstr "Sina MailChimp"
+
+#: widgets/advanced/sina-mailchimp-subscribe.php:122
+msgid "Email placeholder text"
+msgstr "Texto espaço reservado email"
+
+#: widgets/advanced/sina-mailchimp-subscribe.php:125
+#: widgets/advanced/sina-mailchimp-subscribe.php:156
+#: widgets/advanced/sina-mailchimp-subscribe.php:177
+#: widgets/advanced/sina-mailchimp-subscribe.php:198
+#: widgets/advanced/sina-search-form.php:107
+msgid "Enter placeholder text"
+msgstr "Insira espaço reservado"
+
+#: widgets/advanced/sina-mailchimp-subscribe.php:145
+#: widgets/advanced/sina-mailchimp-subscribe.php:315
+msgid "First Name"
+msgstr "Primeiro nome"
+
+#: widgets/advanced/sina-mailchimp-subscribe.php:153
+msgid "First name placeholder text"
+msgstr "Texto primeiro nome"
+
+#: widgets/advanced/sina-mailchimp-subscribe.php:166
+#: widgets/advanced/sina-mailchimp-subscribe.php:333
+msgid "Last Name"
+msgstr "Último nome"
+
+#: widgets/advanced/sina-mailchimp-subscribe.php:174
+msgid "Last name placeholder text"
+msgstr "Texto espaço reservado sobrenome"
+
+#: widgets/advanced/sina-mailchimp-subscribe.php:187
+msgid "Phone Number"
+msgstr "Número de fone"
+
+#: widgets/advanced/sina-mailchimp-subscribe.php:195
+msgid "Phone placeholder text"
+msgstr "Texto espaço reservado fone"
+
+#: widgets/advanced/sina-mailchimp-subscribe.php:239
+#: widgets/basic/sina-fancytext.php:200 widgets/basic/sina-social-icons.php:275
+#: widgets/basic/sina-user-counter.php:153
+#: widgets/basic/sina-visit-counter.php:152
+msgid "Display"
+msgstr "Mostrar"
+
+#: widgets/advanced/sina-mailchimp-subscribe.php:242
+#: widgets/basic/sina-fancytext.php:203 widgets/basic/sina-social-icons.php:278
+#: widgets/basic/sina-user-counter.php:157
+#: widgets/basic/sina-visit-counter.php:156
+msgid "Inline"
+msgstr "Na linha"
+
+#: widgets/advanced/sina-mailchimp-subscribe.php:243
+#: widgets/basic/sina-fancytext.php:204 widgets/basic/sina-social-icons.php:279
+#: widgets/basic/sina-user-counter.php:156
+#: widgets/basic/sina-visit-counter.php:155
+msgid "Block"
+msgstr "Quadra"
+
+#: widgets/advanced/sina-mailchimp-subscribe.php:366
+msgid "Phone"
+msgstr "Fone"
+
+#: widgets/advanced/sina-modal-box.php:110
+msgid "Modal Content"
+msgstr "Conteúdo modal"
+
+#: widgets/advanced/sina-modal-box.php:118
+msgid "Auto Show"
+msgstr "Show de auto"
+
+#: widgets/advanced/sina-modal-box.php:147
+msgid "Close to click outside"
+msgstr "Fechar clicar fora"
+
+#: widgets/advanced/sina-modal-box.php:155
+msgid "Close to press ESC"
+msgstr "Feche pressionar ESC"
+
+#: widgets/advanced/sina-modal-box.php:182 widgets/basic/sina-table.php:130
+msgid "Header Text"
+msgstr "Texto do Cabeçalho"
+
+#: widgets/advanced/sina-modal-box.php:185
+msgid "Enter Header Text"
+msgstr "Digite texto cabeçalho"
+
+#: widgets/advanced/sina-modal-box.php:216
+#: widgets/advanced/sina-particle-layer.php:211
+#: widgets/advanced/sina-portfolio.php:191
+#: widgets/basic/sina-content-box.php:238 widgets/basic/sina-flip-box.php:171
+#: widgets/basic/sina-flip-box.php:261 widgets/basic/sina-team.php:172
+#: widgets/basic/sina-title.php:205
+msgid "Enter Description"
+msgstr "Insira descrição"
+
+#: widgets/advanced/sina-modal-box.php:238
+#: widgets/advanced/sina-modal-box.php:1139
+msgid "Trigger Button"
+msgstr "Botão de gatilho"
+
+#: widgets/advanced/sina-modal-box.php:249
+msgid "CSS class"
+msgstr ""
+
+#: widgets/advanced/sina-modal-box.php:251
+#: widgets/basic/sina-dynamic-button.php:239
+msgid "Enter CLASS"
+msgstr "Insira CLASS"
+
+#: widgets/advanced/sina-modal-box.php:252
+msgid "Make sure this CLASS unique"
+msgstr "Certifique de que este CLASS seja único"
+
+#: widgets/advanced/sina-modal-box.php:265
+msgid "Modal"
+msgstr "Modal"
+
+#: widgets/advanced/sina-modal-box.php:273
+#: widgets/basic/sina-google-map.php:159
+msgid "Animation"
+msgstr "Animação"
+
+#: widgets/advanced/sina-modal-box.php:283
+#: widgets/advanced/sina-particle-layer.php:376
+msgid "Animation Speed"
+msgstr "Velocidade da animação"
+
+#: widgets/advanced/sina-modal-box.php:422 widgets/basic/sina-accordion.php:420
+#: widgets/basic/sina-table.php:609
+msgid "Header"
+msgstr "Cabeçalho"
+
+#: widgets/advanced/sina-modal-box.php:573
+msgid "Footer"
+msgstr "Rodapé"
+
+#: widgets/advanced/sina-modal-box.php:639
+msgid "Close Button Style"
+msgstr "Estilo botão Fechar"
+
+#: widgets/advanced/sina-modal-box.php:864
+msgid "Body"
+msgstr "Corpo"
+
+#: widgets/advanced/sina-modal-box.php:872
+msgid "Max Height"
+msgstr "Altura máxima"
+
+#: widgets/advanced/sina-modal-box.php:1282
+msgid "Close"
+msgstr "Perto"
+
+#: widgets/advanced/sina-news-ticker.php:109
+msgid "Ticker Content"
+msgstr "Conteúdo do Ticker"
+
+#: widgets/advanced/sina-news-ticker.php:142
+msgid "Ticker Settings"
+msgstr "Configurações do Ticker"
+
+#: widgets/advanced/sina-news-ticker.php:149
+msgid "Label Text"
+msgstr "Texto de rótulo"
+
+#: widgets/advanced/sina-news-ticker.php:157
+msgid "Label Position"
+msgstr "Posição da rótulo"
+
+#: widgets/advanced/sina-news-ticker.php:162
+msgid "Both"
+msgstr "Ambos"
+
+#: widgets/advanced/sina-news-ticker.php:173
+msgid "Pause On Hover"
+msgstr "Pausar ao hover"
+
+#: widgets/advanced/sina-news-ticker.php:180
+#: widgets/advanced/sina-news-ticker.php:579
+msgid "Time"
+msgstr "Tempo"
+
+#: widgets/advanced/sina-news-ticker.php:188
+msgid "Scroll Speed"
+msgstr "Velocidade de rolagem"
+
+#: widgets/advanced/sina-news-ticker.php:205
+msgid "Left Label"
+msgstr "Rótulo Esquerda"
+
+#: widgets/advanced/sina-news-ticker.php:316
+msgid "Right Label"
+msgstr "Rótulo certa"
+
+#: widgets/advanced/sina-news-ticker.php:427
+msgid "Headline"
+msgstr "Manchete"
+
+#: widgets/advanced/sina-news-ticker.php:670
+msgid " not published yet"
+msgstr "ainda não publicado"
+
+#: widgets/advanced/sina-particle-layer.php:238
+#: widgets/advanced/sina-particle-layer.php:280
+#: widgets/basic/sina-dynamic-button.php:245
+msgid "CSS ID"
+msgstr ""
+
+#: widgets/advanced/sina-particle-layer.php:240
+#: widgets/advanced/sina-particle-layer.php:282
+#: widgets/basic/sina-dynamic-button.php:247
+msgid "Enter ID"
+msgstr "Insira o ID"
+
+#: widgets/advanced/sina-particle-layer.php:241
+#: widgets/advanced/sina-particle-layer.php:283
+#: widgets/basic/sina-dynamic-button.php:248
+msgid "Make sure this ID unique"
+msgstr "Certifique de que este ID seja único"
+
+#: widgets/advanced/sina-particle-layer.php:297
+msgid "Particle Settings"
+msgstr "Configurações de partícula"
+
+#: widgets/advanced/sina-particle-layer.php:313
+msgid "Ball Color"
+msgstr "Cor da Bola"
+
+#: widgets/advanced/sina-particle-layer.php:321
+msgid "Particles Number"
+msgstr "Número de Partículas"
+
+#: widgets/advanced/sina-particle-layer.php:332
+msgid "Link Width"
+msgstr "Largura do Link"
+
+#: widgets/advanced/sina-particle-layer.php:343
+msgid "Link Distance"
+msgstr "Distância do link"
+
+#: widgets/advanced/sina-particle-layer.php:354
+msgid "Create Link"
+msgstr "Criar Link"
+
+#: widgets/advanced/sina-particle-layer.php:365
+msgid "Ball Max Size"
+msgstr "Tamanho máximo bola"
+
+#: widgets/advanced/sina-particle-layer.php:387
+msgid "Disable Links"
+msgstr "Desativar links"
+
+#: widgets/advanced/sina-particle-layer.php:396
+msgid "Disable Mouse"
+msgstr "Desativar mouse"
+
+#: widgets/advanced/sina-particle-layer.php:413
+msgid "Animation Settings"
+msgstr "Configurações de animação"
+
+#: widgets/advanced/sina-particle-layer.php:558
+msgid "Template Style"
+msgstr "Estilo do modelo"
+
+#: widgets/advanced/sina-portfolio.php:116
+msgid "Portfolio"
+msgstr "Portfólio"
+
+#: widgets/advanced/sina-portfolio.php:127
+msgid "Fade"
+msgstr "Desvaneça"
+
+#: widgets/advanced/sina-portfolio.php:129
+msgid "Fade & Move"
+msgstr "Fade e mover"
+
+#: widgets/advanced/sina-portfolio.php:130
+msgid "Zoom & Move"
+msgstr "Mover e ampliar"
+
+#: widgets/advanced/sina-portfolio.php:146
+msgid "Masonry"
+msgstr "Alvenaria"
+
+#: widgets/advanced/sina-portfolio.php:154
+msgid "Reset Text"
+msgstr "Redefinir texto"
+
+#: widgets/advanced/sina-portfolio.php:156
+msgid "Enter Reset Text"
+msgstr "Digite texto redefinição"
+
+#: widgets/advanced/sina-portfolio.php:163
+#: widgets/advanced/sina-posts-carousel.php:195
+msgid "Show Content"
+msgstr "Mostrar conteúdo"
+
+#: widgets/advanced/sina-portfolio.php:201
+msgid "Category"
+msgstr "Categoria"
+
+#: widgets/advanced/sina-portfolio.php:204
+msgid "Multiple category must be comma separated!"
+msgstr "As categorias múltiplas devem ser separadas por vírgulas!"
+
+#: widgets/advanced/sina-portfolio.php:230
+msgid "1 Column 1 Row"
+msgstr "1 coluna 1 linha"
+
+#: widgets/advanced/sina-portfolio.php:231
+msgid "1 Column 2 Row"
+msgstr "1 coluna 2 linha"
+
+#: widgets/advanced/sina-portfolio.php:232
+msgid "2 Column 1 Row"
+msgstr "2 coluna 1 linha"
+
+#: widgets/advanced/sina-portfolio.php:233
+msgid "2 Column 2 Row"
+msgstr "2 coluna 2 linha"
+
+#: widgets/advanced/sina-portfolio.php:234
+msgid "3 Column 1 Row"
+msgstr "3 coluna 1 linha"
+
+#: widgets/advanced/sina-portfolio.php:235
+msgid "3 Column 2 Row"
+msgstr "3 coluna 2 linha"
+
+#: widgets/advanced/sina-portfolio.php:236
+msgid "3 Column 3 Row"
+msgstr "3 colunas 3 linhas"
+
+#: widgets/advanced/sina-portfolio.php:238
+msgid ""
+"Size will work if the <strong>\"number of columns\"</strong> is <strong>"
+"\"Masonry\"</strong> selected"
+msgstr ""
+"O tamanho funcionará se o <strong>\"número de colunas\"</strong> for <strong>"
+"\"Alvenaria\"</strong> selecionado"
+
+#: widgets/advanced/sina-portfolio.php:321
+msgid "Menu Buttons"
+msgstr "Botões do Menu"
+
+#: widgets/advanced/sina-portfolio.php:349
+msgid "Gap From Items"
+msgstr "Espaço de itens"
+
+#: widgets/advanced/sina-portfolio.php:443
+msgid "Items"
+msgstr "Itens"
+
+#: widgets/advanced/sina-portfolio.php:502
+msgid "Overlay Styles"
+msgstr "Estilos de sobreposição"
+
+#: widgets/advanced/sina-portfolio.php:709
+msgid "Icons"
+msgstr "Ícones"
+
+#: widgets/advanced/sina-portfolio.php:800
+msgid "Icons Gap"
+msgstr "Ícones espaço"
+
+#: widgets/advanced/sina-portfolio.php:815 widgets/basic/sina-table.php:617
+#: widgets/basic/sina-table.php:842 widgets/basic/sina-team.php:1036
+msgid "Icon Size"
+msgstr "Tamanho do ícone"
+
+#: widgets/advanced/sina-portfolio.php:858
+msgid "Zoom button radius"
+msgstr "Raio  botão ampliar"
+
+#: widgets/advanced/sina-portfolio.php:877
+msgid "Link button radius"
+msgstr "Raio botão link"
+
+#: widgets/advanced/sina-posts-carousel.php:112
+msgid "Posts Content"
+msgstr "Conteúdo de postagens"
+
+#: widgets/advanced/sina-posts-carousel.php:122 widgets/basic/sina-team.php:111
+msgid "Thumb"
+msgstr "Miniatura"
+
+#: widgets/advanced/sina-posts-carousel.php:204
+msgid "Excerpt"
+msgstr "Excerto"
+
+#: widgets/advanced/sina-posts-carousel.php:389
+msgid "Vertical Align"
+msgstr "Alinhamento Vertical"
+
+#: widgets/advanced/sina-posts-carousel.php:826
+msgid "Button Styles"
+msgstr "Estilos de botão"
+
+#: widgets/advanced/sina-posts-carousel.php:1640
+msgid "Avatar"
+msgstr "Avatar"
+
+#: widgets/advanced/sina-posts-tab.php:110
+msgid "Tab Content"
+msgstr "Conteúdo da aba"
+
+#: widgets/advanced/sina-posts-tab.php:120
+msgid "Select Category"
+msgstr "Selecione Categoria"
+
+#: widgets/advanced/sina-posts-tab.php:139
+msgid "Add Categories"
+msgstr "Adicionar categorias"
+
+#: widgets/advanced/sina-posts-tab.php:164
+msgid "Tag"
+msgstr "Etiqueta"
+
+#: widgets/advanced/sina-posts-tab.php:173
+msgid "Preview Right"
+msgstr "Visualizar direita"
+
+#: widgets/advanced/sina-posts-tab.php:190
+msgid "Categories Wrapper"
+msgstr "Wrapper de categorias"
+
+#: widgets/advanced/sina-posts-tab.php:296
+msgid "Gap From Content"
+msgstr "Lacuna do conteúdo"
+
+#: widgets/advanced/sina-posts-tab.php:409
+msgid "Thumbnail"
+msgstr "Miniatura"
+
+#: widgets/advanced/sina-posts-tab.php:417
+msgid "Width (%)"
+msgstr "Largura (%)"
+
+#: widgets/advanced/sina-posts-tab.php:528
+msgid "Title Style"
+msgstr "Estilo do Título"
+
+#: widgets/advanced/sina-posts-tab.php:576
+msgid "Meta Style"
+msgstr "Meta estilo"
+
+#: widgets/advanced/sina-posts-tab.php:605
+#: widgets/advanced/sina-posts-tab.php:942
+msgid "Gap From Title"
+msgstr "Espaço de  título"
+
+#: widgets/advanced/sina-posts-tab.php:626
+msgid "Preview List"
+msgstr "Lista de visualização"
+
+#: widgets/advanced/sina-posts-tab.php:634
+msgid "List Width (%)"
+msgstr "Largura da lista (%)"
+
+#: widgets/advanced/sina-posts-tab.php:657
+msgid "List Padding"
+msgstr "Preenchimento de lista"
+
+#: widgets/advanced/sina-posts-tab.php:675
+msgid "Title Width (%)"
+msgstr "Largura do Título (%)"
+
+#: widgets/advanced/sina-posts-tab.php:699
+msgid "Preview Thumb Width (%)"
+msgstr "Largura miniatura visualização (%)"
+
+#: widgets/advanced/sina-posts-tab.php:722
+msgid "Preview Thumb Height"
+msgstr "Altura miniatura visualização"
+
+#: widgets/advanced/sina-posts-tab.php:783
+msgid "Preview Title"
+msgstr "Título de visualização"
+
+#: widgets/advanced/sina-product-zoomer.php:111
+msgid "Product Content"
+msgstr "Conteúdo do Produto"
+
+#: widgets/advanced/sina-product-zoomer.php:122
+msgid "Enter Product Title"
+msgstr "Insira título produto"
+
+#: widgets/advanced/sina-product-zoomer.php:136
+msgid "Enter Product Description"
+msgstr "Insira descrição produto"
+
+#: widgets/advanced/sina-product-zoomer.php:164
+msgid "Content Bottom"
+msgstr "Conteúdo inferior"
+
+#: widgets/advanced/sina-product-zoomer.php:179
+msgid "Product Images"
+msgstr "Imagens de produtos"
+
+#: widgets/advanced/sina-product-zoomer.php:193
+msgid "This title will be show only item header"
+msgstr "Este título será mostrado apenas o cabeçalho do iten"
+
+#: widgets/advanced/sina-product-zoomer.php:200
+msgid "Original Image"
+msgstr "Imagem original"
+
+#: widgets/advanced/sina-product-zoomer.php:213
+msgid "Thumb Image"
+msgstr "Imagem em miniatura"
+
+#: widgets/advanced/sina-product-zoomer.php:226
+msgid "Preview Image"
+msgstr "Imagem de visualização"
+
+#: widgets/advanced/sina-product-zoomer.php:240
+msgid "Add Images"
+msgstr "Adicionar imagens"
+
+#: widgets/advanced/sina-product-zoomer.php:288
+msgid "Show Preview"
+msgstr "Mostrar Antevisão"
+
+#: widgets/advanced/sina-product-zoomer.php:296
+msgid "Zoomer Position"
+msgstr "Posição do Zoomer"
+
+#: widgets/advanced/sina-product-zoomer.php:299
+msgid "Lens"
+msgstr "Lente"
+
+#: widgets/advanced/sina-product-zoomer.php:300
+#: widgets/advanced/sina-review-carousel.php:274
+#: widgets/basic/sina-piechart.php:298 widgets/basic/sina-pricing.php:206
+msgid "Top"
+msgstr "Cima"
+
+#: widgets/advanced/sina-product-zoomer.php:311
+msgid "Lens Shape"
+msgstr "Forma da lente"
+
+#: widgets/advanced/sina-product-zoomer.php:314
+msgid "Circle"
+msgstr "Círculo"
+
+#: widgets/advanced/sina-review-carousel.php:114
+msgid "Review"
+msgstr "Reveja"
+
+#: widgets/advanced/sina-review-carousel.php:151
+#: widgets/basic/sina-team.php:159
+msgid "Enter Position"
+msgstr "Insira a posição"
+
+#: widgets/advanced/sina-review-carousel.php:161
+#: widgets/advanced/sina-review-carousel.php:506
+msgid "Company"
+msgstr "Companhia"
+
+#: widgets/advanced/sina-review-carousel.php:163
+msgid "Enter Organization"
+msgstr "Entrar na Organização"
+
+#: widgets/advanced/sina-review-carousel.php:173
+#: widgets/advanced/sina-review-carousel.php:575
+msgid "Comment"
+msgstr "Comente"
+
+#: widgets/advanced/sina-review-carousel.php:175
+msgid "Enter Comment"
+msgstr "Insira comentário"
+
+#: widgets/advanced/sina-review-carousel.php:186
+msgid "Add Image"
+msgstr "Adicionar imagem"
+
+#: widgets/advanced/sina-review-carousel.php:271
+#: widgets/basic/sina-pricing.php:203 widgets/basic/sina-team.php:121
+msgid "Image Position"
+msgstr "Posição da imagem"
+
+#: widgets/advanced/sina-search-form.php:96
+msgid "Form Content"
+msgstr "Conteúdo do formulário"
+
+#: widgets/advanced/sina-search-form.php:104
+msgid "Placeholder text"
+msgstr "Texto espaço reservado"
+
+#: widgets/advanced/sina-search-form.php:122
+msgid "Field"
+msgstr "Campo"
+
+#: widgets/advanced/sina-twitter-feed.php:122
+#: widgets/advanced/sina-twitter-feed.php:611
+msgid "Account Name"
+msgstr "Nome da conta"
+
+#: widgets/advanced/sina-twitter-feed.php:125
+msgid "Enter account name"
+msgstr "Insira nome conta"
+
+#: widgets/advanced/sina-twitter-feed.php:126
+msgid "Use @ in front of your account name."
+msgstr "Use @ antes do nome da sua conta."
+
+#: widgets/advanced/sina-twitter-feed.php:133
+msgid "Consumer Key"
+msgstr "Chave consumidor"
+
+#: widgets/advanced/sina-twitter-feed.php:136
+msgid "Enter consumer key"
+msgstr "Insira chave consumidor"
+
+#: widgets/advanced/sina-twitter-feed.php:137
+msgid "Get Consumer Key"
+msgstr "Obtenha chave consumidor"
+
+#: widgets/advanced/sina-twitter-feed.php:143
+msgid "Consumer Secret Key"
+msgstr "Chave secreta consumidor"
+
+#: widgets/advanced/sina-twitter-feed.php:146
+msgid "Enter consumer secret key"
+msgstr "Insira chave secreta consumidor"
+
+#: widgets/advanced/sina-twitter-feed.php:147
+msgid "Get Consumer Secret Key"
+msgstr "Obtenha chave secreta consumidor"
+
+#: widgets/advanced/sina-twitter-feed.php:444
+msgid "Account Name Styles"
+msgstr "Estilos nome conta"
+
+#: widgets/basic/sina-accordion.php:114
+msgid "Accordion"
+msgstr "Acordeão"
+
+#: widgets/basic/sina-accordion.php:122
+msgid "First Item Open"
+msgstr "Primeiro iten aberto"
+
+#: widgets/basic/sina-accordion.php:138
+msgid "Active Icon"
+msgstr "Ícone Ativo"
+
+#: widgets/basic/sina-accordion.php:215
+msgid "Box Styles"
+msgstr "Estilos de caixa"
+
+#: widgets/basic/sina-accordion.php:249
+msgid "Header Styles"
+msgstr "Estilos de cabeçalho"
+
+#: widgets/basic/sina-accordion.php:267 widgets/basic/sina-accordion.php:473
+#: widgets/basic/sina-accordion.php:534 widgets/basic/sina-pricing.php:266
+#: widgets/basic/sina-social-icons.php:141
+#: widgets/basic/sina-social-icons.php:185
+#: widgets/basic/sina-social-icons.php:380
+#: widgets/basic/sina-social-icons.php:431 widgets/basic/sina-team.php:240
+#: widgets/basic/sina-team.php:284 widgets/basic/sina-team.php:1076
+#: widgets/basic/sina-team.php:1127 widgets/basic/sina-video.php:309
+#: widgets/basic/sina-video.php:361
+msgid "Icon Color"
+msgstr "Cor do ícone"
+
+#: widgets/basic/sina-accordion.php:590
+msgid "Icon Padding"
+msgstr "Preenchimento de ícone"
+
+#: widgets/basic/sina-content-box.php:110
+msgid "Linkable Entire Box"
+msgstr "Caixa inteira vinculável"
+
+#: widgets/basic/sina-content-box.php:136 widgets/basic/sina-pricing.php:164
+msgid "Ribbon Title"
+msgstr "Título da fita"
+
+#: widgets/basic/sina-content-box.php:146 widgets/basic/sina-pricing.php:174
+msgid "Ribbon Position"
+msgstr "Ribbon Position"
+
+#: widgets/basic/sina-content-box.php:168 widgets/basic/sina-counter.php:122
+#: widgets/basic/sina-flip-box.php:108 widgets/basic/sina-flip-box.php:198
+msgid "Icon Format"
+msgstr "Formato de ícone"
+
+#: widgets/basic/sina-content-box.php:461
+#: widgets/basic/sina-content-box.php:602
+#: widgets/basic/sina-content-box.php:781 widgets/basic/sina-counter.php:486
+#: widgets/basic/sina-flip-box.php:518
+msgid "Icon or Image"
+msgstr "Ícone ou imagem"
+
+#: widgets/basic/sina-content-box.php:518
+#: widgets/basic/sina-content-box.php:661
+msgid "Title & Description"
+msgstr "Título e Descrição"
+
+#: widgets/basic/sina-content-box.php:525
+#: widgets/basic/sina-content-box.php:668
+msgid "Title Color"
+msgstr "Cor do Título"
+
+#: widgets/basic/sina-content-box.php:539
+#: widgets/basic/sina-content-box.php:681
+msgid "Description Color"
+msgstr "Descrição Cor"
+
+#: widgets/basic/sina-content-box.php:815
+msgid "Float"
+msgstr "Flutuador"
+
+#: widgets/basic/sina-content-box.php:1123 widgets/basic/sina-pricing.php:1417
+msgid "Ribbon"
+msgstr "Fita"
+
+#: widgets/basic/sina-counter.php:114
+msgid "Counter"
+msgstr "Contador"
+
+#: widgets/basic/sina-counter.php:182
+msgid "Title Position"
+msgstr "Posição do Título"
+
+#: widgets/basic/sina-counter.php:197 widgets/basic/sina-piechart.php:157
+#: widgets/basic/sina-progressbar.php:202
+msgid "Prefix"
+msgstr "Prefixo"
+
+#: widgets/basic/sina-counter.php:199 widgets/basic/sina-pricing.php:137
+msgid "Enter Prefix"
+msgstr "Insira o prefixo"
+
+#: widgets/basic/sina-counter.php:208
+msgid "Prefix Space"
+msgstr "Espaço de Prefixo"
+
+#: widgets/basic/sina-counter.php:227 widgets/basic/sina-piechart.php:168
+#: widgets/basic/sina-progressbar.php:213
+msgid "Suffix"
+msgstr "Sufixo"
+
+#: widgets/basic/sina-counter.php:229 widgets/basic/sina-pricing.php:151
+msgid "Enter Suffix"
+msgstr "Digite o sufixo"
+
+#: widgets/basic/sina-counter.php:238
+msgid "Suffix space"
+msgstr "Espaço de sufixo"
+
+#: widgets/basic/sina-counter.php:257
+msgid "Thousand Delimiter"
+msgstr "Mil Delimitador"
+
+#: widgets/basic/sina-counter.php:260
+msgid "Comma"
+msgstr "Vírgula"
+
+#: widgets/basic/sina-counter.php:261
+msgid "Dot"
+msgstr "Ponto"
+
+#: widgets/basic/sina-counter.php:262
+msgid "Pipe"
+msgstr "Tubo"
+
+#: widgets/basic/sina-counter.php:263 widgets/basic/sina-transform.php:124
+msgid "Space"
+msgstr "Espaço"
+
+#: widgets/basic/sina-counter.php:271
+msgid "Start Number"
+msgstr "Número Inicial"
+
+#: widgets/basic/sina-counter.php:283
+msgid "Stop Number"
+msgstr "Número de parada"
+
+#: widgets/basic/sina-counter.php:295
+msgid "Counting Duration"
+msgstr "Duração da contagem"
+
+#: widgets/basic/sina-counter.php:416 widgets/basic/sina-user-counter.php:260
+#: widgets/basic/sina-visit-counter.php:259
+msgid "Number"
+msgstr "Número"
+
+#: widgets/basic/sina-dynamic-button.php:118
+msgid "Button Type"
+msgstr "Tipo de botão"
+
+#: widgets/basic/sina-dynamic-button.php:121
+msgid "Static"
+msgstr "Estático"
+
+#: widgets/basic/sina-dynamic-button.php:122
+msgid "Page"
+msgstr "Página"
+
+#: widgets/basic/sina-dynamic-button.php:123
+msgid "Taxonomy"
+msgstr "Taxonomia"
+
+#: widgets/basic/sina-dynamic-button.php:131
+msgid "Select Page"
+msgstr "Selecione página"
+
+#: widgets/basic/sina-dynamic-button.php:143
+msgid "Select Taxonomy"
+msgstr "Selecione Taxonomia"
+
+#: widgets/basic/sina-dynamic-button.php:237
+msgid "CSS CLASS"
+msgstr ""
+
+#: widgets/basic/sina-fancytext.php:112 widgets/basic/sina-fancytext.php:135
+#: widgets/basic/sina-fancytext.php:341
+msgid "Fancy Text"
+msgstr "Texto Extravagante"
+
+#: widgets/basic/sina-fancytext.php:158 widgets/basic/sina-fancytext.php:383
+#: widgets/basic/sina-user-counter.php:126
+msgid "Prefix Text"
+msgstr "Texto do prefixo"
+
+#: widgets/basic/sina-fancytext.php:161 widgets/basic/sina-user-counter.php:129
+msgid "Enter prefix text"
+msgstr "Insira texto prefixo"
+
+#: widgets/basic/sina-fancytext.php:171 widgets/basic/sina-fancytext.php:423
+#: widgets/basic/sina-user-counter.php:140
+msgid "Suffix Text"
+msgstr "Sufixo Texto"
+
+#: widgets/basic/sina-fancytext.php:174 widgets/basic/sina-user-counter.php:143
+msgid "Enter suffix text"
+msgstr "Digite texto sufixo"
+
+#: widgets/basic/sina-fancytext.php:192
+msgid "Fancy Settings"
+msgstr "Configurações extravagantes"
+
+#: widgets/basic/sina-fancytext.php:239
+msgid "Typing"
+msgstr "Digitando"
+
+#: widgets/basic/sina-fancytext.php:244
+msgid "Animation Type"
+msgstr "Tipo de Animação"
+
+#: widgets/basic/sina-fancytext.php:264
+msgid "Typing Speed"
+msgstr "Velocidade de digitação"
+
+#: widgets/basic/sina-fancytext.php:278
+msgid "Loop"
+msgstr "Ciclo"
+
+#: widgets/basic/sina-fancytext.php:289
+msgid "Cursor"
+msgstr "Cursor"
+
+#: widgets/basic/sina-fancytext.php:302
+msgid "Cursor Color"
+msgstr "Cor do Cursor"
+
+#: widgets/basic/sina-flip-box.php:100
+msgid "Front Side"
+msgstr "Frente"
+
+#: widgets/basic/sina-flip-box.php:190
+msgid "Back Side"
+msgstr "Alça de mira"
+
+#: widgets/basic/sina-flip-box.php:302
+msgid "Horizontal Flip"
+msgstr ""
+
+#: widgets/basic/sina-flip-box.php:303
+msgid "Vertical Flip"
+msgstr ""
+
+#: widgets/basic/sina-flip-box.php:319 widgets/basic/sina-flip-box.php:528
+#: widgets/basic/sina-flip-box.php:785 widgets/basic/sina-flip-box.php:936
+msgid "Front"
+msgstr "Frente"
+
+#: widgets/basic/sina-flip-box.php:367 widgets/basic/sina-flip-box.php:432
+msgid "Content Padding"
+msgstr "Preenchimento conteúdo"
+
+#: widgets/basic/sina-flip-box.php:384 widgets/basic/sina-flip-box.php:647
+#: widgets/basic/sina-flip-box.php:851 widgets/basic/sina-flip-box.php:982
+msgid "Back"
+msgstr "Costas"
+
+#: widgets/basic/sina-google-map.php:109 widgets/basic/sina-google-map.php:203
+msgid "Map"
+msgstr "Mapa"
+
+#: widgets/basic/sina-google-map.php:117
+msgid "If you would like to change the API key"
+msgstr "Se você gostaria de mudar a chave API"
+
+#: widgets/basic/sina-google-map.php:125
+msgid "Latitude"
+msgstr "Latitude"
+
+#: widgets/basic/sina-google-map.php:136
+msgid "Longitude"
+msgstr "Longitude"
+
+#: widgets/basic/sina-google-map.php:162
+msgid "Drop"
+msgstr "Solta"
+
+#: widgets/basic/sina-google-map.php:171
+msgid "Marker"
+msgstr "Marcador"
+
+#: widgets/basic/sina-google-map.php:179
+msgid "Choose Marker"
+msgstr "Escolha marcador"
+
+#: widgets/basic/sina-image-differ.php:113
+msgid "Differ Content"
+msgstr "Conteúdo Comparar"
+
+#: widgets/basic/sina-image-differ.php:121
+msgid "Before Image"
+msgstr "Antes da Imagem"
+
+#: widgets/basic/sina-image-differ.php:134
+msgid "After Image"
+msgstr "Depois da imagem"
+
+#: widgets/basic/sina-image-differ.php:155
+msgid "Differ Settings"
+msgstr "Comparar configurações"
+
+#: widgets/basic/sina-image-differ.php:163
+msgid "Before Text"
+msgstr "Antes do Texto"
+
+#: widgets/basic/sina-image-differ.php:171
+msgid "After Text"
+msgstr "Depois do Texto"
+
+#: widgets/basic/sina-image-differ.php:179
+msgid "Orientation"
+msgstr "Orientação"
+
+#: widgets/basic/sina-image-differ.php:191
+msgid "Slider Offset"
+msgstr "Deslocamento controle deslizante"
+
+#: widgets/basic/sina-image-differ.php:211
+msgid "Slider move on hover"
+msgstr "Deslizante move hover"
+
+#: widgets/basic/sina-image-differ.php:220
+msgid "Slider move on click"
+msgstr "Controle deslizante move clicar"
+
+#: widgets/basic/sina-image-differ.php:237
+msgid "Differ"
+msgstr "Comparar"
+
+#: widgets/basic/sina-image-differ.php:256
+msgid "Handle Background"
+msgstr "Fundo separador alça"
+
+#: widgets/basic/sina-image-differ.php:267
+msgid "Handle Separator Color"
+msgstr "Cor separador alça"
+
+#: widgets/basic/sina-image-differ.php:325
+msgid "Labels"
+msgstr "Rótulos"
+
+#: widgets/basic/sina-piechart.php:111
+msgid "Piechart"
+msgstr "Gráfico de pizza"
+
+#: widgets/basic/sina-piechart.php:122
+msgid "Enter title"
+msgstr "Digite o título"
+
+#: widgets/basic/sina-piechart.php:133 widgets/basic/sina-piechart.php:376
+#: widgets/basic/sina-progressbar.php:178
+msgid "Value"
+msgstr "Valor"
+
+#: widgets/basic/sina-piechart.php:145 widgets/basic/sina-progressbar.php:190
+msgid "Max Value"
+msgstr "Valor máximo"
+
+#: widgets/basic/sina-piechart.php:159 widgets/basic/sina-progressbar.php:204
+msgid "Enter prefix"
+msgstr "Insira o prefixo"
+
+#: widgets/basic/sina-piechart.php:170 widgets/basic/sina-progressbar.php:215
+msgid "Enter suffix"
+msgstr "Digite o sufixo"
+
+#: widgets/basic/sina-piechart.php:196
+msgid "Animation Duration"
+msgstr "Duração da animação"
+
+#: widgets/basic/sina-piechart.php:215
+msgid "Chart"
+msgstr "Gráfico"
+
+#: widgets/basic/sina-piechart.php:223
+msgid "Bar Color"
+msgstr "Cor da Barra"
+
+#: widgets/basic/sina-piechart.php:231
+msgid "Bar Width"
+msgstr "Largura da Barra"
+
+#: widgets/basic/sina-piechart.php:241
+msgid "Bar Cap"
+msgstr "Bar Cap"
+
+#: widgets/basic/sina-piechart.php:244
+msgid "Round"
+msgstr "Redondo"
+
+#: widgets/basic/sina-piechart.php:245
+msgid "Square"
+msgstr "Quadrado"
+
+#: widgets/basic/sina-piechart.php:253
+msgid "Track Color"
+msgstr "Cor de trilha"
+
+#: widgets/basic/sina-piechart.php:261
+msgid "Track Width"
+msgstr "Largura da trilha"
+
+#: widgets/basic/sina-piechart.php:271
+msgid "Scale Color"
+msgstr "Cor da Escala"
+
+#: widgets/basic/sina-pricing.php:101
+msgid "Pricing"
+msgstr "Preços"
+
+#: widgets/basic/sina-pricing.php:123 widgets/basic/sina-pricing.php:917
+msgid "Price"
+msgstr "Preço"
+
+#: widgets/basic/sina-pricing.php:125
+msgid "Enter Price"
+msgstr "Insira o preço"
+
+#: widgets/basic/sina-pricing.php:135
+msgid "Price Prefix"
+msgstr "Prefixo de preço"
+
+#: widgets/basic/sina-pricing.php:149
+msgid "Price Suffix"
+msgstr "Sufixo de preço"
+
+#: widgets/basic/sina-pricing.php:196
+msgid "Show Image"
+msgstr "Mostrar imagem"
+
+#: widgets/basic/sina-pricing.php:241
+msgid "Enter Content"
+msgstr "Insira conteúdo"
+
+#: widgets/basic/sina-pricing.php:277
+msgid "Add Content"
+msgstr "Adicionar conteúdo"
+
+#: widgets/basic/sina-pricing.php:318
+msgid "Order Button"
+msgstr "Botão de pedido"
+
+#: widgets/basic/sina-pricing.php:600
+msgid "Price Styles"
+msgstr "Estilos de preço"
+
+#: widgets/basic/sina-pricing.php:668
+msgid "Price Prefix Styles"
+msgstr "Estilos prefixo preço"
+
+#: widgets/basic/sina-pricing.php:997
+msgid "Price Prefix / Suffix"
+msgstr "Prefixo / sufixo de preço"
+
+#: widgets/basic/sina-pricing.php:1008
+msgid "Prefix Color"
+msgstr "Cor do Prefixo"
+
+#: widgets/basic/sina-pricing.php:1045
+msgid "Suffix Size"
+msgstr "Tamanho do sufixo"
+
+#: widgets/basic/sina-pricing.php:1261
+msgid "Icon Styles"
+msgstr "Estilos de ícone"
+
+#: widgets/basic/sina-progressbar.php:114
+#: widgets/basic/sina-progressbar.php:233
+msgid "Progressbar"
+msgstr "Barra de progresso"
+
+#: widgets/basic/sina-progressbar.php:285 widgets/basic/sina-transform.php:788
+msgid "Border Radius"
+msgstr "Raio de borda"
+
+#: widgets/basic/sina-progressbar.php:296
+msgid "Track Style"
+msgstr "Estilo de trilha"
+
+#: widgets/basic/sina-progressbar.php:384
+msgid "Bottom Margin"
+msgstr "Margem inferior"
+
+#: widgets/basic/sina-progressbar.php:429
+msgid "Percentage"
+msgstr "Percentagem"
+
+#: widgets/basic/sina-social-icons.php:95
+#: widgets/basic/sina-social-icons.php:267
+msgid "Social Icons"
+msgstr "Ícones Sociais"
+
+#: widgets/basic/sina-social-icons.php:123 widgets/basic/sina-team.php:219
+msgid "This name will be show in the item header"
+msgstr "Este nome será mostrado no cabeçalho do iten"
+
+#: widgets/basic/sina-social-icons.php:227 widgets/basic/sina-team.php:326
+msgid "Add Social Icon"
+msgstr "Adicionar Ícone Social"
+
+#: widgets/basic/sina-social-icons.php:355 widgets/basic/sina-team.php:1051
+#: widgets/basic/sina-video.php:464
+msgid "Line Height"
+msgstr "Altura da linha"
+
+#: widgets/basic/sina-table.php:111
+msgid "Table"
+msgstr "Tabela"
+
+#: widgets/basic/sina-table.php:121 widgets/basic/sina-table.php:278
+msgid "Column Span"
+msgstr "Span da coluna"
+
+#: widgets/basic/sina-table.php:227
+msgid "Add Header Column"
+msgstr "Adicionar coluna cabeçalho"
+
+#: widgets/basic/sina-table.php:253
+msgid "Content Type"
+msgstr "Tipo de conteúdo"
+
+#: widgets/basic/sina-table.php:256
+msgid "Row"
+msgstr "Linha"
+
+#: widgets/basic/sina-table.php:257
+msgid "Cell"
+msgstr "Célula"
+
+#: widgets/basic/sina-table.php:258
+msgid "Head"
+msgstr "Cabeça"
+
+#: widgets/basic/sina-table.php:266
+msgid "Row Span"
+msgstr "Span de linha"
+
+#: widgets/basic/sina-table.php:392
+msgid "Add Row"
+msgstr "Adicionar linha"
+
+#: widgets/basic/sina-table.php:433
+msgid ""
+"NOTICE: If you using data from the external source,  make sure here is no "
+"row or cell except the header row."
+msgstr ""
+"AVISO: Se você estiver usando dados de uma fonte externa, certifique-se de "
+"que não haja linhas ou células, exceto a linha do cabeçalho."
+
+#: widgets/basic/sina-table.php:448
+msgid "Table Settings"
+msgstr "Configurações da tabela"
+
+#: widgets/basic/sina-table.php:456
+msgid "Data Table"
+msgstr "Tabela de dados"
+
+#: widgets/basic/sina-table.php:458
+msgid "Whether this table use as a data table or not?"
+msgstr "Se esta tabela é usada como uma tabela de dados ou não?"
+
+#: widgets/basic/sina-table.php:464
+msgid "Data Export"
+msgstr "Exportação de Dados"
+
+#: widgets/basic/sina-table.php:475
+msgid "Data Searching"
+msgstr "Pesquisa de dados"
+
+#: widgets/basic/sina-table.php:486
+msgid "Data Sorting"
+msgstr "Classificação de dados"
+
+#: widgets/basic/sina-table.php:497
+msgid "Sortable Column Position"
+msgstr "Posição coluna classificável"
+
+#: widgets/basic/sina-table.php:499
+msgid ""
+"Enter the column position to make that column sortable by default. (Ex. 1,2,"
+"3...)"
+msgstr ""
+"Insira a posição da coluna para torná-la classificável por padrão. (Ex. 1,2,"
+"3 ...)"
+
+#: widgets/basic/sina-table.php:511
+msgid "Select Order Type"
+msgstr "Selecione tipo de pedido"
+
+#: widgets/basic/sina-table.php:514
+msgid "DESC Order"
+msgstr ""
+
+#: widgets/basic/sina-table.php:515
+msgid "ASC Order"
+msgstr ""
+
+#: widgets/basic/sina-table.php:527
+msgid "Data Info"
+msgstr "Informação de dados"
+
+#: widgets/basic/sina-table.php:549
+msgid "Pagination Type"
+msgstr "Tipo de Paginação"
+
+#: widgets/basic/sina-table.php:552
+msgid "Numbers Only"
+msgstr ""
+
+#: widgets/basic/sina-table.php:553
+msgid "Prev & Next Only"
+msgstr ""
+
+#: widgets/basic/sina-table.php:554
+msgid "Prev, Next & Numbers"
+msgstr ""
+
+#: widgets/basic/sina-table.php:555
+msgid "First, Last & Numbers"
+msgstr ""
+
+#: widgets/basic/sina-table.php:556
+msgid "First, Last, Prev & Next"
+msgstr ""
+
+#: widgets/basic/sina-table.php:557
+msgid "All"
+msgstr "Tudo"
+
+#: widgets/basic/sina-table.php:569
+msgid "Data Source"
+msgstr "Fonte de dados"
+
+#: widgets/basic/sina-table.php:573
+msgid "External"
+msgstr "Externo"
+
+#: widgets/basic/sina-table.php:584
+msgid "Source Link"
+msgstr "Link da fonte"
+
+#: widgets/basic/sina-table.php:587
+msgid "Enter Link"
+msgstr "Insira o link"
+
+#: widgets/basic/sina-table.php:588
+msgid "The source link must have the data in JSON format!"
+msgstr "Link de origem deve ter os dados no formato JSON!"
+
+#: widgets/basic/sina-table.php:1055
+msgid "Even Row"
+msgstr "Linha par"
+
+#: widgets/basic/sina-table.php:1151
+msgid "Export Buttons"
+msgstr "Botões de exportação"
+
+#: widgets/basic/sina-table.php:1253
+msgid "Hover Color"
+msgstr "Hover cor"
+
+#: widgets/basic/sina-table.php:1290
+msgid "Bottom Gap"
+msgstr "Espaço inferior"
+
+#: widgets/basic/sina-table.php:1368
+msgid "Accent"
+msgstr "Sotaque"
+
+#: widgets/basic/sina-table.php:1407
+msgid "Accent Color"
+msgstr "Cor de destaque"
+
+#: widgets/basic/sina-table.php:1486
+msgid "Hover & Active Color"
+msgstr "Hover e cor ativa"
+
+#: widgets/basic/sina-team.php:100
+msgid "Member"
+msgstr "Membro"
+
+#: widgets/basic/sina-team.php:595
+msgid "Move & Zoom"
+msgstr "Mover e ampliar"
+
+#: widgets/basic/sina-team.php:1013
+msgid "Social Icon"
+msgstr "Ícone Social"
+
+#: widgets/basic/sina-title.php:95
+msgid "Title Content"
+msgstr "Conteúdo do Título"
+
+#: widgets/basic/sina-title.php:103 widgets/basic/sina-title.php:595
+msgid "Separator"
+msgstr "Separador"
+
+#: widgets/basic/sina-title.php:107
+msgid "Solid"
+msgstr "Sólido"
+
+#: widgets/basic/sina-title.php:108
+msgid "Solid and Dot"
+msgstr "Sólido e Ponto"
+
+#: widgets/basic/sina-title.php:116
+msgid "Separator Position"
+msgstr "Posição do Separador"
+
+#: widgets/basic/sina-title.php:145
+msgid "Highlight Text"
+msgstr "Destacar Texto"
+
+#: widgets/basic/sina-title.php:148
+msgid "Enter Highlight Text"
+msgstr "Insira texto destaque"
+
+#: widgets/basic/sina-title.php:149
+msgid "You can use SPAN TAG for multi-color title."
+msgstr "Você pode usar SPAN TAG para títulos multicoloridos."
+
+#: widgets/basic/sina-title.php:177
+msgid "Enter Sub Title"
+msgstr "Insira o Subtítulo"
+
+#: widgets/basic/sina-title.php:622
+msgid "Dot Color"
+msgstr "Cor punto"
+
+#: widgets/basic/sina-transform.php:97
+msgid "Transform Content"
+msgstr "Transformar o conteúdo"
+
+#: widgets/basic/sina-transform.php:159
+msgid "Transform Style"
+msgstr "Estilo de transformação"
+
+#: widgets/basic/sina-transform.php:195
+msgid "Transform Effects"
+msgstr "Efeitos de transformação"
+
+#: widgets/basic/sina-transform.php:215
+msgid "3D Transform"
+msgstr "3D Transform"
+
+#: widgets/basic/sina-user-counter.php:109
+msgid "User Counter"
+msgstr "Contador de usuário"
+
+#: widgets/basic/sina-user-counter.php:117
+msgid "Select Roles"
+msgstr "Selecione funções"
+
+#: widgets/basic/sina-video.php:114
+msgid "Video"
+msgstr "Video"
+
+#: widgets/basic/sina-video.php:122
+msgid "Animation Effects"
+msgstr "Efeitos de animação"
+
+#: widgets/basic/sina-video.php:126
+msgid "Rubber"
+msgstr "Borracha"
+
+#: widgets/basic/sina-video.php:128
+msgid "Wave"
+msgstr "Onda"
+
+#: widgets/basic/sina-video.php:135
+msgid "Wave Color"
+msgstr "Cor da Onda"
+
+#: widgets/basic/sina-visit-counter.php:109
+msgid "Visitor Count"
+msgstr "Contagem de visitantes"
+
+#: widgets/basic/sina-visit-counter.php:117
+msgid "Today Text"
+msgstr "Texto Hoje"
+
+#: widgets/basic/sina-visit-counter.php:120
+#: widgets/basic/sina-visit-counter.php:134
+msgid "Enter text"
+msgstr "Digite o texto"
+
+#: widgets/basic/sina-visit-counter.php:131
+msgid "Yesterday Text"
+msgstr "Texto Ontem"
+
+#: widgets/basic/sina-visit-counter.php:145
+msgid "Today at Top"
+msgstr "Hoje no cima"
+
+#: widgets/layout/blogpost/grid.php:70 widgets/layout/blogpost/list.php:75
+#: widgets/layout/posts-carousel/grid.php:58
+#: widgets/layout/posts-carousel/list.php:65
+msgid "by"
+msgstr "de"
+
+#. Description of the plugin
+msgid "A collection of high-quality widgets for Elementor page builder."
+msgstr "A collection of high-quality widgets for Elementor page builder."
+
+#. URI of the plugin
+msgid "https://sinaextra.com/sina-addon-for-elementor/"
+msgstr ""
+
+#. Author of the plugin
+msgid "SinaExtra"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://sinaextra.com/"
+msgstr ""
