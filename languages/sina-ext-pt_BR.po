@@ -3,10 +3,10 @@ msgstr ""
 "Project-Id-Version: Sina Extension for Elementor\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-09-03 08:16+0000\n"
-"PO-Revision-Date: 2020-09-05 07:48+0000\n"
+"PO-Revision-Date: 2020-09-05 09:59+0000\n"
 "Last-Translator: \n"
-"Language-Team: Bengali (Bangladesh)\n"
-"Language: bn_BD\n"
+"Language-Team: Portuguese (Brazil)\n"
+"Language: pt_BR\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -16,301 +16,301 @@ msgstr ""
 
 #: sina-extension-for-elementor.php:39 widgets/basic/sina-accordion.php:42
 msgid "Sina Accordion"
-msgstr "Sina অ্যাকর্ডিয়ন"
+msgstr "Sina Acordeão"
 
 #: sina-extension-for-elementor.php:40 widgets/basic/sina-content-box.php:43
 msgid "Sina Content Box"
-msgstr "Sina সামগ্রী বাক্স"
+msgstr "Sina Caixa de Conteúdo"
 
 #: sina-extension-for-elementor.php:41 widgets/basic/sina-counter.php:41
 msgid "Sina Counter"
-msgstr "Sina গণনাকারী"
+msgstr "Sina Contador"
 
 #: sina-extension-for-elementor.php:42 widgets/basic/sina-dynamic-button.php:34
 msgid "Sina Dynamic Button"
-msgstr "Sina ডায়নামিক বোতাম"
+msgstr "Sina Botão Dinâmico"
 
 #: sina-extension-for-elementor.php:43 widgets/basic/sina-fancytext.php:39
 msgid "Sina Fancy Text"
-msgstr "Sina অভিনব লিখা"
+msgstr "Sina Texto Extravagante"
 
 #: sina-extension-for-elementor.php:44 widgets/basic/sina-flip-box.php:41
 msgid "Sina Flip Box"
-msgstr "Sina ফ্লিপ বাক্স"
+msgstr "Sina Giro caixa"
 
 #: sina-extension-for-elementor.php:45 widgets/basic/sina-google-map.php:36
 msgid "Sina Google Map"
-msgstr "Sina গুগল মানচিত্র"
+msgstr "Sina Google Mapa"
 
 #: sina-extension-for-elementor.php:46 widgets/basic/sina-image-differ.php:39
 msgid "Sina Image Differ"
-msgstr "Sina ছবির পৃথকীকরণ"
+msgstr "Sina Comparar imagens"
 
 #: sina-extension-for-elementor.php:47 widgets/basic/sina-piechart.php:38
 msgid "Sina Piechart"
-msgstr "Sina পাইচার্ট"
+msgstr "Sina Gráfico de pizza"
 
 #: sina-extension-for-elementor.php:48 widgets/basic/sina-pricing.php:42
 msgid "Sina Pricing"
-msgstr "Sina মূল্য নির্ধারণ"
+msgstr "Sina Preços"
 
 #: sina-extension-for-elementor.php:49 widgets/basic/sina-progressbar.php:42
 msgid "Sina Progressbar"
-msgstr "Sina প্রগতিবার"
+msgstr "Sina Barra de progresso"
 
 #: sina-extension-for-elementor.php:50 widgets/basic/sina-social-icons.php:37
 msgid "Sina Social Icons"
-msgstr "Sina সামাজিক আইকন"
+msgstr "Sina Ícones Sociais"
 
 #: sina-extension-for-elementor.php:51 widgets/basic/sina-table.php:38
 msgid "Sina Table"
-msgstr "Sina ছক"
+msgstr "Sina Tabela"
 
 #: sina-extension-for-elementor.php:52 widgets/basic/sina-team.php:41
 msgid "Sina Team"
-msgstr "Sina দল"
+msgstr "Sina Equipe"
 
 #: sina-extension-for-elementor.php:53 widgets/basic/sina-title.php:37
 msgid "Sina Title"
-msgstr "Sina শিরোনাম"
+msgstr "Sina Título"
 
 #: sina-extension-for-elementor.php:54 widgets/basic/sina-transform.php:39
 msgid "Sina Transform"
-msgstr "Sina রূপান্তর"
+msgstr "Sina Transformar"
 
 #: sina-extension-for-elementor.php:55 widgets/basic/sina-user-counter.php:37
 msgid "Sina User Counter"
-msgstr "Sina ব্যবহারকারী গণনা"
+msgstr "Sina Contador de usuário"
 
 #: sina-extension-for-elementor.php:56 widgets/basic/sina-video.php:40
 msgid "Sina Video"
-msgstr "Sina ভিডিও"
+msgstr "Sina Video"
 
 #: sina-extension-for-elementor.php:57 widgets/basic/sina-visit-counter.php:37
 msgid "Sina Visit Counter"
-msgstr "Sina দর্শন গণনাকারী"
+msgstr "Sina Visitar contador"
 
 #: sina-extension-for-elementor.php:60
 #: widgets/advanced/sina-banner-slider.php:39
 msgid "Sina Banner Slider"
-msgstr "Sina ব্যানার স্লাইডার"
+msgstr "Sina Controle deslizante banner"
 
 #: sina-extension-for-elementor.php:61 widgets/advanced/sina-blogpost.php:41
 msgid "Sina Blog Post"
-msgstr "Sina ব্লগ পোস্ট"
+msgstr "Sina Postagem do blog"
 
 #: sina-extension-for-elementor.php:62
 #: widgets/advanced/sina-brand-carousel.php:39
 msgid "Sina Brand Carousel"
-msgstr "Sina ব্র্যান্ড ক্যারোসেল"
+msgstr "Sina Carrossel de Marca"
 
 #: sina-extension-for-elementor.php:63
 #: widgets/advanced/sina-contact-form.php:36
 msgid "Sina Contact Form"
-msgstr "Sina যোগাযোগ ফর্ম"
+msgstr "Sina Formulário de Contato"
 
 #: sina-extension-for-elementor.php:64
 #: widgets/advanced/sina-content-slider.php:41
 msgid "Sina Content Slider"
-msgstr "Sina সামগ্রী স্লাইডার"
+msgstr "Sina Controle deslizante conteúdo"
 
 #: sina-extension-for-elementor.php:65 widgets/advanced/sina-countdown.php:42
 msgid "Sina Countdown"
-msgstr "Sina ক্ষণ গণনাকারী"
+msgstr "Sina Contagem regressiva"
 
 #: sina-extension-for-elementor.php:66
 #: widgets/advanced/sina-facebook-feed.php:40
 msgid "Sina Facebook Feed"
-msgstr "Sina ফেসবুক ফিড"
+msgstr "Sina Facebook Feed"
 
 #: sina-extension-for-elementor.php:67 widgets/advanced/sina-login-form.php:36
 msgid "Sina Login Form"
-msgstr "Sina লগইন ফর্ম"
+msgstr "Sina Formulário de login"
 
 #: sina-extension-for-elementor.php:68
 msgid "Sina MailChimp Subscribe"
-msgstr "Sina মেলচিম্প সাবস্ক্রাইব"
+msgstr "Sina MailChimp Assine"
 
 #: sina-extension-for-elementor.php:69 widgets/advanced/sina-modal-box.php:39
 msgid "Sina Modal Box"
-msgstr "Sina মোডাল বাক্স"
+msgstr "Sina Caixa Modal"
 
 #: sina-extension-for-elementor.php:70 widgets/advanced/sina-news-ticker.php:38
 msgid "Sina News Ticker"
-msgstr "Sina খবরের টিকার"
+msgstr "Sina Notícia Ticker"
 
 #: sina-extension-for-elementor.php:71
 #: widgets/advanced/sina-particle-layer.php:38
 msgid "Sina Particle Layer"
-msgstr "Sina কণার স্তর"
+msgstr "Sina Camada de Partículas"
 
 #: sina-extension-for-elementor.php:72 widgets/advanced/sina-portfolio.php:40
 msgid "Sina Portfolio"
-msgstr "Sina পোর্টফোলিও"
+msgstr "Sina Portfólio"
 
 #: sina-extension-for-elementor.php:73
 #: widgets/advanced/sina-posts-carousel.php:38
 msgid "Sina Posts Carousel"
-msgstr "Sina পোস্ট ক্যারোসেল"
+msgstr "Sina Carrossel de Postagens"
 
 #: sina-extension-for-elementor.php:74 widgets/advanced/sina-posts-tab.php:39
 msgid "Sina Posts Tab"
-msgstr "Sina পোস্ট ট্যাব"
+msgstr "Sina Blog aba"
 
 #: sina-extension-for-elementor.php:75
 #: widgets/advanced/sina-product-zoomer.php:39
 msgid "Sina Product Zoomer"
-msgstr "Sina পণ্যের জুমার"
+msgstr "Sina Zoomer de produto"
 
 #: sina-extension-for-elementor.php:76
 #: widgets/advanced/sina-review-carousel.php:39
 msgid "Sina Review Carousel"
-msgstr "Sina পর্যালোচনা ক্যারোসেল"
+msgstr "Sina Carrossel de avaliações"
 
 #: sina-extension-for-elementor.php:77 widgets/advanced/sina-search-form.php:38
 msgid "Sina Search Form"
-msgstr "Sina অনুসন্ধানের ফর্ম"
+msgstr "Sina Formulário de pesquisa"
 
 #: sina-extension-for-elementor.php:78
 #: widgets/advanced/sina-twitter-feed.php:40
 msgid "Sina Twitter Feed"
-msgstr "Sina টুইটার ফিড"
+msgstr "Sina Twitter Feed"
 
 #: sina-extension-for-elementor.php:81
 msgid "Sina Pro Chart"
-msgstr "Sina Pro চার্ট"
+msgstr "Sina Pro Gráfico"
 
 #: sina-extension-for-elementor.php:82
 msgid "Sina Pro Hover Image"
-msgstr "Sina Pro হোভার ছবি"
+msgstr "Sina Pro Imagem hover"
 
 #: sina-extension-for-elementor.php:83
 msgid "Sina Pro Image Accordion"
-msgstr "Sina Pro ছবির অ্যাকর্ডিয়ান"
+msgstr "Sina Pro Imagem Acordeão"
 
 #: sina-extension-for-elementor.php:84
 msgid "Sina Pro Image Marker"
-msgstr "Sina Pro ছবির চিহ্নিতকারী"
+msgstr "Sina Pro Marcador de imagem"
 
 #: sina-extension-for-elementor.php:85
 msgid "Sina Pro Image Scroller"
-msgstr "Sina Pro ছবি স্ক্রোলার"
+msgstr "Sina Pro Imagem scroller"
 
 #: sina-extension-for-elementor.php:86
 msgid "Sina Pro Instant Search"
-msgstr "Sina Pro তাত্ক্ষণিক অনুসন্ধান"
+msgstr "Sina Pro Pesquisa Instantânea"
 
 #: sina-extension-for-elementor.php:87
 msgid "Sina Pro Lost Password Form"
-msgstr "Sina Pro পাসওয়ার্ড ফর্ম"
+msgstr "Sina Pro Formulário de Senha"
 
 #: sina-extension-for-elementor.php:88
 msgid "Sina Pro Lottie Animation"
-msgstr "Sina Pro লটি অ্যানিমেশন"
+msgstr "Sina Pro Lottie Animação"
 
 #: sina-extension-for-elementor.php:89
 msgid "Sina Pro Offcanvas Bar"
-msgstr "Sina Pro অফক্যানভাস বার"
+msgstr "Sina Pro Barra Offcanvas"
 
 #: sina-extension-for-elementor.php:90
 msgid "Sina Pro Posts Gallery"
-msgstr "Sina Pro পোস্টের গ্যালারী"
+msgstr "Sina Pro Galeria de postagens"
 
 #: sina-extension-for-elementor.php:91
 msgid "Sina Pro Posts on Scroll"
-msgstr "Sina Pro পোস্ট স্ক্রোলে"
+msgstr "Sina Pro Postagens rolagem"
 
 #: sina-extension-for-elementor.php:92
 msgid "Sina Pro Register Form"
-msgstr "Sina Pro নিবন্ধন ফর্ম"
+msgstr "Sina Pro Formulário de Registro"
 
 #: sina-extension-for-elementor.php:93
 msgid "Sina Pro Section Navigation"
-msgstr "Sina Pro বিভাগ নেভিগেশন"
+msgstr "Sina Pro Seção de navegação"
 
 #: sina-extension-for-elementor.php:94
 msgid "Sina Pro Source Code"
-msgstr "Sina Pro উৎসের কোড"
+msgstr "Sina Pro Código fonte"
 
 #: sina-extension-for-elementor.php:95
 msgid "Sina Pro Tab"
-msgstr "Sina Pro ট্যাব"
+msgstr "Sina Pro Aba"
 
 #: sina-extension-for-elementor.php:96
 msgid "Sina Pro Team Carousel"
-msgstr "Sina Pro দলের ক্যারোসেল"
+msgstr "Sina Pro Carrossel de equipe"
 
 #: sina-extension-for-elementor.php:97
 msgid "Sina Pro Testimonial"
-msgstr "Sina Pro প্রশংসাপত্র"
+msgstr "Sina Pro Testemunho"
 
 #: sina-extension-for-elementor.php:98
 msgid "Sina Pro Thumb Carousel"
-msgstr "Sina Pro থাম্ব ক্যারোসেল"
+msgstr "Sina Pro Carrossel miniaturas"
 
 #: sina-extension-for-elementor.php:99
 msgid "Sina Pro Tilt Box"
-msgstr "Sina Pro কাত বাক্স"
+msgstr "Sina Pro Caixa de inclinação"
 
 #: sina-extension-for-elementor.php:100
 msgid "Sina Pro Toggle Content"
-msgstr "Sina Pro টগল সামগ্রী"
+msgstr "Sina Pro Alternar conteúdo"
 
 #: sina-extension-for-elementor.php:101
 msgid "Sina Pro Video Gallery"
-msgstr "Sina Pro ভিডিও গ্যালারী"
+msgstr "Sina Pro Galeria de vídeo"
 
 #: sina-extension-for-elementor.php:113
 msgid "Sina Pro Masker"
-msgstr "Sina Pro মুখোশ"
+msgstr "Sina Pro Mascarador"
 
 #: sina-extension-for-elementor.php:114
 msgid "Sina Pro Parallax"
-msgstr "Sina Pro প্যারালাক্স"
+msgstr "Sina Pro Paralaxe"
 
 #: sina-extension-for-elementor.php:115
 msgid "Sina Pro Section Particles"
-msgstr "Sina Pro বিভাগ কণাসমূহ"
+msgstr "Sina Pro Partículas de Seção"
 
 #: sina-extension-for-elementor.php:116
 msgid "Sina Pro Water Ripples"
-msgstr "Sina Pro পানির ঢেউ"
+msgstr "Sina Pro Ondulações na água"
 
 #: sina-extension-for-elementor.php:117
 msgid "Sina Pro Clips Animation"
-msgstr "Sina Pro ক্লিপ অ্যানিমেশন"
+msgstr "Sina Pro Animação de clipes"
 
 #: sina-extension-for-elementor.php:118
 msgid "Sina Pro Colors Animation"
-msgstr "Sina Pro রঙের অ্যানিমেশন"
+msgstr "Sina Pro Animação de Cores"
 
 #: sina-extension-for-elementor.php:119
 msgid "Sina Pro Conditional Publish"
-msgstr "Sina Pro শর্ত সাপেক্ষে প্রকাশ"
+msgstr "Sina Pro Publicação condicional"
 
 #: sina-extension-for-elementor.php:120
 msgid "Sina Pro Content Protection"
-msgstr "Sina Pro সামগ্রী সুরক্ষিত"
+msgstr "Sina Pro Proteção de Conteúdo"
 
 #: sina-extension-for-elementor.php:121
 msgid "Sina Pro Preloader"
-msgstr "Sina Pro প্রিলোডার"
+msgstr "Sina Pro Preloader"
 
 #: sina-extension-for-elementor.php:122
 msgid "Sina Pro Reading Progressbar"
-msgstr "Sina Pro পড়ার প্রগতিবার"
+msgstr "Sina Pro Lendo progresso"
 
 #: admin/sina-ext-rollback.php:56
 msgid "Sina Extension Rollback to Previous Version"
-msgstr "Sina Extension আগের সংস্করণে ফিরে যাচ্ছে"
+msgstr "Reversão da Sina Extension para a versão anterior"
 
 #: admin/sina-ext-rollback.php:72 admin/partials/page-content.php:59
 msgid "Rollback to Previous Version"
-msgstr "পূর্ববর্তী সংস্করণে ফেরা"
+msgstr "Reverter para a versão anterior"
 
 #: admin/sina-ext-settings.php:47
 msgid "Sina Extension Settings"
-msgstr "Sina Extension সেটিংস"
+msgstr "Configurações da Sina Extension"
 
 #: admin/sina-ext-settings.php:48 admin/partials/page-content.php:2
 #: admin/partials/page-content.php:146
@@ -319,37 +319,37 @@ msgstr ""
 
 #: admin/sina-ext-settings.php:79
 msgid "Google Map API Key"
-msgstr "গুগল ম্যাপের এপিআই চাবি"
+msgstr "Chave API Google Mapa"
 
 #: admin/sina-ext-settings.php:80
 msgid "MailChimp API Key"
-msgstr "মেলচিম্পের এপিআই চাবি"
+msgstr "Chave de API MailChimp"
 
 #: admin/sina-ext-settings.php:81
 msgid "MailChimp List Id"
-msgstr "মেলচিম্পের তালিকা Id"
+msgstr "ID da lista MailChimp"
 
 #: admin/sina-ext-settings.php:82
 msgid "Google Recaptcha Site Key"
-msgstr "গুগল রিক্যাপচার সাইটের চাবি"
+msgstr "Chave site Google Recaptcha"
 
 #: admin/sina-ext-settings.php:83
 msgid "Google Recaptcha Secret Key"
-msgstr "গুগল রিক্যাপচার গোপনীয় চাবি"
+msgstr "Chave secreta Google Recaptcha"
 
 #: admin/sina-ext-settings.php:84
 msgid "After Logout Redirect URL"
-msgstr "লগআউটের পরে পুনঃনির্দেশ URL"
+msgstr "URL redirecionamento após logout"
 
 #: admin/sina-ext-settings.php:89 admin/sina-ext-settings.php:140
 #: inc/sina-ext-library-readable.php:32 inc/sina-ext-library.php:1
 msgid "Sina Templates"
-msgstr "Sina টেম্পলেটগুলো"
+msgstr "Sina Modelos"
 
 #: inc/sina-ext-base.php:53
 #, php-format
 msgid "\"%1$s\" requires \"%2$s\" to be activate."
-msgstr "\"%1$s\" এর সক্রিয়করণের জন্য \"%2$s\" প্রয়োজন।"
+msgstr "\"%1$s\" requer \"%2$s\" para ser ativado."
 
 #. Name of the plugin
 #: inc/sina-ext-base.php:53 inc/sina-ext-base.php:63 inc/sina-ext-base.php:106
@@ -362,22 +362,22 @@ msgstr ""
 
 #: inc/sina-ext-base.php:55
 msgid "Activate Elementor"
-msgstr "Elementor সক্রিয় করুন"
+msgstr "Ativar Elementor"
 
 #: inc/sina-ext-base.php:63
 #, php-format
 msgid "\"%1$s\" requires \"%2$s\" to be install."
-msgstr "\"%1$s\" ইনস্টল করার জন্য \"%2$s\" প্রয়োজন।"
+msgstr "\"%1$s\" requer \"%2$s\" para ser instalado."
 
 #: inc/sina-ext-base.php:65
 msgid "Install Elementor"
-msgstr "Elementor ইনস্টল করুন"
+msgstr "Instalar Elementor"
 
 #. 1: Plugin name 2: PHP 3: Required PHP version
 #: inc/sina-ext-base.php:84 inc/sina-ext-base.php:105
 #, php-format
 msgid "\"%1$s\" requires \"%2$s\" version %3$s or greater."
-msgstr "\"%1$s\" এর জন্য \"%2$s\" সংস্করণ %3$s বা তারও বেশি প্রয়োজন।"
+msgstr "\"%1$s\" requer \"%2$s\" versão%3$s ou superior."
 
 #: inc/sina-ext-base.php:85
 msgid "Sina Extension Elementor"
@@ -389,63 +389,63 @@ msgstr ""
 
 #: inc/sina-ext-controls-extend.php:63
 msgid "Sina Morphing Animation"
-msgstr "Sina মরফিং অ্যানিমেশন"
+msgstr "Sina Morphing Animation"
 
 #: inc/sina-ext-controls-extend.php:72
 msgid "Sina Transform Effects"
-msgstr "Sina রূপান্তরের এফেক্টগুলো"
+msgstr "Sina Efeitos transformação"
 
 #: inc/sina-ext-controls-extend.php:75 widgets/basic/sina-transform.php:198
 msgid "Translate"
-msgstr "স্থানান্তর"
+msgstr "Traduzir"
 
 #: inc/sina-ext-controls-extend.php:76 inc/sina-ext-controls-extend.php:168
 #: inc/sina-ext-controls-extend.php:412 widgets/basic/sina-transform.php:199
 #: widgets/basic/sina-transform.php:298 widgets/basic/sina-transform.php:567
 msgid "Scale X"
-msgstr "স্কেল-X"
+msgstr "Escala X"
 
 #: inc/sina-ext-controls-extend.php:77 inc/sina-ext-controls-extend.php:191
 #: inc/sina-ext-controls-extend.php:435 widgets/basic/sina-transform.php:200
 #: widgets/basic/sina-transform.php:321 widgets/basic/sina-transform.php:590
 msgid "Scale Y"
-msgstr "স্কেল-Y"
+msgstr "Escala Y"
 
 #: inc/sina-ext-controls-extend.php:78 inc/sina-ext-controls-extend.php:214
 #: inc/sina-ext-controls-extend.php:458 widgets/basic/sina-transform.php:201
 #: widgets/basic/sina-transform.php:344 widgets/basic/sina-transform.php:613
 msgid "Scale Z"
-msgstr "স্কেল-Z"
+msgstr "Escala Z"
 
 #: inc/sina-ext-controls-extend.php:79 inc/sina-ext-controls-extend.php:237
 #: inc/sina-ext-controls-extend.php:481 widgets/basic/sina-transform.php:202
 #: widgets/basic/sina-transform.php:367 widgets/basic/sina-transform.php:636
 msgid "Rotate X"
-msgstr "অক্ষ-X ঘুরান"
+msgstr "Rotação X"
 
 #: inc/sina-ext-controls-extend.php:80 inc/sina-ext-controls-extend.php:260
 #: inc/sina-ext-controls-extend.php:504 widgets/basic/sina-transform.php:203
 #: widgets/basic/sina-transform.php:390 widgets/basic/sina-transform.php:659
 msgid "Rotate Y"
-msgstr "অক্ষ-Y ঘুরান"
+msgstr "Rotação Y"
 
 #: inc/sina-ext-controls-extend.php:81 inc/sina-ext-controls-extend.php:283
 #: inc/sina-ext-controls-extend.php:527 widgets/basic/sina-transform.php:204
 #: widgets/basic/sina-transform.php:413 widgets/basic/sina-transform.php:682
 msgid "Rotate Z"
-msgstr "অক্ষ-Z ঘুরান"
+msgstr "Rotação Z"
 
 #: inc/sina-ext-controls-extend.php:82 inc/sina-ext-controls-extend.php:306
 #: inc/sina-ext-controls-extend.php:550 widgets/basic/sina-transform.php:205
 #: widgets/basic/sina-transform.php:436 widgets/basic/sina-transform.php:705
 msgid "Skew X"
-msgstr "তির্যক-X"
+msgstr "Skew X"
 
 #: inc/sina-ext-controls-extend.php:83 inc/sina-ext-controls-extend.php:329
 #: inc/sina-ext-controls-extend.php:573 widgets/basic/sina-transform.php:206
 #: widgets/basic/sina-transform.php:459 widgets/basic/sina-transform.php:728
 msgid "Skew Y"
-msgstr "তির্যক-Y"
+msgstr "Skew Y"
 
 #: inc/sina-ext-controls-extend.php:84 inc/sina-ext-controls.php:50
 #: inc/sina-ext-controls.php:97 inc/sina-ext-controls.php:122
@@ -461,11 +461,11 @@ msgstr "তির্যক-Y"
 #: widgets/basic/sina-team.php:596 widgets/basic/sina-title.php:106
 #: widgets/basic/sina-transform.php:207 widgets/basic/sina-video.php:125
 msgid "None"
-msgstr "কোনটাই না"
+msgstr "Nenhum"
 
 #: inc/sina-ext-controls-extend.php:92 widgets/basic/sina-transform.php:222
 msgid "Perspective Size"
-msgstr "পরিপ্রেক্ষিতের আকার"
+msgstr "Tamanho da Perspectiva"
 
 #: inc/sina-ext-controls-extend.php:118 inc/sina-ext-controls.php:632
 #: inc/sina-ext-controls.php:896 inc/sina-ext-controls.php:1040
@@ -499,17 +499,17 @@ msgstr "পরিপ্রেক্ষিতের আকার"
 #: widgets/basic/sina-team.php:1069 widgets/basic/sina-transform.php:248
 #: widgets/basic/sina-video.php:285
 msgid "Normal"
-msgstr "সাধারণ"
+msgstr "Normal"
 
 #: inc/sina-ext-controls-extend.php:125 inc/sina-ext-controls-extend.php:369
 #: widgets/basic/sina-transform.php:255 widgets/basic/sina-transform.php:524
 msgid "Translate X"
-msgstr "স্থানান্তর-X"
+msgstr "Traduzir X"
 
 #: inc/sina-ext-controls-extend.php:144 inc/sina-ext-controls-extend.php:388
 #: widgets/basic/sina-transform.php:274 widgets/basic/sina-transform.php:543
 msgid "Translate Y"
-msgstr "স্থানান্তর-Y"
+msgstr "Traduzir Y"
 
 #: inc/sina-ext-controls-extend.php:362 inc/sina-ext-controls.php:692
 #: inc/sina-ext-controls.php:952 widgets/advanced/sina-blogpost.php:521
@@ -541,19 +541,19 @@ msgstr "স্থানান্তর-Y"
 #: widgets/basic/sina-team.php:1120 widgets/basic/sina-transform.php:517
 #: widgets/basic/sina-video.php:337
 msgid "Hover"
-msgstr "হোভার"
+msgstr "Hover"
 
 #: inc/sina-ext-controls-extend.php:603 widgets/basic/sina-google-map.php:272
 msgid "Transition Duration"
-msgstr "রূপান্তরের স্থায়িত্ব"
+msgstr "Duração da transição"
 
 #: inc/sina-ext-controls.php:27 inc/sina-ext-controls.php:78
 msgid "Background Hover Styles"
-msgstr "পটভূমির হোভার শৈলী"
+msgstr "Estilos hover fundo"
 
 #: inc/sina-ext-controls.php:35 inc/sina-ext-controls.php:86
 msgid "Hover Effects"
-msgstr "হোভার এফেক্টগুলো"
+msgstr "Efeitos de hover"
 
 #: inc/sina-ext-controls.php:38 inc/sina-ext-controls.php:89
 msgid "Door Vertical"
@@ -867,21 +867,21 @@ msgstr ""
 
 #: inc/sina-ext-controls.php:203
 msgid "Number of Posts"
-msgstr "পোস্টের সংখ্যা"
+msgstr "Número de posts"
 
 #: inc/sina-ext-controls.php:214 widgets/advanced/sina-facebook-feed.php:151
 #: widgets/advanced/sina-twitter-feed.php:164
 msgid "Number of Offset"
-msgstr "অফসেটের সংখ্যা"
+msgstr "Número de Offset"
 
 #: inc/sina-ext-controls.php:225
 msgid "Order by"
-msgstr "অর্ডারে"
+msgstr "Ordenar por"
 
 #: inc/sina-ext-controls.php:228 widgets/advanced/sina-posts-tab.php:155
 #: widgets/advanced/sina-posts-tab.php:907
 msgid "Date"
-msgstr "তারিখ"
+msgstr "Encontro"
 
 #: inc/sina-ext-controls.php:229 widgets/advanced/sina-banner-slider.php:138
 #: widgets/advanced/sina-banner-slider.php:544
@@ -910,23 +910,23 @@ msgstr "তারিখ"
 #: widgets/basic/sina-title.php:252 widgets/basic/sina-video.php:161
 #: widgets/basic/sina-video.php:192
 msgid "Title"
-msgstr "শিরোনাম"
+msgstr "Título"
 
 #: inc/sina-ext-controls.php:230
 msgid "Author"
-msgstr "লেখক"
+msgstr "Autor"
 
 #: inc/sina-ext-controls.php:231
 msgid "Modified"
-msgstr "সংশোধিত"
+msgstr "Modificado"
 
 #: inc/sina-ext-controls.php:232
 msgid "Comments"
-msgstr "মন্তব্যগুলো"
+msgstr "Comentários"
 
 #: inc/sina-ext-controls.php:240
 msgid "Sort"
-msgstr "সাজানো"
+msgstr "Ordenar"
 
 #: inc/sina-ext-controls.php:243
 msgid "ASC"
@@ -938,7 +938,7 @@ msgstr ""
 
 #: inc/sina-ext-controls.php:255
 msgid "Autoplay"
-msgstr "স্বয়ংক্রিয় চালু"
+msgstr "Reprodução auto"
 
 #: inc/sina-ext-controls.php:257 inc/sina-ext-controls.php:267
 #: inc/sina-ext-controls.php:277 inc/sina-ext-controls.php:287
@@ -949,7 +949,7 @@ msgstr "স্বয়ংক্রিয় চালু"
 #: widgets/basic/sina-image-differ.php:213
 #: widgets/basic/sina-image-differ.php:222
 msgid "On"
-msgstr "চালু"
+msgstr "Em"
 
 #: inc/sina-ext-controls.php:258 inc/sina-ext-controls.php:268
 #: inc/sina-ext-controls.php:278 inc/sina-ext-controls.php:288
@@ -960,23 +960,23 @@ msgstr "চালু"
 #: widgets/basic/sina-image-differ.php:214
 #: widgets/basic/sina-image-differ.php:223
 msgid "Off"
-msgstr "বন্ধ"
+msgstr "Fora"
 
 #: inc/sina-ext-controls.php:265
 msgid "Pause on Hover"
-msgstr "হোভারে বিরতি"
+msgstr "Pausar ao hover"
 
 #: inc/sina-ext-controls.php:275
 msgid "Mouse Drag"
-msgstr "মাউসে টানা"
+msgstr "Arrastar do mouse"
 
 #: inc/sina-ext-controls.php:285
 msgid "Touch Drag"
-msgstr "স্পর্শে টানা"
+msgstr "Toque Arraste"
 
 #: inc/sina-ext-controls.php:295
 msgid "Infinity Loop"
-msgstr "ইনফিনিটি লুপ"
+msgstr "Infinity Loop"
 
 #: inc/sina-ext-controls.php:305 widgets/advanced/sina-banner-slider.php:301
 #: widgets/advanced/sina-blogpost.php:771
@@ -1024,34 +1024,34 @@ msgstr "ইনফিনিটি লুপ"
 #: widgets/basic/sina-user-counter.php:176
 #: widgets/basic/sina-visit-counter.php:175
 msgid "Center"
-msgstr "কেন্দ্র"
+msgstr "Centro"
 
 #: inc/sina-ext-controls.php:319
 msgid "Dots"
-msgstr "বিন্দুগুলো"
+msgstr "Pontos"
 
 #: inc/sina-ext-controls.php:321 inc/sina-ext-controls.php:331
 #: widgets/advanced/sina-countdown.php:312
 #: widgets/advanced/sina-posts-tab.php:157
 #: widgets/advanced/sina-posts-tab.php:166 widgets/basic/sina-fancytext.php:291
 msgid "Show"
-msgstr "দেখান"
+msgstr "Mostrar"
 
 #: inc/sina-ext-controls.php:322 inc/sina-ext-controls.php:332
 #: widgets/advanced/sina-countdown.php:313
 #: widgets/advanced/sina-posts-tab.php:158
 #: widgets/advanced/sina-posts-tab.php:167 widgets/basic/sina-fancytext.php:292
 msgid "Hide"
-msgstr "লুকান"
+msgstr "Ocultar"
 
 #: inc/sina-ext-controls.php:329 inc/sina-ext-controls.php:619
 msgid "Navigation"
-msgstr "নেভিগেশন"
+msgstr "Navegação"
 
 #: inc/sina-ext-controls.php:341 widgets/advanced/sina-modal-box.php:125
 #: widgets/basic/sina-fancytext.php:253
 msgid "Delay"
-msgstr "বিলম্ব"
+msgstr "Demora"
 
 #: inc/sina-ext-controls.php:352
 msgid "Slide Animation In"
@@ -1063,23 +1063,23 @@ msgstr ""
 
 #: inc/sina-ext-controls.php:378 widgets/advanced/sina-banner-slider.php:449
 msgid "Speed"
-msgstr "গতি"
+msgstr "Velocidade"
 
 #: inc/sina-ext-controls.php:397 widgets/basic/sina-dynamic-button.php:169
 msgid "Label"
-msgstr "লেবেল"
+msgstr "Rótulo"
 
 #: inc/sina-ext-controls.php:399 widgets/basic/sina-table.php:133
 msgid "Enter Text"
-msgstr "লিখা লিখুন"
+msgstr "Digite o texto"
 
 #: inc/sina-ext-controls.php:407
 msgid "Tooltip text"
-msgstr "টুলটিপের লিখা"
+msgstr "Texto de tooltip"
 
 #: inc/sina-ext-controls.php:409
 msgid "Enter Tooltip Text"
-msgstr "টুলটিপের লিখা লিখুন"
+msgstr "Insira texto tooltip"
 
 #: inc/sina-ext-controls.php:416 widgets/advanced/sina-blogpost.php:1147
 #: widgets/advanced/sina-posts-carousel.php:1334
@@ -1094,7 +1094,7 @@ msgstr "টুলটিপের লিখা লিখুন"
 #: widgets/basic/sina-table.php:304 widgets/basic/sina-team.php:198
 #: widgets/basic/sina-video.php:175
 msgid "Icon"
-msgstr "আইকন"
+msgstr "Ícone"
 
 #: inc/sina-ext-controls.php:424 widgets/advanced/sina-posts-tab.php:269
 #: widgets/basic/sina-accordion.php:147
@@ -1102,7 +1102,7 @@ msgstr "আইকন"
 #: widgets/basic/sina-pricing.php:1269 widgets/basic/sina-progressbar.php:144
 #: widgets/basic/sina-table.php:151 widgets/basic/sina-table.php:315
 msgid "Icon Position"
-msgstr "আইকনের অবস্থান"
+msgstr "Posição do ícone"
 
 #: inc/sina-ext-controls.php:427 widgets/advanced/sina-banner-slider.php:297
 #: widgets/advanced/sina-blogpost.php:767
@@ -1160,7 +1160,7 @@ msgstr "আইকনের অবস্থান"
 #: widgets/basic/sina-title.php:678 widgets/basic/sina-user-counter.php:172
 #: widgets/basic/sina-visit-counter.php:171
 msgid "Left"
-msgstr "বামে"
+msgstr "Esquerda"
 
 #: inc/sina-ext-controls.php:428 widgets/advanced/sina-banner-slider.php:305
 #: widgets/advanced/sina-blogpost.php:775
@@ -1220,18 +1220,18 @@ msgstr "বামে"
 #: widgets/basic/sina-title.php:686 widgets/basic/sina-user-counter.php:180
 #: widgets/basic/sina-visit-counter.php:179
 msgid "Right"
-msgstr "ডানে"
+msgstr "Direita"
 
 #: inc/sina-ext-controls.php:439 widgets/advanced/sina-posts-tab.php:282
 #: widgets/basic/sina-dynamic-button.php:218
 #: widgets/basic/sina-pricing.php:1281 widgets/basic/sina-progressbar.php:159
 #: widgets/basic/sina-table.php:630 widgets/basic/sina-table.php:855
 msgid "Icon Spacing"
-msgstr "আইকনের দূরত্ব"
+msgstr "Espaçamento de ícone"
 
 #: inc/sina-ext-controls.php:459 widgets/basic/sina-dynamic-button.php:100
 msgid "Icon Effects"
-msgstr "আইকনের এফেক্টগুলো"
+msgstr "Efeitos de ícone"
 
 #: inc/sina-ext-controls.php:463 widgets/basic/sina-dynamic-button.php:104
 msgid "Icon Right Move"
@@ -1270,7 +1270,7 @@ msgstr ""
 #: widgets/basic/sina-flip-box.php:272 widgets/basic/sina-social-icons.php:114
 #: widgets/basic/sina-team.php:207
 msgid "Link"
-msgstr "লিঙ্ক"
+msgstr "Ligação"
 
 #: inc/sina-ext-controls.php:515 inc/sina-ext-controls.php:902
 #: inc/sina-ext-controls.php:958 inc/sina-ext-controls.php:1046
@@ -1367,7 +1367,7 @@ msgstr "লিঙ্ক"
 #: widgets/basic/sina-visit-counter.php:208
 #: widgets/basic/sina-visit-counter.php:267
 msgid "Text Color"
-msgstr "লিখার রঙ"
+msgstr "Cor do texto"
 
 #: inc/sina-ext-controls.php:526 widgets/advanced/sina-blogpost.php:602
 #: widgets/advanced/sina-blogpost.php:1192
@@ -1375,11 +1375,11 @@ msgstr "লিখার রঙ"
 #: widgets/advanced/sina-posts-carousel.php:1379
 #: widgets/basic/sina-table.php:1209 widgets/basic/sina-table.php:1264
 msgid "Background Color"
-msgstr "পটভূমির রঙ"
+msgstr "Cor de fundo"
 
 #: inc/sina-ext-controls.php:541
 msgid "Max Width"
-msgstr "সর্বোচ্চ প্রস্থ"
+msgstr "Largura máxima"
 
 #: inc/sina-ext-controls.php:564 inc/sina-ext-controls.php:1094
 #: inc/sina-ext-controls.php:1152 inc/sina-ext-controls.php:1195
@@ -1442,7 +1442,7 @@ msgstr "সর্বোচ্চ প্রস্থ"
 #: widgets/basic/sina-team.php:797 widgets/basic/sina-team.php:1176
 #: widgets/basic/sina-title.php:699 widgets/basic/sina-video.php:487
 msgid "Radius"
-msgstr "ব্যাস"
+msgstr "Raio"
 
 #: inc/sina-ext-controls.php:582 widgets/advanced/sina-banner-slider.php:504
 #: widgets/advanced/sina-banner-slider.php:850
@@ -1509,16 +1509,16 @@ msgstr "ব্যাস"
 #: widgets/basic/sina-team.php:532 widgets/basic/sina-team.php:620
 #: widgets/basic/sina-team.php:731 widgets/basic/sina-team.php:808
 msgid "Padding"
-msgstr "প্যাডিং"
+msgstr "Preenchimento"
 
 #: inc/sina-ext-controls.php:603
 msgid "Dots Color"
-msgstr "বিন্দুগুলোর রঙ"
+msgstr "Cor dos pontos"
 
 #: inc/sina-ext-controls.php:642 inc/sina-ext-controls.php:702
 #: widgets/basic/sina-image-differ.php:279
 msgid "Arrow Color"
-msgstr "তীরের রঙ"
+msgstr "Cor da seta"
 
 #: inc/sina-ext-controls.php:733 inc/sina-ext-controls.php:990
 #: inc/sina-ext-controls.php:1352 widgets/advanced/sina-blogpost.php:536
@@ -1548,36 +1548,36 @@ msgstr "তীরের রঙ"
 #: widgets/basic/sina-table.php:1418 widgets/basic/sina-team.php:304
 #: widgets/basic/sina-team.php:1154 widgets/basic/sina-video.php:379
 msgid "Border Color"
-msgstr "সীমান্তের রঙ"
+msgstr "Cor da borda"
 
 #: inc/sina-ext-controls.php:751
 msgid "Font Family"
-msgstr "অক্ষরের পরিবার"
+msgstr "Família de fontes"
 
 #: inc/sina-ext-controls.php:766 widgets/basic/sina-social-icons.php:290
 #: widgets/basic/sina-team.php:1021 widgets/basic/sina-video.php:394
 msgid "Font Size"
-msgstr "অক্ষরের আকার"
+msgstr "Tamanho da fonte"
 
 #: inc/sina-ext-controls.php:779
 msgid "Nav Top (%)"
-msgstr "উপর থেকে ন্যাভ (%)"
+msgstr "Nav cima (%)"
 
 #: inc/sina-ext-controls.php:796
 msgid "Nav Next Radius"
-msgstr "পরবর্তী ন্যাভের ব্যাস"
+msgstr "Próximo raio de nav"
 
 #: inc/sina-ext-controls.php:817
 msgid "Nav Prev Radius"
-msgstr "পূর্ববর্তী ন্যাভের ব্যাস"
+msgstr "Nav raio anterior"
 
 #: inc/sina-ext-controls.php:838
 msgid "Nav Padding"
-msgstr "ন্যাভের প্যাডিং"
+msgstr "Preenchimento nav"
 
 #: inc/sina-ext-controls.php:1107 widgets/basic/sina-accordion.php:517
 msgid "Active"
-msgstr "সক্রিয়"
+msgstr "Active"
 
 #: inc/sina-ext-controls.php:1176 inc/controls/gradient-text.php:437
 #: widgets/advanced/sina-banner-slider.php:812
@@ -1601,7 +1601,7 @@ msgstr "সক্রিয়"
 #: widgets/basic/sina-team.php:664 widgets/basic/sina-team.php:764
 #: widgets/basic/sina-title.php:636 widgets/basic/sina-video.php:414
 msgid "Width"
-msgstr "প্রস্থ"
+msgstr "Largura"
 
 #: inc/sina-ext-controls.php:1206 widgets/advanced/sina-blogpost.php:745
 #: widgets/advanced/sina-blogpost.php:1097
@@ -1659,11 +1659,11 @@ msgstr "প্রস্থ"
 #: widgets/basic/sina-user-counter.php:311 widgets/basic/sina-video.php:249
 #: widgets/basic/sina-visit-counter.php:310
 msgid "Margin"
-msgstr "প্রান্ত"
+msgstr "Margem"
 
 #: inc/sina-ext-controls.php:1220
 msgid "Placeholder Color"
-msgstr "স্থানধারীর রঙ"
+msgstr "Texto espaço reservado cor"
 
 #: inc/sina-ext-controls.php:1287 inc/sina-ext-controls.php:1342
 #: widgets/advanced/sina-blogpost.php:1632
@@ -1676,123 +1676,123 @@ msgstr "স্থানধারীর রঙ"
 #: widgets/basic/sina-team.php:294 widgets/basic/sina-video.php:293
 #: widgets/basic/sina-video.php:345
 msgid "Background"
-msgstr "পটভূমি"
+msgstr "fundo"
 
 #: inc/sina-ext-controls.php:1325
 msgid "Focus"
-msgstr "ফোকাস"
+msgstr "Foco"
 
 #: inc/sina-ext-func.php:92
 msgid "Sina Basic Widgets"
-msgstr "Sina সাধারণ উইজেট গুলো"
+msgstr "Sina Widgets básicos"
 
 #: inc/sina-ext-func.php:98
 msgid "Sina Advanced Widgets"
-msgstr "Sina উন্নত উইজেট গুলো"
+msgstr "Sina Widgets Avançados"
 
 #: inc/sina-ext-hooks.php:26
 msgid "First name too short! Must be contain 3-32 characters."
-msgstr "প্রথম নামটি খুব ছোট! ৩-৩২ অক্ষরে থাকা আবশ্যক।"
+msgstr "Nome muito curto! Deve conter de 3 a 32 caracteres."
 
 #: inc/sina-ext-hooks.php:28
 msgid "First name too long! Must be contain 3-32 characters."
-msgstr "প্রথম নামটি খুব দীর্ঘ! ৩-৩২ অক্ষরে থাকা আবশ্যক।"
+msgstr "Nome muito longo! Deve conter de 3 a 32 caracteres."
 
 #: inc/sina-ext-hooks.php:32
 msgid "Special character(s) not allowed in your first name!"
-msgstr "আপনার প্রথম নামে বিশেষ অক্ষর (গুলি) অনুমোদিত নয়!"
+msgstr "Caracteres especiais não permitidos em seu primeiro nome!"
 
 #: inc/sina-ext-hooks.php:39
 msgid "Last name too short! Must be contain 3-32 characters."
-msgstr "শেষ নামটি খুব ছোট! ৩-৩২ অক্ষরে থাকা আবশ্যক।"
+msgstr "Sobrenome muito curto! Deve conter de 3 a 32 caracteres."
 
 #: inc/sina-ext-hooks.php:41
 msgid "Last name too long! Must be contain 3-32 characters."
-msgstr "শেষ নামটি খুব দীর্ঘ! ৩-৩২ অক্ষরে থাকা আবশ্যক।"
+msgstr "Sobrenome muito longo! Deve conter de 3 a 32 caracteres."
 
 #: inc/sina-ext-hooks.php:45
 msgid "Special character(s) not allowed in your last name!"
-msgstr "আপনার শেষ নামে বিশেষ অক্ষর (গুলি) অনুমোদিত নয়!"
+msgstr "Caracteres especiais não permitidos em seu sobrenome!"
 
 #: inc/sina-ext-hooks.php:51 inc/sina-ext-hooks.php:133
 msgid "Invalid email!"
-msgstr "অবৈধ ইমেল!"
+msgstr "E-mail inválido!"
 
 #: inc/sina-ext-hooks.php:61
 msgid "Invalid phone number!"
-msgstr "অবৈধ ফোন নম্বর!"
+msgstr "Número de fone inválido!"
 
 #: inc/sina-ext-hooks.php:91
 msgid "Internal Error!"
-msgstr "অভ্যন্তরীণ ত্রুটি!"
+msgstr "Erro interno!"
 
 #: inc/sina-ext-hooks.php:120
 msgid "Name can't be empty!"
-msgstr "নাম খালি থাকতে পারবে না!"
+msgstr "Nome não pode estar vazio!"
 
 #: inc/sina-ext-hooks.php:122
 msgid "Name too short! Must be contain 3-32 characters."
-msgstr "নামটি খুব ছোট! ৩-৩২ অক্ষরে থাকা আবশ্যক।"
+msgstr "Nome muito curto! Deve conter de 3 a 32 caracteres."
 
 #: inc/sina-ext-hooks.php:124
 msgid "Name too long! Must be contain 3-32 characters."
-msgstr "নামটি খুব দীর্ঘ! ৩-৩২ অক্ষরে থাকা আবশ্যক।"
+msgstr "Nome muito longo! Deve conter de 3 a 32 caracteres."
 
 #: inc/sina-ext-hooks.php:128
 msgid "Special character(s) not allowed in your name!"
-msgstr "আপনার নামে বিশেষ অক্ষর (গুলি) অনুমোদিত নয়!"
+msgstr "Caracteres especiais não permitidos em seu nome!"
 
 #: inc/sina-ext-hooks.php:139
 msgid "Subject can't be empty!"
-msgstr "বিষয় খালি থাকতে পারবে না!"
+msgstr "Sujeito não pode estar vazio!"
 
 #: inc/sina-ext-hooks.php:141
 msgid "Subject too short! Must be contain 3-200 characters."
-msgstr "বিষয় খুব ছোট! ৩-২০০ অক্ষরে থাকা আবশ্যক।"
+msgstr "Very short subject! It must contain 3 to 200 characters."
 
 #: inc/sina-ext-hooks.php:143
 msgid "Subject too long! Must be contain 3-200 characters."
-msgstr "বিষয় খুব দীর্ঘ! ৩-২০০ অক্ষরে থাকা আবশ্যক।"
+msgstr "Sujeito muito longo! Deve conter de 3 a 200 caracteres."
 
 #: inc/sina-ext-hooks.php:147
 msgid "Invalid subject!"
-msgstr "অবৈধ বিষয়!"
+msgstr "Assunto inválido!"
 
 #: inc/sina-ext-hooks.php:153
 msgid "Message can't be empty!"
-msgstr "বার্তা খালি থাকতে পারবে না!"
+msgstr "Mensagem não pode estar vazia!"
 
 #: inc/sina-ext-hooks.php:155
 msgid "Message too short! Must be contain 3-2000 characters."
-msgstr "বার্তাটি খুব ছোট! ৩-২০০০ অক্ষরে থাকা আবশ্যক।"
+msgstr "Mensagem muito curta! Deve conter de 3 a 2.000 caracteres."
 
 #: inc/sina-ext-hooks.php:157
 msgid "Message too long! Must be contain 3-2000 characters."
-msgstr "বার্তাটি খুব দীর্ঘ! ৩-২০০০ অক্ষরে থাকা আবশ্যক।"
+msgstr "Mensagem muito longa! Deve conter de 3 a 2.000 caracteres."
 
 #: inc/sina-ext-hooks.php:161
 msgid "Invalid message!"
-msgstr "অবৈধ বার্তা!"
+msgstr "Mensagem inválida!"
 
 #: inc/sina-ext-hooks.php:171
 msgid "Invalid reCAPTCHA!"
-msgstr "অবৈধ রেক্যাপচা!"
+msgstr "reCAPTCHA inválido!"
 
 #: inc/sina-ext-hooks.php:179
 msgid "Name: "
-msgstr "নামঃ"
+msgstr "Nome:"
 
 #: inc/sina-ext-hooks.php:209
 msgid "Username or Email can't be empty!"
-msgstr "ব্যবহারকারীর নাম বা ইমেল খালি থাকতে পারবে না!"
+msgstr "Nome de usuário ou e-mail não pode estar vazio!"
 
 #: inc/sina-ext-hooks.php:214
 msgid "Password can't be empty!"
-msgstr "পাসওয়ার্ড খালি থাকতে পারবে না!"
+msgstr "Senha não pode estar em branco!"
 
 #: inc/sina-ext-hooks.php:224
 msgid "Username or Email and password don't match!"
-msgstr "ব্যবহারকারীর নাম বা ইমেল এবং পাসওয়ার্ড মিলে নি!"
+msgstr "Nome de usuário ou e-mail e senha não correspondem!"
 
 #: widgets/starter-widget.php:296
 msgid "Sina "
@@ -1800,102 +1800,102 @@ msgstr ""
 
 #: widgets/starter-widget.php:367
 msgid " Content"
-msgstr "সামগ্রী"
+msgstr "Conteúdo"
 
 #: admin/partials/page-content.php:20 admin/partials/page-content.php:134
 msgid "Documentation"
-msgstr "নিয়মাবলি"
+msgstr "Documentação"
 
 #: admin/partials/page-content.php:27 admin/partials/page-content.php:33
 msgid "Settings"
-msgstr "সেটিংস"
+msgstr "Configurações"
 
 #: admin/partials/page-content.php:28 admin/partials/page-content.php:79
 msgid "Widgets"
-msgstr "উইজেট গুলো"
+msgstr "Widgets"
 
 #: admin/partials/page-content.php:29 admin/partials/page-content.php:107
 msgid "Extenders"
-msgstr "প্রসারক গুলো"
+msgstr "Extensores"
 
 #: admin/partials/page-content.php:35
 msgid "Set your expected options."
-msgstr "আপনার প্রত্যাশিত বিকল্পগুলি সেট করুন।"
+msgstr "Defina suas opções esperadas."
 
 #: admin/partials/page-content.php:40
 msgid "API Settings"
-msgstr "এপিআই সেটিংস"
+msgstr "Configurações de API"
 
 #: admin/partials/page-content.php:48
 msgid "Template Settings"
-msgstr "টেমপ্লেট সেটিংস"
+msgstr "Configurações de modelo"
 
 #: admin/partials/page-content.php:50
 msgid "You can use <strong><i>SINA TEMPLATES</i></strong> on your site. Enjoy!"
 msgstr ""
-"আপনার সাইটে <strong><i>SINA TEMPLATES</i></strong> ব্যবহার করতে পারেন। উপভোগ "
-"করুন!"
+"Você pode usar <strong><i>SINA TEMPLATES</i></strong> em seu site. "
+"Aproveitar!"
 
 #: admin/partials/page-content.php:61
 msgid ""
 "Experiencing an issue with this version? You can rollback the previous "
 "version."
-msgstr "এই সংস্করণটিতে কোনও সমস্যা হচ্ছে? আপনি আগের সংস্করণে ফিরে যেতে পারেন।"
+msgstr ""
+"Está tendo problemas com esta versão? Você pode reverter a versão anterior."
 
 #: admin/partials/page-content.php:67
 #, php-format
 msgid "Reinstall v%s"
-msgstr "v%s পুনরায় ইনস্টল"
+msgstr "Reinstalar v%s"
 
 #: admin/partials/page-content.php:73
 msgid "Warning: Please backup your database before making the rollback."
-msgstr "সতর্কতা: পূর্বের সংস্করণে ফেরার আগে আপনার ডাটাবেসটির ব্যাকআপ রাখুন।"
+msgstr "Aviso: Faça backup de seu banco de dados antes de fazer o rollback."
 
 #: admin/partials/page-content.php:81
 msgid "You can disable widget(s) if you would like to not using on your site."
-msgstr "আপনি যদি সাইটে ব্যবহার না করতে চান তবে উইজেট (গুলি) অক্ষম করতে পারেন।"
+msgstr "Você pode desativar os widgets se desejar não usá-los no seu site."
 
 #: admin/partials/page-content.php:109
 msgid ""
 "You can disable extender(s) if you would like to not using on your site."
-msgstr ""
-"আপনি যদি সাইটে ব্যবহার না করতে চান তবে এক্সটেন্ডার (গুলি) অক্ষম করতে পারেন।"
+msgstr "Você pode desativar os extensores se não quiser usá-los em seu site."
 
 #: admin/partials/page-content.php:120
 msgid "Extender"
-msgstr "প্রসারক"
+msgstr "Extensor"
 
 #: admin/partials/page-content.php:141
 msgid "Found any issue or need help?"
-msgstr "কোন সমস্যা পাওয়া গেছে বা সাহায্যের প্রয়োজন?"
+msgstr "Encontrou algum problema ou precisa de ajuda?"
 
 #: admin/partials/page-content.php:142
 msgid "Open Ticket"
-msgstr "টিকেট খুলুন"
+msgstr "Bilhete aberto"
 
 #: admin/partials/page-content.php:146
 msgid "Did you like"
-msgstr "আপনি কি পছন্দ করেছেন"
+msgstr "Você gostou"
 
 #: admin/partials/page-content.php:146
 msgid "Plugin?"
-msgstr "প্লাগিন?"
+msgstr "Plugar?"
 
 #: admin/partials/page-content.php:146
 msgid "Leave a Review"
-msgstr "একটি পর্যালোচনা দিন"
+msgstr "Dê uma Avaliação"
 
 #: inc/controls/gradient-text.php:51
 msgid "Color Type"
-msgstr "রঙের ধরণ"
+msgstr "Tipo de Cor"
 
 #: inc/controls/gradient-text.php:57
 msgid "Classic"
-msgstr "ক্লাসিক"
+msgstr "Clássico"
 
 #: inc/controls/gradient-text.php:61
 msgid "Gradient"
-msgstr "গ্রেডিয়েন্ট"
+msgstr "Gradiente"
 
 #: inc/controls/gradient-text.php:65 inc/controls/gradient-text.php:189
 #: widgets/advanced/sina-review-carousel.php:256
@@ -1906,7 +1906,7 @@ msgstr "গ্রেডিয়েন্ট"
 #: widgets/basic/sina-flip-box.php:228 widgets/basic/sina-pricing.php:219
 #: widgets/basic/sina-pricing.php:1142 widgets/basic/sina-team.php:646
 msgid "Image"
-msgstr "ছবি"
+msgstr "Imagem"
 
 #: inc/controls/gradient-text.php:73 widgets/advanced/sina-blogpost.php:589
 #: widgets/advanced/sina-blogpost.php:707
@@ -1929,19 +1929,19 @@ msgstr "ছবি"
 #: widgets/basic/sina-table.php:1198 widgets/basic/sina-table.php:1471
 #: widgets/basic/sina-title.php:548
 msgid "Color"
-msgstr "রঙ"
+msgstr "Cor"
 
 #: inc/controls/gradient-text.php:85 inc/controls/gradient-text.php:111
 msgid "Location (%)"
-msgstr "জায়গা (%)"
+msgstr "Localização (%)"
 
 #: inc/controls/gradient-text.php:100
 msgid "Second Color"
-msgstr "দ্বিতীয় রঙ"
+msgstr "Segunda cor"
 
 #: inc/controls/gradient-text.php:126
 msgid "Type"
-msgstr "ধরণ"
+msgstr "Tipo"
 
 #: inc/controls/gradient-text.php:129
 msgid "Linear"
@@ -1949,11 +1949,11 @@ msgstr ""
 
 #: inc/controls/gradient-text.php:130
 msgid "Radial"
-msgstr "রশ্মীয়"
+msgstr "Radial"
 
 #: inc/controls/gradient-text.php:141
 msgid "Angle (deg)"
-msgstr "কোণ (ডিগ্রি)"
+msgstr "Ângulo (graus)"
 
 #: inc/controls/gradient-text.php:164 inc/controls/gradient-text.php:205
 #: widgets/advanced/sina-blogpost.php:1135
@@ -1965,54 +1965,54 @@ msgstr "কোণ (ডিগ্রি)"
 #: widgets/basic/sina-piechart.php:295 widgets/basic/sina-team.php:157
 #: widgets/basic/sina-team.php:903
 msgid "Position"
-msgstr "অবস্থান"
+msgstr "Posição"
 
 #: inc/controls/gradient-text.php:167 inc/controls/gradient-text.php:215
 msgid "Center Center"
-msgstr "কেন্দ্রের কেন্দ্রে"
+msgstr "Centro centro"
 
 #: inc/controls/gradient-text.php:168 inc/controls/gradient-text.php:214
 msgid "Center Left"
-msgstr "কেন্দ্রের বামে"
+msgstr "Centro esquerdo"
 
 #: inc/controls/gradient-text.php:169 inc/controls/gradient-text.php:216
 msgid "Center Right"
-msgstr "কেন্দ্রের ডানে"
+msgstr "Centro direita"
 
 #: inc/controls/gradient-text.php:170 inc/controls/gradient-text.php:212
 msgid "Top Center"
-msgstr "উপরের কেন্দ্রে"
+msgstr "Centro cima"
 
 #: inc/controls/gradient-text.php:171 inc/controls/gradient-text.php:211
 msgid "Top Left"
-msgstr "উপরের বামে"
+msgstr "Cima esquerda"
 
 #: inc/controls/gradient-text.php:172 inc/controls/gradient-text.php:213
 msgid "Top Right"
-msgstr "উপরের ডানে"
+msgstr "Cima direito"
 
 #: inc/controls/gradient-text.php:173 inc/controls/gradient-text.php:218
 msgid "Bottom Center"
-msgstr "নীচের কেন্দ্রে"
+msgstr "Centro Inferior"
 
 #: inc/controls/gradient-text.php:174 inc/controls/gradient-text.php:217
 msgid "Bottom Left"
-msgstr "নীচের বামে"
+msgstr "Inferior esquerdo"
 
 #: inc/controls/gradient-text.php:175 inc/controls/gradient-text.php:219
 msgid "Bottom Right"
-msgstr "নীচের ডানে"
+msgstr "Inferior direito"
 
 #: inc/controls/gradient-text.php:210 inc/controls/gradient-text.php:369
 #: inc/controls/gradient-text.php:400 inc/controls/gradient-text.php:421
 #: widgets/advanced/sina-blogpost.php:126
 msgid "Default"
-msgstr "ডিফল্ট"
+msgstr "Padrão"
 
 #: inc/controls/gradient-text.php:220 inc/controls/gradient-text.php:425
 #: widgets/advanced/sina-blogpost.php:127
 msgid "Custom"
-msgstr "কাস্টম"
+msgstr "Personalizados"
 
 #: inc/controls/gradient-text.php:233
 msgid "X Position"
@@ -2024,35 +2024,35 @@ msgstr ""
 
 #: inc/controls/gradient-text.php:365
 msgid "Attachment"
-msgstr "সংযুক্তি"
+msgstr "Anexo"
 
 #: inc/controls/gradient-text.php:370
 msgid "Scroll"
-msgstr "স্ক্রোল"
+msgstr "Rolagem"
 
 #: inc/controls/gradient-text.php:371
 msgid "Fixed"
-msgstr "স্থির"
+msgstr "Fixo"
 
 #: inc/controls/gradient-text.php:385
 msgid "Note: Attachment Fixed works only on desktop."
-msgstr "দ্রষ্টব্য: সংযুক্তি ফিক্সড কেবলমাত্র ডেস্কটপে কাজ করবে।"
+msgstr "Nota: Attachment Fixed funciona apenas no desktop."
 
 #: inc/controls/gradient-text.php:395 inc/controls/gradient-text.php:402
 msgid "Repeat"
-msgstr "পুনরাবৃত্তি"
+msgstr "Repetir"
 
 #: inc/controls/gradient-text.php:401
 msgid "No-repeat"
-msgstr "অপুনরাবৃত্তি"
+msgstr "Não repetir"
 
 #: inc/controls/gradient-text.php:403
 msgid "Repeat-x"
-msgstr "পুনরাবৃত্তি-X"
+msgstr "Repetir-X"
 
 #: inc/controls/gradient-text.php:404
 msgid "Repeat-y"
-msgstr "পুনরাবৃত্তি-Y"
+msgstr "Repetir-Y"
 
 #: inc/controls/gradient-text.php:416 widgets/advanced/sina-blogpost.php:1441
 #: widgets/advanced/sina-portfolio.php:227
@@ -2064,34 +2064,34 @@ msgstr "পুনরাবৃত্তি-Y"
 #: widgets/basic/sina-flip-box.php:665 widgets/basic/sina-flip-box.php:686
 #: widgets/basic/sina-piechart.php:180
 msgid "Size"
-msgstr "আকার"
+msgstr "Tamanho"
 
 #: inc/controls/gradient-text.php:422
 msgid "Auto"
-msgstr "স্বয়ংক্রিয়"
+msgstr "Auto"
 
 #: inc/controls/gradient-text.php:423
 msgid "Cover"
-msgstr "আবরণ"
+msgstr "Cobrir"
 
 #: inc/controls/gradient-text.php:424
 msgid "Contain"
-msgstr "ধারণ"
+msgstr "Conter"
 
 #: inc/controls/icon.php:3026 inc/controls/icon.php:3027
 msgid "Select Icon"
-msgstr "আইকন নির্বাচন করুন"
+msgstr "Selecione ícone"
 
 #: widgets/advanced/sina-banner-slider.php:115
 msgid "Slides"
-msgstr "স্লাইডগুলো"
+msgstr "Slides"
 
 #: widgets/advanced/sina-banner-slider.php:125
 #: widgets/advanced/sina-portfolio.php:214
 #: widgets/advanced/sina-review-carousel.php:124
 #: widgets/basic/sina-team.php:182 widgets/basic/sina-transform.php:134
 msgid "Choose Image"
-msgstr "ছবি চয়ন করুন"
+msgstr "Escolha imagem"
 
 #: widgets/advanced/sina-banner-slider.php:141
 #: widgets/advanced/sina-banner-slider.php:189
@@ -2116,7 +2116,7 @@ msgstr "ছবি চয়ন করুন"
 #: widgets/basic/sina-visit-counter.php:121
 #: widgets/basic/sina-visit-counter.php:135
 msgid "You can use HTML."
-msgstr "আপনি HTML ব্যবহার করতে পারেন।"
+msgstr "Você pode usar HTML."
 
 #: widgets/advanced/sina-banner-slider.php:151
 #: widgets/advanced/sina-banner-slider.php:617
@@ -2124,17 +2124,17 @@ msgstr "আপনি HTML ব্যবহার করতে পারেন।"
 #: widgets/advanced/sina-particle-layer.php:661
 #: widgets/basic/sina-title.php:367
 msgid "Title Span"
-msgstr "শিরোনামের ভিতরের লিখা"
+msgstr "Título Span"
 
 #: widgets/advanced/sina-banner-slider.php:154
 #: widgets/advanced/sina-particle-layer.php:156
 msgid "Enter Title Span"
-msgstr "শিরোনামের ভিতরে ব্যবহারে কিছু লিখুন"
+msgstr "Insira span título"
 
 #: widgets/advanced/sina-banner-slider.php:155
 #: widgets/advanced/sina-particle-layer.php:157
 msgid "You can use SPAN for multi-color title."
-msgstr "আপনি বহু রঙের শিরোনামের জন্য SPAN ব্যবহার করতে পারেন।"
+msgstr "Você pode usar SPAN para títulos multicoloridos."
 
 #: widgets/advanced/sina-banner-slider.php:164
 #: widgets/advanced/sina-banner-slider.php:200
@@ -2145,12 +2145,12 @@ msgstr "আপনি বহু রঙের শিরোনামের জন�
 #: widgets/basic/sina-fancytext.php:316 widgets/basic/sina-title.php:158
 #: widgets/basic/sina-title.php:187
 msgid "Select Tag"
-msgstr "ট্যাগ নির্বাচন করুন"
+msgstr "Selecione etiqueta"
 
 #: widgets/advanced/sina-banner-slider.php:177
 #: widgets/advanced/sina-particle-layer.php:421
 msgid "Title Animation"
-msgstr "শিরোনামের অ্যানিমেশন"
+msgstr "Título de animação"
 
 #: widgets/advanced/sina-banner-slider.php:186
 #: widgets/advanced/sina-banner-slider.php:658
@@ -2160,12 +2160,12 @@ msgstr "শিরোনামের অ্যানিমেশন"
 #: widgets/advanced/sina-particle-layer.php:705
 #: widgets/basic/sina-title.php:174 widgets/basic/sina-title.php:407
 msgid "Sub Title"
-msgstr "উপ-শিরোনাম"
+msgstr "Subtítulo"
 
 #: widgets/advanced/sina-banner-slider.php:215
 #: widgets/advanced/sina-particle-layer.php:431
 msgid "Sub Title Animation"
-msgstr "উপ-শিরোনামের অ্যানিমেশন"
+msgstr "Animação de subtítulo"
 
 #: widgets/advanced/sina-banner-slider.php:224
 #: widgets/advanced/sina-banner-slider.php:731
@@ -2186,25 +2186,25 @@ msgstr "উপ-শিরোনামের অ্যানিমেশন"
 #: widgets/basic/sina-team.php:169 widgets/basic/sina-team.php:972
 #: widgets/basic/sina-title.php:202 widgets/basic/sina-title.php:508
 msgid "Description"
-msgstr "বর্ণনা"
+msgstr "Descrição"
 
 #: widgets/advanced/sina-banner-slider.php:237
 #: widgets/advanced/sina-particle-layer.php:441
 msgid "Description Animation"
-msgstr "বর্ণনার অ্যানিমেশন"
+msgstr "Descrição Animação"
 
 #: widgets/advanced/sina-banner-slider.php:246
 msgid "Primary Button Text"
-msgstr "প্রাথমিক বোতামের লিখা"
+msgstr "Texto botão primário"
 
 #: widgets/advanced/sina-banner-slider.php:265
 msgid "Secondary Button Text"
-msgstr "মাধ্যমিক বোতামের লিখা"
+msgstr "Texto Botão Secundário"
 
 #: widgets/advanced/sina-banner-slider.php:284
 #: widgets/advanced/sina-particle-layer.php:451
 msgid "Buttons Animation"
-msgstr "বোতাম গুলোর অ্যানিমেশন"
+msgstr "Animação de botões"
 
 #: widgets/advanced/sina-banner-slider.php:293
 #: widgets/advanced/sina-blogpost.php:763
@@ -2251,49 +2251,49 @@ msgstr "বোতাম গুলোর অ্যানিমেশন"
 #: widgets/basic/sina-user-counter.php:168
 #: widgets/basic/sina-visit-counter.php:167
 msgid "Alignment"
-msgstr "প্রান্তিককরণ"
+msgstr "Alinhamento"
 
 #: widgets/advanced/sina-banner-slider.php:319
 msgid "Add Slide"
-msgstr "স্লাইড যুক্ত করুন"
+msgstr "Adicionar slide"
 
 #: widgets/advanced/sina-banner-slider.php:353
 #: widgets/advanced/sina-banner-slider.php:801
 #: widgets/advanced/sina-particle-layer.php:230
 #: widgets/advanced/sina-particle-layer.php:854
 msgid "Primary Button"
-msgstr "প্রাথমিক বোতাম"
+msgstr "Botão Primário"
 
 #: widgets/advanced/sina-banner-slider.php:368
 #: widgets/advanced/sina-banner-slider.php:884
 #: widgets/advanced/sina-particle-layer.php:255
 #: widgets/advanced/sina-particle-layer.php:934
 msgid "Secondary Button"
-msgstr "মাধ্যমিক বোতাম"
+msgstr "Botão Secundário"
 
 #: widgets/advanced/sina-banner-slider.php:376
 #: widgets/advanced/sina-particle-layer.php:263
 msgid "Button Spacing"
-msgstr "বোতামের ফাকা"
+msgstr "Espaçamento de botões"
 
 #: widgets/advanced/sina-banner-slider.php:401
 #: widgets/advanced/sina-content-slider.php:311
 msgid "Slider Settings"
-msgstr "স্লাইডার সেটিংস"
+msgstr "Configurações controle deslizante"
 
 #: widgets/advanced/sina-banner-slider.php:409
 #: widgets/basic/sina-image-differ.php:202 widgets/basic/sina-team.php:579
 msgid "Overlay"
-msgstr "আচ্ছাদন"
+msgstr "Sobreposição"
 
 #: widgets/advanced/sina-banner-slider.php:439
 msgid "Particular Animation"
-msgstr "আলাদা অ্যানিমেশন"
+msgstr "Animação Particular"
 
 #: widgets/advanced/sina-banner-slider.php:471
 #: widgets/advanced/sina-particle-layer.php:469
 msgid "Container"
-msgstr "ধারক"
+msgstr "Recipiente"
 
 #: widgets/advanced/sina-banner-slider.php:479
 #: widgets/advanced/sina-contact-form.php:389
@@ -2310,7 +2310,7 @@ msgstr "ধারক"
 #: widgets/basic/sina-title.php:660 widgets/basic/sina-transform.php:167
 #: widgets/basic/sina-video.php:439
 msgid "Height"
-msgstr "উচ্চতা"
+msgstr "Altura"
 
 #: widgets/advanced/sina-banner-slider.php:595
 #: widgets/advanced/sina-banner-slider.php:709
@@ -2325,62 +2325,62 @@ msgstr "উচ্চতা"
 #: widgets/advanced/sina-portfolio.php:643 widgets/basic/sina-team.php:880
 #: widgets/basic/sina-team.php:949
 msgid "Margin Bottom"
-msgstr "নীচের প্রান্ত"
+msgstr "Margem inferior"
 
 #: widgets/advanced/sina-banner-slider.php:967
 #: widgets/advanced/sina-particle-layer.php:1014
 msgid "Tooltips"
-msgstr "টুলটিপগুলো"
+msgstr "Tooltips"
 
 #: widgets/advanced/sina-banner-slider.php:982
 #: widgets/advanced/sina-content-slider.php:770
 #: widgets/advanced/sina-posts-carousel.php:1793
 #: widgets/advanced/sina-review-carousel.php:627
 msgid "Nav & Dots"
-msgstr "ন্যাভ ও বিন্দু"
+msgstr "Nav e pontos"
 
 #: widgets/advanced/sina-blogpost.php:115
 msgid "Blog Post"
-msgstr "ব্লগ পোস্ট"
+msgstr "Postagem do blog"
 
 #: widgets/advanced/sina-blogpost.php:123
 msgid "Layout Type"
-msgstr "বিন্যাসের ধরণ"
+msgstr "Tipo de Layout"
 
 #: widgets/advanced/sina-blogpost.php:135
 #: widgets/advanced/sina-contact-form.php:260
 #: widgets/advanced/sina-posts-carousel.php:119 widgets/basic/sina-team.php:108
 msgid "Layout"
-msgstr "বিন্যাস"
+msgstr "Layout"
 
 #: widgets/advanced/sina-blogpost.php:138
 #: widgets/advanced/sina-posts-carousel.php:123 widgets/basic/sina-team.php:112
 msgid "Grid"
-msgstr "গ্রিড"
+msgstr "Grade"
 
 #: widgets/advanced/sina-blogpost.php:139
 #: widgets/advanced/sina-posts-carousel.php:124 widgets/basic/sina-team.php:113
 msgid "List"
-msgstr "তালিকা"
+msgstr "Lista"
 
 #: widgets/advanced/sina-blogpost.php:147
 msgid "Custom Column"
-msgstr "কাস্টম কলাম"
+msgstr "Coluna Personalizada"
 
 #: widgets/advanced/sina-blogpost.php:149
 msgid ""
 "You have to enter a series of comma-separated values. That series represents "
 "your custom grid. Possible values: 3,4,5,6,7,8,9,12."
 msgstr ""
-"আপনাকে কমা-বিভাজিত মানগুলির একটি সিরিজ লিখতে হবে। এই সিরিজটি আপনার কাস্টম "
-"গ্রিডকে উপস্থাপন করবে। সম্ভাব্য মান: 3,4,5,6,7,8,9,12."
+"Você deve inserir uma série de valores separados por vírgulas. Essa série "
+"representa sua grade personalizada. Valores possíveis: 3,4,5,6,7,8,9,12."
 
 #: widgets/advanced/sina-blogpost.php:159
 #: widgets/advanced/sina-facebook-feed.php:173
 #: widgets/advanced/sina-portfolio.php:138
 #: widgets/advanced/sina-twitter-feed.php:186
 msgid "Number of Column"
-msgstr "কলামের সংখ্যা"
+msgstr "Número da Coluna"
 
 #: widgets/advanced/sina-blogpost.php:162
 #: widgets/advanced/sina-brand-carousel.php:298
@@ -2389,7 +2389,7 @@ msgstr "কলামের সংখ্যা"
 #: widgets/advanced/sina-posts-carousel.php:268
 #: widgets/advanced/sina-twitter-feed.php:189
 msgid "1"
-msgstr "১"
+msgstr "1"
 
 #: widgets/advanced/sina-blogpost.php:163
 #: widgets/advanced/sina-brand-carousel.php:299
@@ -2399,7 +2399,7 @@ msgstr "১"
 #: widgets/advanced/sina-posts-carousel.php:269
 #: widgets/advanced/sina-twitter-feed.php:190
 msgid "2"
-msgstr "২"
+msgstr "2"
 
 #: widgets/advanced/sina-blogpost.php:164
 #: widgets/advanced/sina-brand-carousel.php:300
@@ -2409,7 +2409,7 @@ msgstr "২"
 #: widgets/advanced/sina-posts-carousel.php:270
 #: widgets/advanced/sina-twitter-feed.php:191
 msgid "3"
-msgstr "৩"
+msgstr "3"
 
 #: widgets/advanced/sina-blogpost.php:165
 #: widgets/advanced/sina-brand-carousel.php:301
@@ -2419,7 +2419,7 @@ msgstr "৩"
 #: widgets/advanced/sina-posts-carousel.php:271
 #: widgets/advanced/sina-twitter-feed.php:192
 msgid "4"
-msgstr "৪"
+msgstr "4"
 
 #: widgets/advanced/sina-blogpost.php:176
 #: widgets/advanced/sina-blogpost.php:1124
@@ -2428,17 +2428,17 @@ msgstr "৪"
 #: widgets/advanced/sina-posts-carousel.php:1311
 #: widgets/advanced/sina-posts-tab.php:261
 msgid "Categories"
-msgstr "বিভাগসমূহ"
+msgstr "Categorias"
 
 #: widgets/advanced/sina-blogpost.php:185
 #: widgets/advanced/sina-news-ticker.php:125
 #: widgets/advanced/sina-posts-carousel.php:141
 msgid "Tags"
-msgstr "ট্যাগসমূহ"
+msgstr "Etiqueta"
 
 #: widgets/advanced/sina-blogpost.php:195
 msgid "Feature Image"
-msgstr "বৈশিষ্ট্য ছবি"
+msgstr "Imagem em destaque"
 
 #: widgets/advanced/sina-blogpost.php:197
 #: widgets/advanced/sina-blogpost.php:210
@@ -2463,7 +2463,7 @@ msgstr "বৈশিষ্ট্য ছবি"
 #: widgets/advanced/sina-posts-carousel.php:1191
 #: widgets/advanced/sina-posts-tab.php:175
 msgid "Yes"
-msgstr "হ্যাঁ"
+msgstr "Sim"
 
 #: widgets/advanced/sina-blogpost.php:198
 #: widgets/advanced/sina-blogpost.php:211
@@ -2488,59 +2488,59 @@ msgstr "হ্যাঁ"
 #: widgets/advanced/sina-posts-carousel.php:1192
 #: widgets/advanced/sina-posts-tab.php:176
 msgid "No"
-msgstr "না"
+msgstr "Não"
 
 #: widgets/advanced/sina-blogpost.php:208
 #: widgets/advanced/sina-posts-carousel.php:152
 msgid "Thumb Right"
-msgstr "থাম্ব ডানে"
+msgstr "Miniatura direita"
 
 #: widgets/advanced/sina-blogpost.php:220
 #: widgets/advanced/sina-posts-carousel.php:164
 msgid "Show Categories"
-msgstr "বিভাগগুলি দেখান"
+msgstr "Mostrar categorias"
 
 #: widgets/advanced/sina-blogpost.php:229
 #: widgets/advanced/sina-posts-carousel.php:173
 msgid "Show Meta"
-msgstr "মেটা দেখান"
+msgstr "Mostrar Meta"
 
 #: widgets/advanced/sina-blogpost.php:238
 #: widgets/advanced/sina-posts-carousel.php:182
 msgid "Show Avatar"
-msgstr "অবতার দেখান"
+msgstr "Mostrar Avatar"
 
 #: widgets/advanced/sina-blogpost.php:250
 msgid " Show Content"
-msgstr "বিষয়বস্তু দেখান"
+msgstr "Mostrar conteúdo"
 
 #: widgets/advanced/sina-blogpost.php:260
 msgid "Show Excerpt"
-msgstr "উদ্ধত দেখান"
+msgstr "Mostrar excerto"
 
 #: widgets/advanced/sina-blogpost.php:272
 #: widgets/advanced/sina-facebook-feed.php:162
 #: widgets/advanced/sina-posts-carousel.php:216
 #: widgets/advanced/sina-twitter-feed.php:175
 msgid "Content Length (Word)"
-msgstr "সামগ্রীর দৈর্ঘ্য (শব্দ)"
+msgstr "Comprimento conteúdo (palavra)"
 
 #: widgets/advanced/sina-blogpost.php:286
 msgid "Show Pagination"
-msgstr "পত্রাঙ্কন দেখান"
+msgstr "Mostrar paginação"
 
 #: widgets/advanced/sina-blogpost.php:298
 msgid "Show Load More"
-msgstr "লোড বোতাম দেখান"
+msgstr "Mostrar Carregar Mais"
 
 #: widgets/advanced/sina-blogpost.php:310
 msgid "Load More Label"
-msgstr "লোড বোতামের লেবেল"
+msgstr "Carregar mais rótulo"
 
 #: widgets/advanced/sina-blogpost.php:312
 #: widgets/basic/sina-dynamic-button.php:171
 msgid "Enter Label"
-msgstr "লেবেল লিখুন"
+msgstr "Insira o rótulo"
 
 #: widgets/advanced/sina-blogpost.php:330
 #: widgets/advanced/sina-blogpost.php:1264
@@ -2549,13 +2549,13 @@ msgstr "লেবেল লিখুন"
 #: widgets/advanced/sina-twitter-feed.php:220
 #: widgets/advanced/sina-twitter-feed.php:856
 msgid "Read More"
-msgstr "আরও পড়ুন"
+msgstr "Consulte Mais"
 
 #: widgets/advanced/sina-blogpost.php:346
 #: widgets/advanced/sina-posts-carousel.php:295
 #: widgets/advanced/sina-posts-carousel.php:513
 msgid "Post"
-msgstr "পোস্ট"
+msgstr "Blog"
 
 #: widgets/advanced/sina-blogpost.php:355
 #: widgets/advanced/sina-facebook-feed.php:216
@@ -2565,8 +2565,8 @@ msgid ""
 "NOTICE: If you change the <strong>Dimension</strong> then the page need to "
 "<strong>Refresh</strong> for seeing the actual result."
 msgstr ""
-"বিজ্ঞপ্তি: আপনি যদি \"মাত্রা\" পরিবর্তন করেন তবে প্রকৃত ফলাফল দেখার জন্য "
-"পৃষ্ঠাটিকে \"রিফ্রেশ\" করা দরকার।"
+"AVISO: Se você alterar a <strong>Dimensão</strong>, a página precisará "
+"<strong>Atualizar</strong> para ver o resultado real."
 
 #: widgets/advanced/sina-blogpost.php:362
 #: widgets/advanced/sina-facebook-feed.php:223
@@ -2578,7 +2578,7 @@ msgstr ""
 #: widgets/basic/sina-pricing.php:341 widgets/basic/sina-team.php:374
 #: widgets/basic/sina-team.php:590
 msgid "Effects"
-msgstr "ইফেক্টগুলো"
+msgstr "Efeitos"
 
 #: widgets/advanced/sina-blogpost.php:365
 #: widgets/advanced/sina-blogpost.php:398
@@ -2593,7 +2593,7 @@ msgstr "ইফেক্টগুলো"
 #: widgets/basic/sina-pricing.php:377 widgets/basic/sina-team.php:377
 #: widgets/basic/sina-team.php:414 widgets/basic/sina-team.php:593
 msgid "Move"
-msgstr "নড়ানো"
+msgstr "Mover"
 
 #: widgets/advanced/sina-blogpost.php:366
 #: widgets/advanced/sina-facebook-feed.php:227
@@ -2606,7 +2606,7 @@ msgstr "নড়ানো"
 #: widgets/basic/sina-team.php:378 widgets/basic/sina-team.php:594
 #: widgets/basic/sina-video.php:127
 msgid "Zoom"
-msgstr "প্রসারিত"
+msgstr "Ampliação"
 
 #: widgets/advanced/sina-blogpost.php:375
 #: widgets/advanced/sina-brand-carousel.php:510
@@ -2618,7 +2618,7 @@ msgstr "প্রসারিত"
 #: widgets/basic/sina-content-box.php:310 widgets/basic/sina-pricing.php:354
 #: widgets/basic/sina-team.php:390
 msgid "Scale"
-msgstr "স্কেল"
+msgstr "Escala"
 
 #: widgets/advanced/sina-blogpost.php:410
 #: widgets/advanced/sina-facebook-feed.php:271
@@ -2628,7 +2628,7 @@ msgstr "স্কেল"
 #: widgets/basic/sina-image-differ.php:182 widgets/basic/sina-pricing.php:389
 #: widgets/basic/sina-team.php:427
 msgid "Horizontal"
-msgstr "অনুভূমিক"
+msgstr "Horizontal"
 
 #: widgets/advanced/sina-blogpost.php:436
 #: widgets/advanced/sina-facebook-feed.php:297
@@ -2638,19 +2638,19 @@ msgstr "অনুভূমিক"
 #: widgets/basic/sina-image-differ.php:183 widgets/basic/sina-pricing.php:415
 #: widgets/basic/sina-team.php:454
 msgid "Vertical"
-msgstr "উল্লম্ব"
+msgstr "Vertical"
 
 #: widgets/advanced/sina-blogpost.php:554
 #: widgets/advanced/sina-facebook-feed.php:433
 #: widgets/advanced/sina-posts-carousel.php:716
 #: widgets/basic/sina-pricing.php:542
 msgid "Title Styles"
-msgstr "শিরোনামের শৈলী"
+msgstr "Estilos de Título"
 
 #: widgets/advanced/sina-blogpost.php:579
 #: widgets/advanced/sina-posts-carousel.php:741
 msgid "Categories Styles"
-msgstr "বিভাগসমূহের শৈলী"
+msgstr "Estilos de categorias"
 
 #: widgets/advanced/sina-blogpost.php:629
 #: widgets/advanced/sina-facebook-feed.php:451
@@ -2658,7 +2658,7 @@ msgstr "বিভাগসমূহের শৈলী"
 #: widgets/advanced/sina-twitter-feed.php:462
 #: widgets/basic/sina-accordion.php:293 widgets/basic/sina-pricing.php:694
 msgid "Content Styles"
-msgstr "সামগ্রীর শৈলী"
+msgstr "Estilos de conteúdo"
 
 #: widgets/advanced/sina-blogpost.php:664
 #: widgets/advanced/sina-search-form.php:217
@@ -2669,14 +2669,14 @@ msgstr "সামগ্রীর শৈলী"
 #: widgets/basic/sina-dynamic-button.php:265 widgets/basic/sina-pricing.php:719
 #: widgets/basic/sina-pricing.php:1317 widgets/basic/sina-video.php:275
 msgid "Button"
-msgstr "বোতাম"
+msgstr "Botão"
 
 #: widgets/advanced/sina-blogpost.php:700
 #: widgets/advanced/sina-facebook-feed.php:469
 #: widgets/advanced/sina-posts-carousel.php:862
 #: widgets/advanced/sina-twitter-feed.php:480
 msgid "Meta Styles"
-msgstr "মেটার শৈলী"
+msgstr "Meta estilos"
 
 #: widgets/advanced/sina-blogpost.php:717
 #: widgets/advanced/sina-blogpost.php:1395
@@ -2686,7 +2686,7 @@ msgstr "মেটার শৈলী"
 #: widgets/advanced/sina-posts-carousel.php:1529
 #: widgets/advanced/sina-posts-carousel.php:1548
 msgid "Link Color"
-msgstr "লিঙ্কের রঙ"
+msgstr "Cor do link"
 
 #: widgets/advanced/sina-blogpost.php:779
 #: widgets/advanced/sina-content-slider.php:464
@@ -2702,7 +2702,7 @@ msgstr "লিঙ্কের রঙ"
 #: widgets/basic/sina-title.php:321 widgets/basic/sina-title.php:470
 #: widgets/basic/sina-title.php:575
 msgid "Justify"
-msgstr "সমান্তরাল"
+msgstr "Justificar"
 
 #: widgets/advanced/sina-blogpost.php:791
 #: widgets/advanced/sina-facebook-feed.php:567
@@ -2712,7 +2712,7 @@ msgstr "সমান্তরাল"
 #: widgets/advanced/sina-twitter-feed.php:578
 #: widgets/basic/sina-image-differ.php:245
 msgid "Overlay Background"
-msgstr "আচ্ছাদনের পটভূমি"
+msgstr "Sobreposição de fundo"
 
 #: widgets/advanced/sina-blogpost.php:824
 #: widgets/advanced/sina-facebook-feed.php:753
@@ -2724,72 +2724,72 @@ msgstr "আচ্ছাদনের পটভূমি"
 #: widgets/basic/sina-table.php:290 widgets/basic/sina-table.php:834
 #: widgets/basic/sina-team.php:753
 msgid "Content"
-msgstr "সামগ্রী"
+msgstr "Conteúdo"
 
 #: widgets/advanced/sina-blogpost.php:832
 #: widgets/advanced/sina-posts-carousel.php:1112
 msgid "Thumb Width (%)"
-msgstr "থাম্বের প্রস্থ (%)"
+msgstr "Largura da miniatura (%)"
 
 #: widgets/advanced/sina-blogpost.php:858
 #: widgets/advanced/sina-posts-carousel.php:1138
 msgid "Thumb Height (px)"
-msgstr "থাম্বের উচ্চতা (px)"
+msgstr "Altura da miniatura (px)"
 
 #: widgets/advanced/sina-blogpost.php:883
 #: widgets/advanced/sina-posts-carousel.php:1163
 msgid "Content Width (%)"
-msgstr "সামগ্রীর প্রস্থ"
+msgstr "Largura conteúdo (%)"
 
 #: widgets/advanced/sina-blogpost.php:909
 #: widgets/advanced/sina-posts-carousel.php:1189
 msgid "Use content Height"
-msgstr "সামগ্রীর উচ্চতা ব্যবহার হবে"
+msgstr "Usar altura de conteúdo"
 
 #: widgets/advanced/sina-blogpost.php:921
 #: widgets/advanced/sina-posts-carousel.php:1201
 msgid "Content Height (px)"
-msgstr "সামগ্রীর উচ্চতা (px)"
+msgstr "Altura conteúdo (px)"
 
 #: widgets/advanced/sina-blogpost.php:1138
 #: widgets/advanced/sina-posts-carousel.php:1325
 #: widgets/advanced/sina-posts-carousel.php:1465
 #: widgets/basic/sina-title.php:119
 msgid "Before Title"
-msgstr "শিরোনামের পূর্বে"
+msgstr "Antes do Título"
 
 #: widgets/advanced/sina-blogpost.php:1139
 #: widgets/advanced/sina-posts-carousel.php:1326
 #: widgets/advanced/sina-posts-carousel.php:1466
 #: widgets/basic/sina-title.php:120
 msgid "After Title"
-msgstr "শিরোনামের পরে"
+msgstr "Depois do Título"
 
 #: widgets/advanced/sina-blogpost.php:1339
 #: widgets/advanced/sina-facebook-feed.php:910
 #: widgets/advanced/sina-posts-carousel.php:1451
 #: widgets/advanced/sina-twitter-feed.php:786
 msgid "Meta"
-msgstr "মেটা"
+msgstr "Meta"
 
 #: widgets/advanced/sina-blogpost.php:1429
 msgid "Avatar styles"
-msgstr "অবতারের শৈলী"
+msgstr "Estilos de avatar"
 
 #: widgets/advanced/sina-blogpost.php:1455
 #: widgets/advanced/sina-blogpost.php:1792
 #: widgets/advanced/sina-posts-carousel.php:1663
 msgid "Spacing"
-msgstr "ফাকা"
+msgstr "Espaçamento"
 
 #: widgets/advanced/sina-blogpost.php:1584 widgets/basic/sina-table.php:538
 #: widgets/basic/sina-table.php:1430
 msgid "Pagination"
-msgstr "পত্রাঙ্কন"
+msgstr "Paginação"
 
 #: widgets/advanced/sina-blogpost.php:1722
 msgid "Current"
-msgstr "চলতি"
+msgstr "Atual"
 
 #: widgets/advanced/sina-blogpost.php:1807
 #: widgets/advanced/sina-portfolio.php:329
@@ -2797,124 +2797,124 @@ msgstr "চলতি"
 #: widgets/basic/sina-dynamic-button.php:273
 #: widgets/basic/sina-image-differ.php:333 widgets/basic/sina-pricing.php:1328
 msgid "Min Width"
-msgstr "ন্যূনতম প্রস্থ"
+msgstr "Largura mínima"
 
 #: widgets/advanced/sina-blogpost.php:1901
 msgid "Load More Button"
-msgstr "লোড বোতাম"
+msgstr "Botão Carregar Mais"
 
 #: widgets/advanced/sina-blogpost.php:2096
 #: widgets/advanced/sina-posts-carousel.php:1913
 msgid "No Posts found"
-msgstr "কোনো পোস্ট পাওয়া যায়নি"
+msgstr "Nenhuma postagem encontrada"
 
 #: widgets/advanced/sina-brand-carousel.php:114
 msgid "Brand"
-msgstr "ব্র্যান্ড"
+msgstr "Marca"
 
 #: widgets/advanced/sina-brand-carousel.php:124
 msgid "Choose Logo"
-msgstr "লোগো চয়ন করুন"
+msgstr "Escolha logotipo"
 
 #: widgets/advanced/sina-brand-carousel.php:137
 msgid "Brand Link"
-msgstr "ব্র্যান্ডের লিঙ্ক"
+msgstr "Link da marca"
 
 #: widgets/advanced/sina-brand-carousel.php:148
 msgid "Brand Name"
-msgstr "ব্র্যান্ডের নাম"
+msgstr "Nome de marca"
 
 #: widgets/advanced/sina-brand-carousel.php:150
 #: widgets/advanced/sina-review-carousel.php:139
 #: widgets/basic/sina-team.php:147
 msgid "Enter Name"
-msgstr "নাম লিখুন"
+msgstr "Insira o nome"
 
 #: widgets/advanced/sina-brand-carousel.php:151
 msgid "This name will show only item header"
-msgstr "এই নামটি আইটেম শিরোনামে প্রদর্শিত হবে"
+msgstr "Este nome mostrará apenas o cabeçalho do iten"
 
 #: widgets/advanced/sina-brand-carousel.php:244
 msgid "Add Logo"
-msgstr "লোগো যুক্ত করুন"
+msgstr "Adicionar logotipo"
 
 #: widgets/advanced/sina-brand-carousel.php:287
 #: widgets/advanced/sina-posts-carousel.php:257
 #: widgets/advanced/sina-review-carousel.php:232
 msgid "Carousel Settings"
-msgstr "ক্যারোসেল সেটিংস"
+msgstr "Configurações do carrossel"
 
 #: widgets/advanced/sina-brand-carousel.php:295
 #: widgets/advanced/sina-content-slider.php:319
 #: widgets/advanced/sina-posts-carousel.php:265
 #: widgets/advanced/sina-review-carousel.php:239
 msgid "Show Item"
-msgstr "আইটেম দেখান"
+msgstr "Mostrar iten"
 
 #: widgets/advanced/sina-brand-carousel.php:302
 #: widgets/advanced/sina-content-slider.php:326
 #: widgets/advanced/sina-portfolio.php:144
 #: widgets/advanced/sina-posts-carousel.php:272
 msgid "5"
-msgstr "৫"
+msgstr "5"
 
 #: widgets/advanced/sina-brand-carousel.php:303
 #: widgets/advanced/sina-content-slider.php:327
 #: widgets/advanced/sina-portfolio.php:145
 #: widgets/advanced/sina-posts-carousel.php:273
 msgid "6"
-msgstr "৬"
+msgstr "6"
 
 #: widgets/advanced/sina-brand-carousel.php:304
 #: widgets/advanced/sina-content-slider.php:328
 #: widgets/advanced/sina-posts-carousel.php:274
 msgid "7"
-msgstr "৭"
+msgstr "7"
 
 #: widgets/advanced/sina-brand-carousel.php:305
 #: widgets/advanced/sina-content-slider.php:329
 #: widgets/advanced/sina-posts-carousel.php:275
 msgid "8"
-msgstr "৮"
+msgstr "8"
 
 #: widgets/advanced/sina-brand-carousel.php:324
 msgid "Brand Box"
-msgstr "ব্র্যান্ডের বাক্স"
+msgstr "Marca caixa"
 
 #: widgets/advanced/sina-brand-carousel.php:332
 msgid "Logo Padding"
-msgstr "লোগো প্যাডিং"
+msgstr "Preenchimento de logotipo"
 
 #: widgets/advanced/sina-brand-carousel.php:357
 msgid "Box Margin"
-msgstr "বাক্সের প্রান্ত"
+msgstr "Margem da Caixa"
 
 #: widgets/advanced/sina-brand-carousel.php:499
 #: widgets/advanced/sina-content-slider.php:785
 #: widgets/advanced/sina-posts-carousel.php:1809
 msgid "Center Item"
-msgstr "কেন্দ্রের আইটেম"
+msgstr "Iiten central"
 
 #: widgets/advanced/sina-contact-form.php:109
 #: widgets/advanced/sina-login-form.php:108
 msgid "Form Settings"
-msgstr "ফর্মের সেটিংস"
+msgstr "Configurações do formulário"
 
 #: widgets/advanced/sina-contact-form.php:117
 msgid "Google Recaptcha"
-msgstr "গুগল রিক্যাপচা"
+msgstr "Google Recaptcha"
 
 #: widgets/advanced/sina-contact-form.php:134
 msgid "Use Custom Email"
-msgstr "কাস্টম ইমেল ব্যবহার হবে"
+msgstr "Use mail personalizado"
 
 #: widgets/advanced/sina-contact-form.php:143
 msgid "Mail To"
-msgstr "মেইলে"
+msgstr "Correio para"
 
 #: widgets/advanced/sina-contact-form.php:146
 msgid "Enter Custom Email"
-msgstr "কাস্টম ইমেল লিখুন"
+msgstr "Insira email personalizado"
 
 #: widgets/advanced/sina-contact-form.php:147
 msgid ""
@@ -2922,38 +2922,38 @@ msgid ""
 "the editor, then the emails will send to the admin email. This email will "
 "work only in the front-end."
 msgstr ""
-"যদি ক্ষেত্রটি খালি থাকে বা কোনও অবৈধ ইমেল প্রবেশ করায় বা সম্পাদক থেকে ইমেল "
-"প্রেরণের চেষ্টা করে, তবে ইমেলগুলি প্রশাসকের ইমেলটিতে প্রেরণ হবে। এই ইমেলটি "
-"কেবল সামনের দিকে কাজ করবে।"
+"Se o campo estiver vazio ou inserir um e-mail inválido ou tentar enviar e-"
+"mail do editor, os e-mails serão enviados para o e-mail do administrador. "
+"Este e-mail funcionará apenas no front-end."
 
 #: widgets/advanced/sina-contact-form.php:159
 msgid "From: "
-msgstr "প্রেরকঃ"
+msgstr "De:"
 
 #: widgets/advanced/sina-contact-form.php:162
 msgid "Enter From Address"
-msgstr "প্রেরক ঠিকানা লিখুন"
+msgstr "Insira endereço origem"
 
 #: widgets/advanced/sina-contact-form.php:168
 #: widgets/advanced/sina-mailchimp-subscribe.php:132
 msgid "Success Message"
-msgstr "সাফল্যের বার্তা"
+msgstr "Mensagem de Sucesso"
 
 #: widgets/advanced/sina-contact-form.php:171
 #: widgets/advanced/sina-mailchimp-subscribe.php:135
 msgid "Enter Success Message"
-msgstr "সাফল্যের বার্তা লিখুন"
+msgstr "Digite mensagem sucesso"
 
 #: widgets/advanced/sina-contact-form.php:181
 #: widgets/advanced/sina-contact-form.php:252
 #: widgets/advanced/sina-mailchimp-subscribe.php:106
 #: widgets/advanced/sina-mailchimp-subscribe.php:231
 msgid "Fields"
-msgstr "ক্ষেত্রগুলো"
+msgstr "Campos"
 
 #: widgets/advanced/sina-contact-form.php:189
 msgid "Name Placeholder Text"
-msgstr "নামের স্থানধারক লিখা"
+msgstr "Texto espaço reservado nome"
 
 #: widgets/advanced/sina-contact-form.php:192
 #: widgets/advanced/sina-contact-form.php:202
@@ -2962,20 +2962,20 @@ msgstr "নামের স্থানধারক লিখা"
 #: widgets/advanced/sina-login-form.php:119
 #: widgets/advanced/sina-login-form.php:129
 msgid "Enter Placeholder Text"
-msgstr "স্থানধারক লিখুন"
+msgstr "Insira espaço reservado"
 
 #: widgets/advanced/sina-contact-form.php:199
 #: widgets/advanced/sina-login-form.php:116
 msgid "Email Placeholder Text"
-msgstr "ইমেলের স্থানধারক লিখা"
+msgstr "Texto espaço reservado email"
 
 #: widgets/advanced/sina-contact-form.php:209
 msgid "Subject Placeholder Text"
-msgstr "বিষয় স্থানধারক লিখা"
+msgstr "Sujeito espaço reservado"
 
 #: widgets/advanced/sina-contact-form.php:219
 msgid "Message Placeholder Text"
-msgstr "বার্তার স্থানধারক লিখা"
+msgstr "Texto espaço reservado mensagem"
 
 #: widgets/advanced/sina-contact-form.php:237
 #: widgets/advanced/sina-contact-form.php:441
@@ -2984,15 +2984,15 @@ msgstr "বার্তার স্থানধারক লিখা"
 #: widgets/advanced/sina-mailchimp-subscribe.php:216
 #: widgets/advanced/sina-mailchimp-subscribe.php:384
 msgid "Submit Button"
-msgstr "পাঠানোর বোতাম"
+msgstr "Botão de envio"
 
 #: widgets/advanced/sina-contact-form.php:263
 msgid "Layout 1"
-msgstr "বিন্যাস ১"
+msgstr "Layout 1"
 
 #: widgets/advanced/sina-contact-form.php:264
 msgid "Layout 2"
-msgstr "বিন্যাস ২"
+msgstr "Layout 2"
 
 #: widgets/advanced/sina-contact-form.php:336
 #: widgets/advanced/sina-review-carousel.php:137
@@ -3000,33 +3000,33 @@ msgstr "বিন্যাস ২"
 #: widgets/basic/sina-social-icons.php:122 widgets/basic/sina-team.php:145
 #: widgets/basic/sina-team.php:218 widgets/basic/sina-team.php:834
 msgid "Name"
-msgstr "নাম"
+msgstr "Nome"
 
 #: widgets/advanced/sina-contact-form.php:351
 #: widgets/advanced/sina-login-form.php:343
 #: widgets/advanced/sina-mailchimp-subscribe.php:351
 msgid "Email"
-msgstr "ইমেল"
+msgstr "Email"
 
 #: widgets/advanced/sina-contact-form.php:366
 msgid "Subject"
-msgstr "বিষয়"
+msgstr "Sujeito"
 
 #: widgets/advanced/sina-contact-form.php:381
 #: widgets/advanced/sina-countdown.php:323
 #: widgets/advanced/sina-countdown.php:333
 #: widgets/advanced/sina-countdown.php:639
 msgid "Message"
-msgstr "বার্তা"
+msgstr "Mensagem"
 
 #: widgets/advanced/sina-contact-form.php:571
 #: widgets/advanced/sina-mailchimp-subscribe.php:535
 msgid "Processing..."
-msgstr "প্রক্রিয়া হচ্ছে..."
+msgstr "Processamento..."
 
 #: widgets/advanced/sina-content-slider.php:115
 msgid "Slider Content"
-msgstr "স্লাইডার সামগ্রী"
+msgstr "Conteúdo deslizante"
 
 #: widgets/advanced/sina-content-slider.php:125
 #: widgets/advanced/sina-modal-box.php:163
@@ -3034,7 +3034,7 @@ msgstr "স্লাইডার সামগ্রী"
 #: widgets/basic/sina-accordion.php:166 widgets/basic/sina-content-box.php:117
 #: widgets/basic/sina-transform.php:105
 msgid "Use Save Templates"
-msgstr "সংরক্ষিত টেমপ্লেট ব্যবহার হবে"
+msgstr "Use Salvar Modelos"
 
 #: widgets/advanced/sina-content-slider.php:132
 #: widgets/advanced/sina-modal-box.php:170
@@ -3042,7 +3042,7 @@ msgstr "সংরক্ষিত টেমপ্লেট ব্যবহার 
 #: widgets/basic/sina-accordion.php:173 widgets/basic/sina-content-box.php:124
 #: widgets/basic/sina-transform.php:112
 msgid "Choose Template"
-msgstr "টেম্পলেট চয়ন করুন"
+msgstr "Escolha modelo"
 
 #: widgets/advanced/sina-content-slider.php:138
 #: widgets/advanced/sina-modal-box.php:176
@@ -3054,23 +3054,22 @@ msgid ""
 "style or layout then you try to change the main template then save and then "
 "insert"
 msgstr ""
-"দ্রষ্টব্য: টেম্পলেট সন্নিবেশ করার পরে সম্পাদনা করার চেষ্টা করবেন না। আপনার "
-"যদি স্টাইল বা বিন্যাস পরিবর্তন করতে হয় তবে আপনি মূল টেমপ্লেট পরিবর্তন করার "
-"চেষ্টা করুন তারপরে সংরক্ষণ করুন এবং তারপরে সন্নিবেশ করুন"
+"NOTA: Não tente editar após o modelo de inserção. Se você precisar alterar o "
+"estilo ou layout, tente alterar o modelo principal, salve e insira"
 
 #: widgets/advanced/sina-content-slider.php:144
 msgid "Use video"
-msgstr "ভিডিও ব্যবহার হবে"
+msgstr "Usar vídeo"
 
 #: widgets/advanced/sina-content-slider.php:154
 #: widgets/basic/sina-video.php:149
 msgid "Video Link"
-msgstr "ভিডিও লিঙ্ক"
+msgstr "Link de vídeo"
 
 #: widgets/advanced/sina-content-slider.php:157
 #: widgets/basic/sina-video.php:152
 msgid "Enter video link"
-msgstr "ভিডিও লিঙ্ক লিখুন"
+msgstr "Insira link vídeo"
 
 #: widgets/advanced/sina-content-slider.php:173
 #: widgets/advanced/sina-content-slider.php:211
@@ -3085,18 +3084,18 @@ msgstr "ভিডিও লিঙ্ক লিখুন"
 #: widgets/basic/sina-progressbar.php:125 widgets/basic/sina-title.php:134
 #: widgets/basic/sina-video.php:164
 msgid "Enter Title"
-msgstr "শিরোনাম লিখুন"
+msgstr "Digite o título"
 
 #: widgets/advanced/sina-content-slider.php:261
 #: widgets/advanced/sina-countdown.php:155
 msgid "Styles"
-msgstr "শৈলী"
+msgstr "Estilos"
 
 #: widgets/advanced/sina-content-slider.php:277
 #: widgets/advanced/sina-countdown.php:260
 #: widgets/advanced/sina-portfolio.php:260 widgets/basic/sina-accordion.php:322
 msgid "Add Item"
-msgstr "আইটেম যুক্ত করুন"
+msgstr "Adicionar iten"
 
 #: widgets/advanced/sina-content-slider.php:348
 #: widgets/advanced/sina-countdown.php:364
@@ -3105,195 +3104,195 @@ msgstr "আইটেম যুক্ত করুন"
 #: widgets/basic/sina-content-box.php:289 widgets/basic/sina-flip-box.php:291
 #: widgets/basic/sina-pricing.php:333 widgets/basic/sina-team.php:366
 msgid "Box"
-msgstr "বাক্স"
+msgstr "Caixa"
 
 #: widgets/advanced/sina-countdown.php:115
 msgid "Countdown"
-msgstr "ক্ষণ গণনা"
+msgstr "Contagem regressiva"
 
 #: widgets/advanced/sina-countdown.php:123
 msgid "Due Date"
-msgstr "নির্দিষ্ট তারিখ"
+msgstr "Data de Vencimento"
 
 #: widgets/advanced/sina-countdown.php:137
 msgid "Select Unit"
-msgstr "একক নির্বাচন করুন"
+msgstr "Selecione unidade"
 
 #: widgets/advanced/sina-countdown.php:140
 msgid "Years"
-msgstr "বছর"
+msgstr "Anos"
 
 #: widgets/advanced/sina-countdown.php:141
 msgid "Months"
-msgstr "মাস"
+msgstr "Meses"
 
 #: widgets/advanced/sina-countdown.php:142
 msgid "Weeks"
-msgstr "সপ্তাহ"
+msgstr "Semanas"
 
 #: widgets/advanced/sina-countdown.php:143
 msgid "Days"
-msgstr "দিন"
+msgstr "Dias"
 
 #: widgets/advanced/sina-countdown.php:144
 msgid "Hours"
-msgstr "ঘন্টা"
+msgstr "Horas"
 
 #: widgets/advanced/sina-countdown.php:145
 msgid "Minutes"
-msgstr "মিনিট"
+msgstr "Minutos"
 
 #: widgets/advanced/sina-countdown.php:146
 msgid "Seconds"
-msgstr "সেকেন্ড"
+msgstr "Segundos"
 
 #: widgets/advanced/sina-countdown.php:195
 msgid "Digit Color"
-msgstr "অঙ্কের রঙ"
+msgstr "Cor de Dígito"
 
 #: widgets/advanced/sina-countdown.php:310
 #: widgets/advanced/sina-countdown.php:569 widgets/basic/sina-fancytext.php:122
 #: widgets/basic/sina-pricing.php:238 widgets/basic/sina-user-counter.php:201
 #: widgets/basic/sina-visit-counter.php:200
 msgid "Text"
-msgstr "লিখা"
+msgstr "Texto"
 
 #: widgets/advanced/sina-countdown.php:320
 msgid "Action"
-msgstr "কার্য"
+msgstr "Açao"
 
 #: widgets/advanced/sina-countdown.php:324
 msgid "Redirection Link"
-msgstr "পুনঃনির্দেশ লিঙ্ক"
+msgstr "Link de redirecionamento"
 
 #: widgets/advanced/sina-countdown.php:326
 msgid "Choose whether if you want to set a message or a redirect link"
-msgstr "আপনি কোনও বার্তা বা পুনর্নির্দেশ লিঙ্ক সেট করতে চান কিনা তা চয়ন করুন"
+msgstr "Escolha se deseja definir uma mensagem ou um link de redirecionamento"
 
 #: widgets/advanced/sina-countdown.php:344
 msgid "Redirect To"
-msgstr "পুনঃনির্দেশ হবে"
+msgstr "Redirecionar ao"
 
 #: widgets/advanced/sina-countdown.php:372
 #: widgets/advanced/sina-review-carousel.php:264
 #: widgets/basic/sina-content-box.php:793 widgets/basic/sina-pricing.php:1153
 #: widgets/basic/sina-team.php:657
 msgid "Morphing Animation"
-msgstr "মরফিং অ্যানিমেশন"
+msgstr "Morphing Animation"
 
 #: widgets/advanced/sina-countdown.php:509
 msgid "Digit"
-msgstr "অঙ্ক"
+msgstr "Dígito"
 
 #: widgets/advanced/sina-facebook-feed.php:114
 #: widgets/advanced/sina-twitter-feed.php:114
 msgid "Feed Content"
-msgstr "ফিডের সামগ্রী"
+msgstr "Conteúdo de feed"
 
 #: widgets/advanced/sina-facebook-feed.php:122
 msgid "Page ID"
-msgstr "পৃষ্ঠার ID"
+msgstr "ID da página"
 
 #: widgets/advanced/sina-facebook-feed.php:125
 msgid "Enter Page ID"
-msgstr "পৃষ্ঠার ID লিখুন"
+msgstr "Insira o ID da página"
 
 #: widgets/advanced/sina-facebook-feed.php:131
 msgid "Access Token"
-msgstr "প্রবেশের টোকন"
+msgstr "Token de acesso"
 
 #: widgets/advanced/sina-facebook-feed.php:134
 msgid "Enter Access Token"
-msgstr "প্রবেশ করার টোকেন লিখুন"
+msgstr "Insira token acesso"
 
 #: widgets/advanced/sina-facebook-feed.php:140
 #: widgets/advanced/sina-twitter-feed.php:153
 msgid "Number of Feed"
-msgstr "ফিডের সংখ্যা"
+msgstr "Número de Feed"
 
 #: widgets/advanced/sina-facebook-feed.php:187
 #: widgets/advanced/sina-twitter-feed.php:200
 msgid "Sort By"
-msgstr "ক্রমানুসার"
+msgstr "Ordenar por"
 
 #: widgets/advanced/sina-facebook-feed.php:190
 #: widgets/advanced/sina-twitter-feed.php:203
 msgid "Newest"
-msgstr "নবীনতম"
+msgstr "Mais novo"
 
 #: widgets/advanced/sina-facebook-feed.php:191
 #: widgets/advanced/sina-twitter-feed.php:204
 msgid "Oldest"
-msgstr "প্রবীণতম"
+msgstr "Mais velho"
 
 #: widgets/advanced/sina-facebook-feed.php:207
 #: widgets/advanced/sina-twitter-feed.php:236
 msgid "Feed"
-msgstr "ফিড"
+msgstr "Feed"
 
 #: widgets/advanced/sina-facebook-feed.php:415
 msgid "Page Name Styles"
-msgstr "পৃষ্ঠার নামের শৈলী"
+msgstr "Estilos nome página"
 
 #: widgets/advanced/sina-facebook-feed.php:591
 msgid "Play Button Color"
-msgstr "চালু বোতামের রঙ"
+msgstr "Cor botão reprodução"
 
 #: widgets/advanced/sina-facebook-feed.php:602
 msgid "Play Button Size"
-msgstr "চালু বোতামের আকার"
+msgstr "Tamanho botão reprodução"
 
 #: widgets/advanced/sina-facebook-feed.php:630
 msgid "Page Name"
-msgstr "পৃষ্ঠার নাম"
+msgstr "Nome da página"
 
 #: widgets/advanced/sina-facebook-feed.php:689
 #: widgets/advanced/sina-twitter-feed.php:670
 msgid "Thumb Styles"
-msgstr "থাম্বের শৈলী"
+msgstr "Estilos de miniatura"
 
 #: widgets/advanced/sina-facebook-feed.php:697
 #: widgets/advanced/sina-twitter-feed.php:678
 msgid "Thumb Size"
-msgstr "থাম্বের আকার"
+msgstr "Tamanho da miniatura"
 
 #: widgets/advanced/sina-login-form.php:126
 msgid "Password Placeholder Text"
-msgstr "পাসওয়ার্ডের স্থানধারক লিখা"
+msgstr "Texto espaço reservado senha"
 
 #: widgets/advanced/sina-login-form.php:136
 msgid "Redirect URL after login"
-msgstr "লগইনের পরে পুনর্নির্দেশ URL"
+msgstr "URL redirecionamento após login"
 
 #: widgets/advanced/sina-login-form.php:139
 msgid "Enter Redirect URL"
-msgstr "পুনঃনির্দেশ URL লিখুন"
+msgstr "Insira URL redirecionamento"
 
 #: widgets/advanced/sina-login-form.php:149
 msgid "Remember login"
-msgstr "লগইন মনে রাখা"
+msgstr "Lembre de login"
 
 #: widgets/advanced/sina-login-form.php:157
 msgid "Remember text"
-msgstr "মনে রাখার লিখা"
+msgstr "Lembre texto"
 
 #: widgets/advanced/sina-login-form.php:160
 msgid "Enter Remember Text"
-msgstr "মনে রাখার লিখা লিখুন"
+msgstr "Insira texto lembrar"
 
 #: widgets/advanced/sina-login-form.php:193
 msgid "Fields & Remember text"
-msgstr "ক্ষেত্রগুলো ও মনে রাখার লিখা"
+msgstr "Campos e texto de memória"
 
 #: widgets/advanced/sina-login-form.php:258
 msgid "Remember styles"
-msgstr "মনে রাখার শৈলী"
+msgstr "Lembre de estilos"
 
 #: widgets/advanced/sina-login-form.php:272
 #: widgets/advanced/sina-review-carousel.php:275
 #: widgets/basic/sina-counter.php:185 widgets/basic/sina-pricing.php:207
 msgid "Middle"
-msgstr "মাঝে"
+msgstr "Meio"
 
 #: widgets/advanced/sina-login-form.php:273
 #: widgets/advanced/sina-product-zoomer.php:302
@@ -3301,19 +3300,19 @@ msgstr "মাঝে"
 #: widgets/basic/sina-counter.php:186 widgets/basic/sina-piechart.php:299
 #: widgets/basic/sina-pricing.php:208
 msgid "Bottom"
-msgstr "নীচে"
+msgstr "Inferior"
 
 #: widgets/advanced/sina-login-form.php:358
 msgid "Password"
-msgstr "পাসওয়ার্ড"
+msgstr "Senha"
 
 #: widgets/advanced/sina-mailchimp-subscribe.php:34
 msgid "Sina MailChimp"
-msgstr "Sina মেলচিম্প"
+msgstr "Sina MailChimp"
 
 #: widgets/advanced/sina-mailchimp-subscribe.php:122
 msgid "Email placeholder text"
-msgstr "ইমেলের স্থানধারক লিখা"
+msgstr "Texto espaço reservado email"
 
 #: widgets/advanced/sina-mailchimp-subscribe.php:125
 #: widgets/advanced/sina-mailchimp-subscribe.php:156
@@ -3321,82 +3320,82 @@ msgstr "ইমেলের স্থানধারক লিখা"
 #: widgets/advanced/sina-mailchimp-subscribe.php:198
 #: widgets/advanced/sina-search-form.php:107
 msgid "Enter placeholder text"
-msgstr "স্থানধারক লিখুন"
+msgstr "Insira espaço reservado"
 
 #: widgets/advanced/sina-mailchimp-subscribe.php:145
 #: widgets/advanced/sina-mailchimp-subscribe.php:315
 msgid "First Name"
-msgstr "প্রথম নাম"
+msgstr "Primeiro nome"
 
 #: widgets/advanced/sina-mailchimp-subscribe.php:153
 msgid "First name placeholder text"
-msgstr "প্রথম নামের স্থানধারক লিখা"
+msgstr "Texto primeiro nome"
 
 #: widgets/advanced/sina-mailchimp-subscribe.php:166
 #: widgets/advanced/sina-mailchimp-subscribe.php:333
 msgid "Last Name"
-msgstr "শেষ নাম"
+msgstr "Último nome"
 
 #: widgets/advanced/sina-mailchimp-subscribe.php:174
 msgid "Last name placeholder text"
-msgstr "শেষ নামের স্থানধারক লিখা"
+msgstr "Texto espaço reservado sobrenome"
 
 #: widgets/advanced/sina-mailchimp-subscribe.php:187
 msgid "Phone Number"
-msgstr "ফোন নম্বর"
+msgstr "Número de fone"
 
 #: widgets/advanced/sina-mailchimp-subscribe.php:195
 msgid "Phone placeholder text"
-msgstr "ফোনের স্থানধারক লিখা"
+msgstr "Texto espaço reservado fone"
 
 #: widgets/advanced/sina-mailchimp-subscribe.php:239
 #: widgets/basic/sina-fancytext.php:200 widgets/basic/sina-social-icons.php:275
 #: widgets/basic/sina-user-counter.php:153
 #: widgets/basic/sina-visit-counter.php:152
 msgid "Display"
-msgstr "প্রদর্শন"
+msgstr "Mostrar"
 
 #: widgets/advanced/sina-mailchimp-subscribe.php:242
 #: widgets/basic/sina-fancytext.php:203 widgets/basic/sina-social-icons.php:278
 #: widgets/basic/sina-user-counter.php:157
 #: widgets/basic/sina-visit-counter.php:156
 msgid "Inline"
-msgstr "বরাবর"
+msgstr "Na linha"
 
 #: widgets/advanced/sina-mailchimp-subscribe.php:243
 #: widgets/basic/sina-fancytext.php:204 widgets/basic/sina-social-icons.php:279
 #: widgets/basic/sina-user-counter.php:156
 #: widgets/basic/sina-visit-counter.php:155
 msgid "Block"
-msgstr "ব্লক"
+msgstr "Quadra"
 
 #: widgets/advanced/sina-mailchimp-subscribe.php:366
 msgid "Phone"
-msgstr "ফোন"
+msgstr "Fone"
 
 #: widgets/advanced/sina-modal-box.php:110
 msgid "Modal Content"
-msgstr "মোডালের সামগ্রী"
+msgstr "Conteúdo modal"
 
 #: widgets/advanced/sina-modal-box.php:118
 msgid "Auto Show"
-msgstr "স্বয়ংক্রিয় প্রদর্শন"
+msgstr "Show de auto"
 
 #: widgets/advanced/sina-modal-box.php:147
 msgid "Close to click outside"
-msgstr "বাইরে ক্লিক করলে বন্ধ হবে"
+msgstr "Fechar clicar fora"
 
 #: widgets/advanced/sina-modal-box.php:155
 msgid "Close to press ESC"
-msgstr "ESC চাপলে বন্ধ হবে"
+msgstr "Feche pressionar ESC"
 
 #: widgets/advanced/sina-modal-box.php:182 widgets/basic/sina-table.php:130
 msgid "Header Text"
-msgstr "প্রধানের লিখা"
+msgstr "Texto do Cabeçalho"
 
 #: widgets/advanced/sina-modal-box.php:185
 msgid "Enter Header Text"
-msgstr "শিরোনামের লিখা লিখুন"
+msgstr "Digite texto cabeçalho"
 
 #: widgets/advanced/sina-modal-box.php:216
 #: widgets/advanced/sina-particle-layer.php:211
@@ -3405,12 +3404,12 @@ msgstr "শিরোনামের লিখা লিখুন"
 #: widgets/basic/sina-flip-box.php:261 widgets/basic/sina-team.php:172
 #: widgets/basic/sina-title.php:205
 msgid "Enter Description"
-msgstr "বর্ণনা লিখুন"
+msgstr "Insira descrição"
 
 #: widgets/advanced/sina-modal-box.php:238
 #: widgets/advanced/sina-modal-box.php:1139
 msgid "Trigger Button"
-msgstr "ট্রিগার বোতাম"
+msgstr "Botão de gatilho"
 
 #: widgets/advanced/sina-modal-box.php:249
 msgid "CSS class"
@@ -3419,99 +3418,99 @@ msgstr ""
 #: widgets/advanced/sina-modal-box.php:251
 #: widgets/basic/sina-dynamic-button.php:239
 msgid "Enter CLASS"
-msgstr "Class লিখুন"
+msgstr "Insira CLASS"
 
 #: widgets/advanced/sina-modal-box.php:252
 msgid "Make sure this CLASS unique"
-msgstr "এই CLASS-টী অনন্য তা নিশ্চিত করুন"
+msgstr "Certifique de que este CLASS seja único"
 
 #: widgets/advanced/sina-modal-box.php:265
 msgid "Modal"
-msgstr "মোডাল"
+msgstr "Modal"
 
 #: widgets/advanced/sina-modal-box.php:273
 #: widgets/basic/sina-google-map.php:159
 msgid "Animation"
-msgstr "অ্যানিমেশন"
+msgstr "Animação"
 
 #: widgets/advanced/sina-modal-box.php:283
 #: widgets/advanced/sina-particle-layer.php:376
 msgid "Animation Speed"
-msgstr "অ্যানিমেশনের গতি"
+msgstr "Velocidade da animação"
 
 #: widgets/advanced/sina-modal-box.php:422 widgets/basic/sina-accordion.php:420
 #: widgets/basic/sina-table.php:609
 msgid "Header"
-msgstr "প্রধান"
+msgstr "Cabeçalho"
 
 #: widgets/advanced/sina-modal-box.php:573
 msgid "Footer"
-msgstr "পাদচরণ"
+msgstr "Rodapé"
 
 #: widgets/advanced/sina-modal-box.php:639
 msgid "Close Button Style"
-msgstr "বন্ধ বোতামের শৈলী"
+msgstr "Estilo botão Fechar"
 
 #: widgets/advanced/sina-modal-box.php:864
 msgid "Body"
-msgstr "দেহ"
+msgstr "Corpo"
 
 #: widgets/advanced/sina-modal-box.php:872
 msgid "Max Height"
-msgstr "সর্বোচ্চ উচ্চতা"
+msgstr "Altura máxima"
 
 #: widgets/advanced/sina-modal-box.php:1282
 msgid "Close"
-msgstr "বন্ধ"
+msgstr "Perto"
 
 #: widgets/advanced/sina-news-ticker.php:109
 msgid "Ticker Content"
-msgstr "টিকার সামগ্রী"
+msgstr "Conteúdo do Ticker"
 
 #: widgets/advanced/sina-news-ticker.php:142
 msgid "Ticker Settings"
-msgstr "টিকার সেটিংস"
+msgstr "Configurações do Ticker"
 
 #: widgets/advanced/sina-news-ticker.php:149
 msgid "Label Text"
-msgstr "লেবেলের লিখা"
+msgstr "Texto de rótulo"
 
 #: widgets/advanced/sina-news-ticker.php:157
 msgid "Label Position"
-msgstr "লেবেলের অবস্থান"
+msgstr "Posição da rótulo"
 
 #: widgets/advanced/sina-news-ticker.php:162
 msgid "Both"
-msgstr "উভয়"
+msgstr "Ambos"
 
 #: widgets/advanced/sina-news-ticker.php:173
 msgid "Pause On Hover"
-msgstr "হোভারে বিরতি"
+msgstr "Pausar ao hover"
 
 #: widgets/advanced/sina-news-ticker.php:180
 #: widgets/advanced/sina-news-ticker.php:579
 msgid "Time"
-msgstr "সময়"
+msgstr "Tempo"
 
 #: widgets/advanced/sina-news-ticker.php:188
 msgid "Scroll Speed"
-msgstr "স্ক্রোলের গতি"
+msgstr "Velocidade de rolagem"
 
 #: widgets/advanced/sina-news-ticker.php:205
 msgid "Left Label"
-msgstr "বামের লেবেল"
+msgstr "Rótulo Esquerda"
 
 #: widgets/advanced/sina-news-ticker.php:316
 msgid "Right Label"
-msgstr "ডানের লেবেল"
+msgstr "Rótulo certa"
 
 #: widgets/advanced/sina-news-ticker.php:427
 msgid "Headline"
-msgstr "শিরোনাম"
+msgstr "Manchete"
 
 #: widgets/advanced/sina-news-ticker.php:670
 msgid " not published yet"
-msgstr "এখনও প্রকাশিত হয় নি"
+msgstr "ainda não publicado"
 
 #: widgets/advanced/sina-particle-layer.php:238
 #: widgets/advanced/sina-particle-layer.php:280
@@ -3523,445 +3522,447 @@ msgstr ""
 #: widgets/advanced/sina-particle-layer.php:282
 #: widgets/basic/sina-dynamic-button.php:247
 msgid "Enter ID"
-msgstr "ID লিখুন"
+msgstr "Insira o ID"
 
 #: widgets/advanced/sina-particle-layer.php:241
 #: widgets/advanced/sina-particle-layer.php:283
 #: widgets/basic/sina-dynamic-button.php:248
 msgid "Make sure this ID unique"
-msgstr "এই ID-টী অনন্য তা নিশ্চিত করুন"
+msgstr "Certifique de que este ID seja único"
 
 #: widgets/advanced/sina-particle-layer.php:297
 msgid "Particle Settings"
-msgstr "কণাসমূহের সেটিংস"
+msgstr "Configurações de partícula"
 
 #: widgets/advanced/sina-particle-layer.php:313
 msgid "Ball Color"
-msgstr "বলের রঙ"
+msgstr "Cor da Bola"
 
 #: widgets/advanced/sina-particle-layer.php:321
 msgid "Particles Number"
-msgstr "কণাসমূহের নম্বর"
+msgstr "Número de Partículas"
 
 #: widgets/advanced/sina-particle-layer.php:332
 msgid "Link Width"
-msgstr "লিঙ্কের প্রস্থ"
+msgstr "Largura do Link"
 
 #: widgets/advanced/sina-particle-layer.php:343
 msgid "Link Distance"
-msgstr "লিঙ্কের দূরত্ব"
+msgstr "Distância do link"
 
 #: widgets/advanced/sina-particle-layer.php:354
 msgid "Create Link"
-msgstr "লিঙ্ক তৈরি করুন"
+msgstr "Criar Link"
 
 #: widgets/advanced/sina-particle-layer.php:365
 msgid "Ball Max Size"
-msgstr "বলের সর্বোচ্চ আকার"
+msgstr "Tamanho máximo bola"
 
 #: widgets/advanced/sina-particle-layer.php:387
 msgid "Disable Links"
-msgstr "লিঙ্কগুলি অক্ষম"
+msgstr "Desativar links"
 
 #: widgets/advanced/sina-particle-layer.php:396
 msgid "Disable Mouse"
-msgstr "মাউস অক্ষম"
+msgstr "Desativar mouse"
 
 #: widgets/advanced/sina-particle-layer.php:413
 msgid "Animation Settings"
-msgstr "অ্যানিমেশনের সেটিংস"
+msgstr "Configurações de animação"
 
 #: widgets/advanced/sina-particle-layer.php:558
 msgid "Template Style"
-msgstr "টেমপ্লেট শৈলী"
+msgstr "Estilo do modelo"
 
 #: widgets/advanced/sina-portfolio.php:116
 msgid "Portfolio"
-msgstr "পোর্টফোলিও"
+msgstr "Portfólio"
 
 #: widgets/advanced/sina-portfolio.php:127
 msgid "Fade"
-msgstr "বিবর্ণ"
+msgstr "Desvaneça"
 
 #: widgets/advanced/sina-portfolio.php:129
 msgid "Fade & Move"
-msgstr "বিবর্ণ ও নড়ানো"
+msgstr "Fade e mover"
 
 #: widgets/advanced/sina-portfolio.php:130
 msgid "Zoom & Move"
-msgstr "নড়ানো ও প্রসারিত"
+msgstr "Mover e ampliar"
 
 #: widgets/advanced/sina-portfolio.php:146
 msgid "Masonry"
-msgstr "স্থাপত্য"
+msgstr "Alvenaria"
 
 #: widgets/advanced/sina-portfolio.php:154
 msgid "Reset Text"
-msgstr "রিসেটের লিখা"
+msgstr "Redefinir texto"
 
 #: widgets/advanced/sina-portfolio.php:156
 msgid "Enter Reset Text"
-msgstr "রিসেট লিখা লিখুন"
+msgstr "Digite texto redefinição"
 
 #: widgets/advanced/sina-portfolio.php:163
 #: widgets/advanced/sina-posts-carousel.php:195
 msgid "Show Content"
-msgstr "বিষয়বস্তু দেখান"
+msgstr "Mostrar conteúdo"
 
 #: widgets/advanced/sina-portfolio.php:201
 msgid "Category"
-msgstr "বিভাগ"
+msgstr "Categoria"
 
 #: widgets/advanced/sina-portfolio.php:204
 msgid "Multiple category must be comma separated!"
-msgstr "একাধিক বিভাগ কমা দ্বারা পৃথক করতে হবে!"
+msgstr "As categorias múltiplas devem ser separadas por vírgulas!"
 
 #: widgets/advanced/sina-portfolio.php:230
 msgid "1 Column 1 Row"
-msgstr "১ কলাম ১ সারি"
+msgstr "1 coluna 1 linha"
 
 #: widgets/advanced/sina-portfolio.php:231
 msgid "1 Column 2 Row"
-msgstr "১ কলাম ২ সারি"
+msgstr "1 coluna 2 linha"
 
 #: widgets/advanced/sina-portfolio.php:232
 msgid "2 Column 1 Row"
-msgstr "২ কলাম ১ সারি"
+msgstr "2 coluna 1 linha"
 
 #: widgets/advanced/sina-portfolio.php:233
 msgid "2 Column 2 Row"
-msgstr "২ কলাম ২ সারি"
+msgstr "2 coluna 2 linha"
 
 #: widgets/advanced/sina-portfolio.php:234
 msgid "3 Column 1 Row"
-msgstr "৩ কলাম ১ সারি"
+msgstr "3 coluna 1 linha"
 
 #: widgets/advanced/sina-portfolio.php:235
 msgid "3 Column 2 Row"
-msgstr "৩ কলাম ২ সারি"
+msgstr "3 coluna 2 linha"
 
 #: widgets/advanced/sina-portfolio.php:236
 msgid "3 Column 3 Row"
-msgstr "৩ কলাম ৩ সারি"
+msgstr "3 colunas 3 linhas"
 
 #: widgets/advanced/sina-portfolio.php:238
 msgid ""
 "Size will work if the <strong>\"number of columns\"</strong> is <strong>"
 "\"Masonry\"</strong> selected"
-msgstr "যদি \"কলামের সংখ্যা\" \"স্থাপত্য\" নির্বাচন করা হয় তবে আকার কাজ করবে"
+msgstr ""
+"O tamanho funcionará se o <strong>\"número de colunas\"</strong> for <strong>"
+"\"Alvenaria\"</strong> selecionado"
 
 #: widgets/advanced/sina-portfolio.php:321
 msgid "Menu Buttons"
-msgstr "মেনুর বোতামগুলো"
+msgstr "Botões do Menu"
 
 #: widgets/advanced/sina-portfolio.php:349
 msgid "Gap From Items"
-msgstr "আইটেমগুলো থেকে দূরত্ব"
+msgstr "Espaço de itens"
 
 #: widgets/advanced/sina-portfolio.php:443
 msgid "Items"
-msgstr "আইটেমগুলো"
+msgstr "Itens"
 
 #: widgets/advanced/sina-portfolio.php:502
 msgid "Overlay Styles"
-msgstr "আচ্ছাদনের শৈলী"
+msgstr "Estilos de sobreposição"
 
 #: widgets/advanced/sina-portfolio.php:709
 msgid "Icons"
-msgstr "আইকন গুলো"
+msgstr "Ícones"
 
 #: widgets/advanced/sina-portfolio.php:800
 msgid "Icons Gap"
-msgstr "আইকন গুলোর দূরত্ব"
+msgstr "Ícones espaço"
 
 #: widgets/advanced/sina-portfolio.php:815 widgets/basic/sina-table.php:617
 #: widgets/basic/sina-table.php:842 widgets/basic/sina-team.php:1036
 msgid "Icon Size"
-msgstr "আইকনের আকার"
+msgstr "Tamanho do ícone"
 
 #: widgets/advanced/sina-portfolio.php:858
 msgid "Zoom button radius"
-msgstr "জুম বোতামের ব্যাস"
+msgstr "Raio  botão ampliar"
 
 #: widgets/advanced/sina-portfolio.php:877
 msgid "Link button radius"
-msgstr "লিঙ্ক বোতামের ব্যাস"
+msgstr "Raio botão link"
 
 #: widgets/advanced/sina-posts-carousel.php:112
 msgid "Posts Content"
-msgstr "পোস্টের সামগ্রী"
+msgstr "Conteúdo de postagens"
 
 #: widgets/advanced/sina-posts-carousel.php:122 widgets/basic/sina-team.php:111
 msgid "Thumb"
-msgstr "থাম্ব"
+msgstr "Miniatura"
 
 #: widgets/advanced/sina-posts-carousel.php:204
 msgid "Excerpt"
-msgstr "উদ্ধত"
+msgstr "Excerto"
 
 #: widgets/advanced/sina-posts-carousel.php:389
 msgid "Vertical Align"
-msgstr "উল্লম্ব সারি"
+msgstr "Alinhamento Vertical"
 
 #: widgets/advanced/sina-posts-carousel.php:826
 msgid "Button Styles"
-msgstr "বোতামের শৈলী"
+msgstr "Estilos de botão"
 
 #: widgets/advanced/sina-posts-carousel.php:1640
 msgid "Avatar"
-msgstr "অবতার"
+msgstr "Avatar"
 
 #: widgets/advanced/sina-posts-tab.php:110
 msgid "Tab Content"
-msgstr "ট্যাব সামগ্রী"
+msgstr "Conteúdo da aba"
 
 #: widgets/advanced/sina-posts-tab.php:120
 msgid "Select Category"
-msgstr "নির্বাচন করুন"
+msgstr "Selecione Categoria"
 
 #: widgets/advanced/sina-posts-tab.php:139
 msgid "Add Categories"
-msgstr "বিভাগসমূহ যুক্ত করুন"
+msgstr "Adicionar categorias"
 
 #: widgets/advanced/sina-posts-tab.php:164
 msgid "Tag"
-msgstr "ট্যাগ"
+msgstr "Etiqueta"
 
 #: widgets/advanced/sina-posts-tab.php:173
 msgid "Preview Right"
-msgstr "পূর্বরূপ ডানে"
+msgstr "Visualizar direita"
 
 #: widgets/advanced/sina-posts-tab.php:190
 msgid "Categories Wrapper"
-msgstr "বিভাগসমূহের ধারক"
+msgstr "Wrapper de categorias"
 
 #: widgets/advanced/sina-posts-tab.php:296
 msgid "Gap From Content"
-msgstr "সামগ্রী থেকে দূরত্ব"
+msgstr "Lacuna do conteúdo"
 
 #: widgets/advanced/sina-posts-tab.php:409
 msgid "Thumbnail"
-msgstr "থাম্বনেইল"
+msgstr "Miniatura"
 
 #: widgets/advanced/sina-posts-tab.php:417
 msgid "Width (%)"
-msgstr "প্রস্থ (%)"
+msgstr "Largura (%)"
 
 #: widgets/advanced/sina-posts-tab.php:528
 msgid "Title Style"
-msgstr "শিরোনামের শৈলী"
+msgstr "Estilo do Título"
 
 #: widgets/advanced/sina-posts-tab.php:576
 msgid "Meta Style"
-msgstr "মেটার শৈলী"
+msgstr "Meta estilo"
 
 #: widgets/advanced/sina-posts-tab.php:605
 #: widgets/advanced/sina-posts-tab.php:942
 msgid "Gap From Title"
-msgstr "শিরোনাম থেকে দূরত্ব"
+msgstr "Espaço de  título"
 
 #: widgets/advanced/sina-posts-tab.php:626
 msgid "Preview List"
-msgstr "পূর্বরূপ তালিকা"
+msgstr "Lista de visualização"
 
 #: widgets/advanced/sina-posts-tab.php:634
 msgid "List Width (%)"
-msgstr "তালিকার প্রস্থ(%)"
+msgstr "Largura da lista (%)"
 
 #: widgets/advanced/sina-posts-tab.php:657
 msgid "List Padding"
-msgstr "তালিকার প্যাডিং"
+msgstr "Preenchimento de lista"
 
 #: widgets/advanced/sina-posts-tab.php:675
 msgid "Title Width (%)"
-msgstr "শিরোনামের প্রস্থ (%)"
+msgstr "Largura do Título (%)"
 
 #: widgets/advanced/sina-posts-tab.php:699
 msgid "Preview Thumb Width (%)"
-msgstr "পূর্বরূপ থাম্বের প্রস্থ (%)"
+msgstr "Largura miniatura visualização (%)"
 
 #: widgets/advanced/sina-posts-tab.php:722
 msgid "Preview Thumb Height"
-msgstr "পূর্বরূপ থাম্বের উচ্চতা"
+msgstr "Altura miniatura visualização"
 
 #: widgets/advanced/sina-posts-tab.php:783
 msgid "Preview Title"
-msgstr "পূর্বরূপ শিরোনাম"
+msgstr "Título de visualização"
 
 #: widgets/advanced/sina-product-zoomer.php:111
 msgid "Product Content"
-msgstr "পণ্যের সামগ্রী"
+msgstr "Conteúdo do Produto"
 
 #: widgets/advanced/sina-product-zoomer.php:122
 msgid "Enter Product Title"
-msgstr "পণ্যের শিরোনাম লিখুন"
+msgstr "Insira título produto"
 
 #: widgets/advanced/sina-product-zoomer.php:136
 msgid "Enter Product Description"
-msgstr "পণ্যের বিবরণ লিখুন"
+msgstr "Insira descrição produto"
 
 #: widgets/advanced/sina-product-zoomer.php:164
 msgid "Content Bottom"
-msgstr "সামগ্রীর নীচে"
+msgstr "Conteúdo inferior"
 
 #: widgets/advanced/sina-product-zoomer.php:179
 msgid "Product Images"
-msgstr "পণ্যের ছবিগুলো"
+msgstr "Imagens de produtos"
 
 #: widgets/advanced/sina-product-zoomer.php:193
 msgid "This title will be show only item header"
-msgstr "এই শিরোনামটি আইটেম শিরোনামে প্রদর্শিত হবে"
+msgstr "Este título será mostrado apenas o cabeçalho do iten"
 
 #: widgets/advanced/sina-product-zoomer.php:200
 msgid "Original Image"
-msgstr "আসল ছবি"
+msgstr "Imagem original"
 
 #: widgets/advanced/sina-product-zoomer.php:213
 msgid "Thumb Image"
-msgstr "থাম্বের ছবি"
+msgstr "Imagem em miniatura"
 
 #: widgets/advanced/sina-product-zoomer.php:226
 msgid "Preview Image"
-msgstr "পূর্বরূপ ছবি"
+msgstr "Imagem de visualização"
 
 #: widgets/advanced/sina-product-zoomer.php:240
 msgid "Add Images"
-msgstr "ছবিগুলো যুক্ত করুন"
+msgstr "Adicionar imagens"
 
 #: widgets/advanced/sina-product-zoomer.php:288
 msgid "Show Preview"
-msgstr "পূর্বরূপ দেখান"
+msgstr "Mostrar Antevisão"
 
 #: widgets/advanced/sina-product-zoomer.php:296
 msgid "Zoomer Position"
-msgstr "জুমারের অবস্থান"
+msgstr "Posição do Zoomer"
 
 #: widgets/advanced/sina-product-zoomer.php:299
 msgid "Lens"
-msgstr "লেন্স"
+msgstr "Lente"
 
 #: widgets/advanced/sina-product-zoomer.php:300
 #: widgets/advanced/sina-review-carousel.php:274
 #: widgets/basic/sina-piechart.php:298 widgets/basic/sina-pricing.php:206
 msgid "Top"
-msgstr "উপরে"
+msgstr "Cima"
 
 #: widgets/advanced/sina-product-zoomer.php:311
 msgid "Lens Shape"
-msgstr "লেন্সের আকৃতি"
+msgstr "Forma da lente"
 
 #: widgets/advanced/sina-product-zoomer.php:314
 msgid "Circle"
-msgstr "বৃত্ত"
+msgstr "Círculo"
 
 #: widgets/advanced/sina-review-carousel.php:114
 msgid "Review"
-msgstr "পর্যালোচনা"
+msgstr "Reveja"
 
 #: widgets/advanced/sina-review-carousel.php:151
 #: widgets/basic/sina-team.php:159
 msgid "Enter Position"
-msgstr "অবস্থান লিখুন"
+msgstr "Insira a posição"
 
 #: widgets/advanced/sina-review-carousel.php:161
 #: widgets/advanced/sina-review-carousel.php:506
 msgid "Company"
-msgstr "প্রতিষ্ঠান"
+msgstr "Companhia"
 
 #: widgets/advanced/sina-review-carousel.php:163
 msgid "Enter Organization"
-msgstr "সংগঠনের নাম লিখুন"
+msgstr "Entrar na Organização"
 
 #: widgets/advanced/sina-review-carousel.php:173
 #: widgets/advanced/sina-review-carousel.php:575
 msgid "Comment"
-msgstr "মন্তব্য"
+msgstr "Comente"
 
 #: widgets/advanced/sina-review-carousel.php:175
 msgid "Enter Comment"
-msgstr "মন্তব্য লিখুন"
+msgstr "Insira comentário"
 
 #: widgets/advanced/sina-review-carousel.php:186
 msgid "Add Image"
-msgstr "ছবি যুক্ত করুন"
+msgstr "Adicionar imagem"
 
 #: widgets/advanced/sina-review-carousel.php:271
 #: widgets/basic/sina-pricing.php:203 widgets/basic/sina-team.php:121
 msgid "Image Position"
-msgstr "ছবির অবস্থান"
+msgstr "Posição da imagem"
 
 #: widgets/advanced/sina-search-form.php:96
 msgid "Form Content"
-msgstr "ফর্মের সামগ্রী"
+msgstr "Conteúdo do formulário"
 
 #: widgets/advanced/sina-search-form.php:104
 msgid "Placeholder text"
-msgstr "স্থানধারক লিখা"
+msgstr "Texto espaço reservado"
 
 #: widgets/advanced/sina-search-form.php:122
 msgid "Field"
-msgstr "ক্ষেত্র"
+msgstr "Campo"
 
 #: widgets/advanced/sina-twitter-feed.php:122
 #: widgets/advanced/sina-twitter-feed.php:611
 msgid "Account Name"
-msgstr "অ্যাকাউন্টের নাম"
+msgstr "Nome da conta"
 
 #: widgets/advanced/sina-twitter-feed.php:125
 msgid "Enter account name"
-msgstr "অ্যাকাউন্টের নাম লিখুন"
+msgstr "Insira nome conta"
 
 #: widgets/advanced/sina-twitter-feed.php:126
 msgid "Use @ in front of your account name."
-msgstr "আপনার অ্যাকাউন্টের নামের সামনে \"@\" ব্যবহার করুন।"
+msgstr "Use @ antes do nome da sua conta."
 
 #: widgets/advanced/sina-twitter-feed.php:133
 msgid "Consumer Key"
-msgstr "গ্রাহক চাবি"
+msgstr "Chave consumidor"
 
 #: widgets/advanced/sina-twitter-feed.php:136
 msgid "Enter consumer key"
-msgstr "গ্রাহক চাবি লিখুন"
+msgstr "Insira chave consumidor"
 
 #: widgets/advanced/sina-twitter-feed.php:137
 msgid "Get Consumer Key"
-msgstr "গ্রাহক চাবি নিন"
+msgstr "Obtenha chave consumidor"
 
 #: widgets/advanced/sina-twitter-feed.php:143
 msgid "Consumer Secret Key"
-msgstr "গোপনীয় গ্রাহক চাবি"
+msgstr "Chave secreta consumidor"
 
 #: widgets/advanced/sina-twitter-feed.php:146
 msgid "Enter consumer secret key"
-msgstr "গোপনীয় গ্রাহক চাবি লিখুন"
+msgstr "Insira chave secreta consumidor"
 
 #: widgets/advanced/sina-twitter-feed.php:147
 msgid "Get Consumer Secret Key"
-msgstr "গোপনীয় গ্রাহক চাবি নিন"
+msgstr "Obtenha chave secreta consumidor"
 
 #: widgets/advanced/sina-twitter-feed.php:444
 msgid "Account Name Styles"
-msgstr "অ্যাকাউন্ট নামের শৈলী"
+msgstr "Estilos nome conta"
 
 #: widgets/basic/sina-accordion.php:114
 msgid "Accordion"
-msgstr "অ্যাকর্ডিয়ন"
+msgstr "Acordeão"
 
 #: widgets/basic/sina-accordion.php:122
 msgid "First Item Open"
-msgstr "প্রথম আইটেম খোলা থাকবে"
+msgstr "Primeiro iten aberto"
 
 #: widgets/basic/sina-accordion.php:138
 msgid "Active Icon"
-msgstr "সক্রিয়ের আইকন"
+msgstr "Ícone Ativo"
 
 #: widgets/basic/sina-accordion.php:215
 msgid "Box Styles"
-msgstr "বাক্সের শৈলী"
+msgstr "Estilos de caixa"
 
 #: widgets/basic/sina-accordion.php:249
 msgid "Header Styles"
-msgstr "প্রধানের শৈলী"
+msgstr "Estilos de cabeçalho"
 
 #: widgets/basic/sina-accordion.php:267 widgets/basic/sina-accordion.php:473
 #: widgets/basic/sina-accordion.php:534 widgets/basic/sina-pricing.php:266
@@ -3973,153 +3974,153 @@ msgstr "প্রধানের শৈলী"
 #: widgets/basic/sina-team.php:1127 widgets/basic/sina-video.php:309
 #: widgets/basic/sina-video.php:361
 msgid "Icon Color"
-msgstr "আইকনের রঙ"
+msgstr "Cor do ícone"
 
 #: widgets/basic/sina-accordion.php:590
 msgid "Icon Padding"
-msgstr "আইকনের প্যাডিং"
+msgstr "Preenchimento de ícone"
 
 #: widgets/basic/sina-content-box.php:110
 msgid "Linkable Entire Box"
-msgstr "পুরো বাক্স লিঙ্কযোগ্য করুন"
+msgstr "Caixa inteira vinculável"
 
 #: widgets/basic/sina-content-box.php:136 widgets/basic/sina-pricing.php:164
 msgid "Ribbon Title"
-msgstr "ফিতার লিখা"
+msgstr "Título da fita"
 
 #: widgets/basic/sina-content-box.php:146 widgets/basic/sina-pricing.php:174
 msgid "Ribbon Position"
-msgstr "ফিতার অবস্থান"
+msgstr "Ribbon Position"
 
 #: widgets/basic/sina-content-box.php:168 widgets/basic/sina-counter.php:122
 #: widgets/basic/sina-flip-box.php:108 widgets/basic/sina-flip-box.php:198
 msgid "Icon Format"
-msgstr "আইকনের প্রকরণ"
+msgstr "Formato de ícone"
 
 #: widgets/basic/sina-content-box.php:461
 #: widgets/basic/sina-content-box.php:602
 #: widgets/basic/sina-content-box.php:781 widgets/basic/sina-counter.php:486
 #: widgets/basic/sina-flip-box.php:518
 msgid "Icon or Image"
-msgstr "আইকন বা ছবি"
+msgstr "Ícone ou imagem"
 
 #: widgets/basic/sina-content-box.php:518
 #: widgets/basic/sina-content-box.php:661
 msgid "Title & Description"
-msgstr "শিরোনাম ও বর্ণনা"
+msgstr "Título e Descrição"
 
 #: widgets/basic/sina-content-box.php:525
 #: widgets/basic/sina-content-box.php:668
 msgid "Title Color"
-msgstr "শিরোনামের রঙ"
+msgstr "Cor do Título"
 
 #: widgets/basic/sina-content-box.php:539
 #: widgets/basic/sina-content-box.php:681
 msgid "Description Color"
-msgstr "বর্ণনার রঙ"
+msgstr "Descrição Cor"
 
 #: widgets/basic/sina-content-box.php:815
 msgid "Float"
-msgstr "দিক"
+msgstr "Flutuador"
 
 #: widgets/basic/sina-content-box.php:1123 widgets/basic/sina-pricing.php:1417
 msgid "Ribbon"
-msgstr "ফিতা"
+msgstr "Fita"
 
 #: widgets/basic/sina-counter.php:114
 msgid "Counter"
-msgstr "গণনাকারী"
+msgstr "Contador"
 
 #: widgets/basic/sina-counter.php:182
 msgid "Title Position"
-msgstr "শিরোনামের অবস্থান"
+msgstr "Posição do Título"
 
 #: widgets/basic/sina-counter.php:197 widgets/basic/sina-piechart.php:157
 #: widgets/basic/sina-progressbar.php:202
 msgid "Prefix"
-msgstr "উপসর্গ"
+msgstr "Prefixo"
 
 #: widgets/basic/sina-counter.php:199 widgets/basic/sina-pricing.php:137
 msgid "Enter Prefix"
-msgstr "উপসর্গ লিখুন"
+msgstr "Insira o prefixo"
 
 #: widgets/basic/sina-counter.php:208
 msgid "Prefix Space"
-msgstr "উপসর্গের দূরত্ব"
+msgstr "Espaço de Prefixo"
 
 #: widgets/basic/sina-counter.php:227 widgets/basic/sina-piechart.php:168
 #: widgets/basic/sina-progressbar.php:213
 msgid "Suffix"
-msgstr "প্রত্যয়"
+msgstr "Sufixo"
 
 #: widgets/basic/sina-counter.php:229 widgets/basic/sina-pricing.php:151
 msgid "Enter Suffix"
-msgstr "প্রত্যয় লিখুন"
+msgstr "Digite o sufixo"
 
 #: widgets/basic/sina-counter.php:238
 msgid "Suffix space"
-msgstr "প্রত্যয়ের দূরত্ব"
+msgstr "Espaço de sufixo"
 
 #: widgets/basic/sina-counter.php:257
 msgid "Thousand Delimiter"
-msgstr "হাজার ডিলিমিটার"
+msgstr "Mil Delimitador"
 
 #: widgets/basic/sina-counter.php:260
 msgid "Comma"
-msgstr "বিরামচিহ্ন"
+msgstr "Vírgula"
 
 #: widgets/basic/sina-counter.php:261
 msgid "Dot"
-msgstr "বিন্দু"
+msgstr "Ponto"
 
 #: widgets/basic/sina-counter.php:262
 msgid "Pipe"
-msgstr "নল"
+msgstr "Tubo"
 
 #: widgets/basic/sina-counter.php:263 widgets/basic/sina-transform.php:124
 msgid "Space"
-msgstr "দূরত্ব"
+msgstr "Espaço"
 
 #: widgets/basic/sina-counter.php:271
 msgid "Start Number"
-msgstr "শুরুর নম্বর"
+msgstr "Número Inicial"
 
 #: widgets/basic/sina-counter.php:283
 msgid "Stop Number"
-msgstr "থামার নম্বর"
+msgstr "Número de parada"
 
 #: widgets/basic/sina-counter.php:295
 msgid "Counting Duration"
-msgstr "গণনার ব্যাপ্তি"
+msgstr "Duração da contagem"
 
 #: widgets/basic/sina-counter.php:416 widgets/basic/sina-user-counter.php:260
 #: widgets/basic/sina-visit-counter.php:259
 msgid "Number"
-msgstr "সংখ্যা"
+msgstr "Número"
 
 #: widgets/basic/sina-dynamic-button.php:118
 msgid "Button Type"
-msgstr "বোতামের ধরণ"
+msgstr "Tipo de botão"
 
 #: widgets/basic/sina-dynamic-button.php:121
 msgid "Static"
-msgstr "স্থির"
+msgstr "Estático"
 
 #: widgets/basic/sina-dynamic-button.php:122
 msgid "Page"
-msgstr "পৃষ্ঠা"
+msgstr "Página"
 
 #: widgets/basic/sina-dynamic-button.php:123
 msgid "Taxonomy"
-msgstr "শ্রেণীবিন্যাস"
+msgstr "Taxonomia"
 
 #: widgets/basic/sina-dynamic-button.php:131
 msgid "Select Page"
-msgstr "পৃষ্ঠা নির্বাচন করুন"
+msgstr "Selecione página"
 
 #: widgets/basic/sina-dynamic-button.php:143
 msgid "Select Taxonomy"
-msgstr "শ্রেণীবিন্যাস নির্বাচন করুন"
+msgstr "Selecione Taxonomia"
 
 #: widgets/basic/sina-dynamic-button.php:237
 msgid "CSS CLASS"
@@ -4128,61 +4129,61 @@ msgstr ""
 #: widgets/basic/sina-fancytext.php:112 widgets/basic/sina-fancytext.php:135
 #: widgets/basic/sina-fancytext.php:341
 msgid "Fancy Text"
-msgstr "অভিনবের লিখা"
+msgstr "Texto Extravagante"
 
 #: widgets/basic/sina-fancytext.php:158 widgets/basic/sina-fancytext.php:383
 #: widgets/basic/sina-user-counter.php:126
 msgid "Prefix Text"
-msgstr "উপসর্গের লিখা"
+msgstr "Texto do prefixo"
 
 #: widgets/basic/sina-fancytext.php:161 widgets/basic/sina-user-counter.php:129
 msgid "Enter prefix text"
-msgstr "উপসর্গের লিখা লিখুন"
+msgstr "Insira texto prefixo"
 
 #: widgets/basic/sina-fancytext.php:171 widgets/basic/sina-fancytext.php:423
 #: widgets/basic/sina-user-counter.php:140
 msgid "Suffix Text"
-msgstr "প্রত্যয়ের লিখা"
+msgstr "Sufixo Texto"
 
 #: widgets/basic/sina-fancytext.php:174 widgets/basic/sina-user-counter.php:143
 msgid "Enter suffix text"
-msgstr "প্রত্যয়ের লিখা লিখুন"
+msgstr "Digite texto sufixo"
 
 #: widgets/basic/sina-fancytext.php:192
 msgid "Fancy Settings"
-msgstr "অভিনব সেটিংস"
+msgstr "Configurações extravagantes"
 
 #: widgets/basic/sina-fancytext.php:239
 msgid "Typing"
-msgstr "লিখতে থাকা"
+msgstr "Digitando"
 
 #: widgets/basic/sina-fancytext.php:244
 msgid "Animation Type"
-msgstr "অ্যানিমেশনের ধরণ"
+msgstr "Tipo de Animação"
 
 #: widgets/basic/sina-fancytext.php:264
 msgid "Typing Speed"
-msgstr "লিখার গতি"
+msgstr "Velocidade de digitação"
 
 #: widgets/basic/sina-fancytext.php:278
 msgid "Loop"
-msgstr "লুপ"
+msgstr "Ciclo"
 
 #: widgets/basic/sina-fancytext.php:289
 msgid "Cursor"
-msgstr "কার্সার"
+msgstr "Cursor"
 
 #: widgets/basic/sina-fancytext.php:302
 msgid "Cursor Color"
-msgstr "কার্সারের রঙ"
+msgstr "Cor do Cursor"
 
 #: widgets/basic/sina-flip-box.php:100
 msgid "Front Side"
-msgstr "সামনের দিকে"
+msgstr "Frente"
 
 #: widgets/basic/sina-flip-box.php:190
 msgid "Back Side"
-msgstr "পিছন দিক"
+msgstr "Alça de mira"
 
 #: widgets/basic/sina-flip-box.php:302
 msgid "Horizontal Flip"
@@ -4195,346 +4196,348 @@ msgstr ""
 #: widgets/basic/sina-flip-box.php:319 widgets/basic/sina-flip-box.php:528
 #: widgets/basic/sina-flip-box.php:785 widgets/basic/sina-flip-box.php:936
 msgid "Front"
-msgstr "সামনে"
+msgstr "Frente"
 
 #: widgets/basic/sina-flip-box.php:367 widgets/basic/sina-flip-box.php:432
 msgid "Content Padding"
-msgstr "সামগ্রীর প্যাডিং"
+msgstr "Preenchimento conteúdo"
 
 #: widgets/basic/sina-flip-box.php:384 widgets/basic/sina-flip-box.php:647
 #: widgets/basic/sina-flip-box.php:851 widgets/basic/sina-flip-box.php:982
 msgid "Back"
-msgstr "পেছনে"
+msgstr "Costas"
 
 #: widgets/basic/sina-google-map.php:109 widgets/basic/sina-google-map.php:203
 msgid "Map"
-msgstr "মানচিত্র"
+msgstr "Mapa"
 
 #: widgets/basic/sina-google-map.php:117
 msgid "If you would like to change the API key"
-msgstr "আপনি যদি এপিআই চাবিটি পরিবর্তন করতে চান"
+msgstr "Se você gostaria de mudar a chave API"
 
 #: widgets/basic/sina-google-map.php:125
 msgid "Latitude"
-msgstr "অক্ষাংশ"
+msgstr "Latitude"
 
 #: widgets/basic/sina-google-map.php:136
 msgid "Longitude"
-msgstr "দ্রাঘিমাংশ"
+msgstr "Longitude"
 
 #: widgets/basic/sina-google-map.php:162
 msgid "Drop"
-msgstr "ঝরা"
+msgstr "Solta"
 
 #: widgets/basic/sina-google-map.php:171
 msgid "Marker"
-msgstr "চিহ্নিতকারী"
+msgstr "Marcador"
 
 #: widgets/basic/sina-google-map.php:179
 msgid "Choose Marker"
-msgstr "চিহ্নিতকারী ছবি চয়ন করুন"
+msgstr "Escolha marcador"
 
 #: widgets/basic/sina-image-differ.php:113
 msgid "Differ Content"
-msgstr "পার্থক্যের সামগ্রী"
+msgstr "Conteúdo Comparar"
 
 #: widgets/basic/sina-image-differ.php:121
 msgid "Before Image"
-msgstr "পূর্বের ছবি"
+msgstr "Antes da Imagem"
 
 #: widgets/basic/sina-image-differ.php:134
 msgid "After Image"
-msgstr "পরের ছবি"
+msgstr "Depois da imagem"
 
 #: widgets/basic/sina-image-differ.php:155
 msgid "Differ Settings"
-msgstr "পার্থক্যের সেটিংস"
+msgstr "Comparar configurações"
 
 #: widgets/basic/sina-image-differ.php:163
 msgid "Before Text"
-msgstr "পূর্বের লিখা"
+msgstr "Antes do Texto"
 
 #: widgets/basic/sina-image-differ.php:171
 msgid "After Text"
-msgstr "পরের লিখা"
+msgstr "Depois do Texto"
 
 #: widgets/basic/sina-image-differ.php:179
 msgid "Orientation"
-msgstr "ওরিয়েন্টেশন"
+msgstr "Orientação"
 
 #: widgets/basic/sina-image-differ.php:191
 msgid "Slider Offset"
-msgstr "স্লাইডার অফসেট"
+msgstr "Deslocamento controle deslizante"
 
 #: widgets/basic/sina-image-differ.php:211
 msgid "Slider move on hover"
-msgstr "হোভারে স্লাইডার নড়ানো"
+msgstr "Deslizante move hover"
 
 #: widgets/basic/sina-image-differ.php:220
 msgid "Slider move on click"
-msgstr "ক্লিকে স্লাইডার নড়ানো"
+msgstr "Controle deslizante move clicar"
 
 #: widgets/basic/sina-image-differ.php:237
 msgid "Differ"
-msgstr "পার্থক্য"
+msgstr "Comparar"
 
 #: widgets/basic/sina-image-differ.php:256
 msgid "Handle Background"
-msgstr "হ্যান্ডেলের পটভূমি"
+msgstr "Fundo separador alça"
 
 #: widgets/basic/sina-image-differ.php:267
 msgid "Handle Separator Color"
-msgstr "হ্যান্ডেলের বিভাজক রঙ"
+msgstr "Cor separador alça"
 
 #: widgets/basic/sina-image-differ.php:325
 msgid "Labels"
-msgstr "লেবেলগুলো"
+msgstr "Rótulos"
 
 #: widgets/basic/sina-piechart.php:111
 msgid "Piechart"
-msgstr "পাই চিত্র"
+msgstr "Gráfico de pizza"
 
 #: widgets/basic/sina-piechart.php:122
 msgid "Enter title"
-msgstr "শিরোনাম লিখুন"
+msgstr "Digite o título"
 
 #: widgets/basic/sina-piechart.php:133 widgets/basic/sina-piechart.php:376
 #: widgets/basic/sina-progressbar.php:178
 msgid "Value"
-msgstr "মান"
+msgstr "Valor"
 
 #: widgets/basic/sina-piechart.php:145 widgets/basic/sina-progressbar.php:190
 msgid "Max Value"
-msgstr "সর্বাধিক মান"
+msgstr "Valor máximo"
 
 #: widgets/basic/sina-piechart.php:159 widgets/basic/sina-progressbar.php:204
 msgid "Enter prefix"
-msgstr "উপসর্গ লিখুন"
+msgstr "Insira o prefixo"
 
 #: widgets/basic/sina-piechart.php:170 widgets/basic/sina-progressbar.php:215
 msgid "Enter suffix"
-msgstr "প্রত্যয় লিখুন"
+msgstr "Digite o sufixo"
 
 #: widgets/basic/sina-piechart.php:196
 msgid "Animation Duration"
-msgstr "অ্যানিমেশনের ব্যাপ্তি"
+msgstr "Duração da animação"
 
 #: widgets/basic/sina-piechart.php:215
 msgid "Chart"
-msgstr "চার্ট"
+msgstr "Gráfico"
 
 #: widgets/basic/sina-piechart.php:223
 msgid "Bar Color"
-msgstr "বারের রঙ"
+msgstr "Cor da Barra"
 
 #: widgets/basic/sina-piechart.php:231
 msgid "Bar Width"
-msgstr "বারের প্রস্থ"
+msgstr "Largura da Barra"
 
 #: widgets/basic/sina-piechart.php:241
 msgid "Bar Cap"
-msgstr "বারের মাথা"
+msgstr "Bar Cap"
 
 #: widgets/basic/sina-piechart.php:244
 msgid "Round"
-msgstr "গোল"
+msgstr "Redondo"
 
 #: widgets/basic/sina-piechart.php:245
 msgid "Square"
-msgstr "বর্গক্ষেত্র"
+msgstr "Quadrado"
 
 #: widgets/basic/sina-piechart.php:253
 msgid "Track Color"
-msgstr "পথের রঙ"
+msgstr "Cor de trilha"
 
 #: widgets/basic/sina-piechart.php:261
 msgid "Track Width"
-msgstr "পথের প্রস্থ"
+msgstr "Largura da trilha"
 
 #: widgets/basic/sina-piechart.php:271
 msgid "Scale Color"
-msgstr "স্কেল রঙ"
+msgstr "Cor da Escala"
 
 #: widgets/basic/sina-pricing.php:101
 msgid "Pricing"
-msgstr "মূল্য নির্ধারণ"
+msgstr "Preços"
 
 #: widgets/basic/sina-pricing.php:123 widgets/basic/sina-pricing.php:917
 msgid "Price"
-msgstr "মূল্য"
+msgstr "Preço"
 
 #: widgets/basic/sina-pricing.php:125
 msgid "Enter Price"
-msgstr "মুল্য লিখুন"
+msgstr "Insira o preço"
 
 #: widgets/basic/sina-pricing.php:135
 msgid "Price Prefix"
-msgstr "মূল্যের উপসর্গ"
+msgstr "Prefixo de preço"
 
 #: widgets/basic/sina-pricing.php:149
 msgid "Price Suffix"
-msgstr "মূল্যের প্রত্যয়"
+msgstr "Sufixo de preço"
 
 #: widgets/basic/sina-pricing.php:196
 msgid "Show Image"
-msgstr "ছবি দেখান"
+msgstr "Mostrar imagem"
 
 #: widgets/basic/sina-pricing.php:241
 msgid "Enter Content"
-msgstr "বিষয়বস্তু লিখুন"
+msgstr "Insira conteúdo"
 
 #: widgets/basic/sina-pricing.php:277
 msgid "Add Content"
-msgstr "সামগ্রী যুক্ত করুন"
+msgstr "Adicionar conteúdo"
 
 #: widgets/basic/sina-pricing.php:318
 msgid "Order Button"
-msgstr "অর্ডারের বোতাম"
+msgstr "Botão de pedido"
 
 #: widgets/basic/sina-pricing.php:600
 msgid "Price Styles"
-msgstr "মূল্যের শৈলী"
+msgstr "Estilos de preço"
 
 #: widgets/basic/sina-pricing.php:668
 msgid "Price Prefix Styles"
-msgstr "মূল্য উপসর্গের শৈলী"
+msgstr "Estilos prefixo preço"
 
 #: widgets/basic/sina-pricing.php:997
 msgid "Price Prefix / Suffix"
-msgstr "মূল্যের উপসর্গ / প্রত্যয়"
+msgstr "Prefixo / sufixo de preço"
 
 #: widgets/basic/sina-pricing.php:1008
 msgid "Prefix Color"
-msgstr "উপসর্গের রঙ"
+msgstr "Cor do Prefixo"
 
 #: widgets/basic/sina-pricing.php:1045
 msgid "Suffix Size"
-msgstr "প্রত্যয়ের আকার"
+msgstr "Tamanho do sufixo"
 
 #: widgets/basic/sina-pricing.php:1261
 msgid "Icon Styles"
-msgstr "আইকনের শৈলী"
+msgstr "Estilos de ícone"
 
 #: widgets/basic/sina-progressbar.php:114
 #: widgets/basic/sina-progressbar.php:233
 msgid "Progressbar"
-msgstr "প্রগতিবার"
+msgstr "Barra de progresso"
 
 #: widgets/basic/sina-progressbar.php:285 widgets/basic/sina-transform.php:788
 msgid "Border Radius"
-msgstr "সীমান্তের ব্যাস"
+msgstr "Raio de borda"
 
 #: widgets/basic/sina-progressbar.php:296
 msgid "Track Style"
-msgstr "পথের শৈলী"
+msgstr "Estilo de trilha"
 
 #: widgets/basic/sina-progressbar.php:384
 msgid "Bottom Margin"
-msgstr "নীচের প্রান্ত"
+msgstr "Margem inferior"
 
 #: widgets/basic/sina-progressbar.php:429
 msgid "Percentage"
-msgstr "শতাংশ"
+msgstr "Percentagem"
 
 #: widgets/basic/sina-social-icons.php:95
 #: widgets/basic/sina-social-icons.php:267
 msgid "Social Icons"
-msgstr "সামাজিক আইকনগুলো"
+msgstr "Ícones Sociais"
 
 #: widgets/basic/sina-social-icons.php:123 widgets/basic/sina-team.php:219
 msgid "This name will be show in the item header"
-msgstr "এই নামটি আইটেম শিরোনামে প্রদর্শিত হবে"
+msgstr "Este nome será mostrado no cabeçalho do iten"
 
 #: widgets/basic/sina-social-icons.php:227 widgets/basic/sina-team.php:326
 msgid "Add Social Icon"
-msgstr "সামাজিক আইকন যুক্ত করুন"
+msgstr "Adicionar Ícone Social"
 
 #: widgets/basic/sina-social-icons.php:355 widgets/basic/sina-team.php:1051
 #: widgets/basic/sina-video.php:464
 msgid "Line Height"
-msgstr "লাইনের উচ্চতা"
+msgstr "Altura da linha"
 
 #: widgets/basic/sina-table.php:111
 msgid "Table"
-msgstr "ছক"
+msgstr "Tabela"
 
 #: widgets/basic/sina-table.php:121 widgets/basic/sina-table.php:278
 msgid "Column Span"
-msgstr "কলাম স্প্যান"
+msgstr "Span da coluna"
 
 #: widgets/basic/sina-table.php:227
 msgid "Add Header Column"
-msgstr "প্রধান সারির কলাম যুক্ত করুন"
+msgstr "Adicionar coluna cabeçalho"
 
 #: widgets/basic/sina-table.php:253
 msgid "Content Type"
-msgstr "সামগ্রীর ধরণ"
+msgstr "Tipo de conteúdo"
 
 #: widgets/basic/sina-table.php:256
 msgid "Row"
-msgstr "সারি"
+msgstr "Linha"
 
 #: widgets/basic/sina-table.php:257
 msgid "Cell"
-msgstr "ঘর"
+msgstr "Célula"
 
 #: widgets/basic/sina-table.php:258
 msgid "Head"
-msgstr "হেড"
+msgstr "Cabeça"
 
 #: widgets/basic/sina-table.php:266
 msgid "Row Span"
-msgstr "সারি স্প্যান"
+msgstr "Span de linha"
 
 #: widgets/basic/sina-table.php:392
 msgid "Add Row"
-msgstr "সারি যুক্ত করুন"
+msgstr "Adicionar linha"
 
 #: widgets/basic/sina-table.php:433
 msgid ""
 "NOTICE: If you using data from the external source,  make sure here is no "
 "row or cell except the header row."
 msgstr ""
-"বিজ্ঞপ্তি: আপনি যদি বাহ্যিক উত্স থেকে ডেটা ব্যবহার করেন, তবে নিশ্চিত হয়ে "
-"নিন যে, প্রধান সারিতে ছাড়া এখানে কোনও সারি বা ঘর নেই।"
+"AVISO: Se você estiver usando dados de uma fonte externa, certifique-se de "
+"que não haja linhas ou células, exceto a linha do cabeçalho."
 
 #: widgets/basic/sina-table.php:448
 msgid "Table Settings"
-msgstr "ছকের সেটিংস"
+msgstr "Configurações da tabela"
 
 #: widgets/basic/sina-table.php:456
 msgid "Data Table"
-msgstr "উপাত্তের ছক"
+msgstr "Tabela de dados"
 
 #: widgets/basic/sina-table.php:458
 msgid "Whether this table use as a data table or not?"
-msgstr "এই ছকটি ডেটা ছক হিসাবে ব্যবহার হবে?"
+msgstr "Se esta tabela é usada como uma tabela de dados ou não?"
 
 #: widgets/basic/sina-table.php:464
 msgid "Data Export"
-msgstr "উপাত্ত রফতানি"
+msgstr "Exportação de Dados"
 
 #: widgets/basic/sina-table.php:475
 msgid "Data Searching"
-msgstr "উপাত্ত খোঁজা"
+msgstr "Pesquisa de dados"
 
 #: widgets/basic/sina-table.php:486
 msgid "Data Sorting"
-msgstr "উপাত্ত বাছা"
+msgstr "Classificação de dados"
 
 #: widgets/basic/sina-table.php:497
 msgid "Sortable Column Position"
-msgstr "বাছাইযোগ্য কলামের অবস্থান"
+msgstr "Posição coluna classificável"
 
 #: widgets/basic/sina-table.php:499
 msgid ""
 "Enter the column position to make that column sortable by default. (Ex. 1,2,"
 "3...)"
-msgstr "ডিফল্টরূপে কলামটিকে বাছাইযোগ্য করতে কলামের অবস্থান প্রবেশ করান।"
+msgstr ""
+"Insira a posição da coluna para torná-la classificável por padrão. (Ex. 1,2,"
+"3 ...)"
 
 #: widgets/basic/sina-table.php:511
 msgid "Select Order Type"
-msgstr "ক্রমের ধরন নির্বাচন করুন"
+msgstr "Selecione tipo de pedido"
 
 #: widgets/basic/sina-table.php:514
 msgid "DESC Order"
@@ -4546,11 +4549,11 @@ msgstr ""
 
 #: widgets/basic/sina-table.php:527
 msgid "Data Info"
-msgstr "উপাত্তের তথ্য"
+msgstr "Informação de dados"
 
 #: widgets/basic/sina-table.php:549
 msgid "Pagination Type"
-msgstr "পত্রাঙ্কনের ধরণ"
+msgstr "Tipo de Paginação"
 
 #: widgets/basic/sina-table.php:552
 msgid "Numbers Only"
@@ -4574,182 +4577,182 @@ msgstr ""
 
 #: widgets/basic/sina-table.php:557
 msgid "All"
-msgstr "সকল"
+msgstr "Tudo"
 
 #: widgets/basic/sina-table.php:569
 msgid "Data Source"
-msgstr "উপাত্তের উৎস"
+msgstr "Fonte de dados"
 
 #: widgets/basic/sina-table.php:573
 msgid "External"
-msgstr "বহিরাগত"
+msgstr "Externo"
 
 #: widgets/basic/sina-table.php:584
 msgid "Source Link"
-msgstr "উৎসের লিঙ্ক"
+msgstr "Link da fonte"
 
 #: widgets/basic/sina-table.php:587
 msgid "Enter Link"
-msgstr "লিঙ্ক লিখুন"
+msgstr "Insira o link"
 
 #: widgets/basic/sina-table.php:588
 msgid "The source link must have the data in JSON format!"
-msgstr "উৎস লিঙ্কে অবশ্যই JSON ফর্ম্যাটে ডেটা থাকতে হবে!"
+msgstr "Link de origem deve ter os dados no formato JSON!"
 
 #: widgets/basic/sina-table.php:1055
 msgid "Even Row"
-msgstr "জোড়া সারি"
+msgstr "Linha par"
 
 #: widgets/basic/sina-table.php:1151
 msgid "Export Buttons"
-msgstr "রফতানির বোতামগুলো"
+msgstr "Botões de exportação"
 
 #: widgets/basic/sina-table.php:1253
 msgid "Hover Color"
-msgstr "হোভার রঙ"
+msgstr "Hover cor"
 
 #: widgets/basic/sina-table.php:1290
 msgid "Bottom Gap"
-msgstr "নীচের ফাকা"
+msgstr "Espaço inferior"
 
 #: widgets/basic/sina-table.php:1368
 msgid "Accent"
-msgstr "স্বরাঘাত"
+msgstr "Sotaque"
 
 #: widgets/basic/sina-table.php:1407
 msgid "Accent Color"
-msgstr "স্বরাঘাতের রঙ"
+msgstr "Cor de destaque"
 
 #: widgets/basic/sina-table.php:1486
 msgid "Hover & Active Color"
-msgstr "হোভার ও সক্রিয় রঙ"
+msgstr "Hover e cor ativa"
 
 #: widgets/basic/sina-team.php:100
 msgid "Member"
-msgstr "সদস্য"
+msgstr "Membro"
 
 #: widgets/basic/sina-team.php:595
 msgid "Move & Zoom"
-msgstr "নড়ানো ও প্রসারিত"
+msgstr "Mover e ampliar"
 
 #: widgets/basic/sina-team.php:1013
 msgid "Social Icon"
-msgstr "সামাজিক আইকন"
+msgstr "Ícone Social"
 
 #: widgets/basic/sina-title.php:95
 msgid "Title Content"
-msgstr "শিরোনামের বিষয়বস্তু"
+msgstr "Conteúdo do Título"
 
 #: widgets/basic/sina-title.php:103 widgets/basic/sina-title.php:595
 msgid "Separator"
-msgstr "বিভাজক"
+msgstr "Separador"
 
 #: widgets/basic/sina-title.php:107
 msgid "Solid"
-msgstr "দৃঢ়"
+msgstr "Sólido"
 
 #: widgets/basic/sina-title.php:108
 msgid "Solid and Dot"
-msgstr "দৃঢ় ও বিন্দু"
+msgstr "Sólido e Ponto"
 
 #: widgets/basic/sina-title.php:116
 msgid "Separator Position"
-msgstr "বিভাজকের অবস্থান"
+msgstr "Posição do Separador"
 
 #: widgets/basic/sina-title.php:145
 msgid "Highlight Text"
-msgstr "দৃষ্টিগোচর লিখা"
+msgstr "Destacar Texto"
 
 #: widgets/basic/sina-title.php:148
 msgid "Enter Highlight Text"
-msgstr "দৃষ্টিগোচর লিখা লিখুন"
+msgstr "Insira texto destaque"
 
 #: widgets/basic/sina-title.php:149
 msgid "You can use SPAN TAG for multi-color title."
-msgstr "আপনি বহু রঙের শিরোনামের জন্য SPAN ব্যবহার করতে পারেন।"
+msgstr "Você pode usar SPAN TAG para títulos multicoloridos."
 
 #: widgets/basic/sina-title.php:177
 msgid "Enter Sub Title"
-msgstr "উপশিরোনাম লিখুন"
+msgstr "Insira o Subtítulo"
 
 #: widgets/basic/sina-title.php:622
 msgid "Dot Color"
-msgstr "বিন্দুর রঙ"
+msgstr "Cor punto"
 
 #: widgets/basic/sina-transform.php:97
 msgid "Transform Content"
-msgstr "রূপান্তর সামগ্রী"
+msgstr "Transformar o conteúdo"
 
 #: widgets/basic/sina-transform.php:159
 msgid "Transform Style"
-msgstr "রূপান্তরের শৈলী"
+msgstr "Estilo de transformação"
 
 #: widgets/basic/sina-transform.php:195
 msgid "Transform Effects"
-msgstr "রূপান্তর এফেক্টগুলো"
+msgstr "Efeitos de transformação"
 
 #: widgets/basic/sina-transform.php:215
 msgid "3D Transform"
-msgstr "তৃতীয় মাত্রায় রূপান্তর"
+msgstr "3D Transform"
 
 #: widgets/basic/sina-user-counter.php:109
 msgid "User Counter"
-msgstr "ব্যবহারকারী গণনাকারী"
+msgstr "Contador de usuário"
 
 #: widgets/basic/sina-user-counter.php:117
 msgid "Select Roles"
-msgstr "ভূমিকা নির্বাচন করুন"
+msgstr "Selecione funções"
 
 #: widgets/basic/sina-video.php:114
 msgid "Video"
-msgstr "ভিডিও"
+msgstr "Video"
 
 #: widgets/basic/sina-video.php:122
 msgid "Animation Effects"
-msgstr "অ্যানিমেশন এফেক্টগুলো"
+msgstr "Efeitos de animação"
 
 #: widgets/basic/sina-video.php:126
 msgid "Rubber"
-msgstr "রাবার"
+msgstr "Borracha"
 
 #: widgets/basic/sina-video.php:128
 msgid "Wave"
-msgstr "তরঙ্গ"
+msgstr "Onda"
 
 #: widgets/basic/sina-video.php:135
 msgid "Wave Color"
-msgstr "তরঙ্গের রঙ"
+msgstr "Cor da Onda"
 
 #: widgets/basic/sina-visit-counter.php:109
 msgid "Visitor Count"
-msgstr "দর্শনার্থীর গণনা"
+msgstr "Contagem de visitantes"
 
 #: widgets/basic/sina-visit-counter.php:117
 msgid "Today Text"
-msgstr "আজ-এর লিখা"
+msgstr "Texto Hoje"
 
 #: widgets/basic/sina-visit-counter.php:120
 #: widgets/basic/sina-visit-counter.php:134
 msgid "Enter text"
-msgstr "লিখা লিখুন"
+msgstr "Digite o texto"
 
 #: widgets/basic/sina-visit-counter.php:131
 msgid "Yesterday Text"
-msgstr "গতকাল-এর লিখা"
+msgstr "Texto Ontem"
 
 #: widgets/basic/sina-visit-counter.php:145
 msgid "Today at Top"
-msgstr "আজ উপরে"
+msgstr "Hoje no cima"
 
 #: widgets/layout/blogpost/grid.php:70 widgets/layout/blogpost/list.php:75
 #: widgets/layout/posts-carousel/grid.php:58
 #: widgets/layout/posts-carousel/list.php:65
 msgid "by"
-msgstr "কর্তৃক"
+msgstr "de"
 
 #. Description of the plugin
 msgid "A collection of high-quality widgets for Elementor page builder."
-msgstr "এলিমেন্টর পৃষ্ঠা নির্মাতার জন্য উচ্চ-মানের উইজেটগুলির একটি সংগ্রহ।"
+msgstr "A collection of high-quality widgets for Elementor page builder."
 
 #. URI of the plugin
 msgid "https://sinaextra.com/sina-addon-for-elementor/"
