@@ -1,4 +1,4 @@
-/* Sina Extension for Elementor v3.3.3 */
+/* Sina Extension for Elementor v3.3.4 */
 
 !(function ($) {
 	'use strict';
@@ -598,6 +598,14 @@
 				$zoom = $this.data('zoom'),
 				$lat = $this.data('lat'),
 				$long = $this.data('long'),
+				$defaultui = $this.data('defaultui') ? false : true,
+				$zoomControl = $this.data('zoom-control') ? true : false,
+				$streetControl = $this.data('street-control') ? true : false,
+				$fullscreenControl = $this.data('fullscreen-control') ? true : false,
+				$zoomControlPos = $this.data('zoom-position'),
+				$streetControlPos = $this.data('street-position'),
+				$fullscreenControlPos = $this.data('fullscreen-position'),
+				$mapStyle = $this.data('map-style'),
 				$isMarker = $this.data('marker'),
 				$marker = $this.data('marker-link');
 
@@ -606,7 +614,21 @@
 					lat: $lat,
 					lng: $long
 				},
-				zoom: $zoom
+				zoom: $zoom,
+				disableDefaultUI: $defaultui,
+				zoomControl: $zoomControl,
+				zoomControlOptions: {
+					position: google.maps.ControlPosition[$zoomControlPos]
+				},
+				streetViewControl: $streetControl,
+				streetViewControlOptions: {
+					position: google.maps.ControlPosition[$streetControlPos]
+				},
+				fullscreenControl: $fullscreenControl,
+				fullscreenControlOptions: {
+					position: google.maps.ControlPosition[$fullscreenControlPos]
+				},
+				styles: sinaMapStyles[$mapStyle],
 			});
 
 			if ( $isMarker && $marker ) {
@@ -797,14 +819,6 @@
 					$grid.isotope({filter: filterValue});
 				});
 
-				$btns.each(function (i, btns) {
-					var btns = $(btns);
-
-					btns.on('click', '.sina-portfolio-btn', function () {
-						btns.find('.is-checked').removeClass('is-checked');
-						$(this).addClass('is-checked');
-					});
-				});
 			});
 
 			$this.find('.sina-portfolio-zoom').magnificPopup({

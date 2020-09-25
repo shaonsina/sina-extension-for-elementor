@@ -60,6 +60,7 @@ abstract class Sina_Ext_Functions extends Sina_Extension_Base{
 		wp_register_script( 'data-table', SINA_EXT_URL .'assets/js/datatables.min.js', ['jquery'], SINA_EXT_VERSION, true );
 		// wp_register_script( 'data-table', '//cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.10.20/b-1.6.1/b-html5-1.6.1/b-print-1.6.1/datatables.min.js', ['jquery'], SINA_EXT_VERSION, true );
 		wp_register_script( 'sina-tooltip', SINA_EXT_URL .'assets/js/sina-tooltip.min.js', [], SINA_EXT_VERSION, true );
+		wp_register_script( 'sina-google-map-styles', SINA_EXT_URL .'assets/js/map-styles.min.js', [], SINA_EXT_VERSION, true );
 
 		if ( $map_apikey ) {
 			wp_register_script( 'sina-google-map', '//maps.google.com/maps/api/js?key='. $map_apikey, [], SINA_EXT_VERSION, true );

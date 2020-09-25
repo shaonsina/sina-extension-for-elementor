@@ -5,7 +5,7 @@ Donate link: https://sinaextra.com/sina-addon-for-elementor/
 Requires at least: 4.7
 Tested up to: 5.5
 Requires PHP: 7.0
-Stable tag: 3.3.3
+Stable tag: 3.3.4
 License: GPL v3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -36,9 +36,27 @@ Translation Ready for:
 * Bengali
 * French
 * German
-* Spanish
 * Portuguese
-Also, the .pot file provided, so you can translate into your local.
+* Spanish
+
+=== Also .po and .mo files included for below regions ===
+
+- Angola
+- Austria
+- Bangladesh
+- Belgium
+- Brazil
+- Canada
+- Chile
+- Colombia
+- Costa Rica
+- France
+- Germany
+- Mexico
+- Portugal
+- Puerto Rica
+- Spain
+- Switzerland
 
 == What can you do by this plugin? ==
 You can make unlimited design without coding knowledge.
@@ -226,6 +244,10 @@ Yes. It's totally free. We also have a [PRO](https://sinaextra.com/sina-addon-fo
 
 
 == Changelog ==
+
+= 3.3.4 - 25-09-2020 =
+- Added: More Styles of Google Map
+- Added: More options to Google Map
 
 = 3.3.3 - 06-09-2020 =
 - Added: Multiple link & label for buttons of Banner Slider

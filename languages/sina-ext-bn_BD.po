@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sina Extension for Elementor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-03 08:16+0000\n"
-"PO-Revision-Date: 2020-09-05 07:48+0000\n"
+"POT-Creation-Date: 2020-09-25 03:56+0000\n"
+"PO-Revision-Date: 2020-09-25 04:10+0000\n"
 "Last-Translator: \n"
 "Language-Team: Bengali (Bangladesh)\n"
 "Language: bn_BD\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/\n"
-"X-Loco-Version: 2.4.3; wp-5.4.2"
+"X-Loco-Version: 2.4.3; wp-5.5.1"
 
 #: sina-extension-for-elementor.php:39 widgets/basic/sina-accordion.php:42
 msgid "Sina Accordion"
@@ -490,7 +490,7 @@ msgstr "পরিপ্রেক্ষিতের আকার"
 #: widgets/advanced/sina-twitter-feed.php:362
 #: widgets/advanced/sina-twitter-feed.php:629
 #: widgets/basic/sina-accordion.php:456 widgets/basic/sina-content-box.php:406
-#: widgets/basic/sina-google-map.php:236 widgets/basic/sina-pricing.php:450
+#: widgets/basic/sina-google-map.php:375 widgets/basic/sina-pricing.php:450
 #: widgets/basic/sina-social-icons.php:134
 #: widgets/basic/sina-social-icons.php:373 widgets/basic/sina-table.php:169
 #: widgets/basic/sina-table.php:334 widgets/basic/sina-table.php:681
@@ -532,7 +532,7 @@ msgstr "স্থানান্তর-Y"
 #: widgets/advanced/sina-search-form.php:301
 #: widgets/advanced/sina-twitter-feed.php:411
 #: widgets/advanced/sina-twitter-feed.php:649
-#: widgets/basic/sina-content-box.php:556 widgets/basic/sina-google-map.php:253
+#: widgets/basic/sina-content-box.php:556 widgets/basic/sina-google-map.php:392
 #: widgets/basic/sina-pricing.php:508 widgets/basic/sina-social-icons.php:178
 #: widgets/basic/sina-social-icons.php:424 widgets/basic/sina-table.php:197
 #: widgets/basic/sina-table.php:362 widgets/basic/sina-table.php:742
@@ -543,7 +543,7 @@ msgstr "স্থানান্তর-Y"
 msgid "Hover"
 msgstr "হোভার"
 
-#: inc/sina-ext-controls-extend.php:603 widgets/basic/sina-google-map.php:272
+#: inc/sina-ext-controls-extend.php:603 widgets/basic/sina-google-map.php:411
 msgid "Transition Duration"
 msgstr "রূপান্তরের স্থায়িত্ব"
 
@@ -641,7 +641,7 @@ msgstr ""
 msgid "Zoom In Up"
 msgstr ""
 
-#: inc/sina-ext-controls.php:133 widgets/basic/sina-google-map.php:163
+#: inc/sina-ext-controls.php:133 widgets/basic/sina-google-map.php:310
 msgid "Bounce"
 msgstr ""
 
@@ -1682,11 +1682,11 @@ msgstr "পটভূমি"
 msgid "Focus"
 msgstr "ফোকাস"
 
-#: inc/sina-ext-func.php:92
+#: inc/sina-ext-func.php:93
 msgid "Sina Basic Widgets"
 msgstr "Sina সাধারণ উইজেট গুলো"
 
-#: inc/sina-ext-func.php:98
+#: inc/sina-ext-func.php:99
 msgid "Sina Advanced Widgets"
 msgstr "Sina উন্নত উইজেট গুলো"
 
@@ -1980,26 +1980,38 @@ msgid "Center Right"
 msgstr "কেন্দ্রের ডানে"
 
 #: inc/controls/gradient-text.php:170 inc/controls/gradient-text.php:212
+#: widgets/basic/sina-google-map.php:217 widgets/basic/sina-google-map.php:250
+#: widgets/basic/sina-google-map.php:283
 msgid "Top Center"
 msgstr "উপরের কেন্দ্রে"
 
 #: inc/controls/gradient-text.php:171 inc/controls/gradient-text.php:211
+#: widgets/basic/sina-google-map.php:216 widgets/basic/sina-google-map.php:249
+#: widgets/basic/sina-google-map.php:282
 msgid "Top Left"
 msgstr "উপরের বামে"
 
 #: inc/controls/gradient-text.php:172 inc/controls/gradient-text.php:213
+#: widgets/basic/sina-google-map.php:218 widgets/basic/sina-google-map.php:251
+#: widgets/basic/sina-google-map.php:284
 msgid "Top Right"
 msgstr "উপরের ডানে"
 
 #: inc/controls/gradient-text.php:173 inc/controls/gradient-text.php:218
+#: widgets/basic/sina-google-map.php:220 widgets/basic/sina-google-map.php:253
+#: widgets/basic/sina-google-map.php:286
 msgid "Bottom Center"
 msgstr "নীচের কেন্দ্রে"
 
 #: inc/controls/gradient-text.php:174 inc/controls/gradient-text.php:217
+#: widgets/basic/sina-google-map.php:219 widgets/basic/sina-google-map.php:252
+#: widgets/basic/sina-google-map.php:285
 msgid "Bottom Left"
 msgstr "নীচের বামে"
 
 #: inc/controls/gradient-text.php:175 inc/controls/gradient-text.php:219
+#: widgets/basic/sina-google-map.php:221 widgets/basic/sina-google-map.php:254
+#: widgets/basic/sina-google-map.php:287
 msgid "Bottom Right"
 msgstr "নীচের ডানে"
 
@@ -2305,7 +2317,7 @@ msgstr "ধারক"
 #: widgets/advanced/sina-posts-carousel.php:306
 #: widgets/advanced/sina-posts-tab.php:440
 #: widgets/basic/sina-content-box.php:906 widgets/basic/sina-flip-box.php:451
-#: widgets/basic/sina-google-map.php:211 widgets/basic/sina-progressbar.php:241
+#: widgets/basic/sina-google-map.php:350 widgets/basic/sina-progressbar.php:241
 #: widgets/basic/sina-social-icons.php:330 widgets/basic/sina-team.php:679
 #: widgets/basic/sina-title.php:660 widgets/basic/sina-transform.php:167
 #: widgets/basic/sina-video.php:439
@@ -2602,7 +2614,7 @@ msgstr "নড়ানো"
 #: widgets/advanced/sina-twitter-feed.php:256
 #: widgets/basic/sina-content-box.php:301
 #: widgets/basic/sina-content-box.php:803 widgets/basic/sina-flip-box.php:304
-#: widgets/basic/sina-google-map.php:147 widgets/basic/sina-pricing.php:345
+#: widgets/basic/sina-google-map.php:148 widgets/basic/sina-pricing.php:345
 #: widgets/basic/sina-team.php:378 widgets/basic/sina-team.php:594
 #: widgets/basic/sina-video.php:127
 msgid "Zoom"
@@ -3430,7 +3442,7 @@ msgid "Modal"
 msgstr "মোডাল"
 
 #: widgets/advanced/sina-modal-box.php:273
-#: widgets/basic/sina-google-map.php:159
+#: widgets/basic/sina-google-map.php:306
 msgid "Animation"
 msgstr "অ্যানিমেশন"
 
@@ -4206,31 +4218,177 @@ msgstr "সামগ্রীর প্যাডিং"
 msgid "Back"
 msgstr "পেছনে"
 
-#: widgets/basic/sina-google-map.php:109 widgets/basic/sina-google-map.php:203
+#: widgets/basic/sina-google-map.php:110 widgets/basic/sina-google-map.php:342
 msgid "Map"
 msgstr "মানচিত্র"
 
-#: widgets/basic/sina-google-map.php:117
+#: widgets/basic/sina-google-map.php:118
 msgid "If you would like to change the API key"
 msgstr "আপনি যদি এপিআই চাবিটি পরিবর্তন করতে চান"
 
-#: widgets/basic/sina-google-map.php:125
+#: widgets/basic/sina-google-map.php:126
 msgid "Latitude"
 msgstr "অক্ষাংশ"
 
-#: widgets/basic/sina-google-map.php:136
+#: widgets/basic/sina-google-map.php:137
 msgid "Longitude"
 msgstr "দ্রাঘিমাংশ"
 
-#: widgets/basic/sina-google-map.php:162
-msgid "Drop"
-msgstr "ঝরা"
+#: widgets/basic/sina-google-map.php:160
+msgid "Select Style"
+msgstr "শৈলী নির্বাচন করুন"
+
+#: widgets/basic/sina-google-map.php:163
+msgid "Style1"
+msgstr "শৈলী ১"
+
+#: widgets/basic/sina-google-map.php:164
+msgid "Style2"
+msgstr "শৈলী ২"
+
+#: widgets/basic/sina-google-map.php:165
+msgid "Style3"
+msgstr "শৈলী ৩"
+
+#: widgets/basic/sina-google-map.php:166
+msgid "Style4"
+msgstr "শৈলী ৪"
+
+#: widgets/basic/sina-google-map.php:167
+msgid "Style5"
+msgstr "শৈলী ৫"
+
+#: widgets/basic/sina-google-map.php:168
+msgid "Style6"
+msgstr "শৈলী ৬"
+
+#: widgets/basic/sina-google-map.php:169
+msgid "Style7"
+msgstr "শৈলী ৭"
+
+#: widgets/basic/sina-google-map.php:170
+msgid "Style8"
+msgstr "শৈলী ৮"
 
 #: widgets/basic/sina-google-map.php:171
+msgid "Style9"
+msgstr "শৈলী ৯"
+
+#: widgets/basic/sina-google-map.php:172
+msgid "Style10"
+msgstr "শৈলী ১০"
+
+#: widgets/basic/sina-google-map.php:173
+msgid "Style11"
+msgstr "শৈলী ১১"
+
+#: widgets/basic/sina-google-map.php:174
+msgid "Style12"
+msgstr "শৈলী ১২"
+
+#: widgets/basic/sina-google-map.php:175
+msgid "Style13"
+msgstr "শৈলী ১৩"
+
+#: widgets/basic/sina-google-map.php:176
+msgid "Style14"
+msgstr "শৈলী ১৪"
+
+#: widgets/basic/sina-google-map.php:177
+msgid "Style15"
+msgstr "শৈলী ১৫"
+
+#: widgets/basic/sina-google-map.php:178
+msgid "Style16"
+msgstr "শৈলী ১৬"
+
+#: widgets/basic/sina-google-map.php:179
+msgid "Style17"
+msgstr "শৈলী ১৭"
+
+#: widgets/basic/sina-google-map.php:180
+msgid "Style18"
+msgstr "শৈলী ১৮"
+
+#: widgets/basic/sina-google-map.php:181
+msgid "Style19"
+msgstr "শৈলী ১৯"
+
+#: widgets/basic/sina-google-map.php:182
+msgid "Style20"
+msgstr "শৈলী ২০"
+
+#: widgets/basic/sina-google-map.php:183
+msgid "Style21"
+msgstr "শৈলী ২১"
+
+#: widgets/basic/sina-google-map.php:191
+msgid "Default UI"
+msgstr "ডিফল্ট ইউআই"
+
+#: widgets/basic/sina-google-map.php:199
+msgid "Zoom Control"
+msgstr "জুম কন্ট্রোল"
+
+#: widgets/basic/sina-google-map.php:207
+msgid "Zoom Control Position"
+msgstr "জুম কন্ট্রোলের অবস্থান"
+
+#: widgets/basic/sina-google-map.php:210 widgets/basic/sina-google-map.php:243
+#: widgets/basic/sina-google-map.php:276
+msgid "Left Top"
+msgstr "বামের উপরে"
+
+#: widgets/basic/sina-google-map.php:211 widgets/basic/sina-google-map.php:244
+#: widgets/basic/sina-google-map.php:277
+msgid "Left Center"
+msgstr "বামের মাঝে"
+
+#: widgets/basic/sina-google-map.php:212 widgets/basic/sina-google-map.php:245
+#: widgets/basic/sina-google-map.php:278
+msgid "Left Bottom"
+msgstr "বামের নীচে"
+
+#: widgets/basic/sina-google-map.php:213 widgets/basic/sina-google-map.php:246
+#: widgets/basic/sina-google-map.php:279
+msgid "Right Top"
+msgstr "ডানের উপরে"
+
+#: widgets/basic/sina-google-map.php:214 widgets/basic/sina-google-map.php:247
+#: widgets/basic/sina-google-map.php:280
+msgid "Right Center"
+msgstr "ডানের মাঝে"
+
+#: widgets/basic/sina-google-map.php:215 widgets/basic/sina-google-map.php:248
+#: widgets/basic/sina-google-map.php:281
+msgid "Right Bottom"
+msgstr "ডানের নীচে"
+
+#: widgets/basic/sina-google-map.php:232
+msgid "Street View"
+msgstr "রাস্তার দৃশ্য"
+
+#: widgets/basic/sina-google-map.php:240
+msgid "Street View Position"
+msgstr "রাস্তার দৃশ্যের অবস্থান"
+
+#: widgets/basic/sina-google-map.php:265
+msgid "Fullscreen"
+msgstr "পূর্ণ পর্দা"
+
+#: widgets/basic/sina-google-map.php:273
+msgid "Fullscreen Position"
+msgstr "পূর্ণ পর্দার অবস্থান"
+
+#: widgets/basic/sina-google-map.php:298
 msgid "Marker"
 msgstr "চিহ্নিতকারী"
 
-#: widgets/basic/sina-google-map.php:179
+#: widgets/basic/sina-google-map.php:309
+msgid "Drop"
+msgstr "ঝরা"
+
+#: widgets/basic/sina-google-map.php:318
 msgid "Choose Marker"
 msgstr "চিহ্নিতকারী ছবি চয়ন করুন"
 

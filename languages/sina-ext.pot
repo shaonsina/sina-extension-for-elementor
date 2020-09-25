@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sina Extension for Elementor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-03 08:16+0000\n"
+"POT-Creation-Date: 2020-09-25 03:56+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -491,7 +491,7 @@ msgstr ""
 #: widgets/advanced/sina-twitter-feed.php:362
 #: widgets/advanced/sina-twitter-feed.php:629
 #: widgets/basic/sina-accordion.php:456 widgets/basic/sina-content-box.php:406
-#: widgets/basic/sina-google-map.php:236 widgets/basic/sina-pricing.php:450
+#: widgets/basic/sina-google-map.php:375 widgets/basic/sina-pricing.php:450
 #: widgets/basic/sina-social-icons.php:134
 #: widgets/basic/sina-social-icons.php:373 widgets/basic/sina-table.php:169
 #: widgets/basic/sina-table.php:334 widgets/basic/sina-table.php:681
@@ -533,7 +533,7 @@ msgstr ""
 #: widgets/advanced/sina-search-form.php:301
 #: widgets/advanced/sina-twitter-feed.php:411
 #: widgets/advanced/sina-twitter-feed.php:649
-#: widgets/basic/sina-content-box.php:556 widgets/basic/sina-google-map.php:253
+#: widgets/basic/sina-content-box.php:556 widgets/basic/sina-google-map.php:392
 #: widgets/basic/sina-pricing.php:508 widgets/basic/sina-social-icons.php:178
 #: widgets/basic/sina-social-icons.php:424 widgets/basic/sina-table.php:197
 #: widgets/basic/sina-table.php:362 widgets/basic/sina-table.php:742
@@ -544,7 +544,7 @@ msgstr ""
 msgid "Hover"
 msgstr ""
 
-#: inc/sina-ext-controls-extend.php:603 widgets/basic/sina-google-map.php:272
+#: inc/sina-ext-controls-extend.php:603 widgets/basic/sina-google-map.php:411
 msgid "Transition Duration"
 msgstr ""
 
@@ -642,7 +642,7 @@ msgstr ""
 msgid "Zoom In Up"
 msgstr ""
 
-#: inc/sina-ext-controls.php:133 widgets/basic/sina-google-map.php:163
+#: inc/sina-ext-controls.php:133 widgets/basic/sina-google-map.php:310
 msgid "Bounce"
 msgstr ""
 
@@ -1683,11 +1683,11 @@ msgstr ""
 msgid "Focus"
 msgstr ""
 
-#: inc/sina-ext-func.php:92
+#: inc/sina-ext-func.php:93
 msgid "Sina Basic Widgets"
 msgstr ""
 
-#: inc/sina-ext-func.php:98
+#: inc/sina-ext-func.php:99
 msgid "Sina Advanced Widgets"
 msgstr ""
 
@@ -1978,26 +1978,38 @@ msgid "Center Right"
 msgstr ""
 
 #: inc/controls/gradient-text.php:170 inc/controls/gradient-text.php:212
+#: widgets/basic/sina-google-map.php:217 widgets/basic/sina-google-map.php:250
+#: widgets/basic/sina-google-map.php:283
 msgid "Top Center"
 msgstr ""
 
 #: inc/controls/gradient-text.php:171 inc/controls/gradient-text.php:211
+#: widgets/basic/sina-google-map.php:216 widgets/basic/sina-google-map.php:249
+#: widgets/basic/sina-google-map.php:282
 msgid "Top Left"
 msgstr ""
 
 #: inc/controls/gradient-text.php:172 inc/controls/gradient-text.php:213
+#: widgets/basic/sina-google-map.php:218 widgets/basic/sina-google-map.php:251
+#: widgets/basic/sina-google-map.php:284
 msgid "Top Right"
 msgstr ""
 
 #: inc/controls/gradient-text.php:173 inc/controls/gradient-text.php:218
+#: widgets/basic/sina-google-map.php:220 widgets/basic/sina-google-map.php:253
+#: widgets/basic/sina-google-map.php:286
 msgid "Bottom Center"
 msgstr ""
 
 #: inc/controls/gradient-text.php:174 inc/controls/gradient-text.php:217
+#: widgets/basic/sina-google-map.php:219 widgets/basic/sina-google-map.php:252
+#: widgets/basic/sina-google-map.php:285
 msgid "Bottom Left"
 msgstr ""
 
 #: inc/controls/gradient-text.php:175 inc/controls/gradient-text.php:219
+#: widgets/basic/sina-google-map.php:221 widgets/basic/sina-google-map.php:254
+#: widgets/basic/sina-google-map.php:287
 msgid "Bottom Right"
 msgstr ""
 
@@ -2303,7 +2315,7 @@ msgstr ""
 #: widgets/advanced/sina-posts-carousel.php:306
 #: widgets/advanced/sina-posts-tab.php:440
 #: widgets/basic/sina-content-box.php:906 widgets/basic/sina-flip-box.php:451
-#: widgets/basic/sina-google-map.php:211 widgets/basic/sina-progressbar.php:241
+#: widgets/basic/sina-google-map.php:350 widgets/basic/sina-progressbar.php:241
 #: widgets/basic/sina-social-icons.php:330 widgets/basic/sina-team.php:679
 #: widgets/basic/sina-title.php:660 widgets/basic/sina-transform.php:167
 #: widgets/basic/sina-video.php:439
@@ -2596,7 +2608,7 @@ msgstr ""
 #: widgets/advanced/sina-twitter-feed.php:256
 #: widgets/basic/sina-content-box.php:301
 #: widgets/basic/sina-content-box.php:803 widgets/basic/sina-flip-box.php:304
-#: widgets/basic/sina-google-map.php:147 widgets/basic/sina-pricing.php:345
+#: widgets/basic/sina-google-map.php:148 widgets/basic/sina-pricing.php:345
 #: widgets/basic/sina-team.php:378 widgets/basic/sina-team.php:594
 #: widgets/basic/sina-video.php:127
 msgid "Zoom"
@@ -3418,7 +3430,7 @@ msgid "Modal"
 msgstr ""
 
 #: widgets/advanced/sina-modal-box.php:273
-#: widgets/basic/sina-google-map.php:159
+#: widgets/basic/sina-google-map.php:306
 msgid "Animation"
 msgstr ""
 
@@ -4194,31 +4206,177 @@ msgstr ""
 msgid "Back"
 msgstr ""
 
-#: widgets/basic/sina-google-map.php:109 widgets/basic/sina-google-map.php:203
+#: widgets/basic/sina-google-map.php:110 widgets/basic/sina-google-map.php:342
 msgid "Map"
 msgstr ""
 
-#: widgets/basic/sina-google-map.php:117
+#: widgets/basic/sina-google-map.php:118
 msgid "If you would like to change the API key"
 msgstr ""
 
-#: widgets/basic/sina-google-map.php:125
+#: widgets/basic/sina-google-map.php:126
 msgid "Latitude"
 msgstr ""
 
-#: widgets/basic/sina-google-map.php:136
+#: widgets/basic/sina-google-map.php:137
 msgid "Longitude"
 msgstr ""
 
-#: widgets/basic/sina-google-map.php:162
-msgid "Drop"
+#: widgets/basic/sina-google-map.php:160
+msgid "Select Style"
+msgstr ""
+
+#: widgets/basic/sina-google-map.php:163
+msgid "Style1"
+msgstr ""
+
+#: widgets/basic/sina-google-map.php:164
+msgid "Style2"
+msgstr ""
+
+#: widgets/basic/sina-google-map.php:165
+msgid "Style3"
+msgstr ""
+
+#: widgets/basic/sina-google-map.php:166
+msgid "Style4"
+msgstr ""
+
+#: widgets/basic/sina-google-map.php:167
+msgid "Style5"
+msgstr ""
+
+#: widgets/basic/sina-google-map.php:168
+msgid "Style6"
+msgstr ""
+
+#: widgets/basic/sina-google-map.php:169
+msgid "Style7"
+msgstr ""
+
+#: widgets/basic/sina-google-map.php:170
+msgid "Style8"
 msgstr ""
 
 #: widgets/basic/sina-google-map.php:171
-msgid "Marker"
+msgid "Style9"
+msgstr ""
+
+#: widgets/basic/sina-google-map.php:172
+msgid "Style10"
+msgstr ""
+
+#: widgets/basic/sina-google-map.php:173
+msgid "Style11"
+msgstr ""
+
+#: widgets/basic/sina-google-map.php:174
+msgid "Style12"
+msgstr ""
+
+#: widgets/basic/sina-google-map.php:175
+msgid "Style13"
+msgstr ""
+
+#: widgets/basic/sina-google-map.php:176
+msgid "Style14"
+msgstr ""
+
+#: widgets/basic/sina-google-map.php:177
+msgid "Style15"
+msgstr ""
+
+#: widgets/basic/sina-google-map.php:178
+msgid "Style16"
 msgstr ""
 
 #: widgets/basic/sina-google-map.php:179
+msgid "Style17"
+msgstr ""
+
+#: widgets/basic/sina-google-map.php:180
+msgid "Style18"
+msgstr ""
+
+#: widgets/basic/sina-google-map.php:181
+msgid "Style19"
+msgstr ""
+
+#: widgets/basic/sina-google-map.php:182
+msgid "Style20"
+msgstr ""
+
+#: widgets/basic/sina-google-map.php:183
+msgid "Style21"
+msgstr ""
+
+#: widgets/basic/sina-google-map.php:191
+msgid "Default UI"
+msgstr ""
+
+#: widgets/basic/sina-google-map.php:199
+msgid "Zoom Control"
+msgstr ""
+
+#: widgets/basic/sina-google-map.php:207
+msgid "Zoom Control Position"
+msgstr ""
+
+#: widgets/basic/sina-google-map.php:210 widgets/basic/sina-google-map.php:243
+#: widgets/basic/sina-google-map.php:276
+msgid "Left Top"
+msgstr ""
+
+#: widgets/basic/sina-google-map.php:211 widgets/basic/sina-google-map.php:244
+#: widgets/basic/sina-google-map.php:277
+msgid "Left Center"
+msgstr ""
+
+#: widgets/basic/sina-google-map.php:212 widgets/basic/sina-google-map.php:245
+#: widgets/basic/sina-google-map.php:278
+msgid "Left Bottom"
+msgstr ""
+
+#: widgets/basic/sina-google-map.php:213 widgets/basic/sina-google-map.php:246
+#: widgets/basic/sina-google-map.php:279
+msgid "Right Top"
+msgstr ""
+
+#: widgets/basic/sina-google-map.php:214 widgets/basic/sina-google-map.php:247
+#: widgets/basic/sina-google-map.php:280
+msgid "Right Center"
+msgstr ""
+
+#: widgets/basic/sina-google-map.php:215 widgets/basic/sina-google-map.php:248
+#: widgets/basic/sina-google-map.php:281
+msgid "Right Bottom"
+msgstr ""
+
+#: widgets/basic/sina-google-map.php:232
+msgid "Street View"
+msgstr ""
+
+#: widgets/basic/sina-google-map.php:240
+msgid "Street View Position"
+msgstr ""
+
+#: widgets/basic/sina-google-map.php:265
+msgid "Fullscreen"
+msgstr ""
+
+#: widgets/basic/sina-google-map.php:273
+msgid "Fullscreen Position"
+msgstr ""
+
+#: widgets/basic/sina-google-map.php:298
+msgid "Marker"
+msgstr ""
+
+#: widgets/basic/sina-google-map.php:309
+msgid "Drop"
+msgstr ""
+
+#: widgets/basic/sina-google-map.php:318
 msgid "Choose Marker"
 msgstr ""
 
