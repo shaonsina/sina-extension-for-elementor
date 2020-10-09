@@ -5,7 +5,7 @@ Donate link: https://sinaextra.com/sina-addon-for-elementor/
 Requires at least: 4.7
 Tested up to: 5.5
 Requires PHP: 7.0
-Stable tag: 3.3.4
+Stable tag: 3.3.5
 License: GPL v3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -82,7 +82,7 @@ Need Help? Please [create support ticket](https://sinaextra.com/support/)
 11. [Facebook Feed](https://sinaextra.com/sina-extension/facebook-feed): Show your facebook feed into your web page(s).
 12. [Fancy Text](https://sinaextra.com/sina-extension/fancy-text): Use animated text with 45+ animation effects.
 13. [Flip Box](https://sinaextra.com/sina-extension/flip-box): Show animated Flip Box to highlight any content on your web page.
-14. [Google Map](https://sinaextra.com/sina-extension/google-map): Add Google map with API key into the web page.
+14. [Google Map](https://sinaextra.com/sina-extension/google-map): Add a colorful Google map into your web page. We have added 20+ custom colors for the map.
 15. [Image Differ](https://sinaextra.com/sina-extension/image-differ): Compare two images for seeing the difference between before and after. Also you can use vertical & horizontal orientation.
 16. [Login Form](https://sinaextra.com/sina-extension/login-form): Add an attractive & custom login form anywhere into your web page.
 17. [MailChimp](https://sinaextra.com/sina-extension/mailchimp): Add MailChimp form for subscribing the users.
@@ -244,6 +244,9 @@ Yes. It's totally free. We also have a [PRO](https://sinaextra.com/sina-addon-fo
 
 
 == Changelog ==
+
+= 3.3.5 - 13-10-2020 =
+- Fixed: Sina Morphing Animation issue
 
 = 3.3.4 - 25-09-2020 =
 - Added: More Styles of Google Map
