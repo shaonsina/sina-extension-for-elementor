@@ -246,7 +246,7 @@ Yes. It's totally free. We also have a [PRO](https://sinaextra.com/sina-addon-fo
 == Changelog ==
 
 = 3.3.5 - 13-10-2020 =
-- Fixed: Sina Morphing Animation issue
+- Fixed: Morphing Animation issue
 
 = 3.3.4 - 25-09-2020 =
 - Added: More Styles of Google Map

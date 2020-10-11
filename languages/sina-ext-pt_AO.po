@@ -3,10 +3,10 @@ msgstr ""
 "Project-Id-Version: Sina Extension for Elementor\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-09-25 03:56+0000\n"
-"PO-Revision-Date: 2020-09-25 05:13+0000\n"
+"PO-Revision-Date: 2020-10-11 08:33+0000\n"
 "Last-Translator: \n"
-"Language-Team: Portuguese (Angola)\n"
-"Language: pt_AO\n"
+"Language-Team: Portuguese (Portugal)\n"
+"Language: pt_PT\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1676,7 +1676,7 @@ msgstr "Texto espaço reservado cor"
 #: widgets/basic/sina-team.php:294 widgets/basic/sina-video.php:293
 #: widgets/basic/sina-video.php:345
 msgid "Background"
-msgstr "fundo"
+msgstr "Fundo"
 
 #: inc/sina-ext-controls.php:1325
 msgid "Focus"

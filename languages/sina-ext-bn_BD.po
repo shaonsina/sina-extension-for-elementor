@@ -3,9 +3,9 @@ msgstr ""
 "Project-Id-Version: Sina Extension for Elementor\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-09-25 03:56+0000\n"
-"PO-Revision-Date: 2020-09-25 04:10+0000\n"
+"PO-Revision-Date: 2020-10-10 08:22+0000\n"
 "Last-Translator: \n"
-"Language-Team: Bengali (Bangladesh)\n"
+"Language-Team: বাংলা\n"
 "Language: bn_BD\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "MIME-Version: 1.0\n"
@@ -3729,7 +3729,7 @@ msgstr "ট্যাব সামগ্রী"
 
 #: widgets/advanced/sina-posts-tab.php:120
 msgid "Select Category"
-msgstr "নির্বাচন করুন"
+msgstr "বিভাগ নির্বাচন করুন"
 
 #: widgets/advanced/sina-posts-tab.php:139
 msgid "Add Categories"
