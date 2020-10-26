@@ -245,6 +245,9 @@ Yes. It's totally free. We also have a [PRO](https://sinaextra.com/sina-addon-fo
 
 == Changelog ==
 
+= 3.3.6 - 01-11-2020 =
+- Fixed: Video Animation Issue
+
 = 3.3.5 - 13-10-2020 =
 - Fixed: Morphing Animation issue
 

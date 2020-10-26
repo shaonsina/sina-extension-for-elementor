@@ -1,4 +1,4 @@
-/* Sina Extension for Elementor v3.3.5 */
+/* Sina Extension for Elementor v3.3.6 */
 
 /*--------------------------------- General -------------------------------------- */
 .sina-overlay{
@@ -1031,6 +1031,9 @@ img.mfp-img{
 /*--------------------------------- Video -------------------------------------- */
 .sina-video{
 	text-align: center;
+}
+.elementor-widget-sina_video{
+	visibility: visible;
 }
 
 
