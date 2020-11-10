@@ -289,7 +289,7 @@ class Sina_Dynamic_Button_Widget extends Widget_Base{
 				],
 				'separator' => 'before',
 				'selectors' => [
-					'{{WRAPPER}} .sina-dynamic-btn' => 'min-width: {{SIZE}}{{UNIT}};;',
+					'{{WRAPPER}} .sina-dynamic-btn' => 'min-width: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
