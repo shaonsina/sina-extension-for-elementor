@@ -3,7 +3,7 @@
  * Plugin Name: Sina Extension for Elementor
  * Plugin URI: https://sinaextra.com/sina-addon-for-elementor/
  * Description: A collection of high-quality widgets for Elementor page builder.
- * Version: 3.3.6
+ * Version: 3.3.7
  * Author: SinaExtra
  * Author URI: https://sinaextra.com/
  * Text Domain: sina-ext
@@ -17,8 +17,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define('SINA_EXT_VERSION', '3.3.6');
-define('SINA_EXT_PREVIOUS_VERSION', '3.3.5' );
+define('SINA_EXT_VERSION', '3.3.7');
+define('SINA_EXT_PREVIOUS_VERSION', '3.3.6' );
 define('SINA_EXT_FILE', __FILE__ );
 define('SINA_EXT_SLUG', basename( SINA_EXT_FILE, '.php' ));
 define('SINA_EXT_DIR', __DIR__);

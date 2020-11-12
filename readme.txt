@@ -5,7 +5,7 @@ Donate link: https://sinaextra.com/sina-addon-for-elementor/
 Requires at least: 4.7
 Tested up to: 5.5
 Requires PHP: 7.0
-Stable tag: 3.3.6
+Stable tag: 3.3.7
 License: GPL v3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -42,6 +42,7 @@ Translation Ready for:
 === Also .po and .mo files included for below regions ===
 
 - Angola
+- Argentina
 - Austria
 - Bangladesh
 - Belgium
@@ -52,11 +53,16 @@ Translation Ready for:
 - Costa Rica
 - France
 - Germany
+- Guatemala
 - Mexico
+- Peru
 - Portugal
 - Puerto Rica
 - Spain
 - Switzerland
+- Uruguay
+- Venezuela
+
 
 == What can you do by this plugin? ==
 You can make unlimited design without coding knowledge.
@@ -244,6 +250,10 @@ Yes. It's totally free. We also have a [PRO](https://sinaextra.com/sina-addon-fo
 
 
 == Changelog ==
+
+= 3.3.7 - 12-10-2020 =
+- Fixed: Small Issue
+- Improved
 
 = 3.3.6 - 29-10-2020 =
 - Fixed: Video Animation Issue
