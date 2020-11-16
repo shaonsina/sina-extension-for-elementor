@@ -787,13 +787,8 @@ class Sina_Content_Box_Widget extends Widget_Base{
 			]
 		);
 
-		$this->add_control(
-			'is_morphing_anim_icon',
-			[
-				'label' => esc_html__( 'Morphing Animation', 'sina-ext' ),
-				'type' => Controls_Manager::SWITCHER,
-			]
-		);
+		Sina_Common_Data::morphing_animation( $this );
+
 		$this->add_control(
 			'image_effects',
 			[
@@ -806,6 +801,7 @@ class Sina_Content_Box_Widget extends Widget_Base{
 				'condition' => [
 					'icon_format' => 'image',
 				],
+				'separator' => 'before',
 				'default' => '',
 			]
 		);
@@ -824,6 +820,7 @@ class Sina_Content_Box_Widget extends Widget_Base{
 						'icon' => 'eicon-h-align-right',
 					],
 				],
+				'separator' => 'before',
 				'selectors' => [
 					'{{WRAPPER}} .sina-content-box-icon, {{WRAPPER}} .sina-content-box-content' => 'float: {{VALUE}};',
 				],
@@ -1264,7 +1261,7 @@ class Sina_Content_Box_Widget extends Widget_Base{
 	protected function render() {
 		$data = $this->get_settings_for_display();
 		$img_alt = $data['title'] ? $data['title'] : Control_Media::get_image_alt( $data['image'] );
-		$morphing_anim_icon = ('yes' == $data['is_morphing_anim_icon']) ? 'sina-morphing-anim' : '';
+		$morphing_anim_icon = ('yes' == $data['is_morphing_anim_icon'] && $data['morphing_pattern']) ? $data['morphing_pattern'] : '';
 		?>
 		<div class="sina-content-box clearfix <?php echo esc_attr( $data['effects'].' '.$data['bg_layer_effects'] ); ?>">
 

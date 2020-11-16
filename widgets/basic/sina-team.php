@@ -651,13 +651,8 @@ class Sina_Team_Widget extends Widget_Base{
 			]
 		);
 
-		$this->add_control(
-			'is_morphing_anim_image',
-			[
-				'label' => esc_html__( 'Morphing Animation', 'sina-ext' ),
-				'type' => Controls_Manager::SWITCHER,
-			]
-		);
+		Sina_Common_Data::morphing_animation( $this );
+
 		$this->add_responsive_control(
 			'image_width',
 			[
@@ -668,6 +663,7 @@ class Sina_Team_Widget extends Widget_Base{
 					'unit' => '%',
 					'size' => '50',
 				],
+				'separator' => 'before',
 				'selectors' => [
 					'{{WRAPPER}} .sina-team img, {{WRAPPER}} .sina-team-image' => 'width: {{SIZE}}{{UNIT}};',
 				],
@@ -1220,7 +1216,7 @@ class Sina_Team_Widget extends Widget_Base{
 		$data = $this->get_settings_for_display();
 		$box_class = 'clearfix '. $data['box_effects'];
 		$content_class = 'sina-team-content';
-		$morphing_anim_image = ('yes' == $data['is_morphing_anim_image']) ? 'sina-morphing-anim' : '';
+		$morphing_anim_image = ('yes' == $data['is_morphing_anim_icon'] && $data['morphing_pattern']) ? $data['morphing_pattern'] : '';
 
 		if ( 'thumb' == $data['layout'] ) {
 			$box_class = $data['effects'];
@@ -1284,7 +1280,7 @@ class Sina_Team_Widget extends Widget_Base{
 		<#
 			var boxClass = 'clearfix '+ settings.box_effects;
 			var contentClass = 'sina-team-content';
-			var morphingAnimImage = ('yes' == settings.is_morphing_anim_image) ? 'sina-morphing-anim' : '';
+			var morphingAnimImage = ('yes' == settings.is_morphing_anim_icon && settings.morphing_pattern) ? settings.morphing_pattern : '';
 
 			if ( 'thumb' == settings.layout ) {
 				boxClass = settings.effects;

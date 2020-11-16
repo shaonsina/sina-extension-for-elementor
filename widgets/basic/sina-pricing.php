@@ -1147,13 +1147,8 @@ class Sina_Pricing_Widget extends Widget_Base{
 			]
 		);
 
-		$this->add_control(
-			'is_morphing_anim_image',
-			[
-				'label' => esc_html__( 'Morphing Animation', 'sina-ext' ),
-				'type' => Controls_Manager::SWITCHER,
-			]
-		);
+		Sina_Common_Data::morphing_animation( $this );
+
 		$this->add_responsive_control(
 			'image_width',
 			[
@@ -1168,6 +1163,7 @@ class Sina_Pricing_Widget extends Widget_Base{
 						'max' => 30,
 					],
 				],
+				'separator' => 'before',
 				'selectors' => [
 					'{{WRAPPER}} .sina-pricing-img img' => 'width: {{SIZE}}{{UNIT}};',
 				],
@@ -1483,7 +1479,7 @@ class Sina_Pricing_Widget extends Widget_Base{
 	protected function render() {
 		$data = $this->get_settings_for_display();
 		$img_alt = $data['title'] ? $data['title'] : Control_Media::get_image_alt( $data['image'] );
-		$morphing_anim_image = ('yes' == $data['is_morphing_anim_image']) ? 'sina-morphing-anim' : '';
+		$morphing_anim_image = ('yes' == $data['is_morphing_anim_icon'] && $data['morphing_pattern']) ? $data['morphing_pattern'] : '';
 		?>
 		<div class="sina-pricing <?php echo esc_attr( $data['effects'].' '.$data['bg_layer_effects'] ); ?>">
 			<?php if ( $data['ribbon_title'] && $data['ribbon_position'] ): ?>
@@ -1561,7 +1557,7 @@ class Sina_Pricing_Widget extends Widget_Base{
 				view.addRenderAttribute( 'title', 'class', 'sina-pricing-title' );
 				view.addInlineEditingAttributes( 'title' );
 
-				var morphingAnimImage = ('yes' == settings.is_morphing_anim_image) ? 'sina-morphing-anim' : '';
+				var morphingAnimImage = ('yes' == settings.is_morphing_anim_icon && settings.morphing_pattern) ? settings.morphing_pattern : '';
 			#>
 			<# if (settings.ribbon_title && settings.ribbon_position) { #>
 				<div class="{{{settings.ribbon_position}}}">

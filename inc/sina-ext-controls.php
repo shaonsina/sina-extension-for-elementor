@@ -19,6 +19,33 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 
 class Sina_Common_Data{
+	public static function morphing_animation( $obj ) {
+		$obj->add_control(
+			'is_morphing_anim_icon',
+			[
+				'label' => esc_html__( 'Morphing Animation', 'sina-ext' ),
+				'type' => Controls_Manager::SWITCHER,
+			]
+		);
+		$obj->add_control(
+			'morphing_pattern',
+			[
+				'label' => esc_html__( 'Morphing Pattern', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					'sina-morphing-anim' => esc_html__( 'Pattern 1', 'sina-ext' ),
+					'sina-morphing-pattern-2' => esc_html__( 'Pattern 2', 'sina-ext' ),
+					'sina-morphing-pattern-3' => esc_html__( 'Pattern 3', 'sina-ext' ),
+					'sina-morphing-pattern-4' => esc_html__( 'Pattern 4', 'sina-ext' ),
+				],
+				'default' => 'sina-morphing-anim',
+				'condition' => [
+					'is_morphing_anim_icon' => 'yes',
+				],
+			]
+		);
+	}
+
 	public static function BG_hover_effects( $obj, $class, $prefix = 'bg_layer' ) {
 
 		$obj->add_control(

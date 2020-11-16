@@ -62,8 +62,25 @@ class Sina_Ext_Controls{
 			[
 				'label' => '<strong>'.esc_html__( 'Sina Morphing Animation', 'sina-ext' ).'</strong>',
 				'type' => Controls_Manager::SWITCHER,
-				'prefix_class' => 'sina-morphing-anim-',
 				'separator' => 'before',
+			]
+		);
+		$elems->add_control(
+			'sina_is_morphing_pattern',
+			[
+				'label' => esc_html__( 'Morphing Pattern', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					'yes' => esc_html__( 'Pattern 1', 'sina-ext' ),
+					'pattern-2' => esc_html__( 'Pattern 2', 'sina-ext' ),
+					'pattern-3' => esc_html__( 'Pattern 3', 'sina-ext' ),
+					'pattern-4' => esc_html__( 'Pattern 4', 'sina-ext' ),
+				],
+				'prefix_class' => 'sina-morphing-anim-',
+				'default' => 'yes',
+				'condition' => [
+					'sina_is_morphing_animation' => 'yes',
+				],
 			]
 		);
 		$elems->add_control(

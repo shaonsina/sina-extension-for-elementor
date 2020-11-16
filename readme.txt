@@ -5,7 +5,7 @@ Donate link: https://sinaextra.com/sina-addon-for-elementor/
 Requires at least: 4.7
 Tested up to: 5.5
 Requires PHP: 7.0
-Stable tag: 3.3.7
+Stable tag: 3.3.8
 License: GPL v3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -250,6 +250,9 @@ Yes. It's totally free. We also have a [PRO](https://sinaextra.com/sina-addon-fo
 
 
 == Changelog ==
+
+= 3.3.8 - 20-10-2020 =
+- Added: 3 More Pattern added to Morphing Animation
 
 = 3.3.7 - 12-10-2020 =
 - Fixed: Small Issue

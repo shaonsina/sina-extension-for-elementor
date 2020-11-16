@@ -366,13 +366,8 @@ class Sina_Countdown_Widget extends Widget_Base{
 			]
 		);
 
-		$this->add_control(
-			'is_morphing_anim_box',
-			[
-				'label' => esc_html__( 'Morphing Animation', 'sina-ext' ),
-				'type' => Controls_Manager::SWITCHER,
-			]
-		);
+		Sina_Common_Data::morphing_animation( $this );
+
 		$this->add_responsive_control(
 			'width',
 			[
@@ -387,6 +382,7 @@ class Sina_Countdown_Widget extends Widget_Base{
 				'default' => [
 					'size' => '100',
 				],
+				'separator' => 'before',
 				'selectors' => [
 					'{{WRAPPER}} .sina-cd' => 'width: {{SIZE}}{{UNIT}};',
 				],
@@ -690,7 +686,7 @@ class Sina_Countdown_Widget extends Widget_Base{
 
 	protected function render() {
 		$data = $this->get_settings_for_display();
-		$morphing_anim_box = ('yes' == $data['is_morphing_anim_box']) ? 'sina-morphing-anim' : '';
+		$morphing_anim_box = ('yes' == $data['is_morphing_anim_icon'] && $data['morphing_pattern']) ? $data['morphing_pattern'] : '';
 		?>
 		<div class="sina-countdown"
 		data-time="<?php echo esc_attr( $data['countdown_time'] ); ?>"
