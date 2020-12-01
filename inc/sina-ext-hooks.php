@@ -176,7 +176,8 @@ Class Sina_Ext_Hooks{
 				$site_name = get_bloginfo( 'name' );
 				$site_name = $from_text ? $from_text : $site_name;
 				$headers = 'From: '. $site_name .'<'. $email .'>';
-				$message = esc_html__( 'Name: ', 'sina-ext' ).$name."\n\n".$message;
+				$message = esc_html__( 'Email: ', 'sina-ext' ).$email."\n\n".$message;
+				$message = esc_html__( 'Name: ', 'sina-ext' ).$name."\n".$message;
 
 				if ( '' == $err  && $inbox ) {
 					$custom_email = get_option('sina_contact_email'.$inbox);
