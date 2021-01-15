@@ -981,6 +981,21 @@ class Sina_Banner_Slider_Widget extends Widget_Base{
 			[
 				'label' => esc_html__( 'Nav & Dots', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
+				'conditions' => [
+					'relation' => 'or',
+					'terms' => [
+						[
+							'name' => 'nav',
+							'operator' => 'contains',
+							'value' => 'yes'
+						],
+						[
+							'name' => 'dots',
+							'operator' => 'contains',
+							'value' => 'yes'
+						]
+					]
+				],
 			]
 		);
 		Sina_Common_Data::nav_dots_style($this, '.sina-banner-slider');

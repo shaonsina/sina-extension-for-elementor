@@ -2,14 +2,13 @@
 	'use strict';
 
 	$(document).on('click', '.sina-ext-toggle', function(e){
-
 		var $this = $(this);
 
 		if ( $this.hasClass('sina-ext-pro') ) {
 			e.preventDefault();
 			Swal.fire({
 				title: 'Go Pro',
-				html: 'Purchase our <a href="https://sinaextra.com/sina-addon-for-elementor/" target="_blank">pro version</a> to unlock pro features.',
+				html: 'Purchase our <a href="https://sina-extension.sinaextra.com/" target="_blank">pro version</a> to unlock pro features.',
 				icon: 'info',
 				showCloseButton: true
 			});

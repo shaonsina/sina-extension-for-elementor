@@ -700,6 +700,9 @@ class Sina_Common_Data{
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'nav_shadow',
+				'condition' => [
+					'nav!' => '',
+				],
 				'selector' => '{{WRAPPER}} '.$class.' .owl-prev, {{WRAPPER}} '.$class.' .owl-next',
 			]
 		);
@@ -707,6 +710,9 @@ class Sina_Common_Data{
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'nav_border',
+				'condition' => [
+					'nav!' => '',
+				],
 				'selector' => '{{WRAPPER}} '.$class.' .owl-prev, {{WRAPPER}} '.$class.' .owl-next',
 			]
 		);
@@ -751,6 +757,9 @@ class Sina_Common_Data{
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'nav_hover_shadow',
+				'condition' => [
+					'nav!' => '',
+				],
 				'selector' => '{{WRAPPER}} '.$class.' .owl-prev:hover, {{WRAPPER}} '.$class.' .owl-next:hover',
 			]
 		);

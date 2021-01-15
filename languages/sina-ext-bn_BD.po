@@ -4910,7 +4910,7 @@ msgid "A collection of high-quality widgets for Elementor page builder."
 msgstr "এলিমেন্টর পৃষ্ঠা নির্মাতার জন্য উচ্চ-মানের উইজেটগুলির একটি সংগ্রহ।"
 
 #. URI of the plugin
-msgid "https://sinaextra.com/sina-addon-for-elementor/"
+msgid "https://sina-extension.sinaextra.com/"
 msgstr ""
 
 #. Author of the plugin

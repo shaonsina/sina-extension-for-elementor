@@ -4897,7 +4897,7 @@ msgid "A collection of high-quality widgets for Elementor page builder."
 msgstr ""
 
 #. URI of the plugin
-msgid "https://sinaextra.com/sina-addon-for-elementor/"
+msgid "https://sina-extension.sinaextra.com/"
 msgstr ""
 
 #. Author of the plugin
