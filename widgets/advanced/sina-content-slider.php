@@ -774,13 +774,13 @@ class Sina_Content_Slider_Widget extends Widget_Base{
 					'terms' => [
 						[
 							'name' => 'nav',
-							'operator' => 'contains',
-							'value' => 'yes'
+							'operator' => '!=',
+							'value' => ''
 						],
 						[
 							'name' => 'dots',
-							'operator' => 'contains',
-							'value' => 'yes'
+							'operator' => '!=',
+							'value' => ''
 						]
 					]
 				],

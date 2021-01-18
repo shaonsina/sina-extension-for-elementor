@@ -986,13 +986,13 @@ class Sina_Banner_Slider_Widget extends Widget_Base{
 					'terms' => [
 						[
 							'name' => 'nav',
-							'operator' => 'contains',
-							'value' => 'yes'
+							'operator' => '!=',
+							'value' => ''
 						],
 						[
 							'name' => 'dots',
-							'operator' => 'contains',
-							'value' => 'yes'
+							'operator' => '!=',
+							'value' => ''
 						]
 					]
 				],
