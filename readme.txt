@@ -3,9 +3,9 @@ Contributors: shaonsina
 Tags: elementor, elementor addon, elementor addons, elementor extension, elementor widget, elementor templates
 Donate link: https://sina-extension.sinaextra.com/
 Requires at least: 4.7
-Tested up to: 5.6
+Tested up to: 5.7
 Requires PHP: 7.0
-Stable tag: 3.3.9
+Stable tag: 3.3.11
 License: GPL v3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -251,7 +251,11 @@ Yes. It's totally free. We also have a [PRO](https://sina-extension.sinaextra.co
 
 == Changelog ==
 
-= 3.3.9 - 16-01-2020 =
+= 3.3.11 - 15-03-2020 =
+- Added: Date and Author to News Ticker
+- Improved
+
+= 3.3.10 - 16-01-2020 =
 - Fixed: Navigation & Dots issue for Sliders and Carousels
 - Updated: Blocks and Templates
 

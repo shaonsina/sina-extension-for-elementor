@@ -175,6 +175,14 @@ class Sina_News_Ticker_Widget extends Widget_Base{
 			]
 		);
 		$this->add_control(
+			'show_date',
+			[
+				'label' => esc_html__( 'Date', 'sina-ext' ),
+				'type' => Controls_Manager::SWITCHER,
+				'default' => 'yes',
+			]
+		);
+		$this->add_control(
 			'show_time',
 			[
 				'label' => esc_html__( 'Time', 'sina-ext' ),
@@ -576,10 +584,22 @@ class Sina_News_Ticker_Widget extends Widget_Base{
 		$this->start_controls_section(
 			'time_style',
 			[
-				'label' => esc_html__( 'Time', 'sina-ext' ),
+				'label' => esc_html__( 'Date Time', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
-				'condition' => [
-					'show_time' => 'yes',
+				'conditions' => [
+					'relation' => 'or',
+					'terms' => [
+						[
+							'name' => 'show_date',
+							'operator' => '!=',
+							'value' => ''
+						],
+						[
+							'name' => 'show_time',
+							'operator' => '!=',
+							'value' => ''
+						]
+					]
 				],
 			]
 		);
@@ -657,6 +677,9 @@ class Sina_News_Ticker_Widget extends Widget_Base{
 							<?php while ( $post_query->have_posts() ) : $post_query->the_post(); ?>
 								<div class="sina-news">
 									<a href="<?php the_permalink(); ?>">
+										<?php if( 'yes' == $data['show_date'] ): ?>
+											<span><?php printf( '%s', get_the_date() ); ?></span>
+										<?php endif; ?>
 										<?php if( 'yes' == $data['show_time'] ): ?>
 											<span><?php the_time(); ?></span>
 										<?php endif; ?>

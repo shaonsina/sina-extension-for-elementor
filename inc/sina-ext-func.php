@@ -112,13 +112,15 @@ abstract class Sina_Ext_Functions extends Sina_Extension_Base{
 
 		if ( is_array($active_widgets) ) {
 			foreach ($active_widgets as $cat => $widgets) {
-				foreach ($widgets as $widget => $translate) {
-					$file = SINA_EXT_DIR .'/widgets/'.$cat.'/sina-'.$widget.'.php';
-					if (file_exists( $file )) {
-						require_once( $file );
-						$widget = str_replace(' ', '_', ucwords( str_replace('-', ' ', $widget) ) );
-						$widget = 'Sina_'.$widget.'_Widget';
-						$widgets_manager->register_widget_type( new $widget() );
+				if ($cat != 'pro') {
+					foreach ($widgets as $widget => $translate) {
+						$file = SINA_EXT_DIR .'/widgets/'.$cat.'/sina-'.$widget.'.php';
+						if (file_exists( $file )) {
+							require_once( $file );
+							$widget = str_replace(' ', '_', ucwords( str_replace('-', ' ', $widget) ) );
+							$widget = 'Sina_'.$widget.'_Widget';
+							$widgets_manager->register_widget_type( new $widget() );
+						}
 					}
 				}
 			}

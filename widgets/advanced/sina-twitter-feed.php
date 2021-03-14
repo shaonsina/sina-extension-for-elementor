@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Facebook Feed Widget.
+ * Twitter Feed Widget.
  *
  * @since 3.3.0
  */

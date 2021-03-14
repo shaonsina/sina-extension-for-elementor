@@ -3,7 +3,7 @@
  * Plugin Name: Sina Extension for Elementor
  * Plugin URI: https://sina-extension.sinaextra.com/
  * Description: A collection of high-quality widgets for Elementor page builder.
- * Version: 3.3.10
+ * Version: 3.3.11
  * Author: SinaExtra
  * Author URI: https://sinaextra.com/
  * Text Domain: sina-ext
@@ -17,8 +17,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define('SINA_EXT_VERSION', '3.3.10');
-define('SINA_EXT_PREVIOUS_VERSION', '3.3.8' );
+define('SINA_EXT_VERSION', '3.3.11');
+define('SINA_EXT_PREVIOUS_VERSION', '3.3.10' );
 define('SINA_EXT_FILE', __FILE__ );
 define('SINA_EXT_SLUG', basename( SINA_EXT_FILE, '.php' ));
 define('SINA_EXT_DIR', __DIR__);
@@ -79,6 +79,7 @@ define('SINA_WIDGETS', [
 	],
 	'pro' => [
 		'chart'					=> esc_html__( 'Sina Pro Chart', 'sina-ext' ),
+		'facebook-feed-carousel'=> esc_html__( 'Sina Pro Facebook Feed Carousel',  'sina-ext' ),
 		'hover-image'			=> esc_html__( 'Sina Pro Hover Image', 'sina-ext' ),
 		'image-accordion'		=> esc_html__( 'Sina Pro Image Accordion', 'sina-ext' ),
 		'image-marker'			=> esc_html__( 'Sina Pro Image Marker', 'sina-ext' ),
@@ -98,6 +99,7 @@ define('SINA_WIDGETS', [
 		'thumb-carousel'		=> esc_html__( 'Sina Pro Thumb Carousel', 'sina-ext' ),
 		'tilt-box'				=> esc_html__( 'Sina Pro Tilt Box', 'sina-ext' ),
 		'toggle-content'		=> esc_html__( 'Sina Pro Toggle Content', 'sina-ext' ),
+		'twitter-feed-carousel'	=> esc_html__( 'Sina Pro Twitter Feed Carousel',  'sina-ext' ),
 		'video-gallery'			=> esc_html__( 'Sina Pro Video Gallery', 'sina-ext' ),
 	],
 ]);
