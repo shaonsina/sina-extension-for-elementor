@@ -251,11 +251,17 @@ Yes. It's totally free. We also have a [PRO](https://sina-extension.sinaextra.co
 
 == Changelog ==
 
-= 3.3.11 - 15-03-2020 =
-- Added: Date and Author to News Ticker
+= 3.3.12 - 10-04-2020 =
 - Improved
 
-= 3.3.10 - 16-01-2020 =
+= 3.3.11 - 15-03-2020 =
+- Added: Date to News Ticker
+- Improved
+
+= 3.3.10 - 18-01-2020 =
+- Fixed: Unexpected Error
+
+= 3.3.9 - 16-01-2020 =
 - Fixed: Navigation & Dots issue for Sliders and Carousels
 - Updated: Blocks and Templates
 

@@ -149,11 +149,11 @@ class Sina_Ext_Settings{
 		$widget 	= $data['widget'];
 		$cat 		= $data['cat'];
 		$name 		= 'sina-'.$widget;
-		$pro 		= ( !defined('SINA_EXT_PRO_VERSION') && 'pro' == $cat ) ? 'sina-ext-pro' : '';
+		$pro 		= ( !defined('SINA_EXT_PRO_VERSION') && ('pro' == $cat || 'wooCommerce' == $cat) ) ? 'sina-ext-pro' : '';
 		$checked	= isset($widgets[ $cat ][ $widget ]) ? 'checked' : '';
 		$key 		= 'sina_widgets['.$cat.']['. $widget .']';
 
-		if (defined('SINA_EXT_PRO_VERSION') && 'pro' == $cat) {
+		if (defined('SINA_EXT_PRO_VERSION') && ('pro' == $cat || 'wooCommerce' == $cat)) {
 			$label 	= __( $data['translate'], 'sina-ext-pro' );
 		} else{
 			$label	= __( $data['translate'], 'sina-ext' );

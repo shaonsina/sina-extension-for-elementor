@@ -84,7 +84,7 @@
 				<div class="sina-ext-options">
 					<?php
 						foreach ($set_widgets as $cat => $data) {
-							$sina_pro = ('pro' == $cat) ? $go_pro : '';
+							$sina_pro = ('pro' == $cat || 'wooCommerce' == $cat) ? $go_pro : '';
 							$checked = isset($get_widgets[$cat]) ? 'checked' : '';
 							?>
 							<div class="sina-ext-pb sina-toggle-all-<?php echo esc_attr($cat); ?>">
@@ -93,6 +93,12 @@
 										<?php printf('<input type="checkbox" id="sina_widgets[%s]" %s value="1">', $cat, $checked); ?>
 										<?php printf('<label for="sina_widgets[%1$s]"><div class="sina-ext-label">%2$s</div><div class="sina-ext-toggle-btn"> <div></div></div></label>', $cat, esc_html__( ucfirst($cat), 'sina-ext' )); ?>
 									</div>
+
+									<?php
+										if ('wooCommerce' == $cat):
+											printf('<p><strong>'.esc_html__('Before enabling these features make sure the %s plugin has installed!', 'sina-ext').'</strong></p>', '<a href="https://wordpress.org/plugins/woocommerce/" target="_blank">WooCommerce</a>' );
+										endif;
+									?>
 								</div>
 							<?php
 							do_settings_sections( 'sina_widgets_'.$cat );

@@ -112,7 +112,7 @@ abstract class Sina_Ext_Functions extends Sina_Extension_Base{
 
 		if ( is_array($active_widgets) ) {
 			foreach ($active_widgets as $cat => $widgets) {
-				if ($cat != 'pro') {
+				if ($cat != 'pro' || $cat != 'wooCommerce') {
 					foreach ($widgets as $widget => $translate) {
 						$file = SINA_EXT_DIR .'/widgets/'.$cat.'/sina-'.$widget.'.php';
 						if (file_exists( $file )) {
