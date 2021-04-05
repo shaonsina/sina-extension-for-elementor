@@ -898,11 +898,11 @@ class Sina_Content_Slider_Widget extends Widget_Base{
 							<a class="owl-video" href="<?php echo esc_url( $slide['video_link'] ) ?>"></a>
 					<?php else: ?>
 						<?php if ( $slide['title'] ): ?>
-							<?php printf( '<%1$s %2$s>%3$s</%1$s>', $slide['title_tag'], $this->get_render_attribute_string( $title_key ), $slide['title'] ); ?>
+							<?php printf( '<%1$s %2$s>%3$s</%1$s>', sina_ext_html_tags( $slide['title_tag'] ), $this->get_render_attribute_string( $title_key ), $slide['title'] ); ?>
 						<?php endif; ?>
 
 						<?php if ( $slide['subtitle'] ): ?>
-							<?php printf( '<%1$s %2$s>%3$s</%1$s>', $slide['subtitle_tag'], $this->get_render_attribute_string( $subtitle_key ), $slide['subtitle'] ); ?>
+							<?php printf( '<%1$s %2$s>%3$s</%1$s>', sina_ext_html_tags( $slide['subtitle_tag'] ), $this->get_render_attribute_string( $subtitle_key ), $slide['subtitle'] ); ?>
 						<?php endif; ?>
 
 						<?php if ( $slide['desc'] ): ?>

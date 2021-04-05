@@ -4,6 +4,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+function sina_ext_html_tags( $tag ) {
+	$allowed_tags = [
+		'h1',
+		'h2',
+		'h3',
+		'h4',
+		'h5',
+		'h6',
+		'p',
+	];
+	return in_array( strtolower( $tag ), $allowed_tags ) ? $tag : 'h2';
+}
+
 function sina_ext_custom_css($desktop_css = '', $tablet_css = '', $tablet_break = 1024) {
 	$output_css = $desktop_css;
 	if ( $tablet_css ) {

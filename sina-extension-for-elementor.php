@@ -102,20 +102,6 @@ define('SINA_WIDGETS', [
 		'twitter-feed-carousel'	=> esc_html__( 'Sina Pro Twitter Feed Carousel',  'sina-ext' ),
 		'video-gallery'			=> esc_html__( 'Sina Pro Video Gallery', 'sina-ext' ),
 	],
-	'wooCommerce' => [
-		'shop-box-grid'			=> esc_html__( 'Sina Pro Shop Box Grid',  'sina-ext' ),
-		'shop-list-grid'		=> esc_html__( 'Sina Pro Shop List Grid',  'sina-ext' ),
-		'shop-thumb-grid'		=> esc_html__( 'Sina Pro Shop Thumb Grid',  'sina-ext' ),
-		'shop-flipbox'			=> esc_html__( 'Sina Pro Shop Flipbox',  'sina-ext' ),
-		'shop-box-carousel'		=> esc_html__( 'Sina Pro Shop Box Carousel',  'sina-ext' ),
-		'shop-list-carousel'	=> esc_html__( 'Sina Pro Shop List Carousel',  'sina-ext' ),
-		'shop-thumb-carousel'	=> esc_html__( 'Sina Pro Shop Thumb Carousel',  'sina-ext' ),
-		'shop-flip-carousel'	=> esc_html__( 'Sina Pro Shop Flip Carousel',  'sina-ext' ),
-		'product-filter-vertical'=> esc_html__( 'Sina Pro Product Filter Vertical',  'sina-ext' ),
-		'product-filter-horizontal'=> esc_html__( 'Sina Pro Product Filter Horizontal',  'sina-ext' ),
-		'woo-checkout'			=> esc_html__( 'Sina Pro Woo Checkout',  'sina-ext' ),
-		'woo-wislisht'			=> esc_html__( 'Sina Pro Woo Wislisht',  'sina-ext' ),
-	],
 ]);
 
 
