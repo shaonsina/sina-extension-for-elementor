@@ -1,4 +1,4 @@
-/* Sina Extension for Elementor v3.3.4 */
+/* Sina Extension for Elementor v3.3.12 */
 
 !(function ($) {
 	'use strict';
@@ -821,11 +821,9 @@
 
 			});
 
-			$this.find('.sina-portfolio-zoom').magnificPopup({
-				type: 'image',
-				gallery: {
-					enabled: true
-				},
+			$this.find('.sina-portfolio-zoom').venobox({
+				titlePosition: 'bottom',
+				bgcolor: '#000000',
 			});
 
 		});
@@ -922,8 +920,9 @@
 
 	function sinaVideo($scope, $) {
 		$scope.find('.sina-video').each(function () {
-			$(this).children('.sina-video-play').magnificPopup({
-				type: 'iframe'
+			$(this).children('.sina-video-play').venobox({
+				titlePosition: 'bottom',
+				bgcolor: '#000000',
 			});
 		});
 	}

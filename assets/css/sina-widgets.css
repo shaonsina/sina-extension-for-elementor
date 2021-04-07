@@ -1,4 +1,4 @@
-/* Sina Extension for Elementor v3.3.6 */
+/* Sina Extension for Elementor v3.3.12 */
 
 /*--------------------------------- General -------------------------------------- */
 .sina-overlay{
@@ -180,8 +180,7 @@
 }
 .sina-input-field:focus,
 .sina-video-play,
-.sina-video-play:focus,
-.mfp-arrow.mfp-prevent-close{
+.sina-video-play:focus{
 	outline: none;
 }
 .sina-button:active,
@@ -200,20 +199,6 @@
 .sina-social{
 	margin: 0;
 	padding: 0;
-}
-
-/* Magnific Popup */
-.mfp-image-holder .mfp-close,
-.mfp-iframe-holder .mfp-close {
-	top: -44px;
-	right: 0 !important;
-	padding-right: 0 !important;
-	background: transparent;
-	outline: none;
-	font-weight: 400;
-}
-img.mfp-img{
-	padding-top: 0;
 }
 
 /* Ribbon */

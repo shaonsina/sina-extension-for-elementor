@@ -952,7 +952,7 @@ class Sina_Portfolio_Widget extends Widget_Base{
 										<?php endif ?>
 
 										<div class="btns-wrap">
-											<a title="<?php echo esc_attr( $item['item_name'] ); ?>" href="#" data-mfp-src="<?php echo esc_url( $item['image']['url'] ); ?>" class="sina-portfolio-zoom">
+											<a title="<?php echo esc_attr( $item['item_name'] ); ?>" href="<?php echo esc_url( $item['image']['url'] ); ?>" class="sina-portfolio-zoom" data-gall="<?php echo esc_attr( 'sina-pf-'.$this->get_id() ); ?>">
 												<i class="fa fa-search-plus"></i>
 											</a>
 											<a href="<?php echo esc_url( $item['link']['url'] ); ?>"
@@ -1024,12 +1024,7 @@ class Sina_Portfolio_Widget extends Widget_Base{
 
 			});
 
-			$this.find('.sina-portfolio-zoom').magnificPopup({
-				type: 'image',
-				gallery: {
-					enabled: true
-				},
-			});
+			$this.find('.sina-portfolio-zoom').venobox();
 
 		});
 		</script>

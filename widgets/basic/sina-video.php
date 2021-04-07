@@ -513,7 +513,7 @@ class Sina_Video_Widget extends Widget_Base{
 		?>
 		<div class="sina-video">
 			<?php if ( $data['icon'] ): ?>
-				<a class="sina-video-play <?php echo esc_attr($data['animation'].' '.$data['btn_bg_layer_effects']); ?>" href="<?php echo esc_url( $data['video_link'] ); ?>">
+				<a class="sina-video-play <?php echo esc_attr($data['animation'].' '.$data['btn_bg_layer_effects']); ?>" href="<?php echo esc_url( $data['video_link'] ); ?>" data-vbtype="video">
 					<i class="<?php echo esc_attr( $data['icon'] ); ?>"></i>
 				</a>
 			<?php endif ?>
@@ -535,7 +535,7 @@ class Sina_Video_Widget extends Widget_Base{
 			#>
 			<# if (settings.icon) { #>
 			<a class="sina-video-play {{{settings.animation +' '+ settings.btn_bg_layer_effects}}}"
-			href="{{{settings.video_link}}}">
+			href="{{{settings.video_link}}}" data-vbtype="video">
 				<i class="{{{settings.icon}}}"></i>
 			</a>
 			<# } #>
