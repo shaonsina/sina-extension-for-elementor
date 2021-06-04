@@ -5,7 +5,7 @@ Donate link: https://sina-extension.sinaextra.com/
 Requires at least: 4.7
 Tested up to: 5.7
 Requires PHP: 7.0
-Stable tag: 3.3.12
+Stable tag: 3.3.14
 License: GPL v3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -251,18 +251,25 @@ Yes. It's totally free. We also have a [PRO](https://sina-extension.sinaextra.co
 
 == Changelog ==
 
-= 3.3.12 - 06-04-2020 =
+= 3.3.14 - 04-06-2021 =
+- Fixed: Minor issue
+- Added: WooCommerce supports for PRO version
+
+= 3.3.13 - 07-05-2021 =
+- Fixed: Elementor Compatibility issue
+
+= 3.3.12 - 06-04-2021 =
 - Fixed: Security issue
 - Fixed: Particle Layer subtitle issue
 
-= 3.3.11 - 15-03-2020 =
+= 3.3.11 - 15-03-2021 =
 - Added: Date to News Ticker
 - Improved
 
-= 3.3.10 - 18-01-2020 =
+= 3.3.10 - 18-01-2021 =
 - Fixed: Unexpected Error
 
-= 3.3.9 - 16-01-2020 =
+= 3.3.9 - 16-01-2021 =
 - Fixed: Navigation & Dots issue for Sliders and Carousels
 - Updated: Blocks and Templates
 
