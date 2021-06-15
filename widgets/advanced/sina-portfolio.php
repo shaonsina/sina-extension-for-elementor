@@ -78,7 +78,7 @@ class Sina_Portfolio_Widget extends Widget_Base{
 	 */
 	public function get_style_depends() {
 		return [
-			'magnific-popup',
+			'venobox',
 			'sina-widgets',
 		];
 	}
@@ -92,7 +92,7 @@ class Sina_Portfolio_Widget extends Widget_Base{
 	 */
 	public function get_script_depends() {
 		return [
-			'magnific-popup',
+			'venobox',
 			'imagesLoaded',
 			'isotope',
 			'sina-widgets',
