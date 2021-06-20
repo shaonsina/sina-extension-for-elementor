@@ -3,7 +3,7 @@
  * Plugin Name: Sina Extension for Elementor
  * Plugin URI: https://sina-extension.sinaextra.com/
  * Description: A collection of high-quality widgets for Elementor page builder.
- * Version: 3.3.14
+ * Version: 3.3.15
  * Author: SinaExtra
  * Author URI: https://sinaextra.com/
  * Text Domain: sina-ext
@@ -17,8 +17,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define('SINA_EXT_VERSION', '3.3.14');
-define('SINA_EXT_PREVIOUS_VERSION', '3.3.13' );
+define('SINA_EXT_VERSION', '3.3.15');
+define('SINA_EXT_PREVIOUS_VERSION', '3.3.14' );
 define('SINA_EXT_FILE', __FILE__ );
 define('SINA_EXT_SLUG', basename( SINA_EXT_FILE, '.php' ));
 define('SINA_EXT_DIR', __DIR__);
@@ -103,12 +103,14 @@ define('SINA_WIDGETS', [
 		'video-gallery'			=> esc_html__( 'Sina Pro Video Gallery', 'sina-ext' ),
 	],
 	'wooCommerce' => [
-		'shop-box-grid'			=> esc_html__( 'Sina Pro Shop Box Grid',  'sina-ext-pro' ),
-		'shop-list-grid'		=> esc_html__( 'Sina Pro Shop List Grid',  'sina-ext-pro' ),
-		'shop-thumb-grid'		=> esc_html__( 'Sina Pro Shop Thumb Grid',  'sina-ext-pro' ),
-		'shop-box-carousel'		=> esc_html__( 'Sina Pro Shop Box Carousel',  'sina-ext-pro' ),
-		'shop-list-carousel'	=> esc_html__( 'Sina Pro Shop List Carousel',  'sina-ext-pro' ),
-		'shop-thumb-carousel'	=> esc_html__( 'Sina Pro Shop Thumb Carousel',  'sina-ext-pro' ),
+		'shop-box-grid'			=> esc_html__( 'Sina Pro Shop Box Grid',  'sina-ext' ),
+		'shop-list-grid'		=> esc_html__( 'Sina Pro Shop List Grid',  'sina-ext' ),
+		'shop-thumb-grid'		=> esc_html__( 'Sina Pro Shop Thumb Grid',  'sina-ext' ),
+		'shop-box-carousel'		=> esc_html__( 'Sina Pro Shop Box Carousel',  'sina-ext' ),
+		'shop-list-carousel'	=> esc_html__( 'Sina Pro Shop List Carousel',  'sina-ext' ),
+		'shop-thumb-carousel'	=> esc_html__( 'Sina Pro Shop Thumb Carousel',  'sina-ext' ),
+		'product-filter-vertical'=> esc_html__( 'Sina Pro Product Filter Vertical',  'sina-ext' ),
+		'product-filter-horizontal'=> esc_html__( 'Sina Pro Product Filter Horizontal',  'sina-ext' ),
 	],
 ]);
 
