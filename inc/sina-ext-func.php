@@ -7,9 +7,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 use \Sina_Extension\Sina_Extension_Base;
-use \Sina_Extension\Manager\Sina_Ext_Manager;
 use \Sina_Extension\Admin\Sina_Ext_Settings;
 use \Sina_Extension\Sina_Ext_Controls;
+use \Sina_Extension\Sina_Ext_Templates;
 
 /**
  * Sina_Ext_Functions Class For widgets functionality
@@ -54,7 +54,7 @@ abstract class Sina_Ext_Functions extends Sina_Extension_Base{
 		wp_register_script( 'venobox', SINA_EXT_URL .'assets/js/venobox.min.js', ['jquery'], SINA_EXT_VERSION, true );
 		wp_register_script( 'countdown', SINA_EXT_URL .'assets/js/jquery.countdown.min.js', ['jquery'], SINA_EXT_VERSION, true );
 		wp_register_script( 'easypiechart', SINA_EXT_URL .'assets/js/jquery.easypiechart.min.js', ['jquery'], SINA_EXT_VERSION, true );
-		wp_register_script( 'isotope', SINA_EXT_URL .'assets/js/isotope.min.js', ['jquery', 'imagesLoaded', 'magnific-popup'], SINA_EXT_VERSION, true );
+		wp_register_script( 'isotope', SINA_EXT_URL .'assets/js/isotope.min.js', ['jquery', 'imagesLoaded'], SINA_EXT_VERSION, true );
 		wp_register_script( 'xzoom', SINA_EXT_URL .'assets/js/xzoom.min.js', ['jquery'], SINA_EXT_VERSION, true );
 		wp_register_script( 'jquery-event-move', SINA_EXT_URL .'assets/js/jquery.event.move.min.js', ['jquery'], SINA_EXT_VERSION, true );
 		wp_register_script( 'jquery-twentytwenty', SINA_EXT_URL .'assets/js/jquery.twentytwenty.min.js', ['jquery'], SINA_EXT_VERSION, true );
@@ -78,7 +78,7 @@ abstract class Sina_Ext_Functions extends Sina_Extension_Base{
 	 * @since 3.1.4
 	 */
 	public function require_scripts() {
-		wp_enqueue_style( 'icofont', SINA_EXT_URL .'admin/assets/css/icofont.min.css', [], SINA_EXT_VERSION );
+		wp_enqueue_style( 'icofont', SINA_EXT_URL .'assets/css/icofont.min.css', [], SINA_EXT_VERSION );
 	}
 
 	/**
@@ -118,7 +118,7 @@ abstract class Sina_Ext_Functions extends Sina_Extension_Base{
 							require_once( $file );
 							$widget = str_replace(' ', '_', ucwords( str_replace('-', ' ', $widget) ) );
 							$widget = 'Sina_'.$widget.'_Widget';
-							$widgets_manager->register_widget_type( new $widget() );
+							$widgets_manager->register( new $widget() );
 						}
 					}
 				}
@@ -150,14 +150,14 @@ abstract class Sina_Ext_Functions extends Sina_Extension_Base{
 			return;
 		}
 
-		add_action( 'elementor/editor/before_enqueue_scripts', [ $this, 'require_scripts' ] );
-		add_action( 'wp_enqueue_scripts', [$this, 'require_scripts'] );
+		add_action( 'elementor/editor/after_enqueue_scripts', [ $this, 'require_scripts' ] );
+		add_action( 'wp_enqueue_scripts', [ $this, 'require_scripts' ] );
 
 		// Register Widget Category
 		add_action( 'elementor/elements/categories_registered', [ $this, 'widget_category' ] );
 
 		// Register Widgets
-		add_action( 'elementor/widgets/widgets_registered', [ $this, 'register_widgets' ] );
+		add_action( 'elementor/widgets/register', [ $this, 'register_widgets' ] );
 
 		// Enqueue Widget Styles
 		add_action( 'elementor/frontend/after_register_styles', [ $this, 'widget_styles' ] );
@@ -171,7 +171,6 @@ abstract class Sina_Ext_Functions extends Sina_Extension_Base{
 
 		Sina_Ext_Settings::instance();
 		Sina_Ext_Controls::instance();
-		Sina_Ext_Manager::instance();
 	}
 
 	/**
@@ -184,8 +183,8 @@ abstract class Sina_Ext_Functions extends Sina_Extension_Base{
 		require_once( SINA_EXT_ADMIN .'sina-ext-settings.php' );
 		require_once( SINA_EXT_INC .'sina-ext-hooks.php' );
 		require_once( SINA_EXT_INC .'sina-ext-helpers.php' );
-		require_once( SINA_EXT_INC .'sina-ext-manager.php' );
 		require_once( SINA_EXT_INC .'sina-ext-controls.php' );
 		require_once( SINA_EXT_INC .'sina-ext-controls-extend.php' );
+		require_once( SINA_EXT_ADMIN .'sina-ext-templates.php' );
 	}
 }

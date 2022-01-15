@@ -41,7 +41,7 @@ class Sina_Ext_Controls{
 	public function __construct() {
 		$this->controls_files();
 
-		add_action('elementor/controls/controls_registered', [$this, 'controls'], 15 );
+		add_action('elementor/controls/register', [$this, 'controls'], 15 );
 		add_action('elementor/element/common/_section_style/before_section_end', [$this, 'register_controls']);
 	}
 
@@ -51,8 +51,8 @@ class Sina_Ext_Controls{
 	}
 
 	public function controls( $manager ) {
-		$manager->unregister_control( $manager::ICON );
-		$manager->register_control( $manager::ICON, new \Sina_Extension\Sina_Ext_Icon());
+		$manager->unregister( $manager::ICON );
+		$manager->register( new \Sina_Extension\Sina_Ext_Icon());
 		$manager->add_group_control( Sina_Ext_Gradient_Text::get_type(), new \Sina_Extension\Sina_Ext_Gradient_Text());
 	}
 

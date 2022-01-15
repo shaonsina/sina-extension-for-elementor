@@ -516,7 +516,7 @@
 				year.html( addZero(Y) );
 				month.html( addZero(m) );
 				week.html( '0'+w );
-				day.html( e.strftime('%d') );
+				day.html( e.strftime('%n') );
 				hour.html( e.strftime('%H') );
 				min.html( e.strftime('%M') );
 				sec.html( e.strftime('%S') );
@@ -525,7 +525,7 @@
 					year.next().html( Y < 2 ? 'Year' : 'Years' );
 					month.next().html( m < 2 ? 'Month' : 'Months' );
 					week.next().html( w < 2 ? 'Week' : 'Weeks' );
-					day.next().html( e.strftime('%d') < 2 ? 'Day' : 'Days' );
+					day.next().html( e.strftime('%n') < 2 ? 'Day' : 'Days' );
 					hour.next().html( e.strftime('%H') < 2 ? 'Hour' : 'Hours' );
 					min.next().html( e.strftime('%M') < 2 ? 'Minute' : 'Minutes' );
 					sec.next().html( e.strftime('%S') < 2 ? 'Second' : 'Seconds' );

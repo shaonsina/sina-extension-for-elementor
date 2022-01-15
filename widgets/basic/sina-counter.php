@@ -124,11 +124,11 @@ class Sina_Counter_Widget extends Widget_Base{
 				'options' => [
 					'icon' => [
 						'title' => esc_html__( 'Icon', 'sina-ext' ),
-						'icon' => 'fa fa-star',
+						'icon' => 'eicon-star',
 					],
 					'image' => [
 						'title' => esc_html__( 'Image', 'sina-ext' ),
-						'icon' => 'fa fa-image',
+						'icon' => 'eicon-image-bold',
 					],
 				],
 				'default' => 'icon',
@@ -308,15 +308,15 @@ class Sina_Counter_Widget extends Widget_Base{
 				'options' => [
 					'left' => [
 						'title' => esc_html__( 'Left', 'sina-ext' ),
-						'icon' => 'fa fa-align-left',
+						'icon' => 'eicon-text-align-left',
 					],
 					'center' => [
 						'title' => esc_html__( 'Center', 'sina-ext' ),
-						'icon' => 'fa fa-align-center',
+						'icon' => 'eicon-text-align-center',
 					],
 					'right' => [
 						'title' => esc_html__( 'Right', 'sina-ext' ),
-						'icon' => 'fa fa-align-right',
+						'icon' => 'eicon-text-align-right',
 					],
 				],
 				'default' => 'center',

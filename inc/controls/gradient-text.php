@@ -55,15 +55,15 @@ class Sina_Ext_Gradient_Text extends Group_Control_Base{
 			'options' => [
 				'classic' => [
 					'title' => __( 'Classic', 'sina-ext' ),
-					'icon' => 'fa fa-paint-brush',
+					'icon' => 'eicon-paint-brush',
 				],
 				'gradient' => [
 					'title' => __( 'Gradient', 'sina-ext' ),
-					'icon' => 'fa fa-barcode',
+					'icon' => 'eicon-barcode',
 				],
 				'image' => [
 					'title' => __( 'Image', 'sina-ext' ),
-					'icon' => 'fa fa-image',
+					'icon' => 'eicon-image-bold',
 				],
 			],
 			'default' => 'classic',

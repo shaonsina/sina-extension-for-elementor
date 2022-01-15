@@ -3,9 +3,9 @@ Contributors: shaonsina
 Tags: elementor, elementor addon, elementor addons, elementor extension, elementor widget, elementor templates
 Donate link: https://sina-extension.sinaextra.com/
 Requires at least: 4.7
-Tested up to: 5.7
+Tested up to: 5.8
 Requires PHP: 7.0
-Stable tag: 3.3.15
+Stable tag: 3.3.18
 License: GPL v3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -124,27 +124,45 @@ Cool things are coming soon...
 
 == PRO WIDGETS ==
 
-1. [Chart](https://sina-extension.sinaextra.com/chart): Display your company statistics within a chart (bar, pie, line etc.)
-2. [Hover Image](https://sina-extension.sinaextra.com/hover-image): Show an image with attractive hover effects.
-3. [Image Accordion](https://sina-extension.sinaextra.com/image-accordion): Display content and images with a new way!
-4. [Image Marker](https://sina-extension.sinaextra.com/image-marker): Mention or highlight specific area of an image.
-5. [Image Scroller](https://sina-extension.sinaextra.com/image-scroller): Show the full preview of your project or work.
-6. [Instant Search](https://sina-extension.sinaextra.com/instant-search-form/): Display a search form with AJAX action for searching instantly.
-7. [Lost Password Form](https://sina-extension.sinaextra.com/lost-password-form): Add a custom "lost password" form anywhere into your web page.
-8. [Lottie Animation](https://sina-extension.sinaextra.com/lottie-animation): Display an attractive Lottie Animation on your web page.
-9. [Offcanvas Bar](https://sina-extension.sinaextra.com/offcanvas-bar): Show your expected content into a offcanvas sidebar.
-10. [Posts Gallery](https://sina-extension.sinaextra.com/posts-gallery): Display the posts into a Gallery with unlimited creative design.
-11. [Posts Load On Scroll](https://sina-extension.sinaextra.com/posts-load-on-scroll): Load the posts (grid, list & thumb) by AJAX on infinite scroll.
-12. [Register Form](https://sina-extension.sinaextra.com/register-form): Add a register form anywhere into your web page.
-13. [Section Navigation](https://sina-extension.sinaextra.com/section-navigation): To navigate the sections within a page add the fixed navigation.
-14. [Source Code](https://sina-extension.sinaextra.com/source-code): Highlight the code of your script if it needs.
-15. [Tab](https://sina-extension.sinaextra.com/tab): Display any content within a tab that you want.
-16. [Team Carousel](https://sina-extension.sinaextra.com/team-carousel): Add your team members and display them in a carousel.
-17. [Tilt Box](https://sina-extension.sinaextra.com/tilt-box): Display your Content or Image by an eye-catching interactive way.
-18. [Testimonial](https://sina-extension.sinaextra.com/testimonial): Show the testimonials into an interactive carousel.
-19. [Thumb Carousel](https://sina-extension.sinaextra.com/thumb-carousel): You can display images into a carousel with thumbnail.
-20. [Toggle Content](https://sina-extension.sinaextra.com/toggle-content): Display any content within a toggle tab.
-21. [Video Gallery](https://sina-extension.sinaextra.com/video-gallery): Add some youtube videos link to play on a popup as a gallery.
+1. [Chart](https://sina-extension.sinaextra.com/chart/): Display your company statistics within a chart (bar, pie, line etc.)
+2. [Facebook Feed Carousel](https://sina-extension.sinaextra.com/facebook-feed-carousel/): Show your facebook feed as a carousel into your web page(s).
+3. [Hover Image](https://sina-extension.sinaextra.com/hover-image/): Show an image with attractive hover effects.
+4. [Image Accordion](https://sina-extension.sinaextra.com/image-accordion/): Display content and images with a new way!
+5. [Image Marker](https://sina-extension.sinaextra.com/image-marker/): Mention or highlight specific area of an image.
+6. [Image Scroller](https://sina-extension.sinaextra.com/image-scroller/): Show the full preview of your project or work.
+7. [Instant Search](https://sina-extension.sinaextra.com/instant-search-form/): Display a search form with AJAX action for searching instantly.
+8. [Lost Password Form](https://sina-extension.sinaextra.com/lost-password-form/): Add a custom "lost password" form anywhere into your web page.
+9. [Lottie Animation](https://sina-extension.sinaextra.com/lottie-animation/): Display an attractive Lottie Animation on your web page.
+10. [Offcanvas Bar](https://sina-extension.sinaextra.com/offcanvas-bar/): Show your expected content into a offcanvas sidebar.
+11. [Posts Gallery](https://sina-extension.sinaextra.com/posts-gallery/): Display the posts into a Gallery with unlimited creative design.
+12. [Posts Load On Scroll](https://sina-extension.sinaextra.com/posts-load-on-scroll/): Load the posts (grid, list & thumb) by AJAX on infinite scroll.
+13. [Register Form](https://sina-extension.sinaextra.com/register-form/): Add a register form anywhere into your web page.
+14. [Section Navigation](https://sina-extension.sinaextra.com/section-navigation/): To navigate the sections within a page add the fixed navigation.
+15. [Source Code](https://sina-extension.sinaextra.com/source-code/): Highlight the code of your script if it needs.
+16. [Tab](https://sina-extension.sinaextra.com/tab/): Display any content within a tab that you want.
+17. [Team Carousel](https://sina-extension.sinaextra.com/team-carousel/): Add your team members and display them in a carousel.
+18. [Testimonial](https://sina-extension.sinaextra.com/testimonial/): Show the testimonials into an interactive carousel.
+19. [Thumb Carousel](https://sina-extension.sinaextra.com/thumb-carousel/): You can display images into a carousel with thumbnail.
+20. [Tilt Box](https://sina-extension.sinaextra.com/tilt-box/): Display your Content or Image by an eye-catching interactive way.
+21. [Toggle Content](https://sina-extension.sinaextra.com/toggle-content/): Display any content within a toggle tab.
+22. [Twitter Feed Carousel](https://sina-extension.sinaextra.com/twitter-feed-carousel/): Show your twitter feed as a carousel into your web page(s).
+23. [Video Gallery](https://sina-extension.sinaextra.com/video-gallery/): Add some youtube videos link to play on a popup as a gallery.
+
+
+
+
+== WOOCOMMERCE WIDGETS ==
+
+1. [Shop Box Grid](https://sina-extension.sinaextra.com/shop-box-grid/): Display WooCommerce Products with Box Grid.
+2. [Shop List Grid](https://sina-extension.sinaextra.com/shop-list-grid/): Show WooCommerce Products into the page with List Grid.
+3. [Shop Thumb Grid](https://sina-extension.sinaextra.com/shop-thumb-grid/): The WooCommerce Products show your web page(s) as Thumb Grid.
+4. [Shop Box Carousel](https://sina-extension.sinaextra.com/shop-box-carousel/): Display WooCommerce Products with a Box Carousel.
+5. [Shop List Carousel](https://sina-extension.sinaextra.com/shop-list-carousel/): Show WooCommerce Products into the page with List Carousel.
+6. [Shop Thumb Carousel](https://sina-extension.sinaextra.com/shop-thumb-carousel/): The WooCommerce Products show your web page(s) as Thumb Carousel.
+7. [Products Filter Vertical](https://sina-extension.sinaextra.com/product-filter-vertical/): Display a vertical Search and Filter form into the page for Woocommerce products.
+8. [Products Filter Horizontal](https://sina-extension.sinaextra.com/product-filter-horizontal/): Show a horizontal Search and Filter form into the page for Woocommerce products.
+
+
 
 
 == PRO EXTENDERS ==
@@ -250,6 +268,16 @@ Yes. It's totally free. We also have a [PRO](https://sina-extension.sinaextra.co
 
 
 == Changelog ==
+
+= 3.3.18 - 01-09-2021 =
+- Fixed: Slider and Fancybox animation issues
+
+= 3.3.17 - 19-08-2021 =
+- Fixed: Elementor Compatibility issue
+
+= 3.3.16 - 22-07-2021 =
+- Added: Footer enable/disable option to Modal Box
+- Fixed: Some issues
 
 = 3.3.15 - 02-07-2021 =
 - Fixed: Some issues

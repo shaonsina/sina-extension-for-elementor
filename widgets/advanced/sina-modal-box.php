@@ -113,6 +113,14 @@ class Sina_Modal_Box_Widget extends Widget_Base{
 		);
 
 		$this->add_control(
+			'is_footer_show',
+			[
+				'label' => esc_html__( 'Footer Show', 'sina-ext' ),
+				'type' => Controls_Manager::SWITCHER,
+				'default' => 'yes',
+			]
+		);
+		$this->add_control(
 			'is_auto_show',
 			[
 				'label' => esc_html__( 'Auto Show', 'sina-ext' ),
@@ -542,15 +550,15 @@ class Sina_Modal_Box_Widget extends Widget_Base{
 				'options' => [
 					'left' => [
 						'title' => esc_html__( 'Left', 'sina-ext' ),
-						'icon' => 'fa fa-align-left',
+						'icon' => 'eicon-text-align-left',
 					],
 					'center' => [
 						'title' => esc_html__( 'Center', 'sina-ext' ),
-						'icon' => 'fa fa-align-center',
+						'icon' => 'eicon-text-align-center',
 					],
 					'right' => [
 						'title' => esc_html__( 'Right', 'sina-ext' ),
-						'icon' => 'fa fa-align-right',
+						'icon' => 'eicon-text-align-right',
 					],
 				],
 				'default' => 'left',
@@ -572,6 +580,9 @@ class Sina_Modal_Box_Widget extends Widget_Base{
 			[
 				'label' => esc_html__( 'Footer', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
+				'condition' => [
+					'is_footer_show!' => '',
+				]
 			]
 		);
 
@@ -833,15 +844,15 @@ class Sina_Modal_Box_Widget extends Widget_Base{
 				'options' => [
 					'left' => [
 						'title' => esc_html__( 'Left', 'sina-ext' ),
-						'icon' => 'fa fa-align-left',
+						'icon' => 'eicon-text-align-left',
 					],
 					'center' => [
 						'title' => esc_html__( 'Center', 'sina-ext' ),
-						'icon' => 'fa fa-align-center',
+						'icon' => 'eicon-text-align-center',
 					],
 					'right' => [
 						'title' => esc_html__( 'Right', 'sina-ext' ),
-						'icon' => 'fa fa-align-right',
+						'icon' => 'eicon-text-align-right',
 					],
 				],
 				'default' => 'right',
@@ -1015,19 +1026,19 @@ class Sina_Modal_Box_Widget extends Widget_Base{
 				'options' => [
 					'left' => [
 						'title' => esc_html__( 'Left', 'sina-ext' ),
-						'icon' => 'fa fa-align-left',
+						'icon' => 'eicon-text-align-left',
 					],
 					'center' => [
 						'title' => esc_html__( 'Center', 'sina-ext' ),
-						'icon' => 'fa fa-align-center',
+						'icon' => 'eicon-text-align-center',
 					],
 					'right' => [
 						'title' => esc_html__( 'Right', 'sina-ext' ),
-						'icon' => 'fa fa-align-right',
+						'icon' => 'eicon-text-align-right',
 					],
 					'justify' => [
 						'title' => esc_html__( 'Justify', 'sina-ext' ),
-						'icon' => 'fa fa-align-justify',
+						'icon' => 'eicon-text-align-justify',
 					],
 				],
 				'default' => 'left',
@@ -1104,19 +1115,19 @@ class Sina_Modal_Box_Widget extends Widget_Base{
 				'options' => [
 					'left' => [
 						'title' => esc_html__( 'Left', 'sina-ext' ),
-						'icon' => 'fa fa-align-left',
+						'icon' => 'eicon-text-align-left',
 					],
 					'center' => [
 						'title' => esc_html__( 'Center', 'sina-ext' ),
-						'icon' => 'fa fa-align-center',
+						'icon' => 'eicon-text-align-center',
 					],
 					'right' => [
 						'title' => esc_html__( 'Right', 'sina-ext' ),
-						'icon' => 'fa fa-align-right',
+						'icon' => 'eicon-text-align-right',
 					],
 					'justify' => [
 						'title' => esc_html__( 'Justify', 'sina-ext' ),
-						'icon' => 'fa fa-align-justify',
+						'icon' => 'eicon-text-align-justify',
 					],
 				],
 				'default' => 'left',
@@ -1205,15 +1216,15 @@ class Sina_Modal_Box_Widget extends Widget_Base{
 				'options' => [
 					'left' => [
 						'title' => esc_html__( 'Left', 'sina-ext' ),
-						'icon' => 'fa fa-align-left',
+						'icon' => 'eicon-text-align-left',
 					],
 					'center' => [
 						'title' => esc_html__( 'Center', 'sina-ext' ),
-						'icon' => 'fa fa-align-center',
+						'icon' => 'eicon-text-align-center',
 					],
 					'right' => [
 						'title' => esc_html__( 'Right', 'sina-ext' ),
-						'icon' => 'fa fa-align-right',
+						'icon' => 'eicon-text-align-right',
 					],
 				],
 				'selectors' => [
@@ -1278,9 +1289,11 @@ class Sina_Modal_Box_Widget extends Widget_Base{
 								<?php endif; ?>
 							<?php endif; ?>
 						</div>
-						<div class="sina-modal-footer">
-							<button class="sina-button sina-modal-close close-<?php echo esc_attr( $trigger_id ); ?>"><?php _e( 'Close', 'sina-ext' ); ?></button>
-						</div>
+						<?php if ($data['is_footer_show']): ?>
+							<div class="sina-modal-footer">
+								<button class="sina-button sina-modal-close close-<?php echo esc_attr( $trigger_id ); ?>"><?php _e( 'Close', 'sina-ext' ); ?></button>
+							</div>
+						<?php endif; ?>
 					</div>
 				</div>
 			</div>

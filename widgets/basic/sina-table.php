@@ -803,15 +803,15 @@ class Sina_Table_Widget extends Widget_Base{
 				'options' => [
 					'left' => [
 						'title' => esc_html__( 'Left', 'sina-ext' ),
-						'icon' => 'fa fa-align-left',
+						'icon' => 'eicon-text-align-left',
 					],
 					'center' => [
 						'title' => esc_html__( 'Center', 'sina-ext' ),
-						'icon' => 'fa fa-align-center',
+						'icon' => 'eicon-text-align-center',
 					],
 					'right' => [
 						'title' => esc_html__( 'Right', 'sina-ext' ),
-						'icon' => 'fa fa-align-right',
+						'icon' => 'eicon-text-align-right',
 					],
 				],
 				'default' => 'left',
@@ -1024,15 +1024,15 @@ class Sina_Table_Widget extends Widget_Base{
 				'options' => [
 					'left' => [
 						'title' => esc_html__( 'Left', 'sina-ext' ),
-						'icon' => 'fa fa-align-left',
+						'icon' => 'eicon-text-align-left',
 					],
 					'center' => [
 						'title' => esc_html__( 'Center', 'sina-ext' ),
-						'icon' => 'fa fa-align-center',
+						'icon' => 'eicon-text-align-center',
 					],
 					'right' => [
 						'title' => esc_html__( 'Right', 'sina-ext' ),
-						'icon' => 'fa fa-align-right',
+						'icon' => 'eicon-text-align-right',
 					],
 				],
 				'default' => 'left',
@@ -1337,15 +1337,15 @@ class Sina_Table_Widget extends Widget_Base{
 				'options' => [
 					'left' => [
 						'title' => esc_html__( 'Left', 'sina-ext' ),
-						'icon' => 'fa fa-align-left',
+						'icon' => 'eicon-text-align-left',
 					],
 					'center' => [
 						'title' => esc_html__( 'Center', 'sina-ext' ),
-						'icon' => 'fa fa-align-center',
+						'icon' => 'eicon-text-align-center',
 					],
 					'right' => [
 						'title' => esc_html__( 'Right', 'sina-ext' ),
-						'icon' => 'fa fa-align-right',
+						'icon' => 'eicon-text-align-right',
 					],
 				],
 				'default' => 'center',
