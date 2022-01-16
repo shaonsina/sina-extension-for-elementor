@@ -97,7 +97,7 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base{
 	 * @since 1.0.0
 	 * @access protected
 	 */
-	protected function _register_controls() {
+	protected function register_controls() {
 		// Start Fields Content
 		// =====================
 		$this->start_controls_section(
@@ -430,7 +430,7 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base{
 				'label' => esc_html__( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
-				'desktop_default' => [
+				'default' => [
 					'top' => '13',
 					'right' => '25',
 					'bottom' => '13',
@@ -541,7 +541,7 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base{
 	}
 
 
-	protected function _content_template() {
+	protected function content_template() {
 
 	}
 }

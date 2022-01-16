@@ -103,7 +103,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base{
 	 *
 	 * @since 2.2.0
 	 */
-	protected function _register_controls() {
+	protected function register_controls() {
 		// Start Posts Content
 		// ====================
 		$this->start_controls_section(
@@ -274,7 +274,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base{
 					'7' => esc_html__( '7', 'sina-ext' ),
 					'8' => esc_html__( '8', 'sina-ext' ),
 				],
-				'desktop_default' => '2',
+				'default' => '2',
 				'tablet_default' => '2',
 				'mobile_default' => '1',
 			]
@@ -578,7 +578,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base{
 						'max' => 100,
 					],
 				],
-				'desktop_default' => [
+				'default' => [
 					'size' => '0',
 				],
 				'tablet_default' => [
@@ -604,7 +604,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base{
 						'max' => 100,
 					],
 				],
-				'desktop_default' => [
+				'default' => [
 					'size' => '-10',
 				],
 				'tablet_default' => [
@@ -1112,7 +1112,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base{
 				'label' => esc_html__( 'Thumb Width (%)', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ '%' ],
-				'desktop_default' => [
+				'default' => [
 					'unit' => '%',
 					'size' => '40',
 				],
@@ -1143,7 +1143,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base{
 						'max' => 1000,
 					],
 				],
-				'desktop_default' => [
+				'default' => [
 					'size' => 225,
 				],
 				'tablet_default' => [
@@ -1163,7 +1163,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base{
 				'label' => esc_html__( 'Content Width (%)', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ '%' ],
-				'desktop_default' => [
+				'default' => [
 					'unit' => '%',
 					'size' => '60',
 				],
@@ -1206,7 +1206,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base{
 						'max' => 1000,
 					],
 				],
-				'desktop_default' => [
+				'default' => [
 					'size' => 225,
 				],
 				'tablet_default' => [
@@ -1931,7 +1931,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base{
 	}
 
 
-	protected function _content_template() {
+	protected function content_template() {
 
 	}
 }

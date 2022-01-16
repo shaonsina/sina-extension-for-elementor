@@ -93,7 +93,7 @@ class Sina_Content_Box_Widget extends Widget_Base{
 	 * @since 1.0.2
 	 * @access protected
 	 */
-	protected function _register_controls() {
+	protected function register_controls() {
 		// Start Box Content
 		// =====================
 		$this->start_controls_section(
@@ -351,7 +351,7 @@ class Sina_Content_Box_Widget extends Widget_Base{
 						'max' => 100,
 					],
 				],
-				'desktop_default' => [
+				'default' => [
 					'size' => '0',
 				],
 				'tablet_default' => [
@@ -377,7 +377,7 @@ class Sina_Content_Box_Widget extends Widget_Base{
 						'max' => 100,
 					],
 				],
-				'desktop_default' => [
+				'default' => [
 					'size' => '-10',
 				],
 				'tablet_default' => [
@@ -1342,7 +1342,7 @@ class Sina_Content_Box_Widget extends Widget_Base{
 	}
 
 
-	protected function _content_template() {
+	protected function content_template() {
 
 	}
 }

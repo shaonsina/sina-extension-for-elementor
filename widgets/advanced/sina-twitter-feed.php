@@ -105,7 +105,7 @@ class Sina_Twitter_Feed_Widget extends Widget_Base{
 	 * @since 3.3.0
 	 * @access protected
 	 */
-	protected function _register_controls() {
+	protected function register_controls() {
 		// Start Feed Content
 		// ===================
 		$this->start_controls_section(
@@ -306,7 +306,7 @@ class Sina_Twitter_Feed_Widget extends Widget_Base{
 						'max' => 100,
 					],
 				],
-				'desktop_default' => [
+				'default' => [
 					'size' => '0',
 				],
 				'tablet_default' => [
@@ -332,7 +332,7 @@ class Sina_Twitter_Feed_Widget extends Widget_Base{
 						'max' => 100,
 					],
 				],
-				'desktop_default' => [
+				'default' => [
 					'size' => '-10',
 				],
 				'tablet_default' => [
@@ -1043,7 +1043,7 @@ class Sina_Twitter_Feed_Widget extends Widget_Base{
 		<?php
 	}
 
-	protected function _content_template() {
+	protected function content_template() {
 
 	}
 }

@@ -101,7 +101,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base{
 	 *
 	 * @since 1.2.0
 	 */
-	protected function _register_controls() {
+	protected function register_controls() {
 		// Start Tab Content
 		// ===================
 		$this->start_controls_section(
@@ -417,7 +417,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base{
 				'label' => esc_html__( 'Width (%)', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ '%' ],
-				'desktop_default' => [
+				'default' => [
 					'unit' => '%',
 					'size' => '60',
 				],
@@ -469,7 +469,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base{
 				'label' => esc_html__( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em' ],
-				'desktop_default' => [
+				'default' => [
 					'top' => '15',
 					'right' => '0',
 					'bottom' => '0',
@@ -634,7 +634,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base{
 				'label' => esc_html__( 'List Width (%)', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ '%' ],
-				'desktop_default' => [
+				'default' => [
 					'unit' => '%',
 					'size' => '40',
 				],
@@ -675,7 +675,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base{
 				'label' => esc_html__( 'Title Width (%)', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ '%' ],
-				'desktop_default' => [
+				'default' => [
 					'unit' => '%',
 					'size' => '60',
 				],
@@ -699,7 +699,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base{
 				'label' => esc_html__( 'Preview Thumb Width (%)', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ '%' ],
-				'desktop_default' => [
+				'default' => [
 					'unit' => '%',
 					'size' => '40',
 				],
@@ -1108,7 +1108,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base{
 	}
 
 
-	protected function _content_template() {
+	protected function content_template() {
 
 	}
 }

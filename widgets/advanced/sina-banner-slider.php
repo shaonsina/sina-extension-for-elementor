@@ -106,7 +106,7 @@ class Sina_Banner_Slider_Widget extends Widget_Base{
 	 * @since 1.0.0
 	 * @access protected
 	 */
-	protected function _register_controls() {
+	protected function register_controls() {
 		// Start Slider Content
 		// =====================
 		$this->start_controls_section(
@@ -375,7 +375,7 @@ class Sina_Banner_Slider_Widget extends Widget_Base{
 			[
 				'label' => esc_html__( 'Button Spacing', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
-				'desktop_default' => [
+				'default' => [
 					'size' => 20,
 				],
 				'mobile_default' => [
@@ -487,7 +487,7 @@ class Sina_Banner_Slider_Widget extends Widget_Base{
 						'max' => 50,
 					],
 				],
-				'desktop_default' => [
+				'default' => [
 					'size' => 600,
 				],
 				'tablet_default' => [
@@ -504,7 +504,7 @@ class Sina_Banner_Slider_Widget extends Widget_Base{
 				'label' => esc_html__( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
-				'desktop_default' => [
+				'default' => [
 					'top' => '200',
 					'right' => '120',
 					'bottom' => '220',
@@ -850,7 +850,7 @@ class Sina_Banner_Slider_Widget extends Widget_Base{
 				'label' => esc_html__( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
-				'desktop_default' => [
+				'default' => [
 					'top' => '12',
 					'right' => '25',
 					'bottom' => '12',
@@ -933,7 +933,7 @@ class Sina_Banner_Slider_Widget extends Widget_Base{
 				'label' => esc_html__( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
-				'desktop_default' => [
+				'default' => [
 					'top' => '12',
 					'right' => '25',
 					'bottom' => '12',
@@ -1118,7 +1118,7 @@ class Sina_Banner_Slider_Widget extends Widget_Base{
 	}
 
 
-	protected function _content_template() {
+	protected function content_template() {
 		
 	}
 }

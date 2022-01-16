@@ -103,7 +103,7 @@ class Sina_Fancytext_Widget extends Widget_Base{
 	 * @since 1.0.0
 	 * @access protected
 	 */
-	protected function _register_controls() {
+	protected function register_controls() {
 		// Start Fancytext Content
 		// =====================
 		$this->start_controls_section(
@@ -509,7 +509,7 @@ class Sina_Fancytext_Widget extends Widget_Base{
 	}
 
 
-	protected function _content_template() {
+	protected function content_template() {
 		?>
 		<#
 		if ( settings.fancy_prefix || settings.fancy_suffix || settings.fancy_text.length > 0 ) {

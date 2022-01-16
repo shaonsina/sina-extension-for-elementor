@@ -106,7 +106,7 @@ class Sina_Blogpost_Widget extends Widget_Base{
 	 * @since 1.0.0
 	 * @access protected
 	 */
-	protected function _register_controls() {
+	protected function register_controls() {
 		// Start Blogpost Content
 		// =====================
 		$this->start_controls_section(
@@ -416,7 +416,7 @@ class Sina_Blogpost_Widget extends Widget_Base{
 						'max' => 100,
 					],
 				],
-				'desktop_default' => [
+				'default' => [
 					'size' => '0',
 				],
 				'tablet_default' => [
@@ -442,7 +442,7 @@ class Sina_Blogpost_Widget extends Widget_Base{
 						'max' => 100,
 					],
 				],
-				'desktop_default' => [
+				'default' => [
 					'size' => '-10',
 				],
 				'tablet_default' => [
@@ -832,7 +832,7 @@ class Sina_Blogpost_Widget extends Widget_Base{
 				'label' => esc_html__( 'Thumb Width (%)', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ '%' ],
-				'desktop_default' => [
+				'default' => [
 					'unit' => '%',
 					'size' => '40',
 				],
@@ -863,7 +863,7 @@ class Sina_Blogpost_Widget extends Widget_Base{
 						'max' => 1000,
 					],
 				],
-				'desktop_default' => [
+				'default' => [
 					'size' => 200,
 				],
 				'tablet_default' => [
@@ -883,7 +883,7 @@ class Sina_Blogpost_Widget extends Widget_Base{
 				'label' => esc_html__( 'Content Width (%)', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ '%' ],
-				'desktop_default' => [
+				'default' => [
 					'unit' => '%',
 					'size' => '60',
 				],
@@ -926,7 +926,7 @@ class Sina_Blogpost_Widget extends Widget_Base{
 						'max' => 1000,
 					],
 				],
-				'desktop_default' => [
+				'default' => [
 					'size' => 200,
 				],
 				'tablet_default' => [
@@ -2125,7 +2125,7 @@ class Sina_Blogpost_Widget extends Widget_Base{
 	}
 
 
-	protected function _content_template() {
+	protected function content_template() {
 
 	}
 }

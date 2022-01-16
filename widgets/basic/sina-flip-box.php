@@ -91,7 +91,7 @@ class Sina_Flip_Box_Widget extends Widget_Base{
 	 * @since 1.0.0
 	 * @access protected
 	 */
-	protected function _register_controls() {
+	protected function register_controls() {
 		// Start Front Side Content
 		// =========================
 		$this->start_controls_section(
@@ -1099,7 +1099,7 @@ class Sina_Flip_Box_Widget extends Widget_Base{
 	}
 
 
-	protected function _content_template() {
+	protected function content_template() {
 		?>
 		<#
 			var flipClsArr = ['sina-flipbox-effect-s-top', 'sina-flipbox-effect-s-bottom', 'sina-flipbox-effect-s-left', 'sina-flipbox-effect-s-right'];

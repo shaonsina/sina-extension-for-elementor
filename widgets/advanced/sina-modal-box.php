@@ -101,7 +101,7 @@ class Sina_Modal_Box_Widget extends Widget_Base{
 	 *
 	 * @since 2.2.0
 	 */
-	protected function _register_controls() {
+	protected function register_controls() {
 		// Start Modal Content
 		// ====================
 		$this->start_controls_section(
@@ -320,7 +320,7 @@ class Sina_Modal_Box_Widget extends Widget_Base{
 						'max' => 95,
 					],
 				],
-				'desktop_default' => [
+				'default' => [
 					'size' => 600,
 				],
 				'mobile_default' => [
@@ -888,7 +888,7 @@ class Sina_Modal_Box_Widget extends Widget_Base{
 						'max' => 900,
 					],
 				],
-				'desktop_default' => [
+				'default' => [
 					'size' => 300,
 				],
 				'mobile_default' => [
@@ -1302,7 +1302,7 @@ class Sina_Modal_Box_Widget extends Widget_Base{
 	}
 
 
-	protected function _content_template() {
+	protected function content_template() {
 
 	}
 }

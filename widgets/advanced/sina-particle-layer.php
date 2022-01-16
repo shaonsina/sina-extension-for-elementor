@@ -104,7 +104,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base{
 	 * @since 1.0.0
 	 * @access protected
 	 */
-	protected function _register_controls() {
+	protected function register_controls() {
 		// Start Content
 		// ===============
 		$this->start_controls_section(
@@ -262,7 +262,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base{
 			[
 				'label' => esc_html__( 'Button Spacing', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
-				'desktop_default' => [
+				'default' => [
 					'size' => 20,
 				],
 				'mobile_default' => [
@@ -500,7 +500,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base{
 				'label' => esc_html__( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
-				'desktop_default' => [
+				'default' => [
 					'top' => '180',
 					'right' => '50',
 					'bottom' => '180',
@@ -900,7 +900,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base{
 				'label' => esc_html__( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
-				'desktop_default' => [
+				'default' => [
 					'top' => '12',
 					'right' => '25',
 					'bottom' => '12',
@@ -980,7 +980,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base{
 				'label' => esc_html__( 'Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
-				'desktop_default' => [
+				'default' => [
 					'top' => '12',
 					'right' => '25',
 					'bottom' => '12',
@@ -1112,7 +1112,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base{
 	}
 
 
-	protected function _content_template() {
+	protected function content_template() {
 		
 	}
 }

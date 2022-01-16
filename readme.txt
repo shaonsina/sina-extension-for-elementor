@@ -5,7 +5,7 @@ Donate link: https://sina-extension.sinaextra.com/
 Requires at least: 4.7
 Tested up to: 5.8
 Requires PHP: 7.0
-Stable tag: 3.3.18
+Stable tag: 3.4.0
 License: GPL v3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -18,7 +18,7 @@ This is an extension or addon for [Elementor](https://wordpress.org/plugins/elem
 
 
 = Use of Sina Templates =
-https://youtu.be/4_FEAlX5bz8
+https://youtu.be/x8sZyLEBoks
 
 
 == Features ==
@@ -162,6 +162,9 @@ Cool things are coming soon...
 7. [Products Filter Vertical](https://sina-extension.sinaextra.com/product-filter-vertical/): Display a vertical Search and Filter form into the page for Woocommerce products.
 8. [Products Filter Horizontal](https://sina-extension.sinaextra.com/product-filter-horizontal/): Show a horizontal Search and Filter form into the page for Woocommerce products.
 
+9. [Cart](https://sina-extension.sinaextra.com/cart/): Add a Cart into the page for Woocommerce products purchase.
+10. [Checkout](https://sina-extension.sinaextra.com/checkout/): Add a Checkout into the page for Woocommerce products purchase.
+
 
 
 
@@ -171,12 +174,13 @@ Cool things are coming soon...
 2. [Colors Animation](https://sina-extension.sinaextra.com/colors-animation): Show some colors on the section with animated (fade, horizontal, vertical).
 3. [Conditional Publish](https://sina-extension.sinaextra.com/conditional-publish): Publish your content when some conditions will fulfill.
 4. [Content Protection](https://sina-extension.sinaextra.com/content-protection): Show or hide specific element or section for the specific users (based on role).
-5. [Masker](https://sina-extension.sinaextra.com/masker): Apply to mask any content of the widget.
-6. [Parallax](https://sina-extension.sinaextra.com/parallax): Display parallax to any section or entire the page.
-7. [Preloader](https://sina-extension.sinaextra.com/preloader): If there doesn't have a preloader on your website then you can add a Preloader by this extender.
-8. [Reading Progressbar](https://sina-extension.sinaextra.com/reading-progressbar): Display a progressbar top of the page or posts for seeing the users how much they have read or seen (based on scroll).
-9. [Section Particles](https://sina-extension.sinaextra.com/section-particles): Apply the particles effect to any section.
-10. [Water Ripples](https://sina-extension.sinaextra.com/water-ripples): Add an interactive water ripples effect, which is the most interesting.
+5. [Grid Animation](https://sina-extension.sinaextra.com/grid-animation/): Add some grid-based smooth animation on any of the pages.
+6. [Masker](https://sina-extension.sinaextra.com/masker): Apply to mask any content of the widget.
+7. [Parallax](https://sina-extension.sinaextra.com/parallax): Display parallax to any section or entire the page.
+8. [Preloader](https://sina-extension.sinaextra.com/preloader): If there doesn't have a preloader on your website then you can add a Preloader by this extender.
+9. [Reading Progressbar](https://sina-extension.sinaextra.com/reading-progressbar): Display a progressbar top of the page or posts for seeing the users how much they have read or seen (based on scroll).
+10. [Section Particles](https://sina-extension.sinaextra.com/section-particles): Apply the particles effect to any section.
+11. [Water Ripples](https://sina-extension.sinaextra.com/water-ripples): Add an interactive water ripples effect, which is the most interesting.
 
 
 == The summary of core Features ==
@@ -268,6 +272,11 @@ Yes. It's totally free. We also have a [PRO](https://sina-extension.sinaextra.co
 
 
 == Changelog ==
+
+= 3.4.0 - 17-01-2022 =
+- Fixed: Countdown issue
+- Fixed: Elementor Compatible issue
+- Improved
 
 = 3.3.18 - 01-09-2021 =
 - Fixed: Slider and Fancybox animation issues

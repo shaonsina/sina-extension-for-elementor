@@ -101,7 +101,7 @@ class Sina_Google_Map_Widget extends Widget_Base{
 	 * @since 1.0.0
 	 * @access protected
 	 */
-	protected function _register_controls() {
+	protected function register_controls() {
 		// Start Map Content
 		// =====================
 		$this->start_controls_section(
@@ -455,7 +455,7 @@ class Sina_Google_Map_Widget extends Widget_Base{
 	}
 
 
-	protected function _content_template() {
+	protected function content_template() {
 		?>
 		<# var id = view.getID(); #>
 		<div id="sina-google-map-{{{id}}}" class="sina-google-map"

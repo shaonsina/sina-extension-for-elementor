@@ -83,7 +83,7 @@ class Sina_Dynamic_Button_Widget extends Widget_Base{
 	 *
 	 * @since 2.3.0
 	 */
-	protected function _register_controls() {
+	protected function register_controls() {
 		// Start Buttons Content
 		// ======================
 		$this->start_controls_section(
@@ -394,7 +394,7 @@ class Sina_Dynamic_Button_Widget extends Widget_Base{
 	}
 
 
-	protected function _content_template() {
+	protected function content_template() {
 
 	}
 }

@@ -105,7 +105,7 @@ class Sina_Brand_Carousel_Widget extends Widget_Base{
 	 * @since 1.0.0
 	 * @access protected
 	 */
-	protected function _register_controls() {
+	protected function register_controls() {
 		// Start Brand Content
 		// =====================
 		$this->start_controls_section(
@@ -304,7 +304,7 @@ class Sina_Brand_Carousel_Widget extends Widget_Base{
 					'7' => esc_html__( '7', 'sina-ext' ),
 					'8' => esc_html__( '8', 'sina-ext' ),
 				],
-				'desktop_default' => '4',
+				'default' => '4',
 				'tablet_default' => '4',
 				'mobile_default' => '2',
 			]
@@ -332,7 +332,7 @@ class Sina_Brand_Carousel_Widget extends Widget_Base{
 				'label' => esc_html__( 'Logo Padding', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
-				'desktop_default' => [
+				'default' => [
 					'top' => '20',
 					'right' => '75',
 					'bottom' => '20',
@@ -595,7 +595,7 @@ class Sina_Brand_Carousel_Widget extends Widget_Base{
 	}
 
 
-	protected function _content_template() {
+	protected function content_template() {
 		?>
 		<div class="sina-brand-carousel owl-carousel"
 		data-item-lg="{{{settings.show_item}}}"

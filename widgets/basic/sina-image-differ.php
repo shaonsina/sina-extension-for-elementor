@@ -104,7 +104,7 @@ class Sina_Image_Differ_Widget extends Widget_Base{
 	 *
 	 * @since 3.1.0
 	 */
-	protected function _register_controls() {
+	protected function register_controls() {
 		// Start Differ Content
 		// =====================
 		$this->start_controls_section(
@@ -487,7 +487,7 @@ class Sina_Image_Differ_Widget extends Widget_Base{
 	}
 
 
-	protected function _content_template() {
+	protected function content_template() {
 
 	}
 }
