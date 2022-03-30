@@ -175,7 +175,6 @@ class Sina_Common_Data{
 			'flipInX' => esc_html__( 'Flip In X', 'sina-ext' ),
 			'flipInY' => esc_html__( 'Flip In Y', 'sina-ext' ),
 			'lightSpeedIn' => esc_html__('Light Speed In', 'sina-ext'),
-			'swing' => esc_html__( 'Swing', 'sina-ext' ),
 			'flash' => esc_html__('Flash', 'sina-ext'),
 			'pulse' => esc_html__('Pulse', 'sina-ext'),
 			'rubberBand' => esc_html__('Rubber Band', 'sina-ext'),

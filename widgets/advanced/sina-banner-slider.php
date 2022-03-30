@@ -77,7 +77,7 @@ class Sina_Banner_Slider_Widget extends Widget_Base{
 	 */
 	public function get_style_depends() {
 		return [
-			'e-animations',
+			'animate-merge',
 			'owl-carousel',
 			'sina-tooltip',
 			'sina-widgets',

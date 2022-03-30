@@ -76,7 +76,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base{
 	 */
 	public function get_style_depends() {
 		return [
-			'e-animations',
+			'animate-merge',
 			'sina-tooltip',
 			'sina-widgets',
 		];
