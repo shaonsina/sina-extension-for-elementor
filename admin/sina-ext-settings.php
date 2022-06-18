@@ -76,11 +76,11 @@ class Sina_Ext_Settings{
 		register_setting( 'sina_settings_group', 'sina_ext_after_logout_url' );
 
 		add_settings_section( 'sina_api_section', '', '', 'sina_ext_settings' );
-		add_settings_field( 'sina_google_map_key', esc_html__('Google Map API Key', 'sina-ext'), [$this, 'text_field'], 'sina_ext_settings', 'sina_api_section', ['key' => 'sina_map_apikey'] );
-		add_settings_field( 'sina_mailchimp_key', esc_html__('MailChimp API Key', 'sina-ext'), [$this, 'text_field'], 'sina_ext_settings', 'sina_api_section', ['key' => 'sina_mailchimp', 'index' => 'apikey' ] );
-		add_settings_field( 'sina_mailchimp_list_id', esc_html__('MailChimp List Id', 'sina-ext'), [$this, 'text_field'], 'sina_ext_settings', 'sina_api_section', ['key' => 'sina_mailchimp', 'index' => 'list_id' ] );
-		add_settings_field( 'sina_ext_pro_recaptcha_key', esc_html__('Google Recaptcha Site Key', 'sina-ext'), [$this, 'text_field'], 'sina_ext_settings', 'sina_api_section', ['key' => 'sina_ext_pro_recaptcha_key'] );
-		add_settings_field( 'sina_ext_pro_recaptcha_secret_key', esc_html__('Google Recaptcha Secret Key', 'sina-ext'), [$this, 'text_field'], 'sina_ext_settings', 'sina_api_section', ['key' => 'sina_ext_pro_recaptcha_secret_key'] );
+		add_settings_field( 'sina_google_map_key', esc_html__('Google Map API Key', 'sina-ext'), [$this, 'password_field'], 'sina_ext_settings', 'sina_api_section', ['key' => 'sina_map_apikey'] );
+		add_settings_field( 'sina_mailchimp_key', esc_html__('MailChimp API Key', 'sina-ext'), [$this, 'password_field'], 'sina_ext_settings', 'sina_api_section', ['key' => 'sina_mailchimp', 'index' => 'apikey' ] );
+		add_settings_field( 'sina_mailchimp_list_id', esc_html__('MailChimp List Id', 'sina-ext'), [$this, 'password_field'], 'sina_ext_settings', 'sina_api_section', ['key' => 'sina_mailchimp', 'index' => 'list_id' ] );
+		add_settings_field( 'sina_ext_pro_recaptcha_key', esc_html__('Google Recaptcha Site Key', 'sina-ext'), [$this, 'password_field'], 'sina_ext_settings', 'sina_api_section', ['key' => 'sina_ext_pro_recaptcha_key'] );
+		add_settings_field( 'sina_ext_pro_recaptcha_secret_key', esc_html__('Google Recaptcha Secret Key', 'sina-ext'), [$this, 'password_field'], 'sina_ext_settings', 'sina_api_section', ['key' => 'sina_ext_pro_recaptcha_secret_key'] );
 		add_settings_field( 'sina_ext_after_logout_url', esc_html__('After Logout Redirect URL', 'sina-ext'), [$this, 'text_field'], 'sina_ext_settings', 'sina_api_section', ['key' => 'sina_ext_after_logout_url'] );
 
 
@@ -131,6 +131,18 @@ class Sina_Ext_Settings{
 		}
 		$data = sanitize_text_field( $data );
 		printf('<input class="regular-text" type="text" name="%s" value="%s">', $key, $data);
+	}
+
+	public function password_field($field) {
+		$data = get_option( $field['key'] );
+		$key  = $field['key'];
+
+		if ( is_array($data) ) {
+			$data = $data[ $field['index'] ];
+			$key = $key.'['. $field['index'] .']';
+		}
+		$data = sanitize_text_field( $data );
+		printf('<input class="regular-text" type="password" name="%s" value="%s">', $key, $data);
 	}
 
 	public function templates_option($data) {

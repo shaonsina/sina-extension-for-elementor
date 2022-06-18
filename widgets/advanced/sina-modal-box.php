@@ -1244,6 +1244,7 @@ class Sina_Modal_Box_Widget extends Widget_Base{
 
 	protected function render() {
 		$data = $this->get_settings_for_display();
+		$delay_show = isset($data['delay_show']['size']) ? $data['delay_show']['size'] : '';
 		$trigger_id = $data['trigger_id'] ? $data['trigger_id'] : 'sina-modal-'.$this->get_id();
 
 		$this->add_render_attribute( 'modal_header', 'class', 'sina-modal-header' );
@@ -1257,7 +1258,7 @@ class Sina_Modal_Box_Widget extends Widget_Base{
 		?>
 		<div class="sina-modal-box"
 		data-auto-show="<?php echo esc_attr( $data['is_auto_show'] ); ?>"
-		data-delay-show="<?php echo esc_attr( $data['delay_show']['size'] ); ?>"
+		data-delay-show="<?php echo esc_attr( $delay_show ); ?>"
 		data-click="<?php echo esc_attr( $data['is_outside_click'] ); ?>"
 		data-esc="<?php echo esc_attr( $data['is_esc_press'] ); ?>"
 		data-modal-id="<?php echo esc_attr( $trigger_id ); ?>">

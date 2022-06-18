@@ -1,11 +1,11 @@
-== Sina Extension for Elementor ==
+== Sina Extension for Elementor (Slider, Modal, Particle, Portfolio, Tab, Table, Ticker, Free Elementor Widgets & Elementor Templates) ==
 Contributors: shaonsina
 Tags: elementor, elementor addon, elementor addons, elementor extension, elementor widget, elementor templates
 Donate link: https://sina-extension.sinaextra.com/
 Requires at least: 4.7
-Tested up to: 5.9
+Tested up to: 6.0
 Requires PHP: 7.0
-Stable tag: 3.4.1
+Stable tag: 3.4.2
 License: GPL v3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -119,7 +119,6 @@ Cool things are coming soon...
 
 == FREE EXTENDERS ==
 1. [Morphing Animation](https://sina-extension.sinaextra.com/morphing-animation): Apply an animation to any content of the widget.
-2. [Transform](https://sina-extension.sinaextra.com/transform): Display content by transforming in the different dimensions.
 
 
 == PRO WIDGETS ==
@@ -273,8 +272,10 @@ Yes. It's totally free. We also have a [PRO](https://sina-extension.sinaextra.co
 
 == Changelog ==
 
-= 3.4.1 - 31-03-2022 =
+= 3.4.1 - 20-04-2022 =
 - Fixed: Animations Issue
+- Removed: Transform Effect Exteder
+- Improved
 
 = 3.4.0 - 17-01-2022 =
 - Fixed: Countdown issue
