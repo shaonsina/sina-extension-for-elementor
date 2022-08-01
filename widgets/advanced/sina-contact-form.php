@@ -568,7 +568,7 @@ class Sina_Contact_Form_Widget extends Widget_Base{
 
 				<?php printf('<p class="sina-success-text">%s</p>', $data['successs_message']); ?>
 				<p class="sina-error-text"></p>
-				<p class="sina-process-text"><?php _e( 'Processing...', 'sina-ext' ); ?></p>
+				<p class="sina-process-text"><?php echo esc_html__( 'Processing...', 'sina-ext' ); ?></p>
 
 				<?php wp_nonce_field( 'sina_contact', 'sina_contact_nonce'.$this->get_id() ); ?>
 			</form><!-- .sina-contact-form -->

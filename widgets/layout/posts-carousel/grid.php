@@ -55,7 +55,7 @@
 					<?php if ( 'yes' == $data['posts_avatar'] ): ?>
 						<?php echo get_avatar( get_the_author_meta( "ID" ), $data['grid_avatar_size']['size']); ?>
 					<?php else: ?>
-						<?php _e('by', 'sina-ext'); ?>
+						<?php echo esc_html__('by', 'sina-ext'); ?>
 					<?php endif; ?>
 					<?php the_author_posts_link(); ?>
 					|

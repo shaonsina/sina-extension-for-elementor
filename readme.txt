@@ -272,6 +272,10 @@ Yes. It's totally free. We also have a [PRO](https://sina-extension.sinaextra.co
 
 == Changelog ==
 
+= 3.4.2 - 18-06-2022 =
+- Fixed: Modal Animation and warning Issue
+- Fixed: Icon Issue
+
 = 3.4.1 - 20-04-2022 =
 - Fixed: Animations Issue
 - Removed: Transform Effect Exteder

@@ -1,5 +1,5 @@
 <div class="sina-ext-banner" style="background-image: url(<?php echo esc_url( SINA_EXT_URL .'admin/assets/img/sina-extension-banner.jpg' ); ?>);">
-	<h1><?php _e( 'Sina Extension', 'sina-ext' ); ?></h1>
+	<h1><?phpecho esc_html__ 'Sina Extension', 'sina-ext' ); ?></h1>
 </div>
 
 <div class="sina-ext-wrap">
@@ -24,20 +24,20 @@
 
 		<div class="sina-ext-tabs-wrap">
 			<div class="sina-ext-btns">
-				<a class="active" href="#sina-ext-settings"><?php _e( 'Settings', 'sina-ext' ); ?></a>
-				<a href="#sina-ext-widgets"><?php _e( 'Widgets', 'sina-ext' ); ?></a>
-				<a href="#sina-ext-extenders"><?php _e( 'Extenders', 'sina-ext' ); ?></a>
+				<a class="active" href="#sina-ext-settings"><?php echo esc_html__( 'Settings', 'sina-ext' ); ?></a>
+				<a href="#sina-ext-widgets"><?php echo esc_html__( 'Widgets', 'sina-ext' ); ?></a>
+				<a href="#sina-ext-extenders"><?php echo esc_html__( 'Extenders', 'sina-ext' ); ?></a>
 			</div>
 
 			<div class="sina-ext-tab-content show sina-ext-pt sina-ext-pb" id="sina-ext-settings">
-				<h2 class="sina-ext-tab-title"><?php _e( 'Settings', 'sina-ext' ); ?></h2>
+				<h2 class="sina-ext-tab-title"><?php echo esc_html__( 'Settings', 'sina-ext' ); ?></h2>
 				<p class="sina-ext-pb">
-					<?php _e( 'Set your expected options.', 'sina-ext' ); ?>
+					<?php echo esc_html__( 'Set your expected options.', 'sina-ext' ); ?>
 				</p>
 
 				<?php do_action( 'sina_ext_before_api_settings'); ?>
 
-				<h2 class="sina-ext-pt"><?php _e( 'API Settings', 'sina-ext' ); ?></h2>
+				<h2 class="sina-ext-pt"><?php echo esc_html__( 'API Settings', 'sina-ext' ); ?></h2>
 				<div class="sina-ext-pb">
 					<?php do_settings_sections( 'sina_ext_settings' ); ?>
 				</div>
@@ -45,9 +45,9 @@
 				<?php do_action( 'sina_ext_before_templates_settings'); ?>
 
 				<div class="sina-ext-options sina-ext-pt">
-					<h2><?php _e( 'Template Settings', 'sina-ext' ); ?></h2>
+					<h2><?php echo esc_html__( 'Template Settings', 'sina-ext' ); ?></h2>
 					<p class="sina-ext-pb">
-						<?php _e( 'You can use <strong><i>SINA TEMPLATES</i></strong> on your site. Enjoy!', 'sina-ext' ); ?>
+						<?php echo esc_html__( 'You can use <strong><i>SINA TEMPLATES</i></strong> on your site. Enjoy!', 'sina-ext' ); ?>
 					</p>
 
 					<div class="sina-ext-pb">
@@ -56,9 +56,9 @@
 				</div>
 
 				<div class="sina-ext-options sina-ext-pb">
-					<h2><?php _e( 'Rollback to Previous Version', 'sina-ext' ); ?></h2>
+					<h2><?php echo esc_html__( 'Rollback to Previous Version', 'sina-ext' ); ?></h2>
 					<p>
-						<?php _e( 'Experiencing an issue with this version? You can rollback the previous version.', 'sina-ext' ); ?>
+						<?php echo esc_html__( 'Experiencing an issue with this version? You can rollback the previous version.', 'sina-ext' ); ?>
 					</p>
 					<?php
 					printf( '<a href="%1$s" class="sina-ext-rollback-btn button elementor-button-spinner elementor-rollback-button">%2$s</a>',
@@ -70,15 +70,15 @@
 					);
 					?>
 					<p style="color: #e00;">
-						<?php _e( 'Warning: Please backup your database before making the rollback.', 'sina-ext' ); ?>
+						<?php echo esc_html__( 'Warning: Please backup your database before making the rollback.', 'sina-ext' ); ?>
 					</p>
 				</div>
 			</div>
 
 			<div class="sina-ext-tab-content sina-ext-pt sina-ext-pb" id="sina-ext-widgets">
-				<h2 class="sina-ext-tab-title"><?php _e( 'Widgets', 'sina-ext' ); ?></h2>
+				<h2 class="sina-ext-tab-title"><?php echo esc_html__( 'Widgets', 'sina-ext' ); ?></h2>
 				<p class="sina-ext-pb">
-					<?php _e( 'You can disable widget(s) if you would like to not using on your site.', 'sina-ext' ); ?>
+					<?php echo esc_html__( 'You can disable widget(s) if you would like to not using on your site.', 'sina-ext' ); ?>
 				</p>
 
 				<div class="sina-ext-options">
@@ -110,9 +110,9 @@
 			</div>
 
 			<div class="sina-ext-tab-content sina-ext-pt sina-ext-pb" id="sina-ext-extenders">
-				<h2 class="sina-ext-tab-title"><?php _e( 'Extenders', 'sina-ext' ); ?></h2>
+				<h2 class="sina-ext-tab-title"><?php echo esc_html__( 'Extenders', 'sina-ext' ); ?></h2>
 				<p class="sina-ext-pb">
-					<?php _e( 'You can disable extender(s) if you would like to not using on your site.', 'sina-ext' ); ?>
+					<?php echo esc_html__( 'You can disable extender(s) if you would like to not using on your site.', 'sina-ext' ); ?>
 				</p>
 
 				<div class="sina-ext-options">
@@ -144,11 +144,11 @@
 	</form>
 
 	<p>
-		<?php _e( 'Found any issue or need help?', 'sina-ext' ); ?>
-		<a href="https://sinaextra.com/support/" target="_blank"><?php _e( 'Open Ticket', 'sina-ext' ); ?></a>
+		<?php echo esc_html__( 'Found any issue or need help?', 'sina-ext' ); ?>
+		<a href="https://sinaextra.com/support/" target="_blank"><?php echo esc_html__( 'Open Ticket', 'sina-ext' ); ?></a>
 	</p>
 
 	<div class="sina-ext-options">
-	    <p><?php _e( 'Did you like', 'sina-ext' ); ?> <strong><i><?php _e( 'Sina Extension', 'sina-ext' ); ?></i></strong> <?php _e( 'Plugin?', 'sina-ext' ); ?> <a href="https://wordpress.org/support/plugin/sina-extension-for-elementor/reviews/#new-post" target="_blank"><?php _e( 'Leave a Review', 'sina-ext' ); ?></a></p>
+	    <p><?php echo esc_html__( 'Did you like', 'sina-ext' ); ?> <strong><i><?php echo esc_html__( 'Sina Extension', 'sina-ext' ); ?></i></strong> <?php echo esc_html__( 'Plugin?', 'sina-ext' ); ?> <a href="https://wordpress.org/support/plugin/sina-extension-for-elementor/reviews/#new-post" target="_blank"><?php echo esc_html__( 'Leave a Review', 'sina-ext' ); ?></a></p>
 	</div>
 </div>

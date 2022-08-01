@@ -2093,7 +2093,7 @@ class Sina_Blogpost_Widget extends Widget_Base{
 			<?php
 		else:
 			?>
-				<h3><?php _e('No Posts found', 'sina-ext'); ?></h3>
+				<h3><?php echo esc_html__('No Posts found', 'sina-ext'); ?></h3>
 			<?php
 		endif;
 		if ( Plugin::instance()->editor->is_edit_mode() ) {

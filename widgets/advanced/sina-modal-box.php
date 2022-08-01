@@ -1293,7 +1293,7 @@ class Sina_Modal_Box_Widget extends Widget_Base{
 						</div>
 						<?php if ($data['is_footer_show']): ?>
 							<div class="sina-modal-footer">
-								<button class="sina-button sina-modal-close close-<?php echo esc_attr( $trigger_id ); ?>"><?php _e( 'Close', 'sina-ext' ); ?></button>
+								<button class="sina-button sina-modal-close close-<?php echo esc_attr( $trigger_id ); ?>"><?php echo esc_html__( 'Close', 'sina-ext' ); ?></button>
 							</div>
 						<?php endif; ?>
 					</div>

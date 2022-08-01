@@ -532,7 +532,7 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base{
 
 				<?php printf('<p class="sina-success-text">%s</p>', $data['successs_message']); ?>
 				<p class="sina-error-text"></p>
-				<p class="sina-process-text"><?php _e( 'Processing...', 'sina-ext' ); ?></p>
+				<p class="sina-process-text"><?php echo esc_html__( 'Processing...', 'sina-ext' ); ?></p>
 
 				<?php wp_nonce_field( 'sina_mc_subscribe', 'sina_mc_subscribe_nonce'.$this->get_id() ); ?>
 			</form><!-- .sina-subs-form -->
