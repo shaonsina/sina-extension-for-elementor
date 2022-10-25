@@ -394,6 +394,7 @@
 			var headerView = this.getHeaderView();
 			headerView.tools.show(new TemplateLibraryHeaderActionsView());
 			headerView.menuArea.show(new TemplateLibraryHeaderMenuView());
+
 			this.showLogo();
 		},
 		showLogo: function() {
@@ -418,6 +419,7 @@
 	});
 
 	var Component = function(ComponentModal) {
+		var self;
 		Component.prototype = Object.create(ComponentModal && ComponentModal.prototype, {
 			constructor: {
 				value: Component,
@@ -432,6 +434,7 @@
 		var parent = Object.getPrototypeOf( Component.prototype );
 		Component.prototype.__construct = function(args) {
 			parent.__construct.call( this, args );
+			self = this;
 			elementor.on( 'document:loaded', this.onDocumentLoaded.bind( this ) );
 		};
 		Component.prototype.getNamespace = function() {
@@ -512,41 +515,42 @@
 			return true;
 		};
 		Component.prototype.show = function( args ) {
-			this.manager.modalConfig = args;
+			self.manager.modalConfig = args;
 	
 			if ( args.toDefault || ! $e.routes.restoreState( 'sina_ext' ) ) {
-				$e.route( this.getDefaultRoute() );
+				$e.route( self.getDefaultRoute() );
 			}
 		};
 		Component.prototype.insertTemplate = function( args ) {
 			var autoImportSettings = false,
 				model = args.model,
-				self = this;
-	
-			var withPageSettings = args.withPageSettings || null;
+
+				withPageSettings = args.withPageSettings || null;
 	
 			if ( autoImportSettings ) {
 				withPageSettings = true;
 			}
 	
 			if ( null === withPageSettings && model.get( 'hasPageSettings' ) ) {
-				var insertTemplateHandler = this.getImportSettingsDialog();
+				var insertTemplateHandler = self.getImportSettingsDialog();
 	
 				insertTemplateHandler.showImportDialog( model );
 	
 				return;
 			}
 	
-			this.manager.layout.showLoadingView();
+			self.manager.layout.showLoadingView();
 	
-			this.manager.requestTemplateContent( model.get( 'source' ), model.get( 'template_id' ), {
+			self.manager.requestTemplateContent( model.get( 'source' ), model.get( 'template_id' ), {
 				data: {
 					with_page_settings: withPageSettings,
 				},
 				success: function( data ) {
+
 					var importOptions = jQuery.extend( {}, self.manager.modalConfig.importOptions );
 	
 					importOptions.withPageSettings = withPageSettings;
+
 
 					self.manager.layout.hideLoadingView();
 	
@@ -628,7 +632,7 @@
 		};
 
 		return Component;
-	}(elementorModules.common.ComponentModal);
+	}($e.modules.ComponentModalBase);
 
 
 	var TemplateLibraryManager = function TemplateLibraryManager() {
@@ -754,8 +758,10 @@
 		};
 
 		this.showTemplates = function () {
+
 			self.layout.setHeaderDefaultParts();
 			self.layout.showModal();
+
 			self.loadTemplates(function () {
 				var templatesToShow = self.filterTemplates();
 				self.layout.showTemplatesView(new TemplateLibraryCollection(templatesToShow));
@@ -763,6 +769,7 @@
 		};
 
 		this.filterTemplates = function () {
+
 			return templatesCollection.filter(function (model) {
 				if ('sina_ext' !== model.get('source')) {
 					return false;

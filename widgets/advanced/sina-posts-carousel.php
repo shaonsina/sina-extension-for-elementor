@@ -1901,11 +1901,13 @@ class Sina_Posts_Carousel_Widget extends Widget_Base{
 		// Post Query
 		$post_query = new WP_Query( $default );
 		if ( $post_query->have_posts() ) :
+			$show_item_tablet = isset($data['show_item_tablet']) ? $data['show_item_tablet'] : $data['show_item'];
+			$show_item_mobile = isset($data['show_item_mobile']) ? $data['show_item_mobile'] : $data['show_item'];
 			?>
 			<div class="sina-posts-carousel owl-carousel"
 			data-item-lg="<?php echo esc_attr( $data['show_item'] ); ?>"
-			data-item-md="<?php echo esc_attr( $data['show_item_tablet'] ); ?>"
-			data-item-sm="<?php echo esc_attr( $data['show_item_mobile'] ); ?>"
+			data-item-md="<?php echo esc_attr( $show_item_tablet ); ?>"
+			data-item-sm="<?php echo esc_attr( $show_item_mobile ); ?>"
 			data-autoplay="<?php echo esc_attr( $data['autoplay'] ); ?>"
 			data-pause="<?php echo esc_attr( $data['pause'] ); ?>"
 			data-center="<?php echo esc_attr( $data['center'] ); ?>"
