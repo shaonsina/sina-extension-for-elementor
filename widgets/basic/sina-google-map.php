@@ -433,6 +433,7 @@ class Sina_Google_Map_Widget extends Widget_Base{
 
 	protected function render() {
 		$data = $this->get_settings_for_display();
+		$custom_marker = isset($data['custom_marker']['url']) ? $data['custom_marker']['url'] : '';
 		?>
 		<div id="sina-google-map-<?php echo esc_attr( $this->get_id() ); ?>" class="sina-google-map"
 		data-id="sina-google-map-<?php echo esc_attr( $this->get_id() ); ?>"
@@ -449,7 +450,7 @@ class Sina_Google_Map_Widget extends Widget_Base{
 		data-fullscreen-position="<?php echo esc_attr( $data['fullscreen_control_position'] ) ?>"
 		data-map-style="<?php echo esc_attr( $data['gmap_style'] ) ?>"
 		data-marker="<?php echo esc_attr( $data['marker'] ) ?>"
-		data-marker-link="<?php echo esc_attr( $data['custom_marker']['url'] ) ?>">
+		data-marker-link="<?php echo esc_attr( $custom_marker ) ?>">
 		</div><!-- .sina-google-map -->
 		<?php
 	}

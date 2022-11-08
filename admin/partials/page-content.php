@@ -47,7 +47,7 @@
 				<div class="sina-ext-options sina-ext-pt">
 					<h2><?php echo esc_html__( 'Template Settings', 'sina-ext' ); ?></h2>
 					<p class="sina-ext-pb">
-						<?php echo esc_html__( 'You can use <strong><i>SINA TEMPLATES</i></strong> on your site. Enjoy!', 'sina-ext' ); ?>
+						<?php echo sprintf( '%s <strong><i>%s</i></strong> %s', esc_html__( 'You can use', 'sina-ext' ), esc_html__( 'SINA TEMPLATES', 'sina-ext' ), esc_html__( 'on your site. Enjoy!', 'sina-ext' ) );?>
 					</p>
 
 					<div class="sina-ext-pb">

@@ -805,12 +805,12 @@ class Sina_Transform_Widget extends Widget_Base{
 		$img_alt = Control_Media::get_image_alt( $data['image'] );
 		?>
 		<div class="sina-transform">
-			<div class="sina-transform-content <?php echo esc_attr( $data['transform_overflow'] ); ?>">
+			<div class="sina-transform-content">
 				<?php
 					if ( 'yes' == $data['save_templates'] && $data['template'] ) :
 						$frontend = new Frontend;
 						echo $frontend->get_builder_content( $data['template'], true );
-					elseif ( $data['image']['url'] ) :
+					elseif ( isset($data['image']['url']) ) :
 						?>
 						<img src="<?php echo esc_url( $data['image']['url'] ); ?>" alt="<?php echo esc_attr( $img_alt ) ?>">
 				<?php endif; ?>

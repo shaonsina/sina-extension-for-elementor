@@ -3,7 +3,7 @@ Contributors: shaonsina
 Tags: elementor, elementor addon, elementor addons, elementor extension, elementor widget, elementor templates
 Donate link: https://sina-extension.sinaextra.com/
 Requires at least: 4.7
-Tested up to: 6.0
+Tested up to: 6.1
 Requires PHP: 7.0
 Stable tag: 3.4.3
 License: GPL v3
@@ -271,6 +271,9 @@ Yes. It's totally free. We also have a [PRO](https://sina-extension.sinaextra.co
 
 
 == Changelog ==
+
+= 3.4.4 - 08-11-2022 =
+- Fixed: Some issues
 
 = 3.4.3 - 13-08-2022 =
 - Fixed: Elementor Compatibility issue

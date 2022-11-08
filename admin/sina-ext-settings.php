@@ -53,7 +53,7 @@ class Sina_Ext_Settings{
 	}
 
 	public function admin_scripts( $hook ) {
-		if ( 'elementor_page_sina_ext_settings' == $hook ) {
+		if ( 'elementor_page_sina_ext_settings' == $hook || '%d8%a7%d9%84%d9%85%d9%86%d8%aa%d9%88%d8%b1_page_sina_ext_settings' == $hook ) {
 			// CSS Files
 			wp_enqueue_style( 'sina-admin', SINA_EXT_URL .'admin/assets/css/sina-admin.min.css', [], SINA_EXT_VERSION );
 
