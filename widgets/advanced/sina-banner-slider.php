@@ -77,6 +77,9 @@ class Sina_Banner_Slider_Widget extends Widget_Base{
 	 */
 	public function get_style_depends() {
 		return [
+			'icofont',
+			'font-awesome',
+			'elementor-icons',
 			'animate-merge',
 			'owl-carousel',
 			'sina-tooltip',

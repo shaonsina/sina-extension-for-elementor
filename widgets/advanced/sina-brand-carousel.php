@@ -77,6 +77,9 @@ class Sina_Brand_Carousel_Widget extends Widget_Base{
 	 */
 	public function get_style_depends() {
 		return [
+			'icofont',
+			'font-awesome',
+			'elementor-icons',
 			'owl-carousel',
 			'animate-merge',
 			'sina-widgets',

@@ -23,6 +23,7 @@ abstract class Sina_Ext_Functions extends Sina_Extension_Base{
 	 * @since 3.0.0
 	 */
 	public function widget_styles() {
+		wp_register_style( 'icofont', SINA_EXT_URL .'admin/assets/css/icofont.min.css', [], SINA_EXT_VERSION );
 		wp_register_style( 'owl-carousel', SINA_EXT_URL .'assets/css/owl.carousel.min.css', [], SINA_EXT_VERSION );
 		wp_register_style( 'venobox', SINA_EXT_URL .'assets/css/venobox.min.css', [], SINA_EXT_VERSION );
 		wp_register_style( 'animate-merge', SINA_EXT_URL .'assets/css/animate-merge.min.css', [], SINA_EXT_VERSION );
@@ -70,16 +71,6 @@ abstract class Sina_Ext_Functions extends Sina_Extension_Base{
 		}
 		wp_register_script( 'sina-widgets', SINA_EXT_URL .'assets/js/sina-widgets.min.js', ['jquery'], SINA_EXT_VERSION, true );
 		wp_localize_script( 'sina-widgets', 'sinaAjax', ['ajaxURL' => $ajax_url] );
-	}
-
-	/**
-	 * Require Scripts
-	 *
-	 * @since 3.1.4
-	 */
-	public function require_scripts() {
-		wp_enqueue_style( 'icofont', SINA_EXT_URL .'admin/assets/css/icofont.min.css', [], SINA_EXT_VERSION );
-		wp_enqueue_style( 'font-awesome' );
 	}
 
 	/**
@@ -150,9 +141,6 @@ abstract class Sina_Ext_Functions extends Sina_Extension_Base{
 			add_action( 'admin_notices', [ $this, 'admin_notice_minimum_php_version' ] );
 			return;
 		}
-
-		add_action( 'elementor/editor/after_enqueue_scripts', [ $this, 'require_scripts' ] );
-		add_action( 'wp_enqueue_scripts', [ $this, 'require_scripts' ] );
 
 		// Register Widget Category
 		add_action( 'elementor/elements/categories_registered', [ $this, 'widget_category' ] );

@@ -30,6 +30,11 @@ class Sina_Ext_Icon extends Base_Data_Control{
 		return 'icon';
 	}
 
+	public function enqueue() {
+		wp_enqueue_style( 'icofont', SINA_EXT_URL .'admin/assets/css/icofont.min.css', [], SINA_EXT_VERSION );
+		wp_enqueue_style( 'font-awesome' );
+	}
+
 	/**
 	 * Get icons.
 	 *

@@ -76,6 +76,9 @@ class Sina_Particle_Layer_Widget extends Widget_Base{
 	 */
 	public function get_style_depends() {
 		return [
+			'icofont',
+			'font-awesome',
+			'elementor-icons',
 			'animate-merge',
 			'sina-tooltip',
 			'sina-widgets',

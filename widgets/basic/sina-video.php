@@ -78,6 +78,9 @@ class Sina_Video_Widget extends Widget_Base{
 	 */
 	public function get_style_depends() {
 		return [
+			'icofont',
+			'font-awesome',
+			'elementor-icons',
 			'venobox',
 			'sina-widgets',
 		];
