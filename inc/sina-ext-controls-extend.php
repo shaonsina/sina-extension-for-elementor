@@ -43,6 +43,8 @@ class Sina_Ext_Controls{
 
 		add_action('elementor/controls/register', [$this, 'controls'], 15 );
 		add_action('elementor/element/common/_section_style/before_section_end', [$this, 'register_controls']);
+		add_action( 'elementor/widget/render_content', [$this, 'render_content'], 10, 2 );
+		add_action( 'elementor/preview/enqueue_scripts', [ $this, 'preview_scripts' ] );
 	}
 
 	private function controls_files(){
@@ -83,5 +85,18 @@ class Sina_Ext_Controls{
 				],
 			]
 		);
+	}
+
+	public function render_content($content, $elems) {
+		$data = $elems->get_settings_for_display();
+
+		if ( 'yes' == $data['sina_is_morphing_animation'] ) {
+			wp_enqueue_style( 'sina-morphing-anim' );
+		}
+		return $content;
+	}
+
+	public function preview_scripts() {
+		wp_enqueue_style( 'sina-morphing-anim' );
 	}
 }

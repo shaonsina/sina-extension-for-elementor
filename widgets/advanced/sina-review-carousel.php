@@ -79,6 +79,7 @@ class Sina_Review_Carousel_Widget extends Widget_Base{
 		return [
 			'owl-carousel',
 			'animate-merge',
+			'sina-morphing-anim',
 			'sina-widgets',
 		];
 	}

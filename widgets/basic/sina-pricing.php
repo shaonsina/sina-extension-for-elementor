@@ -83,6 +83,7 @@ class Sina_Pricing_Widget extends Widget_Base{
 			'icofont',
 			'font-awesome',
 			'elementor-icons',
+			'sina-morphing-anim',
 			'sina-widgets',
 		];
 	}
