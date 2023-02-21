@@ -272,8 +272,9 @@ Yes. It's totally free. We also have a [PRO](https://sina-extension.sinaextra.co
 
 == Changelog ==
 
-= 3.4.5 - 01-12-2022 =
+= 3.4.5 - 21-02-2023 =
 - Fixed: Unnecessary scripts load
+- Added: Margin option to Particle Layer and Banner Slider
 - Improved Performance
 
 = 3.4.4 - 08-11-2022 =
