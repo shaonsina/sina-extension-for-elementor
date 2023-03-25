@@ -1,4 +1,4 @@
-/* Sina Extension for Elementor v3.3.12 */
+/* Sina Extension for Elementor v3.4.5 */
 
 !(function ($) {
 	'use strict';
@@ -381,6 +381,7 @@
 		$scope.find('.sina-login-form').each(function () {
 			var $this = $(this),
 				$uid = $this.data('uid'),
+				$state = $this.data('state'),
 				$url = $this.data('url'),
 				$remLog = $this.data('rem-login'),
 				$nonce = $this.children('#sina_login_nonce'+$uid),
@@ -401,7 +402,7 @@
 				e.preventDefault();
 				clearTimeout(timeout);
 
-				$logBtn.html('Logging...');
+				$logBtn.html($state);
 				$error.fadeOut(0);
 
 				$.post(
@@ -415,14 +416,14 @@
 					},
 					function( data, status, code ) {
 						if ( status == 'success' ) {
-							if ( data ) {
+							if ( data == 'logged in' ) {
+								location.href = $url;
+							} else if ( data ) {
 								$error.html( data ).fadeIn(200);
 
 								timeout = setTimeout( function() {
 									$error.fadeOut(200);
 								}, 10000 );
-							} else{
-								location.href = $url;
 							}
 							$logBtn.html(btnHtml);
 						}

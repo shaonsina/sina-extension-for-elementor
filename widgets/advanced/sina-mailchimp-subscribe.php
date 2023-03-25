@@ -143,6 +143,16 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base{
 			]
 		);
 		$this->add_control(
+			'process_text',
+			[
+				'label' => esc_html__( 'Processing Text', 'sina-ext' ),
+				'label_block' => true,
+				'type' => Controls_Manager::TEXT,
+				'placeholder' => esc_html__( 'Enter Processing Text', 'sina-ext' ),
+				'default' => 'Processing...',
+			]
+		);
+		$this->add_control(
 			'fname',
 			[
 				'label' => esc_html__( 'First Name', 'sina-ext' ),
@@ -535,7 +545,7 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base{
 
 				<?php printf('<p class="sina-success-text">%s</p>', $data['successs_message']); ?>
 				<p class="sina-error-text"></p>
-				<p class="sina-process-text"><?php echo esc_html__( 'Processing...', 'sina-ext' ); ?></p>
+				<p class="sina-process-text"><?php printf('%s', $data['process_text']); ?></p>
 
 				<?php wp_nonce_field( 'sina_mc_subscribe', 'sina_mc_subscribe_nonce'.$this->get_id() ); ?>
 			</form><!-- .sina-subs-form -->

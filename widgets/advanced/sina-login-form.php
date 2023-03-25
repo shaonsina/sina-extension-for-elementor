@@ -182,6 +182,16 @@ class Sina_Login_Form_Widget extends Widget_Base{
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
+		$this->add_control(
+			'login_state',
+			[
+				'label' => esc_html__( 'Login State', 'sina-ext' ),
+				'label_block' => true,
+				'type' => Controls_Manager::TEXT,
+				'placeholder' => esc_html__( 'Enter Login State', 'sina-ext' ),
+				'default' => 'Logging',
+			]
+		);
 		Sina_Common_Data::button_content($this, '.sina-login-btn', 'Log In', 'btn', false);
 		$this->end_controls_section();
 		// End Button Content
@@ -491,6 +501,7 @@ class Sina_Login_Form_Widget extends Widget_Base{
 		<div class="sina-form">
 			<form class="sina-login-form"
 			data-uid="<?php echo esc_attr( $id ); ?>"
+			data-state="<?php echo esc_attr( $data['login_state'] ); ?>"
 			data-rem-login="<?php echo esc_attr( $data['is_remember_login'] ); ?>"
 			data-url="<?php echo esc_url( $data['redirect_url'] ); ?>">
 

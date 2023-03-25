@@ -3,9 +3,9 @@ Contributors: shaonsina
 Tags: elementor, elementor addon, elementor addons, elementor extension, elementor widget, elementor templates
 Donate link: https://sina-extension.sinaextra.com/
 Requires at least: 4.7
-Tested up to: 6.1
+Tested up to: 6.2
 Requires PHP: 7.0
-Stable tag: 3.4.5
+Stable tag: 3.4.6
 License: GPL v3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -271,6 +271,9 @@ Yes. It's totally free. We also have a [PRO](https://sina-extension.sinaextra.co
 
 
 == Changelog ==
+
+= 3.4.6 - 28-03-2023 =
+- Added: Process Text to Login, Contact and MailChimp Form
 
 = 3.4.5 - 21-02-2023 =
 - Fixed: Unnecessary scripts load

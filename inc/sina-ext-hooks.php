@@ -99,7 +99,7 @@ Class Sina_Ext_Hooks{
 				}
 			}
 
-			printf( '%s', $err );
+			die( $err );
 		}
 		die();
 	}
@@ -187,7 +187,7 @@ Class Sina_Ext_Hooks{
 					wp_mail( $admin_email, $subject, $message, $headers );
 				}
 			}
-			printf( '%s', $err );
+			die( $err );
 		}
 		die();
 	}
@@ -202,31 +202,28 @@ Class Sina_Ext_Hooks{
 			$err = '';
 
 			if ( $username ) {
-				$email = sanitize_email( $username );
 				if ( '' == $email ) {
 					$email = $username;
 				}
 			} else{
-				$err = esc_html__( 'Username or Email can\'t be empty!', 'sina-ext' );
+				die( esc_html__( 'Username and Email can\'t be empty!', 'sina-ext' ) );
 			}
 
-			if ( '' == $err ) {
-				if ( '' == $password) {
-					$err = esc_html__( 'Password can\'t be empty!', 'sina-ext' );
-				} else {
-					$rem = $remember == 'true' ? true : false;
-					$user = wp_signon( array(
-						'user_login'    => $email,
-						'user_password' => $password,
-						'remember'      => $rem
-					) );
+			if ( '' == $password) {
+				die( esc_html__( 'Password can\'t be empty!', 'sina-ext' ) );
+			} else {
+				$rem = $remember == 'true' ? true : false;
+				$user = wp_signon( array(
+					'user_login'    => $email,
+					'user_password' => $password,
+					'remember'      => $rem
+				) );
 
-					if ( is_wp_error( $user ) ) {
-						$err = esc_html__( 'Username or Email and password don\'t match!', 'sina-ext' );
-					}
+				if ( is_wp_error( $user ) ) {
+					die( esc_html__( 'Username or Email and password don\'t match!', 'sina-ext' ) );
 				}
 			}
-			printf( '%s', $err );
+			die( 'logged in' );
 		}
 		die();
 	}
@@ -280,7 +277,7 @@ Class Sina_Ext_Hooks{
 					$count += isset($users[$role]) ? $users[$role] : 0;
 				}
 			}
-			printf( '%s', $count );
+			die( $count );
 		}
 		die();
 	}
@@ -293,7 +290,7 @@ Class Sina_Ext_Hooks{
 				$visit_data = get_post_meta( $page, 'sina_visit_counter', true);
 
 				$data = $visit_data['sina_visit_today'] . '|' . $visit_data['sina_visit_yesterday'];
-				printf( '%s', $data );
+				die( $data );
 			}
 		}
 		die();
