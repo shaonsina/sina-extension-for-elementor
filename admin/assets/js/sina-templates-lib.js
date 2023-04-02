@@ -855,8 +855,7 @@
 	
 		var $templateLibBtnStyle = $( '<style />' ),
 			btnStyle = '';
-			btnStyle += '.elementor-add-section-area-button.sina-ext-add-template-button { margin-left: 8px; vertical-align: bottom; }';
-			btnStyle += '.elementor-add-section-area-button.sina-ext-add-template-button img { height: 40px; }';
+			btnStyle += '.elementor-add-section-area-button.sina-ext-add-template-button { padding: 0; vertical-align: bottom; }';
 
 		$templateLibBtnStyle.html( btnStyle );
 

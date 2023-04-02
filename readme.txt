@@ -272,11 +272,12 @@ Yes. It's totally free. We also have a [PRO](https://sina-extension.sinaextra.co
 
 == Changelog ==
 
-= 3.4.6 - 28-03-2023 =
+= 3.4.6 - 02-04-2023 =
 - Added: Process Text to Login, Contact and MailChimp Form
+- Fixed: User Counter issue
+- Fixed: Elementor Compatibility issue
 
 = 3.4.5 - 21-02-2023 =
-- Fixed: Unnecessary scripts load
 - Added: Margin option to Particle Layer and Banner Slider
 - Improved Performance
 
@@ -289,7 +290,7 @@ Yes. It's totally free. We also have a [PRO](https://sina-extension.sinaextra.co
 - Improved
 
 = 3.4.2 - 18-06-2022 =
-- Fixed: Modal Animation and warning Issue
+- Fixed: Modal Animation and warning issue
 - Fixed: Icon Issue
 
 = 3.4.1 - 20-04-2022 =

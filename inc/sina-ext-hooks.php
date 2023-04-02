@@ -277,7 +277,7 @@ Class Sina_Ext_Hooks{
 					$count += isset($users[$role]) ? $users[$role] : 0;
 				}
 			}
-			die( $count );
+			die( strval($count) );
 		}
 		die();
 	}

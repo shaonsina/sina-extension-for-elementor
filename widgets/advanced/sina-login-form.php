@@ -189,7 +189,7 @@ class Sina_Login_Form_Widget extends Widget_Base{
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => esc_html__( 'Enter Login State', 'sina-ext' ),
-				'default' => 'Logging',
+				'default' => 'Login...',
 			]
 		);
 		Sina_Common_Data::button_content($this, '.sina-login-btn', 'Log In', 'btn', false);
