@@ -1903,9 +1903,13 @@ class Sina_Posts_Carousel_Widget extends Widget_Base{
 		$txt_len = $data['posts_txt_len'];
 		// Post Query
 		$post_query = new WP_Query( $default );
-		if ( $post_query->have_posts() ) :
-			$show_item_tablet = isset($data['show_item_tablet']) ? $data['show_item_tablet'] : $data['show_item'];
-			$show_item_mobile = isset($data['show_item_mobile']) ? $data['show_item_mobile'] : $data['show_item'];
+		if ( $post_query->have_posts() ):
+			if ($data['show_item'] == '1') {
+				$show_item_tablet = $show_item_mobile = $data['show_item'];
+			} else{
+				$show_item_tablet = isset($data['show_item_tablet']) ? $data['show_item_tablet'] : '2';
+				$show_item_mobile = isset($data['show_item_mobile']) ? $data['show_item_mobile'] : '1';
+			}
 			?>
 			<div class="sina-posts-carousel owl-carousel"
 			data-item-lg="<?php echo esc_attr( $data['show_item'] ); ?>"

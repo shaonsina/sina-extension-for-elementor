@@ -558,8 +558,12 @@ class Sina_Brand_Carousel_Widget extends Widget_Base{
 
 	protected function render() {
 		$data = $this->get_settings_for_display();
-		$show_item_tablet = isset($data['show_item_tablet']) ? $data['show_item_tablet'] : $data['show_item'];
-		$show_item_mobile = isset($data['show_item_mobile']) ? $data['show_item_mobile'] : $data['show_item'];
+		if ($data['show_item'] == '1') {
+			$show_item_tablet = $show_item_mobile = $data['show_item'];
+		} else{
+			$show_item_tablet = isset($data['show_item_tablet']) ? $data['show_item_tablet'] : '2';
+			$show_item_mobile = isset($data['show_item_mobile']) ? $data['show_item_mobile'] : '1';
+		}
 		?>
 		<div class="sina-brand-carousel owl-carousel"
 		data-item-lg="<?php echo esc_attr( $data['show_item'] ); ?>"
