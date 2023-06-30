@@ -273,7 +273,7 @@ Yes. It's totally free. We also have a [PRO](https://sina-extension.sinaextra.co
 == Changelog ==
 
 = 3.4.7 - 01-07-2023 =
-- Added: Vertical alignment to Content Box
+- Added: Line Height control to Content Box icon
 - Fixed: Brand Carousel slide issue
 - Fixed: Posts Carousel slide issue
 - Fixed: Content Slider slide issue
