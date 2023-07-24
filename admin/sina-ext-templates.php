@@ -97,7 +97,7 @@
 			</div>
 		</script>
 		<script type="text/template" id="tmpl-elementor-template-library-get-pro-button-sina-ext">
-			<a class="elementor-template-library-template-action elementor-button elementor-go-pro" href="https://sina-extension.sinaextra.com/?utm_source=panel-library&utm_campaign=gopro&utm_medium=wp-dash" target="_blank">
+			<a class="elementor-template-library-template-action elementor-button elementor-go-pro" href="https://sina-extension.sinaextra.com/#pricing" target="_blank">
 				<i class="eicon-external-link-square" aria-hidden="true"></i>
 				<span class="elementor-button-title"><?php echo __('Go Pro','sina-ext'); ?></span>
 			</a>
