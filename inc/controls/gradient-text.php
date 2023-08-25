@@ -273,26 +273,6 @@ class Sina_Ext_Gradient_Text extends Group_Control_Base{
 				'image[url]!' => '',
 			],
 			'required' => true,
-			'device_args' => [
-				Controls_Stack::RESPONSIVE_TABLET => [
-					'selectors' => [
-						'{{SELECTOR}}' => 'background-position: {{SIZE}}{{UNIT}} {{ypos_tablet.SIZE}}{{ypos_tablet.UNIT}}',
-					],
-					'condition' => [
-						'background' => 'image',
-						'position_tablet' => 'initial',
-					],
-				],
-				Controls_Stack::RESPONSIVE_MOBILE => [
-					'selectors' => [
-						'{{SELECTOR}}' => 'background-position: {{SIZE}}{{UNIT}} {{ypos_mobile.SIZE}}{{ypos_mobile.UNIT}}',
-					],
-					'condition' => [
-						'background' => 'image',
-						'position_mobile' => 'initial',
-					],
-				],
-			],
 		];
 
 		$fields['ypos'] = [
@@ -339,26 +319,6 @@ class Sina_Ext_Gradient_Text extends Group_Control_Base{
 				'image[url]!' => '',
 			],
 			'required' => true,
-			'device_args' => [
-				Controls_Stack::RESPONSIVE_TABLET => [
-					'selectors' => [
-						'{{SELECTOR}}' => 'background-position: {{xpos_tablet.SIZE}}{{xpos_tablet.UNIT}} {{SIZE}}{{UNIT}}',
-					],
-					'condition' => [
-						'background' => 'image',
-						'position_tablet' => 'initial',
-					],
-				],
-				Controls_Stack::RESPONSIVE_MOBILE => [
-					'selectors' => [
-						'{{SELECTOR}}' => 'background-position: {{xpos_mobile.SIZE}}{{xpos_mobile.UNIT}} {{SIZE}}{{UNIT}}',
-					],
-					'condition' => [
-						'background' => 'image',
-						'position_mobile' => 'initial',
-					],
-				],
-			],
 		];
 
 		$fields['attachment'] = [
@@ -464,26 +424,6 @@ class Sina_Ext_Gradient_Text extends Group_Control_Base{
 				'background' => 'image',
 				'size' => 'initial',
 				'image[url]!' => '',
-			],
-			'device_args' => [
-				Controls_Stack::RESPONSIVE_TABLET => [
-					'selectors' => [
-						'{{SELECTOR}}' => 'background-size: {{SIZE}}{{UNIT}} auto',
-					],
-					'condition' => [
-						'background' => 'image',
-						'size_tablet' => 'initial',
-					],
-				],
-				Controls_Stack::RESPONSIVE_MOBILE => [
-					'selectors' => [
-						'{{SELECTOR}}' => 'background-size: {{SIZE}}{{UNIT}} auto',
-					],
-					'condition' => [
-						'background' => 'image',
-						'size_mobile' => 'initial',
-					],
-				],
 			],
 		];
 
