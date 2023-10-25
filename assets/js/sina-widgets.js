@@ -1,4 +1,4 @@
-/* Sina Extension for Elementor v3.4.5 */
+/* Sina Extension for Elementor v3.4.9 */
 
 !(function ($) {
 	'use strict';
@@ -350,6 +350,7 @@
 	function sinaTable($scope, $) {
 		$scope.find('.sina-table').each(function () {
 			var $this = $(this),
+				$tableRow = $this.children('table'),
 				$table = $this.find('.sina-data-table'),
 				$tableInfo = $this.data('table-info'),
 				head = $tableInfo.head ? $tableInfo.head : [],
@@ -373,6 +374,14 @@
 				paging : paging,
 				pagingType : pagingType,
 				dom: exportBtns,
+			});
+
+			$tableRow.on('click', 'tr', function(e) {
+				e.preventDefault();
+				if ( 'yes' != $tableInfo.keep_focus) {
+					$(this).siblings('tr').removeClass('focus');
+				}
+				$(this).toggleClass('focus');
 			});
 		});
 	}

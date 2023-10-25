@@ -272,6 +272,15 @@ Yes. It's totally free. We also have a [PRO](https://sina-extension.sinaextra.co
 
 == Changelog ==
 
+= 3.4.9 - 01-07-2023 =
+- Add: Focus option to the Table row
+- Add: Link option to the Team
+
+= 3.4.8 - 01-07-2023 =
+- Changed: Api has changed
+- Fixed: Gradient Background issue
+- Improved
+
 = 3.4.7 - 01-07-2023 =
 - Added: Line Height control to Content Box icon
 - Fixed: Brand Carousel slide issue

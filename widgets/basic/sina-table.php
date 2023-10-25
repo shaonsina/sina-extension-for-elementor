@@ -839,6 +839,14 @@ class Sina_Table_Widget extends Widget_Base{
 			]
 		);
 
+		$this->add_control(
+			'content_keep_focus',
+			[
+				'label' => esc_html__( 'Keep Focus', 'sina-ext' ),
+				'type' => Controls_Manager::SWITCHER,
+				'description' => esc_html__('Whether the rows keep focus?', 'sina-ext'),
+			]
+		);
 		$this->add_responsive_control(
 			'content_icon_size',
 			[
@@ -998,6 +1006,53 @@ class Sina_Table_Widget extends Widget_Base{
 
 		$this->end_controls_tab();
 
+		$this->start_controls_tab(
+			'content_focus',
+			[
+				'label' => esc_html__( 'Focus', 'sina-ext' ),
+			]
+		);
+
+		$this->add_control(
+			'content_focus_color',
+			[
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#222',
+				'selectors' => [
+					'{{WRAPPER}} table tbody tr.focus' => 'color: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
+			[
+				'name' => 'content_focus_background',
+				'types' => [ 'classic', 'gradient' ],
+				'fields_options' => [
+					'background' => [ 
+						'default' =>'classic', 
+					],
+					'color' => [
+						'default' => 'rgba(16, 133, 228, 0.2)',
+					],
+				],
+				'selector' => '{{WRAPPER}} table tbody tr.focus',
+			]
+		);
+		$this->add_control(
+			'content_focus_border',
+			[
+				'label' => esc_html__( 'Border Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} table tbody tr.focus td, {{WRAPPER}} table tbody tr.focus th' => 'border-color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->end_controls_tab();
+
 		$this->end_controls_tabs();
 
 		$this->add_responsive_control(
@@ -1134,6 +1189,43 @@ class Sina_Table_Widget extends Widget_Base{
 					],
 				],
 				'selector' => '{{WRAPPER}} table tbody tr.even:hover',
+			]
+		);
+
+		$this->end_controls_tab();
+
+		$this->start_controls_tab(
+			'even_row_focus',
+			[
+				'label' => esc_html__( 'Focus', 'sina-ext' ),
+			]
+		);
+
+		$this->add_control(
+			'even_row_focus_color',
+			[
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#222',
+				'selectors' => [
+					'{{WRAPPER}} table tbody tr.focus.even' => 'color: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
+			[
+				'name' => 'even_row_focus_background',
+				'types' => [ 'classic', 'gradient' ],
+				'fields_options' => [
+					'background' => [ 
+						'default' =>'classic', 
+					],
+					'color' => [
+						'default' => 'rgba(16, 133, 228, 0.2)',
+					],
+				],
+				'selector' => '{{WRAPPER}} table tbody tr.focus.even',
 			]
 		);
 
@@ -1529,6 +1621,7 @@ class Sina_Table_Widget extends Widget_Base{
 			'pagingType' => $data['data_paging_type'],
 			'info' 		=> $data['data_info'],
 			'external_source' => $external_source,
+			'keep_focus'=> $data['content_keep_focus'],
 		];
 
 		$rows = [];
