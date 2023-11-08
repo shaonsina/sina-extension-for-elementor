@@ -374,6 +374,7 @@
 				paging : paging,
 				pagingType : pagingType,
 				dom: exportBtns,
+				lengthMenu: [10, 25, 50, 100, 200, 500],
 			});
 
 			$tableRow.on('click', 'tr', function(e) {
