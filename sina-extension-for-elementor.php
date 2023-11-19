@@ -111,6 +111,8 @@ define('SINA_WIDGETS', [
 		'shop-thumb-carousel'	=> esc_html__( 'Sina Pro Shop Thumb Carousel',  'sina-ext' ),
 		'product-filter-vertical'=> esc_html__( 'Sina Pro Product Filter Vertical',  'sina-ext' ),
 		'product-filter-horizontal'=> esc_html__( 'Sina Pro Product Filter Horizontal',  'sina-ext' ),
+		'cart'					=> esc_html__( 'Sina Pro Cart',  'sina-ext' ),
+		'checkout'				=> esc_html__( 'Sina Pro Checkout',  'sina-ext' ),
 	],
 ]);
 
@@ -125,9 +127,10 @@ define('SINA_EXTENDERS', [
 		'masker'				=> esc_html__( 'Sina Pro Masker', 'sina-ext' ),
 		'parallax'				=> esc_html__( 'Sina Pro Parallax', 'sina-ext' ),
 		'section-particles'		=> esc_html__( 'Sina Pro Section Particles', 'sina-ext' ),
-		'water-ripples'			=> esc_html__( 'Sina Pro Water Ripples', 'sina-ext' ),
 		'clips-animation'		=> esc_html__( 'Sina Pro Clips Animation', 'sina-ext' ),
 		'colors-animation'		=> esc_html__( 'Sina Pro Colors Animation', 'sina-ext' ),
+		'grid-animation'		=> esc_html__( 'Sina Pro Grid Animation',  'sina-ext' ),
+		'water-ripples'			=> esc_html__( 'Sina Pro Water Ripples', 'sina-ext' ),
 		'conditional-publish'	=> esc_html__( 'Sina Pro Conditional Publish', 'sina-ext' ),
 		'content-protection'	=> esc_html__( 'Sina Pro Content Protection', 'sina-ext' ),
 		'preloader'				=> esc_html__( 'Sina Pro Preloader', 'sina-ext' ),
