@@ -1,4 +1,4 @@
-/* Sina Extension for Elementor v3.3.12 */
+/* Sina Extension for Elementor v3.5.1 */
 
 /*--------------------------------- General -------------------------------------- */
 .sina-overlay{
@@ -145,7 +145,7 @@
 .sina-accordion-item.open > .sina-accordion-header > .sina-accordion-icon .on{
 	display: block;
 }
-
+.sina-pricing-save-value,
 .sina-contact-form .g-recaptcha,
 .sina-team-social li,
 .sina-bp-cats,

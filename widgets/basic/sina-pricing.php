@@ -163,6 +163,20 @@ class Sina_Pricing_Widget extends Widget_Base{
 			]
 		);
 		$this->add_control(
+			'price_save_value',
+			[
+				'label' => esc_html__( 'Save Value', 'sina-ext' ),
+				'type' => Controls_Manager::TEXT,
+				'placeholder' => esc_html__( 'Enter Save Value', 'sina-ext' ),
+				'condition' => [
+					'price!' => '',
+				],
+				'dynamic' => [
+					'active' => true,
+				],
+			]
+		);
+		$this->add_control(
 			'ribbon_title',
 			[
 				'label' => esc_html__( 'Ribbon Title', 'sina-ext' ),
@@ -693,6 +707,70 @@ class Sina_Pricing_Widget extends Widget_Base{
 		);
 
 		$this->add_control(
+			'suffix_price_hover_heading',
+			[
+				'label' => esc_html__( 'Price Suffix Styles', 'sina-ext' ),
+				'type' => Controls_Manager::HEADING,
+				'condition' => [
+					'price!' => '',
+					'price_suffix!' => '',
+				],
+			]
+		);
+		$this->add_control(
+			'suffix_prefix_hover_color',
+			[
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'condition' => [
+					'price!' => '',
+					'price_suffix!' => '',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-pricing:hover .sina-price-suffix' => 'color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'price_save_value_hover_heading',
+			[
+				'label' => esc_html__( 'Save Value Styles', 'sina-ext' ),
+				'type' => Controls_Manager::HEADING,
+				'condition' => [
+					'price!' => '',
+					'price_save_value!' => '',
+				],
+			]
+		);
+		$this->add_control(
+			'price_save_value_hover_color',
+			[
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'condition' => [
+					'price!' => '',
+					'price_save_value!' => '',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-pricing:hover .sina-pricing-save-value' => 'color: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
+			[
+				'name' => 'price_save_value_hover_bg',
+				'types' => [ 'classic', 'gradient' ],
+				'condition' => [
+					'price!' => '',
+					'price_save_value!' => '',
+				],
+				'selector' => '{{WRAPPER}} .sina-pricing:hover .sina-pricing-save-value',
+			]
+		);
+
+		$this->add_control(
 			'content_hover_heading',
 			[
 				'label' => esc_html__( 'Content Styles', 'sina-ext' ),
@@ -911,6 +989,97 @@ class Sina_Pricing_Widget extends Widget_Base{
 		$this->end_controls_section();
 		// End Title Style
 		// =====================
+
+
+		// Start Price Save Value Style
+		// =============================
+		$this->start_controls_section(
+			'price_save_value_style',
+			[
+				'label' => esc_html__( 'Save Value', 'sina-ext' ),
+				'tab' => Controls_Manager::TAB_STYLE,
+				'condition' => [
+					'price_save_value!' => '',
+				],
+			]
+		);
+
+		$this->add_control(
+			'price_save_valuecolor',
+			[
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#222',
+				'selectors' => [
+					'{{WRAPPER}} .sina-pricing-save-value' => 'color: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name' => 'price_save_value_typography',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_weight' => [
+						'default' => '600',
+					],
+					'font_size'   => [
+						'default' => [
+							'size' => '18',
+						],
+					],
+				],
+				'selector' => '{{WRAPPER}} .sina-pricing-save-value',
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
+			[
+				'name' => 'price_save_value_bg',
+				'types' => [ 'classic', 'gradient' ],
+				'selector' => '{{WRAPPER}} .sina-pricing-save-value',
+			]
+		);
+		$this->add_responsive_control(
+			'price_save_value_radius',
+			[
+				'label' => esc_html__( 'Radius', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'selectors' => [
+					'{{WRAPPER}} .sina-pricing-save-value' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'price_save_value_padding',
+			[
+				'label' => esc_html__( 'Padding', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'selectors' => [
+					'{{WRAPPER}} .sina-pricing-save-value' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'price_save_value_margin',
+			[
+				'label' => esc_html__( 'Margin', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'selectors' => [
+					'{{WRAPPER}} .sina-pricing-save-value' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->end_controls_section();
+		// End Price Save Value Style
+		// ==========================
 
 
 		// Start Price Style
@@ -1508,10 +1677,13 @@ class Sina_Pricing_Widget extends Widget_Base{
 				</div>
 			<?php endif; ?>
 
+			<?php if ($data['price_save_value']): ?>
+				<div class="sina-pricing-save-value"><?php printf( '%s', $data['price_save_value'] ); ?></div>
+			<?php endif; ?>
+
 			<?php if ( $data['price']): ?>
 				<h4 class="sina-price-tag">
-				    <span class="sina-price-prefix"><?php printf( '%s', $data['price_prefix'] ); ?></span>
-					<span><?php printf( '%s', $data['price'] ); ?></span><span class="sina-price-suffix"><?php printf( '%s', $data['price_suffix'] ); ?></span>
+				    <span class="sina-price-prefix"><?php printf( '%s', $data['price_prefix'] ); ?></span><span><?php printf( '%s', $data['price'] ); ?></span><span class="sina-price-suffix"><?php printf( '%s', $data['price_suffix'] ); ?></span>
 				</h4>
 			<?php endif; ?>
 
@@ -1583,6 +1755,10 @@ class Sina_Pricing_Widget extends Widget_Base{
 				<div class="sina-pricing-img">
 					<img class="{{{morphingAnimImage}}}" src="{{{settings.image.url}}}" alt="{{{settings.title}}}">
 				</div>
+			<# } #>
+
+			<# if (settings.price_save_value) { #>
+				<div class="sina-pricing-save-value">{{{settings.price_save_value}}}</div>
 			<# } #>
 
 			<# if (settings.price) { #>
