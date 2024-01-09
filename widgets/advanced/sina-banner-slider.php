@@ -1085,15 +1085,15 @@ class Sina_Banner_Slider_Widget extends Widget_Base{
 
 						<?php if ( $slide['title'] ): ?>
 							<?php $title_span = $slide['title_span'] ? '<span>'.$slide['title_span'].'</span>' : ''; ?>
-							<?php printf('<%4$s %1$s data-animation="animated %2$s">%3$s%5$s</%4$s>', $this->get_render_attribute_string( $title_key ), $slide['title_anim'], $slide['title'], sina_ext_html_tags( $slide['title_tag'] ), $title_span); ?>
+							<?php printf('<%4$s %1$s data-animation="animated %2$s">%3$s%5$s</%4$s>', $this->get_render_attribute_string( $title_key ), esc_attr($slide['title_anim']), $slide['title'], sina_ext_html_tags( $slide['title_tag'] ), $title_span); ?>
 						<?php endif; ?>
 
 						<?php if ( $slide['subtitle'] ): ?>
-							<?php printf('<%4$s %1$s data-animation="animated %2$s">%3$s</%4$s>', $this->get_render_attribute_string( $subtitle_key ), $slide['subtitle_anim'], $slide['subtitle'], sina_ext_html_tags( $slide['subtitle_tag'] )); ?>
+							<?php printf('<%4$s %1$s data-animation="animated %2$s">%3$s</%4$s>', $this->get_render_attribute_string( $subtitle_key ), esc_attr($slide['subtitle_anim']), $slide['subtitle'], sina_ext_html_tags( $slide['subtitle_tag'] )); ?>
 						<?php endif; ?>
 
 						<?php if ( $slide['desc'] ): ?>
-							<?php printf('<div %1$s data-animation="animated %2$s">%3$s</div>', $this->get_render_attribute_string( $desc_key ), $slide['desc_anim'], $slide['desc']); ?>
+							<?php printf('<div %1$s data-animation="animated %2$s">%3$s</div>', $this->get_render_attribute_string( $desc_key ), esc_attr($slide['desc_anim']), $slide['desc']); ?>
 						<?php endif; ?>
 
 						<?php if ( $data['pbtn_text'] || $data['sbtn_text'] ): ?>

@@ -275,6 +275,7 @@ Yes. It's totally free. We also have a [PRO](https://sina-extension.sinaextra.co
 = 3.5.1 - 20-02-2024 =
 - Added: Price Save Value option to Pricing
 - Added: Price Suffix style option for hover to Pricing
+- Fixed: Banner Slider Issue
 
 = 3.5.0 - 20-11-2023 =
 - Added: Focus option to the Table
