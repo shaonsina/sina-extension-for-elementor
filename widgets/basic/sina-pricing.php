@@ -337,6 +337,17 @@ class Sina_Pricing_Widget extends Widget_Base{
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
+		$this->add_control(
+			'btn_query_str',
+			[
+				'label' => esc_html__( 'Query String', 'sina-ext' ),
+				'type' => Controls_Manager::TEXT,
+				'description' => esc_html__( 'Query string will added to the URL', 'sina-ext' ),
+				'dynamic' => [
+					'active' => true,
+				],
+			]
+		);
 		Sina_Common_Data::button_content( $this, '.sina-order-btn', 'Order' );
 		$this->end_controls_section();
 		// End Button Content
@@ -1707,10 +1718,22 @@ class Sina_Pricing_Widget extends Widget_Base{
 				<?php endforeach ?>
 			</ul>
 
-			<?php if ( $data['btn_text'] || $data['btn_icon'] ) : ?>
+			<?php if ( $data['btn_text'] || $data['btn_icon'] ) :
+				$btn_url 	= $data['btn_link']['url'];
+				$query_str 	= $data['btn_query_str'];
+				if (isset($_GET[$query_str]) && '' != $_GET[$query_str]) {
+					$url_hash 	= '';
+					if (strpos($btn_url, '#') !== false) {
+						$url_hash = '#'.parse_url($btn_url, PHP_URL_FRAGMENT);
+						$btn_url = str_replace($url_hash, '', $btn_url);
+					}
+					$query_data = $query_str.'='.$_GET[$query_str].$url_hash;
+					$btn_url = (strpos($btn_url, '?') !== false) ? $btn_url.'&'.$query_data : $btn_url.'?'.$query_data;
+				}
+				?>
 				<div class="sina-pricing-btn">
 					<a class="sina-order-btn <?php echo esc_attr( $data['btn_effect'].' '.$data['btn_bg_layer_effects'] ); ?>"
-					href="<?php echo esc_url( $data['btn_link']['url'] ); ?>"
+					href="<?php echo esc_url( $btn_url ); ?>"
 					<?php if ( 'on' == $data['btn_link']['is_external'] ): ?>
 						target="_blank" 
 					<?php endif; ?>
