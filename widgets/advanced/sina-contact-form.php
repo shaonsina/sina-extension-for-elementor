@@ -577,7 +577,9 @@ class Sina_Contact_Form_Widget extends Widget_Base{
 			data-from="<?php echo esc_attr( $data['from_text'] ); ?>"
 			data-inbox="<?php echo esc_attr( $hash ); ?>"
 			data-captcha="<?php echo esc_attr( $data['is_recaptcha'] ); ?>">
-				<?php include SINA_EXT_LAYOUT.'/contact-form/'.$data['form_layout'].'.php'; ?>
+				<?php if (in_array($data['form_layout'], ['layout1','layout2'])): ?>
+					<?php include SINA_EXT_LAYOUT.'/contact-form/'.$data['form_layout'].'.php'; ?>
+				<?php endif; ?>
 
 				<?php printf('<p class="sina-success-text">%s</p>', $data['successs_message']); ?>
 				<p class="sina-error-text"></p>

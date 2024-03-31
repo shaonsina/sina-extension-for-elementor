@@ -1928,7 +1928,9 @@ class Sina_Posts_Carousel_Widget extends Widget_Base{
 			data-speed="<?php echo esc_attr( $data['speed'] ); ?>"
 			data-delay="<?php echo esc_attr( $data['delay'] ); ?>">
 				<?php while ( $post_query->have_posts() ) : $post_query->the_post(); ?>
-					<?php include SINA_EXT_LAYOUT.'/posts-carousel/'.$data['layout'].'.php'; ?>
+					<?php if (in_array($data['layout'], ['thumb','grid','list'])): ?>
+						<?php include SINA_EXT_LAYOUT.'/posts-carousel/'.$data['layout'].'.php'; ?>
+					<?php endif; ?>
 				<?php endwhile; wp_reset_query(); ?>
 			</div><!-- .sina-posts-carousel -->
 			<?php

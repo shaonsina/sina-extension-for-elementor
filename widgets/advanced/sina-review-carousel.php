@@ -686,7 +686,9 @@ class Sina_Review_Carousel_Widget extends Widget_Base{
 				$this->add_inline_editing_attributes( $comment_key );
 			?>
 			<div class="sina-review-item">
-				<?php include SINA_EXT_LAYOUT.'/review-carousel/'.$data['image_position'].'.php'; ?>
+				<?php if (in_array($data['image_position'], ['top','middle','bottom'])): ?>
+					<?php include SINA_EXT_LAYOUT.'/review-carousel/'.$data['image_position'].'.php'; ?>
+				<?php endif; ?>
 			</div>
 		<?php endforeach; ?>
 		</div><!-- .sina-review-carousel -->

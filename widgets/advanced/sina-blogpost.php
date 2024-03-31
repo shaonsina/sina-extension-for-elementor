@@ -2067,7 +2067,9 @@ class Sina_Blogpost_Widget extends Widget_Base{
 			data-posts-data='<?php echo json_encode( $posts_data ); ?>'>
 				<div class="sina-bp-grid">
 					<div class="sina-bp-grid-sizer"></div>
-					<?php include SINA_EXT_LAYOUT.'/blogpost/'.$data['layout'].'.php'; ?>
+					<?php if (in_array($data['layout'], ['list','grid'])): ?>
+						<?php include SINA_EXT_LAYOUT.'/blogpost/'.$data['layout'].'.php'; ?>
+					<?php endif; ?>
 					<?php wp_reset_query(); ?>
 				</div>
 
