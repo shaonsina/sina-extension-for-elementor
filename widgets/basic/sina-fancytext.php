@@ -464,34 +464,87 @@ class Sina_Fancytext_Widget extends Widget_Base{
 		foreach ($data['fancy_text'] as $text) {
 			$fancy_text .= $text['fancy_items'].'@@';
 		}
+		$tags = [
+			'h1',
+			'h2',
+			'h3',
+			'h4',
+			'h5',
+			'h6',
+			'p'
+		];
+		$anims = [
+			'none',
+			'fadeIn',
+			'fadeInUp',
+			'fadeInDown',
+			'fadeInLeft',
+			'fadeInRight',
+			'zoomIn',
+			'zoomInLeft',
+			'zoomInRight',
+			'zoomInDown',
+			'zoomInUp',
+			'bounce',
+			'bounceIn',
+			'bounceInDown',
+			'bounceInLeft',
+			'bounceInRight',
+			'bounceInUp',
+			'slideInDown',
+			'slideInLeft',
+			'slideInRight',
+			'slideInUp',
+			'rotateIn',
+			'rotateInDownLeft',
+			'rotateInDownRight',
+			'rotateInUpLeft',
+			'rotateInUpRight',
+			'flipInX',
+			'flipInY',
+			'lightSpeedIn',
+			'flash',
+			'pulse',
+			'rubberBand',
+			'shake',
+			'headShake',
+			'swing',
+			'tada',
+			'wobble',
+			'jello',
+			'rollIn',
+			'typing'
+		];
+		$tag = in_array($data['tag'], $tags) ? $data['tag'] : 'h3';
+		$anim = in_array($data['animation_type'], $anims) ? $data['animation_type'] : 'typing';
 		?>
 		<div class="sina-fancytext"
 		data-fancy-text="<?php echo esc_attr( $fancy_text ); ?>"
-		data-anim="<?php echo esc_attr( $data['animation_type'] ); ?>"
+		data-anim="<?php echo esc_attr( $anim ); ?>"
 		data-speed="<?php echo esc_attr( $data['typing_speed'] ); ?>"
 		data-delay="<?php echo esc_attr( $data['delay'] ); ?>"
 		data-cursor="<?php echo esc_attr( $data['cursor'] ); ?>"
 		data-loop="<?php echo esc_attr( $data['loop'] ); ?>">
-			<<?php printf( '%s', $data['tag'] ); ?>>
+			<<?php echo esc_html($tag); ?>>
 			<?php
 				if ( $data['fancy_prefix'] ) :
 					?>
 					<span class="sina-fancytext-prefix">
-						<?php printf( '%s', $data['fancy_prefix'] ); ?>
+						<?php echo esc_html($data['fancy_prefix']); ?>
 					</span>
 					<?php
 				endif;
 
-				if ( 'typing' == $data['animation_type'] ) :
+				if ( 'typing' == $anim ) :
 					?>
 					<span class="sina-fancytext-strings">
-						<?php printf( '%s', $data['fancy_text'][0]['fancy_items'] ); ?>
+						<?php echo esc_html($data['fancy_text'][0]['fancy_items']); ?>
 					</span>
 					<?php
 				else :
 					?>
 					<span class="sina-fancytext-strings">
-						<?php printf( '%s', rtrim($fancy_text, '@@') ); ?>
+						<?php echo esc_html(rtrim($fancy_text, '@@') ); ?>
 					</span>
 					<?php
 				endif;
@@ -499,12 +552,12 @@ class Sina_Fancytext_Widget extends Widget_Base{
 				if ( $data['fancy_suffix'] ) :
 					?>
 					<span class="sina-fancytext-suffix">
-						<?php printf( '%s', $data['fancy_suffix'] ); ?>
+						<?php echo esc_html($data['fancy_suffix']); ?>
 					</span>
 					<?php
 				endif;
 			?>
-			</<?php printf( '%s', $data['tag'] ); ?>>
+			</<?php echo esc_html($tag); ?>>
 		</div><!-- .sina-fancytext -->
 		<?php
 	}

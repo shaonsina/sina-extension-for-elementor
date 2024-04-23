@@ -272,8 +272,12 @@ Yes. It's totally free. We also have a [PRO](https://sina-extension.sinaextra.co
 
 == Changelog ==
 
-= 3.5.2 - 10-04-2024 =
+= 3.5.3 - 24-04-2024 =
+- Fixed: Fancytext issue
+
+= 3.5.2 - 15-04-2024 =
 - Added: Query String option to Pricing
+- Fixed: Some issues fo Blogpost, Contact Form, Posts Carousel and Review Carousel
 
 = 3.5.1 - 20-02-2024 =
 - Added: Price Save Value option to Pricing
