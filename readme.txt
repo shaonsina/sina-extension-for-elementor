@@ -5,7 +5,7 @@ Donate link: https://sina-extension.sinaextra.com/
 Requires at least: 4.7
 Tested up to: 6.5
 Requires PHP: 7.0
-Stable tag: 3.5.2
+Stable tag: 3.5.3
 License: GPL v3
 License URI: https://opensource.org/licenses/GPL-3.0
 
