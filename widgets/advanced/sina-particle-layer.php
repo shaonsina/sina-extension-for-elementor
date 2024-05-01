@@ -1065,11 +1065,11 @@ class Sina_Particle_Layer_Widget extends Widget_Base{
 
 				<?php if ( $data['title'] ): ?>
 					<?php $title_span = $data['title_span'] ? '<span>'.$data['title_span'].'</span>' : ''; ?>
-					<?php printf('<%3$s class="sina-banner-title animated %1$s">%2$s%4$s</%3$s>', $data['title_anim'], $data['title'], sina_ext_html_tags( $data['title_tag'] ), $title_span); ?>
+					<?php printf('<%3$s class="sina-banner-title animated %1$s">%2$s%4$s</%3$s>', $data['title_anim'], $data['title'], sina_ext_escape_tags( $data['title_tag'] ), $title_span); ?>
 				<?php endif; ?>
 
 				<?php if ( $data['subtitle'] ): ?>
-					<?php printf('<%3$s class="sina-banner-subtitle animated %1$s">%2$s</%3$s>', $data['subtitle_anim'], $data['subtitle'], sina_ext_html_tags( $data['subtitle_tag'] )); ?>
+					<?php printf('<%3$s class="sina-banner-subtitle animated %1$s">%2$s</%3$s>', $data['subtitle_anim'], $data['subtitle'], sina_ext_escape_tags( $data['subtitle_tag'] )); ?>
 				<?php endif; ?>
 
 				<?php if ( $data['desc'] ): ?>

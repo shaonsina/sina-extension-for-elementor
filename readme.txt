@@ -5,7 +5,7 @@ Donate link: https://sina-extension.sinaextra.com/
 Requires at least: 4.7
 Tested up to: 6.5
 Requires PHP: 7.0
-Stable tag: 3.5.3
+Stable tag: 3.5.4
 License: GPL v3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -271,6 +271,11 @@ Yes. It's totally free. We also have a [PRO](https://sina-extension.sinaextra.co
 
 
 == Changelog ==
+
+= 3.5.4 - 02-05-2024 =
+- Fixed: Countdown issue
+- Fixed: Fancytext issue
+- Improved
 
 = 3.5.3 - 24-04-2024 =
 - Fixed: Fancytext issue

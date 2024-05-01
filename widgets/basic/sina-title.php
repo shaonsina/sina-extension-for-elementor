@@ -734,7 +734,7 @@ class Sina_Title_Widget extends Widget_Base{
 			<?php endif; ?>
 
 			<?php if ( $data['title'] ): ?>
-				<?php printf( '<%1$s class="sina-title-title">%2$s%3$s</%1$s>', sina_ext_html_tags( $data['title_tag'] ), $data['title'], $title_span ); ?>
+				<?php printf( '<%1$s class="sina-title-title">%2$s%3$s</%1$s>', sina_ext_escape_tags( $data['title_tag'] ), $data['title'], $title_span ); ?>
 			<?php endif; ?>
 
 			<?php if ( 'none' != $data['separator'] && 'after_title' == $data['separator_position'] ): ?>
@@ -744,7 +744,7 @@ class Sina_Title_Widget extends Widget_Base{
 			<?php endif; ?>
 
 			<?php if ( $data['subtitle'] ): ?>
-				<?php printf( '<%1$s class="sina-title-subtitle">%2$s</%1$s>', sina_ext_html_tags( $data['subtitle_tag'] ), $data['subtitle'] ); ?>
+				<?php printf( '<%1$s class="sina-title-subtitle">%2$s</%1$s>', sina_ext_escape_tags( $data['subtitle_tag'] ), $data['subtitle'] ); ?>
 			<?php endif; ?>
 
 			<?php if ( $data['desc'] ): ?>

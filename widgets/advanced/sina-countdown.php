@@ -691,12 +691,13 @@ class Sina_Countdown_Widget extends Widget_Base{
 	protected function render() {
 		$data = $this->get_settings_for_display();
 		$morphing_anim_box = ('yes' == $data['is_morphing_anim_icon'] && $data['morphing_pattern']) ? $data['morphing_pattern'] : '';
+		$msg = $data['message'] ? $data['message'] : '';
 		?>
 		<div class="sina-countdown"
 		data-time="<?php echo esc_attr( $data['countdown_time'] ); ?>"
 		data-text="<?php echo esc_attr( $data['text_state'] ); ?>"
-		data-link="<?php echo esc_attr( $data['redirect'] ); ?>"
-		data-message="<?php echo esc_attr( $data['message'] ); ?>">
+		data-link="<?php echo esc_url( $data['redirect'] ); ?>"
+		data-message="<?php echo sina_ext_use_char( $msg ); ?>">
 			<?php
 			if( date_timestamp_get( date_create( $data['countdown_time'] ) ) > time() ) :
 				foreach ($data['units'] as $value) :
@@ -705,7 +706,7 @@ class Sina_Countdown_Widget extends Widget_Base{
 						<div class="sina-cd-<?php echo esc_attr($value['unit']); ?>">00</div>
 						<?php if ( 'yes' == $data['text_state'] ) : ?>
 							<div class="sina-cd-text">
-								<?php printf( '%s', $value['unit'] ); ?>
+								<?php echo esc_html($value['unit']); ?>
 							</div>
 						<?php endif; ?>
 					</div>

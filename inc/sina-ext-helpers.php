@@ -4,17 +4,71 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-function sina_ext_html_tags( $tag ) {
-	$allowed_tags = [
-		'h1',
-		'h2',
-		'h3',
-		'h4',
-		'h5',
-		'h6',
-		'p',
-	];
-	return in_array( strtolower( $tag ), $allowed_tags ) ? $tag : 'h2';
+function sina_ext_use_char($text) {
+	return str_replace(['&','<','>','='], [' & ',' < ',' > ',' = '], $text);
+}
+
+function sina_ext_escape_tags($tag, $default = 'h2', $extra = []) {
+	$supports = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'div', 'span', 'p'];
+
+	$supports = array_merge($supports, $extra);
+
+	if (!in_array($tag, $supports, true)) {
+		return $default;
+	}
+
+	return $tag;
+}
+
+function sina_ext_escape_in_anims($anim, $default = 'fadeIn', $extra = []) {
+	$supports = [
+			'fadeIn',
+			'fadeInUp',
+			'fadeInDown',
+			'fadeInLeft',
+			'fadeInRight',
+			'zoomIn',
+			'zoomInLeft',
+			'zoomInRight',
+			'zoomInDown',
+			'zoomInUp',
+			'bounce',
+			'bounceIn',
+			'bounceInDown',
+			'bounceInLeft',
+			'bounceInRight',
+			'bounceInUp',
+			'slideInDown',
+			'slideInLeft',
+			'slideInRight',
+			'slideInUp',
+			'rotateIn',
+			'rotateInDownLeft',
+			'rotateInDownRight',
+			'rotateInUpLeft',
+			'rotateInUpRight',
+			'flipInX',
+			'flipInY',
+			'lightSpeedIn',
+			'flash',
+			'pulse',
+			'rubberBand',
+			'shake',
+			'headShake',
+			'swing',
+			'tada',
+			'wobble',
+			'jello',
+			'rollIn'
+		];
+
+	$supports = array_merge($supports, $extra);
+
+	if (!in_array($anim, $supports, true)) {
+		return $default;
+	}
+
+	return $anim;
 }
 
 function sina_ext_custom_css($desktop_css = '', $tablet_css = '', $tablet_break = 1024) {

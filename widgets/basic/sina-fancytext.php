@@ -150,7 +150,7 @@ class Sina_Fancytext_Widget extends Widget_Base{
 						'fancy_items' => 'fourth text',
 					],
 				],
-				'title_field' => '{{{ fancy_items }}}',
+				'title_field' => '{{{ fancy_items.replace(/</g, " < " ).replace(/>/g, " > ").replace(/=/g, " = ").replace(/&/g, " & ") }}}',
 			]
 		);
 		$this->add_control(
@@ -464,68 +464,16 @@ class Sina_Fancytext_Widget extends Widget_Base{
 		foreach ($data['fancy_text'] as $text) {
 			$fancy_text .= $text['fancy_items'].'@@';
 		}
-		$tags = [
-			'h1',
-			'h2',
-			'h3',
-			'h4',
-			'h5',
-			'h6',
-			'p'
-		];
-		$anims = [
-			'none',
-			'fadeIn',
-			'fadeInUp',
-			'fadeInDown',
-			'fadeInLeft',
-			'fadeInRight',
-			'zoomIn',
-			'zoomInLeft',
-			'zoomInRight',
-			'zoomInDown',
-			'zoomInUp',
-			'bounce',
-			'bounceIn',
-			'bounceInDown',
-			'bounceInLeft',
-			'bounceInRight',
-			'bounceInUp',
-			'slideInDown',
-			'slideInLeft',
-			'slideInRight',
-			'slideInUp',
-			'rotateIn',
-			'rotateInDownLeft',
-			'rotateInDownRight',
-			'rotateInUpLeft',
-			'rotateInUpRight',
-			'flipInX',
-			'flipInY',
-			'lightSpeedIn',
-			'flash',
-			'pulse',
-			'rubberBand',
-			'shake',
-			'headShake',
-			'swing',
-			'tada',
-			'wobble',
-			'jello',
-			'rollIn',
-			'typing'
-		];
-		$tag = in_array($data['tag'], $tags) ? $data['tag'] : 'h3';
-		$anim = in_array($data['animation_type'], $anims) ? $data['animation_type'] : 'typing';
+
 		?>
 		<div class="sina-fancytext"
-		data-fancy-text="<?php echo esc_attr( $fancy_text ); ?>"
-		data-anim="<?php echo esc_attr( $anim ); ?>"
+		data-fancy-text="<?php echo sina_ext_use_char( $fancy_text ); ?>"
+		data-anim="<?php echo sina_ext_escape_in_anims($data['animation_type'], 'typing', ['typing']); ?>"
 		data-speed="<?php echo esc_attr( $data['typing_speed'] ); ?>"
 		data-delay="<?php echo esc_attr( $data['delay'] ); ?>"
 		data-cursor="<?php echo esc_attr( $data['cursor'] ); ?>"
 		data-loop="<?php echo esc_attr( $data['loop'] ); ?>">
-			<<?php echo esc_html($tag); ?>>
+			<<?php echo sina_ext_escape_tags($data['tag'], 'h3'); ?>>
 			<?php
 				if ( $data['fancy_prefix'] ) :
 					?>
@@ -535,16 +483,16 @@ class Sina_Fancytext_Widget extends Widget_Base{
 					<?php
 				endif;
 
-				if ( 'typing' == $anim ) :
+				if ( 'typing' == $data['animation_type'] ) :
 					?>
 					<span class="sina-fancytext-strings">
-						<?php echo esc_html($data['fancy_text'][0]['fancy_items']); ?>
+						<?php echo sina_ext_use_char($data['fancy_text'][0]['fancy_items']); ?>
 					</span>
 					<?php
 				else :
 					?>
 					<span class="sina-fancytext-strings">
-						<?php echo esc_html(rtrim($fancy_text, '@@') ); ?>
+						<?php echo sina_ext_use_char(rtrim($fancy_text, '@@') ); ?>
 					</span>
 					<?php
 				endif;
@@ -557,7 +505,7 @@ class Sina_Fancytext_Widget extends Widget_Base{
 					<?php
 				endif;
 			?>
-			</<?php echo esc_html($tag); ?>>
+			</<?php echo sina_ext_escape_tags($data['tag'], 'h3'); ?>>
 		</div><!-- .sina-fancytext -->
 		<?php
 	}
@@ -577,6 +525,7 @@ class Sina_Fancytext_Widget extends Widget_Base{
 
 			view.addRenderAttribute( 'fancy_suffix', 'class', 'sina-fancytext-suffix' );
 			view.addInlineEditingAttributes( 'fancy_suffix' );
+			fancyText = fancyText.replace(/</g, ' < ' ).replace(/>/g, ' > ').replace(/=/g, ' = ').replace(/&/g, ' & ');
 			#>
 			<div class="sina-fancytext"
 			data-fancy-text="{{{fancyText.trim('@@')}}}"
@@ -593,7 +542,7 @@ class Sina_Fancytext_Widget extends Widget_Base{
 
 				<# if ( 'typing' == settings.animation_type ) { #>
 					<span class="sina-fancytext-strings">
-						{{{settings.fancy_text[0]['fancy_items']}}}
+						{{{settings.fancy_text[0]['fancy_items'].replace(/</g, ' < ' ).replace(/>/g, ' > ').replace(/=/g, ' = ').replace(/&/g, ' & ')}}}
 					</span>
 				<# } else { #>
 					<span class="sina-fancytext-strings">
