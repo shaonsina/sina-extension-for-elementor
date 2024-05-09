@@ -543,9 +543,9 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base{
 					</button>
 				</div>
 
-				<?php printf('<p class="sina-success-text">%s</p>', $data['successs_message']); ?>
+				<?php printf('<p class="sina-success-text">%s</p>', esc_html($data['successs_message'])); ?>
 				<p class="sina-error-text"></p>
-				<p class="sina-process-text"><?php printf('%s', $data['process_text']); ?></p>
+				<p class="sina-process-text"><?php echo esc_html($data['process_text']); ?></p>
 
 				<?php wp_nonce_field( 'sina_mc_subscribe', 'sina_mc_subscribe_nonce'.$this->get_id() ); ?>
 			</form><!-- .sina-subs-form -->

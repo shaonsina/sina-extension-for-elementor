@@ -375,7 +375,7 @@ class Sina_Visit_Counter_Widget extends Widget_Base{
 			<?php wp_nonce_field( 'sina_visit_counter', 'sina_visit_counter_nonce' ); ?>
 			<?php if ( $data['today'] && 'yes' == $data['position'] ): ?>
 				<div class="sina-today">
-					<h3 <?php echo $this->get_render_attribute_string( 'today' ); ?>><?php printf( $data['today'] ); ?></h3>
+					<h3 <?php echo $this->get_render_attribute_string( 'today' ); ?>><?php printf( '%s', $data['today'] ); ?></h3>
 					<?php if ( isset($visit_data['sina_visit_today']) ): ?>
 						<span class="sina-visit-number sina-visit-today">
 							<?php printf( '%s', $visit_data['sina_visit_today'] ); ?>
@@ -386,7 +386,7 @@ class Sina_Visit_Counter_Widget extends Widget_Base{
 
 			<?php if ( $data['yesterday'] ): ?>
 				<div class="sina-yesterday">
-					<h3 <?php echo $this->get_render_attribute_string( 'yesterday' ); ?>><?php printf( $data['yesterday'] ); ?></h3>
+					<h3 <?php echo $this->get_render_attribute_string( 'yesterday' ); ?>><?php printf( '%s', $data['yesterday'] ); ?></h3>
 					<?php if ( isset($visit_data['sina_visit_yesterday']) ): ?>
 						<span class="sina-visit-number sina-visit-yesterday">
 							<?php printf( '%s', $visit_data['sina_visit_yesterday'] ); ?>
@@ -397,7 +397,7 @@ class Sina_Visit_Counter_Widget extends Widget_Base{
 
 			<?php if ( $data['today'] && '' == $data['position'] ): ?>
 				<div class="sina-today">
-					<h3 <?php echo $this->get_render_attribute_string( 'today' ); ?>><?php printf( $data['today'] ); ?></h3>
+					<h3 <?php echo $this->get_render_attribute_string( 'today' ); ?>><?php printf( '%s', $data['today'] ); ?></h3>
 					<?php if ( isset($visit_data['sina_visit_today']) ): ?>
 						<span class="sina-visit-number sina-visit-today">
 							<?php printf( '%s', $visit_data['sina_visit_today'] ); ?>

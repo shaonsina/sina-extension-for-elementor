@@ -903,7 +903,9 @@ class Sina_Portfolio_Widget extends Widget_Base{
 		<div class="sina-portfolio <?php echo esc_attr( 'sina-pf-'.$this->get_id() ); ?>"
 		data-layout="<?php echo esc_attr( $data['columns'] ); ?>">
 			<div class="sina-portfolio-btns">
-				<button class="sina-portfolio-btn sina-button is-checked <?php echo esc_attr( $data['btn_bg_layer_effects'] ); ?>" data-filter="*"><?php printf('%s', $data['reset_text']); ?></button>
+				<button class="sina-portfolio-btn sina-button is-checked <?php echo esc_attr( $data['btn_bg_layer_effects'] ); ?>" data-filter="*">
+					<?php echo esc_html($data['reset_text']); ?>
+				</button>
 				<?php
 					$categories = sina_get_portfolio_cat( $data['portfolio'] );
 					foreach ( $categories as $cat ) :
@@ -944,10 +946,10 @@ class Sina_Portfolio_Widget extends Widget_Base{
 									<div class="sina-portfolio-content">
 										<?php if ( 'yes' == $data['show_content'] ): ?>
 											<?php if ($item['item_name']): ?>
-												<?php printf('<h3 %2$s>%1$s</h3>', $item['item_name'], $this->get_render_attribute_string( $title_key )); ?>
+												<?php printf('<h3 %2$s>%1$s</h3>', esc_html($item['item_name']), $this->get_render_attribute_string( $title_key )); ?>
 											<?php endif; ?>
 											<?php if ($item['item_desc']): ?>
-												<?php printf('<div %2$s>%1$s</div>', $item['item_desc'], $this->get_render_attribute_string( $desc_key )); ?>
+												<?php printf('<div %2$s>%1$s</div>', esc_html($item['item_desc']), $this->get_render_attribute_string( $desc_key )); ?>
 											<?php endif; ?>
 										<?php endif ?>
 

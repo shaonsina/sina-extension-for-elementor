@@ -174,6 +174,7 @@ class Sina_Team_Widget extends Widget_Base{
 				'lable_block' => true,
 				'type' => Controls_Manager::TEXTAREA,
 				'placeholder' => esc_html__( 'Enter Description', 'sina-ext' ),
+				'description' => esc_html__( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, autem amet. Labore eos cum at, et illo ducimus.',
 				'dynamic' => [
 					'active' => true,
@@ -1239,13 +1240,13 @@ class Sina_Team_Widget extends Widget_Base{
 			<div class="<?php echo esc_attr( $content_class ); ?>">
 				<?php if ( $data['name'] ): ?>
 					<h5 class="sina-team-name">
-						<?php printf( '%s', $data['name'] ); ?>
+						<?php echo esc_html( $data['name'] ); ?>
 					</h5>
 				<?php endif; ?>
 
 				<?php if ( $data['position'] ): ?>
 					<h6 class="sina-team-position">
-						<?php printf( '%s', $data['position'] ); ?>
+						<?php echo esc_html( $data['position'] ); ?>
 					</h6>
 				<?php endif; ?>
 

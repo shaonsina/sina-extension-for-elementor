@@ -145,6 +145,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base{
 					'label_block' => true,
 					'type' => Controls_Manager::TEXT,
 					'placeholder' => esc_html__( 'Enter Title', 'sina-ext' ),
+					'description' => esc_html__( 'You can use HTML.', 'sina-ext' ),
 					'default' => 'Welcome to get start your business',
 					'dynamic' => [
 						'active' => true,
@@ -184,6 +185,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base{
 					'label_block' => true,
 					'type' => Controls_Manager::TEXT,
 					'placeholder' => esc_html__( 'Enter Title', 'sina-ext' ),
+					'description' => esc_html__( 'You can use HTML.', 'sina-ext' ),
 					'separator' => 'before',
 					'default' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
 					'dynamic' => [
@@ -213,6 +215,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base{
 					'label_block' => true,
 					'type' => Controls_Manager::TEXTAREA,
 					'placeholder' => esc_html__( 'Enter Description', 'sina-ext' ),
+					'description' => esc_html__( 'You can use HTML.', 'sina-ext' ),
 					'separator' => 'before',
 					'default' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
 					'dynamic' => [
@@ -1065,15 +1068,15 @@ class Sina_Particle_Layer_Widget extends Widget_Base{
 
 				<?php if ( $data['title'] ): ?>
 					<?php $title_span = $data['title_span'] ? '<span>'.$data['title_span'].'</span>' : ''; ?>
-					<?php printf('<%3$s class="sina-banner-title animated %1$s">%2$s%4$s</%3$s>', $data['title_anim'], $data['title'], sina_ext_escape_tags( $data['title_tag'] ), $title_span); ?>
+					<?php printf('<%3$s class="sina-banner-title animated %1$s">%2$s%4$s</%3$s>', esc_attr($data['title_anim']), $data['title'], sina_ext_escape_tags( $data['title_tag'] ), $title_span); ?>
 				<?php endif; ?>
 
 				<?php if ( $data['subtitle'] ): ?>
-					<?php printf('<%3$s class="sina-banner-subtitle animated %1$s">%2$s</%3$s>', $data['subtitle_anim'], $data['subtitle'], sina_ext_escape_tags( $data['subtitle_tag'] )); ?>
+					<?php printf('<%3$s class="sina-banner-subtitle animated %1$s">%2$s</%3$s>', esc_attr($data['subtitle_anim']), $data['subtitle'], sina_ext_escape_tags( $data['subtitle_tag'] )); ?>
 				<?php endif; ?>
 
 				<?php if ( $data['desc'] ): ?>
-					<?php printf('<div class="sina-banner-desc animated %1$s">%2$s</div>', $data['desc_anim'], $data['desc']); ?>
+					<?php printf('<div class="sina-banner-desc animated %1$s">%2$s</div>', esc_attr($data['desc_anim']), $data['desc']); ?>
 				<?php endif; ?>
 
 				<?php if ( $data['pbtn_text'] || $data['sbtn_text'] ): ?>
@@ -1132,7 +1135,8 @@ class Sina_Particle_Layer_Widget extends Widget_Base{
 			data-size="<?php echo esc_attr( $data['particle_ball']); ?>"
 			data-speed="<?php echo esc_attr( $data['anim_speed']); ?>"
 			data-dlink="<?php echo esc_attr( $data['link_state']); ?>"
-			data-dmouse="<?php echo esc_attr( $data['mouse_state']); ?>"></div>
+			data-dmouse="<?php echo esc_attr( $data['mouse_state']); ?>">
+			</div>
 		</div><!-- .sina-particle-layer -->
 		<?php
 	}

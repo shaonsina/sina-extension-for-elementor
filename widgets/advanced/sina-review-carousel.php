@@ -138,6 +138,7 @@ class Sina_Review_Carousel_Widget extends Widget_Base{
 				'label' => esc_html__( 'Name', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => esc_html__( 'Enter Name', 'sina-ext' ),
+				'description' => esc_html__( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'Jhon Doe',
 				'dynamic' => [
 					'active' => true,
@@ -150,6 +151,7 @@ class Sina_Review_Carousel_Widget extends Widget_Base{
 				'label' => esc_html__( 'Position', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => esc_html__( 'Enter Position', 'sina-ext' ),
+				'description' => esc_html__( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'CEO',
 				'dynamic' => [
 					'active' => true,
@@ -162,6 +164,7 @@ class Sina_Review_Carousel_Widget extends Widget_Base{
 				'label' => esc_html__( 'Company', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => esc_html__( 'Enter Organization', 'sina-ext' ),
+				'description' => esc_html__( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'Google',
 				'dynamic' => [
 					'active' => true,
@@ -174,6 +177,7 @@ class Sina_Review_Carousel_Widget extends Widget_Base{
 				'label' => esc_html__( 'Comment', 'sina-ext' ),
 				'type' => Controls_Manager::TEXTAREA,
 				'placeholder' => esc_html__( 'Enter Comment', 'sina-ext' ),
+				'description' => esc_html__( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. At tempora cumque delectus nam obcaecati consectetur ad dolorum neque dolores nemo!',
 				'dynamic' => [
 					'active' => true,

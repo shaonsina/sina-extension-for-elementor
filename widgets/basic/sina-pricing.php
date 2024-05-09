@@ -1668,7 +1668,7 @@ class Sina_Pricing_Widget extends Widget_Base{
 		<div class="sina-pricing <?php echo esc_attr( $data['effects'].' '.$data['bg_layer_effects'] ); ?>">
 			<?php if ( $data['ribbon_title'] && $data['ribbon_position'] ): ?>
 				<div class="<?php echo esc_attr( $data['ribbon_position'] ); ?>">
-					<?php printf( '%s', $data['ribbon_title'] ); ?>
+					<?php echo esc_html( $data['ribbon_title'] ); ?>
 				</div>
 			<?php endif; ?>
 
@@ -1689,12 +1689,12 @@ class Sina_Pricing_Widget extends Widget_Base{
 			<?php endif; ?>
 
 			<?php if ($data['price_save_value']): ?>
-				<div class="sina-pricing-save-value"><?php printf( '%s', $data['price_save_value'] ); ?></div>
+				<div class="sina-pricing-save-value"><?php echo esc_html( $data['price_save_value'] ); ?></div>
 			<?php endif; ?>
 
 			<?php if ( $data['price']): ?>
 				<h4 class="sina-price-tag">
-				    <span class="sina-price-prefix"><?php printf( '%s', $data['price_prefix'] ); ?></span><span><?php printf( '%s', $data['price'] ); ?></span><span class="sina-price-suffix"><?php printf( '%s', $data['price_suffix'] ); ?></span>
+				    <span class="sina-price-prefix"><?php echo esc_html( $data['price_prefix'] ); ?></span><span><?php echo esc_html( $data['price'] ); ?></span><span class="sina-price-suffix"><?php echo esc_html( $data['price_suffix'] ); ?></span>
 				</h4>
 			<?php endif; ?>
 
@@ -1710,7 +1710,7 @@ class Sina_Pricing_Widget extends Widget_Base{
 						<?php if ( $item['icon'] && 'left' == $data['icon_align'] ): ?>
 							<i class="<?php echo esc_attr($item['icon']); ?> sina-icon-left"></i>
 						<?php endif; ?>
-						<?php printf( '%s', $item['title'] ); ?>
+						<?php echo esc_html( $item['title'] ); ?>
 						<?php if ( $item['icon'] && 'right' == $data['icon_align'] ): ?>
 							<i class="<?php echo esc_attr($item['icon']); ?> sina-icon-right"></i>
 						<?php endif; ?>

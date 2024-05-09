@@ -565,7 +565,7 @@ class Sina_Contact_Form_Widget extends Widget_Base{
 	protected function render() {
 		$data = $this->get_settings_for_display();
 		$hash = '';
-		if ( sanitize_email( $data['contact_email'] ) && !Plugin::instance()->editor->is_edit_mode() ) {
+		if ( $data['contact_email'] && sanitize_email( $data['contact_email'] ) && !Plugin::instance()->editor->is_edit_mode() ) {
 			$hash = md5( $data['contact_email'] );
 			add_option( 'sina_contact_email'.$hash, $data['contact_email'] );
 		}
@@ -581,9 +581,9 @@ class Sina_Contact_Form_Widget extends Widget_Base{
 					<?php include SINA_EXT_LAYOUT.'/contact-form/'.$data['form_layout'].'.php'; ?>
 				<?php endif; ?>
 
-				<?php printf('<p class="sina-success-text">%s</p>', $data['successs_message']); ?>
+				<?php printf('<p class="sina-success-text">%s</p>', esc_html($data['successs_message'])); ?>
 				<p class="sina-error-text"></p>
-				<p class="sina-process-text"><?php printf('%s', $data['process_text']); ?></p>
+				<p class="sina-process-text"><?php echo esc_html($data['process_text']); ?></p>
 
 				<?php wp_nonce_field( 'sina_contact', 'sina_contact_nonce'.$this->get_id() ); ?>
 			</form><!-- .sina-contact-form -->

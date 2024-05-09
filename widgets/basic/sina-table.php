@@ -1667,7 +1667,7 @@ class Sina_Table_Widget extends Widget_Base{
 									<?php if ( $content['header_icon'] && $content['header_icon_align'] == 'left' ): ?>
 										<i class="<?php echo esc_attr($content['header_icon']); ?> sina-icon-left"></i>
 									<?php endif; ?>
-									<?php printf( '%s', $content['header_text'] ); ?>
+									<?php echo esc_html( $content['header_text'] ); ?>
 									<?php if ( $content['header_icon'] && $content['header_icon_align'] == 'right' ): ?>
 										<i class="<?php echo esc_attr($content['header_icon']); ?> sina-icon-right"></i>
 									<?php endif; ?>
@@ -1681,7 +1681,7 @@ class Sina_Table_Widget extends Widget_Base{
 					<?php foreach ($rows as $key => $row) : ?>
 						<tr class="elementor-repeater-item-<?php echo esc_attr( $key ); ?>">
 							<?php foreach ($row as $content) : ?>
-								<<?php printf( '%s', $content['type'] ); ?>
+								<<?php echo sina_ext_escape_tags( $content['type'], 'td', ['th', 'td'] ); ?>
 								rowspan="<?php echo esc_attr( $content['row_span'] ); ?>"
 								colspan="<?php echo esc_attr( $content['col_span'] ); ?>"
 								class="elementor-repeater-item-<?php echo esc_attr( $content['id'] ); ?>" >
@@ -1693,7 +1693,7 @@ class Sina_Table_Widget extends Widget_Base{
 								<?php if ( $content['icon'] && $content['icon_align'] == 'right' ): ?>
 									<i class="<?php echo esc_attr($content['icon']); ?> sina-icon-right"></i>
 								<?php endif; ?>
-								</<?php printf( '%s', $content['type'] ); ?>>
+								</<?php echo sina_ext_escape_tags( $content['type'], 'td', ['th', 'td'] ); ?>>
 							<?php endforeach; ?>
 						</tr>
 					<?php endforeach; ?>

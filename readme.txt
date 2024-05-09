@@ -272,17 +272,30 @@ Yes. It's totally free. We also have a [PRO](https://sina-extension.sinaextra.co
 
 == Changelog ==
 
-= 3.5.4 - 02-05-2024 =
-- Fixed: Countdown issue
-- Fixed: Fancytext issue
+= 3.5.4 - 12-05-2024 =
+- Fixed: Contact Form escaping issue
+- Fixed: Countdown escaping issue
+- Fixed: Fancytext escaping issue
+- Fixed: Mailchimp escaping issue
+- Fixed: News Ticker escaping issue
+- Fixed: Particle Layer escaping issue
+- Fixed: Piechart escaping issue
+- Fixed: Portfolio escaping issue
+- Fixed: Pricing escaping issue
+- Fixed: Progressbar escaping issue
+- Fixed: Review Carousel escaping issue
+- Fixed: Table escaping issue
+- Fixed: Team escaping issue
+- Fixed: User Counter escaping issue
+- Fixed: Visit Counter escaping issue
 - Improved
 
 = 3.5.3 - 24-04-2024 =
-- Fixed: Fancytext issue
+- Fixed: Fancytext escaping issue
 
 = 3.5.2 - 15-04-2024 =
 - Added: Query String option to Pricing
-- Fixed: Some issues fo Blogpost, Contact Form, Posts Carousel and Review Carousel
+- Fixed: Some issues for Blogpost, Contact Form, Posts Carousel and Review Carousel
 
 = 3.5.1 - 20-02-2024 =
 - Added: Price Save Value option to Pricing
