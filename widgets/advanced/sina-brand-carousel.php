@@ -627,9 +627,9 @@ class Sina_Brand_Carousel_Widget extends Widget_Base{
 				<div class="sina-brand-item">
 					<div class="sina-brand-item-inner elementor-repeater-item-{{{logo._id}}}">
 						<a <# if (logo.link.url) { #>
-								href="{{{logo.link.url}}}"
+								href="{{{_.escape(logo.link.url)}}}"
 							<# } #>>
-							<img src="{{{logo.brand_logo.url}}}" alt="{{{logo.title}}}">
+							<img src="{{{_.escape(logo.brand_logo.url)}}}" alt="{{{logo.title}}}">
 						</a>
 					</div>
 				</div>

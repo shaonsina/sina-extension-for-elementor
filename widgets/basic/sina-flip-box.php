@@ -1124,11 +1124,11 @@ class Sina_Flip_Box_Widget extends Widget_Base{
 			<div class="sina-flipbox-front {{{settings.effects}}}">
 				<# if ( 'icon' == settings.front_icon_format && settings.front_icon ) { #>
 					<div class="sina-flipbox-icon">
-						<i class="{{{settings.front_icon}}}"></i>
+						<i class="{{{_.escape(settings.front_icon)}}}"></i>
 					</div>
 				<# } else if ( 'image' == settings.front_icon_format && settings.front_image.url) { #>
 					<div class="sina-flipbox-icon">
-						<img src="{{{settings.front_image.url}}}" alt="{{{settings.front_title}}}">
+						<img src="{{{_.escape(settings.front_image.url)}}}" alt="{{{settings.front_title}}}">
 					</div>
 				<# } #>
 
@@ -1145,11 +1145,11 @@ class Sina_Flip_Box_Widget extends Widget_Base{
 			<div class="sina-flipbox-back {{{settings.effects}}}">
 				<# if ( 'icon' == settings.back_icon_format && settings.back_icon ) { #>
 					<div class="sina-flipbox-icon">
-						<i class="{{{settings.back_icon}}}"></i>
+						<i class="{{{_.escape(settings.back_icon)}}}"></i>
 					</div>
 				<# } else if ( 'image' == settings.back_icon_format && settings.back_image.url ) { #>
 					<div class="sina-flipbox-icon">
-						<img src="{{{settings.back_image.url}}}" alt="{{{settings.back_title}}}">
+						<img src="{{{_.escape(settings.back_image.url)}}}" alt="{{{settings.back_title}}}">
 					</div>
 				<# } #>
 

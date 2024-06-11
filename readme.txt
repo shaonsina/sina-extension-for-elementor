@@ -5,7 +5,7 @@ Donate link: https://sina-extension.sinaextra.com/
 Requires at least: 4.7
 Tested up to: 6.5
 Requires PHP: 7.0
-Stable tag: 3.5.4
+Stable tag: 3.5.5
 License: GPL v3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -271,6 +271,19 @@ Yes. It's totally free. We also have a [PRO](https://sina-extension.sinaextra.co
 
 
 == Changelog ==
+
+= 3.5.5 - 12-06-2024 =
+- Fixed: Blogpost escaping issue
+- Fixed: Brand Carousel escaping issue
+- Fixed: Counter escaping issue
+- Fixed: Flip Box escaping issue
+- Fixed: Google Map escaping issue
+- Fixed: Pricing escaping issue
+- Fixed: Progressbar escaping issue
+- Fixed: Social Icons escaping issue
+- Fixed: Table escaping issue
+- Fixed: Team escaping issue
+- Fixed: Video escaping issue
 
 = 3.5.4 - 12-05-2024 =
 - Fixed: Contact Form escaping issue

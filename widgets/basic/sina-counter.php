@@ -680,11 +680,11 @@ class Sina_Counter_Widget extends Widget_Base{
 		<div class="sina-counter">
 			<# if ( 'icon' == settings.icon_format ) { #>
 				<div class="sina-counter-icon">
-					<i class="{{{settings.icon}}}"></i>
+					<i class="{{{_.escape(settings.icon)}}}"></i>
 				</div>
 			<# } else if( 'image' == settings.icon_format ) { #>
 				<div class="sina-counter-icon">
-					<img src="{{{settings.image.url}}}">
+					<img src="{{{_.escape(settings.image.url)}}}">
 				</div>
 			<# } #>
 
@@ -699,9 +699,9 @@ class Sina_Counter_Widget extends Widget_Base{
 					<# } #>
 
 					<span class="sina-counter-number" 
-					data-duration="{{{settings.speed}}}"
-					data-to-value="{{{settings.stop_number}}}"
-					data-delimiter="{{{settings.delimiter}}}">
+					data-duration="{{{_.escape(settings.speed)}}}"
+					data-to-value="{{{_.escape(settings.stop_number)}}}"
+					data-delimiter="{{{_.escape(settings.delimiter)}}}">
 						{{{settings.start_number}}}
 					</span>
 

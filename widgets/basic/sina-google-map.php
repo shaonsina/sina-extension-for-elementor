@@ -474,7 +474,7 @@ class Sina_Google_Map_Widget extends Widget_Base{
 		data-fullscreen-position="{{{settings.fullscreen_control_position}}}"
 		data-map-style="{{{settings.gmap_style}}}"
 		data-marker="{{{settings.marker}}}"
-		data-marker-link="{{{settings.custom_marker.url}}}">
+		data-marker-link="{{{_.escape(settings.custom_marker.url)}}}">
 		</div><!-- .sina-google-map -->
 		<?php
 	}

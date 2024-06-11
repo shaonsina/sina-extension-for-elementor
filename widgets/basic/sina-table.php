@@ -1654,9 +1654,10 @@ class Sina_Table_Widget extends Widget_Base{
 				}
 			}
 		}
+		_wp_json_sanity_check()
 		?>
 		<div class="sina-table"
-		data-table-info='<?php echo json_encode( $table_info ); ?>'>
+		data-table-info='<?php echo wp_json_encode( $table_info ); ?>'>
 			<table class="<?php echo esc_attr( $table_class ); ?>">
 				<?php if ( !empty( $data['header_content'] ) ): ?>
 					<thead>
@@ -1776,13 +1777,13 @@ class Sina_Table_Widget extends Widget_Base{
 								<th colspan="{{{content.header_col_span}}}"
 									class="elementor-repeater-item-{{{content._id}}}">
 									<# if (content.header_icon && content.header_icon_align == 'left') { #>
-										<i class="{{{content.header_icon}}} sina-icon-left"></i>
+										<i class="{{{_.escape(content.header_icon)}}} sina-icon-left"></i>
 									<# } #>
 
 									{{{content.header_text}}}
 
 									<# if (content.header_icon && content.header_icon_align == 'right') { #>
-										<i class="{{{content.header_icon}}} sina-icon-right"></i>
+										<i class="{{{_.escape(content.header_icon)}}} sina-icon-right"></i>
 									<# } #>
 								</th>
 							<# }); #>
@@ -1800,13 +1801,13 @@ class Sina_Table_Widget extends Widget_Base{
 								class="elementor-repeater-item-{{{content.id}}}" >
 
 								<# if (content.icon && content.icon_align == 'left') { #>
-									<i class="{{{content.icon}}} sina-icon-left"></i>
+									<i class="{{{_.escape(content.icon)}}} sina-icon-left"></i>
 								<# } #>
 
 								{{{content.cell_content}}}
 
 								<# if (content.icon && content.icon_align == 'right') { #>
-									<i class="{{{content.icon}}} sina-icon-right"></i>
+									<i class="{{{_.escape(content.icon)}}} sina-icon-right"></i>
 								<# } #>
 
 								</{{{content.type}}}>

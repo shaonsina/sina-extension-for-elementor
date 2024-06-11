@@ -564,13 +564,13 @@ class Sina_Progressbar_Widget extends Widget_Base{
 			<# if (settings.title) { #>
 			<h3 class="sina-bar-title">
 				<# if (settings.icon && 'left' == settings.icon_align) { #>
-					<i class="{{{settings.icon}}} sina-icon-left"></i>
+					<i class="{{{_.escape(settings.icon)}}} sina-icon-left"></i>
 				<# } #>
 
 				{{{settings.title}}}
 
 				<# if (settings.icon && 'right' == settings.icon_align) { #>
-					<i class="{{{settings.icon}}} sina-icon-right"></i>
+					<i class="{{{_.escape(settings.icon)}}} sina-icon-right"></i>
 				<# } #>
 			</h3>
 			<# } #>

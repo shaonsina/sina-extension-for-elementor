@@ -1766,7 +1766,7 @@ class Sina_Pricing_Widget extends Widget_Base{
 
 			<# if ('yes' == settings.thumbs && 'top' == settings.img_position) { #>
 				<div class="sina-pricing-img">
-					<img class="{{{morphingAnimImage}}}" src="{{{settings.image.url}}}" alt="{{{settings.title}}}">
+					<img class="{{{morphingAnimImage}}}" src="{{{_.escape(settings.image.url)}}}" alt="{{{settings.title}}}">
 				</div>
 			<# } #>
 
@@ -1776,7 +1776,7 @@ class Sina_Pricing_Widget extends Widget_Base{
 
 			<# if ('yes' == settings.thumbs && 'middle' == settings.img_position) { #>
 				<div class="sina-pricing-img">
-					<img class="{{{morphingAnimImage}}}" src="{{{settings.image.url}}}" alt="{{{settings.title}}}">
+					<img class="{{{morphingAnimImage}}}" src="{{{_.escape(settings.image.url)}}}" alt="{{{settings.title}}}">
 				</div>
 			<# } #>
 
@@ -1793,7 +1793,7 @@ class Sina_Pricing_Widget extends Widget_Base{
 
 			<# if ('yes' == settings.thumbs && 'bottom' == settings.img_position) { #>
 			<div class="sina-pricing-img">
-				<img class="{{{morphingAnimImage}}}" src="{{{settings.image.url}}}" alt="{{{settings.title}}}">
+				<img class="{{{morphingAnimImage}}}" src="{{{_.escape(settings.image.url)}}}" alt="{{{settings.title}}}">
 			</div>
 			<# } #>
 
@@ -1801,13 +1801,13 @@ class Sina_Pricing_Widget extends Widget_Base{
 				<# _.each( settings.item, function( item, index ) { #>
 					<li class="elementor-repeater-item-{{{item._id}}}">
 						<# if (item.icon && 'left' == settings.icon_align) { #>
-							<i class="{{{item.icon}}} sina-icon-left"></i>
+							<i class="{{{_.escape(item.icon)}}} sina-icon-left"></i>
 						<# } #>
 
 						{{{item.title}}}
 
 						<# if (item.icon && 'right' == settings.icon_align) { #>
-							<i class="{{{item.icon}}} sina-icon-right"></i>
+							<i class="{{{_.escape(item.icon)}}} sina-icon-right"></i>
 						<# } #>
 					</li>
 				<# }); #>
@@ -1816,15 +1816,15 @@ class Sina_Pricing_Widget extends Widget_Base{
 			<# if (settings.btn_text || settings.btn_icon) { #>
 			<div class="sina-pricing-btn">
 				<a class="sina-order-btn {{{settings.btn_effect +' '+ settings.btn_bg_layer_effects}}}"
-				href="{{{settings.btn_link.url}}}">
+				href="{{{_.escape(settings.btn_link.url)}}}">
 					<# if (settings.btn_icon && 'left' == settings.btn_icon_align) { #>
-						<i class="{{{settings.btn_icon}}} sina-icon-left"></i>
+						<i class="{{{_.escape(settings.btn_icon)}}} sina-icon-left"></i>
 					<# } #>
 
 					{{{settings.btn_text}}}
 
 					<# if (settings.btn_icon && 'right' == settings.btn_icon_align) { #>
-						<i class="{{{settings.btn_icon}}} sina-icon-right"></i>
+						<i class="{{{_.escape(settings.btn_icon)}}} sina-icon-right"></i>
 					<# } #>
 				</a>
 			</div>

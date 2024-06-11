@@ -1304,9 +1304,9 @@ class Sina_Team_Widget extends Widget_Base{
 		<div class="sina-team {{{boxClass}}}">
 			<# if (settings.image.url) {
 				if ('list' == settings.layout) { #>
-				<div class="sina-team-image sina-bg-cover {{{morphingAnimImage}}}" style="background-image: url({{{settings.image.url}}});"></div>
+				<div class="sina-team-image sina-bg-cover {{{morphingAnimImage}}}" style="background-image: url({{{_.escape(settings.image.url)}}});"></div>
 				<# } else { #>
-				<img class="{{{morphingAnimImage}}}" src="{{{settings.image.url}}}" alt="{{{settings.name}}}">
+				<img class="{{{morphingAnimImage}}}" src="{{{_.escape(settings.image.url)}}}" alt="{{{settings.name}}}">
 			<# } } #>
 
 
@@ -1333,8 +1333,8 @@ class Sina_Team_Widget extends Widget_Base{
 					<# _.each( settings.social_icons, function( icon, index ) { #>
 					<li class="elementor-repeater-item-{{{icon._id}}}">
 						<a class="{{{settings.icon_bg_layer_effects}}}"
-							href="{{{icon.link.url}}}">
-							<i class="{{{icon.icon}}}"></i>
+							href="{{{_.escape(icon.link.url)}}}">
+							<i class="{{{_.escape(icon.icon)}}}"></i>
 						</a>
 					</li>
 					<# }); #>

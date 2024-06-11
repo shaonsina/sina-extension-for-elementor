@@ -538,8 +538,8 @@ class Sina_Video_Widget extends Widget_Base{
 			#>
 			<# if (settings.icon) { #>
 			<a class="sina-video-play {{{settings.animation +' '+ settings.btn_bg_layer_effects}}}"
-			href="{{{settings.video_link}}}" data-vbtype="video">
-				<i class="{{{settings.icon}}}"></i>
+			href="{{{_.escape(settings.video_link)}}}" data-vbtype="video">
+				<i class="{{{_.escape(settings.icon)}}}"></i>
 			</a>
 			<# } #>
 
