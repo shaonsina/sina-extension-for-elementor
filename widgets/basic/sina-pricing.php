@@ -257,6 +257,7 @@ class Sina_Pricing_Widget extends Widget_Base{
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => esc_html__( 'Enter Content', 'sina-ext' ),
+				'description' => esc_html__( 'You can use HTML.', 'sina-ext' ),
 			]
 		);
 		$repeater->add_control(
@@ -1710,7 +1711,7 @@ class Sina_Pricing_Widget extends Widget_Base{
 						<?php if ( $item['icon'] && 'left' == $data['icon_align'] ): ?>
 							<i class="<?php echo esc_attr($item['icon']); ?> sina-icon-left"></i>
 						<?php endif; ?>
-						<?php echo esc_html( $item['title'] ); ?>
+						<?php printf( '%1$s', $item['title'] ); ?>
 						<?php if ( $item['icon'] && 'right' == $data['icon_align'] ): ?>
 							<i class="<?php echo esc_attr($item['icon']); ?> sina-icon-right"></i>
 						<?php endif; ?>

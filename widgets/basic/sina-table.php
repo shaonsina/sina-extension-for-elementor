@@ -1620,7 +1620,7 @@ class Sina_Table_Widget extends Widget_Base{
 			'paging' 	=> $data['data_paging'],
 			'pagingType' => $data['data_paging_type'],
 			'info' 		=> $data['data_info'],
-			'external_source' => $external_source,
+			'external_source' => esc_url($external_source),
 			'keep_focus'=> $data['content_keep_focus'],
 		];
 
@@ -1654,7 +1654,6 @@ class Sina_Table_Widget extends Widget_Base{
 				}
 			}
 		}
-		_wp_json_sanity_check()
 		?>
 		<div class="sina-table"
 		data-table-info='<?php echo wp_json_encode( $table_info ); ?>'>
