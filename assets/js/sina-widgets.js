@@ -1,7 +1,20 @@
-/* Sina Extension for Elementor v3.4.9 */
+/* Sina Extension for Elementor v3.5.7 */
 
 !(function ($) {
 	'use strict';
+
+	function sinaExtObserveTarget(target, callback) {
+		var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+		var observer = new IntersectionObserver(function (entries, observer) {
+			entries.forEach(function (entry) {
+				if (entry.isIntersecting) {
+					callback(entry);
+				}
+			});
+		}, options);
+		observer.observe(target);
+	}
+
 
 	// Owl Carousel for some Slider or Carousel
 	function sinaOwl(owl) {
@@ -558,10 +571,10 @@
 	}
 
 	function sinaCounter($scope, $) {
-		elementorFrontend.waypoint($scope.find('.sina-counter-number'), function () {
-			var $this 	= $(this),
-				data 	= $this.data(),
-				digit	= data.toValue.toString().match(/\.(.*)/);
+		sinaExtObserveTarget($scope[0], function () {
+			var $this = $scope.find('.sina-counter-number'),
+				data  = $this.data(),
+				digit = data.toValue.toString().match(/\.(.*)/);
 
 			if (digit) {
 				data.rounding = digit[1].length;
@@ -779,8 +792,8 @@
 	}
 
 	function sinaPiechart($scope, $) {
-		elementorFrontend.waypoint($scope.find('.sina-piechart-wrap'), function () {
-			var $this 		= $(this),
+		sinaExtObserveTarget($scope[0], function () {
+			var $this 		= $scope.find('.sina-piechart-wrap'),
 				trackColor	= $this.data('track'),
 				trackWidth	= $this.data('track-width'),
 				barColor	= $this.data('bar'),
@@ -852,8 +865,8 @@
 	}
 
 	function sinaProgressbars($scope, $) {
-		elementorFrontend.waypoint($scope.find('.sina-bar-content'), function () {
-			var $this = $(this),
+		sinaExtObserveTarget($scope[0], function () {
+			var $this = $scope.find('.sina-bar-content'),
 				$perc = $this.data('percentage');
 
 			$this.animate({ width: $perc + '%' }, $perc * 20 );

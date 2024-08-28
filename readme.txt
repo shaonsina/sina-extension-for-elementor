@@ -1,11 +1,11 @@
 == Sina Extension for Elementor (Slider, Gallery, Form, Modal, Data Table, Tab, Particle, Free Elementor Widgets & Elementor Templates) ==
 Contributors: shaonsina
-Tags: elementor, elementor addon, elementor addons, elementor extension, elementor widget, elementor templates
+Tags: elementor addon, elementor addons, elementor extension, elementor widget, elementor templates
 Donate link: https://sina-extension.sinaextra.com/
-Requires at least: 4.7
-Tested up to: 6.5
+Requires at least: 4.8
+Tested up to: 6.6
 Requires PHP: 7.0
-Stable tag: 3.5.6
+Stable tag: 3.5.7
 License: GPL v3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -271,6 +271,9 @@ Yes. It's totally free. We also have a [PRO](https://sina-extension.sinaextra.co
 
 
 == Changelog ==
+
+= 3.5.7 - 28-08-2024 =
+- Added: IntersectionObserver API instead of waypoints.js to improve performance.
 
 = 3.5.6 - 01-07-2024 =
 - Fixed: Blogpost escaping issue
