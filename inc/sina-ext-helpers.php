@@ -220,3 +220,11 @@ function sina_get_page_templates(){
 	}
 	return $options;
 }
+
+function sina_get_templates_data($id, $frontend){
+	if (current_user_can( 'edit_others_posts' )) {
+		return $frontend->get_builder_content( $id, true );
+	} elseif ( 'publish' == get_post_status($id) ) {
+		return $frontend->get_builder_content( $id, true );
+	}
+}

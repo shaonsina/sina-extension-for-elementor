@@ -1282,7 +1282,7 @@ class Sina_Modal_Box_Widget extends Widget_Base{
 							<?php
 								if ( 'yes' == $data['save_templates'] && $data['template'] ) :
 									$frontend = new Frontend;
-									echo $frontend->get_builder_content( $data['template'], true );
+									echo sina_get_templates_data($data['template'], $frontend);
 								else:
 							?>
 								<?php if ( $data['title'] ): ?>

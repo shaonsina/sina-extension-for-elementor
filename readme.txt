@@ -5,7 +5,7 @@ Donate link: https://sina-extension.sinaextra.com/
 Requires at least: 4.8
 Tested up to: 6.6
 Requires PHP: 7.0
-Stable tag: 3.5.7
+Stable tag: 3.5.8
 License: GPL v3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -271,6 +271,13 @@ Yes. It's totally free. We also have a [PRO](https://sina-extension.sinaextra.co
 
 
 == Changelog ==
+
+= 3.5.8 - 10-12-2024 =
+- Fixed: Accordion Template issue
+- Fixed: Content Slider Template issue
+- Fixed: Modal Box Template issue
+- Fixed: Particle Layer Template issue
+- Fixed: Transform Template issue
 
 = 3.5.7 - 28-08-2024 =
 - Added: IntersectionObserver API instead of waypoints.js to improve performance.

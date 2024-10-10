@@ -901,7 +901,7 @@ class Sina_Content_Slider_Widget extends Widget_Base{
 					<?php
 						if ( 'yes' == $slide['save_templates'] && $slide['template'] ) :
 							$frontend = new Frontend;
-							echo $frontend->get_builder_content( $slide['template'], true );
+							echo sina_get_templates_data($slide['template'], $frontend);
 						elseif ( 'yes' == $slide['is_video'] && '' !== $slide['video_link'] ) :
 					?>
 							<a class="owl-video" href="<?php echo esc_url( $slide['video_link'] ) ?>"></a>

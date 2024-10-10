@@ -750,7 +750,7 @@ class Sina_Accordion_Widget extends Widget_Base{
 						<?php
 							if ( 'yes' == $item['save_templates'] && $item['template'] ) :
 								$frontend = new Frontend;
-								echo $frontend->get_builder_content( $item['template'], true );
+								echo sina_get_templates_data($item['template'], $frontend);
 							else:
 								?>
 								<div <?php echo $this->get_render_attribute_string( $desc_key ); ?>>

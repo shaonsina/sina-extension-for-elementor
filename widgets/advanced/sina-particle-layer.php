@@ -1062,7 +1062,7 @@ class Sina_Particle_Layer_Widget extends Widget_Base{
 				<?php
 					if ( 'yes' == $data['save_templates'] && $data['template'] ) {
 						$frontend = new Frontend;
-						echo '<div class="sina-particle-template">'. $frontend->get_builder_content( $data['template'], true ) .'</div>';
+						echo '<div class="sina-particle-template">'. sina_get_templates_data($data['template'], $frontend) .'</div>';
 					}
 				?>
 
