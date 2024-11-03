@@ -166,8 +166,6 @@ abstract class Sina_Extension_Base{
 	public static function activation() {
 		add_option( 'sina_extension_activation', true );
 		$data = get_option( 'sina_widgets' );
-		$site = get_option( 'siteurl' );
-		$url = 'https://account.sinaextra.com/used/?type=active&version='.SINA_EXT_VERSION.'&dom='.$site;
 		if ( !empty($data) ) {
 			$data = array_merge(SINA_WIDGETS, $data);
 			update_option( 'sina_widgets', $data);
@@ -180,18 +178,6 @@ abstract class Sina_Extension_Base{
 			'list_id'	=> '',
 		] );
 		add_option( 'sina_templates_option', [] );
-		wp_remote_get( $url, ['timeout' => 60] );
-	}
-
-	/**
-	 * For deactivation
-	 *
-	 * @since 3.5.0
-	 */
-	public static function deactivation() {
-		$site = get_option( 'siteurl' );
-		$url = 'https://account.sinaextra.com/used/?type=unused&version='.SINA_EXT_VERSION.'&dom='.$site;
-		wp_remote_get( $url, ['timeout' => 60] );
 	}
 
 	/**
