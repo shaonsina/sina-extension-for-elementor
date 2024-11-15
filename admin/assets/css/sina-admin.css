@@ -187,7 +187,10 @@
 .sina-ext-my{
 	margin: 20px 0;
 }
-
+.sina-ext-products{
+	width: 100%;
+	height: 970px;
+}
 
 @media (max-width: 767px) {
 	.sina-toggle-section,

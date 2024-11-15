@@ -194,7 +194,7 @@ abstract class Sina_Extension_Base{
 			delete_option('sina_extension_activation');
 
 			if ( ! is_network_admin() ) {
-				wp_redirect("admin.php?page=sina_ext_settings");
+				wp_redirect("admin.php?page=sina_ext");
 			}
 		}
 	}
@@ -205,7 +205,7 @@ abstract class Sina_Extension_Base{
 	 * @since 3.0.0
 	 */
 	public function settings( $links ) {
-		$links[] = '<a href="admin.php?page=sina_ext_settings">Settings</a>';
+		$links[] = '<a href="admin.php?page=sina_ext">Settings</a>';
 		if ( ! defined('SINA_EXT_PRO_WIDGETS') ) {
 			$links[] = '<a href="https://sina-extension.sinaextra.com/" target="_blank"><span style="font-weight: 700; color: #1085e4">Go Pro</span></a>';
 		}

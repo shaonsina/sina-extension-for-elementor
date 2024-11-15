@@ -36,24 +36,46 @@ class Sina_Ext_Settings{
 	}
 
 	public function __construct() {
-		add_action( 'admin_menu', [$this, 'add_submenu'], 550 );
+		add_action( 'admin_menu', [$this, 'add_menu'] );
+		add_action( 'admin_menu', [$this, 'add_submenu'] );
 		add_action( 'admin_init', [$this, 'settings_group'] );
 		add_action( 'admin_enqueue_scripts', [$this, 'admin_scripts'] );
 	}
 
-	public function add_submenu() {
-		add_submenu_page(
-			'elementor',
-			esc_html__('Sina Extension Settings', 'sina-ext'),
+	public function add_menu() {
+		$menu_icon = defined('SINA_EXT_PRO_URL') ? SINA_EXT_PRO_URL .'assets/img/menu-icon.png' : SINA_EXT_URL . 'admin/assets/img/menu-icon.png';
+		add_menu_page(
+			esc_html__('Sina Extension', 'sina-ext'),
 			esc_html__('Sina Extension', 'sina-ext'),
 			'manage_options',
-			'sina_ext_settings',
+			'sina_ext',
+			[$this, 'page_content'],
+			$menu_icon,
+			58
+		);
+	}
+
+	public function add_submenu() {
+		add_submenu_page(
+			'sina_ext',
+			esc_html__('Settings', 'sina-ext'),
+			esc_html__('Settings', 'sina-ext'),
+			'manage_options',
+			'sina_ext',
 			[$this, 'page_content']
+		);
+		add_submenu_page(
+			'sina_ext',
+			esc_html__('Products', 'sina-ext'),
+			esc_html__('Products', 'sina-ext'),
+			'manage_options',
+			'products',
+			[$this, 'products_page']
 		);
 	}
 
 	public function admin_scripts( $hook ) {
-		if ( 'elementor_page_sina_ext_settings' == $hook || '%d8%a7%d9%84%d9%85%d9%86%d8%aa%d9%88%d8%b1_page_sina_ext_settings' == $hook ) {
+		if ( 'toplevel_page_sina_ext' == $hook || 'sina-extension_page_products' == $hook || 'sina-extension_page_sina_ext_pro_update' == $hook ) {
 			// CSS Files
 			wp_enqueue_style( 'sina-admin', SINA_EXT_URL .'admin/assets/css/sina-admin.min.css', [], SINA_EXT_VERSION );
 
@@ -115,6 +137,10 @@ class Sina_Ext_Settings{
 				add_settings_field( 'sina_ext'.str_replace('-', '_', $extender), '', [$this, 'extenders_switcher'], 'sina_extenders', 'sina_extenders_section', ['extender' => $extender, 'translate' => $translate, 'type' => $type, 'get_extenders' => $get_extenders]  );
 			}
 		}
+	}
+
+	public function products_page() {
+		require SINA_EXT_ADMIN.'partials/products.php';
 	}
 
 	public function page_content() {
