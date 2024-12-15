@@ -43,7 +43,7 @@ class Sina_Ext_Settings{
 	}
 
 	public function add_menu() {
-		$menu_icon = defined('SINA_EXT_PRO_URL') ? SINA_EXT_PRO_URL .'assets/img/menu-icon.png' : SINA_EXT_URL . 'admin/assets/img/menu-icon.png';
+		$menu_icon = (defined('SINA_EXT_PRO_URL') && file_exists(SINA_EXT_PRO_URL .'assets/img/menu-icon.png')) ? SINA_EXT_PRO_URL .'assets/img/menu-icon.png' : SINA_EXT_URL . 'admin/assets/img/menu-icon.png';
 		add_menu_page(
 			esc_html__('Sina Extension', 'sina-ext'),
 			esc_html__('Sina Extension', 'sina-ext'),

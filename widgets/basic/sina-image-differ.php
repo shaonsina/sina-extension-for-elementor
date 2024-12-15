@@ -476,8 +476,8 @@ class Sina_Image_Differ_Widget extends Widget_Base{
 		data-offset="<?php echo esc_attr( $data['offset'] ) ?>"
 		data-click="<?php echo esc_attr( $data['click_move'] ) ?>"
 		data-hover="<?php echo esc_attr( $data['hover_move'] ) ?>"
-		data-before="<?php echo esc_attr( $data['before_text'] ) ?>"
-		data-after="<?php echo esc_attr( $data['after_text'] ) ?>">
+		data-before="<?php echo sina_ext_remove_chars( $data['before_text'] ) ?>"
+		data-after="<?php echo sina_ext_remove_chars( $data['after_text'] ) ?>">
 			<div class="twentytwenty-container">
 				<img src="<?php echo esc_url( $data['before_image']['url'] ); ?>" alt="<?php echo esc_attr( $before_img_alt ) ?>" />
 				<img src="<?php echo esc_url( $data['after_image']['url'] ); ?>" alt="<?php echo esc_attr( $after_img_alt ) ?>" />

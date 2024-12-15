@@ -8,6 +8,10 @@ function sina_ext_use_char($text) {
 	return str_replace(['&','<','>','='], [' & ',' < ',' > ',' = '], $text);
 }
 
+function sina_ext_remove_chars($text) {
+	return preg_replace('/[^A-Za-z0-9 ]/', '', $text);
+}
+
 function sina_ext_escape_tags($tag, $default = 'h2', $extra = []) {
 	$supports = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'div', 'span', 'p'];
 
