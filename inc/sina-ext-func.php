@@ -174,6 +174,7 @@ abstract class Sina_Ext_Functions extends Sina_Extension_Base{
 		require_once( SINA_EXT_INC .'sina-ext-helpers.php' );
 		require_once( SINA_EXT_INC .'sina-ext-controls.php' );
 		require_once( SINA_EXT_INC .'sina-ext-controls-extend.php' );
+		require_once( SINA_EXT_ADMIN .'sina-ext-theme-builder.php' );
 		require_once( SINA_EXT_ADMIN .'sina-ext-templates.php' );
 	}
 }
