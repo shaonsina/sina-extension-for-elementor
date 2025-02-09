@@ -10,7 +10,7 @@ use Elementor\Modules\Library\Documents\Library_Document;
 use Elementor\Plugin as ElementorPlugin;
 
 
-class Sina_Ext_Theme_Builder {
+class Sina_Ext_Theme_Builder{
 	const POST_TYPE 	 = 'sina-ext-template';
 	const POST_TYPE_META = 'sina-ext-template-meta';
 
@@ -44,43 +44,37 @@ class Sina_Ext_Theme_Builder {
 		add_action( 'manage_' . self::POST_TYPE . '_posts_columns', [$this, 'manage_columns'] );
 		add_action( 'manage_' . self::POST_TYPE . '_posts_custom_column', [$this, 'columns_content'], 10, 2 );
 
-		// Print template edit popup.
-		add_action( 'admin_footer', [ $this, 'print_popup' ] );
+		// Template store Ajax call
+		add_action( 'wp_ajax_sina_ext_save_template', [$this, 'save_template'] );
 
+		// Get Template data Ajax call
+		add_action( 'wp_ajax_sina_ext_get_template', [$this, 'get_template_by_id'] );
+		add_action( 'wp_ajax_sina_ext_get_posts_by_query', [$this, 'get_posts_by_query'] );
+
+		// Print template edit popup.
+		add_action( 'admin_footer', [$this, 'print_popup'] );
+
+		// Override Header, Footer, Archive page and Single page
+		add_action( 'get_header', [$this, 'override_default_header'] );
+		add_action( 'get_footer', [$this, 'override_default_footer'] );
+		add_action( 'sina_ext_header_builder_content', [$this, 'header_builder_content'] );
+		add_action( 'sina_ext_footer_builder_content', [$this, 'footer_builder_content'] );
+		add_action( 'sina_ext_archive_builder_content', [$this, 'archive_page_builder_content'] );
+		add_action( 'sina_ext_single_builder_content', [$this, 'single_page_builder_content'] );
+
+
+		// Template filter
+		add_filter( 'parse_query', [$this, 'query_filter'] );
 		add_filter( 'views_edit-' . self::POST_TYPE, [$this, 'print_tabs'] );
 
-		// query filter
-		// add_filter( 'parse_query', [ $this, 'query_filter' ] );
-
-
-		// Template store ajax action
-		// add_action( 'wp_ajax_sina_ext_save_template', [ $this, 'save_template_request' ] );
-
-		// Get template data Ajax action
-		// add_action( 'wp_ajax_sina_ext_get_template', [ $this, 'get_post_By_id' ] );
-
-		// add_action( 'wp_ajax_sina_ext_get_posts_by_query', [$this, 'get_posts_by_query'] );
-
 		// Change Template
-		// add_filter( 'template_include', [ $this, 'template_loader' ] );
-
-		// Archive Page
-		// add_action( 'sina_ext_archive_builder_content', [ $this, 'archive_page_builder_content' ] );
-
-		//single
-		// add_action( 'sina_ext_single_builder_content', [ $this, 'single_post_builder_content' ] );
+		add_filter( 'template_include', [$this, 'template_loader'] );
 
 		// Body classes
-		// add_filter( 'body_class', [ $this, 'body_classes' ] );
-
-		//header footer
-		// add_action( 'get_header', [ $this, 'override_header' ] );
-		// add_action( 'get_footer', [ $this, 'override_footer' ] );
-		// add_action( 'sina_ext_header_builder_content', [ $this, 'header_builder_content' ] );
-		// add_action( 'sina_ext_footer_builder_content', [ $this, 'footer_builder_content' ] );
+		add_filter( 'body_class', [$this, 'body_classes'] );
 	}
 
-	public function enqueue_scripts( $hook ) {
+	public function enqueue_scripts($hook) {
 		if ( isset( $_GET['post_type'] ) && $_GET['post_type'] == self::POST_TYPE ) {
 			// CSS Files
 			wp_enqueue_style( 'select2', SINA_EXT_URL . 'admin/assets/css/select2.min.css' );
@@ -88,15 +82,15 @@ class Sina_Ext_Theme_Builder {
 
 			// JS Files
 			wp_enqueue_script( 'select2', SINA_EXT_URL . 'admin/assets/js/select2.min.js', ['jquery'], SINA_EXT_VERSION, true );
-			wp_enqueue_script( 'sina-ext-theme-builder', SINA_EXT_URL . 'admin/assets/js/sina-admin-theme-builder.min.js', ['jquery', 'wp-util'], SINA_EXT_VERSION, true );
+			wp_enqueue_script( 'sina-ext-theme-builder', SINA_EXT_URL . 'admin/assets/js/sina-admin-theme-builder.js', ['jquery', 'wp-util'], SINA_EXT_VERSION, true );
 
 			$localize_data = [
 				'ajaxurl'         => admin_url( 'admin-ajax.php' ),
 				'nonce'           => wp_create_nonce( 'sina_ext_tmp_nonce' ),
 				'adminURL'        => admin_url(),
-				'hflocation'      => self::get_hf_location_selections(),
-				'archivelocation' => self::get_archive_location_selections(),
-				'singlelocation'  => self::get_single_location_selections(),
+				'hflocation'      => self::get_hf_select(),
+				'archivelocation' => self::get_archive_select(),
+				'singlelocation'  => self::get_single_select(),
 				'templatetype'    => self::get_template_type(),
 				'labels'          => [
 					'fields'  => [
@@ -126,7 +120,7 @@ class Sina_Ext_Theme_Builder {
 		}
 	}
 
-	public static function get_hf_location_selections() {
+	public static function get_hf_select() {
 		$args = [
 			'public'            => true,
 			'show_in_nav_menus' => true,
@@ -171,7 +165,7 @@ class Sina_Ext_Theme_Builder {
 				$selection_options[ $post_type->name ] = [
 					'label' => esc_html( $post_type->label ),
 					'value' => [
-						'all' . $post_type->name => esc_html( 'All ' . $post_type->label ),
+						'all-' . $post_type->name => esc_html( 'All ' . $post_type->label ),
 					],
 				];
 			} else {
@@ -195,7 +189,7 @@ class Sina_Ext_Theme_Builder {
 		return apply_filters( 'sina_ext_display_hf_list', $selection_options );
 	}
 
-	public static function get_archive_location_selections() {
+	public static function get_archive_select() {
 		$args = [
 			'public'            => true,
 			'show_in_nav_menus' => true,
@@ -203,7 +197,7 @@ class Sina_Ext_Theme_Builder {
 
 		$post_types = get_post_types( $args, 'objects' );
 
-		//unset unnecessary post type
+		// Remove unnecessary post type
 		unset( $post_types['page'] );
 		unset( $post_types['post'] );
 		unset( $post_types['product'] );
@@ -244,7 +238,7 @@ class Sina_Ext_Theme_Builder {
 		return apply_filters( 'sina_ext_display_archive_list', $selection_options );
 	}
 
-	public static function get_single_location_selections() {
+	public static function get_single_select() {
 		$args = [
 			'public'            => true,
 			'show_in_nav_menus' => true,
@@ -252,7 +246,7 @@ class Sina_Ext_Theme_Builder {
 
 		$post_types = get_post_types( $args, 'objects' );
 
-		//unset unnecessary post type
+		// Remove unnecessary post type
 		unset( $post_types['page'] );
 		unset( $post_types['product'] );
 		unset( $post_types[ self::POST_TYPE ] );
@@ -270,7 +264,7 @@ class Sina_Ext_Theme_Builder {
 			$selection_options[ $post_type->name ] = [
 				'label' => esc_html( $post_type->label ),
 				'value' => [
-					$post_type->name . '-singular' => esc_html( $post_type->label . ' Singular' ),
+					$post_type->name . '-singulars' => esc_html( $post_type->label . ' Singular' ),
 				],
 			];
 		}
@@ -278,7 +272,30 @@ class Sina_Ext_Theme_Builder {
 		return apply_filters( 'sina_ext_display_archive_list', $selection_options );
 	}
 
-	// Register Template Custom post
+	public static function get_template_type() {
+		$template_type = [
+			'header'  => [
+				'label'     => esc_html__( 'Header', 'sina-ext' ),
+				'optionkey' => 'header'
+			],
+			'footer'  => [
+				'label'     => esc_html__( 'Footer', 'sina-ext' ),
+				'optionkey' => 'footer'
+			],
+			'archive' => [
+				'label'     => esc_html__( 'Archive/404/Search', 'sina-ext' ),
+				'optionkey' => 'archivepage'
+			],
+			'single'  => [
+				'label'     => esc_html__( 'Single', 'sina-ext' ),
+				'optionkey' => 'singlepage'
+			],
+		];
+
+		return apply_filters( 'sina_ext_builder_template_types', $template_type );
+	}
+
+	// Register Template Custom Post
 	public function register_theme_builder_post_type() {
 		$labels = [
 			'name'                  => esc_html_x( 'Sina Theme Builder', 'Post Type General Name', 'sina-ext' ),
@@ -342,7 +359,7 @@ class Sina_Ext_Theme_Builder {
 		flush_rewrite_rules();
 	}
 
-	public function manage_columns( $columns ) {
+	public function manage_columns($columns) {
 		$column_date = $columns['date'];
 		unset( $columns['date'] );
 
@@ -353,10 +370,10 @@ class Sina_Ext_Theme_Builder {
 		return $columns;
 	}
 
-	public function columns_content( $column_name, $post_id ) {
+	public function columns_content($column_name, $post_id) {
 		$type = get_post_meta( $post_id, self::POST_TYPE_META . '_type', true );
 
-		if ( ! array_key_exists( $type, self::get_template_type() ) ) {
+		if ( !array_key_exists( $type, self::get_template_type() ) ) {
 			return;
 		}
 
@@ -368,35 +385,617 @@ class Sina_Ext_Theme_Builder {
 			$display = get_post_meta( $post_id, self::POST_TYPE_META . '_location', true );
 			?>
             <div class="post-status">
-            <strong><?php esc_html__( 'Display:', 'sina-ext' ); ?> </strong>
-			<?php echo esc_html( $display ); ?>
-            </div><?php
+            	<strong><?php esc_html_e( 'Display:', 'sina-ext' ); ?> </strong>
+				<?php echo esc_html( $display ); ?>
+            </div>
+            <?php
 		}
 	}
 
-	public static function get_template_type() {
-		$template_type = [
-			'header'  => [
-				'label'     => esc_html__( 'Header', 'sina-ext' ),
-				'optionkey' => 'header'
-			],
-			'footer'  => [
-				'label'     => esc_html__( 'Footer', 'sina-ext' ),
-				'optionkey' => 'footer'
-			],
-			'archive' => [
-				'label'     => esc_html__( 'Archive/404/Search', 'sina-ext' ),
-				'optionkey' => 'archivepage'
-			],
-			'single'  => [
-				'label'     => esc_html__( 'Single', 'sina-ext' ),
-				'optionkey' => 'singlepage'
-			],
+	// Create Template
+	public function create_template($data) {
+		$args = [
+			'post_type'   => self::POST_TYPE,
+			'post_status' => $data['tmptype'] == 'popup' ? 'draft' : 'publish',
+			'post_title'  => $data['title'],
 		];
+		$new_post_id = wp_insert_post( $args );
 
-		return apply_filters( 'sina_ext_builder_template_types', $template_type );
+		if ( $new_post_id ) {
+			$return = [
+				'message' => esc_html__( 'Template has been inserted', 'sina-ext' ),
+				'id'      => $new_post_id,
+			];
+
+			update_post_meta( $new_post_id, self::POST_TYPE_META . '_type', $data['tmptype'] );
+			update_post_meta( $new_post_id, self::POST_TYPE_META . '_location', $data['tmplocation'] );
+			update_post_meta( $new_post_id, '_elementor_edit_mode', 'builder' );
+			update_post_meta( $new_post_id, '_wp_page_template', 'elementor_canvas' );
+
+			if ( 'header' === $data['tmptype'] || 'footer' === $data['tmptype'] ) {
+				update_post_meta( $new_post_id, self::POST_TYPE_META . '_splocation', $data['tmpSpLocation'] );
+			}
+
+			wp_send_json_success( $return );
+
+		} else {
+			$errormessage = [
+				'message' => esc_html__( 'Some thing is worng!', 'sina-ext' )
+			];
+			wp_send_json_error( $errormessage );
+		}
 	}
 
+	// Save Template
+	public function save_template() {
+		if ( isset( $_POST ) ) {
+			if ( !( current_user_can( 'manage_options' ) || current_user_can( 'edit_others_posts' ) ) ) {
+				$errormessage = [
+					'message' => esc_html__( 'You are unauthorize to adding template!', 'sina-ext' )
+				];
+				wp_send_json_error( $errormessage );
+			}
+
+			$nonce = isset( $_POST['nonce'] ) ? sanitize_text_field( wp_unslash( $_POST['nonce'] ) ) : '';
+
+			if ( !wp_verify_nonce( $nonce, 'sina_ext_tmp_nonce' ) ) {
+				$errormessage = [
+					'message' => esc_html__( 'Nonce Varification Faild!', 'sina-ext' )
+				];
+				wp_send_json_error( $errormessage );
+			}
+
+			$title            = !empty( $_POST['title'] ) ? sanitize_text_field( wp_unslash( $_POST['title'] ) ) : '';
+			$tmpid            = !empty( $_POST['tmpId'] ) ? sanitize_text_field( wp_unslash( $_POST['tmpId'] ) ) : '';
+			$tmpType          = !empty( $_POST['tmpType'] ) ? sanitize_text_field( wp_unslash( $_POST['tmpType'] ) ) : 'single';
+			$tmplocation      = !empty( $_POST['tmpDisplay'] ) ? sanitize_text_field( wp_unslash( $_POST['tmpDisplay'] ) ) : '';
+			$specificsDisplay = !empty( $_POST['specificsDisplay'] ) ? sanitize_text_field( wp_unslash( $_POST['specificsDisplay'] ) ) : '';
+
+			$data = [
+				'title'         => $title,
+				'id'            => $tmpid,
+				'tmptype'       => $tmpType,
+				'tmplocation'   => $tmplocation,
+				'tmpSpLocation' => $specificsDisplay,
+			];
+
+			if ( $tmpid ) {
+				$this->update_template( $data );
+			} else {
+				$this->create_template( $data );
+			}
+		} else {
+			$errormessage = [
+				'message' => esc_html__( 'Post request dose not found', 'sina-ext' )
+			];
+			wp_send_json_error( $errormessage );
+		}
+	}
+
+	// Update Template
+	public function update_template($data) {
+		$update_post_args = [
+			'ID'         => $data['id'],
+			'post_title' => $data['title'],
+		];
+		wp_update_post( $update_post_args );
+
+		update_post_meta( $data['id'], self::POST_TYPE_META . '_type', $data['tmptype'] );
+		update_post_meta( $data['id'], self::POST_TYPE_META . '_location', $data['tmplocation'] );
+
+		if ( 'header' === $data['tmptype'] || 'footer' === $data['tmptype'] ) {
+			update_post_meta( $data['id'], self::POST_TYPE_META . '_splocation', $data['tmpSpLocation'] );
+		} else {
+			delete_post_meta( $data['id'], self::POST_TYPE_META . '_splocation' );
+		}
+
+		$return = [
+			'message' => esc_html__( 'Template has been updated', 'sina-ext' ),
+			'id'      => $data['id']
+		];
+		wp_send_json_success( $return );
+	}
+
+	// Get Template data by id
+	public function get_template_by_id() {
+		if ( isset( $_POST ) ) {
+			if ( !( current_user_can( 'manage_options' ) || current_user_can( 'edit_others_posts' ) ) ) {
+				$errormessage = [
+					'message' => esc_html__( 'You are unauthorize to adding template!', 'sina-ext' )
+				];
+				wp_send_json_error( $errormessage );
+			}
+
+			$nonce = isset( $_POST['nonce'] ) ? sanitize_text_field( wp_unslash( $_POST['nonce'] ) ) : '';
+
+			if ( !wp_verify_nonce( $nonce, 'sina_ext_tmp_nonce' ) ) {
+				$errormessage = [
+					'message' => esc_html__( 'Nonce Varification Faild!', 'sina-ext' )
+				];
+				wp_send_json_error( $errormessage );
+			}
+
+			$tmpid            = !empty( $_POST['tmpId'] ) ? sanitize_text_field( wp_unslash( $_POST['tmpId'] ) ) : '';
+			$postdata         = get_post( $tmpid );
+			$tmpType          = !empty( get_post_meta( $tmpid, self::POST_TYPE_META . '_type', true ) ) ? get_post_meta( $tmpid, self::POST_TYPE_META . '_type', true ) : 'single';
+			$tmpLocation      = !empty( get_post_meta( $tmpid, self::POST_TYPE_META . '_location', true ) ) ? get_post_meta( $tmpid, self::POST_TYPE_META . '_location', true ) : '';
+			$specificsDisplay = !empty( get_post_meta( $tmpid, self::POST_TYPE_META . '_splocation', true ) ) ? get_post_meta( $tmpid, self::POST_TYPE_META . '_splocation', true ) : '';
+			$spLocations      = [];
+
+			if ( !empty( $specificsDisplay ) ) {
+				foreach ( json_decode( $specificsDisplay ) as $item ) {
+					$sppost               = get_post( intval( $item ) );
+					$spLocations[ $item ] = $sppost->post_title;
+				}
+			}
+
+			$data = [
+				'tmpTitle'      => $postdata->post_title,
+				'tmpType'       => $tmpType,
+				'tmpLocation'   => $tmpLocation,
+				'tmpSpLocation' => $spLocations,
+			];
+			wp_send_json_success( $data );
+		} else {
+			$errormessage = [
+				'message' => esc_html__( 'Some thing is worng!', 'sina-ext' )
+			];
+			wp_send_json_error( $errormessage );
+		}
+	}
+
+	public function query_filter( \WP_Query $query ) {
+		if ( !is_admin() || !empty( $query->query_vars['meta_key'] ) || self::POST_TYPE !== $query->get( 'post_type' ) ) {
+			return;
+		}
+
+		if ( isset( $_GET['template_type'] ) && $_GET['template_type'] != '' && $_GET['template_type'] != 'all' ) {
+			$type = isset( $_GET['template_type'] ) ? sanitize_key( $_GET['template_type'] ) : '';
+
+			$query->query_vars['meta_key']     = self::POST_TYPE_META . '_type';
+			$query->query_vars['meta_value']   = $type;
+			$query->query_vars['meta_compare'] = '=';
+		}
+	}
+
+	function get_posts_by_query() {
+		if ( isset( $_POST ) ) {
+			$nonce = isset( $_POST['nonce'] ) ? sanitize_text_field( wp_unslash( $_POST['nonce'] ) ) : '';
+
+			if ( !wp_verify_nonce( $nonce, 'sina_ext_tmp_nonce' ) ) {
+				$errormessage = [
+					'message' => esc_html__( 'Nonce Varification Faild!', 'sina-ext' )
+				];
+				wp_send_json_error( $errormessage );
+			}
+
+			$search_string 	= isset( $_POST['q'] ) ? sanitize_text_field( wp_unslash( $_POST['q'] ) ) : '';
+			$data 			= [];
+			$result			= [];
+			$args 			= [
+				'public'   => true,
+				'_builtin' => false,
+			];
+			$output     	= 'names';
+			$operator   	= 'and';
+			$post_types 	= get_post_types( $args, $output, $operator );
+
+			unset( $post_types[ self::POST_TYPE ] );
+
+			$post_types['Posts'] = 'post';
+			$post_types['Pages'] = 'page';
+
+			foreach ( $post_types as $key => $post_type ) {
+				$data = [];
+
+				add_filter( 'posts_search', [$this, 'search_only_titles'], 10, 2 );
+
+				$query = new \WP_Query(
+					[
+						's'              => $search_string,
+						'post_type'      => $post_type,
+						'posts_per_page' => -1,
+					]
+				);
+
+				if ( $query->have_posts() ) {
+					while ( $query->have_posts() ) {
+						$query->the_post();
+						$title  = get_the_title();
+						$title  .= ( 0 != $query->post->post_parent ) ? ' (' . get_the_title( $query->post->post_parent ) . ')' : '';
+						$id     = get_the_id();
+						$data[] = [
+							'id'   => $id,
+							'text' => $title,
+						];
+					}
+				}
+
+				if ( is_array( $data ) && !empty( $data ) ) {
+					$result[] = [
+						'text'     => $key,
+						'children' => $data,
+					];
+				}
+			}
+
+			$data = [];
+
+			wp_reset_postdata();
+
+			wp_send_json( $result );
+		} else {
+			$errormessage = [
+				'message' => esc_html__( 'Some thing is worng!', 'sina-ext' )
+			];
+			wp_send_json_error( $errormessage );
+		}
+	}
+
+	function search_only_titles($search, $wp_query) {
+		if ( !empty( $search ) && !empty( $wp_query->query_vars['search_terms'] ) ) {
+			global $wpdb;
+
+			$q = $wp_query->query_vars;
+			$n = !empty( $q['exact'] ) ? '' : '%';
+
+			$search = [];
+
+			foreach ( (array) $q['search_terms'] as $term ) {
+				$search[] = $wpdb->prepare( "$wpdb->posts.post_title LIKE %s", $n . $wpdb->esc_like( $term ) . $n );
+			}
+
+			if ( !is_user_logged_in() ) {
+				$search[] = "$wpdb->posts.post_password = ''";
+			}
+
+			$search = ' AND ' . implode( ' AND ', $search );
+		}
+
+		return $search;
+	}
+
+	// Load Template
+	public function template_loader($template) {
+		if ( is_embed() ) {
+			return $template;
+		}
+
+		$default_file = self::get_template_default_file();
+
+		if ( $default_file ) {
+			$template = SINA_EXT_INC . 'templates/' . $default_file;
+		}
+
+		return $template;
+	}
+
+	private function get_template_default_file() {
+		if ( is_singular() && $this->has_template('single') ) {
+			$default_file = 'single.php';
+		} elseif ( (is_archive() || is_home() || is_search() || is_404()) && $this->has_template('archive') ) {
+			$default_file = 'archive.php';
+		} else {
+			$default_file = '';
+		}
+
+		return $default_file;
+	}
+
+	public function body_classes($classes) {
+		$class_prefix = 'elementor-page-';
+
+		if ( is_singular() && $this->has_template('single') ) {
+			$classes[] = $class_prefix . self::has_template('single');
+		} elseif ( (is_archive() || is_home() || is_search()) && $this->has_template('archive') ) {
+			$classes[] = $class_prefix . self::has_template('archive');
+		}
+
+		return $classes;
+	}
+
+	// Override the default header.
+	public function override_default_header($name) {
+		if ( !$this->has_template('header') ) {
+			return;
+		}
+
+		require SINA_EXT_INC . 'templates/header.php';
+
+		$templates = [];
+		$name      = (string) $name;
+		if ( '' !== $name ) {
+			$templates[] = "header-{$name}.php";
+		}
+
+		$templates[] = 'header.php';
+
+		// Avoid wp_head hook
+		remove_all_actions('wp_head');
+		ob_start();
+		locate_template( $templates, true );
+		ob_get_clean();
+	}
+
+	// Overriding the default footer.
+	public function override_default_footer( $name ) {
+		// Fixed div ending issues
+		if ( !$this->has_template('header') && $this->has_template('footer') ) {
+			$current_template = basename( get_page_template_slug() );
+			if ( $current_template == 'elementor_canvas' ) {
+				return;
+			}
+
+			$current_theme = get_template();
+
+			switch ( $current_theme ) {
+				case 'astra':
+					echo '</div></div>';
+					break;
+
+					// case 'neve':
+					// echo '</main>';
+					// break;
+
+					// case 'generatepress':
+					// case 'generatepress-child':
+					// echo '</div>';
+					// break;
+
+					// case 'oceanwp':
+					// case 'oceanwp-child':
+					// echo '</div>';
+					// break;
+
+					// case 'bb-theme':
+					// case 'bb-theme-child':
+					// echo '</div>';
+					// break;
+
+					// case 'genesis':
+					// case 'genesis-child':
+					// echo '</div>';
+					// break;
+
+					// case 'twentynineteen':
+					// echo '</div>';
+					// break;
+
+					// case 'my-listing':
+					// case 'my-listing-child':
+					// echo '</div>';
+					// break;
+
+				default:
+					break;
+			}
+		}
+
+		if ( !$this->has_template('footer') ) {
+			return;
+		}
+
+		require SINA_EXT_INC . 'templates/footer.php';
+
+		$templates = [];
+		$name      = (string) $name;
+		if ( '' !== $name ) {
+			$templates[] = "footer-{$name}.php";
+		}
+
+		$templates[] = 'footer.php';
+
+		// Avoid wp_footer hook
+		remove_all_actions('wp_footer');
+		ob_start();
+		locate_template( $templates, true );
+		ob_get_clean();
+	}
+
+	public function has_template($tmpType = '') {
+		$template_ID = self::get_current_template_by_condition($tmpType);
+
+		if ($template_ID) {
+			return $template_ID;
+		}
+
+		return false;
+	}
+
+	// Set Header content
+	public function header_builder_content() {
+		$template_id = $this->get_template_id('header');
+		if ( $template_id != '0' ) {
+			echo self::render_build_content($template_id);
+		}
+	}
+
+	// Set Footer content
+	public function footer_builder_content() {
+		$template_id = $this->get_template_id('footer');
+		if ( $template_id != '0' ) {
+			echo self::render_build_content($template_id);
+		}
+	}
+
+	// Set Archvie page content
+	public function archive_page_builder_content() {
+		$template_id = $this->get_template_id('archive');
+		if ( $template_id != '0' ) {
+			echo self::render_build_content($template_id);
+		}
+	}
+
+	// Set Single page content
+	public function single_page_builder_content() {
+		$template_id = $this->get_template_id('single');
+		if ( $template_id != '0' ) {
+			echo self::render_build_content($template_id);
+		}
+	}
+
+	public function get_template_id($tmpType = '') {
+		$template_ID = self::get_current_template_by_condition($tmpType);
+
+		if ( $template_ID ) {
+			return $template_ID;
+		}
+
+		return false;
+	}
+
+	public function get_current_template_by_condition($tmpType = '') {
+		$query_args         = [
+			'post_type'      => self::POST_TYPE,
+			'fields'         => 'ids',
+			'posts_per_page' => -1,
+			'order'          => 'ASC',
+			'orderby'        => 'date',
+			'meta_query'     => [
+				[
+					'key'   => self::POST_TYPE_META . '_type',
+					'value' => $tmpType,
+				]
+			]
+		];
+		$query              = new \WP_Query($query_args);
+		$count              = $query->post_count;
+		$templates          = [];
+		$templates_specific = [ 'specifics' => [] ];
+
+		foreach($query->posts as $key => $post_id) {
+			$location   = get_post_meta(absint($post_id), self::POST_TYPE_META . '_location', true);
+			$splocation = get_post_meta(absint($post_id), self::POST_TYPE_META . '_splocation', true);
+
+			if ( !empty($location) ) {
+				if ( 'specifics' === $location ) {
+					array_push( $templates_specific['specifics'],
+						[ 'id' => $post_id, 'posts' => json_decode($splocation) ]
+					);
+				} else {
+					$templates[ $location ] = $post_id;
+				}
+			}
+
+			if ( $key === $count - 1 && !empty( $templates_specific['specifics'] ) ) {
+				$templates = array_merge( $templates, $templates_specific );
+			}
+		}
+
+		wp_reset_postdata();
+		if ( empty($templates) ) {
+			return false;
+		}
+
+		// Check specific page and post
+		if ( !is_home() && !is_archive() && array_key_exists('specifics', $templates) ) {
+			foreach ( $templates['specifics'] as $specific ) {
+				$key = array_search( get_the_ID(), $specific['posts'] );
+				if ( false !== $key ) {
+					return $specific['id'];
+				}
+			}
+		}
+
+		// Check 404 page
+		if ( is_404() && array_key_exists('404', $templates) ) {
+			return $templates['404'];
+		}
+
+		// Check search page
+		if ( is_search() && array_key_exists('search', $templates) ) {
+			return $templates['search'];
+		}
+
+		// Check front page
+		if ( is_front_page() && array_key_exists('front', $templates) ) {
+			return $templates['front'];
+		}
+
+		// Check blog/posts page
+		if ( is_home() && array_key_exists('blog', $templates) ) {
+			return $templates['blog'];
+		}
+
+		// Check archive pages
+		if ( is_archive() ) {
+			// Check date archive
+			if ( is_date() && array_key_exists('date', $templates) ) {
+				return $templates['date'];
+			}
+
+			// Check author archive
+			if ( is_author() && array_key_exists('author', $templates) ) {
+				return $templates['author'];
+			}
+
+			// Check WooCommerce shop archive
+			if ( function_exists( 'is_shop' ) && is_shop() && array_key_exists('woo-shop', $templates) ) {
+				return $templates['woo-shop'];
+			}
+
+			// Check post type archive
+			$custom_archive = get_post_type() . '-archive';
+			if ( array_key_exists($custom_archive, $templates) ) {
+				return $templates[ $custom_archive ];
+			}
+
+			// All archives
+			if ( array_key_exists('archives', $templates) ) {
+				return $templates['archives'];
+			}
+		}
+
+		// Check singular
+		if ( is_singular() ) {
+			if ( ( 'page' === get_post_type() || self::POST_TYPE === get_post_type() ) && 'single' === $tmpType ) {
+				return false;
+			}
+
+			// Check post type singulars Header and Footer
+			$single_hf = get_post_type() . '-singulars';
+			if ( array_key_exists($single_hf, $templates) ) {
+				return $templates[ $single_hf ];
+			}
+
+			// All singulars
+			if ( array_key_exists('singulars', $templates) ) {
+				return $templates['singulars'];
+			}
+		}
+
+		// Check global
+		if ( array_key_exists('global', $templates) ) {
+			return $templates['global'];
+		}
+	}
+
+	public static function render_build_content($id) {
+		$output   = '';
+		$document = ElementorPlugin::instance()->documents->get($id);
+
+		if ( $document && $document->is_built_with_elementor() ) {
+			$output = ElementorPlugin::instance()->frontend->get_builder_content_for_display($id, true);
+		} else {
+			$content = get_the_content(null, false, $id);
+
+			if ( has_blocks($content) ) {
+				$blocks = parse_blocks($content);
+				foreach ( $blocks as $block ) {
+					$output .= do_shortcode( render_block($block) );
+				}
+			} else {
+				$content = apply_filters( 'the_content', $content );
+				$content = str_replace( ']]>', ']]&gt;', $content );
+
+				return $content;
+			}
+		}
+
+		return $output;
+	}
+
+	// Print Tabs
 	public function print_tabs( $views ) {
 		$active_class = 'nav-tab-active';
 		$current_type = '';
@@ -429,7 +1028,7 @@ class Sina_Ext_Theme_Builder {
 		return $views;
 	}
 
-	// Print Template edit popup
+	// Print Template Edit Popup
 	public function print_popup() {
 		if ( isset( $_GET['post_type'] ) && $_GET['post_type'] == self::POST_TYPE ) {
 			?>
@@ -575,11 +1174,6 @@ class Sina_Ext_Theme_Builder {
 		}
 	}
 
-
-
-
-
-
 	// Library_Document
 	public static function get_document( $post_id ) {
 		$document = null;
@@ -587,326 +1181,14 @@ class Sina_Ext_Theme_Builder {
 		try {
 			$document = ElementorPlugin::$instance->documents->get( $post_id );
 		} catch ( \Exception $e ) {
-			// Do nothing.
 			unset( $e );
 		}
 
-		if ( ! empty( $document ) && ! $document instanceof Library_Document ) {
+		if ( !empty( $document ) && !$document instanceof Library_Document ) {
 			$document = null;
 		}
 
 		return $document;
-	}
-
-
-	// Overriding the default header.
-	public function override_header( $name ) {
-
-		if ( ! $this->has_template( 'header' ) ) {
-			return;
-		}
-
-		require Sina_Ext_ADDONS_PATH . '/templates/header.php';
-
-		$templates = [];
-		$name      = (string) $name;
-		if ( '' !== $name ) {
-			$templates[] = "header-{$name}.php";
-		}
-
-		$templates[] = 'header.php';
-
-		// Avoid running wp_head hooks again
-		remove_all_actions( 'wp_head' );
-		ob_start();
-		// It cause a `require_once` so, in the get_header it self it will not be required again.
-		locate_template( $templates, true );
-		ob_get_clean();
-	}
-
-	// Overriding the default footer.
-	public function override_footer( $name ) {
-		//fixed div ending issues
-		if ( ! $this->has_template( 'header' ) && $this->has_template( 'footer' ) ) {
-			$current_template = basename( get_page_template_slug() );
-			if ( $current_template == 'elementor_canvas' ) {
-				return;
-			}
-
-			$current_theme = get_template();
-
-			switch ( $current_theme ) {
-				case 'astra':
-					echo '</div></div>';
-					break;
-
-		//				case 'neve':
-		//					echo '</main>';
-		//					break;
-		//
-		//				case 'generatepress':
-		//				case 'generatepress-child':
-		//				    echo '</div>';
-		//					break;
-		//
-		//				case 'oceanwp':
-		//				case 'oceanwp-child':
-		//				    echo '</div>';
-		//					break;
-		//
-		//				case 'bb-theme':
-		//				case 'bb-theme-child':
-		//				        echo '</div>';
-		//					break;
-		//
-		//				case 'genesis':
-		//				case 'genesis-child':
-		//				    echo '</div>';
-		//					break;
-		//
-		//				case 'twentynineteen':
-		//					echo '</div>';
-		//					break;
-		//
-		//				case 'my-listing':
-		//				case 'my-listing-child':
-		//				    echo '</div>';
-		//					break;
-
-				default:
-					break;
-			}
-		}
-
-
-		if ( ! $this->has_template( 'footer' ) ) {
-			return;
-		}
-
-		require Sina_Ext_ADDONS_PATH . '/templates/footer.php';
-
-		$templates = [];
-		$name      = (string) $name;
-		if ( '' !== $name ) {
-			$templates[] = "footer-{$name}.php";
-		}
-
-		$templates[] = 'footer.php';
-
-		// Avoid running wp_head hooks again
-		remove_all_actions( 'wp_footer' );
-		ob_start();
-		// It cause a `require_once` so, in the get_header it self it will not be required again.
-		locate_template( $templates, true );
-		ob_get_clean();
-	}
-
-	// Set Builder content for header
-	public function header_builder_content() {
-		$archive_template_id = $this->get_template_id( 'header' );
-		if ( $archive_template_id != '0' ) {
-			echo self::render_build_content( $archive_template_id );
-		}
-	}
-
-	// Set Builder content for footer
-	public function footer_builder_content() {
-		$archive_template_id = $this->get_template_id( 'footer' );
-		if ( $archive_template_id != '0' ) {
-			echo self::render_build_content( $archive_template_id );
-		}
-	}
-
-
-	public function body_classes( $classes ) {
-		$class_prefix = 'elementor-page-';
-
-		if ( is_singular() && $this->has_template( 'single' ) ) {
-			$classes[] = $class_prefix . self::has_template( 'single' );
-		} elseif ( ( is_archive() || is_home() || is_search() ) && $this->has_template( 'archive' ) ) {
-			$classes[] = $class_prefix . self::has_template( 'archive' );
-		}
-
-		return $classes;
-	}
-
-	// Load template.
-	public function template_loader( $template ) {
-		if ( is_embed() ) {
-			return $template;
-		}
-
-		$default_file = self::get_template_loader_default_file();
-
-		if ( $default_file ) {
-			$template = Sina_Ext_ADDONS_PATH . '/templates/' . $default_file;
-		}
-
-		return $template;
-	}
-
-	private function get_template_loader_default_file() {
-		if ( is_singular() && $this->has_template( 'single' ) ) {
-			$default_file = 'single.php';
-		} elseif ( ( is_archive() || is_home() || is_search() || is_404() ) && $this->has_template( 'archive' ) ) {
-			$default_file = 'archive.php';
-		} else {
-			$default_file = '';
-		}
-
-		return $default_file;
-	}
-
-	public function has_template( $tmpType = '' ) {
-		$template_ID = self::get_current_post_by_condition( $tmpType );
-
-		if ( $template_ID ) {
-			return $template_ID;
-		}
-
-		return false;
-	}
-
-	public function get_template_id( $tmpType = '' ) {
-		$template_ID = self::get_current_post_by_condition( $tmpType );
-
-		if ( $template_ID ) {
-			return $template_ID;
-		}
-
-		return false;
-	}
-
-	public function get_current_post_by_condition( $tmpType = '' ) {
-		$query_args         = [
-			'post_type'      => self::POST_TYPE,
-			'fields'         => 'ids',
-			'posts_per_page' => - 1,
-			'order'          => 'ASC',
-			'orderby'        => 'date',
-			'meta_query'     => [
-				[
-					'key'   => self::POST_TYPE_META . '_type',
-					'value' => $tmpType,
-				]
-			]
-		];
-		$query              = new \WP_Query( $query_args );
-		$count              = $query->post_count;
-		$templates          = [];
-		$templates_specific = [ 'specifics' => [] ];
-
-		foreach ( $query->posts as $key => $post_id ) {
-
-			$location   = get_post_meta( absint( $post_id ), self::POST_TYPE_META . '_location', true );
-			$splocation = get_post_meta( absint( $post_id ), self::POST_TYPE_META . '_splocation', true );
-
-			if ( ! empty( $location ) ) {
-				if ( 'specifics' === $location ) {
-					array_push( $templates_specific['specifics'],
-						[ 'id' => $post_id, 'posts' => json_decode( $splocation ) ]
-					);
-				} else {
-					$templates[ $location ] = $post_id;
-				}
-			}
-
-			if ( $key === $count - 1 && ! empty( $templates_specific['specifics'] ) ) {
-				$templates = array_merge( $templates, $templates_specific );
-			}
-		}
-
-		wp_reset_postdata();
-
-		if ( empty( $templates ) ) {
-			return false;
-		}
-
-		//check for specific page and post
-		if ( ! is_home() && ! is_archive() && array_key_exists( 'specifics', $templates ) ) {
-			foreach ( $templates['specifics'] as $specific ) {
-				$key = array_search( get_the_ID(), $specific['posts'] );
-				if ( false !== $key ) {
-					return $specific['id'];
-				}
-			}
-		}
-
-		//check 404 page
-		if ( is_404() && array_key_exists( '404', $templates ) ) {
-			return $templates['404'];
-		}
-
-		//check search page
-		if ( is_search() && array_key_exists( 'search', $templates ) ) {
-			return $templates['search'];
-		}
-
-		//check front page
-		if ( is_front_page() && array_key_exists( 'front', $templates ) ) {
-			return $templates['front'];
-		}
-
-		//check for blog/posts page
-		if ( is_home() && array_key_exists( 'blog', $templates ) ) {
-			return $templates['blog'];
-		}
-
-		//check for archive
-		if ( is_archive() ) {
-
-			//check for all date archive
-			if ( is_date() && array_key_exists( 'date', $templates ) ) {
-				return $templates['date'];
-			}
-
-			//check for all author archive
-			if ( is_author() && array_key_exists( 'author', $templates ) ) {
-				return $templates['author'];
-			}
-
-			//check for WooCommerce shop archive
-			if ( function_exists( 'is_shop' ) && is_shop() && array_key_exists( 'woo-shop', $templates ) ) {
-				return $templates['woo-shop'];
-			}
-
-			//check for custom post type archive
-			$custom_archive = get_post_type() . '-archive';
-			if ( array_key_exists( $custom_archive, $templates ) ) {
-				return $templates[ $custom_archive ];
-			}
-
-			//all archives
-			if ( array_key_exists( 'archives', $templates ) ) {
-				return $templates['archives'];
-			}
-		}
-
-		//check for singular
-		if ( is_singular() ) {
-
-			//if template type single ignore post type page
-			if ( ( 'page' === get_post_type() || self::POST_TYPE === get_post_type() ) && 'single' === $tmpType ) {
-				return false;
-			}
-
-			//check for custom post type singular
-			$custom_single = get_post_type() . '-singular';
-			if ( array_key_exists( $custom_single, $templates ) ) {
-				return $templates[ $custom_single ];
-			}
-
-			//all singular
-			if ( array_key_exists( 'singulars', $templates ) ) {
-				return $templates['singulars'];
-			}
-		}
-
-
-		//check for global
-		if ( array_key_exists( 'global', $templates ) ) {
-			return $templates['global'];
-		}
 	}
 
 	public function get_current_page_type() {
@@ -941,314 +1223,6 @@ class Sina_Ext_Theme_Builder {
 		}
 
 		return $page_type;
-	}
-
-	public static function render_build_content( $id ) {
-		$output   = '';
-		$document = ElementorPlugin::instance()->documents->get( $id );
-
-		if ( $document && $document->is_built_with_elementor() ) {
-			$output = ElementorPlugin::instance()->frontend->get_builder_content_for_display( $id, true );
-		} else {
-			$content = get_the_content( null, false, $id );
-
-			if ( has_blocks( $content ) ) {
-				$blocks = parse_blocks( $content );
-				foreach ( $blocks as $block ) {
-					$output .= do_shortcode( render_block( $block ) );
-				}
-			} else {
-				$content = apply_filters( 'the_content', $content );
-				$content = str_replace( ']]>', ']]&gt;', $content );
-
-				return $content;
-			}
-		}
-
-		return $output;
-
-	}
-
-	// Set Builder Content For archive page
-	public function archive_page_builder_content() {
-		$archive_template_id = $this->get_template_id( 'archive' );
-		if ( $archive_template_id != '0' ) {
-			// PHPCS - should not be escaped.
-			echo self::render_build_content( $archive_template_id );// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-		}
-	}
-
-	// Set Builder Content For single post
-	public function single_post_builder_content() {
-		$archive_template_id = $this->get_template_id( 'single' );
-		if ( $archive_template_id != '0' ) {
-			// PHPCS - should not be escaped.
-			echo self::render_build_content( $archive_template_id ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-		}
-	}
-
-	public function query_filter( \WP_Query $query ) {
-		if ( ! is_admin() || ! empty( $query->query_vars['meta_key'] ) || self::POST_TYPE !== $query->get( 'post_type' ) ) {
-			return;
-		}
-
-		if ( isset( $_GET['template_type'] ) && $_GET['template_type'] != '' && $_GET['template_type'] != 'all' ) {
-			$type = isset( $_GET['template_type'] ) ? sanitize_key( $_GET['template_type'] ) : '';
-
-			$query->query_vars['meta_key']     = self::POST_TYPE_META . '_type';
-			$query->query_vars['meta_value']   = $type;
-			$query->query_vars['meta_compare'] = '=';
-		}
-	}
-
-
-	// Get Template data by id
-	public function get_post_By_id() {
-		if ( isset( $_POST ) ) {
-			if ( ! ( current_user_can( 'manage_options' ) || current_user_can( 'edit_others_posts' ) ) ) {
-				$errormessage = [
-					'message' => esc_html__( 'You are unauthorize to adding template!', 'sina-ext' )
-				];
-				wp_send_json_error( $errormessage );
-			}
-
-			$nonce = isset( $_POST['nonce'] ) ? sanitize_text_field( wp_unslash( $_POST['nonce'] ) ) : '';
-
-			if ( ! wp_verify_nonce( $nonce, 'sina_ext_tmp_nonce' ) ) {
-				$errormessage = [
-					'message' => esc_html__( 'Nonce Varification Faild !', 'sina-ext' )
-				];
-				wp_send_json_error( $errormessage );
-			}
-
-			$tmpid            = ! empty( $_POST['tmpId'] ) ? sanitize_text_field( wp_unslash( $_POST['tmpId'] ) ) : '';
-			$postdata         = get_post( $tmpid );
-			$tmpType          = ! empty( get_post_meta( $tmpid, self::POST_TYPE_META . '_type', true ) ) ? get_post_meta( $tmpid, self::POST_TYPE_META . '_type', true ) : 'single';
-			$tmpLocation      = ! empty( get_post_meta( $tmpid, self::POST_TYPE_META . '_location', true ) ) ? get_post_meta( $tmpid, self::POST_TYPE_META . '_location', true ) : '';
-			$specificsDisplay = ! empty( get_post_meta( $tmpid, self::POST_TYPE_META . '_splocation', true ) ) ? get_post_meta( $tmpid, self::POST_TYPE_META . '_splocation', true ) : '';
-			$spLocations      = [];
-
-			if ( ! empty( $specificsDisplay ) ) {
-				foreach ( json_decode( $specificsDisplay ) as $item ) {
-					$sppost               = get_post( intval( $item ) );
-					$spLocations[ $item ] = $sppost->post_title;
-				}
-			}
-
-			$data = [
-				'tmpTitle'      => $postdata->post_title,
-				'tmpType'       => $tmpType,
-				'tmpLocation'   => $tmpLocation,
-				'tmpSpLocation' => $spLocations,
-			];
-			wp_send_json_success( $data );
-		} else {
-			$errormessage = [
-				'message' => esc_html__( 'Some thing is worng !', 'sina-ext' )
-			];
-			wp_send_json_error( $errormessage );
-		}
-	}
-
-	function get_posts_by_query() {
-		if ( isset( $_POST ) ) {
-			$nonce = isset( $_POST['nonce'] ) ? sanitize_text_field( wp_unslash( $_POST['nonce'] ) ) : '';
-
-			if ( ! wp_verify_nonce( $nonce, 'sina_ext_tmp_nonce' ) ) {
-				$errormessage = [
-					'message' => esc_html__( 'Nonce Varification Faild !', 'sina-ext' )
-				];
-				wp_send_json_error( $errormessage );
-			}
-
-			$search_string 	= isset( $_POST['q'] ) ? sanitize_text_field( wp_unslash( $_POST['q'] ) ) : '';
-			$data 			= [];
-			$result			= [];
-			$args 			= [
-				'public'   => true,
-				'_builtin' => false,
-			];
-			$output     	= 'names';
-			$operator   	= 'and';
-			$post_types 	= get_post_types( $args, $output, $operator );
-
-			unset( $post_types[ self::POST_TYPE ] );
-
-			$post_types['Posts'] = 'post';
-			$post_types['Pages'] = 'page';
-
-			foreach ( $post_types as $key => $post_type ) {
-				$data = [];
-
-				add_filter( 'posts_search', [$this, 'search_only_titles'], 10, 2 );
-
-				$query = new \WP_Query(
-					[
-						's'              => $search_string,
-						'post_type'      => $post_type,
-						'posts_per_page' => - 1,
-					]
-				);
-
-				if ( $query->have_posts() ) {
-					while ( $query->have_posts() ) {
-						$query->the_post();
-						$title  = get_the_title();
-						$title  .= ( 0 != $query->post->post_parent ) ? ' (' . get_the_title( $query->post->post_parent ) . ')' : '';
-						$id     = get_the_id();
-						$data[] = [
-							'id'   => $id,
-							'text' => $title,
-						];
-					}
-				}
-
-				if ( is_array( $data ) && ! empty( $data ) ) {
-					$result[] = [
-						'text'     => $key,
-						'children' => $data,
-					];
-				}
-			}
-
-			$data = [];
-
-			wp_reset_postdata();
-
-			wp_send_json( $result );
-		} else {
-			$errormessage = [
-				'message' => esc_html__( 'Some thing is worng !', 'sina-ext' )
-			];
-			wp_send_json_error( $errormessage );
-		}
-	}
-
-	function search_only_titles( $search, $wp_query ) {
-		if ( ! empty( $search ) && ! empty( $wp_query->query_vars['search_terms'] ) ) {
-			global $wpdb;
-
-			$q = $wp_query->query_vars;
-			$n = ! empty( $q['exact'] ) ? '' : '%';
-
-			$search = [];
-
-			foreach ( (array) $q['search_terms'] as $term ) {
-				$search[] = $wpdb->prepare( "$wpdb->posts.post_title LIKE %s", $n . $wpdb->esc_like( $term ) . $n );
-			}
-
-			if ( ! is_user_logged_in() ) {
-				$search[] = "$wpdb->posts.post_password = ''";
-			}
-
-			$search = ' AND ' . implode( ' AND ', $search );
-		}
-
-		return $search;
-	}
-
-	// Template Insert
-	public function insert( $data ) {
-		$args = [
-			'post_type'   => self::POST_TYPE,
-			'post_status' => $data['tmptype'] == 'popup' ? 'draft' : 'publish',
-			'post_title'  => $data['title'],
-		];
-		$new_post_id = wp_insert_post( $args );
-
-		if ( $new_post_id ) {
-			$return = [
-				'message' => esc_html__( 'Template has been inserted', 'sina-ext' ),
-				'id'      => $new_post_id,
-			];
-
-			update_post_meta( $new_post_id, self::POST_TYPE_META . '_type', $data['tmptype'] );
-			update_post_meta( $new_post_id, self::POST_TYPE_META . '_location', $data['tmplocation'] );
-			update_post_meta( $new_post_id, '_elementor_edit_mode', 'builder' );
-			update_post_meta( $new_post_id, '_wp_page_template', 'elementor_canvas' );
-
-			if ( 'header' === $data['tmptype'] || 'footer' === $data['tmptype'] ) {
-				update_post_meta( $new_post_id, self::POST_TYPE_META . '_splocation', $data['tmpSpLocation'] );
-			}
-
-			wp_send_json_success( $return );
-
-		} else {
-			$errormessage = [
-				'message' => esc_html__( 'Some thing is worng !', 'sina-ext' )
-			];
-			wp_send_json_error( $errormessage );
-		}
-	}
-
-	// Save Template
-	public function save_template_request() {
-		if ( isset( $_POST ) ) {
-			if ( ! ( current_user_can( 'manage_options' ) || current_user_can( 'edit_others_posts' ) ) ) {
-				$errormessage = [
-					'message' => esc_html__( 'You are unauthorize to adding template!', 'sina-ext' )
-				];
-				wp_send_json_error( $errormessage );
-			}
-
-			$nonce = isset( $_POST['nonce'] ) ? sanitize_text_field( wp_unslash( $_POST['nonce'] ) ) : '';
-
-			if ( ! wp_verify_nonce( $nonce, 'sina_ext_tmp_nonce' ) ) {
-				$errormessage = [
-					'message' => esc_html__( 'Nonce Varification Faild !', 'sina-ext' )
-				];
-				wp_send_json_error( $errormessage );
-			}
-
-			$title            = ! empty( $_POST['title'] ) ? sanitize_text_field( wp_unslash( $_POST['title'] ) ) : '';
-			$tmpid            = ! empty( $_POST['tmpId'] ) ? sanitize_text_field( wp_unslash( $_POST['tmpId'] ) ) : '';
-			$tmpType          = ! empty( $_POST['tmpType'] ) ? sanitize_text_field( wp_unslash( $_POST['tmpType'] ) ) : 'single';
-			$tmplocation      = ! empty( $_POST['tmpDisplay'] ) ? sanitize_text_field( wp_unslash( $_POST['tmpDisplay'] ) ) : '';
-			$specificsDisplay = ! empty( $_POST['specificsDisplay'] ) ? sanitize_text_field( wp_unslash( $_POST['specificsDisplay'] ) ) : '';
-
-			$data = [
-				'title'         => $title,
-				'id'            => $tmpid,
-				'tmptype'       => $tmpType,
-				'tmplocation'   => $tmplocation,
-				'tmpSpLocation' => $specificsDisplay,
-			];
-
-			if ( $tmpid ) {
-				$this->update( $data );
-			} else {
-				$this->insert( $data );
-			}
-		} else {
-			$errormessage = [
-				'message' => esc_html__( 'Post request dose not found', 'sina-ext' )
-			];
-			wp_send_json_error( $errormessage );
-		}
-	}
-
-	// Template Update
-	public function update( $data ) {
-		$update_post_args = [
-			'ID'         => $data['id'],
-			'post_title' => $data['title'],
-		];
-		wp_update_post( $update_post_args );
-
-		update_post_meta( $data['id'], self::POST_TYPE_META . '_type', $data['tmptype'] );
-		update_post_meta( $data['id'], self::POST_TYPE_META . '_location', $data['tmplocation'] );
-
-		if ( 'header' === $data['tmptype'] || 'footer' === $data['tmptype'] ) {
-			update_post_meta( $data['id'], self::POST_TYPE_META . '_splocation', $data['tmpSpLocation'] );
-		} else {
-			delete_post_meta( $data['id'], self::POST_TYPE_META . '_splocation' );
-		}
-
-		$return = [
-			'message' => esc_html__( 'Template has been updated', 'sina-ext' ),
-			'id'      => $data['id']
-		];
-		wp_send_json_success( $return );
 	}
 }
 

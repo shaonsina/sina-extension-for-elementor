@@ -12,7 +12,7 @@
 					url: ajaxurl,
 					dataType: 'json',
 					method: 'post',
-					delay: 250,
+					delay: 200,
 					data: function data(params) {
 						return {
 							q: params.term,
@@ -155,7 +155,6 @@
 					} else {}
 				},
 				complete: function complete(data) {
-					$('body.post-type-woolentor-template').removeClass('loading');
 					$this.removeClass('updating-message');
 					$this.text(Sina_Ext_Theme_Builder.labels.buttons.save.saved);
 				},
