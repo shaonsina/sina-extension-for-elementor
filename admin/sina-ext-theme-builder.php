@@ -9,7 +9,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 use Elementor\Modules\Library\Documents\Library_Document;
 use Elementor\Plugin as ElementorPlugin;
 
-
 class Sina_Ext_Theme_Builder{
 	const POST_TYPE 	 = 'sina-ext-template';
 	const POST_TYPE_META = 'sina-ext-template-meta';
@@ -82,7 +81,7 @@ class Sina_Ext_Theme_Builder{
 
 			// JS Files
 			wp_enqueue_script( 'select2', SINA_EXT_URL . 'admin/assets/js/select2.min.js', ['jquery'], SINA_EXT_VERSION, true );
-			wp_enqueue_script( 'sina-ext-theme-builder', SINA_EXT_URL . 'admin/assets/js/sina-admin-theme-builder.js', ['jquery', 'wp-util'], SINA_EXT_VERSION, true );
+			wp_enqueue_script( 'sina-ext-theme-builder', SINA_EXT_URL . 'admin/assets/js/sina-admin-theme-builder.min.js', ['jquery', 'wp-util'], SINA_EXT_VERSION, true );
 
 			$localize_data = [
 				'ajaxurl'         => admin_url( 'admin-ajax.php' ),

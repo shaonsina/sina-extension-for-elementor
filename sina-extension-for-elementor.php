@@ -36,6 +36,9 @@ define('SINA_EXT_ADMIN', SINA_EXT_DIR .'/admin/');
  * @since 2.0.0
  */
 define('SINA_WIDGETS', [
+	'header_footer' => [
+		'nav-menu'				=> esc_html__( 'Sina Nav Menu', 'sina-ext' ),
+	],
 	'basic' => [
 		'accordion' 			=> esc_html__( 'Sina Accordion', 'sina-ext' ),
 		'content-box' 			=> esc_html__( 'Sina Content Box', 'sina-ext' ),

@@ -1,4 +1,4 @@
-/* Sina Extension for Elementor v3.5.1 */
+/* Sina Extension for Elementor v3.7.0 */
 
 /*--------------------------------- General -------------------------------------- */
 .sina-overlay{
@@ -239,6 +239,151 @@
 	left: 133%;
 	width: 7%;
 }
+
+/*--------------------------------- Nav Menu -------------------------------------- */
+.sina-nav-menu{
+	/*margin-top: 20px;*/
+	min-height: 60px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 9999;
+	/*background-color: rgba(256, 256, 256, 0.2);*/
+	transition: background 0.5s ease-in-out;
+}
+.sina-nav-container{
+	display: flex;
+	flex-wrap: wrap;
+	margin-right: auto;
+	margin-left: auto;
+	padding: 0 15px;
+	max-width: 1140px;
+	justify-content: space-between;
+}
+.sina-nav-toggle{
+	display: none;
+}
+.sina-nav-header h1,
+.sina-nav-header p,
+.sina-nav-toggle{
+	color: #fff;
+}
+.sina-nav-header h1{
+	margin: 8px 0 0;
+	font-size: 24px;
+	line-height: 28px;
+	font-weight: 700;
+}
+.sina-nav-header p{
+	margin: 0;
+	font-family: Montserrat, sans-serif;
+	font-size: 12px;
+	line-height: 16px;
+	font-style: italic;
+}
+.sina-nav-menu.sina-navbar-fixed.sina-navbar-freez{
+	position: fixed;
+	margin-top: 0;
+	background-color: #fff;
+	box-shadow: 0 1px 4px #eee;
+}
+.sina-navbar-fixed.sina-navbar-freez{
+	top: 0;
+}
+.sina-menu li a,
+.sina-navbar-freez .sina-nav-header h1,
+.sina-navbar-freez .sina-nav-header p,
+.sina-nav-menu.sina-navbar-fixed.sina-navbar-freez .sina-menu li a{
+	color: #222;
+}
+
+/* Menu */
+.sina-menu li a{
+	display: block;
+	position: relative;
+	padding: 13px 15px;
+	font-family: Montserrat, sans-serif;
+	font-size: 12px;
+	font-weight: 600;
+	line-height: 20px;
+	color: #222;
+	cursor: pointer;
+	text-transform: uppercase;
+	transition: all 0.3s ease-in-out;
+}
+.sina-menu > li{
+	display: inline-block;
+	position: relative;
+}
+.sina-menu > .menu-item-has-children > a{
+	padding-right: 30px;
+}
+.sina-menu .menu-item-has-children > a:before{
+	position: absolute;
+	content: "\f107";
+	right: 10px;
+	font-size: 16px;
+	font-family: 'FontAwesome';
+}
+.sina-menu .menu-item-has-children.open > a:before{
+	content: "\f106";
+}
+.sina-menu .sub-menu{
+	position: absolute;
+	display: none;
+	top: 100%;
+	left: 0;
+	z-index: 1000;
+	background-color: #fff;
+}
+.sina-menu .sub-menu li > a:hover,
+.sina-menu .sub-menu li > a:focus{
+	background-color: #fafafa;
+}
+.sina-menu .sub-menu > li{
+	border-top: solid 1px #fafafa;
+}
+
+/*Sub Menu Animation*/
+.sina-nav-fadeInLeft{
+	animation-name: sina-nav-fadeInLeft;
+}
+@keyframes sina-nav-fadeInLeft{
+	0% {
+		opacity: 0;
+		transform: translateX(-20px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+.sina-nav-fadeOut{
+	animation-name: sina-nav-fadeOut;
+}
+@keyframes sina-nav-fadeOut{
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+.sina-nav-zoomIn{
+	animation-name: sina-nav-zoomIn;
+}
+@keyframes sina-nav-zoomIn{
+	0% {
+		opacity: 0;
+		transform: scale(.3);
+	}
+	50% {
+		opacity: 1;
+	}
+}
+
+
 
 /*--------------------------------- Accordion -------------------------------------- */
 .sina-accordion-item .sina-accordion-header{
@@ -1278,6 +1423,109 @@
 }
 
 
+/* RESPONSIVE-Desktop*/
+@media (min-width: 1025px) {
+	/* Navigation */
+	.sina-nav-menu.wp-topbar{
+		top: 32px;
+	}
+	.sina-menu > li > a{
+		padding: 20px 15px;
+		color: #fff;
+	}
+	.sina-menu .sub-menu{
+		width: 200px;
+		box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.05);
+		border-radius: 0 0 10px 10px;
+		border: solid 1px #fafafa;
+		overflow: hidden;
+	}
+	.sina-menu .sub-menu > li:first-child{
+		border-top: 0;
+	}
+
+}
+
+/* RESPONSIVE-Tablet*/
+@media (max-width: 1024px) {
+	/* Navigation */
+	.sina-nav-header{
+		position: relative;
+		width: 100%;
+		text-align: center
+	}
+	.sina-nav-toggle{
+		display: inline-block;
+		position: absolute;
+		left: 0;
+		top: 18px;
+		border: 0;
+		font-size: 20px;
+		line-height: 20px;
+		cursor: pointer;
+		background-color: transparent;
+	}
+	.sina-nav-brand{
+		display: inline-block;
+	}
+	.sina-menu{
+		padding: 15px;
+	}
+	.sina-menu > li:first-child{
+		border-top: 0;
+	}
+	.sina-menu .sub-menu{
+		position: inherit;
+		padding-left: 15px;
+		width: 100%;
+	}
+	.sina-menu li{
+		display: block;
+		width: 100%;
+		border-top: solid 1px #f8f8f8;
+	}
+	.sina-menu a:hover,
+	.sina-menu a:focus{
+		background-color: #fafafa;
+	}
+	.sina-menu .menu-item-has-children > a:before{
+		content: "\f105";
+	}
+	.sina-menu .menu-item-has-children.open > a:before{
+		content: "\f107";
+	}
+
+	/* Mobile Sidebar */
+	.sina-nav-mobile-sidebar .sina-navbar-collapse{
+		position: fixed;
+		top: 0;
+		left: -280px;
+		width: 280px;
+		height: 100%;
+		max-height: 100%;
+		margin: 0;
+		padding-bottom: 60px;
+		z-index: 99;
+		overflow-x: hidden;
+		transition: all 0.3s ease-in-out;
+	}
+	.sina-nav-mobile-sidebar .sina-navbar-collapse.show{
+		left: 0;
+	}
+	.sina-nav-mobile-sidebar.wp-topbar .sina-navbar-collapse{
+		top: 32px;
+	}
+	body.sina-nav-mobile-left > .sina-nav-wrapper{
+		margin-left: 280px;
+		margin-right: -280px;
+	}
+	body > .sina-nav-wrapper{
+		position: relative;
+		transition: all 0.3s ease-in-out;
+	}
+}
+
+
 /* RESPONSIVE-Tablet*/
 @media (max-width: 991px) {
 	.sina-portfolio-item{
@@ -1302,6 +1550,14 @@
 	.sina-pt-content .sina-pt-posts,
 	.sina-pt-content-content{
 		width: 100%;
+	}
+}
+
+
+/* RESPONSIVE-Mobile*/
+@media (max-width: 782px) {
+	.sina-nav-mobile-sidebar.wp-topbar .sina-navbar-collapse{
+		top: 46px;
 	}
 }
 

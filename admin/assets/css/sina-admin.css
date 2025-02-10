@@ -1,4 +1,4 @@
-/* Sina Extension for Elementor v3.3.3 */
+/* Sina Extension for Elementor v3.7.0 */
 .sina-ext-banner{
 	padding: 50px 0;
 	margin-top: 20px;
@@ -141,6 +141,7 @@
 	box-shadow: inset 0 0 0 0 #1085e4;
 	border: 2px solid #8c8c8c;
 	border-radius: 22px;
+	cursor: pointer;
 	transition: all 200ms ease;
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
