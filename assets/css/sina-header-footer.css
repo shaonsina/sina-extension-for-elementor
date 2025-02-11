@@ -1,0 +1,226 @@
+/* Sina Extension for Elementor v3.7.0 */
+
+/*--------------------------------- General -------------------------------------- */
+.clearfix::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
+/*--------------------------------- Nav Menu -------------------------------------- */
+.sina-ext-nav{
+	min-height: 60px;
+	transition: background 0.5s ease-in-out;
+}
+.sina-ext-nav-container{
+	display: flex;
+	flex-wrap: wrap;
+	margin-right: auto;
+	margin-left: auto;
+	padding: 0 15px;
+	max-width: 1140px;
+	justify-content: space-between;
+}
+.sina-ext-nav-toggle{
+	display: none;
+}
+.sina-ext-nav-header h1,
+.sina-ext-nav-header p{
+	color: #fff;
+}
+.sina-ext-nav-header h1{
+	margin: 8px 0 0;
+	font-size: 24px;
+	line-height: 28px;
+	font-weight: 700;
+}
+.sina-ext-nav-header p{
+	margin: 0;
+	font-family: Montserrat, sans-serif;
+	font-size: 12px;
+	line-height: 16px;
+	font-style: italic;
+}
+.sina-ext-nav-absolute{
+	position: absolute;
+	/*top: 130px;*/
+	left: 0;
+	right: 0;
+	z-index: 9999;
+}
+.sina-ext-nav-fixed{
+	left: 0;
+	right: 0;
+	z-index: 9999;
+}
+.sina-ext-nav-fixed.sina-ext-nav-freez{
+	position: fixed;
+	/*top: 0;*/
+	margin-top: 0;
+	/*background-color: #fff;*/
+	/*box-shadow: 0 1px 4px #eee;*/
+}
+.sina-ext-nav-freez .sina-ext-nav-header h1,
+.sina-ext-nav-freez .sina-ext-nav-header p,
+.sina-ext-nav.sina-ext-nav-fixed.sina-ext-nav-freez .sina-ext-menu li a{
+	color: green;
+}
+
+/* Menu */
+.sina-ext-menu li a{
+	display: block;
+	position: relative;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+}
+.sina-ext-menu > li > a{
+	text-align: center;
+}
+.sina-ext-menu > li{
+	display: inline-block;
+	position: relative;
+}
+.sina-ext-menu .menu-item-has-children > a:before{
+	position: absolute;
+	font-family: 'IcoFont';
+}
+.sina-ext-menu .sub-menu{
+	position: absolute;
+	display: none;
+	top: 100%;
+	left: 0;
+	z-index: 1000;
+}
+.sina-ext-menu .sub-menu > li{
+	border-top: solid 1px;
+}
+
+/*Sub Menu Animation*/
+.sina-ext-menu-fadeInLeft{
+	animation-name: sina-ext-menu-fadeInLeft;
+}
+@keyframes sina-ext-menu-fadeInLeft{
+	0% {
+		opacity: 0;
+		transform: translateX(-20px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+.sina-ext-menu-fadeOut{
+	animation-name: sina-ext-menu-fadeOut;
+}
+@keyframes sina-ext-menu-fadeOut{
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+.sina-ext-menu-zoomIn{
+	animation-name: sina-ext-menu-zoomIn;
+}
+@keyframes sina-ext-menu-zoomIn{
+	0% {
+		opacity: 0;
+		transform: scale(.3);
+	}
+	50% {
+		opacity: 1;
+	}
+}
+
+
+
+/* RESPONSIVE-Desktop*/
+@media (min-width: 1025px) {
+	/* Navigation */
+	.sina-ext-nav.wp-topbar{
+		top: 32px;
+	}
+	.sina-ext-menu .sub-menu{
+		overflow: hidden;
+	}
+	.sina-ext-menu .sub-menu > li:first-child{
+		border-top: 0!important;
+	}
+
+}
+
+
+/* RESPONSIVE-Tablet*/
+@media (max-width: 1024px) {
+	/* Navigation */
+	.sina-ext-nav-header{
+		position: relative;
+		width: 100%;
+		text-align: center
+	}
+	.sina-ext-nav-toggle{
+		display: inline-block;
+		position: absolute;
+		line-height: 1;
+		cursor: pointer;
+	}
+	.sina-ext-nav-brand{
+		display: inline-block;
+	}
+	.sina-ext-menu{
+		padding: 15px;
+	}
+	.sina-ext-menu > li:first-child{
+		border-top: 0;
+	}
+	.sina-ext-menu .sub-menu{
+		position: inherit;
+		padding-left: 15px;
+		border: 0!important;
+		width: 100% !important;
+		box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.0)!important;
+	}
+	.sina-ext-menu li{
+		display: block;
+		width: 100%;
+		border-top: solid 1px;
+	}
+
+	/* Mobile Sidebar */
+	.sina-ext-nav-mobile-sidebar .sina-ext-nav-collapse{
+		position: fixed;
+		top: 0;
+		left: -280px;
+		width: 280px;
+		height: 100%;
+		max-height: 100%;
+		margin: 0;
+		padding-bottom: 60px;
+		z-index: 99;
+		overflow-x: hidden;
+		transition: all 0.3s ease-in-out;
+	}
+	.sina-ext-nav-mobile-sidebar .sina-ext-nav-collapse.show{
+		left: 0;
+	}
+	.sina-ext-nav-mobile-sidebar.wp-topbar .sina-ext-nav-collapse{
+		top: 32px;
+	}
+	body.sina-ext-nav-mobile-left > .sina-ext-nav-wrapper{
+		margin-left: 280px;
+		margin-right: -280px;
+	}
+	body > .sina-ext-nav-wrapper{
+		position: relative;
+		transition: all 0.3s ease-in-out;
+	}
+}
+
+
+/* RESPONSIVE-Mobile*/
+@media (max-width: 782px) {
+	.sina-ext-nav-mobile-sidebar.wp-topbar .sina-ext-nav-collapse{
+		top: 46px;
+	}
+}

@@ -890,6 +890,173 @@ class Sina_Common_Data{
 		);
 	}
 
+	public static function menu_item_style( $obj, $class = '', $prefix = 'menu_item', $separator = false) {
+		$obj->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name' => $prefix.'_typography',
+				'fields_options' => [
+					'typography' => [ 
+						'default' =>'custom', 
+					],
+					'font_size'   => [
+						'default' => [
+							'size' => '12',
+						],
+					],
+					'line_height'   => [
+						'default' => [
+							'unit' => 'px',
+							'size' => '20',
+						],
+					],
+					'font_weight' => [
+						'default' => '600',
+					],
+					'transform'   => [
+						'default' => [
+							'size' => 'uppercase',
+						],
+					],
+				],
+				'selector' => '{{WRAPPER}} '.$class,
+			]
+		);
+
+		$obj->start_controls_tabs( $prefix.'_tabs' );
+
+		$obj->start_controls_tab(
+			$prefix.'_normal',
+			[
+				'label' => esc_html__( 'Normal', 'sina-ext' ),
+			]
+		);
+		$obj->add_control(
+			$prefix.'_color',
+			[
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#222',
+				'selectors' => [
+					'{{WRAPPER}} '.$class => 'color: {{VALUE}};',
+				],
+			]
+		);
+		$obj->add_group_control(
+			Group_Control_Background::get_type(),
+			[
+				'name' => $prefix.'_bg',
+				'types' => [ 'classic', 'gradient' ],
+				'fields_options' => [
+					'background' => [ 
+						'default' =>'classic', 
+					],
+					'color' => [
+						'default' => '#fff',
+					],
+				],
+				'selector' => '{{WRAPPER}} '.$class,
+			]
+		);
+		$obj->add_group_control(
+			Group_Control_Text_Shadow::get_type(),
+			[
+				'name' => $prefix.'_tshadow',
+				'selector' => '{{WRAPPER}} '.$class,
+			]
+		);
+		$obj->add_group_control(
+			Group_Control_Box_Shadow::get_type(),
+			[
+				'name' => $prefix.'_shadow',
+				'selector' => '{{WRAPPER}} '.$class,
+			]
+		);
+		if ('desktop' == $separator) {
+			$obj->add_control(
+				$prefix.'_separator',
+				[
+					'label' => esc_html__( 'Separator Color', 'sina-ext' ),
+					'type' => Controls_Manager::COLOR,
+					'default' => '#fafafa',
+					'selectors' => [
+						'{{WRAPPER}} .sina-ext-menu .sub-menu > li' => 'border-color: {{VALUE}};',
+						'{{WRAPPER}} .show .sina-ext-menu li' => 'border-color: {{VALUE}};',
+					],
+				]
+			);
+		} else {
+			$obj->add_group_control(
+				Group_Control_Border::get_type(),
+				[
+					'name' => $prefix.'_border',
+					'selector' => '{{WRAPPER}} '.$class,
+				]
+			);
+		}
+		$obj->end_controls_tab();
+
+		$obj->start_controls_tab(
+			$prefix.'_hover',
+			[
+				'label' => esc_html__( 'Hover', 'sina-ext' ),
+			]
+		);
+		$obj->add_control(
+			$prefix.'_hover_color',
+			[
+				'label' => esc_html__( 'Text Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} '.$class.':hover' => 'color: {{VALUE}};',
+				],
+			]
+		);
+		$obj->add_group_control(
+			Group_Control_Background::get_type(),
+			[
+				'name' => $prefix.'_hover_bg',
+				'types' => [ 'classic', 'gradient' ],
+				'fields_options' => [
+					'background' => [ 
+						'default' =>'classic', 
+					],
+					'color' => [
+						'default' => '#fafafa',
+					],
+				],
+				'selector' => '{{WRAPPER}} '.$class.':hover',
+			]
+		);
+		$obj->add_group_control(
+			Group_Control_Text_Shadow::get_type(),
+			[
+				'name' => $prefix.'_hover_tshadow',
+				'selector' => '{{WRAPPER}} '.$class.':hover',
+			]
+		);
+		$obj->add_group_control(
+			Group_Control_Box_Shadow::get_type(),
+			[
+				'name' => $prefix.'_hover_shadow',
+				'selector' => '{{WRAPPER}} '.$class.':hover',
+			]
+		);
+		$obj->add_control(
+			$prefix.'_hover_border',
+			[
+				'label' => esc_html__( 'Border Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} '.$class.':hover' => 'border-color: {{VALUE}};',
+				],
+			]
+		);
+		$obj->end_controls_tab();
+
+		$obj->end_controls_tabs();
+	}
+
 	public static function button_style( $obj, $class = '', $prefix = 'btn') {
 		$obj->add_group_control(
 			Group_Control_Typography::get_type(),
@@ -912,11 +1079,6 @@ class Sina_Common_Data{
 					],
 					'font_weight' => [
 						'default' => '400',
-					],
-					'transform'   => [
-						'default' => [
-							'size' => 'uppercase',
-						],
 					],
 				],
 				'selector' => '{{WRAPPER}} '.$class,

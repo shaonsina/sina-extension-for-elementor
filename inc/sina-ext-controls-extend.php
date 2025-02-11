@@ -48,13 +48,16 @@ class Sina_Ext_Controls{
 	}
 
 	private function controls_files(){
+		require_once( SINA_EXT_INC .'controls/controls-manager.php' );
 		require_once SINA_EXT_INC .'controls/icon.php';
+		require_once SINA_EXT_INC .'controls/menu-icon.php';
 		require_once SINA_EXT_INC .'controls/gradient-text.php';
 	}
 
 	public function controls( $manager ) {
 		$manager->unregister( $manager::ICON );
 		$manager->register( new \Sina_Extension\Sina_Ext_Icon());
+		$manager->register( new \Sina_Extension\Sina_Ext_Menu_Icon());
 		$manager->add_group_control( Sina_Ext_Gradient_Text::get_type(), new \Sina_Extension\Sina_Ext_Gradient_Text());
 	}
 

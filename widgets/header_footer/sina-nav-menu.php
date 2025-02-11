@@ -9,8 +9,10 @@
 use \Elementor\Widget_Base;
 use \Elementor\Controls_Manager;
 use \Elementor\Group_Control_Typography;
+use \Elementor\Group_Control_Background;
 use \Elementor\Group_Control_Text_Shadow;
-
+use \Elementor\Group_Control_Box_Shadow;
+use \Elementor\Group_Control_Border;
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -18,7 +20,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 class Sina_Nav_Menu_Widget extends Widget_Base{
-
 	/**
 	 * Get widget name.
 	 *
@@ -75,7 +76,7 @@ class Sina_Nav_Menu_Widget extends Widget_Base{
 	 */
 	public function get_style_depends() {
 		return [
-			'sina-widgets',
+			'sina-header-footer',
 		];
 	}
 
@@ -88,8 +89,18 @@ class Sina_Nav_Menu_Widget extends Widget_Base{
 	 */
 	public function get_script_depends() {
 		return [
-			'sina-widgets',
+			'sina-header-footer',
 		];
+	}
+
+	public function get_menu_list(){
+		$list = [];
+		$menus = wp_get_nav_menus();
+		foreach($menus as $menu){
+			$list[$menu->slug] = $menu->name;
+		}
+
+		return $list;
 	}
 
 	/**
@@ -111,85 +122,606 @@ class Sina_Nav_Menu_Widget extends Widget_Base{
 				]
 			);
 
-			$this->add_responsive_control(
-				'alignment',
+			$this->add_control(
+				'nav_menu',
+				[
+					'label' => esc_html__( 'Select Menu', 'sina-ext' ),
+					'type' => Controls_Manager::SELECT,
+					'options' => $this->get_menu_list(),
+				]
+			);
+			$this->add_control(
+				'menu_alignment',
 				[
 					'label' => esc_html__( 'Alignment', 'sina-ext' ),
 					'type' => Controls_Manager::CHOOSE,
 					'options' => [
-						'left' => [
-							'title' => esc_html__( 'Left', 'sina-ext' ),
-							'icon' => 'eicon-text-align-left',
+						'flex-start' => [
+							'title' => esc_html__( 'Start', 'sina-ext' ),
+							'icon' => 'eicon-flex eicon-align-start-h',
 						],
 						'center' => [
 							'title' => esc_html__( 'Center', 'sina-ext' ),
-							'icon' => 'eicon-text-align-center',
+							'icon' => 'eicon-flex eicon-align-center-h',
 						],
-						'right' => [
-							'title' => esc_html__( 'Right', 'sina-ext' ),
-							'icon' => 'eicon-text-align-right',
+						'flex-end' => [
+							'title' => esc_html__( 'End', 'sina-ext' ),
+							'icon' => 'eicon-flex eicon-align-end-h',
+						],
+						'space-between' => [
+							'title' => esc_html__( 'Space Between', 'sina-ext' ),
+							'icon' => 'eicon-flex eicon-align-stretch-h',
 						],
 					],
 					'default' => 'center',
 					'selectors' => [
-						'{{WRAPPER}} ' => 'text-align: {{VALUE}};',
+						'{{WRAPPER}} .sina-ext-nav' => 'justify-content: {{VALUE}};',
 					],
 				]
 			);
+			$this->add_control(
+				'submenu_open_icon',
+				[
+					'label' => esc_html__( 'Submenu Open Icon', 'sina-ext' ),
+					'type' => Sina_Ext_Controls_Manager::SINA_MENU_ICON,
+					'label_block' => true,
+					'default' => 'icofont icofont-rounded-up',
+				]
+			);
+			$this->add_control(
+				'submenu_close_icon',
+				[
+					'label' => esc_html__( 'Submenu Close Icon', 'sina-ext' ),
+					'type' => Sina_Ext_Controls_Manager::SINA_MENU_ICON,
+					'label_block' => true,
+					'default' => 'icofont icofont-rounded-down',
+				]
+			);
+
 			$this->end_controls_section();
 		// End Nav Menu
 		// =============
 
-
-		// Start Nav Menu Style
-		// =====================
+		// Start Mobile Menu
+		// ==================
 			$this->start_controls_section(
-				'nav_menu_style',
+				'mobile_menu_content',
 				[
-					'label' => esc_html__( 'Nav Menu', 'sina-ext' ),
+					'label' => esc_html__( 'Tablet and Mobile Menu', 'sina-ext' ),
+					'tab' => Controls_Manager::TAB_CONTENT,
+				]
+			);
+
+			$this->add_control(
+				'mobile_menu_open_icon',
+				[
+					'label' => esc_html__( 'Menu Open Icon', 'sina-ext' ),
+					'type' => Controls_Manager::ICON,
+					'label_block' => true,
+					'default' => 'icofont icofont-navigation-menu',
+				]
+			);
+			$this->add_control(
+				'mobile_menu_close_icon',
+				[
+					'label' => esc_html__( 'Menu Close Icon', 'sina-ext' ),
+					'type' => Controls_Manager::ICON,
+					'label_block' => true,
+					'default' => 'icofont icofont-close',
+				]
+			);
+			$this->add_control(
+				'mobile_submenu_open_icon',
+				[
+					'label' => esc_html__( 'Submenu Open Icon', 'sina-ext' ),
+					'type' => Sina_Ext_Controls_Manager::SINA_MENU_ICON,
+					'label_block' => true,
+					'default' => 'icofont icofont-rounded-down',
+				]
+			);
+			$this->add_control(
+				'mobile_submenu_close_icon',
+				[
+					'label' => esc_html__( 'Submenu Close Icon', 'sina-ext' ),
+					'type' => Sina_Ext_Controls_Manager::SINA_MENU_ICON,
+					'label_block' => true,
+					'default' => 'icofont icofont-rounded-right',
+				]
+			);
+
+			$this->end_controls_section();
+		// End Mobile Menu
+		// ================
+
+
+		// Start Nav Container Style
+		// ==========================
+			$this->start_controls_section(
+				'nav_style',
+				[
+					'label' => esc_html__( 'Nav Container', 'sina-ext' ),
+					'tab' => Controls_Manager::TAB_STYLE,
+				]
+			);
+
+			$this->add_group_control(
+				Group_Control_Background::get_type(),
+				[
+					'name' => 'nav_bg',
+					'types' => [ 'classic', 'gradient' ],
+					'selector' => '{{WRAPPER}} .sina-ext-nav',
+				]
+			);
+			$this->add_group_control(
+				Group_Control_Box_Shadow::get_type(),
+				[
+					'name' => 'nav_shadow',
+					'selector' => '{{WRAPPER}} .sina-ext-nav',
+				]
+			);
+			$this->add_group_control(
+				Group_Control_Border::get_type(),
+				[
+					'name' => 'nav_border',
+					'selector' => '{{WRAPPER}} .sina-ext-nav',
+				]
+			);
+			$this->add_responsive_control(
+				'nav_radius',
+				[
+					'label' => esc_html__( 'Radius', 'sina-ext' ),
+					'type' => Controls_Manager::DIMENSIONS,
+					'size_units' => [ 'px', 'em', '%' ],
+					'selectors' => [
+						'{{WRAPPER}} .sina-ext-nav' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					],
+				]
+			);
+			$this->add_responsive_control(
+				'nav_padding',
+				[
+					'label' => esc_html__( 'Padding', 'sina-ext' ),
+					'type' => Controls_Manager::DIMENSIONS,
+					'size_units' => [ 'px', 'em', '%' ],
+					'selectors' => [
+						'{{WRAPPER}} .sina-ext-nav' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					],
+				]
+			);
+			$this->add_responsive_control(
+				'nav_margin',
+				[
+					'label' => esc_html__( 'Margin', 'sina-ext' ),
+					'type' => Controls_Manager::DIMENSIONS,
+					'size_units' => [ 'px', 'em', '%' ],
+					'selectors' => [
+						'{{WRAPPER}} .sina-ext-nav' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					],
+				]
+			);
+
+			$this->end_controls_section();
+		// End Nav Container Style
+		// ========================
+
+		// Start Menu Item Style
+		// ======================
+			$this->start_controls_section(
+				'menu_item_style',
+				[
+					'label' => esc_html__( 'Menu Item', 'sina-ext' ),
+					'tab' => Controls_Manager::TAB_STYLE,
+				]
+			);
+
+			Sina_Common_Data::menu_item_style( $this, '.sina-ext-menu > li > a' );
+
+			$this->add_responsive_control(
+				'menu_item_width',
+				[
+					'label' => esc_html__( 'Min Width', 'sina-ext' ),
+					'type' => Controls_Manager::SLIDER,
+					'size_units' => [ 'px', 'em', '%' ],
+					'range' => [
+						'px' => [
+							'min' => 0,
+							'max' => 1000,
+						],
+						'em' => [
+							'min' => 0,
+							'max' => 100,
+						],
+						'%' => [
+							'min' => 0,
+							'max' => 100,
+						],
+					],
+					'separator' => 'before',
+					'selectors' => [
+						'{{WRAPPER}} .sina-ext-menu > li > a' => 'min-width: {{SIZE}}{{UNIT}};',
+					],
+				]
+			);
+			$this->add_responsive_control(
+				'menu_item_radius',
+				[
+					'label' => esc_html__( 'Radius', 'sina-ext' ),
+					'type' => Controls_Manager::DIMENSIONS,
+					'size_units' => [ 'px', 'em', '%' ],
+					'selectors' => [
+						'{{WRAPPER}} .sina-ext-menu > li > a' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					],
+				]
+			);
+			$this->add_responsive_control(
+				'menu_item_padding',
+				[
+					'label' => esc_html__( 'Padding', 'sina-ext' ),
+					'type' => Controls_Manager::DIMENSIONS,
+					'size_units' => [ 'px', 'em', '%' ],
+					'default' => [
+						'top' => '20',
+						'right' => '15',
+						'bottom' => '20',
+						'left' => '15',
+						'isLinked' => false,
+					],
+					'selectors' => [
+						'{{WRAPPER}} .sina-ext-menu > li > a' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					],
+				]
+			);
+
+			$this->add_control(
+				'submenu_indicator_style',
+				[
+					'label' => esc_html__( 'Submenu Indicator', 'sina-ext' ),
+					'type' => Controls_Manager::HEADING,
+					'separator' => 'before',
+				]
+			);
+
+			$this->add_responsive_control(
+				'submenu_indicator_size',
+				[
+					'label' => esc_html__( 'Font Size', 'sina-ext' ),
+					'type' => Controls_Manager::SLIDER,
+					'default' => [
+						'size' => '16',
+					],
+					'separator' => 'before',
+					'selectors' => [
+						'{{WRAPPER}} .sina-ext-menu .menu-item-has-children > a:before' => 'font-size: {{SIZE}}{{UNIT}};',
+					],
+				]
+			);
+			$this->add_responsive_control(
+				'submenu_indicator_space',
+				[
+					'label' => esc_html__( 'Spacing', 'sina-ext' ),
+					'type' => Controls_Manager::SLIDER,
+					'default' => [
+						'size' => '6',
+					],
+					'selectors' => [
+						'{{WRAPPER}} .sina-ext-menu .menu-item-has-children > a:before' => 'right: {{SIZE}}{{UNIT}};',
+						'.rtl {{WRAPPER}} .sina-ext-menu .menu-item-has-children > a:before' => 'left: {{SIZE}}{{UNIT}};',
+						'.rtl {{WRAPPER}} .sina-ext-menu .menu-item-has-children > a:before' => 'right: inherit;',
+					],
+				]
+			);
+			$this->add_responsive_control(
+				'submenu_indicator_padding',
+				[
+					'label' => esc_html__( 'Submenu Item Padding', 'sina-ext' ),
+					'type' => Controls_Manager::DIMENSIONS,
+					'size_units' => [ 'px', 'em', '%' ],
+					'default' => [
+						'top' => '20',
+						'right' => '30',
+						'bottom' => '20',
+						'left' => '15',
+						'isLinked' => false,
+					],
+					'selectors' => [
+						'{{WRAPPER}} .sina-ext-menu > .menu-item-has-children > a' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					],
+				]
+			);
+
+			$this->end_controls_section();
+		// End Menu Item Style
+		// ====================
+
+		// Start Submenu Container Style
+		// ==============================
+			$this->start_controls_section(
+				'submenu_style',
+				[
+					'label' => esc_html__( 'Submenu Container', 'sina-ext' ),
+					'tab' => Controls_Manager::TAB_STYLE,
+				]
+			);
+
+			$this->add_responsive_control(
+				'submenu_width',
+				[
+					'label' => esc_html__( 'Width', 'sina-ext' ),
+					'type' => Controls_Manager::SLIDER,
+					'size_units' => [ 'px', 'em', '%' ],
+					'range' => [
+						'px' => [
+							'min' => 0,
+							'max' => 1000,
+						],
+						'em' => [
+							'min' => 0,
+							'max' => 100,
+						],
+						'%' => [
+							'min' => 0,
+							'max' => 100,
+						],
+					],
+					'default' => [
+						'unit' => 'px',
+						'size' => 200,
+					],
+					'selectors' => [
+						'{{WRAPPER}} .sina-ext-menu .sub-menu' => 'width: {{SIZE}}{{UNIT}};',
+					],
+				]
+			);
+			$this->add_group_control(
+				Group_Control_Background::get_type(),
+				[
+					'name' => 'submenu_bg',
+					'types' => [ 'classic', 'gradient' ],
+					'fields_options' => [
+						'background' => [ 
+							'default' =>'classic', 
+						],
+						'color' => [
+							'default' => '#fff',
+						],
+					],
+					'selector' => '{{WRAPPER}} .sina-ext-menu .sub-menu',
+				]
+			);
+			$this->add_group_control(
+				Group_Control_Box_Shadow::get_type(),
+				[
+					'name' => 'submenu_shadow',
+					'selector' => '{{WRAPPER}} .sina-ext-menu .sub-menu',
+				]
+			);
+			$this->add_group_control(
+				Group_Control_Border::get_type(),
+				[
+					'name' => 'submenu_border',
+					'fields_options' => [
+						'border' => [
+							'default' => 'solid',
+						],
+						'color' => [
+							'default' => '#fafafa',
+						],
+						'width' => [
+							'default' => [
+								'top' => '1',
+								'right' => '1',
+								'bottom' => '1',
+								'left' => '1',
+								'isLinked' => true,
+							]
+						],
+					],
+					'selector' => '{{WRAPPER}} .sina-ext-menu .sub-menu',
+				]
+			);
+			$this->add_responsive_control(
+				'submenu_radius',
+				[
+					'label' => esc_html__( 'Radius', 'sina-ext' ),
+					'type' => Controls_Manager::DIMENSIONS,
+					'size_units' => [ 'px', 'em', '%' ],
+					'default' => [
+						'top' => '0',
+						'right' => '0',
+						'bottom' => '10',
+						'left' => '10',
+						'isLinked' => false,
+					],
+					'selectors' => [
+						'{{WRAPPER}} .sina-ext-menu .sub-menu' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					],
+				]
+			);
+			$this->add_responsive_control(
+				'submenu_padding',
+				[
+					'label' => esc_html__( 'Padding', 'sina-ext' ),
+					'type' => Controls_Manager::DIMENSIONS,
+					'size_units' => [ 'px', 'em', '%' ],
+					'selectors' => [
+						'{{WRAPPER}} .sina-ext-menu .sub-menu' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					],
+				]
+			);
+
+			$this->end_controls_section();
+		// End Submenu Container Style
+		// ============================
+
+		// Start Submenu Style
+		// ====================
+			$this->start_controls_section(
+				'submenu_item_style',
+				[
+					'label' => esc_html__( 'Submenu Item', 'sina-ext' ),
+					'tab' => Controls_Manager::TAB_STYLE,
+				]
+			);
+
+			Sina_Common_Data::menu_item_style( $this, '.sina-ext-menu .sub-menu li > a', 'submenu_item', 'desktop' );
+
+			$this->add_responsive_control(
+				'submenu_item_padding',
+				[
+					'label' => esc_html__( 'Padding', 'sina-ext' ),
+					'type' => Controls_Manager::DIMENSIONS,
+					'size_units' => [ 'px', 'em', '%' ],
+					'default' => [
+						'top' => '13',
+						'right' => '15',
+						'bottom' => '13',
+						'left' => '15',
+						'isLinked' => false,
+					],
+					'selectors' => [
+						'{{WRAPPER}} .sina-ext-menu .sub-menu li > a' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					],
+				]
+			);
+
+			$this->end_controls_section();
+		// End Submenu Style
+		// ==================
+
+		// Start Mobile Menu Toggle Style
+		// ===============================
+			$this->start_controls_section(
+				'mobile_menu_style',
+				[
+					'label' => esc_html__( 'Mobile Menu Toogle', 'sina-ext' ),
 					'tab' => Controls_Manager::TAB_STYLE,
 				]
 			);
 
 			$this->add_control(
-				'text_color',
+				'mobile_menu_toggle_color',
 				[
-					'label' => esc_html__( 'Text Color', 'sina-ext' ),
+					'label' => esc_html__( 'Color', 'sina-ext' ),
 					'type' => Controls_Manager::COLOR,
-					'default' => '#1085e4',
+					'default' => '#fff',
 					'selectors' => [
-						'{{WRAPPER}} ' => 'color: {{VALUE}};',
+						'{{WRAPPER}} .sina-ext-nav-toggle' => 'color: {{VALUE}};',
+					],
+				]
+			);
+			$this->add_control(
+				'mobile_menu_toggle_background',
+				[
+					'label' => esc_html__( 'Background', 'sina-ext' ),
+					'type' => Controls_Manager::COLOR,
+					'default' => '#00000000',
+					'selectors' => [
+						'{{WRAPPER}} .sina-ext-nav-toggle' => 'background: {{VALUE}};',
+					],
+				]
+			);
+			$this->add_responsive_control(
+				'mobile_menu_toggle_size',
+				[
+					'label' => esc_html__( 'Size', 'sina-ext' ),
+					'type' => Controls_Manager::SLIDER,
+					'size_units' => [ 'px' ],
+					'range' => [
+						'px' => [
+							'min' => 0,
+							'max' => 1000,
+						],
+					],
+					'default' => [
+						'unit' => 'px',
+						'size' => 20,
+					],
+					'selectors' => [
+						'{{WRAPPER}} .sina-ext-nav-toggle' => 'font-size: {{SIZE}}{{UNIT}};',
+					],
+				]
+			);
+			$this->add_responsive_control(
+				'mobile_menu_toggle_left',
+				[
+					'label' => esc_html__( 'Left', 'sina-ext' ),
+					'type' => Controls_Manager::SLIDER,
+					'size_units' => [ 'px' ],
+					'range' => [
+						'px' => [
+							'min' => 0,
+							'max' => 1000,
+						],
+					],
+					'default' => [
+						'unit' => 'px',
+						'size' => 0,
+					],
+					'selectors' => [
+						'{{WRAPPER}} .sina-ext-nav-toggle' => 'left: {{SIZE}}{{UNIT}};',
+					],
+				]
+			);
+			$this->add_responsive_control(
+				'mobile_menu_toggle_top',
+				[
+					'label' => esc_html__( 'Top', 'sina-ext' ),
+					'type' => Controls_Manager::SLIDER,
+					'size_units' => [ 'px' ],
+					'range' => [
+						'px' => [
+							'min' => 0,
+							'max' => 1000,
+						],
+					],
+					'default' => [
+						'unit' => 'px',
+						'size' => 18,
+					],
+					'selectors' => [
+						'{{WRAPPER}} .sina-ext-nav-toggle' => 'top: {{SIZE}}{{UNIT}};',
 					],
 				]
 			);
 			$this->add_group_control(
-				Group_Control_Typography::get_type(),
+				Group_Control_Border::get_type(),
 				[
-					'name' => 'text_typography',
+					'name' => 'mobile_menu_toggle_border',
 					'fields_options' => [
-						'typography' => [ 
-							'default' =>'custom', 
+						'border' => [
+							'default' => 'solid',
 						],
-						'font_weight' => [
-							'default' => '600',
+						'color' => [
+							'default' => '#fff',
 						],
-						'font_size'   => [
+						'width' => [
 							'default' => [
-								'size' => '24',
-							],
-						],
-						'line_height'   => [
-							'default' => [
-								'size' => '32',
-							],
+								'top' => '0',
+								'right' => '0',
+								'bottom' => '0',
+								'left' => '0',
+								'isLinked' => true,
+							]
 						],
 					],
-					'selector' => '{{WRAPPER}} ',
+					'selector' => '{{WRAPPER}} .sina-ext-nav-toggle',
 				]
 			);
+			$this->add_responsive_control(
+				'mobile_menu_toggle_padding',
+				[
+					'label' => esc_html__( 'Padding', 'sina-ext' ),
+					'type' => Controls_Manager::DIMENSIONS,
+					'size_units' => [ 'px', ],
+					'selectors' => [
+						'{{WRAPPER}} .sina-ext-nav-toggle' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					],
+				]
+			);
+
 			$this->end_controls_section();
-		// End Nav Menu Style
-		// ===================
+		// End Mobile Menu Toggle Style
+		// =============================
 	}
 
 
@@ -197,27 +729,66 @@ class Sina_Nav_Menu_Widget extends Widget_Base{
 		$data 			= $this->get_settings_for_display();
 		$nav_classes	= !is_customize_preview() && is_admin_bar_showing() ? 'wp-topbar ' : '';
 		$args 			= [
-			// 'menu'                   => $settings['nav_menu'],
-			'fallback_cb'            => 'wp_page_menu',
-			'container_class'	=> 'sina-navbar-collapse',
-			'items_wrap'		=> '<ul class="sina-menu sina-menu-right" data-in="sina-nav-fadeInLeft" data-out="sina-nav-fadeOutLeft">%3$s</ul>',
+			'menu'				=> $data['nav_menu'],
+			'fallback_cb'		=> 'wp_page_menu',
+			'container_class'	=> 'sina-ext-nav-collapse',
+			'items_wrap'		=> '<ul class="sina-ext-menu" data-in="sina-ext-menu-fadeInLeft" data-out="sina-ext-menu-fadeOutLeft">%3$s</ul>',
+		];
+		$menu_list_icons = [
+			'icofont icofont-arrow-down' => '"\ea5b"',
+			'icofont icofont-arrow-left' => '"\ea5c"',
+			'icofont icofont-arrow-right' => '"\ea5d"',
+			'icofont icofont-arrow-up' => '"\ea5e"',
+			'icofont icofont-caret-down' => '"\ea67"',
+			'icofont icofont-caret-left' => '"\ea68"',
+			'icofont icofont-caret-right' => '"\ea69"',
+			'icofont icofont-caret-up' => '"\ea6a"',
+			'icofont icofont-rounded-down' => '"\ea99"',
+			'icofont icofont-rounded-left' => '"\ea9d"',
+			'icofont icofont-rounded-right' => '"\eaa0"',
+			'icofont icofont-rounded-up' => '"\eaa1"',
+			'icofont icofont-simple-down' => '"\eab2"',
+			'icofont icofont-simple-left' => '"\eab5"',
+			'icofont icofont-simple-right' => '"\eab8"',
+			'icofont icofont-simple-up' => '"\eab9"',
+			'icofont icofont-swoosh-down' => '"\eac2"',
+			'icofont icofont-swoosh-left' => '"\eac3"',
+			'icofont icofont-swoosh-right' => '"\eac4"',
+			'icofont icofont-swoosh-up' => '"\eac5"',
+			'icofont icofont-double-left' => '"\ea7b"',
+			'icofont icofont-double-right' => '"\ea7c"',
+			'icofont icofont-rounded-double-left' => '"\ea97"',
+			'icofont icofont-rounded-double-right' => '"\ea98"',
+			'icofont icofont-plus' => '"\efc2"',
+			'icofont icofont-minus' => '"\ef9a"',
 		];
 		?>
-		<nav class="sina-nav-menu sina-nav-mobile-sidebar sina-navbar-fixed <?php echo esc_attr($nav_classes); ?>" data-top="64">
-			<div class="sina-nav-container">
-				<div class="sina-nav-header">
-					<button type="button" class="sina-nav-toggle">
-						<i class="fa fa-bars"></i>
+		<style type="text/css">
+			.sina-ext-menu .menu-item-has-children > a:before{content: <?php echo $menu_list_icons[ $data['submenu_close_icon'] ] ?>;}
+			.sina-ext-menu .menu-item-has-children.open > a:before{content: <?php echo $menu_list_icons[ $data['submenu_open_icon'] ] ?>;}
+			@media (max-width: 1024px) {
+				.sina-ext-menu .menu-item-has-children > a:before{content: <?php echo $menu_list_icons[ $data['mobile_submenu_close_icon'] ] ?>;}
+				.sina-ext-menu .menu-item-has-children.open > a:before{content: <?php echo $menu_list_icons[ $data['mobile_submenu_open_icon'] ] ?>;}
+			}
+		</style>
+		<nav class="sina-ext-nav sina-ext-nav-mobile-sidebar sina-ext-nav-fixed sina-ext-nav-absolute <?php echo esc_attr($nav_classes); ?>"
+			data-top="0">
+			<div class="sina-ext-nav-container">
+				<div class="sina-ext-nav-header">
+					<button type="button" class="sina-ext-nav-toggle"
+					data-open="<?php echo esc_attr( $data['mobile_menu_open_icon'] ) ?>"
+					data-close="<?php echo esc_attr( $data['mobile_menu_close_icon'] ) ?>">
+						<i class="toggle-icon <?php echo esc_attr( $data['mobile_menu_open_icon'] ) ?>"></i>
 					</button>
 
-					<a class="sina-nav-brand" href="https://sinaextra.com">
+					<a class="sina-ext-nav-brand" href="https://sinaextra.com">
 						<h1>Sina Extra</h1>
 						<p>Quality Plugins House</p>
 					</a>
 				</div>
 				<?php wp_nav_menu( $args ); ?>
 			</div>
-		</nav><!-- .sina-nav-menu -->
+		</nav><!-- .sina-ext-nav -->
 		<?php
 	}
 
