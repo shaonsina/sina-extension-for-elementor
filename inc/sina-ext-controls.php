@@ -47,7 +47,6 @@ class Sina_Common_Data{
 	}
 
 	public static function BG_hover_effects( $obj, $class, $prefix = 'bg_layer' ) {
-
 		$obj->add_control(
 			$prefix.'_styles',
 			[
@@ -98,7 +97,6 @@ class Sina_Common_Data{
 	}
 
 	public static function BG_hover_effects_alt( $obj, $class, $prefix = 'bg_layer' ) {
-
 		$obj->add_control(
 			$prefix.'_styles',
 			[
@@ -416,7 +414,6 @@ class Sina_Common_Data{
 	}
 
 	public static function button_content( $obj, $class = '', $btn_text = 'Learn More', $prefix = 'btn', $cond = true, $tooltip = false ) {
-
 		$obj->add_control(
 			$prefix.'_text',
 			[
@@ -1042,16 +1039,30 @@ class Sina_Common_Data{
 				'selector' => '{{WRAPPER}} '.$class.':hover',
 			]
 		);
-		$obj->add_control(
-			$prefix.'_hover_border',
-			[
-				'label' => esc_html__( 'Border Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} '.$class.':hover' => 'border-color: {{VALUE}};',
-				],
-			]
-		);
+		if ('desktop' == $separator) {
+			$obj->add_control(
+				$prefix.'_hover_separator',
+				[
+					'label' => esc_html__( 'Separator Color', 'sina-ext' ),
+					'type' => Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .sina-ext-menu .sub-menu > li:hover' => 'border-color: {{VALUE}};',
+						'{{WRAPPER}} .show .sina-ext-menu li:hover' => 'border-color: {{VALUE}};',
+					],
+				]
+			);
+		} else {
+			$obj->add_control(
+				$prefix.'_hover_border',
+				[
+					'label' => esc_html__( 'Border Color', 'sina-ext' ),
+					'type' => Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} '.$class.':hover' => 'border-color: {{VALUE}};',
+					],
+				]
+			);
+		}
 		$obj->end_controls_tab();
 
 		$obj->end_controls_tabs();

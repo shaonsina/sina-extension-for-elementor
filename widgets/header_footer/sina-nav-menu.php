@@ -76,7 +76,7 @@ class Sina_Nav_Menu_Widget extends Widget_Base{
 	 */
 	public function get_style_depends() {
 		return [
-			'sina-header-footer',
+			'sina-widgets',
 		];
 	}
 
@@ -89,7 +89,7 @@ class Sina_Nav_Menu_Widget extends Widget_Base{
 	 */
 	public function get_script_depends() {
 		return [
-			'sina-header-footer',
+			'sina-widgets',
 		];
 	}
 
@@ -128,35 +128,6 @@ class Sina_Nav_Menu_Widget extends Widget_Base{
 					'label' => esc_html__( 'Select Menu', 'sina-ext' ),
 					'type' => Controls_Manager::SELECT,
 					'options' => $this->get_menu_list(),
-				]
-			);
-			$this->add_control(
-				'menu_alignment',
-				[
-					'label' => esc_html__( 'Alignment', 'sina-ext' ),
-					'type' => Controls_Manager::CHOOSE,
-					'options' => [
-						'flex-start' => [
-							'title' => esc_html__( 'Start', 'sina-ext' ),
-							'icon' => 'eicon-flex eicon-align-start-h',
-						],
-						'center' => [
-							'title' => esc_html__( 'Center', 'sina-ext' ),
-							'icon' => 'eicon-flex eicon-align-center-h',
-						],
-						'flex-end' => [
-							'title' => esc_html__( 'End', 'sina-ext' ),
-							'icon' => 'eicon-flex eicon-align-end-h',
-						],
-						'space-between' => [
-							'title' => esc_html__( 'Space Between', 'sina-ext' ),
-							'icon' => 'eicon-flex eicon-align-stretch-h',
-						],
-					],
-					'default' => 'center',
-					'selectors' => [
-						'{{WRAPPER}} .sina-ext-nav' => 'justify-content: {{VALUE}};',
-					],
 				]
 			);
 			$this->add_control(
@@ -368,6 +339,30 @@ class Sina_Nav_Menu_Widget extends Widget_Base{
 					],
 					'selectors' => [
 						'{{WRAPPER}} .sina-ext-menu > li > a' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					],
+				]
+			);
+			$this->add_responsive_control(
+				'menu_item_alignment',
+				[
+					'label' => esc_html__( 'Alignment', 'sina-ext' ),
+					'type' => Controls_Manager::CHOOSE,
+					'options' => [
+						'left' => [
+							'title' => esc_html__( 'Left', 'sina-ext' ),
+							'icon' => 'eicon-text-align-left',
+						],
+						'center' => [
+							'title' => esc_html__( 'Center', 'sina-ext' ),
+							'icon' => 'eicon-text-align-center',
+						],
+						'right' => [
+							'title' => esc_html__( 'Right', 'sina-ext' ),
+							'icon' => 'eicon-text-align-right',
+						],
+					],
+					'selectors' => [
+						'{{WRAPPER}} .sina-ext-menu > li > a' => 'text-align: {{VALUE}};',
 					],
 				]
 			);
@@ -583,6 +578,30 @@ class Sina_Nav_Menu_Widget extends Widget_Base{
 					],
 				]
 			);
+			$this->add_responsive_control(
+				'submenu_item_alignment',
+				[
+					'label' => esc_html__( 'Alignment', 'sina-ext' ),
+					'type' => Controls_Manager::CHOOSE,
+					'options' => [
+						'left' => [
+							'title' => esc_html__( 'Left', 'sina-ext' ),
+							'icon' => 'eicon-text-align-left',
+						],
+						'center' => [
+							'title' => esc_html__( 'Center', 'sina-ext' ),
+							'icon' => 'eicon-text-align-center',
+						],
+						'right' => [
+							'title' => esc_html__( 'Right', 'sina-ext' ),
+							'icon' => 'eicon-text-align-right',
+						],
+					],
+					'selectors' => [
+						'{{WRAPPER}} .sina-ext-menu .sub-menu li > a' => 'text-align: {{VALUE}};',
+					],
+				]
+			);
 
 			$this->end_controls_section();
 		// End Submenu Style
@@ -603,7 +622,7 @@ class Sina_Nav_Menu_Widget extends Widget_Base{
 				[
 					'label' => esc_html__( 'Color', 'sina-ext' ),
 					'type' => Controls_Manager::COLOR,
-					'default' => '#fff',
+					'default' => '#222',
 					'selectors' => [
 						'{{WRAPPER}} .sina-ext-nav-toggle' => 'color: {{VALUE}};',
 					],
@@ -771,23 +790,13 @@ class Sina_Nav_Menu_Widget extends Widget_Base{
 				.sina-ext-menu .menu-item-has-children.open > a:before{content: <?php echo $menu_list_icons[ $data['mobile_submenu_open_icon'] ] ?>;}
 			}
 		</style>
-		<nav class="sina-ext-nav sina-ext-nav-mobile-sidebar sina-ext-nav-fixed sina-ext-nav-absolute <?php echo esc_attr($nav_classes); ?>"
-			data-top="0">
-			<div class="sina-ext-nav-container">
-				<div class="sina-ext-nav-header">
-					<button type="button" class="sina-ext-nav-toggle"
-					data-open="<?php echo esc_attr( $data['mobile_menu_open_icon'] ) ?>"
-					data-close="<?php echo esc_attr( $data['mobile_menu_close_icon'] ) ?>">
-						<i class="toggle-icon <?php echo esc_attr( $data['mobile_menu_open_icon'] ) ?>"></i>
-					</button>
-
-					<a class="sina-ext-nav-brand" href="https://sinaextra.com">
-						<h1>Sina Extra</h1>
-						<p>Quality Plugins House</p>
-					</a>
-				</div>
-				<?php wp_nav_menu( $args ); ?>
-			</div>
+		<nav class="sina-ext-nav sina-ext-nav-mobile-sidebar <?php echo esc_attr($nav_classes); ?>">
+			<button type="button" class="sina-ext-nav-toggle"
+			data-open="<?php echo esc_attr( $data['mobile_menu_open_icon'] ) ?>"
+			data-close="<?php echo esc_attr( $data['mobile_menu_close_icon'] ) ?>">
+				<i class="toggle-icon <?php echo esc_attr( $data['mobile_menu_open_icon'] ) ?>"></i>
+			</button>
+			<?php wp_nav_menu( $args ); ?>
 		</nav><!-- .sina-ext-nav -->
 		<?php
 	}

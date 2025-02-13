@@ -9,11 +9,10 @@
 			var $body 		= $('body');
 			var $getNav		= $(this);
 			var $menu 		= $getNav.find('.sina-ext-menu');
-			var $collapse 	= $('.sina-ext-nav-collapse');
-			var $navToggle 	= $('.sina-ext-nav-toggle');
+			var $collapse 	= $getNav.find('.sina-ext-nav-collapse');
+			var $navToggle 	= $getNav.find('.sina-ext-nav-toggle');
 			var $open_icon  = $navToggle.data('open');
 			var $close_icon = $navToggle.data('close');
-			var top 		= $getNav.data('top') || $getNav.offset().top;
 			var getIn 		= $menu.data('in');
 			var getOut 		= $menu.data('out');
 
@@ -43,32 +42,6 @@
 					$('.sub-menu', dropdown).eq(0).toggleClass(getIn).stop().fadeToggle().toggleClass(getOut);
 					$(dropdown).toggleClass('open');
 				});
-			}
-			
-
-			// Navbar Fixed
-			// ---------------------------------
-			function freezNav() {
-				var scrollTop = $(window).scrollTop();
-				var winWidth  = $(window).outerWidth();
-
-				if( winWidth > 1024 && scrollTop > top ){
-					$getNav.addClass('sina-ext-nav-freez');
-				} else {
-					$getNav.removeClass('sina-ext-nav-freez');
-				}
-			}
-			if( $getNav.hasClass('sina-ext-nav-fixed') ){
-				$(window).on('scroll', function(){
-					freezNav();
-				});
-				$(window).on('resize', function(){
-					freezNav();
-				});
-
-				if ( getWindow > 1024 && $(window).scrollTop() > top ) {
-					$getNav.addClass('sina-ext-nav-freez');
-				}
 			}
 
 

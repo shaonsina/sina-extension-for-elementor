@@ -128,6 +128,7 @@ define('SINA_WIDGETS', [
  */
 define('SINA_EXTENDERS', [
 	'pro' => [
+		'sticky'				=> esc_html__( 'Sina Pro Sticky', 'sina-ext' ),
 		'masker'				=> esc_html__( 'Sina Pro Masker', 'sina-ext' ),
 		'parallax'				=> esc_html__( 'Sina Pro Parallax', 'sina-ext' ),
 		'section-particles'		=> esc_html__( 'Sina Pro Section Particles', 'sina-ext' ),
@@ -137,6 +138,7 @@ define('SINA_EXTENDERS', [
 		'water-ripples'			=> esc_html__( 'Sina Pro Water Ripples', 'sina-ext' ),
 		'conditional-publish'	=> esc_html__( 'Sina Pro Conditional Publish', 'sina-ext' ),
 		'content-protection'	=> esc_html__( 'Sina Pro Content Protection', 'sina-ext' ),
+		'preloader'				=> esc_html__( 'Sina Pro Preloader', 'sina-ext' ),
 		'preloader'				=> esc_html__( 'Sina Pro Preloader', 'sina-ext' ),
 		'reading-progressbar'	=> esc_html__( 'Sina Pro Reading Progressbar', 'sina-ext' ),
 	],
