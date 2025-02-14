@@ -148,6 +148,26 @@ class Sina_Nav_Menu_Widget extends Widget_Base{
 					'default' => 'icofont icofont-rounded-down',
 				]
 			);
+			$this->add_control(
+				'submenu_anim_in',
+				[
+					'label' => esc_html__( 'Submenu Animation In', 'sina-ext' ),
+					'type' => Controls_Manager::SELECT,
+					'label_block' => true,
+					'default' => 'fadeInLeft',
+					'options' => Sina_Common_Data::animation(),
+				]
+			);
+			$this->add_control(
+				'submenu_anim_out',
+				[
+					'label' => esc_html__( 'Submenu Animation Out', 'sina-ext' ),
+					'type' => Controls_Manager::SELECT,
+					'label_block' => true,
+					'default' => 'fadeOut',
+					'options' => Sina_Common_Data::animation_out(),
+				]
+			);
 
 			$this->end_controls_section();
 		// End Nav Menu
@@ -205,82 +225,12 @@ class Sina_Nav_Menu_Widget extends Widget_Base{
 		// ================
 
 
-		// Start Nav Container Style
-		// ==========================
-			$this->start_controls_section(
-				'nav_style',
-				[
-					'label' => esc_html__( 'Nav Container', 'sina-ext' ),
-					'tab' => Controls_Manager::TAB_STYLE,
-				]
-			);
-
-			$this->add_group_control(
-				Group_Control_Background::get_type(),
-				[
-					'name' => 'nav_bg',
-					'types' => [ 'classic', 'gradient' ],
-					'selector' => '{{WRAPPER}} .sina-ext-nav',
-				]
-			);
-			$this->add_group_control(
-				Group_Control_Box_Shadow::get_type(),
-				[
-					'name' => 'nav_shadow',
-					'selector' => '{{WRAPPER}} .sina-ext-nav',
-				]
-			);
-			$this->add_group_control(
-				Group_Control_Border::get_type(),
-				[
-					'name' => 'nav_border',
-					'selector' => '{{WRAPPER}} .sina-ext-nav',
-				]
-			);
-			$this->add_responsive_control(
-				'nav_radius',
-				[
-					'label' => esc_html__( 'Radius', 'sina-ext' ),
-					'type' => Controls_Manager::DIMENSIONS,
-					'size_units' => [ 'px', 'em', '%' ],
-					'selectors' => [
-						'{{WRAPPER}} .sina-ext-nav' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-					],
-				]
-			);
-			$this->add_responsive_control(
-				'nav_padding',
-				[
-					'label' => esc_html__( 'Padding', 'sina-ext' ),
-					'type' => Controls_Manager::DIMENSIONS,
-					'size_units' => [ 'px', 'em', '%' ],
-					'selectors' => [
-						'{{WRAPPER}} .sina-ext-nav' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-					],
-				]
-			);
-			$this->add_responsive_control(
-				'nav_margin',
-				[
-					'label' => esc_html__( 'Margin', 'sina-ext' ),
-					'type' => Controls_Manager::DIMENSIONS,
-					'size_units' => [ 'px', 'em', '%' ],
-					'selectors' => [
-						'{{WRAPPER}} .sina-ext-nav' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-					],
-				]
-			);
-
-			$this->end_controls_section();
-		// End Nav Container Style
-		// ========================
-
-		// Start Menu Item Style
-		// ======================
+		// Start Menu Style
+		// =================
 			$this->start_controls_section(
 				'menu_item_style',
 				[
-					'label' => esc_html__( 'Menu Item', 'sina-ext' ),
+					'label' => esc_html__( 'Menu', 'sina-ext' ),
 					'tab' => Controls_Manager::TAB_STYLE,
 				]
 			);
@@ -425,15 +375,15 @@ class Sina_Nav_Menu_Widget extends Widget_Base{
 			);
 
 			$this->end_controls_section();
-		// End Menu Item Style
-		// ====================
+		// End Menu Style
+		// ===============
 
-		// Start Submenu Container Style
-		// ==============================
+		// Start Submenu Wrap Style
+		// =========================
 			$this->start_controls_section(
 				'submenu_style',
 				[
-					'label' => esc_html__( 'Submenu Container', 'sina-ext' ),
+					'label' => esc_html__( 'Submenu Wrapper', 'sina-ext' ),
 					'tab' => Controls_Manager::TAB_STYLE,
 				]
 			);
@@ -545,15 +495,15 @@ class Sina_Nav_Menu_Widget extends Widget_Base{
 			);
 
 			$this->end_controls_section();
-		// End Submenu Container Style
-		// ============================
+		// End Submenu Wrap Style
+		// =======================
 
 		// Start Submenu Style
 		// ====================
 			$this->start_controls_section(
 				'submenu_item_style',
 				[
-					'label' => esc_html__( 'Submenu Item', 'sina-ext' ),
+					'label' => esc_html__( 'Submenu', 'sina-ext' ),
 					'tab' => Controls_Manager::TAB_STYLE,
 				]
 			);
@@ -607,12 +557,26 @@ class Sina_Nav_Menu_Widget extends Widget_Base{
 		// End Submenu Style
 		// ==================
 
-		// Start Mobile Menu Toggle Style
-		// ===============================
+		// Start Mobile Menu Style
+		// ========================
 			$this->start_controls_section(
-				'mobile_menu_style',
+				'mobile_menu_item_style',
 				[
-					'label' => esc_html__( 'Mobile Menu Toogle', 'sina-ext' ),
+					'label' => esc_html__( 'Tablet and Mobile Menu', 'sina-ext' ),
+					'tab' => Controls_Manager::TAB_STYLE,
+				]
+			);
+			Sina_Common_Data::menu_item_style( $this, '.show .sina-ext-menu li a', 'mobile_menu_item', 'mobile' );
+			$this->end_controls_section();
+		// End Mobile Menu Style
+		// ======================
+
+		// Start Menu Toggle Style
+		// ========================
+			$this->start_controls_section(
+				'mobile_menu_toggle_style',
+				[
+					'label' => esc_html__( 'Menu Toggle', 'sina-ext' ),
 					'tab' => Controls_Manager::TAB_STYLE,
 				]
 			);
@@ -739,19 +703,26 @@ class Sina_Nav_Menu_Widget extends Widget_Base{
 			);
 
 			$this->end_controls_section();
-		// End Mobile Menu Toggle Style
-		// =============================
+		// End Menu Toggle Style
+		// ======================
 	}
 
 
 	protected function render() {
 		$data 			= $this->get_settings_for_display();
-		$nav_classes	= !is_customize_preview() && is_admin_bar_showing() ? 'wp-topbar ' : '';
+		$anim = [
+			'fadeInLeft',
+			'fadeInRight',
+			'fadeOutLeft',
+			'fadeOutRight',
+		];
+		$anim_in = in_array($data['submenu_anim_in'], $anim) ? 'sina-ext-menu-'.$data['submenu_anim_in'] : $data['submenu_anim_in'];
+		$anim_out = in_array($data['submenu_anim_out'], $anim) ? 'sina-ext-menu-'.$data['submenu_anim_out'] : $data['submenu_anim_out'];
 		$args 			= [
 			'menu'				=> $data['nav_menu'],
 			'fallback_cb'		=> 'wp_page_menu',
 			'container_class'	=> 'sina-ext-nav-collapse',
-			'items_wrap'		=> '<ul class="sina-ext-menu" data-in="sina-ext-menu-fadeInLeft" data-out="sina-ext-menu-fadeOutLeft">%3$s</ul>',
+			'items_wrap'		=> '<ul class="sina-ext-menu" data-in="'.$anim_in.'" data-out="'.$anim_out.'">%3$s</ul>',
 		];
 		$menu_list_icons = [
 			'icofont icofont-arrow-down' => '"\ea5b"',
@@ -790,7 +761,7 @@ class Sina_Nav_Menu_Widget extends Widget_Base{
 				.sina-ext-menu .menu-item-has-children.open > a:before{content: <?php echo $menu_list_icons[ $data['mobile_submenu_open_icon'] ] ?>;}
 			}
 		</style>
-		<nav class="sina-ext-nav sina-ext-nav-mobile-sidebar <?php echo esc_attr($nav_classes); ?>">
+		<nav class="sina-ext-nav sina-ext-nav-mobile-sidebar">
 			<button type="button" class="sina-ext-nav-toggle"
 			data-open="<?php echo esc_attr( $data['mobile_menu_open_icon'] ) ?>"
 			data-close="<?php echo esc_attr( $data['mobile_menu_close_icon'] ) ?>">

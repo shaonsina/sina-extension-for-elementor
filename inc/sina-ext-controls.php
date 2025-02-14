@@ -978,6 +978,17 @@ class Sina_Common_Data{
 					'default' => '#fafafa',
 					'selectors' => [
 						'{{WRAPPER}} .sina-ext-menu .sub-menu > li' => 'border-color: {{VALUE}};',
+					],
+				]
+			);
+		} elseif ('mobile' == $separator) {
+			$obj->add_control(
+				$prefix.'_separator',
+				[
+					'label' => esc_html__( 'Separator Color', 'sina-ext' ),
+					'type' => Controls_Manager::COLOR,
+					'default' => '#fafafa',
+					'selectors' => [
 						'{{WRAPPER}} .show .sina-ext-menu li' => 'border-color: {{VALUE}};',
 					],
 				]
@@ -1047,6 +1058,16 @@ class Sina_Common_Data{
 					'type' => Controls_Manager::COLOR,
 					'selectors' => [
 						'{{WRAPPER}} .sina-ext-menu .sub-menu > li:hover' => 'border-color: {{VALUE}};',
+					],
+				]
+			);
+		} elseif ('mobile' == $separator) {
+			$obj->add_control(
+				$prefix.'_hover_separator',
+				[
+					'label' => esc_html__( 'Separator Color', 'sina-ext' ),
+					'type' => Controls_Manager::COLOR,
+					'selectors' => [
 						'{{WRAPPER}} .show .sina-ext-menu li:hover' => 'border-color: {{VALUE}};',
 					],
 				]
@@ -1065,6 +1086,160 @@ class Sina_Common_Data{
 		}
 		$obj->end_controls_tab();
 
+		$obj->end_controls_tabs();
+	}
+
+	public static function sticky_menu_item_style( $obj, $class = '', $prefix = 'sticky_menu_item') {
+		$obj->add_control(
+			$prefix.'_style',
+			[
+				'label' => esc_html__( 'Sticky Menu Item', 'sina-ext' ),
+				'type' => Controls_Manager::HEADING,
+				'separator' => 'before',
+				'condition' => [
+					'sina_is_sticky' => 'yes',
+				],
+			]
+		);
+		$obj->start_controls_tabs( $prefix.'_tabs' );
+			$obj->start_controls_tab(
+				$prefix.'_normal',
+				[
+					'label' => esc_html__( 'Normal', 'sina-ext' ),
+					'condition' => [
+						'sina_is_sticky' => 'yes',
+					],
+				]
+			);
+			$obj->add_control(
+				$prefix.'_color',
+				[
+					'label' => esc_html__( 'Text Color', 'sina-ext' ),
+					'type' => Controls_Manager::COLOR,
+					'default' => '#222',
+					'condition' => [
+						'sina_is_sticky' => 'yes',
+					],
+					'selectors' => [
+						'{{WRAPPER}}.sina-pro-sticky-freez '.$class => 'color: {{VALUE}};',
+					],
+				]
+			);
+			$obj->add_group_control(
+				Group_Control_Background::get_type(),
+				[
+					'name' => $prefix.'_bg',
+					'types' => [ 'classic', 'gradient' ],
+					'condition' => [
+						'sina_is_sticky' => 'yes',
+					],
+					'selector' => '{{WRAPPER}}.sina-pro-sticky-freez '.$class,
+				]
+			);
+			$obj->add_group_control(
+				Group_Control_Text_Shadow::get_type(),
+				[
+					'name' => $prefix.'_tshadow',
+					'condition' => [
+						'sina_is_sticky' => 'yes',
+					],
+					'selector' => '{{WRAPPER}}.sina-pro-sticky-freez '.$class,
+				]
+			);
+			$obj->add_group_control(
+				Group_Control_Box_Shadow::get_type(),
+				[
+					'name' => $prefix.'_shadow',
+					'condition' => [
+						'sina_is_sticky' => 'yes',
+					],
+					'selector' => '{{WRAPPER}}.sina-pro-sticky-freez '.$class,
+				]
+			);
+			$obj->add_control(
+				$prefix.'_border_color',
+				[
+					'label' => esc_html__( 'Border Color', 'sina-ext' ),
+					'type' => Controls_Manager::COLOR,
+					'condition' => [
+						'sina_is_sticky' => 'yes',
+					],
+					'selectors' => [
+						'{{WRAPPER}}.sina-pro-sticky-freez '.$class => 'border-color: {{VALUE}};',
+					],
+				]
+			);
+
+			$obj->end_controls_tab();
+
+			$obj->start_controls_tab(
+				$prefix.'_hover',
+				[
+					'label' => esc_html__( 'Hover', 'sina-ext' ),
+					'condition' => [
+						'sina_is_sticky' => 'yes',
+					],
+				]
+			);
+			$obj->add_control(
+				$prefix.'_hover_color',
+				[
+					'label' => esc_html__( 'Text Color', 'sina-ext' ),
+					'type' => Controls_Manager::COLOR,
+					'default' => '#1085e4',
+					'condition' => [
+						'sina_is_sticky' => 'yes',
+					],
+					'selectors' => [
+						'{{WRAPPER}}.sina-pro-sticky-freez '.$class.':hover' => 'color: {{VALUE}};',
+					],
+				]
+			);
+			$obj->add_group_control(
+				Group_Control_Background::get_type(),
+				[
+					'name' => $prefix.'_hover_bg',
+					'types' => [ 'classic', 'gradient' ],
+					'condition' => [
+						'sina_is_sticky' => 'yes',
+					],
+					'selector' => '{{WRAPPER}}.sina-pro-sticky-freez '.$class.':hover',
+				]
+			);
+			$obj->add_group_control(
+				Group_Control_Text_Shadow::get_type(),
+				[
+					'name' => $prefix.'_hover_tshadow',
+					'condition' => [
+						'sina_is_sticky' => 'yes',
+					],
+					'selector' => '{{WRAPPER}}.sina-pro-sticky-freez '.$class.':hover',
+				]
+			);
+			$obj->add_group_control(
+				Group_Control_Box_Shadow::get_type(),
+				[
+					'name' => $prefix.'_hover_shadow',
+					'condition' => [
+						'sina_is_sticky' => 'yes',
+					],
+					'selector' => '{{WRAPPER}}.sina-pro-sticky-freez '.$class.':hover',
+				]
+			);
+			$obj->add_control(
+				$prefix.'_hover_border',
+				[
+					'label' => esc_html__( 'Border Color', 'sina-ext' ),
+					'type' => Controls_Manager::COLOR,
+					'condition' => [
+						'sina_is_sticky' => 'yes',
+					],
+					'selectors' => [
+						'{{WRAPPER}}.sina-pro-sticky-freez '.$class.':hover' => 'border-color: {{VALUE}};',
+					],
+				]
+			);
+			$obj->end_controls_tab();
 		$obj->end_controls_tabs();
 	}
 
