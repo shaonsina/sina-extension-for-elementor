@@ -1428,7 +1428,7 @@
 	.sina-ext-nav-mobile-sidebar .sina-ext-nav-collapse.show{
 		left: 0;
 	}
-	.sina-ext-nav-mobile-sidebar.wp-topbar .sina-ext-nav-collapse{
+	.admin-bar .sina-ext-nav-mobile-sidebar .sina-ext-nav-collapse{
 		top: 32px;
 	}
 	body.sina-ext-nav-mobile-left > .sina-ext-nav-wrapper{
@@ -1444,11 +1444,10 @@
 
 /* RESPONSIVE-Mobile*/
 @media (max-width: 782px) {
-	.sina-ext-nav-mobile-sidebar.wp-topbar .sina-ext-nav-collapse{
+	.admin-bar .sina-ext-nav-mobile-sidebar .sina-ext-nav-collapse{
 		top: 46px;
 	}
 }
-
 
 
 /* RESPONSIVE-Tablet*/

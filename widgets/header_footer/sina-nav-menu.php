@@ -245,15 +245,12 @@ class Sina_Nav_Menu_Widget extends Widget_Base{
 					'size_units' => [ 'px', 'em', '%' ],
 					'range' => [
 						'px' => [
-							'min' => 0,
-							'max' => 1000,
+							'max' => 500,
 						],
 						'em' => [
-							'min' => 0,
-							'max' => 100,
+							'max' => 50,
 						],
 						'%' => [
-							'min' => 0,
 							'max' => 100,
 						],
 					],
@@ -350,8 +347,8 @@ class Sina_Nav_Menu_Widget extends Widget_Base{
 					],
 					'selectors' => [
 						'{{WRAPPER}} .sina-ext-menu .menu-item-has-children > a:before' => 'right: {{SIZE}}{{UNIT}};',
+						'body.rtl {{WRAPPER}} .sina-ext-menu .menu-item-has-children > a:before' => 'right: inherit;',
 						'.rtl {{WRAPPER}} .sina-ext-menu .menu-item-has-children > a:before' => 'left: {{SIZE}}{{UNIT}};',
-						'.rtl {{WRAPPER}} .sina-ext-menu .menu-item-has-children > a:before' => 'right: inherit;',
 					],
 				]
 			);
@@ -396,15 +393,12 @@ class Sina_Nav_Menu_Widget extends Widget_Base{
 					'size_units' => [ 'px', 'em', '%' ],
 					'range' => [
 						'px' => [
-							'min' => 0,
 							'max' => 1000,
 						],
 						'em' => [
-							'min' => 0,
 							'max' => 100,
 						],
 						'%' => [
-							'min' => 0,
 							'max' => 100,
 						],
 					],
@@ -611,13 +605,12 @@ class Sina_Nav_Menu_Widget extends Widget_Base{
 					'size_units' => [ 'px' ],
 					'range' => [
 						'px' => [
-							'min' => 0,
-							'max' => 1000,
+							'max' => 100,
 						],
 					],
 					'default' => [
 						'unit' => 'px',
-						'size' => 20,
+						'size' => 24,
 					],
 					'selectors' => [
 						'{{WRAPPER}} .sina-ext-nav-toggle' => 'font-size: {{SIZE}}{{UNIT}};',
@@ -625,23 +618,24 @@ class Sina_Nav_Menu_Widget extends Widget_Base{
 				]
 			);
 			$this->add_responsive_control(
-				'mobile_menu_toggle_left',
+				'mobile_menu_toggle_Spacing',
 				[
-					'label' => esc_html__( 'Left', 'sina-ext' ),
+					'label' => esc_html__( 'Spacing', 'sina-ext' ),
 					'type' => Controls_Manager::SLIDER,
 					'size_units' => [ 'px' ],
 					'range' => [
 						'px' => [
-							'min' => 0,
-							'max' => 1000,
+							'max' => 100,
 						],
 					],
 					'default' => [
 						'unit' => 'px',
-						'size' => 0,
+						'size' => 16,
 					],
 					'selectors' => [
 						'{{WRAPPER}} .sina-ext-nav-toggle' => 'left: {{SIZE}}{{UNIT}};',
+						'body.rtl {{WRAPPER}} .sina-ext-nav-toggle' => 'right: {{SIZE}}{{UNIT}};',
+						'.rtl {{WRAPPER}} .sina-ext-nav-toggle' => 'left: inherit;',
 					],
 				]
 			);
@@ -653,13 +647,12 @@ class Sina_Nav_Menu_Widget extends Widget_Base{
 					'size_units' => [ 'px' ],
 					'range' => [
 						'px' => [
-							'min' => 0,
 							'max' => 1000,
 						],
 					],
 					'default' => [
 						'unit' => 'px',
-						'size' => 18,
+						'size' => 12,
 					],
 					'selectors' => [
 						'{{WRAPPER}} .sina-ext-nav-toggle' => 'top: {{SIZE}}{{UNIT}};',
