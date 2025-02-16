@@ -1278,6 +1278,12 @@
 }
 
 
+/*--------------------------------- Header Footer -------------------------------------- */
+.elementor-editor-active header.sina-pro-sticky-freez,
+.elementor-editor-active footer.sina-pro-sticky-freez{
+	width: 100%!important;
+}
+
 /*--------------------------------- Nav Menu -------------------------------------- */
 .sina-ext-nav{
 	transition: background 0.5s ease-in-out;
@@ -1304,8 +1310,6 @@
 .sina-ext-menu .sub-menu{
 	position: absolute;
 	display: none;
-	top: 100%;
-	left: 0;
 	z-index: 1000;
 }
 .sina-ext-menu .sub-menu > li{
@@ -1370,8 +1374,12 @@
 /* RESPONSIVE-Desktop*/
 @media (min-width: 1025px) {
 	/* Navigation */
-	.sina-ext-menu .sub-menu{
-		overflow: hidden;
+	.sina-ext-menu .sub-menu li{
+		position: relative;
+	}
+	.sina-ext-menu .sub-menu .sub-menu{
+		top: 0!important;
+		left: 100%;
 	}
 	.sina-ext-menu .sub-menu > li:first-child{
 		border-top: 0!important;
@@ -1400,7 +1408,6 @@
 	}
 	.sina-ext-menu .sub-menu{
 		position: inherit;
-		padding-left: 15px;
 		border: 0!important;
 		width: 100% !important;
 		box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.0)!important;

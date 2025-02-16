@@ -131,6 +131,13 @@ class Sina_Nav_Menu_Widget extends Widget_Base{
 				]
 			);
 			$this->add_control(
+				'nav_menu_sticky',
+				[
+					'label' => esc_html__( 'Sticky Menu', 'sina-ext' ),
+					'type' => Controls_Manager::SWITCHER,
+				]
+			);
+			$this->add_control(
 				'submenu_open_icon',
 				[
 					'label' => esc_html__( 'Submenu Open Icon', 'sina-ext' ),
@@ -256,7 +263,7 @@ class Sina_Nav_Menu_Widget extends Widget_Base{
 					],
 					'separator' => 'before',
 					'selectors' => [
-						'{{WRAPPER}} .sina-ext-menu > li > a' => 'min-width: {{SIZE}}{{UNIT}};',
+						'.elementor-element-{{ID}} .sina-ext-menu > li > a' => 'min-width: {{SIZE}}{{UNIT}};',
 					],
 				]
 			);
@@ -267,7 +274,7 @@ class Sina_Nav_Menu_Widget extends Widget_Base{
 					'type' => Controls_Manager::DIMENSIONS,
 					'size_units' => [ 'px', 'em', '%' ],
 					'selectors' => [
-						'{{WRAPPER}} .sina-ext-menu > li > a' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+						'.elementor-element-{{ID}} .sina-ext-menu > li > a' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 					],
 				]
 			);
@@ -285,7 +292,7 @@ class Sina_Nav_Menu_Widget extends Widget_Base{
 						'isLinked' => false,
 					],
 					'selectors' => [
-						'{{WRAPPER}} .sina-ext-menu > li > a' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+						'.elementor-element-{{ID}} .sina-ext-menu > li > a' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 					],
 				]
 			);
@@ -309,7 +316,7 @@ class Sina_Nav_Menu_Widget extends Widget_Base{
 						],
 					],
 					'selectors' => [
-						'{{WRAPPER}} .sina-ext-menu > li > a' => 'text-align: {{VALUE}};',
+						'.elementor-element-{{ID}} .sina-ext-menu > li > a' => 'text-align: {{VALUE}};',
 					],
 				]
 			);
@@ -333,7 +340,7 @@ class Sina_Nav_Menu_Widget extends Widget_Base{
 					],
 					'separator' => 'before',
 					'selectors' => [
-						'{{WRAPPER}} .sina-ext-menu .menu-item-has-children > a:before' => 'font-size: {{SIZE}}{{UNIT}};',
+						'.elementor-element-{{ID}} .sina-ext-menu .menu-item-has-children > a:before' => 'font-size: {{SIZE}}{{UNIT}};',
 					],
 				]
 			);
@@ -346,9 +353,9 @@ class Sina_Nav_Menu_Widget extends Widget_Base{
 						'size' => '6',
 					],
 					'selectors' => [
-						'{{WRAPPER}} .sina-ext-menu .menu-item-has-children > a:before' => 'right: {{SIZE}}{{UNIT}};',
-						'body.rtl {{WRAPPER}} .sina-ext-menu .menu-item-has-children > a:before' => 'right: inherit;',
-						'.rtl {{WRAPPER}} .sina-ext-menu .menu-item-has-children > a:before' => 'left: {{SIZE}}{{UNIT}};',
+						'.elementor-element-{{ID}} .sina-ext-menu .menu-item-has-children > a:before' => 'right: {{SIZE}}{{UNIT}};',
+						'body.rtl .elementor-element-{{ID}} .sina-ext-menu .menu-item-has-children > a:before' => 'right: inherit;',
+						'.rtl .elementor-element-{{ID}} .sina-ext-menu .menu-item-has-children > a:before' => 'left: {{SIZE}}{{UNIT}};',
 					],
 				]
 			);
@@ -366,7 +373,7 @@ class Sina_Nav_Menu_Widget extends Widget_Base{
 						'isLinked' => false,
 					],
 					'selectors' => [
-						'{{WRAPPER}} .sina-ext-menu > .menu-item-has-children > a' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+						'.elementor-element-{{ID}} .sina-ext-menu > .menu-item-has-children > a' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 					],
 				]
 			);
@@ -374,6 +381,45 @@ class Sina_Nav_Menu_Widget extends Widget_Base{
 			$this->end_controls_section();
 		// End Menu Style
 		// ===============
+
+		// Start Sticky Menu Style
+		// ========================
+			$this->start_controls_section(
+				'sticky_menu_style',
+				[
+					'label' => esc_html__( 'Sticky Menu', 'sina-ext' ),
+					'tab' => Controls_Manager::TAB_STYLE,
+					'condition' => [
+						'nav_menu_sticky' => 'yes',
+					]
+				]
+			);
+
+			$this->add_control(
+				'submenu_sticky_top',
+				[
+					'label' => esc_html__( 'Sticky Top Spacing', 'sina-ext' ),
+					'type' => Controls_Manager::SLIDER,
+					'size_units' => [ 'px' ],
+					'range' => [
+						'px' => [
+							'max' => 500,
+						],
+					],
+					'default' => [
+						'unit' => 'px',
+						'size' => 0,
+					],
+					'selectors' => [
+						'.sina-pro-sticky-freez .elementor-element-{{ID}} .sina-ext-menu .sub-menu' => 'top: calc(100% + {{SIZE}}{{UNIT}});',
+					],
+				]
+			);
+			Sina_Common_Data::sticky_menu_item_style( $this, '.sina-ext-menu > li > a' );
+
+			$this->end_controls_section();
+		// End Sticky Menu Style
+		// ======================
 
 		// Start Submenu Wrap Style
 		// =========================
@@ -407,31 +453,35 @@ class Sina_Nav_Menu_Widget extends Widget_Base{
 						'size' => 200,
 					],
 					'selectors' => [
-						'{{WRAPPER}} .sina-ext-menu .sub-menu' => 'width: {{SIZE}}{{UNIT}};',
+						'.elementor-element-{{ID}} .sina-ext-menu .sub-menu' => 'width: {{SIZE}}{{UNIT}};',
 					],
 				]
 			);
-			$this->add_group_control(
-				Group_Control_Background::get_type(),
+			$this->add_control(
+				'submenu_top',
 				[
-					'name' => 'submenu_bg',
-					'types' => [ 'classic', 'gradient' ],
-					'fields_options' => [
-						'background' => [ 
-							'default' =>'classic', 
-						],
-						'color' => [
-							'default' => '#fff',
+					'label' => esc_html__( 'Top Spacing', 'sina-ext' ),
+					'type' => Controls_Manager::SLIDER,
+					'size_units' => [ 'px' ],
+					'range' => [
+						'px' => [
+							'max' => 500,
 						],
 					],
-					'selector' => '{{WRAPPER}} .sina-ext-menu .sub-menu',
+					'default' => [
+						'unit' => 'px',
+						'size' => 0,
+					],
+					'selectors' => [
+						'.elementor-element-{{ID}} .sina-ext-menu .sub-menu' => 'top: calc(100% + {{SIZE}}{{UNIT}});',
+					],
 				]
 			);
 			$this->add_group_control(
 				Group_Control_Box_Shadow::get_type(),
 				[
 					'name' => 'submenu_shadow',
-					'selector' => '{{WRAPPER}} .sina-ext-menu .sub-menu',
+					'selector' => '.elementor-element-{{ID}} .sina-ext-menu .sub-menu',
 				]
 			);
 			$this->add_group_control(
@@ -455,7 +505,7 @@ class Sina_Nav_Menu_Widget extends Widget_Base{
 							]
 						],
 					],
-					'selector' => '{{WRAPPER}} .sina-ext-menu .sub-menu',
+					'selector' => '.elementor-element-{{ID}} .sina-ext-menu .sub-menu',
 				]
 			);
 			$this->add_responsive_control(
@@ -472,18 +522,11 @@ class Sina_Nav_Menu_Widget extends Widget_Base{
 						'isLinked' => false,
 					],
 					'selectors' => [
-						'{{WRAPPER}} .sina-ext-menu .sub-menu' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-					],
-				]
-			);
-			$this->add_responsive_control(
-				'submenu_padding',
-				[
-					'label' => esc_html__( 'Padding', 'sina-ext' ),
-					'type' => Controls_Manager::DIMENSIONS,
-					'size_units' => [ 'px', 'em', '%' ],
-					'selectors' => [
-						'{{WRAPPER}} .sina-ext-menu .sub-menu' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+						'.elementor-element-{{ID}} .sina-ext-menu .sub-menu' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+						'.elementor-element-{{ID}} .sina-ext-menu .sub-menu li:first-of-type > a' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} 0px 0px;',
+						'.elementor-element-{{ID}} .sina-ext-menu .sub-menu li:last-of-type > a' => 'border-radius: 0px 0px {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+						'.elementor-element-{{ID}} .sina-ext-menu .sub-menu .sub-menu li:first-of-type > a' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} 0px 0px;',
+						'.elementor-element-{{ID}} .sina-ext-menu .sub-menu .sub-menu li:last-of-type > a' => 'border-radius: 0px 0px {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 					],
 				]
 			);
@@ -518,7 +561,7 @@ class Sina_Nav_Menu_Widget extends Widget_Base{
 						'isLinked' => false,
 					],
 					'selectors' => [
-						'{{WRAPPER}} .sina-ext-menu .sub-menu li > a' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+						'.elementor-element-{{ID}} .sina-ext-menu .sub-menu li > a' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 					],
 				]
 			);
@@ -542,7 +585,7 @@ class Sina_Nav_Menu_Widget extends Widget_Base{
 						],
 					],
 					'selectors' => [
-						'{{WRAPPER}} .sina-ext-menu .sub-menu li > a' => 'text-align: {{VALUE}};',
+						'.elementor-element-{{ID}} .sina-ext-menu .sub-menu li > a' => 'text-align: {{VALUE}};',
 					],
 				]
 			);
@@ -582,7 +625,7 @@ class Sina_Nav_Menu_Widget extends Widget_Base{
 					'type' => Controls_Manager::COLOR,
 					'default' => '#222',
 					'selectors' => [
-						'{{WRAPPER}} .sina-ext-nav-toggle' => 'color: {{VALUE}};',
+						'.elementor-element-{{ID}} .sina-ext-nav-toggle' => 'color: {{VALUE}};',
 					],
 				]
 			);
@@ -593,7 +636,7 @@ class Sina_Nav_Menu_Widget extends Widget_Base{
 					'type' => Controls_Manager::COLOR,
 					'default' => '#00000000',
 					'selectors' => [
-						'{{WRAPPER}} .sina-ext-nav-toggle' => 'background: {{VALUE}};',
+						'.elementor-element-{{ID}} .sina-ext-nav-toggle' => 'background: {{VALUE}};',
 					],
 				]
 			);
@@ -613,7 +656,7 @@ class Sina_Nav_Menu_Widget extends Widget_Base{
 						'size' => 24,
 					],
 					'selectors' => [
-						'{{WRAPPER}} .sina-ext-nav-toggle' => 'font-size: {{SIZE}}{{UNIT}};',
+						'.elementor-element-{{ID}} .sina-ext-nav-toggle' => 'font-size: {{SIZE}}{{UNIT}};',
 					],
 				]
 			);
@@ -633,9 +676,9 @@ class Sina_Nav_Menu_Widget extends Widget_Base{
 						'size' => 16,
 					],
 					'selectors' => [
-						'{{WRAPPER}} .sina-ext-nav-toggle' => 'left: {{SIZE}}{{UNIT}};',
-						'body.rtl {{WRAPPER}} .sina-ext-nav-toggle' => 'right: {{SIZE}}{{UNIT}};',
-						'.rtl {{WRAPPER}} .sina-ext-nav-toggle' => 'left: inherit;',
+						'.elementor-element-{{ID}} .sina-ext-nav-toggle' => 'left: {{SIZE}}{{UNIT}};',
+						'body.rtl .elementor-element-{{ID}} .sina-ext-nav-toggle' => 'right: {{SIZE}}{{UNIT}};',
+						'.rtl .elementor-element-{{ID}} .sina-ext-nav-toggle' => 'left: inherit;',
 					],
 				]
 			);
@@ -655,7 +698,7 @@ class Sina_Nav_Menu_Widget extends Widget_Base{
 						'size' => 12,
 					],
 					'selectors' => [
-						'{{WRAPPER}} .sina-ext-nav-toggle' => 'top: {{SIZE}}{{UNIT}};',
+						'.elementor-element-{{ID}} .sina-ext-nav-toggle' => 'top: {{SIZE}}{{UNIT}};',
 					],
 				]
 			);
@@ -680,7 +723,7 @@ class Sina_Nav_Menu_Widget extends Widget_Base{
 							]
 						],
 					],
-					'selector' => '{{WRAPPER}} .sina-ext-nav-toggle',
+					'selector' => '.elementor-element-{{ID}} .sina-ext-nav-toggle',
 				]
 			);
 			$this->add_responsive_control(
@@ -690,7 +733,7 @@ class Sina_Nav_Menu_Widget extends Widget_Base{
 					'type' => Controls_Manager::DIMENSIONS,
 					'size_units' => [ 'px', ],
 					'selectors' => [
-						'{{WRAPPER}} .sina-ext-nav-toggle' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+						'.elementor-element-{{ID}} .sina-ext-nav-toggle' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 					],
 				]
 			);

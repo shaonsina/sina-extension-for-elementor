@@ -50,19 +50,15 @@
 }
 
 /*--------------------------------- Nav Menu -------------------------------------- */
-.rtl .sina-ext-menu .sub-menu{
+.rtl .sina-ext-menu .sub-menu .sub-menu{
 	left: inherit;
-	right: 0;
+	right: 100%;
 }
 
 
 /* RESPONSIVE-Tablet*/
 @media (max-width: 1024px) {
 	/* RTL Mobile Sidebar */
-	.rtl .sina-ext-menu .sub-menu{
-		padding-left: inherit;
-		padding-right: 15px;
-	}
 	.rtl .sina-ext-nav-mobile-sidebar .sina-ext-nav-collapse{
 		right: -280px;
 	}

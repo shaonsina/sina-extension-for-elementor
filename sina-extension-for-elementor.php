@@ -38,6 +38,27 @@ define('SINA_EXT_ADMIN', SINA_EXT_DIR .'/admin/');
 define('SINA_WIDGETS', [
 	'header_footer' => [
 		'nav-menu'				=> esc_html__( 'Sina Nav Menu', 'sina-ext' ),
+		'site-logo'				=> esc_html__( 'Sina Site Logo', 'sina-ext' ),
+		'site-info'				=> esc_html__( 'Sina Site Info', 'sina-ext' ),
+		'direct-contact'		=> esc_html__( 'Sina Direct Contact', 'sina-ext' ),
+		'quick-links'			=> esc_html__( 'Sina Quick Links', 'sina-ext' ),
+		'search'				=> esc_html__( 'Sina Search', 'sina-ext' ),
+		'scroll-to-top'			=> esc_html__( 'Sina Scroll to Top', 'sina-ext' ),
+		'woo-cart'				=> esc_html__( 'Sina Woo Cart', 'sina-ext' ),
+	],
+	'theme_builder' => [
+		'page-title'				=> esc_html__( 'Sina Page Title', 'sina-ext' ),
+		'post-title'				=> esc_html__( 'Sina Post Title', 'sina-ext' ),
+		'post-excerpt'				=> esc_html__( 'Sina Post Excerpt', 'sina-ext' ),
+		'post-content'				=> esc_html__( 'Sina Post Content', 'sina-ext' ),
+		'post-comments'				=> esc_html__( 'Sina Post Comments', 'sina-ext' ),
+		'post-navigation'			=> esc_html__( 'Sina Post Navigation', 'sina-ext' ),
+		'post-meta'					=> esc_html__( 'Sina Post Meta', 'sina-ext' ),
+		'author-meta'				=> esc_html__( 'Sina Author Meta', 'sina-ext' ),
+		'featured-image'			=> esc_html__( 'Sina Featured Image', 'sina-ext' ),
+		'breadcrumbs'				=> esc_html__( 'Sina Breadcrumbs', 'sina-ext' ),
+		'archive-title'				=> esc_html__( 'Sina Archive Title', 'sina-ext' ),
+		'archive-post'				=> esc_html__( 'Sina Archive Post', 'sina-ext' ),
 	],
 	'basic' => [
 		'accordion' 			=> esc_html__( 'Sina Accordion', 'sina-ext' ),
