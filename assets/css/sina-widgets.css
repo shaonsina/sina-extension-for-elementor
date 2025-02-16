@@ -1284,6 +1284,13 @@
 	width: 100%!important;
 }
 
+/*--------------------------------- Site Info -------------------------------------- */
+.sina-site-info-title a,
+.sina-site-info-copyright a{
+	padding: 0;
+	margin: 0;
+}
+
 /*--------------------------------- Nav Menu -------------------------------------- */
 .sina-ext-nav{
 	transition: background 0.5s ease-in-out;
@@ -1313,7 +1320,7 @@
 	z-index: 1000;
 }
 .sina-ext-menu .sub-menu > li{
-	border-top: solid 1px;
+	border-top: solid 1px #fafafa;
 }
 
 /*Sub Menu Animation*/
@@ -1415,7 +1422,7 @@
 	.sina-ext-menu li{
 		display: block;
 		width: 100%;
-		border-top: solid 1px;
+		border-top: solid 1px #fafafa;
 	}
 
 	/* Mobile Sidebar */

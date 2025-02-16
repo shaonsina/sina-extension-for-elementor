@@ -6,6 +6,7 @@ use \Elementor\Group_Control_Background;
 use \Elementor\Group_Control_Box_Shadow;
 use \Elementor\Group_Control_Text_Shadow;
 use \Elementor\Group_Control_Border;
+use \Sina_Extension\Sina_Ext_Gradient_Text;
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -510,6 +511,7 @@ class Sina_Common_Data{
 	}
 
 	public static function tooltip_style( $obj, $prefix, $class ) {
+		$selector = '{{WRAPPER}} '.$class.' .tooltip-inner';
 		$obj->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
@@ -539,7 +541,7 @@ class Sina_Common_Data{
 				'type' => Controls_Manager::COLOR,
 				'default' => '#fafafa',
 				'selectors' => [
-					'{{WRAPPER}} '.$class.' .tooltip-inner' => 'color: {{VALUE}};',
+					$selector => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -550,7 +552,7 @@ class Sina_Common_Data{
 				'type' => Controls_Manager::COLOR,
 				'default' => '#222',
 				'selectors' => [
-					'{{WRAPPER}} '.$class.' .tooltip-inner' => 'background-color: {{VALUE}};',
+					$selector => 'background-color: {{VALUE}};',
 					'{{WRAPPER}} '.$class.' .tooltip.top .tooltip-arrow' => 'border-top-color: {{VALUE}};',
 					'{{WRAPPER}} '.$class.' .tooltip.bottom .tooltip-arrow' => 'border-bottom-color: {{VALUE}};',
 					'{{WRAPPER}} '.$class.' .tooltip.left .tooltip-arrow' => 'border-left-color: {{VALUE}};',
@@ -577,7 +579,7 @@ class Sina_Common_Data{
 					'size' => 120,
 				],
 				'selectors' => [
-					'{{WRAPPER}} '.$class.' .tooltip-inner' => 'width: {{SIZE}}{{UNIT}};',
+					$selector => 'width: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -595,7 +597,7 @@ class Sina_Common_Data{
 					'isLinked' => true,
 				],
 				'selectors' => [
-					'{{WRAPPER}} '.$class.' .tooltip-inner' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					$selector => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -613,7 +615,7 @@ class Sina_Common_Data{
 					'isLinked' => false,
 				],
 				'selectors' => [
-					'{{WRAPPER}} '.$class.' .tooltip-inner' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					$selector => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -888,6 +890,7 @@ class Sina_Common_Data{
 	}
 
 	public static function menu_item_style( $obj, $class = '', $prefix = 'menu_item', $separator = false) {
+		$selector = '.elementor-element-{{ID}} '.$class;
 		$obj->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
@@ -916,7 +919,7 @@ class Sina_Common_Data{
 						],
 					],
 				],
-				'selector' => '.elementor-element-{{ID}} '.$class,
+				'selector' => $selector,
 			]
 		);
 
@@ -935,7 +938,7 @@ class Sina_Common_Data{
 				'type' => Controls_Manager::COLOR,
 				'default' => '#222',
 				'selectors' => [
-					'.elementor-element-{{ID}} '.$class => 'color: {{VALUE}};',
+					$selector => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -952,21 +955,21 @@ class Sina_Common_Data{
 						'default' => '#fff',
 					],
 				],
-				'selector' => '.elementor-element-{{ID}} '.$class,
+				'selector' => $selector,
 			]
 		);
 		$obj->add_group_control(
 			Group_Control_Text_Shadow::get_type(),
 			[
 				'name' => $prefix.'_tshadow',
-				'selector' => '.elementor-element-{{ID}} '.$class,
+				'selector' => $selector,
 			]
 		);
 		$obj->add_group_control(
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => $prefix.'_shadow',
-				'selector' => '.elementor-element-{{ID}} '.$class,
+				'selector' => $selector,
 			]
 		);
 		if ('desktop' == $separator) {
@@ -998,7 +1001,7 @@ class Sina_Common_Data{
 				Group_Control_Border::get_type(),
 				[
 					'name' => $prefix.'_border',
-					'selector' => '.elementor-element-{{ID}} '.$class,
+					'selector' => $selector,
 				]
 			);
 		}
@@ -1016,7 +1019,7 @@ class Sina_Common_Data{
 				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'.elementor-element-{{ID}} '.$class.':hover' => 'color: {{VALUE}};',
+					$selector.':hover' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -1033,21 +1036,21 @@ class Sina_Common_Data{
 						'default' => '#fafafa',
 					],
 				],
-				'selector' => '.elementor-element-{{ID}} '.$class.':hover',
+				'selector' => $selector.':hover',
 			]
 		);
 		$obj->add_group_control(
 			Group_Control_Text_Shadow::get_type(),
 			[
 				'name' => $prefix.'_hover_tshadow',
-				'selector' => '.elementor-element-{{ID}} '.$class.':hover',
+				'selector' => $selector.':hover',
 			]
 		);
 		$obj->add_group_control(
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => $prefix.'_hover_shadow',
-				'selector' => '.elementor-element-{{ID}} '.$class.':hover',
+				'selector' => $selector.':hover',
 			]
 		);
 		if ('desktop' == $separator) {
@@ -1079,7 +1082,7 @@ class Sina_Common_Data{
 					'label' => esc_html__( 'Border Color', 'sina-ext' ),
 					'type' => Controls_Manager::COLOR,
 					'selectors' => [
-						'.elementor-element-{{ID}} '.$class.':hover' => 'border-color: {{VALUE}};',
+						$selector.':hover' => 'border-color: {{VALUE}};',
 					],
 				]
 			);
@@ -1089,7 +1092,137 @@ class Sina_Common_Data{
 		$obj->end_controls_tabs();
 	}
 
+	public static function site_info($obj, $class = '', $prefix = 'site_info_title', $sticky_class = '', $link = false) {
+		$selector = $sticky_class.'.elementor-element-{{ID}} '.$class;
+		$anchor = $hover = $focus = '';
+		if ($link) {
+			$anchor = ','.$sticky_class.'.elementor-element-{{ID}} '.$class.' a';
+			$hover = ','.$sticky_class.'.elementor-element-{{ID}} '.$class.' a:hover';
+			$focus = ','.$sticky_class.'.elementor-element-{{ID}} '.$class.' a:focus';
+		}
+
+		$obj->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name' => $prefix.'_typography',
+				'selector' => $selector,
+			]
+		);
+		$obj->add_group_control(
+			Group_Control_Text_Shadow::get_type(),
+			[
+				'name' => $prefix.'_shadow',
+				'selector' => $selector,
+			]
+		);
+		$obj->add_group_control(
+			Sina_Ext_Gradient_Text::get_type(),
+			[
+				'name' => $prefix.'_color',
+				'selector' => $selector.$anchor.$hover.$focus,
+			]
+		);
+		$obj->add_responsive_control(
+			$prefix.'_alignment',
+			[
+				'label' => esc_html__( 'Alignment', 'sina-ext' ),
+				'type' => Controls_Manager::CHOOSE,
+				'options' => [
+					'left' => [
+						'title' => esc_html__( 'Left', 'sina-ext' ),
+						'icon' => 'eicon-text-align-left',
+					],
+					'center' => [
+						'title' => esc_html__( 'Center', 'sina-ext' ),
+						'icon' => 'eicon-text-align-center',
+					],
+					'right' => [
+						'title' => esc_html__( 'Right', 'sina-ext' ),
+						'icon' => 'eicon-text-align-right',
+					],
+					'justify' => [
+						'title' => esc_html__( 'Justify', 'sina-ext' ),
+						'icon' => 'eicon-text-align-justify',
+					],
+				],
+				'selectors' => [
+					$selector => 'text-align: {{VALUE}};',
+				],
+			]
+		);
+		$obj->add_responsive_control(
+			$prefix.'_padding',
+			[
+				'label' => esc_html__( 'Padding', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '0',
+					'right' => '0',
+					'bottom' => '0',
+					'left' => '0',
+					'isLinked' => true,
+				],
+				'selectors' => [
+					$selector => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+		$obj->add_responsive_control(
+			$prefix.'_margin',
+			[
+				'label' => esc_html__( 'Margin', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'default' => [
+					'top' => '0',
+					'right' => '0',
+					'bottom' => '0',
+					'left' => '0',
+					'isLinked' => true,
+				],
+				'selectors' => [
+					$selector => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+	}
+
 	public static function sticky_menu_item_style( $obj, $class = '', $prefix = 'sticky_menu_item') {
+		$selector = '.sina-pro-sticky-freez .elementor-element-{{ID}} '.$class;
+		$obj->start_controls_section(
+			$prefix.'_style',
+			[
+				'label' => esc_html__( 'Sticky Menu', 'sina-ext' ),
+				'tab' => Controls_Manager::TAB_STYLE,
+				'condition' => [
+					'nav_menu_sticky' => 'yes',
+				]
+			]
+		);
+
+		$obj->add_control(
+			$prefix.'_submenu_top',
+			[
+				'label' => esc_html__( 'Sticky Top Spacing', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px' ],
+				'range' => [
+					'px' => [
+						'min' => -200,
+						'max' => 200,
+					],
+				],
+				'default' => [
+					'unit' => 'px',
+					'size' => 0,
+				],
+				'selectors' => [
+					'.sina-pro-sticky-freez .elementor-element-{{ID}} .sina-ext-menu .sub-menu' => 'top: calc(100% + {{SIZE}}{{UNIT}});',
+				],
+			]
+		);
+
 		$obj->start_controls_tabs( $prefix.'_tabs' );
 			$obj->start_controls_tab(
 				$prefix.'_normal',
@@ -1104,7 +1237,7 @@ class Sina_Common_Data{
 					'type' => Controls_Manager::COLOR,
 					'default' => '#222',
 					'selectors' => [
-						'.sina-pro-sticky-freez .elementor-element-{{ID}} '.$class => 'color: {{VALUE}};',
+						$selector => 'color: {{VALUE}};',
 					],
 				]
 			);
@@ -1113,21 +1246,21 @@ class Sina_Common_Data{
 				[
 					'name' => $prefix.'_bg',
 					'types' => [ 'classic', 'gradient' ],
-					'selector' => '.sina-pro-sticky-freez .elementor-element-{{ID}} '.$class,
+					'selector' => $selector,
 				]
 			);
 			$obj->add_group_control(
 				Group_Control_Text_Shadow::get_type(),
 				[
 					'name' => $prefix.'_tshadow',
-					'selector' => '.sina-pro-sticky-freez .elementor-element-{{ID}} '.$class,
+					'selector' => $selector,
 				]
 			);
 			$obj->add_group_control(
 				Group_Control_Box_Shadow::get_type(),
 				[
 					'name' => $prefix.'_shadow',
-					'selector' => '.sina-pro-sticky-freez .elementor-element-{{ID}} '.$class,
+					'selector' => $selector,
 				]
 			);
 			$obj->add_control(
@@ -1136,7 +1269,7 @@ class Sina_Common_Data{
 					'label' => esc_html__( 'Border Color', 'sina-ext' ),
 					'type' => Controls_Manager::COLOR,
 					'selectors' => [
-						'.sina-pro-sticky-freez .elementor-element-{{ID}} '.$class => 'border-color: {{VALUE}};',
+						$selector => 'border-color: {{VALUE}};',
 					],
 				]
 			);
@@ -1156,7 +1289,7 @@ class Sina_Common_Data{
 					'type' => Controls_Manager::COLOR,
 					'default' => '#1085e4',
 					'selectors' => [
-						'.sina-pro-sticky-freez .elementor-element-{{ID}} '.$class.':hover' => 'color: {{VALUE}};',
+						$selector.':hover' => 'color: {{VALUE}};',
 					],
 				]
 			);
@@ -1165,21 +1298,21 @@ class Sina_Common_Data{
 				[
 					'name' => $prefix.'_hover_bg',
 					'types' => [ 'classic', 'gradient' ],
-					'selector' => '.sina-pro-sticky-freez .elementor-element-{{ID}} '.$class.':hover',
+					'selector' => $selector.':hover',
 				]
 			);
 			$obj->add_group_control(
 				Group_Control_Text_Shadow::get_type(),
 				[
 					'name' => $prefix.'_hover_tshadow',
-					'selector' => '.sina-pro-sticky-freez .elementor-element-{{ID}} '.$class.':hover',
+					'selector' => $selector.':hover',
 				]
 			);
 			$obj->add_group_control(
 				Group_Control_Box_Shadow::get_type(),
 				[
 					'name' => $prefix.'_hover_shadow',
-					'selector' => '.sina-pro-sticky-freez .elementor-element-{{ID}} '.$class.':hover',
+					'selector' => $selector.':hover',
 				]
 			);
 			$obj->add_control(
@@ -1188,15 +1321,18 @@ class Sina_Common_Data{
 					'label' => esc_html__( 'Border Color', 'sina-ext' ),
 					'type' => Controls_Manager::COLOR,
 					'selectors' => [
-						'.sina-pro-sticky-freez .elementor-element-{{ID}} '.$class.':hover' => 'border-color: {{VALUE}};',
+						$selector.':hover' => 'border-color: {{VALUE}};',
 					],
 				]
 			);
 			$obj->end_controls_tab();
 		$obj->end_controls_tabs();
+
+		$obj->end_controls_section();
 	}
 
 	public static function button_style( $obj, $class = '', $prefix = 'btn') {
+		$selector = '{{WRAPPER}} '.$class;
 		$obj->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
@@ -1220,7 +1356,7 @@ class Sina_Common_Data{
 						'default' => '400',
 					],
 				],
-				'selector' => '{{WRAPPER}} '.$class,
+				'selector' => $selector,
 			]
 		);
 
@@ -1239,7 +1375,7 @@ class Sina_Common_Data{
 				'type' => Controls_Manager::COLOR,
 				'default' => '#fafafa',
 				'selectors' => [
-					'{{WRAPPER}} '.$class => 'color: {{VALUE}};',
+					$selector => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -1256,28 +1392,28 @@ class Sina_Common_Data{
 						'default' => '#1085e4',
 					],
 				],
-				'selector' => '{{WRAPPER}} '.$class,
+				'selector' => $selector,
 			]
 		);
 		$obj->add_group_control(
 			Group_Control_Text_Shadow::get_type(),
 			[
 				'name' => $prefix.'_tshadow',
-				'selector' => '{{WRAPPER}} '.$class,
+				'selector' => $selector,
 			]
 		);
 		$obj->add_group_control(
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => $prefix.'_shadow',
-				'selector' => '{{WRAPPER}} '.$class,
+				'selector' => $selector,
 			]
 		);
 		$obj->add_group_control(
 			Group_Control_Border::get_type(),
 			[
 				'name' => $prefix.'_border',
-				'selector' => '{{WRAPPER}} '.$class,
+				'selector' => $selector,
 			]
 		);
 		$obj->end_controls_tab();
@@ -1294,7 +1430,7 @@ class Sina_Common_Data{
 				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} '.$class.':hover' => 'color: {{VALUE}};',
+					$selector.':hover' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -1303,21 +1439,21 @@ class Sina_Common_Data{
 			[
 				'name' => $prefix.'_hover_bg',
 				'types' => [ 'classic', 'gradient' ],
-				'selector' => '{{WRAPPER}} '.$class.':hover',
+				'selector' => $selector.':hover',
 			]
 		);
 		$obj->add_group_control(
 			Group_Control_Text_Shadow::get_type(),
 			[
 				'name' => $prefix.'_hover_tshadow',
-				'selector' => '{{WRAPPER}} '.$class.':hover',
+				'selector' => $selector.':hover',
 			]
 		);
 		$obj->add_group_control(
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => $prefix.'_hover_shadow',
-				'selector' => '{{WRAPPER}} '.$class.':hover',
+				'selector' => $selector.':hover',
 			]
 		);
 		$obj->add_control(
@@ -1326,7 +1462,7 @@ class Sina_Common_Data{
 				'label' => esc_html__( 'Border Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} '.$class.':hover' => 'border-color: {{VALUE}};',
+					$selector.':hover' => 'border-color: {{VALUE}};',
 				],
 			]
 		);
@@ -1336,6 +1472,7 @@ class Sina_Common_Data{
 	}
 
 	public static function button_style_active( $obj, $class = '', $prefix = 'btn') {
+		$selector = '{{WRAPPER}} '.$class;
 		$obj->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
@@ -1364,7 +1501,7 @@ class Sina_Common_Data{
 						],
 					],
 				],
-				'selector' => '{{WRAPPER}} '.$class,
+				'selector' => $selector,
 			]
 		);
 
@@ -1383,7 +1520,7 @@ class Sina_Common_Data{
 				'type' => Controls_Manager::COLOR,
 				'default' => '#fafafa',
 				'selectors' => [
-					'{{WRAPPER}} '.$class => 'color: {{VALUE}};',
+					$selector => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -1400,28 +1537,28 @@ class Sina_Common_Data{
 						'default' => '#1085e4',
 					],
 				],
-				'selector' => '{{WRAPPER}} '.$class,
+				'selector' => $selector,
 			]
 		);
 		$obj->add_group_control(
 			Group_Control_Text_Shadow::get_type(),
 			[
 				'name' => $prefix.'_tshadow',
-				'selector' => '{{WRAPPER}} '.$class,
+				'selector' => $selector,
 			]
 		);
 		$obj->add_group_control(
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => $prefix.'_shadow',
-				'selector' => '{{WRAPPER}} '.$class,
+				'selector' => $selector,
 			]
 		);
 		$obj->add_group_control(
 			Group_Control_Border::get_type(),
 			[
 				'name' => $prefix.'_border',
-				'selector' => '{{WRAPPER}} '.$class,
+				'selector' => $selector,
 			]
 		);
 		$obj->add_responsive_control(
@@ -1431,7 +1568,7 @@ class Sina_Common_Data{
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
-					'{{WRAPPER}} '.$class => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					$selector => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -1449,7 +1586,7 @@ class Sina_Common_Data{
 				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} '.$class.'.active' => 'color: {{VALUE}};',
+					$selector.'.active' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -1458,28 +1595,28 @@ class Sina_Common_Data{
 			[
 				'name' => $prefix.'_active_bg',
 				'types' => [ 'classic', 'gradient' ],
-				'selector' => '{{WRAPPER}} '.$class.'.active',
+				'selector' => $selector.'.active',
 			]
 		);
 		$obj->add_group_control(
 			Group_Control_Text_Shadow::get_type(),
 			[
 				'name' => $prefix.'_active_tshadow',
-				'selector' => '{{WRAPPER}} '.$class.'.active',
+				'selector' => $selector.'.active',
 			]
 		);
 		$obj->add_group_control(
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => $prefix.'_active_shadow',
-				'selector' => '{{WRAPPER}} '.$class.'.active',
+				'selector' => $selector.'.active',
 			]
 		);
 		$obj->add_group_control(
 			Group_Control_Border::get_type(),
 			[
 				'name' => $prefix.'_active_border',
-				'selector' => '{{WRAPPER}} '.$class.'.active',
+				'selector' => $selector.'.active',
 			]
 		);
 		$obj->add_responsive_control(
@@ -1489,7 +1626,7 @@ class Sina_Common_Data{
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
-					'{{WRAPPER}} '.$class.'.active' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					$selector.'.active' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -1550,6 +1687,7 @@ class Sina_Common_Data{
 	}
 
 	public static function input_fields_style( $obj ) {
+		$selector = '{{WRAPPER}} .sina-input-field';
 		$obj->add_control(
 			'placeholder_color',
 			[
@@ -1586,14 +1724,14 @@ class Sina_Common_Data{
 						],
 					],
 				],
-				'selector' => '{{WRAPPER}} .sina-input-field',
+				'selector' => $selector,
 			]
 		);
 		$obj->add_group_control(
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'fields_shadow',
-				'selector' => '{{WRAPPER}} .sina-input-field',
+				'selector' => $selector,
 			]
 		);
 
@@ -1613,7 +1751,7 @@ class Sina_Common_Data{
 				'type' => Controls_Manager::COLOR,
 				'default' => '#222',
 				'selectors' => [
-					'{{WRAPPER}} .sina-input-field' => 'color: {{VALUE}};',
+					$selector => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -1624,7 +1762,7 @@ class Sina_Common_Data{
 				'type' => Controls_Manager::COLOR,
 				'default' => '#fff',
 				'selectors' => [
-					'{{WRAPPER}} .sina-input-field' => 'background: {{VALUE}};',
+					$selector => 'background: {{VALUE}};',
 				],
 			]
 		);
@@ -1649,7 +1787,7 @@ class Sina_Common_Data{
 						]
 					],
 				],
-				'selector' => '{{WRAPPER}} .sina-input-field',
+				'selector' => $selector,
 			]
 		);
 
@@ -1668,7 +1806,7 @@ class Sina_Common_Data{
 				'label' => esc_html__( 'Text Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .sina-input-field:focus' => 'color: {{VALUE}};',
+					$selector.':focus' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -1678,7 +1816,7 @@ class Sina_Common_Data{
 				'label' => esc_html__( 'Background', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .sina-input-field:focus' => 'background: {{VALUE}};',
+					$selector.':focus' => 'background: {{VALUE}};',
 				],
 			]
 		);
@@ -1688,7 +1826,7 @@ class Sina_Common_Data{
 				'label' => esc_html__( 'Border Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .sina-input-field:focus' => 'border-color: {{VALUE}}'
+					$selector.':focus' => 'border-color: {{VALUE}}'
 				],
 			]
 		);
