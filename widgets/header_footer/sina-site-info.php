@@ -63,7 +63,7 @@ class Sina_Site_Info_Widget extends Widget_Base{
 	 * @since 3.7.0
 	 */
 	public function get_keywords() {
-		return [ 'sina site info', 'sina site title', 'sina site tagline', 'sina site copyright', 'sina site copy text' ];
+		return [ 'sina site info', 'sina site title', 'sina site tagline', 'sina site copyright', 'sina header', 'sina footer' ];
 	}
 
 	/**

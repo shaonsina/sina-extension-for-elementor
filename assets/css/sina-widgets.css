@@ -1291,6 +1291,23 @@
 	margin: 0;
 }
 
+/*--------------------------------- Site Info -------------------------------------- */
+.sina-logo-wrap{
+	position: relative;
+	display: inline-block;
+	overflow: hidden;
+}
+.sina-sticky-logo{
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	transition: opacity 0.3s;
+}
+.sina-pro-sticky-freez .sina-sticky-logo{
+	opacity: 1;
+}
+
 /*--------------------------------- Nav Menu -------------------------------------- */
 .sina-ext-nav{
 	transition: background 0.5s ease-in-out;
