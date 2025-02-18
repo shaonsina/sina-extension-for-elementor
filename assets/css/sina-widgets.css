@@ -27,6 +27,9 @@
 	clear: both;
 	display: table;
 }
+.sina-fixed{
+	position: fixed;
+}
 
 /* Common */
 .sina-hover-move:hover,
@@ -39,6 +42,8 @@
 .sina-pricing-zoom:hover{
 	z-index: 999;
 }
+.sina-direct-contact a,
+.sina-direct-contact a:hover i,
 .sina-feed .sina-feed-title a,
 .sina-feed .sina-feed-page-name a,
 .sina-feed .sina-feed-meta,
@@ -139,12 +144,14 @@
 	display: none;
 }
 
+.sina-block,
 .sina-bg-thumb img,
 .sina-pt-item.active,
 .sina-pt-content .sina-pt-btn,
 .sina-accordion-item.open > .sina-accordion-header > .sina-accordion-icon .on{
 	display: block;
 }
+.sina-inline,
 .sina-pricing-save-value,
 .sina-contact-form .g-recaptcha,
 .sina-team-social li,
@@ -153,6 +160,13 @@
 .sina-fancytext .sina-fancytext-strings > .animated,
 .sina-product-zoomer{
 	display: inline-block;
+}
+.sina-video,
+.sina-pricing,
+.sina-review-item,
+.sina-direct-contact i,
+.sina-piechart .sina-piechart-content{
+	text-align: center;
 }
 .twentytwenty-before-label:before,
 .twentytwenty-after-label:before,
@@ -728,9 +742,6 @@
 	position: relative;
 	margin: 0 auto;
 }
-.sina-piechart .sina-piechart-content{
-	text-align: center;
-}
 .sina-piechart .sina-piechart-content,
 .sina-content-box-linkable,
 .sina-particle{
@@ -894,9 +905,6 @@
 }
 
 /*--------------------------------- Pricing -------------------------------------- */
-.sina-pricing {
-	text-align: center;
-}
 .sina-pricing-body{
 	margin: 10px 0 20px;
 	padding: 0;
@@ -919,9 +927,6 @@
 }
 
 /*--------------------------------- Review Carousel -------------------------------------- */
-.sina-review-item{
-	text-align: center;
-}
 .sina-review-carousel .owl-item .sina-review-face {
 	margin: 20px auto;
 }
@@ -1014,9 +1019,6 @@
 }
 
 /*--------------------------------- Video -------------------------------------- */
-.sina-video{
-	text-align: center;
-}
 .elementor-widget-sina_video{
 	visibility: visible;
 }
@@ -1279,19 +1281,13 @@
 
 
 /*--------------------------------- Header Footer -------------------------------------- */
+.elementor-editor-active section.sina-pro-sticky-freez,
 .elementor-editor-active header.sina-pro-sticky-freez,
 .elementor-editor-active footer.sina-pro-sticky-freez{
 	width: 100%!important;
 }
 
-/*--------------------------------- Site Info -------------------------------------- */
-.sina-site-info-title a,
-.sina-site-info-copyright a{
-	padding: 0;
-	margin: 0;
-}
-
-/*--------------------------------- Site Info -------------------------------------- */
+/*--------------------------------- Site Logo -------------------------------------- */
 .sina-logo-wrap{
 	position: relative;
 	display: inline-block;
@@ -1306,6 +1302,18 @@
 }
 .sina-pro-sticky-freez .sina-sticky-logo{
 	opacity: 1;
+}
+
+/*--------------------------------- Site Info -------------------------------------- */
+.sina-site-info-title a,
+.sina-site-info-copyright a{
+	padding: 0;
+	margin: 0;
+}
+
+/*--------------------------------- Direct Contact -------------------------------------- */
+.sina-direct-contact a{
+	margin: 0 10px;
 }
 
 /*--------------------------------- Nav Menu -------------------------------------- */

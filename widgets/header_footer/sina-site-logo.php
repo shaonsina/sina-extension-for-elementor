@@ -8,7 +8,6 @@
 
 use \Elementor\Widget_Base;
 use \Elementor\Controls_Manager;
-use \Elementor\Control_Media;
 
 
 // Exit if accessed directly.
@@ -73,19 +72,6 @@ class Sina_Site_Logo_Widget extends Widget_Base{
 	 * @since 3.7.0
 	 */
 	public function get_style_depends() {
-		return [
-			'sina-widgets',
-		];
-	}
-
-	/**
-	 * Get widget scripts.
-	 *
-	 * Retrieve the list of scripts the widget belongs to.
-	 *
-	 * @since 3.7.0
-	 */
-	public function get_script_depends() {
 		return [
 			'sina-widgets',
 		];
@@ -272,6 +258,7 @@ class Sina_Site_Logo_Widget extends Widget_Base{
 		</div><!-- .sina-site-logo -->
 		<?php
 	}
+
 
 	protected function content_template() {
 
