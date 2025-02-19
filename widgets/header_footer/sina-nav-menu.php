@@ -761,11 +761,11 @@ class Sina_Nav_Menu_Widget extends Widget_Base{
 		];
 		?>
 		<style type="text/css">
-			.sina-ext-menu .menu-item-has-children > a:before{content: <?php echo $menu_list_icons[ $data['submenu_close_icon'] ] ?>;}
-			.sina-ext-menu .menu-item-has-children.open > a:before{content: <?php echo $menu_list_icons[ $data['submenu_open_icon'] ] ?>;}
+			<?php echo '.elementor-element-'.$this->get_id(); ?> .sina-ext-menu .menu-item-has-children > a:before{content: <?php echo $menu_list_icons[ $data['submenu_close_icon'] ] ?>;}
+			<?php echo '.elementor-element-'.$this->get_id(); ?> .sina-ext-menu .menu-item-has-children.open > a:before{content: <?php echo $menu_list_icons[ $data['submenu_open_icon'] ] ?>;}
 			@media (max-width: 1024px) {
-				.sina-ext-menu .menu-item-has-children > a:before{content: <?php echo $menu_list_icons[ $data['mobile_submenu_close_icon'] ] ?>;}
-				.sina-ext-menu .menu-item-has-children.open > a:before{content: <?php echo $menu_list_icons[ $data['mobile_submenu_open_icon'] ] ?>;}
+				<?php echo '.elementor-element-'.$this->get_id(); ?> .sina-ext-menu .menu-item-has-children > a:before{content: <?php echo $menu_list_icons[ $data['mobile_submenu_close_icon'] ] ?>;}
+				<?php echo '.elementor-element-'.$this->get_id(); ?> .sina-ext-menu .menu-item-has-children.open > a:before{content: <?php echo $menu_list_icons[ $data['mobile_submenu_open_icon'] ] ?>;}
 			}
 		</style>
 		<nav class="sina-ext-nav sina-ext-nav-mobile-sidebar">

@@ -257,7 +257,7 @@ class Sina_Site_Info_Widget extends Widget_Base{
 						]
 					]
 				);
-				Sina_Common_Data::site_info( $this, '.sina-site-info-title', 'site_info_sticky_title', '.sina-pro-sticky-freez ', true );
+				Sina_Common_Data::site_info( $this, '.sina-site-info-title', 'site_info_sticky_title', '.sina-pro-sticked ', true );
 				$this->end_controls_section();
 			// End Site Sticky Title Style
 			// ============================
@@ -274,7 +274,7 @@ class Sina_Site_Info_Widget extends Widget_Base{
 						]
 					]
 				);
-				Sina_Common_Data::site_info( $this, '.sina-site-info-tagline', 'site_info_sticky_tagline', '.sina-pro-sticky-freez ' );
+				Sina_Common_Data::site_info( $this, '.sina-site-info-tagline', 'site_info_sticky_tagline', '.sina-pro-sticked ' );
 				$this->end_controls_section();
 			// End Site Sticky Tagline Style
 			// ==============================
@@ -291,7 +291,7 @@ class Sina_Site_Info_Widget extends Widget_Base{
 						]
 					]
 				);
-				Sina_Common_Data::site_info( $this, '.sina-site-info-copyright', 'site_info_sticky_copyright', '.sina-pro-sticky-freez ', true );
+				Sina_Common_Data::site_info( $this, '.sina-site-info-copyright', 'site_info_sticky_copyright', '.sina-pro-sticked ', true );
 				$this->end_controls_section();
 			// End Site Sticky Copyright Style
 			// ================================

@@ -60,6 +60,7 @@ class Sina_Ext_Theme_Builder{
 		add_action( 'sina_ext_footer_builder_content', [$this, 'footer_builder_content'] );
 		add_action( 'sina_ext_archive_builder_content', [$this, 'archive_page_builder_content'] );
 		add_action( 'sina_ext_single_builder_content', [$this, 'single_page_builder_content'] );
+		add_action( 'sina_ext_others_builder_content', [$this, 'others_page_builder_content'] );
 
 
 		// Template filter
@@ -81,7 +82,7 @@ class Sina_Ext_Theme_Builder{
 
 			// JS Files
 			wp_enqueue_script( 'select2', SINA_EXT_URL . 'admin/assets/js/select2.min.js', ['jquery'], SINA_EXT_VERSION, true );
-			wp_enqueue_script( 'sina-ext-theme-builder', SINA_EXT_URL . 'admin/assets/js/sina-admin-theme-builder.min.js', ['jquery', 'wp-util'], SINA_EXT_VERSION, true );
+			wp_enqueue_script( 'sina-ext-theme-builder', SINA_EXT_URL . 'admin/assets/js/sina-admin-theme-builder.js', ['jquery', 'wp-util'], SINA_EXT_VERSION, true );
 
 			$localize_data = [
 				'ajaxurl'         => admin_url( 'admin-ajax.php' ),
@@ -90,6 +91,7 @@ class Sina_Ext_Theme_Builder{
 				'hflocation'      => self::get_hf_select(),
 				'archivelocation' => self::get_archive_select(),
 				'singlelocation'  => self::get_single_select(),
+				'otherslocation' => self::get_others_select(),
 				'templatetype'    => self::get_template_type(),
 				'labels'          => [
 					'fields'  => [
@@ -128,12 +130,12 @@ class Sina_Ext_Theme_Builder{
 		$post_types = get_post_types( $args, 'objects' );
 
 		$special_pages = [
-			'404'    => esc_html__( '404 Page', 'sina-ext' ),
-			'search' => esc_html__( 'Search Page', 'sina-ext' ),
-			'blog'   => esc_html__( 'Blog / Posts Page', 'sina-ext' ),
 			'front'  => esc_html__( 'Front Page', 'sina-ext' ),
-			'date'   => esc_html__( 'Date Archive', 'sina-ext' ),
+			'blog'   => esc_html__( 'Blog / Posts Page', 'sina-ext' ),
+			'search' => esc_html__( 'Search Page', 'sina-ext' ),
+			'404'    => esc_html__( '404 Page', 'sina-ext' ),
 			'author' => esc_html__( 'Author Archive', 'sina-ext' ),
+			'date'   => esc_html__( 'Date Archive', 'sina-ext' ),
 		];
 
 		if ( class_exists( 'WooCommerce' ) ) {
@@ -203,8 +205,6 @@ class Sina_Ext_Theme_Builder{
 		unset( $post_types[ self::POST_TYPE ] );
 
 		$special_pages = [
-			'404'    => esc_html__( '404 Page', 'sina-ext' ),
-			'search' => esc_html__( 'Search Page', 'sina-ext' ),
 			'blog'   => esc_html__( 'Blog / Posts Page', 'sina-ext' ),
 			'date'   => esc_html__( 'Date Archive', 'sina-ext' ),
 			'author' => esc_html__( 'Author Archive', 'sina-ext' ),
@@ -254,6 +254,7 @@ class Sina_Ext_Theme_Builder{
 			'basic' => [
 				'label' => esc_html__( 'Basic', 'sina-ext' ),
 				'value' => [
+					'' => esc_html__( 'None', 'sina-ext' ),
 					'singulars' => esc_html__( 'All Singular', 'sina-ext' ),
 				],
 			],
@@ -271,6 +272,35 @@ class Sina_Ext_Theme_Builder{
 		return apply_filters( 'sina_ext_display_archive_list', $selection_options );
 	}
 
+	public static function get_others_select() {
+		$args = [
+			'public'            => true,
+			'show_in_nav_menus' => true,
+		];
+
+		$special_pages = [
+			'front'  => esc_html__( 'Front Page', 'sina-ext' ),
+			'search' => esc_html__( 'Search Page', 'sina-ext' ),
+			'404'    => esc_html__( '404 Page', 'sina-ext' ),
+		];
+
+		$selection_options = [
+			'basic' => [
+				'label' => esc_html__( 'Basic', 'sina-ext' ),
+				'value' => [
+					''         => esc_html__( 'None', 'sina-ext' ),
+				],
+			],
+
+			'special-pages' => [
+				'label' => esc_html__( 'Special Pages', 'sina-ext' ),
+				'value' => $special_pages,
+			],
+		];
+
+		return apply_filters( 'sina_ext_display_others_list', $selection_options );
+	}
+
 	public static function get_template_type() {
 		$template_type = [
 			'header'  => [
@@ -282,12 +312,16 @@ class Sina_Ext_Theme_Builder{
 				'optionkey' => 'footer'
 			],
 			'archive' => [
-				'label'     => esc_html__( 'Archive/404/Search', 'sina-ext' ),
+				'label'     => esc_html__( 'Archive', 'sina-ext' ),
 				'optionkey' => 'archivepage'
 			],
 			'single'  => [
 				'label'     => esc_html__( 'Single', 'sina-ext' ),
 				'optionkey' => 'singlepage'
+			],
+			'others' => [
+				'label'     => esc_html__( 'Others', 'sina-ext' ),
+				'optionkey' => 'otherpage'
 			],
 		];
 
@@ -672,8 +706,10 @@ class Sina_Ext_Theme_Builder{
 	private function get_template_default_file() {
 		if ( is_singular() && $this->has_template('single') ) {
 			$default_file = 'single.php';
-		} elseif ( (is_archive() || is_home() || is_search() || is_404()) && $this->has_template('archive') ) {
+		} elseif ( (is_archive() ) && $this->has_template('archive') ) {
 			$default_file = 'archive.php';
+		} elseif ( (is_home() || is_search() || is_404()) && $this->has_template('others') ) {
+			$default_file = 'others.php';
 		} else {
 			$default_file = '';
 		}
@@ -686,8 +722,10 @@ class Sina_Ext_Theme_Builder{
 
 		if ( is_singular() && $this->has_template('single') ) {
 			$classes[] = $class_prefix . self::has_template('single');
-		} elseif ( (is_archive() || is_home() || is_search()) && $this->has_template('archive') ) {
+		} elseif ( (is_archive()) && $this->has_template('archive') ) {
 			$classes[] = $class_prefix . self::has_template('archive');
+		} elseif ( (is_home() || is_search()) && $this->has_template('others') ) {
+			$classes[] = $class_prefix . self::has_template('others');
 		}
 
 		return $classes;
@@ -828,6 +866,14 @@ class Sina_Ext_Theme_Builder{
 	// Set Single page content
 	public function single_page_builder_content() {
 		$template_id = $this->get_template_id('single');
+		if ( $template_id != '0' ) {
+			echo self::render_build_content($template_id);
+		}
+	}
+
+	// Set Others page content
+	public function others_page_builder_content() {
+		$template_id = $this->get_template_id('others');
 		if ( $template_id != '0' ) {
 			echo self::render_build_content($template_id);
 		}
@@ -1031,144 +1077,150 @@ class Sina_Ext_Theme_Builder{
 	public function print_popup() {
 		if ( isset( $_GET['post_type'] ) && $_GET['post_type'] == self::POST_TYPE ) {
 			?>
-            <script type="text/template" id="tmpl-sina-ext-ctppopup">
-                <div class="sina-ext-template-edit-popup-area">
-                    <div class="sina-ext-body-overlay"></div>
-                    <div class="sina-ext-template-edit-popup">
+			<script type="text/template" id="tmpl-sina-ext-cpt-popup">
+				<div class="sina-ext-template-edit-popup-area">
+					<div class="sina-ext-body-overlay"></div>
+					<div class="sina-ext-template-edit-popup">
+						<div class="sina-ext-template-edit-header">
+							<h3 class="sina-ext-template-edit-setting-title">{{{ data.heading.head }}}</h3>
+							<span class="sina-ext-template-edit-cross">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+								class="bi bi-x-lg" viewBox="0 0 16 16"><path
+								d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/></svg>
+							</span>
+						</div>
 
-                        <div class="sina-ext-template-edit-header">
-                            <h3 class="sina-ext-template-edit-setting-title">
-                                {{{data.heading.head}}}
-                            </h3>
-                            <span class="sina-ext-template-edit-cross">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                     class="bi bi-x-lg" viewBox="0 0 16 16"><path
-                                            d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/></svg>
-                            </span>
-                        </div>
+						<div class="sina-ext-template-edit-body">
+							<div class="sina-ext-template-edit-field">
+								<label class="sina-ext-template-edit-label">{{{ data.heading.fields.name.title }}}</label>
+								<input class="sina-ext-template-edit-input" id="sina-ext-template-title" type="text"
+								name="sina-ext-template-title"
+								placeholder="{{ data.heading.fields.name.placeholder }}">
+							</div>
 
-                        <div class="sina-ext-template-edit-body">
+							<div class="sina-ext-template-edit-field">
+								<label class="sina-ext-template-edit-label">{{{ data.heading.fields.type }}}</label>
+								<select class="sina-ext-template-edit-input" name="sina-ext-template-type"
+								id="sina-ext-template-type">
+									<#
+									_.each( data.templatetype, function( item, key ) {
+										#>
+										<option value="{{ key }}">{{{ item.label }}}</option>
+										<#
+									} );
+									#>
+								</select>
+							</div>
 
-                            <div class="sina-ext-template-edit-field">
-                                <label class="sina-ext-template-edit-label">{{{ data.heading.fields.name.title
-                                    }}}</label>
-                                <input class="sina-ext-template-edit-input" id="sina-ext-template-title" type="text"
-                                       name="sina-ext-template-title"
-                                       placeholder="{{ data.heading.fields.name.placeholder }}">
-                            </div>
+							<div class="sina-ext-template-edit-field hf-location hidden">
+								<label class="sina-ext-template-edit-label">{{{ data.heading.fields.display }}}</label>
+								<select class="sina-ext-template-edit-input" name="sina-ext-hf-display-type"
+								id="sina-ext-hf-display-type">
+									<#
+									_.each( data.hflocation, function( items, keys ) {
+										#>
+										<optgroup label="{{{ items.label }}}">
+											<#
+											_.each( items.value, function( item, key ) {
+												#>
+												<option value="{{ key }}">{{{ item }}}</option>
+												<#
+											} );
+											#>
+										</optgroup>
+										<#
+									} );
+									#>
+								</select>
+							</div>
 
-                            <div class="sina-ext-template-edit-field">
-                                <label class="sina-ext-template-edit-label">{{{data.heading.fields.type}}}</label>
-                                <select class="sina-ext-template-edit-input" name="sina-ext-template-type"
-                                        id="sina-ext-template-type">
-                                    <#
-                                    _.each( data.templatetype, function( item, key ) {
+							<div class="sina-ext-template-edit-field hf-s-location hidden">
+								<label class="sina-ext-template-edit-label"></label>
+								<select class="sina-ext-template-edit-input" name="sina-ext-hf-s-display-type[]"
+								id="sina-ext-hf-s-display-type" multiple="multiple">
+								</select>
+							</div>
 
-                                    #>
-                                    <option value="{{ key }}">{{{ item.label }}}</option>
-                                    <#
+							<div class="sina-ext-template-edit-field archive-location hidden">
+								<label class="sina-ext-template-edit-label">{{{ data.heading.fields.display }}}</label>
+								<select class="sina-ext-template-edit-input" name="sina-ext-archive-display-type"
+								id="sina-ext-archive-display-type">
+									<#
+									_.each( data.archivelocation, function( items, keys ) {
+										#>
+										<optgroup label="{{{ items.label }}}">
+											<#
+											_.each( items.value, function( item, key ) {
+												#>
+												<option value="{{ key }}">{{{ item }}}</option>
+												<#
+											} );
+											#>
+										</optgroup>
+										<#
+									} );
+									#>
+								</select>
+							</div>
 
-                                    } );
-                                    #>
-                                </select>
-                            </div>
+							<div class="sina-ext-template-edit-field single-location hidden">
+								<label class="sina-ext-template-edit-label">{{{ data.heading.fields.display }}}</label>
+								<select class="sina-ext-template-edit-input" name="sina-ext-single-display-type"
+								id="sina-ext-single-display-type">
+									<#
+									_.each( data.singlelocation, function( items, keys ) {
+										#>
+										<optgroup label="{{{ items.label }}}">
+											<#
+											_.each( items.value, function( item, key ) {
+												#>
+												<option value="{{ key }}">{{{ item }}}</option>
+												<#
+											} );
+											#>
+										</optgroup>
+										<#
+									} );
+									#>
+								</select>
+							</div>
 
-                            <div class="sina-ext-template-edit-field hf-location hidden">
-                                <label class="sina-ext-template-edit-label">{{{data.heading.fields.display}}}</label>
-                                <select class="sina-ext-template-edit-input" name="sina-ext-hf-display-type"
-                                        id="sina-ext-hf-display-type">
-                                    <#
-                                    _.each( data.hflocation, function( items, keys ) {
-                                    #>
-                                    <optgroup label="{{{ items.label }}}">
-                                        <#
-                                        _.each( items.value, function( item, key ) {
-                                        #>
-                                        <option value="{{ key }}">{{{ item }}}</option>
-                                        <#
-                                        } );
-                                        #>
-                                    </optgroup>
-                                    <#
-                                    } );
-                                    #>
-                                </select>
-                            </div>
+							<div class="sina-ext-template-edit-field others-location hidden">
+								<label class="sina-ext-template-edit-label">{{{ data.heading.fields.display }}}</label>
+								<select class="sina-ext-template-edit-input" name="sina-ext-others-display-type"
+								id="sina-ext-others-display-type">
+									<#
+									_.each( data.otherslocation, function( items, keys ) {
+										#>
+										<optgroup label="{{{ items.label }}}">
+											<#
+											_.each( items.value, function( item, key ) {
+												#>
+												<option value="{{ key }}">{{{ item }}}</option>
+												<#
+											} );
+											#>
+										</optgroup>
+										<#
+									} );
+									#>
+								</select>
+							</div>
+						</div>
 
-                            <div class="sina-ext-template-edit-field hf-s-location hidden">
-                                <label class="sina-ext-template-edit-label"></label>
-                                <select class="sina-ext-template-edit-input" name="sina-ext-hf-s-display-type[]"
-                                        id="sina-ext-hf-s-display-type" multiple="multiple">
-                                </select>
-                            </div>
-
-                            <div class="sina-ext-template-edit-field archive-location hidden">
-                                <label class="sina-ext-template-edit-label">{{{data.heading.fields.display}}}</label>
-                                <select class="sina-ext-template-edit-input" name="sina-ext-archive-display-type"
-                                        id="sina-ext-archive-display-type">
-                                    <#
-                                    _.each( data.archivelocation, function( items, keys ) {
-                                    #>
-                                    <optgroup label="{{{ items.label }}}">
-                                        <#
-                                        _.each( items.value, function( item, key ) {
-                                        #>
-                                        <option value="{{ key }}">{{{ item }}}</option>
-                                        <#
-                                        } );
-                                        #>
-                                    </optgroup>
-                                    <#
-                                    } );
-                                    #>
-                                </select>
-                            </div>
-
-                            <div class="sina-ext-template-edit-field single-location hidden">
-                                <label class="sina-ext-template-edit-label">{{{data.heading.fields.display}}}</label>
-                                <select class="sina-ext-template-edit-input" name="sina-ext-single-display-type"
-                                        id="sina-ext-single-display-type">
-                                    <#
-                                    _.each( data.singlelocation, function( items, keys ) {
-                                    #>
-                                    <optgroup label="{{{ items.label }}}">
-                                        <#
-                                        _.each( items.value, function( item, key ) {
-                                        #>
-                                        <option value="{{ key }}">{{{ item }}}</option>
-                                        <#
-                                        } );
-                                        #>
-                                    </optgroup>
-                                    <#
-                                    } );
-                                    #>
-                                </select>
-                            </div>
-
-                        </div>
-
-                        <div class="sina-ext-template-edit-footer">
-
-                            <div class="sina-ext-template-button-group">
-                                <div class="sina-ext-template-button-item sina-ext-editor-elementor {{ data.haselementor === 'yes' ? 'button-show' : '' }}">
-                                    <button class="sina-ext-tmp-elementor button">{{{
-                                        data.heading.buttons.elementor.label
-                                        }}}
-                                    </button>
-                                </div>
-                                <div class="sina-ext-template-button-item">
-                                    <button class="sina-ext-tmp-save button button-primary">{{{
-                                        data.heading.buttons.save.label }}}
-                                    </button>
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-                </div>
-            </script>
+						<div class="sina-ext-template-edit-footer">
+							<div class="sina-ext-template-button-group">
+								<div class="sina-ext-template-button-item sina-ext-editor-elementor {{ data.haselementor === 'yes' ? 'button-show' : '' }}">
+									<button class="sina-ext-tmp-elementor button">{{{ data.heading.buttons.elementor.label }}}</button>
+								</div>
+								<div class="sina-ext-template-button-item">
+									<button class="sina-ext-tmp-save button button-primary">{{{ data.heading.buttons.save.label }}}</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</script>
 			<?php
 		}
 	}

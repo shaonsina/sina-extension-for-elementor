@@ -475,7 +475,7 @@ class Sina_Direct_Contact_Widget extends Widget_Base{
 
 
 		if (!empty($get_extenders) && isset($get_extenders['sticky'])) {
-			$selector = '.sina-pro-sticky-freez '.$selector;
+			$selector = '.sina-pro-sticked '.$selector;
 			// Start Phone Style
 			// ==================
 				$this->start_controls_section(
@@ -485,7 +485,7 @@ class Sina_Direct_Contact_Widget extends Widget_Base{
 						'tab' => Controls_Manager::TAB_STYLE,
 					]
 				);
-				Sina_Common_Data::link_style( $this, '.sina-dc-phone', 'sticky_phone_text', '.sina-pro-sticky-freez ' );
+				Sina_Common_Data::link_style( $this, '.sina-dc-phone', 'sticky_phone_text', '.sina-pro-sticked ' );
 				$this->end_controls_section();
 			// End Phone Style
 			// ================
@@ -527,7 +527,7 @@ class Sina_Direct_Contact_Widget extends Widget_Base{
 							],
 						]
 					);
-					Sina_Common_Data::icon_style( $this, '.sina-dc-phone i', 'sticky_phone_icon', '.sina-pro-sticky-freez ' );
+					Sina_Common_Data::icon_style( $this, '.sina-dc-phone i', 'sticky_phone_icon', '.sina-pro-sticked ' );
 				$this->end_controls_section();
 			// End Phone Icon Style
 			// =====================
@@ -541,7 +541,7 @@ class Sina_Direct_Contact_Widget extends Widget_Base{
 						'tab' => Controls_Manager::TAB_STYLE,
 					]
 				);
-				Sina_Common_Data::link_style( $this, '.sina-dc-email', 'sticky_email_text', '.sina-pro-sticky-freez ' );
+				Sina_Common_Data::link_style( $this, '.sina-dc-email', 'sticky_email_text', '.sina-pro-sticked ' );
 				$this->end_controls_section();
 			// End Email Style
 			// ================
@@ -584,7 +584,7 @@ class Sina_Direct_Contact_Widget extends Widget_Base{
 							],
 						]
 					);
-					Sina_Common_Data::icon_style( $this, '.sina-dc-email i', 'sticky_email_icon', '.sina-pro-sticky-freez ' );
+					Sina_Common_Data::icon_style( $this, '.sina-dc-email i', 'sticky_email_icon', '.sina-pro-sticked ' );
 				$this->end_controls_section();
 			// End Email Icon Style
 			// =====================

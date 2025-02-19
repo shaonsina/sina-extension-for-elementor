@@ -387,6 +387,7 @@
 .sina-bg-thumb:hover .sina-overlay{
 	opacity: 1;
 }
+.sina-quick-links a,
 .sina-pc-title,
 .sina-pc-title a,
 .sina-bp-title,
@@ -1281,9 +1282,9 @@
 
 
 /*--------------------------------- Header Footer -------------------------------------- */
-.elementor-editor-active section.sina-pro-sticky-freez,
-.elementor-editor-active header.sina-pro-sticky-freez,
-.elementor-editor-active footer.sina-pro-sticky-freez{
+.elementor-editor-active section.sina-pro-sticked,
+.elementor-editor-active header.sina-pro-sticked,
+.elementor-editor-active footer.sina-pro-sticked{
 	width: 100%!important;
 }
 
@@ -1300,7 +1301,7 @@
 	opacity: 0;
 	transition: opacity 0.3s;
 }
-.sina-pro-sticky-freez .sina-sticky-logo{
+.sina-pro-sticked .sina-sticky-logo{
 	opacity: 1;
 }
 
@@ -1314,6 +1315,12 @@
 /*--------------------------------- Direct Contact -------------------------------------- */
 .sina-direct-contact a{
 	margin: 0 10px;
+}
+
+/*--------------------------------- Quick Links -------------------------------------- */
+.sina-quick-links li{
+	display: inline-block;
+	width: 100%;
 }
 
 /*--------------------------------- Nav Menu -------------------------------------- */

@@ -37,13 +37,14 @@
 		},
 		// Render Popup HTML
 		renderPopup: function renderPopup(event) {
-			var popupTmp = wp.template('sina-ext-ctppopup'),
+			var popupTmp = wp.template('sina-ext-cpt-popup'),
 			content = null;
 			content = popupTmp({
 				templatetype: Sina_Ext_Theme_Builder.templatetype,
 				hflocation: Sina_Ext_Theme_Builder.hflocation,
 				archivelocation: Sina_Ext_Theme_Builder.archivelocation,
 				singlelocation: Sina_Ext_Theme_Builder.singlelocation,
+				otherslocation: Sina_Ext_Theme_Builder.otherslocation,
 				editor: Sina_Ext_Theme_Builder.editor,
 				heading: Sina_Ext_Theme_Builder.labels
 			});
@@ -83,7 +84,7 @@
 					complete: function complete(response) {
 						$(document).trigger('sina_ext_template_edit_popup_open');
 
-						var temDisplay = $('.hf-location:visible select, .archive-location:visible select, .single-location:visible select');
+						var temDisplay = $('.hf-location:visible select, .archive-location:visible select, .single-location:visible select, .others-location:visible select');
 						temDisplay.find("option[value='" + response.responseJSON.data.tmpLocation + "']")[0].selected = "true";
 
 						//display specific locations
@@ -122,7 +123,7 @@
 			tmpId = event.target.dataset.tmpid ? event.target.dataset.tmpid : '',
 			title = $('#sina-ext-template-title').val(),
 			tmpType = $('#sina-ext-template-type').val(),
-			temDisplay = $('.hf-location:visible select, .archive-location:visible select, .single-location:visible select').val(),
+			temDisplay = $('.hf-location:visible select, .archive-location:visible select, .single-location:visible select, .others-location:visible select').val(),
 			specificsDisplay = $('.hf-s-location:visible select').val();
 
 			$.ajax({
@@ -173,15 +174,18 @@
 		displayLocation: function displayLocation(event) {
 			var type = $('#sina-ext-template-type').val();
 			$('.hf-s-location').addClass('hidden');
-			if ('archive' === type) {
-				$('.archive-location').removeClass('hidden');
-				$('.hf-location, .single-location').addClass('hidden');
-			} else if ('single' === type) {
+			if ('single' === type) {
 				$('.single-location').removeClass('hidden');
-				$('.hf-location, .archive-location').addClass('hidden');
+				$('.hf-location, .archive-location, .others-location').addClass('hidden');
+			} else if ('archive' === type) {
+				$('.archive-location').removeClass('hidden');
+				$('.hf-location, .single-location, .others-location').addClass('hidden');
+			} else if ('others' === type) {
+				$('.others-location').removeClass('hidden');
+				$('.hf-location, .archive-location, .single-location').addClass('hidden');
 			} else {
 				$('.hf-location').removeClass('hidden');
-				$('.single-location, .archive-location').addClass('hidden');
+				$('.archive-location, .single-location, .others-location').addClass('hidden');
 				setTimeout(function () {
 					//specifics location for page post taxonomy etc
 					if ('specifics' === $('#sina-ext-hf-display-type').val()) {
