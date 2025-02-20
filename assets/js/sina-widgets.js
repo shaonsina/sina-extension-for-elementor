@@ -138,6 +138,25 @@
 		});
 	}
 
+	function sinaScrollTop($scope, $) {
+		$scope.find('.sina-scroll-top').each(function () {
+			var $this = $(this);
+			$(window).on('scroll', function() {
+				if ($(this).scrollTop() > 300) {
+					$this.fadeIn('slow');
+				} else {
+					$this.fadeOut('slow');
+				}
+			});
+			$this.on('click', function() {
+				$("html, body").animate({
+					scrollTop: 0
+				}, 600);
+				return false;
+			});
+		});
+	}
+
 	function sinaBrandCarousel($scope, $) {
 		$scope.find('.sina-brand-carousel').each(function () {
 			sinaOwl( $(this) );
@@ -1044,6 +1063,7 @@
 
 
 	$(window).on('elementor/frontend/init', function () {
+		elementorFrontend.hooks.addAction('frontend/element_ready/sina_scroll_to_top.default', sinaScrollTop);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_nav_menu.default', sinaNavMenu);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_accordion.default', sinaAccordion);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_banner_slider.default', sinaBannerSlider);

@@ -100,6 +100,37 @@ class Sina_Nav_Menu_Widget extends Widget_Base{
 		return $list;
 	}
 
+	public function get_icon_list() {
+		return [
+			'icofont icofont-arrow-down' => 'Arrow Down',
+			'icofont icofont-arrow-left' => 'Arrow Left',
+			'icofont icofont-arrow-right' => 'Arrow Right',
+			'icofont icofont-arrow-up' => 'Arrow Up',
+			'icofont icofont-caret-down' => 'Caret Down',
+			'icofont icofont-caret-left' => 'Caret Left',
+			'icofont icofont-caret-right' => 'Caret Right',
+			'icofont icofont-caret-up' => 'Caret Up',
+			'icofont icofont-rounded-down' => 'Rounded Down',
+			'icofont icofont-rounded-left' => 'Rounded Left',
+			'icofont icofont-rounded-right' => 'Rounded Right',
+			'icofont icofont-rounded-up' => 'Rounded Up',
+			'icofont icofont-simple-down' => 'Simple Down',
+			'icofont icofont-simple-left' => 'Simple Left',
+			'icofont icofont-simple-right' => 'Simple Right',
+			'icofont icofont-simple-up' => 'Simple Up',
+			'icofont icofont-swoosh-down' => 'Swoosh Down',
+			'icofont icofont-swoosh-left' => 'Swoosh Left',
+			'icofont icofont-swoosh-right' => 'Swoosh Right',
+			'icofont icofont-swoosh-up' => 'Swoosh Up',
+			'icofont icofont-double-left' => 'Double Left',
+			'icofont icofont-double-right' => 'Double Right',
+			'icofont icofont-rounded-double-left' => 'Rounded Double Left',
+			'icofont icofont-rounded-double-right' => 'Rounded Double Right',
+			'icofont icofont-plus' => 'Plus',
+			'icofont icofont-minus' => 'Minus',
+		];
+	}
+
 	/**
 	 * Register widget controls.
 	 *
@@ -110,6 +141,7 @@ class Sina_Nav_Menu_Widget extends Widget_Base{
 	 */
 	protected function register_controls() {
 		$get_extenders 	= get_option( 'sina_extenders' );
+		$submenu_icons = $this->get_icon_list();
 		// Start Nav Menu
 		// ===============
 			$this->start_controls_section(
@@ -141,8 +173,9 @@ class Sina_Nav_Menu_Widget extends Widget_Base{
 				'submenu_open_icon',
 				[
 					'label' => esc_html__( 'Submenu Open Icon', 'sina-ext' ),
-					'type' => Sina_Ext_Controls_Manager::SINA_MENU_ICON,
 					'label_block' => true,
+					'type' => Controls_Manager::ICON,
+					'include' => $submenu_icons,
 					'default' => 'icofont icofont-rounded-up',
 				]
 			);
@@ -150,8 +183,9 @@ class Sina_Nav_Menu_Widget extends Widget_Base{
 				'submenu_close_icon',
 				[
 					'label' => esc_html__( 'Submenu Close Icon', 'sina-ext' ),
-					'type' => Sina_Ext_Controls_Manager::SINA_MENU_ICON,
 					'label_block' => true,
+					'type' => Controls_Manager::ICON,
+					'include' => $submenu_icons,
 					'default' => 'icofont icofont-rounded-down',
 				]
 			);
@@ -194,8 +228,8 @@ class Sina_Nav_Menu_Widget extends Widget_Base{
 				'mobile_menu_open_icon',
 				[
 					'label' => esc_html__( 'Menu Open Icon', 'sina-ext' ),
-					'type' => Controls_Manager::ICON,
 					'label_block' => true,
+					'type' => Controls_Manager::ICON,
 					'default' => 'icofont icofont-navigation-menu',
 				]
 			);
@@ -203,8 +237,8 @@ class Sina_Nav_Menu_Widget extends Widget_Base{
 				'mobile_menu_close_icon',
 				[
 					'label' => esc_html__( 'Menu Close Icon', 'sina-ext' ),
-					'type' => Controls_Manager::ICON,
 					'label_block' => true,
+					'type' => Controls_Manager::ICON,
 					'default' => 'icofont icofont-close',
 				]
 			);
@@ -212,8 +246,9 @@ class Sina_Nav_Menu_Widget extends Widget_Base{
 				'mobile_submenu_open_icon',
 				[
 					'label' => esc_html__( 'Submenu Open Icon', 'sina-ext' ),
-					'type' => Sina_Ext_Controls_Manager::SINA_MENU_ICON,
 					'label_block' => true,
+					'type' => Controls_Manager::ICON,
+					'include' => $submenu_icons,
 					'default' => 'icofont icofont-rounded-down',
 				]
 			);
@@ -221,8 +256,9 @@ class Sina_Nav_Menu_Widget extends Widget_Base{
 				'mobile_submenu_close_icon',
 				[
 					'label' => esc_html__( 'Submenu Close Icon', 'sina-ext' ),
-					'type' => Sina_Ext_Controls_Manager::SINA_MENU_ICON,
 					'label_block' => true,
+					'type' => Controls_Manager::ICON,
+					'include' => $submenu_icons,
 					'default' => 'icofont icofont-rounded-right',
 				]
 			);

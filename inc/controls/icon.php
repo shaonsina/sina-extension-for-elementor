@@ -3383,9 +3383,15 @@ class Sina_Ext_Icon extends Base_Data_Control{
 			<div class="elementor-control-input-wrapper">
 				<select id="<?php echo $control_uid; ?>" class="elementor-control-icon" data-setting="{{ data.name }}" data-placeholder="<?php echo __( 'Select Icon', 'sina-ext' ); ?>">
 					<option value=""><?php echo __( 'Select Icon', 'sina-ext' ); ?></option>
-					<# _.each( data.options, function( option_title, option_value ) { #>
-					<option value="{{ option_value }}">{{{ option_title }}}</option>
-					<# } ); #>
+					<# if( data.include ) { #>
+						<# _.each( data.include, function( option_title, option_value ) { #>
+							<option value="{{ option_value }}">{{{ option_title }}}</option>
+						<# } ); #>
+					<# } else { #>
+						<# _.each( data.options, function( option_title, option_value ) { #>
+							<option value="{{ option_value }}">{{{ option_title }}}</option>
+						<# } ); #>
+					<# } #>
 				</select>
 			</div>
 		</div>

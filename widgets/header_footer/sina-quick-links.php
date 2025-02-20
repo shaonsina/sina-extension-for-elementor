@@ -163,7 +163,7 @@ class Sina_Quick_Links_Widget extends Widget_Base{
 		?>
 		<div class="sina-quick-links">
 			<?php wp_nav_menu( $args ); ?>
-		</div><!-- .sina-site-logo -->
+		</div><!-- .sina-quick-links -->
 		<?php
 	}
 
