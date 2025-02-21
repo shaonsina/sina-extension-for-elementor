@@ -467,7 +467,7 @@ class Sina_Fancytext_Widget extends Widget_Base{
 
 		?>
 		<div class="sina-fancytext"
-		data-fancy-text="<?php echo sina_ext_use_char( $fancy_text ); ?>"
+		data-fancy-text="<?php echo sina_ext_remove_chars( $fancy_text ); ?>"
 		data-anim="<?php echo sina_ext_escape_in_anims($data['animation_type'], 'typing', ['typing']); ?>"
 		data-speed="<?php echo esc_attr( $data['typing_speed'] ); ?>"
 		data-delay="<?php echo esc_attr( $data['delay'] ); ?>"
@@ -486,13 +486,13 @@ class Sina_Fancytext_Widget extends Widget_Base{
 				if ( 'typing' == $data['animation_type'] ) :
 					?>
 					<span class="sina-fancytext-strings">
-						<?php echo sina_ext_use_char($data['fancy_text'][0]['fancy_items']); ?>
+						<?php echo sina_ext_remove_chars($data['fancy_text'][0]['fancy_items']); ?>
 					</span>
 					<?php
 				else :
 					?>
 					<span class="sina-fancytext-strings">
-						<?php echo sina_ext_use_char(rtrim($fancy_text, '@@') ); ?>
+						<?php echo sina_ext_remove_chars(rtrim($fancy_text, '@@') ); ?>
 					</span>
 					<?php
 				endif;
