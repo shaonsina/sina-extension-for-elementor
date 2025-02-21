@@ -5,7 +5,7 @@ Donate link: https://sina-extension.sinaextra.com/
 Requires at least: 4.8
 Tested up to: 6.7
 Requires PHP: 7.0
-Stable tag: 3.6.0
+Stable tag: 3.6.1
 License: GPL v3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -271,6 +271,11 @@ Yes. It's totally free. We also have a [PRO](https://sina-extension.sinaextra.co
 
 
 == Changelog ==
+
+= 3.6.1 - 25-02-2025 =
+- Fixed: Countdown escaping issue
+- Fixed: Fancytext escaping issue
+- Fixed: Login Form escaping issue
 
 = 3.6.0 - 20-12-2024 =
 - Added: Menu Page

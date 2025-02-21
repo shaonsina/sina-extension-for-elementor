@@ -4,12 +4,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-function sina_ext_use_char($text) {
-	return str_replace(['&','<','>','='], [' & ',' < ',' > ',' = '], $text);
-}
-
 function sina_ext_remove_chars($text) {
-	return preg_replace('/[^A-Za-z0-9 ]/', '', $text);
+	return preg_replace('/[^A-Za-z0-9 @!.]/', '', $text);
 }
 
 function sina_ext_escape_tags($tag, $default = 'h2', $extra = []) {

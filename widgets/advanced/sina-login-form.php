@@ -501,7 +501,7 @@ class Sina_Login_Form_Widget extends Widget_Base{
 		<div class="sina-form">
 			<form class="sina-login-form"
 			data-uid="<?php echo esc_attr( $id ); ?>"
-			data-state="<?php echo esc_attr( $data['login_state'] ); ?>"
+			data-state="<?php echo sina_ext_remove_chars( $data['login_state'] ); ?>"
 			data-rem-login="<?php echo esc_attr( $data['is_remember_login'] ); ?>"
 			data-url="<?php echo esc_url( $data['redirect_url'] ); ?>">
 

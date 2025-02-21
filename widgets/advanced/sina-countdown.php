@@ -697,7 +697,7 @@ class Sina_Countdown_Widget extends Widget_Base{
 		data-time="<?php echo esc_attr( $data['countdown_time'] ); ?>"
 		data-text="<?php echo esc_attr( $data['text_state'] ); ?>"
 		data-link="<?php echo esc_url( $data['redirect'] ); ?>"
-		data-message="<?php echo sina_ext_use_char( $msg ); ?>">
+		data-message="<?php echo sina_ext_remove_chars( $msg ); ?>">
 			<?php
 			if( date_timestamp_get( date_create( $data['countdown_time'] ) ) > time() ) :
 				foreach ($data['units'] as $value) :
