@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 define('SINA_EXT_VERSION', '3.7.0');
-define('SINA_EXT_PREVIOUS_VERSION', '3.6.0' );
+define('SINA_EXT_PREVIOUS_VERSION', '3.6.1' );
 define('SINA_EXT_FILE', __FILE__ );
 define('SINA_EXT_SLUG', basename( SINA_EXT_FILE, '.php' ));
 define('SINA_EXT_DIR', __DIR__);
@@ -41,8 +41,8 @@ define('SINA_WIDGETS', [
 		'site-logo'				=> esc_html__( 'Sina Site Logo', 'sina-ext' ),
 		'site-info'				=> esc_html__( 'Sina Site Info', 'sina-ext' ),
 		'direct-contact'		=> esc_html__( 'Sina Direct Contact', 'sina-ext' ),
-		'quick-links'			=> esc_html__( 'Sina Quick Links', 'sina-ext' ),
 		'search'				=> esc_html__( 'Sina Search', 'sina-ext' ),
+		'quick-links'			=> esc_html__( 'Sina Quick Links', 'sina-ext' ),
 		'scroll-to-top'			=> esc_html__( 'Sina Scroll to Top', 'sina-ext' ),
 		'woo-cart'				=> esc_html__( 'Sina Woo Cart', 'sina-ext' ),
 	],

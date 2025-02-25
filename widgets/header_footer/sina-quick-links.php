@@ -107,15 +107,61 @@ class Sina_Quick_Links_Widget extends Widget_Base{
 				]
 			);
 
-			$this->add_control(
-				'quick_links',
-				[
-					'label' => esc_html__( 'Select Menu', 'sina-ext' ),
-					'description' => esc_html__( 'Dropdown isn\'t support', 'sina-ext' ),
-					'type' => Controls_Manager::SELECT,
-					'options' => $this->get_menu_list(),
-				]
-			);
+				$this->add_control(
+					'quick_links',
+					[
+						'label' => esc_html__( 'Select Menu', 'sina-ext' ),
+						'description' => esc_html__( 'Dropdown isn\'t support', 'sina-ext' ),
+						'type' => Controls_Manager::SELECT,
+						'options' => $this->get_menu_list(),
+					]
+				);
+				$this->add_responsive_control(
+					'width',
+					[
+						'label' => esc_html__( 'Width', 'sina-ext' ),
+						'type' => Controls_Manager::SLIDER,
+						'size_units' => [ 'px', 'em', '%'],
+						'range' => [
+							'px' => [
+								'max' => 500,
+							],
+							'em' => [
+								'max' => 50,
+							],
+							'%' => [
+								'max' => 100,
+							],
+						],
+						'selectors' => [
+							'.elementor-element-{{ID}} .sina-quick-links li' => 'width: {{SIZE}}{{UNIT}};',
+						],
+					]
+				);
+				$this->add_responsive_control(
+					'alignment',
+					[
+						'label' => esc_html__( 'Alignment', 'sina-ext' ),
+						'type' => Controls_Manager::CHOOSE,
+						'options' => [
+							'left' => [
+								'title' => esc_html__( 'Left', 'sina-ext' ),
+								'icon' => 'eicon-text-align-left',
+							],
+							'center' => [
+								'title' => esc_html__( 'Center', 'sina-ext' ),
+								'icon' => 'eicon-text-align-center',
+							],
+							'right' => [
+								'title' => esc_html__( 'Right', 'sina-ext' ),
+								'icon' => 'eicon-text-align-right',
+							],
+						],
+						'selectors' => [
+							'.elementor-element-{{ID}} .sina-quick-links a' => 'text-align: {{VALUE}};',
+						],
+					]
+				);
 
 			$this->end_controls_section();
 		// End Quick Links
@@ -131,7 +177,7 @@ class Sina_Quick_Links_Widget extends Widget_Base{
 					'tab' => Controls_Manager::TAB_STYLE,
 				]
 			);
-			Sina_Common_Data::link_style( $this, '.sina-quick-links a', 'quick_links', '', '.sina-quick-links li' );
+			Sina_Common_Data::link_style( $this, '.sina-quick-links a', 'quick_links' );
 			$this->end_controls_section();
 		// End Quick Links Style
 		// ======================

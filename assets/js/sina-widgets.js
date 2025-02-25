@@ -138,6 +138,42 @@
 		});
 	}
 
+	function sinaSearch($scope, $) {
+		$scope.find('.sina-search').each(function () {
+			var $this = $(this);
+			var $click = $this.data('click') ? true : false;
+			var $esc = $this.data('esc') ? true : false;
+			var $btn = $this.children('.sina-button');
+			var $modal = $this.children('.sina-modal-overlay');
+			var $close = $modal.find('.sina-modal-close');
+
+			$btn.click( function(e) {
+				$modal.fadeIn( 400 );
+			});
+
+			$close.click( function() {
+				$modal.fadeOut(400);
+			});
+
+			if ( $click ) {
+				$(document).on('click', function(e) {
+					if ( $(e.target).is('.sina-modal-area') ) {
+						$modal.fadeOut(400);
+					}
+				});
+			}
+
+			if ( $esc ) {
+				$(window).on('keydown', function(e) {
+					var key = e.which || e.keyCode;
+					if ( 192 == key ) {
+						$modal.fadeOut(400);
+					}
+				});
+			}
+		});
+	}
+
 	function sinaScrollTop($scope, $) {
 		$scope.find('.sina-scroll-top').each(function () {
 			var $this = $(this);
@@ -1063,6 +1099,7 @@
 
 
 	$(window).on('elementor/frontend/init', function () {
+		elementorFrontend.hooks.addAction('frontend/element_ready/sina_search.default', sinaSearch);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_scroll_to_top.default', sinaScrollTop);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_nav_menu.default', sinaNavMenu);
 		elementorFrontend.hooks.addAction('frontend/element_ready/sina_accordion.default', sinaAccordion);

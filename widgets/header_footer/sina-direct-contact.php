@@ -316,7 +316,7 @@ class Sina_Direct_Contact_Widget extends Widget_Base{
 						],
 						'selectors' => [
 							$selector.' .sina-dc-phone i' => 'margin-right: {{SIZE}}{{UNIT}};',
-							'.rtl '.$selector.' .sina-dc-phone i' => 'margin-right: inherit;',
+							'.rtl '.$selector.' .sina-dc-phone i' => 'margin-right: auto;',
 							'.rtl '.$selector.' .sina-dc-phone i' => 'margin-left: {{SIZE}}{{UNIT}};',
 						],
 					]
@@ -463,7 +463,7 @@ class Sina_Direct_Contact_Widget extends Widget_Base{
 						],
 						'selectors' => [
 							$selector.' .sina-dc-email i' => 'margin-right: {{SIZE}}{{UNIT}};',
-							'.rtl '.$selector.' .sina-dc-email i' => 'margin-right: inherit;',
+							'.rtl '.$selector.' .sina-dc-email i' => 'margin-right: auto;',
 							'.rtl '.$selector.' .sina-dc-email i' => 'margin-left: {{SIZE}}{{UNIT}};',
 						],
 					]
@@ -522,7 +522,7 @@ class Sina_Direct_Contact_Widget extends Widget_Base{
 							],
 							'selectors' => [
 								$selector.' .sina-dc-phone i' => 'margin-right: {{SIZE}}{{UNIT}};',
-								'.rtl '.$selector.' .sina-dc-phone i' => 'margin-right: inherit;',
+								'.rtl '.$selector.' .sina-dc-phone i' => 'margin-right: auto;',
 								'.rtl '.$selector.' .sina-dc-phone i' => 'margin-left: {{SIZE}}{{UNIT}};',
 							],
 						]
@@ -579,7 +579,7 @@ class Sina_Direct_Contact_Widget extends Widget_Base{
 							],
 							'selectors' => [
 								$selector.' .sina-dc-email i' => 'margin-right: {{SIZE}}{{UNIT}};',
-								'.rtl '.$selector.' .sina-dc-email i' => 'margin-right: inherit;',
+								'.rtl '.$selector.' .sina-dc-email i' => 'margin-right: auto;',
 								'.rtl '.$selector.' .sina-dc-email i' => 'margin-left: {{SIZE}}{{UNIT}};',
 							],
 						]

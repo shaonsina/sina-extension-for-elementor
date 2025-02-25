@@ -67,7 +67,7 @@
 		right: 0;
 	}
 	body.rtl.sina-ext-nav-mobile-left > .sina-ext-nav-wrapper{
-		margin-left: inherit;
+		margin-left: auto;
 		margin-right: 280px;
 	}
 }

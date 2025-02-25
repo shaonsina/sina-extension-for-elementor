@@ -1318,6 +1318,24 @@
 	margin: 0 10px;
 }
 
+/*--------------------------------- Search -------------------------------------- */
+.sina-search .sina-input-field,
+.sina-search .sina-button{
+	background: transparent;
+	border: 0;
+}
+.sina-search .sina-input-field::-webkit-search-cancel-button{
+	display: none;
+}
+.sina-search .sina-modal-area{
+	animation-duration: 2.25s;
+	animation-timing-function: ease-in-out;
+}
+.sina-search .sina-modal-close{
+	position: absolute;
+	z-index: 9;
+}
+
 /*--------------------------------- Quick Links -------------------------------------- */
 .sina-quick-links li{
 	display: inline-block;

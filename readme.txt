@@ -1,4 +1,4 @@
-== Sina Extension for Elementor (Slider, Gallery, Form, Modal, Data Table, Tab, Particle, Free Elementor Widgets & Elementor Templates) ==
+== Sina Extension for Elementor (Header Builder, Footer Builter, Theme Builder, Slider, Gallery, Form, Modal, Data Table Free Elementor Widgets & Elementor Templates) ==
 Contributors: shaonsina
 Tags: elementor addon, elementor addons, elementor extension, elementor widget, elementor templates
 Donate link: https://sina-extension.sinaextra.com/
@@ -9,12 +9,12 @@ Stable tag: 3.7.0
 License: GPL v3
 License URI: https://opensource.org/licenses/GPL-3.0
 
-A collection of high-quality widgets for Elementor page builder. 100+ predefined blocks & pages with unlimited customization ability.
+A collection of high-quality features including Header, Footer and Theme Builder. 60+ Custom elements with 100+ predefined blocks & pages and more.
 
 
 == Description ==
 
-This is an extension or addon for [Elementor](https://wordpress.org/plugins/elementor/) page builder. It will extend the Elementor and increase web page building experience. It has 38 useful & high-quality widgets or addon and 2 creative extenders. Which you may use for easy & fast make the page & display your content far better way. After using it, you will feel that it's one of the best addon for Elementor.
+This is an extension or addon for [Elementor](https://wordpress.org/plugins/elementor/) page builder. It will extend the Elementor and increase web page building experience. It has 58 useful & high-quality widgets or addon and 2 creative extenders. Which you may use for easy & fast make the page & display your content far better way. After using it, you will feel that it's one of the best addon for Elementor.
 
 
 = Use of Sina Templates =
@@ -23,7 +23,7 @@ https://youtu.be/x8sZyLEBoks
 
 == Features ==
 
-* 40 free elements.
+* 60 free elements.
 * Options panel for enable/disable elements.
 * Easy to use
 * Details Customisation ability

@@ -979,7 +979,7 @@ class Sina_Common_Data{
 		);
 	}
 
-	public static function link_style( $obj, $class = '', $prefix = 'phone_text', $sticky_class = '', $width_class = '') {
+	public static function link_style( $obj, $class = '', $prefix = 'phone_text', $sticky_class = '') {
 		$selector = $sticky_class.'.elementor-element-{{ID}} '.$class;
 		$obj->add_group_control(
 			Group_Control_Typography::get_type(),
@@ -1089,37 +1089,13 @@ class Sina_Common_Data{
 			$obj->end_controls_tab();
 		$obj->end_controls_tabs();
 
-		if ($width_class) {
-			$obj->add_responsive_control(
-				$prefix.'_width',
-				[
-					'label' => esc_html__( 'Width', 'sina-ext' ),
-					'type' => Controls_Manager::SLIDER,
-					'size_units' => [ 'px', 'em', '%'],
-					'range' => [
-						'px' => [
-							'max' => 500,
-						],
-						'em' => [
-							'max' => 50,
-						],
-						'%' => [
-							'max' => 100,
-						],
-					],
-					'separator' => 'before',
-					'selectors' => [
-						$sticky_class.'.elementor-element-{{ID}} '.$width_class => 'width: {{SIZE}}{{UNIT}};',
-					],
-				]
-			);
-		}
 		$obj->add_responsive_control(
 			$prefix.'_radius',
 			[
 				'label' => esc_html__( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
+				'separator' => 'before',
 				'selectors' => [
 					$selector => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
