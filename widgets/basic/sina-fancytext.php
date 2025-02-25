@@ -523,7 +523,7 @@ class Sina_Fancytext_Widget extends Widget_Base{
 
 			view.addRenderAttribute( 'fancy_suffix', 'class', 'sina-fancytext-suffix' );
 			view.addInlineEditingAttributes( 'fancy_suffix' );
-			fancyText = fancyText.replace(/</g, ' < ' ).replace(/>/g, ' > ').replace(/=/g, ' = ').replace(/&/g, ' & ');
+			fancyText = fancyText.replace(/[^A-z0-9 @!.]/g, '');
 			#>
 			<div class="sina-fancytext"
 			data-fancy-text="{{{fancyText.trim('@@')}}}"
@@ -540,7 +540,7 @@ class Sina_Fancytext_Widget extends Widget_Base{
 
 				<# if ( 'typing' == settings.animation_type ) { #>
 					<span class="sina-fancytext-strings">
-						{{{settings.fancy_text[0]['fancy_items'].replace(/</g, ' < ' ).replace(/>/g, ' > ').replace(/=/g, ' = ').replace(/&/g, ' & ')}}}
+						{{{settings.fancy_text[0]['fancy_items'].replace(/[^A-z0-9 @!.]/g, '')}}}
 					</span>
 				<# } else { #>
 					<span class="sina-fancytext-strings">
