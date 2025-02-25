@@ -1,7 +1,7 @@
 <?php
 
 /**
- * User Scroll to Top.
+ * Scroll to Top Widget.
  *
  * @since 3.7.0
  */

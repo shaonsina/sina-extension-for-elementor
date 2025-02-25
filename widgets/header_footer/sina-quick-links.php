@@ -1,7 +1,7 @@
 <?php
 
 /**
- * User Quick Links.
+ * Quick Links Widget.
  *
  * @since 3.7.0
  */

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * User Site Logo.
+ * Site Logo Widget.
  *
  * @since 3.7.0
  */

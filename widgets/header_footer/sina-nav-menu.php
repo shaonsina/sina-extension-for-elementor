@@ -1,7 +1,7 @@
 <?php
 
 /**
- * User Counter Widget.
+ * Nav Menu Widget.
  *
  * @since 3.7.0
  */
@@ -320,9 +320,9 @@ class Sina_Nav_Menu_Widget extends Widget_Base{
 						'type' => Controls_Manager::DIMENSIONS,
 						'size_units' => [ 'px', 'em', '%' ],
 						'default' => [
-							'top' => '20',
+							'top' => '13',
 							'right' => '15',
-							'bottom' => '20',
+							'bottom' => '13',
 							'left' => '15',
 							'isLinked' => false,
 						],
@@ -401,9 +401,9 @@ class Sina_Nav_Menu_Widget extends Widget_Base{
 						'type' => Controls_Manager::DIMENSIONS,
 						'size_units' => [ 'px', 'em', '%' ],
 						'default' => [
-							'top' => '20',
+							'top' => '13',
 							'right' => '30',
-							'bottom' => '20',
+							'bottom' => '13',
 							'left' => '15',
 							'isLinked' => false,
 						],
@@ -702,7 +702,7 @@ class Sina_Nav_Menu_Widget extends Widget_Base{
 					],
 					'default' => [
 						'unit' => 'px',
-						'size' => 12,
+						'size' => '-13',
 					],
 					'selectors' => [
 						'.elementor-element-{{ID}} .sina-ext-nav-toggle' => 'top: {{SIZE}}{{UNIT}};',

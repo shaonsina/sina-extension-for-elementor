@@ -1,7 +1,7 @@
 <?php
 
 /**
- * User Site Info.
+ * Site Info Widget.
  *
  * @since 3.7.0
  */
@@ -118,7 +118,6 @@ class Sina_Site_Info_Widget extends Widget_Base{
 					[
 						'label' => esc_html__( 'Show Site Copyright', 'sina-ext' ),
 						'type' => Controls_Manager::SWITCHER,
-						'default' => 'yes',
 					]
 				);
 				$this->add_control(

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * User Direct Contact.
+ * Direct Contact Widget.
  *
  * @since 3.7.0
  */
