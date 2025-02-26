@@ -96,6 +96,7 @@
 .sina-banner-slider{
 	direction: ltr;
 }
+.sina-search form,
 .sina-content-box-icon,
 .sina-flipbox-hidden,
 .sina-transform-content,
@@ -1319,16 +1320,18 @@
 }
 
 /*--------------------------------- Search -------------------------------------- */
-.sina-search .sina-input-field,
-.sina-search .sina-button{
-	background: transparent;
-	border: 0;
-}
 .sina-search .sina-input-field::-webkit-search-cancel-button{
 	display: none;
 }
+.sina-search .sina-input-field:active,
+.sina-search .sina-input-field:focus,
+.sina-search .sina-input-field,
+.sina-search .sina-button{
+	background: transparent!important;
+	border: 0;
+}
 .sina-search .sina-modal-area{
-	animation-duration: 2.25s;
+	animation-duration: 2.1s;
 	animation-timing-function: ease-in-out;
 }
 .sina-search .sina-modal-close{
@@ -1337,6 +1340,12 @@
 }
 
 /*--------------------------------- Quick Links -------------------------------------- */
+.sina-quick-links ul,
+.sina-ext-nav ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
 .sina-quick-links li{
 	display: inline-block;
 	width: 100%;
@@ -1356,6 +1365,11 @@
 /*--------------------------------- Nav Menu -------------------------------------- */
 .sina-ext-nav{
 	transition: background 0.5s ease-in-out;
+}
+.sina-ext-nav ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
 }
 .sina-ext-nav-toggle{
 	display: none;
@@ -1495,8 +1509,8 @@
 		width: 280px;
 		height: 100%;
 		max-height: 100%;
-		margin: 0;
 		padding-bottom: 60px;
+		margin: 0;
 		z-index: 99;
 		overflow-x: hidden;
 		transition: all 0.3s ease-in-out;

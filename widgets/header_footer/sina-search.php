@@ -310,24 +310,25 @@ class Sina_Search_Widget extends Widget_Base{
 		// End Button Style
 		// =================
 
-		if (!empty($get_extenders) && isset($get_extenders['sticky'])) {
-			// Start Sticky Button Style
-			// ==========================
-				$this->start_controls_section(
-					'sticky_btn_style',
-					[
-						'label' => esc_html__( 'Sticky Search Button', 'sina-ext' ),
-						'tab' => Controls_Manager::TAB_STYLE,
-					]
-				);
-				Sina_Common_Data::link_style( $this, '.sina-search .sina-button', 'sticky_btn', '.sina-pro-sticked ' );
-				$this->end_controls_section();
-			// End Sticky Button Style
-			// ========================
-		}
+		// Start Sticky Button Style
+		// ==========================
+			if (!empty($get_extenders) && isset($get_extenders['sticky'])) {
+					$this->start_controls_section(
+						'sticky_btn_style',
+						[
+							'label' => esc_html__( 'Sticky Search Button', 'sina-ext' ),
+							'tab' => Controls_Manager::TAB_STYLE,
+						]
+					);
+					Sina_Common_Data::link_style( $this, '.sina-search .sina-button', 'sticky_btn', '.sina-pro-sticked ' );
+					$this->end_controls_section();
+			}
+		// End Sticky Button Style
+		// ========================
 
 		// Start Form Style
 		// =================
+			$selector = '{{WRAPPER}} form';
 			$this->start_controls_section(
 				'form_style',
 				[
@@ -335,7 +336,14 @@ class Sina_Search_Widget extends Widget_Base{
 					'tab' => Controls_Manager::TAB_STYLE,
 				]
 			);
-				$selector = '{{WRAPPER}} .sina-search-form';
+
+				$this->add_group_control(
+					Group_Control_Typography::get_type(),
+					[
+						'name' => 'fields_typography',
+						'selector' => $selector,
+					]
+				);
 				$this->add_control(
 					'placeholder_color',
 					[
@@ -348,13 +356,6 @@ class Sina_Search_Widget extends Widget_Base{
 							'{{WRAPPER}} .sina-input-field::-ms-placeholder' => 'color: {{VALUE}};',
 							'{{WRAPPER}} .sina-input-field::placeholder' => 'color: {{VALUE}};',
 						],
-					]
-				);
-				$this->add_group_control(
-					Group_Control_Typography::get_type(),
-					[
-						'name' => 'fields_typography',
-						'selector' => $selector,
 					]
 				);
 				$this->add_control(
@@ -475,6 +476,9 @@ class Sina_Search_Widget extends Widget_Base{
 						'label' => esc_html__( 'Search Button', 'sina-ext' ),
 						'type' => Controls_Manager::HEADING,
 						'separator' => 'before',
+						'condition' => [
+							'form_icon!' => '',
+						],
 					]
 				);
 				$this->add_control(
@@ -483,6 +487,9 @@ class Sina_Search_Widget extends Widget_Base{
 						'label' => esc_html__( 'Color', 'sina-ext' ),
 						'type' => Controls_Manager::COLOR,
 						'default' => '#fff',
+						'condition' => [
+							'form_icon!' => '',
+						],
 						'selectors' => [
 							$selector.' .sina-button' => 'color: {{VALUE}};',
 						],
@@ -500,6 +507,9 @@ class Sina_Search_Widget extends Widget_Base{
 							'bottom' => '0',
 							'left' => '18',
 							'isLinked' => false,
+						],
+						'condition' => [
+							'form_icon!' => '',
 						],
 						'selectors' => [
 							$selector.' .sina-button' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
@@ -525,7 +535,7 @@ class Sina_Search_Widget extends Widget_Base{
 								'default' =>'classic', 
 							],
 							'color' => [
-								'default' => 'rgba(0,0,0,0.5)',
+								'default' => 'rgba(0,0,0,0.7)',
 							],
 						],
 						'selector' => '{{WRAPPER}} .sina-modal-overlay',
@@ -670,15 +680,24 @@ class Sina_Search_Widget extends Widget_Base{
 				<button class="sina-button sina-modal-close">
 					<i class="<?php echo esc_attr( $data['close_icon'] ); ?>"></i>
 				</button>
+
 				<div class="sina-modal-area sina-flex animated <?php echo esc_attr( $data['form_anim'] ); ?>">
-					<form class="sina-search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-						<input class="sina-input-field" type="search" placeholder="<?php echo esc_attr( $data['form_text'] ); ?>" value="<?php get_search_query(); ?>" name="<?php echo esc_attr( 's' ) ?>" data-gtm-form-interact-field-id="0">
-						<button class="sina-button" type="submit">
-							<i class="<?php echo esc_attr( $data['form_icon'] ); ?>"></i>
-						</button>
+					<form action="<?php echo esc_url( home_url( '/' ) ); ?>">
+						<input class="sina-input-field" type="search"
+						<?php if ($data['form_text']): ?>
+							placeholder="<?php echo esc_attr( $data['form_text'] ); ?>"
+						<?php endif; ?>
+						value="<?php get_search_query(); ?>" name="<?php echo esc_attr( 's' ) ?>">
+
+						<?php if ($data['form_icon']): ?>
+							<button class="sina-button" type="submit">
+								<i class="<?php echo esc_attr( $data['form_icon'] ); ?>"></i>
+							</button>
+						<?php endif; ?>
 					</form>
 				</div>
 			</div>
+
 			<button class="sina-button">
 				<?php Sina_Common_Data::button_html($data); ?>
 			</button>
