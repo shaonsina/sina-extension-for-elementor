@@ -96,7 +96,7 @@
 
 									<?php
 										if ('wooCommerce' == $cat):
-											printf('<p><strong>'.esc_html__('Before enabling these features make sure the %s plugin has installed!', 'sina-ext').'</strong></p>', '<a href="https://wordpress.org/plugins/woocommerce/" target="_blank">WooCommerce</a>' );
+											printf('<p><strong>'.esc_html__('Before enabling these features make sure the %s plugin has been installed and activated!', 'sina-ext').'</strong></p>', '<a href="https://wordpress.org/plugins/woocommerce/" target="_blank">WooCommerce</a>' );
 										endif;
 									?>
 								</div>

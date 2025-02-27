@@ -73,6 +73,7 @@ class Sina_Nav_Menu_Widget extends Widget_Base{
 	 */
 	public function get_style_depends() {
 		return [
+			'icofont',
 			'sina-widgets',
 		];
 	}

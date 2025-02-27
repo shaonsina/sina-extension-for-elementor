@@ -42,6 +42,7 @@
 .sina-pricing-zoom:hover{
 	z-index: 999;
 }
+.sina-woo-cart-link,
 .sina-direct-contact a,
 .sina-direct-contact a:hover i,
 .sina-feed .sina-feed-title a,
@@ -1360,6 +1361,26 @@
 	background: #1085e4;
 	cursor: pointer;
 	border-radius: 50%;
+}
+
+/*--------------------------------- Woo Cart -------------------------------------- */
+.sina-woo-cart-icon{
+	position: relative;
+	margin-right: 4px;
+}
+.sina-woo-cart-icon[data-counter]:before{
+	position: absolute;
+	content: attr(data-counter);
+	min-width: 16px;
+	height: 16px;
+	line-height: 16px;
+	border-radius: 100%;
+	text-align: center;
+	font-size: 10px;
+	transition: all 0.4s;
+}
+.sina-woo-cart-icon.sina-woo-badge-hide[data-counter="0"]:before{
+	display: none;
 }
 
 /*--------------------------------- Nav Menu -------------------------------------- */

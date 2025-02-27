@@ -168,6 +168,25 @@ abstract class Sina_Ext_Functions extends Sina_Extension_Base{
 		Sina_Ext_Controls::instance();
 	}
 
+	public function refresh_woo_cart_count( $fragments ) {
+		$woo_cart = WC()->cart;
+		$is_cart 	= is_a( $woo_cart, 'WC_Cart' );
+		$cart_count = '';
+
+		if ( !$is_cart ) {
+			return $fragments;
+		}
+
+		if ( null !== $woo_cart ) {
+			$cart_count = $woo_cart->get_cart_contents_count();
+			$fragments['.sina-woo-cart-subtotal'] = '<span class="sina-woo-cart-subtotal">' . $woo_cart->get_cart_subtotal() . '</span>';
+		}
+
+		$fragments['.sina-woo-cart-icon[data-counter]'] = '<span class="sina-woo-cart-icon" data-counter="' . $cart_count . '"><i class="eicon eicon-basket-medium"></i></span>';
+
+		return $fragments;
+	}
+
 	/**
 	 * Include helper & hooks files
 	 *

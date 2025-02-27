@@ -121,39 +121,11 @@ class Sina_Site_Info_Widget extends Widget_Base{
 					]
 				);
 				$this->add_control(
-					'site_info_copyright_date',
-					[
-						'label' => esc_html__( 'Copyright Date', 'sina-ext' ),
-						'type' => Controls_Manager::SELECT,
-						'options' => [
-							'' => esc_html__( 'none', 'sina-ext' ),
-							'dynamic' => esc_html__( 'Dynamic', 'sina-ext' ),
-							'custom' => esc_html__( 'Custom', 'sina-ext' ),
-						],
-						'default' => 'dynamic',
-						'condition' => [
-							'site_info_copyright' => 'yes',
-						]
-					]
-				);
-				$this->add_control(
-					'site_info_copyright_date_custom',
-					[
-						'label' => esc_html__( 'Custom Date', 'sina-ext' ),
-						'type' => Controls_Manager::TEXT,
-						'default' => date('Y'),
-						'condition' => [
-							'site_info_copyright' => 'yes',
-							'site_info_copyright_date' => 'custom',
-						]
-					]
-				);
-				$this->add_control(
 					'site_info_copyright_text',
 					[
 						'label' => esc_html__( 'Copyright Text', 'sina-ext' ),
-						'type' => Controls_Manager::TEXT,
-						'default' => 'All Rights Reserved',
+						'type' => Controls_Manager::TEXTAREA,
+						'default' => '© {{current_year}} {{site_link}} All Rights Reserved',
 						'condition' => [
 							'site_info_copyright' => 'yes',
 						]
@@ -301,13 +273,6 @@ class Sina_Site_Info_Widget extends Widget_Base{
 	protected function render() {
 		$data = $this->get_settings_for_display();
 
-		$copyright_date = '© ';
-		$link = '';
-		if ('dynamic' == $data['site_info_copyright_date']) {
-			$copyright_date .= date('Y');
-		} elseif ( 'custom' == $data['site_info_copyright_date'] ) {
-			$copyright_date .= $data['site_info_copyright_date_custom'];
-		}
 		if ('dynamic' == $data['site_info_is_link']) {
 			$link = home_url( '/' );
 		} elseif ( 'custom' == $data['site_info_is_link'] ) {
@@ -316,18 +281,19 @@ class Sina_Site_Info_Widget extends Widget_Base{
 		?>
 		<div class="sina-site-info"">
 			<?php if ('yes' == $data['site_info_title']): ?>
-				<h1 class="sina-site-info-title"><?php $this->get_site_link($data, $link); ?></h1>
+				<h1 class="sina-site-info-title"><?php echo $this->get_site_link($data, $link); ?></h1>
 			<?php endif; ?>
 
 			<?php if ('yes' == $data['site_info_tagline']): ?>
 				<p class="sina-site-info-tagline"><?php bloginfo( 'description' ); ?></p>
 			<?php endif; ?>
 
-			<?php if ('yes' == $data['site_info_copyright']): ?>
+			<?php if ('yes' == $data['site_info_copyright']):
+				$copyright = str_replace('{{current_year}}', date('Y'), $data['site_info_copyright_text']);
+				$copyright = str_replace('{{site_link}}', $this->get_site_link($data, $link), $copyright);
+				?>
 				<p class="sina-site-info-copyright">
-					<?php echo esc_html($copyright_date); ?>
-					<?php $this->get_site_link($data, $link); ?>
-					<?php echo esc_html( $data['site_info_copyright_text'] ); ?>
+					<?php printf( '%s', $copyright ); ?>
 				</p>
 			<?php endif; ?>
 		</div><!-- .sina-site-info -->
@@ -337,6 +303,7 @@ class Sina_Site_Info_Widget extends Widget_Base{
 
 	private function get_site_link($data, $link) {
 		if ($data['site_info_is_link']) {
+			ob_start();
 			?>
 			<a href="<?php echo esc_url( $link ); ?>"
 				<?php if ('custom' == $data['site_info_is_link']): ?>
@@ -350,8 +317,9 @@ class Sina_Site_Info_Widget extends Widget_Base{
 				><?php bloginfo( 'name' ); ?>
 			</a>
 			<?php
+			return ob_get_clean();
 		} else{
-			bloginfo( 'name' );
+			return get_bloginfo( 'name' );
 		}
 	}
 

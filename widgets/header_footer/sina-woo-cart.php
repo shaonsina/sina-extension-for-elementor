@@ -41,7 +41,7 @@ class Sina_Woo_Cart_Widget extends Widget_Base{
 	 * @since 3.7.0
 	 */
 	public function get_icon() {
-		return 'eicon-cart-medium';
+		return 'eicon-basket-medium';
 	}
 
 	/**
@@ -73,23 +73,8 @@ class Sina_Woo_Cart_Widget extends Widget_Base{
 	 */
 	public function get_style_depends() {
 		return [
+			'icofont',
 			'sina-widgets',
-		];
-	}
-
-	public function get_icon_list() {
-		return [
-			'icofont icofont-ui-cart' => 'icofont-ui-cart',
-			'icofont icofont-opencart' => 'icofont-opencart',
-			'icofont icofont-cart-alt' => 'icofont-cart-alt',
-			'icofont icofont-cart' => 'icofont-cart',
-			'icofont icofont-shopping-cart' => 'icofont-shopping-cart',
-			'fa fa-opencart' => 'opencart',
-			'fa fa-shopping-cart' => 'shopping-cart',
-			'eicon-cart' => 'eicon-cart',
-			'eicon-cart-light' => 'eicon-cart-light',
-			'eicon-cart-medium' => 'eicon-cart-medium',
-			'eicon-cart-solid' => 'eicon-cart-solid',
 		];
 	}
 
@@ -106,7 +91,7 @@ class Sina_Woo_Cart_Widget extends Widget_Base{
 		// Start Woo Cart
 		// ===============
 			$this->start_controls_section(
-				'woo_cart_content',
+				'cart_content',
 				[
 					'label' => esc_html__( 'Woo Cart', 'sina-ext' ),
 					'tab' => Controls_Manager::TAB_CONTENT,
@@ -114,53 +99,190 @@ class Sina_Woo_Cart_Widget extends Widget_Base{
 			);
 
 				$this->add_control(
-					'cart_icon',
+					'cart_badge_empty',
 					[
-						'label' => esc_html__( 'Cart Icon', 'sina-ext' ),
-						'label_block' => true,
-						'type' => Controls_Manager::ICON,
-						'include' => $this->get_icon_list(),
-						'default' => 'icofont icofont-cart',
+						'label' => esc_html__( 'Hide Empty Badge', 'sina-ext' ),
+						'type' => Controls_Manager::SWITCHER,
+						'default' => 'yes',
 					]
 				);
-				if (!empty($get_extenders) && isset($get_extenders['sticky'])) {
-				}
+				$this->add_control(
+					'subtotal',
+					[
+						'label' => esc_html__( 'Show Total Price', 'sina-ext' ),
+						'type' => Controls_Manager::SWITCHER,
+						'default' => 'yes',
+					]
+				);
 
 			$this->end_controls_section();
 		// End Woo Cart
 		// =============
 
 
-		// Start Cart Style
-		// =================
-			$selector = '.elementor-element-{{ID}} .sina-woo-cart';
+		// Start Cart Button Style
+		// ========================
+			$selector = '.elementor-element-{{ID}} .sina-woo-cart-icon[data-counter]';
 			$this->start_controls_section(
-				'woo_cart_style',
+				'cart_style',
 				[
-					'label' => esc_html__( 'Cart', 'sina-ext' ),
+					'label' => esc_html__( 'Cart Button', 'sina-ext' ),
 					'tab' => Controls_Manager::TAB_STYLE,
 				]
 			);
 
+				Sina_Common_Data::link_style( $this, '.sina-woo-cart-link', 'cart_btn' );
+				$this->add_control(
+					'cart_badge',
+					[
+						'label' => esc_html__( 'Cart Badge', 'sina-ext' ),
+						'type' => Controls_Manager::HEADING,
+						'separator' => 'before',
+					]
+				);
+				$this->add_responsive_control(
+					'cart_badge_top',
+					[
+						'label' => esc_html__( 'Top', 'sina-ext' ),
+						'type' => Controls_Manager::SLIDER,
+						'size_units' => [ 'px'],
+						'range' => [
+							'px' => [
+								'min' => -100,
+							],
+						],
+						'default' => [
+							'unit' => 'px',
+							'size' => -5,
+						],
+						'selectors' => [
+							$selector.':before' => 'top: {{SIZE}}{{UNIT}};',
+						],
+					]
+				);
+				$this->add_responsive_control(
+					'cart_badge_right',
+					[
+						'label' => esc_html__( 'Right', 'sina-ext' ),
+						'type' => Controls_Manager::SLIDER,
+						'size_units' => [ 'px'],
+						'range' => [
+							'px' => [
+								'min' => -100,
+							],
+						],
+						'default' => [
+							'unit' => 'px',
+							'size' => -5,
+						],
+						'selectors' => [
+							$selector.':before' => 'right: {{SIZE}}{{UNIT}};',
+						],
+					]
+				);
+				$this->add_control(
+					'cart_badge_color',
+					[
+						'label' => esc_html__( 'Color', 'sina-ext' ),
+						'type' => Controls_Manager::COLOR,
+						'default' => '#fff',
+						'selectors' => [
+							$selector.':before' => 'color: {{VALUE}};',
+						],
+					]
+				);
+				$this->add_control(
+					'cart_badge_bg',
+					[
+						'label' => esc_html__( 'Background Color', 'sina-ext' ),
+						'type' => Controls_Manager::COLOR,
+						'default' => '#1085e4',
+						'selectors' => [
+							$selector.':before' => 'background-color: {{VALUE}};',
+						],
+					]
+				);
+
 			$this->end_controls_section();
-		// End Cart Style
-		// ===============
+		// End Cart Button Style
+		// ======================
+
+		if (!empty($get_extenders) && isset($get_extenders['sticky'])) {
+			$selector = '.sina-pro-sticked .elementor-element-{{ID}} .sina-woo-cart-icon[data-counter]';
+			// Start Sticky Cart Button Style
+			// ===============================
+				$this->start_controls_section(
+					'sticky_cart_style',
+					[
+						'label' => esc_html__( 'Sticky Cart Button', 'sina-ext' ),
+						'tab' => Controls_Manager::TAB_STYLE,
+					]
+				);
+
+				 Sina_Common_Data::link_style( $this, '.sina-woo-cart-link', 'sticky_cart_btn', '.sina-pro-sticked ' );
+				 $this->add_control(
+				 	'sticky_cart_badge',
+				 	[
+				 		'label' => esc_html__( 'Cart Badge', 'sina-ext' ),
+				 		'type' => Controls_Manager::HEADING,
+				 		'separator' => 'before',
+				 	]
+				 );
+				 $this->add_control(
+				 	'sticky_cart_badge_color',
+				 	[
+				 		'label' => esc_html__( 'Color', 'sina-ext' ),
+				 		'type' => Controls_Manager::COLOR,
+				 		'selectors' => [
+				 			$selector.':before' => 'color: {{VALUE}};',
+				 		],
+				 	]
+				 );
+				 $this->add_control(
+				 	'sticky_cart_badge_bg',
+				 	[
+				 		'label' => esc_html__( 'Background Color', 'sina-ext' ),
+				 		'type' => Controls_Manager::COLOR,
+				 		'selectors' => [
+				 			$selector.':before' => 'background-color: {{VALUE}};',
+				 		],
+				 	]
+				 );
+
+				$this->end_controls_section();
+			// End Sticky Cart Button Style
+			// =============================
+		}
 	}
 
 
 	protected function render() {
-		if ( null === \WC()->cart ) {
-			return;
-		}
+		if ( class_exists( 'WooCommerce' ) ):
+			$data 	  = $this->get_settings_for_display();
+			$woo_cart = \WC()->cart;
 
-		$data = $this->get_settings_for_display();
-		?>
-		<div class="sina-woo-cart">
-			<button class="sina-button">
-				<i class="<?php echo esc_attr( $data['cart_icon'] ); ?>"></i>
-			</button>
-		</div><!-- .sina-woo-cart -->
-		<?php
+			if ( null === $woo_cart ) {
+				return;
+			}
+			$classes = ('yes' == $data['cart_badge_empty']) ? 'sina-woo-badge-hide' : '';
+			?>
+			<div class="sina-woo-cart">
+				<a class="sina-woo-cart-link" href="<?php echo esc_url( wc_get_cart_url() ); ?>">
+					<span class="sina-woo-cart-icon <?php echo esc_attr( $classes ) ?>" data-counter="<?php echo ( null !== $woo_cart ) ? esc_attr( $woo_cart->get_cart_contents_count() ) : ''; ?>">
+						<i class="eicon eicon-basket-medium"></i>
+					</span>
+
+					<?php if ( 'yes' == $data['subtotal'] && null !== $woo_cart ): ?>
+						<span class="sina-woo-cart-subtotal">
+							<?php echo wp_kses_post( $woo_cart->get_cart_subtotal() ); ?>
+						</span>
+					<?php endif; ?>
+				</a>
+			</div><!-- .sina-woo-cart -->
+			<?php
+		else:
+			printf('<h3>%s</h3>', esc_html__('Please install and activate the WooCommerce plugin to use this feature!', 'sina-ext') );
+		endif;
 	}
 
 
