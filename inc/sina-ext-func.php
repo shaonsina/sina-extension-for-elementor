@@ -86,6 +86,12 @@ abstract class Sina_Ext_Functions extends Sina_Extension_Base{
 			]
 		);
 		$elements_manager->add_category(
+			'sina-theme-builder',
+			[
+				'title' => esc_html__( 'Sina Theme Builder', 'sina-ext' ),
+			]
+		);
+		$elements_manager->add_category(
 			'sina-extension',
 			[
 				'title' => esc_html__( 'Sina Basic Widgets', 'sina-ext' ),
@@ -182,7 +188,7 @@ abstract class Sina_Ext_Functions extends Sina_Extension_Base{
 			$fragments['.sina-woo-cart-subtotal'] = '<span class="sina-woo-cart-subtotal">' . $woo_cart->get_cart_subtotal() . '</span>';
 		}
 
-		$fragments['.sina-woo-cart-icon[data-counter]'] = '<span class="sina-woo-cart-icon" data-counter="' . $cart_count . '"><i class="eicon eicon-basket-medium"></i></span>';
+		$fragments['.sina-woo-cart-icon[data-counter]'] = '<span class="sina-woo-cart-icon" data-counter="' . $cart_count . '"><i class="eicon-basket-medium"></i></span>';
 
 		return $fragments;
 	}

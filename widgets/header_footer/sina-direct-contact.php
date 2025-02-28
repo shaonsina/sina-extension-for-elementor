@@ -78,6 +78,28 @@ class Sina_Direct_Contact_Widget extends Widget_Base{
 		];
 	}
 
+	public function get_icon_list() {
+		return [
+			'icofont icofont-iphone' => 'icofont-iphone',
+			'icofont icofont-ui-cell-phone' => 'icofont-ui-cell-phone',
+			'icofont icofont-ui-dial-phone' => 'icofont-ui-dial-phone',
+			'icofont icofont-ui-touch-phone' => 'icofont-ui-touch-phone',
+			'icofont icofont-mobile-phone' => 'icofont-mobile-phone',
+			'icofont icofont-phone-circle' => 'icofont-phone-circle',
+			'icofont icofont-phone' => 'icofont-phone',
+			'icofont icofont-smart-phone' => 'icofont-smart-phone',
+			'icofont icofont-telephone' => 'icofont-telephone',
+			'icofont icofont-email' => 'icofont-email',
+			'icofont icofont-send-mail' => 'icofont-send-mail',
+			'icofont icofont-envelope' => 'icofont-envelope',
+			'icofont icofont-envelope-open' => 'icofont-envelope-open',
+			'fa fa-envelope' => 'envelope',
+			'fa fa-envelope-o' => 'envelope-o',
+			'eicon-envelope' => 'eicon-envelope',
+			'eicon-mail' => 'eicon-mail',
+		];
+	}
+
 	/**
 	 * Register widget controls.
 	 *
@@ -87,6 +109,7 @@ class Sina_Direct_Contact_Widget extends Widget_Base{
 	 * @access protected
 	 */
 	protected function register_controls() {
+		$icon_list = $this->get_icon_list();
 		$get_extenders 	= get_option( 'sina_extenders' );
 		$selector = '.elementor-element-{{ID}} .sina-direct-contact';
 		// Start Direct Contact
@@ -135,9 +158,10 @@ class Sina_Direct_Contact_Widget extends Widget_Base{
 				'phone_icon',
 				[
 					'label' => esc_html__( 'Phone Icon', 'sina-ext' ),
-					'type' => Controls_Manager::ICON,
 					'label_block' => true,
-					'default' => 'fa fa-phone',
+					'type' => Controls_Manager::ICON,
+					'include' => $icon_list,
+					'default' => 'icofont icofont-phone',
 					'condition' => [
 						'phone_number!' => '',
 					]
@@ -166,9 +190,10 @@ class Sina_Direct_Contact_Widget extends Widget_Base{
 				'email_icon',
 				[
 					'label' => esc_html__( 'Email Icon', 'sina-ext' ),
-					'type' => Controls_Manager::ICON,
 					'label_block' => true,
-					'default' => 'fa fa-envelope-o',
+					'type' => Controls_Manager::ICON,
+					'include' => $icon_list,
+					'default' => 'icofont icofont-envelope',
 					'condition' => [
 						'email_address!' => '',
 					]

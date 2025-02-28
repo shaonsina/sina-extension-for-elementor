@@ -78,6 +78,7 @@ class Sina_Search_Widget extends Widget_Base{
 	public function get_style_depends() {
 		return [
 			'icofont',
+			'animate-merge',
 			'sina-widgets',
 		];
 	}
@@ -119,8 +120,6 @@ class Sina_Search_Widget extends Widget_Base{
 			'icofont icofont-close-squared' => 'icofont-close-squared',
 			'icofont icofont-close' => 'icofont-close',
 			'fa fa-close' => 'close',
-			'fa fa-window-close' => 'window-close',
-			'fa fa-window-close-o' => 'window-close-o',
 			'eicon-editor-close' => 'eicon-editor-close',
 			'eicon-close' => 'eicon-close',
 			'eicon-close-circle' => 'eicon-close-circle',

@@ -73,7 +73,6 @@ class Sina_Nav_Menu_Widget extends Widget_Base{
 	 */
 	public function get_style_depends() {
 		return [
-			'icofont',
 			'sina-widgets',
 		];
 	}
@@ -87,6 +86,7 @@ class Sina_Nav_Menu_Widget extends Widget_Base{
 	 */
 	public function get_script_depends() {
 		return [
+			'icofont',
 			'sina-widgets',
 		];
 	}
@@ -225,24 +225,6 @@ class Sina_Nav_Menu_Widget extends Widget_Base{
 				]
 			);
 
-			$this->add_control(
-				'mobile_menu_open_icon',
-				[
-					'label' => esc_html__( 'Menu Open Icon', 'sina-ext' ),
-					'label_block' => true,
-					'type' => Controls_Manager::ICON,
-					'default' => 'icofont icofont-navigation-menu',
-				]
-			);
-			$this->add_control(
-				'mobile_menu_close_icon',
-				[
-					'label' => esc_html__( 'Menu Close Icon', 'sina-ext' ),
-					'label_block' => true,
-					'type' => Controls_Manager::ICON,
-					'default' => 'icofont icofont-close',
-				]
-			);
 			$this->add_control(
 				'mobile_submenu_open_icon',
 				[
@@ -754,6 +736,7 @@ class Sina_Nav_Menu_Widget extends Widget_Base{
 
 	protected function render() {
 		$data 			= $this->get_settings_for_display();
+		$uid = $this->get_id();
 		$anim = [
 			'fadeInLeft',
 			'fadeInRight',
@@ -798,18 +781,18 @@ class Sina_Nav_Menu_Widget extends Widget_Base{
 		];
 		?>
 		<style type="text/css">
-			<?php echo '.elementor-element-'.$this->get_id(); ?> .sina-ext-menu .menu-item-has-children > a:before{content: <?php echo $menu_list_icons[ $data['submenu_close_icon'] ] ?>;}
-			<?php echo '.elementor-element-'.$this->get_id(); ?> .sina-ext-menu .menu-item-has-children.open > a:before{content: <?php echo $menu_list_icons[ $data['submenu_open_icon'] ] ?>;}
+			<?php echo '.elementor-element-'.$uid; ?> .sina-ext-menu .menu-item-has-children > a:before{content: <?php echo $menu_list_icons[ $data['submenu_close_icon'] ] ?>;}
+			<?php echo '.elementor-element-'.$uid; ?> .sina-ext-menu .menu-item-has-children.open > a:before{content: <?php echo $menu_list_icons[ $data['submenu_open_icon'] ] ?>;}
 			@media (max-width: 1024px) {
-				<?php echo '.elementor-element-'.$this->get_id(); ?> .sina-ext-menu .menu-item-has-children > a:before{content: <?php echo $menu_list_icons[ $data['mobile_submenu_close_icon'] ] ?>;}
-				<?php echo '.elementor-element-'.$this->get_id(); ?> .sina-ext-menu .menu-item-has-children.open > a:before{content: <?php echo $menu_list_icons[ $data['mobile_submenu_open_icon'] ] ?>;}
+				<?php echo '.elementor-element-'.$uid; ?> .sina-ext-menu .menu-item-has-children > a:before{content: <?php echo $menu_list_icons[ $data['mobile_submenu_close_icon'] ] ?>;}
+				<?php echo '.elementor-element-'.$uid; ?> .sina-ext-menu .menu-item-has-children.open > a:before{content: <?php echo $menu_list_icons[ $data['mobile_submenu_open_icon'] ] ?>;}
 			}
 		</style>
 		<nav class="sina-ext-nav sina-ext-nav-mobile-sidebar">
 			<button type="button" class="sina-ext-nav-toggle"
-			data-open="<?php echo esc_attr( $data['mobile_menu_open_icon'] ) ?>"
-			data-close="<?php echo esc_attr( $data['mobile_menu_close_icon'] ) ?>">
-				<i class="toggle-icon <?php echo esc_attr( $data['mobile_menu_open_icon'] ) ?>"></i>
+			data-open="eicon-menu-bar"
+			data-close="eicon-close">
+				<i class="toggle-icon eicon-menu-bar"></i>
 			</button>
 			<?php wp_nav_menu( $args ); ?>
 		</nav><!-- .sina-ext-nav -->

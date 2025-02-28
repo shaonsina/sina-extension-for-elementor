@@ -73,7 +73,6 @@ class Sina_Woo_Cart_Widget extends Widget_Base{
 	 */
 	public function get_style_depends() {
 		return [
-			'icofont',
 			'sina-widgets',
 		];
 	}
@@ -269,7 +268,7 @@ class Sina_Woo_Cart_Widget extends Widget_Base{
 			<div class="sina-woo-cart">
 				<a class="sina-woo-cart-link" href="<?php echo esc_url( wc_get_cart_url() ); ?>">
 					<span class="sina-woo-cart-icon <?php echo esc_attr( $classes ) ?>" data-counter="<?php echo ( null !== $woo_cart ) ? esc_attr( $woo_cart->get_cart_contents_count() ) : ''; ?>">
-						<i class="eicon eicon-basket-medium"></i>
+						<i class="eicon-basket-medium"></i>
 					</span>
 
 					<?php if ( 'yes' == $data['subtotal'] && null !== $woo_cart ): ?>

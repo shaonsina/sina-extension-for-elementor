@@ -92,7 +92,7 @@ class Sina_Scroll_To_Top_Widget extends Widget_Base{
 		];
 	}
 
-	public function get_exclude_icons() {
+	public function get_icon_list() {
 		return [
 			'icofont icofont-arrow-up' => 'icofont-arrow-up',
 			'icofont icofont-bubble-up' => 'icofont-bubble-up',
@@ -136,7 +136,7 @@ class Sina_Scroll_To_Top_Widget extends Widget_Base{
 						'label' => esc_html__( 'Select Icon', 'sina-ext' ),
 						'label_block' => true,
 						'type' => Controls_Manager::ICON,
-						'include' => $this->get_exclude_icons(),
+						'include' => $this->get_icon_list(),
 						'default' => 'fa fa-chevron-up',
 					]
 				);

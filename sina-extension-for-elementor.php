@@ -47,7 +47,6 @@ define('SINA_WIDGETS', [
 		'woo-cart'				=> esc_html__( 'Sina Woo Cart', 'sina-ext' ),
 	],
 	'theme_builder' => [
-		'page-title'				=> esc_html__( 'Sina Page Title', 'sina-ext' ),
 		'post-title'				=> esc_html__( 'Sina Post Title', 'sina-ext' ),
 		'post-excerpt'				=> esc_html__( 'Sina Post Excerpt', 'sina-ext' ),
 		'post-content'				=> esc_html__( 'Sina Post Content', 'sina-ext' ),
