@@ -8,7 +8,6 @@
 
 use \Elementor\Widget_Base;
 use \Elementor\Controls_Manager;
-use Elementor\Plugin;
 
 
 // Exit if accessed directly.
@@ -55,12 +54,7 @@ class Sina_Post_Title_Widget extends Widget_Base{
 	}
 
 	public function show_in_panel() {
-		$tmpType = get_post_meta( get_the_ID(), 'sina-ext-template-meta_type', true );
-
-		if ( 'single' === $tmpType ) {
-			return true;
-		}
-		return false;
+		return Sina_Common_Data::widget_show_in_panel();
 	}
 
 	/**
@@ -93,44 +87,36 @@ class Sina_Post_Title_Widget extends Widget_Base{
 				]
 			);
 
-			$this->add_control(
-				'note',
-				[
-					'type' => Controls_Manager::RAW_HTML,
-					'raw' => __( 'NOTICE: The title will be visible on Frontend correctly.', 'sina-ext' ),
-					'content_classes' => 'elementor-panel-alert elementor-panel-alert-warning',
-				]
-			);
-			$this->add_control(
-				'before_text',
-				[
-					'label' => esc_html__( 'Before Text', 'sina-ext' ),
-					'type' => Controls_Manager::TEXT,
-				]
-			);
-			$this->add_control(
-				'after_text',
-				[
-					'label' => esc_html__( 'After Text', 'sina-ext' ),
-					'type' => Controls_Manager::TEXT,
-				]
-			);
-			$this->add_control(
-				'html_tag',
-				[
-					'label' => esc_html__( 'HTML Tag', 'sina-ext' ),
-					'type' => Controls_Manager::SELECT,
-					'options' => [
-						'h1' => 'H1',
-						'h2' => 'H2',
-						'h3' => 'H3',
-						'h4' => 'H4',
-						'h5' => 'H5',
-						'h6' => 'H6',
-					],
-					'default' => 'h2',
-				]
-			);
+				$this->add_control(
+					'before_text',
+					[
+						'label' => esc_html__( 'Before Text', 'sina-ext' ),
+						'type' => Controls_Manager::TEXT,
+					]
+				);
+				$this->add_control(
+					'after_text',
+					[
+						'label' => esc_html__( 'After Text', 'sina-ext' ),
+						'type' => Controls_Manager::TEXT,
+					]
+				);
+				$this->add_control(
+					'html_tag',
+					[
+						'label' => esc_html__( 'HTML Tag', 'sina-ext' ),
+						'type' => Controls_Manager::SELECT,
+						'options' => [
+							'h1' => 'H1',
+							'h2' => 'H2',
+							'h3' => 'H3',
+							'h4' => 'H4',
+							'h5' => 'H5',
+							'h6' => 'H6',
+						],
+						'default' => 'h2',
+					]
+				);
 
 			$this->end_controls_section();
 		// End Post Title
@@ -155,6 +141,7 @@ class Sina_Post_Title_Widget extends Widget_Base{
 
 	protected function render() {
 		$data = $this->get_settings_for_display();
+		Sina_Common_Data::switch_to_last_post();
 		?>
 		<<?php echo sina_ext_escape_tags($data['html_tag']); ?> class="sina-post-title"><?php the_title( $data['before_text'], $data['after_text'] ); ?></<?php echo sina_ext_escape_tags($data['html_tag']); ?>>
 		<?php

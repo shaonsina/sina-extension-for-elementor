@@ -6,6 +6,7 @@ use \Elementor\Group_Control_Background;
 use \Elementor\Group_Control_Box_Shadow;
 use \Elementor\Group_Control_Text_Shadow;
 use \Elementor\Group_Control_Border;
+use \Elementor\Plugin;
 use \Sina_Extension\Sina_Ext_Gradient_Text;
 
 // Exit if accessed directly.
@@ -85,7 +86,7 @@ class Sina_Common_Data{
 				'name' => $prefix.'_color',
 				'types' => [ 'classic', 'gradient' ],
 				'fields_options' => [
-					'background' => [ 
+					'background' => [
 						'default' =>'classic', 
 					],
 					'color' => [
@@ -131,7 +132,7 @@ class Sina_Common_Data{
 				'name' => $prefix.'_color',
 				'types' => [ 'classic', 'gradient' ],
 				'fields_options' => [
-					'background' => [ 
+					'background' => [
 						'default' =>'classic', 
 					],
 					'color' => [
@@ -679,7 +680,7 @@ class Sina_Common_Data{
 						'name' => 'nav_bg',
 						'types' => [ 'classic', 'gradient' ],
 						'fields_options' => [
-							'background' => [ 
+							'background' => [
 								'default' =>'classic', 
 							],
 							'color' => [
@@ -1362,7 +1363,7 @@ class Sina_Common_Data{
 						'name' => $prefix.'_bg',
 						'types' => [ 'classic', 'gradient' ],
 						'fields_options' => [
-							'background' => [ 
+							'background' => [
 								'default' =>'classic', 
 							],
 							'color' => [
@@ -1443,7 +1444,7 @@ class Sina_Common_Data{
 						'name' => $prefix.'_hover_bg',
 						'types' => [ 'classic', 'gradient' ],
 						'fields_options' => [
-							'background' => [ 
+							'background' => [
 								'default' =>'classic', 
 							],
 							'color' => [
@@ -1700,7 +1701,7 @@ class Sina_Common_Data{
 						'name' => $prefix.'_bg',
 						'types' => [ 'classic', 'gradient' ],
 						'fields_options' => [
-							'background' => [ 
+							'background' => [
 								'default' =>'classic', 
 							],
 							'color' => [
@@ -1843,7 +1844,7 @@ class Sina_Common_Data{
 						'name' => $prefix.'_bg',
 						'types' => [ 'classic', 'gradient' ],
 						'fields_options' => [
-							'background' => [ 
+							'background' => [
 								'default' =>'classic', 
 							],
 							'color' => [
@@ -2140,6 +2141,38 @@ class Sina_Common_Data{
 				);
 			$obj->end_controls_tab();
 		$obj->end_controls_tabs();
+	}
+
+	public static function widget_show_in_panel() {
+		$post_type = get_post_type();
+		if (in_array($post_type, ['page','product'])) {
+			return false;
+		} elseif ($post_type == 'sina-ext-template') {
+			$tmpType = get_post_meta( get_the_ID(), 'sina-ext-template-meta_type', true );
+			if ( 'single' === $tmpType ) {
+				return true;
+			}
+			return false;
+		} elseif (is_single()) {
+			return true;
+		}
+		return false;
+	}
+
+	public static function switch_to_last_post() {
+		if ( 'sina-ext-template' === get_post_type() ) {
+			$post_id = get_the_id();
+			$recent_posts = wp_get_recent_posts( array(
+				'numberposts' => 1,
+				'post_status' => 'publish'
+			) );
+
+			if ( isset($recent_posts[0]) ) {
+				$post_id = $recent_posts[0]['ID'];
+			}
+
+			Plugin::$instance->db->switch_to_post( $post_id );
+		}
 	}
 
 	public static function button_html( $data, $prefix = 'btn' ) {

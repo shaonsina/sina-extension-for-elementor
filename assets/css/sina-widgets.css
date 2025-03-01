@@ -170,6 +170,7 @@
 .sina-piechart .sina-piechart-content{
 	text-align: center;
 }
+.sina-post-nav-title,
 .twentytwenty-before-label:before,
 .twentytwenty-after-label:before,
 .sina-scroll-top,
@@ -255,6 +256,208 @@
 .sina-separator.sina-separator-solid-dot:after{
 	left: 133%;
 	width: 7%;
+}
+
+/*--------------------------------- Header Footer -------------------------------------- */
+section.sina-pro-sticked,
+header.sina-pro-sticked,
+footer.sina-pro-sticked{
+	width: 100%!important;
+}
+
+/*--------------------------------- Site Logo -------------------------------------- */
+.sina-logo-wrap{
+	position: relative;
+	display: inline-block;
+	overflow: hidden;
+}
+.sina-sticky-logo{
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	transition: opacity 0.3s;
+}
+.sina-pro-sticked .sina-sticky-logo{
+	opacity: 1;
+}
+
+/*--------------------------------- Site Info -------------------------------------- */
+.sina-site-info-title a,
+.sina-site-info-copyright a{
+	padding: 0;
+	margin: 0;
+}
+
+/*--------------------------------- Direct Contact -------------------------------------- */
+.sina-direct-contact a{
+	margin: 0 10px;
+}
+
+/*--------------------------------- Search -------------------------------------- */
+.sina-search .sina-input-field::-webkit-search-cancel-button{
+	display: none;
+}
+.sina-search .sina-input-field:active,
+.sina-search .sina-input-field:focus,
+.sina-search .sina-input-field,
+.sina-search .sina-button{
+	background: transparent!important;
+	border: 0;
+}
+.sina-search .sina-modal-area{
+	animation-duration: 2.1s;
+	animation-timing-function: ease-in-out;
+}
+.sina-search .sina-modal-close{
+	position: absolute;
+	z-index: 9;
+}
+
+/*--------------------------------- Quick Links -------------------------------------- */
+.sina-quick-links ul,
+.sina-ext-nav ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.sina-quick-links li{
+	display: inline-block;
+	width: 100%;
+}
+
+/*--------------------------------- Scroll To Top -------------------------------------- */
+.sina-scroll-top{
+	width: 50px;
+	height: 50px;
+	line-height: 50px;
+	color: #fff;
+	background: #1085e4;
+	cursor: pointer;
+	border-radius: 50%;
+}
+
+/*--------------------------------- Woo Cart -------------------------------------- */
+.sina-woo-cart-icon{
+	position: relative;
+	margin-right: 4px;
+}
+.sina-woo-cart-icon[data-counter]:before{
+	position: absolute;
+	content: attr(data-counter);
+	min-width: 16px;
+	height: 16px;
+	line-height: 16px;
+	border-radius: 100%;
+	text-align: center;
+	font-size: 10px;
+	transition: all 0.4s;
+}
+.sina-woo-cart-icon.sina-woo-badge-hide[data-counter="0"]:before{
+	display: none;
+}
+
+/*--------------------------------- Nav Menu -------------------------------------- */
+.sina-ext-nav{
+	transition: background 0.5s ease-in-out;
+}
+.sina-ext-nav ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.sina-ext-nav-toggle{
+	display: none;
+}
+
+/* Menu */
+.sina-ext-menu li a{
+	display: block;
+	position: relative;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+}
+.sina-ext-menu > li{
+	display: inline-block;
+	position: relative;
+}
+.sina-ext-menu .menu-item-has-children > a:before{
+	position: absolute;
+	font-family: 'IcoFont';
+}
+.sina-ext-menu .sub-menu{
+	position: absolute;
+	display: none;
+	z-index: 1000;
+}
+.sina-ext-menu .sub-menu > li{
+	border-top: solid 1px #fafafa;
+}
+
+/*Sub Menu Animation*/
+.sina-ext-menu-fadeInLeft{
+	animation-name: sina-ext-menu-fadeInLeft;
+}
+@keyframes sina-ext-menu-fadeInLeft{
+	0% {
+		opacity: 0;
+		transform: translateX(-20px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+.sina-ext-menu-fadeOutLeft{
+	animation-name: sina-ext-menu-fadeOutLeft;
+}
+@keyframes sina-ext-menu-fadeOutLeft{
+	0% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+	100% {
+		opacity: 0;
+		transform: translateX(-20px);
+	}
+}
+.sina-ext-menu-fadeInRight{
+	animation-name: sina-ext-menu-fadeInRight;
+}
+@keyframes sina-ext-menu-fadeInRight{
+	0% {
+		opacity: 0;
+		transform: translateX(20px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+.sina-ext-menu-fadeOutRight{
+	animation-name: sina-ext-menu-fadeOutRight;
+}
+@keyframes sina-ext-menu-fadeOutRight{
+	0% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+	100% {
+		opacity: 0;
+		transform: translateX(20px);
+	}
+}
+
+/*--------------------------------- Theme Builder -------------------------------------- */
+.sina-post-nav-prev{
+	float: left;
+}
+.sina-post-nav-next{
+	float: right;
+}
+.sina-post-nav-title{
+	font-size: 18px;
+	text-transform: inherit;
 }
 
 /*--------------------------------- Accordion -------------------------------------- */
@@ -398,6 +601,7 @@
 	display: block;
 	transition: all 0.4s;
 }
+.sina-post-navigation span,
 .sina-bp-pagination .page-numbers{
 	display: inline-block;
 	text-align: center;
@@ -437,11 +641,13 @@
 }
 
 /*--------------------------------- Posts Carousel -------------------------------------- */
+.sina-post-featured-img,
 .sina-news-ticker,
 .sina-pc-thumb{
 	position: relative;
 	overflow: hidden;
 }
+.sina-post-featured-img .sina-overlay,
 .sina-pc-thumb .sina-overlay{
 	opacity: 1;
 }
@@ -1284,196 +1490,6 @@
 }
 
 
-/*--------------------------------- Header Footer -------------------------------------- */
-.elementor-editor-active section.sina-pro-sticked,
-.elementor-editor-active header.sina-pro-sticked,
-.elementor-editor-active footer.sina-pro-sticked{
-	width: 100%!important;
-}
-
-/*--------------------------------- Site Logo -------------------------------------- */
-.sina-logo-wrap{
-	position: relative;
-	display: inline-block;
-	overflow: hidden;
-}
-.sina-sticky-logo{
-	position: absolute;
-	top: 0;
-	left: 0;
-	opacity: 0;
-	transition: opacity 0.3s;
-}
-.sina-pro-sticked .sina-sticky-logo{
-	opacity: 1;
-}
-
-/*--------------------------------- Site Info -------------------------------------- */
-.sina-site-info-title a,
-.sina-site-info-copyright a{
-	padding: 0;
-	margin: 0;
-}
-
-/*--------------------------------- Direct Contact -------------------------------------- */
-.sina-direct-contact a{
-	margin: 0 10px;
-}
-
-/*--------------------------------- Search -------------------------------------- */
-.sina-search .sina-input-field::-webkit-search-cancel-button{
-	display: none;
-}
-.sina-search .sina-input-field:active,
-.sina-search .sina-input-field:focus,
-.sina-search .sina-input-field,
-.sina-search .sina-button{
-	background: transparent!important;
-	border: 0;
-}
-.sina-search .sina-modal-area{
-	animation-duration: 2.1s;
-	animation-timing-function: ease-in-out;
-}
-.sina-search .sina-modal-close{
-	position: absolute;
-	z-index: 9;
-}
-
-/*--------------------------------- Quick Links -------------------------------------- */
-.sina-quick-links ul,
-.sina-ext-nav ul{
-	margin: 0;
-	padding: 0;
-	list-style: none;
-}
-.sina-quick-links li{
-	display: inline-block;
-	width: 100%;
-}
-
-/*--------------------------------- Scroll To Top -------------------------------------- */
-.sina-scroll-top{
-	width: 50px;
-	height: 50px;
-	line-height: 50px;
-	color: #fff;
-	background: #1085e4;
-	cursor: pointer;
-	border-radius: 50%;
-}
-
-/*--------------------------------- Woo Cart -------------------------------------- */
-.sina-woo-cart-icon{
-	position: relative;
-	margin-right: 4px;
-}
-.sina-woo-cart-icon[data-counter]:before{
-	position: absolute;
-	content: attr(data-counter);
-	min-width: 16px;
-	height: 16px;
-	line-height: 16px;
-	border-radius: 100%;
-	text-align: center;
-	font-size: 10px;
-	transition: all 0.4s;
-}
-.sina-woo-cart-icon.sina-woo-badge-hide[data-counter="0"]:before{
-	display: none;
-}
-
-/*--------------------------------- Nav Menu -------------------------------------- */
-.sina-ext-nav{
-	transition: background 0.5s ease-in-out;
-}
-.sina-ext-nav ul{
-	margin: 0;
-	padding: 0;
-	list-style: none;
-}
-.sina-ext-nav-toggle{
-	display: none;
-}
-
-/* Menu */
-.sina-ext-menu li a{
-	display: block;
-	position: relative;
-	cursor: pointer;
-	transition: all 0.3s ease-in-out;
-}
-.sina-ext-menu > li{
-	display: inline-block;
-	position: relative;
-}
-.sina-ext-menu .menu-item-has-children > a:before{
-	position: absolute;
-	font-family: 'IcoFont';
-}
-.sina-ext-menu .sub-menu{
-	position: absolute;
-	display: none;
-	z-index: 1000;
-}
-.sina-ext-menu .sub-menu > li{
-	border-top: solid 1px #fafafa;
-}
-
-/*Sub Menu Animation*/
-.sina-ext-menu-fadeInLeft{
-	animation-name: sina-ext-menu-fadeInLeft;
-}
-@keyframes sina-ext-menu-fadeInLeft{
-	0% {
-		opacity: 0;
-		transform: translateX(-20px);
-	}
-	100% {
-		opacity: 1;
-		transform: translateX(0);
-	}
-}
-.sina-ext-menu-fadeOutLeft{
-	animation-name: sina-ext-menu-fadeOutLeft;
-}
-@keyframes sina-ext-menu-fadeOutLeft{
-	0% {
-		opacity: 1;
-		transform: translateX(0);
-	}
-	100% {
-		opacity: 0;
-		transform: translateX(-20px);
-	}
-}
-.sina-ext-menu-fadeInRight{
-	animation-name: sina-ext-menu-fadeInRight;
-}
-@keyframes sina-ext-menu-fadeInRight{
-	0% {
-		opacity: 0;
-		transform: translateX(20px);
-	}
-	100% {
-		opacity: 1;
-		transform: translateX(0);
-	}
-}
-.sina-ext-menu-fadeOutRight{
-	animation-name: sina-ext-menu-fadeOutRight;
-}
-@keyframes sina-ext-menu-fadeOutRight{
-	0% {
-		opacity: 1;
-		transform: translateX(0);
-	}
-	100% {
-		opacity: 0;
-		transform: translateX(20px);
-	}
-}
-
 
 /* RESPONSIVE-Desktop*/
 @media (min-width: 1025px) {
@@ -1617,6 +1633,10 @@
 	.sina-subs-input .sina-subs-btn{
 		font-size: 14px;
 		line-height: 20px;
+	}
+	.sina-post-navigation a{
+		width: 100%;
+		text-align: center;
 	}
 	.sina-contact-input-half{
 		width: 100%;

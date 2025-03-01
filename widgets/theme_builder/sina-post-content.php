@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Post Excerpt Widget.
+ * Post Content Widget.
  *
  * @since 3.7.0
  */
@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class Sina_Post_Excerpt_Widget extends Widget_Base{
+class Sina_Post_Content_Widget extends Widget_Base{
 
 	/**
 	 * Get widget name.
@@ -23,7 +23,7 @@ class Sina_Post_Excerpt_Widget extends Widget_Base{
 	 * @since 3.7.0
 	 */
 	public function get_name() {
-		return 'sina_post_excerpt';
+		return 'sina_post_content';
 	}
 
 	/**
@@ -32,7 +32,7 @@ class Sina_Post_Excerpt_Widget extends Widget_Base{
 	 * @since 3.7.0
 	 */
 	public function get_title() {
-		return esc_html__( 'Sina Post Excerpt', 'sina-ext' );
+		return esc_html__( 'Sina Post Content', 'sina-ext' );
 	}
 
 	/**
@@ -41,7 +41,7 @@ class Sina_Post_Excerpt_Widget extends Widget_Base{
 	 * @since 3.7.0
 	 */
 	public function get_icon() {
-		return 'eicon-post-excerpt';
+		return 'eicon-post-content';
 	}
 
 	/**
@@ -65,7 +65,7 @@ class Sina_Post_Excerpt_Widget extends Widget_Base{
 	 * @since 3.7.0
 	 */
 	public function get_keywords() {
-		return [ 'sina post excerpt', 'sina theme builder' ];
+		return [ 'sina post content', 'sina theme builder' ];
 	}
 
 	/**
@@ -77,52 +77,26 @@ class Sina_Post_Excerpt_Widget extends Widget_Base{
 	 * @access protected
 	 */
 	protected function register_controls() {
-		// Start Post Excerpt
-		// ===================
+		// Start Content Style
+		// ==================
 			$this->start_controls_section(
-				'post_excerpt_content',
+				'post_content_style',
 				[
-					'label' => esc_html__( 'Post Excerpt', 'sina-ext' ),
-					'tab' => Controls_Manager::TAB_CONTENT,
-				]
-			);
-
-				$this->add_control(
-					'length',
-					[
-						'label' => esc_html__( 'Content Length (Word)', 'sina-ext' ),
-						'type' => Controls_Manager::NUMBER,
-						'max' => 5000,
-						'default' => 100,
-					]
-				);
-
-			$this->end_controls_section();
-		// End Post Excerpt
-		// =================
-
-
-		// Start Excerpt Style
-		// ====================
-			$this->start_controls_section(
-				'post_excerpt_style',
-				[
-					'label' => esc_html__( 'Excerpt', 'sina-ext' ),
+					'label' => esc_html__( 'Content', 'sina-ext' ),
 					'tab' => Controls_Manager::TAB_STYLE,
 				]
 			);
-			Sina_Common_Data::site_info( $this, '.sina-post-excerpt', 'post_excerpt' );
+			Sina_Common_Data::site_info( $this, '.sina-post-content', 'post_content' );
 			$this->end_controls_section();
-		// End Excerpt Style
-		// ==================
+		// End Content Style
+		// ================
 	}
 
 
 	protected function render() {
 		Sina_Common_Data::switch_to_last_post();
-		$data = $this->get_settings_for_display();
 		?>
-		<div class="sina-post-excerpt"><?php echo wp_trim_words( get_the_excerpt(), $data['length'] ); ?></div>
+		<div class="sina-post-content"><?php the_content(); ?></div>
 		<?php
 	}
 
