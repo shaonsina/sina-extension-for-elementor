@@ -3203,6 +3203,7 @@ class Sina_Ext_Icon extends Base_Data_Control{
 			'eicon-caret-left' => 'eicon-caret-left',
 			'eicon-caret-right' => 'eicon-caret-right',
 			'eicon-caret-up' => 'eicon-caret-up',
+			'eicon-caret-down' => 'eicon-caret-down',
 			'eicon-chain-broken' => 'eicon-chain-broken',
 			'eicon-check-circle-o' => 'eicon-check-circle-o',
 			'eicon-check' => 'eicon-check',
@@ -3233,7 +3234,6 @@ class Sina_Ext_Icon extends Base_Data_Control{
 			'eicon-link' => 'eicon-link',
 			'eicon-long-arrow-left' => 'eicon-long-arrow-left',
 			'eicon-long-arrow-right' => 'eicon-long-arrow-right',
-			'eicon-caret-down' => 'eicon-caret-down',
 			'eicon-paint-brush' => 'eicon-paint-brush',
 			'eicon-pencil' => 'eicon-pencil',
 			'eicon-plus-circle' => 'eicon-plus-circle',
@@ -3383,9 +3383,15 @@ class Sina_Ext_Icon extends Base_Data_Control{
 			<div class="elementor-control-input-wrapper">
 				<select id="<?php echo $control_uid; ?>" class="elementor-control-icon" data-setting="{{ data.name }}" data-placeholder="<?php echo __( 'Select Icon', 'sina-ext' ); ?>">
 					<option value=""><?php echo __( 'Select Icon', 'sina-ext' ); ?></option>
-					<# _.each( data.options, function( option_title, option_value ) { #>
-					<option value="{{ option_value }}">{{{ option_title }}}</option>
-					<# } ); #>
+					<# if( data.include ) { #>
+						<# _.each( data.include, function( option_title, option_value ) { #>
+							<option value="{{ option_value }}">{{{ option_title }}}</option>
+						<# } ); #>
+					<# } else { #>
+						<# _.each( data.options, function( option_title, option_value ) { #>
+							<option value="{{ option_value }}">{{{ option_title }}}</option>
+						<# } ); #>
+					<# } #>
 				</select>
 			</div>
 		</div>

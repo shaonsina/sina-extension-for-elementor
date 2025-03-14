@@ -91,12 +91,12 @@
 								<div class='sina-ext-pb sina-ext-my'>
 									<div class="sina-toggle-section <?php echo esc_attr($sina_pro); ?> sina-ext-toggle" data-cat="<?php echo esc_attr($cat); ?>">
 										<?php printf('<input type="checkbox" id="sina_widgets[%s]" %s value="1">', $cat, $checked); ?>
-										<?php printf('<label for="sina_widgets[%1$s]"><div class="sina-ext-label">%2$s</div><div class="sina-ext-toggle-btn"> <div></div></div></label>', $cat, esc_html__( ucfirst($cat), 'sina-ext' )); ?>
+										<?php printf('<label for="sina_widgets[%1$s]"><div class="sina-ext-label">%2$s</div><div class="sina-ext-toggle-btn"> <div></div></div></label>', $cat, esc_html__( ucwords(str_replace('_', ' ', $cat)), 'sina-ext' )); ?>
 									</div>
 
 									<?php
 										if ('wooCommerce' == $cat):
-											printf('<p><strong>'.esc_html__('Before enabling these features make sure the %s plugin has installed!', 'sina-ext').'</strong></p>', '<a href="https://wordpress.org/plugins/woocommerce/" target="_blank">WooCommerce</a>' );
+											printf('<p><strong>'.esc_html__('Before enabling these features make sure the %s plugin has been installed and activated!', 'sina-ext').'</strong></p>', '<a href="https://wordpress.org/plugins/woocommerce/" target="_blank">WooCommerce</a>' );
 										endif;
 									?>
 								</div>

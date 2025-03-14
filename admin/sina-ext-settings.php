@@ -66,6 +66,14 @@ class Sina_Ext_Settings{
 		);
 		add_submenu_page(
 			'sina_ext',
+			esc_html__( 'Theme Builder', 'sina-ext' ),
+			esc_html__( 'Theme Builder', 'sina-ext' ),
+			'manage_options',
+			'edit.php?post_type=sina-ext-template',
+			null
+		);
+		add_submenu_page(
+			'sina_ext',
 			esc_html__('Products', 'sina-ext'),
 			esc_html__('Products', 'sina-ext'),
 			'manage_options',

@@ -258,7 +258,7 @@ class Sina_Mailchimp_Subscribe_Widget extends Widget_Base{
 				'default' => 'inline-block',
 			]
 		);
-		Sina_Common_Data::input_fields_style( $this );
+		Sina_Common_Data::input_fields_style( $this, '.sina-input-field' );
 		$this->add_responsive_control(
 			'fields_radius',
 			[

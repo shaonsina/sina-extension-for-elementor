@@ -1,0 +1,380 @@
+/* Sina Extension for Elementor v3.7.0 */
+
+/*--------------------------------- General -------------------------------------- */
+.sina-overlay{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	transition: all 0.4s;
+}
+.sina-fixed{
+	position: fixed;
+}
+.sina-flex{
+	display: flex;
+}
+
+/* Common */
+.sina-woo-cart-link,
+.sina-direct-contact a,
+.sina-direct-contact a:hover i{
+	transition: all 0.4s;
+}
+.sina-search form {
+	overflow: hidden;
+}
+.sina-direct-contact i{
+	text-align: center;
+}
+.sina-scroll-top{
+	text-align: center;
+	transition: all 0.4s;
+}
+.sina-input-field{
+	display: inline-block;
+	width: inherit;
+	height: inherit;
+	vertical-align: inherit !important;
+	transition: all 0.4s;
+}
+.sina-input-field:focus{
+	outline: none;
+}
+.sina-button:active,
+.sina-button:focus,
+.sina-button{
+	border: 0;
+	outline: none;
+	cursor: pointer;
+}
+.sina-button{
+	display: inline-block;
+	text-align: center;
+	overflow: hidden;
+	transition: all 0.4s;
+}
+.sina-button:not(.sina-pt-cat-btn) i{
+	display: inline-block;
+	transition: all 0.2s cubic-bezier(0.1, 0.8, 0.8, 1);
+}
+
+/*--------------------------------- Header Footer -------------------------------------- */
+section.sina-pro-sticked,
+header.sina-pro-sticked,
+footer.sina-pro-sticked{
+	width: 100%!important;
+}
+
+/*--------------------------------- Site Logo -------------------------------------- */
+.sina-logo-wrap{
+	position: relative;
+	display: inline-block;
+	overflow: hidden;
+}
+.sina-sticky-logo{
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	transition: opacity 0.3s;
+}
+.sina-pro-sticked .sina-sticky-logo{
+	opacity: 1;
+}
+
+/*--------------------------------- Site Info -------------------------------------- */
+.sina-site-info-title a,
+.sina-site-info-copyright a{
+	padding: 0;
+	margin: 0;
+}
+
+/*--------------------------------- Direct Contact -------------------------------------- */
+.sina-direct-contact a{
+	margin: 0 10px;
+}
+
+/*--------------------------------- Search -------------------------------------- */
+.sina-modal-overlay{
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	display: none;
+	z-index: 99999;
+}
+.sina-modal-area{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	align-items: center;
+	justify-content: center;
+}
+.sina-search .sina-input-field::-webkit-search-cancel-button{
+	display: none;
+}
+.sina-search .sina-input-field:active,
+.sina-search .sina-input-field:focus,
+.sina-search .sina-input-field,
+.sina-search .sina-button{
+	background: transparent!important;
+	border: 0;
+}
+.sina-search .sina-modal-area{
+	animation-duration: 2.1s;
+	animation-timing-function: ease-in-out;
+}
+.sina-search .sina-modal-close{
+	position: absolute;
+	z-index: 9;
+}
+
+/*--------------------------------- Quick Links -------------------------------------- */
+.sina-quick-links ul,
+.sina-ext-nav ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.sina-quick-links li{
+	display: inline-block;
+	min-width: 100%;
+}
+.sina-quick-links a{
+	display: block;
+	transition: all 0.4s;
+}
+
+/*--------------------------------- Scroll To Top -------------------------------------- */
+.sina-scroll-top{
+	display: none;
+	width: 50px;
+	height: 50px;
+	line-height: 50px;
+	color: #fff;
+	background: #1085e4;
+	cursor: pointer;
+	border-radius: 50%;
+}
+
+/*--------------------------------- Woo Cart -------------------------------------- */
+.sina-woo-cart-icon{
+	position: relative;
+	margin-right: 4px;
+}
+.sina-woo-cart-icon[data-counter]:before{
+	position: absolute;
+	content: attr(data-counter);
+	min-width: 16px;
+	height: 16px;
+	line-height: 16px;
+	border-radius: 100%;
+	text-align: center;
+	font-size: 10px;
+	transition: all 0.4s;
+}
+.sina-woo-cart-icon.sina-woo-badge-hide[data-counter="0"]:before{
+	display: none;
+}
+
+/*--------------------------------- Nav Menu -------------------------------------- */
+.sina-ext-nav{
+	transition: background 0.5s ease-in-out;
+}
+.sina-ext-nav ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+button.sina-ext-nav-toggle{
+	display: none;
+}
+
+/* Menu */
+.sina-ext-menu li a{
+	display: block;
+	position: relative;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+}
+.sina-ext-menu > li{
+	display: inline-block;
+	position: relative;
+}
+.sina-ext-menu .menu-item-has-children > a:before{
+	position: absolute;
+	font-family: 'IcoFont';
+}
+.sina-ext-menu .sub-menu{
+	position: absolute;
+	display: none;
+	z-index: 1000;
+}
+.sina-ext-menu .sub-menu > li{
+	border-top: solid 1px #fafafa;
+}
+
+/*Sub Menu Animation*/
+.sina-ext-menu-fadeInLeft{
+	animation-name: sina-ext-menu-fadeInLeft;
+}
+@keyframes sina-ext-menu-fadeInLeft{
+	0% {
+		opacity: 0;
+		transform: translateX(-20px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+.sina-ext-menu-fadeOutLeft{
+	animation-name: sina-ext-menu-fadeOutLeft;
+}
+@keyframes sina-ext-menu-fadeOutLeft{
+	0% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+	100% {
+		opacity: 0;
+		transform: translateX(-20px);
+	}
+}
+.sina-ext-menu-fadeInRight{
+	animation-name: sina-ext-menu-fadeInRight;
+}
+@keyframes sina-ext-menu-fadeInRight{
+	0% {
+		opacity: 0;
+		transform: translateX(20px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+.sina-ext-menu-fadeOutRight{
+	animation-name: sina-ext-menu-fadeOutRight;
+}
+@keyframes sina-ext-menu-fadeOutRight{
+	0% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+	100% {
+		opacity: 0;
+		transform: translateX(20px);
+	}
+}
+
+
+
+/* RTL */
+.rtl .sina-ext-menu .sub-menu .sub-menu{
+	left: inherit;
+	right: 100%;
+}
+
+
+/* RESPONSIVE-Desktop*/
+@media (min-width: 1025px) {
+	/* Navigation */
+	.sina-ext-menu .sub-menu li{
+		position: relative;
+	}
+	.sina-ext-menu .sub-menu .sub-menu{
+		top: 0!important;
+		left: 100%;
+	}
+	.sina-ext-menu .sub-menu > li:first-child{
+		border-top: 0!important;
+	}
+}
+
+
+/* RESPONSIVE-Tablet*/
+@media (max-width: 1024px) {
+	/* Navigation */
+	button.sina-ext-nav-toggle{
+		display: inline-block;
+		position: absolute;
+		line-height: 1;
+		cursor: pointer;
+		z-index: 9;
+	}
+	.sina-ext-menu{
+		padding: 15px;
+	}
+	.sina-ext-menu > li:first-child{
+		border-top: 0;
+	}
+	.sina-ext-menu > li > a{
+		border: 0!important;
+	}
+	.sina-ext-menu .sub-menu{
+		position: inherit;
+		border: 0!important;
+		width: 100% !important;
+		box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.0)!important;
+	}
+	.sina-ext-menu li{
+		display: block;
+		width: 100%;
+		border-top: solid 1px #fafafa;
+	}
+
+	/* Mobile Sidebar */
+	.sina-ext-nav-mobile-sidebar .sina-ext-nav-collapse{
+		position: fixed;
+		top: 0;
+		left: -280px;
+		width: 280px;
+		height: 100%;
+		max-height: 100%;
+		padding-bottom: 60px;
+		margin: 0;
+		z-index: 99;
+		overflow-x: hidden;
+		transition: all 0.3s ease-in-out;
+	}
+	.sina-ext-nav-mobile-sidebar .sina-ext-nav-collapse.show{
+		left: 0;
+	}
+	.admin-bar .sina-ext-nav-mobile-sidebar .sina-ext-nav-collapse{
+		top: 32px;
+	}
+	body.sina-ext-nav-mobile-left > .sina-ext-nav-wrapper{
+		margin-left: 280px;
+		margin-right: -280px;
+	}
+	body > .sina-ext-nav-wrapper{
+		position: relative;
+		transition: all 0.3s ease-in-out;
+	}
+
+	/* RTL Mobile Sidebar */
+	.rtl .sina-ext-nav-mobile-sidebar .sina-ext-nav-collapse{
+		right: -280px;
+	}
+	.rtl .sina-ext-nav-mobile-sidebar .sina-ext-nav-collapse.show{
+		left: inherit;
+		right: 0;
+	}
+	body.rtl.sina-ext-nav-mobile-left > .sina-ext-nav-wrapper{
+		margin-left: auto;
+		margin-right: 280px;
+	}
+}
+
+
+/* RESPONSIVE-Mobile*/
+@media (max-width: 782px) {
+	.admin-bar .sina-ext-nav-mobile-sidebar .sina-ext-nav-collapse{
+		top: 46px;
+	}
+}

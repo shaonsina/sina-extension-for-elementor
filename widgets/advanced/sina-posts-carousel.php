@@ -1936,7 +1936,7 @@ class Sina_Posts_Carousel_Widget extends Widget_Base{
 			<?php
 		else:
 			?>
-				<h3><?php echo esc_html__('No Posts found', 'sina-ext'); ?></h3>
+				<h3 class="sina-text-center"><?php echo esc_html__('No Posts found', 'sina-ext'); ?></h3>
 			<?php
 		endif;
 	}

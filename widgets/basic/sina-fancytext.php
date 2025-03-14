@@ -107,350 +107,351 @@ class Sina_Fancytext_Widget extends Widget_Base{
 	protected function register_controls() {
 		// Start Fancytext Content
 		// =====================
-			$this->start_controls_section(
-				'fancytext_content',
-				[
-					'label' => esc_html__( 'Fancy Text', 'sina-ext' ),
-					'tab' => Controls_Manager::TAB_CONTENT,
-				]
-			);
+		$this->start_controls_section(
+			'fancytext_content',
+			[
+				'label' => esc_html__( 'Fancy Text', 'sina-ext' ),
+				'tab' => Controls_Manager::TAB_CONTENT,
+			]
+		);
 
-				$repeater = new Repeater();
+		$repeater = new Repeater();
 
-				$repeater->add_control(
-					'fancy_items',
-					[
-						'label' => esc_html__( 'Text', 'sina-ext' ),
-						'label_block' => true,
-						'type' => Controls_Manager::TEXT,
-						'default' => 'Fancy text',
-						'dynamic' => [
-							'active' => true,
-						],
-					]
-				);
-				$this->add_control(
-					'fancy_text',
-					[
-						'label' => esc_html__( 'Fancy Text', 'sina-ext' ),
-						'type' => Controls_Manager::REPEATER,
-						'fields' => $repeater->get_controls(),
-						'default' => [
-							[
-								'fancy_items' => 'first text',
-							],
-							[
-								'fancy_items' => 'second text',
-							],
-							[
-								'fancy_items' => 'third text',
-							],
-							[
-								'fancy_items' => 'fourth text',
-							],
-						],
-						'title_field' => '{{{ fancy_items.replace(/</g, " < " ).replace(/>/g, " > ").replace(/=/g, " = ").replace(/&/g, " & ") }}}',
-					]
-				);
-				$this->add_control(
-					'fancy_prefix',
-					[
-						'label' => esc_html__( 'Prefix Text', 'sina-ext' ),
-						'label_block' => true,
-						'type' => Controls_Manager::TEXT,
-						'placeholder' => esc_html__( 'Enter prefix text', 'sina-ext' ),
-						'default' => 'Prefix text ',
-						'dynamic' => [
-							'active' => true,
-						],
-					]
-				);
-				$this->add_control(
-					'fancy_suffix',
-					[
-						'label' => esc_html__( 'Suffix Text', 'sina-ext' ),
-						'label_block' => true,
-						'type' => Controls_Manager::TEXT,
-						'placeholder' => esc_html__( 'Enter suffix text', 'sina-ext' ),
-						'default' => ' Suffix text',
-						'dynamic' => [
-							'active' => true,
-						],
-					]
-				);
+		$repeater->add_control(
+			'fancy_items',
+			[
+				'label' => esc_html__( 'Text', 'sina-ext' ),
+				'label_block' => true,
+				'type' => Controls_Manager::TEXT,
+				'default' => 'Fancy text',
+				'dynamic' => [
+					'active' => true,
+				],
+			]
+		);
 
-			$this->end_controls_section();
+		$this->add_control(
+			'fancy_text',
+			[
+				'label' => esc_html__( 'Fancy Text', 'sina-ext' ),
+				'type' => Controls_Manager::REPEATER,
+				'fields' => $repeater->get_controls(),
+				'default' => [
+					[
+						'fancy_items' => 'first text',
+					],
+					[
+						'fancy_items' => 'second text',
+					],
+					[
+						'fancy_items' => 'third text',
+					],
+					[
+						'fancy_items' => 'fourth text',
+					],
+				],
+				'title_field' => '{{{ fancy_items.replace(/</g, " < " ).replace(/>/g, " > ").replace(/=/g, " = ").replace(/&/g, " & ") }}}',
+			]
+		);
+		$this->add_control(
+			'fancy_prefix',
+			[
+				'label' => esc_html__( 'Prefix Text', 'sina-ext' ),
+				'label_block' => true,
+				'type' => Controls_Manager::TEXT,
+				'placeholder' => esc_html__( 'Enter prefix text', 'sina-ext' ),
+				'default' => 'Prefix text ',
+				'dynamic' => [
+					'active' => true,
+				],
+			]
+		);
+		$this->add_control(
+			'fancy_suffix',
+			[
+				'label' => esc_html__( 'Suffix Text', 'sina-ext' ),
+				'label_block' => true,
+				'type' => Controls_Manager::TEXT,
+				'placeholder' => esc_html__( 'Enter suffix text', 'sina-ext' ),
+				'default' => ' Suffix text',
+				'dynamic' => [
+					'active' => true,
+				],
+			]
+		);
+
+		$this->end_controls_section();
 		// End Fancytext Content
 		// =======================
 
 
 		// Start Fancy Settings
 		// ======================
-			$this->start_controls_section(
-				'fancy_settings',
-				[
-					'label' => esc_html__( 'Fancy Settings', 'sina-ext' ),
-					'tab' => Controls_Manager::TAB_CONTENT,
-				]
-			);
+		$this->start_controls_section(
+			'fancy_settings',
+			[
+				'label' => esc_html__( 'Fancy Settings', 'sina-ext' ),
+				'tab' => Controls_Manager::TAB_CONTENT,
+			]
+		);
 
-				$this->add_responsive_control(
-					'display',
-					[
-						'label' => esc_html__( 'Display', 'sina-ext' ),
-						'type' => Controls_Manager::SELECT,
-						'options' => [
-							'inline' => esc_html__( 'Inline', 'sina-ext' ),
-							'block' => esc_html__( 'Block', 'sina-ext' ),
-						],
-						'default' => 'inline',
-						'selectors' => [
-							'{{WRAPPER}} .sina-fancytext-prefix, {{WRAPPER}} .sina-fancytext-suffix' => 'display: {{VALUE}};',
-						],
-					]
-				);
-				$this->add_responsive_control(
-					'alignment',
-					[
-						'label' => esc_html__( 'Alignment', 'sina-ext' ),
-						'type' => Controls_Manager::CHOOSE,
-						'options' => [
-							'left' => [
-								'title' => esc_html__( 'Left', 'sina-ext' ),
-								'icon' => 'eicon-text-align-left',
-							],
-							'center' => [
-								'title' => esc_html__( 'Center', 'sina-ext' ),
-								'icon' => 'eicon-text-align-center',
-							],
-							'right' => [
-								'title' => esc_html__( 'Right', 'sina-ext' ),
-								'icon' => 'eicon-text-align-right',
-							],
-						],
-						'default' => 'center',
-						'selectors' => [
-							'{{WRAPPER}} .sina-fancytext' => 'text-align: {{VALUE}};',
-						],
-					]
-				);
-				$animation = Sina_Common_Data::animation();
-				unset( $animation['none'] );
-				$animation['typing'] = esc_html__( 'Typing', 'sina-ext' );
+		$this->add_responsive_control(
+			'display',
+			[
+				'label' => esc_html__( 'Display', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					'inline' => esc_html__( 'Inline', 'sina-ext' ),
+					'block' => esc_html__( 'Block', 'sina-ext' ),
+				],
+				'default' => 'inline',
+				'selectors' => [
+					'{{WRAPPER}} .sina-fancytext-prefix, {{WRAPPER}} .sina-fancytext-suffix' => 'display: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'alignment',
+			[
+				'label' => esc_html__( 'Alignment', 'sina-ext' ),
+				'type' => Controls_Manager::CHOOSE,
+				'options' => [
+					'left' => [
+						'title' => esc_html__( 'Left', 'sina-ext' ),
+						'icon' => 'eicon-text-align-left',
+					],
+					'center' => [
+						'title' => esc_html__( 'Center', 'sina-ext' ),
+						'icon' => 'eicon-text-align-center',
+					],
+					'right' => [
+						'title' => esc_html__( 'Right', 'sina-ext' ),
+						'icon' => 'eicon-text-align-right',
+					],
+				],
+				'default' => 'center',
+				'selectors' => [
+					'{{WRAPPER}} .sina-fancytext' => 'text-align: {{VALUE}};',
+				],
+			]
+		);
+		$animation = Sina_Common_Data::animation();
+		unset( $animation['none'] );
+		$animation['typing'] = esc_html__( 'Typing', 'sina-ext' );
 
-				$this->add_control(
-					'animation_type',
-					[
-						'label' => esc_html__( 'Animation Type', 'sina-ext' ),
-						'type' => Controls_Manager::SELECT,
-						'default' => 'typing',
-						'options' => $animation,
-					]
-				);
-				$this->add_control(
-					'delay',
-					[
-						'label' => esc_html__( 'Delay', 'sina-ext' ),
-						'type' => Controls_Manager::NUMBER,
-						'min' => 100,
-						'max' => 10000,
-						'step' => 100,
-						'default' => '2000'
-					]
-				);
-				$this->add_control(
-					'typing_speed',
-					[
-						'label' => esc_html__( 'Typing Speed', 'sina-ext' ),
-						'type' => Controls_Manager::NUMBER,
-						'min' => 100,
-						'max' => 10000,
-						'step' => 100,
-						'default' => '100',
-						'condition' => [
-							'animation_type' => 'typing',
-						],
-					]
-				);
-				$this->add_control(
-					'loop',
-					[
-						'label' => esc_html__( 'Loop', 'sina-ext' ),
-						'type' => Controls_Manager::SWITCHER,
-						'condition' => [
-							'animation_type' => 'typing',
-						],
-						'default' => 'yes',
-					]
-				);
-				$this->add_control(
-					'cursor',
-					[
-						'label' => esc_html__( 'Cursor', 'sina-ext' ),
-						'type' => Controls_Manager::SWITCHER,
-						'label_on' => esc_html__( 'Show', 'sina-ext' ),
-						'label_off' => esc_html__( 'Hide', 'sina-ext' ),
-						'default' => 'yes',
-						'condition' => [
-							'animation_type' => 'typing',
-						],
-					]
-				);
-				$this->add_control(
-					'cursor_color',
-					[
-						'label' => esc_html__( 'Cursor Color', 'sina-ext' ),
-						'type' => Controls_Manager::COLOR,
-						'default' => '#1085e4',
-						'condition' => [
-							'cursor' => 'yes',
-						],
-						'selectors' => [
-							'{{WRAPPER}} .sina-fancytext .typed-cursor' => 'color: {{VALUE}};',
-						],
-					]
-				);
-				$this->add_control(
-					'tag',
-					[
-						'label' => esc_html__( 'Select Tag', 'sina-ext' ),
-						'type' => Controls_Manager::SELECT,
-						'options' => [
-							'h1' => 'H1',
-							'h2' => 'H2',
-							'h3' => 'H3',
-							'h4' => 'H4',
-							'h5' => 'H5',
-							'h6' => 'H6',
-							'p' => 'p',
-						],
-						'default' => 'h3',
-					]
-				);
+		$this->add_control(
+			'animation_type',
+			[
+				'label' => esc_html__( 'Animation Type', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'default' => 'typing',
+				'options' => $animation,
+			]
+		);
+		$this->add_control(
+			'delay',
+			[
+				'label' => esc_html__( 'Delay', 'sina-ext' ),
+				'type' => Controls_Manager::NUMBER,
+				'min' => 100,
+				'max' => 10000,
+				'step' => 100,
+				'default' => '2000'
+			]
+		);
+		$this->add_control(
+			'typing_speed',
+			[
+				'label' => esc_html__( 'Typing Speed', 'sina-ext' ),
+				'type' => Controls_Manager::NUMBER,
+				'min' => 100,
+				'max' => 10000,
+				'step' => 100,
+				'default' => '100',
+				'condition' => [
+					'animation_type' => 'typing',
+				],
+			]
+		);
+		$this->add_control(
+			'loop',
+			[
+				'label' => esc_html__( 'Loop', 'sina-ext' ),
+				'type' => Controls_Manager::SWITCHER,
+				'condition' => [
+					'animation_type' => 'typing',
+				],
+				'default' => 'yes',
+			]
+		);
+		$this->add_control(
+			'cursor',
+			[
+				'label' => esc_html__( 'Cursor', 'sina-ext' ),
+				'type' => Controls_Manager::SWITCHER,
+				'label_on' => esc_html__( 'Show', 'sina-ext' ),
+				'label_off' => esc_html__( 'Hide', 'sina-ext' ),
+				'default' => 'yes',
+				'condition' => [
+					'animation_type' => 'typing',
+				],
+			]
+		);
+		$this->add_control(
+			'cursor_color',
+			[
+				'label' => esc_html__( 'Cursor Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#1085e4',
+				'condition' => [
+					'cursor' => 'yes',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-fancytext .typed-cursor' => 'color: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_control(
+			'tag',
+			[
+				'label' => esc_html__( 'Select Tag', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					'h1' => 'H1',
+					'h2' => 'H2',
+					'h3' => 'H3',
+					'h4' => 'H4',
+					'h5' => 'H5',
+					'h6' => 'H6',
+					'p' => 'p',
+				],
+				'default' => 'h3',
+			]
+		);
 
-			$this->end_controls_section();
+		$this->end_controls_section();
 		// End Fancy Settings
 		// ====================
 
 
 		// Start Fancy Style
 		// =====================
-			$this->start_controls_section(
-				'fancy_style',
-				[
-					'label' => esc_html__( 'Fancy Text', 'sina-ext' ),
-					'tab' => Controls_Manager::TAB_STYLE,
-				]
-			);
+		$this->start_controls_section(
+			'fancy_style',
+			[
+				'label' => esc_html__( 'Fancy Text', 'sina-ext' ),
+				'tab' => Controls_Manager::TAB_STYLE,
+			]
+		);
 
-				$this->add_group_control(
-					Group_Control_Typography::get_type(),
-					[
-						'name' => 'fancy_typography',
-						'selector' => '{{WRAPPER}} .sina-fancytext-strings, {{WRAPPER}} .typed-cursor',
-					]
-				);
-				$this->add_group_control(
-					Group_Control_Text_Shadow::get_type(),
-					[
-						'name' => 'fancy_shadow',
-						'selector' => '{{WRAPPER}} .sina-fancytext-strings',
-					]
-				);
-				$this->add_group_control(
-					Sina_Ext_Gradient_Text::get_type(),
-					[
-						'name' => 'fancy_color',
-						'fields_options' => [
-							'color' => [
-								'default' => '#1085e4',
-							],
-						],
-						'selector' => '{{WRAPPER}} .sina-fancytext-strings, {{WRAPPER}} .sina-fancytext-strings > span.animated, {{WRAPPER}} .typed-cursor',
-					]
-				);
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name' => 'fancy_typography',
+				'selector' => '{{WRAPPER}} .sina-fancytext-strings, {{WRAPPER}} .typed-cursor',
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Text_Shadow::get_type(),
+			[
+				'name' => 'fancy_shadow',
+				'selector' => '{{WRAPPER}} .sina-fancytext-strings',
+			]
+		);
+		$this->add_group_control(
+			Sina_Ext_Gradient_Text::get_type(),
+			[
+				'name' => 'fancy_color',
+				'fields_options' => [
+					'color' => [
+						'default' => '#1085e4',
+					],
+				],
+				'selector' => '{{WRAPPER}} .sina-fancytext-strings, {{WRAPPER}} .sina-fancytext-strings > span.animated, {{WRAPPER}} .typed-cursor',
+			]
+		);
 
-			$this->end_controls_section();
+		$this->end_controls_section();
 		// End Fancy Style
 		// =====================
 
 
 		// Start Prefix Style
 		// =====================
-			$this->start_controls_section(
-				'prefix_style',
-				[
-					'label' => esc_html__( 'Prefix Text', 'sina-ext' ),
-					'tab' => Controls_Manager::TAB_STYLE,
-					'condition' => [
-						'fancy_prefix!' => ''
-					],
-				]
-			);
+		$this->start_controls_section(
+			'prefix_style',
+			[
+				'label' => esc_html__( 'Prefix Text', 'sina-ext' ),
+				'tab' => Controls_Manager::TAB_STYLE,
+				'condition' => [
+					'fancy_prefix!' => ''
+				],
+			]
+		);
 
-				$this->add_group_control(
-					Group_Control_Typography::get_type(),
-					[
-						'name' => 'prefix_typography',
-						'selector' => '{{WRAPPER}} .sina-fancytext-prefix',
-					]
-				);
-				$this->add_group_control(
-					Group_Control_Text_Shadow::get_type(),
-					[
-						'name' => 'prefix_shadow',
-						'selector' => '{{WRAPPER}} .sina-fancytext-prefix',
-					]
-				);
-				$this->add_group_control(
-					Sina_Ext_Gradient_Text::get_type(),
-					[
-						'name' => 'prefix_color',
-						'selector' => '{{WRAPPER}} .sina-fancytext-prefix',
-					]
-				);
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name' => 'prefix_typography',
+				'selector' => '{{WRAPPER}} .sina-fancytext-prefix',
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Text_Shadow::get_type(),
+			[
+				'name' => 'prefix_shadow',
+				'selector' => '{{WRAPPER}} .sina-fancytext-prefix',
+			]
+		);
+		$this->add_group_control(
+			Sina_Ext_Gradient_Text::get_type(),
+			[
+				'name' => 'prefix_color',
+				'selector' => '{{WRAPPER}} .sina-fancytext-prefix',
+			]
+		);
 
-			$this->end_controls_section();
+		$this->end_controls_section();
 		// End Prefix Style
 		// =====================
 
 
 		// Start Suffix Style
 		// =====================
-			$this->start_controls_section(
-				'suffix_style',
-				[
-					'label' => esc_html__( 'Suffix Text', 'sina-ext' ),
-					'tab' => Controls_Manager::TAB_STYLE,
-					'condition' => [
-						'fancy_suffix!' => ''
-					],
-				]
-			);
+		$this->start_controls_section(
+			'suffix_style',
+			[
+				'label' => esc_html__( 'Suffix Text', 'sina-ext' ),
+				'tab' => Controls_Manager::TAB_STYLE,
+				'condition' => [
+					'fancy_suffix!' => ''
+				],
+			]
+		);
 
-				$this->add_group_control(
-					Group_Control_Typography::get_type(),
-					[
-						'name' => 'suffix_typography',
-						'selector' => '{{WRAPPER}} .sina-fancytext-suffix',
-					]
-				);
-				$this->add_group_control(
-					Group_Control_Text_Shadow::get_type(),
-					[
-						'name' => 'suffix_shadow',
-						'selector' => '{{WRAPPER}} .sina-fancytext-suffix',
-					]
-				);
-				$this->add_group_control(
-					Sina_Ext_Gradient_Text::get_type(),
-					[
-						'name' => 'suffix_color',
-						'selector' => '{{WRAPPER}} .sina-fancytext-suffix',
-					]
-				);
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name' => 'suffix_typography',
+				'selector' => '{{WRAPPER}} .sina-fancytext-suffix',
+			]
+		);
+		$this->add_group_control(
+			Group_Control_Text_Shadow::get_type(),
+			[
+				'name' => 'suffix_shadow',
+				'selector' => '{{WRAPPER}} .sina-fancytext-suffix',
+			]
+		);
+		$this->add_group_control(
+			Sina_Ext_Gradient_Text::get_type(),
+			[
+				'name' => 'suffix_color',
+				'selector' => '{{WRAPPER}} .sina-fancytext-suffix',
+			]
+		);
 
-			$this->end_controls_section();
+		$this->end_controls_section();
 		// End Suffix Style
 		// =====================
 	}
@@ -463,6 +464,7 @@ class Sina_Fancytext_Widget extends Widget_Base{
 		foreach ($data['fancy_text'] as $text) {
 			$fancy_text .= $text['fancy_items'].'@@';
 		}
+
 		?>
 		<div class="sina-fancytext"
 		data-fancy-text="<?php echo sina_ext_remove_chars( $fancy_text ); ?>"

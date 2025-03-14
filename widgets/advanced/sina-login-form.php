@@ -208,7 +208,7 @@ class Sina_Login_Form_Widget extends Widget_Base{
 			]
 		);
 
-		Sina_Common_Data::input_fields_style( $this );
+		Sina_Common_Data::input_fields_style( $this, '.sina-input-field' );
 		$this->add_responsive_control(
 			'fields_radius',
 			[

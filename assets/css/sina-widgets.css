@@ -1,6 +1,11 @@
-/* Sina Extension for Elementor v3.5.1 */
+/* Sina Extension for Elementor v3.7.0 */
 
 /*--------------------------------- General -------------------------------------- */
+.clearfix::after {
+	content: "";
+	clear: both;
+	display: table;
+}
 .sina-overlay{
 	position: absolute;
 	top: 0;
@@ -15,17 +20,15 @@
 	background-repeat: no-repeat;
 	background-position: center;
 }
+.sina-fixed{
+	position: fixed;
+}
 .sina-flex{
 	display: flex;
 }
 .sina-login-remember-wrap input[type="checkbox"],
 .sina-login-remember-wrap input[type="radio"]{
 	height: inherit;
-}
-.clearfix::after {
-	content: "";
-	clear: both;
-	display: table;
 }
 
 /* Common */
@@ -37,8 +40,15 @@
 .sina-team-box-zoom:hover,
 .sina-pricing-move:hover,
 .sina-pricing-zoom:hover{
-	z-index: 999;
+	z-index: 99;
 }
+.sina-author-profile a,
+.sina-post-comments #comments a,
+.sina-post-comments #comments .comment-edit-link,
+.sina-post-comments #comments .comment-delete-link,
+.sina-post-comments #comments .comment-reply-link,
+.sina-post-comments #comments [type="submit"],
+.sina-post-nav-title,
 .sina-feed .sina-feed-title a,
 .sina-feed .sina-feed-page-name a,
 .sina-feed .sina-feed-meta,
@@ -50,7 +60,6 @@
 .sina-pc-col,
 .sina-bp,
 .sina-bp-text,
-.sina-bp-col,
 .sina-bp-meta,
 .sina-pc-meta,
 .sina-bp-cats,
@@ -103,7 +112,6 @@
 .sina-bp-list .sina-bp,
 .sina-feed-grid,
 .sina-bp-grid,
-.sina-bp-col,
 .sina-bp,
 .sina-brand-carousel,
 .sina-contact-input,
@@ -139,12 +147,16 @@
 	display: none;
 }
 
+.sina-block,
 .sina-bg-thumb img,
 .sina-pt-item.active,
 .sina-pt-content .sina-pt-btn,
 .sina-accordion-item.open > .sina-accordion-header > .sina-accordion-icon .on{
 	display: block;
 }
+.sina-post-meta li,
+.sina-breadcrumbs li,
+.sina-inline,
 .sina-pricing-save-value,
 .sina-contact-form .g-recaptcha,
 .sina-team-social li,
@@ -154,6 +166,14 @@
 .sina-product-zoomer{
 	display: inline-block;
 }
+.sina-text-center,
+.sina-video,
+.sina-pricing,
+.sina-review-item,
+.sina-piechart .sina-piechart-content{
+	text-align: center;
+}
+.sina-breadcrumbs a,
 .twentytwenty-before-label:before,
 .twentytwenty-after-label:before,
 .sina-social li a i,
@@ -163,7 +183,6 @@
 }
 .sina-bp-list .sina-bg-thumb,
 .sina-bp-list .sina-bp-content,
-.sina-bp-col,
 .sina-news,
 .sina-news-content,
 .sina-portfolio-item,
@@ -240,6 +259,47 @@
 	width: 7%;
 }
 
+/*--------------------------------- Theme Builder -------------------------------------- */
+.sina-post-comments .avatar,
+.sina-post-meta .avatar,
+.sina-bp-meta .avatar{
+	vertical-align: middle;
+}
+
+/*--------------------------------- Post Navigation -------------------------------------- */
+.sina-post-navigation a{
+	max-width: 50%;
+}
+.sina-post-nav-prev{
+	float: left;
+	padding-right: 20px;
+	text-align: left;
+}
+.sina-post-nav-next{
+	float: right;
+	padding-left: 20px;
+	text-align: right;
+}
+.sina-post-nav-title{
+	font-size: 18px;
+	line-height: 26px;
+	text-transform: inherit;
+}
+
+/*--------------------------------- Post Meta -------------------------------------- */
+.sina-post-meta,
+.sina-breadcrumbs{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.sina-post-meta li{
+	border-right: 1px solid;
+}
+.sina-post-meta li:last-child{
+	border-right: 0;
+}
+
 /*--------------------------------- Accordion -------------------------------------- */
 .sina-accordion-item .sina-accordion-header{
 	-ms-flex-pack: justify;
@@ -250,6 +310,12 @@
 }
 .sina-accordion-desc p{
 	margin-bottom: 0;
+}
+
+/*--------------------------------- Breadcrumbs -------------------------------------- */
+.sina-breadcrumbs i.fa-home,
+.sina-breadcrumbs li:not(.sina-breadcrumbs-current){
+	margin-right: 10px;
 }
 
 /*------------------- Banner Slider, Brand Carousel & Review Carousel -------------------*/
@@ -331,6 +397,11 @@
 }
 
 /*--------------------------------- Blogpost -------------------------------------- */
+.sina-bp-col{
+	float: left;
+	overflow: hidden;
+	transition: all 0.4s;
+}
 .sina-twitter-feed-grid-sizer,
 .sina-fb-feed-grid-sizer,
 .sina-bp-grid-sizer{
@@ -380,6 +451,7 @@
 	display: block;
 	transition: all 0.4s;
 }
+.sina-post-navigation span,
 .sina-bp-pagination .page-numbers{
 	display: inline-block;
 	text-align: center;
@@ -419,11 +491,13 @@
 }
 
 /*--------------------------------- Posts Carousel -------------------------------------- */
+.sina-post-featured-img,
 .sina-news-ticker,
 .sina-pc-thumb{
 	position: relative;
 	overflow: hidden;
 }
+.sina-post-featured-img .sina-overlay,
 .sina-pc-thumb .sina-overlay{
 	opacity: 1;
 }
@@ -728,9 +802,6 @@
 	position: relative;
 	margin: 0 auto;
 }
-.sina-piechart .sina-piechart-content{
-	text-align: center;
-}
 .sina-piechart .sina-piechart-content,
 .sina-content-box-linkable,
 .sina-particle{
@@ -894,9 +965,6 @@
 }
 
 /*--------------------------------- Pricing -------------------------------------- */
-.sina-pricing {
-	text-align: center;
-}
 .sina-pricing-body{
 	margin: 10px 0 20px;
 	padding: 0;
@@ -919,9 +987,6 @@
 }
 
 /*--------------------------------- Review Carousel -------------------------------------- */
-.sina-review-item{
-	text-align: center;
-}
 .sina-review-carousel .owl-item .sina-review-face {
 	margin: 20px auto;
 }
@@ -1014,9 +1079,6 @@
 }
 
 /*--------------------------------- Video -------------------------------------- */
-.sina-video{
-	text-align: center;
-}
 .elementor-widget-sina_video{
 	visibility: visible;
 }
@@ -1308,6 +1370,8 @@
 
 /* RESPONSIVE-Mobile*/
 @media (max-width: 767px) {
+	.sina-post-nav-title,
+	.sina-nt-label-both,
 	.sina-posts-carousel .owl-next,
 	.sina-posts-carousel .owl-prev,
 	.sina-content-slider .owl-next,
@@ -1340,9 +1404,6 @@
 	}
 	.sina-contact-input-half:last-child{
 		margin: 0;
-	}
-	.sina-nt-label-both{
-		display: none;
 	}
 }
 

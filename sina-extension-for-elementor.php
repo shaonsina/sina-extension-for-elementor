@@ -3,7 +3,7 @@
  * Plugin Name: Sina Extension for Elementor
  * Plugin URI: https://sina-extension.sinaextra.com/
  * Description: A collection of high-quality widgets for Elementor page builder.
- * Version: 3.6.1
+ * Version: 3.7.0
  * Author: SinaExtra
  * Author URI: https://sinaextra.com/
  * Requires Plugins: elementor
@@ -18,8 +18,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define('SINA_EXT_VERSION', '3.6.1');
-define('SINA_EXT_PREVIOUS_VERSION', '3.6.0' );
+define('SINA_EXT_VERSION', '3.7.0');
+define('SINA_EXT_PREVIOUS_VERSION', '3.6.1' );
 define('SINA_EXT_FILE', __FILE__ );
 define('SINA_EXT_SLUG', basename( SINA_EXT_FILE, '.php' ));
 define('SINA_EXT_DIR', __DIR__);
@@ -36,8 +36,31 @@ define('SINA_EXT_ADMIN', SINA_EXT_DIR .'/admin/');
  * @since 2.0.0
  */
 define('SINA_WIDGETS', [
+	'header_footer' => [
+		'nav-menu'				=> esc_html__( 'Sina Nav Menu', 'sina-ext' ),
+		'site-logo'				=> esc_html__( 'Sina Site Logo', 'sina-ext' ),
+		'site-info'				=> esc_html__( 'Sina Site Info', 'sina-ext' ),
+		'direct-contact'		=> esc_html__( 'Sina Direct Contact', 'sina-ext' ),
+		'search'				=> esc_html__( 'Sina Search', 'sina-ext' ),
+		'quick-links'			=> esc_html__( 'Sina Quick Links', 'sina-ext' ),
+		'scroll-to-top'			=> esc_html__( 'Sina Scroll to Top', 'sina-ext' ),
+		'woo-cart'				=> esc_html__( 'Sina Woo Cart', 'sina-ext' ),
+	],
+	'theme_builder' => [
+		'post-title'				=> esc_html__( 'Sina Post Title', 'sina-ext' ),
+		'post-content'				=> esc_html__( 'Sina Post Content', 'sina-ext' ),
+		'post-featured-image'		=> esc_html__( 'Sina Post Featured Image', 'sina-ext' ),
+		'post-excerpt'				=> esc_html__( 'Sina Post Excerpt', 'sina-ext' ),
+		'post-meta'					=> esc_html__( 'Sina Post Meta', 'sina-ext' ),
+		'post-navigation'			=> esc_html__( 'Sina Post Navigation', 'sina-ext' ),
+		'post-comments'				=> esc_html__( 'Sina Post Comments', 'sina-ext' ),
+		'archive-title'				=> esc_html__( 'Sina Archive Title', 'sina-ext' ),
+		'author-profile'			=> esc_html__( 'Sina Author Profile', 'sina-ext' ),
+		'posts'						=> esc_html__( 'Sina Posts', 'sina-ext' ),
+	],
 	'basic' => [
 		'accordion' 			=> esc_html__( 'Sina Accordion', 'sina-ext' ),
+		'breadcrumbs' 			=> esc_html__( 'Sina Breadcrumbs', 'sina-ext' ),
 		'content-box' 			=> esc_html__( 'Sina Content Box', 'sina-ext' ),
 		'counter' 				=> esc_html__( 'Sina Counter', 'sina-ext' ),
 		'dynamic-button'		=> esc_html__( 'Sina Dynamic Button', 'sina-ext' ),
@@ -125,6 +148,7 @@ define('SINA_WIDGETS', [
  */
 define('SINA_EXTENDERS', [
 	'pro' => [
+		'sticky'				=> esc_html__( 'Sina Pro Sticky', 'sina-ext' ),
 		'masker'				=> esc_html__( 'Sina Pro Masker', 'sina-ext' ),
 		'parallax'				=> esc_html__( 'Sina Pro Parallax', 'sina-ext' ),
 		'section-particles'		=> esc_html__( 'Sina Pro Section Particles', 'sina-ext' ),
@@ -134,6 +158,7 @@ define('SINA_EXTENDERS', [
 		'water-ripples'			=> esc_html__( 'Sina Pro Water Ripples', 'sina-ext' ),
 		'conditional-publish'	=> esc_html__( 'Sina Pro Conditional Publish', 'sina-ext' ),
 		'content-protection'	=> esc_html__( 'Sina Pro Content Protection', 'sina-ext' ),
+		'preloader'				=> esc_html__( 'Sina Pro Preloader', 'sina-ext' ),
 		'preloader'				=> esc_html__( 'Sina Pro Preloader', 'sina-ext' ),
 		'reading-progressbar'	=> esc_html__( 'Sina Pro Reading Progressbar', 'sina-ext' ),
 	],

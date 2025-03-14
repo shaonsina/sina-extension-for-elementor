@@ -23,6 +23,8 @@ abstract class Sina_Ext_Functions extends Sina_Extension_Base{
 	 * @since 3.0.0
 	 */
 	public function widget_styles() {
+		$widgets = get_option( 'sina_widgets' );
+
 		wp_register_style( 'icofont', SINA_EXT_URL .'admin/assets/css/icofont.min.css', [], SINA_EXT_VERSION );
 		wp_register_style( 'owl-carousel', SINA_EXT_URL .'assets/css/owl.carousel.min.css', [], SINA_EXT_VERSION );
 		wp_register_style( 'venobox', SINA_EXT_URL .'assets/css/venobox.min.css', [], SINA_EXT_VERSION );
@@ -32,6 +34,10 @@ abstract class Sina_Ext_Functions extends Sina_Extension_Base{
 		wp_register_style( 'sina-tooltip', SINA_EXT_URL .'assets/css/sina-tooltip.min.css', [], SINA_EXT_VERSION );
 		wp_register_style( 'sina-morphing-anim', SINA_EXT_URL .'assets/css/sina-morphing.min.css', [], SINA_EXT_VERSION );
 		wp_register_style( 'sina-widgets', SINA_EXT_URL .'assets/css/sina-widgets.min.css', [], SINA_EXT_VERSION );
+
+		if ( isset($widgets['header_footer']) ) {
+			wp_enqueue_style( 'sina-header-footer', SINA_EXT_URL .'assets/css/sina-header-footer.min.css', [], SINA_EXT_VERSION );
+		}
 
 		if ( is_rtl() ) {
 			wp_enqueue_style( 'sina-widgets-rtl', SINA_EXT_URL .'assets/css/sina-widgets-rtl.min.css', [], SINA_EXT_VERSION );
@@ -79,6 +85,18 @@ abstract class Sina_Ext_Functions extends Sina_Extension_Base{
 	 * @since 3.0.0
 	 */
 	public function widget_category( $elements_manager ) {
+		$elements_manager->add_category(
+			'sina-header-footer',
+			[
+				'title' => esc_html__( 'Sina Header Footer', 'sina-ext' ),
+			]
+		);
+		$elements_manager->add_category(
+			'sina-theme-builder',
+			[
+				'title' => esc_html__( 'Sina Theme Builder', 'sina-ext' ),
+			]
+		);
 		$elements_manager->add_category(
 			'sina-extension',
 			[
@@ -162,6 +180,25 @@ abstract class Sina_Ext_Functions extends Sina_Extension_Base{
 		Sina_Ext_Controls::instance();
 	}
 
+	public function refresh_woo_cart_count( $fragments ) {
+		$woo_cart = WC()->cart;
+		$is_cart 	= is_a( $woo_cart, 'WC_Cart' );
+		$cart_count = '';
+
+		if ( !$is_cart ) {
+			return $fragments;
+		}
+
+		if ( null !== $woo_cart ) {
+			$cart_count = $woo_cart->get_cart_contents_count();
+			$fragments['.sina-woo-cart-subtotal'] = '<span class="sina-woo-cart-subtotal">' . $woo_cart->get_cart_subtotal() . '</span>';
+		}
+
+		$fragments['.sina-woo-cart-icon[data-counter]'] = '<span class="sina-woo-cart-icon" data-counter="' . $cart_count . '"><i class="eicon-basket-medium"></i></span>';
+
+		return $fragments;
+	}
+
 	/**
 	 * Include helper & hooks files
 	 *
@@ -174,6 +211,7 @@ abstract class Sina_Ext_Functions extends Sina_Extension_Base{
 		require_once( SINA_EXT_INC .'sina-ext-helpers.php' );
 		require_once( SINA_EXT_INC .'sina-ext-controls.php' );
 		require_once( SINA_EXT_INC .'sina-ext-controls-extend.php' );
+		require_once( SINA_EXT_ADMIN .'sina-ext-theme-builder.php' );
 		require_once( SINA_EXT_ADMIN .'sina-ext-templates.php' );
 	}
 }

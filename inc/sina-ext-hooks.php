@@ -237,6 +237,8 @@ Class Sina_Ext_Hooks{
 			$content_length = (int) $data['content_length'];
 
 			$default = [
+				'post_type'			=> $data['post_type'],
+				's'					=> $data['s'],
 				'category__in'		=> $data['categories'],
 				'tag__in'			=> $data['tags'],
 				'posts_per_page'	=> (int) $data['posts_num'],

@@ -147,6 +147,7 @@ abstract class Sina_Extension_Base{
 	 */
 	public function load_filters() {
 		add_filter( 'plugin_action_links_'. SINA_EXT_BASENAME, [ $this, 'settings' ] );
+		add_filter( 'woocommerce_add_to_cart_fragments', [ $this, 'refresh_woo_cart_count' ] );
 	}
 
 	/**
