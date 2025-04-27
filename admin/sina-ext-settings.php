@@ -111,7 +111,7 @@ class Sina_Ext_Settings{
 		add_settings_field( 'sina_mailchimp_list_id', esc_html__('MailChimp List Id', 'sina-ext'), [$this, 'password_field'], 'sina_ext_settings', 'sina_api_section', ['key' => 'sina_mailchimp', 'index' => 'list_id' ] );
 		add_settings_field( 'sina_ext_pro_recaptcha_key', esc_html__('Google Recaptcha Site Key', 'sina-ext'), [$this, 'password_field'], 'sina_ext_settings', 'sina_api_section', ['key' => 'sina_ext_pro_recaptcha_key'] );
 		add_settings_field( 'sina_ext_pro_recaptcha_secret_key', esc_html__('Google Recaptcha Secret Key', 'sina-ext'), [$this, 'password_field'], 'sina_ext_settings', 'sina_api_section', ['key' => 'sina_ext_pro_recaptcha_secret_key'] );
-		add_settings_field( 'sina_ext_after_logout_url', esc_html__('After Logout Redirect URL', 'sina-ext'), [$this, 'text_field'], 'sina_ext_settings', 'sina_api_section', ['key' => 'sina_ext_after_logout_url'] );
+		add_settings_field( 'sina_ext_after_logout_url', esc_html__('After Logout Redirect URL', 'sina-ext'), [$this, 'url_field'], 'sina_ext_settings', 'sina_api_section', ['key' => 'sina_ext_after_logout_url'] );
 
 
 		$templates = get_option( 'sina_templates_option' );
@@ -155,7 +155,7 @@ class Sina_Ext_Settings{
 		require SINA_EXT_ADMIN.'partials/page-content.php';
 	}
 
-	public function text_field($field) {
+	public function url_field($field) {
 		$data = get_option( $field['key'] );
 		$key  = $field['key'];
 
@@ -163,7 +163,7 @@ class Sina_Ext_Settings{
 			$data = $data[ $field['index'] ];
 			$key = $key.'['. $field['index'] .']';
 		}
-		$data = sanitize_text_field( $data );
+		$data = sanitize_url( $data );
 		printf('<input class="regular-text" type="text" name="%s" value="%s">', $key, $data);
 	}
 
@@ -176,7 +176,7 @@ class Sina_Ext_Settings{
 			$key = $key.'['. $field['index'] .']';
 		}
 		$data = sanitize_text_field( $data );
-		printf('<input class="regular-text" type="password" name="%s" value="%s">', $key, $data);
+		printf('<input class="regular-text" type="password" name="%s" value="%s">', $key, sina_ext_remove_pass_chars($data));
 	}
 
 	public function templates_option($data) {

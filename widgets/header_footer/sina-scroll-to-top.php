@@ -41,8 +41,7 @@ class Sina_Scroll_To_Top_Widget extends Widget_Base{
 	 * @since 3.7.0
 	 */
 	public function get_icon() {
-		return 'eicon-arrow-up
-';
+		return 'eicon-arrow-up';
 	}
 
 	/**
