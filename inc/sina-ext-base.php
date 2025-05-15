@@ -117,7 +117,6 @@ abstract class Sina_Extension_Base{
 	 * @since 3.0.0
 	 */
 	public function load_actions() {
-		add_action( 'init', [ $this, 'i18n' ] );
 		add_action( 'admin_init', [$this, 'redirection'] );
 		add_action( 'admin_post_sina_ext_rollback', ['Sina_Ext_Rollback', 'rollback'] );
 
@@ -148,37 +147,6 @@ abstract class Sina_Extension_Base{
 	public function load_filters() {
 		add_filter( 'plugin_action_links_'. SINA_EXT_BASENAME, [ $this, 'settings' ] );
 		add_filter( 'woocommerce_add_to_cart_fragments', [ $this, 'refresh_woo_cart_count' ] );
-	}
-
-	/**
-	 * Load Textdomain
-	 *
-	 * @since 1.0.0
-	 */
-	public function i18n() {
-		load_plugin_textdomain( 'sina-ext', false, SINA_EXT_DIRNAME.'/languages' );
-	}
-
-	/**
-	 * For activation
-	 *
-	 * @since 3.0.0
-	 */
-	public static function activation() {
-		add_option( 'sina_extension_activation', true );
-		$data = get_option( 'sina_widgets' );
-		if ( !empty($data) ) {
-			$data = array_merge(SINA_WIDGETS, $data);
-			update_option( 'sina_widgets', $data);
-		} else{
-			update_option( 'sina_widgets', SINA_WIDGETS);
-		}
-		add_option( 'sina_map_apikey', '' );
-		add_option( 'sina_mailchimp', [
-			'apikey'	=> '',
-			'list_id'	=> '',
-		] );
-		add_option( 'sina_templates_option', [] );
 	}
 
 	/**

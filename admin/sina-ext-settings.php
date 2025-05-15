@@ -21,6 +21,14 @@ class Sina_Ext_Settings{
 	private static $_instance = null;
 
 	/**
+	 * SINA WIDGETS and SINA EXTENDERS Constant
+	 *
+	 * @since 3.7.0
+	 */
+	public $sina_widgets = [];
+	public $sina_extenders = [];
+
+	/**
 	 * Instance
 	 *
 	 * Ensures only one instance of the class is loaded or can be loaded.
@@ -36,6 +44,129 @@ class Sina_Ext_Settings{
 	}
 
 	public function __construct() {
+		$this->sina_widgets = [
+			'header_footer' => [
+				'nav-menu'				=> esc_html__( 'Sina Nav Menu', 'sina-ext' ),
+				'site-logo'				=> esc_html__( 'Sina Site Logo', 'sina-ext' ),
+				'site-info'				=> esc_html__( 'Sina Site Info', 'sina-ext' ),
+				'direct-contact'		=> esc_html__( 'Sina Direct Contact', 'sina-ext' ),
+				'search'				=> esc_html__( 'Sina Search', 'sina-ext' ),
+				'quick-links'			=> esc_html__( 'Sina Quick Links', 'sina-ext' ),
+				'scroll-to-top'			=> esc_html__( 'Sina Scroll to Top', 'sina-ext' ),
+				'woo-cart'				=> esc_html__( 'Sina Woo Cart', 'sina-ext' ),
+			],
+			'theme_builder' => [
+				'post-title'				=> esc_html__( 'Sina Post Title', 'sina-ext' ),
+				'post-content'				=> esc_html__( 'Sina Post Content', 'sina-ext' ),
+				'post-featured-image'		=> esc_html__( 'Sina Post Featured Image', 'sina-ext' ),
+				'post-excerpt'				=> esc_html__( 'Sina Post Excerpt', 'sina-ext' ),
+				'post-meta'					=> esc_html__( 'Sina Post Meta', 'sina-ext' ),
+				'post-navigation'			=> esc_html__( 'Sina Post Navigation', 'sina-ext' ),
+				'post-comments'				=> esc_html__( 'Sina Post Comments', 'sina-ext' ),
+				'archive-title'				=> esc_html__( 'Sina Archive Title', 'sina-ext' ),
+				'author-profile'			=> esc_html__( 'Sina Author Profile', 'sina-ext' ),
+				'posts'						=> esc_html__( 'Sina Posts', 'sina-ext' ),
+			],
+			'basic' => [
+				'accordion' 			=> esc_html__( 'Sina Accordion', 'sina-ext' ),
+				'breadcrumbs' 			=> esc_html__( 'Sina Breadcrumbs', 'sina-ext' ),
+				'content-box' 			=> esc_html__( 'Sina Content Box', 'sina-ext' ),
+				'counter' 				=> esc_html__( 'Sina Counter', 'sina-ext' ),
+				'dynamic-button'		=> esc_html__( 'Sina Dynamic Button', 'sina-ext' ),
+				'fancytext' 			=> esc_html__( 'Sina Fancy Text', 'sina-ext' ),
+				'flip-box' 				=> esc_html__( 'Sina Flip Box', 'sina-ext' ),
+				'google-map' 			=> esc_html__( 'Sina Google Map', 'sina-ext' ),
+				'image-differ'			=> esc_html__( 'Sina Image Differ', 'sina-ext' ),
+				'piechart' 				=> esc_html__( 'Sina Piechart', 'sina-ext' ),
+				'pricing' 				=> esc_html__( 'Sina Pricing', 'sina-ext' ),
+				'progressbar' 			=> esc_html__( 'Sina Progressbar', 'sina-ext' ),
+				'social-icons'			=> esc_html__( 'Sina Social Icons', 'sina-ext' ),
+				'table'			 		=> esc_html__( 'Sina Table', 'sina-ext' ),
+				'team' 					=> esc_html__( 'Sina Team', 'sina-ext' ),
+				'title'					=> esc_html__( 'Sina Title', 'sina-ext' ),
+				'transform'				=> esc_html__( 'Sina Transform', 'sina-ext' ),
+				'user-counter' 			=> esc_html__( 'Sina User Counter', 'sina-ext' ),
+				'video' 				=> esc_html__( 'Sina Video', 'sina-ext' ),
+				'visit-counter' 		=> esc_html__( 'Sina Visit Counter', 'sina-ext' ),
+			],
+			'advanced' => [
+				'banner-slider' 		=> esc_html__( 'Sina Banner Slider', 'sina-ext' ),
+				'blogpost' 				=> esc_html__( 'Sina Blog Post', 'sina-ext' ),
+				'brand-carousel' 		=> esc_html__( 'Sina Brand Carousel', 'sina-ext' ),
+				'contact-form' 			=> esc_html__( 'Sina Contact Form', 'sina-ext' ),
+				'content-slider'		=> esc_html__( 'Sina Content Slider', 'sina-ext' ),
+				'countdown' 			=> esc_html__( 'Sina Countdown', 'sina-ext' ),
+				'facebook-feed'			=> esc_html__( 'Sina Facebook Feed', 'sina-ext' ),
+				'login-form' 			=> esc_html__( 'Sina Login Form', 'sina-ext' ),
+				'mailchimp-subscribe' 	=> esc_html__( 'Sina MailChimp Subscribe', 'sina-ext' ),
+				'modal-box'			 	=> esc_html__( 'Sina Modal Box', 'sina-ext' ),
+				'news-ticker' 			=> esc_html__( 'Sina News Ticker', 'sina-ext' ),
+				'particle-layer' 		=> esc_html__( 'Sina Particle Layer', 'sina-ext' ),
+				'portfolio' 			=> esc_html__( 'Sina Portfolio', 'sina-ext' ),
+				'posts-carousel'		=> esc_html__( 'Sina Posts Carousel', 'sina-ext' ),
+				'posts-tab' 			=> esc_html__( 'Sina Posts Tab', 'sina-ext' ),
+				'product-zoomer' 		=> esc_html__( 'Sina Product Zoomer', 'sina-ext' ),
+				'review-carousel' 		=> esc_html__( 'Sina Review Carousel', 'sina-ext' ),
+				'search-form' 			=> esc_html__( 'Sina Search Form', 'sina-ext' ),
+				'twitter-feed'			=> esc_html__( 'Sina Twitter Feed', 'sina-ext' ),
+			],
+			'pro' => [
+				'chart'					=> esc_html__( 'Sina Pro Chart', 'sina-ext' ),
+				'facebook-feed-carousel'=> esc_html__( 'Sina Pro Facebook Feed Carousel',  'sina-ext' ),
+				'hover-image'			=> esc_html__( 'Sina Pro Hover Image', 'sina-ext' ),
+				'image-accordion'		=> esc_html__( 'Sina Pro Image Accordion', 'sina-ext' ),
+				'image-marker'			=> esc_html__( 'Sina Pro Image Marker', 'sina-ext' ),
+				'image-scroller'		=> esc_html__( 'Sina Pro Image Scroller', 'sina-ext' ),
+				'instant-search'		=> esc_html__( 'Sina Pro Instant Search', 'sina-ext' ),
+				'lost-password-form'	=> esc_html__( 'Sina Pro Lost Password Form', 'sina-ext' ),
+				'lottie-animation'		=> esc_html__( 'Sina Pro Lottie Animation', 'sina-ext' ),
+				'offcanvas-bar'			=> esc_html__( 'Sina Pro Offcanvas Bar', 'sina-ext' ),
+				'posts-gallery'			=> esc_html__( 'Sina Pro Posts Gallery', 'sina-ext' ),
+				'posts-on-scroll'		=> esc_html__( 'Sina Pro Posts on Scroll', 'sina-ext' ),
+				'register-form'			=> esc_html__( 'Sina Pro Register Form', 'sina-ext' ),
+				'section-navigation'	=> esc_html__( 'Sina Pro Section Navigation', 'sina-ext' ),
+				'source-code'			=> esc_html__( 'Sina Pro Source Code', 'sina-ext' ),
+				'tab' 					=> esc_html__( 'Sina Pro Tab', 'sina-ext' ),
+				'team-carousel'			=> esc_html__( 'Sina Pro Team Carousel', 'sina-ext' ),
+				'testimonial'			=> esc_html__( 'Sina Pro Testimonial', 'sina-ext' ),
+				'thumb-carousel'		=> esc_html__( 'Sina Pro Thumb Carousel', 'sina-ext' ),
+				'tilt-box'				=> esc_html__( 'Sina Pro Tilt Box', 'sina-ext' ),
+				'toggle-content'		=> esc_html__( 'Sina Pro Toggle Content', 'sina-ext' ),
+				'twitter-feed-carousel'	=> esc_html__( 'Sina Pro Twitter Feed Carousel',  'sina-ext' ),
+				'video-gallery'			=> esc_html__( 'Sina Pro Video Gallery', 'sina-ext' ),
+			],
+			'wooCommerce' => [
+				'shop-box-grid'			=> esc_html__( 'Sina Pro Shop Box Grid',  'sina-ext' ),
+				'shop-list-grid'		=> esc_html__( 'Sina Pro Shop List Grid',  'sina-ext' ),
+				'shop-thumb-grid'		=> esc_html__( 'Sina Pro Shop Thumb Grid',  'sina-ext' ),
+				'shop-box-carousel'		=> esc_html__( 'Sina Pro Shop Box Carousel',  'sina-ext' ),
+				'shop-list-carousel'	=> esc_html__( 'Sina Pro Shop List Carousel',  'sina-ext' ),
+				'shop-thumb-carousel'	=> esc_html__( 'Sina Pro Shop Thumb Carousel',  'sina-ext' ),
+				'product-filter-vertical'=> esc_html__( 'Sina Pro Product Filter Vertical',  'sina-ext' ),
+				'product-filter-horizontal'=> esc_html__( 'Sina Pro Product Filter Horizontal',  'sina-ext' ),
+				'cart'					=> esc_html__( 'Sina Pro Cart',  'sina-ext' ),
+				'checkout'				=> esc_html__( 'Sina Pro Checkout',  'sina-ext' ),
+			],
+		];
+
+		$this->sina_extenders = [
+			'pro' => [
+				'sticky'				=> esc_html__( 'Sina Pro Sticky', 'sina-ext' ),
+				'masker'				=> esc_html__( 'Sina Pro Masker', 'sina-ext' ),
+				'parallax'				=> esc_html__( 'Sina Pro Parallax', 'sina-ext' ),
+				'section-particles'		=> esc_html__( 'Sina Pro Section Particles', 'sina-ext' ),
+				'clips-animation'		=> esc_html__( 'Sina Pro Clips Animation', 'sina-ext' ),
+				'colors-animation'		=> esc_html__( 'Sina Pro Colors Animation', 'sina-ext' ),
+				'grid-animation'		=> esc_html__( 'Sina Pro Grid Animation',  'sina-ext' ),
+				'water-ripples'			=> esc_html__( 'Sina Pro Water Ripples', 'sina-ext' ),
+				'conditional-publish'	=> esc_html__( 'Sina Pro Conditional Publish', 'sina-ext' ),
+				'content-protection'	=> esc_html__( 'Sina Pro Content Protection', 'sina-ext' ),
+				'preloader'				=> esc_html__( 'Sina Pro Preloader', 'sina-ext' ),
+				'preloader'				=> esc_html__( 'Sina Pro Preloader', 'sina-ext' ),
+				'reading-progressbar'	=> esc_html__( 'Sina Pro Reading Progressbar', 'sina-ext' ),
+			],
+		];
+
 		add_action( 'admin_menu', [$this, 'add_menu'] );
 		add_action( 'admin_menu', [$this, 'add_submenu'] );
 		add_action( 'admin_init', [$this, 'settings_group'] );
@@ -198,27 +329,31 @@ class Sina_Ext_Settings{
 		$pro 		= ( !defined('SINA_EXT_PRO_VERSION') && ('pro' == $cat || 'wooCommerce' == $cat) ) ? 'sina-ext-pro' : '';
 		$checked	= isset($widgets[ $cat ][ $widget ]) ? 'checked' : '';
 		$key 		= 'sina_widgets['.$cat.']['. $widget .']';
+		$translated = $this->sina_widgets;
 
-		if (defined('SINA_EXT_PRO_VERSION') && ('pro' == $cat || 'wooCommerce' == $cat)) {
-			$label 	= __( $data['translate'], 'sina-ext-pro' );
+		if ( isset($translated[$cat][$widget]) ) {
+			$label 	= $translated[$cat][$widget];
 		} else{
-			$label	= __( $data['translate'], 'sina-ext' );
+			$label 	= $data['translate'];
 		}
+
 		require SINA_EXT_ADMIN.'partials/switch.php';
 	}
 
 	public function extenders_switcher($data) {
-		$name 		= $data['extender'];
-		$key 		= 'sina_extenders['.$name.']';
+		$extender 	= $data['extender'];
+		$key 		= 'sina_extenders['.$extender.']';
 		$pro 		= ( !defined('SINA_EXT_PRO_VERSION') && 'pro' == $data['type'] ) ? 'sina-ext-pro' : '';
-		$checked 	= isset($data[ 'get_extenders' ][ $name ]) ? 'checked' : '';
-		$name 		= 'sina-'.$name;
+		$checked 	= isset($data[ 'get_extenders' ][ $extender ]) ? 'checked' : '';
+		$name 		= 'sina-'.$extender;
+		$translated = $this->sina_extenders;
 
-		if (defined('SINA_EXT_PRO_VERSION') && 'pro' == $data['type']) {
-			$label 	= __( $data['translate'], 'sina-ext-pro' );
+		if ( isset($translated[ $data['type'] ][$extender]) ) {
+			$label 	= $translated[ $data['type'] ][$extender];
 		} else{
-			$label	= __( $data['translate'], 'sina-ext' );
+			$label 	= $data['translate'];
 		}
+
 		require SINA_EXT_ADMIN.'partials/switch.php';
 	}
 }
