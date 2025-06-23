@@ -2049,7 +2049,7 @@ class Sina_Blogpost_Widget extends Widget_Base{
 				'is_thumb'=> $data['is_thumb'],
 				'read_more_effect'=> $data['read_more_effect'],
 				'read_more_text'=> esc_attr( $data['read_more_text'] ),
-				'read_more_icon'=> $data['read_more_icon'],
+				'read_more_icon'=> esc_attr($data['read_more_icon']),
 				'read_more_icon_align'=> $data['read_more_icon_align'],
 				'effects' => $data['effects'],
 				'cats_position' => $data['cats_position'],

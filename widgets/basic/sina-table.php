@@ -1612,7 +1612,7 @@ class Sina_Table_Widget extends Widget_Base{
 
 		$table_info = [
 			'head' 		=> $table_head,
-			'export' 	=> $data['data_export'],
+			'export' 	=> esc_attr($data['data_export']),
 			'ordering' 	=> $data['data_sorting'],
 			'sort_col' 	=> $data['data_sorting_column'],
 			'sort_type'	=> $data['data_sorting_type'],

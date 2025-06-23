@@ -5,7 +5,7 @@ Donate link: https://sina-extension.sinaextra.com/
 Requires at least: 4.8
 Tested up to: 6.8
 Requires PHP: 7.0
-Stable tag: 3.7.0
+Stable tag: 3.7.1
 License: GPL v3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -297,6 +297,12 @@ Yes. It's totally free. We also have a [PRO](https://sina-extension.sinaextra.co
 
 
 == Changelog ==
+
+= 3.7.1 - 01-07-2025 =
+- Fixed: Posts escaping issue
+- Fixed: Blogpost escaping issue
+- Fixed: Table escaping issue
+- Fixed: Theme Builde invalid post type issue
 
 = 3.7.0 - 17-05-2025 =
 - New: Header Builder Feature
