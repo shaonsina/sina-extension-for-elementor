@@ -298,11 +298,13 @@ Yes. It's totally free. We also have a [PRO](https://sina-extension.sinaextra.co
 
 == Changelog ==
 
-= 3.7.1 - 01-07-2025 =
-- Fixed: Posts escaping issue
+= 3.7.1 - 10-07-2025 =
 - Fixed: Blogpost escaping issue
+- Fixed: Countdown escaping issue
+- Fixed: Fancytext escaping issue
+- Fixed: Posts escaping issue
 - Fixed: Table escaping issue
-- Fixed: Theme Builde invalid post type issue
+- Fixed: Theme Builder invalid post type issue
 
 = 3.7.0 - 17-05-2025 =
 - New: Header Builder Feature

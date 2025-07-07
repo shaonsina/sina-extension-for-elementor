@@ -1,4 +1,4 @@
-/* Sina Extension for Elementor v3.7.0 */
+/* Sina Extension for Elementor v3.7.1 */
 
 !(function ($) {
 	'use strict';
@@ -644,7 +644,8 @@
 				sec   = $this.find('.sina-cd-second'),
 				text  = $this.data('text'),
 				mesg  = $this.data('message'),
-				link   = $this.data('link'),
+				mesg  = mesg.replace(/[^A-z0-9 @!.]/g, ''),
+				link  = $this.data('link'),
 				time  = $this.data('time');
 
 			$this.countdown( time ).on('update.countdown', function (e) {
@@ -712,6 +713,7 @@
 				cursor = $this.data('cursor') ? true : false,
 				loop = $this.data('loop') ? true : false,
 				fancyText = $this.data('fancy-text'),
+				fancyText = fancyText.replace(/[^A-z0-9 @!.]/g, ''),
 				fancyText = fancyText.split('@@');
 
 			if ( 'typing' == anim ) {
