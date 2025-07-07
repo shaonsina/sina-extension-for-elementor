@@ -304,6 +304,7 @@ Yes. It's totally free. We also have a [PRO](https://sina-extension.sinaextra.co
 - Fixed: Fancytext escaping issue
 - Fixed: Posts escaping issue
 - Fixed: Table escaping issue
+- Fixed: Templates Library issue
 - Fixed: Theme Builder invalid post type issue
 
 = 3.7.0 - 17-05-2025 =

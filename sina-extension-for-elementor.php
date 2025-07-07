@@ -167,8 +167,8 @@ define('SINA_EXTENDERS', [
 add_action('plugins_loaded', function () {
 	require SINA_EXT_INC . 'sina-ext-base.php';
 	require SINA_EXT_INC . 'sina-ext-func.php';
-	require_once( SINA_EXT_ADMIN .'sina-ext-theme-builder.php' );
 	require SINA_EXT_INC . 'sina-ext.php';
+	Sina_Extension::modules();
 });
 
 add_action('init', function () {
