@@ -1,20 +1,21 @@
-== Sina Extension for Elementor (Header Builder, Footer Builter, Theme Builder, Slider, Gallery, Form, Modal, Data Table Free Elementor Widgets & Elementor Templates) ==
+== Sina Extension for Elementor ==
 Contributors: shaonsina
 Tags: elementor addon, elementor addons, elementor extension, elementor widget, elementor templates
 Donate link: https://sina-extension.sinaextra.com/
 Requires at least: 4.8
 Tested up to: 6.8
 Requires PHP: 7.0
-Stable tag: 3.7.1
+Stable tag: 3.7.2
 License: GPL v3
 License URI: https://opensource.org/licenses/GPL-3.0
 
-A collection of high-quality features including Header, Footer and Theme Builder. 58 Custom elements with 100+ predefined blocks & pages and more.
+A collection of high-quality features including Header, Footer and Theme Builder. 58 Custom elements with 100+ ready templates and more.
 
 
 == Description ==
 
-This is an extension or addon for [Elementor](https://wordpress.org/plugins/elementor/) page builder. It will extend the Elementor and increase web page building experience. It has 58 useful & high-quality widgets or addon and 2 creative extenders. Which you may use for easy & fast make the page & display your content far better way. After using it, you will feel that it's one of the best addon for Elementor.
+This is an extension or addon for [Elementor](https://wordpress.org/plugins/elementor/) page builder. It will extend Elementor by the Header, Footer & Theme Builder features with 58 custom widgets in detailed editing ability. So Elementor users can create Header, Footer, Single page, Archive page, Search page, 404 page and Front page templates more dynamically just in drag & drop.
+So Sina Extension will increase the web page building experience and you can use it to easily & fast make the web pages & display your content far better way.
 
 
 = Use of Sina Templates =
@@ -23,45 +24,15 @@ https://youtu.be/x8sZyLEBoks
 
 == Features ==
 
+* Header Builder.
+* Footer Builder.
+* Theme Builder.
 * 58 free elements.
-* Options panel for enable/disable elements.
-* Easy to use
-* Details Customisation ability
 * 100+ Fully Responsive predefined [Blocks & Pages](https://sina-extension.sinaextra.com/sina-templates/).
+* Options panel for enable/disable elements.
+* Details Customisation ability
+* Easy to use
 * Free Support through the forum & in our [support desk](https://sinaextra.com/support/).
-
-== Translation Ready ==
-
-Translation Ready for:
-* Bengali
-* French
-* German
-* Portuguese
-* Spanish
-
-=== Also .po and .mo files included for below regions ===
-
-- Angola
-- Argentina
-- Austria
-- Bangladesh
-- Belgium
-- Brazil
-- Canada
-- Chile
-- Colombia
-- Costa Rica
-- France
-- Germany
-- Guatemala
-- Mexico
-- Peru
-- Portugal
-- Puerto Rica
-- Spain
-- Switzerland
-- Uruguay
-- Venezuela
 
 
 == What can you do by this plugin? ==
@@ -70,7 +41,7 @@ You can make unlimited design without coding knowledge.
 
 
 == Support ==
-Need Help? Please [create support ticket](https://sinaextra.com/support/)
+Need Help? Please [create a support ticket](https://sinaextra.com/support/)
 
 
 == HEADER AND FOOTER WIDGETS ==
@@ -208,66 +179,52 @@ Cool things are coming soon...
 12. [Water Ripples](https://sina-extension.sinaextra.com/water-ripples): Add an interactive water ripples effect, which is the most interesting.
 
 
-== The summary of core Features ==
+== Translation Ready ==
 
-- **Accordion:** This element not only a generic Accordion. It has template option, which means you can use any template inside the description container. So it ensures that you can create complex type of accordion. Like: Nested Accordion.
+Translation Ready for:
+* Bengali
+* French
+* German
+* Portuguese
+* Spanish
 
-- **Chart:** Sina Extension has a Chart widget with 7 types (horizontal bar, vertical bar, line, pie, doughnut, polar area & radar) of charts variations.
+=== Also .po and .mo files included for below regions ===
 
-- **Clips or Image Animation:** This plugin has a Clips Animation extender. So you can animate any image(s) by it.
+- Angola
+- Argentina
+- Austria
+- Bangladesh
+- Belgium
+- Brazil
+- Canada
+- Chile
+- Colombia
+- Costa Rica
+- France
+- Germany
+- Guatemala
+- Mexico
+- Peru
+- Portugal
+- Puerto Rica
+- Spain
+- Switzerland
+- Uruguay
+- Venezuela
 
-- **Colors or Gradient Animation:** Also you can make color(s) or gradient color(s) animation with Colors Animation extender.
 
-- **Content Box:** By this widget, you can make the Icon or Image or List Box or Step Process. That means you will get those three in one. If you would like the content will be shown with a ribbon or hover effect then you can by this widget. Also, you can use background and button icon animation and any template inside the container. So it's a huge powerful widget.
+###  ❤ LIKE Sina Extension?
+⭐️  Rate us on [WordPress](https://wordpress.org/support/plugin/sina-extension-for-elementor/reviews/#new-post)
 
-- **Content Protection:** Yes, Sina Extension has Content Protection extender that means you can display different content for different users according to the role.
 
-- **Conditional Publish:** You also can set the different types of conditions to show or hide your expected contend. Like: Login Status, Specific Day(s), Specific Month(s), Specific Date, Date Range, Time Range etc.
+### 👑 CHECK OUT OUR OTHER PLUGINS AND ADDONS
 
-- **Dynamic Button:** This element not only a generic Button. It has the capability to use a Category or Tag or Post or Page link as a button with background and icon animation.
-
-- **Form:** This plugin has various types of form widgets that ensure without need extra plugin you can make Instant Search or AJAX Search form, Contact form, Register or Sign Up form, Sign In or Login form, Password Recovery or Reset form, Mailchimp form and native Search form.
-
-- **Image:** Sina Extension has different types of Image widgets. Like: Image Accordion, Image Scroller, Image Marker or Hotspot and Hover Image.
-So that you can display the image(s) with an interactive way.
-
-- **Lottie Animation:** Nowadays Lottie is the most popular animation feature for the web. So we have added this feature as well.
-
-- **Masking:** Yes, we also added this feature. But it is not only a specific content-based masking feature. Like: Image Masking or Video Masking, which provided other addons or plugins.
-It is more powerful and you can apply to mask any content of your widget. Enjoy!!
-
-- **Modal or Popup Box:** Sometimes you need to show some content inside a Modal or Popup box. So you can show any template inside the Modal Box widget. Also It has an auto show option that means the modal will be shown auto after your expected time delay.
-
-- **Morphing Animation:** It is an attractive animation extender that you can apply to any content of the widget.
-
-- **Parallax:** Now-a-days parallax is the most attractive way to display the content. Sina Extension has a Parallax extender for display the content the way you want.
-
-- **Particles:** It has particles feature. You can use the particles in two ways. One, by our Particle Layer widget. Two, by our Section Particles extender.
-
-- **Portfolio or Image Gallery:** Yes, we also covered this feature. Cause, some users want to show their work or some images as a filterable gallery. It has capable of using a masonry grid as well.
-
-- **Preloader:** If there doesn't have a preloader on your website then you can add a Preloader by our preloader extender.
-
-- **Posts or Blog:** This plugin has different types of post widgets that mean you can show the posts as column grid, masonry grid and list grid. You also can display the posts into a Tab, Carousel, Gallery, Ticker, Load on Scroll, Load more Button or Pagination. Also can define your expected grid columns (for custom layout) which may add extra benefit for you.
-
-- **Slider or Carousel:** We have added various types of sliders or carousels. And you can make Text slider, Image slider, Posts slider, Team slider, Thumb slider, Video slider, Review slider or carousel and Interactive Testimonial carousel. Also you can be sliding any template with our Content Slider widget which will give you an extra facility.
-
-- **Social Feed:** It also has some social feed widgets. Like: Facebook Feed, Twitter Feed. And you can use these widgets to showing the feed into your web page(s).
-
-- **Source Code:** Sometimes you may need to show the code of your script into the web page. So you can do by the Source Code widget.
-
-- **Tab or Virtual Tour:** Sina Extension has a Tab element. And it capable of using embed code or Virtual Tour. Another thing it has the template option. So you can show any template inside the tab description container.
-
-- **Transform:** If you would like to display the content with different dimensions or as a 3D. No worry. Just make a template & display inside the Transform widget. Also, you can set the dimensions from the Advanced tab (Sina Transform Effects) of every widget. Enjoy!!
-
-- **Video Gallery:** We have a filterable Video Gallery widget for playing some youtube videos on a popup.
-
-- **Water Ripples:** It is an interesting feature of this plugin. You can set a Water Ripples effect in any section, which may increase the extra attention of your visitors.
-
-- **Predefined Blocks:** We provide lots of ready blocks which may save huge time. On the other hand, the blocks may work as an example of how to using the elements.
-
-- **Conclusion:** We think it's the all in one plugin or addons for Elementor page builder. So, why not choose it? Thanks for reading.
-
+👉 **[WP Car Listing](https://wp-car-listing.sinaextra.com/)** – The most flexible plugin to manage car listing website.
+👉 **[Realentor](https://realentor.sinaextra.com/)** – Real Estate solution to manage property listings.
+👉 **[Recruitly Addons](https://sinaextra.com/recruitly-addons/)** – To create and publish job posts fast & easily.
+👉 **[Pets & Animals Listing](https://pets-and-animals-listing.sinaextra.com/)** – To manage the Pets & Animals listings.
+👉 **[Event Manager WP](https://event-manager-wp.sinaextra.com/)** – Powerful and flexible plugin to manage all kinds of events.
+👉 **[Multi Variation Custom Post](https://multi-variation-custom-post.sinaextra.com/)** – Ultimate solution for WordPress content.
 
 
 == Installation ==
@@ -297,6 +254,10 @@ Yes. It's totally free. We also have a [PRO](https://sina-extension.sinaextra.co
 
 
 == Changelog ==
+
+= 3.7.2 - 20-09-2025 =
+- Fixed: Some issues
+- Improved
 
 = 3.7.1 - 10-07-2025 =
 - Fixed: Blogpost escaping issue
