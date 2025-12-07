@@ -1604,7 +1604,7 @@ class Sina_Table_Widget extends Widget_Base{
 		$table_head = [];
 		foreach ($data['header_content'] as $content) {
 			$table_head[] = [
-				'data' => strtolower($content['header_text'])
+				'data' => $content['header_text']
 			];
 		}
 
@@ -1711,7 +1711,7 @@ class Sina_Table_Widget extends Widget_Base{
 
 			var tableHead = [];
 			_.each( settings.header_content, function( content, key ) {
-				var headerText = content.header_text.toLowerCase();
+				var headerText = content.header_text;
 				tableHead.push({ 'data' : headerText });
 			});
 

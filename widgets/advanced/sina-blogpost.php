@@ -2088,7 +2088,10 @@ class Sina_Blogpost_Widget extends Widget_Base{
 								'current'	=> $paged,
 								'prev_next'	=> false,
 							] );
-							echo str_replace('span', 'a', $paginate);
+
+							if ($paginate) {
+								echo str_replace('span', 'a', $paginate);
+							}
 						?>
 					</div>
 				<?php endif; ?>
