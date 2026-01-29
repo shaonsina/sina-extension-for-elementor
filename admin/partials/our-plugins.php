@@ -1,5 +1,5 @@
 <div class="sina-ext-banner" style="background-image: url(<?php echo esc_url( SINA_EXT_URL .'admin/assets/img/sina-extension-banner.jpg' ); ?>);">
-	<h1><?php echo esc_html__('Our Products', 'sina-ext' ); ?></h1>
+	<h1><?php echo esc_html__('Our Plugins', 'sina-ext' ); ?></h1>
 </div>
 
 <div class="sina-ext-wrap">

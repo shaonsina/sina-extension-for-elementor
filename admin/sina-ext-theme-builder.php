@@ -15,6 +15,9 @@
         </div>
         <?php return $views;}public function print_popup(){if(isset($_GET['post_type'])&&$_GET['post_type']==self::POST_TYPE){ ?>
             <script type="text/template" id="tmpl-sina-ext-cpt-popup">
+                <div class="sina-ext-loader">
+                    <img src="<?php echo esc_url( SINA_EXT_URL .'admin/assets/img/loader.gif' ); ?>" alt="<?php echo esc_attr__( 'Sina Loader', 'sina-ext' ); ?>">
+                </div>
                 <div class="sina-ext-template-edit-popup-area">
                     <div class="sina-ext-body-overlay"></div>
                     <div class="sina-ext-template-edit-popup">

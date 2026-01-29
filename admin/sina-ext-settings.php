@@ -205,16 +205,16 @@ class Sina_Ext_Settings{
 		);
 		add_submenu_page(
 			'sina_ext',
-			esc_html__('Products', 'sina-ext'),
-			esc_html__('Products', 'sina-ext'),
+			esc_html__('Our Plugins', 'sina-ext'),
+			'<span style="color:#0e0">'.esc_html__('Our Plugins', 'sina-ext').'</span>',
 			'manage_options',
-			'products',
-			[$this, 'products_page']
+			'sina_ext-plugins',
+			[$this, 'our_plugins']
 		);
 	}
 
 	public function admin_scripts( $hook ) {
-		if ( 'toplevel_page_sina_ext' == $hook || 'sina-extension_page_products' == $hook || 'sina-extension_page_sina_ext_pro_update' == $hook ) {
+		if ( 'toplevel_page_sina_ext' == $hook || 'sina-extension_page_sina_ext-plugins' == $hook || 'sina-extension_page_sina_ext_pro_update' == $hook ) {
 			// CSS Files
 			wp_enqueue_style( 'sina-admin', SINA_EXT_URL .'admin/assets/css/sina-admin.min.css', [], SINA_EXT_VERSION );
 
@@ -278,8 +278,8 @@ class Sina_Ext_Settings{
 		}
 	}
 
-	public function products_page() {
-		require SINA_EXT_ADMIN.'partials/products.php';
+	public function our_plugins() {
+		require SINA_EXT_ADMIN.'partials/our-plugins.php';
 	}
 
 	public function page_content() {
