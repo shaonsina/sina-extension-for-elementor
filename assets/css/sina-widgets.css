@@ -1,4 +1,4 @@
-/* Sina Extension for Elementor v3.7.0 */
+/* Sina Extension for Elementor v3.7.5 */
 
 /*--------------------------------- General -------------------------------------- */
 .clearfix::after {
@@ -151,6 +151,7 @@
 .sina-bg-thumb img,
 .sina-pt-item.active,
 .sina-pt-content .sina-pt-btn,
+.sina-content-box-title > a,
 .sina-accordion-item.open > .sina-accordion-header > .sina-accordion-icon .on{
 	display: block;
 }
