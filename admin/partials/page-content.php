@@ -61,12 +61,13 @@
 						<?php echo esc_html__( 'Experiencing an issue with this version? You can rollback the previous version.', 'sina-ext' ); ?>
 					</p>
 					<?php
-					printf( '<a href="%1$s" class="sina-ext-rollback-btn button elementor-button-spinner elementor-rollback-button">%2$s</a>',
+					printf( '<a href="%1$s" class="button elementor-button-spinner" onclick="return confirm(\'%3$s\');">%2$s</a>',
 						wp_nonce_url( admin_url( 'admin-post.php?action=sina_ext_rollback' ), 'sina_ext_rollback' ),
 						sprintf(
 							__( 'Reinstall v%s', 'sina-ext' ),
 							SINA_EXT_PREVIOUS_VERSION
-						)
+						),
+						esc_html__( 'Are you sure you want to reinstall previous version?', 'sina-ext' )
 					);
 					?>
 					<p style="color: #e00;">
