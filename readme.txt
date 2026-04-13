@@ -5,7 +5,7 @@ Donate link: https://sina-extension.sinaextra.com/
 Requires at least: 4.8
 Tested up to: 6.9
 Requires PHP: 7.0
-Stable tag: 3.7.6
+Stable tag: 3.8.1
 License: GPL v3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -255,10 +255,13 @@ Yes. It's totally free. We also have a [PRO](https://sina-extension.sinaextra.co
 
 == Changelog ==
 
-= 3.7.6 - 11-04-2026 =
-- Fixed: Rollback previous version
+= 3.8.1 - 14-04-2026 =
+- Fixed: Single template for Theme Builder issue
+- Fixed: Post Excerpt for Theme Builder issue
+- Fixed: Toggle Button issue for the settings
 
-= 3.7.5 - 07-04-2026 =
+= 3.8.0 - 11-04-2026 =
+- Fixed: Rollback previous version issue
 - Fixed: Some issues
 - Improved
 
@@ -318,12 +321,10 @@ Yes. It's totally free. We also have a [PRO](https://sina-extension.sinaextra.co
 = 3.6.0 - 20-12-2024 =
 - Added: Menu Page
 - Fixed: Image Differ escaping issue
-- Improved
-
-= 3.5.91 - 11-12-2024 =
 - Fixed: Security issue
 - Fixed: Performance issue
 - Fixed: Elementor Compatibility issue
+- Improved
 
 = 3.5.8 - 12-10-2024 =
 - Fixed: Accordion Template issue

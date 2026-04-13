@@ -17,15 +17,10 @@
 			var $input 	= $this.children('input');
 			var cat 	= $this.data('cat');
 			var $all 	= $('.sina-toggle-all-'+cat+' > .form-table .sina-ext-toggle input');
-			var status 	= $input.attr('checked');
+			var status = !$input.prop('checked');
 
-			if ( status ) {
-				$input.removeAttr('checked');
-				$all.removeAttr('checked');
-			} else {
-				$input.attr('checked', true);
-				$all.attr('checked', true);
-			}
+			$input.prop('checked', status);
+			$all.prop('checked', status);
 		}
 	});
 

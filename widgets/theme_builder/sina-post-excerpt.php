@@ -88,7 +88,7 @@ class Sina_Post_Excerpt_Widget extends Widget_Base{
 			);
 
 				$this->add_control(
-					'length',
+					'post_excerpt_length',
 					[
 						'label' => esc_html__( 'Content Length (Word)', 'sina-ext' ),
 						'type' => Controls_Manager::NUMBER,
@@ -122,7 +122,7 @@ class Sina_Post_Excerpt_Widget extends Widget_Base{
 		Sina_Common_Data::switch_to_last_post();
 		$data = $this->get_settings_for_display();
 		?>
-		<div class="sina-post-excerpt"><?php echo wp_trim_words( get_the_excerpt(), $data['length'] ); ?></div><!-- .sina-post-excerpt -->
+		<div class="sina-post-excerpt"><?php echo wp_trim_words( get_the_excerpt(), $data['post_excerpt_length'] ); ?></div><!-- .sina-post-excerpt -->
 		<?php
 	}
 
