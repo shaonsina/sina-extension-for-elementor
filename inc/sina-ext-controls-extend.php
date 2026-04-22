@@ -90,7 +90,7 @@ class Sina_Ext_Controls{
 	public function render_content($content, $elems) {
 		$data = $elems->get_settings_for_display();
 
-		if ( 'yes' == $data['sina_is_morphing_animation'] ) {
+		if ( isset($data['sina_is_morphing_animation']) && 'yes' == $data['sina_is_morphing_animation'] ) {
 			wp_enqueue_style( 'sina-morphing-anim' );
 		}
 		return $content;

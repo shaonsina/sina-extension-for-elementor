@@ -5,7 +5,7 @@ Donate link: https://sina-extension.sinaextra.com/
 Requires at least: 4.8
 Tested up to: 6.9
 Requires PHP: 7.0
-Stable tag: 3.8.1
+Stable tag: 3.8.2
 License: GPL v3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -254,6 +254,9 @@ Yes. It's totally free. We also have a [PRO](https://sina-extension.sinaextra.co
 
 
 == Changelog ==
+
+= 3.8.2 - 22-04-2026 =
+- Fixed: Elementor Compatibility issue
 
 = 3.8.1 - 14-04-2026 =
 - Fixed: Single template for Theme Builder issue
