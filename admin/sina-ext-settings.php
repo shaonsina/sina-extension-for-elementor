@@ -205,6 +205,30 @@ class Sina_Ext_Settings{
 		);
 		add_submenu_page(
 			'sina_ext',
+			esc_html__( 'Header', 'sina-ext' ),
+			esc_html__( 'Header', 'sina-ext' ),
+			'manage_options',
+			'edit.php?post_type=sina-ext-template&template_type=header',
+			null
+		);
+		add_submenu_page(
+			'sina_ext',
+			esc_html__( 'Footer', 'sina-ext' ),
+			esc_html__( 'Footer', 'sina-ext' ),
+			'manage_options',
+			'edit.php?post_type=sina-ext-template&template_type=footer',
+			null
+		);
+		add_submenu_page(
+			'sina_ext',
+			esc_html__( 'Popup', 'sina-ext' ),
+			esc_html__( 'Popup', 'sina-ext' ),
+			'manage_options',
+			'edit.php?post_type=sina-ext-template&template_type=popup',
+			null
+		);
+		add_submenu_page(
+			'sina_ext',
 			esc_html__('Our Plugins', 'sina-ext'),
 			'<span style="color:#0e0">'.esc_html__('Our Plugins', 'sina-ext').'</span>',
 			'manage_options',

@@ -220,6 +220,6 @@ abstract class Sina_Ext_Functions extends Sina_Extension_Base{
 	 */
 	public static function modules() {
 		require_once( SINA_EXT_ADMIN .'sina-ext-templates.php' );
-		require_once( SINA_EXT_ADMIN .'sina-ext-theme-builder.php' );
+		require_once( SINA_EXT_ADMIN .'sina-ext-theme-builder-readable.php' );
 	}
 }
