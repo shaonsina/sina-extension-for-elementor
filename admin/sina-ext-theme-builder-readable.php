@@ -36,6 +36,7 @@ class Sina_Ext_Theme_Builder{
 		add_action( 'wp_footer', [$this, 'popup_builder_html'] );
 		add_action( 'sina_ext_header_builder_content', [$this, 'header_builder_content'] );
 		add_action( 'sina_ext_footer_builder_content', [$this, 'footer_builder_content'] );
+		add_action( 'sina_ext_popup_builder_content', [$this, 'popup_builder_content'] );
 		add_action( 'sina_ext_archive_builder_content', [$this, 'archive_page_builder_content'] );
 		add_action( 'sina_ext_single_builder_content', [$this, 'single_page_builder_content'] );
 		add_action( 'sina_ext_others_builder_content', [$this, 'others_page_builder_content'] );
@@ -44,13 +45,15 @@ class Sina_Ext_Theme_Builder{
 
 		add_filter( 'parse_query', [$this, 'query_filter'] );
 		add_filter( 'views_edit-'.self::POST_TYPE, [$this, 'print_tabs'] );
-		add_filter( 'template_include', [$this, 'template_loader'] );
-		add_filter( 'body_class', [$this, 'body_classes'] );
+		add_filter( 'template_include', [$this, 'template_loader'], 9999 );
 	}
 
 	public function popup_builder_html() {
-		$html = '<div class="sina-ext-popup"></div>';
-		printf($html);
+		?>
+		<div class="sina-ext-popup">
+			<?php do_action( 'sina_ext_popup_builder_content' ); ?>
+		</div>
+		<?php
 	}
 
 	public function enqueue_scripts( $hook ) {
@@ -416,7 +419,7 @@ class Sina_Ext_Theme_Builder{
 	public function create_template( $data ) {
 		$args = [
 			'post_type' => self::POST_TYPE,
-			'post_status' => $data['tmptype'] == 'popup' ? 'draft' : 'publish',
+			'post_status' => 'publish',
 			'post_title' => $data['title'],
 		];
 
@@ -433,10 +436,11 @@ class Sina_Ext_Theme_Builder{
 			update_post_meta($new_post_id, '_elementor_edit_mode', 'builder');
 			update_post_meta($new_post_id, '_wp_page_template', 'elementor_canvas');
 
-			if ('header' === $data['tmptype'] || 'footer' === $data['tmptype']) {
+			if ( in_array($data['tmptype'], ['header', 'footer', 'popup']) ) {
 				update_post_meta($new_post_id, self::POST_TYPE_META.'_splocation', $data['tmpSpLocation']);
-			} elseif ('popup' === $data['tmptype']) {
-				update_post_meta($new_post_id, self::POST_TYPE_META.'_splocation', $data['tmpSpLocation']);
+			}
+
+			if ('popup' === $data['tmptype']) {
 				update_post_meta($new_post_id, '_elementor_template_type', 'sina_popup');
 			}
 
@@ -504,14 +508,16 @@ class Sina_Ext_Theme_Builder{
 		update_post_meta( $data['id'], self::POST_TYPE_META.'_type', $data['tmptype'] );
 		update_post_meta( $data['id'], self::POST_TYPE_META.'_location', $data['tmplocation'] );
 
-		if ('header' === $data['tmptype'] || 'footer' === $data['tmptype']) {
-			update_post_meta( $data['id'], self::POST_TYPE_META.'_splocation', $data['tmpSpLocation'] );
-		} elseif ('popup' === $data['tmptype']) {
-			update_post_meta( $data['id'], self::POST_TYPE_META.'_splocation', $data['tmpSpLocation'] );
+		if ('popup' === $data['tmptype']) {
 			update_post_meta( $data['id'], '_elementor_template_type', 'sina_popup' );
 		} else {
-			delete_post_meta( $data['id'], self::POST_TYPE_META.'_splocation' );
 			delete_post_meta( $data['id'], '_elementor_template_type' );
+		}
+
+		if ( in_array($data['tmptype'], ['header', 'footer', 'popup']) ) {
+			update_post_meta( $data['id'], self::POST_TYPE_META.'_splocation', $data['tmpSpLocation'] );
+		} else {
+			delete_post_meta( $data['id'], self::POST_TYPE_META.'_splocation' );
 		}
 
 		$return = [
@@ -694,31 +700,17 @@ class Sina_Ext_Theme_Builder{
 	}
 
 	private function get_template_default_file() {
-		if ( is_singular() && $this->has_template('single') ) {
-			$default_file = 'single.php';
+		if ( is_singular() && $this->has_template('popup') ) {
+			return 'popup.php';
+		} elseif ( is_singular() && $this->has_template('single') ) {
+			return 'single.php';
 		} elseif ( is_archive() && $this->has_template('archive') ) {
-			$default_file = 'archive.php';
+			return 'archive.php';
 		} elseif ( (is_home() || is_search() || is_404() ) && $this->has_template('others') ) {
-			$default_file = 'others.php';
-		} else {
-			$default_file = '';
+			return 'others.php';
 		}
 
-		return $default_file;
-	}
-
-	public function body_classes( $classes ) {
-		$class_prefix = 'elementor-page-';
-
-		if ( is_singular() && $this->has_template('single') ) {
-			$classes[] = $class_prefix . self::has_template('single');
-		} elseif ( is_archive() && $this->has_template('archive') ) {
-			$classes[] = $class_prefix . self::has_template('archive');
-		} elseif ( ( is_home() || is_search() ) && $this->has_template('others') ) {
-			$classes[] = $class_prefix . self::has_template('others');
-		}
-
-		return $classes;
+		return '';
 	}
 
 	public function override_default_header( $name ) {
@@ -793,6 +785,14 @@ class Sina_Ext_Theme_Builder{
 
 	public function footer_builder_content() {
 		$template_id = $this->get_template_id('footer');
+
+		if ( $template_id != '0' ) {
+			echo self::render_build_content($template_id);
+		}
+	}
+
+	public function popup_builder_content() {
+		$template_id = $this->get_template_id('popup');
 
 		if ( $template_id != '0' ) {
 			echo self::render_build_content($template_id);
