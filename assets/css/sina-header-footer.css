@@ -1,4 +1,4 @@
-/* Sina Extension for Elementor v3.7.0 */
+/* Sina Extension for Elementor v3.9.0 */
 
 /*--------------------------------- General -------------------------------------- */
 .sina-overlay{
@@ -28,10 +28,6 @@
 }
 .sina-direct-contact i{
 	text-align: center;
-}
-.sina-scroll-top{
-	text-align: center;
-	transition: all 0.4s;
 }
 .sina-input-field{
 	display: inline-block;
@@ -152,13 +148,17 @@ footer.sina-pro-sticked{
 /*--------------------------------- Scroll To Top -------------------------------------- */
 .sina-scroll-top{
 	display: none;
+}
+.sina-scroll-top i{
 	width: 50px;
 	height: 50px;
 	line-height: 50px;
-	color: #fff;
-	background: #1085e4;
-	cursor: pointer;
+	text-align: center;
 	border-radius: 50%;
+	background: #1085e4;
+	color: #fff;
+	cursor: pointer;
+	transition: all 0.4s;
 }
 
 /*--------------------------------- Woo Cart -------------------------------------- */

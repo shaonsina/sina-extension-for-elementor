@@ -6,13 +6,12 @@ if ( !defined('ABSPATH') ) {
 	exit();
 }
 
-use \Elementor\Plugin;
-
 class Sina_Ext_Theme_Builder{
 	const POST_TYPE = 'sina-ext-template';
 	const POST_TYPE_META = 'sina-ext-template-meta';
 
 	private static $_instance = null;
+	private static $elementor_instance;
 
 	public static function instance() {
 		if ( is_null(self::$_instance) ) {
@@ -22,6 +21,8 @@ class Sina_Ext_Theme_Builder{
 	}
 
 	public function __construct() {
+		self::$elementor_instance = \Elementor\Plugin::instance();
+
 		add_action( 'admin_enqueue_scripts', [$this, 'enqueue_scripts'] );
 		add_action( 'init', [$this, 'register_theme_builder_post_type'] );
 		add_action( 'manage_'.self::POST_TYPE.'_posts_columns', [$this, 'manage_columns'] );
@@ -33,7 +34,6 @@ class Sina_Ext_Theme_Builder{
 		add_action( 'admin_footer', [$this, 'print_popup'] );
 		add_action( 'get_header', [$this, 'override_default_header'] );
 		add_action( 'get_footer', [$this, 'override_default_footer'] );
-		add_action( 'wp_footer', [$this, 'popup_builder_html'] );
 		add_action( 'sina_ext_header_builder_content', [$this, 'header_builder_content'] );
 		add_action( 'sina_ext_footer_builder_content', [$this, 'footer_builder_content'] );
 		add_action( 'sina_ext_popup_builder_content', [$this, 'popup_builder_content'] );
@@ -46,14 +46,6 @@ class Sina_Ext_Theme_Builder{
 		add_filter( 'parse_query', [$this, 'query_filter'] );
 		add_filter( 'views_edit-'.self::POST_TYPE, [$this, 'print_tabs'] );
 		add_filter( 'template_include', [$this, 'template_loader'], 9999 );
-	}
-
-	public function popup_builder_html() {
-		?>
-		<div class="sina-ext-popup">
-			<?php do_action( 'sina_ext_popup_builder_content' ); ?>
-		</div>
-		<?php
 	}
 
 	public function enqueue_scripts( $hook ) {
@@ -353,29 +345,16 @@ class Sina_Ext_Theme_Builder{
 			'label' 				=> esc_html__('Theme Builder', 'sina-ext'),
 			'description' 			=> esc_html__('Sina Extension Theme Builder', 'sina-ext'),
 			'labels' 				=> $labels,
-			'supports' 				=> ['title', 'elementor', 'thumbnail'],
-			'hierarchical' 			=> false,
+			'supports' 				=> ['title', 'elementor'],
 			'public' 				=> true,
+			'exclude_from_search' 	=> true,
+			'publicly_queryable' 	=> true,
 			'show_ui' 				=> true,
 			'show_in_menu' 			=> false,
 			'show_in_admin_bar' 	=> false,
-			'show_in_nav_menus' 	=> true,
-			'can_export' 			=> true,
-			'has_archive' 			=> false,
-			'rewrite' 				=> [
-				'slug' 		=> 'sina-ext-template',
-				'pages' 	=> false,
-				'with_front'=> true,
-				'feeds' 	=> false,
-			],
-			'query_var' 			=> true,
-			'exclude_from_search' 	=> true,
-			'publicly_queryable' 	=> true,
 			'capability_type' 		=> 'page',
-			'show_in_rest' 			=> true,
-			'rest_base' 			=> self::POST_TYPE,
 		];
-		
+
 		register_post_type(self::POST_TYPE, $args);
 
 		$this->get_active();
@@ -700,9 +679,14 @@ class Sina_Ext_Theme_Builder{
 	}
 
 	private function get_template_default_file() {
-		if ( is_singular() && $this->has_template('popup') ) {
-			return 'popup.php';
-		} elseif ( is_singular() && $this->has_template('single') ) {
+		if ( get_post_type() === self::POST_TYPE && is_singular() ) {
+			$type = get_post_meta( get_the_ID(), self::POST_TYPE_META . '_type', true );
+			if ( 'popup' == $type) {
+				return 'editor-popup.php';
+			}
+		}
+
+		if ( is_singular() && $this->has_template('single') ) {
 			return 'single.php';
 		} elseif ( is_archive() && $this->has_template('archive') ) {
 			return 'archive.php';
@@ -714,11 +698,12 @@ class Sina_Ext_Theme_Builder{
 	}
 
 	public function override_default_header( $name ) {
+		require_once SINA_EXT_INC . 'templates/popup-content.php';
 		if ( !$this->has_template('header') ) {
 			return;
 		}
 
-		require SINA_EXT_INC . 'templates/header.php';
+		require_once SINA_EXT_INC . 'templates/header.php';
 
 		$templates = [];
 		$name = (string) $name;
@@ -748,7 +733,7 @@ class Sina_Ext_Theme_Builder{
 			return;
 		}
 
-		require SINA_EXT_INC . 'templates/footer.php';
+		require_once SINA_EXT_INC . 'templates/footer.php';
 
 		$templates = [];
 		$name = (string) $name;
@@ -951,10 +936,10 @@ class Sina_Ext_Theme_Builder{
 
 	public static function render_build_content( $id ) {
 		$output = '';
-		$document = Plugin::instance()->documents->get($id);
+		$document = self::$elementor_instance->documents->get($id);
 
 		if ( $document && $document->is_built_with_elementor() ) {
-			$output = Plugin::instance()->frontend->get_builder_content_for_display($id, true);
+			$output = self::$elementor_instance->frontend->get_builder_content_for_display($id, true);
 		} else {
 			$content = get_the_content(null, false, $id);
 

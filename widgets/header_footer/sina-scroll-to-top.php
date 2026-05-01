@@ -203,6 +203,7 @@ class Sina_Scroll_To_Top_Widget extends Widget_Base{
 
 		// Start Scroll Top Style
 		// =======================
+			$selector = '{{WRAPPER}} .sina-scroll-top i';
 			$this->start_controls_section(
 				'scroll_top_style',
 				[
