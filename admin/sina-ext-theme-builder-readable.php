@@ -32,16 +32,14 @@ class Sina_Ext_Theme_Builder{
 		add_action( 'wp_ajax_sina_ext_get_template', [$this, 'get_template_by_id'] );
 		add_action( 'wp_ajax_sina_ext_get_posts_by_query', [$this, 'get_posts_by_query'] );
 		add_action( 'admin_footer', [$this, 'print_popup'] );
-		add_action( 'get_header', [$this, 'override_default_header'] );
-		add_action( 'get_footer', [$this, 'override_default_footer'] );
+		add_action( 'get_header', [$this, 'override_default_header'], 9999 );
+		add_action( 'get_footer', [$this, 'override_default_footer'], 9999 );
 		add_action( 'sina_ext_header_builder_content', [$this, 'header_builder_content'] );
 		add_action( 'sina_ext_footer_builder_content', [$this, 'footer_builder_content'] );
-		add_action( 'sina_ext_popup_builder_content', [$this, 'popup_builder_content'] );
 		add_action( 'sina_ext_archive_builder_content', [$this, 'archive_page_builder_content'] );
 		add_action( 'sina_ext_single_builder_content', [$this, 'single_page_builder_content'] );
 		add_action( 'sina_ext_others_builder_content', [$this, 'others_page_builder_content'] );
 		add_action( 'elementor/documents/register', [ $this, 'register_document_type' ] );
-
 
 		add_filter( 'parse_query', [$this, 'query_filter'] );
 		add_filter( 'views_edit-'.self::POST_TYPE, [$this, 'print_tabs'] );
@@ -60,7 +58,7 @@ class Sina_Ext_Theme_Builder{
 				'ajaxurl' 			=> admin_url('admin-ajax.php'),
 				'nonce' 			=> wp_create_nonce('sina_ext_tmp_nonce'),
 				'adminURL' 			=> admin_url(),
-				'hflocation' 		=> self::get_hf_select(),
+				'hflocation' 		=> self::get_hfp_select(),
 				'archivelocation' 	=> self::get_archive_select(),
 				'singlelocation' 	=> self::get_single_select(),
 				'otherslocation' 	=> self::get_others_select(),
@@ -100,7 +98,7 @@ class Sina_Ext_Theme_Builder{
 		$documents_manager->register_document_type( 'sina_popup', 'Sina_Popup_Builder' );
 	}
 
-	public static function get_hf_select() {
+	public static function get_hfp_select() {
 		$args = [
 			'public' => true,
 			'show_in_nav_menus' => true,
@@ -146,7 +144,7 @@ class Sina_Ext_Theme_Builder{
 				$selection_options[$post_type->name] = [
 					'label' => esc_html($post_type->label),
 					'value' => [
-						'all-'.$post_type->name => esc_html('All '.$post_type->label),
+						'all-page' => esc_html('All '.$post_type->label),
 					],
 				];
 			} else {
@@ -167,7 +165,7 @@ class Sina_Ext_Theme_Builder{
 			],
 		];
 
-		return apply_filters('sina_ext_display_hf_list', $selection_options);
+		return apply_filters('sina_ext_display_hfp_list', $selection_options);
 	}
 
 	public static function get_archive_select() {
@@ -679,18 +677,18 @@ class Sina_Ext_Theme_Builder{
 	}
 
 	private function get_template_default_file() {
-		if ( get_post_type() === self::POST_TYPE && is_singular() ) {
+		if ( is_singular(self::POST_TYPE) ) {
 			$type = get_post_meta( get_the_ID(), self::POST_TYPE_META . '_type', true );
 			if ( 'popup' == $type) {
-				return 'editor-popup.php';
+				return 'popup.php';
 			}
 		}
 
-		if ( is_singular() && $this->has_template('single') ) {
+		if ( is_singular() && $this->get_the_template_id('single') ) {
 			return 'single.php';
-		} elseif ( is_archive() && $this->has_template('archive') ) {
+		} elseif ( is_archive() && $this->get_the_template_id('archive') ) {
 			return 'archive.php';
-		} elseif ( (is_home() || is_search() || is_404() ) && $this->has_template('others') ) {
+		} elseif ( (is_home() || is_search() || is_404() ) && $this->get_the_template_id('others') ) {
 			return 'others.php';
 		}
 
@@ -698,8 +696,9 @@ class Sina_Ext_Theme_Builder{
 	}
 
 	public function override_default_header( $name ) {
-		require_once SINA_EXT_INC . 'templates/popup-content.php';
-		if ( !$this->has_template('header') ) {
+		$this->popup_builder_content();
+
+		if ( !$this->get_the_template_id('header') ) {
 			return;
 		}
 
@@ -721,15 +720,7 @@ class Sina_Ext_Theme_Builder{
 	}
 
 	public function override_default_footer( $name ) {
-		if ( !$this->has_template('header') && $this->has_template('footer') ) {
-			$current_template = basename( get_page_template_slug() );
-
-			if ($current_template == 'elementor_canvas') {
-				return;
-			}
-		}
-
-		if ( !$this->has_template('footer') ) {
+		if ( !$this->get_the_template_id('footer') ) {
 			return;
 		}
 
@@ -750,18 +741,8 @@ class Sina_Ext_Theme_Builder{
 		ob_get_clean();
 	}
 
-	public function has_template( $tmpType = '' ) {
-		$template_ID = self::get_current_template_by_condition($tmpType);
-
-		if ( $template_ID ) {
-			return $template_ID;
-		}
-
-		return false;
-	}
-
 	public function header_builder_content() {
-		$template_id = $this->get_template_id('header');
+		$template_id = $this->get_the_template_id('header');
 
 		if ( $template_id != '0' ) {
 			echo self::render_build_content($template_id);
@@ -769,7 +750,7 @@ class Sina_Ext_Theme_Builder{
 	}
 
 	public function footer_builder_content() {
-		$template_id = $this->get_template_id('footer');
+		$template_id = $this->get_the_template_id('footer');
 
 		if ( $template_id != '0' ) {
 			echo self::render_build_content($template_id);
@@ -777,15 +758,19 @@ class Sina_Ext_Theme_Builder{
 	}
 
 	public function popup_builder_content() {
-		$template_id = $this->get_template_id('popup');
+		$template_id = $this->get_the_template_id('popup');
 
 		if ( $template_id != '0' ) {
-			echo self::render_build_content($template_id);
+			?>
+			<div class="sina-ext-popup">
+			    <?php echo self::render_build_content($template_id); ?>
+			</div>
+			<?php
 		}
 	}
 
 	public function archive_page_builder_content() {
-		$template_id = $this->get_template_id('archive');
+		$template_id = $this->get_the_template_id('archive');
 
 		if ( $template_id != '0' ) {
 			echo self::render_build_content($template_id);
@@ -793,7 +778,7 @@ class Sina_Ext_Theme_Builder{
 	}
 
 	public function single_page_builder_content() {
-		$template_id = $this->get_template_id('single');
+		$template_id = $this->get_the_template_id('single');
 
 		if ( $template_id != '0' ) {
 			echo self::render_build_content($template_id);
@@ -801,24 +786,14 @@ class Sina_Ext_Theme_Builder{
 	}
 
 	public function others_page_builder_content() {
-		$template_id = $this->get_template_id('others');
+		$template_id = $this->get_the_template_id('others');
 
 		if ( $template_id != '0' ) {
 			echo self::render_build_content($template_id);
 		}
 	}
 
-	public function get_template_id( $tmpType = '' ) {
-		$template_ID = self::get_current_template_by_condition($tmpType);
-
-		if ( $template_ID ) {
-			return $template_ID;
-		}
-
-		return false;
-	}
-
-	public function get_current_template_by_condition( $tmpType = '' ) {
+	public function get_the_template_id( $tmpType = '' ) {
 		$query_args = [
 			'post_type' => self::POST_TYPE,
 			'fields' => 'ids',
@@ -832,14 +807,12 @@ class Sina_Ext_Theme_Builder{
 				]
 			]
 		];
-
 		$query = new \WP_Query( $query_args );
 		$count = $query->post_count;
 		$templates = [];
 		$templates_specific = [
 			'specifics' => []
 		];
-
 		foreach ( $query->posts as $key => $post_id ) {
 			$location = get_post_meta( absint($post_id), self::POST_TYPE_META . '_location', true);
 			$splocation = get_post_meta( absint($post_id), self::POST_TYPE_META . '_splocation', true);
@@ -914,14 +887,20 @@ class Sina_Ext_Theme_Builder{
 		}
 
 		if ( is_singular() ) {
-			if ( ('page' === get_post_type() || self::POST_TYPE === get_post_type()) && 'single' === $tmpType ) {
+			$post_type = get_post_type();
+
+			if ( self::POST_TYPE == $post_type && 'single' === $tmpType ) {
 				return false;
 			}
 
-			$single_hf = get_post_type() . '-singulars';
+			if ( 'page' === $post_type && array_key_exists('all-page', $templates) ) {
+				return $templates['all-page'];
+			}
 
-			if ( array_key_exists($single_hf, $templates) ) {
-				return $templates[$single_hf];
+			$single_hfp = $post_type . '-singulars';
+
+			if ( array_key_exists($single_hfp, $templates) ) {
+				return $templates[$single_hfp];
 			}
 
 			if ( array_key_exists('singulars', $templates) ) {
@@ -932,6 +911,8 @@ class Sina_Ext_Theme_Builder{
 		if ( array_key_exists('global', $templates) ) {
 			return $templates['global'];
 		}
+
+		return false;
 	}
 
 	public static function render_build_content( $id ) {
